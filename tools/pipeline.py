@@ -70,10 +70,68 @@ def pos_at(t_ms):
     return (samples[k]['x'], samples[k]['y']) if abs(ts[k] - t_ms) < 700 else None
 
 # nettete + sous-echantillonnage spatial (on saute les images quasi identiques)
-sharps = []
+# ---- netteté et deplacement image a image (correlation de phase sur 256 px) ----
+sharps, smalls = [], []
 for p, t in items:
     g = cv2.imread(p, cv2.IMREAD_REDUCED_GRAYSCALE_4)
     sharps.append(float(cv2.Laplacian(g, cv2.CV_64F).var()))
+    smalls.append(cv2.resize(g, (256, 256), interpolation=cv2.INTER_AREA).astype(np.float32))
+h4, w4 = cv2.imread(items[0][0], cv2.IMREAD_REDUCED_GRAYSCALE_4).shape
+win = cv2.createHanningWindow((256, 256), cv2.CV_32F)
+moves = [0.0]
+for i in range(1, len(smalls)):
+    (dx, dy), resp = cv2.phaseCorrelate(smalls[i - 1], smalls[i], win)
+    moves.append(math.hypot(dx / 256, dy / 256) if resp > 0.05 else 1.0)   # fraction du cadre ; pas de correlation = "a bouge"
+del smalls
+
+# ---- piles de profondeur : suites d'images immobiles dont la nettete varie (vis micrometrique tournee) ----
+def edf(paths):
+    """Fusion de plans de mise au point : en chaque pixel on garde le plan le plus net (pyramide laplacienne)."""
+    imgs = [cv2.imread(q) for q in paths]
+    ref = cv2.cvtColor(imgs[0], cv2.COLOR_BGR2GRAY).astype(np.float32)
+    aligned, maps = [], []
+    for im in imgs:
+        g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY).astype(np.float32)
+        (dx, dy), resp = cv2.phaseCorrelate(ref, g)
+        if resp > 0.05 and abs(dx) < 60 and abs(dy) < 60:
+            M = np.float32([[1, 0, -dx], [0, 1, -dy]]); im = cv2.warpAffine(im, M, (im.shape[1], im.shape[0]), borderMode=cv2.BORDER_REPLICATE); g = cv2.warpAffine(g, M, (g.shape[1], g.shape[0]), borderMode=cv2.BORDER_REPLICATE)
+        aligned.append(im.astype(np.float32))
+        maps.append(cv2.GaussianBlur(np.abs(cv2.Laplacian(g, cv2.CV_32F, ksize=3)), (0, 0), 6))
+    M = np.stack(maps); M = (M / (M.max(0, keepdims=True) + 1e-6)) ** 8; M = M / (M.sum(0, keepdims=True) + 1e-9)
+    levels = 5
+    out_pyr = None
+    for im, w in zip(aligned, M):
+        gp = [im]; wp = [w]
+        for _ in range(levels):
+            gp.append(cv2.pyrDown(gp[-1])); wp.append(cv2.pyrDown(wp[-1]))
+        lp = [gp[i] - cv2.pyrUp(gp[i + 1], dstsize=(gp[i].shape[1], gp[i].shape[0])) for i in range(levels)] + [gp[levels]]
+        contrib = [l * wl[..., None] for l, wl in zip(lp, wp)]
+        out_pyr = contrib if out_pyr is None else [o + c for o, c in zip(out_pyr, contrib)]
+    res = out_pyr[levels]
+    for i in range(levels - 1, -1, -1):
+        res = cv2.pyrUp(res, dstsize=(out_pyr[i].shape[1], out_pyr[i].shape[0])) + out_pyr[i]
+    return np.clip(res, 0, 255).astype(np.uint8)
+
+STILL = 0.02   # deplacement < 2 % du cadre = immobile
+merged, i, stacks = [], 0, 0
+while i < len(items):
+    j = i + 1
+    while j < len(items) and moves[j] < STILL: j += 1
+    run = list(range(i, j))
+    if len(run) >= 3:
+        sh = [sharps[k] for k in run]
+        if max(sh) > 1.5 * min(sh) and max(sh) >= 3.0:
+            outp = os.path.join(frames_dir, f'z_{i:06d}.jpg')
+            cv2.imwrite(outp, edf([items[k][0] for k in run]), [cv2.IMWRITE_JPEG_QUALITY, 95])
+            merged.append((outp, items[run[len(run) // 2]][1], max(sh))); stacks += 1
+        else:
+            k = max(run, key=lambda k: sharps[k]); merged.append((items[k][0], items[k][1], sharps[k]))
+    else:
+        for k in run: merged.append((items[k][0], items[k][1], sharps[k]))
+    i = j
+if stacks: log(f'{stacks} pile(s) de profondeur fusionnée(s) (EDF)')
+items = [(p, t) for p, t, _ in merged]; sharps = [sh for _, _, sh in merged]
+
 thr = max(3.0, 0.4 * float(np.median(sharps)))   # relative threshold: drops the blurred frames of this series only
 log(f'netteté médiane {np.median(sharps):.1f}, seuil {thr:.1f}')
 sel = []

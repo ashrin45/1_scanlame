@@ -692,7 +692,7 @@ self.onmessage = async e => {
     else timer = setInterval(tick, +$('interval').value);
     $('shoot').textContent = 'Arrêter'; $('shoot').classList.add('stop'); $('rec').classList.add('on'); setState('recording');
     for (const id of ['interval', 'quality', 'scale', 'mode', 'flux', 'bitrate']) $(id).disabled = true;
-    say(mode === 'video' ? 'Enregistrement en cours. Déplace la platine lentement, en serpentin.' : 'Série en cours. Déplace la platine lentement, en serpentin.');
+    say(mode === 'video' ? 'Enregistrement en cours. Platine lente, en serpentin. Pour la profondeur : arrêt, aller-retour de la vis micrométrique 2 s, puis on repart.' : 'Série en cours. Déplace la platine lentement, en serpentin.');
   }
   let stopping = false;
   async function stopSeries() {
