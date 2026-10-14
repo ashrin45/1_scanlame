@@ -19,7 +19,11 @@
   @keyframes blink { 50% { opacity: .25; } }
   #sharp { position: absolute; left: 10px; bottom: 10px; right: 10px; height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
   #sharp i { display: block; height: 100%; width: 0; background: var(--ok); transition: width .2s; }
-  #panel { flex: 0 0 auto; background: var(--panel); border-top: 1px solid var(--line); padding: 10px max(14px, env(safe-area-inset-right, 0)) 10px max(14px, env(safe-area-inset-left, 0)); display: grid; gap: 10px; }
+  #map { position: absolute; right: 10px; bottom: 22px; width: min(46vw, 240px); height: min(46vw, 240px); background: rgba(23,21,28,.9); border: 1px solid var(--line); border-radius: 8px; }
+  #trk { position: absolute; right: 10px; bottom: 6px; font-size: 11px; font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 6px; background: rgba(11,10,13,.72); padding: 2px 6px; border-radius: 4px; }
+  #trk i { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); display: inline-block; }
+  #trk.ok i { background: var(--ok); } #trk.lost i { background: var(--rec); } #trk.relocated i { background: var(--warn); }
+  #panel { flex: 0 0 auto; background: var(--panel); border-top: 1px solid var(--line); padding: 10px max(14px, env(safe-area-inset-right, 0)) 10px max(14px, env(safe-area-inset-left, 0)); display: grid; gap: 10px; max-height: 55vh; overflow-y: auto; }
   .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
   label { color: var(--muted); font-size: 12px; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
   select, input[type=text], input[type=url] { background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 7px 8px; font: inherit; }
@@ -33,10 +37,7 @@
   #msg { color: var(--muted); font-size: 12px; min-height: 1.2em; }
   #msg.err { color: var(--rec); }
   details summary { color: var(--muted); font-size: 12px; cursor: pointer; }
-  #map { position: absolute; right: 10px; bottom: 22px; width: min(46vw, 240px); height: min(46vw, 240px); background: rgba(23,21,28,.9); border: 1px solid var(--line); border-radius: 8px; }
-  #trk { position: absolute; right: 10px; bottom: 6px; font-size: 11px; font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 6px; }
-  #trk i { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); display: inline-block; }
-  #trk.ok i { background: var(--ok); } #trk.lost i { background: var(--rec); } #trk.relocated i { background: var(--warn); }
+  #log { margin: 8px 0 0; max-height: 30vh; overflow: auto; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; font: 11px/1.45 ui-monospace, Menlo, monospace; white-space: pre-wrap; word-break: break-all; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -45,6 +46,7 @@
   <div class="hud">
     <span id="res">caméra arrêtée</span>
     <span id="count">0 photo</span>
+    <span id="rate">cadence : 0,0 /s</span>
     <span id="lock">AF/AE auto</span>
   </div>
   <div id="rec"></div>
@@ -67,8 +69,11 @@
         <option value="1000">1 s</option>
       </select>
     </label>
+    <label>Taille photo
+      <select id="scale"><option value="1">pleine</option><option value="0.75">3/4</option><option value="0.5" selected>1/2</option></select>
+    </label>
     <label>Qualité JPEG
-      <select id="quality"><option value="0.92">92 %</option><option value="0.85">85 %</option><option value="0.75">75 %</option></select>
+      <select id="quality"><option value="0.92">92 %</option><option value="0.85" selected>85 %</option><option value="0.75">75 %</option></select>
     </label>
     <button id="lockbtn" class="toggle" aria-pressed="false" disabled>Verrouiller AF/AE</button>
     <label class="grow">Zoom <span id="zoomv">1.0×</span>
@@ -88,10 +93,15 @@
       </label>
     </div>
   </details>
+  <details id="logbox">
+    <summary>Journal</summary>
+    <div class="row" style="margin-top:8px"><button id="copylog">Copier le journal</button></div>
+    <pre id="log"></pre>
+  </details>
   <div id="msg">Mets le téléphone sur l'oculaire, fais la mise au point à la bague du microscope, puis verrouille AF/AE avant de lancer la série.</div>
 </div>
 
-
+<!-- Position tracker, run inside a worker -->
 <script id="tracker-src" type="text/plain">
 // Position tracker for microscope field capture.
 // Frames are resampled to a 256x256 greyscale square (aspect is restored when converting
@@ -164,12 +174,15 @@ const Tracker = (() => {
     return best;
   }
   // Coarse-to-fine match. guess is in L2 (256 px) units. Returns shift in L2 units + score.
-  function match(pyrA, pyrB, masks, guess = { vx: 0, vy: 0 }, r0 = 24) {
+  function match(pyrA, pyrB, masks, guess = { vx: 0, vy: 0 }, r0 = 32) {
     let b = search(pyrA[0], pyrB[0], masks[0], S0, Math.round(guess.vx / 4), Math.round(guess.vy / 4), r0, 2);
     if (b.score < 0) return { vx: 0, vy: 0, score: -1 };
     b = search(pyrA[0], pyrB[0], masks[0], S0, b.vx, b.vy, 2);
+    const gx = Math.round(guess.vx / 4), gy = Math.round(guess.vy / 4);
+    const onEdge = Math.abs(b.vx - gx) >= r0 || Math.abs(b.vy - gy) >= r0;   // peak on the search border: unreliable
     b = search(pyrA[1], pyrB[1], masks[1], S1, b.vx * 2, b.vy * 2, 3);
     b = search(pyrA[2], pyrB[2], masks[2], S2, b.vx * 2, b.vy * 2, 2);
+    if (onEdge && b.score < 0.7) b.score = Math.min(b.score, 0.3);
     return b;
   }
 
@@ -226,118 +239,99 @@ self.onmessage = e => {
   if (!self.sess) self.sess = Tracker.createSession();
   if (m.type === 'reset') { self.sess = Tracker.createSession(); return; }
   if (m.type === 'mask') { self.sess.setMask(m.bright); return; }
-  if (m.type === 'frame') { const f = self.sess.add(m.g); self.postMessage({ id: m.id, x: f.x, y: f.y, score: f.score, status: f.status }); }
+  if (m.type === 'frame') { const t = performance.now(); const f = self.sess.add(m.g); self.postMessage({ id: m.id, x: f.x, y: f.y, score: f.score, status: f.status, ms: Math.round(performance.now() - t) }); }
 };
 </script>
+
+<!-- JPEG encoder: one ImageBitmap in, JPEG + 256px grey + thumbnail out. Several run in parallel. -->
+<script id="encoder-src" type="text/plain">
+self.onmessage = async e => {
+  const { id, bitmap, scale, quality } = e.data, t0 = performance.now();
+  try {
+    const w = Math.round(bitmap.width * scale), h = Math.round(bitmap.height * scale);
+    const oc = new OffscreenCanvas(w, h); oc.getContext('2d').drawImage(bitmap, 0, 0, w, h);
+    const blobP = oc.convertToBlob({ type: 'image/jpeg', quality });
+    const c2 = new OffscreenCanvas(256, 256), x2 = c2.getContext('2d', { willReadFrequently: true });
+    x2.drawImage(bitmap, 0, 0, 256, 256);
+    const d = x2.getImageData(0, 0, 256, 256).data, g = new Float32Array(256 * 256);
+    for (let i = 0, j = 0; i < d.length; i += 4, j++) g[j] = d[i] * .3 + d[i+1] * .59 + d[i+2] * .11;
+    const tw = 64, th = Math.round(64 * bitmap.height / bitmap.width), c3 = new OffscreenCanvas(tw, th);
+    c3.getContext('2d').drawImage(bitmap, 0, 0, tw, th);
+    const thumb = c3.transferToImageBitmap();
+    const blob = await blobP;
+    bitmap.close();
+    self.postMessage({ id, blob, g, thumb, w, h, ms: Math.round(performance.now() - t0) }, [g.buffer, thumb]);
+  } catch (err) { self.postMessage({ id, error: String(err && err.message || err) }); }
+};
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
 (() => {
   const $ = id => document.getElementById(id);
   const video = $('v');
-  let stream = null, track = null, timer = null, running = false, busy = false;
-  let shots = [];           // {name, blob}
+  let stream = null, track = null, timer = null, running = false;
+  let shots = [];                 // {name, blob}
   let totalBytes = 0, seriesId = '', seq = 0, wakeLock = null;
-  const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d', { willReadFrequently: false });
-  const small = document.createElement('canvas'); small.width = 240; small.height = 180;
-  const sctx = small.getContext('2d', { willReadFrequently: true });
+  const frameInfo = {};           // name -> {name, t, x, y, score, status, track, thumb, size, encMs}
+  const POOL = Math.min(4, Math.max(2, (navigator.hardwareConcurrency || 4) - 2));
 
-  // ---- live position tracking (runs in a worker, builds the coverage map) ----
-  const S = 256, c256 = document.createElement('canvas'); c256.width = S; c256.height = S;
-  const ctx256 = c256.getContext('2d', { willReadFrequently: true });
-  const worker = new Worker(URL.createObjectURL(new Blob([document.getElementById('tracker-src').textContent], { type: 'text/javascript' })));
-  const map = $('map'), mctx = map.getContext('2d');
-  let pending = 0, placed = [];     // {name, x, y (native px), score, status, thumb}
-  const frameInfo = {};             // name -> record (also used for serie.json)
-  function gray256() {
-    ctx256.drawImage(video, 0, 0, S, S);
-    const d = ctx256.getImageData(0, 0, S, S).data, g = new Float32Array(S * S);
-    for (let i = 0, j = 0; i < d.length; i += 4, j++) g[j] = d[i] * .3 + d[i+1] * .59 + d[i+2] * .11;
-    return g;
+  // ---------- journal ----------
+  const lines = [], t00 = performance.now();
+  function log(msg) {
+    const l = `${((performance.now() - t00) / 1000).toFixed(3).padStart(8)}  ${msg}`;
+    lines.push(l); if (lines.length > 2000) lines.shift();
+    console.log(l);
+    const el = $('log'); el.textContent = lines.slice(-250).join('\n'); if ($('logbox').open) el.scrollTop = el.scrollHeight;
   }
-  function sendMask() {
-    const g = gray256(), sorted = Float32Array.from(g).sort(), p95 = sorted[Math.floor(sorted.length * 0.95)];
-    const bright = new Uint8Array(S * S); for (let i = 0; i < g.length; i++) bright[i] = g[i] > 0.3 * p95 ? 1 : 0;
-    worker.postMessage({ type: 'mask', bright }, [bright.buffer]);
-  }
-  function thumb() {
-    const t = document.createElement('canvas'); t.width = 64; t.height = Math.round(64 * video.videoHeight / video.videoWidth);
-    t.getContext('2d').drawImage(video, 0, 0, t.width, t.height); return t;
-  }
-  function trackFrame(name) {
-    if (pending > 0) { frameInfo[name].status = 'skipped'; return; }   // worker busy: skip this one, next frame will carry on
-    pending++;
-    const g = gray256();
-    worker.postMessage({ type: 'frame', id: name, g }, [g.buffer]);
-  }
-  worker.onerror = e => { pending = 0; say('Suivi de position en erreur : ' + e.message, true); };
-  worker.onmessage = e => {
-    pending--;
-    const r = e.data, rec = frameInfo[r.id]; if (!rec) return;
-    rec.x = r.x * video.videoWidth / S; rec.y = r.y * video.videoHeight / S; rec.score = r.score; rec.status = r.status;
-    if (r.status !== 'lost') placed.push(rec);
-    const trk = $('trk'); trk.className = r.status;
-    $('trkt').textContent = r.status === 'ok' ? `suivi ok (${r.score.toFixed(2)})` : r.status === 'lost' ? 'suivi perdu : reviens sur une zone déjà vue' : 'recalé sur la carte';
-    drawMap(rec);
-  };
-  function drawMap(current) {
-    const dpr = window.devicePixelRatio || 1, cw = map.clientWidth, ch = map.clientHeight;
-    if (map.width !== cw * dpr) { map.width = cw * dpr; map.height = ch * dpr; }
-    mctx.setTransform(dpr, 0, 0, dpr, 0, 0); mctx.clearRect(0, 0, cw, ch);
-    if (!placed.length) return;
-    const W = video.videoWidth, H = video.videoHeight;
-    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
-    for (const p of placed) { x0 = Math.min(x0, p.x); y0 = Math.min(y0, p.y); x1 = Math.max(x1, p.x + W); y1 = Math.max(y1, p.y + H); }
-    const pad = 8, sc = Math.min((cw - 2 * pad) / (x1 - x0), (ch - 2 * pad) / (y1 - y0));
-    const ox = pad + ((cw - 2 * pad) - (x1 - x0) * sc) / 2, oy = pad + ((ch - 2 * pad) - (y1 - y0) * sc) / 2;
-    mctx.globalAlpha = 0.95;
-    for (const p of placed) mctx.drawImage(p.thumb, ox + (p.x - x0) * sc, oy + (p.y - y0) * sc, W * sc, H * sc);
-    mctx.globalAlpha = 1;
-    if (current) {
-      mctx.lineWidth = 2; mctx.strokeStyle = current.status === 'lost' ? '#eb5757' : current.status === 'relocated' ? '#f2c94c' : '#6fcf97';
-      mctx.strokeRect(ox + (current.x - x0) * sc, oy + (current.y - y0) * sc, W * sc, H * sc);
-    }
-    mctx.fillStyle = '#f0ecf4'; mctx.font = '11px system-ui, sans-serif'; mctx.fillText(`${placed.length} champs placés`, 8, ch - 8);
-  }
+  $('copylog').onclick = async () => { try { await navigator.clipboard.writeText(lines.join('\n')); say('Journal copié.'); } catch (_) { say('Copie refusée : sélectionne le texte à la main.', true); } };
+  window.addEventListener('error', e => log('ERREUR ' + e.message));
+  window.addEventListener('unhandledrejection', e => log('ERREUR promesse ' + (e.reason && e.reason.message || e.reason)));
 
-  const say = (t, err = false) => { $('msg').textContent = t; $('msg').className = err ? 'err' : ''; };
+  const say = (t, err = false) => { $('msg').textContent = t; $('msg').className = err ? 'err' : ''; if (err) log('MSG ' + t); };
   const fmtMB = b => (b / 1048576).toFixed(1) + ' Mo';
   const stamp = () => { const d = new Date(), p = n => String(n).padStart(2, '0');
     return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`; };
 
+  // ---------- workers ----------
+  const mkWorker = id => new Worker(URL.createObjectURL(new Blob([$(id).textContent], { type: 'text/javascript' })));
+  const hasOffscreen = typeof OffscreenCanvas !== 'undefined' && typeof createImageBitmap === 'function';
+  const encoders = hasOffscreen ? Array.from({ length: POOL }, () => mkWorker('encoder-src')) : [];
+  const tracker = mkWorker('tracker-src');
+  let inflight = 0, trackerBusy = 0, placed = [];
+  log(`page chargée. ${navigator.userAgent}`);
+  log(`coeurs : ${navigator.hardwareConcurrency || '?'}, encodeurs parallèles : ${hasOffscreen ? POOL : 'aucun (OffscreenCanvas absent, encodage sur le fil principal)'}`);
+
+  // ---------- camera ----------
   async function startCamera() {
+    log('getUserMedia demandé (arrière, 4096x3072 idéal)');
     try {
-      stream = await navigator.mediaDevices.getUserMedia({
-        audio: false,
-        video: { facingMode: { ideal: 'environment' }, width: { ideal: 4096 }, height: { ideal: 3072 }, frameRate: { ideal: 30 } }
-      });
+      stream = await navigator.mediaDevices.getUserMedia({ audio: false,
+        video: { facingMode: { ideal: 'environment' }, width: { ideal: 4096 }, height: { ideal: 3072 }, frameRate: { ideal: 30 } } });
     } catch (e) { say('Caméra refusée ou indisponible : ' + e.message + '. La page doit être ouverte en HTTPS.', true); return; }
     track = stream.getVideoTracks()[0];
     video.srcObject = stream;
     await new Promise(r => video.onloadedmetadata = r);
+    const st = track.getSettings(), caps = track.getCapabilities ? track.getCapabilities() : {};
     $('res').textContent = `${video.videoWidth} × ${video.videoHeight}`;
     $('start').textContent = 'Caméra active'; $('start').disabled = true;
     $('shoot').disabled = false; $('lockbtn').disabled = false;
-    const caps = track.getCapabilities ? track.getCapabilities() : {};
+    log(`flux ${video.videoWidth}x${video.videoHeight} @${st.frameRate || '?'} fps, piste "${track.label}"`);
+    log(`capacités : focus ${JSON.stringify(caps.focusMode || null)}, expo ${JSON.stringify(caps.exposureMode || null)}, balance ${JSON.stringify(caps.whiteBalanceMode || null)}, zoom ${caps.zoom ? caps.zoom.min + '..' + caps.zoom.max : 'non'}`);
     if (caps.zoom) {
       const z = $('zoom'); z.min = caps.zoom.min; z.max = caps.zoom.max; z.step = caps.zoom.step || 0.1;
-      z.value = track.getSettings().zoom || caps.zoom.min; z.disabled = false; $('zoomv').textContent = (+z.value).toFixed(1) + '×';
+      z.value = st.zoom || caps.zoom.min; z.disabled = false; $('zoomv').textContent = (+z.value).toFixed(1) + '×';
     }
-    try { wakeLock = await navigator.wakeLock?.request('screen'); } catch (_) {}
+    try { wakeLock = await navigator.wakeLock?.request('screen'); log('wake lock ' + (wakeLock ? 'ok' : 'non')); } catch (e) { log('wake lock refusé : ' + e.message); }
     say(`Flux ${video.videoWidth}×${video.videoHeight}. Focus manuel : ${caps.focusMode?.includes('manual') ? 'oui' : 'non'}, exposition manuelle : ${caps.exposureMode?.includes('manual') ? 'oui' : 'non'}.`);
     requestAnimationFrame(sharpness);
   }
-
   $('zoom').oninput = async e => {
     $('zoomv').textContent = (+e.target.value).toFixed(1) + '×';
-    try { await track.applyConstraints({ advanced: [{ zoom: +e.target.value }] }); } catch (_) {}
+    try { await track.applyConstraints({ advanced: [{ zoom: +e.target.value }] }); } catch (err) { log('zoom refusé : ' + err.message); }
   };
-
-  // Freeze focus, exposure and white balance at their current values
   async function lockAll(on) {
-    const caps = track.getCapabilities ? track.getCapabilities() : {};
-    const s = track.getSettings();
-    const adv = {};
+    const caps = track.getCapabilities ? track.getCapabilities() : {}, s = track.getSettings(), adv = {};
     if (on) {
       if (caps.focusMode?.includes('manual')) { adv.focusMode = 'manual'; if (s.focusDistance != null) adv.focusDistance = s.focusDistance; }
       if (caps.exposureMode?.includes('manual')) { adv.exposureMode = 'manual'; if (s.exposureTime != null) adv.exposureTime = s.exposureTime; if (s.iso != null) adv.iso = s.iso; }
@@ -347,9 +341,11 @@ self.onmessage = e => {
       if (caps.exposureMode?.includes('continuous')) adv.exposureMode = 'continuous';
       if (caps.whiteBalanceMode?.includes('continuous')) adv.whiteBalanceMode = 'continuous';
     }
+    log(`verrouillage ${on ? 'on' : 'off'} : ${JSON.stringify(adv)}`);
     if (!Object.keys(adv).length) { say('Ce téléphone n\'expose pas le verrouillage AF/AE au navigateur. Utilise le verrouillage de l\'app caméra native ou l\'app Capacitor.', true); return false; }
     try { await track.applyConstraints({ advanced: [adv] }); }
     catch (e) { say('Verrouillage refusé : ' + e.message, true); return false; }
+    log('réglages après verrouillage : ' + JSON.stringify(track.getSettings()));
     $('lock').textContent = on ? 'AF/AE verrouillés' : 'AF/AE auto';
     return true;
   }
@@ -358,91 +354,171 @@ self.onmessage = e => {
     if (await lockAll(on)) { $('lockbtn').setAttribute('aria-pressed', String(on)); say(on ? 'Réglages figés. Tu peux lancer la série.' : 'Réglages automatiques rétablis.'); }
   };
 
-  // Sharpness meter (variance of a simple Laplacian on a small greyscale copy)
+  // ---------- sharpness meter ----------
+  const small = document.createElement('canvas'); small.width = 240; small.height = 180;
+  const sctx = small.getContext('2d', { willReadFrequently: true });
   let lastSharp = 0;
   function sharpness(t) {
     if (!track) return;
-    if (t - lastSharp > 250 && video.readyState >= 2) {
+    if (t - lastSharp > 250 && video.readyState >= 2 && inflight < POOL) {
       lastSharp = t;
       sctx.drawImage(video, 0, 0, 240, 180);
       const d = sctx.getImageData(0, 0, 240, 180).data, w = 240, g = new Float32Array(w * 180);
       for (let i = 0, j = 0; i < d.length; i += 4, j++) g[j] = d[i] * .3 + d[i+1] * .59 + d[i+2] * .11;
       let sum = 0, sum2 = 0, n = 0;
       for (let y = 1; y < 179; y++) for (let x = 1; x < w - 1; x++) {
-        const k = y * w + x, l = 4 * g[k] - g[k-1] - g[k+1] - g[k-w] - g[k+w];
-        sum += l; sum2 += l * l; n++;
+        const k = y * w + x, l = 4 * g[k] - g[k-1] - g[k+1] - g[k-w] - g[k+w]; sum += l; sum2 += l * l; n++;
       }
-      const v = sum2 / n - (sum / n) ** 2;
-      $('sharpbar').style.width = Math.min(100, Math.sqrt(v) * 2.5) + '%';
+      $('sharpbar').style.width = Math.min(100, Math.sqrt(sum2 / n - (sum / n) ** 2) * 2.5) + '%';
     }
     requestAnimationFrame(sharpness);
   }
 
-  // One frame -> JPEG blob
-  function grab() {
-    return new Promise(res => {
-      canvas.width = video.videoWidth; canvas.height = video.videoHeight;
-      ctx.drawImage(video, 0, 0);
-      canvas.toBlob(res, 'image/jpeg', +$('quality').value);
-    });
+  // ---------- tracking & map ----------
+  const S = 256, c256 = document.createElement('canvas'); c256.width = S; c256.height = S;
+  const ctx256 = c256.getContext('2d', { willReadFrequently: true });
+  const map = $('map'), mctx = map.getContext('2d');
+  function sendMask() {
+    ctx256.drawImage(video, 0, 0, S, S);
+    const d = ctx256.getImageData(0, 0, S, S).data, g = new Float32Array(S * S);
+    for (let i = 0, j = 0; i < d.length; i += 4, j++) g[j] = d[i] * .3 + d[i+1] * .59 + d[i+2] * .11;
+    const sorted = Float32Array.from(g).sort(), p95 = sorted[Math.floor(sorted.length * 0.95)];
+    const bright = new Uint8Array(S * S); let n = 0;
+    for (let i = 0; i < g.length; i++) { bright[i] = g[i] > 0.3 * p95 ? 1 : 0; n += bright[i]; }
+    log(`masque oculaire : ${Math.round(100 * n / bright.length)} % du cadre utile (p95 ${Math.round(p95)})`);
+    tracker.postMessage({ type: 'mask', bright }, [bright.buffer]);
+  }
+  function trackFrame(rec, g) {
+    if (trackerBusy > 0) { rec.track = 'skipped'; return; }
+    trackerBusy++; rec.track = 'pending';
+    tracker.postMessage({ type: 'frame', id: rec.name, g }, [g.buffer]);
+  }
+  tracker.onerror = e => { trackerBusy = 0; log('ERREUR suivi : ' + e.message); };
+  tracker.onmessage = e => {
+    trackerBusy--;
+    const r = e.data, rec = frameInfo[r.id]; if (!rec) return;
+    rec.x = r.x * video.videoWidth / S; rec.y = r.y * video.videoHeight / S; rec.score = r.score; rec.track = r.status;
+    if (r.status !== 'lost') placed.push(rec);
+    $('trk').className = r.status;
+    $('trkt').textContent = r.status === 'ok' ? `suivi ok (${r.score.toFixed(2)})` : r.status === 'lost' ? 'suivi perdu : reviens sur une zone déjà vue' : 'recalé sur la carte';
+    log(`${rec.name.slice(-8, -4)} suivi ${r.status} score ${r.score.toFixed(2)} pos ${Math.round(rec.x)},${Math.round(rec.y)} (${r.ms} ms)`);
+    drawMap(rec);
+  };
+  function drawMap(current) {
+    const dpr = window.devicePixelRatio || 1, cw = map.clientWidth, ch = map.clientHeight;
+    if (map.width !== Math.round(cw * dpr)) { map.width = Math.round(cw * dpr); map.height = Math.round(ch * dpr); }
+    mctx.setTransform(dpr, 0, 0, dpr, 0, 0); mctx.clearRect(0, 0, cw, ch);
+    if (!placed.length) return;
+    const W = video.videoWidth, H = video.videoHeight;
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    for (const p of placed) { x0 = Math.min(x0, p.x); y0 = Math.min(y0, p.y); x1 = Math.max(x1, p.x + W); y1 = Math.max(y1, p.y + H); }
+    const pad = 8, sc = Math.min((cw - 2 * pad) / (x1 - x0), (ch - 2 * pad) / (y1 - y0));
+    const ox = pad + ((cw - 2 * pad) - (x1 - x0) * sc) / 2, oy = pad + ((ch - 2 * pad) - (y1 - y0) * sc) / 2;
+    mctx.globalAlpha = 0.95;
+    for (const p of placed) if (p.thumb) mctx.drawImage(p.thumb, ox + (p.x - x0) * sc, oy + (p.y - y0) * sc, W * sc, H * sc);
+    mctx.globalAlpha = 1;
+    if (current && current.x != null) {
+      mctx.lineWidth = 2; mctx.strokeStyle = current.track === 'lost' ? '#eb5757' : current.track === 'relocated' ? '#f2c94c' : '#6fcf97';
+      mctx.strokeRect(ox + (current.x - x0) * sc, oy + (current.y - y0) * sc, W * sc, H * sc);
+    }
+    mctx.fillStyle = '#f0ecf4'; mctx.font = '11px system-ui, sans-serif'; mctx.fillText(`${placed.length} champs placés`, 8, ch - 8);
   }
 
+  // ---------- capture ----------
+  let lastT = 0, recent = [], skipped = 0;
+  function onEncoded(rec, blob, g, thumb, encMs) {
+    rec.thumb = thumb; rec.size = blob.size; rec.encMs = encMs; rec.status = 'ok';
+    const url = $('upload').value.trim();
+    if (url) {
+      const fd = new FormData(); fd.append('file', blob, rec.name); fd.append('t_ms', String(Math.round(rec.t)));
+      fetch(url, { method: 'POST', body: fd }).then(r => { if (!r.ok) log(`envoi ${rec.name}: HTTP ${r.status}`); }).catch(e => { say('Envoi échoué : ' + e.message, true); });
+    } else shots.push({ name: rec.name, blob });
+    totalBytes += blob.size;
+    $('count').textContent = `${seq} photo${seq > 1 ? 's' : ''}`;
+    $('mem').textContent = url ? `${fmtMB(totalBytes)} envoyés` : `${fmtMB(totalBytes)} en mémoire`;
+    log(`${rec.name.slice(-8, -4)} +${Math.round(rec.dt)} ms  enc ${encMs} ms  ${fmtMB(blob.size)}  en vol ${inflight}`);
+    if (g) trackFrame(rec, g);
+    if (!url && totalBytes > 600 * 1048576) { stopSeries(); say('600 Mo en mémoire : série arrêtée, télécharge le ZIP avant de continuer.', true); }
+  }
+  encoders.forEach((w, i) => {
+    w.onmessage = e => {
+      inflight--;
+      const r = e.data, rec = frameInfo[r.id]; if (!rec) return;
+      if (r.error) { rec.status = 'error'; log(`${r.id.slice(-8, -4)} ERREUR encodeur ${i} : ${r.error}`); return; }
+      onEncoded(rec, r.blob, r.g, r.thumb, r.ms);
+    };
+    w.onerror = e => { inflight = 0; log(`ERREUR encodeur ${i} : ${e.message}`); };
+  });
+  // fallback without OffscreenCanvas: everything on the main thread, from one snapshot
+  const big = document.createElement('canvas'), bctx = big.getContext('2d');
+  async function grabMain(rec) {
+    const sc = +$('scale').value, w = Math.round(video.videoWidth * sc), h = Math.round(video.videoHeight * sc), t0 = performance.now();
+    big.width = w; big.height = h; bctx.drawImage(video, 0, 0, w, h);
+    ctx256.drawImage(big, 0, 0, S, S);
+    const d = ctx256.getImageData(0, 0, S, S).data, g = new Float32Array(S * S);
+    for (let i = 0, j = 0; i < d.length; i += 4, j++) g[j] = d[i] * .3 + d[i+1] * .59 + d[i+2] * .11;
+    const th = document.createElement('canvas'); th.width = 64; th.height = Math.round(64 * h / w); th.getContext('2d').drawImage(big, 0, 0, th.width, th.height);
+    const blob = await new Promise(res => big.toBlob(res, 'image/jpeg', +$('quality').value));
+    inflight--;
+    if (blob) onEncoded(rec, blob, g, th, Math.round(performance.now() - t0)); else { rec.status = 'error'; log(rec.name + ' toBlob a renvoyé null'); }
+  }
   async function tick() {
-    if (!running || busy) return;     // skip a beat rather than queue up
-    busy = true;
-    try {
-      const blob = await grab();
-      if (!blob) return;
-      seq++;
-      const name = `${seriesId}_${String(seq).padStart(4, '0')}.jpg`;
-      frameInfo[name] = { name, x: null, y: null, score: null, status: 'pending', thumb: thumb() };
-      trackFrame(name);
-      const url = $('upload').value.trim();
-      if (url) {
-        const fd = new FormData(); fd.append('file', blob, name);
-        fetch(url, { method: 'POST', body: fd }).catch(e => say('Envoi échoué : ' + e.message, true));
-      } else {
-        shots.push({ name, blob });
-      }
-      totalBytes += blob.size;
-      $('count').textContent = `${seq} photo${seq > 1 ? 's' : ''}`;
-      $('mem').textContent = url ? `${fmtMB(totalBytes)} envoyés` : `${fmtMB(totalBytes)} en mémoire`;
-      if (!url && totalBytes > 600 * 1048576) { stopSeries(); say('600 Mo en mémoire : série arrêtée, télécharge le ZIP avant de continuer.', true); }
-    } finally { busy = false; }
+    if (!running) return;
+    const now = performance.now();
+    if (inflight >= Math.max(1, encoders.length)) { skipped++; log(`saut : ${inflight} encodage(s) en cours, intervalle trop court pour ce téléphone`); return; }
+    const dt = lastT ? now - lastT : 0; lastT = now;
+    seq++;
+    const name = `${seriesId}_${String(seq).padStart(4, '0')}.jpg`;
+    const rec = frameInfo[name] = { name, t: now - seriesT0, dt, x: null, y: null, score: null, status: 'pending', track: 'none', thumb: null };
+    recent.push(now); while (recent.length > 6) recent.shift();
+    if (recent.length > 1) $('rate').textContent = `cadence : ${((recent.length - 1) * 1000 / (recent[recent.length - 1] - recent[0])).toFixed(1).replace('.', ',')} /s`;
+    inflight++;
+    if (encoders.length) {
+      let bmp;
+      try { bmp = await createImageBitmap(video); }
+      catch (e) { inflight--; rec.status = 'error'; log('createImageBitmap : ' + e.message); return; }
+      encoders[seq % encoders.length].postMessage({ id: name, bitmap: bmp, scale: +$('scale').value, quality: +$('quality').value }, [bmp]);
+    } else grabMain(rec);
   }
-
+  let seriesT0 = 0;
   function startSeries() {
-    running = true; seq = 0; seriesId = 'lame_' + stamp();
-    worker.postMessage({ type: 'reset' }); pending = 0; placed = []; for (const k in frameInfo) delete frameInfo[k];
+    running = true; seq = 0; seriesId = 'lame_' + stamp(); seriesT0 = performance.now(); lastT = 0; recent = []; skipped = 0;
+    tracker.postMessage({ type: 'reset' }); trackerBusy = 0; placed = [];
     sendMask(); drawMap(null); $('trk').className = ''; $('trkt').textContent = 'suivi en cours';
+    log(`=== série ${seriesId} : intervalle ${$('interval').value} ms, taille ${$('scale').value}, qualité ${$('quality').value}, zoom ${$('zoom').value}, flux ${video.videoWidth}x${video.videoHeight}`);
     $('shoot').textContent = 'Arrêter'; $('shoot').classList.add('stop'); $('rec').classList.add('on');
-    $('interval').disabled = true; $('quality').disabled = true;
+    $('interval').disabled = true; $('quality').disabled = true; $('scale').disabled = true;
     timer = setInterval(tick, +$('interval').value);
     say('Série en cours. Déplace la platine lentement, en serpentin.');
   }
   function stopSeries() {
     running = false; clearInterval(timer);
+    const dur = (performance.now() - seriesT0) / 1000;
+    log(`=== fin de série : ${seq} photos en ${dur.toFixed(1)} s (${(seq / dur).toFixed(2)} /s), ${skipped} sauts, ${placed.length} champs placés`);
     $('shoot').textContent = 'Lancer la série'; $('shoot').classList.remove('stop'); $('rec').classList.remove('on');
-    $('interval').disabled = false; $('quality').disabled = false;
+    $('interval').disabled = false; $('quality').disabled = false; $('scale').disabled = false;
     $('save').disabled = shots.length === 0; $('clear').disabled = shots.length === 0;
-    say(`Série terminée : ${seq} photos.`);
+    say(`Série terminée : ${seq} photos, ${skipped} sauts.`);
   }
   $('shoot').onclick = () => running ? stopSeries() : startSeries();
 
+  // ---------- export ----------
   $('save').onclick = async () => {
     if (!shots.length) return;
     $('save').disabled = true; say('Création du ZIP…');
     const zip = new JSZip();
-    const meta = { series: seriesId, count: shots.length, interval_ms: +$('interval').value, width: video.videoWidth, height: video.videoHeight, zoom: $('zoom').value, userAgent: navigator.userAgent };
-    meta.frames = Object.values(frameInfo).map(f => ({ name: f.name, x: f.x == null ? null : Math.round(f.x), y: f.y == null ? null : Math.round(f.y), score: f.score == null ? null : +f.score.toFixed(3), status: f.status }));
+    const meta = { series: seriesId, count: shots.length, interval_ms: +$('interval').value, scale: +$('scale').value, width: video.videoWidth, height: video.videoHeight, zoom: $('zoom').value, userAgent: navigator.userAgent,
+      frames: Object.values(frameInfo).map(f => ({ name: f.name, t_ms: Math.round(f.t), x: f.x == null ? null : Math.round(f.x), y: f.y == null ? null : Math.round(f.y), score: f.score == null ? null : +f.score.toFixed(3), track: f.track, enc_ms: f.encMs || null })) };
     zip.file('serie.json', JSON.stringify(meta, null, 1));
+    zip.file('journal.txt', lines.join('\n'));
     for (const s of shots) zip.file(s.name, s.blob);
     const out = await zip.generateAsync({ type: 'blob', compression: 'STORE' });
     const a = document.createElement('a'); a.href = URL.createObjectURL(out); a.download = `${seriesId}.zip`; a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 30000);
+    log(`ZIP ${fmtMB(out.size)} : ${shots.length} photos`);
     say(`ZIP de ${fmtMB(out.size)} prêt dans les téléchargements.`); $('save').disabled = false;
   };
-  $('clear').onclick = () => { shots = []; totalBytes = 0; seq = 0; placed = []; for (const k in frameInfo) delete frameInfo[k]; drawMap(null); $('count').textContent = '0 photo'; $('mem').textContent = ''; $('save').disabled = true; $('clear').disabled = true; };
+  $('clear').onclick = () => { shots = []; totalBytes = 0; seq = 0; placed = []; for (const k in frameInfo) delete frameInfo[k]; drawMap(null); $('count').textContent = '0 photo'; $('mem').textContent = ''; $('save').disabled = true; $('clear').disabled = true; log('mémoire vidée'); };
   $('start').onclick = startCamera;
   document.addEventListener('visibilitychange', async () => { if (document.visibilityState === 'visible' && track) { try { wakeLock = await navigator.wakeLock?.request('screen'); } catch (_) {} } });
 })();
