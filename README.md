@@ -32,6 +32,9 @@ Debit video reglable dans la page (15 / 30 / 60 Mbit/s) ; 30 suffit pour un Gram
 L'URL change a chaque lancement ; un compte Cloudflare gratuit + un domaine la rend fixe.
 Alternative : Tailscale Funnel (URL stable, app Tailscale sur le telephone et le PC).
 Pour un serveur allume en permanence sans frais : Oracle Cloud Always Free (ARM 4 coeurs, 24 Go, 200 Go de disque).
+Installation en une commande sur la VM, voir tools/oracle/setup.sh (Caddy + HTTPS Let's Encrypt via DuckDNS,
+service systemd, dossier /data/series pour les prises et /data/lames pour les pyramides publiees).
+Le serveur demande un jeton (X-Token) ; le meme jeton se saisit dans la page.
 
 ## Usage
 

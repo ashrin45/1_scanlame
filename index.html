@@ -101,7 +101,10 @@
     <summary>Envoi direct à un serveur (optionnel)</summary>
     <div class="row" style="margin-top:8px">
       <label class="grow">URL du serveur (tools/server.py) : photos et vidéo partent au fil de l'eau, rien ne reste sur le téléphone
-        <input id="upload" type="url" placeholder="http://localhost:8000" inputmode="url">
+        <input id="upload" type="url" placeholder="https://lames.duckdns.org" inputmode="url">
+      </label>
+      <label>Jeton d'accès
+        <input id="token" type="text" placeholder="le même que sur le serveur" autocomplete="off">
       </label>
     </div>
   </details>
@@ -300,6 +303,10 @@ self.onmessage = async e => {
   window.addEventListener('error', e => log('ERREUR ' + e.message));
   window.addEventListener('unhandledrejection', e => log('ERREUR promesse ' + (e.reason && e.reason.message || e.reason)));
 
+  const hdr = () => { const t = $('token').value.trim(); return t ? { 'X-Token': t } : {}; };
+  try { $('upload').value = localStorage.getItem('scanlame.url') || ''; $('token').value = localStorage.getItem('scanlame.token') || ''; } catch (_) {}
+  $('upload').onchange = () => { try { localStorage.setItem('scanlame.url', $('upload').value.trim()); } catch (_) {} };
+  $('token').onchange = () => { try { localStorage.setItem('scanlame.token', $('token').value.trim()); } catch (_) {} };
   const say = (t, err = false) => { $('msg').textContent = t; $('msg').className = err ? 'err' : ''; if (err) log('MSG ' + t); };
   const fmtMB = b => (b / 1048576).toFixed(1) + ' Mo';
   const stamp = () => { const d = new Date(), p = n => String(n).padStart(2, '0');
@@ -453,7 +460,7 @@ self.onmessage = async e => {
     const url = $('upload').value.trim();
     if (url) {
       const fd = new FormData(); fd.append('file', blob, rec.name); fd.append('t_ms', String(Math.round(rec.t))); fd.append('series', seriesId);
-      fetch(url.replace(/\/$/, '') + '/photo', { method: 'POST', body: fd }).then(r => { if (!r.ok) log(`envoi ${rec.name}: HTTP ${r.status}`); }).catch(e => { say('Envoi échoué : ' + e.message, true); });
+      fetch(url.replace(/\/$/, '') + '/photo', { method: 'POST', body: fd, headers: hdr() }).then(r => { if (!r.ok) log(`envoi ${rec.name}: HTTP ${r.status}`); }).catch(e => { say('Envoi échoué : ' + e.message, true); });
     } else shots.push({ name: rec.name, blob });
     totalBytes += blob.size;
     $('count').textContent = `${seq} photo${seq > 1 ? 's' : ''}`;
@@ -534,7 +541,7 @@ self.onmessage = async e => {
         const n = chunkSeq++, fd = new FormData();
         fd.append('file', e.data, `${seriesId}_${String(n).padStart(5, '0')}.bin`); fd.append('series', seriesId); fd.append('seq', String(n)); fd.append('mime', recorder.mimeType);
         pendingUploads++;
-        fetch(url.replace(/\/$/, '') + '/chunk', { method: 'POST', body: fd })
+        fetch(url.replace(/\/$/, '') + '/chunk', { method: 'POST', body: fd, headers: hdr() })
           .then(r => { if (!r.ok) log(`morceau ${n} : HTTP ${r.status}`); })
           .catch(err => log(`morceau ${n} : envoi échoué, ${err.message}`))
           .finally(() => { pendingUploads--; });
@@ -556,7 +563,7 @@ self.onmessage = async e => {
         if (url) {
           // finish: send the positions, the server closes the series
           const meta = seriesMeta();
-          try { const r = await fetch(url.replace(/\/$/, '') + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(meta) }); log(`série clôturée côté serveur : HTTP ${r.status}`); }
+          try { const r = await fetch(url.replace(/\/$/, '') + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', ...hdr() }, body: JSON.stringify(meta) }); log(`série clôturée côté serveur : HTTP ${r.status}`); }
           catch (err) { log('clôture serveur échouée : ' + err.message); }
           log(`vidéo envoyée en ${chunkSeq} morceaux (${fmtMB(totalBytes)}), ${sampleSeq} échantillons de position`);
         } else {
