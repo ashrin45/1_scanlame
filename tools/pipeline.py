@@ -46,7 +46,7 @@ photos = sorted(glob.glob(os.path.join(S, 'photos', '*.jpg'))) + sorted(glob.glo
 items = []   # (path, t_ms or None)
 if videos and not glob.glob(os.path.join(frames_dir, 'f_*.jpg')):
     log('extraction', videos[0], 'à', a.fps, 'img/s')
-    subprocess.run(['ffmpeg', '-loglevel', 'error', '-y', '-i', os.path.join(S, videos[0]), '-vf', f'fps={a.fps}',
+    subprocess.run(['ffmpeg', '-loglevel', 'error', '-y', '-err_detect', 'ignore_err', '-fflags', '+genpts+discardcorrupt', '-i', os.path.join(S, videos[0]), '-vf', f'fps={a.fps}',
                     '-q:v', '2', '-frame_pts', '1', os.path.join(frames_dir, 'f_%08d.jpg')], check=True)
 if videos:
     for p in sorted(glob.glob(os.path.join(frames_dir, 'f_*.jpg'))):
