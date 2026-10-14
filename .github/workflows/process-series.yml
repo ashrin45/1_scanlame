@@ -1,0 +1,41 @@
+name: Assemblage des prises (Supabase -> galerie)
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Nom d une série précise (optionnel)'
+        required: false
+permissions:
+  contents: write
+concurrency:
+  group: process-series
+  cancel-in-progress: false
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Outils
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+          pip install -q opencv-python-headless numpy requests
+      - name: Traiter les séries en attente
+        id: run
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python tools/process_inbox.py ${{ inputs.only && format('--only {0}', inputs.only) || '' }}
+      - name: Publier dans la galerie
+        if: steps.run.outputs.published != ''
+        run: |
+          git config user.name scanlame && git config user.email scanlame@users.noreply.github.com
+          git add lames
+          git commit -m "Lames : ${{ steps.run.outputs.published }}"
+          git pull --rebase -q origin main
+          git push -q origin HEAD:main
