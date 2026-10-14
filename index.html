@@ -70,6 +70,9 @@
     <label>Flux caméra
       <select id="flux"><option value="max">maximal</option><option value="2000" selected>moyen (≈2000 px)</option><option value="1500">réduit (≈1500 px)</option></select>
     </label>
+    <label>Débit vidéo
+      <select id="bitrate"><option value="15">15 Mbit/s</option><option value="30" selected>30 Mbit/s</option><option value="60">60 Mbit/s</option></select>
+    </label>
     <label>Intervalle
       <select id="interval">
         <option value="200">0,2 s</option>
@@ -97,8 +100,8 @@
   <details>
     <summary>Envoi direct à un serveur (optionnel)</summary>
     <div class="row" style="margin-top:8px">
-      <label class="grow">URL de dépôt (POST multipart, champ "file")
-        <input id="upload" type="url" placeholder="https://192.168.1.20:8000/upload" inputmode="url">
+      <label class="grow">URL du serveur (tools/server.py) : photos et vidéo partent au fil de l'eau, rien ne reste sur le téléphone
+        <input id="upload" type="url" placeholder="http://localhost:8000" inputmode="url">
       </label>
     </div>
   </details>
@@ -449,8 +452,8 @@ self.onmessage = async e => {
     rec.thumb = thumb; rec.size = blob.size; rec.encMs = encMs; rec.status = 'ok';
     const url = $('upload').value.trim();
     if (url) {
-      const fd = new FormData(); fd.append('file', blob, rec.name); fd.append('t_ms', String(Math.round(rec.t)));
-      fetch(url, { method: 'POST', body: fd }).then(r => { if (!r.ok) log(`envoi ${rec.name}: HTTP ${r.status}`); }).catch(e => { say('Envoi échoué : ' + e.message, true); });
+      const fd = new FormData(); fd.append('file', blob, rec.name); fd.append('t_ms', String(Math.round(rec.t))); fd.append('series', seriesId);
+      fetch(url.replace(/\/$/, '') + '/photo', { method: 'POST', body: fd }).then(r => { if (!r.ok) log(`envoi ${rec.name}: HTTP ${r.status}`); }).catch(e => { say('Envoi échoué : ' + e.message, true); });
     } else shots.push({ name: rec.name, blob });
     totalBytes += blob.size;
     $('count').textContent = `${seq} photo${seq > 1 ? 's' : ''}`;
@@ -500,7 +503,7 @@ self.onmessage = async e => {
     } else grabMain(rec);
   }
   // ---------- video mode: hardware encoder + position sampling from the preview ----------
-  let recorder = null, chunks = [], sampleTimer = null, sampleSeq = 0;
+  let recorder = null, chunks = [], sampleTimer = null, sampleSeq = 0, chunkSeq = 0, pendingUploads = 0;
   const thumbCanvas = () => { const c = document.createElement('canvas'); c.width = 64; c.height = Math.round(64 * video.videoHeight / video.videoWidth); c.getContext('2d').drawImage(video, 0, 0, c.width, c.height); return c; };
   function pickMime() {
     const list = ['video/mp4;codecs=avc1.640034', 'video/mp4;codecs=avc1', 'video/mp4', 'video/webm;codecs=h264', 'video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'];
@@ -520,10 +523,24 @@ self.onmessage = async e => {
   function startVideo() {
     const mime = pickMime();
     if (!mime) { say('Ce navigateur ne sait pas enregistrer de vidéo (MediaRecorder absent). Passe en mode photos.', true); return false; }
-    try { recorder = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 60e6 }); }
+    try { recorder = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: +$('bitrate').value * 1e6 }); }
     catch (e) { say('Enregistreur refusé : ' + e.message, true); return false; }
-    chunks = []; sampleSeq = 0;
-    recorder.ondataavailable = e => { if (e.data && e.data.size) { chunks.push(e.data); totalBytes += e.data.size; $('mem').textContent = `${fmtMB(totalBytes)} de vidéo`; } };
+    chunks = []; sampleSeq = 0; chunkSeq = 0; pendingUploads = 0;
+    recorder.ondataavailable = e => {
+      if (!e.data || !e.data.size) return;
+      totalBytes += e.data.size;
+      const url = $('upload').value.trim();
+      if (url) {
+        const n = chunkSeq++, fd = new FormData();
+        fd.append('file', e.data, `${seriesId}_${String(n).padStart(5, '0')}.bin`); fd.append('series', seriesId); fd.append('seq', String(n)); fd.append('mime', recorder.mimeType);
+        pendingUploads++;
+        fetch(url.replace(/\/$/, '') + '/chunk', { method: 'POST', body: fd })
+          .then(r => { if (!r.ok) log(`morceau ${n} : HTTP ${r.status}`); })
+          .catch(err => log(`morceau ${n} : envoi échoué, ${err.message}`))
+          .finally(() => { pendingUploads--; });
+        $('mem').textContent = `${fmtMB(totalBytes)} envoyés, ${pendingUploads} en attente`;
+      } else { chunks.push(e.data); $('mem').textContent = `${fmtMB(totalBytes)} de vidéo`; }
+    };
     recorder.onerror = e => { log('ERREUR enregistreur : ' + (e.error && e.error.message || e)); say('Enregistrement interrompu, voir le journal. Essaie un flux plus petit.', true); stopSeries(); };
     recorder.onstart = () => log(`enregistrement démarré : ${recorder.mimeType}, ${recorder.videoBitsPerSecond ? Math.round(recorder.videoBitsPerSecond / 1e6) + ' Mbit/s' : 'débit non confirmé'}`);
     try { recorder.start(1000); } catch (e) { say('Démarrage vidéo refusé : ' + e.message + '. Essaie un flux plus petit.', true); return false; }
@@ -534,12 +551,21 @@ self.onmessage = async e => {
     clearInterval(sampleTimer);
     return new Promise(res => {
       if (!recorder || recorder.state === 'inactive') return res();
-      recorder.onstop = () => {
-        const ext = recorder.mimeType.includes('mp4') ? 'mp4' : 'webm';
-        const blob = new Blob(chunks, { type: recorder.mimeType });
-        shots.push({ name: `${seriesId}.${ext}`, blob });
-        log(`vidéo ${seriesId}.${ext} : ${fmtMB(blob.size)}, ${sampleSeq} échantillons de position`);
-        $('count').textContent = `vidéo ${fmtMB(blob.size)}`;
+      recorder.onstop = async () => {
+        const ext = recorder.mimeType.includes('mp4') ? 'mp4' : 'webm', url = $('upload').value.trim();
+        if (url) {
+          // finish: send the positions, the server closes the series
+          const meta = seriesMeta();
+          try { const r = await fetch(url.replace(/\/$/, '') + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(meta) }); log(`série clôturée côté serveur : HTTP ${r.status}`); }
+          catch (err) { log('clôture serveur échouée : ' + err.message); }
+          log(`vidéo envoyée en ${chunkSeq} morceaux (${fmtMB(totalBytes)}), ${sampleSeq} échantillons de position`);
+        } else {
+          const blob = new Blob(chunks, { type: recorder.mimeType });
+          shots.push({ name: `${seriesId}.${ext}`, blob });
+          log(`vidéo ${seriesId}.${ext} : ${fmtMB(blob.size)}, ${sampleSeq} échantillons de position`);
+          $('count').textContent = `vidéo ${fmtMB(blob.size)}`;
+        }
+        chunks = [];
         res();
       };
       recorder.stop();
@@ -552,11 +578,11 @@ self.onmessage = async e => {
     tracker.postMessage({ type: 'reset' }); trackerBusy = 0; placed = [];
     sendMask(); drawMap(null); $('trk').className = ''; $('trkt').textContent = 'suivi en cours';
     const mode = $('mode').value;
-    log(`=== série ${seriesId} (${mode}) : intervalle ${$('interval').value} ms, taille ${$('scale').value}, qualité ${$('quality').value}, zoom ${$('zoom').value}, flux ${video.videoWidth}x${video.videoHeight}`);
+    log(`=== série ${seriesId} (${mode}) : débit ${$('bitrate').value} Mbit/s, serveur ${$('upload').value.trim() || 'aucun'}, intervalle ${$('interval').value} ms, taille ${$('scale').value}, qualité ${$('quality').value}, zoom ${$('zoom').value}, flux ${video.videoWidth}x${video.videoHeight}`);
     if (mode === 'video') { if (!startVideo()) { running = false; return; } }
     else timer = setInterval(tick, +$('interval').value);
     $('shoot').textContent = 'Arrêter'; $('shoot').classList.add('stop'); $('rec').classList.add('on');
-    for (const id of ['interval', 'quality', 'scale', 'mode', 'flux']) $(id).disabled = true;
+    for (const id of ['interval', 'quality', 'scale', 'mode', 'flux', 'bitrate']) $(id).disabled = true;
     say(mode === 'video' ? 'Enregistrement en cours. Déplace la platine lentement, en serpentin.' : 'Série en cours. Déplace la platine lentement, en serpentin.');
   }
   async function stopSeries() {
@@ -566,25 +592,34 @@ self.onmessage = async e => {
     if (mode === 'video') await stopVideo();
     log(`=== fin de série : ${mode === 'video' ? dur.toFixed(1) + ' s de vidéo' : seq + ' photos en ' + dur.toFixed(1) + ' s (' + (seq / dur).toFixed(2) + ' /s), ' + skipped + ' sauts'}, ${placed.length} champs placés`);
     $('shoot').textContent = 'Lancer la série'; $('shoot').classList.remove('stop'); $('rec').classList.remove('on');
-    for (const id of ['interval', 'quality', 'scale', 'mode', 'flux']) $(id).disabled = false;
+    for (const id of ['interval', 'quality', 'scale', 'mode', 'flux', 'bitrate']) $(id).disabled = false;
     $('save').disabled = shots.length === 0; $('clear').disabled = shots.length === 0;
     say(mode === 'video' ? `Vidéo de ${dur.toFixed(0)} s enregistrée, ${placed.length} positions suivies.` : `Série terminée : ${seq} photos, ${skipped} sauts.`);
   }
   $('shoot').onclick = () => running ? stopSeries() : startSeries();
 
   // ---------- export ----------
+  const seriesMeta = () => ({ series: seriesId, mode: $('mode').value, count: shots.length, interval_ms: +$('interval').value, sample_ms: 250, position_unit: 'px of the camera stream', bitrate_mbps: +$('bitrate').value, scale: +$('scale').value, width: video.videoWidth, height: video.videoHeight, zoom: $('zoom').value, userAgent: navigator.userAgent,
+      frames: Object.values(frameInfo).map(f => ({ name: f.name, kind: f.status === 'sample' ? 'sample' : 'photo', t_ms: Math.round(f.t), x: f.x == null ? null : Math.round(f.x), y: f.y == null ? null : Math.round(f.y), score: f.score == null ? null : +f.score.toFixed(3), track: f.track, enc_ms: f.encMs || null })) });
+  const download = (blob, name) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 30000); };
   $('save').onclick = async () => {
     if (!shots.length) return;
-    $('save').disabled = true; say('Création du ZIP…');
+    $('save').disabled = true;
+    const meta = seriesMeta();
+    if (shots.some(s => /\.(mp4|webm)$/.test(s.name))) {
+      // video: no ZIP in memory, the file goes out as it is plus a small JSON and the journal
+      for (const s of shots) download(s.blob, s.name);
+      download(new Blob([JSON.stringify(meta, null, 1)], { type: 'application/json' }), `${seriesId}.json`);
+      download(new Blob([lines.join('\n')], { type: 'text/plain' }), `${seriesId}_journal.txt`);
+      say('Vidéo, positions et journal envoyés dans les téléchargements.'); $('save').disabled = false; return;
+    }
+    say('Création du ZIP…');
     const zip = new JSZip();
-    const meta = { series: seriesId, mode: $('mode').value, count: shots.length, interval_ms: +$('interval').value, sample_ms: 250, position_unit: 'px of the camera stream', scale: +$('scale').value, width: video.videoWidth, height: video.videoHeight, zoom: $('zoom').value, userAgent: navigator.userAgent,
-      frames: Object.values(frameInfo).map(f => ({ name: f.name, kind: f.status === 'sample' ? 'sample' : 'photo', t_ms: Math.round(f.t), x: f.x == null ? null : Math.round(f.x), y: f.y == null ? null : Math.round(f.y), score: f.score == null ? null : +f.score.toFixed(3), track: f.track, enc_ms: f.encMs || null })) };
     zip.file('serie.json', JSON.stringify(meta, null, 1));
     zip.file('journal.txt', lines.join('\n'));
     for (const s of shots) zip.file(s.name, s.blob);
     const out = await zip.generateAsync({ type: 'blob', compression: 'STORE' });
-    const a = document.createElement('a'); a.href = URL.createObjectURL(out); a.download = `${seriesId}.zip`; a.click();
-    setTimeout(() => URL.revokeObjectURL(a.href), 30000);
+    download(out, `${seriesId}.zip`);
     log(`ZIP ${fmtMB(out.size)} : ${shots.length} photos`);
     say(`ZIP de ${fmtMB(out.size)} prêt dans les téléchargements.`); $('save').disabled = false;
   };

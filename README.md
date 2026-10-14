@@ -14,6 +14,14 @@ Page (Chrome Android, HTTPS) : https://ashrin45.github.io/1_scanlame/
 - **Photos JPEG a intervalle** : une photo toutes les 0,2 a 1 s, encodage dans des workers paralleles.
   Utile pour la pleine resolution du capteur, au prix d'une cadence qui depend du telephone.
 
+## Stockage
+
+Une prise brute pese vite plusieurs centaines de Mo (30 Mbit/s = 225 Mo par minute). Elle ne doit pas etre
+conservee : la lame finie (pyramide de tuiles JPEG) pese 5 a 10 fois moins que la somme des images.
+Chaine conseillee : telephone -> serveur (tools/server.py, envoi au fil de l'eau) -> extraction des images
+nettes (tools/extract_frames.py) -> stitching -> pyramide de tuiles ; puis suppression de la video et des images.
+Debit video reglable dans la page (15 / 30 / 60 Mbit/s) ; 30 suffit pour un Gram a 2000 px.
+
 ## Usage
 
 Demarrer la camera, choisir le flux (moyen suffit pour commencer), mise au point a la bague du microscope
