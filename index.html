@@ -376,6 +376,24 @@ self.onmessage = async e => {
     const r = await fetch(base + (kind === 'photo' ? '/photo' : '/chunk'), { method: 'POST', body: fd, headers: hdr() });
     if (!r.ok) throw new Error('HTTP ' + r.status);
   }
+  // retries with backoff + limited concurrency, so a network hiccup does not lose chunks
+  let active = 0; const waiting = [];
+  const slot = () => new Promise(res => { if (active < 3) { active++; res(); } else waiting.push(res); });
+  const release = () => { active--; const n = waiting.shift(); if (n) { active++; n(); } };
+  const failed = [];
+  async function sendReliable(kind, blob, name, fields, label) {
+    await slot();
+    try {
+      for (let attempt = 1; attempt <= 6; attempt++) {
+        try { await sendFile(kind, blob, name, fields); if (attempt > 1) log(`${label} : envoyé à la tentative ${attempt}`); return true; }
+        catch (e) {
+          log(`${label} : tentative ${attempt} échouée, ${e.message}`);
+          if (attempt === 6) { failed.push(label); return false; }
+          await new Promise(r => setTimeout(r, Math.min(15000, 800 * 2 ** (attempt - 1))));
+        }
+      }
+    } finally { release(); }
+  }
   async function sendFinish(meta) {
     const r = await fetch(serverUrl() + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', ...hdr() }, body: JSON.stringify(meta) });
     return r.status;
@@ -532,7 +550,7 @@ self.onmessage = async e => {
     rec.thumb = thumb; rec.size = blob.size; rec.encMs = encMs; rec.status = 'ok';
     const url = $('upload').value.trim();
     if (url) {
-      sendFile('photo', blob, rec.name, { t_ms: Math.round(rec.t), series: seriesId }).catch(e => { say(`Envoi ${rec.name} échoué : ${e.message}`, true); });
+      sendReliable('photo', blob, rec.name, { t_ms: Math.round(rec.t), series: seriesId }, rec.name.slice(-8, -4));
     } else shots.push({ name: rec.name, blob });
     totalBytes += blob.size;
     $('count').textContent = `${seq} photo${seq > 1 ? 's' : ''}`;
@@ -604,7 +622,7 @@ self.onmessage = async e => {
     if (!mime) { say('Ce navigateur ne sait pas enregistrer de vidéo (MediaRecorder absent). Passe en mode photos.', true); return false; }
     try { recorder = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: +$('bitrate').value * 1e6 }); }
     catch (e) { say('Enregistreur refusé : ' + e.message, true); return false; }
-    chunks = []; sampleSeq = 0; chunkSeq = 0; pendingUploads = 0;
+    chunks = []; sampleSeq = 0; chunkSeq = 0; pendingUploads = 0; failed.length = 0;
     recorder.ondataavailable = e => {
       if (!e.data || !e.data.size) return;
       totalBytes += e.data.size;
@@ -612,8 +630,7 @@ self.onmessage = async e => {
       if (url) {
         const n = chunkSeq++;
         pendingUploads++;
-        sendFile('chunk', e.data, `${String(n).padStart(5, '0')}.bin`, { series: seriesId, seq: n, mime: recorder.mimeType })
-          .catch(err => log(`morceau ${n} : envoi échoué, ${err.message}`))
+        sendReliable('chunk', e.data, `${String(n).padStart(5, '0')}.bin`, { series: seriesId, seq: n, mime: recorder.mimeType }, `morceau ${n}`)
           .finally(() => { pendingUploads--; });
         $('mem').textContent = `${fmtMB(totalBytes)} envoyés, ${pendingUploads} en attente`;
       } else { chunks.push(e.data); $('mem').textContent = `${fmtMB(totalBytes)} de vidéo`; }
@@ -632,10 +649,12 @@ self.onmessage = async e => {
         const ext = recorder.mimeType.includes('mp4') ? 'mp4' : 'webm', url = $('upload').value.trim();
         if (url) {
           // finish: send the positions, the server closes the series
-          // wait for the last chunks before closing the series
-          for (let i = 0; i < 120 && pendingUploads > 0; i++) await new Promise(r => setTimeout(r, 500));
-          const meta = { ...seriesMeta(), video_mime: recorder.mimeType, chunks: chunkSeq };
-          try { const st = await sendFinish(meta); log(`série clôturée côté serveur : HTTP ${st}`); if (st === 200) say('Prise envoyée. L\'assemblage démarre côté serveur, la lame apparaîtra dans la galerie.'); }
+          // wait for the last chunks (and their retries) before closing the series
+          say('Fin des envois en cours…');
+          for (let i = 0; i < 600 && pendingUploads > 0; i++) await new Promise(r => setTimeout(r, 500));
+          const meta = { ...seriesMeta(), video_mime: recorder.mimeType, chunks: chunkSeq, failed: failed.slice() };
+          if (failed.length) log(`ATTENTION ${failed.length} morceau(x) jamais envoyé(s) : ${failed.join(', ')}`);
+          try { const st = await sendFinish(meta); log(`série clôturée côté serveur : HTTP ${st}`); if (st === 200) say(failed.length ? `Prise envoyée avec ${failed.length} morceau(x) manquant(s), voir le journal.` : 'Prise envoyée. L\'assemblage démarre côté serveur, la lame apparaîtra dans la galerie.', failed.length > 0); }
           catch (err) { log('clôture serveur échouée : ' + err.message); }
           log(`vidéo envoyée en ${chunkSeq} morceaux (${fmtMB(totalBytes)}), ${sampleSeq} échantillons de position`);
         } else {
