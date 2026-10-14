@@ -101,7 +101,7 @@
     <summary>Envoi direct à un serveur (optionnel)</summary>
     <div class="row" style="margin-top:8px">
       <label class="grow">URL du serveur (tools/server.py) : photos et vidéo partent au fil de l'eau, rien ne reste sur le téléphone
-        <input id="upload" type="url" placeholder="https://lames.duckdns.org" inputmode="url">
+        <input id="upload" type="url" placeholder="https://xxxx.supabase.co/functions/v1/scanlame" inputmode="url">
       </label>
       <label>Jeton d'accès
         <input id="token" type="text" placeholder="le même que sur le serveur" autocomplete="off">
@@ -308,6 +308,29 @@ self.onmessage = async e => {
   if (!$('upload').value && /\/capture\/?$/.test(location.pathname)) $('upload').value = location.origin;   // page servie par le Space : serveur pré-rempli
   $('upload').onchange = () => { try { localStorage.setItem('scanlame.url', $('upload').value.trim()); } catch (_) {} };
   $('token').onchange = () => { try { localStorage.setItem('scanlame.token', $('token').value.trim()); } catch (_) {} };
+  // Envoi d'un fichier : Supabase (URL .../functions/v1/scanlame : signature puis PUT direct au stockage)
+  // ou serveur classique (POST multipart sur /photo ou /chunk)
+  const serverUrl = () => $('upload').value.trim().replace(/\/$/, '');
+  const isSupabase = () => /\/functions\/v1\//.test(serverUrl());
+  async function sendFile(kind, blob, name, fields) {
+    const base = serverUrl();
+    if (isSupabase()) {
+      const r = await fetch(base + '/sign', { method: 'POST', headers: { 'Content-Type': 'application/json', ...hdr() }, body: JSON.stringify({ series: seriesId, name, kind }) });
+      if (!r.ok) throw new Error('signature HTTP ' + r.status);
+      const { url } = await r.json();
+      const r2 = await fetch(url, { method: 'PUT', headers: { 'Content-Type': blob.type || 'application/octet-stream', 'x-upsert': 'true' }, body: blob });
+      if (!r2.ok) throw new Error('stockage HTTP ' + r2.status);
+      return;
+    }
+    const fd = new FormData(); fd.append('file', blob, name);
+    for (const [k, v] of Object.entries(fields)) fd.append(k, String(v));
+    const r = await fetch(base + (kind === 'photo' ? '/photo' : '/chunk'), { method: 'POST', body: fd, headers: hdr() });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+  }
+  async function sendFinish(meta) {
+    const r = await fetch(serverUrl() + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', ...hdr() }, body: JSON.stringify(meta) });
+    return r.status;
+  }
   const say = (t, err = false) => { $('msg').textContent = t; $('msg').className = err ? 'err' : ''; if (err) log('MSG ' + t); };
   const fmtMB = b => (b / 1048576).toFixed(1) + ' Mo';
   const stamp = () => { const d = new Date(), p = n => String(n).padStart(2, '0');
@@ -460,8 +483,7 @@ self.onmessage = async e => {
     rec.thumb = thumb; rec.size = blob.size; rec.encMs = encMs; rec.status = 'ok';
     const url = $('upload').value.trim();
     if (url) {
-      const fd = new FormData(); fd.append('file', blob, rec.name); fd.append('t_ms', String(Math.round(rec.t))); fd.append('series', seriesId);
-      fetch(url.replace(/\/$/, '') + '/photo', { method: 'POST', body: fd, headers: hdr() }).then(r => { if (!r.ok) log(`envoi ${rec.name}: HTTP ${r.status}`); }).catch(e => { say('Envoi échoué : ' + e.message, true); });
+      sendFile('photo', blob, rec.name, { t_ms: Math.round(rec.t), series: seriesId }).catch(e => { say(`Envoi ${rec.name} échoué : ${e.message}`, true); });
     } else shots.push({ name: rec.name, blob });
     totalBytes += blob.size;
     $('count').textContent = `${seq} photo${seq > 1 ? 's' : ''}`;
@@ -539,11 +561,9 @@ self.onmessage = async e => {
       totalBytes += e.data.size;
       const url = $('upload').value.trim();
       if (url) {
-        const n = chunkSeq++, fd = new FormData();
-        fd.append('file', e.data, `${seriesId}_${String(n).padStart(5, '0')}.bin`); fd.append('series', seriesId); fd.append('seq', String(n)); fd.append('mime', recorder.mimeType);
+        const n = chunkSeq++;
         pendingUploads++;
-        fetch(url.replace(/\/$/, '') + '/chunk', { method: 'POST', body: fd, headers: hdr() })
-          .then(r => { if (!r.ok) log(`morceau ${n} : HTTP ${r.status}`); })
+        sendFile('chunk', e.data, `${String(n).padStart(5, '0')}.bin`, { series: seriesId, seq: n, mime: recorder.mimeType })
           .catch(err => log(`morceau ${n} : envoi échoué, ${err.message}`))
           .finally(() => { pendingUploads--; });
         $('mem').textContent = `${fmtMB(totalBytes)} envoyés, ${pendingUploads} en attente`;
@@ -563,8 +583,10 @@ self.onmessage = async e => {
         const ext = recorder.mimeType.includes('mp4') ? 'mp4' : 'webm', url = $('upload').value.trim();
         if (url) {
           // finish: send the positions, the server closes the series
-          const meta = seriesMeta();
-          try { const r = await fetch(url.replace(/\/$/, '') + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', ...hdr() }, body: JSON.stringify(meta) }); log(`série clôturée côté serveur : HTTP ${r.status}`); }
+          // wait for the last chunks before closing the series
+          for (let i = 0; i < 120 && pendingUploads > 0; i++) await new Promise(r => setTimeout(r, 500));
+          const meta = { ...seriesMeta(), video_mime: recorder.mimeType, chunks: chunkSeq };
+          try { const st = await sendFinish(meta); log(`série clôturée côté serveur : HTTP ${st}`); if (st === 200) say('Prise envoyée. L\'assemblage démarre côté serveur, la lame apparaîtra dans la galerie.'); }
           catch (err) { log('clôture serveur échouée : ' + err.message); }
           log(`vidéo envoyée en ${chunkSeq} morceaux (${fmtMB(totalBytes)}), ${sampleSeq} échantillons de position`);
         } else {
