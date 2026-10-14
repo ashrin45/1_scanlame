@@ -53,7 +53,10 @@
   button.toggle[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: rgba(197,138,214,.12); }
   #bar .side { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 13px; color: var(--muted); }
   #bar.recording { background: rgba(60,8,12,.94); }
-  #bar .side button { width: 100%; max-width: 150px; }
+  #bar .side button { width: 100%; max-width: 160px; min-height: 46px; padding: 8px 10px; font-size: 14px; }
+  #bar .side { gap: 6px; }
+  button.danger { border-color: rgba(235,87,87,.6); color: #ff9a9a; }
+  button.danger:disabled { opacity: .3; }
   /* shutter */
   #shutter { width: 88px; height: 88px; border-radius: 50%; border: 5px solid #fff; background: transparent; padding: 0; display: grid; place-items: center; }
   #shutter i { display: block; width: 68px; height: 68px; border-radius: 50%; background: #fff; transition: all .15s; }
@@ -104,7 +107,7 @@
 <div id="bar">
   <div class="side"><button id="lockbtn" class="toggle" aria-pressed="false" disabled>Verrouiller AF/AE</button></div>
   <button id="shutter" class="camera" aria-label="Démarrer la caméra"><i></i></button>
-  <div class="side"><button id="gear">Réglages</button></div>
+  <div class="side"><button id="gear">Réglages</button><button id="off" class="danger" disabled>Éteindre la caméra</button></div>
 </div>
 <button id="start" hidden>Démarrer la caméra</button>
 <button id="shoot" hidden disabled>Lancer la série</button>
@@ -407,7 +410,7 @@ self.onmessage = async e => {
     const st = track.getSettings(), caps = track.getCapabilities ? track.getCapabilities() : {};
     $('res').textContent = `${video.videoWidth} × ${video.videoHeight}`;
     $('start').textContent = 'Caméra active'; $('start').disabled = true;
-    $('shoot').disabled = false; $('lockbtn').disabled = false; $('shoot').classList.add('ready'); setState('ready');
+    $('shoot').disabled = false; $('lockbtn').disabled = false; $('off').disabled = false; $('shoot').classList.add('ready'); setState('ready');
     log(`flux ${video.videoWidth}x${video.videoHeight} @${st.frameRate || '?'} fps, piste "${track.label}"`);
     log(`capacités : focus ${JSON.stringify(caps.focusMode || null)}, expo ${JSON.stringify(caps.exposureMode || null)}, balance ${JSON.stringify(caps.whiteBalanceMode || null)}, zoom ${caps.zoom ? caps.zoom.min + '..' + caps.zoom.max : 'non'}`);
     if (caps.zoom) {
@@ -712,8 +715,20 @@ self.onmessage = async e => {
     } else el.textContent = kind === 'ready' ? 'Prêt, caméra active' : 'Caméra arrêtée';
     el.className = kind; $('stage').classList.toggle('recording', kind === 'recording'); $('bar').classList.toggle('recording', kind === 'recording');
   }
-  // ---------- phone UI glue ----------
   const shutter = $('shutter'), sheet = $('sheet'), backdrop = $('backdrop');
+  async function stopCamera() {
+    if (running) await stopSeries();
+    if (stream) stream.getTracks().forEach(t => t.stop());
+    stream = null; track = null; video.srcObject = null;
+    try { await wakeLock?.release(); } catch (_) {} wakeLock = null;
+    $('res').textContent = 'caméra arrêtée'; $('lock').textContent = 'AF/AE auto'; $('lockbtn').setAttribute('aria-pressed', 'false'); $('lockbtn').disabled = true;
+    $('zoom').disabled = true; $('shoot').disabled = true; $('shoot').classList.remove('ready'); $('off').disabled = true;
+    $('start').disabled = false; $('start').textContent = 'Démarrer la caméra';
+    setState('off'); shutter.className = 'camera'; shutter.disabled = false;
+    log('caméra éteinte'); say('Caméra éteinte. Touche le bouton violet pour la rallumer.');
+  }
+  $('off').onclick = stopCamera;
+  // ---------- phone UI glue ----------
   const openSheet = o => { sheet.classList.toggle('open', o); backdrop.classList.toggle('open', o); if (o) { const el = $('log'); el.scrollTop = el.scrollHeight; } };
   $('gear').onclick = () => openSheet(true); $('close').onclick = () => openSheet(false); backdrop.onclick = () => openSheet(false);
   shutter.onclick = () => { if (!track) { $('start').click(); return; } $('shoot').click(); };
