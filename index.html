@@ -305,6 +305,7 @@ self.onmessage = async e => {
 
   const hdr = () => { const t = $('token').value.trim(); return t ? { 'X-Token': t } : {}; };
   try { $('upload').value = localStorage.getItem('scanlame.url') || ''; $('token').value = localStorage.getItem('scanlame.token') || ''; } catch (_) {}
+  if (!$('upload').value && /\/capture\/?$/.test(location.pathname)) $('upload').value = location.origin;   // page servie par le Space : serveur pré-rempli
   $('upload').onchange = () => { try { localStorage.setItem('scanlame.url', $('upload').value.trim()); } catch (_) {} };
   $('token').onchange = () => { try { localStorage.setItem('scanlame.token', $('token').value.trim()); } catch (_) {} };
   const say = (t, err = false) => { $('msg').textContent = t; $('msg').className = err ? 'err' : ''; if (err) log('MSG ' + t); };
