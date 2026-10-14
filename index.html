@@ -61,6 +61,15 @@
     <button id="shoot" class="primary" disabled>Lancer la série</button>
   </div>
   <div class="row">
+    <label>Mode
+      <select id="mode">
+        <option value="video" selected>Vidéo (encodeur matériel)</option>
+        <option value="photo">Photos JPEG à intervalle</option>
+      </select>
+    </label>
+    <label>Flux caméra
+      <select id="flux"><option value="max">maximal</option><option value="2000" selected>moyen (≈2000 px)</option><option value="1500">réduit (≈1500 px)</option></select>
+    </label>
     <label>Intervalle
       <select id="interval">
         <option value="200">0,2 s</option>
@@ -303,11 +312,14 @@ self.onmessage = async e => {
   log(`coeurs : ${navigator.hardwareConcurrency || '?'}, encodeurs parallèles : ${hasOffscreen ? POOL : 'aucun (OffscreenCanvas absent, encodage sur le fil principal)'}`);
 
   // ---------- camera ----------
+  function fluxConstraints() {
+    const f = $('flux').value, w = f === 'max' ? 4096 : +f;
+    return { width: { ideal: w }, height: { ideal: Math.round(w * 0.75) }, frameRate: { ideal: 30 } };
+  }
   async function startCamera() {
-    log('getUserMedia demandé (arrière, 4096x3072 idéal)');
+    log('getUserMedia demandé (arrière, ' + JSON.stringify(fluxConstraints()) + ')');
     try {
-      stream = await navigator.mediaDevices.getUserMedia({ audio: false,
-        video: { facingMode: { ideal: 'environment' }, width: { ideal: 4096 }, height: { ideal: 3072 }, frameRate: { ideal: 30 } } });
+      stream = await navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: { ideal: 'environment' }, ...fluxConstraints() } });
     } catch (e) { say('Caméra refusée ou indisponible : ' + e.message + '. La page doit être ouverte en HTTPS.', true); return; }
     track = stream.getVideoTracks()[0];
     video.srcObject = stream;
@@ -326,6 +338,13 @@ self.onmessage = async e => {
     say(`Flux ${video.videoWidth}×${video.videoHeight}. Focus manuel : ${caps.focusMode?.includes('manual') ? 'oui' : 'non'}, exposition manuelle : ${caps.exposureMode?.includes('manual') ? 'oui' : 'non'}.`);
     requestAnimationFrame(sharpness);
   }
+  $('flux').onchange = async () => {
+    if (!track || running) return;
+    try { await track.applyConstraints(fluxConstraints()); await new Promise(r => setTimeout(r, 300)); }
+    catch (e) { log('changement de flux refusé : ' + e.message); }
+    $('res').textContent = `${video.videoWidth} × ${video.videoHeight}`;
+    log(`flux changé : ${video.videoWidth}x${video.videoHeight}`);
+  };
   $('zoom').oninput = async e => {
     $('zoomv').textContent = (+e.target.value).toFixed(1) + '×';
     try { await track.applyConstraints({ advanced: [{ zoom: +e.target.value }] }); } catch (err) { log('zoom refusé : ' + err.message); }
@@ -480,25 +499,76 @@ self.onmessage = async e => {
       encoders[seq % encoders.length].postMessage({ id: name, bitmap: bmp, scale: +$('scale').value, quality: +$('quality').value }, [bmp]);
     } else grabMain(rec);
   }
+  // ---------- video mode: hardware encoder + position sampling from the preview ----------
+  let recorder = null, chunks = [], sampleTimer = null, sampleSeq = 0;
+  const thumbCanvas = () => { const c = document.createElement('canvas'); c.width = 64; c.height = Math.round(64 * video.videoHeight / video.videoWidth); c.getContext('2d').drawImage(video, 0, 0, c.width, c.height); return c; };
+  function pickMime() {
+    const list = ['video/mp4;codecs=avc1.640034', 'video/mp4;codecs=avc1', 'video/mp4', 'video/webm;codecs=h264', 'video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'];
+    return list.find(m => window.MediaRecorder && MediaRecorder.isTypeSupported(m)) || '';
+  }
+  function sampleTick() {
+    if (!running || trackerBusy > 0) return;
+    const now = performance.now();
+    sampleSeq++;
+    const name = `${seriesId}_t${String(Math.round(now - seriesT0)).padStart(7, '0')}`;
+    const rec = frameInfo[name] = { name, t: now - seriesT0, dt: 0, x: null, y: null, score: null, status: 'sample', track: 'none', thumb: thumbCanvas() };
+    ctx256.drawImage(video, 0, 0, S, S);
+    const d = ctx256.getImageData(0, 0, S, S).data, g = new Float32Array(S * S);
+    for (let i = 0, j = 0; i < d.length; i += 4, j++) g[j] = d[i] * .3 + d[i+1] * .59 + d[i+2] * .11;
+    trackFrame(rec, g);
+  }
+  function startVideo() {
+    const mime = pickMime();
+    if (!mime) { say('Ce navigateur ne sait pas enregistrer de vidéo (MediaRecorder absent). Passe en mode photos.', true); return false; }
+    try { recorder = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 60e6 }); }
+    catch (e) { say('Enregistreur refusé : ' + e.message, true); return false; }
+    chunks = []; sampleSeq = 0;
+    recorder.ondataavailable = e => { if (e.data && e.data.size) { chunks.push(e.data); totalBytes += e.data.size; $('mem').textContent = `${fmtMB(totalBytes)} de vidéo`; } };
+    recorder.onerror = e => { log('ERREUR enregistreur : ' + (e.error && e.error.message || e)); say('Enregistrement interrompu, voir le journal. Essaie un flux plus petit.', true); stopSeries(); };
+    recorder.onstart = () => log(`enregistrement démarré : ${recorder.mimeType}, ${recorder.videoBitsPerSecond ? Math.round(recorder.videoBitsPerSecond / 1e6) + ' Mbit/s' : 'débit non confirmé'}`);
+    try { recorder.start(1000); } catch (e) { say('Démarrage vidéo refusé : ' + e.message + '. Essaie un flux plus petit.', true); return false; }
+    sampleTimer = setInterval(sampleTick, 250);
+    return true;
+  }
+  function stopVideo() {
+    clearInterval(sampleTimer);
+    return new Promise(res => {
+      if (!recorder || recorder.state === 'inactive') return res();
+      recorder.onstop = () => {
+        const ext = recorder.mimeType.includes('mp4') ? 'mp4' : 'webm';
+        const blob = new Blob(chunks, { type: recorder.mimeType });
+        shots.push({ name: `${seriesId}.${ext}`, blob });
+        log(`vidéo ${seriesId}.${ext} : ${fmtMB(blob.size)}, ${sampleSeq} échantillons de position`);
+        $('count').textContent = `vidéo ${fmtMB(blob.size)}`;
+        res();
+      };
+      recorder.stop();
+    });
+  }
+
   let seriesT0 = 0;
   function startSeries() {
     running = true; seq = 0; seriesId = 'lame_' + stamp(); seriesT0 = performance.now(); lastT = 0; recent = []; skipped = 0;
     tracker.postMessage({ type: 'reset' }); trackerBusy = 0; placed = [];
     sendMask(); drawMap(null); $('trk').className = ''; $('trkt').textContent = 'suivi en cours';
-    log(`=== série ${seriesId} : intervalle ${$('interval').value} ms, taille ${$('scale').value}, qualité ${$('quality').value}, zoom ${$('zoom').value}, flux ${video.videoWidth}x${video.videoHeight}`);
+    const mode = $('mode').value;
+    log(`=== série ${seriesId} (${mode}) : intervalle ${$('interval').value} ms, taille ${$('scale').value}, qualité ${$('quality').value}, zoom ${$('zoom').value}, flux ${video.videoWidth}x${video.videoHeight}`);
+    if (mode === 'video') { if (!startVideo()) { running = false; return; } }
+    else timer = setInterval(tick, +$('interval').value);
     $('shoot').textContent = 'Arrêter'; $('shoot').classList.add('stop'); $('rec').classList.add('on');
-    $('interval').disabled = true; $('quality').disabled = true; $('scale').disabled = true;
-    timer = setInterval(tick, +$('interval').value);
-    say('Série en cours. Déplace la platine lentement, en serpentin.');
+    for (const id of ['interval', 'quality', 'scale', 'mode', 'flux']) $(id).disabled = true;
+    say(mode === 'video' ? 'Enregistrement en cours. Déplace la platine lentement, en serpentin.' : 'Série en cours. Déplace la platine lentement, en serpentin.');
   }
-  function stopSeries() {
+  async function stopSeries() {
+    if (!running) return;
     running = false; clearInterval(timer);
-    const dur = (performance.now() - seriesT0) / 1000;
-    log(`=== fin de série : ${seq} photos en ${dur.toFixed(1)} s (${(seq / dur).toFixed(2)} /s), ${skipped} sauts, ${placed.length} champs placés`);
+    const dur = (performance.now() - seriesT0) / 1000, mode = $('mode').value;
+    if (mode === 'video') await stopVideo();
+    log(`=== fin de série : ${mode === 'video' ? dur.toFixed(1) + ' s de vidéo' : seq + ' photos en ' + dur.toFixed(1) + ' s (' + (seq / dur).toFixed(2) + ' /s), ' + skipped + ' sauts'}, ${placed.length} champs placés`);
     $('shoot').textContent = 'Lancer la série'; $('shoot').classList.remove('stop'); $('rec').classList.remove('on');
-    $('interval').disabled = false; $('quality').disabled = false; $('scale').disabled = false;
+    for (const id of ['interval', 'quality', 'scale', 'mode', 'flux']) $(id).disabled = false;
     $('save').disabled = shots.length === 0; $('clear').disabled = shots.length === 0;
-    say(`Série terminée : ${seq} photos, ${skipped} sauts.`);
+    say(mode === 'video' ? `Vidéo de ${dur.toFixed(0)} s enregistrée, ${placed.length} positions suivies.` : `Série terminée : ${seq} photos, ${skipped} sauts.`);
   }
   $('shoot').onclick = () => running ? stopSeries() : startSeries();
 
@@ -507,8 +577,8 @@ self.onmessage = async e => {
     if (!shots.length) return;
     $('save').disabled = true; say('Création du ZIP…');
     const zip = new JSZip();
-    const meta = { series: seriesId, count: shots.length, interval_ms: +$('interval').value, scale: +$('scale').value, width: video.videoWidth, height: video.videoHeight, zoom: $('zoom').value, userAgent: navigator.userAgent,
-      frames: Object.values(frameInfo).map(f => ({ name: f.name, t_ms: Math.round(f.t), x: f.x == null ? null : Math.round(f.x), y: f.y == null ? null : Math.round(f.y), score: f.score == null ? null : +f.score.toFixed(3), track: f.track, enc_ms: f.encMs || null })) };
+    const meta = { series: seriesId, mode: $('mode').value, count: shots.length, interval_ms: +$('interval').value, sample_ms: 250, position_unit: 'px of the camera stream', scale: +$('scale').value, width: video.videoWidth, height: video.videoHeight, zoom: $('zoom').value, userAgent: navigator.userAgent,
+      frames: Object.values(frameInfo).map(f => ({ name: f.name, kind: f.status === 'sample' ? 'sample' : 'photo', t_ms: Math.round(f.t), x: f.x == null ? null : Math.round(f.x), y: f.y == null ? null : Math.round(f.y), score: f.score == null ? null : +f.score.toFixed(3), track: f.track, enc_ms: f.encMs || null })) };
     zip.file('serie.json', JSON.stringify(meta, null, 1));
     zip.file('journal.txt', lines.join('\n'));
     for (const s of shots) zip.file(s.name, s.blob);
