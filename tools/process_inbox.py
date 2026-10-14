@@ -55,8 +55,10 @@ for s in series:
         if not stamps:
             print(f'{s} : pas encore close, ignorée'); continue
         newest = max(datetime.fromisoformat(t.replace('Z', '+00:00')) for t in stamps)
-        if datetime.now(timezone.utc) - newest < timedelta(minutes=10):
-            print(f'{s} : pas encore close, ignorée'); continue
+        if newest.tzinfo is None: newest = newest.replace(tzinfo=timezone.utc)
+        age = datetime.now(timezone.utc) - newest
+        if age < timedelta(minutes=5):
+            print(f'{s} : pas encore close (dernier morceau il y a {int(age.total_seconds())} s), ignorée'); continue
         orphan = True
         print(f'{s} : non close depuis plus de 10 min, traitée sans positions')
     if 'failed.txt' in names:
