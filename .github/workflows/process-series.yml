@@ -12,6 +12,10 @@ on:
       only:
         description: 'Nom d une série précise (optionnel)'
         required: false
+      force:
+        description: 'Retraiter cette série même si déjà publiée'
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -35,7 +39,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python tools/process_inbox.py ${{ inputs.only && format('--only {0}', inputs.only) || '' }}
+        run: python tools/process_inbox.py ${{ inputs.only && format('--only {0}', inputs.only) || '' }} ${{ inputs.force && '--force' || '' }}
       - name: Publier dans la galerie
         if: steps.run.outputs.published != ''
         run: |

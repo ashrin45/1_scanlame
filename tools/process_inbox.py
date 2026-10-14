@@ -12,6 +12,8 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--keep', action='store_true')
 ap.add_argument('--only', default=None)
 ap.add_argument('--work', default='inbox')
+ap.add_argument('--keep-days', type=float, default=float(os.environ.get('KEEP_DAYS', '3')), help='garder les prises publiees ce nombre de jours (reassemblage possible)')
+ap.add_argument('--force', action='store_true', help='retraiter meme une serie deja publiee ou en echec (avec --only)')
 a = ap.parse_args()
 
 URL = os.environ.get('SUPABASE_URL', '').rstrip('/')
@@ -61,7 +63,17 @@ for s in series:
             print(f'{s} : pas encore close (dernier morceau il y a {int(age.total_seconds())} s), ignorée'); continue
         orphan = True
         print(f'{s} : non close depuis plus de 10 min, traitée sans positions')
-    if 'failed.txt' in names:
+    if 'done.txt' in names and not (a.force and a.only):
+        # published earlier: keep the raw take a few days, then delete it
+        from datetime import datetime, timezone, timedelta
+        done_at = next((e.get('updated_at') or e.get('created_at') for e in entries if e['name'] == 'done.txt'), None)
+        if done_at:
+            age = datetime.now(timezone.utc) - datetime.fromisoformat(done_at.replace('Z', '+00:00'))
+            if age > timedelta(days=a.keep_days):
+                allp = [f'{s}/{e["name"]}' for e in entries if e.get('id')] + [f'{s}/chunks/{e["name"]}' for e in ls(f'{s}/chunks')] + [f'{s}/photos/{e["name"]}' for e in ls(f'{s}/photos')]
+                rm(allp); print(f'{s} : publiée il y a {age.days} j, prise supprimée du bucket'); continue
+        print(f'{s} : déjà publiée, conservée'); continue
+    if 'failed.txt' in names and not (a.force and a.only):
         print(f'{s} : déjà en échec, ignorée'); continue
     print(f'== {s}')
     d = os.path.join(a.work, s); shutil.rmtree(d, ignore_errors=True); os.makedirs(d)
@@ -105,7 +117,9 @@ for s in series:
     if rc != 0:
         print('  ÉCHEC de la publication'); put_text(f'{s}/failed.txt', 'publication'); continue
     print(f'  publiée : lames/{slug}/ en {time.time() - t0:.0f} s')
-    if not a.keep: rm(paths)
+    put_text(f'{s}/done.txt', slug)
+    if 'failed.txt' in names: rm([f'{s}/failed.txt'])
+    if not a.keep and a.keep_days <= 0: rm(paths)
     done.append(slug)
     shutil.rmtree(d, ignore_errors=True)
 print('séries publiées :', done or 'aucune')

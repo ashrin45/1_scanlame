@@ -20,9 +20,9 @@ ap.add_argument('series')
 ap.add_argument('--out', default=None)
 ap.add_argument('--fps', type=float, default=4.0)
 ap.add_argument('--blur', type=float, default=25.0)
-ap.add_argument('--max-frames', type=int, default=400)
+ap.add_argument('--max-frames', type=int, default=600)
 ap.add_argument('--reg-size', type=int, default=1200, help='plus grand cote des images pour le recalage')
-ap.add_argument('--max-side', type=int, default=12000, help='plus grand cote de la mosaique finale')
+ap.add_argument('--max-side', type=int, default=16000, help='plus grand cote de la mosaique finale')
 ap.add_argument('--min-inliers', type=int, default=40)
 a = ap.parse_args()
 
@@ -82,7 +82,7 @@ for (p, t), sharp in zip(items, sharps):
     if sharp < thr:
         continue
     pos = pos_at(t)
-    if pos and last_pos and W0 and math.hypot(pos[0] - last_pos[0], pos[1] - last_pos[1]) < 0.12 * max(W0, H0):
+    if pos and last_pos and W0 and math.hypot(pos[0] - last_pos[0], pos[1] - last_pos[1]) < 0.15 * max(W0, H0):
         continue
     if pos: last_pos = pos
     sel.append(dict(path=p, t=t, sharp=sharp, pos=pos))
