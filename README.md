@@ -22,6 +22,17 @@ Chaine conseillee : telephone -> serveur (tools/server.py, envoi au fil de l'eau
 nettes (tools/extract_frames.py) -> stitching -> pyramide de tuiles ; puis suppression de la video et des images.
 Debit video reglable dans la page (15 / 30 / 60 Mbit/s) ; 30 suffit pour un Gram a 2000 px.
 
+## Recevoir les prises sur son PC depuis n'importe quel reseau (gratuit)
+
+1. Telecharger cloudflared.exe (Cloudflare Zero Trust downloads), le poser a cote de tools/server.py.
+2. Terminal 1 : `python tools\server.py --root D:\lames`
+3. Terminal 2 : `cloudflared tunnel --url http://localhost:8000` -> URL https://xxxx.trycloudflare.com
+4. Coller cette URL dans « URL du serveur » sur la page. La video arrive seconde par seconde dans D:\lames\<serie>\.
+
+L'URL change a chaque lancement ; un compte Cloudflare gratuit + un domaine la rend fixe.
+Alternative : Tailscale Funnel (URL stable, app Tailscale sur le telephone et le PC).
+Pour un serveur allume en permanence sans frais : Oracle Cloud Always Free (ARM 4 coeurs, 24 Go, 200 Go de disque).
+
 ## Usage
 
 Demarrer la camera, choisir le flux (moyen suffit pour commencer), mise au point a la bague du microscope
