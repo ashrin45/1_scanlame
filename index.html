@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#0b0a0d">
+<title>Capture lame</title>
+<style>
+  :root { --bg:#0b0a0d; --panel:#17151c; --fg:#f0ecf4; --muted:#9a93a6; --line:#2d2936; --accent:#c58ad6; --ok:#6fcf97; --warn:#f2c94c; --rec:#eb5757; }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; overscroll-behavior: none; }
+  body { display: flex; flex-direction: column; padding-top: env(safe-area-inset-top, 0); padding-bottom: env(safe-area-inset-bottom, 0); }
+  #stage { position: relative; flex: 1 1 auto; min-height: 0; background: #000; overflow: hidden; }
+  video { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .hud { position: absolute; left: 10px; top: 10px; display: flex; flex-direction: column; gap: 4px; font-variant-numeric: tabular-nums; font-size: 12px; }
+  .hud span { background: rgba(11,10,13,.72); padding: 3px 8px; border-radius: 5px; }
+  #rec { display: none; position: absolute; right: 12px; top: 12px; width: 14px; height: 14px; border-radius: 50%; background: var(--rec); box-shadow: 0 0 0 3px rgba(235,87,87,.35); animation: blink 1s infinite; }
+  #rec.on { display: block; }
+  @keyframes blink { 50% { opacity: .25; } }
+  #sharp { position: absolute; left: 10px; bottom: 10px; right: 10px; height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+  #sharp i { display: block; height: 100%; width: 0; background: var(--ok); transition: width .2s; }
+  #panel { flex: 0 0 auto; background: var(--panel); border-top: 1px solid var(--line); padding: 10px max(14px, env(safe-area-inset-right, 0)) 10px max(14px, env(safe-area-inset-left, 0)); display: grid; gap: 10px; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  label { color: var(--muted); font-size: 12px; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  select, input[type=text], input[type=url] { background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 7px 8px; font: inherit; }
+  input[type=range] { width: 100%; accent-color: var(--accent); }
+  button { font: 600 14px system-ui, sans-serif; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; min-height: 44px; }
+  button:disabled { opacity: .4; }
+  button.primary { background: var(--accent); color: #1a0f1f; border-color: var(--accent); flex: 1 1 auto; }
+  button.primary.stop { background: var(--rec); border-color: var(--rec); color: #fff; }
+  button.toggle[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+  .grow { flex: 1 1 120px; }
+  #msg { color: var(--muted); font-size: 12px; min-height: 1.2em; }
+  #msg.err { color: var(--rec); }
+  details summary { color: var(--muted); font-size: 12px; cursor: pointer; }
+  #map { position: absolute; right: 10px; bottom: 22px; width: min(46vw, 240px); height: min(46vw, 240px); background: rgba(23,21,28,.9); border: 1px solid var(--line); border-radius: 8px; }
+  #trk { position: absolute; right: 10px; bottom: 6px; font-size: 11px; font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 6px; }
+  #trk i { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); display: inline-block; }
+  #trk.ok i { background: var(--ok); } #trk.lost i { background: var(--rec); } #trk.relocated i { background: var(--warn); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <video id="v" autoplay playsinline muted></video>
+  <div class="hud">
+    <span id="res">caméra arrêtée</span>
+    <span id="count">0 photo</span>
+    <span id="lock">AF/AE auto</span>
+  </div>
+  <div id="rec"></div>
+  <div id="sharp" title="netteté"><i id="sharpbar"></i></div>
+  <canvas id="map"></canvas>
+  <div id="trk"><i></i><span id="trkt">suivi inactif</span></div>
+</div>
+
+<div id="panel">
+  <div class="row">
+    <button id="start" class="primary">Démarrer la caméra</button>
+    <button id="shoot" class="primary" disabled>Lancer la série</button>
+  </div>
+  <div class="row">
+    <label>Intervalle
+      <select id="interval">
+        <option value="200">0,2 s</option>
+        <option value="300">0,3 s</option>
+        <option value="500">0,5 s</option>
+        <option value="1000">1 s</option>
+      </select>
+    </label>
+    <label>Qualité JPEG
+      <select id="quality"><option value="0.92">92 %</option><option value="0.85">85 %</option><option value="0.75">75 %</option></select>
+    </label>
+    <button id="lockbtn" class="toggle" aria-pressed="false" disabled>Verrouiller AF/AE</button>
+    <label class="grow">Zoom <span id="zoomv">1.0×</span>
+      <input id="zoom" type="range" min="1" max="1" step="0.1" value="1" disabled>
+    </label>
+  </div>
+  <div class="row">
+    <button id="save" disabled>Télécharger le ZIP</button>
+    <button id="clear" disabled>Vider</button>
+    <span id="mem" style="color:var(--muted);font-size:12px"></span>
+  </div>
+  <details>
+    <summary>Envoi direct à un serveur (optionnel)</summary>
+    <div class="row" style="margin-top:8px">
+      <label class="grow">URL de dépôt (POST multipart, champ "file")
+        <input id="upload" type="url" placeholder="https://192.168.1.20:8000/upload" inputmode="url">
+      </label>
+    </div>
+  </details>
+  <div id="msg">Mets le téléphone sur l'oculaire, fais la mise au point à la bague du microscope, puis verrouille AF/AE avant de lancer la série.</div>
+</div>
+
+
+<script id="tracker-src" type="text/plain">
+// Position tracker for microscope field capture.
+// Frames are resampled to a 256x256 greyscale square (aspect is restored when converting
+// shifts back to native pixels). Pyramid levels: L0 64px, L1 128px, L2 256px.
+// Convention: v = argmax NCC such that B(p + v) ~= A(p). The scene moved by +v from A to B,
+// so frame B sits at posA - v on the map.
+const Tracker = (() => {
+  const S2 = 256, S1 = 128, S0 = 64;
+
+  function downsample(src, s) {            // 2x2 mean, src is Float32Array s*s
+    const d = s >> 1, out = new Float32Array(d * d);
+    for (let y = 0; y < d; y++) for (let x = 0; x < d; x++) {
+      const i = 2 * y * s + 2 * x;
+      out[y * d + x] = (src[i] + src[i + 1] + src[i + s] + src[i + s + 1]) * 0.25;
+    }
+    return out;
+  }
+  function downsampleMask(src, s) {       // keep only cells fully inside the mask
+    const d = s >> 1, out = new Uint8Array(d * d);
+    for (let y = 0; y < d; y++) for (let x = 0; x < d; x++) {
+      const i = 2 * y * s + 2 * x;
+      out[y * d + x] = (src[i] & src[i + 1] & src[i + s] & src[i + s + 1]) ? 1 : 0;
+    }
+    return out;
+  }
+  function pyramid(g256) {                // g256: Float32Array 256*256
+    const l1 = downsample(g256, S2), l0 = downsample(l1, S1);
+    return [l0, l1, g256];
+  }
+  function maskPyramid(bright256) {       // Uint8Array 256*256 (1 = inside eyepiece disc)
+    // erode by 6 px at 256 to keep away from the dark rim
+    const er = new Uint8Array(S2 * S2);
+    for (let y = 0; y < S2; y++) for (let x = 0; x < S2; x++) {
+      let ok = 1;
+      for (let dy = -6; dy <= 6 && ok; dy += 3) for (let dx = -6; dx <= 6; dx += 3) {
+        const yy = y + dy, xx = x + dx;
+        if (yy < 0 || yy >= S2 || xx < 0 || xx >= S2 || !bright256[yy * S2 + xx]) { ok = 0; break; }
+      }
+      er[y * S2 + x] = ok;
+    }
+    const m1 = downsampleMask(er, S2), m0 = downsampleMask(m1, S1);
+    return [m0, m1, er];
+  }
+
+  // Zero-mean normalised cross-correlation over the masked overlap for one shift v
+  function nccAt(A, B, M, s, vx, vy) {
+    const x0 = Math.max(0, -vx), x1 = Math.min(s, s - vx), y0 = Math.max(0, -vy), y1 = Math.min(s, s - vy);
+    let n = 0, sa = 0, sb = 0, saa = 0, sbb = 0, sab = 0;
+    for (let y = y0; y < y1; y++) {
+      let ia = y * s + x0, ib = (y + vy) * s + x0 + vx;
+      for (let x = x0; x < x1; x++, ia++, ib++) {
+        if (!M[ia] || !M[ib]) continue;
+        const a = A[ia], b = B[ib];
+        n++; sa += a; sb += b; saa += a * a; sbb += b * b; sab += a * b;
+      }
+    }
+    if (n < s * s * 0.2) return -1;        // need a real overlap, tiny overlaps give fake peaks
+    const cov = sab - sa * sb / n, va = saa - sa * sa / n, vb = sbb - sb * sb / n;
+    if (va <= 1e-6 || vb <= 1e-6) return -1;
+    return cov / Math.sqrt(va * vb);
+  }
+  function search(A, B, M, s, cx, cy, r, step = 1) {
+    let best = { vx: cx, vy: cy, score: -2 };
+    const lim = Math.floor(s * 0.8);
+    for (let vy = cy - r; vy <= cy + r; vy += step) for (let vx = cx - r; vx <= cx + r; vx += step) {
+      if (Math.abs(vx) > lim || Math.abs(vy) > lim) continue;
+      const sc = nccAt(A, B, M, s, vx, vy);
+      if (sc > best.score) best = { vx, vy, score: sc };
+    }
+    return best;
+  }
+  // Coarse-to-fine match. guess is in L2 (256 px) units. Returns shift in L2 units + score.
+  function match(pyrA, pyrB, masks, guess = { vx: 0, vy: 0 }, r0 = 24) {
+    let b = search(pyrA[0], pyrB[0], masks[0], S0, Math.round(guess.vx / 4), Math.round(guess.vy / 4), r0, 2);
+    if (b.score < 0) return { vx: 0, vy: 0, score: -1 };
+    b = search(pyrA[0], pyrB[0], masks[0], S0, b.vx, b.vy, 2);
+    b = search(pyrA[1], pyrB[1], masks[1], S1, b.vx * 2, b.vy * 2, 3);
+    b = search(pyrA[2], pyrB[2], masks[2], S2, b.vx * 2, b.vy * 2, 2);
+    return b;
+  }
+
+  // Session: keeps positions in L2 units (x right, y down); caller scales to native px.
+  function createSession() {
+    const frames = [];      // {i, x, y, score, status, pyr}
+    const keys = [];        // keyframes (subset of frames)
+    let masks = null, last = null;
+    return {
+      setMask(bright256) { masks = maskPyramid(bright256); },
+      hasMask() { return !!masks; },
+      frames, keys,
+      add(g256) {
+        const pyr = pyramid(g256);
+        const f = { i: frames.length, x: 0, y: 0, score: 1, status: 'ok', pyr };
+        if (!masks) masks = maskPyramid(new Uint8Array(S2 * S2).fill(1));
+        if (!last) { frames.push(f); keys.push(f); last = f; return f; }
+        // 1) consecutive tracking
+        let m = match(last.pyr, pyr, masks);
+        let x = last.x - m.vx, y = last.y - m.vy, score = m.score, status = 'ok';
+        if (m.score < 0.35) {
+          // 2) try to re-localise against nearby keyframes
+          status = 'lost'; score = m.score;
+          const cands = keys.filter(k => k !== last).sort((a, b) => Math.hypot(a.x - last.x, a.y - last.y) - Math.hypot(b.x - last.x, b.y - last.y)).slice(0, 6);
+          let best = null;
+          for (const k of cands) {
+            const mk = match(k.pyr, pyr, masks, { vx: k.x - last.x, vy: k.y - last.y }, 28);
+            if (mk.score > 0.5 && (!best || mk.score > best.score)) best = { k, m: mk };
+          }
+          if (best) { x = best.k.x - best.m.vx; y = best.k.y - best.m.vy; score = best.m.score; status = 'relocated'; }
+          else { x = last.x; y = last.y; }
+        } else {
+          // 3) drift correction against an older keyframe close to the predicted position
+          const k = keys.filter(k => k.i < f.i - 4 && Math.hypot(k.x - x, k.y - y) < S2 * 0.55)
+            .sort((a, b) => Math.hypot(a.x - x, a.y - y) - Math.hypot(b.x - x, b.y - y))[0];
+          if (k) {
+            const mk = match(k.pyr, pyr, masks, { vx: k.x - x, vy: k.y - y }, 6);
+            if (mk.score > 0.45) { x = 0.3 * x + 0.7 * (k.x - mk.vx); y = 0.3 * y + 0.7 * (k.y - mk.vy); }
+          }
+        }
+        Object.assign(f, { x, y, score, status });
+        frames.push(f);
+        if (status !== 'lost') { last = f; if (f.i % 2 === 0 && keys.length < 400) keys.push(f); }
+        return f;
+      }
+    };
+  }
+  return { createSession, pyramid, maskPyramid, match, S2 };
+})();
+
+
+self.onmessage = e => {
+  const m = e.data;
+  if (!self.sess) self.sess = Tracker.createSession();
+  if (m.type === 'reset') { self.sess = Tracker.createSession(); return; }
+  if (m.type === 'mask') { self.sess.setMask(m.bright); return; }
+  if (m.type === 'frame') { const f = self.sess.add(m.g); self.postMessage({ id: m.id, x: f.x, y: f.y, score: f.score, status: f.status }); }
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const video = $('v');
+  let stream = null, track = null, timer = null, running = false, busy = false;
+  let shots = [];           // {name, blob}
+  let totalBytes = 0, seriesId = '', seq = 0, wakeLock = null;
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d', { willReadFrequently: false });
+  const small = document.createElement('canvas'); small.width = 240; small.height = 180;
+  const sctx = small.getContext('2d', { willReadFrequently: true });
+
+  // ---- live position tracking (runs in a worker, builds the coverage map) ----
+  const S = 256, c256 = document.createElement('canvas'); c256.width = S; c256.height = S;
+  const ctx256 = c256.getContext('2d', { willReadFrequently: true });
+  const worker = new Worker(URL.createObjectURL(new Blob([document.getElementById('tracker-src').textContent], { type: 'text/javascript' })));
+  const map = $('map'), mctx = map.getContext('2d');
+  let pending = 0, placed = [];     // {name, x, y (native px), score, status, thumb}
+  const frameInfo = {};             // name -> record (also used for serie.json)
+  function gray256() {
+    ctx256.drawImage(video, 0, 0, S, S);
+    const d = ctx256.getImageData(0, 0, S, S).data, g = new Float32Array(S * S);
+    for (let i = 0, j = 0; i < d.length; i += 4, j++) g[j] = d[i] * .3 + d[i+1] * .59 + d[i+2] * .11;
+    return g;
+  }
+  function sendMask() {
+    const g = gray256(), sorted = Float32Array.from(g).sort(), p95 = sorted[Math.floor(sorted.length * 0.95)];
+    const bright = new Uint8Array(S * S); for (let i = 0; i < g.length; i++) bright[i] = g[i] > 0.3 * p95 ? 1 : 0;
+    worker.postMessage({ type: 'mask', bright }, [bright.buffer]);
+  }
+  function thumb() {
+    const t = document.createElement('canvas'); t.width = 64; t.height = Math.round(64 * video.videoHeight / video.videoWidth);
+    t.getContext('2d').drawImage(video, 0, 0, t.width, t.height); return t;
+  }
+  function trackFrame(name) {
+    if (pending > 0) { frameInfo[name].status = 'skipped'; return; }   // worker busy: skip this one, next frame will carry on
+    pending++;
+    const g = gray256();
+    worker.postMessage({ type: 'frame', id: name, g }, [g.buffer]);
+  }
+  worker.onerror = e => { pending = 0; say('Suivi de position en erreur : ' + e.message, true); };
+  worker.onmessage = e => {
+    pending--;
+    const r = e.data, rec = frameInfo[r.id]; if (!rec) return;
+    rec.x = r.x * video.videoWidth / S; rec.y = r.y * video.videoHeight / S; rec.score = r.score; rec.status = r.status;
+    if (r.status !== 'lost') placed.push(rec);
+    const trk = $('trk'); trk.className = r.status;
+    $('trkt').textContent = r.status === 'ok' ? `suivi ok (${r.score.toFixed(2)})` : r.status === 'lost' ? 'suivi perdu : reviens sur une zone déjà vue' : 'recalé sur la carte';
+    drawMap(rec);
+  };
+  function drawMap(current) {
+    const dpr = window.devicePixelRatio || 1, cw = map.clientWidth, ch = map.clientHeight;
+    if (map.width !== cw * dpr) { map.width = cw * dpr; map.height = ch * dpr; }
+    mctx.setTransform(dpr, 0, 0, dpr, 0, 0); mctx.clearRect(0, 0, cw, ch);
+    if (!placed.length) return;
+    const W = video.videoWidth, H = video.videoHeight;
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    for (const p of placed) { x0 = Math.min(x0, p.x); y0 = Math.min(y0, p.y); x1 = Math.max(x1, p.x + W); y1 = Math.max(y1, p.y + H); }
+    const pad = 8, sc = Math.min((cw - 2 * pad) / (x1 - x0), (ch - 2 * pad) / (y1 - y0));
+    const ox = pad + ((cw - 2 * pad) - (x1 - x0) * sc) / 2, oy = pad + ((ch - 2 * pad) - (y1 - y0) * sc) / 2;
+    mctx.globalAlpha = 0.95;
+    for (const p of placed) mctx.drawImage(p.thumb, ox + (p.x - x0) * sc, oy + (p.y - y0) * sc, W * sc, H * sc);
+    mctx.globalAlpha = 1;
+    if (current) {
+      mctx.lineWidth = 2; mctx.strokeStyle = current.status === 'lost' ? '#eb5757' : current.status === 'relocated' ? '#f2c94c' : '#6fcf97';
+      mctx.strokeRect(ox + (current.x - x0) * sc, oy + (current.y - y0) * sc, W * sc, H * sc);
+    }
+    mctx.fillStyle = '#f0ecf4'; mctx.font = '11px system-ui, sans-serif'; mctx.fillText(`${placed.length} champs placés`, 8, ch - 8);
+  }
+
+  const say = (t, err = false) => { $('msg').textContent = t; $('msg').className = err ? 'err' : ''; };
+  const fmtMB = b => (b / 1048576).toFixed(1) + ' Mo';
+  const stamp = () => { const d = new Date(), p = n => String(n).padStart(2, '0');
+    return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`; };
+
+  async function startCamera() {
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({
+        audio: false,
+        video: { facingMode: { ideal: 'environment' }, width: { ideal: 4096 }, height: { ideal: 3072 }, frameRate: { ideal: 30 } }
+      });
+    } catch (e) { say('Caméra refusée ou indisponible : ' + e.message + '. La page doit être ouverte en HTTPS.', true); return; }
+    track = stream.getVideoTracks()[0];
+    video.srcObject = stream;
+    await new Promise(r => video.onloadedmetadata = r);
+    $('res').textContent = `${video.videoWidth} × ${video.videoHeight}`;
+    $('start').textContent = 'Caméra active'; $('start').disabled = true;
+    $('shoot').disabled = false; $('lockbtn').disabled = false;
+    const caps = track.getCapabilities ? track.getCapabilities() : {};
+    if (caps.zoom) {
+      const z = $('zoom'); z.min = caps.zoom.min; z.max = caps.zoom.max; z.step = caps.zoom.step || 0.1;
+      z.value = track.getSettings().zoom || caps.zoom.min; z.disabled = false; $('zoomv').textContent = (+z.value).toFixed(1) + '×';
+    }
+    try { wakeLock = await navigator.wakeLock?.request('screen'); } catch (_) {}
+    say(`Flux ${video.videoWidth}×${video.videoHeight}. Focus manuel : ${caps.focusMode?.includes('manual') ? 'oui' : 'non'}, exposition manuelle : ${caps.exposureMode?.includes('manual') ? 'oui' : 'non'}.`);
+    requestAnimationFrame(sharpness);
+  }
+
+  $('zoom').oninput = async e => {
+    $('zoomv').textContent = (+e.target.value).toFixed(1) + '×';
+    try { await track.applyConstraints({ advanced: [{ zoom: +e.target.value }] }); } catch (_) {}
+  };
+
+  // Freeze focus, exposure and white balance at their current values
+  async function lockAll(on) {
+    const caps = track.getCapabilities ? track.getCapabilities() : {};
+    const s = track.getSettings();
+    const adv = {};
+    if (on) {
+      if (caps.focusMode?.includes('manual')) { adv.focusMode = 'manual'; if (s.focusDistance != null) adv.focusDistance = s.focusDistance; }
+      if (caps.exposureMode?.includes('manual')) { adv.exposureMode = 'manual'; if (s.exposureTime != null) adv.exposureTime = s.exposureTime; if (s.iso != null) adv.iso = s.iso; }
+      if (caps.whiteBalanceMode?.includes('manual')) { adv.whiteBalanceMode = 'manual'; if (s.colorTemperature != null) adv.colorTemperature = s.colorTemperature; }
+    } else {
+      if (caps.focusMode?.includes('continuous')) adv.focusMode = 'continuous';
+      if (caps.exposureMode?.includes('continuous')) adv.exposureMode = 'continuous';
+      if (caps.whiteBalanceMode?.includes('continuous')) adv.whiteBalanceMode = 'continuous';
+    }
+    if (!Object.keys(adv).length) { say('Ce téléphone n\'expose pas le verrouillage AF/AE au navigateur. Utilise le verrouillage de l\'app caméra native ou l\'app Capacitor.', true); return false; }
+    try { await track.applyConstraints({ advanced: [adv] }); }
+    catch (e) { say('Verrouillage refusé : ' + e.message, true); return false; }
+    $('lock').textContent = on ? 'AF/AE verrouillés' : 'AF/AE auto';
+    return true;
+  }
+  $('lockbtn').onclick = async () => {
+    const on = $('lockbtn').getAttribute('aria-pressed') !== 'true';
+    if (await lockAll(on)) { $('lockbtn').setAttribute('aria-pressed', String(on)); say(on ? 'Réglages figés. Tu peux lancer la série.' : 'Réglages automatiques rétablis.'); }
+  };
+
+  // Sharpness meter (variance of a simple Laplacian on a small greyscale copy)
+  let lastSharp = 0;
+  function sharpness(t) {
+    if (!track) return;
+    if (t - lastSharp > 250 && video.readyState >= 2) {
+      lastSharp = t;
+      sctx.drawImage(video, 0, 0, 240, 180);
+      const d = sctx.getImageData(0, 0, 240, 180).data, w = 240, g = new Float32Array(w * 180);
+      for (let i = 0, j = 0; i < d.length; i += 4, j++) g[j] = d[i] * .3 + d[i+1] * .59 + d[i+2] * .11;
+      let sum = 0, sum2 = 0, n = 0;
+      for (let y = 1; y < 179; y++) for (let x = 1; x < w - 1; x++) {
+        const k = y * w + x, l = 4 * g[k] - g[k-1] - g[k+1] - g[k-w] - g[k+w];
+        sum += l; sum2 += l * l; n++;
+      }
+      const v = sum2 / n - (sum / n) ** 2;
+      $('sharpbar').style.width = Math.min(100, Math.sqrt(v) * 2.5) + '%';
+    }
+    requestAnimationFrame(sharpness);
+  }
+
+  // One frame -> JPEG blob
+  function grab() {
+    return new Promise(res => {
+      canvas.width = video.videoWidth; canvas.height = video.videoHeight;
+      ctx.drawImage(video, 0, 0);
+      canvas.toBlob(res, 'image/jpeg', +$('quality').value);
+    });
+  }
+
+  async function tick() {
+    if (!running || busy) return;     // skip a beat rather than queue up
+    busy = true;
+    try {
+      const blob = await grab();
+      if (!blob) return;
+      seq++;
+      const name = `${seriesId}_${String(seq).padStart(4, '0')}.jpg`;
+      frameInfo[name] = { name, x: null, y: null, score: null, status: 'pending', thumb: thumb() };
+      trackFrame(name);
+      const url = $('upload').value.trim();
+      if (url) {
+        const fd = new FormData(); fd.append('file', blob, name);
+        fetch(url, { method: 'POST', body: fd }).catch(e => say('Envoi échoué : ' + e.message, true));
+      } else {
+        shots.push({ name, blob });
+      }
+      totalBytes += blob.size;
+      $('count').textContent = `${seq} photo${seq > 1 ? 's' : ''}`;
+      $('mem').textContent = url ? `${fmtMB(totalBytes)} envoyés` : `${fmtMB(totalBytes)} en mémoire`;
+      if (!url && totalBytes > 600 * 1048576) { stopSeries(); say('600 Mo en mémoire : série arrêtée, télécharge le ZIP avant de continuer.', true); }
+    } finally { busy = false; }
+  }
+
+  function startSeries() {
+    running = true; seq = 0; seriesId = 'lame_' + stamp();
+    worker.postMessage({ type: 'reset' }); pending = 0; placed = []; for (const k in frameInfo) delete frameInfo[k];
+    sendMask(); drawMap(null); $('trk').className = ''; $('trkt').textContent = 'suivi en cours';
+    $('shoot').textContent = 'Arrêter'; $('shoot').classList.add('stop'); $('rec').classList.add('on');
+    $('interval').disabled = true; $('quality').disabled = true;
+    timer = setInterval(tick, +$('interval').value);
+    say('Série en cours. Déplace la platine lentement, en serpentin.');
+  }
+  function stopSeries() {
+    running = false; clearInterval(timer);
+    $('shoot').textContent = 'Lancer la série'; $('shoot').classList.remove('stop'); $('rec').classList.remove('on');
+    $('interval').disabled = false; $('quality').disabled = false;
+    $('save').disabled = shots.length === 0; $('clear').disabled = shots.length === 0;
+    say(`Série terminée : ${seq} photos.`);
+  }
+  $('shoot').onclick = () => running ? stopSeries() : startSeries();
+
+  $('save').onclick = async () => {
+    if (!shots.length) return;
+    $('save').disabled = true; say('Création du ZIP…');
+    const zip = new JSZip();
+    const meta = { series: seriesId, count: shots.length, interval_ms: +$('interval').value, width: video.videoWidth, height: video.videoHeight, zoom: $('zoom').value, userAgent: navigator.userAgent };
+    meta.frames = Object.values(frameInfo).map(f => ({ name: f.name, x: f.x == null ? null : Math.round(f.x), y: f.y == null ? null : Math.round(f.y), score: f.score == null ? null : +f.score.toFixed(3), status: f.status }));
+    zip.file('serie.json', JSON.stringify(meta, null, 1));
+    for (const s of shots) zip.file(s.name, s.blob);
+    const out = await zip.generateAsync({ type: 'blob', compression: 'STORE' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(out); a.download = `${seriesId}.zip`; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 30000);
+    say(`ZIP de ${fmtMB(out.size)} prêt dans les téléchargements.`); $('save').disabled = false;
+  };
+  $('clear').onclick = () => { shots = []; totalBytes = 0; seq = 0; placed = []; for (const k in frameInfo) delete frameInfo[k]; drawMap(null); $('count').textContent = '0 photo'; $('mem').textContent = ''; $('save').disabled = true; $('clear').disabled = true; };
+  $('start').onclick = startCamera;
+  document.addEventListener('visibilitychange', async () => { if (document.visibilityState === 'visible' && track) { try { wakeLock = await navigator.wakeLock?.request('screen'); } catch (_) {} } });
+})();
+</script>
+</body>
+</html>
