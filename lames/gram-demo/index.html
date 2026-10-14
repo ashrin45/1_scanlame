@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gram, démonstration (20 champs)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one-screen viewer, slim instrument bar on top, the slide fills the rest */
+:root {
+  --bg: #f3f0f4; --panel: #ffffff; --fg: #2b2433; --muted: #6e6478; --line: #d9d2de;
+  --accent: #7a2e8c; --accent-soft: rgba(122,46,140,.14); --stage: #e9e4ec;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; color-scheme: dark }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-ui); display: flex; flex-direction: column; overflow: hidden; }
+header { flex: 0 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px;
+  padding-block: 8px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: var(--panel); border-bottom: 1px solid var(--line); }
+h1 { font-size: 15px; font-weight: 600; margin: 0; letter-spacing: .01em; }
+.meta { font-family: var(--font-data); font-size: 12px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.meta b { color: var(--fg); font-weight: 500; }
+.tools { margin-left: auto; display: flex; gap: 6px; }
+button { font: 500 13px var(--font-ui); color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; min-width: 36px; }
+button:hover { border-color: var(--accent); }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+#viewer { flex: 1 1 auto; min-height: 0; background: var(--stage); position: relative; }
+#viewer .navigator { border: 1px solid var(--line) !important; background: var(--panel) !important; }
+.hud { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 5;
+  font-family: var(--font-data); font-size: 12px; color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; pointer-events: none; font-variant-numeric: tabular-nums; }
+svg.fields polygon { fill: none; stroke: var(--accent); stroke-width: 1.5px; vector-effect: non-scaling-stroke; opacity: .9; }
+svg.fields text { fill: var(--accent); font: 500 70px var(--font-data); paint-order: stroke; stroke: var(--panel); stroke-width: 18px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Gram, démonstration (20 champs)</h1>
+  <div class="meta"><span><b>20</b> champs</span><span><b>6870 × 3332</b> px</span><span><b>14</b> niveaux de zoom</span><span>échelle non calibrée</span></div>
+  <div class="tools">
+    <button id="zin" aria-label="Zoom avant">+</button>
+    <button id="zout" aria-label="Zoom arrière">−</button>
+    <button id="home" aria-label="Vue entière">⌂</button>
+    <button id="fields" aria-pressed="false">Champs</button>
+  </div>
+</header>
+<div id="viewer"><div class="hud" id="hud">zoom 1.00×</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+<script>
+const W = 6870, H = 3332;
+const FIELDS = [{"id":"406","pts":[[1124,276],[4203,-1],[4479,3063],[1399,3340]],"scale":0.5},{"id":"740","pts":[[76,197],[2043,259],[1967,2689],[0,2627]],"scale":0.98},{"id":"643","pts":[[95,194],[2059,255],[1984,2690],[20,2629]],"scale":0.99},{"id":"638","pts":[[1171,201],[3175,215],[3158,2675],[1154,2661]],"scale":0.97},{"id":"631","pts":[[1304,212],[3310,220],[3300,2681],[1294,2673]],"scale":0.97},{"id":"625","pts":[[1555,214],[3564,214],[3564,2680],[1555,2680]],"scale":0.96},{"id":"622","pts":[[1659,218],[3668,213],[3674,2679],[1665,2684]],"scale":0.96},{"id":"619","pts":[[1819,216],[3828,206],[3842,2671],[1833,2682]],"scale":0.96},{"id":"613","pts":[[2078,216],[4086,196],[4111,2669],[2103,2689]],"scale":0.96},{"id":"607","pts":[[2391,222],[4392,193],[4427,2649],[2426,2678]],"scale":0.97},{"id":"595","pts":[[2760,229],[4750,190],[4797,2632],[2807,2671]],"scale":0.97},{"id":"583","pts":[[3343,242],[5299,188],[5366,2588],[3410,2643]],"scale":0.99},{"id":"574","pts":[[3674,243],[5620,184],[5692,2572],[3746,2631]],"scale":0.99},{"id":"562","pts":[[4002,244],[5940,174],[6026,2553],[4088,2623]],"scale":1.0},{"id":"559","pts":[[4142,237],[6085,162],[6177,2545],[4235,2620]],"scale":1.0},{"id":"557","pts":[[4322,213],[6278,142],[6365,2542],[4410,2613]],"scale":0.99},{"id":"553","pts":[[4697,224],[6631,129],[6747,2511],[4813,2605]],"scale":1.0},{"id":"546","pts":[[4714,225],[6648,130],[6764,2512],[4831,2606]],"scale":1.0},{"id":"543","pts":[[4770,217],[6708,123],[6824,2510],[4886,2604]],"scale":1.0},{"id":"542","pts":[[4814,204],[6760,113],[6873,2510],[4926,2601]],"scale":0.99}];
+const viewer = OpenSeadragon({
+  id: 'viewer', showNavigationControl: false, showNavigator: true, navigatorPosition: 'TOP_RIGHT', navigatorSizeRatio: 0.16,
+  gestureSettingsTouch: { pinchToZoom: true, flickEnabled: true }, maxZoomPixelRatio: 3, minZoomImageRatio: 0.6, visibilityRatio: 0.5,
+  animationTime: 0.6, immediateRender: true, preserveViewport: false,
+  tileSources: { Image: { xmlns: 'http://schemas.microsoft.com/deepzoom/2008', Url: 'lame_files/', Format: 'jpg', Overlap: '1', TileSize: '512', Size: { Width: String(W), Height: String(H) } } }
+});
+document.getElementById('zin').onclick = () => viewer.viewport.zoomBy(1.6);
+document.getElementById('zout').onclick = () => viewer.viewport.zoomBy(1 / 1.6);
+document.getElementById('home').onclick = () => viewer.viewport.goHome();
+// field outlines: one SVG overlay in image pixel coordinates
+const svgNS = 'http://www.w3.org/2000/svg';
+const svg = document.createElementNS(svgNS, 'svg');
+svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'fields'); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%');
+svg.style.overflow = 'visible';
+for (const f of FIELDS) {
+  const p = document.createElementNS(svgNS, 'polygon');
+  p.setAttribute('points', f.pts.map(q => q.join(',')).join(' '));
+  svg.appendChild(p);
+  const t = document.createElementNS(svgNS, 'text');
+  const [x, y] = f.pts[0]; t.setAttribute('x', x + 40); t.setAttribute('y', y + 110); t.textContent = f.id; svg.appendChild(t);
+}
+svg.hidden = true;
+viewer.addHandler('open', () => {
+  viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) });
+});
+const btn = document.getElementById('fields');
+btn.onclick = () => { const on = btn.getAttribute('aria-pressed') !== 'true'; btn.setAttribute('aria-pressed', String(on)); svg.hidden = !on; };
+const hud = document.getElementById('hud');
+viewer.addHandler('zoom', () => {
+  const z = viewer.viewport.viewportToImageZoom(viewer.viewport.getZoom(true));
+  hud.textContent = 'zoom ' + z.toFixed(2) + '× (1,00× = pixels natifs)';
+});
+</script>
+
+</body>
+</html>
