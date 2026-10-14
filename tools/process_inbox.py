@@ -46,15 +46,30 @@ done = []
 for s in series:
     entries = ls(s)
     names = {e['name'] for e in entries}
+    orphan = False
     if 'serie.json' not in names:
-        print(f'{s} : pas encore close, ignorée'); continue
+        # recording never closed (page reloaded, double tap...): process it anyway once it has been quiet for 10 min
+        from datetime import datetime, timezone, timedelta
+        objs = ls(f'{s}/chunks') + ls(f'{s}/photos')
+        stamps = [o.get('updated_at') or o.get('created_at') for o in objs if o.get('updated_at') or o.get('created_at')]
+        if not stamps:
+            print(f'{s} : pas encore close, ignorée'); continue
+        newest = max(datetime.fromisoformat(t.replace('Z', '+00:00')) for t in stamps)
+        if datetime.now(timezone.utc) - newest < timedelta(minutes=10):
+            print(f'{s} : pas encore close, ignorée'); continue
+        orphan = True
+        print(f'{s} : non close depuis plus de 10 min, traitée sans positions')
     if 'failed.txt' in names:
         print(f'{s} : déjà en échec, ignorée'); continue
     print(f'== {s}')
     d = os.path.join(a.work, s); shutil.rmtree(d, ignore_errors=True); os.makedirs(d)
-    get(f'{s}/serie.json', os.path.join(d, 'serie.json'))
-    meta = json.load(open(os.path.join(d, 'serie.json')))
-    paths = [f'{s}/serie.json']
+    if orphan:
+        meta = {'series': s, 'mode': 'video', 'video_mime': 'video/mp4', 'frames': []}
+        json.dump(meta, open(os.path.join(d, 'serie.json'), 'w')); paths = []
+    else:
+        get(f'{s}/serie.json', os.path.join(d, 'serie.json'))
+        meta = json.load(open(os.path.join(d, 'serie.json')))
+        paths = [f'{s}/serie.json']
     chunks = sorted(e['name'] for e in ls(f'{s}/chunks'))
     if chunks:
         ext = 'mp4' if 'mp4' in str(meta.get('video_mime', '')) else 'webm'

@@ -21,6 +21,9 @@
   #state { position: absolute; left: 50%; top: calc(12px + var(--sat)); transform: translateX(-50%); font-weight: 700; font-size: 15px; letter-spacing: .04em; padding: 8px 16px; border-radius: 999px; background: rgba(0,0,0,.6); color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
   #state.ready { color: var(--fg); background: rgba(0,0,0,.65); }
   #state.recording { color: #fff; background: var(--rec); }
+  #state.sending { color: #1a0f1f; background: var(--warn); }
+  #state .bar { display: inline-block; width: 90px; height: 8px; background: rgba(0,0,0,.25); border-radius: 4px; overflow: hidden; vertical-align: middle; }
+  #state .bar i { display: block; height: 100%; background: #1a0f1f; }
   #state.recording::before { content: ''; width: 12px; height: 12px; border-radius: 50%; background: #fff; animation: blink 1s infinite; }
   #stage.recording::after { content: ''; position: absolute; inset: 0; border: 4px solid var(--rec); pointer-events: none; }
   #rec { display: none; position: absolute; right: calc(14px + var(--sar)); top: calc(14px + var(--sat)); width: 14px; height: 14px; border-radius: 50%; background: var(--rec); box-shadow: 0 0 0 3px rgba(235,87,87,.35); animation: blink 1s infinite; }
@@ -364,10 +367,10 @@ self.onmessage = async e => {
   // ou serveur classique (POST multipart sur /photo ou /chunk)
   const serverUrl = () => $('upload').value.trim().replace(/\/$/, '');
   const isSupabase = () => /\/functions\/v1\//.test(serverUrl());
-  async function sendFile(kind, blob, name, fields) {
+  async function sendFile(kind, blob, name, fields, sid = seriesId) {
     const base = serverUrl();
     if (isSupabase()) {
-      const r = await fetch(base + '/sign', { method: 'POST', headers: { 'Content-Type': 'application/json', ...hdr() }, body: JSON.stringify({ series: seriesId, name, kind }) });
+      const r = await fetch(base + '/sign', { method: 'POST', headers: { 'Content-Type': 'application/json', ...hdr() }, body: JSON.stringify({ series: sid, name, kind }) });
       if (!r.ok) throw new Error('signature HTTP ' + r.status);
       const { url } = await r.json();
       const r2 = await fetch(url, { method: 'PUT', headers: { 'Content-Type': blob.type || 'application/octet-stream', 'x-upsert': 'true' }, body: blob });
@@ -384,11 +387,11 @@ self.onmessage = async e => {
   const slot = () => new Promise(res => { if (active < 3) { active++; res(); } else waiting.push(res); });
   const release = () => { active--; const n = waiting.shift(); if (n) { active++; n(); } };
   const failed = [];
-  async function sendReliable(kind, blob, name, fields, label) {
+  async function sendReliable(kind, blob, name, fields, label, sid = seriesId) {
     await slot();
     try {
       for (let attempt = 1; attempt <= 6; attempt++) {
-        try { await sendFile(kind, blob, name, fields); if (attempt > 1) log(`${label} : envoyé à la tentative ${attempt}`); return true; }
+        try { await sendFile(kind, blob, name, fields, sid); if (attempt > 1) log(`${label} : envoyé à la tentative ${attempt}`); return true; }
         catch (e) {
           log(`${label} : tentative ${attempt} échouée, ${e.message}`);
           if (attempt === 6) { failed.push(label); return false; }
@@ -603,7 +606,7 @@ self.onmessage = async e => {
     } else grabMain(rec);
   }
   // ---------- video mode: hardware encoder + position sampling from the preview ----------
-  let recorder = null, chunks = [], sampleTimer = null, sampleSeq = 0, chunkSeq = 0, pendingUploads = 0;
+  let recorder = null, chunks = [], sampleTimer = null, sampleSeq = 0, chunkSeq = 0, pendingUploads = 0, current = null;
   const thumbCanvas = () => { const c = document.createElement('canvas'); c.width = 64; c.height = Math.round(64 * video.videoHeight / video.videoWidth); c.getContext('2d').drawImage(video, 0, 0, c.width, c.height); return c; };
   function pickMime() {
     const list = ['video/mp4;codecs=avc1.640034', 'video/mp4;codecs=avc1', 'video/mp4', 'video/webm;codecs=h264', 'video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'];
@@ -626,17 +629,19 @@ self.onmessage = async e => {
     try { recorder = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: +$('bitrate').value * 1e6 }); }
     catch (e) { say('Enregistreur refusé : ' + e.message, true); return false; }
     chunks = []; sampleSeq = 0; chunkSeq = 0; pendingUploads = 0; failed.length = 0;
+    const st = current = { id: seriesId, rec: recorder, chunkSeq: 0, pending: 0, failed: [], bytes: 0, chunks: [], sent: 0, meta: null };
     recorder.ondataavailable = e => {
       if (!e.data || !e.data.size) return;
-      totalBytes += e.data.size;
+      st.bytes += e.data.size; totalBytes += e.data.size;
       const url = $('upload').value.trim();
       if (url) {
-        const n = chunkSeq++;
-        pendingUploads++;
-        sendReliable('chunk', e.data, `${String(n).padStart(5, '0')}.bin`, { series: seriesId, seq: n, mime: recorder.mimeType }, `morceau ${n}`)
-          .finally(() => { pendingUploads--; });
-        $('mem').textContent = `${fmtMB(totalBytes)} envoyés, ${pendingUploads} en attente`;
-      } else { chunks.push(e.data); $('mem').textContent = `${fmtMB(totalBytes)} de vidéo`; }
+        const n = st.chunkSeq++;
+        st.pending++; pendingUploads = st.pending;
+        sendReliable('chunk', e.data, `${String(n).padStart(5, '0')}.bin`, { series: st.id, seq: n, mime: st.rec.mimeType }, `morceau ${n}`, st.id)
+          .then(ok => { if (ok) { st.sent++; if (st.sent % 10 === 0) log(`${st.sent} morceaux envoyés (${fmtMB(st.bytes)})`); } else st.failed.push(`morceau ${n}`); })
+          .finally(() => { st.pending--; pendingUploads = st.pending; });
+        $('mem').textContent = `${fmtMB(st.bytes)} envoyés, ${st.pending} en attente`;
+      } else { st.chunks.push(e.data); $('mem').textContent = `${fmtMB(st.bytes)} de vidéo`; }
     };
     recorder.onerror = e => { log('ERREUR enregistreur : ' + (e.error && e.error.message || e)); say('Enregistrement interrompu, voir le journal. Essaie un flux plus petit.', true); stopSeries(); };
     recorder.onstart = () => log(`enregistrement démarré : ${recorder.mimeType}, ${recorder.videoBitsPerSecond ? Math.round(recorder.videoBitsPerSecond / 1e6) + ' Mbit/s' : 'débit non confirmé'}`);
@@ -646,30 +651,33 @@ self.onmessage = async e => {
   }
   function stopVideo() {
     clearInterval(sampleTimer);
+    const st = current; current = null;
     return new Promise(res => {
-      if (!recorder || recorder.state === 'inactive') return res();
-      recorder.onstop = async () => {
-        const ext = recorder.mimeType.includes('mp4') ? 'mp4' : 'webm', url = $('upload').value.trim();
+      if (!st || st.rec.state === 'inactive') return res();
+      st.meta = seriesMeta();   // positions gathered so far belong to this recording
+      st.rec.onstop = async () => {
+        const ext = st.rec.mimeType.includes('mp4') ? 'mp4' : 'webm', url = $('upload').value.trim();
         if (url) {
-          // finish: send the positions, the server closes the series
-          // wait for the last chunks (and their retries) before closing the series
-          say('Fin des envois en cours…');
-          for (let i = 0; i < 600 && pendingUploads > 0; i++) await new Promise(r => setTimeout(r, 500));
-          const meta = { ...seriesMeta(), video_mime: recorder.mimeType, chunks: chunkSeq, failed: failed.slice() };
-          if (failed.length) log(`ATTENTION ${failed.length} morceau(x) jamais envoyé(s) : ${failed.join(', ')}`);
-          try { const st = await sendFinish(meta); log(`série clôturée côté serveur : HTTP ${st}`); if (st === 200) say(failed.length ? `Prise envoyée avec ${failed.length} morceau(x) manquant(s), voir le journal.` : 'Prise envoyée. L\'assemblage démarre côté serveur, la lame apparaîtra dans la galerie.', failed.length > 0); }
-          catch (err) { log('clôture serveur échouée : ' + err.message); }
-          log(`vidéo envoyée en ${chunkSeq} morceaux (${fmtMB(totalBytes)}), ${sampleSeq} échantillons de position`);
+          // wait for the last chunks (and their retries) before closing the series, with visible progress
+          say('Envoi en cours, garde la page ouverte.');
+          for (let i = 0; i < 1200 && st.pending > 0; i++) { setState('sending', st); await new Promise(r => setTimeout(r, 500)); }
+          setState('sending', st);
+          const meta = { ...st.meta, series: st.id, video_mime: st.rec.mimeType, chunks: st.chunkSeq, failed: st.failed.slice() };
+          if (st.failed.length) log(`ATTENTION ${st.failed.length} morceau(x) jamais envoyé(s) : ${st.failed.join(', ')}`);
+          try { const code = await sendFinish(meta); log(`série ${st.id} clôturée côté serveur : HTTP ${code}`);
+            if (code === 200) say(st.failed.length ? `Prise envoyée avec ${st.failed.length} morceau(x) manquant(s), voir le journal.` : `Prise envoyée (${st.sent} morceaux, ${fmtMB(st.bytes)}). Tu peux fermer. L'assemblage se fait côté serveur, la lame apparaîtra dans la galerie.`, st.failed.length > 0);
+            else say(`Clôture refusée (HTTP ${code}). Vérifie le jeton.`, true); }
+          catch (err) { log('clôture serveur échouée : ' + err.message); say('Clôture échouée : ' + err.message, true); }
+          log(`vidéo ${st.id} : ${st.chunkSeq} morceaux (${fmtMB(st.bytes)}), ${st.sent} envoyés, ${sampleSeq} échantillons de position`);
         } else {
-          const blob = new Blob(chunks, { type: recorder.mimeType });
-          shots.push({ name: `${seriesId}.${ext}`, blob });
-          log(`vidéo ${seriesId}.${ext} : ${fmtMB(blob.size)}, ${sampleSeq} échantillons de position`);
+          const blob = new Blob(st.chunks, { type: st.rec.mimeType });
+          shots.push({ name: `${st.id}.${ext}`, blob });
+          log(`vidéo ${st.id}.${ext} : ${fmtMB(blob.size)}, ${sampleSeq} échantillons de position`);
           $('count').textContent = `vidéo ${fmtMB(blob.size)}`;
         }
-        chunks = [];
         res();
       };
-      recorder.stop();
+      st.rec.stop();
     });
   }
 
@@ -686,8 +694,10 @@ self.onmessage = async e => {
     for (const id of ['interval', 'quality', 'scale', 'mode', 'flux', 'bitrate']) $(id).disabled = true;
     say(mode === 'video' ? 'Enregistrement en cours. Déplace la platine lentement, en serpentin.' : 'Série en cours. Déplace la platine lentement, en serpentin.');
   }
+  let stopping = false;
   async function stopSeries() {
-    if (!running) return;
+    if (!running || stopping) return;
+    stopping = true; $('shoot').disabled = true;
     running = false; clearInterval(timer);
     const dur = (performance.now() - seriesT0) / 1000, mode = $('mode').value;
     if (mode === 'video') await stopVideo();
@@ -695,9 +705,10 @@ self.onmessage = async e => {
     $('shoot').textContent = 'Lancer la série'; $('shoot').classList.remove('stop'); $('rec').classList.remove('on'); setState('ready');
     for (const id of ['interval', 'quality', 'scale', 'mode', 'flux', 'bitrate']) $(id).disabled = false;
     $('save').disabled = shots.length === 0; $('clear').disabled = shots.length === 0;
-    say(mode === 'video' ? `Vidéo de ${dur.toFixed(0)} s enregistrée, ${placed.length} positions suivies.` : `Série terminée : ${seq} photos, ${skipped} sauts.`);
+    if (!$('upload').value.trim()) say(mode === 'video' ? `Vidéo de ${dur.toFixed(0)} s enregistrée, ${placed.length} positions suivies.` : `Série terminée : ${seq} photos, ${skipped} sauts.`);
+    stopping = false; $('shoot').disabled = false;
   }
-  $('shoot').onclick = () => running ? stopSeries() : startSeries();
+  $('shoot').onclick = () => { if (stopping) return; running ? stopSeries() : startSeries(); };
 
   // ---------- export ----------
   const seriesMeta = () => ({ series: seriesId, title: $('title').value.trim() || null, mode: $('mode').value, count: shots.length, interval_ms: +$('interval').value, sample_ms: 250, position_unit: 'px of the camera stream', bitrate_mbps: +$('bitrate').value, scale: +$('scale').value, width: video.videoWidth, height: video.videoHeight, zoom: $('zoom').value, userAgent: navigator.userAgent,
@@ -734,6 +745,9 @@ self.onmessage = async e => {
       const t0 = Date.now();
       const tick = () => { const s = Math.floor((Date.now() - t0) / 1000); el.textContent = `ENREGISTREMENT ${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`; };
       tick(); stateTimer = setInterval(tick, 1000);
+    } else if (kind === 'sending') {
+      const st = arguments[1], done = st.sent, total = st.chunkSeq, pct = total ? Math.round(100 * done / total) : 0;
+      el.innerHTML = `ENVOI ${done}/${total} <span class="bar"><i style="width:${pct}%"></i></span>`;
     } else el.textContent = kind === 'ready' ? 'Prêt, caméra active' : 'Caméra arrêtée';
     el.className = kind; $('stage').classList.toggle('recording', kind === 'recording'); $('bar').classList.toggle('recording', kind === 'recording');
   }
