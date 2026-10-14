@@ -30,6 +30,12 @@ def get(path, dest):
         r.raise_for_status()
         with open(dest, 'wb') as f:
             for c in r.iter_content(1 << 20): f.write(c)
+def put_text(path, text):
+    r = requests.post(f'{URL}/storage/v1/object/{BUCKET}/{path}', headers={**H, 'Content-Type': 'text/plain', 'x-upsert': 'true'}, data=text.encode()); r.raise_for_status()
+def slugify(t):
+    import unicodedata, re
+    t = unicodedata.normalize('NFKD', t).encode('ascii', 'ignore').decode().lower()
+    return re.sub(r'[^a-z0-9]+', '-', t).strip('-')[:40]
 def rm(paths):
     for i in range(0, len(paths), 100):
         r = requests.delete(f'{URL}/storage/v1/object/{BUCKET}', headers=H, json={'prefixes': paths[i:i + 100]}); r.raise_for_status()
@@ -42,6 +48,8 @@ for s in series:
     names = {e['name'] for e in entries}
     if 'serie.json' not in names:
         print(f'{s} : pas encore close, ignorée'); continue
+    if 'failed.txt' in names:
+        print(f'{s} : déjà en échec, ignorée'); continue
     print(f'== {s}')
     d = os.path.join(a.work, s); shutil.rmtree(d, ignore_errors=True); os.makedirs(d)
     get(f'{s}/serie.json', os.path.join(d, 'serie.json'))
@@ -63,19 +71,22 @@ for s in series:
         for p in photos:
             get(f'{s}/photos/{p}', os.path.join(d, 'photos', p)); paths.append(f'{s}/photos/{p}')
         print(f'  photos : {len(photos)}')
-    if not chunks and not photos:
-        print('  vide : supprimée'); rm(paths); continue
+    vid = os.path.join(d, f'video.{ext}') if chunks else None
+    if (not chunks and not photos) or (vid and os.path.getsize(vid) < 200_000):
+        print('  vide ou trop courte : supprimée'); rm(paths); continue
     t0 = time.time()
     res = os.path.join(d, 'result')
     rc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'pipeline.py'), d, '--out', res]).returncode
     if rc != 0:
-        print(f'  ÉCHEC du pipeline (code {rc}), série conservée dans le bucket'); continue
-    slug = s.lower().replace('_', '-')
+        print(f'  ÉCHEC du pipeline (code {rc}), série marquée en échec dans le bucket')
+        logp = os.path.join(res, 'pipeline.log')
+        put_text(f'{s}/failed.txt', open(logp).read()[-4000:] if os.path.isfile(logp) else f'pipeline code {rc}'); continue
     title = meta.get('title') or s
+    slug = (slugify(title) + '-' + s.split('_')[1][4:] + s.split('_')[2][:4]) if meta.get('title') and s.count('_') >= 2 else s.lower().replace('_', '-')
     rc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'publish_lame.py'), os.path.join(res, 'pano.jpg'), '--name', slug,
                          '--title', title, '--fields', os.path.join(res, 'fields.json')]).returncode
     if rc != 0:
-        print('  ÉCHEC de la publication'); continue
+        print('  ÉCHEC de la publication'); put_text(f'{s}/failed.txt', 'publication'); continue
     print(f'  publiée : lames/{slug}/ en {time.time() - t0:.0f} s')
     if not a.keep: rm(paths)
     done.append(slug)
