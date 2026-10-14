@@ -2,6 +2,9 @@ name: Assemblage des prises (Supabase -> galerie)
 on:
   schedule:
     - cron: '*/15 * * * *'
+  push:
+    branches: [main]
+    paths: ['tools/**', '.github/workflows/process-series.yml']
   workflow_dispatch:
     inputs:
       only:
