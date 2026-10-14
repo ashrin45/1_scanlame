@@ -18,9 +18,9 @@ import cv2, numpy as np
 ap = argparse.ArgumentParser()
 ap.add_argument('series')
 ap.add_argument('--out', default=None)
-ap.add_argument('--fps', type=float, default=3.0)
+ap.add_argument('--fps', type=float, default=4.0)
 ap.add_argument('--blur', type=float, default=25.0)
-ap.add_argument('--max-frames', type=int, default=250)
+ap.add_argument('--max-frames', type=int, default=400)
 ap.add_argument('--reg-size', type=int, default=1200, help='plus grand cote des images pour le recalage')
 ap.add_argument('--max-side', type=int, default=12000, help='plus grand cote de la mosaique finale')
 ap.add_argument('--min-inliers', type=int, default=40)
@@ -219,6 +219,28 @@ for it in range(10):
         if not src: continue
         A, _ = cv2.estimateAffinePartial2D(np.vstack(src), np.vstack(dst), method=cv2.LMEDS)
         if A is not None: T[v] = A3(A)
+# --- filet de securite : les images non reliees mais suivies en direct sont placees d'apres leur position ---
+# (translation estimee par rapport aux images deja placees ayant une position suivie ; precision du suivi, pas du recalage)
+anchors = [k for k in comp if P[k]]
+extra = 0
+if anchors and W0:
+    # transformation moyenne position_flux -> repere de reference, estimee sur les images placees
+    src = np.float32([P[k] for k in anchors]); dst = np.float32([(T[k] @ np.array([0, 0, 1]))[:2] for k in anchors])
+    Apos = None
+    if len(anchors) >= 3:
+        Apos, _ = cv2.estimateAffinePartial2D(src, dst, method=cv2.LMEDS)
+    if Apos is None:
+        s_ = scales[ref] * (1.0)   # a defaut : meme echelle que le recalage, pure translation
+        off = dst.mean(0) - src.mean(0) * s_
+        Apos = np.array([[s_, 0, off[0]], [0, s_, off[1]]], np.float64)
+    for c in comps[1:]:
+        for k in c:
+            if P[k]:
+                t = (Apos @ np.array([P[k][0], P[k][1], 1.0]))[:2]
+                sc = math.hypot(Apos[0, 0], Apos[0, 1])
+                T[k] = np.array([[sc, 0, t[0]], [0, sc, t[1]], [0, 0, 1]])
+                comp.append(k); extra += 1
+    if extra: log(f'{extra} image(s) placée(s) d\'après le suivi en direct (sans recalage fin)')
 # erreur residuelle
 res = []
 for (i, j), (pi, pj, _, _) in pairs.items():

@@ -5,6 +5,8 @@ on:
   push:
     branches: [main]
     paths: ['tools/**', '.github/workflows/process-series.yml']
+  repository_dispatch:
+    types: [serie]
   workflow_dispatch:
     inputs:
       only:

@@ -6,7 +6,7 @@
 //
 // Routes (URL de base : https://<projet>.supabase.co/functions/v1/scanlame) :
 //   POST /sign    {series, name, contentType}  -> {url} : URL signée où la page envoie le fichier en PUT
-//   POST /finish  {series, ...meta}            -> écrit <series>/serie.json (déclenche le traitement côté GitHub)
+//   POST /finish  {series, ...meta}            -> écrit <series>/serie.json et réveille GitHub (secret GH_TOKEN)
 //   GET  /        -> état
 import { createClient } from "npm:@supabase/supabase-js@2";
 
@@ -53,7 +53,20 @@ Deno.serve(async (req) => {
     const { error } = await supabase.storage.from(BUCKET)
       .upload(`${series}/serie.json`, new Blob([JSON.stringify(body)], { type: "application/json" }), { upsert: true, contentType: "application/json" });
     if (error) return json({ error: error.message }, 500);
-    return json({ ok: true, queued: true });
+    // wake the GitHub workflow right away (optional: needs the GH_TOKEN secret on this function)
+    let dispatched = false;
+    const gh = Deno.env.get("GH_TOKEN"), repo = Deno.env.get("GH_REPO") || "ashrin45/1_scanlame";
+    if (gh) {
+      try {
+        const r = await fetch(`https://api.github.com/repos/${repo}/dispatches`, {
+          method: "POST",
+          headers: { Authorization: `Bearer ${gh}`, Accept: "application/vnd.github+json", "Content-Type": "application/json", "User-Agent": "scanlame" },
+          body: JSON.stringify({ event_type: "serie", client_payload: { series } }),
+        });
+        dispatched = r.status === 204;
+      } catch (_) { dispatched = false; }
+    }
+    return json({ ok: true, queued: true, dispatched });
   }
   return json({ error: "route inconnue" }, 404);
 });
