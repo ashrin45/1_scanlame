@@ -10,45 +10,55 @@
 <title>Capture lame</title>
 <style>
   :root { --bg:#000; --panel:#17151c; --fg:#f0ecf4; --muted:#a79cb1; --line:#2d2936; --accent:#c58ad6; --ok:#6fcf97; --warn:#f2c94c; --rec:#eb5757;
-          --bar: 104px; --sat: env(safe-area-inset-top, 0px); --sab: env(safe-area-inset-bottom, 0px); --sal: env(safe-area-inset-left, 0px); --sar: env(safe-area-inset-right, 0px); }
+          --bar: 120px; --sat: env(safe-area-inset-top, 0px); --sab: env(safe-area-inset-bottom, 0px); --sal: env(safe-area-inset-left, 0px); --sar: env(safe-area-inset-right, 0px); }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-  html, body { height: 100%; margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; overscroll-behavior: none; overflow: hidden; }
+  html, body { height: 100%; margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; overscroll-behavior: none; overflow: hidden; }
   /* ---- the camera fills the screen; everything else floats on top ---- */
   #stage { position: fixed; inset: 0; background: #000; }
   video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
-  .hud { position: absolute; left: calc(10px + var(--sal)); top: calc(10px + var(--sat)); display: flex; flex-direction: column; gap: 4px; font-variant-numeric: tabular-nums; font-size: 12px; pointer-events: none; }
-  .hud span { background: rgba(0,0,0,.55); padding: 3px 8px; border-radius: 5px; backdrop-filter: blur(4px); }
+  .hud { position: absolute; left: calc(10px + var(--sal)); top: calc(58px + var(--sat)); display: flex; flex-direction: column; gap: 5px; font-variant-numeric: tabular-nums; font-size: 14px; pointer-events: none; }
+  .hud span { background: rgba(0,0,0,.55); padding: 4px 10px; border-radius: 6px; backdrop-filter: blur(4px); }
+  #state { position: absolute; left: 50%; top: calc(12px + var(--sat)); transform: translateX(-50%); font-weight: 700; font-size: 15px; letter-spacing: .04em; padding: 8px 16px; border-radius: 999px; background: rgba(0,0,0,.6); color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
+  #state.ready { color: var(--fg); background: rgba(0,0,0,.65); }
+  #state.recording { color: #fff; background: var(--rec); }
+  #state.recording::before { content: ''; width: 12px; height: 12px; border-radius: 50%; background: #fff; animation: blink 1s infinite; }
+  #stage.recording::after { content: ''; position: absolute; inset: 0; border: 4px solid var(--rec); pointer-events: none; }
   #rec { display: none; position: absolute; right: calc(14px + var(--sar)); top: calc(14px + var(--sat)); width: 14px; height: 14px; border-radius: 50%; background: var(--rec); box-shadow: 0 0 0 3px rgba(235,87,87,.35); animation: blink 1s infinite; }
   #rec.on { display: block; }
   @keyframes blink { 50% { opacity: .25; } }
   /* sharpness: thin bar just above the bottom controls */
-  #sharp { position: absolute; left: calc(14px + var(--sal)); right: calc(14px + var(--sar)); bottom: calc(var(--bar) + var(--sab) + 54px); height: 5px; background: rgba(255,255,255,.18); border-radius: 3px; overflow: hidden; }
+  #sharpwrap { position: absolute; left: calc(14px + var(--sal)); right: calc(14px + var(--sar)); bottom: calc(var(--bar) + var(--sab) + 56px); display: flex; align-items: center; gap: 10px; font-size: 14px; }
+  #sharpwrap span { background: rgba(0,0,0,.55); padding: 4px 10px; border-radius: 6px; min-width: 60px; text-align: center; color: var(--muted); }
+  #sharp { flex: 1; height: 8px; background: rgba(255,255,255,.18); border-radius: 4px; overflow: hidden; }
   #sharp i { display: block; height: 100%; width: 0; background: var(--ok); transition: width .2s; }
   /* zoom slider, above the sharpness bar */
-  #zoomwrap { position: absolute; left: calc(14px + var(--sal)); right: calc(14px + var(--sar)); bottom: calc(var(--bar) + var(--sab) + 14px); display: flex; align-items: center; gap: 10px; font-size: 12px; font-variant-numeric: tabular-nums; }
-  #zoomwrap span { background: rgba(0,0,0,.55); padding: 3px 8px; border-radius: 5px; min-width: 46px; text-align: center; }
+  #zoomwrap { position: absolute; left: calc(14px + var(--sal)); right: calc(14px + var(--sar)); bottom: calc(var(--bar) + var(--sab) + 14px); display: flex; align-items: center; gap: 10px; font-size: 14px; font-variant-numeric: tabular-nums; }
+  #zoomwrap span { background: rgba(0,0,0,.55); padding: 4px 10px; border-radius: 6px; min-width: 60px; text-align: center; }
+  #zoomwrap em { font-style: normal; color: var(--muted); }
   input[type=range] { flex: 1; accent-color: var(--accent); height: 28px; margin: 0; }
   /* coverage map: top right, tap to enlarge */
-  #map { position: absolute; right: calc(10px + var(--sar)); top: calc(38px + var(--sat)); width: min(38vw, 180px); height: min(38vw, 180px); background: rgba(23,21,28,.85); border: 1px solid var(--line); border-radius: 8px; transition: width .2s, height .2s; }
+  #map { position: absolute; right: calc(10px + var(--sar)); top: calc(92px + var(--sat)); width: min(38vw, 180px); height: min(38vw, 180px); background: rgba(23,21,28,.85); border: 1px solid var(--line); border-radius: 8px; transition: width .2s, height .2s; }
   #map.big { width: calc(100vw - 20px - var(--sal) - var(--sar)); height: min(70vh, 100vw); }
-  #trk { position: absolute; right: calc(10px + var(--sar)); top: calc(12px + var(--sat)); font-size: 11px; font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,.55); padding: 3px 7px; border-radius: 5px; max-width: 60vw; }
+  #trk { position: absolute; right: calc(10px + var(--sar)); top: calc(58px + var(--sat)); font-size: 13px; font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,.55); padding: 3px 7px; border-radius: 5px; max-width: 60vw; }
   #trk i { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); display: inline-block; flex: 0 0 auto; }
   #trk.ok i { background: var(--ok); } #trk.lost i { background: var(--rec); } #trk.relocated i { background: var(--warn); }
   /* message toast */
-  #msg { position: absolute; left: calc(14px + var(--sal)); right: calc(14px + var(--sar)); bottom: calc(var(--bar) + var(--sab) + 70px); background: rgba(0,0,0,.65); color: var(--fg); font-size: 13px; padding: 8px 10px; border-radius: 8px; backdrop-filter: blur(4px); }
+  #msg { position: absolute; left: calc(14px + var(--sal)); right: calc(14px + var(--sar)); bottom: calc(var(--bar) + var(--sab) + 78px); background: rgba(0,0,0,.65); color: var(--fg); font-size: 15px; padding: 10px 12px; border-radius: 10px; backdrop-filter: blur(4px); }
   #msg:empty { display: none; }
   #msg.err { background: rgba(235,87,87,.85); }
   /* ---- bottom bar: lock | shutter | settings ---- */
   #bar { position: fixed; left: 0; right: 0; bottom: 0; height: calc(var(--bar) + var(--sab)); padding: 0 calc(16px + var(--sar)) var(--sab) calc(16px + var(--sal)); background: rgba(10,9,12,.92); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; }
-  button { font: 600 14px system-ui, sans-serif; color: var(--fg); background: #1d1a22; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; min-height: 48px; }
+  button { font: 600 16px system-ui, sans-serif; color: var(--fg); background: #1d1a22; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; min-height: 56px; }
   button:disabled { opacity: .4; }
   button.toggle[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: rgba(197,138,214,.12); }
-  #bar .side { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; color: var(--muted); }
+  #bar .side { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 13px; color: var(--muted); }
+  #bar.recording { background: rgba(60,8,12,.94); }
   #bar .side button { width: 100%; max-width: 150px; }
   /* shutter */
-  #shutter { width: 76px; height: 76px; border-radius: 50%; border: 4px solid #fff; background: transparent; padding: 0; display: grid; place-items: center; }
-  #shutter i { display: block; width: 58px; height: 58px; border-radius: 50%; background: #fff; transition: all .15s; }
-  #shutter.stop i { width: 32px; height: 32px; border-radius: 6px; background: var(--rec); }
+  #shutter { width: 88px; height: 88px; border-radius: 50%; border: 5px solid #fff; background: transparent; padding: 0; display: grid; place-items: center; }
+  #shutter i { display: block; width: 68px; height: 68px; border-radius: 50%; background: #fff; transition: all .15s; }
+  #shutter.stop { border-color: var(--rec); }
+  #shutter.stop i { width: 38px; height: 38px; border-radius: 8px; background: var(--rec); }
   #shutter.camera i { background: var(--accent); }
   #shutter:disabled { opacity: .35; }
   /* ---- settings sheet ---- */
@@ -57,9 +67,9 @@
   #sheet h2 { font-size: 15px; margin: 4px 0 10px; display: flex; justify-content: space-between; align-items: center; }
   #sheet h2 button { min-height: 36px; padding: 6px 12px; }
   .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; }
-  label { color: var(--muted); font-size: 12px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  label { color: var(--muted); font-size: 14px; display: flex; flex-direction: column; gap: 5px; min-width: 0; }
   label.wide { grid-column: 1 / -1; }
-  select, input[type=text], input[type=url] { background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 8px; font: inherit; min-height: 44px; width: 100%; }
+  select, input[type=text], input[type=url] { background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 10px; padding: 12px 10px; font: inherit; font-size: 16px; min-height: 50px; width: 100%; }
   .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
   #save, #clear { flex: 1 1 auto; }
   #mem { color: var(--muted); font-size: 12px; width: 100%; }
@@ -83,11 +93,12 @@
     <span id="lock">AF/AE auto</span>
   </div>
   <div id="rec"></div>
+  <div id="state">Caméra arrêtée</div>
   <div id="trk"><i></i><span id="trkt">suivi inactif</span></div>
   <canvas id="map" title="carte de couverture, toucher pour agrandir"></canvas>
-  <div id="msg">Touche le bouton violet pour démarrer la caméra.</div>
-  <div id="zoomwrap"><span id="zoomv">1.0×</span><input id="zoom" type="range" min="1" max="1" step="0.1" value="1" disabled aria-label="Zoom"></div>
-  <div id="sharp" title="netteté"><i id="sharpbar"></i></div>
+  <div id="msg">Touche le bouton violet pour démarrer la caméra. Si tout paraît minuscule, désactive « Version ordinateur » dans le menu de Chrome.</div>
+  <div id="zoomwrap"><span><em>zoom</em> <b id="zoomv">1.0×</b></span><input id="zoom" type="range" min="1" max="1" step="0.1" value="1" disabled aria-label="Zoom"></div>
+  <div id="sharpwrap"><span>netteté</span><div id="sharp"><i id="sharpbar"></i></div></div>
 </div>
 
 <div id="bar">
@@ -396,7 +407,7 @@ self.onmessage = async e => {
     const st = track.getSettings(), caps = track.getCapabilities ? track.getCapabilities() : {};
     $('res').textContent = `${video.videoWidth} × ${video.videoHeight}`;
     $('start').textContent = 'Caméra active'; $('start').disabled = true;
-    $('shoot').disabled = false; $('lockbtn').disabled = false; $('shoot').classList.add('ready');
+    $('shoot').disabled = false; $('lockbtn').disabled = false; $('shoot').classList.add('ready'); setState('ready');
     log(`flux ${video.videoWidth}x${video.videoHeight} @${st.frameRate || '?'} fps, piste "${track.label}"`);
     log(`capacités : focus ${JSON.stringify(caps.focusMode || null)}, expo ${JSON.stringify(caps.exposureMode || null)}, balance ${JSON.stringify(caps.whiteBalanceMode || null)}, zoom ${caps.zoom ? caps.zoom.min + '..' + caps.zoom.max : 'non'}`);
     if (caps.zoom) {
@@ -646,7 +657,7 @@ self.onmessage = async e => {
     log(`=== série ${seriesId} (${mode}) : débit ${$('bitrate').value} Mbit/s, serveur ${$('upload').value.trim() || 'aucun'}, intervalle ${$('interval').value} ms, taille ${$('scale').value}, qualité ${$('quality').value}, zoom ${$('zoom').value}, flux ${video.videoWidth}x${video.videoHeight}`);
     if (mode === 'video') { if (!startVideo()) { running = false; return; } }
     else timer = setInterval(tick, +$('interval').value);
-    $('shoot').textContent = 'Arrêter'; $('shoot').classList.add('stop'); $('rec').classList.add('on');
+    $('shoot').textContent = 'Arrêter'; $('shoot').classList.add('stop'); $('rec').classList.add('on'); setState('recording');
     for (const id of ['interval', 'quality', 'scale', 'mode', 'flux', 'bitrate']) $(id).disabled = true;
     say(mode === 'video' ? 'Enregistrement en cours. Déplace la platine lentement, en serpentin.' : 'Série en cours. Déplace la platine lentement, en serpentin.');
   }
@@ -656,7 +667,7 @@ self.onmessage = async e => {
     const dur = (performance.now() - seriesT0) / 1000, mode = $('mode').value;
     if (mode === 'video') await stopVideo();
     log(`=== fin de série : ${mode === 'video' ? dur.toFixed(1) + ' s de vidéo' : seq + ' photos en ' + dur.toFixed(1) + ' s (' + (seq / dur).toFixed(2) + ' /s), ' + skipped + ' sauts'}, ${placed.length} champs placés`);
-    $('shoot').textContent = 'Lancer la série'; $('shoot').classList.remove('stop'); $('rec').classList.remove('on');
+    $('shoot').textContent = 'Lancer la série'; $('shoot').classList.remove('stop'); $('rec').classList.remove('on'); setState('ready');
     for (const id of ['interval', 'quality', 'scale', 'mode', 'flux', 'bitrate']) $(id).disabled = false;
     $('save').disabled = shots.length === 0; $('clear').disabled = shots.length === 0;
     say(mode === 'video' ? `Vidéo de ${dur.toFixed(0)} s enregistrée, ${placed.length} positions suivies.` : `Série terminée : ${seq} photos, ${skipped} sauts.`);
@@ -690,6 +701,17 @@ self.onmessage = async e => {
   };
   $('clear').onclick = () => { shots = []; totalBytes = 0; seq = 0; placed = []; for (const k in frameInfo) delete frameInfo[k]; drawMap(null); $('count').textContent = '0 photo'; $('mem').textContent = ''; $('save').disabled = true; $('clear').disabled = true; log('mémoire vidée'); };
   $('start').onclick = startCamera;
+  // ---------- state banner ----------
+  let stateTimer = null;
+  function setState(kind) {
+    const el = $('state'); clearInterval(stateTimer);
+    if (kind === 'recording') {
+      const t0 = Date.now();
+      const tick = () => { const s = Math.floor((Date.now() - t0) / 1000); el.textContent = `ENREGISTREMENT ${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`; };
+      tick(); stateTimer = setInterval(tick, 1000);
+    } else el.textContent = kind === 'ready' ? 'Prêt, caméra active' : 'Caméra arrêtée';
+    el.className = kind; $('stage').classList.toggle('recording', kind === 'recording'); $('bar').classList.toggle('recording', kind === 'recording');
+  }
   // ---------- phone UI glue ----------
   const shutter = $('shutter'), sheet = $('sheet'), backdrop = $('backdrop');
   const openSheet = o => { sheet.classList.toggle('open', o); backdrop.classList.toggle('open', o); if (o) { const el = $('log'); el.scrollTop = el.scrollHeight; } };
