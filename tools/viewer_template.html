@@ -79,12 +79,10 @@ for (const f of FIELDS) {
   const t = document.createElementNS(svgNS, 'text');
   const [x, y] = f.pts[0]; t.setAttribute('x', x + 40); t.setAttribute('y', y + 110); t.textContent = f.id; svg.appendChild(t);
 }
-svg.hidden = true;
-viewer.addHandler('open', () => {
-  viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) });
-});
+// the field overlay is only added to the viewer when the person asks for it
+let fieldsShown = false;
 const btn = document.getElementById('fields');
-btn.onclick = () => { const on = btn.getAttribute('aria-pressed') !== 'true'; btn.setAttribute('aria-pressed', String(on)); svg.hidden = !on; };
+btn.onclick = () => { fieldsShown = !fieldsShown; btn.setAttribute('aria-pressed', String(fieldsShown)); if (fieldsShown) viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(svg); };
 const hud = document.getElementById('hud');
 viewer.addHandler('zoom', () => {
   const z = viewer.viewport.viewportToImageZoom(viewer.viewport.getZoom(true));
