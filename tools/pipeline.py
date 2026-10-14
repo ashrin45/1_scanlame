@@ -70,12 +70,16 @@ def pos_at(t_ms):
     return (samples[k]['x'], samples[k]['y']) if abs(ts[k] - t_ms) < 700 else None
 
 # nettete + sous-echantillonnage spatial (on saute les images quasi identiques)
-sel = []
-last_pos = None
+sharps = []
 for p, t in items:
     g = cv2.imread(p, cv2.IMREAD_REDUCED_GRAYSCALE_4)
-    sharp = float(cv2.Laplacian(g, cv2.CV_64F).var())
-    if sharp < a.blur:
+    sharps.append(float(cv2.Laplacian(g, cv2.CV_64F).var()))
+thr = max(3.0, 0.4 * float(np.median(sharps)))   # relative threshold: drops the blurred frames of this series only
+log(f'netteté médiane {np.median(sharps):.1f}, seuil {thr:.1f}')
+sel = []
+last_pos = None
+for (p, t), sharp in zip(items, sharps):
+    if sharp < thr:
         continue
     pos = pos_at(t)
     if pos and last_pos and W0 and math.hypot(pos[0] - last_pos[0], pos[1] - last_pos[1]) < 0.12 * max(W0, H0):
