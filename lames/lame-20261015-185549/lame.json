@@ -1,0 +1,47 @@
+{
+ "title": "lame_20261015_185549",
+ "width": 3926,
+ "height": 9432,
+ "fields": 27,
+ "tiles": 217,
+ "tile": 512,
+ "maxlvl": 14,
+ "um_per_px": null,
+ "stain": "mgg",
+ "objective": "x100",
+ "sample": null,
+ "comment": null,
+ "captured": "15/10/2026 18:55",
+ "parent": null,
+ "parent_transform": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "14 champ(s) placé(s) sans recalage fin"
+  ],
+  "frames": {
+   "candidates": 54,
+   "blurred": 13,
+   "selected": 27,
+   "used": 27,
+   "tracked_only": 14
+  },
+  "residual_px": 0.91,
+  "residual_max_px": 153.67,
+  "holes": [],
+  "holes_frac": 0.0,
+  "coverage_px": 30321457,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.037,
+  "gain_spread_pct": 5.4,
+  "flat_field": "mesuré",
+  "k1": -0.026,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null
+}
