@@ -670,6 +670,9 @@ if anchors and W0:
                 t = (Apos @ np.array([P[k][0], P[k][1], 1.0]))[:2]
                 T[k] = np.array([[1.0, 0, t[0]], [0, 1.0, t[1]], [0, 0, 1]]); comp.append(k); extra += 1
     if extra: log(f'{extra} image(s) placée(s) d\'après le suivi en direct (sans recalage fin)')
+    if extra > max(3, 0.5 * len(comp)):
+        log(f'ÉCHEC : {extra} champs sur {len(comp)} ne se recalent pas par les points (image floue ou vide ?) ; prise inexploitable, pas de composition')
+        sys.exit(3)
 
 # --- compensation photometrique : gain par image et par canal, estime sur les recouvrements (log-gains, moindres carres) ---
 gains = {k: np.ones(3, np.float32) for k in comp}
@@ -857,6 +860,11 @@ def compose_tile(tx, ty, loader, only=None):
     lab0 = np.argmax(Wst, axis=0); anyc = Wst.max(0) > 0
     del Wst
     win = [n for n in range(len(kept)) if ((lab0 == n) & anyc).any()]   # images qui gagnent quelque part
+    if len(win) > MAX_LAYERS:   # garde-fou memoire : on garde les images qui couvrent le plus de pixels de la tuile
+        areas = {n: int(((lab0 == n) & anyc).sum()) for n in win}
+        win = sorted(win, key=lambda n: -areas[n])[:MAX_LAYERS]
+        # les pixels des images ecartees passent a la meilleure image restante
+        sub = np.stack([weights[n] for n in win]); lab0 = np.array(win)[np.argmax(sub, axis=0)]; anyc = anyc & (sub.max(0) > 0); del sub
     lab = np.full(lab0.shape, -1, np.int32)
     for new_n, n in enumerate(win): lab[(lab0 == n) & anyc] = new_n
     layers, vals = [], []
@@ -882,7 +890,8 @@ try:
     _avail_gb = float(open('/proc/meminfo').read().split('MemAvailable:')[1].split()[0]) / 1e6
 except Exception:
     _avail_gb = 8.0
-TILE_WORKERS = max(1, min(NWORK, 6, int(_avail_gb / 2.0)))   # ~2 Go par tuile de 2560 px en pleine charge
+TILE_WORKERS = max(1, min(NWORK, 6, int(_avail_gb / 3.0)))   # ~3 Go par tuile de 2560 px en pleine charge
+MAX_LAYERS = 12
 with ThreadPoolExecutor(TILE_WORKERS) as ex:
     for r in ex.map(lambda t: compose_tile(t[0], t[1], load), _tiles):
         if r is None: continue
