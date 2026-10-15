@@ -535,8 +535,10 @@ if anchors and W0:
         if ci == a.component or len(c) >= 3: continue      # une composante de 3 images ou plus est une zone a part entiere
         for k in c:
             if P[k]:
-                t = (Apos @ np.array([P[k][0], P[k][1], 1.0]))[:2]; sc = math.hypot(Apos[0, 0], Apos[0, 1])
-                T[k] = np.array([[sc, 0, t[0]], [0, sc, t[1]], [0, 0, 1]]); comp.append(k); extra += 1
+                # Apos convertit les positions du suivi (px du flux) en px de recalage de la reference : seule la
+                # translation sert ; l'image garde l'echelle de la reference (toutes les images ont la meme echelle de recalage)
+                t = (Apos @ np.array([P[k][0], P[k][1], 1.0]))[:2]
+                T[k] = np.array([[1.0, 0, t[0]], [0, 1.0, t[1]], [0, 0, 1]]); comp.append(k); extra += 1
     if extra: log(f'{extra} image(s) placée(s) d\'après le suivi en direct (sans recalage fin)')
 
 # --- compensation photometrique : gain par image et par canal, estime sur les recouvrements (log-gains, moindres carres) ---
