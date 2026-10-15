@@ -524,6 +524,60 @@ with ThreadPoolExecutor(NWORK) as ex:
     for ij, r_ in zip(_cl, ex.map(_pair_job, _cl)):
         if r_ is not None: pairs[ij] = r_
 log(len(pairs), 'paires valides')
+
+# --- recalage par correlation guide par le suivi du telephone (frottis sanguins, champs repetitifs ou pauvres en points) ---
+# 1. etalonnage : relation entre deplacement du suivi (px du flux) et translation de recalage, sur les paires SIFT sures
+# 2. pour chaque paire candidate sans paire SIFT, translation initiale d'apres le suivi, affinee par ECC sur le recouvrement
+def _gray_clahe(reg):
+    return cv2.createCLAHE(3.0, (8, 8)).apply(cv2.cvtColor(reg, cv2.COLOR_BGR2GRAY)).astype(np.float32)
+pos_map = None
+if W0 and sum(1 for q in P if q) >= 2:
+    src, dst = [], []
+    for (i, j), (pi, pj, A, n) in pairs.items():
+        if P[i] and P[j] and n >= 60:
+            src.append([P[j][0] - P[i][0], P[j][1] - P[i][1]]); dst.append([A[0, 2], A[1, 2]])
+    if len(src) >= 4:
+        Mp, inl = cv2.estimateAffine2D(np.float32(src), np.float32(dst), method=cv2.LMEDS)
+        if Mp is not None and inl is not None and inl.sum() >= 4:
+            pos_map = Mp[:, :2]   # deplacement du suivi -> translation attendue (px de recalage)
+            log(f'suivi etalonne sur {int(inl.sum())} paires : facteur {math.hypot(*pos_map[0]):.3f}')
+    if pos_map is None:
+        # pas assez de paires SIFT : on suppose le suivi en px du flux, meme orientation que la camera
+        pos_map = np.float32([[scales[0], 0], [0, scales[0]]])
+        log('suivi non etalonnable par les points : facteur suppose = echelle de recalage')
+    GRAY = {}
+    def gray_of(k):
+        if k not in GRAY: GRAY[k] = _gray_clahe(regs[k])
+        return GRAY[k]
+    def ecc_pair(ij):
+        i, j = ij
+        if (i, j) in pairs or not (P[i] and P[j]): return None
+        d = pos_map @ np.float32([P[j][0] - P[i][0], P[j][1] - P[i][1]])   # attendu : pi = pj + d
+        h_, w_ = regs[i].shape[:2]
+        if abs(d[0]) > 0.8 * w_ or abs(d[1]) > 0.8 * h_: return None     # recouvrement trop faible
+        # recouvrement : zone de i vue par j
+        x0_, y0_ = int(max(0, d[0])), int(max(0, d[1])); x1_, y1_ = int(min(w_, w_ + d[0])), int(min(h_, h_ + d[1]))
+        if x1_ - x0_ < 80 or y1_ - y0_ < 80: return None
+        gi, gj = gray_of(i), gray_of(j)
+        tmpl = gi[y0_:y1_, x0_:x1_]
+        W_ = np.float32([[1, 0, -d[0]], [0, 1, -d[1]]])     # j -> i (ECC : input warpe vers template)
+        try:
+            cc, W_ = cv2.findTransformECC(gi, gj, W_, cv2.MOTION_TRANSLATION, (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 40, 1e-3), None, 5)
+        except cv2.error:
+            return None
+        dx, dy = -W_[0, 2], -W_[1, 2]
+        if cc < 0.35 or math.hypot(dx - d[0], dy - d[1]) > 0.12 * max(w_, h_): return None
+        # correspondances synthetiques sur une grille du recouvrement
+        xs = np.linspace(x0_ + 10, x1_ - 10, 8); ys = np.linspace(y0_ + 10, y1_ - 10, 6)
+        pi_ = np.float32([[x, y] for y in ys for x in xs]); pj_ = pi_ - np.float32([dx, dy])
+        A_ = np.float32([[1, 0, dx], [0, 1, dy]])
+        return (i, j), (pi_, pj_, A_, max(a.min_inliers, int(40 * cc)))
+    todo = [ij for ij in sorted(cand) if ij not in pairs]
+    with ThreadPoolExecutor(NWORK) as ex:
+        added = [r_ for r_ in ex.map(ecc_pair, todo) if r_ is not None]
+    for ij, val in added: pairs[ij] = val
+    if added: log(f'{len(added)} paire(s) recalée(s) par corrélation guidée par le suivi (champs répétitifs ou pauvres en points)')
+    del GRAY
 if not pairs:
     sys.exit('aucune paire d\'images ne se recouvre')
 
