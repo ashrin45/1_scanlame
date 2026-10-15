@@ -859,39 +859,48 @@ def compose_tile(tx, ty, loader, only=None):
     ks = [k for k in comp if bbox[k][0] < X1 and bbox[k][2] > X0 and bbox[k][1] < Y1 and bbox[k][3] > Y0]
     if not ks or (only is not None and not any(k in only for k in ks)): return None
     gx, gy = np.meshgrid(np.arange(X0, X1, dtype=np.float32), np.arange(Y0, Y1, dtype=np.float32))
-    maps, weights, valids, kept = {}, [], [], []
-    for k in ks:
+    def maps_of(k):
         Mi = Minv[k]
         ux = Mi[0, 0] * gx + Mi[0, 1] * gy + Mi[0, 2]; uy = Mi[1, 0] * gx + Mi[1, 1] * gy + Mi[1, 2]
         pd = distort_pts(np.stack([ux, uy], -1), centers[k], Rs[k])
-        mapx, mapy = pd[..., 0].astype(np.float32), pd[..., 1].astype(np.float32)
+        return pd[..., 0].astype(np.float32), pd[..., 1].astype(np.float32)
+    def weight_of(k, mapx, mapy):
         wm = cv2.remap(dist_maps[k], mapx, mapy, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=0)
-        if wm.max() <= 0: continue
         valid = wm > 0.04                                                # on reste a l'ecart du bord sombre du disque
         core = np.clip((wm - (1 - a.core)) / a.core, 0, 1) ** 3          # 1 au coeur, 0 vers le bord du champ
-        wgt = ((core + 1e-3 * valid) / (scale_k[k] ** 4)).astype(np.float32)
-        maps[k] = (mapx, mapy); weights.append(wgt); valids.append(valid); kept.append(k)
-    del gx, gy
-    if not kept: return None
-    Wst = np.stack(weights)
-    lab0 = np.argmax(Wst, axis=0); anyc = Wst.max(0) > 0
-    del Wst
-    win = [n for n in range(len(kept)) if ((lab0 == n) & anyc).any()]   # images qui gagnent quelque part
-    if len(win) > MAX_LAYERS:   # garde-fou memoire : on garde les images qui couvrent le plus de pixels de la tuile
-        areas = {n: int(((lab0 == n) & anyc).sum()) for n in win}
-        win = sorted(win, key=lambda n: -areas[n])[:MAX_LAYERS]
-        # les pixels des images ecartees passent a la meilleure image restante
-        sub = np.stack([weights[n] for n in win]); lab0 = np.array(win)[np.argmax(sub, axis=0)]; anyc = anyc & (sub.max(0) > 0); del sub
-    lab = np.full(lab0.shape, -1, np.int32)
-    for new_n, n in enumerate(win): lab[(lab0 == n) & anyc] = new_n
-    layers, vals = [], []
-    for n in win:
-        k = kept[n]; mapx, mapy = maps[k]
+        return ((core + 1e-3 * valid) / (scale_k[k] ** 4)).astype(np.float32), valid
+    # passe 1, incrementale : meilleur poids et image gagnante par pixel, sans rien garder d'autre (memoire bornee)
+    best = np.zeros((th, tw), np.float32); lab_k = np.full((th, tw), -1, np.int32)
+    for k in ks:
+        mapx, mapy = maps_of(k)
+        wgt, _ = weight_of(k, mapx, mapy)
+        better = wgt > best
+        if better.any(): best[better] = wgt[better]; lab_k[better] = k
+        del mapx, mapy, wgt, better
+    anyc = best > 0
+    win = [k for k in ks if (lab_k == k).any()]                         # images qui gagnent quelque part
+    if len(win) > MAX_LAYERS:   # garde-fou memoire : les images qui couvrent le plus de pixels de la tuile
+        areas = {k: int((lab_k == k).sum()) for k in win}
+        win = sorted(win, key=lambda k: -areas[k])[:MAX_LAYERS]
+    lab = np.full((th, tw), -1, np.int32)
+    for new_n, k in enumerate(win): lab[(lab_k == k) & anyc] = new_n
+    # pixels dont le gagnant a ete ecarte : repris par la meilleure image gardee qui les couvre (2e passe ci-dessous)
+    orphan = anyc & (lab < 0)
+    del best, lab_k
+    layers, vals, kept = [], [], win
+    for n, k in enumerate(win):
+        mapx, mapy = maps_of(k)
+        wgt, valid = weight_of(k, mapx, mapy)
+        if orphan.any():
+            take = orphan & valid; lab[take] = n; orphan &= ~take
         im = cv2.remap(loader(k), mapx, mapy, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(238, 238, 238)).astype(np.float32)
         im = np.clip(im * gains[k][None, None, :], 0, 255)
-        im[~valids[n]] = 238.0                                           # hors du disque : fond neutre (evite les halos du fondu)
-        layers.append(im); vals.append(valids[n])
-    del maps, weights
+        im[~valid] = 238.0                                               # hors du disque : fond neutre (evite les halos du fondu)
+        layers.append(im); vals.append(valid)
+        del mapx, mapy, wgt
+    anyc &= lab >= 0
+    del gx, gy
+    if not layers: return None
     masks = [((lab == n) & anyc).astype(np.float32) for n in range(len(layers))]
     if len(layers) > 1 and not a.no_seams:
         masks = seam_masks(layers, masks, vals, lab, anyc)
