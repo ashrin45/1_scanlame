@@ -179,6 +179,15 @@
       </select>
     </label>
     <label class="wide check"><input id="advanced" type="checkbox"> Fonctions en cours de validation : boutons « Fond blanc » et « Changer d'objectif » pendant la prise</label>
+    <label>Mise au point au verrouillage
+      <select id="focusmode"><option value="inf" selected>infini (oculaire à 0 dioptrie, recommandé)</option><option value="keep">garder la distance de l'autofocus</option></select>
+    </label>
+    <label>Compensation d'exposition
+      <select id="evcomp"><option value="-1">-1 IL</option><option value="-0.7">-0,7 IL</option><option value="-0.3">-0,3 IL</option><option value="0" selected>0</option><option value="0.3">+0,3 IL</option><option value="0.7">+0,7 IL</option></select>
+    </label>
+    <label class="wide">Photo pleine résolution (essai)
+      <button id="phototest" type="button" disabled>Prendre une photo d'essai et mesurer sa taille</button>
+    </label>
     <label>Profondeur (vis micrométrique)
       <select id="depth"><option value="off" selected>désactivée : image la plus nette à chaque arrêt</option><option value="on">fusion + plans navigables (en essai)</option></select>
     </label>
@@ -441,6 +450,35 @@ self.onmessage = async e => {
   if (LS.get('scanlame.zoommax') !== null) $('zoommax').value = LS.get('scanlame.zoommax');
   if (LS.get('scanlame.depth')) $('depth').value = LS.get('scanlame.depth');
   $('advanced').checked = LS.get('scanlame.advanced') === '1';
+  if (LS.get('scanlame.focusmode')) $('focusmode').value = LS.get('scanlame.focusmode');
+  $('focusmode').onchange = () => LS.set('scanlame.focusmode', $('focusmode').value);
+  if (LS.get('scanlame.evcomp')) $('evcomp').value = LS.get('scanlame.evcomp');
+  $('evcomp').onchange = async () => {
+    LS.set('scanlame.evcomp', $('evcomp').value);
+    if (!track) return;
+    const caps = track.getCapabilities ? track.getCapabilities() : {};
+    if (!caps.exposureCompensation) { say('Ce téléphone n\'expose pas la compensation d\'exposition au navigateur.', true); return; }
+    const v = Math.max(caps.exposureCompensation.min, Math.min(caps.exposureCompensation.max, +$('evcomp').value));
+    try { await track.applyConstraints({ advanced: [{ exposureCompensation: v }] }); log(`compensation d'exposition ${v} IL`); say(`Compensation d'exposition ${v} IL.`); }
+    catch (e) { say('Compensation refusée : ' + e.message, true); }
+  };
+  // photo pleine resolution : ImageCapture.takePhoto (selon le telephone, bien au-dela de la 4K du flux)
+  $('phototest').onclick = async () => {
+    if (!track) return;
+    if (!window.ImageCapture) { say('ImageCapture absent de ce navigateur.', true); return; }
+    try {
+      const ic = new ImageCapture(track);
+      const pc = await ic.getPhotoCapabilities().catch(() => null);
+      if (pc) log(`photo : largeur ${pc.imageWidth?.min}..${pc.imageWidth?.max}, hauteur ${pc.imageHeight?.min}..${pc.imageHeight?.max}`);
+      const opts = pc && pc.imageWidth ? { imageWidth: pc.imageWidth.max, imageHeight: pc.imageHeight.max } : {};
+      const t0 = performance.now(); const blob = await ic.takePhoto(opts); const ms = Math.round(performance.now() - t0);
+      const bmp = await createImageBitmap(blob);
+      log(`photo d'essai : ${bmp.width} x ${bmp.height}, ${fmtMB(blob.size)}, ${ms} ms (flux ${video.videoWidth} x ${video.videoHeight})`);
+      say(`Photo d'essai : ${bmp.width} × ${bmp.height} px en ${ms} ms (le flux vidéo fait ${video.videoWidth} × ${video.videoHeight}).`);
+      bmp.close();
+      shots.push({ name: `${stamp()}_essai_${bmp.width}x${bmp.height}.jpg`, blob }); $('save').disabled = false; $('clear').disabled = false;
+    } catch (e) { log('photo d\'essai refusée : ' + e.message); say('Photo d\'essai refusée : ' + e.message, true); }
+  };
   $('advanced').onchange = () => { LS.set('scanlame.advanced', $('advanced').checked ? '1' : '0'); $('phase').classList.toggle('on', running && $('advanced').checked); };
   $('depth').onchange = () => LS.set('scanlame.depth', $('depth').value);
   $('zoommax').onchange = () => { LS.set('scanlame.zoommax', $('zoommax').value); const z = $('zoom'), lim = +$('zoommax').value; if (!z.disabled && track) { const caps = track.getCapabilities ? track.getCapabilities() : {}; if (caps.zoom) { z.max = lim > 0 ? Math.min(caps.zoom.max, lim) : caps.zoom.max; if (+z.value > +z.max) { z.value = z.max; z.dispatchEvent(new Event('input')); } } } };
@@ -598,7 +636,7 @@ self.onmessage = async e => {
     const st = track.getSettings(), caps = track.getCapabilities ? track.getCapabilities() : {};
     $('res').textContent = `${video.videoWidth} × ${video.videoHeight}`;
     $('start').textContent = 'Caméra active'; $('start').disabled = true;
-    $('shoot').disabled = false; $('lockbtn').disabled = false; $('off').disabled = false; $('shoot').classList.add('ready'); setState('ready');
+    $('shoot').disabled = false; $('lockbtn').disabled = false; $('off').disabled = false; $('phototest').disabled = false; $('shoot').classList.add('ready'); setState('ready');
     log(`flux ${video.videoWidth}x${video.videoHeight} @${st.frameRate || '?'} fps, piste "${track.label}"`);
     log(`capacités : focus ${JSON.stringify(caps.focusMode || null)}, expo ${JSON.stringify(caps.exposureMode || null)}, balance ${JSON.stringify(caps.whiteBalanceMode || null)}, zoom ${caps.zoom ? caps.zoom.min + '..' + caps.zoom.max : 'non'}`);
     log(`plages : focusDistance ${JSON.stringify(caps.focusDistance || null)}, exposureTime ${JSON.stringify(caps.exposureTime || null)}, iso ${JSON.stringify(caps.iso || null)}, colorTemperature ${JSON.stringify(caps.colorTemperature || null)}`);
@@ -630,7 +668,7 @@ self.onmessage = async e => {
     const caps = track.getCapabilities ? track.getCapabilities() : {}, s = track.getSettings();
     const inRange = (v, c) => v != null && c && typeof c.min === 'number' && typeof c.max === 'number' && c.max > c.min && v >= c.min && v <= c.max && v > 0;
     const groups = on ? [
-      ['mise au point', caps.focusMode?.includes('manual') ? { focusMode: 'manual', ...(inRange(s.focusDistance, caps.focusDistance) ? { focusDistance: s.focusDistance } : {}) } : null],
+      ['mise au point', caps.focusMode?.includes('manual') ? { focusMode: 'manual', ...(($('focusmode').value === 'inf' && caps.focusDistance && typeof caps.focusDistance.max === 'number' && caps.focusDistance.max > 0) ? { focusDistance: caps.focusDistance.max } : inRange(s.focusDistance, caps.focusDistance) ? { focusDistance: s.focusDistance } : {}) } : null],
       ['exposition', caps.exposureMode?.includes('manual') ? { exposureMode: 'manual', ...(inRange(s.exposureTime, caps.exposureTime) ? { exposureTime: s.exposureTime } : {}), ...(inRange(s.iso, caps.iso) ? { iso: s.iso } : {}) } : null],
       ['balance des blancs', caps.whiteBalanceMode?.includes('manual') ? { whiteBalanceMode: 'manual', ...(inRange(s.colorTemperature, caps.colorTemperature) ? { colorTemperature: s.colorTemperature } : {}) } : null],
     ] : [
@@ -651,11 +689,21 @@ self.onmessage = async e => {
       }
     }
     log('réglages après verrouillage : ' + JSON.stringify(track.getSettings()));
+    showExposure();
     if (!ok.length) { say('Verrouillage refusé par le téléphone (' + ko.join(', ') + ').', true); return false; }
     $('lock').textContent = on ? (ko.length ? 'verrou partiel : ' + ok.join(', ') : 'AF/AE verrouillés') : 'AF/AE auto';
     if (on && ko.length) say('Verrouillé : ' + ok.join(', ') + '. Refusé : ' + ko.join(', ') + '.', true);
     return true;
   }
+  function showExposure() {
+    if (!track) return;
+    const st = track.getSettings(), parts = [];
+    if (st.iso) parts.push('ISO ' + st.iso);
+    if (st.exposureTime) parts.push('1/' + Math.round(10000 / st.exposureTime) + ' s');   // exposureTime en 1/10000 s
+    if (st.focusDistance != null && st.focusMode === 'manual') parts.push('MAP ' + (st.focusDistance >= 100 ? '∞' : st.focusDistance + ' m'));
+    $('res').textContent = `${video.videoWidth} × ${video.videoHeight}` + (parts.length ? ' · ' + parts.join(' · ') : '');
+  }
+  setInterval(() => { if (track && !running) showExposure(); }, 3000);
   $('lockbtn').onclick = async () => {
     const on = $('lockbtn').getAttribute('aria-pressed') !== 'true';
     if (await lockAll(on)) { $('lockbtn').setAttribute('aria-pressed', String(on)); say(on ? 'Réglages figés. Tu peux lancer la série.' : 'Réglages automatiques rétablis.'); }
@@ -994,7 +1042,7 @@ self.onmessage = async e => {
     stream = null; track = null; video.srcObject = null;
     try { await wakeLock?.release(); } catch (_) {} wakeLock = null;
     $('res').textContent = 'caméra arrêtée'; $('lock').textContent = 'AF/AE auto'; $('lockbtn').setAttribute('aria-pressed', 'false'); $('lockbtn').disabled = true;
-    $('zoom').disabled = true; $('shoot').disabled = true; $('shoot').classList.remove('ready'); $('off').disabled = true;
+    $('zoom').disabled = true; $('shoot').disabled = true; $('shoot').classList.remove('ready'); $('off').disabled = true; $('phototest').disabled = true;
     $('start').disabled = false; $('start').textContent = 'Démarrer la caméra';
     setState('off'); shutter.className = 'camera'; shutter.disabled = false;
     log('caméra éteinte'); say('Caméra éteinte. Touche le bouton violet pour la rallumer.');
