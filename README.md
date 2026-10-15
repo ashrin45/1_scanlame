@@ -63,6 +63,10 @@ reglage de flux et au zoom numerique ; la visionneuse affiche alors une barre (�
   lame d'ensemble dans les reglages. Le detail est recale par points dans la mosaique d'ensemble (tools/link_child.py)
   et s'affiche en calque a sa place dans la visionneuse parente (bouton « Details ») ; sans recalage possible il
   reste accessible par lien.
+- Reprise ciblee : dans les reglages, « Completer une lame existante », puis filmer seulement les zones a reprendre
+  (le calque « Qualite » de la visionneuse montre les trous). La prise est assemblee seule, recalee par points dans
+  la lame existante (tools/merge_retake.py) et ne remplit que ce qui manquait, avec un fondu a la frontiere. La lame
+  garde son nom et son adresse ; si le recalage echoue, la reprise est publiee a part.
 - File d'attente hors ligne : si le reseau tombe, les morceaux et la cloture sont gardes dans le telephone
   (IndexedDB) et repartent seuls au retour du reseau, au chargement de la page ou avec « Envoyer maintenant ».
 

@@ -148,6 +148,9 @@
     <label class="wide">Lame d'ensemble (si cette prise est un détail à plus fort grossissement)
       <select id="parent"><option value="">Aucune : nouvelle lame</option></select>
     </label>
+    <label class="wide">Compléter une lame existante (reprise des zones manquantes, même objectif)
+      <select id="complete"><option value="">Non : nouvelle lame</option></select>
+    </label>
     <label class="wide">Échelle pour cet objectif : µm par pixel du flux (optionnel)
       <input id="umpx" type="number" inputmode="decimal" step="0.001" min="0" placeholder="ex. 0.085 (mesuré avec un micromètre objet, à ce zoom)">
     </label>
@@ -409,7 +412,13 @@ self.onmessage = async e => {
     try {
       const r = await fetch(new URL('lames/lames.json', location.href), { cache: 'no-store' }); if (!r.ok) return;
       const list = await r.json();
-      for (const l of list.filter(l => !l.parent).reverse()) { const o = document.createElement('option'); o.value = l.slug; o.textContent = `${l.title}${l.objective ? ' (obj. ' + l.objective + ')' : ''}`; $('parent').appendChild(o); }
+      for (const l of list.slice().reverse()) {
+        const label = `${l.title}${l.objective ? ' (obj. ' + l.objective + ')' : ''}`;
+        if (!l.parent) { const o = document.createElement('option'); o.value = l.slug; o.textContent = label; $('parent').appendChild(o); }
+        const o2 = document.createElement('option'); o2.value = l.slug; o2.textContent = label; $('complete').appendChild(o2);
+      }
+      $('parent').onchange = () => { if ($('parent').value) $('complete').value = ''; };
+      $('complete').onchange = () => { if ($('complete').value) { $('parent').value = ''; const l = list.find(x => x.slug === $('complete').value); if (l && l.objective) { $('objective').value = l.objective; $('objective').dispatchEvent(new Event('change')); } } };
       log(`${list.length} lame(s) publiée(s) connues`);
     } catch (e) { log('liste des lames indisponible : ' + e.message); }
   })();
@@ -809,7 +818,7 @@ self.onmessage = async e => {
     tracker.postMessage({ type: 'reset' }); trackerBusy = 0; placed = [];
     sendMask(); drawMap(null); $('trk').className = ''; $('trkt').textContent = 'suivi en cours';
     const mode = $('mode').value;
-    log(`=== série ${seriesId} (${mode}) « ${$('title').value.trim() || 'sans nom'} », ${$('stain').value}, objectif ${$('objective').value}${$('parent').value ? ', détail de ' + $('parent').value : ''} : débit ${$('bitrate').value} Mbit/s, serveur ${$('upload').value.trim() || 'aucun'}, intervalle ${$('interval').value} ms, taille ${$('scale').value}, qualité ${$('quality').value}, zoom ${$('zoom').value}, flux ${video.videoWidth}x${video.videoHeight}`);
+    log(`=== série ${seriesId} (${mode}) « ${$('title').value.trim() || 'sans nom'} », ${$('stain').value}, objectif ${$('objective').value}${$('parent').value ? ', détail de ' + $('parent').value : ''}${$('complete').value ? ', reprise de ' + $('complete').value : ''} : débit ${$('bitrate').value} Mbit/s, serveur ${$('upload').value.trim() || 'aucun'}, intervalle ${$('interval').value} ms, taille ${$('scale').value}, qualité ${$('quality').value}, zoom ${$('zoom').value}, flux ${video.videoWidth}x${video.videoHeight}`);
     if (mode === 'video') { if (!startVideo()) { running = false; return; } }
     else timer = setInterval(tick, +$('interval').value);
     $('shoot').textContent = 'Arrêter'; $('shoot').classList.add('stop'); $('rec').classList.add('on'); setState('recording');
@@ -834,7 +843,7 @@ self.onmessage = async e => {
 
   // ---------- export ----------
   const seriesMeta = () => ({ series: seriesId, title: $('title').value.trim() || null, um_per_px: +$('umpx').value > 0 ? +$('umpx').value : null,
-      stain: $('stain').value, objective: $('objective').value, sample: $('sample').value.trim() || null, comment: $('comment').value.trim() || null, parent: $('parent').value || null,
+      stain: $('stain').value, objective: $('objective').value, sample: $('sample').value.trim() || null, comment: $('comment').value.trim() || null, parent: $('parent').value || null, complete: $('complete').value || null,
       captured: new Date().toISOString(), mode: $('mode').value, count: shots.length, interval_ms: +$('interval').value, sample_ms: 250, position_unit: 'px of the camera stream', bitrate_mbps: +$('bitrate').value, scale: +$('scale').value, width: video.videoWidth, height: video.videoHeight, zoom: $('zoom').value, userAgent: navigator.userAgent,
       frames: Object.values(frameInfo).map(f => ({ name: f.name, kind: f.status === 'sample' ? 'sample' : 'photo', t_ms: Math.round(f.t), x: f.x == null ? null : Math.round(f.x), y: f.y == null ? null : Math.round(f.y), score: f.score == null ? null : +f.score.toFixed(3), track: f.track, enc_ms: f.encMs || null })) });
   const download = (blob, name) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 30000); };

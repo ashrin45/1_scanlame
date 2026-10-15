@@ -10,10 +10,12 @@ import cv2, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from publish_lame import LAMES, load_lame, save_lame, write_pages, write_gallery
 
-def reg_image(slug, j, max_side=3000):
-    """Image reduite de la lame (pano_reg.jpg, sinon reconstruite depuis les tuiles) + son echelle par rapport a la pleine resolution."""
+def reg_image(slug, j, max_side=3000, full=False):
+    """Image reduite de la lame (pano_reg.jpg, sinon reconstruite depuis les tuiles) + son echelle par rapport a la pleine resolution.
+    full=True : pleine resolution reconstruite depuis les tuiles."""
     p = os.path.join(LAMES, slug, 'pano_reg.jpg')
-    if os.path.isfile(p):
+    if full: max_side = 10 ** 9
+    if os.path.isfile(p) and not full:
         im = cv2.imread(p); return im, im.shape[1] / j['width']
     W, H, T, maxlvl = j['width'], j['height'], j['tile'], j['maxlvl']
     lvl = maxlvl

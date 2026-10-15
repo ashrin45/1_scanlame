@@ -89,6 +89,7 @@ def write_pages(slug):
     meta += f'<span><b>{W} × {H}</b> px</span><span><b>{j["maxlvl"] + 1}</b> niveaux de zoom</span>'
     meta += f'<span>{j["um_per_px"]:.4g} µm/px</span>' if j.get('um_per_px') else '<span>échelle non calibrée</span>'
     if j.get('zstack'): meta += f'<span><b>{j["zstack"]}</b> plans de profondeur</span>'
+    if j.get('retakes'): meta += f'<span>complétée <b>{j["retakes"]}</b> fois</span>'
     children = []
     for c in j.get('children') or []:
         cj = load_lame(c['slug'])
@@ -169,7 +170,8 @@ def main():
              captured=captured or old.get('captured') or datetime.date.today().strftime('%d/%m/%Y'),
              parent=layout.get('parent') or old.get('parent'), parent_transform=old.get('parent_transform'),
              children=old.get('children') or [], quality=layout.get('quality'),
-             zstack=len(zpaths), zstack_tiles=sorted(zkeys) if zpaths else None)
+             retakes=layout.get('retakes') or old.get('retakes') or 0, retake_series=layout.get('retake_series') or old.get('retake_series') or [],
+             zstack=len(zpaths) if zpaths else (old.get('zstack') or 0), zstack_tiles=sorted(zkeys) if zpaths else old.get('zstack_tiles'))
     save_lame(slug, j)
     write_pages(slug)
     # la lame parente (si deja publiee) affiche ses enfants : on la regenere aussi
