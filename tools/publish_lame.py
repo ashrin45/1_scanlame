@@ -90,6 +90,8 @@ def write_pages(slug):
     meta += f'<span>{j["um_per_px"]:.4g} µm/px</span>' if j.get('um_per_px') else '<span>échelle non calibrée</span>'
     if j.get('zstack'): meta += f'<span><b>{j["zstack"]}</b> plans de profondeur</span>'
     if j.get('retakes'): meta += f'<span>complétée <b>{j["retakes"]}</b> fois</span>'
+    logs = sorted(os.listdir(os.path.join(out, 'journaux'))) if os.path.isdir(os.path.join(out, 'journaux')) else []
+    if logs: meta += '<span>journaux : ' + ' '.join(f'<a href="journaux/{html.escape(l)}">{"téléphone" if "telephone" in l else "assemblage"} {html.escape(l[:8])}</a>' for l in logs) + '</span>'
     children = []
     for c in j.get('children') or []:
         cj = load_lame(c['slug'])

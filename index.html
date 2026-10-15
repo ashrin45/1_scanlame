@@ -80,6 +80,8 @@
   #queue.on { display: inline-block; }
   select, input[type=text], input[type=url], input[type=number] { background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 10px; padding: 12px 10px; font: inherit; font-size: 16px; min-height: 50px; width: 100%; }
   .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  label.check { flex-direction: row; align-items: center; gap: 10px; color: var(--fg); }
+  label.check input { width: 22px; height: 22px; accent-color: var(--accent); margin: 0; flex: 0 0 auto; }
   #save, #clear { flex: 1 1 auto; }
   #mem { color: var(--muted); font-size: 12px; width: 100%; }
   h3 { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin: 18px 0 8px; }
@@ -189,6 +191,7 @@
     <label class="wide">Jeton d'accès
       <input id="token" type="text" placeholder="le même que sur le serveur" autocomplete="off">
     </label>
+    <label class="wide check"><input id="sendlog" type="checkbox" checked> Joindre le journal du téléphone à la prise (mise au point de l'application)</label>
   </div>
   <h3>File d'attente (envois en panne de réseau)</h3>
   <div class="row">
@@ -407,6 +410,9 @@ self.onmessage = async e => {
   $('umpx').onchange = () => LS.set('scanlame.umpx.' + $('objective').value, $('umpx').value.trim());
   $('objective').onchange = () => { LS.set('scanlame.objective', $('objective').value); loadUmpx(); };
   $('stain').onchange = () => LS.set('scanlame.stain', $('stain').value);
+  if (LS.get('scanlame.sendlog') === '0') $('sendlog').checked = false;
+  $('sendlog').onchange = () => LS.set('scanlame.sendlog', $('sendlog').checked ? '1' : '0');
+  const journalForServer = () => $('sendlog').checked ? lines.slice(-1500).join('\n') : undefined;
   // lames deja publiees (pour rattacher un detail a sa lame d'ensemble) : liste lames/lames.json a cote de cette page
   (async () => {
     try {
@@ -785,8 +791,9 @@ self.onmessage = async e => {
           say('Envoi en cours, garde la page ouverte.');
           for (let i = 0; i < 1200 && st.pending > 0; i++) { setState('sending', st); await new Promise(r => setTimeout(r, 500)); }
           setState('sending', st);
-          const meta = { ...st.meta, series: st.id, video_mime: st.rec.mimeType, chunks: st.chunkSeq, failed: st.failed.slice() };
           if (st.failed.length) log(`ATTENTION ${st.failed.length} morceau(x) jamais envoyé(s) : ${st.failed.join(', ')}`);
+          log(`vidéo ${st.id} : ${st.chunkSeq} morceaux (${fmtMB(st.bytes)}), ${st.sent} envoyés, ${st.queued} en file, ${sampleSeq} échantillons de position`);
+          const meta = { ...st.meta, series: st.id, video_mime: st.rec.mimeType, chunks: st.chunkSeq, failed: st.failed.slice(), journal: journalForServer() };
           if (st.queued) {
             // des morceaux attendent le reseau : la cloture part apres eux, depuis la file
             await enqueue({ kind: 'finish', meta, series: st.id, label: 'clôture ' + st.id });
@@ -799,7 +806,6 @@ self.onmessage = async e => {
               else throw new Error('HTTP ' + code); }
             catch (err) { log('clôture serveur échouée : ' + err.message); await enqueue({ kind: 'finish', meta, series: st.id, label: 'clôture ' + st.id }); say('Clôture impossible pour le moment, gardée en file d\'attente : ' + err.message, true); }
           }
-          log(`vidéo ${st.id} : ${st.chunkSeq} morceaux (${fmtMB(st.bytes)}), ${st.sent} envoyés, ${sampleSeq} échantillons de position`);
         } else {
           const blob = new Blob(st.chunks, { type: st.rec.mimeType });
           shots.push({ name: `${st.id}.${ext}`, blob });

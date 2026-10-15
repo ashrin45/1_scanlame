@@ -100,6 +100,11 @@ for s in series:
         for p in photos:
             get(f'{s}/photos/{p}', os.path.join(d, 'photos', p)); paths.append(f'{s}/photos/{p}')
         print(f'  photos : {len(photos)}')
+    if meta.get('journal'):
+        open(os.path.join(d, 'journal-telephone.txt'), 'w', encoding='utf-8').write(meta['journal'])
+        tail = meta['journal'].strip().split('\n')
+        print(f'  journal du téléphone : {len(tail)} lignes, dernières :'); print('\n'.join('    ' + l for l in tail[-12:]))
+        meta['journal'] = None; json.dump(meta, open(os.path.join(d, 'serie.json'), 'w'))
     vid = os.path.join(d, f'video.{ext}') if chunks else None
     if (not chunks and not photos) or (vid and os.path.getsize(vid) < 200_000):
         print('  vide ou trop courte : supprimée'); rm(paths); continue
@@ -129,6 +134,12 @@ for s in series:
     rc = subprocess.run(cmd).returncode
     if rc != 0:
         print('  ÉCHEC de la publication'); put_text(f'{s}/failed.txt', 'publication'); continue
+    # journaux publies a cote de la lame (telephone + assemblage), le temps de la mise au point
+    logs = os.path.join(ROOT, 'lames', slug, 'journaux'); os.makedirs(logs, exist_ok=True)
+    stampf = s.replace('lame_', '')
+    for src, dst in ((os.path.join(d, 'journal-telephone.txt'), f'{stampf}-telephone.txt'), (os.path.join(res if not res.endswith('merged') else os.path.dirname(res), 'pipeline.log'), f'{stampf}-assemblage.txt')):
+        if os.path.isfile(src): shutil.copyfile(src, os.path.join(logs, dst))
+    subprocess.run([sys.executable, '-c', 'import sys; sys.path.insert(0, sys.argv[1]); from publish_lame import write_pages; write_pages(sys.argv[2])', os.path.join(ROOT, 'tools'), slug])
     parent = meta.get('parent')
     if parent:
         if os.path.isfile(os.path.join(ROOT, 'lames', parent, 'lame.json')):
