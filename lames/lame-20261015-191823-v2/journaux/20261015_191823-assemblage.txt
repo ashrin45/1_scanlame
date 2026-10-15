@@ -1,0 +1,24 @@
+[    0.0s] extraction video.mp4 à 4.0 img/s
+[   25.5s] segment 1/1 : objectif x100, 712 images entre 0 s et 178 s
+[   25.5s] 712 images candidates
+[   32.0s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[   32.0s] netteté médiane 4.3, seuil 3.0
+[   32.0s] 177 images retenues (nettes, non redondantes)
+[   32.0s] pas de champ vide filmé : vignettage estimé par lissage
+[   34.4s] aberration chromatique : échelle R 1.0005, B 1.0005
+[   35.0s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 1 %)
+[   59.1s] prétraitement terminé, 177 images, recalage à 900 x 1200
+[   69.2s] points SIFT : 383 par image en moyenne
+[   69.2s] 1702 paires à tester
+[   71.7s] 122 paires valides
+[  102.8s] 532 paire(s) recalée(s) par corrélation d'images (champs répétitifs ou pauvres en points)
+[  103.2s] distorsion radiale : aucune correction (résidu 0.98 px, pas d'amélioration nette)
+[  103.2s] composantes : [177] -> on assemble la n°0 : 177 images
+[  112.1s] ajustement global : 32993 correspondances, 176 images
+[  113.1s] compensation photométrique : écart de gain max 4.4 %
+[  113.1s] recalage : erreur médiane 0.50 px (échelle recalage), max 5.36
+[  116.2s] mosaïque réduite d'un facteur 0.96 pour tenir dans 32000 px
+[  116.2s] mosaïque 12946 x 32000
+[  390.6s] composition : 112 tuiles en 267 s
+[  395.4s] qualité : note A (aucune remarque)
+[  395.4s] terminé : pano.jpg 12946 x 32000 , 177 images utilisées sur 177
