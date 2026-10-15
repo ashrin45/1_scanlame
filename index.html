@@ -471,13 +471,16 @@ self.onmessage = async e => {
       const pc = await ic.getPhotoCapabilities().catch(() => null);
       if (pc) log(`photo : largeur ${pc.imageWidth?.min}..${pc.imageWidth?.max}, hauteur ${pc.imageHeight?.min}..${pc.imageHeight?.max}`);
       const opts = pc && pc.imageWidth ? { imageWidth: pc.imageWidth.max, imageHeight: pc.imageHeight.max } : {};
-      const t0 = performance.now(); const blob = await ic.takePhoto(opts); const ms = Math.round(performance.now() - t0);
+      const t0 = performance.now(); let blob;
+      try { blob = await ic.takePhoto(opts); }
+      catch (e1) { log(`takePhoto avec taille max refusé (${e1.name}: ${e1.message}), nouvel essai sans option`); blob = await ic.takePhoto(); }
+      const ms = Math.round(performance.now() - t0);
       const bmp = await createImageBitmap(blob);
       log(`photo d'essai : ${bmp.width} x ${bmp.height}, ${fmtMB(blob.size)}, ${ms} ms (flux ${video.videoWidth} x ${video.videoHeight})`);
       say(`Photo d'essai : ${bmp.width} × ${bmp.height} px en ${ms} ms (le flux vidéo fait ${video.videoWidth} × ${video.videoHeight}).`);
       bmp.close();
       shots.push({ name: `${stamp()}_essai_${bmp.width}x${bmp.height}.jpg`, blob }); $('save').disabled = false; $('clear').disabled = false;
-    } catch (e) { log('photo d\'essai refusée : ' + e.message); say('Photo d\'essai refusée : ' + e.message, true); }
+    } catch (e) { log(`photo d'essai refusée : ${e.name}: ${e.message}`); say(`Photo d'essai refusée (${e.name}) : ${e.message}`, true); }
   };
   $('advanced').onchange = () => { LS.set('scanlame.advanced', $('advanced').checked ? '1' : '0'); $('phase').classList.toggle('on', running && $('advanced').checked); };
   $('depth').onchange = () => LS.set('scanlame.depth', $('depth').value);
