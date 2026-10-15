@@ -438,7 +438,7 @@ self.onmessage = async e => {
   $('zoommax').onchange = () => { LS.set('scanlame.zoommax', $('zoommax').value); const z = $('zoom'), lim = +$('zoommax').value; if (!z.disabled && track) { const caps = track.getCapabilities ? track.getCapabilities() : {}; if (caps.zoom) { z.max = lim > 0 ? Math.min(caps.zoom.max, lim) : caps.zoom.max; if (+z.value > +z.max) { z.value = z.max; z.dispatchEvent(new Event('input')); } } } };
   if (LS.get('scanlame.sendlog') === '0') $('sendlog').checked = false;
   $('sendlog').onchange = () => LS.set('scanlame.sendlog', $('sendlog').checked ? '1' : '0');
-  const journalForServer = () => $('sendlog').checked ? lines.slice(-1500).join('\n') : undefined;
+  const journalForServer = () => !$('sendlog').checked ? undefined : lines.length <= 1600 ? lines.join('\n') : lines.slice(0, 150).concat([`[... ${lines.length - 1550} lignes omises ...]`], lines.slice(-1400)).join('\n');
   // lames deja publiees (pour rattacher un detail a sa lame d'ensemble) : liste lames/lames.json a cote de cette page
   (async () => {
     try {

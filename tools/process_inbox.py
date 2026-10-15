@@ -128,7 +128,9 @@ while True:
     # --- segments d'objectif (changement d'objectif pendant la prise) et zones distinctes (composantes) ---
     def run_pipeline(outdir, extra):
         os.makedirs(outdir, exist_ok=True)
-        if not os.path.isdir(os.path.join(outdir, 'frames')): os.symlink(os.path.join(res, 'frames'), os.path.join(outdir, 'frames'))
+        link = os.path.join(outdir, 'frames')
+        if os.path.islink(link) and not os.path.isdir(link): os.unlink(link)
+        if not os.path.isdir(link): os.symlink(os.path.abspath(os.path.join(res, 'frames')), link)
         return subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'pipeline.py'), d, '--out', outdir] + extra).returncode == 0
     def layout_of(r):
         try: return json.load(open(os.path.join(r, 'layout.json')))

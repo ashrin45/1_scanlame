@@ -125,6 +125,8 @@ for i in range(1, len(smalls)):
         else:
             v = (1.0, 0.0)
     vecs.append(v); moves.append(math.hypot(*v))
+if not videos:   # photos a intervalle : pas de pile de profondeur, chaque photo est un champ
+    moves = [1.0] * len(moves); vecs = [(1.0, 0.0)] * len(vecs)
 del smalls
 
 # ---- piles de profondeur : suites d'images immobiles dont la nettete varie (vis micrometrique tournee) ----
@@ -346,6 +348,19 @@ sharp_paths = [it['path'] for it in sorted(sel, key=lambda it: -it['sharp'])[:4]
 chroma = chroma_estimate(sharp_paths)
 log(f"aberration chromatique : échelle R {chroma['r']:.4f}, B {chroma['b']:.4f}")
 
+def white_point(img, mask):
+    """Blanc d'une image : moyenne par canal des memes pixels, les plus lumineux du champ (fond), et non un
+    percentile par canal (qui melange des pixels differents et teinte les champs charges en cellules)."""
+    lum = img[..., 0] * 0.114 + img[..., 1] * 0.587 + img[..., 2] * 0.299
+    m = mask > 0
+    if m.sum() < 100: return np.array([238.0, 238.0, 238.0])
+    thr = np.percentile(lum[m], 97)
+    sel_ = m & (lum >= thr)
+    return np.array([img[..., c][sel_].mean() for c in range(3)])
+
+WHITE = {}
+def white_of(path): return WHITE[path]
+
 def preprocess(path, reg_size):
     im = cv2.imread(path)
     H_, W_ = im.shape[:2]
@@ -369,7 +384,7 @@ def preprocess(path, reg_size):
         bg = cv2.resize(bgs, (crop.shape[1], crop.shape[0]), interpolation=cv2.INTER_LINEAR)
     ref = np.array([np.percentile(bg[..., c][mask > 0], 90) for c in range(3)])
     corr = np.clip(f32 * (ref / (bg + 1e-6)), 0, 255)
-    wb = np.array([np.percentile(corr[..., c][mask > 0], 95) for c in range(3)])
+    wb = white_of(path) if path in WHITE else white_point(corr, mask)
     corr = np.clip(corr * (238.0 / np.maximum(wb, 1)), 0, 255).astype(np.uint8)
     corr[mask == 0] = 0
     s = min(1.0, reg_size / max(corr.shape[:2]))
@@ -379,7 +394,7 @@ def preprocess(path, reg_size):
     R = 0.5 * math.hypot(W_, H_)                  # rayon de normalisation de la distorsion
     return corr, mask, reg, rmask, s, (x0, y0), center, R
 
-def preprocess_plane(path, crop, mask):
+def preprocess_plane(path, crop, mask, edf_path=None):
     """Meme chaine que preprocess, mais avec la decoupe et le masque de l'image EDF (meme geometrie)."""
     im = cv2.imread(path)
     H_, W_ = im.shape[:2]
@@ -400,10 +415,31 @@ def preprocess_plane(path, crop, mask):
         bg = cv2.resize(bgs, (w, h), interpolation=cv2.INTER_LINEAR)
     ref = np.array([np.percentile(bg[..., c][mask > 0], 90) for c in range(3)])
     corr = np.clip(f32 * (ref / (bg + 1e-6)), 0, 255)
-    wb = np.array([np.percentile(corr[..., c][mask > 0], 95) for c in range(3)])
+    wb = WHITE.get(edf_path) if edf_path else None
+    if wb is None: wb = white_point(corr, mask)
     corr = np.clip(corr * (238.0 / np.maximum(wb, 1)), 0, 255).astype(np.uint8)
     corr[mask == 0] = 0
     return corr
+
+# --- balance des blancs : estimee sur chaque image (reduite), puis lissee sur les images voisines dans le temps ---
+_w = []
+for it in sel:
+    im4 = cv2.imread(it['path'], cv2.IMREAD_REDUCED_COLOR_4)
+    m4 = disc_mask(im4)
+    f4 = im4.astype(np.float32)
+    if flat is not None:
+        bg4 = cv2.resize(flat, (im4.shape[1], im4.shape[0]), interpolation=cv2.INTER_AREA)
+        ref4 = np.array([np.percentile(bg4[..., c][m4 > 0], 90) for c in range(3)])
+        f4 = np.clip(f4 * (ref4 / (bg4 + 1e-6)), 0, 255)
+    _w.append(white_point(f4, m4))
+_w = np.array(_w)
+k_ = min(9, len(_w) if len(_w) % 2 else len(_w) - 1)
+for i_ in range(len(_w)):
+    lo_, hi_ = max(0, i_ - k_ // 2), min(len(_w), i_ + k_ // 2 + 1)
+    WHITE[sel[i_]['path']] = np.median(_w[lo_:hi_], axis=0)
+if len(_w) > 1:
+    drift = float(np.max(_w.max(0) / np.maximum(_w.min(0), 1) - 1)) * 100
+    log(f'balance des blancs : blanc estimé par image, lissé sur {k_} images (variation max {drift:.0f} %)')
 
 full_dir = os.path.join(out, 'full'); os.makedirs(full_dir, exist_ok=True)
 regs, rmasks, scales, offsets, centers, Rs = [], [], [], [], [], []
@@ -414,7 +450,7 @@ for i, it in enumerate(sel):
     regs.append(reg); rmasks.append(rmask); scales.append(s); offsets.append(off); centers.append(center); Rs.append(R)
     it['crop'] = [int(off[0]), int(off[1]), int(corr.shape[1]), int(corr.shape[0])]
     for z, pp in enumerate(it.get('planes') or []):
-        cv2.imwrite(os.path.join(full_dir, f'{i:04d}_z{z}.jpg'), preprocess_plane(pp, it['crop'], mask), [cv2.IMWRITE_JPEG_QUALITY, 97])
+        cv2.imwrite(os.path.join(full_dir, f'{i:04d}_z{z}.jpg'), preprocess_plane(pp, it['crop'], mask, it['path']), [cv2.IMWRITE_JPEG_QUALITY, 97])
     del corr, mask
 N = len(regs)
 log('prétraitement terminé,', N, 'images, recalage à', regs[0].shape[1], 'x', regs[0].shape[0])
