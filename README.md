@@ -32,7 +32,7 @@ Mise en place, une fois :
    desactiver « Enforce JWT verification », secret SCANLAME_TOKEN = jeton de la page.
 2. GitHub (ce depot) : secrets SUPABASE_URL (https://xxxx.supabase.co) et SUPABASE_SERVICE_KEY (cle service_role).
 3. Page de capture : URL du serveur = https://xxxx.supabase.co/functions/v1/scanlame, jeton = SCANLAME_TOKEN.
-Le bucket « series » est cree automatiquement. Les prises sont supprimees du bucket une fois publiees.
+Le bucket « series » est cree automatiquement. Les prises publiees restent 60 jours dans le bucket (archive brute, plan Pro 100 Go), nettoyage automatique au-dela de 80 Go.
 Onglet Actions > « Assemblage des prises » > Run workflow pour lancer sans attendre le prochain quart d'heure.
 
 ## Assemblage (tools/pipeline.py)

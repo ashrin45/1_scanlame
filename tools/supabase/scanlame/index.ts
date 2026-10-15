@@ -44,7 +44,7 @@ Deno.serve(async (req) => {
         }
       }
     } catch (_) { /* bucket absent ou vide */ }
-    return json({ ok: true, service: "scanlame", bucket: BUCKET, used_bytes: used, series, limit_bytes: 1073741824 });
+    return json({ ok: true, service: "scanlame", bucket: BUCKET, used_bytes: used, series, limit_bytes: 107374182400 });   // plan Pro : 100 Go inclus
   }
 
   const token = Deno.env.get("SCANLAME_TOKEN") || "";

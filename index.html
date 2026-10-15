@@ -996,7 +996,7 @@ self.onmessage = async e => {
     if (!isSupabase()) { $('storage').textContent = ''; return; }
     try {
       const r = await fetch(serverUrl(), { cache: 'no-store' }); const j = await r.json();
-      if (j.used_bytes != null) { const pct = Math.round(100 * j.used_bytes / j.limit_bytes); $('storage').textContent = `Stockage serveur : ${fmtMB(j.used_bytes)} sur ${fmtMB(j.limit_bytes)} (${pct} %), ${j.series} prise(s). Les prises publiées sont gardées 3 jours, nettoyées plus tôt au-delà de 800 Mo.`; $('storage').style.color = pct > 85 ? 'var(--warn)' : 'var(--muted)'; }
+      if (j.used_bytes != null) { const pct = Math.round(100 * j.used_bytes / j.limit_bytes); $('storage').textContent = `Stockage serveur : ${fmtMB(j.used_bytes)} sur ${fmtMB(j.limit_bytes)} (${pct} %), ${j.series} prise(s). Les prises publiées sont gardées 60 jours (archive brute), nettoyées plus tôt au-delà de 80 Go.`; $('storage').style.color = pct > 85 ? 'var(--warn)' : 'var(--muted)'; }
       else $('storage').textContent = 'Stockage serveur : inconnu (fonction à redéployer)';
     } catch (_) { $('storage').textContent = 'Stockage serveur : injoignable'; }
   }
