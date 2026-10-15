@@ -1,9 +1,9 @@
 {
  "title": "lame_20261015_093508",
- "width": 3960,
- "height": 13354,
- "fields": 20,
- "tiles": 302,
+ "width": 3021,
+ "height": 8773,
+ "fields": 16,
+ "tiles": 160,
  "tile": 512,
  "maxlvl": 14,
  "um_per_px": null,
@@ -18,25 +18,25 @@
  "quality": {
   "grade": "B",
   "notes": [
-   "14 champ(s) placé(s) sans recalage fin"
+   "11 champ(s) placé(s) sans recalage fin"
   ],
   "frames": {
-   "candidates": 79,
+   "candidates": 44,
    "blurred": 0,
-   "selected": 28,
-   "used": 20,
-   "tracked_only": 14
+   "selected": 24,
+   "used": 16,
+   "tracked_only": 11
   },
-  "residual_px": 0.87,
-  "residual_max_px": 1.46,
+  "residual_px": 0.88,
+  "residual_max_px": 1.26,
   "holes": [],
   "holes_frac": 0.0,
-  "coverage_px": 34900878,
+  "coverage_px": 19501222,
   "coverage_mm2": null,
   "low_sharp_frac": 0.0,
-  "gain_spread_pct": 3.9,
+  "gain_spread_pct": 3.6,
   "flat_field": "estimé",
-  "k1": -0.034,
+  "k1": -0.03,
   "zstack_fields": 0,
   "zstack_levels": 0
  },
