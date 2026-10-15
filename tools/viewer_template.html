@@ -39,6 +39,8 @@ button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(
   font-family: var(--font-data); font-size: 12px; color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; pointer-events: none; font-variant-numeric: tabular-nums; }
 svg.fields polygon { fill: none; stroke: var(--accent); stroke-width: 1.5px; vector-effect: non-scaling-stroke; opacity: .9; }
 svg.fields text { fill: var(--accent); font: 500 40px var(--font-data); paint-order: stroke; stroke: var(--panel); stroke-width: 10px; opacity: .8; }
+#bar { position: absolute; right: max(14px, env(safe-area-inset-right, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px)); text-align: right; z-index: 5; pointer-events: none; font: 500 12px var(--font-data); color: #fff; text-shadow: 0 0 4px #000, 0 0 2px #000; }
+#bar i { display: block; margin-left: auto; height: 4px; background: #fff; border: 1px solid #000; border-top: 0; box-shadow: 0 0 3px #000; margin-bottom: 3px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>
@@ -53,11 +55,12 @@ svg.fields text { fill: var(--accent); font: 500 40px var(--font-data); paint-or
     <button id="fields" aria-pressed="false">Champs</button>
   </div>
 </header>
-<div id="viewer"><div class="hud" id="hud">zoom 1.00×</div></div>
+<div id="viewer"><div class="hud" id="hud">zoom 1.00×</div><div id="bar" hidden><i></i><span></span></div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
 <script>
 const W = __W__, H = __H__;
 const FIELDS = __FIELDS__;
+const UMPX = __UMPX__;   // micromètres par pixel de la mosaïque, null si non calibré
 const viewer = OpenSeadragon({
   id: 'viewer', showNavigationControl: false, showNavigator: true, navigatorPosition: 'TOP_RIGHT', navigatorSizeRatio: 0.16,
   gestureSettingsTouch: { pinchToZoom: true, flickEnabled: true }, maxZoomPixelRatio: 3, minZoomImageRatio: 0.6, visibilityRatio: 0.5,
@@ -84,10 +87,28 @@ let fieldsShown = false;
 const btn = document.getElementById('fields');
 btn.onclick = () => { fieldsShown = !fieldsShown; btn.setAttribute('aria-pressed', String(fieldsShown)); if (fieldsShown) viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(svg); };
 const hud = document.getElementById('hud');
-viewer.addHandler('zoom', () => {
+const bar = document.getElementById('bar');
+function updateBar() {
+  if (!UMPX) return;
+  const z = viewer.viewport.viewportToImageZoom(viewer.viewport.getZoom(true));   // pixels écran par pixel image
+  const umPerScreenPx = UMPX / z;
+  // longueur « ronde » (1, 2, 5 × 10^n µm) la plus proche de 120 px écran
+  const target = 120 * umPerScreenPx;
+  const p = Math.pow(10, Math.floor(Math.log10(target)));
+  const len = [1, 2, 5, 10].map(m => m * p).reduce((a, b) => Math.abs(b - target) < Math.abs(a - target) ? b : a);
+  bar.querySelector('i').style.width = (len / umPerScreenPx).toFixed(1) + 'px';
+  bar.querySelector('span').textContent = len >= 1000 ? (len / 1000).toLocaleString('fr-FR') + ' mm' : len.toLocaleString('fr-FR') + ' µm';
+  bar.hidden = false;
+}
+function updateHud() {
   const z = viewer.viewport.viewportToImageZoom(viewer.viewport.getZoom(true));
   hud.textContent = 'zoom ' + z.toFixed(2) + '× (1,00× = pixels natifs)';
-});
+  updateBar();
+}
+viewer.addHandler('zoom', updateHud);
+viewer.addHandler('animation', updateHud);
+viewer.addHandler('animation-finish', updateHud);
+viewer.addHandler('open', updateHud);
 </script>
 
 </body>

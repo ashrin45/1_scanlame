@@ -35,6 +35,19 @@ Mise en place, une fois :
 Le bucket « series » est cree automatiquement. Les prises sont supprimees du bucket une fois publiees.
 Onglet Actions > « Assemblage des prises » > Run workflow pour lancer sans attendre le prochain quart d'heure.
 
+## Assemblage (tools/pipeline.py)
+
+Extraction a 4 im/s, selection des images nettes et suffisamment deplacees, fusion de profondeur (EDF) sur les
+arrets de platine (tourner la vis micrometrique sans bouger : les plans nets sont fusionnes), flat-field mesure
+si la prise commence par 2 s de champ vide (sinon estime), correction chromatique radiale et distorsion de
+lentille (k1) estimees sur les points apparies, recalage global de toutes les images en meme temps (ajustement
+par moindres carres robustes), compensation photometrique entre images, composition par tuiles avec coeur du
+champ privilegie, coutures et fondu multibande. Dependances : ffmpeg, opencv-python-headless, numpy, scipy.
+
+Barre d'echelle : saisir dans les reglages de la page « µm par pixel du flux », mesure une fois avec un
+micrometre objet (ex. 100 µm sur l'image = 1180 px du flux -> 0.085). La valeur est propre a l'objectif, au
+reglage de flux et au zoom numerique ; la visionneuse affiche alors une barre (µm, mm) qui suit le zoom.
+
 ## Alternative : recevoir sur son PC (tools/server.py)
 
 `python tools\server.py --root D:\lames --token JETON` puis `cloudflared tunnel --url http://localhost:8000`

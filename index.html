@@ -122,6 +122,9 @@
     <label class="wide">Nom de la lame (pour la galerie)
       <input id="title" type="text" placeholder="ex. Gram, prélèvement vaginal, 14/10" autocomplete="off">
     </label>
+    <label class="wide">Échelle : µm par pixel du flux (optionnel)
+      <input id="umpx" type="number" inputmode="decimal" step="0.001" min="0" placeholder="ex. 0.085 (mesuré avec un micromètre objet, à ce zoom)">
+    </label>
     <label>Mode
       <select id="mode">
         <option value="video" selected>Vidéo (encodeur matériel)</option>
@@ -359,7 +362,8 @@ self.onmessage = async e => {
   window.addEventListener('unhandledrejection', e => log('ERREUR promesse ' + (e.reason && e.reason.message || e.reason)));
 
   const hdr = () => { const t = $('token').value.trim(); return t ? { 'X-Token': t } : {}; };
-  try { $('upload').value = localStorage.getItem('scanlame.url') || ''; $('token').value = localStorage.getItem('scanlame.token') || ''; } catch (_) {}
+  try { $('upload').value = localStorage.getItem('scanlame.url') || ''; $('token').value = localStorage.getItem('scanlame.token') || ''; $('umpx').value = localStorage.getItem('scanlame.umpx') || ''; } catch (_) {}
+  $('umpx').onchange = () => { try { localStorage.setItem('scanlame.umpx', $('umpx').value.trim()); } catch (_) {} };
   if (!$('upload').value && /\/capture\/?$/.test(location.pathname)) $('upload').value = location.origin;   // page servie par le Space : serveur pré-rempli
   $('upload').onchange = () => { try { localStorage.setItem('scanlame.url', $('upload').value.trim()); } catch (_) {} };
   $('token').onchange = () => { try { localStorage.setItem('scanlame.token', $('token').value.trim()); } catch (_) {} };
@@ -711,7 +715,7 @@ self.onmessage = async e => {
   $('shoot').onclick = () => { if (stopping) return; running ? stopSeries() : startSeries(); };
 
   // ---------- export ----------
-  const seriesMeta = () => ({ series: seriesId, title: $('title').value.trim() || null, mode: $('mode').value, count: shots.length, interval_ms: +$('interval').value, sample_ms: 250, position_unit: 'px of the camera stream', bitrate_mbps: +$('bitrate').value, scale: +$('scale').value, width: video.videoWidth, height: video.videoHeight, zoom: $('zoom').value, userAgent: navigator.userAgent,
+  const seriesMeta = () => ({ series: seriesId, title: $('title').value.trim() || null, um_per_px: +$('umpx').value > 0 ? +$('umpx').value : null, mode: $('mode').value, count: shots.length, interval_ms: +$('interval').value, sample_ms: 250, position_unit: 'px of the camera stream', bitrate_mbps: +$('bitrate').value, scale: +$('scale').value, width: video.videoWidth, height: video.videoHeight, zoom: $('zoom').value, userAgent: navigator.userAgent,
       frames: Object.values(frameInfo).map(f => ({ name: f.name, kind: f.status === 'sample' ? 'sample' : 'photo', t_ms: Math.round(f.t), x: f.x == null ? null : Math.round(f.x), y: f.y == null ? null : Math.round(f.y), score: f.score == null ? null : +f.score.toFixed(3), track: f.track, enc_ms: f.encMs || null })) });
   const download = (blob, name) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 30000); };
   $('save').onclick = async () => {

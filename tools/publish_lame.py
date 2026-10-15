@@ -15,7 +15,8 @@ ap.add_argument('--title', default=None)
 ap.add_argument('--fields', default=None, help='fields.json : contours des champs [{id, pts:[[x,y],...]}]')
 ap.add_argument('--tile', type=int, default=512)
 ap.add_argument('--quality', type=int, default=85)
-ap.add_argument('--note', default='échelle non calibrée')
+ap.add_argument('--note', default=None)
+ap.add_argument('--um-per-px', type=float, default=None, help='micromètres par pixel de la mosaïque (barre d\'échelle)')
 a = ap.parse_args()
 
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -43,12 +44,13 @@ open(os.path.join(out, 'lame.dzi'), 'w').write(
 
 fields = json.load(open(a.fields)) if a.fields else []
 title = a.title or slug
-meta = (f'<span><b>{len(fields)}</b> champs</span>' if fields else '') + f'<span><b>{W} × {H}</b> px</span><span><b>{maxlvl + 1}</b> niveaux de zoom</span><span>{html.escape(a.note)}</span>'
+note = a.note or (f'{a.um_per_px:.4g} µm/px' if a.um_per_px else 'échelle non calibrée')
+meta = (f'<span><b>{len(fields)}</b> champs</span>' if fields else '') + f'<span><b>{W} × {H}</b> px</span><span><b>{maxlvl + 1}</b> niveaux de zoom</span><span>{html.escape(note)}</span>'
 tpl = open(os.path.join(root, 'tools', 'viewer_template.html'), encoding='utf-8').read()
 page = (tpl.replace('__TITLE__', html.escape(title)).replace('__META__', meta).replace('__W__', str(W)).replace('__H__', str(H))
-        .replace('__FIELDS__', json.dumps(fields, separators=(',', ':'))).replace('__TILE__', str(a.tile)))
+        .replace('__FIELDS__', json.dumps(fields, separators=(',', ':'))).replace('__TILE__', str(a.tile)).replace('__UMPX__', json.dumps(a.um_per_px)))
 open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(page)
-json.dump({'title': title, 'width': W, 'height': H, 'fields': len(fields), 'tiles': n}, open(os.path.join(out, 'lame.json'), 'w'))
+json.dump({'title': title, 'width': W, 'height': H, 'fields': len(fields), 'tiles': n, 'um_per_px': a.um_per_px}, open(os.path.join(out, 'lame.json'), 'w'))
 
 # gallery
 items = []

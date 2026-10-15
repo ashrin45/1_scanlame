@@ -112,8 +112,13 @@ for s in series:
         put_text(f'{s}/failed.txt', open(logp).read()[-4000:] if os.path.isfile(logp) else f'pipeline code {rc}'); continue
     title = meta.get('title') or s
     slug = (slugify(title) + '-' + s.split('_')[1][4:] + s.split('_')[2][:4]) if meta.get('title') and s.count('_') >= 2 else s.lower().replace('_', '-')
-    rc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'publish_lame.py'), os.path.join(res, 'pano.jpg'), '--name', slug,
-                         '--title', title, '--fields', os.path.join(res, 'fields.json')]).returncode
+    cmd = [sys.executable, os.path.join(ROOT, 'tools', 'publish_lame.py'), os.path.join(res, 'pano.jpg'), '--name', slug,
+           '--title', title, '--fields', os.path.join(res, 'fields.json')]
+    try:
+        layout = json.load(open(os.path.join(res, 'layout.json')))
+        if layout.get('um_per_px'): cmd += ['--um-per-px', str(layout['um_per_px'])]
+    except Exception: pass
+    rc = subprocess.run(cmd).returncode
     if rc != 0:
         print('  ÉCHEC de la publication'); put_text(f'{s}/failed.txt', 'publication'); continue
     print(f'  publiée : lames/{slug}/ en {time.time() - t0:.0f} s')

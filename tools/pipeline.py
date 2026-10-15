@@ -6,10 +6,12 @@ Usage : python tools/pipeline.py <dossier_serie> [--out <dossier>] [--fps 3] [--
 
 Etapes :
  1. images : extraction ffmpeg de la video (ou photos/*.jpg), rejet des floues, positions par horodatage
- 2. pretraitement : masque du disque oculaire, correction de vignettage, balance des blancs
- 3. recalage : SIFT + similarite RANSAC sur les paires voisines (voisinage temporel + positions estimees),
-    placement glouton sur les meilleures paires, puis raffinement Gauss-Seidel
- 4. composition : image dominante par region (nette, proche du centre), bord propre
+ 2. pretraitement : masque du disque oculaire, flat-field (champ vide filme, sinon estime), balance des blancs,
+    correction de l'aberration chromatique (recalage radial des canaux R et B sur G)
+ 3. recalage : SIFT + similarite RANSAC sur les paires voisines, estimation de la distorsion radiale (k1),
+    placement glouton puis ajustement global par moindres carres (toutes les paires a la fois, Huber)
+ 4. composition par tuiles : coeur net de chaque champ en priorite, coutures sur l'image dominante,
+    fondu multibande (pyramide laplacienne)
  5. sortie : pano.jpg, layout.json, fields.json (pour publish_lame.py)
 """
 import argparse, glob, itertools, json, math, os, subprocess, sys, time
@@ -24,6 +26,10 @@ ap.add_argument('--max-frames', type=int, default=600)
 ap.add_argument('--reg-size', type=int, default=1200, help='plus grand cote des images pour le recalage')
 ap.add_argument('--max-side', type=int, default=16000, help='plus grand cote de la mosaique finale')
 ap.add_argument('--min-inliers', type=int, default=40)
+ap.add_argument('--core', type=float, default=0.70, help='fraction du rayon de champ utilisee en priorite (coeur net)')
+ap.add_argument('--no-distortion', action='store_true', help='ne pas estimer la distorsion radiale')
+ap.add_argument('--no-chroma', action='store_true', help='ne pas corriger l aberration chromatique')
+ap.add_argument('--tile', type=int, default=2048, help='taille des tuiles de composition')
 a = ap.parse_args()
 
 S = a.series.rstrip('/')
@@ -152,8 +158,7 @@ if len(sel) < 2:
     sys.exit('pas assez d\'images nettes')
 
 # ---------------------------------------------------------------- 2. pretraitement
-def preprocess(path, reg_size):
-    im = cv2.imread(path)
+def disc_mask(im):
     g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
     _, th = cv2.threshold(g, 60, 255, cv2.THRESH_BINARY)
     th = cv2.morphologyEx(th, cv2.MORPH_CLOSE, np.ones((25, 25), np.uint8))
@@ -165,19 +170,81 @@ def preprocess(path, reg_size):
         mask = np.zeros_like(comp); cv2.fillPoly(mask, [cv2.convexHull(max(cnts, key=cv2.contourArea))], 255)
     else:
         mask = np.full(g.shape, 255, np.uint8)
-    frac = (mask > 0).mean()
-    if frac < 0.97:   # disque oculaire visible : on recule du bord sombre
+    if (mask > 0).mean() < 0.97:   # disque oculaire visible : on recule du bord sombre
         er = max(10, int(0.03 * max(g.shape)))
         mask = cv2.erode(mask, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (er, er)))
+    return mask
+
+# --- flat-field reel : images "vides" (fond clair, sans texture) filmees pendant la prise ---
+flat = None
+blank_idx = [i for i, (sh, (p, t)) in enumerate(zip(sharps, items)) if sh < 0.15 * float(np.median(sharps))]
+if len(blank_idx) >= 3:
+    cand = []
+    for i in blank_idx[:12]:
+        im = cv2.imread(items[i][0]).astype(np.float32)
+        if im.mean() > 120: cand.append(im)
+    if len(cand) >= 3:
+        flat = np.median(np.stack(cand), axis=0)
+        flat = cv2.GaussianBlur(flat, (0, 0), 2)
+        log(f'flat-field mesuré sur {len(cand)} images de champ vide')
+if flat is None:
+    log('pas de champ vide filmé : vignettage estimé par lissage')
+
+# --- aberration chromatique : echelle radiale des canaux R et B par rapport a G (optique fixe, estimee une fois) ---
+def radial_scale(ch, s, c):
+    M = np.float32([[s, 0, c[0] * (1 - s)], [0, s, c[1] * (1 - s)]])
+    return cv2.warpAffine(ch, M, (ch.shape[1], ch.shape[0]), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
+def chroma_estimate(paths):
+    best = {'r': 1.0, 'b': 1.0}
+    if a.no_chroma: return best
+    grads = []
+    for p in paths:
+        im = cv2.imread(p); h, w = im.shape[:2]
+        im = cv2.resize(im, (w // 2, h // 2), interpolation=cv2.INTER_AREA)
+        grads.append(im)
+    for key, idx in (('r', 2), ('b', 0)):
+        scores = []
+        cands = np.linspace(0.994, 1.006, 25)
+        for s_ in cands:
+            sc = 0.0
+            for im in grads:
+                h, w = im.shape[:2]; c = (w / 2, h / 2)
+                g = cv2.Sobel(im[..., 1].astype(np.float32), cv2.CV_32F, 1, 1)
+                ch = radial_scale(im[..., idx].astype(np.float32), s_, c)
+                gc = cv2.Sobel(ch, cv2.CV_32F, 1, 1)
+                # correlation des gradients hors du centre (la ou l'aberration agit)
+                yy, xx = np.mgrid[0:h, 0:w]; ring = ((xx - c[0]) ** 2 + (yy - c[1]) ** 2) > (0.35 * max(h, w)) ** 2
+                g1, g2 = g[ring], gc[ring]
+                sc += float(np.corrcoef(g1, g2)[0, 1])
+            scores.append(sc)
+        best[key] = float(cands[int(np.argmax(scores))])
+    return best
+
+sharp_paths = [it['path'] for it in sorted(sel, key=lambda it: -it['sharp'])[:4]]
+chroma = chroma_estimate(sharp_paths)
+log(f"aberration chromatique : échelle R {chroma['r']:.4f}, B {chroma['b']:.4f}")
+
+def preprocess(path, reg_size):
+    im = cv2.imread(path)
+    H_, W_ = im.shape[:2]
+    if chroma['r'] != 1.0 or chroma['b'] != 1.0:
+        c = (W_ / 2, H_ / 2)
+        im = im.astype(np.float32)
+        im[..., 2] = radial_scale(im[..., 2], chroma['r'], c); im[..., 0] = radial_scale(im[..., 0], chroma['b'], c)
+        im = np.clip(im, 0, 255).astype(np.uint8)
+    mask = disc_mask(im)
     ys, xs = np.where(mask > 0)
     x0, x1, y0, y1 = xs.min(), xs.max() + 1, ys.min(), ys.max() + 1
     crop, mask = im[y0:y1, x0:x1], mask[y0:y1, x0:x1]
     f32 = crop.astype(np.float32); m = (mask > 0).astype(np.float32)
-    small = cv2.resize(f32 * m[..., None], None, fx=1 / 16, fy=1 / 16, interpolation=cv2.INTER_AREA)
-    msmall = cv2.resize(m, None, fx=1 / 16, fy=1 / 16, interpolation=cv2.INTER_AREA)
-    sig = max(crop.shape) * 0.12 / 16
-    bgs = cv2.GaussianBlur(small, (0, 0), sig) / (cv2.GaussianBlur(msmall, (0, 0), sig)[..., None] + 1e-6)
-    bg = cv2.resize(bgs, (crop.shape[1], crop.shape[0]), interpolation=cv2.INTER_LINEAR)
+    if flat is not None and flat.shape[:2] == (H_, W_):
+        bg = flat[y0:y1, x0:x1]
+    else:
+        small = cv2.resize(f32 * m[..., None], None, fx=1 / 16, fy=1 / 16, interpolation=cv2.INTER_AREA)
+        msmall = cv2.resize(m, None, fx=1 / 16, fy=1 / 16, interpolation=cv2.INTER_AREA)
+        sig = max(crop.shape) * 0.12 / 16
+        bgs = cv2.GaussianBlur(small, (0, 0), sig) / (cv2.GaussianBlur(msmall, (0, 0), sig)[..., None] + 1e-6)
+        bg = cv2.resize(bgs, (crop.shape[1], crop.shape[0]), interpolation=cv2.INTER_LINEAR)
     ref = np.array([np.percentile(bg[..., c][mask > 0], 90) for c in range(3)])
     corr = np.clip(f32 * (ref / (bg + 1e-6)), 0, 255)
     wb = np.array([np.percentile(corr[..., c][mask > 0], 95) for c in range(3)])
@@ -186,15 +253,17 @@ def preprocess(path, reg_size):
     s = min(1.0, reg_size / max(corr.shape[:2]))
     reg = cv2.resize(corr, None, fx=s, fy=s, interpolation=cv2.INTER_AREA) if s < 1 else corr
     rmask = cv2.resize(mask, (reg.shape[1], reg.shape[0]), interpolation=cv2.INTER_NEAREST)
-    return corr, mask, reg, rmask, s, (x0, y0)
+    center = (W_ / 2 - x0, H_ / 2 - y0)          # centre optique dans le repere de la decoupe
+    R = 0.5 * math.hypot(W_, H_)                  # rayon de normalisation de la distorsion
+    return corr, mask, reg, rmask, s, (x0, y0), center, R
 
 full_dir = os.path.join(out, 'full'); os.makedirs(full_dir, exist_ok=True)
-regs, rmasks, scales, offsets = [], [], [], []
+regs, rmasks, scales, offsets, centers, Rs = [], [], [], [], [], []
 for i, it in enumerate(sel):
-    corr, mask, reg, rmask, s, off = preprocess(it['path'], a.reg_size)
-    cv2.imwrite(os.path.join(full_dir, f'{i:04d}.jpg'), corr, [cv2.IMWRITE_JPEG_QUALITY, 95])
+    corr, mask, reg, rmask, s, off, center, R = preprocess(it['path'], a.reg_size)
+    cv2.imwrite(os.path.join(full_dir, f'{i:04d}.jpg'), corr, [cv2.IMWRITE_JPEG_QUALITY, 97])
     cv2.imwrite(os.path.join(full_dir, f'{i:04d}_mask.png'), mask)
-    regs.append(reg); rmasks.append(rmask); scales.append(s); offsets.append(off)
+    regs.append(reg); rmasks.append(rmask); scales.append(s); offsets.append(off); centers.append(center); Rs.append(R)
     it['crop'] = [int(off[0]), int(off[1]), int(corr.shape[1]), int(corr.shape[0])]
     del corr, mask
 N = len(regs)
@@ -209,7 +278,6 @@ for reg, m in zip(regs, rmasks):
     kps.append(k); des.append(d)
 log('points SIFT :', int(np.mean([len(k) for k in kps])), 'par image en moyenne')
 
-# paires candidates : voisinage temporel + recouvrement prevu par les positions
 cand = set()
 for i in range(N):
     for j in range(i + 1, min(N, i + 9)):
@@ -224,7 +292,7 @@ if W0 and any(P):
 log(len(cand), 'paires à tester')
 
 bf = cv2.BFMatcher(cv2.NORM_L2)
-pairs = {}
+pairs = {}   # (i,j) -> (pi, pj, A, n) en coordonnees de recalage (brutes)
 for i, j in sorted(cand):
     if des[i] is None or des[j] is None or len(des[i]) < 20 or len(des[j]) < 20: continue
     mm = bf.knnMatch(des[i], des[j], k=2)
@@ -233,12 +301,50 @@ for i, j in sorted(cand):
     pi = np.float32([kps[i][m.queryIdx].pt for m in good]); pj = np.float32([kps[j][m.trainIdx].pt for m in good])
     A, inl = cv2.estimateAffinePartial2D(pj, pi, method=cv2.RANSAC, ransacReprojThreshold=4.0, maxIters=4000, confidence=0.999)
     if A is None: continue
-    n_inl = int(inl.sum())
-    sc = math.hypot(A[0, 0], A[0, 1])
+    n_inl = int(inl.sum()); sc = math.hypot(A[0, 0], A[0, 1])
     if n_inl >= a.min_inliers and 0.5 < sc < 2.0:
         s_ = inl.ravel() > 0
         pairs[(i, j)] = (pi[s_], pj[s_], A, n_inl)
 log(len(pairs), 'paires valides')
+if not pairs:
+    sys.exit('aucune paire d\'images ne se recouvre')
+
+# --- distorsion radiale k1 (meme optique pour toutes les images) : choisie pour minimiser le residu des similitudes ---
+def undist(pts, k, c, R):
+    d = pts - np.float32(c); r2 = (d[:, 0] ** 2 + d[:, 1] ** 2) / (R * R)
+    return np.float32(c) + d * (1 + k * r2)[:, None]
+def pair_residual(k, subset):
+    tot = []
+    for (i, j) in subset:
+        pi, pj, _, _ = pairs[(i, j)]
+        ui = undist(pi, k, (centers[i][0] * scales[i], centers[i][1] * scales[i]), Rs[i] * scales[i])
+        uj = undist(pj, k, (centers[j][0] * scales[j], centers[j][1] * scales[j]), Rs[j] * scales[j])
+        A, _ = cv2.estimateAffinePartial2D(uj, ui, method=cv2.LMEDS)
+        if A is None: continue
+        d = cv2.transform(uj[None], A)[0] - ui
+        tot.append(np.median(np.hypot(d[:, 0], d[:, 1])))
+    return float(np.mean(tot)) if tot else 1e9
+k1 = 0.0
+if not a.no_distortion:
+    subset = sorted(pairs, key=lambda k: -pairs[k][3])[:80]
+    ks = np.linspace(-0.15, 0.15, 16)
+    r = [pair_residual(k, subset) for k in ks]
+    b = int(np.argmin(r)); lo, hi = ks[max(0, b - 1)], ks[min(len(ks) - 1, b + 1)]
+    ks2 = np.linspace(lo, hi, 11); r2 = [pair_residual(k, subset) for k in ks2]
+    cv2.setRNGSeed(0); r0 = pair_residual(0.0, subset)
+    best = float(ks2[int(np.argmin(r2))])
+    if min(r2) < 0.97 * r0:
+        k1 = best
+        log(f'distorsion radiale k1 = {k1:+.4f} (résidu {min(r2):.2f} px contre {r0:.2f} px sans correction)')
+    else:
+        log(f'distorsion radiale : aucune correction (résidu {r0:.2f} px, pas d\'amélioration nette)')
+# points non distordus + similitudes recalculees
+for (i, j) in list(pairs):
+    pi, pj, A, n = pairs[(i, j)]
+    ui = undist(pi, k1, (centers[i][0] * scales[i], centers[i][1] * scales[i]), Rs[i] * scales[i])
+    uj = undist(pj, k1, (centers[j][0] * scales[j], centers[j][1] * scales[j]), Rs[j] * scales[j])
+    A2, _ = cv2.estimateAffinePartial2D(uj, ui, method=cv2.LMEDS)
+    pairs[(i, j)] = (ui, uj, A2 if A2 is not None else A, n)
 
 adj = {i: {} for i in range(N)}
 for (i, j), (_, _, _, n) in pairs.items(): adj[i][j] = n; adj[j][i] = n
@@ -267,39 +373,118 @@ while len(T) < len(comp):
             if v not in T and (best is None or n > best[2]): best = (k, v, n)
     k, v, _ = best
     T[v] = T[k] @ (A3(pairs[(k, v)][2]) if (k, v) in pairs else np.linalg.inv(A3(pairs[(v, k)][2])))
-for it in range(10):
-    for v in comp:
-        if v == ref: continue
-        src, dst = [], []
-        for (i, j), (pi, pj, _, _) in pairs.items():
-            if j == v and i in T: src.append(pj); dst.append(cv2.transform(pi[None], T[i][:2])[0])
-            elif i == v and j in T: src.append(pi); dst.append(cv2.transform(pj[None], T[j][:2])[0])
-        if not src: continue
-        A, _ = cv2.estimateAffinePartial2D(np.vstack(src), np.vstack(dst), method=cv2.LMEDS)
-        if A is not None: T[v] = A3(A)
-# --- filet de securite : les images non reliees mais suivies en direct sont placees d'apres leur position ---
-# (translation estimee par rapport aux images deja placees ayant une position suivie ; precision du suivi, pas du recalage)
+
+# --- ajustement global : toutes les similitudes d'un coup, moindres carres robustes (Huber) ---
+try:
+    import scipy.sparse as sp, scipy.sparse.linalg as spl
+    idx = {k: n for n, k in enumerate([k for k in comp if k != ref])}
+    rows, cols, vals, rhs, wts = [], [], [], [], []
+    eq = 0
+    corr_list = []
+    for (i, j), (pi, pj, _, _) in pairs.items():
+        if i not in T or j not in T: continue
+        n = min(len(pi), 120); step = max(1, len(pi) // n)
+        for p, q in zip(pi[::step], pj[::step]):
+            corr_list.append((i, j, p, q))
+    def add(eq, k, x, y, sign):   # parametres (a,b,tx,ty) de l'image k ; eq paire (x_eq, y_eq)
+        if k == ref:
+            return (-sign * x, -sign * y)   # contribution connue : a=1,b=0,t=0 -> passe au second membre
+        base = 4 * idx[k]
+        rows.extend([eq, eq, eq, eq + 1, eq + 1, eq + 1]); cols.extend([base, base + 1, base + 2, base, base + 1, base + 3])
+        vals.extend([sign * x, -sign * y, sign, sign * y, sign * x, sign])
+        return (0.0, 0.0)
+    for (i, j, p, q) in corr_list:
+        r1 = add(eq, i, float(p[0]), float(p[1]), 1.0); r2 = add(eq, j, float(q[0]), float(q[1]), -1.0)
+        rhs.extend([r1[0] + r2[0], r1[1] + r2[1]]); eq += 2
+    Amat = sp.csr_matrix((vals, (rows, cols)), shape=(eq, 4 * len(idx)))
+    bvec = np.array(rhs)
+    x0 = np.zeros(4 * len(idx))
+    for k, n in idx.items():
+        x0[4 * n:4 * n + 4] = [T[k][0, 0], T[k][1, 0], T[k][0, 2], T[k][1, 2]]
+    x = x0.copy(); w = np.ones(eq)
+    for it in range(4):
+        Wd = sp.diags(np.sqrt(w))
+        sol = spl.lsqr(Wd @ Amat, Wd @ bvec, x0=x, atol=1e-8, btol=1e-8, iter_lim=2000)[0]
+        x = sol
+        res_v = Amat @ x - bvec
+        rp = np.hypot(res_v[0::2], res_v[1::2]); delta = 2.0
+        wp = np.where(rp <= delta, 1.0, delta / np.maximum(rp, 1e-6))
+        w = np.repeat(wp, 2)
+    for k, n in idx.items():
+        a_, b_, tx, ty = x[4 * n:4 * n + 4]
+        T[k] = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
+    log(f'ajustement global : {len(corr_list)} correspondances, {len(idx)} images')
+except ImportError:
+    log('scipy absent : raffinement image par image')
+    for it in range(10):
+        for v in comp:
+            if v == ref: continue
+            src, dst = [], []
+            for (i, j), (pi, pj, _, _) in pairs.items():
+                if j == v and i in T: src.append(pj); dst.append(cv2.transform(pi[None], T[i][:2])[0])
+                elif i == v and j in T: src.append(pi); dst.append(cv2.transform(pj[None], T[j][:2])[0])
+            if not src: continue
+            A, _ = cv2.estimateAffinePartial2D(np.vstack(src), np.vstack(dst), method=cv2.LMEDS)
+            if A is not None: T[v] = A3(A)
+
+# --- filet de securite : images non reliees mais suivies en direct, placees d'apres leur position ---
 anchors = [k for k in comp if P[k]]
 extra = 0
 if anchors and W0:
-    # transformation moyenne position_flux -> repere de reference, estimee sur les images placees
     src = np.float32([P[k] for k in anchors]); dst = np.float32([(T[k] @ np.array([0, 0, 1]))[:2] for k in anchors])
     Apos = None
     if len(anchors) >= 3:
         Apos, _ = cv2.estimateAffinePartial2D(src, dst, method=cv2.LMEDS)
     if Apos is None:
-        s_ = scales[ref] * (1.0)   # a defaut : meme echelle que le recalage, pure translation
-        off = dst.mean(0) - src.mean(0) * s_
+        s_ = scales[ref]; off = dst.mean(0) - src.mean(0) * s_
         Apos = np.array([[s_, 0, off[0]], [0, s_, off[1]]], np.float64)
     for c in comps[1:]:
         for k in c:
             if P[k]:
-                t = (Apos @ np.array([P[k][0], P[k][1], 1.0]))[:2]
-                sc = math.hypot(Apos[0, 0], Apos[0, 1])
-                T[k] = np.array([[sc, 0, t[0]], [0, sc, t[1]], [0, 0, 1]])
-                comp.append(k); extra += 1
+                t = (Apos @ np.array([P[k][0], P[k][1], 1.0]))[:2]; sc = math.hypot(Apos[0, 0], Apos[0, 1])
+                T[k] = np.array([[sc, 0, t[0]], [0, sc, t[1]], [0, 0, 1]]); comp.append(k); extra += 1
     if extra: log(f'{extra} image(s) placée(s) d\'après le suivi en direct (sans recalage fin)')
-# erreur residuelle
+
+# --- compensation photometrique : gain par image et par canal, estime sur les recouvrements (log-gains, moindres carres) ---
+gains = {k: np.ones(3, np.float32) for k in comp}
+try:
+    import scipy.sparse as sp, scipy.sparse.linalg as spl
+    def patch_mean(img, pts, r=5):
+        out = []
+        for x, y in pts:
+            x, y = int(round(x)), int(round(y))
+            p = img[max(0, y - r):y + r + 1, max(0, x - r):x + r + 1]
+            out.append(p.reshape(-1, 3).mean(0) if p.size else np.array([np.nan] * 3))
+        return np.array(out)
+    gidx = {k: n for n, k in enumerate([k for k in comp if k != ref])}
+    rows, cols, vals, rhs = [], [], [], []
+    eq = 0
+    for (i, j), (pi, pj, _, n) in pairs.items():
+        if i not in T or j not in T: continue
+        step = max(1, len(pi) // 40)
+        mi = patch_mean(regs[i], pi[::step]); mj = patch_mean(regs[j], pj[::step])
+        ok = np.all(np.isfinite(mi), 1) & np.all(np.isfinite(mj), 1) & (mi.min(1) > 20) & (mj.min(1) > 20)
+        if ok.sum() < 5: continue
+        d = np.log(mj[ok] + 1) - np.log(mi[ok] + 1)      # log(mean_j) - log(mean_i) par canal
+        w = math.sqrt(ok.sum())
+        for ch in range(3):
+            # g_i - g_j = median(d)   (gain a appliquer a i moins celui de j)
+            if i != ref: rows.append(eq); cols.append(3 * gidx[i] + ch); vals.append(w)
+            if j != ref: rows.append(eq); cols.append(3 * gidx[j] + ch); vals.append(-w)
+            rhs.append(w * float(np.median(d[:, ch]))); eq += 1
+    if gidx and eq:
+        # faible rappel vers 0 (pas de derive globale)
+        for n in range(3 * len(gidx)):
+            rows.append(eq); cols.append(n); vals.append(0.05); rhs.append(0.0); eq += 1
+        Gm = sp.csr_matrix((vals, (rows, cols)), shape=(eq, 3 * len(gidx)))
+        g = spl.lsqr(Gm, np.array(rhs), atol=1e-8, btol=1e-8)[0]
+        for k, n in gidx.items():
+            gains[k] = np.exp(np.clip(g[3 * n:3 * n + 3], -0.4, 0.4)).astype(np.float32)
+        spread = max(float(np.abs(np.log(v)).max()) for v in gains.values())
+        log(f'compensation photométrique : écart de gain max {spread * 100:.1f} %')
+except ImportError:
+    pass
+
 res = []
 for (i, j), (pi, pj, _, _) in pairs.items():
     if i in T and j in T:
@@ -307,18 +492,17 @@ for (i, j), (pi, pj, _, _) in pairs.items():
         res.append(np.median(np.hypot(d[:, 0], d[:, 1])))
 log(f'recalage : erreur médiane {np.median(res):.2f} px (échelle recalage), max {np.max(res):.2f}')
 
-# ---------------------------------------------------------------- 4. composition
-# transformation pleine resolution : T est exprime en pixels de l'image de recalage ; on remonte a l'image pleine
-Tf = {}
+# ---------------------------------------------------------------- 4. composition par tuiles
+# transformation pleine resolution (coordonnees non distordues de l'image k -> reference en px de recalage)
+Tf = {k: T[k] @ np.diag([scales[k], scales[k], 1]) for k in comp}
+smin = min(math.hypot(Tf[k][0, 0], Tf[k][0, 1]) for k in comp)
+Sref = np.diag([1 / smin, 1 / smin, 1])
+sizes = {}
 for k in comp:
-    s = scales[k]
-    Tf[k] = T[k] @ np.diag([s, s, 1])          # pleine res -> ref (ref en px recalage)
-sc_ref = 1.0 / scales[ref]                      # pour que l'image de reference soit a l'echelle 1
-smin = min(math.hypot((Tf[k] @ np.diag([1, 1, 1]))[0, 0], Tf[k][0, 1]) for k in comp)
-Sref = np.diag([1 / smin, 1 / smin, 1])          # l'image la plus zoomee reste a l'echelle 1
+    sizes[k] = cv2.imread(os.path.join(full_dir, f'{k:04d}_mask.png'), 0).shape
 corners = []
 for k in comp:
-    h, w = cv2.imread(os.path.join(full_dir, f'{k:04d}_mask.png'), 0).shape
+    h, w = sizes[k]
     corners.append(cv2.transform(np.float32([[0, 0], [w, 0], [w, h], [0, h]])[None], (Sref @ Tf[k])[:2])[0])
 corners = np.vstack(corners); mn, mx = corners.min(0), corners.max(0)
 W, H = mx - mn
@@ -327,29 +511,110 @@ if shrink < 1: log(f'mosaïque réduite d\'un facteur {shrink:.2f} pour tenir da
 Sfin = np.diag([shrink, shrink, 1]) @ np.array([[1, 0, -mn[0]], [0, 1, -mn[1]], [0, 0, 1]]) @ Sref
 W, H = int(math.ceil(W * shrink)), int(math.ceil(H * shrink))
 log('mosaïque', W, 'x', H)
-acc = np.zeros((H, W, 3), np.float32); wacc = np.zeros((H, W), np.float32); cov = np.zeros((H, W), np.uint8)
-placements, fields = {}, []
+
+# par image : matrice canvas<-undistorted (2x3), son inverse, boite englobante, poids (distance au bord, coeur net)
+M, Minv, bbox, scale_k, dist_maps = {}, {}, {}, {}, {}
 for k in comp:
-    M = (Sfin @ Tf[k])[:2]
-    im = cv2.imread(os.path.join(full_dir, f'{k:04d}.jpg')); mk = cv2.imread(os.path.join(full_dir, f'{k:04d}_mask.png'), 0)
-    s = math.hypot(M[0, 0], M[0, 1])
-    warped = cv2.warpAffine(im, M, (W, H), flags=cv2.INTER_LINEAR)
-    wm = cv2.warpAffine(mk, M, (W, H), flags=cv2.INTER_NEAREST)
-    dist = cv2.distanceTransform((wm > 0).astype(np.uint8), cv2.DIST_L2, 5)
-    wgt = (dist / max(float(dist.max()), 1.0)) ** 6 / (s ** 4)
-    acc += warped.astype(np.float32) * wgt[..., None]; wacc += wgt
-    cov = np.maximum(cov, cv2.erode(wm, np.ones((9, 9), np.uint8)))
-    h, w = mk.shape
-    pts = cv2.transform(np.float32([[0, 0], [w, 0], [w, h], [0, h]])[None], M)[0]
-    fields.append(dict(id=f'{k:04d}', pts=[[int(round(x)), int(round(y))] for x, y in pts], scale=round(1 / s, 3)))
-    placements[k] = M.tolist()
-    del warped, wm, dist, wgt, im, mk
-pano = np.clip(np.divide(acc, wacc[..., None], out=np.full_like(acc, 255.0), where=wacc[..., None] > 0), 0, 255).astype(np.uint8)
-pano[cov == 0] = 255
-del acc, wacc
-cv2.imwrite(os.path.join(out, 'pano.jpg'), pano, [cv2.IMWRITE_JPEG_QUALITY, 90])
+    Mk = (Sfin @ Tf[k])
+    M[k] = Mk[:2]; Minv[k] = np.linalg.inv(Mk)[:2]
+    scale_k[k] = math.hypot(Mk[0, 0], Mk[0, 1])
+    h, w = sizes[k]
+    c4 = cv2.transform(np.float32([[0, 0], [w, 0], [w, h], [0, h]])[None], Mk[:2])[0]
+    bbox[k] = (int(max(0, np.floor(c4[:, 0].min()))), int(max(0, np.floor(c4[:, 1].min()))), int(min(W, np.ceil(c4[:, 0].max()))), int(min(H, np.ceil(c4[:, 1].max()))))
+    mk = cv2.imread(os.path.join(full_dir, f'{k:04d}_mask.png'), 0)
+    dm = cv2.distanceTransform((mk > 0).astype(np.uint8), cv2.DIST_L2, 5)
+    dist_maps[k] = (dm / max(float(dm.max()), 1.0)).astype(np.float32)   # 0 au bord, 1 au centre
+
+def distort_pts(pu, c, R):
+    """undistorted -> distorted (inverse de undist), par point fixe"""
+    d = pu - np.float32(c); r2u = (d[..., 0] ** 2 + d[..., 1] ** 2) / (R * R)
+    f = np.ones_like(r2u)
+    for _ in range(4):
+        f = 1.0 / (1.0 + k1 * r2u / (f * f))      # r_d = r_u / (1 + k1 r_d^2)
+    return np.float32(c) + d * f[..., None]
+
+TILE, MARGIN, LEVELS = a.tile, 256, 5
+pano = np.zeros((H, W, 3), np.uint8); pano[:] = 255
+covered = np.zeros((H, W), np.uint8)
+imgs_cache = {}
+def load(k):
+    if k not in imgs_cache:
+        if len(imgs_cache) > 40: imgs_cache.clear()
+        imgs_cache[k] = cv2.imread(os.path.join(full_dir, f'{k:04d}.jpg'))
+    return imgs_cache[k]
+
+def blend_multiband(layers, masks):
+    """layers: liste d'images float32 HxWx3 ; masks: liste de masques float32 HxW (partition) -> fondu multibande"""
+    out = None
+    for im, m in zip(layers, masks):
+        gp = [im]; mp = [m]
+        for _ in range(LEVELS):
+            gp.append(cv2.pyrDown(gp[-1])); mp.append(cv2.pyrDown(mp[-1]))
+        lp = [gp[i] - cv2.pyrUp(gp[i + 1], dstsize=(gp[i].shape[1], gp[i].shape[0])) for i in range(LEVELS)] + [gp[LEVELS]]
+        contrib = [l * mm[..., None] for l, mm in zip(lp, mp)]
+        out = contrib if out is None else [o + c for o, c in zip(out, contrib)]
+    res = out[LEVELS]
+    for i in range(LEVELS - 1, -1, -1):
+        res = cv2.pyrUp(res, dstsize=(out[i].shape[1], out[i].shape[0])) + out[i]
+    return res
+
+ty_n, tx_n = math.ceil(H / TILE), math.ceil(W / TILE)
+t_comp = time.time()
+for ty in range(ty_n):
+    for tx in range(tx_n):
+        x0, y0 = tx * TILE, ty * TILE
+        X0, Y0 = max(0, x0 - MARGIN), max(0, y0 - MARGIN)
+        X1, Y1 = min(W, x0 + TILE + MARGIN), min(H, y0 + TILE + MARGIN)
+        tw, th = X1 - X0, Y1 - Y0
+        if tw <= 0 or th <= 0: continue
+        ks = [k for k in comp if bbox[k][0] < X1 and bbox[k][2] > X0 and bbox[k][1] < Y1 and bbox[k][3] > Y0]
+        if not ks: continue
+        # grille des pixels de la tuile (centres)
+        gx, gy = np.meshgrid(np.arange(X0, X1, dtype=np.float32), np.arange(Y0, Y1, dtype=np.float32))
+        layers, weights = [], []
+        for k in ks:
+            Mi = Minv[k]
+            ux = Mi[0, 0] * gx + Mi[0, 1] * gy + Mi[0, 2]; uy = Mi[1, 0] * gx + Mi[1, 1] * gy + Mi[1, 2]
+            pd = distort_pts(np.stack([ux, uy], -1), centers[k], Rs[k])
+            mapx, mapy = pd[..., 0].astype(np.float32), pd[..., 1].astype(np.float32)
+            wm = cv2.remap(dist_maps[k], mapx, mapy, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=0)
+            if wm.max() <= 0: continue
+            im = cv2.remap(load(k), mapx, mapy, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(238, 238, 238)).astype(np.float32)
+            im = np.clip(im * gains[k][None, None, :], 0, 255)
+            valid = wm > 0.04                                                # on reste a l'ecart du bord sombre du disque
+            im[~valid] = 238.0                                               # hors du disque : fond neutre (evite les halos du fondu)
+            core = np.clip((wm - (1 - a.core)) / a.core, 0, 1) ** 3          # 1 au coeur, 0 vers le bord du champ
+            wgt = (core + 1e-3 * valid) / (scale_k[k] ** 4)
+            layers.append(im); weights.append(wgt.astype(np.float32))
+        if not layers: continue
+        Wst = np.stack(weights)
+        lab = np.argmax(Wst, axis=0); anyc = Wst.max(0) > 0
+        masks = [((lab == n) & anyc).astype(np.float32) for n in range(len(layers))]
+        if len(layers) == 1:
+            blended = layers[0]
+        else:
+            blended = blend_multiband(layers, masks)
+        blended = np.clip(blended, 0, 255).astype(np.uint8)
+        # ecriture de la zone centrale (sans la marge)
+        ix0, iy0 = x0 - X0, y0 - Y0
+        ix1, iy1 = min(tw, ix0 + TILE), min(th, iy0 + TILE)
+        sub = blended[iy0:iy1, ix0:ix1]; subc = anyc[iy0:iy1, ix0:ix1]
+        region = pano[y0:y0 + (iy1 - iy0), x0:x0 + (ix1 - ix0)]
+        region[subc] = sub[subc]
+        covered[y0:y0 + (iy1 - iy0), x0:x0 + (ix1 - ix0)] = subc.astype(np.uint8) * 255
+log(f'composition : {ty_n * tx_n} tuiles en {time.time() - t_comp:.0f} s')
+cv2.imwrite(os.path.join(out, 'pano.jpg'), pano, [cv2.IMWRITE_JPEG_QUALITY, 92])
+
+fields, placements = [], {}
+for k in comp:
+    h, w = sizes[k]
+    pts = cv2.transform(np.float32([[0, 0], [w, 0], [w, h], [0, h]])[None], M[k])[0]
+    fields.append(dict(id=f'{k:04d}', pts=[[int(round(x)), int(round(y))] for x, y in pts], scale=round(1 / scale_k[k], 3)))
+    placements[str(k)] = M[k].tolist()
 json.dump(fields, open(os.path.join(out, 'fields.json'), 'w'))
-json.dump(dict(size=[W, H], images=len(comp), of=N, placements={str(k): v for k, v in placements.items()},
-               residual_px=float(np.median(res)), series=meta.get('series'), sources=[sel[k]['path'] for k in comp]),
+json.dump(dict(size=[W, H], images=len(comp), of=N, placements=placements, k1=k1, chroma=chroma,
+               flat_field='mesuré' if flat is not None else 'estimé', residual_px=float(np.median(res)),
+               um_per_px=(float(meta['um_per_px']) * smin / (scales[ref] * shrink)) if meta.get('um_per_px') else None,   # µm par pixel de la mosaïque
+               series=meta.get('series'), sources=[sel[k]['path'] for k in comp]),
           open(os.path.join(out, 'layout.json'), 'w'), indent=1)
 log('terminé : pano.jpg', W, 'x', H, ',', len(comp), 'images utilisées sur', N)
