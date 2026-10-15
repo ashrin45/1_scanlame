@@ -45,7 +45,9 @@ def git_publish(paths, message):
     """Commite les dossiers donnes, se synchronise avec origin/main, regenere la galerie et pousse. Retourne True si pousse."""
     try:
         git('config', 'user.name', 'scanlame'); git('config', 'user.email', 'scanlame@users.noreply.github.com')
-        git('add', '--', *paths)
+        git('add', '-A', '--', 'lames')
+        git('reset', '-q', '--', 'lames/index.html', 'lames/lames.json')          # fichiers derives : regeneres apres synchronisation
+        git('checkout', '--', 'lames/index.html', 'lames/lames.json')
         if git('diff', '--cached', '--quiet').returncode != 0: git('commit', '-q', '-m', message, check=True)
         for attempt in range(3):
             r = git('pull', '--rebase', '-q', 'origin', 'main')
