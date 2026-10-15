@@ -43,10 +43,19 @@ def rm(paths):
     for i in range(0, len(paths), 100):
         r = requests.delete(f'{URL}/storage/v1/object/{BUCKET}', headers=H, json={'prefixes': paths[i:i + 100]}); r.raise_for_status()
 
-series = [e['name'] for e in ls('') if e.get('id') is None or e.get('metadata') is None]   # dossiers
-series = [s for s in series if not a.only or s == a.only]
 done = []
-for s in series:
+seen = set()
+def pending_series():
+    names = [e['name'] for e in ls('') if e.get('id') is None or e.get('metadata') is None]   # dossiers
+    return [n for n in names if (not a.only or n == a.only) and n not in seen]
+series = []
+while True:
+  if not series:
+      series = pending_series()   # relu a chaque tour : une prise arrivee pendant le passage est traitee tout de suite
+      if not series: break
+      if seen: print(f'nouvelle(s) série(s) arrivée(s) pendant le passage : {series}')
+  s = series.pop(0); seen.add(s)
+  if True:
     entries = ls(s)
     names = {e['name'] for e in entries}
     orphan = False
