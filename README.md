@@ -48,6 +48,24 @@ Barre d'echelle : saisir dans les reglages de la page « µm par pixel du flux �
 micrometre objet (ex. 100 µm sur l'image = 1180 px du flux -> 0.085). La valeur est propre a l'objectif, au
 reglage de flux et au zoom numerique ; la visionneuse affiche alors une barre (µm, mm) qui suit le zoom.
 
+## Metadonnees, qualite, profondeur, grossissements lies, file d'attente
+
+- Reglages de la page : coloration, objectif, prelevement, commentaire, lame d'ensemble. Coloration et objectif sont
+  memorises ; la calibration « µm par pixel » l'est par objectif. Tout est repris dans la galerie (filtres par
+  coloration et objectif) et dans la visionneuse.
+- Rapport de qualite (bouton « Qualite » de la visionneuse, note A/B/C) : trous dans la couverture, champs peu nets,
+  precision du recalage, images floues rejetees, surface couverte. Le calque colore chaque champ selon sa nettete
+  et entoure les trous : on sait quoi refilmer sans ouvrir toute la lame.
+- Profondeur navigable : sur chaque arret de platine avec balayage de la vis micrometrique, jusqu'a 5 plans sont
+  conserves en plus de la fusion EDF. Le curseur « profondeur » de la visionneuse (ou les touches [ et ]) passe
+  d'un plan a l'autre, la position 0 etant l'image nette partout. Seules les tuiles qui changent sont stockees.
+- Grossissements lies : filmer d'abord une vue d'ensemble (x10), puis des details (x40, x100) en choisissant la
+  lame d'ensemble dans les reglages. Le detail est recale par points dans la mosaique d'ensemble (tools/link_child.py)
+  et s'affiche en calque a sa place dans la visionneuse parente (bouton « Details ») ; sans recalage possible il
+  reste accessible par lien.
+- File d'attente hors ligne : si le reseau tombe, les morceaux et la cloture sont gardes dans le telephone
+  (IndexedDB) et repartent seuls au retour du reseau, au chargement de la page ou avec « Envoyer maintenant ».
+
 ## Alternative : recevoir sur son PC (tools/server.py)
 
 `python tools\server.py --root D:\lames --token JETON` puis `cloudflared tunnel --url http://localhost:8000`

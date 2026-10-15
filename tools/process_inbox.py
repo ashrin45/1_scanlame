@@ -113,14 +113,17 @@ for s in series:
     title = meta.get('title') or s
     slug = (slugify(title) + '-' + s.split('_')[1][4:] + s.split('_')[2][:4]) if meta.get('title') and s.count('_') >= 2 else s.lower().replace('_', '-')
     cmd = [sys.executable, os.path.join(ROOT, 'tools', 'publish_lame.py'), os.path.join(res, 'pano.jpg'), '--name', slug,
-           '--title', title, '--fields', os.path.join(res, 'fields.json')]
-    try:
-        layout = json.load(open(os.path.join(res, 'layout.json')))
-        if layout.get('um_per_px'): cmd += ['--um-per-px', str(layout['um_per_px'])]
-    except Exception: pass
+           '--title', title, '--fields', os.path.join(res, 'fields.json'), '--layout', os.path.join(res, 'layout.json')]
     rc = subprocess.run(cmd).returncode
     if rc != 0:
         print('  ÉCHEC de la publication'); put_text(f'{s}/failed.txt', 'publication'); continue
+    parent = meta.get('parent')
+    if parent:
+        if os.path.isfile(os.path.join(ROOT, 'lames', parent, 'lame.json')):
+            print(f'  lame de détail de {parent} : recalage dans la lame d\'ensemble')
+            subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'link_child.py'), parent, slug])
+        else:
+            print(f'  lame parente {parent} introuvable, publiée seule')
     print(f'  publiée : lames/{slug}/ en {time.time() - t0:.0f} s')
     put_text(f'{s}/done.txt', slug)
     if 'failed.txt' in names: rm([f'{s}/failed.txt'])

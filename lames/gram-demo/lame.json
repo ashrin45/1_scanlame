@@ -1,1 +1,43 @@
-{"title": "Gram, d\u00e9monstration (20 champs)", "width": 6870, "height": 3332, "fields": 20, "tiles": 146}
+{
+ "title": "Gram, démonstration (20 champs)",
+ "width": 6684,
+ "height": 3162,
+ "fields": 17,
+ "tiles": 146,
+ "tile": 512,
+ "maxlvl": 13,
+ "um_per_px": 0.08352547500191473,
+ "stain": "gram",
+ "objective": "x100",
+ "sample": "prélèvement vaginal",
+ "comment": null,
+ "captured": "14/10/2026 12:00",
+ "parent": null,
+ "parent_transform": null,
+ "children": [],
+ "quality": {
+  "grade": "A",
+  "notes": [],
+  "frames": {
+   "candidates": 20,
+   "blurred": 3,
+   "selected": 17,
+   "used": 17,
+   "tracked_only": 0
+  },
+  "residual_px": 0.71,
+  "residual_max_px": 4.77,
+  "holes": [],
+  "holes_frac": 0.0,
+  "coverage_px": 15068999,
+  "coverage_mm2": 0.105,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 14.7,
+  "flat_field": "estimé",
+  "k1": -0.062,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "zstack": 0,
+ "zstack_tiles": null
+}

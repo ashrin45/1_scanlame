@@ -77,10 +77,14 @@ def pos_at(t_ms):
 
 # nettete + sous-echantillonnage spatial (on saute les images quasi identiques)
 # ---- netteté et deplacement image a image (correlation de phase sur 256 px) ----
-sharps, smalls = [], []
+def sharpness(g):
+    """(variance du laplacien, mesure normalisee par le contenu : energie haute frequence / energie du gradient)"""
+    lap = cv2.Laplacian(g, cv2.CV_64F); gx = cv2.Sobel(g, cv2.CV_64F, 1, 0); gy = cv2.Sobel(g, cv2.CV_64F, 0, 1)
+    return float(lap.var()), float(lap.var() / (gx.var() + gy.var() + 1e-6))
+sharps, sharpn, smalls = [], [], []
 for p, t in items:
     g = cv2.imread(p, cv2.IMREAD_REDUCED_GRAYSCALE_4)
-    sharps.append(float(cv2.Laplacian(g, cv2.CV_64F).var()))
+    sv, sn = sharpness(g); sharps.append(sv); sharpn.append(sn)
     smalls.append(cv2.resize(g, (256, 256), interpolation=cv2.INTER_AREA).astype(np.float32))
 h4, w4 = cv2.imread(items[0][0], cv2.IMREAD_REDUCED_GRAYSCALE_4).shape
 win = cv2.createHanningWindow((256, 256), cv2.CV_32F)
@@ -92,7 +96,8 @@ del smalls
 
 # ---- piles de profondeur : suites d'images immobiles dont la nettete varie (vis micrometrique tournee) ----
 def edf(paths):
-    """Fusion de plans de mise au point : en chaque pixel on garde le plan le plus net (pyramide laplacienne)."""
+    """Fusion de plans de mise au point : en chaque pixel on garde le plan le plus net (pyramide laplacienne).
+    Retourne (image fusionnee, plans alignes uint8, cartes de nettete reduites)."""
     imgs = [cv2.imread(q) for q in paths]
     ref = cv2.cvtColor(imgs[0], cv2.COLOR_BGR2GRAY).astype(np.float32)
     aligned, maps = [], []
@@ -101,13 +106,14 @@ def edf(paths):
         (dx, dy), resp = cv2.phaseCorrelate(ref, g)
         if resp > 0.05 and abs(dx) < 60 and abs(dy) < 60:
             M = np.float32([[1, 0, -dx], [0, 1, -dy]]); im = cv2.warpAffine(im, M, (im.shape[1], im.shape[0]), borderMode=cv2.BORDER_REPLICATE); g = cv2.warpAffine(g, M, (g.shape[1], g.shape[0]), borderMode=cv2.BORDER_REPLICATE)
-        aligned.append(im.astype(np.float32))
+        aligned.append(im)
         maps.append(cv2.GaussianBlur(np.abs(cv2.Laplacian(g, cv2.CV_32F, ksize=3)), (0, 0), 6))
     M = np.stack(maps); M = (M / (M.max(0, keepdims=True) + 1e-6)) ** 8; M = M / (M.sum(0, keepdims=True) + 1e-9)
+    small_maps = [cv2.resize(m, (64, 48), interpolation=cv2.INTER_AREA) for m in maps]
     levels = 5
     out_pyr = None
     for im, w in zip(aligned, M):
-        gp = [im]; wp = [w]
+        gp = [im.astype(np.float32)]; wp = [w]
         for _ in range(levels):
             gp.append(cv2.pyrDown(gp[-1])); wp.append(cv2.pyrDown(wp[-1]))
         lp = [gp[i] - cv2.pyrUp(gp[i + 1], dstsize=(gp[i].shape[1], gp[i].shape[0])) for i in range(levels)] + [gp[levels]]
@@ -116,7 +122,22 @@ def edf(paths):
     res = out_pyr[levels]
     for i in range(levels - 1, -1, -1):
         res = cv2.pyrUp(res, dstsize=(out_pyr[i].shape[1], out_pyr[i].shape[0])) + out_pyr[i]
-    return np.clip(res, 0, 255).astype(np.uint8)
+    return np.clip(res, 0, 255).astype(np.uint8), aligned, small_maps
+
+def spectral_order(maps):
+    """Ordonne des plans de mise au point sans connaitre z : les plans voisins en z ont des cartes de nettete
+    semblables ; le vecteur de Fiedler du graphe de similarite donne un ordre 1-D (seriation spectrale).
+    Marche aussi si la vis a fait un aller-retour."""
+    n = len(maps)
+    if n <= 2: return list(range(n))
+    X = np.stack([m.ravel() for m in maps]).astype(np.float64)
+    X -= X.mean(1, keepdims=True); X /= (np.linalg.norm(X, axis=1, keepdims=True) + 1e-9)
+    Sm = np.clip(X @ X.T, 0, 1); np.fill_diagonal(Sm, 0)
+    Lap = np.diag(Sm.sum(1)) - Sm
+    w, v = np.linalg.eigh(Lap)
+    return [int(i) for i in np.argsort(v[:, 1])]
+
+ZMAX = 5   # plans conserves au plus par pile (z-stack navigable)
 
 STILL = 0.02   # deplacement < 2 % du cadre = immobile
 merged, i, stacks = [], 0, 0
@@ -128,15 +149,29 @@ while i < len(items):
         sh = [sharps[k] for k in run]
         if max(sh) > 1.5 * min(sh) and max(sh) >= 3.0:
             outp = os.path.join(frames_dir, f'z_{i:06d}.jpg')
-            cv2.imwrite(outp, edf([items[k][0] for k in run]), [cv2.IMWRITE_JPEG_QUALITY, 95])
-            merged.append((outp, items[run[len(run) // 2]][1], max(sh))); stacks += 1
+            fused, aligned, smaps = edf([items[k][0] for k in run])
+            cv2.imwrite(outp, fused, [cv2.IMWRITE_JPEG_QUALITY, 95])
+            # plans conserves pour la navigation en profondeur : ordre z retrouve par seriation, ZMAX plans repartis
+            order = spectral_order(smaps)
+            L = min(ZMAX, len(order))
+            pick = [order[int(round(q * (len(order) - 1) / max(1, L - 1)))] for q in range(L)]
+            planes = []
+            for z, k in enumerate(pick):
+                pp = os.path.join(frames_dir, f'z_{i:06d}_p{z}.jpg')
+                cv2.imwrite(pp, aligned[k], [cv2.IMWRITE_JPEG_QUALITY, 95]); planes.append(pp)
+            del aligned
+            sn = sharpness(cv2.resize(cv2.cvtColor(fused, cv2.COLOR_BGR2GRAY), (fused.shape[1] // 4, fused.shape[0] // 4), interpolation=cv2.INTER_AREA))[1]
+            merged.append((outp, items[run[len(run) // 2]][1], max(sh), sn, planes)); stacks += 1
         else:
-            k = max(run, key=lambda k: sharps[k]); merged.append((items[k][0], items[k][1], sharps[k]))
+            k = max(run, key=lambda k: sharps[k]); merged.append((items[k][0], items[k][1], sharps[k], sharpn[k], None))
     else:
-        for k in run: merged.append((items[k][0], items[k][1], sharps[k]))
+        for k in run: merged.append((items[k][0], items[k][1], sharps[k], sharpn[k], None))
     i = j
-if stacks: log(f'{stacks} pile(s) de profondeur fusionnée(s) (EDF)')
-items = [(p, t) for p, t, _ in merged]; sharps = [sh for _, _, sh in merged]
+if stacks: log(f'{stacks} pile(s) de profondeur fusionnée(s) (EDF), plans conservés pour la navigation')
+planes_of = {p: pl for p, _, _, _, pl in merged if pl}
+sharpn_of = {p: sn for p, _, _, sn, _ in merged}
+items = [(p, t) for p, t, _, _, _ in merged]; sharps = [sh for _, _, sh, _, _ in merged]
+n_candidates = len(items)
 
 thr = max(3.0, 0.4 * float(np.median(sharps)))   # relative threshold: drops the blurred frames of this series only
 log(f'netteté médiane {np.median(sharps):.1f}, seuil {thr:.1f}')
@@ -146,10 +181,13 @@ for (p, t), sharp in zip(items, sharps):
     if sharp < thr:
         continue
     pos = pos_at(t)
+    planes = planes_of.get(p)
     if pos and last_pos and W0 and math.hypot(pos[0] - last_pos[0], pos[1] - last_pos[1]) < 0.15 * max(W0, H0):
-        continue
+        if planes and sel and not sel[-1].get('planes'): sel.pop()     # une pile de profondeur remplace l'image simple prise au meme endroit
+        else: continue
     if pos: last_pos = pos
-    sel.append(dict(path=p, t=t, sharp=sharp, pos=pos))
+    sel.append(dict(path=p, t=t, sharp=sharp, sharpn=sharpn_of[p], pos=pos, planes=planes))
+n_blurred = sum(1 for sh in sharps if sh < thr)
 if len(sel) > a.max_frames:
     step = len(sel) / a.max_frames
     sel = [sel[int(i * step)] for i in range(a.max_frames)]
@@ -257,6 +295,32 @@ def preprocess(path, reg_size):
     R = 0.5 * math.hypot(W_, H_)                  # rayon de normalisation de la distorsion
     return corr, mask, reg, rmask, s, (x0, y0), center, R
 
+def preprocess_plane(path, crop, mask):
+    """Meme chaine que preprocess, mais avec la decoupe et le masque de l'image EDF (meme geometrie)."""
+    im = cv2.imread(path)
+    H_, W_ = im.shape[:2]
+    if chroma['r'] != 1.0 or chroma['b'] != 1.0:
+        c = (W_ / 2, H_ / 2)
+        im = im.astype(np.float32)
+        im[..., 2] = radial_scale(im[..., 2], chroma['r'], c); im[..., 0] = radial_scale(im[..., 0], chroma['b'], c)
+        im = np.clip(im, 0, 255).astype(np.uint8)
+    x0, y0, w, h = crop
+    f32 = im[y0:y0 + h, x0:x0 + w].astype(np.float32); m = (mask > 0).astype(np.float32)
+    if flat is not None and flat.shape[:2] == (H_, W_):
+        bg = flat[y0:y0 + h, x0:x0 + w]
+    else:
+        small = cv2.resize(f32 * m[..., None], None, fx=1 / 16, fy=1 / 16, interpolation=cv2.INTER_AREA)
+        msmall = cv2.resize(m, None, fx=1 / 16, fy=1 / 16, interpolation=cv2.INTER_AREA)
+        sig = max(h, w) * 0.12 / 16
+        bgs = cv2.GaussianBlur(small, (0, 0), sig) / (cv2.GaussianBlur(msmall, (0, 0), sig)[..., None] + 1e-6)
+        bg = cv2.resize(bgs, (w, h), interpolation=cv2.INTER_LINEAR)
+    ref = np.array([np.percentile(bg[..., c][mask > 0], 90) for c in range(3)])
+    corr = np.clip(f32 * (ref / (bg + 1e-6)), 0, 255)
+    wb = np.array([np.percentile(corr[..., c][mask > 0], 95) for c in range(3)])
+    corr = np.clip(corr * (238.0 / np.maximum(wb, 1)), 0, 255).astype(np.uint8)
+    corr[mask == 0] = 0
+    return corr
+
 full_dir = os.path.join(out, 'full'); os.makedirs(full_dir, exist_ok=True)
 regs, rmasks, scales, offsets, centers, Rs = [], [], [], [], [], []
 for i, it in enumerate(sel):
@@ -265,6 +329,8 @@ for i, it in enumerate(sel):
     cv2.imwrite(os.path.join(full_dir, f'{i:04d}_mask.png'), mask)
     regs.append(reg); rmasks.append(rmask); scales.append(s); offsets.append(off); centers.append(center); Rs.append(R)
     it['crop'] = [int(off[0]), int(off[1]), int(corr.shape[1]), int(corr.shape[0])]
+    for z, pp in enumerate(it.get('planes') or []):
+        cv2.imwrite(os.path.join(full_dir, f'{i:04d}_z{z}.jpg'), preprocess_plane(pp, it['crop'], mask), [cv2.IMWRITE_JPEG_QUALITY, 97])
     del corr, mask
 N = len(regs)
 log('prétraitement terminé,', N, 'images, recalage à', regs[0].shape[1], 'x', regs[0].shape[0])
@@ -428,6 +494,7 @@ except ImportError:
             if A is not None: T[v] = A3(A)
 
 # --- filet de securite : images non reliees mais suivies en direct, placees d'apres leur position ---
+linked = set(comp)   # images recalees par les points ; les suivantes ne le sont que par le suivi en direct
 anchors = [k for k in comp if P[k]]
 extra = 0
 if anchors and W0:
@@ -559,62 +626,148 @@ def blend_multiband(layers, masks):
     return res
 
 ty_n, tx_n = math.ceil(H / TILE), math.ceil(W / TILE)
+def compose_tile(tx, ty, loader, only=None):
+    """Compose la tuile (tx, ty) ; loader(k) donne l'image pleine resolution de k. Retourne (x0, y0, image, couverture) ou None."""
+    x0, y0 = tx * TILE, ty * TILE
+    X0, Y0 = max(0, x0 - MARGIN), max(0, y0 - MARGIN)
+    X1, Y1 = min(W, x0 + TILE + MARGIN), min(H, y0 + TILE + MARGIN)
+    tw, th = X1 - X0, Y1 - Y0
+    if tw <= 0 or th <= 0: return None
+    ks = [k for k in comp if bbox[k][0] < X1 and bbox[k][2] > X0 and bbox[k][1] < Y1 and bbox[k][3] > Y0]
+    if not ks or (only is not None and not any(k in only for k in ks)): return None
+    gx, gy = np.meshgrid(np.arange(X0, X1, dtype=np.float32), np.arange(Y0, Y1, dtype=np.float32))
+    layers, weights = [], []
+    for k in ks:
+        Mi = Minv[k]
+        ux = Mi[0, 0] * gx + Mi[0, 1] * gy + Mi[0, 2]; uy = Mi[1, 0] * gx + Mi[1, 1] * gy + Mi[1, 2]
+        pd = distort_pts(np.stack([ux, uy], -1), centers[k], Rs[k])
+        mapx, mapy = pd[..., 0].astype(np.float32), pd[..., 1].astype(np.float32)
+        wm = cv2.remap(dist_maps[k], mapx, mapy, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=0)
+        if wm.max() <= 0: continue
+        im = cv2.remap(loader(k), mapx, mapy, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(238, 238, 238)).astype(np.float32)
+        im = np.clip(im * gains[k][None, None, :], 0, 255)
+        valid = wm > 0.04                                                # on reste a l'ecart du bord sombre du disque
+        im[~valid] = 238.0                                               # hors du disque : fond neutre (evite les halos du fondu)
+        core = np.clip((wm - (1 - a.core)) / a.core, 0, 1) ** 3          # 1 au coeur, 0 vers le bord du champ
+        wgt = (core + 1e-3 * valid) / (scale_k[k] ** 4)
+        layers.append(im); weights.append(wgt.astype(np.float32))
+    if not layers: return None
+    Wst = np.stack(weights)
+    lab = np.argmax(Wst, axis=0); anyc = Wst.max(0) > 0
+    masks = [((lab == n) & anyc).astype(np.float32) for n in range(len(layers))]
+    blended = layers[0] if len(layers) == 1 else blend_multiband(layers, masks)
+    blended = np.clip(blended, 0, 255).astype(np.uint8)
+    ix0, iy0 = x0 - X0, y0 - Y0
+    ix1, iy1 = min(tw, ix0 + TILE), min(th, iy0 + TILE)
+    return x0, y0, blended[iy0:iy1, ix0:ix1], anyc[iy0:iy1, ix0:ix1]
+
 t_comp = time.time()
 for ty in range(ty_n):
     for tx in range(tx_n):
-        x0, y0 = tx * TILE, ty * TILE
-        X0, Y0 = max(0, x0 - MARGIN), max(0, y0 - MARGIN)
-        X1, Y1 = min(W, x0 + TILE + MARGIN), min(H, y0 + TILE + MARGIN)
-        tw, th = X1 - X0, Y1 - Y0
-        if tw <= 0 or th <= 0: continue
-        ks = [k for k in comp if bbox[k][0] < X1 and bbox[k][2] > X0 and bbox[k][1] < Y1 and bbox[k][3] > Y0]
-        if not ks: continue
-        # grille des pixels de la tuile (centres)
-        gx, gy = np.meshgrid(np.arange(X0, X1, dtype=np.float32), np.arange(Y0, Y1, dtype=np.float32))
-        layers, weights = [], []
-        for k in ks:
-            Mi = Minv[k]
-            ux = Mi[0, 0] * gx + Mi[0, 1] * gy + Mi[0, 2]; uy = Mi[1, 0] * gx + Mi[1, 1] * gy + Mi[1, 2]
-            pd = distort_pts(np.stack([ux, uy], -1), centers[k], Rs[k])
-            mapx, mapy = pd[..., 0].astype(np.float32), pd[..., 1].astype(np.float32)
-            wm = cv2.remap(dist_maps[k], mapx, mapy, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=0)
-            if wm.max() <= 0: continue
-            im = cv2.remap(load(k), mapx, mapy, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(238, 238, 238)).astype(np.float32)
-            im = np.clip(im * gains[k][None, None, :], 0, 255)
-            valid = wm > 0.04                                                # on reste a l'ecart du bord sombre du disque
-            im[~valid] = 238.0                                               # hors du disque : fond neutre (evite les halos du fondu)
-            core = np.clip((wm - (1 - a.core)) / a.core, 0, 1) ** 3          # 1 au coeur, 0 vers le bord du champ
-            wgt = (core + 1e-3 * valid) / (scale_k[k] ** 4)
-            layers.append(im); weights.append(wgt.astype(np.float32))
-        if not layers: continue
-        Wst = np.stack(weights)
-        lab = np.argmax(Wst, axis=0); anyc = Wst.max(0) > 0
-        masks = [((lab == n) & anyc).astype(np.float32) for n in range(len(layers))]
-        if len(layers) == 1:
-            blended = layers[0]
-        else:
-            blended = blend_multiband(layers, masks)
-        blended = np.clip(blended, 0, 255).astype(np.uint8)
-        # ecriture de la zone centrale (sans la marge)
-        ix0, iy0 = x0 - X0, y0 - Y0
-        ix1, iy1 = min(tw, ix0 + TILE), min(th, iy0 + TILE)
-        sub = blended[iy0:iy1, ix0:ix1]; subc = anyc[iy0:iy1, ix0:ix1]
-        region = pano[y0:y0 + (iy1 - iy0), x0:x0 + (ix1 - ix0)]
+        r = compose_tile(tx, ty, load)
+        if r is None: continue
+        x0, y0, sub, subc = r
+        region = pano[y0:y0 + sub.shape[0], x0:x0 + sub.shape[1]]
         region[subc] = sub[subc]
-        covered[y0:y0 + (iy1 - iy0), x0:x0 + (ix1 - ix0)] = subc.astype(np.uint8) * 255
+        covered[y0:y0 + sub.shape[0], x0:x0 + sub.shape[1]] = subc.astype(np.uint8) * 255
 log(f'composition : {ty_n * tx_n} tuiles en {time.time() - t_comp:.0f} s')
 cv2.imwrite(os.path.join(out, 'pano.jpg'), pano, [cv2.IMWRITE_JPEG_QUALITY, 92])
 
+# --- z-stack navigable : une mosaique par plan, seules les tuiles touchant une pile sont recomposees ---
+zfields = [k for k in comp if sel[k].get('planes')]
+ZL = max((len(sel[k]['planes']) for k in zfields), default=0)
+if zfields and ZL >= 2:
+    t_z = time.time()
+    zset = set(zfields)
+    for z in range(ZL):
+        zcache = {}
+        def load_z(k, z=z):
+            if k not in zset: return load(k)
+            n = len(sel[k]['planes']); zi = int(round(z * (n - 1) / (ZL - 1)))
+            key = (k, zi)
+            if key not in zcache:
+                if len(zcache) > 20: zcache.clear()
+                zcache[key] = cv2.imread(os.path.join(full_dir, f'{k:04d}_z{zi}.jpg'))
+            return zcache[key]
+        pz = pano.copy()
+        for ty in range(ty_n):
+            for tx in range(tx_n):
+                r = compose_tile(tx, ty, load_z, only=zset)
+                if r is None: continue
+                x0, y0, sub, subc = r
+                region = pz[y0:y0 + sub.shape[0], x0:x0 + sub.shape[1]]
+                region[subc] = sub[subc]
+        cv2.imwrite(os.path.join(out, f'pano_z{z}.jpg'), pz, [cv2.IMWRITE_JPEG_QUALITY, 92])
+        del pz
+    log(f'z-stack : {ZL} plans sur {len(zfields)} champ(s) en {time.time() - t_z:.0f} s')
+else:
+    ZL = 0
+
 fields, placements = [], {}
+med_sharp = float(np.median([sel[k]['sharpn'] for k in comp]))
 for k in comp:
-    h, w = sizes[k]
-    pts = cv2.transform(np.float32([[0, 0], [w, 0], [w, h], [0, h]])[None], M[k])[0]
-    fields.append(dict(id=f'{k:04d}', pts=[[int(round(x)), int(round(y))] for x, y in pts], scale=round(1 / scale_k[k], 3)))
+    mk = cv2.imread(os.path.join(full_dir, f'{k:04d}_mask.png'), 0)
+    cnts, _ = cv2.findContours((mk > 0).astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    if cnts:
+        hull = cv2.convexHull(max(cnts, key=cv2.contourArea)); poly = cv2.approxPolyDP(hull, 0.004 * cv2.arcLength(hull, True), True)[:, 0, :].astype(np.float32)
+    else:
+        h, w = sizes[k]; poly = np.float32([[0, 0], [w, 0], [w, h], [0, h]])
+    pts = cv2.transform(poly[None], M[k])[0]
+    fields.append(dict(id=f'{k:04d}', pts=[[int(round(x)), int(round(y))] for x, y in pts], scale=round(1 / scale_k[k], 3),
+                       sharp=round(sel[k]['sharpn'] / max(med_sharp, 1e-9), 2), z=bool(sel[k].get('planes')), tracked=(k not in linked)))
     placements[str(k)] = M[k].tolist()
 json.dump(fields, open(os.path.join(out, 'fields.json'), 'w'))
+um_px = (float(meta['um_per_px']) * smin / (scales[ref] * shrink)) if meta.get('um_per_px') else None   # µm par pixel de la mosaïque
+
+# --- rapport de qualite : trous, nettete, recalage, images rejetees ---
+SQ = 8
+cov_s = cv2.resize(covered, (max(1, W // SQ), max(1, H // SQ)), interpolation=cv2.INTER_AREA) > 127
+pts_s = np.argwhere(cov_s)[:, ::-1].astype(np.int32)
+holes, holes_frac = [], 0.0
+if len(pts_s) > 10:
+    # trou = zone non couverte entierement entouree de couverture (les echancrures du contour n'en sont pas)
+    pad = np.pad(~cov_s, 1, constant_values=True).astype(np.uint8)
+    n_, lab_, st_, _ = cv2.connectedComponentsWithStats(pad, connectivity=4)
+    outside = set(np.unique(np.concatenate([lab_[0], lab_[-1], lab_[:, 0], lab_[:, -1]])))
+    field_area = float(np.median([cv2.contourArea(np.float32(f['pts'])) for f in fields])) / (SQ * SQ)
+    gap_px = 0
+    for c in range(1, n_):
+        if c in outside or st_[c, cv2.CC_STAT_AREA] < max(4, 0.01 * field_area): continue
+        gap_px += int(st_[c, cv2.CC_STAT_AREA])
+        cnts, _ = cv2.findContours((lab_ == c).astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        for cn in cnts:
+            cn = cv2.approxPolyDP(cn, 1.5, True)
+            holes.append([[int((x - 1) * SQ), int((y - 1) * SQ)] for x, y in cn[:, 0, :]])
+    holes_frac = float(gap_px / max(1, cov_s.sum()))
+low_frac = float(np.mean([f['sharp'] < 0.5 for f in fields]))
+tracked_only = int(sum(1 for f in fields if f['tracked']))
+gain_spread = max(float(np.abs(np.log(v)).max()) for v in gains.values()) * 100 if gains else 0.0
+res_med, res_max = float(np.median(res)), float(np.max(res))
+cov_px = int((covered > 0).sum())
+notes = []
+score = 0
+if res_med > 3.0: notes.append(f'recalage imprécis ({res_med:.1f} px)'); score += 2
+elif res_med > 1.5: notes.append(f'recalage moyen ({res_med:.1f} px)'); score += 1
+if holes_frac > 0.08 or len(holes) >= 4: notes.append(f'{len(holes)} trou(s) dans la couverture ({holes_frac * 100:.0f} %)'); score += 2
+elif holes: notes.append(f'{len(holes)} trou(s) dans la couverture'); score += 1
+if low_frac > 0.25: notes.append(f'{low_frac * 100:.0f} % de champs peu nets'); score += 2
+elif low_frac > 0.10: notes.append(f'{low_frac * 100:.0f} % de champs peu nets'); score += 1
+if tracked_only: notes.append(f'{tracked_only} champ(s) placé(s) sans recalage fin'); score += 1
+if n_blurred > 0.5 * n_candidates: notes.append(f'{n_blurred} images floues rejetées sur {n_candidates}'); score += 1
+grade = 'A' if score == 0 else 'B' if score <= 2 else 'C'
+quality = dict(grade=grade, notes=notes, frames=dict(candidates=n_candidates, blurred=n_blurred, selected=N, used=len(comp), tracked_only=tracked_only),
+               residual_px=round(res_med, 2), residual_max_px=round(res_max, 2), holes=holes, holes_frac=round(holes_frac, 4),
+               coverage_px=cov_px, coverage_mm2=(round(cov_px * um_px * um_px / 1e6, 3) if um_px else None),
+               low_sharp_frac=round(low_frac, 3), gain_spread_pct=round(gain_spread, 1), flat_field='mesuré' if flat is not None else 'estimé',
+               k1=round(k1, 4), zstack_fields=len(zfields), zstack_levels=ZL)
+json.dump(quality, open(os.path.join(out, 'quality.json'), 'w'), indent=1)
+log(f'qualité : note {grade}' + (' (' + ', '.join(notes) + ')' if notes else ' (aucune remarque)'))
+
 json.dump(dict(size=[W, H], images=len(comp), of=N, placements=placements, k1=k1, chroma=chroma,
-               flat_field='mesuré' if flat is not None else 'estimé', residual_px=float(np.median(res)),
-               um_per_px=(float(meta['um_per_px']) * smin / (scales[ref] * shrink)) if meta.get('um_per_px') else None,   # µm par pixel de la mosaïque
+               flat_field='mesuré' if flat is not None else 'estimé', residual_px=res_med,
+               um_per_px=um_px, zstack=ZL, quality=quality,
+               title=meta.get('title'), stain=meta.get('stain'), objective=meta.get('objective'), sample=meta.get('sample'),
+               comment=meta.get('comment'), parent=meta.get('parent'), captured=meta.get('captured'),
                series=meta.get('series'), sources=[sel[k]['path'] for k in comp]),
           open(os.path.join(out, 'layout.json'), 'w'), indent=1)
 log('terminé : pano.jpg', W, 'x', H, ',', len(comp), 'images utilisées sur', N)

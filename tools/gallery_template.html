@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lames virtuelles</title>
+<style>
+:root { --bg:#f3f0f4; --panel:#fff; --fg:#2b2433; --muted:#6e6478; --line:#d9d2de; --accent:#7a2e8c; --ok:#1b9466; --warn:#b7791f; --bad:#c0392b; }
+@media (prefers-color-scheme: dark) { :root { --bg:#17131b; --panel:#211c26; --fg:#ece6f0; --muted:#a79cb1; --line:#3a323f; --accent:#c58ad6; --ok:#3cc58e; --warn:#e2b25a; --bad:#ef6b5a; } }
+body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.4 system-ui,sans-serif; padding:20px max(16px, env(safe-area-inset-right)) 40px max(16px, env(safe-area-inset-left)); }
+h1 { font-size:20px; margin:0 0 4px; } p { color:var(--muted); margin:0 0 14px; }
+.filters { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 16px; }
+.filters button { font:600 13px system-ui,sans-serif; color:var(--muted); background:var(--panel); border:1px solid var(--line); border-radius:999px; padding:6px 12px; cursor:pointer; }
+.filters button[aria-pressed="true"] { color:var(--accent); border-color:var(--accent); }
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:14px; }
+.card { display:block; background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; color:inherit; text-decoration:none; position:relative; }
+.card img { display:block; width:100%; aspect-ratio:3/2; object-fit:cover; background:#000; }
+.card .t { display:flex; flex-direction:column; gap:3px; padding:10px 12px; }
+.card b { font-size:15px; } .card small { color:var(--muted); }
+.card .tags { display:flex; flex-wrap:wrap; gap:4px; margin-top:4px; }
+.tag { font:600 11px system-ui,sans-serif; letter-spacing:.03em; padding:2px 7px; border-radius:6px; background:var(--bg); color:var(--muted); border:1px solid var(--line); }
+.tag.g { color:#fff; border:0; } .tag.gA { background:var(--ok); } .tag.gB { background:var(--warn); } .tag.gC { background:var(--bad); }
+.tag.z { color:var(--accent); border-color:var(--accent); }
+.card:hover { border-color:var(--accent); }
+.empty { color:var(--muted); padding:30px 0; }
+</style></head><body>
+<h1>Lames virtuelles</h1><p>Mosaïques assemblées à partir de captures à l'oculaire. Zoom au pincement, mini-carte en haut à droite.</p>
+<div class="filters" id="filters"></div>
+<div class="grid" id="grid"></div>
+<script>
+const ITEMS = __ITEMS__;
+const STAINS = __STAINS__;
+const grid = document.getElementById('grid'), filters = document.getElementById('filters');
+let fStain = null, fObj = null;
+function tag(txt, cls) { return `<span class="tag ${cls || ''}">${txt}</span>`; }
+function render() {
+  const list = ITEMS.filter(i => (!fStain || i.stain === fStain) && (!fObj || i.objective === fObj));
+  const byslug = Object.fromEntries(ITEMS.map(i => [i.slug, i]));
+  grid.innerHTML = list.map(i => {
+    const tags = [];
+    if (i.stain) tags.push(tag(STAINS[i.stain] || i.stain));
+    if (i.objective) tags.push(tag('obj. ' + i.objective));
+    if (i.grade) tags.push(tag('qualité ' + i.grade, 'g g' + i.grade));
+    if (i.zstack) tags.push(tag(i.zstack + ' plans', 'z'));
+    if (i.children.length) tags.push(tag(i.children.length + ' détail(s)', 'z'));
+    if (i.parent && byslug[i.parent]) tags.push(tag('détail de « ' + byslug[i.parent].title + ' »'));
+    return `<a class="card" href="${i.slug}/"><img src="${i.thumb}" alt="" loading="lazy"><span class="t"><b>${esc(i.title)}</b><small>${i.width} × ${i.height} px${i.captured ? ' · ' + i.captured : ''}${i.sample ? ' · ' + esc(i.sample) : ''}</small><span class="tags">${tags.join('')}</span></span></a>`;
+  }).join('') || '<div class="empty">Aucune lame pour ce filtre.</div>';
+}
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+function buildFilters() {
+  const stains = [...new Set(ITEMS.map(i => i.stain).filter(Boolean))], objs = [...new Set(ITEMS.map(i => i.objective).filter(Boolean))].sort((a, b) => parseFloat(a) - parseFloat(b));
+  if (!stains.length && !objs.length) return;
+  const mk = (label, on, cb) => { const b = document.createElement('button'); b.textContent = label; b.setAttribute('aria-pressed', on); b.onclick = cb; filters.appendChild(b); };
+  mk('Toutes', !fStain && !fObj, () => { fStain = fObj = null; refresh(); });
+  for (const s of stains) mk(STAINS[s] || s, fStain === s, () => { fStain = fStain === s ? null : s; refresh(); });
+  for (const o of objs) mk('objectif ' + o, fObj === o, () => { fObj = fObj === o ? null : o; refresh(); });
+}
+function refresh() { filters.innerHTML = ''; buildFilters(); render(); }
+refresh();
+</script>
+</body></html>
