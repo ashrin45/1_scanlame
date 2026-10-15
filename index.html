@@ -182,6 +182,12 @@
     <label>Mise au point au verrouillage
       <select id="focusmode"><option value="inf" selected>infini (oculaire à 0 dioptrie, recommandé)</option><option value="keep">garder la distance de l'autofocus</option></select>
     </label>
+    <label>Temps de pose au verrouillage
+      <select id="shutter"><option value="0" selected>garder la valeur courante</option><option value="83">1/120 s au plus (monter la lampe si sombre)</option><option value="40">1/250 s au plus</option></select>
+    </label>
+    <label>Température de couleur au verrouillage
+      <select id="ctemp"><option value="0" selected>garder la valeur courante</option><option value="3200">3200 K (halogène)</option><option value="4000">4000 K</option><option value="5000">5000 K (LED blanche)</option><option value="5600">5600 K (lumière du jour)</option></select>
+    </label>
     <label>Compensation d'exposition
       <select id="evcomp"><option value="-1">-1 IL</option><option value="-0.7">-0,7 IL</option><option value="-0.3">-0,3 IL</option><option value="0" selected>0</option><option value="0.3">+0,3 IL</option><option value="0.7">+0,7 IL</option></select>
     </label>
@@ -453,6 +459,7 @@ self.onmessage = async e => {
   if (LS.get('scanlame.focusmode')) $('focusmode').value = LS.get('scanlame.focusmode');
   $('focusmode').onchange = () => LS.set('scanlame.focusmode', $('focusmode').value);
   if (LS.get('scanlame.evcomp')) $('evcomp').value = LS.get('scanlame.evcomp');
+  for (const id of ['shutter', 'ctemp']) { if (LS.get('scanlame.' + id)) $(id).value = LS.get('scanlame.' + id); $(id).onchange = () => LS.set('scanlame.' + id, $(id).value); }
   $('evcomp').onchange = async () => {
     LS.set('scanlame.evcomp', $('evcomp').value);
     if (!track) return;
@@ -672,8 +679,8 @@ self.onmessage = async e => {
     const inRange = (v, c) => v != null && c && typeof c.min === 'number' && typeof c.max === 'number' && c.max > c.min && v >= c.min && v <= c.max && v > 0;
     const groups = on ? [
       ['mise au point', caps.focusMode?.includes('manual') ? { focusMode: 'manual', ...(($('focusmode').value === 'inf' && caps.focusDistance && typeof caps.focusDistance.max === 'number' && caps.focusDistance.max > 0) ? { focusDistance: caps.focusDistance.max } : inRange(s.focusDistance, caps.focusDistance) ? { focusDistance: s.focusDistance } : {}) } : null],
-      ['exposition', caps.exposureMode?.includes('manual') ? { exposureMode: 'manual', ...(inRange(s.exposureTime, caps.exposureTime) ? { exposureTime: s.exposureTime } : {}), ...(inRange(s.iso, caps.iso) ? { iso: s.iso } : {}) } : null],
-      ['balance des blancs', caps.whiteBalanceMode?.includes('manual') ? { whiteBalanceMode: 'manual', ...(inRange(s.colorTemperature, caps.colorTemperature) ? { colorTemperature: s.colorTemperature } : {}) } : null],
+      ['exposition', caps.exposureMode?.includes('manual') ? { exposureMode: 'manual', ...(inRange(s.exposureTime, caps.exposureTime) ? { exposureTime: (+$('shutter').value > 0 ? Math.min(s.exposureTime, Math.max(caps.exposureTime.min, +$('shutter').value)) : s.exposureTime) } : {}), ...(inRange(s.iso, caps.iso) ? { iso: s.iso } : {}) } : null],
+      ['balance des blancs', caps.whiteBalanceMode?.includes('manual') ? { whiteBalanceMode: 'manual', ...((+$('ctemp').value > 0 && inRange(+$('ctemp').value, caps.colorTemperature)) ? { colorTemperature: +$('ctemp').value } : inRange(s.colorTemperature, caps.colorTemperature) ? { colorTemperature: s.colorTemperature } : {}) } : null],
     ] : [
       ['mise au point', caps.focusMode?.includes('continuous') ? { focusMode: 'continuous' } : null],
       ['exposition', caps.exposureMode?.includes('continuous') ? { exposureMode: 'continuous' } : null],
@@ -696,6 +703,7 @@ self.onmessage = async e => {
     if (!ok.length) { say('Verrouillage refusé par le téléphone (' + ko.join(', ') + ').', true); return false; }
     $('lock').textContent = on ? (ko.length ? 'verrou partiel : ' + ok.join(', ') : 'AF/AE verrouillés') : 'AF/AE auto';
     if (on && ko.length) say('Verrouillé : ' + ok.join(', ') + '. Refusé : ' + ko.join(', ') + '.', true);
+    if (on) { const st2 = track.getSettings(); if (st2.exposureTime && +$('shutter').value > 0 && st2.exposureTime > +$('shutter').value + 1) log(`temps de pose ${st2.exposureTime} refusé par le téléphone (demandé ${$('shutter').value})`); if (st2.whiteBalanceMode !== 'manual') log('balance des blancs restée automatique malgré le verrou'); }
     return true;
   }
   function showExposure() {
