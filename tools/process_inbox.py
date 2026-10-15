@@ -140,10 +140,10 @@ while True:
     # jobs : (dossier result, numero de zone ou None, numero de segment, parent explicite ou None)
     jobs = [(res, None, 0, None)]
     def add_zones(r, seg):
-        others = layout_of(r).get('other_components') or []
-        for ci in range(1, 1 + len(others)):
-            rc_ = os.path.join(d, f'result_s{seg}_c{ci}')
-            if run_pipeline(rc_, ['--segment', str(seg), '--component', str(ci)]): jobs.append((rc_, ci, seg, None))
+        others = layout_of(r).get('zone_components') or []      # numeros reels des composantes a assembler a part
+        for n_, comp_i in enumerate(others, start=1):
+            rc_ = os.path.join(d, f'result_s{seg}_c{n_}')
+            if run_pipeline(rc_, ['--segment', str(seg), '--component', str(comp_i)]): jobs.append((rc_, n_, seg, None))
             else: print(f'  segment {seg + 1} zone {ci + 1} : échec de l\'assemblage, ignorée')
     if meta.get('parent'): add_zones(res, 0)
     for seg in range(1, nseg):

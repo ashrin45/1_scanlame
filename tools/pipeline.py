@@ -550,7 +550,25 @@ comps.sort(key=len, reverse=True)
 if a.component >= len(comps): sys.exit(f'composante {a.component} inexistante')
 comp = comps[a.component]
 # zones distinctes dans une meme prise (plusieurs details au fort grossissement) : les autres composantes assez grandes
-other_components = [len(c) for i, c in enumerate(comps) if i != a.component and len(c) >= 2]
+# une zone distincte = composante assez grande ET, quand le suivi donne des positions, eloignee de la composante
+# principale (sinon c'est un fragment du meme balayage, qui sera place d'apres le suivi). Au plus 4 zones.
+def comp_center(c):
+    pts = [P[k] for k in c if P[k]]
+    return np.mean(pts, axis=0) if pts else None
+main_c = comps[a.component]
+zone_ids = []
+for i_, c in enumerate(comps):
+    if i_ == a.component or len(c) < max(3, int(0.15 * len(main_c))): continue
+    if W0 and any(P[k] for k in c) and any(P[k] for k in main_c):
+        cm, cc = comp_center(main_c), comp_center(c)
+        far = np.hypot(*(cc - cm)) > 1.5 * max(W0, H0)
+        # fragment si une image de c est a moins d'un champ d'une image de la principale
+        near = any(P[k] and P[j] and math.hypot(P[k][0] - P[j][0], P[k][1] - P[j][1]) < 1.0 * max(W0, H0) for k in c for j in main_c)
+        if near or not far: continue
+    zone_ids.append(i_)
+zone_ids = zone_ids[:4]
+other_components = [len(comps[i_]) for i_ in zone_ids]
+is_zone = set(zone_ids)
 log('composantes :', [len(c) for c in comps], f'-> on assemble la n°{a.component} :', len(comp), 'images')
 if len(comp) < 2:
     sys.exit('aucune paire d\'images ne se recouvre')
@@ -632,7 +650,7 @@ if anchors and W0:
         s_ = scales[ref]; off = dst.mean(0) - src.mean(0) * s_
         Apos = np.array([[s_, 0, off[0]], [0, s_, off[1]]], np.float64)
     for ci, c in enumerate(comps):
-        if ci == a.component or len(c) >= 2: continue      # une composante de 2 images ou plus est une zone a part entiere
+        if ci == a.component or ci in is_zone: continue    # les zones distinctes sont assemblees a part ; le reste est un fragment
         for k in c:
             if P[k]:
                 # Apos convertit les positions du suivi (px du flux) en px de recalage de la reference : seule la
@@ -898,6 +916,6 @@ json.dump(dict(size=[W, H], images=len(comp), of=N, placements=placements, k1=k1
                title=meta.get('title'), stain=meta.get('stain'), objective=meta.get('objective'), sample=meta.get('sample'),
                comment=meta.get('comment'), parent=meta.get('parent'), captured=meta.get('captured'),
                series=meta.get('series'), component=a.component, other_components=other_components,
-               segment=a.segment, segments=len(segs), sources=[sel[k]['path'] for k in comp]),
+               segment=a.segment, segments=len(segs), zone_components=zone_ids, sources=[sel[k]['path'] for k in comp]),
           open(os.path.join(out, 'layout.json'), 'w'), indent=1)
 log('terminé : pano.jpg', W, 'x', H, ',', len(comp), 'images utilisées sur', N)
