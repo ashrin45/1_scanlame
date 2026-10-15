@@ -39,6 +39,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          PYTHONUNBUFFERED: '1'
         run: |
           ONLY="${{ inputs.only || github.event.client_payload.only || '' }}"
           FORCE="${{ (inputs.force || github.event.client_payload.force) && '--force' || '' }}"
