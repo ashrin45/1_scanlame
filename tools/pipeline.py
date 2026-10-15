@@ -30,6 +30,7 @@ ap.add_argument('--core', type=float, default=0.70, help='fraction du rayon de c
 ap.add_argument('--no-distortion', action='store_true', help='ne pas estimer la distorsion radiale')
 ap.add_argument('--no-chroma', action='store_true', help='ne pas corriger l aberration chromatique')
 ap.add_argument('--tile', type=int, default=2048, help='taille des tuiles de composition')
+ap.add_argument('--depth', choices=['auto', 'off', 'on'], default='auto', help='piles de profondeur (EDF + plans) : off = image la plus nette a chaque arret ; auto = selon serie.json (depth), off par defaut')
 ap.add_argument('--segment', type=int, default=0, help='segment d objectif de la prise (0 = premier) ; voir meta.segments')
 ap.add_argument('--component', type=int, default=0, help='composante connexe a assembler (0 = la plus grande) ; les autres sont listees dans layout.json')
 a = ap.parse_args()
@@ -216,6 +217,8 @@ def spectral_order(maps):
 
 ZMAX = 5   # plans conserves au plus par pile (z-stack navigable)
 
+DEPTH = a.depth if a.depth != 'auto' else (str(meta.get('depth') or 'off'))
+if DEPTH != 'on': log('profondeur désactivée : à chaque arrêt de platine, l\'image la plus nette est gardée')
 STILL, DRIFT = 0.06, 0.15   # pas < 6 % du cadre et derive cumulee < 15 % depuis le debut de l'arret = platine immobile
 merged, i, stacks = [], 0, 0
 while i < len(items):
@@ -227,7 +230,7 @@ while i < len(items):
     run = list(range(i, j))
     if len(run) >= 3:
         sh = [sharps[k] for k in run]
-        if max(sh) > 1.5 * min(sh) and max(sh) >= 3.0:
+        if DEPTH == 'on' and max(sh) > 1.5 * min(sh) and max(sh) >= 3.0:
             outp = os.path.join(frames_dir, f'z_{i:06d}.jpg')
             fused, aligned, smaps = edf([items[k][0] for k in run])
             cv2.imwrite(outp, fused, [cv2.IMWRITE_JPEG_QUALITY, 95])
