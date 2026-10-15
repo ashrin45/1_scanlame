@@ -178,6 +178,7 @@
         <option value="photo">Photos JPEG à intervalle</option>
       </select>
     </label>
+    <label class="wide check"><input id="advanced" type="checkbox"> Fonctions en cours de validation : boutons « Fond blanc » et « Changer d'objectif » pendant la prise</label>
     <label>Profondeur (vis micrométrique)
       <select id="depth"><option value="off" selected>désactivée : image la plus nette à chaque arrêt</option><option value="on">fusion + plans navigables (en essai)</option></select>
     </label>
@@ -439,6 +440,8 @@ self.onmessage = async e => {
   $('stain').onchange = () => LS.set('scanlame.stain', $('stain').value);
   if (LS.get('scanlame.zoommax') !== null) $('zoommax').value = LS.get('scanlame.zoommax');
   if (LS.get('scanlame.depth')) $('depth').value = LS.get('scanlame.depth');
+  $('advanced').checked = LS.get('scanlame.advanced') === '1';
+  $('advanced').onchange = () => { LS.set('scanlame.advanced', $('advanced').checked ? '1' : '0'); $('phase').classList.toggle('on', running && $('advanced').checked); };
   $('depth').onchange = () => LS.set('scanlame.depth', $('depth').value);
   $('zoommax').onchange = () => { LS.set('scanlame.zoommax', $('zoommax').value); const z = $('zoom'), lim = +$('zoommax').value; if (!z.disabled && track) { const caps = track.getCapabilities ? track.getCapabilities() : {}; if (caps.zoom) { z.max = lim > 0 ? Math.min(caps.zoom.max, lim) : caps.zoom.max; if (+z.value > +z.max) { z.value = z.max; z.dispatchEvent(new Event('input')); } } } };
   if (LS.get('scanlame.sendlog') === '0') $('sendlog').checked = false;
@@ -908,7 +911,7 @@ self.onmessage = async e => {
     running = true; seq = 0; seriesId = 'lame_' + stamp() + (tslug ? '_' + tslug : ''); seriesT0 = performance.now(); lastT = 0; recent = []; skipped = 0;
     tracker.postMessage({ type: 'reset' }); trackerBusy = 0; placed = [];
     phases = []; curBlank = null; switching = null; segments = [{ objective: $('objective').value, t0: 0, t1: null, um_per_px: +$('umpx').value > 0 ? +$('umpx').value : null }];
-    $('phase').classList.add('on'); $('blankbtn').setAttribute('aria-pressed', 'false'); $('objbtn').hidden = false; $('blankbtn').hidden = false; $('resumebtn').hidden = true; $('objpick').classList.remove('on');
+    $('phase').classList.toggle('on', $('advanced').checked); $('blankbtn').setAttribute('aria-pressed', 'false'); $('objbtn').hidden = false; $('blankbtn').hidden = false; $('resumebtn').hidden = true; $('objpick').classList.remove('on');
     sendMask(); drawMap(null); $('trk').className = ''; $('trkt').textContent = 'suivi en cours';
     const mode = $('mode').value;
     log(`=== série ${seriesId} (${mode}) « ${$('title').value.trim() || 'sans nom'} », ${$('stain').value}, objectif ${$('objective').value}${$('parent').value ? ', détail de ' + $('parent').value : ''}${$('complete').value ? ', reprise de ' + $('complete').value : ''} : débit ${$('bitrate').value} Mbit/s, serveur ${$('upload').value.trim() || 'aucun'}, intervalle ${$('interval').value} ms, taille ${$('scale').value}, qualité ${$('quality').value}, zoom ${$('zoom').value}, flux ${video.videoWidth}x${video.videoHeight}`);
