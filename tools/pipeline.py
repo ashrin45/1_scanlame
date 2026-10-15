@@ -32,6 +32,7 @@ ap.add_argument('--core', type=float, default=0.70, help='fraction du rayon de c
 ap.add_argument('--no-distortion', action='store_true', help='ne pas estimer la distorsion radiale')
 ap.add_argument('--no-chroma', action='store_true', help='ne pas corriger l aberration chromatique')
 ap.add_argument('--tile', type=int, default=2048, help='taille des tuiles de composition')
+ap.add_argument('--no-seams', action='store_true', help='coutures a mi-chemin (lignes droites) au lieu des coutures qui suivent le fond')
 ap.add_argument('--depth', choices=['auto', 'off', 'on'], default='auto', help='piles de profondeur (EDF + plans) : off = image la plus nette a chaque arret ; auto = selon serie.json (depth), off par defaut')
 ap.add_argument('--segment', type=int, default=0, help='segment d objectif de la prise (0 = premier) ; voir meta.segments')
 ap.add_argument('--component', type=int, default=0, help='composante connexe a assembler (0 = la plus grande) ; les autres sont listees dans layout.json')
@@ -772,6 +773,44 @@ def load(k):
             imgs_cache[k] = im
     return im
 
+SEAM_SCALE = 0.25
+def seam_masks(layers, masks, valids, lab, anyc):
+    """Coutures qui suivent le fond (programmation dynamique sur couleur + gradient, OpenCV stitching) au lieu
+    de lignes droites a mi-chemin : un residu de recalage de quelques pixels devient invisible. Calcul a 1/4,
+    masques remontes a la taille de la tuile ; chaque pixel reste attribue a exactement une image."""
+    n = len(layers)
+    # seules les images qui gagnent quelque part comptent (les autres ne contribueraient jamais)
+    keep = [i for i in range(n) if masks[i].any()]
+    if len(keep) < 2: return masks
+    h, w = lab.shape
+    sw, sh = max(8, int(w * SEAM_SCALE)), max(8, int(h * SEAM_SCALE))
+    imgs_s, msk_s = [], []
+    for i in keep:
+        imgs_s.append(cv2.resize(layers[i], (sw, sh), interpolation=cv2.INTER_AREA))
+        # region admissible = zone valide de l'image, un peu erodee pour rester loin de son bord
+        v = cv2.erode(valids[i].astype(np.uint8), np.ones((9, 9), np.uint8))
+        msk_s.append(cv2.resize(v, (sw, sh), interpolation=cv2.INTER_NEAREST) * 255)
+    try:
+        try: finder = cv2.detail_DpSeamFinder('COLOR_GRAD')          # OpenCV 4.x/5.x : nom de la fonction de cout
+        except Exception: finder = cv2.detail_DpSeamFinder(cv2.detail.DpSeamFinder_COLOR_GRAD)
+        out = finder.find(imgs_s, [(0, 0)] * len(keep), msk_s)
+        if out is None: out = msk_s
+        out = [np.asarray(m.get() if hasattr(m, 'get') else m) for m in out]
+    except (cv2.error, TypeError) as e:
+        if not getattr(seam_masks, 'warned', False): log(f'coutures : OpenCV a refusé ({e}), lignes droites'); seam_masks.warned = True
+        return masks
+    # remontee + attribution unique : pixel pris par exactement une image -> elle ; sinon le gagnant du poids
+    full = [cv2.resize((m > 0).astype(np.uint8), (w, h), interpolation=cv2.INTER_NEAREST) > 0 for m in out]
+    cnt = np.zeros((h, w), np.int32)
+    for f in full: cnt += f
+    new_lab = lab.copy()
+    for idx, i in enumerate(keep):
+        new_lab[(cnt == 1) & full[idx]] = i
+    res = [np.zeros((h, w), np.float32) for _ in range(n)]
+    for i in range(n):
+        res[i][(new_lab == i) & anyc] = 1.0
+    return res
+
 def blend_multiband(layers, masks):
     """layers: liste d'images float32 HxWx3 ; masks: liste de masques float32 HxW (partition) -> fondu multibande"""
     out = None
@@ -789,7 +828,9 @@ def blend_multiband(layers, masks):
 
 ty_n, tx_n = math.ceil(H / TILE), math.ceil(W / TILE)
 def compose_tile(tx, ty, loader, only=None):
-    """Compose la tuile (tx, ty) ; loader(k) donne l'image pleine resolution de k. Retourne (x0, y0, image, couverture) ou None."""
+    """Compose la tuile (tx, ty) ; loader(k) donne l'image pleine resolution de k. Retourne (x0, y0, image, couverture) ou None.
+    Deux passes : d'abord les poids (legers) pour savoir quelles images gagnent quelque part, puis seulement
+    celles-la sont remappees en pleine resolution (memoire divisee par 3 a 5 sur une video tres recouvrante)."""
     x0, y0 = tx * TILE, ty * TILE
     X0, Y0 = max(0, x0 - MARGIN), max(0, y0 - MARGIN)
     X1, Y1 = min(W, x0 + TILE + MARGIN), min(H, y0 + TILE + MARGIN)
@@ -798,7 +839,7 @@ def compose_tile(tx, ty, loader, only=None):
     ks = [k for k in comp if bbox[k][0] < X1 and bbox[k][2] > X0 and bbox[k][1] < Y1 and bbox[k][3] > Y0]
     if not ks or (only is not None and not any(k in only for k in ks)): return None
     gx, gy = np.meshgrid(np.arange(X0, X1, dtype=np.float32), np.arange(Y0, Y1, dtype=np.float32))
-    layers, weights = [], []
+    maps, weights, valids, kept = {}, [], [], []
     for k in ks:
         Mi = Minv[k]
         ux = Mi[0, 0] * gx + Mi[0, 1] * gy + Mi[0, 2]; uy = Mi[1, 0] * gx + Mi[1, 1] * gy + Mi[1, 2]
@@ -806,17 +847,29 @@ def compose_tile(tx, ty, loader, only=None):
         mapx, mapy = pd[..., 0].astype(np.float32), pd[..., 1].astype(np.float32)
         wm = cv2.remap(dist_maps[k], mapx, mapy, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=0)
         if wm.max() <= 0: continue
+        valid = wm > 0.04                                                # on reste a l'ecart du bord sombre du disque
+        core = np.clip((wm - (1 - a.core)) / a.core, 0, 1) ** 3          # 1 au coeur, 0 vers le bord du champ
+        wgt = ((core + 1e-3 * valid) / (scale_k[k] ** 4)).astype(np.float32)
+        maps[k] = (mapx, mapy); weights.append(wgt); valids.append(valid); kept.append(k)
+    del gx, gy
+    if not kept: return None
+    Wst = np.stack(weights)
+    lab0 = np.argmax(Wst, axis=0); anyc = Wst.max(0) > 0
+    del Wst
+    win = [n for n in range(len(kept)) if ((lab0 == n) & anyc).any()]   # images qui gagnent quelque part
+    lab = np.full(lab0.shape, -1, np.int32)
+    for new_n, n in enumerate(win): lab[(lab0 == n) & anyc] = new_n
+    layers, vals = [], []
+    for n in win:
+        k = kept[n]; mapx, mapy = maps[k]
         im = cv2.remap(loader(k), mapx, mapy, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(238, 238, 238)).astype(np.float32)
         im = np.clip(im * gains[k][None, None, :], 0, 255)
-        valid = wm > 0.04                                                # on reste a l'ecart du bord sombre du disque
-        im[~valid] = 238.0                                               # hors du disque : fond neutre (evite les halos du fondu)
-        core = np.clip((wm - (1 - a.core)) / a.core, 0, 1) ** 3          # 1 au coeur, 0 vers le bord du champ
-        wgt = (core + 1e-3 * valid) / (scale_k[k] ** 4)
-        layers.append(im); weights.append(wgt.astype(np.float32))
-    if not layers: return None
-    Wst = np.stack(weights)
-    lab = np.argmax(Wst, axis=0); anyc = Wst.max(0) > 0
+        im[~valids[n]] = 238.0                                           # hors du disque : fond neutre (evite les halos du fondu)
+        layers.append(im); vals.append(valids[n])
+    del maps, weights
     masks = [((lab == n) & anyc).astype(np.float32) for n in range(len(layers))]
+    if len(layers) > 1 and not a.no_seams:
+        masks = seam_masks(layers, masks, vals, lab, anyc)
     blended = layers[0] if len(layers) == 1 else blend_multiband(layers, masks)
     blended = np.clip(blended, 0, 255).astype(np.uint8)
     ix0, iy0 = x0 - X0, y0 - Y0
@@ -825,7 +878,12 @@ def compose_tile(tx, ty, loader, only=None):
 
 t_comp = time.time()
 _tiles = [(tx, ty) for ty in range(ty_n) for tx in range(tx_n)]
-with ThreadPoolExecutor(min(NWORK, 6)) as ex:     # 6 tuiles de 2560 px en parallele au plus (memoire)
+try:
+    _avail_gb = float(open('/proc/meminfo').read().split('MemAvailable:')[1].split()[0]) / 1e6
+except Exception:
+    _avail_gb = 8.0
+TILE_WORKERS = max(1, min(NWORK, 6, int(_avail_gb / 2.0)))   # ~2 Go par tuile de 2560 px en pleine charge
+with ThreadPoolExecutor(TILE_WORKERS) as ex:
     for r in ex.map(lambda t: compose_tile(t[0], t[1], load), _tiles):
         if r is None: continue
         x0, y0, sub, subc = r
@@ -855,7 +913,7 @@ if zfields and ZL >= 2:
                     zcache[key] = im
             return im
         pz = pano.copy()
-        with ThreadPoolExecutor(min(NWORK, 6)) as ex:
+        with ThreadPoolExecutor(TILE_WORKERS) as ex:
             for r in ex.map(lambda t: compose_tile(t[0], t[1], load_z, only=zset), _tiles):
                 if r is None: continue
                 x0, y0, sub, subc = r
