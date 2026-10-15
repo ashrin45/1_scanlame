@@ -110,22 +110,53 @@ for i in range(1, len(smalls)):
 del smalls
 
 # ---- piles de profondeur : suites d'images immobiles dont la nettete varie (vis micrometrique tournee) ----
+def align_stack(imgs):
+    """Decalages (dx, dy) de chaque plan vers le plan le plus net, robustes au flou : ECC en translation sur les gradients
+    a basse resolution, initialise par le plan precedent (la derive de la vis s'accumule). Retourne (shifts, ok)."""
+    n = len(imgs); H_, W_ = imgs[0].shape[:2]
+    f = min(1.0, 400.0 / max(H_, W_))
+    g = [cv2.resize(cv2.cvtColor(im, cv2.COLOR_BGR2GRAY), None, fx=f, fy=f, interpolation=cv2.INTER_AREA).astype(np.float32) for im in imgs]
+    def feat(x):   # gradients lisses : comparables entre un plan net et un plan flou
+        x = cv2.GaussianBlur(x, (0, 0), 2.0)
+        return cv2.magnitude(cv2.Sobel(x, cv2.CV_32F, 1, 0), cv2.Sobel(x, cv2.CV_32F, 0, 1))
+    F = [feat(x) for x in g]
+    sharp = [float(cv2.Laplacian(x, cv2.CV_32F).var()) for x in g]
+    ref = int(np.argmax(sharp))
+    shifts, ok = [(0.0, 0.0)] * n, [False] * n
+    ok[ref] = True
+    crit = (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 60, 1e-4)
+    lim = 0.2 * max(g[0].shape)
+    for order in ([range(ref + 1, n), range(ref - 1, -1, -1)]):
+        prev = (0.0, 0.0)
+        for k in order:
+            best = None
+            for init in ([prev, (0.0, 0.0)] if prev != (0.0, 0.0) else [(0.0, 0.0)]):
+                W = np.array([[1, 0, init[0]], [0, 1, init[1]]], np.float32)
+                try:
+                    cc, W = cv2.findTransformECC(F[ref], F[k], W, cv2.MOTION_TRANSLATION, crit, None, 5)
+                except cv2.error:
+                    continue
+                if abs(W[0, 2]) < lim and abs(W[1, 2]) < lim and (best is None or cc > best[0]): best = (cc, float(W[0, 2]), float(W[1, 2]))
+            if best and best[0] > 0.25:
+                shifts[k] = (best[1] / f, best[2] / f); ok[k] = True; prev = (best[1], best[2])
+            else:
+                ok[k] = False   # plan non alignable : exclu de la fusion
+    return shifts, ok, ref
+
 def edf(paths):
     """Fusion de plans de mise au point : en chaque pixel on garde le plan le plus net (pyramide laplacienne).
-    Retourne (image fusionnee, plans alignes uint8, cartes de nettete reduites)."""
+    Retourne (image fusionnee, plans alignes uint8, cartes de nettete reduites). Les plans qui ne s'alignent pas sur
+    le plan le plus net sont ecartes (sinon ils laissent des fantomes)."""
     imgs = [cv2.imread(q) for q in paths]
-    # alignement progressif (chaque plan sur le precedent, decalages cumules) : la vis micrometrique decale un peu
-    # l'image et deux plans eloignes en z se correlent mal, les plans voisins bien
+    shifts, oks, ref = align_stack(imgs)
+    keep = [k for k in range(len(imgs)) if oks[k]]
+    if len(keep) < len(imgs): log(f'  pile : {len(imgs) - len(keep)} plan(s) non alignable(s) écarté(s)')
     aligned, maps = [], []
-    prev = None; sx = sy = 0.0; lim = 0.15 * max(imgs[0].shape[:2])
-    for im in imgs:
-        g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY).astype(np.float32)
-        if prev is not None:
-            (dx, dy), resp = cv2.phaseCorrelate(prev, g)
-            if resp > 0.03 and abs(dx) < lim and abs(dy) < lim: sx += dx; sy += dy
-        prev = g
+    for k in keep:
+        im = imgs[k]; sx, sy = shifts[k]
         if abs(sx) > 0.5 or abs(sy) > 0.5:
-            M = np.float32([[1, 0, -sx], [0, 1, -sy]]); im = cv2.warpAffine(im, M, (im.shape[1], im.shape[0]), borderMode=cv2.BORDER_REPLICATE); g = cv2.warpAffine(g, M, (g.shape[1], g.shape[0]), borderMode=cv2.BORDER_REPLICATE)
+            M = np.float32([[1, 0, sx], [0, 1, sy]]); im = cv2.warpAffine(im, M, (im.shape[1], im.shape[0]), flags=cv2.INTER_LINEAR + cv2.WARP_INVERSE_MAP, borderMode=cv2.BORDER_REPLICATE)   # convention ECC
+        g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY).astype(np.float32)
         aligned.append(im)
         maps.append(cv2.GaussianBlur(np.abs(cv2.Laplacian(g, cv2.CV_32F, ksize=3)), (0, 0), 6))
     M = np.stack(maps); M = (M / (M.max(0, keepdims=True) + 1e-6)) ** 8; M = M / (M.sum(0, keepdims=True) + 1e-9)
