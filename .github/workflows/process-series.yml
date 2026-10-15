@@ -45,6 +45,18 @@ jobs:
           FORCE="${{ (inputs.force || github.event.client_payload.force) && '--force' || '' }}"
           export PIPELINE_ARGS="${{ github.event.client_payload.pipeline_args || '' }}"
           python tools/process_inbox.py ${ONLY:+--only "$ONLY"} $FORCE
+      - name: Conserver la prise brute (diagnostic, client_payload.keep_raw)
+        if: always() && github.event.client_payload.keep_raw && github.event.client_payload.only
+        uses: actions/upload-artifact@v4
+        with:
+          name: brut-${{ github.event.client_payload.only }}
+          path: |
+            inbox/${{ github.event.client_payload.only }}/video.*
+            inbox/${{ github.event.client_payload.only }}/serie.json
+            inbox/${{ github.event.client_payload.only }}/journal-telephone.txt
+            inbox/${{ github.event.client_payload.only }}/photos
+          retention-days: 3
+          if-no-files-found: ignore
       - name: Publier dans la galerie (reste éventuel)
         if: always()
         run: |
