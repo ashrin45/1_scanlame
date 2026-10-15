@@ -151,18 +151,25 @@ while True:
         print('  vide ou trop courte : supprimée'); rm(paths); continue
     t0 = time.time()
     res = os.path.join(d, 'result')
-    rc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'pipeline.py'), d, '--out', res]).returncode
+    PARGS = os.environ.get('PIPELINE_ARGS', '').split()
+    rc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'pipeline.py'), d, '--out', res] + PARGS).returncode
     if rc != 0:
         print(f'  ÉCHEC du pipeline (code {rc}), série marquée en échec dans le bucket')
         logp = os.path.join(res, 'pipeline.log')
-        put_text(f'{s}/failed.txt', open(logp).read()[-4000:] if os.path.isfile(logp) else f'pipeline code {rc}'); continue
+        put_text(f'{s}/failed.txt', open(logp).read()[-4000:] if os.path.isfile(logp) else f'pipeline code {rc}')
+        # journaux et planche-contact de l'echec publies dans lames/echecs/<serie>/ pour diagnostic
+        ed = os.path.join(ROOT, 'lames', 'echecs', s); os.makedirs(ed, exist_ok=True)
+        for src, dst in ((logp, 'assemblage.txt'), (os.path.join(d, 'journal-telephone.txt'), 'telephone.txt'), (os.path.join(res, 'planche.jpg'), 'planche.jpg')):
+            if os.path.isfile(src): shutil.copyfile(src, os.path.join(ed, dst))
+        if os.environ.get('GITHUB_ACTIONS'): git_publish([f'lames/echecs/{s}'], f'Échec : {s}')
+        continue
     # --- segments d'objectif (changement d'objectif pendant la prise) et zones distinctes (composantes) ---
     def run_pipeline(outdir, extra):
         os.makedirs(outdir, exist_ok=True)
         link = os.path.join(outdir, 'frames')
         if os.path.islink(link) and not os.path.isdir(link): os.unlink(link)
         if not os.path.isdir(link): os.symlink(os.path.abspath(os.path.join(res, 'frames')), link)
-        return subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'pipeline.py'), d, '--out', outdir] + extra).returncode == 0
+        return subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'pipeline.py'), d, '--out', outdir] + extra + os.environ.get('PIPELINE_ARGS', '').split()).returncode == 0
     def layout_of(r):
         try: return json.load(open(os.path.join(r, 'layout.json')))
         except Exception: return {}
@@ -231,7 +238,8 @@ while True:
       # journaux publies a cote de la lame (telephone + assemblage), le temps de la mise au point
       logs = os.path.join(ROOT, 'lames', slug, 'journaux'); os.makedirs(logs, exist_ok=True)
       stampf = s.replace('lame_', '')
-      for src, dst in ((os.path.join(d, 'journal-telephone.txt'), f'{stampf}-telephone.txt'), (os.path.join(res if not res.endswith('merged') else os.path.dirname(res), 'pipeline.log'), f'{stampf}-assemblage.txt')):
+      base_res = res if not res.endswith('merged') else os.path.dirname(res)
+      for src, dst in ((os.path.join(d, 'journal-telephone.txt'), f'{stampf}-telephone.txt'), (os.path.join(base_res, 'pipeline.log'), f'{stampf}-assemblage.txt'), (os.path.join(base_res, 'planche.jpg'), f'{stampf}-planche.jpg')):
           if os.path.isfile(src): shutil.copyfile(src, os.path.join(logs, dst))
       subprocess.run([sys.executable, '-c', 'import sys; sys.path.insert(0, sys.argv[1]); from publish_lame import write_pages; write_pages(sys.argv[2])', os.path.join(ROOT, 'tools'), slug])
       if seg == 0 and ci is None: seg0_slug = slug

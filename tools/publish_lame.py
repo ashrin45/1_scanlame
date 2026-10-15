@@ -99,7 +99,7 @@ def write_pages(slug):
     pr = j.get('params') or {}
     if pr: meta += '<span>v' + str(j.get('version') or 1) + ' · ' + html.escape(params_summary(pr)) + '</span>'
     logs = sorted(os.listdir(os.path.join(out, 'journaux'))) if os.path.isdir(os.path.join(out, 'journaux')) else []
-    if logs: meta += '<span>journaux : ' + ' '.join(f'<a href="journaux/{html.escape(l)}">{"téléphone" if "telephone" in l else "assemblage"} {html.escape(l[:8])}</a>' for l in logs) + '</span>'
+    if logs: meta += '<span>journaux : ' + ' '.join(f'<a href="journaux/{html.escape(l)}">{"téléphone" if "telephone" in l else "planche" if "planche" in l else "assemblage"} {html.escape(l[:8])}</a>' for l in logs) + '</span>'
     children = []
     for c in j.get('children') or []:
         cj = load_lame(c['slug'])

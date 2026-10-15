@@ -32,6 +32,7 @@ ap.add_argument('--core', type=float, default=0.70, help='fraction du rayon de c
 ap.add_argument('--no-distortion', action='store_true', help='ne pas estimer la distorsion radiale')
 ap.add_argument('--no-chroma', action='store_true', help='ne pas corriger l aberration chromatique')
 ap.add_argument('--tile', type=int, default=2048, help='taille des tuiles de composition')
+ap.add_argument('--allow-tracked', action='store_true', help='composer meme si la plupart des champs ne se recalent que par le suivi')
 ap.add_argument('--no-seams', action='store_true', help='coutures a mi-chemin (lignes droites) au lieu des coutures qui suivent le fond')
 ap.add_argument('--depth', choices=['auto', 'off', 'on'], default='auto', help='piles de profondeur (EDF + plans) : off = image la plus nette a chaque arret ; auto = selon serie.json (depth), off par defaut')
 ap.add_argument('--segment', type=int, default=0, help='segment d objectif de la prise (0 = premier) ; voir meta.segments')
@@ -129,6 +130,22 @@ for i in range(1, len(smalls)):
         else:
             v = (1.0, 0.0)
     vecs.append(v); moves.append(math.hypot(*v))
+# --- planche-contact : 24 images reparties sur la prise, avec leur nettete, pour voir ce que la camera a filme ---
+try:
+    idxs = [int(i) for i in np.linspace(0, len(items) - 1, min(24, len(items)))]
+    thumbs = []
+    for i in idxs:
+        th = cv2.imread(items[i][0], cv2.IMREAD_REDUCED_COLOR_8)
+        th = cv2.resize(th, (300, int(300 * th.shape[0] / th.shape[1])))
+        cv2.putText(th, f'{items[i][1] / 1000:.0f}s  net {sharps[i]:.0f}', (6, 22), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 3)
+        cv2.putText(th, f'{items[i][1] / 1000:.0f}s  net {sharps[i]:.0f}', (6, 22), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)
+        thumbs.append(th)
+    hmax = max(t.shape[0] for t in thumbs)
+    thumbs = [cv2.copyMakeBorder(t, 0, hmax - t.shape[0], 0, 0, cv2.BORDER_CONSTANT, value=(40, 40, 40)) for t in thumbs]
+    rows = [np.hstack(thumbs[r:r + 6] + [np.full((hmax, 300, 3), 40, np.uint8)] * (6 - len(thumbs[r:r + 6]))) for r in range(0, len(thumbs), 6)]
+    cv2.imwrite(os.path.join(out, 'planche.jpg'), np.vstack(rows), [cv2.IMWRITE_JPEG_QUALITY, 82])
+except Exception as e_:
+    log('planche-contact impossible : ' + str(e_))
 if not videos:   # photos a intervalle : pas de pile de profondeur, chaque photo est un champ
     moves = [1.0] * len(moves); vecs = [(1.0, 0.0)] * len(vecs)
 del smalls
@@ -670,7 +687,7 @@ if anchors and W0:
                 t = (Apos @ np.array([P[k][0], P[k][1], 1.0]))[:2]
                 T[k] = np.array([[1.0, 0, t[0]], [0, 1.0, t[1]], [0, 0, 1]]); comp.append(k); extra += 1
     if extra: log(f'{extra} image(s) placée(s) d\'après le suivi en direct (sans recalage fin)')
-    if extra > max(3, 0.5 * len(comp)):
+    if extra > max(3, 0.5 * len(comp)) and not a.allow_tracked:
         log(f'ÉCHEC : {extra} champs sur {len(comp)} ne se recalent pas par les points (image floue ou vide ?) ; prise inexploitable, pas de composition')
         sys.exit(3)
 

@@ -43,6 +43,7 @@ jobs:
         run: |
           ONLY="${{ inputs.only || github.event.client_payload.only || '' }}"
           FORCE="${{ (inputs.force || github.event.client_payload.force) && '--force' || '' }}"
+          export PIPELINE_ARGS="${{ github.event.client_payload.pipeline_args || '' }}"
           python tools/process_inbox.py ${ONLY:+--only "$ONLY"} $FORCE
       - name: Publier dans la galerie (reste éventuel)
         if: always()
