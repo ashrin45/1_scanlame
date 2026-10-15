@@ -70,7 +70,7 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
 <body>
 <header>
   <div class="title"><h1>lame_20261015_122713</h1><div class="info" id="info">Gram · objectif x100 · 15/10/2026 12:27</div></div>
-  <div class="meta"><span><b>2</b> champs</span><span><b>1746 × 2417</b> px</span><span><b>13</b> niveaux de zoom</span><span>échelle non calibrée</span><span><b>5</b> plans de profondeur</span><span>journaux : <a href="journaux/20261015_122713-assemblage.txt">assemblage 20261015</a> <a href="journaux/20261015_122713-telephone.txt">téléphone 20261015</a></span></div>
+  <div class="meta"><span><b>2</b> champs</span><span><b>1732 × 2398</b> px</span><span><b>13</b> niveaux de zoom</span><span>échelle non calibrée</span><span><b>5</b> plans de profondeur</span><span>journaux : <a href="journaux/20261015_122713-assemblage.txt">assemblage 20261015</a> <a href="journaux/20261015_122713-telephone.txt">téléphone 20261015</a></span></div>
   <div class="tools">
     <button id="zin" aria-label="Zoom avant">+</button>
     <button id="zout" aria-label="Zoom arrière">−</button>
@@ -88,11 +88,11 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
 <script>
-const W = 1746, H = 2417, TILE = 512, MAXLVL = 12;
-const FIELDS = [{"id":"0000","pts":[[41,277],[454,59],[918,2],[1334,113],[1743,404],[1744,1893],[41,1893]],"scale":1.0,"sharp":0.75,"z":true,"tracked":false},{"id":"0001","pts":[[0,778],[450,546],[897,498],[1323,616],[1726,904],[1728,2414],[1,2415]],"scale":0.986,"sharp":1.25,"z":true,"tracked":false}];
+const W = 1732, H = 2398, TILE = 512, MAXLVL = 12;
+const FIELDS = [{"id":"0000","pts":[[28,277],[445,58],[903,2],[1321,113],[1730,404],[1731,1893],[28,1893]],"scale":1.0,"sharp":0.72,"z":true,"tracked":false},{"id":"0001","pts":[[0,778],[418,559],[877,503],[1307,620],[1705,906],[1705,2396],[0,2396]],"scale":0.999,"sharp":1.28,"z":true,"tracked":false}];
 const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
-const ZSTACK = {"levels": 5, "tiles": ["10/0_0", "10/0_1", "11/0_0", "11/0_1", "11/0_2", "11/1_0", "11/1_1", "11/1_2", "12/0_1", "12/0_2", "12/0_3", "12/0_4", "12/1_0", "12/1_1", "12/1_2", "12/1_3", "12/1_4", "12/2_1", "12/2_2", "12/2_3", "12/2_4", "12/3_2", "12/3_3", "12/3_4", "2/0_0", "3/0_0", "4/0_0", "5/0_0", "6/0_0", "7/0_0", "8/0_0", "9/0_0"]};      // {levels, tiles:[...]} ou null
-const QUALITY = {"grade": "A", "notes": [], "frames": {"candidates": 2, "blurred": 0, "selected": 2, "used": 2, "tracked_only": 0}, "residual_px": 0.3, "residual_max_px": 0.3, "holes": [], "holes_frac": 0.0, "coverage_px": 3797094, "coverage_mm2": null, "low_sharp_frac": 0.0, "gain_spread_pct": 3.0, "flat_field": "estimé", "k1": -0.014, "zstack_fields": 2, "zstack_levels": 5};    // rapport du pipeline ({} si absent)
+const ZSTACK = {"levels": 5, "tiles": ["10/0_0", "10/0_1", "11/0_0", "11/0_1", "11/0_2", "11/1_1", "11/1_2", "12/0_1", "12/0_2", "12/0_3", "12/0_4", "12/1_0", "12/1_1", "12/1_2", "12/1_3", "12/1_4", "12/2_1", "12/2_2", "12/2_3", "12/2_4", "12/3_2", "12/3_4", "2/0_0", "3/0_0", "4/0_0", "5/0_0", "6/0_0", "7/0_0", "8/0_0", "9/0_0"]};      // {levels, tiles:[...]} ou null
+const QUALITY = {"grade": "A", "notes": [], "frames": {"candidates": 2, "blurred": 0, "selected": 2, "used": 2, "tracked_only": 0}, "residual_px": 1.02, "residual_max_px": 1.02, "holes": [], "holes_frac": 0.0, "coverage_px": 3540646, "coverage_mm2": null, "low_sharp_frac": 0.0, "gain_spread_pct": 2.0, "flat_field": "estimé", "k1": -0.082, "zstack_fields": 2, "zstack_levels": 5};    // rapport du pipeline ({} si absent)
 const CHILDREN = [];  // lames de détail (autre objectif) recalées dans celle-ci
 const PARENT = null;      // lame d'ensemble, si celle-ci est un détail
 const svgNS = 'http://www.w3.org/2000/svg';
