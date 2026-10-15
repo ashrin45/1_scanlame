@@ -69,6 +69,12 @@ def load_lame(slug):
 def save_lame(slug, j):
     json.dump(j, open(os.path.join(LAMES, slug, 'lame.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
+def params_summary(pr):
+    bits = ['profondeur ' + ('on' if pr.get('depth') == 'on' else 'off'), 'coutures ' + ('fond' if pr.get('seams', True) else 'droites')]
+    if pr.get('reg_size'): bits.append(f'recalage {pr["reg_size"]} px')
+    if pr.get('code'): bits.append('code ' + pr['code'])
+    return ', '.join(bits)
+
 def info_line(j):
     parts = []
     if j.get('stain'): parts.append(STAINS.get(j['stain'], j['stain']))
@@ -90,6 +96,8 @@ def write_pages(slug):
     meta += f'<span>{j["um_per_px"]:.4g} µm/px</span>' if j.get('um_per_px') else '<span>échelle non calibrée</span>'
     if j.get('zstack'): meta += f'<span><b>{j["zstack"]}</b> plans de profondeur</span>'
     if j.get('retakes'): meta += f'<span>complétée <b>{j["retakes"]}</b> fois</span>'
+    pr = j.get('params') or {}
+    if pr: meta += '<span>v' + str(j.get('version') or 1) + ' · ' + html.escape(params_summary(pr)) + '</span>'
     logs = sorted(os.listdir(os.path.join(out, 'journaux'))) if os.path.isdir(os.path.join(out, 'journaux')) else []
     if logs: meta += '<span>journaux : ' + ' '.join(f'<a href="journaux/{html.escape(l)}">{"téléphone" if "telephone" in l else "assemblage"} {html.escape(l[:8])}</a>' for l in logs) + '</span>'
     children = []
@@ -117,7 +125,8 @@ def write_gallery():
             thumb = f'{d}/lame_files/{max(0, j["maxlvl"] - 4)}/0_0.jpg'
             items.append(dict(slug=d, title=j['title'], width=j['width'], height=j['height'], stain=j.get('stain'), objective=j.get('objective'),
                               sample=j.get('sample'), captured=j.get('captured'), um_per_px=j.get('um_per_px'), grade=(j.get('quality') or {}).get('grade'),
-                              zstack=j.get('zstack') or 0, parent=j.get('parent'), children=[c['slug'] for c in (j.get('children') or [])], thumb=thumb))
+                              zstack=j.get('zstack') or 0, parent=j.get('parent'), children=[c['slug'] for c in (j.get('children') or [])], thumb=thumb,
+                              published=j.get('published'), updated=j.get('updated'), series=j.get('series'), version=j.get('version') or 1, params=j.get('params')))
     json.dump(items, open(os.path.join(LAMES, 'lames.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     tpl = open(os.path.join(ROOT, 'tools', 'gallery_template.html'), encoding='utf-8').read()
     open(os.path.join(LAMES, 'index.html'), 'w', encoding='utf-8').write(
@@ -172,6 +181,9 @@ def main():
              captured=captured or old.get('captured') or datetime.date.today().strftime('%d/%m/%Y'),
              parent=layout.get('parent') or old.get('parent'), parent_transform=old.get('parent_transform'),
              children=old.get('children') or [], quality=layout.get('quality'),
+             series=layout.get('series') or old.get('series'), version=layout.get('version') or old.get('version') or 1, params=layout.get('params') or old.get('params'),
+             published=old.get('published') or datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),
+             updated=datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),
              retakes=layout.get('retakes') or old.get('retakes') or 0, retake_series=layout.get('retake_series') or old.get('retake_series') or [],
              zstack=len(zpaths) if zpaths else (old.get('zstack') or 0), zstack_tiles=sorted(zkeys) if zpaths else old.get('zstack_tiles'))
     save_lame(slug, j)

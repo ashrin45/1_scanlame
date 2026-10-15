@@ -991,6 +991,9 @@ json.dump(dict(size=[W, H], images=len(comp), of=N, placements=placements, k1=k1
                title=meta.get('title'), stain=meta.get('stain'), objective=meta.get('objective'), sample=meta.get('sample'),
                comment=meta.get('comment'), parent=meta.get('parent'), captured=meta.get('captured'),
                series=meta.get('series'), component=a.component, other_components=other_components,
-               segment=a.segment, segments=len(segs), zone_components=zone_ids, sources=[sel[k]['path'] for k in comp]),
+               segment=a.segment, segments=len(segs), zone_components=zone_ids,
+               params=dict(depth=DEPTH, seams=not a.no_seams, fps=a.fps, reg_size=a.reg_size, max_side=a.max_side, core=a.core, tile=a.tile,
+                           distortion=not a.no_distortion, chroma=not a.no_chroma, code=(os.environ.get('GITHUB_SHA') or '')[:7] or None),
+               sources=[sel[k]['path'] for k in comp]),
           open(os.path.join(out, 'layout.json'), 'w'), indent=1)
 log('terminé : pano.jpg', W, 'x', H, ',', len(comp), 'images utilisées sur', N)

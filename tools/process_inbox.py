@@ -35,6 +35,35 @@ def get(path, dest):
             for c in r.iter_content(1 << 20): f.write(c)
 def put_text(path, text):
     r = requests.post(f'{URL}/storage/v1/object/{BUCKET}/{path}', headers={**H, 'Content-Type': 'text/plain', 'x-upsert': 'true'}, data=text.encode()); r.raise_for_status()
+def git(*args, check=False):
+    r = subprocess.run(['git'] + list(args), capture_output=True, text=True)
+    if check and r.returncode != 0: raise subprocess.CalledProcessError(r.returncode, args, r.stdout, r.stderr)
+    return r
+def regen_gallery():
+    subprocess.run([sys.executable, '-c', 'import sys; sys.path.insert(0, sys.argv[1]); from publish_lame import write_gallery; write_gallery()', os.path.join(ROOT, 'tools')])
+def git_publish(paths, message):
+    """Commite les dossiers donnes, se synchronise avec origin/main, regenere la galerie et pousse. Retourne True si pousse."""
+    try:
+        git('config', 'user.name', 'scanlame'); git('config', 'user.email', 'scanlame@users.noreply.github.com')
+        git('add', '--', *paths)
+        if git('diff', '--cached', '--quiet').returncode != 0: git('commit', '-q', '-m', message, check=True)
+        for attempt in range(3):
+            r = git('pull', '--rebase', '-q', 'origin', 'main')
+            if r.returncode != 0:
+                # conflit : seuls les fichiers derives de la galerie peuvent entrer en conflit, on les regenere
+                regen_gallery(); git('add', '--', 'lames/index.html', 'lames/lames.json')
+                env = dict(os.environ, GIT_EDITOR='true')
+                rc = subprocess.run(['git', 'rebase', '--continue'], capture_output=True, text=True, env=env).returncode
+                if rc != 0: git('rebase', '--abort'); print('  synchronisation git impossible : ' + r.stderr[-400:]); return False
+            regen_gallery(); git('add', '--', 'lames/index.html', 'lames/lames.json')
+            if git('diff', '--cached', '--quiet').returncode != 0: git('commit', '-q', '-m', 'Galerie', check=True)
+            if git('push', '-q', 'origin', 'HEAD:main').returncode == 0:
+                print('  poussée vers la galerie'); return True
+            time.sleep(5)
+        print('  push refusé trois fois'); return False
+    except subprocess.CalledProcessError as e:
+        print(f'  git : {e.stderr[-400:] if e.stderr else e}'); return False
+
 def slugify(t):
     import unicodedata, re
     t = unicodedata.normalize('NFKD', t).encode('ascii', 'ignore').decode().lower()
@@ -155,7 +184,7 @@ while True:
     jobs = [(r, ci, seg, ('SEG0' if seg > 0 else par)) for (r, ci, seg, par) in jobs]
     if len(jobs) > 1: print(f'  {len(jobs)} lame(s) dans cette prise (segments et zones)')
     base_title = meta.get('title') or s
-    published = []
+    published = []; published_ok = True
     seg0_slug = None
     for res, ci, seg, par in jobs:
       lay = layout_of(res)
@@ -164,6 +193,22 @@ while True:
       parent = seg0_slug if par == 'SEG0' else (meta.get('parent') if seg == 0 else None)
       if parent:
           lay['parent'] = parent; json.dump(lay, open(os.path.join(res, 'layout.json'), 'w'))
+      # relance d'une prise deja publiee (--force) : nouvelle version a cote de l'ancienne, pour comparer les reglages
+      version = 1
+      if a.force and os.path.isdir(os.path.join(ROOT, 'lames', slug)) and not meta.get('complete'):
+          existing = []
+          for dn in os.listdir(os.path.join(ROOT, 'lames')):
+              lp = os.path.join(ROOT, 'lames', dn, 'lame.json')
+              if os.path.isfile(lp):
+                  try:
+                      lj = json.load(open(lp, encoding='utf-8'))
+                      if lj.get('series') == s and lj.get('segment', 0) == seg and (lj.get('zone') or None) == ci: existing.append(int(lj.get('version') or 1))
+                  except Exception: pass
+          version = (max(existing) if existing else 1) + 1
+          slug = f'{slug}-v{version}'; title = f'{title} (v{version})'
+          print(f'  version {version} de cette prise (l\'ancienne reste en ligne pour comparaison)')
+      lay['series'] = s; lay['version'] = version; lay['segment'] = seg; lay['zone'] = ci
+      json.dump(lay, open(os.path.join(res, 'layout.json'), 'w'))
       complete = meta.get('complete') if (seg == 0 and ci is None) else None
       if complete and os.path.isfile(os.path.join(ROOT, 'lames', complete, 'lame.json')):
           # reprise ciblee : la prise est fondue dans la lame existante, qui garde son nom
@@ -194,22 +239,13 @@ while True:
               subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'link_child.py'), parent, slug])
           else:
               print(f'  lame parente {parent} introuvable, publiée seule')
+      # sous GitHub Actions : publication immediate de cette lame. Seul son dossier est commite ; la galerie
+      # (fichiers derives) est regeneree apres synchronisation pour ne jamais entrer en conflit.
+      pushed = git_publish([f'lames/{slug}'] + ([f'lames/{parent}'] if parent and os.path.isdir(os.path.join(ROOT, 'lames', parent)) else []), f'Lame : {slug}') if os.environ.get('GITHUB_ACTIONS') else True
+      if not pushed: print('  publication immédiate impossible, la prise reste à traiter au prochain passage'); published_ok = False
       print(f'  publiée : lames/{slug}/ en {time.time() - t0:.0f} s')
-      published.append(slug)
-      # sous GitHub Actions : publication immediate de cette lame (la galerie n'attend pas la fin du passage)
-      if os.environ.get('GITHUB_ACTIONS'):
-          try:
-              subprocess.run(['git', 'config', 'user.name', 'scanlame'], check=True)
-              subprocess.run(['git', 'config', 'user.email', 'scanlame@users.noreply.github.com'], check=True)
-              subprocess.run(['git', 'add', 'lames'], check=True)
-              if subprocess.run(['git', 'diff', '--cached', '--quiet']).returncode != 0:
-                  subprocess.run(['git', 'commit', '-q', '-m', f'Lame : {slug}'], check=True)
-                  subprocess.run(['git', 'pull', '--rebase', '-q', 'origin', 'main'], check=True)
-                  subprocess.run(['git', 'push', '-q', 'origin', 'HEAD:main'], check=True)
-                  print('  poussée vers la galerie')
-          except subprocess.CalledProcessError as e:
-              print(f'  publication immédiate impossible ({e}), elle partira en fin de passage')
-    if published:
+      if published_ok: published.append(slug)
+    if published and published_ok:
         put_text(f'{s}/done.txt', ','.join(published))
         if 'failed.txt' in names: rm([f'{s}/failed.txt'])
         if not a.keep and a.keep_days <= 0: rm(paths)

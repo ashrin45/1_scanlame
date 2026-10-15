@@ -23,15 +23,36 @@ h1 { font-size:20px; margin:0 0 4px; } p { color:var(--muted); margin:0 0 14px; 
 </style></head><body>
 <h1>Lames virtuelles</h1><p>Mosaïques assemblées à partir de captures à l'oculaire. Zoom au pincement, mini-carte en haut à droite.</p>
 <div class="filters" id="filters"></div>
+<div class="filters" style="margin-top:-8px"><label style="font-size:13px;color:var(--muted)">Trier par
+  <select id="sort" style="font:inherit;margin-left:6px;padding:5px 8px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--fg)">
+    <option value="published">publication, la plus récente d'abord</option>
+    <option value="captured">prise de vue, la plus récente d'abord</option>
+    <option value="title">nom</option>
+    <option value="sample">prélèvement</option>
+    <option value="grade">qualité</option>
+    <option value="series">même prise, versions côte à côte</option>
+  </select></label></div>
 <div class="grid" id="grid"></div>
 <script>
 const ITEMS = __ITEMS__;
 const STAINS = __STAINS__;
 const grid = document.getElementById('grid'), filters = document.getElementById('filters');
-let fStain = null, fObj = null;
+let fStain = null, fObj = null, sortBy = 'published';
+const capKey = i => { const m = /(\d{2})\/(\d{2})\/(\d{4}) ?(\d{2})?:?(\d{2})?/.exec(i.captured || ''); return m ? `${m[3]}${m[2]}${m[1]}${m[4] || '00'}${m[5] || '00'}` : ''; };
+const fmtDate = iso => { if (!iso) return ''; const d = new Date(iso); return isNaN(d) ? '' : d.toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }); };
+function sorted(list) {
+  const l = list.slice();
+  if (sortBy === 'published') l.sort((a, b) => (b.published || '').localeCompare(a.published || '') || capKey(b).localeCompare(capKey(a)));
+  else if (sortBy === 'captured') l.sort((a, b) => capKey(b).localeCompare(capKey(a)));
+  else if (sortBy === 'title') l.sort((a, b) => a.title.localeCompare(b.title, 'fr'));
+  else if (sortBy === 'sample') l.sort((a, b) => (a.sample || 'zzz').localeCompare(b.sample || 'zzz', 'fr') || a.title.localeCompare(b.title, 'fr'));
+  else if (sortBy === 'series') l.sort((a, b) => (b.series || b.slug).localeCompare(a.series || a.slug) || (b.version || 1) - (a.version || 1));
+  else if (sortBy === 'grade') l.sort((a, b) => (a.grade || 'Z').localeCompare(b.grade || 'Z') || (b.published || '').localeCompare(a.published || ''));
+  return l;
+}
 function tag(txt, cls) { return `<span class="tag ${cls || ''}">${txt}</span>`; }
 function render() {
-  const list = ITEMS.filter(i => (!fStain || i.stain === fStain) && (!fObj || i.objective === fObj));
+  const list = sorted(ITEMS.filter(i => (!fStain || i.stain === fStain) && (!fObj || i.objective === fObj)));
   const byslug = Object.fromEntries(ITEMS.map(i => [i.slug, i]));
   grid.innerHTML = list.map(i => {
     const tags = [];
@@ -39,9 +60,10 @@ function render() {
     if (i.objective) tags.push(tag('obj. ' + i.objective));
     if (i.grade) tags.push(tag('qualité ' + i.grade, 'g g' + i.grade));
     if (i.zstack) tags.push(tag(i.zstack + ' plans', 'z'));
+    if (i.params) { const p = i.params; tags.push(tag('v' + (i.version || 1) + ' · prof. ' + (p.depth === 'on' ? 'on' : 'off') + ' · coutures ' + (p.seams === false ? 'droites' : 'fond') + (p.code ? ' · ' + p.code : ''))); }
     if (i.children.length) tags.push(tag(i.children.length + ' détail(s)', 'z'));
     if (i.parent && byslug[i.parent]) tags.push(tag('détail de « ' + byslug[i.parent].title + ' »'));
-    return `<a class="card" href="${i.slug}/"><img src="${i.thumb}" alt="" loading="lazy"><span class="t"><b>${esc(i.title)}</b><small>${i.width} × ${i.height} px${i.captured ? ' · ' + i.captured : ''}${i.sample ? ' · ' + esc(i.sample) : ''}</small><span class="tags">${tags.join('')}</span></span></a>`;
+    return `<a class="card" href="${i.slug}/"><img src="${i.thumb}" alt="" loading="lazy"><span class="t"><b>${esc(i.title)}</b><small>${i.width} × ${i.height} px${i.captured ? ' · prise ' + i.captured : ''}${i.published ? ' · publiée ' + fmtDate(i.published) : ''}${i.sample ? ' · ' + esc(i.sample) : ''}</small><span class="tags">${tags.join('')}</span></span></a>`;
   }).join('') || '<div class="empty">Aucune lame pour ce filtre.</div>';
 }
 function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
@@ -54,6 +76,8 @@ function buildFilters() {
   for (const o of objs) mk('objectif ' + o, fObj === o, () => { fObj = fObj === o ? null : o; refresh(); });
 }
 function refresh() { filters.innerHTML = ''; buildFilters(); render(); }
+document.getElementById('sort').onchange = e => { sortBy = e.target.value; try { localStorage.setItem('lames.sort', sortBy); } catch (_) {} render(); };
+try { const sv = localStorage.getItem('lames.sort'); if (sv) { sortBy = sv; document.getElementById('sort').value = sv; } } catch (_) {}
 refresh();
 </script>
 </body></html>

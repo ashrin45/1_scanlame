@@ -1,1 +1,11 @@
-{"title": "lame_20261014_193731", "width": 12000, "height": 6966, "fields": 125, "tiles": 462}
+{
+ "title": "lame_20261014_193731",
+ "width": 12000,
+ "height": 6966,
+ "fields": 125,
+ "tiles": 462,
+ "maxlvl": 14,
+ "tile": 512,
+ "published": "2026-10-14T19:23:23+00:00",
+ "updated": "2026-10-14T19:23:23+00:00"
+}
