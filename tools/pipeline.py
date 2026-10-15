@@ -525,59 +525,90 @@ with ThreadPoolExecutor(NWORK) as ex:
         if r_ is not None: pairs[ij] = r_
 log(len(pairs), 'paires valides')
 
-# --- recalage par correlation guide par le suivi du telephone (frottis sanguins, champs repetitifs ou pauvres en points) ---
-# 1. etalonnage : relation entre deplacement du suivi (px du flux) et translation de recalage, sur les paires SIFT sures
-# 2. pour chaque paire candidate sans paire SIFT, translation initiale d'apres le suivi, affinee par ECC sur le recouvrement
+# --- verification des paires SIFT par correlation sur le recouvrement (frottis : cellules toutes semblables -> fausses paires en reseau) ---
 def _gray_clahe(reg):
     return cv2.createCLAHE(3.0, (8, 8)).apply(cv2.cvtColor(reg, cv2.COLOR_BGR2GRAY)).astype(np.float32)
-pos_map = None
-if W0 and sum(1 for q in P if q) >= 2:
-    src, dst = [], []
-    for (i, j), (pi, pj, A, n) in pairs.items():
-        if P[i] and P[j] and n >= 60:
-            src.append([P[j][0] - P[i][0], P[j][1] - P[i][1]]); dst.append([A[0, 2], A[1, 2]])
-    if len(src) >= 4:
-        Mp, inl = cv2.estimateAffine2D(np.float32(src), np.float32(dst), method=cv2.LMEDS)
-        if Mp is not None and inl is not None and inl.sum() >= 4:
-            pos_map = Mp[:, :2]   # deplacement du suivi -> translation attendue (px de recalage)
-            log(f'suivi etalonne sur {int(inl.sum())} paires : facteur {math.hypot(*pos_map[0]):.3f}')
-    if pos_map is None:
-        # pas assez de paires SIFT : on suppose le suivi en px du flux, meme orientation que la camera
-        pos_map = np.float32([[scales[0], 0], [0, scales[0]]])
-        log('suivi non etalonnable par les points : facteur suppose = echelle de recalage')
-    GRAY = {}
-    def gray_of(k):
-        if k not in GRAY: GRAY[k] = _gray_clahe(regs[k])
-        return GRAY[k]
-    def ecc_pair(ij):
-        i, j = ij
-        if (i, j) in pairs or not (P[i] and P[j]): return None
-        d = pos_map @ np.float32([P[j][0] - P[i][0], P[j][1] - P[i][1]])   # attendu : pi = pj + d
-        h_, w_ = regs[i].shape[:2]
-        if abs(d[0]) > 0.8 * w_ or abs(d[1]) > 0.8 * h_: return None     # recouvrement trop faible
-        # recouvrement : zone de i vue par j
-        x0_, y0_ = int(max(0, d[0])), int(max(0, d[1])); x1_, y1_ = int(min(w_, w_ + d[0])), int(min(h_, h_ + d[1]))
-        if x1_ - x0_ < 80 or y1_ - y0_ < 80: return None
-        gi, gj = gray_of(i), gray_of(j)
-        tmpl = gi[y0_:y1_, x0_:x1_]
-        W_ = np.float32([[1, 0, -d[0]], [0, 1, -d[1]]])     # j -> i (ECC : input warpe vers template)
-        try:
-            cc, W_ = cv2.findTransformECC(gi, gj, W_, cv2.MOTION_TRANSLATION, (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 40, 1e-3), None, 5)
-        except cv2.error:
-            return None
-        dx, dy = -W_[0, 2], -W_[1, 2]
-        if cc < 0.35 or math.hypot(dx - d[0], dy - d[1]) > 0.12 * max(w_, h_): return None
-        # correspondances synthetiques sur une grille du recouvrement
-        xs = np.linspace(x0_ + 10, x1_ - 10, 8); ys = np.linspace(y0_ + 10, y1_ - 10, 6)
-        pi_ = np.float32([[x, y] for y in ys for x in xs]); pj_ = pi_ - np.float32([dx, dy])
-        A_ = np.float32([[1, 0, dx], [0, 1, dy]])
-        return (i, j), (pi_, pj_, A_, max(a.min_inliers, int(40 * cc)))
-    todo = [ij for ij in sorted(cand) if ij not in pairs]
+GRAY = {}
+def gray_of(k):
+    if k not in GRAY: GRAY[k] = _gray_clahe(regs[k])
+    return GRAY[k]
+def overlap_cc(i, j, A):
+    """correlation normalisee entre i et j ramenee dans i par A (similitude j -> i) ; None si recouvrement trop faible"""
+    gi = gray_of(i); h_, w_ = gi.shape
+    gj = cv2.warpAffine(gray_of(j), A, (w_, h_), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=-1e4)
+    mj = cv2.warpAffine(rmasks[j], A, (w_, h_), flags=cv2.INTER_NEAREST, borderMode=cv2.BORDER_CONSTANT, borderValue=0)
+    m = (gj > -1e3) & (rmasks[i] > 0) & (mj > 0)
+    if m.sum() < 0.08 * w_ * h_: return None
+    x, y = gi[m], gj[m]; x = x - x.mean(); y = y - y.mean()
+    den = math.sqrt(float((x * x).sum()) * float((y * y).sum()))
+    return float((x * y).sum() / den) if den > 0 else 0.0
+_rej = []
+for ij, (pi, pj, A, n) in list(pairs.items()):
+    cc_ = overlap_cc(ij[0], ij[1], A)
+    if cc_ is not None and cc_ < 0.4: _rej.append((ij, cc_))
+for ij, _ in _rej: del pairs[ij]
+if _rej: log(f'{len(_rej)} paire(s) SIFT rejetée(s) : les images ne se superposent pas à l\'endroit trouvé (motif répétitif)')
+
+# --- recalage par correlation (frottis sanguins, champs repetitifs ou pauvres en points SIFT) ---
+# pour chaque paire candidate sans paire SIFT : plusieurs gabarits de j cherches dans toute l'image i (demi-echelle),
+# accepte si un pic net et non ambigu, ou si deux gabarits s'accordent ; puis affinage pleine echelle et ECC sous-pixel
+HALF = {}
+def half_of(k):
+    if k not in HALF: HALF[k] = cv2.resize(gray_of(k), None, fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
+    return HALF[k]
+def tm_pair(ij):
+    i, j = ij
+    if (i, j) in pairs: return None
+    gi2, gj2 = half_of(i), half_of(j); h2, w2 = gi2.shape; hr_, wr_ = gray_of(i).shape
+    T = min(128, min(h2, w2) // 3)
+    hits = []
+    for fy_ in (0.17, 0.5, 0.83):
+        for fx_ in (0.25, 0.75):
+            tx, ty = int(fx_ * w2 - T / 2), int(fy_ * h2 - T / 2)
+            res = cv2.matchTemplate(gi2, gj2[ty:ty + T, tx:tx + T], cv2.TM_CCOEFF_NORMED)
+            _, cc, _, loc = cv2.minMaxLoc(res)
+            res2 = res.copy(); cv2.circle(res2, loc, 8, -1, -1); _, cc2, _, _ = cv2.minMaxLoc(res2)
+            hits.append((cc, cc - cc2, loc[0] - tx, loc[1] - ty))
+    best = max(hits)
+    agree = [hh for hh in hits if hh[0] >= 0.6 and math.hypot(hh[2] - best[2], hh[3] - best[3]) < 3]
+    if not ((best[0] >= 0.75 and best[1] >= 0.2) or (len(agree) >= 2 and best[1] >= 0.1)): return None
+    dx, dy = 2.0 * best[2], 2.0 * best[3]
+    if wr_ - abs(dx) < 0.12 * wr_ or hr_ - abs(dy) < 0.12 * hr_: return None
+    # affinage pleine echelle : gabarit au centre du recouvrement, recherche locale +-12 px
+    gi, gj = gray_of(i), gray_of(j)
+    x0_, y0_ = int(max(0, -dx)), int(max(0, -dy)); x1_, y1_ = int(min(wr_, wr_ - dx)), int(min(hr_, hr_ - dy))
+    tw_, th_ = min(x1_ - x0_ - 20, 300), min(y1_ - y0_ - 20, 300)
+    if tw_ >= 40 and th_ >= 40:
+        tx0, ty0 = (x0_ + x1_) // 2 - tw_ // 2, (y0_ + y1_) // 2 - th_ // 2
+        sx0, sy0 = max(0, int(tx0 + dx - 12)), max(0, int(ty0 + dy - 12)); sx1, sy1 = min(wr_, int(tx0 + dx + tw_ + 12)), min(hr_, int(ty0 + dy + th_ + 12))
+        win = gi[sy0:sy1, sx0:sx1]
+        if win.shape[0] > th_ and win.shape[1] > tw_:
+            res = cv2.matchTemplate(win, gj[ty0:ty0 + th_, tx0:tx0 + tw_], cv2.TM_CCOEFF_NORMED)
+            _, cc, _, loc = cv2.minMaxLoc(res)
+            if cc >= 0.5: dx, dy = float(sx0 + loc[0] - tx0), float(sy0 + loc[1] - ty0)
+    try:
+        W_ = np.float32([[1, 0, -dx], [0, 1, -dy]])
+        _, W_ = cv2.findTransformECC(gi, gj, W_, cv2.MOTION_TRANSLATION, (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 30, 1e-3), None, 3)
+        if math.hypot(-W_[0, 2] - dx, -W_[1, 2] - dy) < 3: dx, dy = float(-W_[0, 2]), float(-W_[1, 2])
+    except cv2.error:
+        pass
+    A_ = np.float32([[1, 0, dx], [0, 1, dy]])
+    cc_ = overlap_cc(i, j, A_)
+    if cc_ is not None and cc_ < 0.4: return None
+    ox0, oy0 = max(0, dx), max(0, dy); ox1, oy1 = min(wr_, wr_ + dx), min(hr_, hr_ + dy)
+    xs = np.linspace(ox0 + 10, ox1 - 10, 8); ys = np.linspace(oy0 + 10, oy1 - 10, 6)
+    pi_ = np.float32([[x, y] for y in ys for x in xs]); pj_ = pi_ - np.float32([dx, dy])
+    return (i, j), (pi_, pj_, A_, max(a.min_inliers, int(60 * best[0])))
+todo = [ij for ij in sorted(cand) if ij not in pairs]
+if os.environ.get('SCANLAME_DUMP'):
+    import pickle
+    pickle.dump(dict(regs=regs, rmasks=rmasks, P=P, cand=sorted(cand), pairs=pairs, scales=scales, W0=W0, H0=H0), open(os.path.join(out, 'dump.pkl'), 'wb'))
+if todo:
     with ThreadPoolExecutor(NWORK) as ex:
-        added = [r_ for r_ in ex.map(ecc_pair, todo) if r_ is not None]
+        added = [r_ for r_ in ex.map(tm_pair, todo) if r_ is not None]
     for ij, val in added: pairs[ij] = val
-    if added: log(f'{len(added)} paire(s) recalée(s) par corrélation guidée par le suivi (champs répétitifs ou pauvres en points)')
-    del GRAY
+    if added: log(f'{len(added)} paire(s) recalée(s) par corrélation d\'images (champs répétitifs ou pauvres en points)')
+del GRAY, HALF
 if not pairs:
     sys.exit('aucune paire d\'images ne se recouvre')
 
@@ -814,6 +845,7 @@ log('mosaïque', W, 'x', H)
 
 # par image : matrice canvas<-undistorted (2x3), son inverse, boite englobante, poids (distance au bord, coeur net)
 M, Minv, bbox, scale_k, dist_maps = {}, {}, {}, {}, {}
+DIST_DS = 4
 for k in comp:
     Mk = (Sfin @ Tf[k])
     M[k] = Mk[:2]; Minv[k] = np.linalg.inv(Mk)[:2]
@@ -823,7 +855,9 @@ for k in comp:
     bbox[k] = (int(max(0, np.floor(c4[:, 0].min()))), int(max(0, np.floor(c4[:, 1].min()))), int(min(W, np.ceil(c4[:, 0].max()))), int(min(H, np.ceil(c4[:, 1].max()))))
     mk = cv2.imread(os.path.join(full_dir, f'{k:04d}_mask.png'), 0)
     dm = cv2.distanceTransform((mk > 0).astype(np.uint8), cv2.DIST_L2, 5)
-    dist_maps[k] = (dm / max(float(dm.max()), 1.0)).astype(np.float32)   # 0 au bord, 1 au centre
+    dm = (dm / max(float(dm.max()), 1.0)).astype(np.float32)   # 0 au bord, 1 au centre
+    # garde au 1/4 (carte lisse) : 177 images pleine resolution en float32 = 2.7 Go, c'est ce qui tuait le runner
+    dist_maps[k] = cv2.resize(dm, (max(1, w // DIST_DS), max(1, h // DIST_DS)), interpolation=cv2.INTER_AREA)
 
 def distort_pts(pu, c, R):
     """undistorted -> distorted (inverse de undist), par point fixe"""
@@ -919,7 +953,7 @@ def compose_tile(tx, ty, loader, only=None):
         pd = distort_pts(np.stack([ux, uy], -1), centers[k], Rs[k])
         return pd[..., 0].astype(np.float32), pd[..., 1].astype(np.float32)
     def weight_of(k, mapx, mapy):
-        wm = cv2.remap(dist_maps[k], mapx, mapy, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=0)
+        wm = cv2.remap(dist_maps[k], mapx * (1.0 / DIST_DS), mapy * (1.0 / DIST_DS), cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=0)
         valid = wm > 0.04                                                # on reste a l'ecart du bord sombre du disque
         core = np.clip((wm - (1 - a.core)) / a.core, 0, 1) ** 3          # 1 au coeur, 0 vers le bord du champ
         return ((core + 1e-3 * valid) / (scale_k[k] ** 4)).astype(np.float32), valid
