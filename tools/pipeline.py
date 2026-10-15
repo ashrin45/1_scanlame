@@ -14,8 +14,10 @@ Etapes :
     fondu multibande (pyramide laplacienne)
  5. sortie : pano.jpg, layout.json, fields.json (pour publish_lame.py)
 """
-import argparse, glob, itertools, json, math, os, subprocess, sys, time
+import argparse, glob, itertools, json, math, os, subprocess, sys, time, threading
+from concurrent.futures import ThreadPoolExecutor
 import cv2, numpy as np
+NWORK = max(2, min(16, os.cpu_count() or 2))   # OpenCV libere le GIL : les etapes lourdes tournent en parallele sur les coeurs
 
 ap = argparse.ArgumentParser()
 ap.add_argument('series')
@@ -425,8 +427,7 @@ def preprocess_plane(path, crop, mask, edf_path=None):
     return corr
 
 # --- balance des blancs : estimee sur chaque image (reduite), puis lissee sur les images voisines dans le temps ---
-_w = []
-for it in sel:
+def _white_job(it):
     im4 = cv2.imread(it['path'], cv2.IMREAD_REDUCED_COLOR_4)
     m4 = disc_mask(im4)
     f4 = im4.astype(np.float32)
@@ -434,8 +435,9 @@ for it in sel:
         bg4 = cv2.resize(flat, (im4.shape[1], im4.shape[0]), interpolation=cv2.INTER_AREA)
         ref4 = np.array([np.percentile(bg4[..., c][m4 > 0], 90) for c in range(3)])
         f4 = np.clip(f4 * (ref4 / (bg4 + 1e-6)), 0, 255)
-    _w.append(white_point(f4, m4))
-_w = np.array(_w)
+    return white_point(f4, m4)
+with ThreadPoolExecutor(NWORK) as ex:
+    _w = np.array(list(ex.map(_white_job, sel)))
 k_ = min(9, len(_w) if len(_w) % 2 else len(_w) - 1)
 for i_ in range(len(_w)):
     lo_, hi_ = max(0, i_ - k_ // 2), min(len(_w), i_ + k_ // 2 + 1)
@@ -445,26 +447,30 @@ if len(_w) > 1:
     log(f'balance des blancs : blanc estimé par image, lissé sur {k_} images (variation max {drift:.0f} %)')
 
 full_dir = os.path.join(out, 'full'); os.makedirs(full_dir, exist_ok=True)
-regs, rmasks, scales, offsets, centers, Rs = [], [], [], [], [], []
-for i, it in enumerate(sel):
+def _pre_job(i):
+    it = sel[i]
     corr, mask, reg, rmask, s, off, center, R = preprocess(it['path'], a.reg_size)
     cv2.imwrite(os.path.join(full_dir, f'{i:04d}.jpg'), corr, [cv2.IMWRITE_JPEG_QUALITY, 97])
     cv2.imwrite(os.path.join(full_dir, f'{i:04d}_mask.png'), mask)
-    regs.append(reg); rmasks.append(rmask); scales.append(s); offsets.append(off); centers.append(center); Rs.append(R)
     it['crop'] = [int(off[0]), int(off[1]), int(corr.shape[1]), int(corr.shape[0])]
     for z, pp in enumerate(it.get('planes') or []):
         cv2.imwrite(os.path.join(full_dir, f'{i:04d}_z{z}.jpg'), preprocess_plane(pp, it['crop'], mask, it['path']), [cv2.IMWRITE_JPEG_QUALITY, 97])
-    del corr, mask
+    return reg, rmask, s, off, center, R
+with ThreadPoolExecutor(NWORK) as ex:
+    _res = list(ex.map(_pre_job, range(len(sel))))
+regs = [r[0] for r in _res]; rmasks = [r[1] for r in _res]; scales = [r[2] for r in _res]; offsets = [r[3] for r in _res]; centers = [r[4] for r in _res]; Rs = [r[5] for r in _res]
+del _res
 N = len(regs)
 log('prétraitement terminé,', N, 'images, recalage à', regs[0].shape[1], 'x', regs[0].shape[0])
 
 # ---------------------------------------------------------------- 3. recalage
-sift = cv2.SIFT_create(5000)
-kps, des = [], []
-for reg, m in zip(regs, rmasks):
+def _sift_job(args_):
+    reg, m = args_
     g = cv2.createCLAHE(2.0, (8, 8)).apply(cv2.cvtColor(reg, cv2.COLOR_BGR2GRAY))
-    k, d = sift.detectAndCompute(g, cv2.erode(m, np.ones((9, 9), np.uint8)))
-    kps.append(k); des.append(d)
+    return cv2.SIFT_create(5000).detectAndCompute(g, cv2.erode(m, np.ones((9, 9), np.uint8)))
+with ThreadPoolExecutor(NWORK) as ex:
+    _kd = list(ex.map(_sift_job, zip(regs, rmasks)))
+kps = [k for k, _ in _kd]; des = [d for _, d in _kd]
 log('points SIFT :', int(np.mean([len(k) for k in kps])), 'par image en moyenne')
 
 cand = set()
@@ -480,20 +486,25 @@ if W0 and any(P):
                 cand.add((i, j))
 log(len(cand), 'paires à tester')
 
-bf = cv2.BFMatcher(cv2.NORM_L2)
-pairs = {}   # (i,j) -> (pi, pj, A, n) en coordonnees de recalage (brutes)
-for i, j in sorted(cand):
-    if des[i] is None or des[j] is None or len(des[i]) < 20 or len(des[j]) < 20: continue
-    mm = bf.knnMatch(des[i], des[j], k=2)
+def _pair_job(ij):
+    i, j = ij
+    if des[i] is None or des[j] is None or len(des[i]) < 20 or len(des[j]) < 20: return None
+    mm = cv2.BFMatcher(cv2.NORM_L2).knnMatch(des[i], des[j], k=2)
     good = [m for m, n in mm if m.distance < 0.75 * n.distance]
-    if len(good) < 12: continue
+    if len(good) < 12: return None
     pi = np.float32([kps[i][m.queryIdx].pt for m in good]); pj = np.float32([kps[j][m.trainIdx].pt for m in good])
     A, inl = cv2.estimateAffinePartial2D(pj, pi, method=cv2.RANSAC, ransacReprojThreshold=4.0, maxIters=4000, confidence=0.999)
-    if A is None: continue
+    if A is None: return None
     n_inl = int(inl.sum()); sc = math.hypot(A[0, 0], A[0, 1])
     if n_inl >= a.min_inliers and 0.5 < sc < 2.0:
         s_ = inl.ravel() > 0
-        pairs[(i, j)] = (pi[s_], pj[s_], A, n_inl)
+        return (pi[s_], pj[s_], A, n_inl)
+    return None
+pairs = {}   # (i,j) -> (pi, pj, A, n) en coordonnees de recalage (brutes)
+_cl = sorted(cand)
+with ThreadPoolExecutor(NWORK) as ex:
+    for ij, r_ in zip(_cl, ex.map(_pair_job, _cl)):
+        if r_ is not None: pairs[ij] = r_
 log(len(pairs), 'paires valides')
 if not pairs:
     sys.exit('aucune paire d\'images ne se recouvre')
@@ -750,12 +761,16 @@ def distort_pts(pu, c, R):
 TILE, MARGIN, LEVELS = a.tile, 256, 5
 pano = np.zeros((H, W, 3), np.uint8); pano[:] = 255
 covered = np.zeros((H, W), np.uint8)
-imgs_cache = {}
+imgs_cache = {}; _cache_lock = threading.Lock()
 def load(k):
-    if k not in imgs_cache:
-        if len(imgs_cache) > 40: imgs_cache.clear()
-        imgs_cache[k] = cv2.imread(os.path.join(full_dir, f'{k:04d}.jpg'))
-    return imgs_cache[k]
+    with _cache_lock:
+        im = imgs_cache.get(k)
+    if im is None:
+        im = cv2.imread(os.path.join(full_dir, f'{k:04d}.jpg'))
+        with _cache_lock:
+            if len(imgs_cache) > 60: imgs_cache.clear()
+            imgs_cache[k] = im
+    return im
 
 def blend_multiband(layers, masks):
     """layers: liste d'images float32 HxWx3 ; masks: liste de masques float32 HxW (partition) -> fondu multibande"""
@@ -809,9 +824,9 @@ def compose_tile(tx, ty, loader, only=None):
     return x0, y0, blended[iy0:iy1, ix0:ix1], anyc[iy0:iy1, ix0:ix1]
 
 t_comp = time.time()
-for ty in range(ty_n):
-    for tx in range(tx_n):
-        r = compose_tile(tx, ty, load)
+_tiles = [(tx, ty) for ty in range(ty_n) for tx in range(tx_n)]
+with ThreadPoolExecutor(min(NWORK, 6)) as ex:     # 6 tuiles de 2560 px en parallele au plus (memoire)
+    for r in ex.map(lambda t: compose_tile(t[0], t[1], load), _tiles):
         if r is None: continue
         x0, y0, sub, subc = r
         region = pano[y0:y0 + sub.shape[0], x0:x0 + sub.shape[1]]
@@ -827,19 +842,21 @@ if zfields and ZL >= 2:
     t_z = time.time()
     zset = set(zfields)
     for z in range(ZL):
-        zcache = {}
+        zcache = {}; zlock = threading.Lock()
         def load_z(k, z=z):
             if k not in zset: return load(k)
             n = len(sel[k]['planes']); zi = int(round(z * (n - 1) / (ZL - 1)))
             key = (k, zi)
-            if key not in zcache:
-                if len(zcache) > 20: zcache.clear()
-                zcache[key] = cv2.imread(os.path.join(full_dir, f'{k:04d}_z{zi}.jpg'))
-            return zcache[key]
+            with zlock: im = zcache.get(key)
+            if im is None:
+                im = cv2.imread(os.path.join(full_dir, f'{k:04d}_z{zi}.jpg'))
+                with zlock:
+                    if len(zcache) > 30: zcache.clear()
+                    zcache[key] = im
+            return im
         pz = pano.copy()
-        for ty in range(ty_n):
-            for tx in range(tx_n):
-                r = compose_tile(tx, ty, load_z, only=zset)
+        with ThreadPoolExecutor(min(NWORK, 6)) as ex:
+            for r in ex.map(lambda t: compose_tile(t[0], t[1], load_z, only=zset), _tiles):
                 if r is None: continue
                 x0, y0, sub, subc = r
                 region = pz[y0:y0 + sub.shape[0], x0:x0 + sub.shape[1]]
