@@ -899,7 +899,8 @@ self.onmessage = async e => {
     say(`Objectif ${obj} : balayage des zones de détail. Elles seront recalées dans la vue d'ensemble.`);
   };
   function startSeries() {
-    running = true; seq = 0; seriesId = 'lame_' + stamp(); seriesT0 = performance.now(); lastT = 0; recent = []; skipped = 0;
+    const tslug = $('title').value.trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 30);
+    running = true; seq = 0; seriesId = 'lame_' + stamp() + (tslug ? '_' + tslug : ''); seriesT0 = performance.now(); lastT = 0; recent = []; skipped = 0;
     tracker.postMessage({ type: 'reset' }); trackerBusy = 0; placed = [];
     phases = []; curBlank = null; switching = null; segments = [{ objective: $('objective').value, t0: 0, t1: null, um_per_px: +$('umpx').value > 0 ? +$('umpx').value : null }];
     $('phase').classList.add('on'); $('blankbtn').setAttribute('aria-pressed', 'false'); $('objbtn').hidden = false; $('blankbtn').hidden = false; $('resumebtn').hidden = true; $('objpick').classList.remove('on');
