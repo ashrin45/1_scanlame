@@ -1,0 +1,22 @@
+[    0.0s] extraction video.mp4 à 4.0 img/s
+[    5.8s] 205 images candidates
+[   12.8s] 7 pile(s) de profondeur fusionnée(s) (EDF), plans conservés pour la navigation
+[   12.8s] netteté médiane 2.0, seuil 3.0
+[   12.8s] 10 images retenues (nettes, non redondantes)
+[   12.8s] pas de champ vide filmé : vignettage estimé par lissage
+[   14.2s] aberration chromatique : échelle R 1.0000, B 0.9995
+[   20.4s] prétraitement terminé, 10 images, recalage à 900 x 1200
+[   20.8s] points SIFT : 190 par image en moyenne
+[   20.8s] 44 paires à tester
+[   20.8s] 4 paires valides
+[   20.8s] distorsion radiale k1 = -0.0180 (résidu 0.26 px contre 0.35 px sans correction)
+[   20.8s] composantes : [4, 1, 1, 1, 1, 1, 1] -> on assemble la n°0 : 4 images
+[   20.9s] ajustement global : 203 correspondances, 3 images
+[   20.9s] 6 image(s) placée(s) d'après le suivi en direct (sans recalage fin)
+[   20.9s] compensation photométrique : écart de gain max 4.1 %
+[   20.9s] recalage : erreur médiane 0.39 px (échelle recalage), max 0.48
+[   21.1s] mosaïque 12024 x 12083
+[   67.5s] composition : 36 tuiles en 46 s
+[  286.5s] z-stack : 5 plans sur 6 champ(s) en 219 s
+[  286.8s] qualité : note B (6 champ(s) placé(s) sans recalage fin, 61 images floues rejetées sur 82)
+[  286.8s] terminé : pano.jpg 12024 x 12083 , 10 images utilisées sur 10
