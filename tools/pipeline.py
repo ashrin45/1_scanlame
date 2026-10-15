@@ -151,14 +151,20 @@ def edf(paths):
     shifts, oks, ref = align_stack(imgs)
     keep = [k for k in range(len(imgs)) if oks[k]]
     if len(keep) < len(imgs): log(f'  pile : {len(imgs) - len(keep)} plan(s) non alignable(s) écarté(s)')
-    aligned, maps = [], []
+    aligned, maps, valids = [], [], []
+    refim = imgs[ref]
     for k in keep:
         im = imgs[k]; sx, sy = shifts[k]
+        valid = np.ones(im.shape[:2], np.float32)
         if abs(sx) > 0.5 or abs(sy) > 0.5:
-            M = np.float32([[1, 0, sx], [0, 1, sy]]); im = cv2.warpAffine(im, M, (im.shape[1], im.shape[0]), flags=cv2.INTER_LINEAR + cv2.WARP_INVERSE_MAP, borderMode=cv2.BORDER_REPLICATE)   # convention ECC
+            M = np.float32([[1, 0, sx], [0, 1, sy]])
+            im = cv2.warpAffine(im, M, (im.shape[1], im.shape[0]), flags=cv2.INTER_LINEAR + cv2.WARP_INVERSE_MAP, borderMode=cv2.BORDER_CONSTANT, borderValue=(0, 0, 0))   # convention ECC
+            valid = cv2.warpAffine(valid, M, (im.shape[1], im.shape[0]), flags=cv2.INTER_NEAREST + cv2.WARP_INVERSE_MAP, borderMode=cv2.BORDER_CONSTANT, borderValue=0)
+            valid = cv2.erode(valid, np.ones((9, 9), np.uint8))          # on s'ecarte du bord du plan decale
+            im = np.where(valid[..., None] > 0, im, refim)                # hors champ : pixels du plan de reference
         g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY).astype(np.float32)
-        aligned.append(im)
-        maps.append(cv2.GaussianBlur(np.abs(cv2.Laplacian(g, cv2.CV_32F, ksize=3)), (0, 0), 6))
+        aligned.append(im); valids.append(valid)
+        maps.append(cv2.GaussianBlur(np.abs(cv2.Laplacian(g, cv2.CV_32F, ksize=3)), (0, 0), 6) * valid)   # pas de poids hors champ
     M = np.stack(maps); M = (M / (M.max(0, keepdims=True) + 1e-6)) ** 8; M = M / (M.sum(0, keepdims=True) + 1e-9)
     small_maps = [cv2.resize(m, (64, 48), interpolation=cv2.INTER_AREA) for m in maps]
     levels = 5
