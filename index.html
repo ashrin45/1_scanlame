@@ -575,6 +575,7 @@ self.onmessage = async e => {
     $('shoot').disabled = false; $('lockbtn').disabled = false; $('off').disabled = false; $('shoot').classList.add('ready'); setState('ready');
     log(`flux ${video.videoWidth}x${video.videoHeight} @${st.frameRate || '?'} fps, piste "${track.label}"`);
     log(`capacités : focus ${JSON.stringify(caps.focusMode || null)}, expo ${JSON.stringify(caps.exposureMode || null)}, balance ${JSON.stringify(caps.whiteBalanceMode || null)}, zoom ${caps.zoom ? caps.zoom.min + '..' + caps.zoom.max : 'non'}`);
+    log(`plages : focusDistance ${JSON.stringify(caps.focusDistance || null)}, exposureTime ${JSON.stringify(caps.exposureTime || null)}, iso ${JSON.stringify(caps.iso || null)}, colorTemperature ${JSON.stringify(caps.colorTemperature || null)}`);
     if (caps.zoom) {
       const z = $('zoom'), lim = +$('zoommax').value;
       // au-dela de 3x (et 5x) Android bascule sur un teleobjectif : autre optique, autre calibration -> on plafonne
@@ -597,23 +598,36 @@ self.onmessage = async e => {
     $('zoomv').textContent = (+e.target.value).toFixed(1) + '×';
     try { await track.applyConstraints({ advanced: [{ zoom: +e.target.value }] }); } catch (err) { log('zoom refusé : ' + err.message); }
   };
+  // Verrouillage AF/AE/balance : chaque reglage est applique separement, avec sa valeur courante seulement si elle est
+  // dans la plage annoncee (Samsung annonce par exemple colorTemperature 0 ou focusDistance 0, que Chrome refuse en bloc).
   async function lockAll(on) {
-    const caps = track.getCapabilities ? track.getCapabilities() : {}, s = track.getSettings(), adv = {};
-    if (on) {
-      if (caps.focusMode?.includes('manual')) { adv.focusMode = 'manual'; if (s.focusDistance != null) adv.focusDistance = s.focusDistance; }
-      if (caps.exposureMode?.includes('manual')) { adv.exposureMode = 'manual'; if (s.exposureTime != null) adv.exposureTime = s.exposureTime; if (s.iso != null) adv.iso = s.iso; }
-      if (caps.whiteBalanceMode?.includes('manual')) { adv.whiteBalanceMode = 'manual'; if (s.colorTemperature != null) adv.colorTemperature = s.colorTemperature; }
-    } else {
-      if (caps.focusMode?.includes('continuous')) adv.focusMode = 'continuous';
-      if (caps.exposureMode?.includes('continuous')) adv.exposureMode = 'continuous';
-      if (caps.whiteBalanceMode?.includes('continuous')) adv.whiteBalanceMode = 'continuous';
+    const caps = track.getCapabilities ? track.getCapabilities() : {}, s = track.getSettings();
+    const inRange = (v, c) => v != null && c && typeof c.min === 'number' && typeof c.max === 'number' && c.max > c.min && v >= c.min && v <= c.max && v > 0;
+    const groups = on ? [
+      ['mise au point', caps.focusMode?.includes('manual') ? { focusMode: 'manual', ...(inRange(s.focusDistance, caps.focusDistance) ? { focusDistance: s.focusDistance } : {}) } : null],
+      ['exposition', caps.exposureMode?.includes('manual') ? { exposureMode: 'manual', ...(inRange(s.exposureTime, caps.exposureTime) ? { exposureTime: s.exposureTime } : {}), ...(inRange(s.iso, caps.iso) ? { iso: s.iso } : {}) } : null],
+      ['balance des blancs', caps.whiteBalanceMode?.includes('manual') ? { whiteBalanceMode: 'manual', ...(inRange(s.colorTemperature, caps.colorTemperature) ? { colorTemperature: s.colorTemperature } : {}) } : null],
+    ] : [
+      ['mise au point', caps.focusMode?.includes('continuous') ? { focusMode: 'continuous' } : null],
+      ['exposition', caps.exposureMode?.includes('continuous') ? { exposureMode: 'continuous' } : null],
+      ['balance des blancs', caps.whiteBalanceMode?.includes('continuous') ? { whiteBalanceMode: 'continuous' } : null],
+    ];
+    if (!groups.some(g => g[1])) { say('Ce téléphone n\'expose pas le verrouillage AF/AE au navigateur. Utilise le verrouillage de l\'app caméra native ou l\'app Capacitor.', true); return false; }
+    const ok = [], ko = [];
+    for (const [name, adv] of groups) {
+      if (!adv) continue;
+      try { await track.applyConstraints({ advanced: [adv] }); ok.push(name); log(`verrouillage ${on ? 'on' : 'off'} ${name} : ${JSON.stringify(adv)}`); }
+      catch (e) {
+        // valeur refusee : on fige le mode seul, le capteur garde sa valeur courante
+        const bare = Object.fromEntries(Object.entries(adv).filter(([k]) => k.endsWith('Mode')));
+        try { await track.applyConstraints({ advanced: [bare] }); ok.push(name); log(`verrouillage ${name} : ${JSON.stringify(adv)} refusé (${e.message}), mode seul accepté`); }
+        catch (e2) { ko.push(name); log(`verrouillage ${name} refusé : ${e2.message}`); }
+      }
     }
-    log(`verrouillage ${on ? 'on' : 'off'} : ${JSON.stringify(adv)}`);
-    if (!Object.keys(adv).length) { say('Ce téléphone n\'expose pas le verrouillage AF/AE au navigateur. Utilise le verrouillage de l\'app caméra native ou l\'app Capacitor.', true); return false; }
-    try { await track.applyConstraints({ advanced: [adv] }); }
-    catch (e) { say('Verrouillage refusé : ' + e.message, true); return false; }
     log('réglages après verrouillage : ' + JSON.stringify(track.getSettings()));
-    $('lock').textContent = on ? 'AF/AE verrouillés' : 'AF/AE auto';
+    if (!ok.length) { say('Verrouillage refusé par le téléphone (' + ko.join(', ') + ').', true); return false; }
+    $('lock').textContent = on ? (ko.length ? 'verrou partiel : ' + ok.join(', ') : 'AF/AE verrouillés') : 'AF/AE auto';
+    if (on && ko.length) say('Verrouillé : ' + ok.join(', ') + '. Refusé : ' + ko.join(', ') + '.', true);
     return true;
   }
   $('lockbtn').onclick = async () => {
@@ -837,6 +851,7 @@ self.onmessage = async e => {
     sendMask(); drawMap(null); $('trk').className = ''; $('trkt').textContent = 'suivi en cours';
     const mode = $('mode').value;
     log(`=== série ${seriesId} (${mode}) « ${$('title').value.trim() || 'sans nom'} », ${$('stain').value}, objectif ${$('objective').value}${$('parent').value ? ', détail de ' + $('parent').value : ''}${$('complete').value ? ', reprise de ' + $('complete').value : ''} : débit ${$('bitrate').value} Mbit/s, serveur ${$('upload').value.trim() || 'aucun'}, intervalle ${$('interval').value} ms, taille ${$('scale').value}, qualité ${$('quality').value}, zoom ${$('zoom').value}, flux ${video.videoWidth}x${video.videoHeight}`);
+    if ($('lockbtn').getAttribute('aria-pressed') !== 'true') log('ATTENTION : AF/AE non verrouillés, l\'autofocus peut chasser pendant la série');
     if (mode === 'video') { if (!startVideo()) { running = false; return; } }
     else timer = setInterval(tick, +$('interval').value);
     $('shoot').textContent = 'Arrêter'; $('shoot').classList.add('stop'); $('rec').classList.add('on'); setState('recording');
