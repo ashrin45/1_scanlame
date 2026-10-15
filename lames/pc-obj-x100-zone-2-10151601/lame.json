@@ -1,0 +1,48 @@
+{
+ "title": "Pc (obj. x100) (zone 2)",
+ "width": 16001,
+ "height": 3491,
+ "fields": 90,
+ "tiles": 320,
+ "tile": 512,
+ "maxlvl": 14,
+ "um_per_px": null,
+ "stain": "mgg",
+ "objective": "x100",
+ "sample": null,
+ "comment": null,
+ "captured": "15/10/2026 16:01",
+ "parent": "pc-10151601",
+ "parent_transform": null,
+ "children": [],
+ "quality": {
+  "grade": "C",
+  "notes": [
+   "recalage imprécis (30.0 px)",
+   "62 champ(s) placé(s) sans recalage fin"
+  ],
+  "frames": {
+   "candidates": 689,
+   "blurred": 72,
+   "selected": 260,
+   "used": 90,
+   "tracked_only": 62
+  },
+  "residual_px": 29.96,
+  "residual_max_px": 541.49,
+  "holes": [],
+  "holes_frac": 0.0,
+  "coverage_px": 22894167,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 8.3,
+  "flat_field": "mesuré",
+  "k1": -0.022,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null
+}
