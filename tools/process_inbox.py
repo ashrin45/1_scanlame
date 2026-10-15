@@ -14,6 +14,7 @@ ap.add_argument('--only', default=None)
 ap.add_argument('--work', default='inbox')
 ap.add_argument('--keep-days', type=float, default=float(os.environ.get('KEEP_DAYS', '3')), help='garder les prises publiees ce nombre de jours (reassemblage possible)')
 ap.add_argument('--force', action='store_true', help='retraiter meme une serie deja publiee ou en echec (avec --only)')
+ap.add_argument('--storage-limit-mb', type=float, default=float(os.environ.get('STORAGE_LIMIT_MB', '800')), help='au-dela, les prises publiees les plus anciennes sont supprimees sans attendre --keep-days')
 a = ap.parse_args()
 
 URL = os.environ.get('SUPABASE_URL', '').rstrip('/')
@@ -185,6 +186,24 @@ for s in series:
         if not a.keep and a.keep_days <= 0: rm(paths)
         done.extend(published)
     shutil.rmtree(d, ignore_errors=True)
+# --- plafond de stockage : le bucket gratuit fait 1 Go ; au-dela du plafond on supprime les prises deja publiees, les plus anciennes d'abord ---
+def series_files(sname):
+    out = [(f'{sname}/{e["name"]}', e) for e in ls(sname) if e.get('id')]
+    out += [(f'{sname}/chunks/{e["name"]}', e) for e in ls(f'{sname}/chunks')]
+    out += [(f'{sname}/photos/{e["name"]}', e) for e in ls(f'{sname}/photos')]
+    return out
+inv = []
+for sname in [e['name'] for e in ls('') if e.get('id') is None]:
+    files = series_files(sname)
+    size = sum((e.get('metadata') or {}).get('size', 0) for _, e in files)
+    inv.append((sname, size, any(p.endswith('/done.txt') for p, _ in files), [p for p, _ in files]))
+total = sum(x[1] for x in inv)
+print(f'stockage : {total / 1048576:.0f} Mo dans le bucket ({len(inv)} série(s))')
+for sname, size, is_done, paths in sorted(inv):   # noms horodates : ordre chronologique
+    if total <= a.storage_limit_mb * 1048576: break
+    if not is_done: continue
+    rm(paths); total -= size
+    print(f'{sname} : supprimée pour libérer de la place ({size / 1048576:.0f} Mo), reste {total / 1048576:.0f} Mo')
 print('séries publiées :', done or 'aucune')
 if done:
     open(os.environ.get('GITHUB_OUTPUT', '/dev/null'), 'a').write('published=' + ','.join(done) + '\n')

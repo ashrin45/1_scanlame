@@ -30,7 +30,22 @@ async function ensureBucket() {
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: cors });
   const route = new URL(req.url).pathname.replace(/^.*\/scanlame/, "") || "/";
-  if (req.method === "GET") return json({ ok: true, service: "scanlame", bucket: BUCKET });
+  if (req.method === "GET") {
+    // etat + espace utilise par le bucket (somme des tailles, dossier par dossier)
+    let used = 0, series = 0;
+    try {
+      const { data: dirs } = await supabase.storage.from(BUCKET).list("", { limit: 1000 });
+      for (const d of dirs || []) {
+        if (d.id) { used += d.metadata?.size || 0; continue; }
+        series++;
+        for (const sub of ["", "chunks", "photos"]) {
+          const { data: files } = await supabase.storage.from(BUCKET).list(sub ? `${d.name}/${sub}` : d.name, { limit: 1000 });
+          for (const f of files || []) used += f.metadata?.size || 0;
+        }
+      }
+    } catch (_) { /* bucket absent ou vide */ }
+    return json({ ok: true, service: "scanlame", bucket: BUCKET, used_bytes: used, series, limit_bytes: 1073741824 });
+  }
 
   const token = Deno.env.get("SCANLAME_TOKEN") || "";
   if (!token || req.headers.get("x-token") !== token) return json({ error: "jeton invalide" }, 401);

@@ -199,6 +199,7 @@
       <input id="token" type="text" placeholder="le même que sur le serveur" autocomplete="off">
     </label>
     <label class="wide check"><input id="sendlog" type="checkbox" checked> Joindre le journal du téléphone à la prise (mise au point de l'application)</label>
+    <span id="storage" class="wide" style="color:var(--muted);font-size:12px"></span>
   </div>
   <h3>File d'attente (envois en panne de réseau)</h3>
   <div class="row">
@@ -932,7 +933,15 @@ self.onmessage = async e => {
   }
   $('off').onclick = stopCamera;
   // ---------- phone UI glue ----------
-  const openSheet = o => { sheet.classList.toggle('open', o); backdrop.classList.toggle('open', o); if (o) { const el = $('log'); el.scrollTop = el.scrollHeight; } };
+  async function refreshStorage() {
+    if (!isSupabase()) { $('storage').textContent = ''; return; }
+    try {
+      const r = await fetch(serverUrl(), { cache: 'no-store' }); const j = await r.json();
+      if (j.used_bytes != null) { const pct = Math.round(100 * j.used_bytes / j.limit_bytes); $('storage').textContent = `Stockage serveur : ${fmtMB(j.used_bytes)} sur ${fmtMB(j.limit_bytes)} (${pct} %), ${j.series} prise(s). Les prises publiées sont gardées 3 jours, nettoyées plus tôt au-delà de 800 Mo.`; $('storage').style.color = pct > 85 ? 'var(--warn)' : 'var(--muted)'; }
+      else $('storage').textContent = 'Stockage serveur : inconnu (fonction à redéployer)';
+    } catch (_) { $('storage').textContent = 'Stockage serveur : injoignable'; }
+  }
+  const openSheet = o => { sheet.classList.toggle('open', o); backdrop.classList.toggle('open', o); if (o) { const el = $('log'); el.scrollTop = el.scrollHeight; refreshStorage(); } };
   $('gear').onclick = () => openSheet(true); $('close').onclick = () => openSheet(false); backdrop.onclick = () => openSheet(false);
   shutter.onclick = () => { if (!track) { $('start').click(); return; } $('shoot').click(); };
   new MutationObserver(() => {
