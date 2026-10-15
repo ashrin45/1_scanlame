@@ -540,6 +540,7 @@ self.onmessage = async e => {
   }
   async function sendFinish(meta) {
     const r = await fetch(serverUrl() + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', ...hdr() }, body: JSON.stringify(meta) });
+    try { const j = await r.json(); if ('dispatched' in j) log(`réveil GitHub : ${j.dispatched ? 'oui, assemblage lancé' : 'non (secret GH_TOKEN absent ou fonction non redéployée), il attendra le planning'}`); } catch (_) {}
     return r.status;
   }
   const say = (t, err = false) => { $('msg').textContent = t; $('msg').className = err ? 'err' : ''; if (err) log('MSG ' + t); };
