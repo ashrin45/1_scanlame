@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>lame_20261015_123239</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+[hidden] { display: none !important; }
+/* Layout: one-screen viewer, slim instrument bar on top, the slide fills the rest */
+:root {
+  --bg: #f3f0f4; --panel: #ffffff; --fg: #2b2433; --muted: #6e6478; --line: #d9d2de;
+  --accent: #7a2e8c; --accent-soft: rgba(122,46,140,.14); --stage: #e9e4ec; --ok: #1b9466; --warn: #b7791f; --bad: #c0392b;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; color-scheme: dark }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-ui); display: flex; flex-direction: column; overflow: hidden; }
+header { flex: 0 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  padding-block: 8px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: var(--panel); border-bottom: 1px solid var(--line); }
+.title { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+h1 { font-size: 15px; font-weight: 600; margin: 0; letter-spacing: .01em; }
+.info { font-size: 12px; color: var(--muted); }
+.info a { color: var(--accent); text-decoration: none; }
+.meta { font-family: var(--font-data); font-size: 12px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.meta b { color: var(--fg); font-weight: 500; }
+.meta a { color: var(--accent); text-decoration: none; } .meta a:hover { text-decoration: underline; }
+.tools { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+button { font: 500 13px var(--font-ui); color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; min-width: 36px; }
+button:hover { border-color: var(--accent); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+button .g { display: inline-block; min-width: 16px; padding: 0 4px; border-radius: 4px; color: #fff; font-weight: 600; margin-left: 4px; }
+.gA { background: var(--ok); } .gB { background: var(--warn); } .gC { background: var(--bad); }
+.zctl { display: flex; align-items: center; gap: 6px; font: 500 12px var(--font-data); color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; }
+.zctl input { width: 110px; accent-color: var(--accent); margin: 0; }
+.zctl b { color: var(--fg); font-weight: 500; min-width: 7.5em; }
+#viewer { flex: 1 1 auto; min-height: 0; background: var(--stage); position: relative; }
+#viewer .navigator { border: 1px solid var(--line) !important; background: var(--panel) !important; }
+.hud { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 5;
+  font-family: var(--font-data); font-size: 12px; color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; pointer-events: none; font-variant-numeric: tabular-nums; }
+svg.fields polygon { fill: none; stroke: var(--accent); stroke-width: 1.5px; vector-effect: non-scaling-stroke; opacity: .9; }
+svg.fields text { fill: var(--accent); font: 500 40px var(--font-data); paint-order: stroke; stroke: var(--panel); stroke-width: 10px; opacity: .8; }
+svg.quality polygon { stroke-width: 1px; vector-effect: non-scaling-stroke; }
+svg.quality polygon.s2 { fill: rgba(27,148,102,.18); stroke: rgba(27,148,102,.7); }
+svg.quality polygon.s1 { fill: rgba(183,121,31,.28); stroke: rgba(183,121,31,.8); }
+svg.quality polygon.s0 { fill: rgba(192,57,43,.32); stroke: rgba(192,57,43,.9); }
+svg.quality polygon.tracked { stroke-dasharray: 6 4; }
+svg.quality polygon.hole { fill: rgba(192,57,43,.25); stroke: #c0392b; stroke-width: 2px; stroke-dasharray: 8 5; }
+svg.children polygon { fill: none; stroke: #e8a33d; stroke-width: 2px; vector-effect: non-scaling-stroke; }
+svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order: stroke; stroke: #000; stroke-width: 8px; }
+#qpanel { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); top: 12px; z-index: 6; max-width: min(360px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; font-size: 13px; box-shadow: 0 4px 18px rgba(0,0,0,.18); }
+#qpanel h2 { font-size: 13px; margin: 0 0 6px; display: flex; align-items: center; gap: 8px; }
+#qpanel ul { margin: 0 0 8px; padding-left: 18px; } #qpanel li { margin: 2px 0; }
+#qpanel .kv { font-family: var(--font-data); font-size: 11px; color: var(--muted); display: grid; grid-template-columns: auto auto; gap: 2px 12px; font-variant-numeric: tabular-nums; }
+#qpanel .leg { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; font-size: 11px; color: var(--muted); }
+#qpanel .leg i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 3px; }
+#bar { position: absolute; right: max(14px, env(safe-area-inset-right, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px)); text-align: right; z-index: 5; pointer-events: none; font: 500 12px var(--font-data); color: #fff; text-shadow: 0 0 4px #000, 0 0 2px #000; }
+#bar i { display: block; margin-left: auto; height: 4px; background: #fff; border: 1px solid #000; border-top: 0; box-shadow: 0 0 3px #000; margin-bottom: 3px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="title"><h1>lame_20261015_123239</h1><div class="info" id="info">MGG · objectif x50 · 15/10/2026 12:32</div></div>
+  <div class="meta"><span><b>34</b> champs</span><span><b>3386 × 12443</b> px</span><span><b>15</b> niveaux de zoom</span><span>échelle non calibrée</span><span><b>5</b> plans de profondeur</span><span>journaux : <a href="journaux/20261015_123239-assemblage.txt">assemblage 20261015</a> <a href="journaux/20261015_123239-telephone.txt">téléphone 20261015</a></span></div>
+  <div class="tools">
+    <button id="zin" aria-label="Zoom avant">+</button>
+    <button id="zout" aria-label="Zoom arrière">−</button>
+    <button id="home" aria-label="Vue entière">⌂</button>
+    <button id="fields" aria-pressed="false">Champs</button>
+    <button id="qbtn" aria-pressed="false" hidden>Qualité<span class="g" id="qg"></span></button>
+    <button id="kids" aria-pressed="true" hidden>Détails</button>
+    <label class="zctl" id="zctl" hidden><span>profondeur</span><input id="zr" type="range" min="0" max="1" value="0" step="1" aria-label="Plan de profondeur"><b id="zl">net partout</b></label>
+  </div>
+</header>
+<div id="viewer">
+  <div class="hud" id="hud">zoom 1.00×</div>
+  <div id="bar" hidden><i></i><span></span></div>
+  <div id="qpanel" hidden></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+<script>
+const W = 3386, H = 12443, TILE = 512, MAXLVL = 14;
+const FIELDS = [{"id":"0004","pts":[[2881,2096],[2991,4389],[1271,4472],[1161,2178]],"scale":0.989,"sharp":0.88,"z":false,"tracked":false},{"id":"0035","pts":[[1805,2706],[1873,4976],[170,5027],[103,2757]],"scale":1.0,"sharp":0.87,"z":false,"tracked":false},{"id":"0034","pts":[[1851,3408],[1917,5706],[194,5755],[128,3458]],"scale":0.988,"sharp":1.12,"z":true,"tracked":false},{"id":"0032","pts":[[1941,4866],[1989,7211],[231,7247],[183,4902]],"scale":0.968,"sharp":0.88,"z":true,"tracked":false},{"id":"0012","pts":[[3077,4443],[3162,6833],[1370,6897],[1285,4507]],"scale":0.95,"sharp":0.64,"z":false,"tracked":false},{"id":"0030","pts":[[1994,5864],[2035,8269],[231,8300],[190,5894]],"scale":0.944,"sharp":0.66,"z":false,"tracked":false},{"id":"0029","pts":[[2009,6176],[2048,8586],[240,8616],[201,6205]],"scale":0.942,"sharp":1.0,"z":true,"tracked":false},{"id":"0028","pts":[[2053,6909],[2080,9355],[246,9375],[219,6929]],"scale":0.928,"sharp":1.06,"z":true,"tracked":false},{"id":"0027","pts":[[2073,7285],[2095,9746],[250,9763],[228,7302]],"scale":0.923,"sharp":0.91,"z":false,"tracked":false},{"id":"0026","pts":[[2104,7874],[2115,10359],[251,10368],[240,7883]],"scale":0.914,"sharp":0.47,"z":false,"tracked":false},{"id":"0023","pts":[[2146,8591],[2148,11127],[246,11129],[244,8592]],"scale":0.895,"sharp":0.66,"z":false,"tracked":false},{"id":"0024","pts":[[2139,8454],[2143,10985],[245,10988],[241,8457]],"scale":0.897,"sharp":1.22,"z":true,"tracked":false},{"id":"0020","pts":[[2158,8940],[2158,11490],[245,11490],[245,8940]],"scale":0.89,"sharp":0.94,"z":false,"tracked":false},{"id":"0021","pts":[[2192,9861],[2177,12441],[242,12430],[257,9850]],"scale":0.88,"sharp":0.91,"z":false,"tracked":false},{"id":"0022","pts":[[2175,9431],[2166,11990],[247,11983],[256,9424]],"scale":0.888,"sharp":1.22,"z":true,"tracked":false},{"id":"0019","pts":[[2602,8920],[2613,11482],[692,11490],[681,8928]],"scale":0.886,"sharp":1.0,"z":true,"tracked":false},{"id":"0017","pts":[[3330,7914],[3385,10449],[1484,10490],[1430,7955]],"scale":0.896,"sharp":0.53,"z":false,"tracked":false},{"id":"0016","pts":[[3295,7398],[3355,9909],[1472,9954],[1412,7443]],"scale":0.904,"sharp":0.63,"z":false,"tracked":false},{"id":"0015","pts":[[3238,6631],[3312,9110],[1453,9166],[1379,6687]],"scale":0.916,"sharp":0.99,"z":true,"tracked":false},{"id":"0025","pts":[[2076,7382],[2099,9850],[248,9867],[225,7399]],"scale":0.92,"sharp":1.09,"z":true,"tracked":false},{"id":"0013","pts":[[3108,4830],[3190,7240],[1383,7302],[1301,4892]],"scale":0.942,"sharp":1.12,"z":true,"tracked":false},{"id":"0014","pts":[[3164,5638],[3234,8075],[1407,8127],[1337,5691]],"scale":0.932,"sharp":1.2,"z":true,"tracked":false},{"id":"0010","pts":[[2989,3375],[3089,5722],[1328,5797],[1229,3450]],"scale":0.967,"sharp":0.66,"z":false,"tracked":false},{"id":"0008","pts":[[2886,2168],[2994,4464],[1272,4545],[1164,2249]],"scale":0.988,"sharp":0.76,"z":false,"tracked":false},{"id":"0005","pts":[[3109,1760],[3109,4310],[1197,4310],[1197,1760]],"scale":0.89,"sharp":1.2,"z":true,"tracked":true},{"id":"0009","pts":[[3131,2733],[3131,5284],[1219,5284],[1219,2733]],"scale":0.89,"sharp":0.98,"z":true,"tracked":true},{"id":"0031","pts":[[2071,5275],[2071,7825],[159,7825],[159,5275]],"scale":0.89,"sharp":1.03,"z":true,"tracked":true},{"id":"0033","pts":[[2033,4047],[2033,6597],[120,6597],[120,4047]],"scale":0.89,"sharp":1.13,"z":true,"tracked":true},{"id":"0006","pts":[[3084,1039],[3084,3590],[1172,3590],[1172,1039]],"scale":0.89,"sharp":1.2,"z":true,"tracked":true},{"id":"0007","pts":[[3100,1568],[3100,4118],[1188,4118],[1188,1568]],"scale":0.89,"sharp":1.16,"z":true,"tracked":true},{"id":"0011","pts":[[3177,4016],[3177,6567],[1265,6567],[1265,4016]],"scale":0.89,"sharp":1.24,"z":true,"tracked":true},{"id":"0018","pts":[[3323,8874],[3323,11425],[1410,11425],[1410,8874]],"scale":0.89,"sharp":1.22,"z":true,"tracked":true},{"id":"0036","pts":[[1985,2283],[1985,4833],[73,4833],[73,2283]],"scale":0.89,"sharp":1.43,"z":true,"tracked":true},{"id":"0037","pts":[[1913,0],[1913,2550],[0,2550],[0,0]],"scale":0.89,"sharp":1.18,"z":true,"tracked":true}];
+const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
+const ZSTACK = {"levels": 5, "tiles": ["0/0_0", "1/0_0", "10/0_0", "10/0_1", "11/0_0", "11/0_1", "11/0_2", "11/0_3", "12/0_0", "12/0_1", "12/0_2", "12/0_3", "12/0_4", "12/0_5", "12/0_6", "12/1_0", "12/1_1", "12/1_2", "12/1_3", "12/1_4", "12/1_5", "13/0_0", "13/0_1", "13/0_10", "13/0_11", "13/0_2", "13/0_3", "13/0_4", "13/0_5", "13/0_6", "13/0_7", "13/0_8", "13/0_9", "13/1_0", "13/1_1", "13/1_10", "13/1_11", "13/1_2", "13/1_4", "13/1_5", "13/1_6", "13/1_7", "13/1_8", "13/1_9", "13/2_1", "13/2_10", "13/2_11", "13/2_2", "13/2_3", "13/2_6", "13/2_7", "13/2_8", "13/3_10", "13/3_11", "13/3_2", "13/3_3", "13/3_4", "13/3_5", "13/3_6", "13/3_7", "13/3_8", "14/0_0", "14/0_1", "14/0_10", "14/0_11", "14/0_12", "14/0_13", "14/0_14", "14/0_16", "14/0_17", "14/0_18", "14/0_19", "14/0_2", "14/0_20", "14/0_21", "14/0_22", "14/0_23", "14/0_3", "14/0_4", "14/0_5", "14/0_6", "14/0_7", "14/0_8", "14/0_9", "14/1_0", "14/1_1", "14/1_10", "14/1_11", "14/1_12", "14/1_13", "14/1_14", "14/1_16", "14/1_17", "14/1_18", "14/1_19", "14/1_2", "14/1_20", "14/1_21", "14/1_22", "14/1_23", "14/1_3", "14/1_4", "14/1_5", "14/1_9", "14/2_0", "14/2_1", "14/2_10", "14/2_11", "14/2_12", "14/2_13", "14/2_14", "14/2_16", "14/2_17", "14/2_18", "14/2_19", "14/2_2", "14/2_20", "14/2_21", "14/2_22", "14/2_23", "14/2_3", "14/2_4", "14/2_5", "14/2_9", "14/3_0", "14/3_1", "14/3_10", "14/3_11", "14/3_12", "14/3_13", "14/3_14", "14/3_16", "14/3_17", "14/3_18", "14/3_19", "14/3_2", "14/3_20", "14/3_21", "14/3_22", "14/3_23", "14/3_3", "14/3_4", "14/3_9", "14/4_13", "14/4_14", "14/4_15", "14/4_16", "14/4_17", "14/4_19", "14/4_2", "14/4_20", "14/4_21", "14/4_22", "14/4_23", "14/4_3", "14/4_4", "14/5_13", "14/5_14", "14/5_15", "14/5_16", "14/5_17", "14/5_2", "14/5_20", "14/5_21", "14/5_22", "14/5_3", "14/5_4", "14/5_5", "14/5_6", "14/5_7", "14/5_8", "14/6_10", "14/6_11", "14/6_12", "14/6_13", "14/6_14", "14/6_15", "14/6_16", "14/6_17", "14/6_20", "14/6_21", "14/6_22", "14/6_4", "14/6_5", "14/6_6", "14/6_7", "14/6_8", "14/6_9", "2/0_0", "3/0_0", "4/0_0", "5/0_0", "6/0_0", "7/0_0", "8/0_0", "9/0_0"]};      // {levels, tiles:[...]} ou null
+const QUALITY = {"grade": "B", "notes": ["10 champ(s) placé(s) sans recalage fin"], "frames": {"candidates": 82, "blurred": 11, "selected": 41, "used": 34, "tracked_only": 10}, "residual_px": 1.37, "residual_max_px": 39.95, "holes": [], "holes_frac": 0.0, "coverage_px": 35897306, "coverage_mm2": null, "low_sharp_frac": 0.029, "gain_spread_pct": 4.7, "flat_field": "estimé", "k1": -0.01, "zstack_fields": 21, "zstack_levels": 5};    // rapport du pipeline ({} si absent)
+const CHILDREN = [];  // lames de détail (autre objectif) recalées dans celle-ci
+const PARENT = null;      // lame d'ensemble, si celle-ci est un détail
+const svgNS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+
+// tile source : pyramide Deep Zoom de cette lame ; pour un plan z, les tuiles manquantes retombent sur la base
+function source(prefix, keys) {
+  return { width: W, height: H, tileSize: TILE, tileOverlap: 1, minLevel: 0, maxLevel: MAXLVL,
+    getTileUrl: (l, x, y) => (keys && keys.has(l + '/' + x + '_' + y) ? prefix : 'lame_files') + `/${l}/${x}_${y}.jpg` };
+}
+const viewer = OpenSeadragon({
+  id: 'viewer', showNavigationControl: false, showNavigator: true, navigatorPosition: 'TOP_RIGHT', navigatorSizeRatio: 0.16,
+  gestureSettingsTouch: { pinchToZoom: true, flickEnabled: true }, maxZoomPixelRatio: 3, minZoomImageRatio: 0.6, visibilityRatio: 0.5,
+  animationTime: 0.6, immediateRender: true, preserveViewport: false, tileSources: source()
+});
+$('zin').onclick = () => viewer.viewport.zoomBy(1.6);
+$('zout').onclick = () => viewer.viewport.zoomBy(1 / 1.6);
+$('home').onclick = () => viewer.viewport.goHome();
+
+// ---- lame parente / enfants ----
+if (PARENT) $('info').insertAdjacentHTML('beforeend', `${$('info').textContent ? ' · ' : ''}<a href="../${PARENT.slug}/">↖ vue d'ensemble : ${PARENT.title}</a>${PARENT.placed ? '' : ' (position non retrouvée)'}`);
+const placed = CHILDREN.filter(c => c.transform);
+const unplaced = CHILDREN.filter(c => !c.transform);
+if (CHILDREN.length) {
+  $('info').insertAdjacentHTML('beforeend', ($('info').textContent ? ' · ' : '') + CHILDREN.map(c => `<a href="../${c.slug}/">↗ ${c.title}${c.objective ? ' (obj. ' + c.objective + ')' : ''}</a>`).join(' · '));
+}
+const kidLayers = [];
+const kidSvg = document.createElementNS(svgNS, 'svg');
+kidSvg.setAttribute('viewBox', `0 0 ${W} ${H}`); kidSvg.setAttribute('class', 'children'); kidSvg.setAttribute('width', '100%'); kidSvg.setAttribute('height', '100%'); kidSvg.style.overflow = 'visible';
+for (const c of placed) {
+  const [a, b, tx, ty] = c.transform;   // x' = a x - b y + tx ; y' = b x + a y + ty  (enfant px -> parent px)
+  const s = Math.hypot(a, b), deg = Math.atan2(b, a) * 180 / Math.PI;
+  const corners = [[0, 0], [c.width, 0], [c.width, c.height], [0, c.height]].map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty]);
+  const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', corners.map(q => q.map(v => v.toFixed(1)).join(',')).join(' ')); kidSvg.appendChild(p);
+  const t = document.createElementNS(svgNS, 'text'); t.setAttribute('x', corners[0][0] + 30); t.setAttribute('y', corners[0][1] - 20); t.textContent = c.objective ? 'obj. ' + c.objective : c.title; kidSvg.appendChild(t);
+  viewer.addHandler('open', () => viewer.addTiledImage({
+    tileSource: { width: c.width, height: c.height, tileSize: c.tile, tileOverlap: 1, minLevel: 0, maxLevel: c.maxlvl, getTileUrl: (l, x, y) => `../${c.slug}/lame_files/${l}/${x}_${y}.jpg` },
+    x: tx / W, y: ty / W, width: s * c.width / W, degrees: deg,
+    success: e => kidLayers.push(e.item)
+  }));
+}
+if (placed.length) {
+  $('kids').hidden = false;
+  let on = true;
+  const apply = () => { kidLayers.forEach(l => l.setOpacity(on ? 1 : 0)); if (on) viewer.addOverlay({ element: kidSvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(kidSvg); };
+  $('kids').onclick = () => { on = !on; $('kids').setAttribute('aria-pressed', String(on)); apply(); };
+  viewer.addHandler('open', () => viewer.addOverlay({ element: kidSvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }));
+}
+
+// ---- contours des champs (sur demande) ----
+const svg = document.createElementNS(svgNS, 'svg');
+svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'fields'); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%');
+svg.style.overflow = 'visible';
+for (const f of FIELDS) {
+  const p = document.createElementNS(svgNS, 'polygon');
+  p.setAttribute('points', f.pts.map(q => q.join(',')).join(' '));
+  svg.appendChild(p);
+  const t = document.createElementNS(svgNS, 'text');
+  const [x, y] = f.pts[0]; t.setAttribute('x', x + 40); t.setAttribute('y', y + 110); t.textContent = f.id + (f.z ? ' z' : ''); svg.appendChild(t);
+}
+let fieldsShown = false;
+$('fields').onclick = () => { fieldsShown = !fieldsShown; $('fields').setAttribute('aria-pressed', String(fieldsShown)); if (fieldsShown) viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(svg); };
+
+// ---- rapport de qualité : panneau + calque (netteté par champ, trous) ----
+if (QUALITY && QUALITY.grade) {
+  $('qbtn').hidden = false; $('qg').textContent = QUALITY.grade; $('qg').className = 'g g' + QUALITY.grade;
+  const qsvg = document.createElementNS(svgNS, 'svg');
+  qsvg.setAttribute('viewBox', `0 0 ${W} ${H}`); qsvg.setAttribute('class', 'quality'); qsvg.setAttribute('width', '100%'); qsvg.setAttribute('height', '100%'); qsvg.style.overflow = 'visible';
+  for (const f of FIELDS) {
+    const p = document.createElementNS(svgNS, 'polygon');
+    p.setAttribute('points', f.pts.map(q => q.join(',')).join(' '));
+    const s = f.sharp == null ? 1 : f.sharp;
+    p.setAttribute('class', (s >= 0.8 ? 's2' : s >= 0.5 ? 's1' : 's0') + (f.tracked ? ' tracked' : ''));
+    qsvg.appendChild(p);
+  }
+  for (const h of QUALITY.holes || []) {
+    const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', h.map(q => q.join(',')).join(' ')); p.setAttribute('class', 'hole'); qsvg.appendChild(p);
+  }
+  const fr = QUALITY.frames || {};
+  const fmt = v => v == null ? '' : (typeof v === 'number' ? v.toLocaleString('fr-FR') : v);
+  $('qpanel').innerHTML = `<h2>Qualité <span class="g g${QUALITY.grade}" style="padding:0 6px;border-radius:4px;color:#fff">${QUALITY.grade}</span></h2>` +
+    (QUALITY.notes && QUALITY.notes.length ? '<ul>' + QUALITY.notes.map(n => `<li>${n}</li>`).join('') + '</ul>' : '<p style="margin:0 0 8px">Aucune remarque : couverture continue, champs nets, recalage précis.</p>') +
+    `<div class="kv"><span>images extraites</span><span>${fmt(fr.candidates)}</span><span>floues rejetées</span><span>${fmt(fr.blurred)}</span><span>champs assemblés</span><span>${fmt(fr.used)} / ${fmt(fr.selected)}</span>` +
+    `<span>recalage médian</span><span>${fmt(QUALITY.residual_px)} px</span><span>surface couverte</span><span>${QUALITY.coverage_mm2 != null ? fmt(QUALITY.coverage_mm2) + ' mm²' : fmt(QUALITY.coverage_px) + ' px'}</span>` +
+    `<span>flat-field</span><span>${fmt(QUALITY.flat_field)}</span>${QUALITY.zstack_fields ? `<span>piles de profondeur</span><span>${QUALITY.zstack_fields} (${QUALITY.zstack_levels} plans)</span>` : ''}</div>` +
+    `<div class="leg"><span><i style="background:rgba(27,148,102,.5)"></i>net</span><span><i style="background:rgba(183,121,31,.6)"></i>moyen</span><span><i style="background:rgba(192,57,43,.6)"></i>peu net</span><span><i style="border:2px dashed #c0392b;box-sizing:border-box"></i>trou</span><span><i style="border:1px dashed #666;box-sizing:border-box"></i>placé sans recalage</span></div>`;
+  let qOn = false;
+  $('qbtn').onclick = () => { qOn = !qOn; $('qbtn').setAttribute('aria-pressed', String(qOn)); $('qpanel').hidden = !qOn; if (qOn) viewer.addOverlay({ element: qsvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(qsvg); };
+}
+
+// ---- z-stack : un calque par plan, seul le plan choisi est visible (la base EDF reste dessous) ----
+if (ZSTACK && ZSTACK.levels > 0) {
+  const keys = new Set(ZSTACK.tiles || []);
+  const layers = [];
+  viewer.addHandler('open', () => {
+    for (let z = 0; z < ZSTACK.levels; z++) viewer.addTiledImage({ tileSource: source('lame_z' + z, keys), opacity: 0, success: e => { layers[z] = e.item; } });
+  });
+  $('zctl').hidden = false; $('zr').max = ZSTACK.levels;
+  const setZ = v => {
+    v = Math.max(0, Math.min(ZSTACK.levels, v)); $('zr').value = v;
+    $('zl').textContent = v === 0 ? 'net partout' : `plan ${v} / ${ZSTACK.levels}`;
+    layers.forEach((l, z) => l && l.setOpacity(z === v - 1 ? 1 : 0));
+  };
+  $('zr').oninput = () => setZ(+$('zr').value);
+  document.addEventListener('keydown', e => { if (e.key === '[') setZ(+$('zr').value - 1); if (e.key === ']') setZ(+$('zr').value + 1); });
+}
+
+// ---- zoom + barre d'échelle ----
+const hud = $('hud'), bar = $('bar');
+function updateBar() {
+  if (!UMPX) return;
+  const z = imgZoom();   // pixels écran par pixel image
+  const umPerScreenPx = UMPX / z;
+  const target = 120 * umPerScreenPx;
+  const p = Math.pow(10, Math.floor(Math.log10(target)));
+  const len = [1, 2, 5, 10].map(m => m * p).reduce((a, b) => Math.abs(b - target) < Math.abs(a - target) ? b : a);
+  bar.querySelector('i').style.width = (len / umPerScreenPx).toFixed(1) + 'px';
+  bar.querySelector('span').textContent = len >= 1000 ? (len / 1000).toLocaleString('fr-FR') + ' mm' : len.toLocaleString('fr-FR') + ' µm';
+  bar.hidden = false;
+}
+const imgZoom = () => { const it = viewer.world.getItemAt(0); return it ? it.viewportToImageZoom(viewer.viewport.getZoom(true)) : viewer.viewport.getZoom(true) / W; };
+function updateHud() {
+  const z = imgZoom();
+  hud.textContent = 'zoom ' + z.toFixed(2) + '× (1,00× = pixels natifs)';
+  updateBar();
+}
+viewer.addHandler('zoom', updateHud);
+viewer.addHandler('animation', updateHud);
+viewer.addHandler('animation-finish', updateHud);
+viewer.addHandler('open', updateHud);
+</script>
+</body>
+</html>
