@@ -1,0 +1,20 @@
+[    0.0s] extraction video.mp4 à 4.0 img/s
+[   26.5s] segment 1/1 : objectif x100, 712 images entre 0 s et 178 s
+[   26.5s] 712 images candidates
+[   32.8s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[   32.8s] netteté médiane 4.3, seuil 3.0
+[   32.8s] 177 images retenues (nettes, non redondantes)
+[   32.8s] pas de champ vide filmé : vignettage estimé par lissage
+[   35.2s] aberration chromatique : échelle R 1.0005, B 1.0005
+[   35.8s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 1 %)
+[   59.2s] prétraitement terminé, 177 images, recalage à 900 x 1200
+[   69.1s] points SIFT : 383 par image en moyenne
+[   69.1s] 1702 paires à tester
+[   71.5s] 122 paires valides
+[   71.5s] suivi etalonne sur 28 paires : facteur 0.278
+[   97.4s] 6 paire(s) recalée(s) par corrélation guidée par le suivi (champs répétitifs ou pauvres en points)
+[   97.7s] distorsion radiale k1 = -0.0180 (résidu 1.40 px contre 1.59 px sans correction)
+[   97.7s] composantes : [15, 10, 7, 6, 6, 6, 5, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] -> on assemble la n°0 : 15 images
+[   98.0s] ajustement global : 2676 correspondances, 14 images
+[   98.0s] 127 image(s) placée(s) d'après le suivi en direct (sans recalage fin)
+[   98.0s] ÉCHEC : 127 champs sur 142 ne se recalent pas par les points (image floue ou vide ?) ; prise inexploitable, pas de composition
