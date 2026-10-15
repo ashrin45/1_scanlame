@@ -162,6 +162,13 @@
         <option value="photo">Photos JPEG à intervalle</option>
       </select>
     </label>
+    <label>Zoom maximal
+      <select id="zoommax">
+        <option value="2.9" selected>2,9× (reste sur la caméra principale)</option>
+        <option value="1.9">1,9× (prudent)</option>
+        <option value="0">sans limite (change de caméra au-delà de 3×)</option>
+      </select>
+    </label>
     <label>Flux caméra
       <select id="flux"><option value="max">maximal</option><option value="2000" selected>moyen (≈2000 px)</option><option value="1500">réduit (≈1500 px)</option></select>
     </label>
@@ -410,6 +417,8 @@ self.onmessage = async e => {
   $('umpx').onchange = () => LS.set('scanlame.umpx.' + $('objective').value, $('umpx').value.trim());
   $('objective').onchange = () => { LS.set('scanlame.objective', $('objective').value); loadUmpx(); };
   $('stain').onchange = () => LS.set('scanlame.stain', $('stain').value);
+  if (LS.get('scanlame.zoommax') !== null) $('zoommax').value = LS.get('scanlame.zoommax');
+  $('zoommax').onchange = () => { LS.set('scanlame.zoommax', $('zoommax').value); const z = $('zoom'), lim = +$('zoommax').value; if (!z.disabled && track) { const caps = track.getCapabilities ? track.getCapabilities() : {}; if (caps.zoom) { z.max = lim > 0 ? Math.min(caps.zoom.max, lim) : caps.zoom.max; if (+z.value > +z.max) { z.value = z.max; z.dispatchEvent(new Event('input')); } } } };
   if (LS.get('scanlame.sendlog') === '0') $('sendlog').checked = false;
   $('sendlog').onchange = () => LS.set('scanlame.sendlog', $('sendlog').checked ? '1' : '0');
   const journalForServer = () => $('sendlog').checked ? lines.slice(-1500).join('\n') : undefined;
@@ -567,8 +576,11 @@ self.onmessage = async e => {
     log(`flux ${video.videoWidth}x${video.videoHeight} @${st.frameRate || '?'} fps, piste "${track.label}"`);
     log(`capacités : focus ${JSON.stringify(caps.focusMode || null)}, expo ${JSON.stringify(caps.exposureMode || null)}, balance ${JSON.stringify(caps.whiteBalanceMode || null)}, zoom ${caps.zoom ? caps.zoom.min + '..' + caps.zoom.max : 'non'}`);
     if (caps.zoom) {
-      const z = $('zoom'); z.min = caps.zoom.min; z.max = caps.zoom.max; z.step = caps.zoom.step || 0.1;
-      z.value = st.zoom || caps.zoom.min; z.disabled = false; $('zoomv').textContent = (+z.value).toFixed(1) + '×';
+      const z = $('zoom'), lim = +$('zoommax').value;
+      // au-dela de 3x (et 5x) Android bascule sur un teleobjectif : autre optique, autre calibration -> on plafonne
+      z.min = caps.zoom.min; z.max = lim > 0 ? Math.min(caps.zoom.max, Math.max(caps.zoom.min, lim)) : caps.zoom.max; z.step = caps.zoom.step || 0.1;
+      z.value = Math.min(+z.max, st.zoom || caps.zoom.min); z.disabled = false; $('zoomv').textContent = (+z.value).toFixed(1) + '×';
+      if (lim > 0 && caps.zoom.max > lim) log(`zoom limité à ${lim}× (le téléphone propose jusqu'à ${caps.zoom.max}× en changeant de caméra)`);
     }
     try { wakeLock = await navigator.wakeLock?.request('screen'); log('wake lock ' + (wakeLock ? 'ok' : 'non')); } catch (e) { log('wake lock refusé : ' + e.message); }
     say(`Flux ${video.videoWidth}×${video.videoHeight}. Focus manuel : ${caps.focusMode?.includes('manual') ? 'oui' : 'non'}, exposition manuelle : ${caps.exposureMode?.includes('manual') ? 'oui' : 'non'}.`);
