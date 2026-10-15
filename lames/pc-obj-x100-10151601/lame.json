@@ -1,0 +1,68 @@
+{
+ "title": "Pc (obj. x100)",
+ "width": 16000,
+ "height": 3648,
+ "fields": 217,
+ "tiles": 352,
+ "tile": 512,
+ "maxlvl": 14,
+ "um_per_px": null,
+ "stain": "mgg",
+ "objective": "x100",
+ "sample": null,
+ "comment": null,
+ "captured": "15/10/2026 16:01",
+ "parent": "pc-10151601",
+ "parent_transform": null,
+ "children": [],
+ "quality": {
+  "grade": "C",
+  "notes": [
+   "recalage imprécis (9.3 px)",
+   "1 trou(s) dans la couverture",
+   "141 champ(s) placé(s) sans recalage fin"
+  ],
+  "frames": {
+   "candidates": 689,
+   "blurred": 72,
+   "selected": 260,
+   "used": 217,
+   "tracked_only": 141
+  },
+  "residual_px": 9.3,
+  "residual_max_px": 774.01,
+  "holes": [
+   [
+    [
+     9520,
+     1416
+    ],
+    [
+     9000,
+     1432
+    ],
+    [
+     9000,
+     1744
+    ],
+    [
+     9520,
+     1712
+    ]
+   ]
+  ],
+  "holes_frac": 0.0038,
+  "coverage_px": 43003478,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 24.3,
+  "flat_field": "mesuré",
+  "k1": -0.022,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null
+}

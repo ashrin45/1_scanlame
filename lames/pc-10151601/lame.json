@@ -14,7 +14,12 @@
  "captured": "15/10/2026 16:01",
  "parent": null,
  "parent_transform": null,
- "children": [],
+ "children": [
+  {
+   "slug": "pc-obj-x100-10151601",
+   "transform": null
+  }
+ ],
  "quality": {
   "grade": "A",
   "notes": [],
