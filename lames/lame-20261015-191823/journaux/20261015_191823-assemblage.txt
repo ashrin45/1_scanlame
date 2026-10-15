@@ -1,0 +1,24 @@
+[    0.0s] extraction video.mp4 à 4.0 img/s
+[   21.0s] segment 1/1 : objectif x100, 712 images entre 0 s et 178 s
+[   21.0s] 712 images candidates
+[   26.2s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[   26.2s] netteté médiane 4.3, seuil 3.0
+[   26.2s] 177 images retenues (nettes, non redondantes)
+[   26.2s] pas de champ vide filmé : vignettage estimé par lissage
+[   28.2s] aberration chromatique : échelle R 1.0005, B 1.0005
+[   28.8s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 1 %)
+[   48.1s] prétraitement terminé, 177 images, recalage à 900 x 1200
+[   56.4s] points SIFT : 383 par image en moyenne
+[   56.4s] 1702 paires à tester
+[   58.5s] 122 paires valides
+[   58.7s] distorsion radiale k1 = -0.0180 (résidu 1.40 px contre 1.59 px sans correction)
+[   58.8s] composantes : [14, 10, 7, 6, 6, 6, 5, 4, 4, 4, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] -> on assemble la n°0 : 14 images
+[   59.7s] ajustement global : 2628 correspondances, 13 images
+[   59.7s] 128 image(s) placée(s) d'après le suivi en direct (sans recalage fin)
+[   59.7s] compensation photométrique : écart de gain max 1.7 %
+[   59.7s] recalage : erreur médiane 17.82 px (échelle recalage), max 365.62
+[   61.8s] mosaïque réduite d'un facteur 0.36 pour tenir dans 12000 px
+[   61.8s] mosaïque 5040 x 12000
+[  147.9s] composition : 18 tuiles en 81 s
+[  150.3s] qualité : note C (recalage imprécis (17.8 px), 4 trou(s) dans la couverture (7 %), 128 champ(s) placé(s) sans recalage fin)
+[  150.3s] terminé : pano.jpg 5040 x 12000 , 142 images utilisées sur 177
