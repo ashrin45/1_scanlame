@@ -1,22 +1,22 @@
 [    0.0s] extraction video.mp4 à 4.0 img/s
-[    5.8s] 205 images candidates
-[   12.8s] 7 pile(s) de profondeur fusionnée(s) (EDF), plans conservés pour la navigation
-[   12.8s] netteté médiane 2.0, seuil 3.0
-[   12.8s] 10 images retenues (nettes, non redondantes)
-[   12.8s] pas de champ vide filmé : vignettage estimé par lissage
-[   14.2s] aberration chromatique : échelle R 1.0000, B 0.9995
-[   20.4s] prétraitement terminé, 10 images, recalage à 900 x 1200
-[   20.8s] points SIFT : 190 par image en moyenne
-[   20.8s] 44 paires à tester
-[   20.8s] 4 paires valides
-[   20.8s] distorsion radiale k1 = -0.0180 (résidu 0.26 px contre 0.35 px sans correction)
-[   20.8s] composantes : [4, 1, 1, 1, 1, 1, 1] -> on assemble la n°0 : 4 images
-[   20.9s] ajustement global : 203 correspondances, 3 images
-[   20.9s] 6 image(s) placée(s) d'après le suivi en direct (sans recalage fin)
-[   20.9s] compensation photométrique : écart de gain max 4.1 %
-[   20.9s] recalage : erreur médiane 0.39 px (échelle recalage), max 0.48
-[   21.1s] mosaïque 12024 x 12083
-[   67.5s] composition : 36 tuiles en 46 s
-[  286.5s] z-stack : 5 plans sur 6 champ(s) en 219 s
-[  286.8s] qualité : note B (6 champ(s) placé(s) sans recalage fin, 61 images floues rejetées sur 82)
-[  286.8s] terminé : pano.jpg 12024 x 12083 , 10 images utilisées sur 10
+[    5.9s] 205 images candidates
+[   18.0s] 8 pile(s) de profondeur fusionnée(s) (EDF), plans conservés pour la navigation
+[   18.0s] netteté médiane 2.1, seuil 3.0
+[   18.0s] 9 images retenues (nettes, non redondantes)
+[   18.0s] pas de champ vide filmé : vignettage estimé par lissage
+[   19.6s] aberration chromatique : échelle R 1.0005, B 0.9995
+[   27.2s] prétraitement terminé, 9 images, recalage à 900 x 1200
+[   27.6s] points SIFT : 352 par image en moyenne
+[   27.6s] 36 paires à tester
+[   27.6s] 3 paires valides
+[   27.6s] distorsion radiale k1 = -0.0180 (résidu 0.25 px contre 0.31 px sans correction)
+[   27.6s] composantes : [4, 1, 1, 1, 1, 1] -> on assemble la n°0 : 4 images
+[   27.9s] ajustement global : 126 correspondances, 3 images
+[   27.9s] 5 image(s) placée(s) d'après le suivi en direct (sans recalage fin)
+[   27.9s] compensation photométrique : écart de gain max 4.3 %
+[   27.9s] recalage : erreur médiane 0.26 px (échelle recalage), max 0.31
+[   28.0s] mosaïque 11181 x 13378
+[   70.9s] composition : 42 tuiles en 42 s
+[  284.8s] z-stack : 5 plans sur 8 champ(s) en 214 s
+[  285.0s] qualité : note B (5 champ(s) placé(s) sans recalage fin, 32 images floues rejetées sur 44)
+[  285.0s] terminé : pano.jpg 11181 x 13378 , 9 images utilisées sur 9
