@@ -1,20 +1,20 @@
 [    0.0s] extraction video.mp4 à 4.0 img/s
-[    6.3s] 189 images candidates
-[    7.5s] netteté médiane 34.8, seuil 13.9
-[    7.5s] 24 images retenues (nettes, non redondantes)
-[    7.5s] pas de champ vide filmé : vignettage estimé par lissage
-[    9.9s] aberration chromatique : échelle R 1.0000, B 1.0000
-[   18.4s] prétraitement terminé, 24 images, recalage à 981 x 1200
-[   20.2s] points SIFT : 182 par image en moyenne
-[   20.2s] 198 paires à tester
-[   20.3s] 17 paires valides
-[   20.3s] distorsion radiale k1 = -0.0300 (résidu 0.46 px contre 0.76 px sans correction)
-[   20.3s] composantes : [5, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] -> on assemble la n°0 : 5 images
-[   20.5s] ajustement global : 832 correspondances, 4 images
-[   20.5s] 11 image(s) placée(s) d'après le suivi en direct (sans recalage fin)
-[   20.5s] compensation photométrique : écart de gain max 3.6 %
-[   20.5s] recalage : erreur médiane 0.88 px (échelle recalage), max 1.26
-[   20.6s] mosaïque 3021 x 8773
-[   58.5s] composition : 10 tuiles en 37 s
-[   58.7s] qualité : note B (11 champ(s) placé(s) sans recalage fin)
-[   58.7s] terminé : pano.jpg 3021 x 8773 , 16 images utilisées sur 24
+[    6.1s] 189 images candidates
+[    7.2s] netteté médiane 34.8, seuil 13.9
+[    7.2s] 24 images retenues (nettes, non redondantes)
+[    7.2s] pas de champ vide filmé : vignettage estimé par lissage
+[    8.6s] aberration chromatique : échelle R 1.0000, B 1.0000
+[   14.6s] prétraitement terminé, 24 images, recalage à 981 x 1200
+[   15.9s] points SIFT : 182 par image en moyenne
+[   15.9s] 198 paires à tester
+[   15.9s] 17 paires valides
+[   15.9s] distorsion radiale k1 = -0.0300 (résidu 0.46 px contre 0.76 px sans correction)
+[   16.0s] composantes : [5, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] -> on assemble la n°0 : 5 images
+[   16.2s] ajustement global : 832 correspondances, 4 images
+[   16.2s] 11 image(s) placée(s) d'après le suivi en direct (sans recalage fin)
+[   16.2s] compensation photométrique : écart de gain max 3.6 %
+[   16.2s] recalage : erreur médiane 0.88 px (échelle recalage), max 1.26
+[   16.4s] mosaïque 3021 x 8773
+[   38.2s] composition : 10 tuiles en 21 s
+[   38.5s] qualité : note B (11 champ(s) placé(s) sans recalage fin)
+[   38.5s] terminé : pano.jpg 3021 x 8773 , 16 images utilisées sur 24
