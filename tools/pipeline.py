@@ -26,7 +26,7 @@ ap.add_argument('--fps', type=float, default=4.0)
 ap.add_argument('--blur', type=float, default=25.0)
 ap.add_argument('--max-frames', type=int, default=600)
 ap.add_argument('--reg-size', type=int, default=1200, help='plus grand cote des images pour le recalage')
-ap.add_argument('--max-side', type=int, default=16000, help='plus grand cote de la mosaique finale')
+ap.add_argument('--max-side', type=int, default=32000, help='plus grand cote de la mosaique finale (au-dela, reduction : perte de finesse)')
 ap.add_argument('--min-inliers', type=int, default=40)
 ap.add_argument('--core', type=float, default=0.70, help='fraction du rayon de champ utilisee en priorite (coeur net)')
 ap.add_argument('--no-distortion', action='store_true', help='ne pas estimer la distorsion radiale')
@@ -833,7 +833,7 @@ with ThreadPoolExecutor(min(NWORK, 6)) as ex:     # 6 tuiles de 2560 px en paral
         region[subc] = sub[subc]
         covered[y0:y0 + sub.shape[0], x0:x0 + sub.shape[1]] = subc.astype(np.uint8) * 255
 log(f'composition : {ty_n * tx_n} tuiles en {time.time() - t_comp:.0f} s')
-cv2.imwrite(os.path.join(out, 'pano.jpg'), pano, [cv2.IMWRITE_JPEG_QUALITY, 92])
+cv2.imwrite(os.path.join(out, 'pano.jpg'), pano, [cv2.IMWRITE_JPEG_QUALITY, 96])
 
 # --- z-stack navigable : une mosaique par plan, seules les tuiles touchant une pile sont recomposees ---
 zfields = [k for k in comp if sel[k].get('planes')]

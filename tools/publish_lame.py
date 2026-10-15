@@ -132,7 +132,7 @@ def main():
     ap.add_argument('--fields', default=None, help='fields.json : contours des champs [{id, pts:[[x,y],...]}]')
     ap.add_argument('--layout', default=None, help='layout.json du pipeline (metadonnees, qualite, echelle, z-stack)')
     ap.add_argument('--tile', type=int, default=512)
-    ap.add_argument('--quality', type=int, default=85)
+    ap.add_argument('--quality', type=int, default=90)
     ap.add_argument('--um-per-px', type=float, default=None, help='micromètres par pixel de la mosaïque (barre d\'échelle)')
     a = ap.parse_args()
 
