@@ -89,10 +89,24 @@ for p, t in items:
     smalls.append(cv2.resize(g, (256, 256), interpolation=cv2.INTER_AREA).astype(np.float32))
 h4, w4 = cv2.imread(items[0][0], cv2.IMREAD_REDUCED_GRAYSCALE_4).shape
 win = cv2.createHanningWindow((256, 256), cv2.CV_32F)
-moves = [0.0]
+# deplacement image a image, en fraction du cadre. Pendant un balayage de mise au point la correlation peut
+# echouer (image floue) : on se rabat sur le suivi du telephone, sinon on suppose "immobile" si l'une des deux
+# images est floue (c'est la vis micrometrique, pas la platine).
+med_sharp0 = float(np.median(sharps))
+moves, vecs = [0.0], [(0.0, 0.0)]
 for i in range(1, len(smalls)):
     (dx, dy), resp = cv2.phaseCorrelate(smalls[i - 1], smalls[i], win)
-    moves.append(math.hypot(dx / 256, dy / 256) if resp > 0.05 else 1.0)   # fraction du cadre ; pas de correlation = "a bouge"
+    if resp > 0.05:
+        v = (dx / 256, dy / 256)
+    else:
+        p0, p1 = pos_at(items[i - 1][1]), pos_at(items[i][1])
+        if p0 and p1 and W0:
+            v = ((p1[0] - p0[0]) / max(W0, H0), (p1[1] - p0[1]) / max(W0, H0))
+        elif min(sharps[i - 1], sharps[i]) < 0.5 * med_sharp0:
+            v = (0.0, 0.0)
+        else:
+            v = (1.0, 0.0)
+    vecs.append(v); moves.append(math.hypot(*v))
 del smalls
 
 # ---- piles de profondeur : suites d'images immobiles dont la nettete varie (vis micrometrique tournee) ----
@@ -100,13 +114,18 @@ def edf(paths):
     """Fusion de plans de mise au point : en chaque pixel on garde le plan le plus net (pyramide laplacienne).
     Retourne (image fusionnee, plans alignes uint8, cartes de nettete reduites)."""
     imgs = [cv2.imread(q) for q in paths]
-    ref = cv2.cvtColor(imgs[0], cv2.COLOR_BGR2GRAY).astype(np.float32)
+    # alignement progressif (chaque plan sur le precedent, decalages cumules) : la vis micrometrique decale un peu
+    # l'image et deux plans eloignes en z se correlent mal, les plans voisins bien
     aligned, maps = [], []
+    prev = None; sx = sy = 0.0; lim = 0.15 * max(imgs[0].shape[:2])
     for im in imgs:
         g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY).astype(np.float32)
-        (dx, dy), resp = cv2.phaseCorrelate(ref, g)
-        if resp > 0.05 and abs(dx) < 60 and abs(dy) < 60:
-            M = np.float32([[1, 0, -dx], [0, 1, -dy]]); im = cv2.warpAffine(im, M, (im.shape[1], im.shape[0]), borderMode=cv2.BORDER_REPLICATE); g = cv2.warpAffine(g, M, (g.shape[1], g.shape[0]), borderMode=cv2.BORDER_REPLICATE)
+        if prev is not None:
+            (dx, dy), resp = cv2.phaseCorrelate(prev, g)
+            if resp > 0.03 and abs(dx) < lim and abs(dy) < lim: sx += dx; sy += dy
+        prev = g
+        if abs(sx) > 0.5 or abs(sy) > 0.5:
+            M = np.float32([[1, 0, -sx], [0, 1, -sy]]); im = cv2.warpAffine(im, M, (im.shape[1], im.shape[0]), borderMode=cv2.BORDER_REPLICATE); g = cv2.warpAffine(g, M, (g.shape[1], g.shape[0]), borderMode=cv2.BORDER_REPLICATE)
         aligned.append(im)
         maps.append(cv2.GaussianBlur(np.abs(cv2.Laplacian(g, cv2.CV_32F, ksize=3)), (0, 0), 6))
     M = np.stack(maps); M = (M / (M.max(0, keepdims=True) + 1e-6)) ** 8; M = M / (M.sum(0, keepdims=True) + 1e-9)
@@ -140,11 +159,14 @@ def spectral_order(maps):
 
 ZMAX = 5   # plans conserves au plus par pile (z-stack navigable)
 
-STILL = 0.02   # deplacement < 2 % du cadre = immobile
+STILL, DRIFT = 0.06, 0.15   # pas < 6 % du cadre et derive cumulee < 15 % depuis le debut de l'arret = platine immobile
 merged, i, stacks = [], 0, 0
 while i < len(items):
-    j = i + 1
-    while j < len(items) and moves[j] < STILL: j += 1
+    j = i + 1; cx = cy = 0.0
+    while j < len(items) and moves[j] < STILL:
+        cx += vecs[j][0]; cy += vecs[j][1]
+        if math.hypot(cx, cy) >= DRIFT: break
+        j += 1
     run = list(range(i, j))
     if len(run) >= 3:
         sh = [sharps[k] for k in run]

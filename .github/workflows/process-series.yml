@@ -39,7 +39,10 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python tools/process_inbox.py ${{ inputs.only && format('--only {0}', inputs.only) || '' }} ${{ inputs.force && '--force' || '' }}
+        run: |
+          ONLY="${{ inputs.only || github.event.client_payload.only || '' }}"
+          FORCE="${{ (inputs.force || github.event.client_payload.force) && '--force' || '' }}"
+          python tools/process_inbox.py ${ONLY:+--only "$ONLY"} $FORCE
       - name: Publier dans la galerie
         if: steps.run.outputs.published != ''
         run: |
