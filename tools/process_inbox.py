@@ -116,26 +116,44 @@ for s in series:
         print(f'  ÉCHEC du pipeline (code {rc}), série marquée en échec dans le bucket')
         logp = os.path.join(res, 'pipeline.log')
         put_text(f'{s}/failed.txt', open(logp).read()[-4000:] if os.path.isfile(logp) else f'pipeline code {rc}'); continue
-    # une prise de detail peut contenir plusieurs zones distinctes : chacune devient une lame de detail
-    zones = [(res, None)]
-    try: others = json.load(open(os.path.join(res, 'layout.json'))).get('other_components') or []
-    except Exception: others = []
-    if meta.get('parent') and others:
-        print(f'  {1 + len(others)} zones distinctes dans cette prise')
+    # --- segments d'objectif (changement d'objectif pendant la prise) et zones distinctes (composantes) ---
+    def run_pipeline(outdir, extra):
+        os.makedirs(outdir, exist_ok=True)
+        if not os.path.isdir(os.path.join(outdir, 'frames')): os.symlink(os.path.join(res, 'frames'), os.path.join(outdir, 'frames'))
+        return subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'pipeline.py'), d, '--out', outdir] + extra).returncode == 0
+    def layout_of(r):
+        try: return json.load(open(os.path.join(r, 'layout.json')))
+        except Exception: return {}
+    lay0 = layout_of(res)
+    nseg = int(lay0.get('segments') or 0)
+    # jobs : (dossier result, numero de zone ou None, numero de segment, parent explicite ou None)
+    jobs = [(res, None, 0, None)]
+    def add_zones(r, seg):
+        others = layout_of(r).get('other_components') or []
         for ci in range(1, 1 + len(others)):
-            resc = os.path.join(d, f'result_{ci}')
-            # les images extraites sont reutilisees (meme dossier frames)
-            os.makedirs(resc, exist_ok=True)
-            if not os.path.isdir(os.path.join(resc, 'frames')): os.symlink(os.path.join(res, 'frames'), os.path.join(resc, 'frames'))
-            rcc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'pipeline.py'), d, '--out', resc, '--component', str(ci)]).returncode
-            if rcc == 0: zones.append((resc, ci))
-            else: print(f'  zone {ci + 1} : échec de l\'assemblage, ignorée')
+            rc_ = os.path.join(d, f'result_s{seg}_c{ci}')
+            if run_pipeline(rc_, ['--segment', str(seg), '--component', str(ci)]): jobs.append((rc_, ci, seg, None))
+            else: print(f'  segment {seg + 1} zone {ci + 1} : échec de l\'assemblage, ignorée')
+    if meta.get('parent'): add_zones(res, 0)
+    for seg in range(1, nseg):
+        rs = os.path.join(d, f'result_s{seg}')
+        if run_pipeline(rs, ['--segment', str(seg)]):
+            jobs.append((rs, None, seg, 'SEG0')); add_zones(rs, seg)
+        else: print(f'  segment {seg + 1} : échec de l\'assemblage, ignoré')
+    # les zones des segments > 0 heritent aussi du parent SEG0
+    jobs = [(r, ci, seg, ('SEG0' if seg > 0 else par)) for (r, ci, seg, par) in jobs]
+    if len(jobs) > 1: print(f'  {len(jobs)} lame(s) dans cette prise (segments et zones)')
     base_title = meta.get('title') or s
     published = []
-    for res, ci in zones:
-      title = base_title if ci is None else f'{base_title} (zone {ci + 1})'
-      slug = (slugify(title) + '-' + s.split('_')[1][4:] + s.split('_')[2][:4]) if meta.get('title') and s.count('_') >= 2 else s.lower().replace('_', '-') + ('' if ci is None else f'-zone{ci + 1}')
-      complete = meta.get('complete')
+    seg0_slug = None
+    for res, ci, seg, par in jobs:
+      lay = layout_of(res)
+      title = base_title + (f' (obj. {lay.get("objective")})' if seg > 0 else '') + ('' if ci is None else f' (zone {ci + 1})')
+      slug = (slugify(title) + '-' + s.split('_')[1][4:] + s.split('_')[2][:4]) if meta.get('title') and s.count('_') >= 2 else s.lower().replace('_', '-') + ('' if seg == 0 else f'-obj{seg}') + ('' if ci is None else f'-zone{ci + 1}')
+      parent = seg0_slug if par == 'SEG0' else (meta.get('parent') if seg == 0 else None)
+      if parent:
+          lay['parent'] = parent; json.dump(lay, open(os.path.join(res, 'layout.json'), 'w'))
+      complete = meta.get('complete') if (seg == 0 and ci is None) else None
       if complete and os.path.isfile(os.path.join(ROOT, 'lames', complete, 'lame.json')):
           # reprise ciblee : la prise est fondue dans la lame existante, qui garde son nom
           print(f'  reprise de {complete} : fusion dans la lame existante')
@@ -158,7 +176,7 @@ for s in series:
       for src, dst in ((os.path.join(d, 'journal-telephone.txt'), f'{stampf}-telephone.txt'), (os.path.join(res if not res.endswith('merged') else os.path.dirname(res), 'pipeline.log'), f'{stampf}-assemblage.txt')):
           if os.path.isfile(src): shutil.copyfile(src, os.path.join(logs, dst))
       subprocess.run([sys.executable, '-c', 'import sys; sys.path.insert(0, sys.argv[1]); from publish_lame import write_pages; write_pages(sys.argv[2])', os.path.join(ROOT, 'tools'), slug])
-      parent = meta.get('parent')
+      if seg == 0 and ci is None: seg0_slug = slug
       if parent:
           if os.path.isfile(os.path.join(ROOT, 'lames', parent, 'lame.json')):
               print(f'  lame de détail de {parent} : recalage dans la lame d\'ensemble')

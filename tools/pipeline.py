@@ -30,6 +30,7 @@ ap.add_argument('--core', type=float, default=0.70, help='fraction du rayon de c
 ap.add_argument('--no-distortion', action='store_true', help='ne pas estimer la distorsion radiale')
 ap.add_argument('--no-chroma', action='store_true', help='ne pas corriger l aberration chromatique')
 ap.add_argument('--tile', type=int, default=2048, help='taille des tuiles de composition')
+ap.add_argument('--segment', type=int, default=0, help='segment d objectif de la prise (0 = premier) ; voir meta.segments')
 ap.add_argument('--component', type=int, default=0, help='composante connexe a assembler (0 = la plus grande) ; les autres sont listees dans layout.json')
 a = ap.parse_args()
 
@@ -65,6 +66,23 @@ else:
         items.append((p, f['t_ms'] if f else None))
 if not items:
     sys.exit('aucune image')
+# --- phases marquees pendant la prise : fond blanc (flat-field) et segments d'objectif ---
+blank_phases = [ph for ph in (meta.get('phases') or []) if ph.get('kind') == 'blank' and ph.get('t1') is not None]
+in_blank = lambda t: t is not None and any(ph['t0'] <= t <= ph['t1'] for ph in blank_phases)
+blank_items = [(p, t) for p, t in items if in_blank(t)]
+segs = list(meta.get('segments') or [])
+if segs:
+    if a.segment >= len(segs): sys.exit(f'segment {a.segment} inexistant')
+    sg = segs[a.segment]; t0s, t1s = sg.get('t0') or 0, sg.get('t1') or 1e12
+    items = [(p, t) for p, t in items if t is not None and t0s <= t <= t1s and not in_blank(t)]
+    meta['objective'] = sg.get('objective') or meta.get('objective')
+    if sg.get('um_per_px'): meta['um_per_px'] = sg['um_per_px']
+    log(f'segment {a.segment + 1}/{len(segs)} : objectif {meta["objective"]}, {len(items)} images entre {t0s / 1000:.0f} s et {min(t1s, 1e9) / 1000:.0f} s')
+else:
+    items = [(p, t) for p, t in items if not in_blank(t)]
+if blank_items: log(f'{len(blank_items)} image(s) de fond blanc marquées pendant la prise')
+if not items:
+    sys.exit('aucune image dans ce segment')
 log(len(items), 'images candidates')
 
 # positions estimees (px du flux) par temps
@@ -275,8 +293,14 @@ def disc_mask(im):
 
 # --- flat-field reel : images "vides" (fond clair, sans texture) filmees pendant la prise ---
 flat = None
+if blank_items:
+    cand = [cv2.imread(p).astype(np.float32) for p, _ in blank_items[:16]]
+    cand = [im for im in cand if im.mean() > 100]
+    if len(cand) >= 2:
+        flat = cv2.GaussianBlur(np.median(np.stack(cand), axis=0), (0, 0), 2)
+        log(f'flat-field mesuré sur {len(cand)} images de fond blanc (phase marquée)')
 blank_idx = [i for i, (sh, (p, t)) in enumerate(zip(sharps, items)) if sh < 0.15 * float(np.median(sharps))]
-if len(blank_idx) >= 3:
+if flat is None and len(blank_idx) >= 3:
     cand = []
     for i in blank_idx[:12]:
         im = cv2.imread(items[i][0]).astype(np.float32)
@@ -487,7 +511,7 @@ comps.sort(key=len, reverse=True)
 if a.component >= len(comps): sys.exit(f'composante {a.component} inexistante')
 comp = comps[a.component]
 # zones distinctes dans une meme prise (plusieurs details au fort grossissement) : les autres composantes assez grandes
-other_components = [len(c) for i, c in enumerate(comps) if i != a.component and len(c) >= 3]
+other_components = [len(c) for i, c in enumerate(comps) if i != a.component and len(c) >= 2]
 log('composantes :', [len(c) for c in comps], f'-> on assemble la n°{a.component} :', len(comp), 'images')
 if len(comp) < 2:
     sys.exit('aucune paire d\'images ne se recouvre')
@@ -569,7 +593,7 @@ if anchors and W0:
         s_ = scales[ref]; off = dst.mean(0) - src.mean(0) * s_
         Apos = np.array([[s_, 0, off[0]], [0, s_, off[1]]], np.float64)
     for ci, c in enumerate(comps):
-        if ci == a.component or len(c) >= 3: continue      # une composante de 3 images ou plus est une zone a part entiere
+        if ci == a.component or len(c) >= 2: continue      # une composante de 2 images ou plus est une zone a part entiere
         for k in c:
             if P[k]:
                 # Apos convertit les positions du suivi (px du flux) en px de recalage de la reference : seule la
@@ -834,6 +858,7 @@ json.dump(dict(size=[W, H], images=len(comp), of=N, placements=placements, k1=k1
                um_per_px=um_px, zstack=ZL, quality=quality,
                title=meta.get('title'), stain=meta.get('stain'), objective=meta.get('objective'), sample=meta.get('sample'),
                comment=meta.get('comment'), parent=meta.get('parent'), captured=meta.get('captured'),
-               series=meta.get('series'), component=a.component, other_components=other_components, sources=[sel[k]['path'] for k in comp]),
+               series=meta.get('series'), component=a.component, other_components=other_components,
+               segment=a.segment, segments=len(segs), sources=[sel[k]['path'] for k in comp]),
           open(os.path.join(out, 'layout.json'), 'w'), indent=1)
 log('terminé : pano.jpg', W, 'x', H, ',', len(comp), 'images utilisées sur', N)

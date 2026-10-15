@@ -30,6 +30,16 @@
   #rec.on { display: block; }
   @keyframes blink { 50% { opacity: .25; } }
   /* sharpness: thin bar just above the bottom controls */
+  /* phase buttons during a take: blank field (flat-field) and objective change */
+  #phase { position: absolute; left: calc(10px + var(--sal)); top: calc(206px + var(--sat)); display: none; flex-direction: column; gap: 8px; z-index: 2; }
+  #phase.on { display: flex; }
+  #phase button { min-height: 44px; padding: 8px 12px; font-size: 14px; background: rgba(23,21,28,.85); }
+  #phase button[aria-pressed="true"] { border-color: var(--warn); color: var(--warn); }
+  #state.blank { color: #1a0f1f; background: #f5f0e6; }
+  #state.switching { color: #fff; background: #5b2a86; }
+  #objpick { position: absolute; left: calc(10px + var(--sal)); top: calc(310px + var(--sat)); display: none; flex-wrap: wrap; gap: 6px; max-width: 60vw; z-index: 3; background: rgba(23,21,28,.95); padding: 8px; border-radius: 12px; border: 1px solid var(--line); }
+  #objpick.on { display: flex; }
+  #objpick button { min-height: 44px; padding: 6px 12px; font-size: 15px; }
   #sharpwrap { position: absolute; left: calc(14px + var(--sal)); right: calc(14px + var(--sar)); bottom: calc(var(--bar) + var(--sab) + 56px); display: flex; align-items: center; gap: 10px; font-size: 14px; }
   #sharpwrap span { background: rgba(0,0,0,.55); padding: 4px 10px; border-radius: 6px; min-width: 60px; text-align: center; color: var(--muted); }
   #sharp { flex: 1; height: 8px; background: rgba(255,255,255,.18); border-radius: 4px; overflow: hidden; }
@@ -111,6 +121,12 @@
   <div id="msg">Touche le bouton violet pour démarrer la caméra. Si tout paraît minuscule, désactive « Version ordinateur » dans le menu de Chrome.</div>
   <div id="zoomwrap"><span><em>zoom</em> <b id="zoomv">1.0×</b></span><input id="zoom" type="range" min="1" max="1" step="0.1" value="1" disabled aria-label="Zoom"></div>
   <div id="sharpwrap"><span>netteté</span><div id="sharp"><i id="sharpbar"></i></div></div>
+  <div id="phase">
+    <button id="blankbtn" class="toggle" aria-pressed="false">Fond blanc</button>
+    <button id="objbtn">Changer d'objectif</button>
+    <button id="resumebtn" hidden>Reprendre</button>
+  </div>
+  <div id="objpick"></div>
 </div>
 
 <div id="bar">
@@ -770,7 +786,7 @@ self.onmessage = async e => {
     return list.find(m => window.MediaRecorder && MediaRecorder.isTypeSupported(m)) || '';
   }
   function sampleTick() {
-    if (!running || trackerBusy > 0) return;
+    if (!running || trackerBusy > 0 || inPause()) return;
     const now = performance.now();
     sampleSeq++;
     const name = `${seriesId}_t${String(Math.round(now - seriesT0)).padStart(7, '0')}`;
@@ -846,10 +862,47 @@ self.onmessage = async e => {
     });
   }
 
-  let seriesT0 = 0;
+  // ---------- phases pendant la prise : fond blanc (flat-field) et changement d'objectif (segments) ----------
+  let seriesT0 = 0, phases = [], segments = [], curBlank = null, switching = null;
+  const OBJ_LIST = ['x4', 'x10', 'x20', 'x40', 'x50', 'x60', 'x63', 'x100'];
+  const inPause = () => curBlank !== null || switching !== null;   // le suivi ne tourne pas pendant ces phases
+  const tnow = () => Math.round(performance.now() - seriesT0);
+  function calibrations() { const c = {}; for (const o of OBJ_LIST) { const v = +(LS.get('scanlame.umpx.' + o) || 0); if (v > 0) c[o] = v; } return c; }
+  function setBlank(on) {
+    if (on) { curBlank = { kind: 'blank', t0: tnow() }; setState('blank'); say('Fond blanc : place une zone vide de la lame (sans cellule ni bactérie) et laisse 2 à 3 s, puis retouche le bouton.'); log(`fond blanc : début à ${curBlank.t0} ms`); }
+    else if (curBlank) { curBlank.t1 = tnow(); phases.push(curBlank); log(`fond blanc : fin à ${curBlank.t1} ms`); curBlank = null; setState('recording', seriesT0); say('Fond blanc enregistré. Reprends le balayage.'); }
+    $('blankbtn').setAttribute('aria-pressed', String(!!curBlank));
+  }
+  $('blankbtn').onclick = () => { if (!running || switching) return; setBlank(curBlank === null); };
+  $('objbtn').onclick = () => {
+    if (!running || curBlank) return;
+    const pick = $('objpick'); pick.innerHTML = '';
+    for (const o of OBJ_LIST) { if (o === $('objective').value) continue; const b = document.createElement('button'); b.textContent = o; b.onclick = () => startSwitch(o); pick.appendChild(b); }
+    pick.classList.toggle('on');
+  };
+  function startSwitch(obj) {
+    $('objpick').classList.remove('on');
+    segments[segments.length - 1].t1 = tnow();
+    switching = { objective: obj, t0: tnow() };
+    setState('switching', obj); $('objbtn').hidden = true; $('blankbtn').hidden = true; $('resumebtn').hidden = false;
+    say(`Change l'objectif sur le microscope (${obj}), refais la mise au point à la vis, revérouille AF/AE si besoin, puis touche Reprendre.`);
+    log(`changement d'objectif vers ${obj} : début à ${switching.t0} ms`);
+  }
+  $('resumebtn').onclick = () => {
+    if (!switching) return;
+    const obj = switching.objective, t = tnow();
+    segments.push({ objective: obj, t0: t, t1: null, um_per_px: calibrations()[obj] || null });
+    $('objective').value = obj; $('objective').dispatchEvent(new Event('change'));
+    tracker.postMessage({ type: 'reset' }); trackerBusy = 0; placed = []; drawMap(null);   // nouvelle échelle : le suivi repart de zéro
+    log(`objectif ${obj} : reprise à ${t} ms (calibration ${segments[segments.length - 1].um_per_px || 'absente'})`);
+    switching = null; setState('recording', seriesT0); $('objbtn').hidden = false; $('blankbtn').hidden = false; $('resumebtn').hidden = true;
+    say(`Objectif ${obj} : balayage des zones de détail. Elles seront recalées dans la vue d'ensemble.`);
+  };
   function startSeries() {
     running = true; seq = 0; seriesId = 'lame_' + stamp(); seriesT0 = performance.now(); lastT = 0; recent = []; skipped = 0;
     tracker.postMessage({ type: 'reset' }); trackerBusy = 0; placed = [];
+    phases = []; curBlank = null; switching = null; segments = [{ objective: $('objective').value, t0: 0, t1: null, um_per_px: +$('umpx').value > 0 ? +$('umpx').value : null }];
+    $('phase').classList.add('on'); $('blankbtn').setAttribute('aria-pressed', 'false'); $('objbtn').hidden = false; $('blankbtn').hidden = false; $('resumebtn').hidden = true; $('objpick').classList.remove('on');
     sendMask(); drawMap(null); $('trk').className = ''; $('trkt').textContent = 'suivi en cours';
     const mode = $('mode').value;
     log(`=== série ${seriesId} (${mode}) « ${$('title').value.trim() || 'sans nom'} », ${$('stain').value}, objectif ${$('objective').value}${$('parent').value ? ', détail de ' + $('parent').value : ''}${$('complete').value ? ', reprise de ' + $('complete').value : ''} : débit ${$('bitrate').value} Mbit/s, serveur ${$('upload').value.trim() || 'aucun'}, intervalle ${$('interval').value} ms, taille ${$('scale').value}, qualité ${$('quality').value}, zoom ${$('zoom').value}, flux ${video.videoWidth}x${video.videoHeight}`);
@@ -866,6 +919,9 @@ self.onmessage = async e => {
     stopping = true; $('shoot').disabled = true;
     running = false; clearInterval(timer);
     const dur = (performance.now() - seriesT0) / 1000, mode = $('mode').value;
+    if (curBlank) { curBlank.t1 = tnow(); phases.push(curBlank); curBlank = null; }
+    if (switching) { switching = null; } else segments[segments.length - 1].t1 = tnow();
+    $('phase').classList.remove('on'); $('objpick').classList.remove('on');
     if (mode === 'video') await stopVideo();
     log(`=== fin de série : ${mode === 'video' ? dur.toFixed(1) + ' s de vidéo' : seq + ' photos en ' + dur.toFixed(1) + ' s (' + (seq / dur).toFixed(2) + ' /s), ' + skipped + ' sauts'}, ${placed.length} champs placés`);
     $('shoot').textContent = 'Lancer la série'; $('shoot').classList.remove('stop'); $('rec').classList.remove('on'); setState('ready');
@@ -879,7 +935,7 @@ self.onmessage = async e => {
   // ---------- export ----------
   const seriesMeta = () => ({ series: seriesId, title: $('title').value.trim() || null, um_per_px: +$('umpx').value > 0 ? +$('umpx').value : null,
       stain: $('stain').value, objective: $('objective').value, sample: $('sample').value.trim() || null, comment: $('comment').value.trim() || null, parent: $('parent').value || null, complete: $('complete').value || null,
-      captured: new Date().toISOString(), mode: $('mode').value, count: shots.length, interval_ms: +$('interval').value, sample_ms: 250, position_unit: 'px of the camera stream', bitrate_mbps: +$('bitrate').value, scale: +$('scale').value, width: video.videoWidth, height: video.videoHeight, zoom: $('zoom').value, userAgent: navigator.userAgent,
+      captured: new Date().toISOString(), phases: phases.slice(), segments: segments.slice(), calibrations: calibrations(), mode: $('mode').value, count: shots.length, interval_ms: +$('interval').value, sample_ms: 250, position_unit: 'px of the camera stream', bitrate_mbps: +$('bitrate').value, scale: +$('scale').value, width: video.videoWidth, height: video.videoHeight, zoom: $('zoom').value, userAgent: navigator.userAgent,
       frames: Object.values(frameInfo).map(f => ({ name: f.name, kind: f.status === 'sample' ? 'sample' : 'photo', t_ms: Math.round(f.t), x: f.x == null ? null : Math.round(f.x), y: f.y == null ? null : Math.round(f.y), score: f.score == null ? null : +f.score.toFixed(3), track: f.track, enc_ms: f.encMs || null })) });
   const download = (blob, name) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 30000); };
   $('save').onclick = async () => {
@@ -910,14 +966,17 @@ self.onmessage = async e => {
   function setState(kind) {
     const el = $('state'); clearInterval(stateTimer);
     if (kind === 'recording') {
-      const t0 = Date.now();
+      const t0 = arguments[1] ? Date.now() - (performance.now() - arguments[1]) : Date.now();
       const tick = () => { const s = Math.floor((Date.now() - t0) / 1000); el.textContent = `ENREGISTREMENT ${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`; };
       tick(); stateTimer = setInterval(tick, 1000);
     } else if (kind === 'sending') {
       const st = arguments[1], done = st.sent, total = st.chunkSeq, pct = total ? Math.round(100 * done / total) : 0;
       el.innerHTML = `ENVOI ${done}/${total} <span class="bar"><i style="width:${pct}%"></i></span>`;
-    } else el.textContent = kind === 'ready' ? 'Prêt, caméra active' : 'Caméra arrêtée';
-    el.className = kind; $('stage').classList.toggle('recording', kind === 'recording'); $('bar').classList.toggle('recording', kind === 'recording');
+    } else if (kind === 'blank') el.textContent = 'FOND BLANC : zone vide';
+    else if (kind === 'switching') el.textContent = `CHANGEMENT D'OBJECTIF → ${arguments[1]}`;
+    else el.textContent = kind === 'ready' ? 'Prêt, caméra active' : 'Caméra arrêtée';
+    el.className = kind; const rec = kind === 'recording' || kind === 'blank' || kind === 'switching';
+    $('stage').classList.toggle('recording', rec); $('bar').classList.toggle('recording', rec);
   }
   const shutter = $('shutter'), sheet = $('sheet'), backdrop = $('backdrop');
   async function stopCamera() {

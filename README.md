@@ -64,6 +64,10 @@ reglage de flux et au zoom numerique ; la visionneuse affiche alors une barre (�
   et s'affiche en calque a sa place dans la visionneuse parente (bouton « Details ») ; sans recalage possible il
   reste accessible par lien. Une seule prise au fort grossissement peut contenir plusieurs zones eloignees :
   l'assemblage les separe (composantes connexes) et publie un detail par zone (« zone 2 », « zone 3 »...).
+- Pendant la prise, deux boutons : « Fond blanc » (on le touche sur une zone vide de la lame, 2 a 3 s, on le
+  retouche : ces images servent au flat-field et jamais a la mosaique) et « Changer d'objectif » (on choisit le
+  nouvel objectif, on le change sur le microscope, on refait le point, « Reprendre »). Le premier segment devient
+  la lame d'ensemble, les suivants des lames de detail recalees dedans, chacune avec la calibration de son objectif.
 - Reprise ciblee : dans les reglages, « Completer une lame existante », puis filmer seulement les zones a reprendre
   (le calque « Qualite » de la visionneuse montre les trous). La prise est assemblee seule, recalee par points dans
   la lame existante (tools/merge_retake.py) et ne remplit que ce qui manquait, avec un fondu a la frontiere. La lame
