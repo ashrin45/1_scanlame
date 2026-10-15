@@ -115,43 +115,62 @@ for s in series:
         print(f'  ÉCHEC du pipeline (code {rc}), série marquée en échec dans le bucket')
         logp = os.path.join(res, 'pipeline.log')
         put_text(f'{s}/failed.txt', open(logp).read()[-4000:] if os.path.isfile(logp) else f'pipeline code {rc}'); continue
-    title = meta.get('title') or s
-    slug = (slugify(title) + '-' + s.split('_')[1][4:] + s.split('_')[2][:4]) if meta.get('title') and s.count('_') >= 2 else s.lower().replace('_', '-')
-    complete = meta.get('complete')
-    if complete and os.path.isfile(os.path.join(ROOT, 'lames', complete, 'lame.json')):
-        # reprise ciblee : la prise est fondue dans la lame existante, qui garde son nom
-        print(f'  reprise de {complete} : fusion dans la lame existante')
-        rc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'merge_retake.py'), complete, res]).returncode
-        if rc != 0:
-            print('  ÉCHEC de la fusion : la reprise ne se recale pas dans la lame, publiée à part')
-            title = f'{title} (reprise non recalée)'
-        else:
-            slug, res, title = complete, os.path.join(res, 'merged'), None
-    elif complete:
-        print(f'  lame à compléter {complete} introuvable : publiée à part')
-    cmd = [sys.executable, os.path.join(ROOT, 'tools', 'publish_lame.py'), os.path.join(res, 'pano.jpg'), '--name', slug,
-           '--fields', os.path.join(res, 'fields.json'), '--layout', os.path.join(res, 'layout.json')] + (['--title', title] if title else [])
-    rc = subprocess.run(cmd).returncode
-    if rc != 0:
-        print('  ÉCHEC de la publication'); put_text(f'{s}/failed.txt', 'publication'); continue
-    # journaux publies a cote de la lame (telephone + assemblage), le temps de la mise au point
-    logs = os.path.join(ROOT, 'lames', slug, 'journaux'); os.makedirs(logs, exist_ok=True)
-    stampf = s.replace('lame_', '')
-    for src, dst in ((os.path.join(d, 'journal-telephone.txt'), f'{stampf}-telephone.txt'), (os.path.join(res if not res.endswith('merged') else os.path.dirname(res), 'pipeline.log'), f'{stampf}-assemblage.txt')):
-        if os.path.isfile(src): shutil.copyfile(src, os.path.join(logs, dst))
-    subprocess.run([sys.executable, '-c', 'import sys; sys.path.insert(0, sys.argv[1]); from publish_lame import write_pages; write_pages(sys.argv[2])', os.path.join(ROOT, 'tools'), slug])
-    parent = meta.get('parent')
-    if parent:
-        if os.path.isfile(os.path.join(ROOT, 'lames', parent, 'lame.json')):
-            print(f'  lame de détail de {parent} : recalage dans la lame d\'ensemble')
-            subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'link_child.py'), parent, slug])
-        else:
-            print(f'  lame parente {parent} introuvable, publiée seule')
-    print(f'  publiée : lames/{slug}/ en {time.time() - t0:.0f} s')
-    put_text(f'{s}/done.txt', slug)
-    if 'failed.txt' in names: rm([f'{s}/failed.txt'])
-    if not a.keep and a.keep_days <= 0: rm(paths)
-    done.append(slug)
+    # une prise de detail peut contenir plusieurs zones distinctes : chacune devient une lame de detail
+    zones = [(res, None)]
+    try: others = json.load(open(os.path.join(res, 'layout.json'))).get('other_components') or []
+    except Exception: others = []
+    if meta.get('parent') and others:
+        print(f'  {1 + len(others)} zones distinctes dans cette prise')
+        for ci in range(1, 1 + len(others)):
+            resc = os.path.join(d, f'result_{ci}')
+            # les images extraites sont reutilisees (meme dossier frames)
+            os.makedirs(resc, exist_ok=True)
+            if not os.path.isdir(os.path.join(resc, 'frames')): os.symlink(os.path.join(res, 'frames'), os.path.join(resc, 'frames'))
+            rcc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'pipeline.py'), d, '--out', resc, '--component', str(ci)]).returncode
+            if rcc == 0: zones.append((resc, ci))
+            else: print(f'  zone {ci + 1} : échec de l\'assemblage, ignorée')
+    base_title = meta.get('title') or s
+    published = []
+    for res, ci in zones:
+      title = base_title if ci is None else f'{base_title} (zone {ci + 1})'
+      slug = (slugify(title) + '-' + s.split('_')[1][4:] + s.split('_')[2][:4]) if meta.get('title') and s.count('_') >= 2 else s.lower().replace('_', '-') + ('' if ci is None else f'-zone{ci + 1}')
+      complete = meta.get('complete')
+      if complete and os.path.isfile(os.path.join(ROOT, 'lames', complete, 'lame.json')):
+          # reprise ciblee : la prise est fondue dans la lame existante, qui garde son nom
+          print(f'  reprise de {complete} : fusion dans la lame existante')
+          rc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'merge_retake.py'), complete, res]).returncode
+          if rc != 0:
+              print('  ÉCHEC de la fusion : la reprise ne se recale pas dans la lame, publiée à part')
+              title = f'{title} (reprise non recalée)'
+          else:
+              slug, res, title = complete, os.path.join(res, 'merged'), None
+      elif complete:
+          print(f'  lame à compléter {complete} introuvable : publiée à part')
+      cmd = [sys.executable, os.path.join(ROOT, 'tools', 'publish_lame.py'), os.path.join(res, 'pano.jpg'), '--name', slug,
+             '--fields', os.path.join(res, 'fields.json'), '--layout', os.path.join(res, 'layout.json')] + (['--title', title] if title else [])
+      rc = subprocess.run(cmd).returncode
+      if rc != 0:
+          print('  ÉCHEC de la publication'); put_text(f'{s}/failed.txt', 'publication'); break
+      # journaux publies a cote de la lame (telephone + assemblage), le temps de la mise au point
+      logs = os.path.join(ROOT, 'lames', slug, 'journaux'); os.makedirs(logs, exist_ok=True)
+      stampf = s.replace('lame_', '')
+      for src, dst in ((os.path.join(d, 'journal-telephone.txt'), f'{stampf}-telephone.txt'), (os.path.join(res if not res.endswith('merged') else os.path.dirname(res), 'pipeline.log'), f'{stampf}-assemblage.txt')):
+          if os.path.isfile(src): shutil.copyfile(src, os.path.join(logs, dst))
+      subprocess.run([sys.executable, '-c', 'import sys; sys.path.insert(0, sys.argv[1]); from publish_lame import write_pages; write_pages(sys.argv[2])', os.path.join(ROOT, 'tools'), slug])
+      parent = meta.get('parent')
+      if parent:
+          if os.path.isfile(os.path.join(ROOT, 'lames', parent, 'lame.json')):
+              print(f'  lame de détail de {parent} : recalage dans la lame d\'ensemble')
+              subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'link_child.py'), parent, slug])
+          else:
+              print(f'  lame parente {parent} introuvable, publiée seule')
+      print(f'  publiée : lames/{slug}/ en {time.time() - t0:.0f} s')
+      published.append(slug)
+    if published:
+        put_text(f'{s}/done.txt', ','.join(published))
+        if 'failed.txt' in names: rm([f'{s}/failed.txt'])
+        if not a.keep and a.keep_days <= 0: rm(paths)
+        done.extend(published)
     shutil.rmtree(d, ignore_errors=True)
 print('séries publiées :', done or 'aucune')
 if done:

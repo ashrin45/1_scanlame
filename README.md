@@ -62,7 +62,8 @@ reglage de flux et au zoom numerique ; la visionneuse affiche alors une barre (�
 - Grossissements lies : filmer d'abord une vue d'ensemble (x10), puis des details (x40, x100) en choisissant la
   lame d'ensemble dans les reglages. Le detail est recale par points dans la mosaique d'ensemble (tools/link_child.py)
   et s'affiche en calque a sa place dans la visionneuse parente (bouton « Details ») ; sans recalage possible il
-  reste accessible par lien.
+  reste accessible par lien. Une seule prise au fort grossissement peut contenir plusieurs zones eloignees :
+  l'assemblage les separe (composantes connexes) et publie un detail par zone (« zone 2 », « zone 3 »...).
 - Reprise ciblee : dans les reglages, « Completer une lame existante », puis filmer seulement les zones a reprendre
   (le calque « Qualite » de la visionneuse montre les trous). La prise est assemblee seule, recalee par points dans
   la lame existante (tools/merge_retake.py) et ne remplit que ce qui manquait, avec un fondu a la frontiere. La lame

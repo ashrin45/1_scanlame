@@ -30,6 +30,7 @@ ap.add_argument('--core', type=float, default=0.70, help='fraction du rayon de c
 ap.add_argument('--no-distortion', action='store_true', help='ne pas estimer la distorsion radiale')
 ap.add_argument('--no-chroma', action='store_true', help='ne pas corriger l aberration chromatique')
 ap.add_argument('--tile', type=int, default=2048, help='taille des tuiles de composition')
+ap.add_argument('--component', type=int, default=0, help='composante connexe a assembler (0 = la plus grande) ; les autres sont listees dans layout.json')
 a = ap.parse_args()
 
 S = a.series.rstrip('/')
@@ -424,8 +425,11 @@ for s0 in range(N):
         seen.add(u); comp.append(u); stack.extend(adj[u])
     comps.append(comp)
 comps.sort(key=len, reverse=True)
-comp = comps[0]
-log('composantes :', [len(c) for c in comps], '-> on garde', len(comp), 'images')
+if a.component >= len(comps): sys.exit(f'composante {a.component} inexistante')
+comp = comps[a.component]
+# zones distinctes dans une meme prise (plusieurs details au fort grossissement) : les autres composantes assez grandes
+other_components = [len(c) for i, c in enumerate(comps) if i != a.component and len(c) >= 3]
+log('composantes :', [len(c) for c in comps], f'-> on assemble la n°{a.component} :', len(comp), 'images')
 if len(comp) < 2:
     sys.exit('aucune paire d\'images ne se recouvre')
 
@@ -505,7 +509,8 @@ if anchors and W0:
     if Apos is None:
         s_ = scales[ref]; off = dst.mean(0) - src.mean(0) * s_
         Apos = np.array([[s_, 0, off[0]], [0, s_, off[1]]], np.float64)
-    for c in comps[1:]:
+    for ci, c in enumerate(comps):
+        if ci == a.component or len(c) >= 3: continue      # une composante de 3 images ou plus est une zone a part entiere
         for k in c:
             if P[k]:
                 t = (Apos @ np.array([P[k][0], P[k][1], 1.0]))[:2]; sc = math.hypot(Apos[0, 0], Apos[0, 1])
@@ -768,6 +773,6 @@ json.dump(dict(size=[W, H], images=len(comp), of=N, placements=placements, k1=k1
                um_per_px=um_px, zstack=ZL, quality=quality,
                title=meta.get('title'), stain=meta.get('stain'), objective=meta.get('objective'), sample=meta.get('sample'),
                comment=meta.get('comment'), parent=meta.get('parent'), captured=meta.get('captured'),
-               series=meta.get('series'), sources=[sel[k]['path'] for k in comp]),
+               series=meta.get('series'), component=a.component, other_components=other_components, sources=[sel[k]['path'] for k in comp]),
           open(os.path.join(out, 'layout.json'), 'w'), indent=1)
 log('terminé : pano.jpg', W, 'x', H, ',', len(comp), 'images utilisées sur', N)
