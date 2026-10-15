@@ -1,22 +1,45 @@
 [    0.0s] extraction video.mp4 à 4.0 img/s
-[   16.9s] 351 images candidates
-[   87.9s] 28 pile(s) de profondeur fusionnée(s) (EDF), plans conservés pour la navigation
-[   87.9s] netteté médiane 51.3, seuil 20.5
-[   87.9s] 41 images retenues (nettes, non redondantes)
-[   87.9s] pas de champ vide filmé : vignettage estimé par lissage
-[   92.2s] aberration chromatique : échelle R 0.9995, B 1.0005
-[  143.0s] prétraitement terminé, 41 images, recalage à 900 x 1200
-[  148.9s] points SIFT : 3917 par image en moyenne
-[  148.9s] 378 paires à tester
-[  208.8s] 66 paires valides
-[  209.2s] distorsion radiale k1 = -0.0100 (résidu 1.15 px contre 1.31 px sans correction)
-[  209.2s] composantes : [24, 7, 2, 2, 1, 1, 1, 1, 1, 1] -> on assemble la n°0 : 24 images
-[  209.7s] ajustement global : 6439 correspondances, 23 images
-[  209.7s] 10 image(s) placée(s) d'après le suivi en direct (sans recalage fin)
-[  209.8s] compensation photométrique : écart de gain max 4.7 %
-[  209.8s] recalage : erreur médiane 1.37 px (échelle recalage), max 39.95
-[  210.3s] mosaïque 3386 x 12443
-[  337.8s] composition : 14 tuiles en 126 s
-[  946.7s] z-stack : 5 plans sur 21 champ(s) en 609 s
-[  947.4s] qualité : note B (10 champ(s) placé(s) sans recalage fin)
-[  947.4s] terminé : pano.jpg 3386 x 12443 , 34 images utilisées sur 41
+[   15.7s] 351 images candidates
+[   19.2s]   pile : 2 plan(s) non alignable(s) écarté(s)
+[   19.8s]   pile : 2 plan(s) non alignable(s) écarté(s)
+[   22.2s]   pile : 1 plan(s) non alignable(s) écarté(s)
+[   22.7s]   pile : 2 plan(s) non alignable(s) écarté(s)
+[   23.1s]   pile : 3 plan(s) non alignable(s) écarté(s)
+[   24.1s]   pile : 3 plan(s) non alignable(s) écarté(s)
+[   24.3s]   pile : 1 plan(s) non alignable(s) écarté(s)
+[   25.0s]   pile : 3 plan(s) non alignable(s) écarté(s)
+[   27.8s]   pile : 1 plan(s) non alignable(s) écarté(s)
+[   33.8s]   pile : 1 plan(s) non alignable(s) écarté(s)
+[   36.2s]   pile : 3 plan(s) non alignable(s) écarté(s)
+[   37.3s]   pile : 1 plan(s) non alignable(s) écarté(s)
+[   37.8s]   pile : 2 plan(s) non alignable(s) écarté(s)
+[   38.2s]   pile : 4 plan(s) non alignable(s) écarté(s)
+[   40.3s]   pile : 59 plan(s) non alignable(s) écarté(s)
+[   42.1s]   pile : 2 plan(s) non alignable(s) écarté(s)
+[   42.5s]   pile : 1 plan(s) non alignable(s) écarté(s)
+[   42.9s]   pile : 1 plan(s) non alignable(s) écarté(s)
+[   43.3s]   pile : 2 plan(s) non alignable(s) écarté(s)
+[   44.2s]   pile : 1 plan(s) non alignable(s) écarté(s)
+[   46.2s]   pile : 1 plan(s) non alignable(s) écarté(s)
+[   46.9s]   pile : 1 plan(s) non alignable(s) écarté(s)
+[   48.0s]   pile : 2 plan(s) non alignable(s) écarté(s)
+[   48.7s]   pile : 1 plan(s) non alignable(s) écarté(s)
+[   49.3s] 28 pile(s) de profondeur fusionnée(s) (EDF), plans conservés pour la navigation
+[   49.3s] netteté médiane 51.3, seuil 20.5
+[   49.3s] 41 images retenues (nettes, non redondantes)
+[   49.3s] pas de champ vide filmé : vignettage estimé par lissage
+[   51.5s] aberration chromatique : échelle R 0.9995, B 1.0005
+[   86.2s] prétraitement terminé, 41 images, recalage à 900 x 1200
+[   90.0s] points SIFT : 2706 par image en moyenne
+[   90.0s] 378 paires à tester
+[  114.9s] 245 paires valides
+[  115.8s] distorsion radiale k1 = -0.0100 (résidu 1.20 px contre 1.40 px sans correction)
+[  115.9s] composantes : [41] -> on assemble la n°0 : 41 images
+[  117.1s] ajustement global : 34498 correspondances, 40 images
+[  117.5s] compensation photométrique : écart de gain max 3.7 %
+[  117.5s] recalage : erreur médiane 1.36 px (échelle recalage), max 2.31
+[  118.2s] mosaïque 3794 x 14564
+[  239.3s] composition : 16 tuiles en 119 s
+[  838.2s] z-stack : 5 plans sur 24 champ(s) en 599 s
+[  839.1s] qualité : note A (aucune remarque)
+[  839.1s] terminé : pano.jpg 3794 x 14564 , 41 images utilisées sur 41
