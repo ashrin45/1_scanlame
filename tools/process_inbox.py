@@ -166,6 +166,19 @@ for s in series:
               print(f'  lame parente {parent} introuvable, publiée seule')
       print(f'  publiée : lames/{slug}/ en {time.time() - t0:.0f} s')
       published.append(slug)
+      # sous GitHub Actions : publication immediate de cette lame (la galerie n'attend pas la fin du passage)
+      if os.environ.get('GITHUB_ACTIONS'):
+          try:
+              subprocess.run(['git', 'config', 'user.name', 'scanlame'], check=True)
+              subprocess.run(['git', 'config', 'user.email', 'scanlame@users.noreply.github.com'], check=True)
+              subprocess.run(['git', 'add', 'lames'], check=True)
+              if subprocess.run(['git', 'diff', '--cached', '--quiet']).returncode != 0:
+                  subprocess.run(['git', 'commit', '-q', '-m', f'Lame : {slug}'], check=True)
+                  subprocess.run(['git', 'pull', '--rebase', '-q', 'origin', 'main'], check=True)
+                  subprocess.run(['git', 'push', '-q', 'origin', 'HEAD:main'], check=True)
+                  print('  poussée vers la galerie')
+          except subprocess.CalledProcessError as e:
+              print(f'  publication immédiate impossible ({e}), elle partira en fin de passage')
     if published:
         put_text(f'{s}/done.txt', ','.join(published))
         if 'failed.txt' in names: rm([f'{s}/failed.txt'])

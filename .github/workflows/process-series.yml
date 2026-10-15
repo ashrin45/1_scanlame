@@ -43,11 +43,12 @@ jobs:
           ONLY="${{ inputs.only || github.event.client_payload.only || '' }}"
           FORCE="${{ (inputs.force || github.event.client_payload.force) && '--force' || '' }}"
           python tools/process_inbox.py ${ONLY:+--only "$ONLY"} $FORCE
-      - name: Publier dans la galerie
-        if: steps.run.outputs.published != ''
+      - name: Publier dans la galerie (reste éventuel)
+        if: always()
         run: |
           git config user.name scanlame && git config user.email scanlame@users.noreply.github.com
           git add lames
+          git diff --cached --quiet && exit 0
           git commit -m "Lames : ${{ steps.run.outputs.published }}"
           git pull --rebase -q origin main
           git push -q origin HEAD:main
