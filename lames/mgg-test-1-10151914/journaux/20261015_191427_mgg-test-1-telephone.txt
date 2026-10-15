@@ -1,0 +1,53 @@
+   0.021  page chargée. Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36
+   0.022  coeurs : 8, encodeurs parallèles : 4
+   0.143  20 lame(s) publiée(s) connues
+   1.253  getUserMedia demandé (arrière, {"width":{"ideal":2000},"height":{"ideal":1500},"frameRate":{"ideal":30}})
+   1.996  flux 1500x2000 @30 fps, piste "camera 0, facing back"
+   1.996  capacités : focus ["manual","single-shot","continuous"], expo ["continuous","manual"], balance ["continuous","manual"], zoom 1..8
+   1.996  plages : focusDistance {"max":4.8639702796936035,"min":0.10000000149011612,"step":0.009999999776482582}, exposureTime {"max":1174.1304,"min":0.82896,"step":0.1}, iso {"max":3200,"min":12,"step":1}, colorTemperature {"max":7000,"min":2850,"step":50}
+   1.996  zoom limité à 2.9× (le téléphone propose jusqu'à 8× en changeant de caméra)
+   1.997  wake lock ok
+  36.788  flux changé : 1500x2000
+  37.869  flux changé : 1125x1500
+ 164.019  verrouillage on mise au point : {"focusMode":"manual","focusDistance":4.8639702796936035}
+ 164.734  verrouillage on exposition : {"exposureMode":"manual","exposureTime":89.1734,"iso":12}
+ 165.449  verrouillage on balance des blancs : {"whiteBalanceMode":"manual"}
+ 165.450  réglages après verrouillage : {"aspectRatio":0.75,"colorTemperature":0,"deviceId":"b452794b23272924cbd8797c9fee78f2c5217f78929a8858b1a7e439a1b4023a","exposureCompensation":0,"exposureMode":"none","exposureTime":89.1734,"facingMode":"environment","focusDistance":4.8639702796936035,"focusMode":"manual","frameRate":30,"groupId":"df7ba748e72101420192d75db620f4e751944cdd834a5dcd0c3ca474309dd796","height":4080,"iso":12,"resizeMode":"none","torch":false,"whiteBalanceMode":"continuous","width":3060,"zoom":2.9018492698669434}
+ 165.454  balance des blancs restée automatique malgré le verrou
+ 185.671  masque oculaire : 99 % du cadre utile (p95 229)
+ 185.674  === série lame_20261015_191427_mgg-test-1 (video) « Mgg test 1 », mgg, objectif x50 : débit 60 Mbit/s, serveur https://sszzpetmvlhonsumdwlv.supabase.co/functions/v1/scanlame, intervalle 200 ms, taille 0.5, qualité 0.85, zoom 2.9, flux 3060x4080
+ 187.329  t000 suivi ok score 1.00 pos 0,0 (3 ms)
+ 187.344  enregistrement démarré : video/mp4;codecs=avc1.64003c, 60 Mbit/s
+ 188.320  t000 suivi ok score 1.00 pos 0,0 (165 ms)
+ 189.414  t000 suivi ok score 0.99 pos 0,0 (49 ms)
+ 189.491  t000 suivi ok score 0.99 pos 0,-16 (49 ms)
+ 190.742  t000 suivi ok score 0.75 pos -48,-781 (45 ms)
+ 192.214  t000 suivi ok score 0.67 pos -96,-1657 (52 ms)
+ 193.123  t000 suivi ok score 0.75 pos -143,-2391 (66 ms)
+ 193.871  t000 suivi ok score 0.97 pos -143,-2502 (49 ms)
+ 194.967  t000 suivi ok score 0.83 pos -179,-3044 (44 ms)
+ 196.072  t001 suivi ok score 0.97 pos -191,-3203 (42 ms)
+ 197.231  t001 suivi ok score 0.43 pos -155,-3203 (52 ms)
+ 198.358  t001 suivi ok score 0.99 pos -155,-3235 (68 ms)
+ 199.805  t001 suivi ok score 0.99 pos -155,-3299 (47 ms)
+ 200.685  t001 suivi ok score 0.97 pos -167,-3490 (87 ms)
+ 201.418  t001 suivi ok score 0.99 pos -167,-3506 (76 ms)
+ 202.632  t001 suivi ok score 0.83 pos -1578,-3427 (52 ms)
+ 203.397  t001 suivi ok score 0.95 pos -1972,-3411 (52 ms)
+ 204.509  t001 suivi ok score 0.93 pos -2379,-3395 (44 ms)
+ 205.424  t001 suivi ok score 0.97 pos -2558,-3379 (41 ms)
+ 206.527  t002 suivi ok score 0.97 pos -2558,-3379 (35 ms)
+ 207.424  t002 suivi ok score 0.98 pos -2558,-3363 (63 ms)
+ 208.159  t002 suivi ok score 1.00 pos -2558,-3352 (52 ms)
+ 209.266  t002 suivi ok score 0.82 pos -2522,-2754 (55 ms)
+ 210.393  t002 suivi ok score 0.92 pos -2507,-2406 (55 ms)
+ 211.853  t002 suivi ok score 0.97 pos -2497,-2295 (51 ms)
+ 212.664  t002 suivi ok score 0.88 pos -2474,-1844 (65 ms)
+ 213.377  t002 suivi ok score 0.97 pos -2474,-1768 (42 ms)
+ 214.864  t002 suivi ok score 0.84 pos -2442,-1256 (52 ms)
+ 215.680  t002 suivi ok score 0.93 pos -2416,-953 (46 ms)
+ 216.486  t003 suivi ok score 0.98 pos -2411,-812 (55 ms)
+ 217.560  t003 suivi ok score 0.89 pos -2389,-382 (65 ms)
+ 218.663  t003 suivi ok score 0.41 pos -3070,-446 (61 ms)
+ 219.768  t003 suivi ok score 0.86 pos -3046,16 (45 ms)
+ 234.990  vidéo lame_20261015_191427_mgg-test-1 : 4 morceaux (52.9 Mo), 4 envoyés, 0 en file, 33 échantillons de position
