@@ -154,11 +154,17 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             sharpRef > 0 && still && sh < 0.5f * sharpRef -> "flou : retouche la vis micrométrique"
             else -> ""
         }
-        if (still && s.mode == Settings.MODE_PHOTOS && !shooting) {
+        // declenchement : a l'arret (nouvel endroit), ou, platine en mouvement lent, des que la distance a la derniere photo atteint stepFrac du champ
+        val lsd = lastShot
+        val gapNow = if (lsd == null) 0.0 else hypot(f.x - lsd.first, f.y - lsd.second)
+        val speed = if (lp != null && f.status != "lost") hypot(f.x - lp.first, f.y - lp.second) * fpsAcc else 999.0   // unites (sur 256) par seconde
+        val byDistance = st.triggerDistance && f.status != "lost" && lsd != null && gapNow >= st.stepFrac * Tracker.S2 && speed < 40.0 && now() - lastShotT > 400
+        if ((still || byDistance) && s.mode == Settings.MODE_PHOTOS && !shooting) {
             val ls = lastShot
             val gap = if (ls == null) 0.0 else hypot(f.x - ls.first, f.y - ls.second)
             val far = ls == null || gap >= 10.0   // ~4 % du champ : nouvel arrêt
             if (far) {
+                if (byDistance && !still) Journal.log("photo en mouvement lent (${(100 * gap / Tracker.S2).roundToInt()} % du champ, ${speed.roundToInt()} u/s)")
                 // pas trop grand entre deux arrêts : au-dela de 70 % du champ, les photos ne se recouvrent plus assez pour l'assemblage
                 if (gap > 0.7 * Tracker.S2) { nBigSteps++; Journal.log("ATTENTION pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recouvrement insuffisant"); state.value = state.value.copy(message = "Pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recule d'un demi-champ, les photos doivent se recouvrir d'au moins 30 %.") }
                 else if (state.value.message.startsWith("Pas trop grand")) state.value = state.value.copy(message = "Série en cours : déplace la platine d'un demi-champ, arrête-toi, une photo part à chaque arrêt.")
@@ -204,6 +210,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
     }
 
     private var sharpRef = 0f; private var nBlurred = 0; private var nBigSteps = 0
+    private var lastShotT = 0L
     @Volatile private var exposureNote = ""; @Volatile private var liveWarn = ""
     private val photoSharps = ArrayList<Float>()
 
@@ -215,7 +222,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val grade = if (photoSharps.size >= 3 && sh < 0.5f * sharpRef) 2 else if (photoSharps.size >= 3 && sh < 0.7f * sharpRef) 1 else 0
         if (grade == 2) { nBlurred++; Journal.log("photo floue (netteté ${sh.roundToInt()} contre ${sharpRef.roundToInt()} de référence)") }
         shooting = true
-        lastShot = f.x to f.y
+        lastShot = f.x to f.y; lastShotT = now()
         seq++
         val name = "${state.value.seriesId}_${String.format(Locale.ROOT, "%04d", seq)}.jpg"
         val file = File(File(dir, "photos").apply { mkdirs() }, name)

@@ -42,6 +42,8 @@ class Settings(ctx: Context) {
     var videoQuality: String get() = str("vquality", "UHD"); set(v) = set("vquality", v)
     var videoMbps: Int get() = p.getInt("vmbps", 30); set(v) = p.edit().putInt("vmbps", v).apply()
     var stillMs: Int get() = p.getInt("stillms", 350); set(v) = p.edit().putInt("stillms", v).apply()
+    var triggerDistance: Boolean get() = p.getBoolean("trigdist", true); set(v) = p.edit().putBoolean("trigdist", v).apply()   // photo aussi tous les N % de champ, platine en mouvement lent
+    var stepFrac: Float get() = p.getFloat("stepfrac", 0.5f); set(v) = p.edit().putFloat("stepfrac", v).apply()
     var stillPx: Float get() = p.getFloat("stillpx", 1.5f); set(v) = p.edit().putFloat("stillpx", v).apply()
     var analysisSide: Int get() = p.getInt("aside", 640); set(v) = p.edit().putInt("aside", v).apply()
     var galleryUrl: String get() = str("gallery", "https://ashrin45.github.io/1_scanlame/"); set(v) = set("gallery", v.trim().trimEnd('/') + "/")

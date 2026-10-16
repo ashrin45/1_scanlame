@@ -381,6 +381,8 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
     var vmbps by remember { mutableStateOf(st.videoMbps) }
     var vq by remember { mutableStateOf(st.videoQuality) }
     var stillMs by remember { mutableStateOf(st.stillMs) }
+    var trigDist by remember { mutableStateOf(st.triggerDistance) }
+    var stepFrac by remember { mutableStateOf(st.stepFrac) }
     var side by remember { mutableStateOf(st.photoMaxSide) }
     var quality by remember { mutableStateOf(st.photoQuality) }
     var url by remember { mutableStateOf(st.serverUrl) }
@@ -400,7 +402,7 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
         st.stain = stain; st.objective = objective; umpx.replace(',', '.').toFloatOrNull()?.let { st.setUmPerPx(objective, it) }
         st.mode = mode; st.advanced = advanced; st.focusMode = focus; st.shutterCapMs = shutterCap; st.ctemp = ctemp; st.evComp = ev; st.depth = depth
         st.cameraId = cameraId; st.zoomMax = zoomMax; st.zoom = st.zoom.coerceAtMost(zoomMax); st.zoomByCrop = zoomCrop; st.analysisSide = aside
-        st.videoMbps = vmbps; st.videoQuality = vq; st.stillMs = stillMs; st.photoMaxSide = side; st.photoQuality = quality
+        st.videoMbps = vmbps; st.videoQuality = vq; st.stillMs = stillMs; st.triggerDistance = trigDist; st.stepFrac = stepFrac; st.photoMaxSide = side; st.photoQuality = quality
         st.serverUrl = url; st.token = token; st.sendLog = sendLog; st.autoUpload = autoUpload; st.galleryUrl = gallery
         if (autoUpload && up.pendingFiles > 0) Uploader.kick(ctx)
         onFields(title, sample, comment, parent, complete)
@@ -462,6 +464,10 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Select("Définition vidéo", listOf("UHD" to "4K", "FHD" to "1080p", "HD" to "720p"), vq, Modifier.weight(1f)) { vq = it }
                 Select("Immobilité avant photo", listOf("200" to "0,2 s", "350" to "0,35 s", "500" to "0,5 s", "1000" to "1 s"), stillMs.toString(), Modifier.weight(1f)) { stillMs = it.toInt() }
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                Select("Déclenchement", listOf("stop" to "à l'arrêt de la platine seulement", "dist" to "à l'arrêt, et en mouvement lent tous les N % de champ"), if (trigDist) "dist" else "stop", Modifier.weight(1f)) { trigDist = it == "dist" }
+                Select("Pas en mouvement", listOf("0.4" to "40 % du champ", "0.5" to "50 % du champ", "0.6" to "60 % du champ"), stepFrac.toString(), Modifier.weight(1f)) { stepFrac = it.toFloat() }
             }
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Select("Taille photo", listOf("0" to "pleine (12 MP)", "3072" to "3/4", "2048" to "1/2"), side.toString(), Modifier.weight(1f)) { side = it.toInt() }
