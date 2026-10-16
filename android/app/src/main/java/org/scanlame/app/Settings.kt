@@ -17,8 +17,9 @@ class Settings(ctx: Context) {
     private fun str(key: String, def: String) = p.getString(key, def) ?: def
     private fun set(key: String, v: String) = p.edit().putString(key, v).apply()
 
-    var serverUrl: String get() = str("url", ""); set(v) = set("url", v.trim().trimEnd('/'))
-    var token: String get() = str("token", ""); set(v) = set("token", v.trim())
+    // URL et jeton : une seule ligne, sans espace (un collage malheureux du journal dans le champ cassait l'en-tête HTTP)
+    var serverUrl: String get() = str("url", ""); set(v) = set("url", v.lineSequence().firstOrNull()?.trim()?.trimEnd('/') ?: "")
+    var token: String get() = str("token", ""); set(v) = set("token", v.lineSequence().firstOrNull()?.trim()?.filter { it.code in 33..126 } ?: "")
     var stain: String get() = str("stain", "gram"); set(v) = set("stain", v)
     var objective: String get() = str("objective", "x100"); set(v) = set("objective", v)
     var mode: String get() = str("mode", MODE_PHOTOS); set(v) = set("mode", v)
