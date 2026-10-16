@@ -194,7 +194,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     Hud(if (sess.mode == Settings.MODE_VIDEO && sess.running) "vidéo ${sess.bytes shr 20} Mo" else "${sess.photos} photo${if (sess.photos > 1) "s" else ""}${if (sess.blurred > 0) " · ${sess.blurred} floue(s)" else ""}${if (sess.bigSteps > 0) " · ${sess.bigSteps} pas trop grand(s)" else ""}", if (sess.blurred > 0) WARN else FG)
                     Hud("$expo · ISO ${live.iso ?: "?"} · netteté ${sess.sharp.toInt()}")
                     Hud(if (locked) "AF/AE verrouillés" else "AF/AE auto", if (locked) ACCENT else FG)
-                    if (up.pendingFiles > 0) Hud("${up.pendingFiles} en file (${up.pendingBytes shr 20} Mo)${up.lastError?.let { " · $it" } ?: ""}", Color(0xFF1A0F1F), WARN)
+                    if (up.pendingFiles > 0) Hud("${if (st.autoUpload) "" else "envoi bloqué · "}${up.pendingFiles} en file (${up.pendingBytes shr 20} Mo)${up.lastError?.let { " · $it" } ?: ""}", Color(0xFF1A0F1F), WARN)
                 }
                 // suivi + carte
                 Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(6.dp)) {
@@ -233,8 +233,10 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
             }
             // ---- barre du bas : verrou | déclencheur | réglages
             Row(Modifier.fillMaxWidth().background(Color(0xEB0A090C)).navigationBarsPadding().padding(16.dp, 12.dp), verticalAlignment = Alignment.CenterVertically) {
-                Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally) {
+                var autoUp by remember { mutableStateOf(st.autoUpload) }
+                Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     WebButton(if (locked) "AF/AE verrouillés" else "Verrouiller AF/AE", pressed = locked, enabled = cameraOn && bound != null) { engine.setLocked(st, !locked) }
+                    WebButton(if (autoUp) "Envoi auto" else "Envoi bloqué", pressed = !autoUp) { autoUp = !autoUp; st.autoUpload = autoUp; if (autoUp) Uploader.kick(ctx) else Uploader.refresh(ctx); say(if (autoUp) "Envoi automatique : la file part dès que possible." else "Envoi bloqué : les prises restent sur le téléphone jusqu'à « Envoi auto » ou « Envoyer maintenant » dans les réglages.", false) }
                 }
                 // déclencheur : violet = démarrer la caméra, blanc = lancer la série, rouge = arrêter
                 val stop = sess.running
@@ -366,6 +368,7 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
     var url by remember { mutableStateOf(st.serverUrl) }
     var token by remember { mutableStateOf(st.token) }
     var sendLog by remember { mutableStateOf(st.sendLog) }
+    var autoUpload by remember { mutableStateOf(st.autoUpload) }
     var gallery by remember { mutableStateOf(st.galleryUrl) }
     var storage by remember { mutableStateOf("") }
     var testMsg by remember { mutableStateOf("") }
@@ -380,7 +383,8 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
         st.mode = mode; st.advanced = advanced; st.focusMode = focus; st.shutterCapMs = shutterCap; st.ctemp = ctemp; st.evComp = ev; st.depth = depth
         st.cameraId = cameraId; st.zoomMax = zoomMax; st.zoom = st.zoom.coerceAtMost(zoomMax); st.zoomByCrop = zoomCrop; st.analysisSide = aside
         st.videoMbps = vmbps; st.videoQuality = vq; st.stillMs = stillMs; st.photoMaxSide = side; st.photoQuality = quality
-        st.serverUrl = url; st.token = token; st.sendLog = sendLog; st.galleryUrl = gallery
+        st.serverUrl = url; st.token = token; st.sendLog = sendLog; st.autoUpload = autoUpload; st.galleryUrl = gallery
+        if (autoUpload && up.pendingFiles > 0) Uploader.kick(ctx)
         onFields(title, sample, comment, parent, complete)
         Journal.log("réglages enregistrés")
         return camChanged
@@ -449,11 +453,12 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
             OutlinedTextField(url, { url = it }, label = { Text("URL du serveur (vide = garder sur le téléphone)") }, placeholder = { Text("https://xxxx.supabase.co/functions/v1/scanlame") }, singleLine = true, modifier = Modifier.fillMaxWidth())
             OutlinedTextField(token, { token = it }, label = { Text("Jeton d'accès") }, placeholder = { Text("le même que sur le serveur") }, singleLine = true, modifier = Modifier.fillMaxWidth())
             Row(verticalAlignment = Alignment.CenterVertically) { Checkbox(sendLog, { sendLog = it }); Text("Joindre le journal du téléphone à la prise (mise au point de l'application)", fontSize = 14.sp, color = FG) }
+            Row(verticalAlignment = Alignment.CenterVertically) { Checkbox(autoUpload, { autoUpload = it }); Text("Envoi automatique pendant la prise (décoché : tout reste sur le téléphone jusqu'à « Envoyer maintenant »)", fontSize = 14.sp, color = FG) }
             OutlinedTextField(gallery, { gallery = it }, label = { Text("Adresse de la galerie (listes des lames)") }, singleLine = true, modifier = Modifier.fillMaxWidth())
             if (storage.isNotEmpty()) Text(storage, fontSize = 12.sp, color = MUTED)
             Text("FILE D'ATTENTE (ENVOIS EN PANNE DE RÉSEAU)", fontSize = 12.sp, color = MUTED, letterSpacing = 1.sp, modifier = Modifier.padding(top = 8.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
-                WebButton("Envoyer maintenant", enabled = up.pendingFiles > 0) { st.serverUrl = url; st.token = token; Uploader.kick(ctx) }
+                WebButton("Envoyer maintenant", enabled = up.pendingFiles > 0) { st.serverUrl = url; st.token = token; Uploader.kick(ctx, force = true) }
                 WebButton("Abandonner", danger = true, enabled = up.pendingFiles > 0) { Uploader.queueDir(ctx).deleteRecursively(); Uploader.refresh(ctx); Journal.log("file d'attente abandonnée") }
             }
             Text(if (up.pendingFiles == 0) "rien en attente" else "${up.pendingFiles} fichier(s), ${up.pendingBytes shr 20} Mo${up.lastError?.let { " · dernière erreur : $it" } ?: ""}${if (up.busy) " · envoi en cours" else ""}", fontSize = 12.sp, color = MUTED)

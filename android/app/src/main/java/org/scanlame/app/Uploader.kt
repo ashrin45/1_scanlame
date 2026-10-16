@@ -39,7 +39,8 @@ object Uploader {
     fun seriesDir(ctx: Context, series: String) = File(queueDir(ctx), series).apply { mkdirs() }
 
     /** Le fichier est déjà écrit dans seriesDir/<kind>s/<name> par l'appelant ; on lance le Worker. */
-    fun kick(ctx: Context) {
+    fun kick(ctx: Context, force: Boolean = false) {
+        if (!force && !Settings(ctx).autoUpload) { refresh(ctx); return }    // envoi bloqué : la file attend « Envoyer maintenant »
         val req = OneTimeWorkRequestBuilder<UploadWorker>()
             .setConstraints(Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build())
             .setBackoffCriteria(BackoffPolicy.EXPONENTIAL, 15, TimeUnit.SECONDS)

@@ -23,6 +23,7 @@ class Settings(ctx: Context) {
     var objective: String get() = str("objective", "x100"); set(v) = set("objective", v)
     var mode: String get() = str("mode", MODE_PHOTOS); set(v) = set("mode", v)
     var sendLog: Boolean get() = p.getBoolean("sendlog", true); set(v) = p.edit().putBoolean("sendlog", v).apply()
+    var autoUpload: Boolean get() = p.getBoolean("autoupload", true); set(v) = p.edit().putBoolean("autoupload", v).apply()   // faux = garder sur le téléphone jusqu'à « Envoyer maintenant »
     var depth: String get() = str("depth", "off"); set(v) = set("depth", v)
 
     // caméra (mêmes choix que la feuille de réglages de la page)
