@@ -24,6 +24,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.aspectRatio
@@ -77,6 +78,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        androidx.activity.enableEdgeToEdge()
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         settings = Settings(this)
         engine = CameraEngine(this)
@@ -107,7 +109,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     }
     val sess by session.state.collectAsState()
     Scaffold(bottomBar = {
-        if (!sess.running) TabRow(selectedTabIndex = tab) {
+        if (!sess.running) TabRow(selectedTabIndex = tab, modifier = Modifier.navigationBarsPadding()) {
             listOf("Capture", "Réglages", "Diagnostic", "Journal").forEachIndexed { i, t -> Tab(selected = tab == i, onClick = { tab = i }, text = { Text(t, fontSize = 13.sp) }) }
         }
     }) { pad ->
