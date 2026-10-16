@@ -154,12 +154,28 @@ class CameraEngine(private val ctx: Context) {
     }
 
     // ---------------------------------------------------------------- liaison
-    private fun selector(st: Settings, provider: ProcessCameraProvider): CameraSelector {
-        val b = CameraSelector.Builder()
-        if (st.cameraId.isNotEmpty()) b.addCameraFilter { infos -> infos.filter { Camera2CameraInfo.from(it).cameraId == st.cameraId } }
-        else b.requireLensFacing(CameraSelector.LENS_FACING_BACK)
-        return b.build()
+    /**
+     * Choix de la caméra. Les modules physiques (ultra grand-angle, principal, télés) ne sont souvent pas
+     * ouvrables seuls : CameraX ne connaît que les caméras « logiques ». On ouvre alors la caméra logique
+     * qui contient ce module et on lui demande ce module physique précis (setPhysicalCameraId).
+     * Retourne (sélecteur, id physique demandé ou null, description).
+     */
+    private fun selector(st: Settings, provider: ProcessCameraProvider): Triple<CameraSelector, String?, String> {
+        val avail = provider.availableCameraInfos.map { Camera2CameraInfo.from(it).cameraId }
+        fun byId(id: String) = CameraSelector.Builder().addCameraFilter { infos -> infos.filter { Camera2CameraInfo.from(it).cameraId == id } }.build()
+        val want = st.cameraId
+        if (want.isEmpty()) return Triple(CameraSelector.DEFAULT_BACK_CAMERA, st.physicalId.ifEmpty { null }, "caméra arrière par défaut")
+        if (want in avail) return Triple(byId(want), st.physicalId.ifEmpty { null }, "caméra $want")
+        // module physique : on cherche la caméra logique qui le contient
+        if (Build.VERSION.SDK_INT >= 28) for (lid in avail) {
+            val phys = try { manager.getCameraCharacteristics(lid).physicalCameraIds } catch (e: Exception) { emptySet() }
+            if (want in phys) return Triple(byId(lid), want, "caméra logique $lid, module physique $want")
+        }
+        Journal.log("caméra $want inaccessible (CameraX connaît : $avail) : caméra arrière par défaut")
+        return Triple(CameraSelector.DEFAULT_BACK_CAMERA, null, "caméra arrière par défaut ($want inaccessible)")
     }
+
+    private var lastBindKey = ""; private var lastBindT = 0L
 
     @SuppressLint("RestrictedApi")
     fun bind(owner: LifecycleOwner, previewView: PreviewView, st: Settings, mode: String, onFrame: (ImageProxy) -> Unit, onReady: () -> Unit) {
@@ -167,11 +183,15 @@ class CameraEngine(private val ctx: Context) {
         fut.addListener({
             try {
                 val p = fut.get(); provider = p
+                // deux liaisons identiques coup sur coup (recomposition) : la seconde est ignorée
+                val key = "${System.identityHashCode(previewView)}|${st.cameraId}|${st.physicalId}|$mode|${st.photoMaxSide}|${st.analysisSide}|${st.videoQuality}"
+                val nowT = android.os.SystemClock.elapsedRealtime()
+                if (key == lastBindKey && nowT - lastBindT < 1500 && camera != null) return@addListener
+                lastBindKey = key; lastBindT = nowT
                 p.unbindAll()
                 val ratio = if (mode == Settings.MODE_VIDEO) AspectRatio.RATIO_16_9 else AspectRatio.RATIO_4_3
                 val ratioStrategy = AspectRatioStrategy(ratio, AspectRatioStrategy.FALLBACK_RULE_AUTO)
-                val sel = selector(st, p)
-                val physical = st.physicalId.takeIf { it.isNotEmpty() }
+                val (sel, physical, selDesc) = selector(st, p)
 
                 val previewB = Preview.Builder().setResolutionSelector(ResolutionSelector.Builder().setAspectRatioStrategy(ratioStrategy).build())
                 Camera2Interop.Extender(previewB).setSessionCaptureCallback(object : CameraCaptureSession.CaptureCallback() {
@@ -207,7 +227,9 @@ class CameraEngine(private val ctx: Context) {
                     val q = when (st.videoQuality) { "FHD" -> Quality.FHD; "HD" -> Quality.HD; else -> Quality.UHD }
                     val rec = Recorder.Builder().setQualitySelector(QualitySelector.from(q, FallbackStrategy.lowerQualityOrHigherThan(Quality.FHD)))
                         .setTargetVideoEncodingBitRate(st.videoMbps * 1_000_000).setExecutor(ioExecutor).build()
-                    val vc = VideoCapture.withOutput(rec)
+                    val vcB = VideoCapture.Builder(rec)
+                    if (physical != null && Build.VERSION.SDK_INT >= 28) Camera2Interop.Extender(vcB).setPhysicalCameraId(physical)
+                    val vc = vcB.build()
                     videoCapture = vc; uses.add(vc)
                 } else {
                     val icB = ImageCapture.Builder().setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY).setJpegQuality(st.photoQuality)
@@ -224,7 +246,7 @@ class CameraEngine(private val ctx: Context) {
                 analysisSize = analysis.resolutionInfo?.resolution
                 photoSize = imageCapture?.resolutionInfo?.resolution
                 videoSize = videoCapture?.attachedSurfaceResolution
-                bound.value = "caméra ${Camera2CameraInfo.from(cam.cameraInfo).cameraId}${physical?.let { " (physique $it)" } ?: ""}, analyse ${analysisSize?.let { "${it.width}x${it.height}" }}, " +
+                bound.value = "$selDesc, analyse ${analysisSize?.let { "${it.width}x${it.height}" }}, " +
                     (photoSize?.let { "photo ${it.width}x${it.height}" } ?: videoSize?.let { "vidéo ${it.width}x${it.height}" } ?: "")
                 Journal.log("liaison : ${bound.value}")
                 error.value = null
