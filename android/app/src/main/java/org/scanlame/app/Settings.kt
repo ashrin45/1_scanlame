@@ -25,26 +25,25 @@ class Settings(ctx: Context) {
     var sendLog: Boolean get() = p.getBoolean("sendlog", true); set(v) = p.edit().putBoolean("sendlog", v).apply()
     var depth: String get() = str("depth", "off"); set(v) = set("depth", v)
 
-    // caméra
-    var cameraId: String get() = str("camera", ""); set(v) = set("camera", v)            // vide = caméra arrière par défaut (CameraX)
-    var physicalId: String get() = str("physical", ""); set(v) = set("physical", v)      // vide = laisser la caméra logique choisir
+    // caméra (mêmes choix que la feuille de réglages de la page)
+    var cameraId: String get() = str("camera", "5"); set(v) = set("camera", v)            // 5 = capteur principal du S24 Ultra ; vide = arrière par défaut
+    var physicalId: String get() = str("physical", ""); set(v) = set("physical", v)
     var zoom: Float get() = p.getFloat("zoom", 1f); set(v) = p.edit().putFloat("zoom", v).apply()
-    var zoomByCrop: Boolean get() = p.getBoolean("zoomcrop", true); set(v) = p.edit().putBoolean("zoomcrop", v).apply()   // recadrage capteur plutôt que ratio (évite la bascule d'objectif)
-    var focusMode: String get() = str("focus", "infinity"); set(v) = set("focus", v)     // auto | infinity | manual
-    var focusDiopters: Float get() = p.getFloat("focusd", 0f); set(v) = p.edit().putFloat("focusd", v).apply()
-    var exposureMode: String get() = str("expo", "auto"); set(v) = set("expo", v)       // auto | manual
-    var shutterMs: Float get() = p.getFloat("shutter", 4f); set(v) = p.edit().putFloat("shutter", v).apply()
-    var iso: Int get() = p.getInt("iso", 100); set(v) = p.edit().putInt("iso", v).apply()
+    var zoomByCrop: Boolean get() = p.getBoolean("zoomcrop", true); set(v) = p.edit().putBoolean("zoomcrop", v).apply()
+    var zoomMax: Float get() = p.getFloat("zoommax", 4f); set(v) = p.edit().putFloat("zoommax", v).apply()
+    var focusMode: String get() = str("focus", "inf"); set(v) = set("focus", v)         // inf | keep (au verrouillage)
+    var shutterCapMs: Float get() = p.getFloat("shuttercap", 0f); set(v) = p.edit().putFloat("shuttercap", v).apply()   // 0 = garder la pose courante
+    var ctemp: Int get() = p.getInt("ctemp", 0); set(v) = p.edit().putInt("ctemp", v).apply()       // 0 = figer la balance courante
     var evComp: Int get() = p.getInt("ev", 0); set(v) = p.edit().putInt("ev", v).apply()
-    var wbMode: String get() = str("wb", "auto"); set(v) = set("wb", v)                 // auto | daylight | manual
-    var wbKelvin: Int get() = p.getInt("kelvin", 5000); set(v) = p.edit().putInt("kelvin", v).apply()
-    var photoQuality: Int get() = p.getInt("quality", 95); set(v) = p.edit().putInt("quality", v).apply()
-    var photoMaxSide: Int get() = p.getInt("photoside", 4096); set(v) = p.edit().putInt("photoside", v).apply()   // 0 = maximum du capteur
+    var advanced: Boolean get() = p.getBoolean("advanced", false); set(v) = p.edit().putBoolean("advanced", v).apply()
+    var photoQuality: Int get() = p.getInt("quality", 92); set(v) = p.edit().putInt("quality", v).apply()
+    var photoMaxSide: Int get() = p.getInt("photoside", 0); set(v) = p.edit().putInt("photoside", v).apply()   // 0 = pleine
     var videoQuality: String get() = str("vquality", "UHD"); set(v) = set("vquality", v)
-    var videoMbps: Int get() = p.getInt("vmbps", 40); set(v) = p.edit().putInt("vmbps", v).apply()
-    var stillMs: Int get() = p.getInt("stillms", 350); set(v) = p.edit().putInt("stillms", v).apply()      // durée d'immobilité avant photo
-    var stillPx: Float get() = p.getFloat("stillpx", 1.5f); set(v) = p.edit().putFloat("stillpx", v).apply()   // mouvement toléré (unités 256) pendant l'immobilité
+    var videoMbps: Int get() = p.getInt("vmbps", 30); set(v) = p.edit().putInt("vmbps", v).apply()
+    var stillMs: Int get() = p.getInt("stillms", 350); set(v) = p.edit().putInt("stillms", v).apply()
+    var stillPx: Float get() = p.getFloat("stillpx", 1.5f); set(v) = p.edit().putFloat("stillpx", v).apply()
     var analysisSide: Int get() = p.getInt("aside", 640); set(v) = p.edit().putInt("aside", v).apply()
+    var galleryUrl: String get() = str("gallery", "https://ashrin45.github.io/1_scanlame/"); set(v) = set("gallery", v.trim().trimEnd('/') + "/")
 
     fun umPerPx(obj: String): Float = p.getFloat("umpx.$obj", 0f)
     fun setUmPerPx(obj: String, v: Float) = p.edit().putFloat("umpx.$obj", v).apply()

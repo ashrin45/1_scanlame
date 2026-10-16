@@ -280,9 +280,13 @@ thr = max(3.0, 0.4 * float(np.median(sharps)))   # relative threshold: drops the
 log(f'netteté médiane {np.median(sharps):.1f}, seuil {thr:.1f}')
 sel = []
 last_pos = None
+n_dark = 0
 for (p, t), sharp in zip(items, sharps):
     if sharp < thr:
         continue
+    g8 = cv2.imread(p, cv2.IMREAD_REDUCED_GRAYSCALE_8)
+    if g8 is not None and float(np.percentile(g8, 90)) < 70:   # image sombre : telephone hors de l'oculaire, pas un champ
+        n_dark += 1; continue
     pos = pos_at(t)
     planes = planes_of.get(p)
     if pos and last_pos and W0 and math.hypot(pos[0] - last_pos[0], pos[1] - last_pos[1]) < 0.15 * max(W0, H0):
@@ -294,6 +298,7 @@ n_blurred = sum(1 for sh in sharps if sh < thr)
 if len(sel) > a.max_frames:
     step = len(sel) / a.max_frames
     sel = [sel[int(i * step)] for i in range(a.max_frames)]
+if n_dark: log(f'{n_dark} image(s) sombre(s) écartée(s) (téléphone hors de l\'oculaire)')
 log(len(sel), 'images retenues (nettes, non redondantes)')
 if len(sel) < 2:
     sys.exit('pas assez d\'images nettes')
@@ -334,6 +339,27 @@ if flat is None and len(blank_idx) >= 3:
         flat = np.median(np.stack(cand), axis=0)
         flat = cv2.GaussianBlur(flat, (0, 0), 2)
         log(f'flat-field mesuré sur {len(cand)} images de champ vide')
+flat_kind = 'mesuré' if flat is not None else None
+if flat is None and len(sel) >= 8:
+    # mediane temporelle des images retenues : ce qui ne bouge pas avec la platine (vignettage, poussieres de
+    # l'oculaire, taches du capteur) reste, le specimen qui defile disparait. Calculee au 1/4, legerement lissee.
+    pick = [sel[int(i)] for i in np.linspace(0, len(sel) - 1, min(40, len(sel)))]
+    stack, shape0 = [], None
+    for it in pick:
+        im4 = cv2.imread(it['path'], cv2.IMREAD_REDUCED_COLOR_4)
+        if im4 is None: continue
+        if shape0 is None: shape0 = im4.shape
+        if im4.shape == shape0: stack.append(im4.astype(np.float32))
+    if len(stack) >= 8:
+        med = np.median(np.stack(stack), axis=0)
+        m4 = disc_mask(np.clip(med, 0, 255).astype(np.uint8)) > 0
+        inside = med[m4].mean(axis=-1) if m4.any() else med.mean(axis=-1).ravel()
+        if inside.mean() > 110 and inside.std() / max(inside.mean(), 1) < 0.35:
+            med = cv2.GaussianBlur(med, (0, 0), 2)
+            full0 = cv2.imread(pick[0]['path'])
+            flat = cv2.resize(med, (full0.shape[1], full0.shape[0]), interpolation=cv2.INTER_LINEAR)
+            flat_kind = 'médiane'
+            log(f'flat-field : médiane temporelle de {len(stack)} images (vignettage et poussières fixes de l\'oculaire)')
 if flat is None:
     log('pas de champ vide filmé : vignettage estimé par lissage')
 
@@ -561,19 +587,41 @@ def tm_pair(ij):
     if (i, j) in pairs: return None
     gi2, gj2 = half_of(i), half_of(j); h2, w2 = gi2.shape; hr_, wr_ = gray_of(i).shape
     T = min(128, min(h2, w2) // 3)
+    spots = [(int(fx_ * w2 - T / 2), int(fy_ * h2 - T / 2), T) for fy_ in (0.17, 0.5, 0.83) for fx_ in (0.25, 0.75)]
+    # voisins a faible recouvrement (colonnes espacees) : gabarits plus petits le long du bord de j qui regarde i,
+    # d'apres la direction du suivi (sa norme est approximative, sa direction fiable)
+    dxp = dyp = 0.0
+    if P[i] and P[j]:
+        dxp, dyp = (P[j][0] - P[i][0]) * wr_ / W0, (P[j][1] - P[i][1]) * wr_ / W0
+        Tb = 48
+        if abs(dxp) > 0.45 * wr_:
+            tx = 4 if dxp > 0 else w2 - Tb - 4
+            spots += [(tx, int(fy_ * (h2 - Tb)), Tb) for fy_ in (0.05, 0.23, 0.41, 0.59, 0.77, 0.95)]
+        if abs(dyp) > 0.45 * hr_:
+            ty = 4 if dyp > 0 else h2 - Tb - 4
+            spots += [(int(fx_ * (w2 - Tb)), ty, Tb) for fx_ in (0.05, 0.23, 0.41, 0.59, 0.77, 0.95)]
     hits = []
-    for fy_ in (0.17, 0.5, 0.83):
-        for fx_ in (0.25, 0.75):
-            tx, ty = int(fx_ * w2 - T / 2), int(fy_ * h2 - T / 2)
-            res = cv2.matchTemplate(gi2, gj2[ty:ty + T, tx:tx + T], cv2.TM_CCOEFF_NORMED)
-            _, cc, _, loc = cv2.minMaxLoc(res)
-            res2 = res.copy(); cv2.circle(res2, loc, 8, -1, -1); _, cc2, _, _ = cv2.minMaxLoc(res2)
-            hits.append((cc, cc - cc2, loc[0] - tx, loc[1] - ty))
+    for tx, ty, Tk in spots:
+        tmpl = gj2[ty:ty + Tk, tx:tx + Tk]
+        if tmpl.std() < 2.0: continue                     # gabarit uniforme (fond vide) : inutilisable
+        res = cv2.matchTemplate(gi2, tmpl, cv2.TM_CCOEFF_NORMED)
+        _, cc, _, loc = cv2.minMaxLoc(res)
+        res2 = res.copy(); cv2.circle(res2, loc, 8, -1, -1); _, cc2, _, _ = cv2.minMaxLoc(res2)
+        hits.append((cc, cc - cc2, loc[0] - tx, loc[1] - ty))
+    if not hits: return None
     best = max(hits)
     agree = [hh for hh in hits if hh[0] >= 0.6 and math.hypot(hh[2] - best[2], hh[3] - best[3]) < 3]
-    if not ((best[0] >= 0.75 and best[1] >= 0.2) or (len(agree) >= 2 and best[1] >= 0.1)): return None
+    ok = (best[0] >= 0.75 and best[1] >= 0.2) or (len(agree) >= 2 and best[1] >= 0.1)
+    weak = False
+    if not ok and P[i] and P[j]:
+        # pic plus faible (champ pale) mais coherent avec le deplacement mesure par le suivi : accepte avec un poids reduit
+        near = [hh for hh in hits if hh[0] >= 0.45 and math.hypot(2 * hh[2] - dxp, 2 * hh[3] - dyp) < 0.15 * max(wr_, hr_)]
+        if near:
+            best = max(near); agree = [hh for hh in near if math.hypot(hh[2] - best[2], hh[3] - best[3]) < 3]; ok = weak = True
+    if not ok: return None
     dx, dy = 2.0 * best[2], 2.0 * best[3]
-    if wr_ - abs(dx) < 0.12 * wr_ or hr_ - abs(dy) < 0.12 * hr_: return None
+    thin = 0.06 if (len(agree) >= 3 or weak) else 0.12
+    if wr_ - abs(dx) < thin * wr_ or hr_ - abs(dy) < thin * hr_: return None
     # affinage pleine echelle : gabarit au centre du recouvrement, recherche locale +-12 px
     gi, gj = gray_of(i), gray_of(j)
     x0_, y0_ = int(max(0, -dx)), int(max(0, -dy)); x1_, y1_ = int(min(wr_, wr_ - dx)), int(min(hr_, hr_ - dy))
@@ -594,11 +642,13 @@ def tm_pair(ij):
         pass
     A_ = np.float32([[1, 0, dx], [0, 1, dy]])
     cc_ = overlap_cc(i, j, A_)
-    if cc_ is not None and cc_ < 0.4: return None
+    if os.environ.get('SCANLAME_DUMP'): log(f'  corr {i}-{j} : {len(agree)} gabarit(s) d\'accord, pic {best[0]:.2f}, recouvrement cc {cc_}')
+    if cc_ is None and (weak or len(agree) < 3): return None            # recouvrement trop mince pour verifier
+    if cc_ is not None and cc_ < (0.25 if len(agree) >= 3 else 0.4): return None
     ox0, oy0 = max(0, dx), max(0, dy); ox1, oy1 = min(wr_, wr_ + dx), min(hr_, hr_ + dy)
     xs = np.linspace(ox0 + 10, ox1 - 10, 8); ys = np.linspace(oy0 + 10, oy1 - 10, 6)
     pi_ = np.float32([[x, y] for y in ys for x in xs]); pj_ = pi_ - np.float32([dx, dy])
-    return (i, j), (pi_, pj_, A_, max(a.min_inliers, int(60 * best[0])))
+    return (i, j), (pi_, pj_, A_, 30 if weak else max(a.min_inliers, int(60 * best[0])))
 todo = [ij for ij in sorted(cand) if ij not in pairs]
 if os.environ.get('SCANLAME_DUMP'):
     import pickle
@@ -754,7 +804,7 @@ except ImportError:
 # --- filet de securite : images non reliees mais suivies en direct, placees d'apres leur position ---
 linked = set(comp)   # images recalees par les points ; les suivantes ne le sont que par le suivi en direct
 anchors = [k for k in comp if P[k]]
-extra = 0
+extra = 0; extra_single = 0
 if anchors and W0:
     src = np.float32([P[k] for k in anchors]); dst = np.float32([(T[k] @ np.array([0, 0, 1]))[:2] for k in anchors])
     Apos = None
@@ -763,17 +813,44 @@ if anchors and W0:
     if Apos is None:
         s_ = scales[ref]; off = dst.mean(0) - src.mean(0) * s_
         Apos = np.array([[s_, 0, off[0]], [0, s_, off[1]]], np.float64)
+    def chain(c):
+        # recalage interne d'un fragment : chainage des paires depuis son image la mieux reliee (comme pour la principale)
+        r0 = max(c, key=lambda k: sum(adj[k].values())); Tc = {r0: np.eye(3)}
+        while len(Tc) < len(c):
+            best_ = None
+            for k in Tc:
+                for v, n in adj[k].items():
+                    if v in c and v not in Tc and (best_ is None or n > best_[2]): best_ = (k, v, n)
+            if best_ is None: break
+            k, v, _ = best_
+            Tc[v] = Tc[k] @ (A3(pairs[(k, v)][2]) if (k, v) in pairs else np.linalg.inv(A3(pairs[(v, k)][2])))
+        return Tc
     for ci, c in enumerate(comps):
         if ci == a.component or ci in is_zone: continue    # les zones distinctes sont assemblees a part ; le reste est un fragment
-        for k in c:
-            if P[k]:
-                # Apos convertit les positions du suivi (px du flux) en px de recalage de la reference : seule la
-                # translation sert ; l'image garde l'echelle de la reference (toutes les images ont la meme echelle de recalage)
-                t = (Apos @ np.array([P[k][0], P[k][1], 1.0]))[:2]
-                T[k] = np.array([[1.0, 0, t[0]], [0, 1.0, t[1]], [0, 0, 1]]); comp.append(k); extra += 1
-    if extra: log(f'{extra} image(s) placée(s) d\'après le suivi en direct (sans recalage fin)')
-    if extra > max(3, 0.5 * len(comp)) and not a.allow_tracked:
-        log(f'ÉCHEC : {extra} champs sur {len(comp)} ne se recalent pas par les points (image floue ou vide ?) ; prise inexploitable, pas de composition')
+        tracked = [k for k in c if P[k]]
+        if not tracked: continue
+        # Apos convertit les positions du suivi (px du flux) en px de recalage de la reference : seule la
+        # translation sert ; l'image garde l'echelle de la reference (toutes les images ont la meme echelle de recalage)
+        if len(c) >= 2:
+            # fragment recale en interne : place d'un bloc, par la translation mediane entre ses positions suivies et son recalage
+            Tc = chain(c)
+            offs = []
+            for k in tracked:
+                if k in Tc:
+                    t = (Apos @ np.array([P[k][0], P[k][1], 1.0]))[:2]; o = (Tc[k] @ np.array([0, 0, 1.0]))[:2]
+                    offs.append(t - o)
+            if offs:
+                off = np.median(np.array(offs), axis=0)
+                for k in c:
+                    if k in Tc:
+                        T[k] = np.array([[1.0, 0, off[0]], [0, 1.0, off[1]], [0, 0, 1]]) @ Tc[k]; comp.append(k); extra += 1
+                continue
+        for k in tracked:
+            t = (Apos @ np.array([P[k][0], P[k][1], 1.0]))[:2]
+            T[k] = np.array([[1.0, 0, t[0]], [0, 1.0, t[1]], [0, 0, 1]]); comp.append(k); extra += 1; extra_single += 1
+    if extra: log(f'{extra} image(s) placée(s) d\'après le suivi en direct ({extra - extra_single} en blocs recalés entre eux, {extra_single} isolée(s))')
+    if extra_single > max(3, 0.5 * len(comp)) and not a.allow_tracked:
+        log(f'ÉCHEC : {extra_single} champs isolés sur {len(comp)} ne se recalent pas par les points (image floue ou vide ?) ; prise inexploitable, pas de composition')
         sys.exit(3)
 
 # --- compensation photometrique : gain par image et par canal, estime sur les recouvrements (log-gains, moindres carres) ---
@@ -1103,13 +1180,13 @@ grade = 'A' if score == 0 else 'B' if score <= 2 else 'C'
 quality = dict(grade=grade, notes=notes, frames=dict(candidates=n_candidates, blurred=n_blurred, selected=N, used=len(comp), tracked_only=tracked_only),
                residual_px=round(res_med, 2), residual_max_px=round(res_max, 2), holes=holes, holes_frac=round(holes_frac, 4),
                coverage_px=cov_px, coverage_mm2=(round(cov_px * um_px * um_px / 1e6, 3) if um_px else None),
-               low_sharp_frac=round(low_frac, 3), gain_spread_pct=round(gain_spread, 1), flat_field='mesuré' if flat is not None else 'estimé',
+               low_sharp_frac=round(low_frac, 3), gain_spread_pct=round(gain_spread, 1), flat_field=flat_kind or 'estimé',
                k1=round(k1, 4), zstack_fields=len(zfields), zstack_levels=ZL)
 json.dump(quality, open(os.path.join(out, 'quality.json'), 'w'), indent=1)
 log(f'qualité : note {grade}' + (' (' + ', '.join(notes) + ')' if notes else ' (aucune remarque)'))
 
 json.dump(dict(size=[W, H], images=len(comp), of=N, placements=placements, k1=k1, chroma=chroma,
-               flat_field='mesuré' if flat is not None else 'estimé', residual_px=res_med,
+               flat_field=flat_kind or 'estimé', residual_px=res_med,
                um_per_px=um_px, zstack=ZL, quality=quality,
                title=meta.get('title'), stain=meta.get('stain'), objective=meta.get('objective'), sample=meta.get('sample'),
                comment=meta.get('comment'), parent=meta.get('parent'), captured=meta.get('captured'),

@@ -261,12 +261,13 @@ class CameraEngine(private val ctx: Context) {
     fun unbind() { try { provider?.unbindAll() } catch (e: Exception) {}; camera = null }
 
     // ---------------------------------------------------------------- réglages manuels
-    /** Applique les réglages (focus, exposition, balance des blancs, zoom) via Camera2 sur la session en cours. */
+    val locked = MutableStateFlow(false)
+
+    /** Zoom et traitements (toujours appliqués), puis AF/AE/AWB selon l'état du verrou. */
     fun applyControls(st: Settings) {
         val cam = camera ?: return
         val c = chars
         val b = CaptureRequestOptions.Builder()
-        // zoom : recadrage capteur (pas de bascule d'objectif) ou ratio CameraX
         val z = st.zoom.coerceAtLeast(1f)
         if (st.zoomByCrop && c != null) {
             val arr = c.get(CameraCharacteristics.SENSOR_INFO_ACTIVE_ARRAY_SIZE)
@@ -279,43 +280,57 @@ class CameraEngine(private val ctx: Context) {
         } else {
             try { cam.cameraControl.setZoomRatio(z) } catch (e: Exception) { Journal.log("zoom refusé : ${e.message}") }
         }
-        // mise au point
-        when (st.focusMode) {
-            "infinity" -> { b.setCaptureRequestOption(CaptureRequest.CONTROL_AF_MODE, CameraMetadata.CONTROL_AF_MODE_OFF); b.setCaptureRequestOption(CaptureRequest.LENS_FOCUS_DISTANCE, 0f) }
-            "manual" -> { b.setCaptureRequestOption(CaptureRequest.CONTROL_AF_MODE, CameraMetadata.CONTROL_AF_MODE_OFF); b.setCaptureRequestOption(CaptureRequest.LENS_FOCUS_DISTANCE, st.focusDiopters) }
-            else -> b.setCaptureRequestOption(CaptureRequest.CONTROL_AF_MODE, CameraMetadata.CONTROL_AF_MODE_CONTINUOUS_PICTURE)
-        }
-        // exposition
-        if (st.exposureMode == "manual") {
-            b.setCaptureRequestOption(CaptureRequest.CONTROL_AE_MODE, CameraMetadata.CONTROL_AE_MODE_OFF)
-            b.setCaptureRequestOption(CaptureRequest.SENSOR_EXPOSURE_TIME, (st.shutterMs * 1_000_000).toLong().coerceAtLeast(10_000))
-            b.setCaptureRequestOption(CaptureRequest.SENSOR_SENSITIVITY, st.iso)
-        } else {
-            b.setCaptureRequestOption(CaptureRequest.CONTROL_AE_MODE, CameraMetadata.CONTROL_AE_MODE_ON)
-            try { cam.cameraControl.setExposureCompensationIndex(st.evComp) } catch (e: Exception) {}
-        }
-        // balance des blancs
-        when (st.wbMode) {
-            "daylight" -> b.setCaptureRequestOption(CaptureRequest.CONTROL_AWB_MODE, CameraMetadata.CONTROL_AWB_MODE_DAYLIGHT)
-            "manual" -> {
-                b.setCaptureRequestOption(CaptureRequest.CONTROL_AWB_MODE, CameraMetadata.CONTROL_AWB_MODE_OFF)
-                b.setCaptureRequestOption(CaptureRequest.COLOR_CORRECTION_MODE, CameraMetadata.COLOR_CORRECTION_MODE_TRANSFORM_MATRIX)
-                val g = kelvinGains(st.wbKelvin)
-                b.setCaptureRequestOption(CaptureRequest.COLOR_CORRECTION_GAINS, android.hardware.camera2.params.RggbChannelVector(g[0], g[1], g[1], g[2]))
-                b.setCaptureRequestOption(CaptureRequest.COLOR_CORRECTION_TRANSFORM, android.hardware.camera2.params.ColorSpaceTransform(intArrayOf(1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1)))
-            }
-            else -> b.setCaptureRequestOption(CaptureRequest.CONTROL_AWB_MODE, CameraMetadata.CONTROL_AWB_MODE_AUTO)
-        }
         // pas de traitement qui lisse les détails
         b.setCaptureRequestOption(CaptureRequest.NOISE_REDUCTION_MODE, CameraMetadata.NOISE_REDUCTION_MODE_OFF)
         b.setCaptureRequestOption(CaptureRequest.EDGE_MODE, CameraMetadata.EDGE_MODE_OFF)
         b.setCaptureRequestOption(CaptureRequest.CONTROL_VIDEO_STABILIZATION_MODE, CameraMetadata.CONTROL_VIDEO_STABILIZATION_MODE_OFF)
         b.setCaptureRequestOption(CaptureRequest.LENS_OPTICAL_STABILIZATION_MODE, CameraMetadata.LENS_OPTICAL_STABILIZATION_MODE_OFF)
         b.setCaptureRequestOption(CaptureRequest.CONTROL_SCENE_MODE, CameraMetadata.CONTROL_SCENE_MODE_DISABLED)
+        lockOptions(st, locked.value, b)
         Camera2CameraControl.from(cam.cameraControl).setCaptureRequestOptions(b.build()).addListener({
-            Journal.log("réglages appliqués : zoom $z (${if (st.zoomByCrop) "recadrage" else "ratio"}), focus ${st.focusMode}, expo ${st.exposureMode}${if (st.exposureMode == "manual") " ${st.shutterMs} ms ISO ${st.iso}" else " EV ${st.evComp}"}, WB ${st.wbMode}${if (st.wbMode == "manual") " ${st.wbKelvin} K" else ""}")
+            Journal.log("réglages appliqués : zoom $z (${if (st.zoomByCrop) "recadrage" else "ratio"}), AF/AE ${if (locked.value) "verrouillés" else "auto"}, EV ${st.evComp}")
         }, ContextCompat.getMainExecutor(ctx))
     }
+
+    /** Même logique que le bouton « Verrouiller AF/AE » de la page : fige les valeurs courantes, avec plafond de pose et température optionnels. */
+    private fun lockOptions(st: Settings, on: Boolean, b: CaptureRequestOptions.Builder) {
+        val cam = camera ?: return
+        val lv = live.value
+        if (!on) {
+            b.setCaptureRequestOption(CaptureRequest.CONTROL_AF_MODE, CameraMetadata.CONTROL_AF_MODE_CONTINUOUS_PICTURE)
+            b.setCaptureRequestOption(CaptureRequest.CONTROL_AE_MODE, CameraMetadata.CONTROL_AE_MODE_ON)
+            b.setCaptureRequestOption(CaptureRequest.CONTROL_AE_LOCK, false)
+            b.setCaptureRequestOption(CaptureRequest.CONTROL_AWB_MODE, CameraMetadata.CONTROL_AWB_MODE_AUTO)
+            b.setCaptureRequestOption(CaptureRequest.CONTROL_AWB_LOCK, false)
+            try { cam.cameraControl.setExposureCompensationIndex(st.evComp) } catch (e: Exception) {}
+            return
+        }
+        // mise au point
+        b.setCaptureRequestOption(CaptureRequest.CONTROL_AF_MODE, CameraMetadata.CONTROL_AF_MODE_OFF)
+        b.setCaptureRequestOption(CaptureRequest.LENS_FOCUS_DISTANCE, if (st.focusMode == "keep") (lv.focusDiopters ?: 0f) else 0f)
+        // exposition : valeurs courantes figées, pose plafonnée si demandé (ISO relevé d'autant)
+        var expNs = lv.exposureNs ?: 10_000_000L; var iso = lv.iso ?: 200
+        val cap = (st.shutterCapMs * 1_000_000).toLong()
+        if (cap > 0 && expNs > cap) { iso = (iso.toDouble() * expNs / cap).roundToInt(); expNs = cap }
+        val isoRange = chars?.get(CameraCharacteristics.SENSOR_INFO_SENSITIVITY_RANGE)
+        if (isoRange != null) iso = iso.coerceIn(isoRange.lower, isoRange.upper)
+        b.setCaptureRequestOption(CaptureRequest.CONTROL_AE_MODE, CameraMetadata.CONTROL_AE_MODE_OFF)
+        b.setCaptureRequestOption(CaptureRequest.SENSOR_EXPOSURE_TIME, expNs)
+        b.setCaptureRequestOption(CaptureRequest.SENSOR_SENSITIVITY, iso)
+        // balance des blancs : figée telle quelle, ou température demandée
+        if (st.ctemp > 0) {
+            b.setCaptureRequestOption(CaptureRequest.CONTROL_AWB_MODE, CameraMetadata.CONTROL_AWB_MODE_OFF)
+            b.setCaptureRequestOption(CaptureRequest.COLOR_CORRECTION_MODE, CameraMetadata.COLOR_CORRECTION_MODE_TRANSFORM_MATRIX)
+            val g = kelvinGains(st.ctemp)
+            b.setCaptureRequestOption(CaptureRequest.COLOR_CORRECTION_GAINS, android.hardware.camera2.params.RggbChannelVector(g[0], g[1], g[1], g[2]))
+            b.setCaptureRequestOption(CaptureRequest.COLOR_CORRECTION_TRANSFORM, android.hardware.camera2.params.ColorSpaceTransform(intArrayOf(1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1)))
+        } else {
+            b.setCaptureRequestOption(CaptureRequest.CONTROL_AWB_LOCK, true)
+        }
+        Journal.log("verrouillage : focus ${if (st.focusMode == "keep") "distance courante ${lv.focusDiopters}" else "infini"}, pose ${expNs / 1e6} ms, ISO $iso, WB ${if (st.ctemp > 0) "${st.ctemp} K" else "figée"}")
+    }
+
+    fun setLocked(st: Settings, on: Boolean) { locked.value = on; applyControls(st) }
 
     /** Gains R, G, B approximatifs pour une température de couleur (normalisés, vert = 1). */
     private fun kelvinGains(k: Int): FloatArray {
