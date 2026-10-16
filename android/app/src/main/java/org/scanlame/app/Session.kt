@@ -120,7 +120,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         if (dtf > 0) fpsAcc = 0.9f * fpsAcc + 0.1f * (1000f / dtf)
         val s = state.value
         if (!s.running || inPause()) { state.value = s.copy(sharp = sh, fps = fpsAcc); return }
-        if (!tracker.hasMask()) tracker.setMask(makeMask(g))
+        if (!tracker.hasMask()) { val m = makeMask(g); mask256 = m; tracker.setMask(m) }
         val tt = now()
         val f = tracker.add(g.copyOf())
         val ms = (now() - tt).toInt()
@@ -171,8 +171,9 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
     }
 
     /** Vignette couleur 48 x 48 tirée des plans YUV de l'image d'analyse, redressée comme le gris (carte de couverture). */
+    @Volatile private var mask256: ByteArray? = null   // disque oculaire (1 = utile) : les vignettes sont transparentes en dehors
     private fun thumbColor(img: ImageProxy): android.graphics.Bitmap {
-        val n = 48; val out = IntArray(n * n)
+        val n = 48; val out = IntArray(n * n); val mk = mask256; val S = Tracker.S2
         val yP = img.planes[0]; val uP = img.planes[1]; val vP = img.planes[2]
         val yb = yP.buffer; val ub = uP.buffer; val vb = vP.buffer
         val w = img.width; val h = img.height; val rot = img.imageInfo.rotationDegrees
@@ -186,7 +187,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             val cu = (if (ci < ub.limit()) ub.get(ci).toInt() and 255 else 128) - 128
             val cv = (if (ci < vb.limit()) vb.get(ci).toInt() and 255 else 128) - 128
             val r = (yy + 1.402f * cv).toInt().coerceIn(0, 255); val gg = (yy - 0.344f * cu - 0.714f * cv).toInt().coerceIn(0, 255); val b = (yy + 1.772f * cu).toInt().coerceIn(0, 255)
-            out[v * n + u] = (0xFF shl 24) or (r shl 16) or (gg shl 8) or b
+            val inside = mk == null || mk[(v * S / n) * S + u * S / n].toInt() != 0
+            out[v * n + u] = if (inside) (0xFF shl 24) or (r shl 16) or (gg shl 8) or b else 0
         }
         return android.graphics.Bitmap.createBitmap(out, n, n, android.graphics.Bitmap.Config.ARGB_8888)
     }
@@ -279,7 +281,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val id = "lame_${stamp()}${slug(title).takeIf { it.isNotEmpty() }?.let { "_$it" } ?: ""}"
         t0 = now(); seq = 0; sampleSeq = 0; frameCount = 0
         tracker = Tracker(); synchronized(placed) { placed.clear() }; lastPos = null; lastShot = null; stillSince = 0L; shooting = false
-        sharpRef = 0f; nBlurred = 0; nBigSteps = 0; photoSharps.clear(); exposureNote = ""; liveWarn = ""
+        sharpRef = 0f; nBlurred = 0; nBigSteps = 0; photoSharps.clear(); exposureNote = ""; liveWarn = ""; mask256 = null
         while (frames.length() > 0) frames.remove(0)
         while (phases.length() > 0) phases.remove(0)
         segments.clear(); curBlank = null; switching = null
