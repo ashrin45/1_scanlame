@@ -310,23 +310,30 @@ fun WebButton(label: String, pressed: Boolean = false, danger: Boolean = false, 
 @Composable
 fun CoverageMap(s: Session.State, modifier: Modifier) {
     Canvas(modifier.background(Color(0xD917151C), RoundedCornerShape(8.dp)).border(1.dp, LINE, RoundedCornerShape(8.dp))) {
-        val pl = s.placed
-        if (pl.isEmpty()) return@Canvas
-        val W = s.fieldW.toFloat(); val H = s.fieldH.toFloat()
+        val all = s.placed
+        if (all.isEmpty()) {
+            // rien encore : un repère au centre pour montrer que la carte est vivante
+            drawRect(Color(0x33FFFFFF), Offset(size.width * 0.4f, size.height * 0.4f), Size(size.width * 0.2f, size.height * 0.2f), style = Stroke(1f))
+            return@Canvas
+        }
+        val W = s.fieldW.toFloat().coerceAtLeast(1f); val H = s.fieldH.toFloat().coerceAtLeast(1f)
         var x0 = Float.MAX_VALUE; var y0 = Float.MAX_VALUE; var x1 = -Float.MAX_VALUE; var y1 = -Float.MAX_VALUE
-        for (p in pl) { x0 = minOf(x0, p.x.toFloat()); y0 = minOf(y0, p.y.toFloat()); x1 = maxOf(x1, p.x.toFloat() + W); y1 = maxOf(y1, p.y.toFloat() + H) }
+        for (p in all) { x0 = minOf(x0, p.x.toFloat()); y0 = minOf(y0, p.y.toFloat()); x1 = maxOf(x1, p.x.toFloat() + W); y1 = maxOf(y1, p.y.toFloat() + H) }
         val pad = 8f
         val sc = minOf((size.width - 2 * pad) / (x1 - x0), (size.height - 2 * pad) / (y1 - y0))
         val ox = pad + ((size.width - 2 * pad) - (x1 - x0) * sc) / 2; val oy = pad + ((size.height - 2 * pad) - (y1 - y0) * sc) / 2
+        // les photos toujours, les positions intermediaires seulement les 300 dernieres (cout de dessin)
+        val pl = if (all.size <= 400) all else all.filter { it.photo } + all.takeLast(300)
         for (p in pl) {
             val dx = (ox + (p.x.toFloat() - x0) * sc).roundToInt(); val dy = (oy + (p.y.toFloat() - y0) * sc).roundToInt()
-            val dw = (W * sc).roundToInt().coerceAtLeast(1); val dh = (H * sc).roundToInt().coerceAtLeast(1)
+            val dw = (W * sc).roundToInt().coerceAtLeast(2); val dh = (H * sc).roundToInt().coerceAtLeast(2)
             val th = p.thumb
-            if (th != null) drawImage(th.asImageBitmap(), IntOffset(0, 0), IntSize(th.width, th.height), IntOffset(dx, dy), IntSize(dw, dh), alpha = 0.95f)
-            else drawRect(Color(0x33FFFFFF), Offset(dx.toFloat(), dy.toFloat()), Size(dw.toFloat(), dh.toFloat()))
+            var drawn = false
+            if (th != null) try { drawImage(th.asImageBitmap(), IntOffset(0, 0), IntSize(th.width, th.height), IntOffset(dx, dy), IntSize(dw, dh), alpha = 0.95f); drawn = true } catch (e: Exception) {}
+            if (!drawn) drawRect(if (p.photo) Color(0x66C58AD6) else Color(0x22FFFFFF), Offset(dx.toFloat(), dy.toFloat()), Size(dw.toFloat(), dh.toFloat()))
             if (p.photo && p.grade > 0) drawRect(if (p.grade == 2) REC else WARN, Offset(dx.toFloat(), dy.toFloat()), Size(dw.toFloat(), dh.toFloat()), style = Stroke(2f))
         }
-        val cur = pl.last()
+        val cur = all.last()
         drawRect(if (s.track == "lost") REC else if (s.track == "relocated") WARN else OK, Offset(ox + (cur.x.toFloat() - x0) * sc, oy + (cur.y.toFloat() - y0) * sc), Size(W * sc, H * sc), style = Stroke(2f))
     }
 }

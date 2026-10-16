@@ -140,7 +140,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             exposureNote = when { p99 >= 254f && p50 > 240f -> "trop clair : baisse la lampe"; p50 < 70f -> "trop sombre : monte la lampe"; else -> "" }
         }
 
-        if (frameCount % 10 == 0) Journal.log("t${String.format(Locale.ROOT, "%07d", t)} suivi ${f.status} score ${String.format(Locale.ROOT, "%.2f", f.score)} pos ${px.roundToInt()},${py.roundToInt()} net ${sh.roundToInt()} ($ms ms)")
+        if (frameCount % 10 == 0) Journal.log("t${String.format(Locale.ROOT, "%07d", t)} suivi ${f.status} score ${String.format(Locale.ROOT, "%.2f", f.score)} pos ${px.roundToInt()},${py.roundToInt()} net ${sh.roundToInt()} ($ms ms) carte ${synchronized(placed) { placed.size }}")
         // ---- détection d'arrêt
         var still = false
         val lp = lastPos
@@ -178,7 +178,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
 
     /** Vignette couleur 48 x 48 tirée des plans YUV de l'image d'analyse, redressée comme le gris (carte de couverture). */
     @Volatile private var mask256: ByteArray? = null   // disque oculaire (1 = utile) : les vignettes sont transparentes en dehors
-    private fun thumbColor(img: ImageProxy): android.graphics.Bitmap {
+    private fun thumbColor(img: ImageProxy): android.graphics.Bitmap? = try { thumbColorRaw(img) } catch (e: Exception) { Journal.log("vignette : ${e.message}"); null }
+    private fun thumbColorRaw(img: ImageProxy): android.graphics.Bitmap {
         val n = 48; val out = IntArray(n * n); val mk = mask256; val S = Tracker.S2
         val yP = img.planes[0]; val uP = img.planes[1]; val vP = img.planes[2]
         val yb = yP.buffer; val ub = uP.buffer; val vb = vP.buffer
