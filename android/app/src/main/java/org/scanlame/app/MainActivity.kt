@@ -29,6 +29,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
@@ -201,8 +202,8 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                 Text(sess.warn.uppercase(), Modifier.background(Color(0xE6EB5757), RoundedCornerShape(999.dp)).padding(14.dp, 6.dp), color = Color.White, fontSize = 13.sp, fontWeight = FontWeight.Bold)
             }
             Row(Modifier.fillMaxWidth().padding(10.dp, 6.dp), horizontalArrangement = Arrangement.SpaceBetween) {
-                // HUD gauche
-                Column(verticalArrangement = Arrangement.spacedBy(5.dp)) {
+                // HUD gauche : prend ce qui reste ; la colonne de droite (suivi + carte) garde sa taille
+                Column(Modifier.weight(1f).padding(end = 6.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
                     val expo = live.exposureNs?.let { String.format(Locale.ROOT, "%.1f ms", it / 1e6) } ?: "?"
                     Hud(if (cameraOn && bound != null) "${engine.photoSize?.let { "${it.height}x${it.width}" } ?: engine.videoSize?.let { "${it.height}x${it.width}" } ?: ""} · cam ${live.activePhysical ?: "?"}" else "caméra arrêtée")
                     Hud(if (sess.mode == Settings.MODE_VIDEO && sess.running) "vidéo ${sess.bytes shr 20} Mo" else "${sess.photos} photo${if (sess.photos > 1) "s" else ""}${if (sess.blurred > 0) " · ${sess.blurred} floue(s)" else ""}${if (sess.bigSteps > 0) " · ${sess.bigSteps} pas trop grand(s)" else ""}", if (sess.blurred > 0) WARN else FG)
@@ -216,7 +217,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                         Box(Modifier.size(9.dp).background(when (sess.track) { "ok" -> OK; "lost" -> REC; "relocated" -> WARN; else -> MUTED }, CircleShape))
                         Text(when { !sess.running -> "suivi inactif"; sess.track == "ok" -> "suivi ok (${String.format(Locale.ROOT, "%.2f", sess.score)})"; sess.track == "lost" -> "suivi perdu : reviens sur une zone déjà vue"; sess.track == "relocated" -> "recalé sur la carte"; else -> "suivi en cours" }, color = FG, fontSize = 13.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.widthIn(max = 220.dp))
                     }
-                    CoverageMap(sess, Modifier.size(if (mapBig) 340.dp else 150.dp).clickable { mapBig = !mapBig })
+                    CoverageMap(sess, Modifier.requiredSize(if (mapBig) 340.dp else 150.dp).clickable { mapBig = !mapBig })
                 }
             }
             // phases (fonctions en validation)
