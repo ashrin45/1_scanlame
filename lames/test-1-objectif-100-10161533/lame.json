@@ -1,0 +1,87 @@
+{
+ "title": "test 1 objectif 100",
+ "width": 8608,
+ "height": 21049,
+ "fields": 19,
+ "tiles": 994,
+ "tile": 512,
+ "maxlvl": 15,
+ "um_per_px": null,
+ "stain": "gram",
+ "objective": "x100",
+ "sample": null,
+ "comment": null,
+ "captured": "16/10/2026 15:33",
+ "parent": null,
+ "parent_transform": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "1 trou(s) dans la couverture",
+   "9 champ(s) placé(s) sans recalage fin"
+  ],
+  "frames": {
+   "candidates": 21,
+   "blurred": 0,
+   "selected": 19,
+   "used": 19,
+   "tracked_only": 9
+  },
+  "residual_px": 0.98,
+  "residual_max_px": 3.64,
+  "holes": [
+   [
+    [
+     5352,
+     6896
+    ],
+    [
+     5392,
+     9704
+    ],
+    [
+     5392,
+     11240
+    ],
+    [
+     5416,
+     11984
+    ],
+    [
+     5448,
+     6896
+    ]
+   ]
+  ],
+  "holes_frac": 0.0022,
+  "coverage_px": 137432812,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 2.3,
+  "flat_field": "médiane",
+  "k1": -0.026,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "series": "lame_20261016_153336_test-1-objectif-100",
+ "version": 1,
+ "params": {
+  "depth": "off",
+  "seams": true,
+  "fps": 4.0,
+  "reg_size": 1200,
+  "max_side": 32000,
+  "core": 0.7,
+  "tile": 2048,
+  "distortion": true,
+  "chroma": true,
+  "code": "8560600"
+ },
+ "published": "2026-10-16T14:08:00+00:00",
+ "updated": "2026-10-16T14:08:00+00:00",
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null
+}
