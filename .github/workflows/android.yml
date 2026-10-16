@@ -1,0 +1,62 @@
+name: Application Android (APK)
+on:
+  push:
+    branches: [main]
+    paths: ['android/**', '.github/workflows/android.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: android-apk
+  cancel-in-progress: true
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Clé de signature (secrets SCANLAME_KEYSTORE_B64 et SCANLAME_KEYSTORE_PASS)
+        id: key
+        env:
+          KS_B64: ${{ secrets.SCANLAME_KEYSTORE_B64 }}
+        run: |
+          if [ -n "$KS_B64" ]; then
+            echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/scanlame.jks"
+            echo "path=$RUNNER_TEMP/scanlame.jks" >> "$GITHUB_OUTPUT"
+            echo "clé de signature fournie"
+          else
+            echo "::warning::pas de clé de signature (secrets absents) : APK signé en debug, une mise à jour demandera de désinstaller l'ancienne version"
+          fi
+      - name: Compiler
+        working-directory: android
+        env:
+          SCANLAME_KEYSTORE: ${{ steps.key.outputs.path }}
+          SCANLAME_KEYSTORE_PASS: ${{ secrets.SCANLAME_KEYSTORE_PASS }}
+          SCANLAME_VERSION_CODE: ${{ github.run_number }}
+          SCANLAME_VERSION_NAME: 0.${{ github.run_number }}
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease --no-daemon
+          cp app/build/outputs/apk/release/app-release.apk "$RUNNER_TEMP/scanlame.apk"
+          ls -la "$RUNNER_TEMP/scanlame.apk"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scanlame-apk
+          path: ${{ runner.temp }}/scanlame.apk
+      - name: Publier dans la release « android »
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NOTES="Version 0.${{ github.run_number }} (commit ${GITHUB_SHA::7}). Télécharger scanlame.apk, l'ouvrir sur le téléphone, accepter l'installation depuis cette source."
+          if gh release view android -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit android -R "$GITHUB_REPOSITORY" --title "Application Android (dernière version)" --notes "$NOTES"
+          else
+            gh release create android -R "$GITHUB_REPOSITORY" --title "Application Android (dernière version)" --notes "$NOTES" --latest=false
+          fi
+          gh release upload android "$RUNNER_TEMP/scanlame.apk" -R "$GITHUB_REPOSITORY" --clobber
