@@ -78,6 +78,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
@@ -152,7 +153,20 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     var complete by remember { mutableStateOf("") }
     var lames by remember { mutableStateOf<List<LameRef>>(emptyList()) }
     var bindKey by remember { mutableStateOf(0) }
+    var update by remember { mutableStateOf<Updater.Info?>(null) }
+    var updProgress by remember { mutableStateOf(-1) }
+    val scope = androidx.compose.runtime.rememberCoroutineScope()
     val say = { t: String, e: Boolean -> msg = t; msgErr = e; if (e) Journal.log("MSG $t") }
+    LaunchedEffect(Unit) { val u = Updater.check(); if (u != null && u.code > BuildConfig.VERSION_CODE) { update = u; Journal.log("mise à jour disponible : ${u.version} (installée : ${BuildConfig.VERSION_NAME})") } }
+    val doUpdate: () -> Unit = {
+        val u = update
+        if (u != null && updProgress < 0) scope.launch {
+            updProgress = 0
+            val f = Updater.download(ctx, u) { updProgress = it }
+            updProgress = -1
+            if (f != null) Updater.install(ctx, f) else say("Téléchargement de la mise à jour impossible, voir le journal.", true)
+        }
+    }
 
     LaunchedEffect(sess.message) { if (sess.message.isNotEmpty()) say(sess.message, false) }
     LaunchedEffect(camErr) { camErr?.let { say(it, true) } }
@@ -218,6 +232,10 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
             Spacer(Modifier.weight(1f))
             // message, zoom, netteté (juste au-dessus de la barre)
             Column(Modifier.fillMaxWidth().padding(14.dp, 0.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                if (update != null && !sess.running) Row(Modifier.fillMaxWidth().background(Color(0xE6C58AD6), RoundedCornerShape(10.dp)).clickable { doUpdate() }.padding(12.dp, 10.dp), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+                    Text("Mise à jour ${update!!.version} disponible (installée : ${BuildConfig.VERSION_NAME})", color = Color(0xFF1A0F1F), fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
+                    Text(if (updProgress >= 0) "$updProgress %" else "Installer", color = Color(0xFF1A0F1F), fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                }
                 if (msg.isNotEmpty()) Text(msg, Modifier.fillMaxWidth().background(if (msgErr) Color(0xD9EB5757) else Color(0xA6000000), RoundedCornerShape(10.dp)).padding(12.dp, 10.dp), color = FG, fontSize = 15.sp)
                 Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                     Text("netteté", Modifier.background(Color(0x8C000000), RoundedCornerShape(6.dp)).padding(10.dp, 4.dp).width(60.dp), color = MUTED, fontSize = 14.sp)
@@ -394,7 +412,7 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
     ModalBottomSheet(onDismissRequest = { onClose(save()) }, sheetState = sheetState, containerColor = PANEL, dragHandle = null) {
         Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(16.dp, 12.dp).navigationBarsPadding(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                Text("Réglages", fontSize = 15.sp, fontWeight = FontWeight.Bold, color = FG)
+                Text("Réglages · ScanLame ${BuildConfig.VERSION_NAME}", fontSize = 15.sp, fontWeight = FontWeight.Bold, color = FG)
                 WebButton("Fermer", small = true) { onClose(save()) }
             }
             OutlinedTextField(title, { title = it }, label = { Text("Nom de la lame (pour la galerie)") }, placeholder = { Text("ex. Gram, prélèvement vaginal, 14/10") }, singleLine = true, modifier = Modifier.fillMaxWidth())

@@ -60,4 +60,5 @@ jobs:
           else
             gh release create android -R "$GITHUB_REPOSITORY" --title "Application Android (dernière version)" --notes "$NOTES" --latest=false
           fi
-          gh release upload android "$RUNNER_TEMP/scanlame.apk" -R "$GITHUB_REPOSITORY" --clobber
+          printf '{"version":"0.%s","code":%s,"commit":"%s","date":"%s","url":"https://github.com/%s/releases/download/android/scanlame.apk"}\n' "${{ github.run_number }}" "${{ github.run_number }}" "${GITHUB_SHA::7}" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$GITHUB_REPOSITORY" > "$RUNNER_TEMP/version.json"
+          gh release upload android "$RUNNER_TEMP/scanlame.apk" "$RUNNER_TEMP/version.json" -R "$GITHUB_REPOSITORY" --clobber
