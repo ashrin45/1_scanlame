@@ -163,7 +163,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
         else if (!cameraOn) { engine.unbind(); engine.bound.value = null }
     }
     // zoom en direct
-    LaunchedEffect(zoom) { if (cameraOn && bound != null) { st.zoom = zoom; engine.applyControls(st) } }
+    LaunchedEffect(zoom) { if (cameraOn && bound != null) { delay(150); st.zoom = zoom; engine.applyControls(st) } }
 
     Box(Modifier.fillMaxSize().background(BG)) {
         // ---- scène : caméra plein écran

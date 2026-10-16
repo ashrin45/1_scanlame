@@ -305,15 +305,19 @@ class CameraEngine(private val ctx: Context) {
             try { cam.cameraControl.setExposureCompensationIndex(st.evComp) } catch (e: Exception) {}
             return
         }
+        // valeurs figees au moment du verrouillage (reutilisees telles quelles si on change le zoom ensuite)
+        val lk = lockVals ?: run {
+            var expNs = lv.exposureNs ?: 10_000_000L; var iso = lv.iso ?: 200
+            val cap = (st.shutterCapMs * 1_000_000).toLong()
+            if (cap > 0 && expNs > cap) { iso = (iso.toDouble() * expNs / cap).roundToInt(); expNs = cap }
+            val isoRange = chars?.get(CameraCharacteristics.SENSOR_INFO_SENSITIVITY_RANGE)
+            if (isoRange != null) iso = iso.coerceIn(isoRange.lower, isoRange.upper)
+            Triple(expNs, iso, if (st.focusMode == "keep") (lv.focusDiopters ?: 0f) else 0f).also { lockVals = it }
+        }
+        val expNs = lk.first; val iso = lk.second
         // mise au point
         b.setCaptureRequestOption(CaptureRequest.CONTROL_AF_MODE, CameraMetadata.CONTROL_AF_MODE_OFF)
-        b.setCaptureRequestOption(CaptureRequest.LENS_FOCUS_DISTANCE, if (st.focusMode == "keep") (lv.focusDiopters ?: 0f) else 0f)
-        // exposition : valeurs courantes figées, pose plafonnée si demandé (ISO relevé d'autant)
-        var expNs = lv.exposureNs ?: 10_000_000L; var iso = lv.iso ?: 200
-        val cap = (st.shutterCapMs * 1_000_000).toLong()
-        if (cap > 0 && expNs > cap) { iso = (iso.toDouble() * expNs / cap).roundToInt(); expNs = cap }
-        val isoRange = chars?.get(CameraCharacteristics.SENSOR_INFO_SENSITIVITY_RANGE)
-        if (isoRange != null) iso = iso.coerceIn(isoRange.lower, isoRange.upper)
+        b.setCaptureRequestOption(CaptureRequest.LENS_FOCUS_DISTANCE, lk.third)
         b.setCaptureRequestOption(CaptureRequest.CONTROL_AE_MODE, CameraMetadata.CONTROL_AE_MODE_OFF)
         b.setCaptureRequestOption(CaptureRequest.SENSOR_EXPOSURE_TIME, expNs)
         b.setCaptureRequestOption(CaptureRequest.SENSOR_SENSITIVITY, iso)
@@ -327,10 +331,12 @@ class CameraEngine(private val ctx: Context) {
         } else {
             b.setCaptureRequestOption(CaptureRequest.CONTROL_AWB_LOCK, true)
         }
-        Journal.log("verrouillage : focus ${if (st.focusMode == "keep") "distance courante ${lv.focusDiopters}" else "infini"}, pose ${expNs / 1e6} ms, ISO $iso, WB ${if (st.ctemp > 0) "${st.ctemp} K" else "figée"}")
+        if (lockVals === lk && !lockLogged) { lockLogged = true; Journal.log("verrouillage : focus ${if (st.focusMode == "keep") "distance courante ${lk.third}" else "infini"}, pose ${expNs / 1e6} ms, ISO $iso, WB ${if (st.ctemp > 0) "${st.ctemp} K" else "figée"}") }
     }
+    private var lockVals: Triple<Long, Int, Float>? = null
+    private var lockLogged = false
 
-    fun setLocked(st: Settings, on: Boolean) { locked.value = on; applyControls(st) }
+    fun setLocked(st: Settings, on: Boolean) { locked.value = on; lockVals = null; lockLogged = false; applyControls(st) }
 
     /** Gains R, G, B approximatifs pour une température de couleur (normalisés, vert = 1). */
     private fun kelvinGains(k: Int): FloatArray {
