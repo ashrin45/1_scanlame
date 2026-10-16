@@ -23,13 +23,14 @@ import kotlin.math.sqrt
  * changement d'objectif), métadonnées serie.json identiques à celles de la page web, puis file d'envoi.
  */
 class Session(private val ctx: Context, private val engine: CameraEngine, private val st: Settings) {
-    class Placed(val x: Double, val y: Double, val status: String, val photo: Boolean, val thumb: android.graphics.Bitmap?)
+    class Placed(val x: Double, val y: Double, val status: String, val photo: Boolean, val thumb: android.graphics.Bitmap?, val grade: Int = 0)   // grade : 0 net, 1 doux, 2 flou ou vide
     data class State(
         val running: Boolean = false, val mode: String = Settings.MODE_PHOTOS, val seriesId: String = "", val elapsedMs: Long = 0,
         val track: String = "", val score: Float = 0f, val posX: Double = 0.0, val posY: Double = 0.0, val sharp: Float = 0f,
         val still: Boolean = false, val photos: Int = 0, val samples: Int = 0, val bytes: Long = 0, val shooting: Boolean = false,
         val phase: String = "", val objective: String = "x100", val placed: List<Placed> = emptyList(), val fieldW: Double = 1.0, val fieldH: Double = 1.0,
-        val message: String = "", val trackMs: Int = 0, val fps: Float = 0f
+        val message: String = "", val trackMs: Int = 0, val fps: Float = 0f,
+        val warn: String = "", val sharpRef: Float = 0f, val blurred: Int = 0, val bigSteps: Int = 0, val exposure: String = ""
     )
     val state = MutableStateFlow(State())
 
@@ -131,7 +132,14 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "sample").put("t_ms", t).put("x", if (f.status == "lost") JSONObject.NULL else px.roundToInt()).put("y", if (f.status == "lost") JSONObject.NULL else py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status)) }
         }
         frameCount++
-        if (f.status != "lost" && frameCount % 3 == 0) synchronized(placed) { placed.add(Placed(px, py, f.status, false, thumbOf(g))); if (placed.size > 1500) placed.removeAt(0) }
+        if (f.status != "lost" && frameCount % 3 == 0) synchronized(placed) { placed.add(Placed(px, py, f.status, false, thumbColor(img))); if (placed.size > 1500) placed.removeAt(0) }
+        // ---- qualité en direct : exposition (toutes les 5 images) et netteté par rapport aux meilleures photos de la série
+        if (frameCount % 5 == 0) {
+            val sorted = g.copyOf(); sorted.sort()
+            val p99 = sorted[(sorted.size * 0.99).toInt()]; val p50 = sorted[sorted.size / 2]
+            exposureNote = when { p99 >= 254f && p50 > 240f -> "trop clair : baisse la lampe"; p50 < 70f -> "trop sombre : monte la lampe"; else -> "" }
+        }
+
         if (frameCount % 10 == 0) Journal.log("t${String.format(Locale.ROOT, "%07d", t)} suivi ${f.status} score ${String.format(Locale.ROOT, "%.2f", f.score)} pos ${px.roundToInt()},${py.roundToInt()} net ${sh.roundToInt()} ($ms ms)")
         // ---- détection d'arrêt
         var still = false
@@ -141,22 +149,49 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             if (moved <= st.stillPx) { if (stillSince == 0L) stillSince = now(); still = now() - stillSince >= st.stillMs } else stillSince = 0L
             lastPos = f.x to f.y
         } else { stillSince = 0L }
+        liveWarn = when {
+            exposureNote.isNotEmpty() -> exposureNote
+            sharpRef > 0 && still && sh < 0.5f * sharpRef -> "flou : retouche la vis micrométrique"
+            else -> ""
+        }
         if (still && s.mode == Settings.MODE_PHOTOS && !shooting) {
             val ls = lastShot
             val gap = if (ls == null) 0.0 else hypot(f.x - ls.first, f.y - ls.second)
             val far = ls == null || gap >= 10.0   // ~4 % du champ : nouvel arrêt
             if (far) {
                 // pas trop grand entre deux arrêts : au-dela de 70 % du champ, les photos ne se recouvrent plus assez pour l'assemblage
-                if (gap > 0.7 * Tracker.S2) { Journal.log("ATTENTION pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recouvrement insuffisant"); state.value = state.value.copy(message = "Pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recule d'un demi-champ, les photos doivent se recouvrir d'au moins 30 %.") }
+                if (gap > 0.7 * Tracker.S2) { nBigSteps++; Journal.log("ATTENTION pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recouvrement insuffisant"); state.value = state.value.copy(message = "Pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recule d'un demi-champ, les photos doivent se recouvrir d'au moins 30 %.") }
                 else if (state.value.message.startsWith("Pas trop grand")) state.value = state.value.copy(message = "Série en cours : déplace la platine d'un demi-champ, arrête-toi, une photo part à chaque arrêt.")
-                shoot(f, px, py, t, sh, g)
+                shoot(f, px, py, t, sh, img)
             }
         }
         state.value = state.value.copy(track = f.status, score = f.score, posX = px, posY = py, sharp = sh, still = still, samples = sampleSeq,
-            elapsedMs = t, placed = synchronized(placed) { ArrayList(placed) }, trackMs = ms, fps = fpsAcc, shooting = shooting)
+            elapsedMs = t, placed = synchronized(placed) { ArrayList(placed) }, trackMs = ms, fps = fpsAcc, shooting = shooting,
+            warn = liveWarn, sharpRef = sharpRef, blurred = nBlurred, bigSteps = nBigSteps, exposure = exposureNote)
     }
 
-    /** Vignette 48 x 48 en gris à partir du carré 256 (pour la carte de couverture). */
+    /** Vignette couleur 48 x 48 tirée des plans YUV de l'image d'analyse, redressée comme le gris (carte de couverture). */
+    private fun thumbColor(img: ImageProxy): android.graphics.Bitmap {
+        val n = 48; val out = IntArray(n * n)
+        val yP = img.planes[0]; val uP = img.planes[1]; val vP = img.planes[2]
+        val yb = yP.buffer; val ub = uP.buffer; val vb = vP.buffer
+        val w = img.width; val h = img.height; val rot = img.imageInfo.rotationDegrees
+        for (v in 0 until n) for (u in 0 until n) {
+            val fu = (u + 0.5f) / n; val fv = (v + 0.5f) / n
+            val sx: Float; val sy: Float
+            when (rot) { 90 -> { sx = fv; sy = 1f - fu }; 180 -> { sx = 1f - fu; sy = 1f - fv }; 270 -> { sx = 1f - fv; sy = fu }; else -> { sx = fu; sy = fv } }
+            val x = (sx * w).toInt().coerceIn(0, w - 1); val y = (sy * h).toInt().coerceIn(0, h - 1)
+            val yy = yb.get(y * yP.rowStride + x * yP.pixelStride).toInt() and 255
+            val ci = (y / 2) * uP.rowStride + (x / 2) * uP.pixelStride
+            val cu = (if (ci < ub.limit()) ub.get(ci).toInt() and 255 else 128) - 128
+            val cv = (if (ci < vb.limit()) vb.get(ci).toInt() and 255 else 128) - 128
+            val r = (yy + 1.402f * cv).toInt().coerceIn(0, 255); val gg = (yy - 0.344f * cu - 0.714f * cv).toInt().coerceIn(0, 255); val b = (yy + 1.772f * cu).toInt().coerceIn(0, 255)
+            out[v * n + u] = (0xFF shl 24) or (r shl 16) or (gg shl 8) or b
+        }
+        return android.graphics.Bitmap.createBitmap(out, n, n, android.graphics.Bitmap.Config.ARGB_8888)
+    }
+
+    /** Vignette 48 x 48 en gris à partir du carré 256 (secours). */
     private fun thumbOf(g: FloatArray): android.graphics.Bitmap {
         val n = 48; val px = IntArray(n * n); val S = Tracker.S2
         for (y in 0 until n) for (x in 0 until n) {
@@ -166,9 +201,17 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         return android.graphics.Bitmap.createBitmap(px, n, n, android.graphics.Bitmap.Config.ARGB_8888)
     }
 
-    private fun shoot(f: Tracker.Frame, px: Double, py: Double, t: Long, sh: Float, g: FloatArray) {
+    private var sharpRef = 0f; private var nBlurred = 0; private var nBigSteps = 0
+    @Volatile private var exposureNote = ""; @Volatile private var liveWarn = ""
+    private val photoSharps = ArrayList<Float>()
+
+    private fun shoot(f: Tracker.Frame, px: Double, py: Double, t: Long, sh: Float, img: ImageProxy) {
         val dir = seriesDir ?: return
-        val th = thumbOf(g)   // avant la photo : le tampon gris est réutilisé par l'image suivante
+        val th = thumbColor(img)   // avant la photo : le tampon d'analyse est réutilisé par l'image suivante
+        // reference de nettete : mediane des 5 meilleures photos de la serie ; une photo sous 50 % est notee floue, sous 70 % douce
+        photoSharps.add(sh); val best = photoSharps.sortedDescending().take(5); sharpRef = best[best.size / 2]
+        val grade = if (photoSharps.size >= 3 && sh < 0.5f * sharpRef) 2 else if (photoSharps.size >= 3 && sh < 0.7f * sharpRef) 1 else 0
+        if (grade == 2) { nBlurred++; Journal.log("photo floue (netteté ${sh.roundToInt()} contre ${sharpRef.roundToInt()} de référence)") }
         shooting = true
         lastShot = f.x to f.y
         seq++
@@ -180,7 +223,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             if (ok) {
                 val len = file.length()
                 synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("enc_ms", now() - tt).put("sharp", sh.toDouble())) }
-                synchronized(placed) { placed.add(Placed(px, py, f.status, true, th)) }
+                synchronized(placed) { placed.add(Placed(px, py, f.status, true, th, grade)) }
                 state.value = state.value.copy(photos = seq, bytes = state.value.bytes + len)
                 Journal.log("photo ${name.takeLast(8, 4)} à ${px.roundToInt()},${py.roundToInt()} (${len shr 10} ko, ${now() - tt} ms)")
                 Uploader.kick(ctx)
@@ -236,6 +279,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val id = "lame_${stamp()}${slug(title).takeIf { it.isNotEmpty() }?.let { "_$it" } ?: ""}"
         t0 = now(); seq = 0; sampleSeq = 0; frameCount = 0
         tracker = Tracker(); synchronized(placed) { placed.clear() }; lastPos = null; lastShot = null; stillSince = 0L; shooting = false
+        sharpRef = 0f; nBlurred = 0; nBigSteps = 0; photoSharps.clear(); exposureNote = ""; liveWarn = ""
         while (frames.length() > 0) frames.remove(0)
         while (phases.length() > 0) phases.remove(0)
         segments.clear(); curBlank = null; switching = null
@@ -304,7 +348,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             }
             File(dir, "finish.json").writeText(m.toString())
             Uploader.kick(ctx)
-            state.value = state.value.copy(message = "Prise ${s.seriesId.takeLast(6)} en file d'envoi. L'assemblage se fait côté serveur, la lame apparaîtra dans la galerie.")
+            val bilan = if (s.mode == Settings.MODE_PHOTOS) " Bilan : $seq photos, ${nBlurred} floue(s), ${nBigSteps} pas trop grand(s)." else ""
+            state.value = state.value.copy(message = "Prise ${s.seriesId.takeLast(6)} en file d'envoi.$bilan L'assemblage se fait côté serveur, la lame apparaîtra dans la galerie.", warn = "")
             onDone()
         }
         if (s.mode == Settings.MODE_VIDEO && engine.isRecording()) {

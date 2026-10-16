@@ -183,12 +183,15 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                 }
                 Text(txt, Modifier.background(bg, RoundedCornerShape(999.dp)).padding(16.dp, 8.dp), color = fg, fontSize = 15.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.sp)
             }
+            if (sess.running && sess.warn.isNotEmpty()) Box(Modifier.fillMaxWidth().padding(top = 6.dp), contentAlignment = Alignment.Center) {
+                Text(sess.warn.uppercase(), Modifier.background(Color(0xE6EB5757), RoundedCornerShape(999.dp)).padding(14.dp, 6.dp), color = Color.White, fontSize = 13.sp, fontWeight = FontWeight.Bold)
+            }
             Row(Modifier.fillMaxWidth().padding(10.dp, 6.dp), horizontalArrangement = Arrangement.SpaceBetween) {
                 // HUD gauche
                 Column(verticalArrangement = Arrangement.spacedBy(5.dp)) {
                     val expo = live.exposureNs?.let { String.format(Locale.ROOT, "%.1f ms", it / 1e6) } ?: "?"
                     Hud(if (cameraOn && bound != null) "${engine.photoSize?.let { "${it.height}x${it.width}" } ?: engine.videoSize?.let { "${it.height}x${it.width}" } ?: ""} · cam ${live.activePhysical ?: "?"}" else "caméra arrêtée")
-                    Hud(if (sess.mode == Settings.MODE_VIDEO && sess.running) "vidéo ${sess.bytes shr 20} Mo" else "${sess.photos} photo${if (sess.photos > 1) "s" else ""}")
+                    Hud(if (sess.mode == Settings.MODE_VIDEO && sess.running) "vidéo ${sess.bytes shr 20} Mo" else "${sess.photos} photo${if (sess.photos > 1) "s" else ""}${if (sess.blurred > 0) " · ${sess.blurred} floue(s)" else ""}${if (sess.bigSteps > 0) " · ${sess.bigSteps} pas trop grand(s)" else ""}", if (sess.blurred > 0) WARN else FG)
                     Hud("$expo · ISO ${live.iso ?: "?"} · netteté ${sess.sharp.toInt()}")
                     Hud(if (locked) "AF/AE verrouillés" else "AF/AE auto", if (locked) ACCENT else FG)
                     if (up.pendingFiles > 0) Hud("${up.pendingFiles} en file (${up.pendingBytes shr 20} Mo)${up.lastError?.let { " · $it" } ?: ""}", Color(0xFF1A0F1F), WARN)
@@ -218,7 +221,10 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                 if (msg.isNotEmpty()) Text(msg, Modifier.fillMaxWidth().background(if (msgErr) Color(0xD9EB5757) else Color(0xA6000000), RoundedCornerShape(10.dp)).padding(12.dp, 10.dp), color = FG, fontSize = 15.sp)
                 Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                     Text("netteté", Modifier.background(Color(0x8C000000), RoundedCornerShape(6.dp)).padding(10.dp, 4.dp).width(60.dp), color = MUTED, fontSize = 14.sp)
-                    Box(Modifier.weight(1f).height(8.dp).background(Color(0x2EFFFFFF), RoundedCornerShape(4.dp))) { Box(Modifier.fillMaxWidth((sess.sharp / 40f).coerceIn(0f, 1f)).height(8.dp).background(OK, RoundedCornerShape(4.dp))) }
+                    // barre de nettete : echelle = meilleure photo de la serie (sinon 40) ; verte au-dessus de 70 %, orange, rouge sous 50 %
+                    val scale = if (sess.sharpRef > 0) sess.sharpRef * 1.1f else 40f
+                    val frac = (sess.sharp / scale).coerceIn(0f, 1f)
+                    Box(Modifier.weight(1f).height(8.dp).background(Color(0x2EFFFFFF), RoundedCornerShape(4.dp))) { Box(Modifier.fillMaxWidth(frac).height(8.dp).background(if (sess.sharpRef <= 0 || frac >= 0.64f) OK else if (frac >= 0.45f) WARN else REC, RoundedCornerShape(4.dp))) }
                 }
                 Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                     Text("zoom ${String.format(Locale.ROOT, "%.1f", zoom)}×", Modifier.background(Color(0x8C000000), RoundedCornerShape(6.dp)).padding(10.dp, 4.dp), color = FG, fontSize = 14.sp)
@@ -298,6 +304,7 @@ fun CoverageMap(s: Session.State, modifier: Modifier) {
             val th = p.thumb
             if (th != null) drawImage(th.asImageBitmap(), IntOffset(0, 0), IntSize(th.width, th.height), IntOffset(dx, dy), IntSize(dw, dh), alpha = 0.95f)
             else drawRect(Color(0x33FFFFFF), Offset(dx.toFloat(), dy.toFloat()), Size(dw.toFloat(), dh.toFloat()))
+            if (p.photo && p.grade > 0) drawRect(if (p.grade == 2) REC else WARN, Offset(dx.toFloat(), dy.toFloat()), Size(dw.toFloat(), dh.toFloat()), style = Stroke(2f))
         }
         val cur = pl.last()
         drawRect(if (s.track == "lost") REC else if (s.track == "relocated") WARN else OK, Offset(ox + (cur.x.toFloat() - x0) * sc, oy + (cur.y.toFloat() - y0) * sc), Size(W * sc, H * sc), style = Stroke(2f))
