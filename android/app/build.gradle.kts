@@ -7,7 +7,7 @@ plugins {
 }
 
 // Signature : clé fournie par l'environnement (secret GitHub) ; sinon signature de debug (mise à jour = désinstaller avant)
-val ksPath = System.getenv("SCANLAME_KEYSTORE")
+val ksPath = System.getenv("SCANLAME_KEYSTORE")?.takeIf { it.isNotBlank() }
 val ksPass = System.getenv("SCANLAME_KEYSTORE_PASS") ?: ""
 
 android {
