@@ -1,0 +1,17 @@
+[    0.0s] segment 1/1 : objectif x100, 21 images entre 0 s et 40 s
+[    0.0s] 21 images candidates
+[    1.0s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[    1.0s] netteté médiane 8.1, seuil 3.3
+[    1.0s] 21 images retenues (nettes, non redondantes)
+[    1.0s] pas de champ vide filmé : vignettage estimé par lissage
+[    8.9s] aberration chromatique : échelle R 1.0000, B 1.0000
+[    9.2s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 9174 %)
+[   16.0s] prétraitement terminé, 21 images, recalage à 900 x 1200
+[   17.3s] points SIFT : 1435 par image en moyenne
+[   17.3s] 132 paires à tester
+[   19.2s] 25 paires valides
+[   20.3s] distorsion radiale k1 = -0.0260 (résidu 0.85 px contre 1.69 px sans correction)
+[   20.3s] composantes : [10, 6, 3, 1, 1] -> on assemble la n°0 : 10 images
+[   20.6s] ajustement global : 2224 correspondances, 9 images
+[   20.6s] 11 image(s) placée(s) d'après le suivi en direct (sans recalage fin)
+[   20.6s] ÉCHEC : 11 champs sur 21 ne se recalent pas par les points (image floue ou vide ?) ; prise inexploitable, pas de composition
