@@ -1,0 +1,953 @@
+     0.000  ScanLame 0.18 démarré sur samsung SM-S928B (Android 16)
+    13.722  liaison : caméra logique 0, module physique 5, analyse 640x480, photo 4080x3060
+    14.283  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+    23.243  réglages enregistrés
+    23.335  liaison : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+    23.871  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+    60.557  verrouillage : focus infini, pose 29.994234 ms, ISO 444, WB figée
+    60.807  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+    74.382  MSG Serveur non réglé : la prise restera sur le téléphone (file d'attente).
+    74.392  === série lame_20261016_190645 (photos) « sans nom », gram, objectif x100 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+    74.431  masque oculaire : 99 % du cadre utile (p95 236)
+    74.755  t0000355 suivi ok score 1.00 pos 0,0 net 10 (31 ms) carte 3
+    75.055  photo 645_0001 à 0,0 (689 ko, 223 ms)
+    75.069  t0000677 suivi ok score 1.00 pos 0,0 net 11 (20 ms) carte 7
+    75.402  t0001007 suivi ok score 1.00 pos 0,0 net 10 (26 ms) carte 11
+    75.736  t0001343 suivi ok score 1.00 pos 0,0 net 10 (20 ms) carte 14
+    76.067  t0001675 suivi ok score 1.00 pos 0,0 net 10 (20 ms) carte 17
+    76.414  t0002018 suivi ok score 1.00 pos 0,0 net 10 (28 ms) carte 21
+    76.733  t0002342 suivi ok score 1.00 pos 0,0 net 10 (17 ms) carte 24
+    77.084  t0002691 suivi ok score 1.00 pos 0,0 net 10 (31 ms) carte 27
+    77.413  t0003021 suivi ok score 1.00 pos 0,0 net 10 (19 ms) carte 31
+    77.733  t0003342 suivi ok score 1.00 pos -60,0 net 9 (16 ms) carte 34
+    78.075  t0003683 suivi ok score 1.00 pos -68,0 net 10 (22 ms) carte 37
+    78.402  t0004010 suivi ok score 1.00 pos -68,0 net 11 (21 ms) carte 41
+    78.757  t0004364 suivi ok score 1.00 pos -68,0 net 11 (36 ms) carte 44
+    79.091  t0004699 suivi ok score 0.98 pos -796,27 net 4 (34 ms) carte 47
+    79.403  t0005010 suivi ok score 1.00 pos -1128,32 net 9 (20 ms) carte 51
+    79.741  t0005348 suivi ok score 1.00 pos -1147,30 net 10 (29 ms) carte 54
+    79.781  photo 645_0002 à -1146,30 (693 ko, 204 ms)
+    80.078  t0005686 suivi ok score 1.00 pos -1147,30 net 9 (21 ms) carte 58
+    80.410  t0006017 suivi ok score 0.98 pos -1499,42 net 5 (24 ms) carte 62
+    80.739  t0006347 suivi ok score 1.00 pos -2465,66 net 9 (22 ms) carte 65
+    81.092  t0006699 suivi ok score 0.97 pos -2736,70 net 9 (35 ms) carte 68
+    81.114  photo en mouvement lent (52 % du champ, 20 u/s)
+    81.345  photo 645_0003 à -2744,73 (666 ko, 231 ms)
+    81.397  t0007004 suivi ok score 1.00 pos -3001,63 net 9 (21 ms) carte 73
+    81.741  t0007349 suivi ok score 0.99 pos -3299,68 net 8 (21 ms) carte 76
+    82.068  t0007676 suivi ok score 0.99 pos -3656,71 net 9 (21 ms) carte 79
+    82.414  t0008020 suivi ok score 1.00 pos -3682,73 net 11 (29 ms) carte 83
+    82.696  photo 645_0004 à -3692,71 (669 ko, 227 ms)
+    82.727  t0008335 suivi ok score 0.99 pos -4035,74 net 10 (17 ms) carte 87
+    83.077  t0008684 suivi ok score 0.99 pos -4338,83 net 9 (27 ms) carte 90
+    83.399  t0009007 suivi ok score 0.99 pos -4526,80 net 11 (17 ms) carte 94
+    83.732  t0009340 suivi ok score 0.99 pos -4803,82 net 7 (15 ms) carte 97
+    84.076  t0009683 suivi ok score 1.00 pos -5199,95 net 10 (26 ms) carte 100
+    84.409  t0010016 suivi ok score 0.99 pos -5646,114 net 9 (23 ms) carte 104
+    84.728  t0010337 suivi ok score 1.00 pos -6005,127 net 11 (16 ms) carte 107
+    84.870  photo en mouvement lent (80 % du champ, 40 u/s)
+    84.871  ATTENTION pas trop grand (80 % du champ) : recouvrement insuffisant
+    85.062  t0010670 suivi ok score 0.93 pos -6469,137 net 5 (16 ms) carte 110
+    85.075  photo 645_0005 à -6133,127 (674 ko, 203 ms)
+    85.400  t0011008 suivi ok score 0.91 pos -7465,148 net 8 (22 ms) carte 115
+    85.736  t0011344 suivi ok score 1.00 pos -7485,157 net 12 (22 ms) carte 118
+    86.063  t0011671 suivi ok score 1.00 pos -7482,157 net 12 (17 ms) carte 121
+    86.224  photo 645_0006 à -7477,157 (690 ko, 221 ms)
+    86.403  t0012011 suivi ok score 0.97 pos -7740,157 net 7 (22 ms) carte 126
+    86.741  t0012349 suivi ok score 0.98 pos -8207,161 net 8 (22 ms) carte 129
+    87.074  t0012682 suivi ok score 1.00 pos -8638,172 net 12 (24 ms) carte 132
+    87.407  t0013014 suivi ok score 1.00 pos -8793,181 net 13 (21 ms) carte 136
+    87.746  t0013354 suivi ok score 0.99 pos -8926,183 net 12 (21 ms) carte 139
+    88.035  photo en mouvement lent (59 % du champ, 20 u/s)
+    88.094  t0013701 suivi ok score 0.99 pos -9285,186 net 13 (37 ms) carte 142
+    88.253  photo 645_0007 à -9273,197 (715 ko, 217 ms)
+    88.400  t0014008 suivi ok score 0.99 pos -9552,182 net 9 (21 ms) carte 147
+    88.743  t0014350 suivi ok score 0.99 pos -9744,185 net 13 (24 ms) carte 150
+    89.068  t0014676 suivi ok score 0.99 pos -9958,187 net 10 (20 ms) carte 153
+    89.397  t0015005 suivi ok score 0.99 pos -10221,189 net 12 (15 ms) carte 157
+    89.735  t0015343 suivi ok score 0.98 pos -10422,186 net 10 (19 ms) carte 160
+    90.084  t0015692 suivi ok score 0.99 pos -10748,188 net 10 (34 ms) carte 163
+    90.169  photo en mouvement lent (50 % du champ, 37 u/s)
+    90.385  photo 645_0008 à -10810,186 (719 ko, 216 ms)
+    90.398  t0016006 suivi ok score 0.99 pos -10960,188 net 13 (20 ms) carte 168
+    90.739  t0016346 suivi ok score 0.99 pos -11350,186 net 8 (20 ms) carte 171
+    91.073  t0016680 suivi ok score 0.99 pos -11631,188 net 11 (24 ms) carte 174
+    91.421  t0017027 suivi ok score 0.98 pos -11779,187 net 7 (29 ms) carte 178
+    91.749  t0017357 suivi ok score 1.00 pos -12169,201 net 13 (22 ms) carte 181
+    92.069  t0017677 suivi ok score 1.00 pos -12652,195 net 10 (20 ms) carte 184
+    92.262  photo en mouvement lent (67 % du champ, 22 u/s)
+    92.407  t0018014 suivi ok score 1.00 pos -12910,199 net 17 (21 ms) carte 188
+    92.449  photo 645_0009 à -12867,203 (724 ko, 186 ms)
+    92.744  t0018351 suivi ok score 1.00 pos -13038,210 net 16 (24 ms) carte 192
+    93.074  t0018682 suivi ok score 0.99 pos -13311,202 net 10 (19 ms) carte 195
+    93.411  t0019019 suivi ok score 1.00 pos -13522,203 net 11 (22 ms) carte 199
+    93.743  t0019351 suivi ok score 0.99 pos -13710,211 net 18 (21 ms) carte 202
+    94.087  t0019694 suivi ok score 0.99 pos -13953,208 net 18 (32 ms) carte 205
+    94.406  t0020013 suivi ok score 0.99 pos -14111,206 net 12 (19 ms) carte 209
+    94.751  t0020358 suivi ok score 1.00 pos -14299,209 net 17 (31 ms) carte 212
+    95.074  t0020681 suivi ok score 1.00 pos -14348,209 net 12 (23 ms) carte 215
+    95.409  t0021016 suivi ok score 0.99 pos -14900,233 net 10 (20 ms) carte 219
+    95.505  photo en mouvement lent (70 % du champ, 32 u/s)
+    95.728  photo 645_0010 à -15005,237 (738 ko, 222 ms)
+    95.734  t0021342 suivi ok score 1.00 pos -15005,237 net 17 (19 ms) carte 223
+    96.066  t0021674 suivi ok score 1.00 pos -15005,237 net 17 (16 ms) carte 226
+    96.407  t0022015 suivi ok score 1.00 pos -15003,235 net 17 (21 ms) carte 230
+    96.743  t0022351 suivi ok score 0.94 pos -15511,242 net 12 (21 ms) carte 233
+    97.069  t0022677 suivi ok score 0.99 pos -15778,241 net 10 (17 ms) carte 236
+    97.405  t0023012 suivi ok score 1.00 pos -16124,257 net 13 (18 ms) carte 240
+    97.745  t0023353 suivi ok score 1.00 pos -16451,255 net 14 (22 ms) carte 243
+    98.085  t0023692 suivi ok score 1.00 pos -16656,255 net 12 (31 ms) carte 246
+    98.239  photo en mouvement lent (58 % du champ, 1 u/s)
+    98.400  t0024008 suivi ok score 1.00 pos -16769,257 net 17 (16 ms) carte 250
+    98.460  photo 645_0011 à -16768,257 (769 ko, 220 ms)
+    98.742  t0024350 suivi ok score 1.00 pos -17082,255 net 11 (23 ms) carte 254
+    99.070  t0024677 suivi ok score 0.99 pos -17507,255 net 10 (20 ms) carte 257
+    99.408  t0025015 suivi ok score 1.00 pos -17974,272 net 12 (20 ms) carte 261
+    99.740  t0025348 suivi ok score 0.99 pos -18161,267 net 17 (21 ms) carte 264
+   100.074  t0025682 suivi ok score 1.00 pos -18307,269 net 17 (21 ms) carte 267
+   100.132  photo en mouvement lent (52 % du champ, 37 u/s)
+   100.356  photo 645_0012 à -18345,267 (739 ko, 223 ms)
+   100.409  t0026016 suivi ok score 1.00 pos -18653,274 net 16 (24 ms) carte 272
+   100.736  t0026344 suivi ok score 1.00 pos -18771,275 net 19 (16 ms) carte 275
+   101.075  t0026683 suivi ok score 0.99 pos -18931,275 net 18 (23 ms) carte 278
+   101.404  t0027011 suivi ok score 0.99 pos -19127,282 net 15 (17 ms) carte 282
+   101.738  t0027346 suivi ok score 0.99 pos -19182,297 net 17 (18 ms) carte 285
+   102.077  t0027685 suivi ok score 1.00 pos -19250,298 net 17 (15 ms) carte 288
+   102.413  t0028019 suivi ok score 1.00 pos -19286,298 net 16 (27 ms) carte 292
+   102.421  photo 645_0013 à -19250,298 (719 ko, 221 ms)
+   102.749  t0028356 suivi ok score 0.99 pos -19430,298 net 9 (29 ms) carte 296
+   103.075  t0028683 suivi ok score 1.00 pos -19621,298 net 13 (19 ms) carte 299
+   103.407  t0029014 suivi ok score 1.00 pos -19788,314 net 13 (20 ms) carte 303
+   103.734  t0029342 suivi ok score 1.00 pos -19788,314 net 13 (16 ms) carte 306
+   103.952  photo 645_0014 à -19788,314 (690 ko, 217 ms)
+   104.071  t0029679 suivi ok score 0.99 pos -20397,330 net 9 (15 ms) carte 310
+   104.415  t0030021 suivi ok score 0.99 pos -20472,330 net 11 (25 ms) carte 314
+   104.738  t0030346 suivi ok score 1.00 pos -20589,330 net 11 (17 ms) carte 317
+   105.075  t0030682 suivi ok score 0.98 pos -20803,330 net 7 (18 ms) carte 320
+   105.416  t0031022 suivi ok score 0.99 pos -20911,330 net 10 (25 ms) carte 324
+   105.737  t0031345 suivi ok score 0.97 pos -21126,330 net 7 (15 ms) carte 327
+   106.088  t0031694 suivi ok score 1.00 pos -21437,330 net 9 (25 ms) carte 330
+   106.088  photo en mouvement lent (54 % du champ, 0 u/s)
+   106.332  photo 645_0015 à -21437,330 (682 ko, 244 ms)
+   106.413  t0032020 suivi ok score 0.98 pos -21664,330 net 7 (24 ms) carte 335
+   106.740  t0032348 suivi ok score 0.99 pos -21867,330 net 8 (17 ms) carte 338
+   107.074  t0032681 suivi ok score 0.90 pos -21987,330 net 4 (20 ms) carte 341
+   107.406  t0033013 suivi ok score 1.00 pos -22070,330 net 7 (13 ms) carte 345
+   107.735  t0033343 suivi ok score 1.00 pos -21867,330 net 6 (16 ms) carte 348
+   108.080  t0033686 suivi ok score 1.00 pos -21867,330 net 6 (19 ms) carte 351
+   108.081  photo floue (netteté 6 contre 16 de référence)
+   108.297  photo 645_0016 à -21867,330 (672 ko, 216 ms)
+   108.403  t0034011 suivi ok score 1.00 pos -21867,330 net 6 (16 ms) carte 356
+   108.760  t0034367 suivi ok score 1.00 pos -21640,330 net 6 (30 ms) carte 359
+   109.077  t0034685 suivi ok score 1.00 pos -21520,330 net 6 (16 ms) carte 362
+   109.414  t0035021 suivi ok score 0.99 pos -22333,346 net 5 (20 ms) carte 366
+   109.754  t0035360 suivi ok score 1.00 pos -22309,346 net 5 (26 ms) carte 369
+   109.773  photo floue (netteté 5 contre 16 de référence)
+   109.993  photo 645_0017 à -22309,346 (667 ko, 219 ms)
+   110.076  t0035682 suivi ok score 1.00 pos -22309,346 net 5 (23 ms) carte 373
+   110.420  t0036026 suivi ok score 1.00 pos -22309,346 net 5 (24 ms) carte 377
+   110.742  t0036350 suivi ok score 1.00 pos -22309,346 net 5 (20 ms) carte 380
+   111.079  t0036686 suivi ok score 1.00 pos -22309,346 net 5 (21 ms) carte 383
+   111.406  t0037013 suivi ok score 1.00 pos -22309,346 net 5 (16 ms) carte 387
+   111.741  t0037348 suivi ok score 0.90 pos -21568,330 net 4 (18 ms) carte 390
+   112.078  t0037685 suivi ok score 0.99 pos -21317,330 net 5 (19 ms) carte 393
+   112.419  t0038026 suivi ok score 0.94 pos -19745,304 net 4 (21 ms) carte 397
+   112.481  photo en mouvement lent (86 % du champ, 25 u/s)
+   112.481  ATTENTION pas trop grand (86 % du champ) : recouvrement insuffisant
+   112.481  photo floue (netteté 6 contre 16 de référence)
+   112.691  photo 645_0018 à -19683,298 (682 ko, 210 ms)
+   112.742  t0038350 suivi ok score 1.00 pos -19705,298 net 6 (20 ms) carte 401
+   113.106  t0038713 suivi ok score 1.00 pos -19705,298 net 6 (36 ms) carte 404
+   113.409  t0039017 suivi ok score 1.00 pos -19705,282 net 4 (20 ms) carte 408
+   113.750  t0039358 suivi ok score 1.00 pos -19705,298 net 6 (20 ms) carte 411
+   114.074  t0039681 suivi ok score 1.00 pos -19705,298 net 16 (14 ms) carte 414
+   114.415  t0040023 suivi ok score 1.00 pos -19705,298 net 16 (19 ms) carte 418
+   114.750  t0040357 suivi ok score 1.00 pos -19705,298 net 16 (23 ms) carte 421
+   115.091  t0040698 suivi ok score 1.00 pos -19705,298 net 16 (32 ms) carte 424
+   115.414  t0041021 suivi ok score 0.95 pos -19087,283 net 15 (21 ms) carte 428
+   115.741  t0041349 suivi ok score 1.00 pos -18987,282 net 19 (18 ms) carte 431
+   116.074  t0041682 suivi ok score 1.00 pos -18485,272 net 19 (17 ms) carte 434
+   116.419  t0042026 suivi ok score 1.00 pos -18689,284 net 20 (24 ms) carte 438
+   116.763  t0042370 suivi ok score 1.00 pos -18689,284 net 20 (30 ms) carte 441
+   116.869  photo 645_0019 à -18689,284 (754 ko, 223 ms)
+   117.075  t0042683 suivi ok score 1.00 pos -18689,284 net 19 (20 ms) carte 445
+   117.411  t0043018 suivi ok score 0.98 pos -19309,282 net 7 (20 ms) carte 449
+   117.744  t0043352 suivi ok score 1.00 pos -19740,298 net 16 (19 ms) carte 452
+   118.082  t0043690 suivi ok score 1.00 pos -19740,298 net 16 (23 ms) carte 455
+   118.239  photo 645_0020 à -19740,298 (707 ko, 231 ms)
+   118.420  t0044027 suivi ok score 0.90 pos -19776,298 net 7 (28 ms) carte 460
+   118.745  t0044353 suivi ok score 0.87 pos -21617,361 net 11 (17 ms) carte 463
+   118.772  photo en mouvement lent (62 % du champ, 30 u/s)
+   119.000  photo 645_0021 à -21629,361 (670 ko, 228 ms)
+   119.079  t0044686 suivi ok score 1.00 pos -21856,361 net 13 (20 ms) carte 467
+   119.411  t0045018 suivi ok score 1.00 pos -21856,361 net 13 (21 ms) carte 471
+   119.466  photo 645_0022 à -21856,361 (691 ko, 226 ms)
+   119.743  t0045350 suivi ok score 1.00 pos -21856,361 net 13 (17 ms) carte 475
+   120.077  t0045685 suivi ok score 0.89 pos -22943,361 net 9 (17 ms) carte 478
+   120.414  t0046021 suivi ok score 0.99 pos -22955,361 net 12 (20 ms) carte 482
+   120.698  photo 645_0023 à -22955,361 (690 ko, 213 ms)
+   120.740  t0046348 suivi ok score 1.00 pos -22955,361 net 12 (18 ms) carte 486
+   121.092  t0046699 suivi ok score 0.97 pos -22979,361 net 10 (27 ms) carte 489
+   121.399  t0047007 suivi ok score 0.97 pos -23625,361 net 10 (12 ms) carte 493
+   121.748  t0047355 suivi ok score 0.98 pos -23744,361 net 9 (23 ms) carte 496
+   122.082  t0047690 suivi ok score 0.99 pos -23947,361 net 10 (19 ms) carte 499
+   122.417  t0048023 suivi ok score 0.99 pos -24055,361 net 10 (21 ms) carte 503
+   122.752  t0048358 suivi ok score 0.97 pos -24246,361 net 8 (20 ms) carte 506
+   123.081  t0048688 suivi ok score 0.95 pos -24449,361 net 7 (22 ms) carte 509
+   123.185  photo en mouvement lent (52 % du champ, 0 u/s)
+   123.393  photo 645_0024 à -24533,361 (691 ko, 208 ms)
+   123.404  t0049012 suivi ok score 0.98 pos -24557,361 net 12 (14 ms) carte 514
+   123.759  t0049366 suivi ok score 1.00 pos -24653,361 net 12 (25 ms) carte 517
+   124.072  t0049679 suivi ok score 0.98 pos -24868,361 net 11 (12 ms) carte 520
+   124.425  t0050032 suivi ok score 1.00 pos -25083,361 net 11 (21 ms) carte 524
+   124.745  t0050353 suivi ok score 1.00 pos -25083,361 net 12 (16 ms) carte 527
+   124.994  photo 645_0025 à -25083,361 (687 ko, 211 ms)
+   125.074  t0050681 suivi ok score 1.00 pos -25083,361 net 12 (16 ms) carte 531
+   125.406  t0051013 suivi ok score 0.97 pos -25179,361 net 10 (16 ms) carte 535
+   125.748  t0051356 suivi ok score 0.98 pos -25298,361 net 11 (18 ms) carte 538
+   126.082  t0051689 suivi ok score 0.99 pos -25406,361 net 11 (18 ms) carte 541
+   126.420  t0052027 suivi ok score 0.98 pos -25406,361 net 11 (22 ms) carte 545
+   126.673  photo 645_0026 à -25406,361 (664 ko, 231 ms)
+   126.754  t0052361 suivi ok score 1.00 pos -25465,361 net 12 (24 ms) carte 549
+   127.078  t0052686 suivi ok score 1.00 pos -25465,361 net 12 (18 ms) carte 552
+   127.411  t0053018 suivi ok score 0.97 pos -25740,361 net 8 (17 ms) carte 556
+   127.745  t0053353 suivi ok score 0.99 pos -26075,361 net 11 (17 ms) carte 559
+   128.078  t0053685 suivi ok score 1.00 pos -26099,361 net 12 (17 ms) carte 562
+   128.338  photo 645_0027 à -26099,361 (688 ko, 230 ms)
+   128.414  t0054021 suivi ok score 1.00 pos -26099,361 net 12 (20 ms) carte 567
+   128.745  t0054352 suivi ok score 0.99 pos -26171,361 net 12 (15 ms) carte 570
+   129.087  t0054694 suivi ok score 1.00 pos -26171,361 net 12 (19 ms) carte 573
+   129.425  t0055032 suivi ok score 0.99 pos -26219,361 net 11 (25 ms) carte 577
+   129.748  t0055355 suivi ok score 0.97 pos -26278,361 net 11 (19 ms) carte 580
+   129.920  photo 645_0028 à -26254,361 (690 ko, 215 ms)
+   130.078  t0055685 suivi ok score 1.00 pos -26446,361 net 12 (16 ms) carte 584
+   130.409  t0056016 suivi ok score 1.00 pos -26470,361 net 13 (14 ms) carte 588
+   130.571  photo 645_0029 à -26470,361 (693 ko, 217 ms)
+   130.739  t0056347 suivi ok score 0.98 pos -26553,361 net 12 (16 ms) carte 592
+   131.085  t0056692 suivi ok score 1.00 pos -26601,361 net 13 (24 ms) carte 595
+   131.276  photo 645_0030 à -26601,361 (692 ko, 237 ms)
+   131.415  t0057022 suivi ok score 0.97 pos -26709,361 net 13 (20 ms) carte 600
+   131.767  t0057374 suivi ok score 0.98 pos -26744,361 net 12 (25 ms) carte 603
+   131.936  photo 645_0031 à -26721,361 (691 ko, 215 ms)
+   132.072  t0057679 suivi ok score 1.00 pos -26816,361 net 13 (13 ms) carte 607
+   132.415  t0058021 suivi ok score 1.00 pos -26816,361 net 12 (17 ms) carte 611
+   132.751  t0058357 suivi ok score 1.00 pos -26816,361 net 12 (19 ms) carte 614
+   133.102  t0058709 suivi ok score 1.00 pos -26816,361 net 12 (24 ms) carte 617
+   133.426  t0059032 suivi ok score 1.00 pos -26816,361 net 12 (21 ms) carte 621
+   133.753  t0059360 suivi ok score 0.99 pos -26816,361 net 11 (23 ms) carte 624
+   134.083  t0059690 suivi ok score 0.90 pos -26768,2035 net 11 (20 ms) carte 627
+   134.424  t0060030 suivi ok score 1.00 pos -26768,2035 net 11 (26 ms) carte 631
+   134.697  photo 645_0032 à -26768,2035 (723 ko, 206 ms)
+   134.753  t0060359 suivi ok score 1.00 pos -26768,2035 net 11 (23 ms) carte 635
+   135.094  t0060700 suivi ok score 0.97 pos -26768,2226 net 6 (27 ms) carte 638
+   135.436  t0061042 suivi ok score 1.00 pos -26768,2242 net 11 (30 ms) carte 642
+   135.700  photo 645_0033 à -26768,2242 (720 ko, 226 ms)
+   135.750  t0061357 suivi ok score 1.00 pos -26768,2242 net 11 (20 ms) carte 646
+   136.086  t0061693 suivi ok score 0.98 pos -26768,2353 net 10 (17 ms) carte 649
+   136.410  t0062017 suivi ok score 0.99 pos -26768,2497 net 8 (17 ms) carte 653
+   136.747  t0062355 suivi ok score 1.00 pos -26768,2720 net 11 (15 ms) carte 656
+   137.087  t0062693 suivi ok score 1.00 pos -26768,2720 net 11 (16 ms) carte 659
+   137.213  photo 645_0034 à -26768,2720 (725 ko, 240 ms)
+   137.433  t0063039 suivi ok score 1.00 pos -26768,2720 net 11 (30 ms) carte 664
+   137.747  t0063354 suivi ok score 1.00 pos -26768,2720 net 12 (16 ms) carte 667
+   138.078  t0063685 suivi ok score 1.00 pos -26768,2720 net 11 (16 ms) carte 670
+   138.415  t0064021 suivi ok score 1.00 pos -26768,2720 net 11 (15 ms) carte 674
+   138.757  t0064364 suivi ok score 1.00 pos -26768,2720 net 11 (21 ms) carte 677
+   139.086  t0064693 suivi ok score 1.00 pos -26768,2720 net 11 (16 ms) carte 680
+   139.429  t0065035 suivi ok score 1.00 pos -26744,2720 net 11 (25 ms) carte 684
+   139.759  t0065365 suivi ok score 0.98 pos -26697,2720 net 7 (26 ms) carte 687
+   140.084  t0065692 suivi ok score 1.00 pos -26637,2720 net 11 (19 ms) carte 690
+   140.375  photo 645_0035 à -26637,2720 (722 ko, 216 ms)
+   140.412  t0066018 suivi ok score 1.00 pos -26601,2720 net 11 (14 ms) carte 695
+   140.754  t0066360 suivi ok score 0.98 pos -26135,2720 net 9 (20 ms) carte 698
+   141.086  t0066693 suivi ok score 1.00 pos -25872,2720 net 10 (21 ms) carte 701
+   141.411  t0067018 suivi ok score 0.97 pos -25633,2720 net 8 (18 ms) carte 705
+   141.506  photo 645_0036 à -25860,2720 (697 ko, 200 ms)
+   141.747  t0067355 suivi ok score 1.00 pos -25621,2720 net 11 (17 ms) carte 709
+   142.043  photo 645_0037 à -25621,2720 (705 ko, 232 ms)
+   142.074  t0067682 suivi ok score 1.00 pos -25442,2720 net 11 (12 ms) carte 713
+   142.434  t0068041 suivi ok score 1.00 pos -25262,2720 net 11 (25 ms) carte 717
+   142.751  t0068358 suivi ok score 1.00 pos -25226,2720 net 11 (16 ms) carte 720
+   142.902  photo 645_0038 à -25226,2720 (710 ko, 207 ms)
+   143.081  t0068688 suivi ok score 1.00 pos -25214,2720 net 9 (16 ms) carte 724
+   143.412  t0069020 suivi ok score 1.00 pos -24999,2720 net 11 (14 ms) carte 728
+   143.748  t0069356 suivi ok score 1.00 pos -24868,2720 net 11 (16 ms) carte 731
+   144.091  t0069698 suivi ok score 0.99 pos -24617,2720 net 10 (25 ms) carte 734
+   144.435  t0070042 suivi ok score 1.00 pos -24617,2720 net 11 (23 ms) carte 738
+   144.535  photo 645_0039 à -24617,2720 (699 ko, 213 ms)
+   144.745  t0070353 suivi ok score 0.92 pos -24951,2720 net 4 (18 ms) carte 742
+   145.092  t0070699 suivi ok score 1.00 pos -25119,2720 net 10 (24 ms) carte 745
+   145.394  photo 645_0040 à -25119,2720 (679 ko, 204 ms)
+   145.413  t0071020 suivi ok score 0.94 pos -24605,2720 net 5 (18 ms) carte 750
+   145.753  t0071360 suivi ok score 1.00 pos -24545,2720 net 10 (21 ms) carte 753
+   146.066  photo 645_0041 à -24545,2720 (689 ko, 211 ms)
+   146.083  t0071690 suivi ok score 1.00 pos -24545,2720 net 10 (19 ms) carte 757
+   146.420  t0072027 suivi ok score 1.00 pos -24545,2720 net 10 (19 ms) carte 761
+   146.764  t0072371 suivi ok score 1.00 pos -24545,2720 net 10 (24 ms) carte 764
+   147.078  t0072685 suivi ok score 1.00 pos -24545,2720 net 8 (13 ms) carte 767
+   147.427  t0073033 suivi ok score 1.00 pos -24545,2720 net 10 (22 ms) carte 771
+   147.749  t0073357 suivi ok score 1.00 pos -24545,2720 net 7 (15 ms) carte 774
+   148.095  t0073702 suivi ok score 1.00 pos -24545,2720 net 7 (26 ms) carte 777
+   148.421  t0074029 suivi ok score 1.00 pos -24545,2720 net 11 (17 ms) carte 781
+   148.761  t0074368 suivi ok score 1.00 pos -24545,2720 net 11 (25 ms) carte 784
+   149.083  t0074691 suivi ok score 1.00 pos -24545,2720 net 11 (16 ms) carte 787
+   149.420  t0075026 suivi ok score 0.96 pos -23302,2688 net 11 (17 ms) carte 791
+   149.761  t0075367 suivi ok score 1.00 pos -23314,2688 net 11 (24 ms) carte 794
+   150.010  photo 645_0042 à -23314,2688 (697 ko, 228 ms)
+   150.092  t0075699 suivi ok score 1.00 pos -23314,2688 net 11 (23 ms) carte 798
+   150.418  t0076025 suivi ok score 0.99 pos -23314,2688 net 10 (16 ms) carte 802
+   150.747  t0076354 suivi ok score 1.00 pos -23314,2688 net 10 (15 ms) carte 805
+   151.095  t0076703 suivi ok score 1.00 pos -23314,2688 net 11 (25 ms) carte 808
+   151.423  t0077029 suivi ok score 1.00 pos -23314,2688 net 11 (22 ms) carte 812
+   151.758  t0077365 suivi ok score 0.97 pos -23302,2688 net 9 (18 ms) carte 815
+   152.082  t0077689 suivi ok score 1.00 pos -23087,2688 net 11 (16 ms) carte 818
+   152.409  t0078016 suivi ok score 1.00 pos -23087,2688 net 11 (15 ms) carte 822
+   152.512  photo 645_0043 à -23087,2688 (695 ko, 231 ms)
+   152.753  t0078361 suivi ok score 0.98 pos -22955,2688 net 11 (17 ms) carte 826
+   153.084  t0078691 suivi ok score 0.98 pos -22716,2688 net 8 (17 ms) carte 829
+   153.417  t0079024 suivi ok score 0.99 pos -22154,2688 net 11 (18 ms) carte 833
+   153.753  t0079360 suivi ok score 1.00 pos -22154,2688 net 11 (17 ms) carte 836
+   153.939  photo 645_0044 à -22154,2688 (694 ko, 211 ms)
+   154.082  t0079689 suivi ok score 0.97 pos -22143,2688 net 8 (17 ms) carte 840
+   154.425  t0080031 suivi ok score 1.00 pos -22023,2688 net 11 (22 ms) carte 844
+   154.760  t0080367 suivi ok score 0.98 pos -21880,2688 net 10 (23 ms) carte 847
+   155.086  t0080693 suivi ok score 1.00 pos -21880,2688 net 11 (17 ms) carte 850
+   155.337  photo 645_0045 à -21880,2688 (693 ko, 212 ms)
+   155.418  t0081025 suivi ok score 0.99 pos -21832,2688 net 11 (23 ms) carte 855
+   155.758  t0081365 suivi ok score 1.00 pos -21808,2688 net 11 (21 ms) carte 858
+   156.081  t0081689 suivi ok score 1.00 pos -21760,2688 net 11 (15 ms) carte 861
+   156.440  t0082047 suivi ok score 0.95 pos -21354,2688 net 6 (28 ms) carte 865
+   156.761  t0082368 suivi ok score 0.98 pos -21091,2688 net 9 (25 ms) carte 868
+   157.103  t0082710 suivi ok score 0.95 pos -20792,2688 net 10 (27 ms) carte 871
+   157.422  t0083028 suivi ok score 0.98 pos -20577,2688 net 8 (18 ms) carte 875
+   157.756  t0083363 suivi ok score 1.00 pos -20481,2688 net 11 (16 ms) carte 878
+   158.084  t0083692 suivi ok score 1.00 pos -20481,2688 net 12 (18 ms) carte 881
+   158.268  photo 645_0046 à -20481,2688 (690 ko, 217 ms)
+   158.410  t0084017 suivi ok score 0.93 pos -20254,2688 net 11 (12 ms) carte 886
+   158.750  t0084357 suivi ok score 1.00 pos -20230,2688 net 12 (18 ms) carte 889
+   159.001  photo 645_0047 à -20230,2688 (688 ko, 187 ms)
+   159.095  t0084702 suivi ok score 1.00 pos -20230,2688 net 12 (25 ms) carte 893
+   159.419  t0085026 suivi ok score 0.99 pos -20230,2688 net 12 (17 ms) carte 897
+   159.757  t0085364 suivi ok score 0.96 pos -19752,2688 net 10 (17 ms) carte 900
+   160.090  t0085697 suivi ok score 1.00 pos -19632,2688 net 10 (14 ms) carte 903
+   160.427  t0086034 suivi ok score 1.00 pos -19632,2688 net 10 (23 ms) carte 907
+   160.481  photo 645_0048 à -19632,2688 (681 ko, 223 ms)
+   160.750  t0086357 suivi ok score 0.98 pos -19537,2688 net 8 (18 ms) carte 911
+   161.090  t0086697 suivi ok score 1.00 pos -19429,2688 net 10 (19 ms) carte 914
+   161.429  t0087036 suivi ok score 0.99 pos -19357,2688 net 10 (25 ms) carte 918
+   161.448  photo 645_0049 à -19429,2688 (678 ko, 221 ms)
+   161.759  t0087366 suivi ok score 1.00 pos -19250,2688 net 10 (21 ms) carte 922
+   162.087  t0087695 suivi ok score 1.00 pos -19298,2688 net 11 (18 ms) carte 925
+   162.429  t0088035 suivi ok score 1.00 pos -19298,2688 net 11 (20 ms) carte 929
+   162.545  photo 645_0050 à -19298,2688 (684 ko, 211 ms)
+   162.754  t0088361 suivi ok score 1.00 pos -19298,2688 net 11 (18 ms) carte 933
+   163.097  t0088704 suivi ok score 1.00 pos -19298,2688 net 11 (24 ms) carte 936
+   163.417  t0089024 suivi ok score 1.00 pos -19298,2688 net 11 (16 ms) carte 940
+   163.753  t0089361 suivi ok score 1.00 pos -19298,2688 net 8 (17 ms) carte 943
+   164.088  t0089695 suivi ok score 1.00 pos -19298,2688 net 9 (16 ms) carte 946
+   164.426  t0090033 suivi ok score 1.00 pos -19298,2688 net 13 (21 ms) carte 950
+   164.754  t0090362 suivi ok score 1.00 pos -19298,2688 net 13 (16 ms) carte 953
+   165.097  t0090704 suivi ok score 1.00 pos -19298,2688 net 13 (23 ms) carte 956
+   165.424  t0091030 suivi ok score 1.00 pos -19298,2688 net 12 (20 ms) carte 960
+   165.764  t0091371 suivi ok score 0.98 pos -19250,2688 net 9 (23 ms) carte 963
+   166.094  t0091701 suivi ok score 0.99 pos -18939,2688 net 13 (19 ms) carte 966
+   166.423  t0092030 suivi ok score 1.00 pos -18939,2688 net 13 (14 ms) carte 970
+   166.577  photo 645_0051 à -18939,2688 (683 ko, 217 ms)
+   166.774  t0092381 suivi ok score 1.00 pos -18939,2688 net 13 (24 ms) carte 974
+   167.084  t0092691 suivi ok score 0.98 pos -18879,2688 net 11 (15 ms) carte 977
+   167.424  t0093031 suivi ok score 0.99 pos -18580,2688 net 8 (16 ms) carte 981
+   167.749  t0093356 suivi ok score 1.00 pos -18485,2688 net 12 (12 ms) carte 984
+   168.082  t0093689 suivi ok score 1.00 pos -18485,2688 net 12 (16 ms) carte 987
+   168.105  photo 645_0052 à -18485,2688 (680 ko, 219 ms)
+   168.419  t0094027 suivi ok score 1.00 pos -18485,2688 net 8 (17 ms) carte 992
+   168.767  t0094374 suivi ok score 1.00 pos -18090,2688 net 8 (22 ms) carte 995
+   169.078  t0094686 suivi ok score 1.00 pos -18090,2688 net 12 (11 ms) carte 998
+   169.287  photo 645_0053 à -18090,2688 (680 ko, 237 ms)
+   169.418  t0095025 suivi ok score 0.95 pos -18019,2688 net 8 (15 ms) carte 1003
+   169.769  t0095376 suivi ok score 0.99 pos -17768,2688 net 12 (25 ms) carte 1006
+   170.089  t0095697 suivi ok score 0.95 pos -17421,2688 net 6 (16 ms) carte 1009
+   170.442  t0096048 suivi ok score 1.00 pos -17158,2688 net 12 (30 ms) carte 1013
+   170.748  t0096356 suivi ok score 0.96 pos -16859,2688 net 10 (10 ms) carte 1016
+   171.105  t0096712 suivi ok score 0.99 pos -16799,2688 net 12 (24 ms) carte 1019
+   171.385  photo en mouvement lent (61 % du champ, 30 u/s)
+   171.422  t0097028 suivi ok score 0.99 pos -16226,2688 net 10 (15 ms) carte 1023
+   171.617  photo 645_0054 à -16238,2688 (679 ko, 231 ms)
+   171.766  t0097373 suivi ok score 1.00 pos -15987,2688 net 12 (22 ms) carte 1027
+   172.100  t0097706 suivi ok score 0.99 pos -15963,2688 net 12 (23 ms) carte 1030
+   172.149  photo 645_0055 à -15987,2688 (685 ko, 216 ms)
+   172.446  t0098052 suivi ok score 0.99 pos -15891,2688 net 11 (28 ms) carte 1035
+   172.764  t0098371 suivi ok score 1.00 pos -15783,2688 net 12 (19 ms) carte 1038
+   173.082  t0098690 suivi ok score 1.00 pos -15771,2688 net 12 (12 ms) carte 1041
+   173.183  photo 645_0056 à -15783,2688 (690 ko, 235 ms)
+   173.427  t0099034 suivi ok score 0.98 pos -15413,2688 net 8 (20 ms) carte 1046
+   173.765  t0099372 suivi ok score 1.00 pos -14755,2688 net 10 (25 ms) carte 1049
+   174.089  t0099697 suivi ok score 0.98 pos -14744,2688 net 9 (17 ms) carte 1052
+   174.214  photo 645_0057 à -14755,2688 (683 ko, 215 ms)
+   174.432  t0100038 suivi ok score 0.99 pos -14576,2688 net 9 (23 ms) carte 1057
+   174.763  t0100371 suivi ok score 0.99 pos -14457,2688 net 9 (20 ms) carte 1060
+   175.095  t0100702 suivi ok score 0.98 pos -14265,2688 net 9 (21 ms) carte 1063
+   175.422  t0101030 suivi ok score 1.00 pos -14158,2688 net 9 (14 ms) carte 1067
+   175.746  t0101354 suivi ok score 1.00 pos -14158,2688 net 9 (11 ms) carte 1070
+   175.880  photo 645_0058 à -14158,2688 (671 ko, 237 ms)
+   176.076  t0101684 suivi ok score 1.00 pos -14158,2688 net 9 (12 ms) carte 1074
+   176.435  t0102042 suivi ok score 1.00 pos -14098,2688 net 9 (24 ms) carte 1078
+   176.763  t0102371 suivi ok score 0.89 pos -13656,2688 net 7 (19 ms) carte 1081
+   177.085  t0102692 suivi ok score 1.00 pos -13644,2688 net 8 (13 ms) carte 1084
+   177.151  photo floue (netteté 8 contre 17 de référence)
+   177.380  photo 645_0059 à -13644,2688 (665 ko, 229 ms)
+   177.412  t0103019 suivi ok score 1.00 pos -13644,2688 net 8 (11 ms) carte 1089
+   177.753  t0103360 suivi ok score 1.00 pos -13632,2688 net 8 (13 ms) carte 1092
+   178.095  t0103702 suivi ok score 0.99 pos -13512,2688 net 8 (18 ms) carte 1095
+   178.433  t0104039 suivi ok score 1.00 pos -13393,2688 net 9 (20 ms) carte 1099
+   178.764  t0104371 suivi ok score 0.99 pos -13357,2688 net 8 (22 ms) carte 1102
+   178.916  photo 645_0060 à -13369,2688 (667 ko, 215 ms)
+   179.099  t0104706 suivi ok score 1.00 pos -13046,2688 net 9 (25 ms) carte 1106
+   179.423  t0105030 suivi ok score 1.00 pos -13046,2688 net 9 (17 ms) carte 1110
+   179.643  photo 645_0061 à -13046,2688 (666 ko, 219 ms)
+   179.764  t0105371 suivi ok score 1.00 pos -13046,2688 net 9 (22 ms) carte 1114
+   180.086  t0105694 suivi ok score 1.00 pos -13046,2688 net 9 (13 ms) carte 1117
+   180.422  t0106029 suivi ok score 0.99 pos -12939,2688 net 9 (14 ms) carte 1121
+   180.748  t0106357 suivi ok score 0.99 pos -12831,2688 net 8 (11 ms) carte 1124
+   180.839  photo 645_0062 à -12903,2688 (668 ko, 207 ms)
+   181.095  t0106702 suivi ok score 1.00 pos -12783,2688 net 9 (25 ms) carte 1128
+   181.209  photo floue (netteté 8 contre 17 de référence)
+   181.431  t0107038 suivi ok score 1.00 pos -12759,2688 net 9 (19 ms) carte 1132
+   181.455  photo 645_0063 à -12759,2688 (671 ko, 246 ms)
+   181.759  t0107366 suivi ok score 0.99 pos -12042,2688 net 8 (14 ms) carte 1136
+   182.085  t0107693 suivi ok score 1.00 pos -12042,2688 net 9 (14 ms) carte 1139
+   182.347  photo 645_0064 à -12042,2688 (681 ko, 214 ms)
+   182.427  t0108034 suivi ok score 0.99 pos -11815,2688 net 7 (17 ms) carte 1144
+   182.750  t0108358 suivi ok score 1.00 pos -11552,2688 net 8 (13 ms) carte 1147
+   182.989  photo floue (netteté 8 contre 17 de référence)
+   183.092  t0108700 suivi ok score 1.00 pos -11552,2688 net 9 (17 ms) carte 1150
+   183.223  photo 645_0065 à -11552,2688 (686 ko, 233 ms)
+   183.435  t0109042 suivi ok score 1.00 pos -11552,2688 net 8 (21 ms) carte 1155
+   183.762  t0109369 suivi ok score 0.99 pos -11385,2688 net 8 (16 ms) carte 1158
+   184.095  t0109702 suivi ok score 1.00 pos -11337,2688 net 9 (18 ms) carte 1161
+   184.168  photo floue (netteté 8 contre 17 de référence)
+   184.388  photo 645_0066 à -11313,2688 (677 ko, 220 ms)
+   184.417  t0110024 suivi ok score 0.99 pos -10871,2688 net 6 (13 ms) carte 1166
+   184.768  t0110374 suivi ok score 1.00 pos -10811,2688 net 9 (20 ms) carte 1169
+   185.086  photo 645_0067 à -10811,2688 (683 ko, 224 ms)
+   185.096  t0110703 suivi ok score 0.99 pos -10668,2688 net 8 (21 ms) carte 1173
+   185.429  t0111036 suivi ok score 1.00 pos -10596,2688 net 9 (18 ms) carte 1177
+   185.763  t0111370 suivi ok score 0.99 pos -10309,2688 net 8 (18 ms) carte 1180
+   186.095  t0111701 suivi ok score 1.00 pos -9962,2688 net 10 (18 ms) carte 1183
+   186.428  t0112035 suivi ok score 1.00 pos -10058,2688 net 9 (17 ms) carte 1187
+   186.758  t0112365 suivi ok score 1.00 pos -10058,2688 net 9 (15 ms) carte 1190
+   186.917  photo 645_0068 à -10058,2688 (683 ko, 232 ms)
+   187.099  t0112705 suivi ok score 1.00 pos -10058,2688 net 9 (25 ms) carte 1194
+   187.428  t0113035 suivi ok score 1.00 pos -10177,2688 net 8 (20 ms) carte 1198
+   187.605  photo floue (netteté 8 contre 17 de référence)
+   187.753  t0113361 suivi ok score 1.00 pos -10177,2688 net 8 (14 ms) carte 1201
+   187.816  photo 645_0069 à -10177,2688 (679 ko, 211 ms)
+   188.089  t0113696 suivi ok score 0.94 pos -8241,2656 net 6 (17 ms) carte 1205
+   188.155  photo en mouvement lent (64 % du champ, 30 u/s)
+   188.156  photo floue (netteté 7 contre 17 de référence)
+   188.382  photo 645_0070 à -8229,2656 (659 ko, 226 ms)
+   188.422  t0114030 suivi ok score 1.00 pos -8265,2656 net 9 (21 ms) carte 1210
+   188.761  t0114369 suivi ok score 1.00 pos -8265,2656 net 9 (19 ms) carte 1213
+   189.109  t0114716 suivi ok score 1.00 pos -8265,2656 net 9 (25 ms) carte 1216
+   189.436  t0115043 suivi ok score 1.00 pos -8265,2656 net 9 (25 ms) carte 1220
+   189.768  t0115375 suivi ok score 1.00 pos -8265,2656 net 7 (24 ms) carte 1223
+   190.106  t0115712 suivi ok score 1.00 pos -8265,2656 net 12 (24 ms) carte 1226
+   190.424  t0116031 suivi ok score 1.00 pos -8265,2656 net 12 (14 ms) carte 1230
+   190.779  t0116386 suivi ok score 1.00 pos -8265,2656 net 12 (29 ms) carte 1233
+   191.094  t0116702 suivi ok score 1.00 pos -8265,2656 net 11 (18 ms) carte 1236
+   191.450  t0117057 suivi ok score 0.99 pos -8265,2656 net 10 (29 ms) carte 1240
+   191.755  t0117362 suivi ok score 1.00 pos -7799,2656 net 10 (14 ms) carte 1243
+   192.093  t0117701 suivi ok score 1.00 pos -7859,2656 net 10 (13 ms) carte 1246
+   192.425  t0118032 suivi ok score 1.00 pos -7859,2656 net 10 (15 ms) carte 1250
+   192.509  photo 645_0071 à -7859,2656 (659 ko, 216 ms)
+   192.763  t0118370 suivi ok score 0.96 pos -8253,2656 net 6 (15 ms) carte 1254
+   193.097  t0118704 suivi ok score 0.99 pos -8492,2656 net 10 (17 ms) carte 1257
+   193.431  t0119038 suivi ok score 1.00 pos -8731,2656 net 9 (21 ms) carte 1261
+   193.774  t0119381 suivi ok score 0.99 pos -9209,2656 net 9 (25 ms) carte 1264
+   194.090  t0119697 suivi ok score 0.95 pos -10261,2672 net 5 (16 ms) carte 1267
+   194.197  photo en mouvement lent (82 % du champ, 0 u/s)
+   194.197  ATTENTION pas trop grand (82 % du champ) : recouvrement insuffisant
+   194.406  photo 645_0072 à -10369,2672 (682 ko, 208 ms)
+   194.419  t0120027 suivi ok score 1.00 pos -10488,2672 net 8 (14 ms) carte 1272
+   194.764  t0120371 suivi ok score 0.98 pos -10775,2672 net 5 (17 ms) carte 1275
+   195.094  t0120702 suivi ok score 1.00 pos -10930,2672 net 9 (17 ms) carte 1278
+   195.432  t0121039 suivi ok score 1.00 pos -10930,2672 net 8 (20 ms) carte 1282
+   195.490  photo 645_0073 à -10930,2672 (684 ko, 219 ms)
+   195.762  t0121370 suivi ok score 0.98 pos -11217,2672 net 5 (17 ms) carte 1286
+   196.100  t0121707 suivi ok score 1.00 pos -11337,2672 net 9 (21 ms) carte 1289
+   196.429  t0122036 suivi ok score 1.00 pos -11468,2672 net 9 (15 ms) carte 1293
+   196.759  t0122367 suivi ok score 0.96 pos -11827,2672 net 8 (15 ms) carte 1296
+   197.102  t0122709 suivi ok score 0.96 pos -12556,2672 net 6 (22 ms) carte 1299
+   197.197  photo en mouvement lent (56 % du champ, 0 u/s)
+   197.408  photo 645_0074 à -12640,2672 (667 ko, 210 ms)
+   197.419  t0123027 suivi ok score 0.99 pos -12640,2672 net 9 (11 ms) carte 1304
+   197.759  t0123366 suivi ok score 0.96 pos -12879,2672 net 7 (15 ms) carte 1307
+   198.104  t0123711 suivi ok score 0.97 pos -13237,2672 net 6 (22 ms) carte 1310
+   198.434  t0124040 suivi ok score 1.00 pos -13488,2672 net 9 (16 ms) carte 1314
+   198.768  t0124375 suivi ok score 1.00 pos -13883,2672 net 8 (19 ms) carte 1317
+   199.095  t0124702 suivi ok score 1.00 pos -13907,2672 net 9 (17 ms) carte 1320
+   199.285  photo 645_0075 à -13907,2672 (661 ko, 226 ms)
+   199.423  t0125030 suivi ok score 1.00 pos -13907,2672 net 8 (14 ms) carte 1325
+   199.757  t0125365 suivi ok score 1.00 pos -13895,2672 net 8 (13 ms) carte 1328
+   200.100  t0125707 suivi ok score 1.00 pos -13883,2672 net 8 (20 ms) carte 1331
+   200.434  t0126040 suivi ok score 0.98 pos -13787,2672 net 8 (17 ms) carte 1335
+   200.764  t0126371 suivi ok score 1.00 pos -13728,2672 net 9 (16 ms) carte 1338
+   201.090  t0126698 suivi ok score 0.96 pos -13584,2672 net 7 (17 ms) carte 1341
+   201.116  photo 645_0076 à -13716,2672 (660 ko, 234 ms)
+   201.424  t0127032 suivi ok score 0.93 pos -13010,2672 net 6 (17 ms) carte 1346
+   201.755  t0127363 suivi ok score 1.00 pos -12413,2672 net 10 (12 ms) carte 1349
+   202.107  t0127714 suivi ok score 1.00 pos -12293,2672 net 9 (25 ms) carte 1352
+   202.330  photo en mouvement lent (56 % du champ, 31 u/s)
+   202.444  t0128051 suivi ok score 1.00 pos -12006,2672 net 9 (23 ms) carte 1356
+   202.548  photo 645_0077 à -12006,2672 (682 ko, 217 ms)
+   202.752  t0128360 suivi ok score 0.99 pos -11982,2672 net 9 (12 ms) carte 1360
+   203.098  t0128705 suivi ok score 0.95 pos -10177,2640 net 5 (22 ms) carte 1363
+   203.191  photo en mouvement lent (67 % du champ, 30 u/s)
+   203.415  photo 645_0078 à -9950,2640 (680 ko, 224 ms)
+   203.424  t0129031 suivi ok score 1.00 pos -9998,2640 net 9 (15 ms) carte 1368
+   203.755  t0129363 suivi ok score 0.99 pos -10237,2640 net 9 (11 ms) carte 1371
+   204.107  t0129713 suivi ok score 1.00 pos -10273,2640 net 10 (22 ms) carte 1374
+   204.438  t0130045 suivi ok score 0.94 pos -9520,2640 net 7 (20 ms) carte 1378
+   204.781  t0130388 suivi ok score 0.99 pos -9281,2640 net 9 (26 ms) carte 1381
+   205.102  t0130710 suivi ok score 0.98 pos -9197,2640 net 7 (17 ms) carte 1384
+   205.437  t0131044 suivi ok score 0.98 pos -8552,2640 net 6 (18 ms) carte 1388
+   205.628  photo en mouvement lent (60 % du champ, 30 u/s)
+   205.759  t0131366 suivi ok score 0.99 pos -8086,2640 net 9 (12 ms) carte 1391
+   205.862  photo 645_0079 à -8121,2640 (658 ko, 233 ms)
+   206.102  t0131710 suivi ok score 0.99 pos -7536,2640 net 10 (21 ms) carte 1395
+   206.424  t0132032 suivi ok score 0.97 pos -7070,2640 net 8 (14 ms) carte 1399
+   206.765  t0132373 suivi ok score 0.99 pos -6807,2640 net 8 (17 ms) carte 1402
+   207.098  t0132706 suivi ok score 1.00 pos -6723,2640 net 9 (17 ms) carte 1405
+   207.439  t0133046 suivi ok score 0.99 pos -6532,2640 net 7 (23 ms) carte 1409
+   207.459  photo 645_0080 à -6723,2640 (651 ko, 226 ms)
+   207.769  t0133376 suivi ok score 0.99 pos -6305,2640 net 8 (21 ms) carte 1413
+   208.099  t0133707 suivi ok score 0.98 pos -5647,2640 net 6 (19 ms) carte 1416
+   208.440  t0134047 suivi ok score 1.00 pos -5372,2640 net 7 (26 ms) carte 1420
+   208.770  t0134377 suivi ok score 0.99 pos -5301,2640 net 7 (20 ms) carte 1423
+   209.033  photo en mouvement lent (63 % du champ, 0 u/s)
+   209.034  photo floue (netteté 8 contre 17 de référence)
+   209.092  t0134701 suivi ok score 0.99 pos -4799,2640 net 8 (12 ms) carte 1426
+   209.256  photo 645_0081 à -4799,2640 (654 ko, 222 ms)
+   209.428  t0135036 suivi ok score 1.00 pos -4799,2640 net 8 (18 ms) carte 1431
+   209.764  t0135373 suivi ok score 0.96 pos -4440,2640 net 4 (19 ms) carte 1434
+   210.095  t0135702 suivi ok score 0.93 pos -3567,2640 net 6 (14 ms) carte 1437
+   210.433  t0136040 suivi ok score 1.00 pos -3555,2640 net 7 (16 ms) carte 1441
+   210.495  photo floue (netteté 7 contre 17 de référence)
+   210.722  photo 645_0082 à -3555,2640 (654 ko, 226 ms)
+   210.759  t0136367 suivi ok score 1.00 pos -3567,2640 net 7 (15 ms) carte 1445
+   211.110  t0136717 suivi ok score 1.00 pos -3567,2640 net 7 (23 ms) carte 1448
+   211.432  t0137039 suivi ok score 1.00 pos -3280,2640 net 7 (17 ms) carte 1452
+   211.701  photo floue (netteté 7 contre 17 de référence)
+   211.774  t0137381 suivi ok score 1.00 pos -3280,2640 net 7 (16 ms) carte 1455
+   211.918  photo 645_0083 à -3280,2640 (650 ko, 216 ms)
+   212.110  t0137717 suivi ok score 1.00 pos -3280,2640 net 7 (18 ms) carte 1459
+   212.429  t0138037 suivi ok score 0.99 pos -3269,2640 net 7 (15 ms) carte 1463
+   212.759  t0138367 suivi ok score 1.00 pos -3221,2640 net 7 (14 ms) carte 1466
+   213.103  t0138711 suivi ok score 1.00 pos -3209,2640 net 7 (17 ms) carte 1469
+   213.433  t0139040 suivi ok score 1.00 pos -3209,2640 net 6 (18 ms) carte 1473
+   213.765  t0139373 suivi ok score 1.00 pos -3209,2640 net 6 (16 ms) carte 1476
+   214.096  t0139703 suivi ok score 1.00 pos -3209,2640 net 9 (14 ms) carte 1479
+   214.441  t0140048 suivi ok score 1.00 pos -3209,2640 net 8 (23 ms) carte 1483
+   214.763  t0140370 suivi ok score 0.90 pos -3053,2640 net 5 (15 ms) carte 1486
+   215.095  t0140703 suivi ok score 0.98 pos -2922,2640 net 8 (13 ms) carte 1489
+   215.444  t0141051 suivi ok score 1.00 pos -2790,2640 net 8 (22 ms) carte 1493
+   215.772  t0141379 suivi ok score 1.00 pos -2790,2640 net 9 (18 ms) carte 1496
+   215.848  photo 645_0084 à -2790,2640 (661 ko, 234 ms)
+   216.105  t0141712 suivi ok score 1.00 pos -2790,2640 net 9 (23 ms) carte 1500
+   216.446  t0142053 suivi ok score 0.97 pos -2432,2640 net 8 (25 ms) carte 1500
+   216.773  t0142380 suivi ok score 1.00 pos -2420,2640 net 8 (18 ms) carte 1500
+   216.832  photo floue (netteté 8 contre 17 de référence)
+   217.047  photo 645_0085 à -2420,2640 (661 ko, 215 ms)
+   217.106  t0142713 suivi ok score 1.00 pos -2384,2640 net 8 (22 ms) carte 1501
+   217.442  t0143048 suivi ok score 0.98 pos -1930,2640 net 7 (22 ms) carte 1501
+   217.768  t0143375 suivi ok score 0.99 pos -1583,2640 net 7 (13 ms) carte 1501
+   218.100  t0143708 suivi ok score 1.00 pos -1511,2640 net 8 (16 ms) carte 1501
+   218.170  photo floue (netteté 8 contre 17 de référence)
+   218.394  photo 645_0086 à -1499,2640 (656 ko, 223 ms)
+   218.433  t0144041 suivi ok score 0.98 pos -1356,2640 net 8 (22 ms) carte 1502
+   218.776  t0144383 suivi ok score 0.99 pos -1069,2640 net 8 (25 ms) carte 1502
+   219.100  t0144707 suivi ok score 1.00 pos -1009,2640 net 9 (17 ms) carte 1502
+   219.433  t0145040 suivi ok score 1.00 pos -1009,2640 net 9 (22 ms) carte 1502
+   219.494  photo 645_0087 à -1009,2640 (659 ko, 227 ms)
+   219.771  t0145378 suivi ok score 1.00 pos -1009,2640 net 9 (23 ms) carte 1503
+   220.104  t0145712 suivi ok score 1.00 pos -1009,2640 net 9 (20 ms) carte 1503
+   220.429  t0146037 suivi ok score 1.00 pos -1009,2640 net 9 (14 ms) carte 1503
+   220.770  t0146378 suivi ok score 1.00 pos -1009,2640 net 9 (18 ms) carte 1503
+   221.098  t0146705 suivi ok score 1.00 pos -1009,2640 net 9 (14 ms) carte 1503
+   221.432  t0147040 suivi ok score 1.00 pos -1009,2640 net 9 (15 ms) carte 1503
+   221.772  t0147379 suivi ok score 1.00 pos -1009,2640 net 9 (20 ms) carte 1503
+   222.104  t0147711 suivi ok score 1.00 pos -1009,2640 net 9 (20 ms) carte 1503
+   222.443  t0148050 suivi ok score 1.00 pos -1009,2640 net 9 (20 ms) carte 1503
+   222.769  t0148376 suivi ok score 1.00 pos -1009,2640 net 9 (15 ms) carte 1503
+   223.102  t0148709 suivi ok score 1.00 pos -1009,2640 net 9 (19 ms) carte 1503
+   223.438  t0149045 suivi ok score 1.00 pos -1009,2640 net 9 (18 ms) carte 1503
+   223.765  t0149373 suivi ok score 1.00 pos -1009,2640 net 9 (16 ms) carte 1503
+   224.128  t0149734 suivi ok score 1.00 pos -1009,2640 net 9 (27 ms) carte 1503
+   224.445  t0150053 suivi ok score 1.00 pos -1009,2640 net 9 (18 ms) carte 1503
+   224.779  t0150386 suivi ok score 0.89 pos -1009,2672 net 4 (25 ms) carte 1503
+   225.101  t0150708 suivi ok score 1.00 pos -985,3310 net 9 (17 ms) carte 1503
+   225.436  t0151043 suivi ok score 0.96 pos -985,3549 net 5 (17 ms) carte 1503
+   225.782  t0151389 suivi ok score 0.95 pos -962,4282 net 5 (23 ms) carte 1503
+   226.104  t0151712 suivi ok score 0.98 pos -962,4776 net 7 (20 ms) carte 1503
+   226.104  photo en mouvement lent (52 % du champ, 31 u/s)
+   226.105  photo floue (netteté 7 contre 17 de référence)
+   226.316  photo 645_0088 à -962,4776 (649 ko, 211 ms)
+   226.443  t0152050 suivi ok score 0.98 pos -962,4903 net 7 (17 ms) carte 1504
+   226.778  t0152385 suivi ok score 1.00 pos -962,4983 net 7 (25 ms) carte 1504
+   226.900  photo floue (netteté 7 contre 17 de référence)
+   227.096  t0152704 suivi ok score 1.00 pos -962,4983 net 7 (16 ms) carte 1504
+   227.116  photo 645_0089 à -962,4983 (655 ko, 215 ms)
+   227.426  t0153034 suivi ok score 1.00 pos -962,4983 net 7 (12 ms) carte 1505
+   227.772  t0153380 suivi ok score 0.94 pos -1057,4983 net 5 (15 ms) carte 1505
+   228.107  t0153714 suivi ok score 0.99 pos -1332,4983 net 7 (18 ms) carte 1505
+   228.439  t0154047 suivi ok score 1.00 pos -1607,4983 net 8 (19 ms) carte 1505
+   228.629  photo floue (netteté 8 contre 17 de référence)
+   228.770  t0154378 suivi ok score 1.00 pos -1607,4983 net 8 (16 ms) carte 1505
+   228.843  photo 645_0090 à -1607,4983 (660 ko, 213 ms)
+   229.104  t0154711 suivi ok score 0.98 pos -1643,4983 net 7 (18 ms) carte 1506
+   229.439  t0155045 suivi ok score 1.00 pos -2253,4983 net 8 (17 ms) carte 1506
+   229.778  t0155386 suivi ok score 0.98 pos -2288,4983 net 8 (22 ms) carte 1506
+   230.114  t0155721 suivi ok score 0.93 pos -2563,4983 net 4 (22 ms) carte 1506
+   230.442  t0156049 suivi ok score 1.00 pos -2778,4983 net 9 (18 ms) carte 1506
+   230.767  t0156375 suivi ok score 1.00 pos -2838,4983 net 9 (16 ms) carte 1506
+   231.035  photo en mouvement lent (50 % du champ, 30 u/s)
+   231.036  photo floue (netteté 8 contre 17 de référence)
+   231.109  t0156717 suivi ok score 0.99 pos -3209,4983 net 8 (14 ms) carte 1506
+   231.265  photo 645_0091 à -3137,4983 (660 ko, 229 ms)
+   231.435  t0157043 suivi ok score 0.95 pos -3555,4983 net 6 (18 ms) carte 1507
+   231.770  t0157378 suivi ok score 0.98 pos -3759,4983 net 6 (17 ms) carte 1507
+   232.104  t0157712 suivi ok score 0.96 pos -4081,4983 net 5 (19 ms) carte 1507
+   232.441  t0158048 suivi ok score 0.96 pos -4524,4983 net 5 (16 ms) carte 1507
+   232.598  photo en mouvement lent (51 % du champ, 30 u/s)
+   232.599  photo floue (netteté 8 contre 17 de référence)
+   232.774  t0158382 suivi ok score 1.00 pos -4822,4983 net 8 (18 ms) carte 1507
+   232.810  photo 645_0092 à -4691,4983 (654 ko, 211 ms)
+   233.094  t0158703 suivi ok score 1.00 pos -4906,4983 net 8 (13 ms) carte 1508
+   233.431  t0159038 suivi ok score 0.99 pos -4954,4983 net 9 (14 ms) carte 1508
+   233.765  t0159374 suivi ok score 0.97 pos -5241,4983 net 6 (15 ms) carte 1508
+   234.109  t0159717 suivi ok score 0.99 pos -5552,4983 net 9 (17 ms) carte 1508
+   234.437  t0160045 suivi ok score 1.00 pos -5587,4983 net 9 (19 ms) carte 1508
+   234.691  photo 645_0093 à -5587,4983 (654 ko, 215 ms)
+   234.763  t0160372 suivi ok score 0.86 pos -6089,4983 net 5 (16 ms) carte 1509
+   235.110  t0160718 suivi ok score 0.92 pos -6568,4983 net 6 (19 ms) carte 1509
+   235.396  photo en mouvement lent (50 % du champ, 0 u/s)
+   235.431  t0161039 suivi ok score 1.00 pos -7129,4983 net 10 (14 ms) carte 1509
+   235.623  photo 645_0094 à -7129,4983 (663 ko, 226 ms)
+   235.768  t0161375 suivi ok score 0.99 pos -7333,4983 net 9 (16 ms) carte 1510
+   236.121  t0161728 suivi ok score 1.00 pos -7500,4983 net 9 (29 ms) carte 1510
+   236.433  t0162041 suivi ok score 0.90 pos -7847,4983 net 7 (12 ms) carte 1510
+   236.767  t0162375 suivi ok score 0.97 pos -7894,4983 net 8 (13 ms) carte 1510
+   237.095  t0162702 suivi ok score 0.97 pos -8205,4983 net 9 (11 ms) carte 1510
+   237.431  t0163039 suivi ok score 0.93 pos -8313,4983 net 5 (13 ms) carte 1510
+   237.772  t0163379 suivi ok score 0.98 pos -8528,4983 net 9 (18 ms) carte 1510
+   238.069  photo en mouvement lent (50 % du champ, 0 u/s)
+   238.120  t0163727 suivi ok score 1.00 pos -8671,4983 net 9 (25 ms) carte 1510
+   238.288  photo 645_0095 à -8671,4983 (664 ko, 218 ms)
+   238.436  t0164043 suivi ok score 0.97 pos -8910,4983 net 7 (18 ms) carte 1511
+   238.782  t0164389 suivi ok score 1.00 pos -9030,4983 net 10 (22 ms) carte 1511
+   239.099  t0164706 suivi ok score 0.99 pos -9173,4983 net 8 (13 ms) carte 1511
+   239.440  t0165047 suivi ok score 1.00 pos -9365,4983 net 10 (19 ms) carte 1511
+   239.765  t0165373 suivi ok score 1.00 pos -9365,4983 net 10 (13 ms) carte 1511
+   239.836  photo 645_0096 à -9365,4983 (669 ko, 223 ms)
+   240.101  t0165709 suivi ok score 1.00 pos -9568,4983 net 10 (17 ms) carte 1512
+   240.441  t0166049 suivi ok score 1.00 pos -9556,4983 net 11 (15 ms) carte 1512
+   240.550  photo 645_0097 à -9556,4983 (670 ko, 210 ms)
+   240.769  t0166377 suivi ok score 1.00 pos -9353,4983 net 10 (15 ms) carte 1513
+   241.095  t0166703 suivi ok score 0.99 pos -9353,4983 net 10 (13 ms) carte 1513
+   241.151  photo 645_0098 à -9353,4983 (671 ko, 210 ms)
+   241.436  t0167043 suivi ok score 0.94 pos -9436,4983 net 6 (18 ms) carte 1514
+   241.772  t0167379 suivi ok score 0.88 pos -9353,4983 net 6 (16 ms) carte 1514
+   242.106  t0167714 suivi ok score 1.00 pos -9341,4983 net 11 (14 ms) carte 1514
+   242.450  t0168057 suivi ok score 0.89 pos -9484,4983 net 5 (23 ms) carte 1514
+   242.776  t0168383 suivi ok score 0.99 pos -10237,4983 net 10 (20 ms) carte 1514
+   243.111  t0168718 suivi ok score 1.00 pos -10189,4983 net 11 (17 ms) carte 1514
+   243.431  t0169038 suivi ok score 0.97 pos -10297,4983 net 9 (10 ms) carte 1514
+   243.533  photo 645_0099 à -10189,4983 (663 ko, 230 ms)
+   243.768  t0169375 suivi ok score 0.93 pos -11205,4983 net 5 (16 ms) carte 1515
+   243.967  photo en mouvement lent (54 % du champ, 30 u/s)
+   244.098  t0169707 suivi ok score 1.00 pos -11851,4983 net 9 (12 ms) carte 1515
+   244.197  photo 645_0100 à -11851,4983 (667 ko, 229 ms)
+   244.442  t0170049 suivi ok score 0.97 pos -11935,4983 net 7 (21 ms) carte 1516
+   244.766  t0170375 suivi ok score 0.97 pos -12484,4983 net 9 (11 ms) carte 1516
+   245.122  t0170729 suivi ok score 1.00 pos -12496,4983 net 9 (25 ms) carte 1516
+   245.395  photo 645_0101 à -12496,4983 (670 ko, 222 ms)
+   245.432  t0171040 suivi ok score 0.98 pos -12616,4983 net 7 (15 ms) carte 1517
+   245.771  t0171378 suivi ok score 1.00 pos -12807,4983 net 10 (17 ms) carte 1517
+   246.107  t0171714 suivi ok score 0.91 pos -13716,4983 net 6 (15 ms) carte 1517
+   246.448  t0172054 suivi ok score 0.95 pos -13895,4983 net 7 (21 ms) carte 1517
+   246.705  photo en mouvement lent (57 % du champ, 30 u/s)
+   246.772  t0172380 suivi ok score 0.98 pos -14301,4983 net 9 (15 ms) carte 1517
+   246.925  photo 645_0102 à -14241,4983 (666 ko, 220 ms)
+   247.104  t0172712 suivi ok score 0.98 pos -14708,4983 net 11 (18 ms) carte 1518
+   247.452  t0173059 suivi ok score 0.88 pos -14935,4983 net 7 (26 ms) carte 1518
+   247.772  t0173379 suivi ok score 0.99 pos -15461,4983 net 11 (16 ms) carte 1518
+   248.120  t0173727 suivi ok score 0.98 pos -15724,4983 net 8 (25 ms) carte 1518
+   248.240  photo en mouvement lent (54 % du champ, 0 u/s)
+   248.452  t0174059 suivi ok score 0.99 pos -15891,4983 net 12 (26 ms) carte 1518
+   248.460  photo 645_0103 à -15891,4983 (676 ko, 219 ms)
+   248.769  t0174377 suivi ok score 1.00 pos -16345,4983 net 10 (14 ms) carte 1519
+   249.120  t0174727 suivi ok score 0.95 pos -16381,4983 net 7 (22 ms) carte 1519
+   249.463  t0175070 suivi ok score 0.99 pos -16620,4983 net 11 (30 ms) carte 1519
+   249.771  t0175378 suivi ok score 0.99 pos -16991,4983 net 11 (15 ms) carte 1519
+   250.106  t0175713 suivi ok score 1.00 pos -17098,4983 net 11 (16 ms) carte 1519
+   250.445  t0176053 suivi ok score 1.00 pos -16548,4983 net 11 (16 ms) carte 1519
+   250.778  t0176385 suivi ok score 0.99 pos -16596,4983 net 11 (18 ms) carte 1519
+   251.099  t0176707 suivi ok score 0.99 pos -16931,4983 net 8 (13 ms) carte 1519
+   251.444  t0177051 suivi ok score 0.96 pos -17039,4983 net 8 (16 ms) carte 1519
+   251.773  t0177381 suivi ok score 1.00 pos -17266,4983 net 11 (16 ms) carte 1519
+   252.106  t0177714 suivi ok score 1.00 pos -17373,4983 net 11 (11 ms) carte 1519
+   252.438  t0178046 suivi ok score 0.92 pos -18186,4983 net 6 (14 ms) carte 1519
+   252.543  photo en mouvement lent (80 % du champ, 30 u/s)
+   252.543  ATTENTION pas trop grand (80 % du champ) : recouvrement insuffisant
+   252.770  photo 645_0104 à -18329,4983 (660 ko, 226 ms)
+   252.773  t0178381 suivi ok score 0.98 pos -18652,4983 net 8 (15 ms) carte 1520
+   253.104  t0178711 suivi ok score 1.00 pos -18879,4983 net 10 (15 ms) carte 1520
+   253.446  t0179054 suivi ok score 0.99 pos -19011,4983 net 9 (19 ms) carte 1520
+   253.775  t0179383 suivi ok score 0.98 pos -19178,4983 net 7 (15 ms) carte 1520
+   254.107  t0179715 suivi ok score 1.00 pos -19596,4983 net 10 (16 ms) carte 1520
+   254.440  t0180048 suivi ok score 0.98 pos -19656,4983 net 10 (16 ms) carte 1520
+   254.699  photo en mouvement lent (52 % du champ, 30 u/s)
+   254.778  t0180385 suivi ok score 1.00 pos -19907,4983 net 10 (14 ms) carte 1520
+   254.937  photo 645_0105 à -19907,4983 (682 ko, 237 ms)
+   255.100  t0180708 suivi ok score 0.99 pos -20601,4983 net 8 (13 ms) carte 1521
+   255.440  t0181047 suivi ok score 0.96 pos -21306,4983 net 11 (16 ms) carte 1521
+   255.670  photo en mouvement lent (54 % du champ, 0 u/s)
+   255.770  t0181378 suivi ok score 0.99 pos -21617,4983 net 16 (14 ms) carte 1521
+   255.901  photo 645_0106 à -21557,4983 (708 ko, 230 ms)
+   256.106  t0181713 suivi ok score 0.99 pos -22083,4983 net 20 (18 ms) carte 1522
+   256.449  t0182056 suivi ok score 1.00 pos -22119,4983 net 21 (19 ms) carte 1522
+   256.770  photo 645_0107 à -22119,4983 (727 ko, 225 ms)
+   256.778  t0182385 suivi ok score 0.96 pos -22250,4983 net 11 (18 ms) carte 1523
+   257.111  t0182718 suivi ok score 1.00 pos -22561,4983 net 23 (20 ms) carte 1523
+   257.444  t0183051 suivi ok score 0.97 pos -22716,4983 net 12 (17 ms) carte 1523
+   257.786  t0183393 suivi ok score 0.98 pos -23147,4983 net 23 (17 ms) carte 1523
+   258.108  t0183716 suivi ok score 1.00 pos -23159,4983 net 24 (15 ms) carte 1523
+   258.262  photo 645_0108 à -23159,4983 (773 ko, 223 ms)
+   258.450  t0184056 suivi ok score 0.95 pos -23445,4983 net 20 (20 ms) carte 1524
+   258.768  t0184376 suivi ok score 0.99 pos -23493,4983 net 21 (12 ms) carte 1524
+   259.111  t0184718 suivi ok score 0.98 pos -23637,4983 net 24 (17 ms) carte 1524
+   259.442  t0185049 suivi ok score 1.00 pos -23637,4983 net 24 (20 ms) carte 1524
+   259.494  photo 645_0109 à -23637,4983 (777 ko, 216 ms)
+   259.793  t0185399 suivi ok score 1.00 pos -23900,4983 net 24 (25 ms) carte 1525
+   260.126  t0185732 suivi ok score 1.00 pos -24318,4983 net 21 (26 ms) carte 1525
+   260.441  t0186048 suivi ok score 0.99 pos -24426,4983 net 14 (14 ms) carte 1525
+   260.766  t0186374 suivi ok score 0.99 pos -24641,4983 net 19 (11 ms) carte 1525
+   261.115  t0186722 suivi ok score 0.95 pos -25035,4983 net 15 (15 ms) carte 1525
+   261.447  t0187054 suivi ok score 0.97 pos -25119,4983 net 17 (17 ms) carte 1525
+   261.542  photo en mouvement lent (51 % du champ, 30 u/s)
+   261.758  photo 645_0110 à -25203,4983 (740 ko, 215 ms)
+   261.771  t0187379 suivi ok score 0.94 pos -25358,4983 net 9 (14 ms) carte 1526
+   262.100  t0187707 suivi ok score 1.00 pos -25430,4983 net 16 (12 ms) carte 1526
+   262.448  t0188054 suivi ok score 0.98 pos -25621,4983 net 14 (16 ms) carte 1526
+   262.783  t0188389 suivi ok score 0.98 pos -25884,4983 net 13 (17 ms) carte 1526
+   263.118  t0188725 suivi ok score 1.00 pos -25872,4983 net 13 (20 ms) carte 1526
+   263.372  photo 645_0111 à -25872,4983 (740 ko, 236 ms)
+   263.446  t0189053 suivi ok score 1.00 pos -25872,4983 net 13 (16 ms) carte 1527
+   263.784  t0189391 suivi ok score 0.97 pos -26541,4983 net 7 (18 ms) carte 1527
+   264.119  t0189725 suivi ok score 0.99 pos -26613,4983 net 12 (26 ms) carte 1527
+   264.440  t0190047 suivi ok score 1.00 pos -26876,4983 net 14 (12 ms) carte 1527
+   264.771  t0190378 suivi ok score 1.00 pos -26876,4983 net 14 (16 ms) carte 1527
+   264.838  photo 645_0112 à -26876,4983 (771 ko, 218 ms)
+   265.121  t0190727 suivi ok score 1.00 pos -26876,4983 net 14 (23 ms) carte 1528
+   265.442  t0191049 suivi ok score 1.00 pos -26876,4983 net 14 (15 ms) carte 1528
+   265.780  t0191388 suivi ok score 1.00 pos -26876,4983 net 14 (15 ms) carte 1528
+   266.107  t0191715 suivi ok score 0.99 pos -26876,5095 net 9 (15 ms) carte 1528
+   266.444  t0192050 suivi ok score 1.00 pos -26876,5381 net 7 (17 ms) carte 1528
+   266.780  t0192387 suivi ok score 0.99 pos -26876,5716 net 11 (16 ms) carte 1528
+   267.113  t0192720 suivi ok score 0.98 pos -26876,6258 net 6 (16 ms) carte 1528
+   267.453  t0193059 suivi ok score 0.99 pos -26876,6975 net 13 (23 ms) carte 1528
+   267.779  t0193387 suivi ok score 0.96 pos -26876,7788 net 7 (17 ms) carte 1528
+   268.103  t0193711 suivi ok score 0.99 pos -26876,8155 net 11 (12 ms) carte 1528
+   268.103  photo en mouvement lent (78 % du champ, 0 u/s)
+   268.103  ATTENTION pas trop grand (78 % du champ) : recouvrement insuffisant
+   268.289  photo 645_0113 à -26876,8155 (702 ko, 186 ms)
+   268.451  t0194057 suivi ok score 1.00 pos -26876,8155 net 13 (20 ms) carte 1529
+   268.771  t0194379 suivi ok score 1.00 pos -26876,8155 net 13 (15 ms) carte 1529
+   269.109  t0194717 suivi ok score 1.00 pos -26876,8155 net 13 (14 ms) carte 1529
+   269.451  t0195058 suivi ok score 1.00 pos -26888,8155 net 13 (18 ms) carte 1529
+   269.782  t0195389 suivi ok score 1.00 pos -26888,8155 net 13 (21 ms) carte 1529
+   270.119  t0195727 suivi ok score 0.91 pos -26565,8155 net 6 (17 ms) carte 1529
+   270.445  t0196052 suivi ok score 0.97 pos -26207,8155 net 9 (17 ms) carte 1529
+   270.777  t0196384 suivi ok score 1.00 pos -26039,8155 net 13 (14 ms) carte 1529
+   271.108  t0196716 suivi ok score 0.95 pos -25752,8155 net 7 (13 ms) carte 1529
+   271.458  t0197064 suivi ok score 1.00 pos -25513,8155 net 14 (20 ms) carte 1529
+   271.688  photo en mouvement lent (50 % du champ, 30 u/s)
+   271.778  t0197385 suivi ok score 0.99 pos -25262,8155 net 14 (17 ms) carte 1529
+   271.898  photo 645_0114 à -25346,8155 (707 ko, 209 ms)
+   272.104  t0197712 suivi ok score 0.99 pos -25250,8155 net 15 (12 ms) carte 1530
+   272.453  t0198060 suivi ok score 0.98 pos -25107,8155 net 16 (19 ms) carte 1530
+   272.781  t0198389 suivi ok score 0.96 pos -24139,8139 net 7 (15 ms) carte 1530
+   273.106  t0198713 suivi ok score 1.00 pos -24031,8139 net 19 (13 ms) carte 1530
+   273.444  photo 645_0115 à -24043,8139 (731 ko, 232 ms)
+   273.455  t0199063 suivi ok score 1.00 pos -24043,8139 net 19 (16 ms) carte 1531
+   273.779  t0199387 suivi ok score 0.98 pos -23876,8139 net 10 (15 ms) carte 1531
+   274.116  t0199723 suivi ok score 1.00 pos -23637,8139 net 18 (18 ms) carte 1531
+   274.449  t0200055 suivi ok score 1.00 pos -23637,8139 net 18 (17 ms) carte 1531
+   274.675  photo 645_0116 à -23637,8139 (733 ko, 225 ms)
+   274.789  t0200396 suivi ok score 0.90 pos -23386,8139 net 7 (23 ms) carte 1532
+   275.115  t0200723 suivi ok score 1.00 pos -22836,8139 net 17 (18 ms) carte 1532
+   275.455  t0201063 suivi ok score 1.00 pos -22824,8139 net 17 (15 ms) carte 1532
+   275.592  photo 645_0117 à -22824,8139 (719 ko, 226 ms)
+   275.780  t0201388 suivi ok score 1.00 pos -22800,8139 net 17 (16 ms) carte 1533
+   276.119  t0201726 suivi ok score 0.98 pos -22740,8139 net 15 (21 ms) carte 1533
+   276.454  t0202061 suivi ok score 0.98 pos -22394,8139 net 15 (19 ms) carte 1533
+   276.784  t0202391 suivi ok score 0.99 pos -22071,8139 net 12 (18 ms) carte 1533
+   277.118  t0202725 suivi ok score 0.98 pos -21676,8139 net 11 (18 ms) carte 1533
+   277.457  t0203060 suivi ok score 1.00 pos -21605,8139 net 12 (20 ms) carte 1533
+   277.776  t0203384 suivi ok score 1.00 pos -21605,8139 net 12 (15 ms) carte 1533
+   277.875  photo 645_0118 à -21605,8139 (694 ko, 232 ms)
+   278.113  t0203720 suivi ok score 0.97 pos -21485,8139 net 8 (18 ms) carte 1534
+   278.452  t0204060 suivi ok score 0.97 pos -21126,8139 net 6 (18 ms) carte 1534
+   278.782  t0204389 suivi ok score 1.00 pos -20875,8139 net 10 (16 ms) carte 1534
+   279.113  t0204720 suivi ok score 1.00 pos -20840,8139 net 10 (14 ms) carte 1534
+   279.447  t0205055 suivi ok score 1.00 pos -20828,8139 net 10 (20 ms) carte 1534
+   279.458  photo 645_0119 à -20840,8139 (688 ko, 208 ms)
+   279.800  t0205407 suivi ok score 0.98 pos -20828,8139 net 10 (30 ms) carte 1535
+   280.124  t0205730 suivi ok score 0.98 pos -20541,8139 net 9 (21 ms) carte 1535
+   280.462  t0206069 suivi ok score 0.97 pos -20565,8139 net 8 (26 ms) carte 1535
+   280.794  t0206401 suivi ok score 1.00 pos -20589,8139 net 10 (26 ms) carte 1535
+   280.902  photo floue (netteté 10 contre 21 de référence)
+   281.114  t0206721 suivi ok score 1.00 pos -20589,8139 net 10 (18 ms) carte 1535
+   281.134  photo 645_0120 à -20589,8139 (688 ko, 232 ms)
+   281.439  t0207046 suivi ok score 1.00 pos -20589,8139 net 10 (13 ms) carte 1536
+   281.775  t0207383 suivi ok score 1.00 pos -20589,8139 net 10 (14 ms) carte 1536
+   282.111  t0207719 suivi ok score 1.00 pos -20589,8139 net 10 (10 ms) carte 1536
+   282.463  t0208069 suivi ok score 1.00 pos -20589,8139 net 7 (23 ms) carte 1536
+   282.786  t0208393 suivi ok score 1.00 pos -20589,8139 net 9 (17 ms) carte 1536
+   283.122  t0208729 suivi ok score 1.00 pos -20589,8139 net 9 (19 ms) carte 1536
+   283.453  t0209060 suivi ok score 1.00 pos -20589,8139 net 8 (20 ms) carte 1536
+   283.780  t0209388 suivi ok score 1.00 pos -20589,8139 net 10 (17 ms) carte 1536
+   284.129  t0209735 suivi ok score 1.00 pos -20589,8139 net 10 (23 ms) carte 1536
+   284.460  t0210066 suivi ok score 1.00 pos -20589,8139 net 10 (24 ms) carte 1536
+   284.792  t0210399 suivi ok score 0.93 pos -20577,8139 net 6 (23 ms) carte 1536
+   285.117  t0210724 suivi ok score 0.93 pos -19680,8139 net 9 (19 ms) carte 1536
+   285.454  t0211062 suivi ok score 0.99 pos -19549,8139 net 9 (17 ms) carte 1536
+   285.789  t0211396 suivi ok score 1.00 pos -19429,8139 net 10 (21 ms) carte 1536
+   285.956  photo floue (netteté 9 contre 21 de référence)
+   286.116  t0211723 suivi ok score 0.92 pos -19094,8139 net 7 (18 ms) carte 1536
+   286.179  photo 645_0121 à -19405,8139 (665 ko, 223 ms)
+   286.455  t0212062 suivi ok score 1.00 pos -18688,8139 net 10 (18 ms) carte 1537
+   286.782  t0212390 suivi ok score 0.97 pos -18449,8139 net 6 (12 ms) carte 1537
+   287.120  t0212727 suivi ok score 0.96 pos -17851,8139 net 8 (19 ms) carte 1537
+   287.152  photo en mouvement lent (51 % du champ, 30 u/s)
+   287.153  photo floue (netteté 8 contre 21 de référence)
+   287.376  photo 645_0122 à -17839,8139 (672 ko, 223 ms)
+   287.456  t0213063 suivi ok score 0.97 pos -17600,8139 net 7 (19 ms) carte 1538
+   287.778  t0213386 suivi ok score 0.98 pos -17290,8139 net 9 (16 ms) carte 1538
+   288.112  t0213720 suivi ok score 0.92 pos -16955,8139 net 6 (15 ms) carte 1538
+   288.446  t0214053 suivi ok score 1.00 pos -16740,8139 net 11 (15 ms) carte 1538
+   288.768  t0214376 suivi ok score 0.97 pos -16584,8139 net 7 (10 ms) carte 1538
+   288.840  photo 645_0123 à -16716,8139 (687 ko, 221 ms)
+   289.105  t0214713 suivi ok score 1.00 pos -16333,8139 net 10 (11 ms) carte 1539
+   289.443  t0215046 suivi ok score 1.00 pos -16333,8139 net 10 (10 ms) carte 1539
+   289.609  photo 645_0124 à -16333,8139 (683 ko, 208 ms)
+   289.782  t0215389 suivi ok score 0.99 pos -16082,8139 net 10 (16 ms) carte 1540
+   290.112  t0215720 suivi ok score 0.98 pos -15939,8139 net 8 (15 ms) carte 1540
+   290.461  t0216067 suivi ok score 0.99 pos -15724,8139 net 10 (25 ms) carte 1540
+   290.780  t0216387 suivi ok score 0.98 pos -15532,8139 net 10 (13 ms) carte 1540
+   291.119  t0216726 suivi ok score 0.98 pos -14935,8139 net 8 (18 ms) carte 1540
+   291.294  photo en mouvement lent (50 % du champ, 30 u/s)
+   291.294  photo floue (netteté 8 contre 21 de référence)
+   291.436  t0217044 suivi ok score 1.00 pos -14767,8139 net 10 (10 ms) carte 1540
+   291.494  photo 645_0125 à -14803,8139 (681 ko, 199 ms)
+   291.781  t0217389 suivi ok score 1.00 pos -14696,8139 net 11 (16 ms) carte 1541
+   292.122  t0217729 suivi ok score 1.00 pos -14576,8139 net 11 (21 ms) carte 1541
+   292.464  t0218070 suivi ok score 0.98 pos -14373,8139 net 11 (28 ms) carte 1541
+   292.799  t0218406 suivi ok score 0.95 pos -14230,8139 net 8 (24 ms) carte 1541
+   293.106  t0218714 suivi ok score 0.99 pos -14026,8139 net 11 (10 ms) carte 1541
+   293.456  t0219062 suivi ok score 0.97 pos -13620,8139 net 6 (19 ms) carte 1541
+   293.755  photo en mouvement lent (55 % du champ, 30 u/s)
+   293.756  photo floue (netteté 9 contre 21 de référence)
+   293.776  t0219384 suivi ok score 1.00 pos -13118,8139 net 9 (12 ms) carte 1541
+   293.967  photo 645_0126 à -13118,8139 (673 ko, 211 ms)
+   294.118  t0219725 suivi ok score 1.00 pos -13118,8139 net 10 (20 ms) carte 1542
+   294.459  t0220066 suivi ok score 1.00 pos -13237,8139 net 10 (18 ms) carte 1542
+   294.685  photo floue (netteté 10 contre 21 de référence)
+   294.792  t0220400 suivi ok score 1.00 pos -13237,8139 net 10 (19 ms) carte 1542
+   294.899  photo 645_0127 à -13237,8139 (674 ko, 214 ms)
+   295.115  t0220722 suivi ok score 0.92 pos -12843,8139 net 5 (15 ms) carte 1543
+   295.458  t0221064 suivi ok score 0.99 pos -12030,8139 net 9 (18 ms) carte 1543
+   295.790  t0221397 suivi ok score 1.00 pos -11970,8139 net 10 (19 ms) carte 1543
+   296.124  t0221731 suivi ok score 1.00 pos -12018,8139 net 10 (17 ms) carte 1543
+   296.355  photo floue (netteté 10 contre 21 de référence)
+   296.448  t0222055 suivi ok score 1.00 pos -12018,8139 net 10 (18 ms) carte 1543
+   296.580  photo 645_0128 à -12018,8139 (667 ko, 224 ms)
+   296.776  t0222383 suivi ok score 1.00 pos -12018,8139 net 10 (14 ms) carte 1544
+   297.123  t0222731 suivi ok score 0.98 pos -11540,8139 net 10 (19 ms) carte 1544
+   297.458  t0223064 suivi ok score 0.95 pos -11062,8139 net 6 (19 ms) carte 1544
+   297.788  t0223395 suivi ok score 1.00 pos -10919,8139 net 11 (18 ms) carte 1544
+   298.119  t0223726 suivi ok score 0.89 pos -10249,8139 net 8 (17 ms) carte 1544
+   298.183  photo en mouvement lent (59 % du champ, 0 u/s)
+   298.413  photo 645_0129 à -10225,8139 (670 ko, 229 ms)
+   298.450  t0224056 suivi ok score 1.00 pos -10201,8139 net 12 (16 ms) carte 1545
+   298.792  t0224399 suivi ok score 0.98 pos -10046,8139 net 8 (23 ms) carte 1545
+   299.122  t0224729 suivi ok score 0.96 pos -9663,8139 net 6 (17 ms) carte 1545
+   299.446  t0225054 suivi ok score 1.00 pos -9257,8139 net 12 (14 ms) carte 1545
+   299.793  t0225400 suivi ok score 0.98 pos -8707,8139 net 7 (22 ms) carte 1545
+   299.916  photo en mouvement lent (54 % du champ, 0 u/s)
+   300.115  t0225721 suivi ok score 0.99 pos -8492,8139 net 10 (17 ms) carte 1545
+   300.143  photo 645_0130 à -8564,8139 (676 ko, 227 ms)
+   300.437  t0226045 suivi ok score 0.99 pos -8133,8139 net 7 (10 ms) carte 1546
+   300.790  t0226397 suivi ok score 0.99 pos -7942,8139 net 9 (23 ms) carte 1546
+   301.106  t0226714 suivi ok score 0.98 pos -7631,8139 net 7 (10 ms) carte 1546
+   301.453  t0227061 suivi ok score 0.99 pos -7225,8139 net 6 (13 ms) carte 1546
+   301.773  t0227382 suivi ok score 0.99 pos -7046,8139 net 7 (11 ms) carte 1546
+   301.870  photo en mouvement lent (52 % du champ, 34 u/s)
+   301.870  photo floue (netteté 8 contre 21 de référence)
+   302.073  photo 645_0131 à -6986,8139 (659 ko, 203 ms)
+   302.111  t0227717 suivi ok score 0.99 pos -6615,8139 net 7 (14 ms) carte 1547
+   302.453  t0228061 suivi ok score 1.00 pos -6484,8139 net 8 (17 ms) carte 1547
+   302.784  t0228391 suivi ok score 0.98 pos -6173,8139 net 8 (15 ms) carte 1547
+   303.119  t0228726 suivi ok score 0.99 pos -5994,8139 net 8 (17 ms) carte 1547
+   303.455  t0229063 suivi ok score 0.97 pos -5719,8139 net 7 (17 ms) carte 1547
+   303.792  t0229399 suivi ok score 0.99 pos -5587,8139 net 9 (22 ms) carte 1547
+   304.136  t0229743 suivi ok score 0.99 pos -5480,8139 net 9 (29 ms) carte 1547
+   304.451  t0230060 suivi ok score 0.94 pos -4954,8139 net 5 (18 ms) carte 1547
+   304.618  photo en mouvement lent (77 % du champ, 31 u/s)
+   304.618  ATTENTION pas trop grand (77 % du champ) : recouvrement insuffisant
+   304.619  photo floue (netteté 9 contre 21 de référence)
+   304.786  t0230394 suivi ok score 1.00 pos -4631,8139 net 9 (17 ms) carte 1547
+   304.837  photo 645_0132 à -4643,8139 (659 ko, 218 ms)
+   305.118  t0230726 suivi ok score 1.00 pos -4559,8139 net 9 (16 ms) carte 1548
+   305.461  t0231068 suivi ok score 0.98 pos -4464,8139 net 9 (19 ms) carte 1548
+   305.792  t0231400 suivi ok score 0.99 pos -4237,8139 net 9 (16 ms) carte 1548
+   306.117  t0231725 suivi ok score 0.99 pos -4117,8139 net 10 (14 ms) carte 1548
+   306.467  t0232074 suivi ok score 0.94 pos -3484,8139 net 4 (22 ms) carte 1548
+   306.723  photo en mouvement lent (57 % du champ, 30 u/s)
+   306.723  photo floue (netteté 9 contre 21 de référence)
+   306.782  t0232390 suivi ok score 0.99 pos -2814,8139 net 7 (10 ms) carte 1548
+   306.951  photo 645_0133 à -2898,8139 (656 ko, 227 ms)
+   307.119  t0232726 suivi ok score 1.00 pos -2719,8139 net 9 (14 ms) carte 1549
+   307.464  t0233071 suivi ok score 0.98 pos -2384,8139 net 5 (21 ms) carte 1549
+   307.790  t0233397 suivi ok score 0.99 pos -1595,8139 net 6 (17 ms) carte 1549
+   308.117  t0233725 suivi ok score 1.00 pos -1523,8139 net 10 (15 ms) carte 1549
+   308.214  photo floue (netteté 10 contre 21 de référence)
+   308.450  photo 645_0134 à -1523,8139 (657 ko, 236 ms)
+   308.456  t0234064 suivi ok score 0.96 pos -1177,8139 net 7 (13 ms) carte 1550
+   308.794  t0234401 suivi ok score 1.00 pos -962,8139 net 8 (23 ms) carte 1550
+   309.118  t0234723 suivi ok score 1.00 pos -1033,8139 net 9 (13 ms) carte 1550
+   309.318  photo floue (netteté 9 contre 21 de référence)
+   309.452  t0235059 suivi ok score 1.00 pos -1033,8139 net 9 (15 ms) carte 1550
+   309.551  photo 645_0135 à -1033,8139 (661 ko, 232 ms)
+   309.794  t0235401 suivi ok score 1.00 pos -962,8139 net 8 (19 ms) carte 1551
+   310.124  t0235731 suivi ok score 1.00 pos -962,8139 net 9 (16 ms) carte 1551
+   310.458  t0236065 suivi ok score 1.00 pos -962,8139 net 9 (19 ms) carte 1551
+   310.802  t0236408 suivi ok score 1.00 pos -962,8139 net 9 (23 ms) carte 1551
+   311.133  t0236740 suivi ok score 1.00 pos -962,8139 net 9 (19 ms) carte 1551
+   311.464  t0237071 suivi ok score 1.00 pos -962,8139 net 8 (20 ms) carte 1551
+   311.786  t0237393 suivi ok score 1.00 pos -962,8139 net 9 (16 ms) carte 1551
+   312.063  série lame_20261016_190645 : 135 photos, 7128 échantillons de position
+   341.400  réglages enregistrés
+   341.646  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   360.772  === série lame_20261016_191131 (photos) « sans nom », gram, objectif x100 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+   360.789  masque oculaire : 99 % du cadre utile (p95 238)
+   361.106  t0000342 suivi ok score 1.00 pos 0,0 net 8 (23 ms) carte 3
+   361.441  t0000676 suivi ok score 1.00 pos 0,0 net 9 (21 ms) carte 6
+   361.448  photo 131_0001 à 0,0 (656 ko, 230 ms)
+   361.800  t0001036 suivi ok score 1.00 pos 0,0 net 8 (37 ms) carte 11
+   362.114  t0001350 suivi ok score 1.00 pos 0,0 net 9 (23 ms) carte 14
+   362.431  t0001667 suivi ok score 1.00 pos 0,0 net 8 (18 ms) carte 17
+   362.782  t0002017 suivi ok score 1.00 pos 0,0 net 9 (30 ms) carte 21
+   363.118  t0002353 suivi ok score 1.00 pos 0,0 net 9 (30 ms) carte 24
+   363.437  t0002673 suivi ok score 1.00 pos 0,0 net 8 (20 ms) carte 27
+   363.778  t0003013 suivi ok score 1.00 pos 0,0 net 9 (24 ms) carte 31
+   364.100  t0003337 suivi ok score 1.00 pos 0,0 net 9 (16 ms) carte 34
