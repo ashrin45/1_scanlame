@@ -1,0 +1,190 @@
+{
+ "title": "lame_20261016_161241",
+ "width": 12606,
+ "height": 25001,
+ "fields": 45,
+ "tiles": 1689,
+ "tile": 512,
+ "maxlvl": 15,
+ "um_per_px": null,
+ "stain": "gram",
+ "objective": "x100",
+ "sample": null,
+ "comment": null,
+ "captured": "16/10/2026 16:12",
+ "parent": null,
+ "parent_transform": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "1 trou(s) dans la couverture"
+  ],
+  "frames": {
+   "candidates": 60,
+   "blurred": 0,
+   "selected": 45,
+   "used": 45,
+   "tracked_only": 0
+  },
+  "residual_px": 1.05,
+  "residual_max_px": 103.76,
+  "holes": [
+   [
+    [
+     3920,
+     5232
+    ],
+    [
+     3928,
+     6008
+    ],
+    [
+     4000,
+     6008
+    ],
+    [
+     4016,
+     6024
+    ],
+    [
+     4024,
+     6248
+    ],
+    [
+     4008,
+     8800
+    ],
+    [
+     4264,
+     8808
+    ],
+    [
+     4296,
+     8824
+    ],
+    [
+     4288,
+     10384
+    ],
+    [
+     4448,
+     10392
+    ],
+    [
+     4464,
+     10408
+    ],
+    [
+     4456,
+     12184
+    ],
+    [
+     4624,
+     12200
+    ],
+    [
+     4624,
+     13792
+    ],
+    [
+     4600,
+     14864
+    ],
+    [
+     4976,
+     14864
+    ],
+    [
+     4960,
+     13352
+    ],
+    [
+     4824,
+     13344
+    ],
+    [
+     4808,
+     12664
+    ],
+    [
+     4760,
+     12656
+    ],
+    [
+     4744,
+     12008
+    ],
+    [
+     4712,
+     12008
+    ],
+    [
+     4696,
+     11984
+    ],
+    [
+     4688,
+     11400
+    ],
+    [
+     4640,
+     11384
+    ],
+    [
+     4616,
+     10304
+    ],
+    [
+     4616,
+     8312
+    ],
+    [
+     4328,
+     8296
+    ],
+    [
+     4312,
+     7600
+    ],
+    [
+     4264,
+     7592
+    ],
+    [
+     4224,
+     5232
+    ]
+   ]
+  ],
+  "holes_frac": 0.0109,
+  "coverage_px": 255381236,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 4.9,
+  "flat_field": "médiane",
+  "k1": -0.03,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "series": "lame_20261016_161241",
+ "version": 1,
+ "params": {
+  "depth": "off",
+  "seams": true,
+  "fps": 4.0,
+  "reg_size": 1200,
+  "max_side": 32000,
+  "core": 0.7,
+  "tile": 2048,
+  "distortion": true,
+  "chroma": true,
+  "code": "a4741a6"
+ },
+ "published": "2026-10-16T14:19:40+00:00",
+ "updated": "2026-10-16T14:19:40+00:00",
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null
+}
