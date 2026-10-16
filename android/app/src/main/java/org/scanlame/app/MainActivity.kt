@@ -70,7 +70,10 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
 import java.util.Locale
+import kotlin.math.roundToInt
 
 class MainActivity : ComponentActivity() {
     private lateinit var engine: CameraEngine
@@ -108,9 +111,9 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
             launcher.launch(perms.toTypedArray())
         }
     }
-    val sess by session.state.collectAsState()
+    val running by remember { session.state.map { it.running }.distinctUntilChanged() }.collectAsState(initial = false)
     Scaffold(bottomBar = {
-        if (!sess.running) TabRow(selectedTabIndex = tab, modifier = Modifier.navigationBarsPadding()) {
+        if (!running) TabRow(selectedTabIndex = tab, modifier = Modifier.navigationBarsPadding()) {
             listOf("Capture", "Réglages", "Diagnostic", "Journal").forEachIndexed { i, t -> Tab(selected = tab == i, onClick = { tab = i }, text = { Text(t, fontSize = 13.sp) }) }
         }
     }) { pad ->
@@ -281,7 +284,7 @@ fun SettingsScreen(engine: CameraEngine, st: Settings, onApplied: () -> Unit) {
             FlowChips(listOf("" to "auto (logique)") + selCam.physicalIds.map { id -> id to (engine.describe(id)?.let { "$id · ${it.focalMm.firstOrNull()?.let { f -> String.format(Locale.ROOT, "%.1f mm", f) } ?: ""}" } ?: id) }, physical) { physical = it }
         }
         Text("Zoom ${String.format(Locale.ROOT, "%.1f", zoom)}x", fontSize = 13.sp)
-        Slider(zoom, { zoom = it }, valueRange = 1f..4f, steps = 29)
+        Slider(zoom, { zoom = (it * 10).roundToInt() / 10f }, valueRange = 1f..4f)
         Row(verticalAlignment = Alignment.CenterVertically) { Switch(zoomCrop, { zoomCrop = it }); Text("zoom par recadrage capteur (pas de changement d'objectif)", fontSize = 13.sp, modifier = Modifier.padding(start = 8.dp)) }
 
         Text("Mise au point", fontSize = 16.sp)
