@@ -19,7 +19,6 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - uses: android-actions/setup-android@v3
       - uses: gradle/actions/setup-gradle@v4
       - name: Clé de signature (secrets SCANLAME_KEYSTORE_B64 et SCANLAME_KEYSTORE_PASS)
         id: key
@@ -36,12 +35,14 @@ jobs:
       - name: Compiler
         working-directory: android
         env:
+          ANDROID_HOME: /usr/local/lib/android/sdk
           SCANLAME_KEYSTORE: ${{ steps.key.outputs.path }}
           SCANLAME_KEYSTORE_PASS: ${{ secrets.SCANLAME_KEYSTORE_PASS }}
           SCANLAME_VERSION_CODE: ${{ github.run_number }}
           SCANLAME_VERSION_NAME: 0.${{ github.run_number }}
         run: |
           chmod +x gradlew
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null 2>&1 || true
           ./gradlew assembleRelease --no-daemon
           cp app/build/outputs/apk/release/app-release.apk "$RUNNER_TEMP/scanlame.apk"
           ls -la "$RUNNER_TEMP/scanlame.apk"
