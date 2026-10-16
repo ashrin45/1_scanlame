@@ -1,0 +1,63 @@
+{
+ "title": "lame_20261016_191220",
+ "width": 4273,
+ "height": 2015,
+ "fields": 10,
+ "tiles": 61,
+ "tile": 512,
+ "maxlvl": 13,
+ "um_per_px": null,
+ "stain": "gram",
+ "objective": "x100",
+ "sample": null,
+ "comment": null,
+ "captured": "16/10/2026 19:12",
+ "parent": null,
+ "parent_transform": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "3 champ(s) placé(s) sans recalage fin"
+  ],
+  "frames": {
+   "candidates": 22,
+   "blurred": 0,
+   "selected": 10,
+   "used": 10,
+   "tracked_only": 3
+  },
+  "residual_px": 0.72,
+  "residual_max_px": 2.39,
+  "holes": [],
+  "holes_frac": 0.0,
+  "coverage_px": 8272128,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 12.3,
+  "flat_field": "médiane",
+  "k1": 0.0,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "series": "lame_20261016_191220",
+ "version": 1,
+ "params": {
+  "depth": "off",
+  "seams": true,
+  "fps": 4.0,
+  "reg_size": 1200,
+  "max_side": 32000,
+  "core": 0.7,
+  "tile": 2048,
+  "distortion": true,
+  "chroma": true,
+  "code": "8183220"
+ },
+ "published": "2026-10-16T17:28:53+00:00",
+ "updated": "2026-10-16T17:28:53+00:00",
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null
+}
