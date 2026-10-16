@@ -366,7 +366,7 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
     var showDiag by remember { mutableStateOf(false) }
     val up by Uploader.status.collectAsState()
     val cams = remember { engine.cameraIds().mapNotNull { engine.describe(it) }.filter { it.facing == "arrière" } }
-    val cam0 = cameraId
+    val cam0 = remember { st.cameraId }
     fun save(): Boolean {
         val camChanged = cam0 != cameraId || st.mode != mode || st.analysisSide != aside || st.photoMaxSide != side || st.videoQuality != vq || st.videoMbps != vmbps || st.photoQuality != quality
         st.stain = stain; st.objective = objective; umpx.replace(',', '.').toFloatOrNull()?.let { st.setUmPerPx(objective, it) }
