@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>lame_20261016_190645</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+[hidden] { display: none !important; }
+/* Layout: one-screen viewer, slim instrument bar on top, the slide fills the rest */
+:root {
+  --bg: #f3f0f4; --panel: #ffffff; --fg: #2b2433; --muted: #6e6478; --line: #d9d2de;
+  --accent: #7a2e8c; --accent-soft: rgba(122,46,140,.14); --stage: #e9e4ec; --ok: #1b9466; --warn: #b7791f; --bad: #c0392b;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; color-scheme: dark }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-ui); display: flex; flex-direction: column; overflow: hidden; }
+header { flex: 0 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  padding-block: 8px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: var(--panel); border-bottom: 1px solid var(--line); }
+.title { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+h1 { font-size: 15px; font-weight: 600; margin: 0; letter-spacing: .01em; }
+.info { font-size: 12px; color: var(--muted); }
+.info a { color: var(--accent); text-decoration: none; }
+.meta { font-family: var(--font-data); font-size: 12px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.meta b { color: var(--fg); font-weight: 500; }
+.meta a { color: var(--accent); text-decoration: none; } .meta a:hover { text-decoration: underline; }
+.tools { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+button { font: 500 13px var(--font-ui); color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; min-width: 36px; }
+button:hover { border-color: var(--accent); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+button .g { display: inline-block; min-width: 16px; padding: 0 4px; border-radius: 4px; color: #fff; font-weight: 600; margin-left: 4px; }
+.gA { background: var(--ok); } .gB { background: var(--warn); } .gC { background: var(--bad); }
+.zctl { display: flex; align-items: center; gap: 6px; font: 500 12px var(--font-data); color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; }
+.zctl input { width: 110px; accent-color: var(--accent); margin: 0; }
+.zctl b { color: var(--fg); font-weight: 500; min-width: 7.5em; }
+#viewer { flex: 1 1 auto; min-height: 0; background: var(--stage); position: relative; }
+#viewer .navigator { border: 1px solid var(--line) !important; background: var(--panel) !important; }
+.hud { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 5;
+  font-family: var(--font-data); font-size: 12px; color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; pointer-events: none; font-variant-numeric: tabular-nums; }
+svg.fields polygon { fill: none; stroke: var(--accent); stroke-width: 1.5px; vector-effect: non-scaling-stroke; opacity: .9; }
+svg.fields text { fill: var(--accent); font: 500 40px var(--font-data); paint-order: stroke; stroke: var(--panel); stroke-width: 10px; opacity: .8; }
+svg.quality polygon { stroke-width: 1px; vector-effect: non-scaling-stroke; }
+svg.quality polygon.s2 { fill: rgba(27,148,102,.18); stroke: rgba(27,148,102,.7); }
+svg.quality polygon.s1 { fill: rgba(183,121,31,.28); stroke: rgba(183,121,31,.8); }
+svg.quality polygon.s0 { fill: rgba(192,57,43,.32); stroke: rgba(192,57,43,.9); }
+svg.quality polygon.tracked { stroke-dasharray: 6 4; }
+svg.quality polygon.hole { fill: rgba(192,57,43,.25); stroke: #c0392b; stroke-width: 2px; stroke-dasharray: 8 5; }
+svg.children polygon { fill: none; stroke: #e8a33d; stroke-width: 2px; vector-effect: non-scaling-stroke; }
+svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order: stroke; stroke: #000; stroke-width: 8px; }
+#qpanel { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); top: 12px; z-index: 6; max-width: min(360px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; font-size: 13px; box-shadow: 0 4px 18px rgba(0,0,0,.18); }
+#qpanel h2 { font-size: 13px; margin: 0 0 6px; display: flex; align-items: center; gap: 8px; }
+#qpanel ul { margin: 0 0 8px; padding-left: 18px; } #qpanel li { margin: 2px 0; }
+#qpanel .kv { font-family: var(--font-data); font-size: 11px; color: var(--muted); display: grid; grid-template-columns: auto auto; gap: 2px 12px; font-variant-numeric: tabular-nums; }
+#qpanel .leg { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; font-size: 11px; color: var(--muted); }
+#qpanel .leg i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 3px; }
+#bar { position: absolute; right: max(14px, env(safe-area-inset-right, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px)); text-align: right; z-index: 5; pointer-events: none; font: 500 12px var(--font-data); color: #fff; text-shadow: 0 0 4px #000, 0 0 2px #000; }
+#bar i { display: block; margin-left: auto; height: 4px; background: #fff; border: 1px solid #000; border-top: 0; box-shadow: 0 0 3px #000; margin-bottom: 3px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="title"><h1>lame_20261016_190645</h1><div class="info" id="info">Gram · objectif x100 · 16/10/2026 19:06</div></div>
+  <div class="meta"><span><b>92</b> champs</span><span><b>24578 × 10516</b> px</span><span><b>16</b> niveaux de zoom</span><span>échelle non calibrée</span><span>v1 · profondeur off, coutures fond, recalage 1200 px, code 8183220</span><span>journaux : <a href="journaux/20261016_190645-assemblage.txt">assemblage 20261016</a> <a href="journaux/20261016_190645-planche.jpg">planche 20261016</a> <a href="journaux/20261016_190645-telephone.txt">téléphone 20261016</a></span></div>
+  <div class="tools">
+    <button id="zin" aria-label="Zoom avant">+</button>
+    <button id="zout" aria-label="Zoom arrière">−</button>
+    <button id="home" aria-label="Vue entière">⌂</button>
+    <button id="fields" aria-pressed="false">Champs</button>
+    <button id="qbtn" aria-pressed="false" hidden>Qualité<span class="g" id="qg"></span></button>
+    <button id="kids" aria-pressed="true" hidden>Détails</button>
+    <label class="zctl" id="zctl" hidden><span>profondeur</span><input id="zr" type="range" min="0" max="1" value="0" step="1" aria-label="Plan de profondeur"><b id="zl">net partout</b></label>
+  </div>
+</header>
+<div id="viewer">
+  <div class="hud" id="hud">zoom 1.00×</div>
+  <div id="bar" hidden><i></i><span></span></div>
+  <div id="qpanel" hidden></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+<script>
+const W = 24578, H = 10516, TILE = 512, MAXLVL = 15;
+const FIELDS = [{"id":"0000","pts":[[21658,57],[21839,187],[22058,1974],[20606,2152],[20369,215]],"scale":0.983,"sharp":1.13,"z":false,"tracked":false},{"id":"0002","pts":[[20529,166],[20725,322],[20884,2231],[19324,2361],[19153,301]],"scale":0.919,"sharp":1.1,"z":false,"tracked":false},{"id":"0003","pts":[[20069,202],[20272,353],[20428,2304],[18841,2431],[18674,342]],"scale":0.903,"sharp":0.9,"z":false,"tracked":false},{"id":"0004","pts":[[18833,296],[19055,461],[19197,2493],[17539,2610],[17386,441],[17430,395]],"scale":0.866,"sharp":0.77,"z":false,"tracked":false},{"id":"0005","pts":[[18165,298],[18389,467],[18525,2631],[16765,2742],[16621,439],[16652,393]],"scale":0.816,"sharp":0.96,"z":false,"tracked":false},{"id":"0006","pts":[[17204,2],[17490,268],[17509,2993],[15264,3009],[15244,134],[15409,15]],"scale":0.641,"sharp":0.88,"z":false,"tracked":false},{"id":"0047","pts":[[17010,2475],[17295,2726],[17317,5493],[15052,5511],[15029,2610],[15220,2489]],"scale":0.635,"sharp":1.0,"z":false,"tracked":false},{"id":"0044","pts":[[14909,2561],[15197,2832],[15219,5575],[12958,5593],[12934,2679],[13072,2576]],"scale":0.636,"sharp":1.06,"z":false,"tracked":false},{"id":"0045","pts":[[13946,2600],[14235,2849],[14255,5614],[11993,5630],[11972,2656]],"scale":0.636,"sharp":1.02,"z":false,"tracked":false},{"id":"0046","pts":[[15443,2542],[15744,2815],[15767,5554],[13506,5573],[13482,2651],[13555,2558]],"scale":0.637,"sharp":1.05,"z":false,"tracked":false},{"id":"0037","pts":[[14232,2592],[14522,2845],[14543,5608],[12280,5626],[12257,2687],[12422,2607]],"scale":0.636,"sharp":1.0,"z":false,"tracked":false},{"id":"0040","pts":[[16065,2521],[16370,2769],[16392,5531],[14132,5549],[14109,2627],[14260,2533]],"scale":0.637,"sharp":1.11,"z":false,"tracked":false},{"id":"0041","pts":[[17019,2478],[17306,2729],[17327,5497],[15062,5514],[15040,2613],[15226,2492]],"scale":0.635,"sharp":1.01,"z":false,"tracked":false},{"id":"0038","pts":[[14832,2571],[15112,2829],[15135,5583],[12874,5602],[12850,2636],[12955,2586]],"scale":0.637,"sharp":1.04,"z":false,"tracked":false},{"id":"0043","pts":[[16639,2489],[16921,2747],[16939,5507],[14675,5522],[14655,2611],[14839,2501]],"scale":0.636,"sharp":0.97,"z":false,"tracked":false},{"id":"0048","pts":[[18411,2410],[18692,2665],[18726,5430],[16459,5459],[16421,2465]],"scale":0.635,"sharp":0.94,"z":false,"tracked":false},{"id":"0049","pts":[[19517,2343],[19811,2584],[19871,5369],[17598,5418],[17534,2446],[17623,2384]],"scale":0.633,"sharp":0.91,"z":false,"tracked":false},{"id":"0050","pts":[[20940,2262],[21234,2508],[21310,5283],[19039,5345],[18958,2395],[19060,2313]],"scale":0.633,"sharp":1.03,"z":false,"tracked":false},{"id":"0052","pts":[[22625,2145],[22918,2396],[23008,5168],[20734,5242],[20664,2249]],"scale":0.633,"sharp":1.23,"z":false,"tracked":false},{"id":"0053","pts":[[23695,2067],[23994,2318],[24091,5100],[21809,5179],[21706,2205],[21808,2132]],"scale":0.63,"sharp":1.14,"z":false,"tracked":false},{"id":"0054","pts":[[24187,3915],[24483,4155],[24576,6942],[22299,7018],[22200,4070],[22297,3978]],"scale":0.631,"sharp":1.22,"z":false,"tracked":false},{"id":"0051","pts":[[21862,2196],[22153,2438],[22245,5221],[19970,5296],[19872,2322],[19973,2259]],"scale":0.632,"sharp":1.11,"z":false,"tracked":false},{"id":"0042","pts":[[18401,2408],[18692,2654],[18726,5432],[16456,5460],[16420,2519],[16530,2431]],"scale":0.634,"sharp":0.94,"z":false,"tracked":false},{"id":"0007","pts":[[16047,56],[16350,318],[16357,3035],[14122,3040],[14116,128],[14191,59]],"scale":0.644,"sharp":0.85,"z":false,"tracked":false},{"id":"0008","pts":[[14629,83],[14912,335],[14894,3108],[12628,3094],[12646,160],[12785,71]],"scale":0.635,"sharp":0.84,"z":false,"tracked":false},{"id":"0009","pts":[[13043,109],[13336,364],[13333,3168],[11039,3165],[11042,202],[11151,107]],"scale":0.627,"sharp":0.86,"z":false,"tracked":false},{"id":"0010","pts":[[11707,131],[12010,391],[12030,3229],[9705,3246],[9684,270],[9879,144]],"scale":0.619,"sharp":1.02,"z":false,"tracked":false},{"id":"0017","pts":[[9475,200],[9776,465],[9773,3309],[7443,3306],[7446,319],[7647,198]],"scale":0.617,"sharp":0.92,"z":false,"tracked":false},{"id":"0018","pts":[[7790,232],[8104,497],[8103,3384],[5739,3383],[5740,297],[5929,231]],"scale":0.609,"sharp":1.44,"z":false,"tracked":false},{"id":"0019","pts":[[6799,297],[7098,542],[7094,3386],[4778,3382],[4784,380],[4849,294]],"scale":0.621,"sharp":0.94,"z":false,"tracked":false},{"id":"0014","pts":[[7192,288],[7491,589],[7489,3379],[5171,3378],[5197,351],[5357,286]],"scale":0.621,"sharp":1.06,"z":false,"tracked":false},{"id":"0020","pts":[[5506,348],[5797,613],[5779,3417],[3479,3401],[3498,427],[3604,335]],"scale":0.626,"sharp":1.0,"z":false,"tracked":false},{"id":"0023","pts":[[3632,411],[3920,673],[3876,3450],[1601,3414],[1648,468],[1717,380]],"scale":0.632,"sharp":0.93,"z":false,"tracked":false},{"id":"0021","pts":[[4615,398],[4897,658],[4855,3434],[2582,3399],[2627,467],[2814,371]],"scale":0.633,"sharp":1.74,"z":false,"tracked":false},{"id":"0024","pts":[[3641,2384],[3926,2653],[3866,5445],[1576,5396],[1671,2403],[1821,2345]],"scale":0.628,"sharp":1.02,"z":false,"tracked":false},{"id":"0071","pts":[[3448,4933],[3750,5202],[3666,8021],[1358,7952],[1446,4992],[1581,4877]],"scale":0.623,"sharp":0.88,"z":false,"tracked":false},{"id":"0027","pts":[[4833,2910],[5130,3179],[5077,5982],[2777,5939],[2833,2969],[2981,2875]],"scale":0.626,"sharp":1.16,"z":false,"tracked":false},{"id":"0026","pts":[[4382,2917],[4669,3182],[4611,5988],[2312,5940],[2374,2984],[2505,2878]],"scale":0.626,"sharp":1.19,"z":false,"tracked":false},{"id":"0028","pts":[[5332,2896],[5624,3161],[5576,5972],[3274,5933],[3324,2953],[3437,2864]],"scale":0.625,"sharp":1.08,"z":false,"tracked":false},{"id":"0030","pts":[[7287,2846],[7582,3096],[7555,5936],[5240,5913],[5269,2892],[5429,2828]],"scale":0.622,"sharp":1.04,"z":false,"tracked":false},{"id":"0032","pts":[[9240,2788],[9529,3047],[9528,5872],[7215,5871],[7216,2874],[7313,2787]],"scale":0.622,"sharp":0.88,"z":false,"tracked":false},{"id":"0012","pts":[[9860,191],[10153,468],[10153,3304],[7818,3304],[7818,309],[7910,191]],"scale":0.616,"sharp":1.02,"z":false,"tracked":false},{"id":"0013","pts":[[8168,260],[8477,522],[8482,3345],[6168,3349],[6165,373],[6278,263]],"scale":0.622,"sharp":0.84,"z":false,"tracked":false},{"id":"0015","pts":[[9523,197],[9817,453],[9819,3310],[7484,3312],[7482,313],[7676,198]],"scale":0.616,"sharp":0.94,"z":false,"tracked":false},{"id":"0016","pts":[[10243,162],[10589,452],[10589,3293],[8241,3293],[8241,271],[8430,162]],"scale":0.613,"sharp":1.04,"z":false,"tracked":false},{"id":"0034","pts":[[10294,2745],[10590,2999],[10603,5838],[8282,5849],[8269,2852],[8422,2753]],"scale":0.62,"sharp":0.94,"z":false,"tracked":false},{"id":"0035","pts":[[11776,2668],[12082,2915],[12126,5762],[9802,5798],[9756,2793],[9882,2697]],"scale":0.619,"sharp":0.89,"z":false,"tracked":false},{"id":"0065","pts":[[12061,4674],[12369,4939],[12409,7842],[10031,7875],[9987,4797],[10168,4700]],"scale":0.605,"sharp":0.81,"z":false,"tracked":false},{"id":"0064","pts":[[13602,4601],[13905,4866],[13949,7764],[11574,7800],[11527,4700],[11640,4631]],"scale":0.606,"sharp":1.15,"z":false,"tracked":false},{"id":"0063","pts":[[14149,4569],[14450,4827],[14502,7739],[12121,7781],[12067,4704],[12197,4604]],"scale":0.604,"sharp":1.11,"z":false,"tracked":false},{"id":"0062","pts":[[15532,4502],[15844,4759],[15899,7663],[13524,7708],[13466,4632],[13621,4538]],"scale":0.606,"sharp":0.89,"z":false,"tracked":false},{"id":"0061","pts":[[16216,4458],[16524,4718],[16587,7628],[14205,7679],[14139,4602],[14249,4500]],"scale":0.604,"sharp":0.97,"z":false,"tracked":false},{"id":"0060","pts":[[16765,4420],[17075,4680],[17150,7594],[14764,7655],[14684,4536],[14765,4471]],"scale":0.603,"sharp":1.05,"z":false,"tracked":false},{"id":"0059","pts":[[18128,4339],[18426,4600],[18510,7511],[16125,7580],[16036,4474],[16133,4396]],"scale":0.603,"sharp":1.03,"z":false,"tracked":false},{"id":"0058","pts":[[19429,4254],[19739,4514],[19828,7424],[17444,7497],[17349,4405],[17452,4314]],"scale":0.603,"sharp":1.02,"z":false,"tracked":false},{"id":"0057","pts":[[20187,4206],[20493,4467],[20582,7378],[18196,7450],[18129,4320],[18196,4266]],"scale":0.603,"sharp":0.96,"z":false,"tracked":false},{"id":"0056","pts":[[21396,4100],[21714,4362],[21825,7301],[19417,7392],[19298,4263],[19448,4174]],"scale":0.597,"sharp":0.9,"z":false,"tracked":false},{"id":"0055","pts":[[22850,3999],[23167,4255],[23279,7204],[20867,7295],[20748,4142],[20873,4073]],"scale":0.596,"sharp":1.26,"z":false,"tracked":false},{"id":"0066","pts":[[10735,4749],[11039,5010],[11050,7896],[8689,7905],[8678,4836],[8804,4756]],"scale":0.61,"sharp":0.96,"z":false,"tracked":false},{"id":"0036","pts":[[13025,2642],[13310,2882],[13331,5657],[11068,5675],[11046,2770],[11237,2655]],"scale":0.636,"sharp":1.07,"z":false,"tracked":false},{"id":"0033","pts":[[9632,2772],[9925,3039],[9928,5860],[7612,5863],[7609,2865],[7718,2774]],"scale":0.621,"sharp":0.94,"z":false,"tracked":false},{"id":"0031","pts":[[8579,2813],[8874,3077],[8862,5889],[6557,5880],[6569,2875],[6650,2805]],"scale":0.624,"sharp":0.97,"z":false,"tracked":false},{"id":"0011","pts":[[10814,425],[10823,3283],[8482,3290],[8474,270],[8662,168],[10446,163]],"scale":0.615,"sharp":0.81,"z":false,"tracked":false},{"id":"0029","pts":[[6323,2870],[6607,3134],[6569,5957],[4256,5926],[4317,2921],[4398,2844]],"scale":0.622,"sharp":1.1,"z":false,"tracked":false},{"id":"0025","pts":[[3662,2929],[3935,3177],[3872,5989],[1583,5938],[1648,2974],[1816,2888]],"scale":0.628,"sharp":1.06,"z":false,"tracked":false},{"id":"0022","pts":[[4139,396],[4424,652],[4387,3441],[2107,3411],[2146,433],[2324,372]],"scale":0.631,"sharp":0.96,"z":false,"tracked":false},{"id":"0073","pts":[[2160,4943],[2446,5212],[2347,8023],[45,7941],[150,4968],[344,4879]],"scale":0.625,"sharp":1.32,"z":false,"tracked":false},{"id":"0075","pts":[[3416,7390],[3697,7693],[3592,10509],[1261,10422],[1374,7392],[1506,7319]],"scale":0.617,"sharp":0.77,"z":false,"tracked":false},{"id":"0072","pts":[[2958,4936],[3257,5220],[3168,8029],[856,7955],[950,4996],[1148,4878]],"scale":0.622,"sharp":1.29,"z":false,"tracked":false},{"id":"0074","pts":[[2149,7389],[2443,7671],[2321,10497],[0,10396],[129,7427],[331,7310]],"scale":0.62,"sharp":0.98,"z":false,"tracked":false},{"id":"0070","pts":[[5021,4913],[5307,5177],[5248,8012],[2929,7963],[2991,4989],[3187,4874]],"scale":0.62,"sharp":0.78,"z":false,"tracked":false},{"id":"0078","pts":[[6333,7359],[6626,7633],[6554,10508],[4198,10450],[4273,7434],[4474,7313]],"scale":0.611,"sharp":1.0,"z":false,"tracked":false},{"id":"0080","pts":[[8182,7357],[8479,7638],[8395,10500],[6044,10431],[6135,7370],[6264,7300]],"scale":0.612,"sharp":1.19,"z":false,"tracked":false},{"id":"0081","pts":[[9444,7353],[9732,7629],[9645,10500],[7292,10429],[7386,7394],[7461,7294]],"scale":0.611,"sharp":1.0,"z":false,"tracked":false},{"id":"0082","pts":[[10301,7337],[10602,7612],[10526,10506],[8156,10444],[8237,7375],[8386,7287]],"scale":0.607,"sharp":1.0,"z":false,"tracked":false},{"id":"0083","pts":[[11776,7310],[12074,7582],[12014,10501],[9626,10452],[9690,7324],[9839,7271]],"scale":0.602,"sharp":0.95,"z":false,"tracked":false},{"id":"0084","pts":[[13087,7275],[13377,7541],[13337,10486],[10931,10454],[10974,7356],[11023,7271]],"scale":0.598,"sharp":1.03,"z":false,"tracked":false},{"id":"0085","pts":[[14015,7242],[14311,7513],[14283,10466],[11868,10443],[11919,7299],[11994,7223]],"scale":0.596,"sharp":1.04,"z":false,"tracked":false},{"id":"0086","pts":[[15548,7211],[15845,7486],[15808,10444],[13386,10414],[13425,7248],[13544,7186]],"scale":0.594,"sharp":0.8,"z":false,"tracked":false},{"id":"0087","pts":[[16885,7166],[17181,7437],[17161,10417],[14724,10400],[14746,7216],[14885,7152]],"scale":0.591,"sharp":0.89,"z":false,"tracked":false},{"id":"0088","pts":[[18197,7138],[18502,7403],[18473,10388],[16038,10364],[16069,7210],[16186,7118]],"scale":0.591,"sharp":1.45,"z":false,"tracked":false},{"id":"0089","pts":[[20104,7100],[20411,7374],[20377,10347],[17945,10319],[17982,7172],[18148,7078]],"scale":0.592,"sharp":1.0,"z":false,"tracked":false},{"id":"0090","pts":[[21602,7076],[21906,7336],[21873,10318],[19444,10291],[19479,7136],[19605,7053]],"scale":0.592,"sharp":0.78,"z":false,"tracked":false},{"id":"0091","pts":[[22640,7052],[22945,7334],[22913,10294],[20485,10268],[20518,7117],[20639,7031]],"scale":0.592,"sharp":0.89,"z":false,"tracked":false},{"id":"0079","pts":[[6919,7347],[7213,7621],[7149,10506],[4786,10453],[4854,7396],[4987,7304]],"scale":0.609,"sharp":1.14,"z":false,"tracked":false},{"id":"0077","pts":[[5351,7374],[5639,7644],[5557,10514],[3209,10446],[3295,7442],[3500,7321]],"scale":0.613,"sharp":0.86,"z":false,"tracked":false},{"id":"0076","pts":[[4369,7383],[4654,7659],[4560,10513],[2221,10436],[2320,7436],[2519,7322]],"scale":0.615,"sharp":0.85,"z":false,"tracked":false},{"id":"0069","pts":[[6194,4882],[6491,5147],[6453,7989],[4126,7957],[4167,4960],[4306,4856]],"scale":0.618,"sharp":0.72,"z":false,"tracked":false},{"id":"0068","pts":[[7590,4838],[7876,5105],[7866,7953],[5530,7944],[5543,4931],[5698,4831]],"scale":0.616,"sharp":1.05,"z":false,"tracked":false},{"id":"0039","pts":[[15459,2545],[15762,2819],[15783,5558],[13522,5575],[13499,2672],[13656,2559]],"scale":0.636,"sharp":1.06,"z":false,"tracked":false},{"id":"0001","pts":[[21100,158],[21289,291],[21503,2042],[20075,2217],[19842,312]],"scale":1.0,"sharp":1.24,"z":false,"tracked":false},{"id":"0067","pts":[[9772,4370],[10069,4628],[10069,7501],[7721,7501],[7746,4431],[7855,4370]],"scale":0.613,"sharp":1.32,"z":false,"tracked":true}];
+const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
+const ZSTACK = null;      // {levels, tiles:[...]} ou null
+const QUALITY = {"grade": "B", "notes": ["recalage moyen (1.9 px)", "1 champ(s) placé(s) sans recalage fin"], "frames": {"candidates": 135, "blurred": 0, "selected": 92, "used": 92, "tracked_only": 1}, "residual_px": 1.95, "residual_max_px": 130.44, "holes": [], "holes_frac": 0.0, "coverage_px": 229834510, "coverage_mm2": null, "low_sharp_frac": 0.0, "gain_spread_pct": 7.7, "flat_field": "médiane", "k1": -0.026, "zstack_fields": 0, "zstack_levels": 0};    // rapport du pipeline ({} si absent)
+const CHILDREN = [];  // lames de détail (autre objectif) recalées dans celle-ci
+const PARENT = null;      // lame d'ensemble, si celle-ci est un détail
+const svgNS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+
+// tile source : pyramide Deep Zoom de cette lame ; pour un plan z, les tuiles manquantes retombent sur la base
+function source(prefix, keys) {
+  return { width: W, height: H, tileSize: TILE, tileOverlap: 1, minLevel: 0, maxLevel: MAXLVL,
+    getTileUrl: (l, x, y) => (keys && keys.has(l + '/' + x + '_' + y) ? prefix : 'lame_files') + `/${l}/${x}_${y}.jpg` };
+}
+const viewer = OpenSeadragon({
+  id: 'viewer', showNavigationControl: false, showNavigator: true, navigatorPosition: 'TOP_RIGHT', navigatorSizeRatio: 0.16,
+  gestureSettingsTouch: { pinchToZoom: true, flickEnabled: true }, maxZoomPixelRatio: 3, minZoomImageRatio: 0.6, visibilityRatio: 0.5,
+  animationTime: 0.6, immediateRender: true, preserveViewport: false, tileSources: source()
+});
+$('zin').onclick = () => viewer.viewport.zoomBy(1.6);
+$('zout').onclick = () => viewer.viewport.zoomBy(1 / 1.6);
+$('home').onclick = () => viewer.viewport.goHome();
+
+// ---- lame parente / enfants ----
+if (PARENT) $('info').insertAdjacentHTML('beforeend', `${$('info').textContent ? ' · ' : ''}<a href="../${PARENT.slug}/">↖ vue d'ensemble : ${PARENT.title}</a>${PARENT.placed ? '' : ' (position non retrouvée)'}`);
+const placed = CHILDREN.filter(c => c.transform);
+const unplaced = CHILDREN.filter(c => !c.transform);
+if (CHILDREN.length) {
+  $('info').insertAdjacentHTML('beforeend', ($('info').textContent ? ' · ' : '') + CHILDREN.map(c => `<a href="../${c.slug}/">↗ ${c.title}${c.objective ? ' (obj. ' + c.objective + ')' : ''}</a>`).join(' · '));
+}
+const kidLayers = [];
+const kidSvg = document.createElementNS(svgNS, 'svg');
+kidSvg.setAttribute('viewBox', `0 0 ${W} ${H}`); kidSvg.setAttribute('class', 'children'); kidSvg.setAttribute('width', '100%'); kidSvg.setAttribute('height', '100%'); kidSvg.style.overflow = 'visible';
+for (const c of placed) {
+  const [a, b, tx, ty] = c.transform;   // x' = a x - b y + tx ; y' = b x + a y + ty  (enfant px -> parent px)
+  const s = Math.hypot(a, b), deg = Math.atan2(b, a) * 180 / Math.PI;
+  const corners = [[0, 0], [c.width, 0], [c.width, c.height], [0, c.height]].map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty]);
+  const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', corners.map(q => q.map(v => v.toFixed(1)).join(',')).join(' ')); kidSvg.appendChild(p);
+  const t = document.createElementNS(svgNS, 'text'); t.setAttribute('x', corners[0][0] + 30); t.setAttribute('y', corners[0][1] - 20); t.textContent = c.objective ? 'obj. ' + c.objective : c.title; kidSvg.appendChild(t);
+  viewer.addHandler('open', () => viewer.addTiledImage({
+    tileSource: { width: c.width, height: c.height, tileSize: c.tile, tileOverlap: 1, minLevel: 0, maxLevel: c.maxlvl, getTileUrl: (l, x, y) => `../${c.slug}/lame_files/${l}/${x}_${y}.jpg` },
+    x: tx / W, y: ty / W, width: s * c.width / W, degrees: deg,
+    success: e => kidLayers.push(e.item)
+  }));
+}
+if (placed.length) {
+  $('kids').hidden = false;
+  let on = true;
+  const apply = () => { kidLayers.forEach(l => l.setOpacity(on ? 1 : 0)); if (on) viewer.addOverlay({ element: kidSvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(kidSvg); };
+  $('kids').onclick = () => { on = !on; $('kids').setAttribute('aria-pressed', String(on)); apply(); };
+  viewer.addHandler('open', () => viewer.addOverlay({ element: kidSvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }));
+}
+
+// ---- contours des champs (sur demande) ----
+const svg = document.createElementNS(svgNS, 'svg');
+svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'fields'); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%');
+svg.style.overflow = 'visible';
+for (const f of FIELDS) {
+  const p = document.createElementNS(svgNS, 'polygon');
+  p.setAttribute('points', f.pts.map(q => q.join(',')).join(' '));
+  svg.appendChild(p);
+  const t = document.createElementNS(svgNS, 'text');
+  const [x, y] = f.pts[0]; t.setAttribute('x', x + 40); t.setAttribute('y', y + 110); t.textContent = f.id + (f.z ? ' z' : ''); svg.appendChild(t);
+}
+let fieldsShown = false;
+$('fields').onclick = () => { fieldsShown = !fieldsShown; $('fields').setAttribute('aria-pressed', String(fieldsShown)); if (fieldsShown) viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(svg); };
+
+// ---- rapport de qualité : panneau + calque (netteté par champ, trous) ----
+if (QUALITY && QUALITY.grade) {
+  $('qbtn').hidden = false; $('qg').textContent = QUALITY.grade; $('qg').className = 'g g' + QUALITY.grade;
+  const qsvg = document.createElementNS(svgNS, 'svg');
+  qsvg.setAttribute('viewBox', `0 0 ${W} ${H}`); qsvg.setAttribute('class', 'quality'); qsvg.setAttribute('width', '100%'); qsvg.setAttribute('height', '100%'); qsvg.style.overflow = 'visible';
+  for (const f of FIELDS) {
+    const p = document.createElementNS(svgNS, 'polygon');
+    p.setAttribute('points', f.pts.map(q => q.join(',')).join(' '));
+    const s = f.sharp == null ? 1 : f.sharp;
+    p.setAttribute('class', (s >= 0.8 ? 's2' : s >= 0.5 ? 's1' : 's0') + (f.tracked ? ' tracked' : ''));
+    qsvg.appendChild(p);
+  }
+  for (const h of QUALITY.holes || []) {
+    const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', h.map(q => q.join(',')).join(' ')); p.setAttribute('class', 'hole'); qsvg.appendChild(p);
+  }
+  const fr = QUALITY.frames || {};
+  const fmt = v => v == null ? '' : (typeof v === 'number' ? v.toLocaleString('fr-FR') : v);
+  $('qpanel').innerHTML = `<h2>Qualité <span class="g g${QUALITY.grade}" style="padding:0 6px;border-radius:4px;color:#fff">${QUALITY.grade}</span></h2>` +
+    (QUALITY.notes && QUALITY.notes.length ? '<ul>' + QUALITY.notes.map(n => `<li>${n}</li>`).join('') + '</ul>' : '<p style="margin:0 0 8px">Aucune remarque : couverture continue, champs nets, recalage précis.</p>') +
+    `<div class="kv"><span>images extraites</span><span>${fmt(fr.candidates)}</span><span>floues rejetées</span><span>${fmt(fr.blurred)}</span><span>champs assemblés</span><span>${fmt(fr.used)} / ${fmt(fr.selected)}</span>` +
+    `<span>recalage médian</span><span>${fmt(QUALITY.residual_px)} px</span><span>surface couverte</span><span>${QUALITY.coverage_mm2 != null ? fmt(QUALITY.coverage_mm2) + ' mm²' : fmt(QUALITY.coverage_px) + ' px'}</span>` +
+    `<span>flat-field</span><span>${fmt(QUALITY.flat_field)}</span>${QUALITY.zstack_fields ? `<span>piles de profondeur</span><span>${QUALITY.zstack_fields} (${QUALITY.zstack_levels} plans)</span>` : ''}</div>` +
+    `<div class="leg"><span><i style="background:rgba(27,148,102,.5)"></i>net</span><span><i style="background:rgba(183,121,31,.6)"></i>moyen</span><span><i style="background:rgba(192,57,43,.6)"></i>peu net</span><span><i style="border:2px dashed #c0392b;box-sizing:border-box"></i>trou</span><span><i style="border:1px dashed #666;box-sizing:border-box"></i>placé sans recalage</span></div>`;
+  let qOn = false;
+  $('qbtn').onclick = () => { qOn = !qOn; $('qbtn').setAttribute('aria-pressed', String(qOn)); $('qpanel').hidden = !qOn; if (qOn) viewer.addOverlay({ element: qsvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(qsvg); };
+}
+
+// ---- z-stack : un calque par plan, seul le plan choisi est visible (la base EDF reste dessous) ----
+if (ZSTACK && ZSTACK.levels > 0) {
+  const keys = new Set(ZSTACK.tiles || []);
+  const layers = [];
+  viewer.addHandler('open', () => {
+    for (let z = 0; z < ZSTACK.levels; z++) viewer.addTiledImage({ tileSource: source('lame_z' + z, keys), opacity: 0, success: e => { layers[z] = e.item; } });
+  });
+  $('zctl').hidden = false; $('zr').max = ZSTACK.levels;
+  const setZ = v => {
+    v = Math.max(0, Math.min(ZSTACK.levels, v)); $('zr').value = v;
+    $('zl').textContent = v === 0 ? 'net partout' : `plan ${v} / ${ZSTACK.levels}`;
+    layers.forEach((l, z) => l && l.setOpacity(z === v - 1 ? 1 : 0));
+  };
+  $('zr').oninput = () => setZ(+$('zr').value);
+  document.addEventListener('keydown', e => { if (e.key === '[') setZ(+$('zr').value - 1); if (e.key === ']') setZ(+$('zr').value + 1); });
+}
+
+// ---- zoom + barre d'échelle ----
+const hud = $('hud'), bar = $('bar');
+function updateBar() {
+  if (!UMPX) return;
+  const z = imgZoom();   // pixels écran par pixel image
+  const umPerScreenPx = UMPX / z;
+  const target = 120 * umPerScreenPx;
+  const p = Math.pow(10, Math.floor(Math.log10(target)));
+  const len = [1, 2, 5, 10].map(m => m * p).reduce((a, b) => Math.abs(b - target) < Math.abs(a - target) ? b : a);
+  bar.querySelector('i').style.width = (len / umPerScreenPx).toFixed(1) + 'px';
+  bar.querySelector('span').textContent = len >= 1000 ? (len / 1000).toLocaleString('fr-FR') + ' mm' : len.toLocaleString('fr-FR') + ' µm';
+  bar.hidden = false;
+}
+const imgZoom = () => { const it = viewer.world.getItemAt(0); return it ? it.viewportToImageZoom(viewer.viewport.getZoom(true)) : viewer.viewport.getZoom(true) / W; };
+function updateHud() {
+  const z = imgZoom();
+  hud.textContent = 'zoom ' + z.toFixed(2) + '× (1,00× = pixels natifs)';
+  updateBar();
+}
+viewer.addHandler('zoom', updateHud);
+viewer.addHandler('animation', updateHud);
+viewer.addHandler('animation-finish', updateHud);
+viewer.addHandler('open', updateHud);
+</script>
+</body>
+</html>
