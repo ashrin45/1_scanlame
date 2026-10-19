@@ -13,7 +13,12 @@
  "comment": null,
  "captured": "19/10/2026 18:35",
  "parent": "pv-multi-10191835",
- "parent_transform": null,
+ "parent_transform": [
+  0.08434702334160694,
+  0.010619131642992812,
+  989.0079547440665,
+  1005.8136072130537
+ ],
  "children": [],
  "quality": {
   "grade": "A",
@@ -57,5 +62,6 @@
  "retakes": 0,
  "retake_series": [],
  "zstack": 0,
- "zstack_tiles": null
+ "zstack_tiles": null,
+ "parent_approx": null
 }

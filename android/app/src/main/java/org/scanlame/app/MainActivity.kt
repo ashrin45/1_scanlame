@@ -232,8 +232,8 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                 if (sess.phase != "switching") {
                     WebButton(if (sess.phase == "blank") "Fond blanc ●" else "Fond blanc", pressed = sess.phase == "blank", small = true) { session.setBlank(sess.phase != "blank") }
                     WebButton("Changer d'objectif", small = true, enabled = sess.phase != "blank") { showObjPick = !showObjPick }
-                    if (showObjPick) Row(Modifier.background(Color(0xF217151C), RoundedCornerShape(12.dp)).border(1.dp, LINE, RoundedCornerShape(12.dp)).padding(8.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                        for (o in Settings.OBJECTIVES.filter { it != sess.objective }.take(4)) WebButton(o, small = true) { showObjPick = false; session.startSwitch(o) }
+                    if (showObjPick) FlowRow(Modifier.background(Color(0xF217151C), RoundedCornerShape(12.dp)).border(1.dp, LINE, RoundedCornerShape(12.dp)).padding(8.dp), verticalArrangement = Arrangement.spacedBy(6.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                        for (o in Settings.OBJECTIVES.filter { it != sess.objective }) WebButton(o, small = true) { showObjPick = false; session.startSwitch(o) }
                     }
                 } else WebButton("Reprendre", small = true) { session.resumeSwitch() }
             }

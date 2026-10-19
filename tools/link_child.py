@@ -113,7 +113,11 @@ def main():
       kp, dp = sift.detectAndCompute(gw, None)
       if win and kp:
           for k_ in kp: k_.pt = (k_.pt[0] + win[0], k_.pt[1] + win[1])
-      for rr in cands:
+      tried = set(); queue = list(cands)
+      while queue:
+          rr = queue.pop(0)
+          if any(abs(rr / t - 1) < 0.05 for t in tried): continue
+          tried.add(rr)
           f = rr * sp / sc                       # facteur a appliquer a l'image enfant reduite pour tomber a l'echelle du parent reduit
           cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
           gc = cv2.createCLAHE(2.0, (8, 8)).apply(cv2.cvtColor(cs, cv2.COLOR_BGR2GRAY))
@@ -126,7 +130,11 @@ def main():
           if A is None: continue
           n = int(inl.sum()); s_ = math.hypot(A[0, 0], A[0, 1])
           print(f'rapport {rr:.3f} : {len(good)} appariements, {n} inliers, échelle résiduelle {s_:.2f}')
-          if n >= 25 and 0.7 < s_ < 1.4 and (best is None or n > best[0]): best = (n, A, f)
+          # rapport confirme par une 2e estimation independante (echelle residuelle ~1 apres correction) : 15 inliers suffisent
+          ok = (n >= 25 and 0.7 < s_ < 1.4) or (n >= 15 and 0.93 < s_ < 1.07 and rr not in cands)
+          if ok and (best is None or n > best[0]): best = (n, A, f)
+          # echelle residuelle loin de 1 : le rapport reel n'est pas celui attendu (zoom ou objectif different), on reessaie au rapport mesure
+          elif n >= 10 and not (0.7 < s_ < 1.4) and 0.02 < rr * s_ < 1.5: queue.insert(0, rr * s_); print(f'  -> rapport réel probable {rr * s_:.3f}, nouvel essai')
     if best:
         n, A, f = best
         k = sc * f / sp
