@@ -13,6 +13,7 @@ ap.add_argument('--keep', action='store_true')
 ap.add_argument('--only', default=None)
 ap.add_argument('--work', default='inbox')
 ap.add_argument('--keep-days', type=float, default=float(os.environ.get('KEEP_DAYS', '60')), help='garder les prises publiees ce nombre de jours (reassemblage possible ; archive brute)')
+ap.add_argument('--fetch-only', action='store_true', help='telecharger la prise (avec --only) sans l assembler : diagnostic hors ligne')
 ap.add_argument('--force', action='store_true', help='retraiter meme une serie deja publiee ou en echec (avec --only)')
 ap.add_argument('--storage-limit-mb', type=float, default=float(os.environ.get('STORAGE_LIMIT_MB', '80000')), help='au-dela, les prises publiees les plus anciennes sont supprimees sans attendre --keep-days')
 a = ap.parse_args()
@@ -104,7 +105,7 @@ while True:
             print(f'{s} : pas encore close (dernier morceau il y a {int(age.total_seconds())} s), ignorée'); continue
         orphan = True
         print(f'{s} : non close depuis plus de 10 min, traitée sans positions')
-    if 'done.txt' in names and not (a.force and a.only):
+    if 'done.txt' in names and not ((a.force or a.fetch_only) and a.only):
         # published earlier: keep the raw take a few days, then delete it
         from datetime import datetime, timezone, timedelta
         done_at = next((e.get('updated_at') or e.get('created_at') for e in entries if e['name'] == 'done.txt'), None)
@@ -114,7 +115,7 @@ while True:
                 allp = [f'{s}/{e["name"]}' for e in entries if e.get('id')] + [f'{s}/chunks/{e["name"]}' for e in ls(f'{s}/chunks')] + [f'{s}/photos/{e["name"]}' for e in ls(f'{s}/photos')]
                 rm(allp); print(f'{s} : publiée il y a {age.days} j, prise supprimée du bucket'); continue
         print(f'{s} : déjà publiée, conservée'); continue
-    if 'failed.txt' in names and not (a.force and a.only):
+    if 'failed.txt' in names and not ((a.force or a.fetch_only) and a.only):
         print(f'{s} : déjà en échec, ignorée'); continue
     print(f'== {s}')
     d = os.path.join(a.work, s); shutil.rmtree(d, ignore_errors=True); os.makedirs(d)
@@ -147,6 +148,7 @@ while True:
         print(f'  journal du téléphone : {len(tail)} lignes, dernières :'); print('\n'.join('    ' + l for l in tail[-12:]))
         meta['journal'] = None; json.dump(meta, open(os.path.join(d, 'serie.json'), 'w'))
     vid = os.path.join(d, f'video.{ext}') if chunks else None
+    if a.fetch_only: print('  téléchargée seulement (--fetch-only)'); continue
     if (not chunks and not photos) or (vid and os.path.getsize(vid) < 200_000):
         print('  vide ou trop courte : supprimée'); rm(paths); continue
     t0 = time.time()
