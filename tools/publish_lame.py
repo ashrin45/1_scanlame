@@ -103,7 +103,7 @@ def write_pages(slug):
     children = []
     for c in j.get('children') or []:
         cj = load_lame(c['slug'])
-        if cj: children.append(dict(slug=c['slug'], title=cj['title'], objective=cj.get('objective'), width=cj['width'], height=cj['height'], maxlvl=cj['maxlvl'], tile=cj['tile'], transform=c.get('transform')))
+        if cj: children.append(dict(slug=c['slug'], title=cj['title'], objective=cj.get('objective'), width=cj['width'], height=cj['height'], maxlvl=cj['maxlvl'], tile=cj['tile'], transform=c.get('transform'), outline=cj.get('outline')))
     parent = None
     if j.get('parent'):
         pj = load_lame(j['parent'])
@@ -180,7 +180,7 @@ def main():
              stain=layout.get('stain'), objective=layout.get('objective'), sample=layout.get('sample'), comment=layout.get('comment'),
              captured=captured or old.get('captured') or datetime.date.today().strftime('%d/%m/%Y'),
              parent=layout.get('parent') or old.get('parent'), parent_transform=old.get('parent_transform'), parent_approx=old.get('parent_approx'),
-             hint=layout.get('hint') or old.get('hint'), stage=layout.get('stage') or old.get('stage'), stage_cal=old.get('stage_cal'), stage_obs=old.get('stage_obs'),
+             outline=old.get('outline'), hint=layout.get('hint') or old.get('hint'), stage=layout.get('stage') or old.get('stage'), stage_cal=old.get('stage_cal'), stage_obs=old.get('stage_obs'),
              children=old.get('children') or [], quality=layout.get('quality'),
              series=layout.get('series') or old.get('series'), version=layout.get('version') or old.get('version') or 1, params=layout.get('params') or old.get('params'),
              published=old.get('published') or datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),

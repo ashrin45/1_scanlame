@@ -79,6 +79,20 @@ def prior_center(pj, cj):
     if h and h.get('fx') is not None: return np.array([h['fx'] * pj['width'], h['fy'] * pj['height']], float), 'repère'
     return None, None
 
+def outline(slug, j, cim, sc):
+    """Contour(s) de la zone couverte par la mosaique (px pleine resolution) : le fond blanc hors couverture est rogne a l'affichage."""
+    bg = (cim.min(axis=2) > 245).astype(np.uint8)
+    k = np.ones((7, 7), np.uint8)
+    fg = cv2.morphologyEx(1 - bg, cv2.MORPH_CLOSE, k); fg = cv2.morphologyEx(fg, cv2.MORPH_OPEN, k)
+    cs, _ = cv2.findContours(fg, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    area = fg.sum()
+    polys = []
+    for c in sorted(cs, key=cv2.contourArea, reverse=True):
+        if cv2.contourArea(c) < 0.02 * area: break
+        c = cv2.approxPolyDP(c, 3.0, True).reshape(-1, 2)
+        polys.append([[round(float(x) / sc, 1), round(float(y) / sc, 1)] for x, y in c])
+    return polys
+
 def main():
     parent, child = sys.argv[1], sys.argv[2]
     pj, cj = load_lame(parent), load_lame(child)
@@ -159,7 +173,7 @@ def main():
         transform = None
         print('recalage impossible : la lame de détail est seulement listée dans la lame d\'ensemble')
     pj.pop('_slug', None)
-    cj['parent'] = parent; cj['parent_transform'] = transform; save_lame(child, cj)
+    cj['parent'] = parent; cj['parent_transform'] = transform; cj['outline'] = outline(child, cj, cim, sc) if transform else None; save_lame(child, cj)
     kids = [c for c in (pj.get('children') or []) if c['slug'] != child] + [dict(slug=child, transform=transform)]
     pj['children'] = kids; save_lame(parent, pj)
     write_pages(parent); write_pages(child); write_gallery()

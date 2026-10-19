@@ -126,12 +126,14 @@ for (const c of placed) {
   const [a, b, tx, ty] = c.transform;   // x' = a x - b y + tx ; y' = b x + a y + ty  (enfant px -> parent px)
   const s = Math.hypot(a, b), deg = Math.atan2(b, a) * 180 / Math.PI;
   const corners = [[0, 0], [c.width, 0], [c.width, c.height], [0, c.height]].map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty]);
-  const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', corners.map(q => q.map(v => v.toFixed(1)).join(',')).join(' ')); kidSvg.appendChild(p);
+  const polys = (c.outline && c.outline.length) ? c.outline.map(poly => poly.map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty])) : [corners];
+  for (const poly of polys) { const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', poly.map(q => q.map(v => v.toFixed(1)).join(',')).join(' ')); kidSvg.appendChild(p); }
   const t = document.createElementNS(svgNS, 'text'); t.setAttribute('x', corners[0][0] + 30); t.setAttribute('y', corners[0][1] - 20); t.textContent = c.objective ? 'obj. ' + c.objective : c.title; kidSvg.appendChild(t);
   viewer.addHandler('open', () => viewer.addTiledImage({
     tileSource: { width: c.width, height: c.height, tileSize: c.tile, tileOverlap: 1, minLevel: 0, maxLevel: c.maxlvl, getTileUrl: (l, x, y) => `../${c.slug}/lame_files/${l}/${x}_${y}.jpg` },
-    x: tx / W, y: ty / W, width: s * c.width / W, degrees: deg,
-    success: e => kidLayers.push(e.item)
+    // OpenSeadragon tourne l'image autour de son centre : on place le rectangle non tourné pour que son centre tombe au bon endroit
+    x: (a * c.width / 2 - b * c.height / 2 + tx - s * c.width / 2) / W, y: (b * c.width / 2 + a * c.height / 2 + ty - s * c.height / 2) / W, width: s * c.width / W, degrees: deg,
+    success: e => { kidLayers.push(e.item); if (c.outline && c.outline.length && e.item.setCroppingPolygons) e.item.setCroppingPolygons(c.outline.map(poly => poly.map(([x, y]) => ({ x, y })))); }   // fond blanc hors couverture rogné
   }));
 }
 if (placed.length) {
