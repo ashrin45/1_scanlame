@@ -274,7 +274,12 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                 }
                 Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     WebButton("Réglages") { sheet = true }
-                    WebButton("Éteindre la caméra", danger = true, enabled = cameraOn && !sess.running) { cameraOn = false; say("Caméra arrêtée.", false) }
+                    var confirmDiscard by remember { mutableStateOf(false) }
+                    LaunchedEffect(confirmDiscard) { if (confirmDiscard) { delay(4000); confirmDiscard = false } }
+                    if (sess.running) WebButton(if (confirmDiscard) "Confirmer l'abandon" else "Abandonner la série", danger = true, pressed = confirmDiscard) {
+                        if (confirmDiscard) { confirmDiscard = false; session.discard() } else { confirmDiscard = true; say("Abandonner la série en cours ? Appuie encore sur le bouton pour confirmer (4 s).", true) }
+                    }
+                    else WebButton("Éteindre la caméra", danger = true, enabled = cameraOn) { cameraOn = false; say("Caméra arrêtée.", false) }
                 }
             }
         }
