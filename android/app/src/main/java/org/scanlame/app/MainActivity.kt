@@ -62,6 +62,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.layout.aspectRatio
@@ -126,6 +128,7 @@ class MainActivity : ComponentActivity() {
 /** Entrée de la galerie (lames.json) pour les listes « lame d'ensemble » et « compléter ». */
 data class LameRef(val slug: String, val title: String, val objective: String?, val width: Int = 0, val height: Int = 0, val tile: Int = 0, val maxlvl: Int = 0, val thumb: String = "")
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun App(engine: CameraEngine, st: Settings, session: Session) {
     val ctx = LocalContext.current
