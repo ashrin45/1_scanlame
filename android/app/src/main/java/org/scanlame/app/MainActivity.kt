@@ -171,7 +171,8 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
 
     LaunchedEffect(sess.message) { if (sess.message.isNotEmpty()) say(sess.message, false) }
     LaunchedEffect(camErr) { camErr?.let { say(it, true) } }
-    LaunchedEffect(Unit) { lames = withContext(Dispatchers.IO) { loadLames(st.galleryUrl) } }
+    // galerie relue à chaque ouverture des réglages (une lame publiée pendant que l'appli tourne doit apparaître)
+    LaunchedEffect(sheet) { val l = withContext(Dispatchers.IO) { loadLames(st.galleryUrl) }; if (l.isNotEmpty()) lames = l }
     LaunchedEffect(cameraOn, preview, bindKey) {
         val pv = preview
         if (cameraOn && pv != null) engine.bind(owner, pv, st, st.mode, { img -> session.onFrame(img) }) { say("Prêt, caméra active. Pose le téléphone sur l'oculaire, règle la netteté à la vis, verrouille AF/AE puis lance la série.", false) }
@@ -345,7 +346,7 @@ fun CoverageMap(s: Session.State, modifier: Modifier) {
 
 /** lames.json de la galerie : slug, titre, objectif (pour « lame d'ensemble » et « compléter »). */
 fun loadLames(gallery: String): List<LameRef> = try {
-    val c = URL(gallery + "lames/lames.json").openConnection() as HttpURLConnection
+    val c = URL(gallery + "lames/lames.json?t=" + System.currentTimeMillis()).openConnection() as HttpURLConnection
     c.connectTimeout = 8000; c.readTimeout = 8000
     val arr = JSONArray(c.inputStream.bufferedReader().readText()); c.disconnect()
     (0 until arr.length()).map { arr.getJSONObject(it) }.map { LameRef(it.getString("slug"), it.optString("title", it.getString("slug")), it.optString("objective").ifEmpty { null }) }
