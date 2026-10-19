@@ -36,6 +36,7 @@ ap.add_argument('--allow-tracked', action='store_true', help='composer meme si l
 ap.add_argument('--no-seams', action='store_true', help='coutures a mi-chemin (lignes droites) au lieu des coutures qui suivent le fond')
 ap.add_argument('--depth', choices=['auto', 'off', 'on'], default='auto', help='piles de profondeur (EDF + plans) : off = image la plus nette a chaque arret ; auto = selon serie.json (depth), off par defaut')
 ap.add_argument('--segment', type=int, default=0, help='segment d objectif de la prise (0 = premier) ; voir meta.segments')
+ap.add_argument('--parent', default=None, help='lame d ensemble (slug dans lames/, ou dossier result d un segment) : les photos y sont ancrees pendant l assemblage')
 ap.add_argument('--component', type=int, default=0, help='composante connexe a assembler (0 = la plus grande) ; les autres sont listees dans layout.json')
 a = ap.parse_args()
 
@@ -748,6 +749,100 @@ while len(T) < len(comp):
     k, v, _ = best
     T[v] = T[k] @ (A3(pairs[(k, v)][2]) if (k, v) in pairs else np.linalg.inv(A3(pairs[(v, k)][2])))
 
+# --- ancrage dans la lame d'ensemble (--parent) : groupes de photos consecutives apparies dans la lame parente ---
+# chaque groupe bien apparie donne des contraintes absolues (ou est chaque photo dans le parent) : la derive accumulee
+# le long d'une bande (courbure) est corrigee, et la transformation enfant -> parent sort directement de l'ajustement.
+anchor_corr = []          # (k, p px recalage image k, q px pleine resolution parent)
+G_init = None             # similitude parent pleine res -> repere de recalage (initialisation)
+anchored_imgs = set()
+if a.parent:
+  try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import link_child as LC
+    if os.path.isdir(a.parent):
+        plj = json.load(open(os.path.join(a.parent, 'layout.json')))
+        pim = cv2.imread(os.path.join(a.parent, 'pano.jpg'))
+        pj = dict(width=plj['size'][0], height=plj['size'][1], objective=plj.get('objective'), um_per_px=plj.get('um_per_px'))
+        sp_ = min(1.0, 8000 / max(pim.shape[:2]))
+        if sp_ < 1: pim = cv2.resize(pim, None, fx=sp_, fy=sp_, interpolation=cv2.INTER_AREA)
+    else:
+        pj = LC.load_lame(a.parent)
+        if not pj: raise RuntimeError('lame parente introuvable')
+        pim, sp_ = LC.reg_image(a.parent, pj, max_side=8000)
+    order = sorted(comp)
+    # 1) mosaique provisoire (chainage des paires) a basse resolution, pour localiser grossierement la prise dans le parent
+    c4 = np.vstack([cv2.transform(np.float32([[0, 0], [regs[k].shape[1], 0], [regs[k].shape[1], regs[k].shape[0]], [0, regs[k].shape[0]]])[None], T[k][:2])[0] for k in comp])
+    mn_, mx_ = c4.min(0), c4.max(0)
+    prov_s = min(1.0, 1500 / max(mx_ - mn_))
+    Sp = np.array([[prov_s, 0, -mn_[0] * prov_s], [0, prov_s, -mn_[1] * prov_s], [0, 0, 1]])
+    pw, ph = int(math.ceil((mx_ - mn_)[0] * prov_s)) + 1, int(math.ceil((mx_ - mn_)[1] * prov_s)) + 1
+    prov = np.full((ph, pw, 3), 255, np.uint8)
+    for k in order:
+        Mk = (Sp @ T[k])[:2]
+        w_ = cv2.warpAffine(regs[k], Mk, (pw, ph)); m_ = cv2.warpAffine(rmasks[k], Mk, (pw, ph), flags=cv2.INTER_NEAREST) > 0
+        prov[m_] = w_[m_]
+    po, co = LC.objective_number(pj.get('objective')), LC.objective_number(meta.get('objective'))
+    cands = [po / co] if (po and co) else [0.1, 0.16, 0.25, 0.4, 0.63, 1.0]       # px enfant pleine res -> px parent pleine res
+    f_c = [r_ * sp_ / (scales[ref] * prov_s) for r_ in cands]                       # px mosaique provisoire -> px parent reduit
+    prior_box = None
+    hint, stage = meta.get('hint'), meta.get('stage')
+    if hint or stage:
+        pj['_slug'] = a.parent if not os.path.isdir(a.parent) else None
+        try: prior, pk = LC.prior_center(pj, dict(hint=hint, stage=stage)) if pj.get('_slug') else ((np.array([hint['fx'] * pj['width'], hint['fy'] * pj['height']]), 'repère') if hint else (None, None))
+        except Exception: prior, pk = None, None
+        if prior is not None:
+            hw = max(pw * f_c[0], 0.15 * pim.shape[1]); hh = max(ph * f_c[0], 0.15 * pim.shape[0])
+            prior_box = (prior[0] * sp_ - hw, prior[1] * sp_ - hh, prior[0] * sp_ + hw, prior[1] * sp_ + hh)
+            log(f'a priori ({pk}) : prise attendue vers ({prior[0]:.0f}, {prior[1]:.0f}) px du parent')
+    log(f'ancrage dans la lame d\'ensemble {a.parent} ({pj["width"]}x{pj["height"]} px, objectif {pj.get("objective")}) : mosaïque provisoire {pw}x{ph}')
+    best = LC.match_into_parent(prov, pim, f_c, prior_box, log=log)
+    if not best: raise RuntimeError('prise non localisée dans la lame d\'ensemble')
+    A0, n0, f0 = best
+    G0 = A3(A0) @ np.diag([f0, f0, 1]) @ Sp                 # px recalage (repere ref) -> px parent reduit
+    G_init = np.linalg.inv(G0) @ np.diag([sp_, sp_, 1])     # px parent pleine res -> px recalage
+    log(f'localisation grossière : {n0} inliers, échelle enfant->parent {math.hypot(G0[0, 0], G0[1, 0]) / (scales[ref] * sp_):.4f}')
+    match = LC.learned_matcher()
+    if match is None: raise RuntimeError('appariement appris indisponible : pas d\'ancrage par groupes')
+    GS = 5
+    groups = [order[i:i + GS] for i in range(0, len(order), GS)]
+    if len(groups) > 1 and len(groups[-1]) < 3: groups[-2] += groups.pop()
+    ok_g = 0
+    for g in groups:
+        Mg = {k: (G0 @ T[k])[:2] for k in g}
+        cg = np.vstack([cv2.transform(np.float32([[0, 0], [regs[k].shape[1], 0], [regs[k].shape[1], regs[k].shape[0]], [0, regs[k].shape[0]]])[None], Mg[k])[0] for k in g])
+        o_ = np.floor(cg.min(0)); cw, ch = int(math.ceil(cg.max(0)[0] - o_[0])) + 1, int(math.ceil(cg.max(0)[1] - o_[1])) + 1
+        if cw < 40 or ch < 40 or cw * ch > 4e6: continue
+        canvas = np.full((ch, cw, 3), 255, np.uint8)
+        for k in g:
+            Mk = Mg[k].copy(); Mk[:, 2] -= o_
+            w_ = cv2.warpAffine(regs[k], Mk, (cw, ch)); m_ = cv2.warpAffine(rmasks[k], Mk, (cw, ch), flags=cv2.INTER_NEAREST) > 0
+            canvas[m_] = w_[m_]
+        margin = int(0.5 * max(cw, ch)) + 60
+        x0_, y0_ = int(max(0, o_[0] - margin)), int(max(0, o_[1] - margin)); x1_, y1_ = int(min(pim.shape[1], o_[0] + cw + margin)), int(min(pim.shape[0], o_[1] + ch + margin))
+        if x1_ - x0_ < 60 or y1_ - y0_ < 60: continue
+        src, dst = match(canvas, pim[y0_:y1_, x0_:x1_]); dst = dst + [x0_, y0_]
+        Ag, ng, sg = LC.fit(src, dst, thr=4.0)
+        rot = math.degrees(math.atan2(Ag[1, 0], Ag[0, 0])) if Ag is not None else 0
+        shift = np.hypot(*(cv2.transform(np.float32([[cw / 2, ch / 2]])[None], Ag)[0][0] - o_ - [cw / 2, ch / 2])) if Ag is not None else 0
+        good = Ag is not None and ng >= 25 and 0.9 < sg < 1.1 and abs(rot) < 6
+        log(f'  groupe {g[0]:04d}-{g[-1]:04d} : {len(src)} appariements, {ng} inliers, échelle {sg:.3f}, rotation {rot:+.1f}°, décalage {shift:.0f} px parent' + ('' if good else ' : rejeté'))
+        if not good: continue
+        ok_g += 1
+        for k in g:
+            h_, w_ = rmasks[k].shape
+            ys, xs = np.mgrid[h_ * 0.1:h_ * 0.9:6j, w_ * 0.1:w_ * 0.9:6j]
+            pts = np.c_[xs.ravel(), ys.ravel()]
+            pts = pts[rmasks[k][pts[:, 1].astype(int), pts[:, 0].astype(int)] > 0]
+            if len(pts) < 4: continue
+            qc = cv2.transform(np.float32(pts)[None], Mg[k])[0] - o_          # px canvas
+            qp = cv2.transform(np.float32(qc)[None], Ag)[0] / sp_               # px parent pleine res
+            anchor_corr.extend((k, p_, q_) for p_, q_ in zip(pts, qp)); anchored_imgs.add(k)
+    log(f'ancrage : {ok_g}/{len(groups)} groupes appariés, {len(anchored_imgs)} images ancrées, {len(anchor_corr)} points')
+    if not anchor_corr: G_init = G_init   # localisation seule : la transformation d'ensemble est quand meme conservee
+  except Exception as e:
+    log(f'ancrage dans la lame d\'ensemble impossible : {e}')
+    anchor_corr = []; G_init = None
+
 # --- ajustement global : toutes les similitudes d'un coup, moindres carres robustes (Huber) ---
 try:
     import scipy.sparse as sp, scipy.sparse.linalg as spl
@@ -770,25 +865,45 @@ try:
     for (i, j, p, q) in corr_list:
         r1 = add(eq, i, float(p[0]), float(p[1]), 1.0); r2 = add(eq, j, float(q[0]), float(q[1]), -1.0)
         rhs.extend([r1[0] + r2[0], r1[1] + r2[1]]); eq += 2
-    Amat = sp.csr_matrix((vals, (rows, cols)), shape=(eq, 4 * len(idx)))
+    n_pair_eq = eq
+    # ancrages : T_k(p) - G(q) = 0, G (4 params, parent pleine res -> repere de recalage) inconnue commune
+    nG = 4 if (anchor_corr and G_init is not None) else 0
+    base_g = 4 * len(idx)
+    for (k, p, q) in anchor_corr:
+        r1 = add(eq, k, float(p[0]), float(p[1]), 1.0)
+        rows.extend([eq, eq, eq, eq + 1, eq + 1, eq + 1]); cols.extend([base_g, base_g + 1, base_g + 2, base_g, base_g + 1, base_g + 3])
+        vals.extend([-float(q[0]), float(q[1]), -1.0, -float(q[1]), -float(q[0]), -1.0])
+        rhs.extend([r1[0], r1[1]]); eq += 2
+    Amat = sp.csr_matrix((vals, (rows, cols)), shape=(eq, 4 * len(idx) + nG))
     bvec = np.array(rhs)
-    x0 = np.zeros(4 * len(idx))
+    x0 = np.zeros(4 * len(idx) + nG)
     for k, n in idx.items():
         x0[4 * n:4 * n + 4] = [T[k][0, 0], T[k][1, 0], T[k][0, 2], T[k][1, 2]]
-    x = x0.copy(); w = np.ones(eq)
-    for it in range(4):
+    if nG: x0[base_g:base_g + 4] = [G_init[0, 0], G_init[1, 0], G_init[0, 2], G_init[1, 2]]
+    is_anchor = np.zeros(eq // 2, bool); is_anchor[n_pair_eq // 2:] = True
+    W_ANCHOR, DELTA_ANCHOR = 0.5, 8.0    # poids relatif et seuil Huber (px de recalage) des ancrages : ils corrigent la derive sans ecraser le recalage fin
+    x = x0.copy(); w = np.where(np.repeat(is_anchor, 2), W_ANCHOR, 1.0)
+    for it in range(5):
         Wd = sp.diags(np.sqrt(w))
-        sol = spl.lsqr(Wd @ Amat, Wd @ bvec, x0=x, atol=1e-8, btol=1e-8, iter_lim=2000)[0]
+        sol = spl.lsqr(Wd @ Amat, Wd @ bvec, x0=x, atol=1e-8, btol=1e-8, iter_lim=3000)[0]
         x = sol
         res_v = Amat @ x - bvec
-        rp = np.hypot(res_v[0::2], res_v[1::2]); delta = 2.0
-        wp = np.where(rp <= delta, 1.0, delta / np.maximum(rp, 1e-6))
+        rp = np.hypot(res_v[0::2], res_v[1::2])
+        delta = np.where(is_anchor, DELTA_ANCHOR, 2.0)
+        wp = np.where(rp <= delta, 1.0, delta / np.maximum(rp, 1e-6)) * np.where(is_anchor, W_ANCHOR, 1.0)
         w = np.repeat(wp, 2)
     for k, n in idx.items():
         a_, b_, tx, ty = x[4 * n:4 * n + 4]
         T[k] = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
-    log(f'ajustement global : {len(corr_list)} correspondances, {len(idx)} images')
+    G_fit = None
+    if nG:
+        a_, b_, tx, ty = x[base_g:base_g + 4]; G_fit = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
+        ra = rp[is_anchor]
+        log(f'ancrages : résidu médian {np.median(ra):.1f} px de recalage, 90e centile {np.percentile(ra, 90):.1f}')
+    elif G_init is not None: G_fit = G_init
+    log(f'ajustement global : {len(corr_list)} correspondances, {len(idx)} images' + (f', {len(anchor_corr)} ancrages' if nG else ''))
 except ImportError:
+    G_fit = G_init
     log('scipy absent : raffinement image par image')
     for it in range(10):
         for v in comp:
@@ -919,6 +1034,11 @@ if shrink < 1: log(f'mosaïque réduite d\'un facteur {shrink:.2f} pour tenir da
 Sfin = np.diag([shrink, shrink, 1]) @ np.array([[1, 0, -mn[0]], [0, 1, -mn[1]], [0, 0, 1]]) @ Sref
 W, H = int(math.ceil(W * shrink)), int(math.ceil(H * shrink))
 log('mosaïque', W, 'x', H)
+parent_transform = None
+if a.parent and G_fit is not None:
+    PT = np.linalg.inv(G_fit) @ np.linalg.inv(Sfin)      # px mosaique finale -> px parent pleine resolution
+    parent_transform = [float(PT[0, 0]), float(PT[1, 0]), float(PT[0, 2]), float(PT[1, 2])]
+    log(f'position dans la lame d\'ensemble : échelle {math.hypot(PT[0, 0], PT[1, 0]):.4f}, rotation {math.degrees(math.atan2(PT[1, 0], PT[0, 0])):.1f}°, {len(anchored_imgs)} images ancrées')
 
 # par image : matrice canvas<-undistorted (2x3), son inverse, boite englobante, poids (distance au bord, coeur net)
 M, Minv, bbox, scale_k, dist_maps = {}, {}, {}, {}, {}
@@ -1191,6 +1311,7 @@ json.dump(dict(size=[W, H], images=len(comp), of=N, placements=placements, k1=k1
                title=meta.get('title'), stain=meta.get('stain'), objective=meta.get('objective'), sample=meta.get('sample'),
                comment=meta.get('comment'), parent=meta.get('parent'), hint=meta.get('hint'), stage=meta.get('stage'), captured=meta.get('captured'),
                series=meta.get('series'), component=a.component, other_components=other_components,
+               parent_transform=parent_transform, parent_anchored=len(anchored_imgs) if a.parent else None,
                segment=a.segment, segments=len(segs), zone_components=zone_ids,
                params=dict(depth=DEPTH, seams=not a.no_seams, fps=a.fps, reg_size=a.reg_size, max_side=a.max_side, core=a.core, tile=a.tile,
                            distortion=not a.no_distortion, chroma=not a.no_chroma, code=(os.environ.get('GITHUB_SHA') or '')[:7] or None),

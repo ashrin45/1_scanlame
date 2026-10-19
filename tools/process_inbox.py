@@ -154,7 +154,8 @@ while True:
     t0 = time.time()
     res = os.path.join(d, 'result')
     PARGS = os.environ.get('PIPELINE_ARGS', '').split()
-    rc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'pipeline.py'), d, '--out', res] + PARGS).returncode
+    PAR0 = ['--parent', meta['parent']] if meta.get('parent') and os.path.isfile(os.path.join(ROOT, 'lames', meta['parent'], 'lame.json')) else []
+    rc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'pipeline.py'), d, '--out', res] + PAR0 + PARGS).returncode
     if rc != 0:
         print(f'  ÉCHEC du pipeline (code {rc}), série marquée en échec dans le bucket')
         logp = os.path.join(res, 'pipeline.log')
@@ -183,12 +184,12 @@ while True:
         others = layout_of(r).get('zone_components') or []      # numeros reels des composantes a assembler a part
         for n_, comp_i in enumerate(others, start=1):
             rc_ = os.path.join(d, f'result_s{seg}_c{n_}')
-            if run_pipeline(rc_, ['--segment', str(seg), '--component', str(comp_i)]): jobs.append((rc_, n_, seg, None))
+            if run_pipeline(rc_, ['--segment', str(seg), '--component', str(comp_i)] + (['--parent', res] if seg > 0 else PAR0)): jobs.append((rc_, n_, seg, None))
             else: print(f'  segment {seg + 1} zone {ci + 1} : échec de l\'assemblage, ignorée')
     if meta.get('parent'): add_zones(res, 0)
     for seg in range(1, nseg):
         rs = os.path.join(d, f'result_s{seg}')
-        if run_pipeline(rs, ['--segment', str(seg)]):
+        if run_pipeline(rs, ['--segment', str(seg), '--parent', res]):   # segment 0 (premier objectif) = lame d'ensemble : les photos y sont ancrées
             jobs.append((rs, None, seg, 'SEG0')); add_zones(rs, seg)
         else: print(f'  segment {seg + 1} : échec de l\'assemblage, ignoré')
     # les zones des segments > 0 heritent aussi du parent SEG0

@@ -61,7 +61,7 @@ def fit(src, dst, thr=5.0):
     if A is None: return None, 0, 0
     return A, int(inl.sum()), math.hypot(A[0, 0], A[0, 1])
 
-def refine_learned(cs, pim, box, margin=150):
+def refine_learned(cs, pim, box, margin=150, log=print):
     """Appariement appris de l'enfant reduit dans une fenetre du parent reduit (boite en px parent reduit)."""
     match = learned_matcher()
     if match is None: return None
@@ -69,7 +69,7 @@ def refine_learned(cs, pim, box, margin=150):
     if x1 - x0 < 50 or y1 - y0 < 50: return None
     src, dst = match(cs, pim[y0:y1, x0:x1]); dst = dst + [x0, y0]
     A, n, s_ = fit(src, dst)
-    print(f'appariement appris (fenêtre {x1 - x0}x{y1 - y0}) : {len(src)} appariements, {n} inliers, échelle résiduelle {s_:.3f}')
+    log(f'appariement appris (fenêtre {x1 - x0}x{y1 - y0}) : {len(src)} appariements, {n} inliers, échelle résiduelle {s_:.3f}')
     return (A, n, s_) if A is not None and n >= 25 and 0.85 < s_ < 1.15 else None
 
 def first_field_center(slug):
@@ -131,6 +131,59 @@ def outline(slug, j, cim, sc):
         polys.append([[round(float(x) / sc, 1), round(float(y) / sc, 1)] for x, y in c])
     return polys
 
+def match_into_parent(cim, pim, cands_f, prior_box=None, log=print):
+    """Cherche l'image cim (reduite par un des facteurs cands_f) dans pim. prior_box : fenetre (x0,y0,x1,y1) de pim ou chercher d'abord.
+    Retourne (A, n, f) : A similitude (2x3) de cim*f vers pim, n inliers, f facteur retenu ; ou None."""
+    sift = cv2.SIFT_create(8000); bf = cv2.BFMatcher(cv2.NORM_L2)
+    gp = cv2.createCLAHE(2.0, (8, 8)).apply(cv2.cvtColor(pim, cv2.COLOR_BGR2GRAY))
+    windows = []
+    if prior_box is not None:
+        x0, y0, x1, y1 = [int(v) for v in prior_box]
+        x0, y0 = max(0, x0), max(0, y0); x1, y1 = min(gp.shape[1], x1), min(gp.shape[0], y1)
+        if x1 - x0 > 50 and y1 - y0 > 50: windows.append((x0, y0, x1, y1))
+    windows.append(None)
+    best = None
+    for win in windows:
+      if best: break
+      if win: gw = gp[win[1]:win[3], win[0]:win[2]]; log(f'recherche dans la fenêtre {win}')
+      else: gw = gp
+      kp, dp = sift.detectAndCompute(gw, None)
+      if win and kp:
+          for k_ in kp: k_.pt = (k_.pt[0] + win[0], k_.pt[1] + win[1])
+      tried = set(); queue = list(cands_f)
+      while queue:
+          f = queue.pop(0)
+          if any(abs(f / t - 1) < 0.05 for t in tried): continue
+          tried.add(f)
+          cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
+          gc = cv2.createCLAHE(2.0, (8, 8)).apply(cv2.cvtColor(cs, cv2.COLOR_BGR2GRAY))
+          kc, dc = sift.detectAndCompute(gc, None)
+          if dc is None or dp is None or len(dc) < 20: continue
+          good = [m for m, n in bf.knnMatch(dc, dp, k=2) if m.distance < 0.75 * n.distance]
+          if len(good) < 12: continue
+          src = np.float32([kc[m.queryIdx].pt for m in good]); dst = np.float32([kp[m.trainIdx].pt for m in good])
+          A, n, s_ = fit(src, dst)
+          if A is None: continue
+          log(f'facteur {f:.4f} : {len(good)} appariements, {n} inliers, échelle résiduelle {s_:.2f}')
+          # facteur confirme par une 2e estimation independante (echelle residuelle ~1 apres correction) : 15 inliers suffisent
+          ok = (n >= 25 and 0.7 < s_ < 1.4) or (n >= 15 and 0.93 < s_ < 1.07 and f not in cands_f)
+          if ok and (best is None or n > best[1]): best = (A, n, f)
+          # echelle residuelle loin de 1 : le rapport reel n'est pas celui attendu (zoom ou objectif different), on reessaie au facteur mesure
+          elif n >= 10 and not (0.7 < s_ < 1.4) and 0.002 < f * s_ < 5: queue.insert(0, f * s_); log(f'  -> facteur réel probable {f * s_:.4f}, nouvel essai')
+    # affinage par appariement appris autour de la position trouvee (ou de l'a priori) : des centaines de points au lieu d'une poignee
+    if best:
+        A, n, f = best
+        cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
+        corn = cv2.transform(np.float32([[0, 0], [cs.shape[1], 0], [cs.shape[1], cs.shape[0]], [0, cs.shape[0]]]).reshape(-1, 1, 2), A).reshape(-1, 2)
+        ref = refine_learned(cs, pim, [*corn.min(0), *corn.max(0)], log=log)
+        if ref and ref[1] > n: best = (ref[0], ref[1], f); log(f'  -> affinage retenu ({ref[1]} inliers au lieu de {n})')
+    elif prior_box is not None:
+        for f in cands_f:
+            cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
+            ref = refine_learned(cs, pim, prior_box, margin=0, log=log)
+            if ref: best = (ref[0], ref[1], f); log(f'  -> appariement appris autour de l\'a priori retenu (facteur {f:.4f})'); break
+    return best
+
 def main():
     parent, child = sys.argv[1], sys.argv[2]
     pj, cj = load_lame(parent), load_lame(child)
@@ -145,65 +198,27 @@ def main():
     cands = [r] if r else [0.1, 0.16, 0.25, 0.4, 0.63, 1.0]
     pj['_slug'] = parent
     prior, prior_kind = prior_center(pj, cj)
-    sift = cv2.SIFT_create(8000); bf = cv2.BFMatcher(cv2.NORM_L2)
-    gp = cv2.createCLAHE(2.0, (8, 8)).apply(cv2.cvtColor(pim, cv2.COLOR_BGR2GRAY))
-    # avec un a priori, on cherche d'abord dans une fenetre autour (taille enfant attendue x 2, au moins 15 % du parent) : moins d'ambiguite
-    windows = []
-    if prior is not None:
-        rr0 = r or 0.1
-        hw = max(cj['width'] * rr0, 0.15 * pj['width']) * sp; hh = max(cj['height'] * rr0, 0.15 * pj['height']) * sp
-        cx, cy = prior[0] * sp, prior[1] * sp
-        x0, y0 = int(max(0, cx - hw)), int(max(0, cy - hh)); x1, y1 = int(min(gp.shape[1], cx + hw)), int(min(gp.shape[0], cy + hh))
-        if x1 - x0 > 50 and y1 - y0 > 50: windows.append((x0, y0, x1, y1))
-        print(f'a priori ({prior_kind}) : première photo attendue vers ({prior[0]:.0f}, {prior[1]:.0f}) px du parent')
-    windows.append(None)
-    best = None
-    for win in windows:
-      if best: break
-      if win: gw = gp[win[1]:win[3], win[0]:win[2]]; print(f'recherche dans la fenêtre {win}')
-      else: gw = gp
-      kp, dp = sift.detectAndCompute(gw, None)
-      if win and kp:
-          for k_ in kp: k_.pt = (k_.pt[0] + win[0], k_.pt[1] + win[1])
-      tried = set(); queue = list(cands)
-      while queue:
-          rr = queue.pop(0)
-          if any(abs(rr / t - 1) < 0.05 for t in tried): continue
-          tried.add(rr)
-          f = rr * sp / sc                       # facteur a appliquer a l'image enfant reduite pour tomber a l'echelle du parent reduit
-          cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
-          gc = cv2.createCLAHE(2.0, (8, 8)).apply(cv2.cvtColor(cs, cv2.COLOR_BGR2GRAY))
-          kc, dc = sift.detectAndCompute(gc, None)
-          if dc is None or dp is None or len(dc) < 20: continue
-          good = [m for m, n in bf.knnMatch(dc, dp, k=2) if m.distance < 0.75 * n.distance]
-          if len(good) < 12: continue
-          src = np.float32([kc[m.queryIdx].pt for m in good]); dst = np.float32([kp[m.trainIdx].pt for m in good])
-          A, inl = cv2.estimateAffinePartial2D(src, dst, method=cv2.RANSAC, ransacReprojThreshold=5.0, maxIters=5000, confidence=0.999)
-          if A is None: continue
-          n = int(inl.sum()); s_ = math.hypot(A[0, 0], A[0, 1])
-          print(f'rapport {rr:.3f} : {len(good)} appariements, {n} inliers, échelle résiduelle {s_:.2f}')
-          # rapport confirme par une 2e estimation independante (echelle residuelle ~1 apres correction) : 15 inliers suffisent
-          ok = (n >= 25 and 0.7 < s_ < 1.4) or (n >= 15 and 0.93 < s_ < 1.07 and rr not in cands)
-          if ok and (best is None or n > best[0]): best = (n, A, f)
-          # echelle residuelle loin de 1 : le rapport reel n'est pas celui attendu (zoom ou objectif different), on reessaie au rapport mesure
-          elif n >= 10 and not (0.7 < s_ < 1.4) and 0.02 < rr * s_ < 1.5: queue.insert(0, rr * s_); print(f'  -> rapport réel probable {rr * s_:.3f}, nouvel essai')
-    # affinage par appariement appris autour de la position trouvee (ou de l'a priori) : des centaines de points au lieu d'une poignee
-    if best:
-        n, A, f = best
-        cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
-        corn = cv2.transform(np.float32([[0, 0], [cs.shape[1], 0], [cs.shape[1], cs.shape[0]], [0, cs.shape[0]]]).reshape(-1, 1, 2), A).reshape(-1, 2)
-        ref = refine_learned(cs, pim, [*corn.min(0), *corn.max(0)])
-        if ref and ref[1] > n: best = (ref[1], ref[0], f); print(f'  -> affinage retenu ({ref[1]} inliers au lieu de {n})')
-    elif prior is not None:
-        for rr in cands:
-            f = rr * sp / sc
-            cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
-            hw, hh = max(cs.shape[1], 0.15 * pim.shape[1]), max(cs.shape[0], 0.15 * pim.shape[0])
-            ref = refine_learned(cs, pim, [prior[0] * sp - hw, prior[1] * sp - hh, prior[0] * sp + hw, prior[1] * sp + hh], margin=0)
-            if ref: best = (ref[1], ref[0], f); print(f'  -> appariement appris autour de l\'a priori retenu (rapport {rr:.3f})'); break
+    if cj.get('parent_anchored') and cj.get('parent_transform') and '--redo' not in sys.argv:
+        # transformation obtenue pendant l'assemblage (photos ancrees dans le parent) : plus precise qu'un recalage rigide apres coup
+        print(f'transformation d\'assemblage conservée ({cj["parent_anchored"]} images ancrées) ; --redo pour recalculer')
+        best = None; transform = cj['parent_transform']
+    else:
+        best = 'todo'
+    if best == 'todo':
+      f_c = [rr * sp / sc for rr in cands]              # facteur a appliquer a l'image enfant reduite pour tomber a l'echelle du parent reduit
+      prior_box = None
+      if prior is not None:
+          rr0 = r or 0.1
+          hw = max(cj['width'] * rr0, 0.15 * pj['width']) * sp; hh = max(cj['height'] * rr0, 0.15 * pj['height']) * sp
+          cx, cy = prior[0] * sp, prior[1] * sp
+          prior_box = (cx - hw, cy - hh, cx + hw, cy + hh)
+          print(f'a priori ({prior_kind}) : première photo attendue vers ({prior[0]:.0f}, {prior[1]:.0f}) px du parent')
+      best = match_into_parent(cim, pim, f_c, prior_box)
+      if best: best = (best[1], best[0], best[2])   # (n, A, f) comme avant
     if best:
         n, A, f = best
         k = sc * f / sp
+        cj['parent_anchored'] = None
         transform = [float(A[0, 0] * k), float(A[1, 0] * k), float(A[0, 2] / sp), float(A[1, 2] / sp)]   # enfant pleine res -> parent pleine res
         print(f'recalage réussi : {n} inliers, échelle {math.hypot(transform[0], transform[1]):.4f}, rotation {math.degrees(math.atan2(transform[1], transform[0])):.1f}°')
         cj['parent_approx'] = None
@@ -215,6 +230,8 @@ def main():
             obs = [x for x in (pj.get('stage_obs') or []) if x.get('slug') != child] + [dict(slug=child, mm=[cs['x'] - ps['x'], cs['y'] - ps['y']], px=px)]
             pj['stage_obs'] = obs; pj['stage_cal'] = fit_stage(pj, o)
             if pj['stage_cal']: print(f'calibration platine du parent mise à jour ({len(obs)} observation(s)) : {np.round(pj["stage_cal"], 1).tolist()} px/mm')
+    elif cj.get('parent_anchored'):
+        print(f'placement d\'assemblage : échelle {math.hypot(transform[0], transform[1]):.4f}, rotation {math.degrees(math.atan2(transform[1], transform[0])):.1f}°')
     elif prior is not None:
         rr = r or 0.1; c0 = first_field_center(child)
         if c0 is None: c0 = np.array([cj['width'] / 2, cj['height'] / 2])

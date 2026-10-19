@@ -179,7 +179,7 @@ def main():
              um_per_px=a.um_per_px or layout.get('um_per_px'),
              stain=layout.get('stain'), objective=layout.get('objective'), sample=layout.get('sample'), comment=layout.get('comment'),
              captured=captured or old.get('captured') or datetime.date.today().strftime('%d/%m/%Y'),
-             parent=layout.get('parent') or old.get('parent'), parent_transform=old.get('parent_transform'), parent_approx=old.get('parent_approx'),
+             parent=layout.get('parent') or old.get('parent'), parent_transform=layout.get('parent_transform') or old.get('parent_transform'), parent_anchored=layout.get('parent_anchored') if layout.get('parent_transform') else old.get('parent_anchored'), parent_approx=old.get('parent_approx'),
              outline=old.get('outline'), hint=layout.get('hint') or old.get('hint'), stage=layout.get('stage') or old.get('stage'), stage_cal=old.get('stage_cal'), stage_obs=old.get('stage_obs'),
              children=old.get('children') or [], quality=layout.get('quality'),
              series=layout.get('series') or old.get('series'), version=layout.get('version') or old.get('version') or 1, params=layout.get('params') or old.get('params'),
