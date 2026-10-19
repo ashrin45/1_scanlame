@@ -1,0 +1,21 @@
+[    0.0s] segment 1/1 : objectif x10, 36 images entre 0 s et 42 s
+[    0.0s] 36 images candidates
+[    0.4s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[    0.4s] netteté médiane 241.4, seuil 96.6
+[    0.6s] 11 images retenues (nettes, non redondantes)
+[    0.7s] flat-field : médiane temporelle de 11 images (vignettage et poussières fixes de l'oculaire)
+[    1.7s] aberration chromatique : échelle R 1.0015, B 0.9995
+[    1.7s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 2 %)
+[    2.4s] prétraitement terminé, 11 images, recalage à 900 x 1200
+[    3.2s] points SIFT : 5000 par image en moyenne
+[    3.2s] 52 paires à tester
+[    9.0s] 22 paires valides
+[    9.5s] distorsion radiale k1 = -0.0060 (résidu 0.91 px contre 1.04 px sans correction)
+[    9.5s] composantes : [11] -> on assemble la n°0 : 11 images
+[    9.8s] ajustement global : 2997 correspondances, 10 images
+[    9.8s] compensation photométrique : écart de gain max 3.4 %
+[    9.8s] recalage : erreur médiane 0.98 px (échelle recalage), max 1.30
+[    9.9s] mosaïque 6458 x 2122
+[   17.4s] composition : 8 tuiles en 7 s
+[   17.6s] qualité : note A (aucune remarque)
+[   17.6s] terminé : pano.jpg 6458 x 2122 , 11 images utilisées sur 11
