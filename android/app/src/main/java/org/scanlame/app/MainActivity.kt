@@ -323,8 +323,7 @@ fun CoverageMap(s: Session.State, modifier: Modifier) {
         val pad = 8f
         val sc = minOf((size.width - 2 * pad) / (x1 - x0), (size.height - 2 * pad) / (y1 - y0))
         val ox = pad + ((size.width - 2 * pad) - (x1 - x0) * sc) / 2; val oy = pad + ((size.height - 2 * pad) - (y1 - y0) * sc) / 2
-        // les photos toujours, les positions intermediaires seulement les 300 dernieres (cout de dessin)
-        val pl = if (all.size <= 400) all else all.filter { it.photo } + all.takeLast(300)
+        val pl = all   // photos de toute la serie (jamais effacees) puis les 300 dernieres positions, par-dessus
         for (p in pl) {
             val dx = (ox + (p.x.toFloat() - x0) * sc).roundToInt(); val dy = (oy + (p.y.toFloat() - y0) * sc).roundToInt()
             val dw = (W * sc).roundToInt().coerceAtLeast(2); val dh = (H * sc).roundToInt().coerceAtLeast(2)

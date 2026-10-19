@@ -46,7 +46,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
     private var meta = JSONObject()
     private var seriesDir: File? = null
     private var videoFile: File? = null
-    private val placed = ArrayList<Placed>()
+    private val placed = ArrayList<Placed>()        // positions recentes (fenetre glissante)
+    private val placedPhotos = ArrayList<Placed>()  // toutes les photos de la serie : la couverture ne s'efface jamais
     private var W = 1.0; private var H = 1.0           // taille du média capturé (portrait), unité des positions
     private var lastPos: Pair<Double, Double>? = null
     private var stillSince = 0L
@@ -132,7 +133,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "sample").put("t_ms", t).put("x", if (f.status == "lost") JSONObject.NULL else px.roundToInt()).put("y", if (f.status == "lost") JSONObject.NULL else py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status)) }
         }
         frameCount++
-        if (f.status != "lost" && frameCount % 3 == 0) synchronized(placed) { placed.add(Placed(px, py, f.status, false, thumbColor(img))); if (placed.size > 1500) placed.removeAt(0) }
+        if (f.status != "lost" && frameCount % 3 == 0) synchronized(placed) { placed.add(Placed(px, py, f.status, false, thumbColor(img))); if (placed.size > 300) placed.removeAt(0) }
         // ---- qualité en direct : exposition (toutes les 5 images) et netteté par rapport aux meilleures photos de la série
         if (frameCount % 5 == 0) {
             val sorted = g.copyOf(); sorted.sort()
@@ -140,7 +141,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             exposureNote = when { p99 >= 254f && p50 > 240f -> "trop clair : baisse la lampe"; p50 < 70f -> "trop sombre : monte la lampe"; else -> "" }
         }
 
-        if (frameCount % 10 == 0) Journal.log("t${String.format(Locale.ROOT, "%07d", t)} suivi ${f.status} score ${String.format(Locale.ROOT, "%.2f", f.score)} pos ${px.roundToInt()},${py.roundToInt()} net ${sh.roundToInt()} ($ms ms) carte ${synchronized(placed) { placed.size }}")
+        if (frameCount % 10 == 0) Journal.log("t${String.format(Locale.ROOT, "%07d", t)} suivi ${f.status} score ${String.format(Locale.ROOT, "%.2f", f.score)} pos ${px.roundToInt()},${py.roundToInt()} net ${sh.roundToInt()} ($ms ms) carte ${synchronized(placed) { placedPhotos.size }} photos + ${synchronized(placed) { placed.size }} positions")
         // ---- détection d'arrêt
         var still = false
         val lp = lastPos
@@ -172,7 +173,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             }
         }
         state.value = state.value.copy(track = f.status, score = f.score, posX = px, posY = py, sharp = sh, still = still, samples = sampleSeq,
-            elapsedMs = t, placed = synchronized(placed) { ArrayList(placed) }, trackMs = ms, fps = fpsAcc, shooting = shooting,
+            elapsedMs = t, placed = synchronized(placed) { ArrayList<Placed>(placedPhotos.size + placed.size).apply { addAll(placedPhotos); addAll(placed) } }, trackMs = ms, fps = fpsAcc, shooting = shooting,
             warn = liveWarn, sharpRef = sharpRef, blurred = nBlurred, bigSteps = nBigSteps, exposure = exposureNote)
     }
 
@@ -233,7 +234,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             if (ok) {
                 val len = file.length()
                 synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("enc_ms", now() - tt).put("sharp", sh.toDouble())) }
-                synchronized(placed) { placed.add(Placed(px, py, f.status, true, th, grade)) }
+                synchronized(placed) { placedPhotos.add(Placed(px, py, f.status, true, th, grade)) }
                 state.value = state.value.copy(photos = seq, bytes = state.value.bytes + len)
                 Journal.log("photo ${name.takeLast(8, 4)} à ${px.roundToInt()},${py.roundToInt()} (${len shr 10} ko, ${now() - tt} ms)")
                 Uploader.kick(ctx)
@@ -273,7 +274,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val cal = st.umPerPx(obj)
         segments.add(JSONObject().put("objective", obj).put("t0", t).put("t1", JSONObject.NULL).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL))
         st.objective = obj
-        tracker = Tracker(); synchronized(placed) { placed.clear() }; lastPos = null; lastShot = null; stillSince = 0L
+        tracker = Tracker(); synchronized(placed) { placed.clear(); placedPhotos.clear() }; lastPos = null; lastShot = null; stillSince = 0L
         Journal.log("objectif $obj : reprise à $t ms (calibration ${if (cal > 0) cal else "absente"})")
         switching = null
         state.value = state.value.copy(phase = "", objective = obj, message = "Objectif $obj : balayage des zones de détail.")
@@ -288,7 +289,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val mode = st.mode
         val id = "lame_${stamp()}${slug(title).takeIf { it.isNotEmpty() }?.let { "_$it" } ?: ""}"
         t0 = now(); seq = 0; sampleSeq = 0; frameCount = 0
-        tracker = Tracker(); synchronized(placed) { placed.clear() }; lastPos = null; lastShot = null; stillSince = 0L; shooting = false
+        tracker = Tracker(); synchronized(placed) { placed.clear(); placedPhotos.clear() }; lastPos = null; lastShot = null; stillSince = 0L; shooting = false
         sharpRef = 0f; nBlurred = 0; nBigSteps = 0; photoSharps.clear(); exposureNote = ""; liveWarn = ""; mask256 = null
         while (frames.length() > 0) frames.remove(0)
         while (phases.length() > 0) phases.remove(0)
