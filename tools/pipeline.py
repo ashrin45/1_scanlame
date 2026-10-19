@@ -753,6 +753,7 @@ while len(T) < len(comp):
 # chaque groupe bien apparie donne des contraintes absolues (ou est chaque photo dans le parent) : la derive accumulee
 # le long d'une bande (courbure) est corrigee, et la transformation enfant -> parent sort directement de l'ajustement.
 anchor_corr = []          # (k, p px recalage image k, q px pleine resolution parent)
+groups_failed = []
 G_init = None             # similitude parent pleine res -> repere de recalage (initialisation)
 anchored_imgs = set()
 if a.parent:
@@ -826,41 +827,50 @@ if a.parent:
     dbg = os.path.join(out, 'ancrage'); os.makedirs(dbg, exist_ok=True)
     match = LC.learned_matcher()
     if match is None: raise RuntimeError('appariement appris indisponible : pas d\'ancrage par groupes')
+    _cl = cv2.createCLAHE(2.0, (8, 8))
+    def clahe3(im):
+        l = cv2.cvtColor(im, cv2.COLOR_BGR2LAB); l[:, :, 0] = _cl.apply(l[:, :, 0]); return cv2.cvtColor(l, cv2.COLOR_LAB2BGR)
+    def anchor_groups(groups, Tcur, Gcur, margin_frac, tag):
+        """Apparie chaque groupe de photos (rendu dans le repere du parent d'apres Tcur et Gcur) dans une fenetre du parent ; ajoute les ancrages."""
+        ok_g = 0; done = []
+        for g in groups:
+            Mg = {k: (Gcur @ Tcur[k])[:2] for k in g}
+            cg = np.vstack([cv2.transform(np.float32([[0, 0], [regs[k].shape[1], 0], [regs[k].shape[1], regs[k].shape[0]], [0, regs[k].shape[0]]])[None], Mg[k])[0] for k in g])
+            o_ = np.floor(cg.min(0)); cw, ch = int(math.ceil(cg.max(0)[0] - o_[0])) + 1, int(math.ceil(cg.max(0)[1] - o_[1])) + 1
+            if cw < 40 or ch < 40 or cw * ch > 6e6: continue
+            canvas = np.full((ch, cw, 3), 255, np.uint8)
+            for k in g:
+                Mk = Mg[k].copy(); Mk[:, 2] -= o_
+                w_ = cv2.warpAffine(regs[k], Mk, (cw, ch)); m_ = cv2.warpAffine(rmasks[k], Mk, (cw, ch), flags=cv2.INTER_NEAREST) > 0
+                canvas[m_] = w_[m_]
+            margin = int(margin_frac * max(cw, ch)) + 60
+            x0_, y0_ = int(max(0, o_[0] - margin)), int(max(0, o_[1] - margin)); x1_, y1_ = int(min(pim.shape[1], o_[0] + cw + margin)), int(min(pim.shape[0], o_[1] + ch + margin))
+            if x1_ - x0_ < 60 or y1_ - y0_ < 60: continue
+            win = pim[y0_:y1_, x0_:x1_]
+            cv2.imwrite(os.path.join(dbg, f'{tag}{g[0]:04d}_canvas.jpg'), canvas); cv2.imwrite(os.path.join(dbg, f'{tag}{g[0]:04d}_window.jpg'), win)
+            src, dst = match(clahe3(canvas), clahe3(win)); dst = dst + [x0_, y0_]      # contraste egalise : le fond du detail est souvent plus clair que le parent
+            Ag, ng, sg = LC.fit(src, dst, thr=4.0)
+            rot = math.degrees(math.atan2(Ag[1, 0], Ag[0, 0])) if Ag is not None else 0
+            shift = np.hypot(*(cv2.transform(np.float32([[cw / 2, ch / 2]])[None], Ag)[0][0] - o_ - [cw / 2, ch / 2])) if Ag is not None else 0
+            good = Ag is not None and ng >= 25 and 0.9 < sg < 1.1 and abs(rot) < 6
+            log(f'  groupe {g[0]:04d}-{g[-1]:04d} : {len(src)} appariements, {ng} inliers, échelle {sg:.3f}, rotation {rot:+.1f}°, décalage {shift:.0f} px parent' + ('' if good else ' : rejeté'))
+            if not good: continue
+            ok_g += 1; done.append(g)
+            for k in g:
+                h_, w_ = rmasks[k].shape
+                ys, xs = np.mgrid[h_ * 0.1:h_ * 0.9:6j, w_ * 0.1:w_ * 0.9:6j]
+                pts = np.c_[xs.ravel(), ys.ravel()]
+                pts = pts[rmasks[k][pts[:, 1].astype(int), pts[:, 0].astype(int)] > 0]
+                if len(pts) < 4: continue
+                qc = cv2.transform(np.float32(pts)[None], Mg[k])[0] - o_          # px canvas
+                qp = cv2.transform(np.float32(qc)[None], Ag)[0] / sp_               # px parent pleine res
+                anchor_corr.extend((k, p_, q_) for p_, q_ in zip(pts, qp)); anchored_imgs.add(k)
+        return ok_g, done
     GS = 5
     groups = [order[i:i + GS] for i in range(0, len(order), GS)]
     if len(groups) > 1 and len(groups[-1]) < 3: groups[-2] += groups.pop()
-    ok_g = 0
-    for g in groups:
-        Mg = {k: (G0 @ T[k])[:2] for k in g}
-        cg = np.vstack([cv2.transform(np.float32([[0, 0], [regs[k].shape[1], 0], [regs[k].shape[1], regs[k].shape[0]], [0, regs[k].shape[0]]])[None], Mg[k])[0] for k in g])
-        o_ = np.floor(cg.min(0)); cw, ch = int(math.ceil(cg.max(0)[0] - o_[0])) + 1, int(math.ceil(cg.max(0)[1] - o_[1])) + 1
-        if cw < 40 or ch < 40 or cw * ch > 4e6: continue
-        canvas = np.full((ch, cw, 3), 255, np.uint8)
-        for k in g:
-            Mk = Mg[k].copy(); Mk[:, 2] -= o_
-            w_ = cv2.warpAffine(regs[k], Mk, (cw, ch)); m_ = cv2.warpAffine(rmasks[k], Mk, (cw, ch), flags=cv2.INTER_NEAREST) > 0
-            canvas[m_] = w_[m_]
-        margin = int(0.3 * max(cw, ch)) + 60
-        x0_, y0_ = int(max(0, o_[0] - margin)), int(max(0, o_[1] - margin)); x1_, y1_ = int(min(pim.shape[1], o_[0] + cw + margin)), int(min(pim.shape[0], o_[1] + ch + margin))
-        if x1_ - x0_ < 60 or y1_ - y0_ < 60: continue
-        cv2.imwrite(os.path.join(dbg, f'g{g[0]:04d}_canvas.jpg'), canvas); cv2.imwrite(os.path.join(dbg, f'g{g[0]:04d}_window.jpg'), pim[y0_:y1_, x0_:x1_])
-        src, dst = match(canvas, pim[y0_:y1_, x0_:x1_]); dst = dst + [x0_, y0_]
-        Ag, ng, sg = LC.fit(src, dst, thr=4.0)
-        rot = math.degrees(math.atan2(Ag[1, 0], Ag[0, 0])) if Ag is not None else 0
-        shift = np.hypot(*(cv2.transform(np.float32([[cw / 2, ch / 2]])[None], Ag)[0][0] - o_ - [cw / 2, ch / 2])) if Ag is not None else 0
-        good = Ag is not None and ng >= 25 and 0.9 < sg < 1.1 and abs(rot) < 6
-        log(f'  groupe {g[0]:04d}-{g[-1]:04d} : {len(src)} appariements, {ng} inliers, échelle {sg:.3f}, rotation {rot:+.1f}°, décalage {shift:.0f} px parent' + ('' if good else ' : rejeté'))
-        if not good: continue
-        ok_g += 1
-        for k in g:
-            h_, w_ = rmasks[k].shape
-            ys, xs = np.mgrid[h_ * 0.1:h_ * 0.9:6j, w_ * 0.1:w_ * 0.9:6j]
-            pts = np.c_[xs.ravel(), ys.ravel()]
-            pts = pts[rmasks[k][pts[:, 1].astype(int), pts[:, 0].astype(int)] > 0]
-            if len(pts) < 4: continue
-            qc = cv2.transform(np.float32(pts)[None], Mg[k])[0] - o_          # px canvas
-            qp = cv2.transform(np.float32(qc)[None], Ag)[0] / sp_               # px parent pleine res
-            anchor_corr.extend((k, p_, q_) for p_, q_ in zip(pts, qp)); anchored_imgs.add(k)
+    ok_g, done = anchor_groups(groups, T, G0, 0.3, 'g')
+    groups_failed = [g for g in groups if g not in done]
     log(f'ancrage : {ok_g}/{len(groups)} groupes appariés, {len(anchored_imgs)} images ancrées, {len(anchor_corr)} points')
     if not anchor_corr: G_init = G_init   # localisation seule : la transformation d'ensemble est quand meme conservee
   except Exception as e:
@@ -927,7 +937,39 @@ try:
     if nG:
         a_, b_, tx, ty = x[base_g:base_g + 4]; G_fit = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
         ra = rp[is_anchor]
-        log(f'ancrages : résidu médian {np.median(ra):.1f} px de recalage, 90e centile {np.percentile(ra, 90):.1f}')
+        log(f'ancrages (1re passe) : résidu médian {np.median(ra):.1f} px de recalage, 90e centile {np.percentile(ra, 90):.1f}')
+        # 2e passe : les groupes non apparies, fusionnes deux a deux, sont recherches la ou la solution ancree les place (fenetre etroite)
+        if groups_failed and os.environ.get('SCANLAME_NO_PASS2') is None:
+            merged = []
+            i_ = 0
+            while i_ < len(groups_failed):
+                g = list(groups_failed[i_])
+                if i_ + 1 < len(groups_failed) and groups_failed[i_ + 1][0] == g[-1] + 1: g += groups_failed[i_ + 1]; i_ += 1
+                merged.append(g); i_ += 1
+            Gcur = np.diag([sp_, sp_, 1]) @ np.linalg.inv(G_fit)      # px recalage -> px parent reduit
+            n_before = len(anchor_corr)
+            ok2, _ = anchor_groups(merged, T, Gcur, 0.15, 'p2_')
+            if len(anchor_corr) > n_before:
+                log(f'2e passe : {ok2}/{len(merged)} groupes appariés, {len(anchor_corr) - n_before} ancrages de plus ; nouvel ajustement')
+                for (k, p, q) in anchor_corr[n_before:]:
+                    r1 = add(eq, k, float(p[0]), float(p[1]), 1.0)
+                    rows.extend([eq, eq, eq, eq + 1, eq + 1, eq + 1]); cols.extend([base_g, base_g + 1, base_g + 2, base_g, base_g + 1, base_g + 3])
+                    vals.extend([-float(q[0]), float(q[1]), -1.0, -float(q[1]), -float(q[0]), -1.0])
+                    rhs.extend([r1[0], r1[1]]); eq += 2
+                Amat = sp.csr_matrix((vals, (rows, cols)), shape=(eq, 4 * len(idx) + nG)); bvec = np.array(rhs)
+                is_anchor = np.zeros(eq // 2, bool); is_anchor[n_pair_eq // 2:] = True
+                w = np.where(np.repeat(is_anchor, 2), W_ANCHOR, 1.0)
+                for it in range(5):
+                    Wd = sp.diags(w); AtWA = (Amat.T @ Wd @ Amat).toarray(); AtWb = Amat.T @ (w * bvec)
+                    x = np.linalg.solve(AtWA + 1e-9 * np.eye(len(AtWA)), AtWb)
+                    res_v = Amat @ x - bvec; rp = np.hypot(res_v[0::2], res_v[1::2])
+                    delta = np.where(is_anchor, DELTA_ANCHOR, 2.0)
+                    wp = np.where(rp <= delta, 1.0, delta / np.maximum(rp, 1e-6)) * np.where(is_anchor, W_ANCHOR, 1.0); w = np.repeat(wp, 2)
+                for k, n in idx.items():
+                    a_, b_, tx, ty = x[4 * n:4 * n + 4]; T[k] = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
+                a_, b_, tx, ty = x[base_g:base_g + 4]; G_fit = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
+        ra = rp[is_anchor]
+        log(f'ancrages (final) : résidu médian {np.median(ra):.1f} px de recalage, 90e centile {np.percentile(ra, 90):.1f}')
     elif G_init is not None: G_fit = G_init
     log(f'ajustement global : {len(corr_list)} correspondances, {len(idx)} images' + (f', {len(anchor_corr)} ancrages' if nG else ''))
 except ImportError:
