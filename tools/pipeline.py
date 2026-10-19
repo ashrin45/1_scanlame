@@ -1189,7 +1189,7 @@ json.dump(dict(size=[W, H], images=len(comp), of=N, placements=placements, k1=k1
                flat_field=flat_kind or 'estimé', residual_px=res_med,
                um_per_px=um_px, zstack=ZL, quality=quality,
                title=meta.get('title'), stain=meta.get('stain'), objective=meta.get('objective'), sample=meta.get('sample'),
-               comment=meta.get('comment'), parent=meta.get('parent'), captured=meta.get('captured'),
+               comment=meta.get('comment'), parent=meta.get('parent'), hint=meta.get('hint'), stage=meta.get('stage'), captured=meta.get('captured'),
                series=meta.get('series'), component=a.component, other_components=other_components,
                segment=a.segment, segments=len(segs), zone_components=zone_ids,
                params=dict(depth=DEPTH, seams=not a.no_seams, fps=a.fps, reg_size=a.reg_size, max_side=a.max_side, core=a.core, tile=a.tile,

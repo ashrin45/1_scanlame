@@ -62,6 +62,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.Image
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
@@ -118,7 +124,7 @@ class MainActivity : ComponentActivity() {
 }
 
 /** Entrée de la galerie (lames.json) pour les listes « lame d'ensemble » et « compléter ». */
-data class LameRef(val slug: String, val title: String, val objective: String?)
+data class LameRef(val slug: String, val title: String, val objective: String?, val width: Int = 0, val height: Int = 0, val tile: Int = 0, val maxlvl: Int = 0, val thumb: String = "")
 
 @Composable
 fun App(engine: CameraEngine, st: Settings, session: Session) {
@@ -349,8 +355,58 @@ fun loadLames(gallery: String): List<LameRef> = try {
     val c = URL(gallery + "lames/lames.json?t=" + System.currentTimeMillis()).openConnection() as HttpURLConnection
     c.connectTimeout = 8000; c.readTimeout = 8000
     val arr = JSONArray(c.inputStream.bufferedReader().readText()); c.disconnect()
-    (0 until arr.length()).map { arr.getJSONObject(it) }.map { LameRef(it.getString("slug"), it.optString("title", it.getString("slug")), it.optString("objective").ifEmpty { null }) }
+    (0 until arr.length()).map { arr.getJSONObject(it) }.map { LameRef(it.getString("slug"), it.optString("title", it.getString("slug")), it.optString("objective").ifEmpty { null }, it.optInt("width"), it.optInt("height"), it.optInt("tile"), it.optInt("maxlvl"), it.optString("thumb")) }
 } catch (e: Exception) { Journal.log("galerie injoignable : ${e.message}"); emptyList() }
+
+/** Aperçu de la lame d'ensemble (tuiles du niveau tenant dans ~1024 px) : un toucher marque l'endroit approximatif où se trouve le détail. */
+@Composable
+fun ParentHint(gallery: String, ref: LameRef, st: Settings) {
+    var bmp by remember(ref.slug) { mutableStateOf<android.graphics.Bitmap?>(null) }
+    var failed by remember(ref.slug) { mutableStateOf(false) }
+    var hint by remember(ref.slug) { mutableStateOf(st.hint.split(',').mapNotNull { it.toFloatOrNull() }.takeIf { it.size == 2 }) }
+    LaunchedEffect(ref.slug) {
+        bmp = withContext(Dispatchers.IO) { try { loadOverview(gallery, ref) } catch (e: Exception) { Journal.log("aperçu ${ref.slug} : ${e.message}"); null } }
+        if (bmp == null) failed = true
+    }
+    Text("Repère : touchez l'endroit approximatif du détail sur la lame d'ensemble (facultatif, aide le recalage)", color = MUTED, fontSize = 11.sp)
+    val b = bmp
+    if (b != null) {
+        Box(Modifier.fillMaxWidth().aspectRatio(b.width.toFloat() / b.height).pointerInput(ref.slug) {
+            detectTapGestures { o -> val f = listOf(o.x / size.width, o.y / size.height); hint = f; st.hint = "${f[0]},${f[1]}" }
+        }) {
+            Image(b.asImageBitmap(), null, Modifier.fillMaxSize())
+            hint?.let { h ->
+                Canvas(Modifier.fillMaxSize()) {
+                    val c = Offset(h[0] * size.width, h[1] * size.height)
+                    drawCircle(Color.Red, 16f, c, style = Stroke(3f))
+                    drawLine(Color.Red, Offset(c.x - 28, c.y), Offset(c.x + 28, c.y), 3f); drawLine(Color.Red, Offset(c.x, c.y - 28), Offset(c.x, c.y + 28), 3f)
+                }
+            }
+        }
+        Text(hint?.let { "repère : ${(it[0] * 100).roundToInt()} % de la largeur, ${(it[1] * 100).roundToInt()} % de la hauteur" } ?: "aucun repère", color = MUTED, fontSize = 11.sp)
+    } else Text(if (failed) "aperçu indisponible (galerie injoignable)" else "chargement de l'aperçu…", color = MUTED, fontSize = 11.sp)
+}
+
+/** Reconstruit la lame entière à partir des tuiles du niveau Deep Zoom où elle tient dans 1024 px (quelques tuiles). */
+fun loadOverview(gallery: String, ref: LameRef): android.graphics.Bitmap? {
+    fun fetch(path: String): android.graphics.Bitmap? {
+        val c = URL(gallery + "lames/" + path).openConnection() as HttpURLConnection
+        c.connectTimeout = 8000; c.readTimeout = 8000
+        return try { if (c.responseCode == 200) android.graphics.BitmapFactory.decodeStream(c.inputStream) else null } finally { c.disconnect() }
+    }
+    if (ref.tile <= 0 || ref.maxlvl <= 0) return fetch(ref.thumb)
+    var lvl = ref.maxlvl
+    while (lvl > 0 && maxOf(ref.width, ref.height) / (1 shl (ref.maxlvl - lvl)) > 1024) lvl--
+    val f = 1.0 / (1 shl (ref.maxlvl - lvl))
+    val lw = Math.ceil(ref.width * f).toInt(); val lh = Math.ceil(ref.height * f).toInt()
+    val out = android.graphics.Bitmap.createBitmap(lw, lh, android.graphics.Bitmap.Config.ARGB_8888)
+    val cv = android.graphics.Canvas(out); cv.drawColor(0xFFEEEEEE.toInt())
+    for (ty in 0 until Math.ceil(lh / ref.tile.toDouble()).toInt()) for (tx in 0 until Math.ceil(lw / ref.tile.toDouble()).toInt()) {
+        val t = fetch("${ref.slug}/lame_files/$lvl/${tx}_$ty.jpg") ?: continue
+        cv.drawBitmap(t, maxOf(0, tx * ref.tile - 1).toFloat(), maxOf(0, ty * ref.tile - 1).toFloat(), null)   // tuiles Deep Zoom avec 1 px de recouvrement
+    }
+    return out
+}
 
 // ---------------------------------------------------------------- feuille de réglages (même ordre que la page)
 @OptIn(ExperimentalMaterial3Api::class)
@@ -377,6 +433,8 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
     var comment by remember { mutableStateOf(comment0) }
     var parent by remember { mutableStateOf(parent0) }
     var complete by remember { mutableStateOf(complete0) }
+    var stageX by remember { mutableStateOf(st.stageX) }
+    var stageY by remember { mutableStateOf(st.stageY) }
     var stain by remember { mutableStateOf(st.stain) }
     var objective by remember { mutableStateOf(st.objective) }
     var umpx by remember { mutableStateOf(st.umPerPx(st.objective).takeIf { it > 0 }?.toString() ?: "") }
@@ -437,7 +495,13 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
             }
             OutlinedTextField(sample, { sample = it }, label = { Text("Prélèvement") }, placeholder = { Text("ex. hémoculture, ECBU, LCR…") }, singleLine = true, modifier = Modifier.fillMaxWidth())
             OutlinedTextField(comment, { comment = it }, label = { Text("Commentaire (optionnel)") }, placeholder = { Text("ex. CGP en amas, PNN nombreux") }, singleLine = true, modifier = Modifier.fillMaxWidth())
-            Select("Lame d'ensemble (si cette prise est un détail à plus fort grossissement)", listOf("" to "Aucune : nouvelle lame") + st.recentSeries().filter { r -> lames.none { it.slug == r.first } }.map { it.first to "${it.second} (obj. ${it.third}, envoyée, en cours d'assemblage)" } + lames.map { it.slug to "${it.title}${it.objective?.let { o -> " (obj. $o)" } ?: ""}" }, parent) { parent = it; if (it.isNotEmpty()) complete = "" }
+            Select("Lame d'ensemble (si cette prise est un détail à plus fort grossissement)", listOf("" to "Aucune : nouvelle lame") + st.recentSeries().filter { r -> lames.none { it.slug == r.first } }.map { it.first to "${it.second} (obj. ${it.third}, envoyée, en cours d'assemblage)" } + lames.map { it.slug to "${it.title}${it.objective?.let { o -> " (obj. $o)" } ?: ""}" }, parent) { parent = it; st.hint = ""; if (it.isNotEmpty()) complete = "" }
+            if (parent.isNotEmpty()) lames.firstOrNull { it.slug == parent && it.width > 0 }?.let { ParentHint(st.galleryUrl, it, st) }
+            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                OutlinedTextField(stageX, { stageX = it; st.stageX = it }, label = { Text("Platine X (vernier, mm)", fontSize = 12.sp) }, singleLine = true, modifier = Modifier.weight(1f), keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal))
+                OutlinedTextField(stageY, { stageY = it; st.stageY = it }, label = { Text("Platine Y (vernier, mm)", fontSize = 12.sp) }, singleLine = true, modifier = Modifier.weight(1f), keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal))
+            }
+            Text("Relevés de la platine au premier champ de la série (facultatif). Avec ceux de la lame d'ensemble, ils servent à placer le détail ; la correspondance est apprise au premier recalage réussi.", color = MUTED, fontSize = 11.sp)
             Select("Compléter une lame existante (reprise des zones manquantes, même objectif)", listOf("" to "Non : nouvelle lame") + lames.map { it.slug to "${it.title}${it.objective?.let { o -> " (obj. $o)" } ?: ""}" }, complete) { complete = it; if (it.isNotEmpty()) { parent = ""; lames.firstOrNull { l -> l.slug == it }?.objective?.let { o -> objective = o } } }
             OutlinedTextField(umpx, { umpx = it }, label = { Text("Échelle pour cet objectif : µm par pixel de photo (optionnel)") }, placeholder = { Text("ex. 0.085 (mesuré avec un micromètre objet, à ce zoom)") }, singleLine = true, modifier = Modifier.fillMaxWidth())
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {

@@ -55,6 +55,9 @@ class Settings(ctx: Context) {
         val l = listOf(listOf(slug, title.replace('\t', ' ').replace('\n', ' '), objective).joinToString("\t")) + str("recent", "").split('\n').filter { it.contains('\t') && !it.startsWith("$slug\t") }
         set("recent", l.take(20).joinToString("\n"))
     }
+    var hint: String get() = str("hint", ""); set(v) = set("hint", v)           // "fx,fy" : repère touché sur la lame d'ensemble (fraction de l'image), vidé au départ de la série
+    var stageX: String get() = str("stagex", ""); set(v) = set("stagex", v)     // coordonnées de la platine (vernier, mm) à la première photo
+    var stageY: String get() = str("stagey", ""); set(v) = set("stagey", v)
     fun umPerPx(obj: String): Float = p.getFloat("umpx.$obj", 0f)
     fun setUmPerPx(obj: String, v: Float) = p.edit().putFloat("umpx.$obj", v).apply()
     fun calibrations(): Map<String, Float> = OBJECTIVES.mapNotNull { o -> umPerPx(o).takeIf { it > 0 }?.let { o to it } }.toMap()

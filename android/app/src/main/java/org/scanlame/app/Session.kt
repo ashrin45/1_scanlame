@@ -307,10 +307,13 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val rot = lastRot   // rotation appliquée par ffmpeg (métadonnée mp4) et par EXIF (photos) : positions dans l'image redressée
         if (sz != null) { W = (if (rot % 180 != 0) sz.height else sz.width).toDouble(); H = (if (rot % 180 != 0) sz.width else sz.height).toDouble() } else { W = 3000.0; H = 4000.0 }
         val dir = Uploader.seriesDir(ctx, id); seriesDir = dir
+        st.hint = ""
         meta = JSONObject()
             .put("series", id).put("title", title.ifBlank { null }).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL)
             .put("stain", st.stain).put("objective", st.objective).put("sample", sample.ifBlank { null }).put("comment", comment.ifBlank { null })
             .put("parent", parent ?: JSONObject.NULL).put("complete", complete ?: JSONObject.NULL)
+            .put("hint", st.hint.split(',').mapNotNull { it.toDoubleOrNull() }.takeIf { parent != null && it.size == 2 }?.let { JSONObject().put("fx", it[0]).put("fy", it[1]) } ?: JSONObject.NULL)
+            .put("stage", st.stageX.replace(',', '.').toDoubleOrNull()?.let { x -> st.stageY.replace(',', '.').toDoubleOrNull()?.let { y -> JSONObject().put("x", x).put("y", y) } } ?: JSONObject.NULL)
             .put("captured", SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX", Locale.ROOT).format(Date()))
             .put("calibrations", JSONObject(st.calibrations().mapValues { it.value.toDouble() }))
             .put("depth", st.depth).put("mode", mode).put("sample_ms", 100).put("position_unit", "px of the captured image (portrait)")

@@ -125,7 +125,7 @@ def write_gallery():
             thumb = f'{d}/lame_files/{max(0, j["maxlvl"] - 4)}/0_0.jpg'
             items.append(dict(slug=d, title=j['title'], width=j['width'], height=j['height'], stain=j.get('stain'), objective=j.get('objective'),
                               sample=j.get('sample'), captured=j.get('captured'), um_per_px=j.get('um_per_px'), grade=(j.get('quality') or {}).get('grade'),
-                              zstack=j.get('zstack') or 0, parent=j.get('parent'), children=[c['slug'] for c in (j.get('children') or [])], thumb=thumb,
+                              zstack=j.get('zstack') or 0, parent=j.get('parent'), children=[c['slug'] for c in (j.get('children') or [])], thumb=thumb, tile=j.get('tile'), maxlvl=j.get('maxlvl'),
                               published=j.get('published'), updated=j.get('updated'), series=j.get('series'), version=j.get('version') or 1, params=j.get('params')))
     json.dump(items, open(os.path.join(LAMES, 'lames.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     tpl = open(os.path.join(ROOT, 'tools', 'gallery_template.html'), encoding='utf-8').read()
@@ -179,7 +179,8 @@ def main():
              um_per_px=a.um_per_px or layout.get('um_per_px'),
              stain=layout.get('stain'), objective=layout.get('objective'), sample=layout.get('sample'), comment=layout.get('comment'),
              captured=captured or old.get('captured') or datetime.date.today().strftime('%d/%m/%Y'),
-             parent=layout.get('parent') or old.get('parent'), parent_transform=old.get('parent_transform'),
+             parent=layout.get('parent') or old.get('parent'), parent_transform=old.get('parent_transform'), parent_approx=old.get('parent_approx'),
+             hint=layout.get('hint') or old.get('hint'), stage=layout.get('stage') or old.get('stage'), stage_cal=old.get('stage_cal'), stage_obs=old.get('stage_obs'),
              children=old.get('children') or [], quality=layout.get('quality'),
              series=layout.get('series') or old.get('series'), version=layout.get('version') or old.get('version') or 1, params=layout.get('params') or old.get('params'),
              published=old.get('published') or datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),
