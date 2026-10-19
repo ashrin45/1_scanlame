@@ -908,9 +908,11 @@ try:
     W_ANCHOR, DELTA_ANCHOR = 0.5, 8.0    # poids relatif et seuil Huber (px de recalage) des ancrages : ils corrigent la derive sans ecraser le recalage fin
     x = x0.copy(); w = np.where(np.repeat(is_anchor, 2), W_ANCHOR, 1.0)
     for it in range(5):
-        Wd = sp.diags(np.sqrt(w))
-        sol = spl.lsqr(Wd @ Amat, Wd @ bvec, x0=x, atol=1e-8, btol=1e-8, iter_lim=3000)[0]
-        x = sol
+        # equations normales (quelques centaines a quelques milliers d'inconnues) : solution exacte, pas de probleme de convergence
+        Wd = sp.diags(w)
+        AtWA = (Amat.T @ Wd @ Amat).toarray(); AtWb = Amat.T @ (w * bvec)
+        try: x = np.linalg.solve(AtWA + 1e-9 * np.eye(len(AtWA)), AtWb)
+        except np.linalg.LinAlgError: x = spl.lsqr(sp.diags(np.sqrt(w)) @ Amat, np.sqrt(w) * bvec, x0=x, atol=1e-10, btol=1e-10, iter_lim=20000)[0]
         res_v = Amat @ x - bvec
         rp = np.hypot(res_v[0::2], res_v[1::2])
         delta = np.where(is_anchor, DELTA_ANCHOR, 2.0)
@@ -919,6 +921,8 @@ try:
     for k, n in idx.items():
         a_, b_, tx, ty = x[4 * n:4 * n + 4]
         T[k] = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
+    sc_ = [math.hypot(T[k][0, 0], T[k][1, 0]) for k in comp]
+    log(f'échelles relatives après ajustement : min {min(sc_):.3f}, max {max(sc_):.3f}')
     G_fit = None
     if nG:
         a_, b_, tx, ty = x[base_g:base_g + 4]; G_fit = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
