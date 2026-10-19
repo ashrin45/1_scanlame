@@ -142,7 +142,7 @@ def match_into_parent(cim, pim, cands_f, prior_box=None, log=print):
         x0, y0 = max(0, x0), max(0, y0); x1, y1 = min(gp.shape[1], x1), min(gp.shape[0], y1)
         if x1 - x0 > 50 and y1 - y0 > 50: windows.append((x0, y0, x1, y1))
     windows.append(None)
-    best = None
+    best = None; weak = []
     for win in windows:
       if best: break
       if win: gw = gp[win[1]:win[3], win[0]:win[2]]; log(f'recherche dans la fenêtre {win}')
@@ -168,8 +168,9 @@ def match_into_parent(cim, pim, cands_f, prior_box=None, log=print):
           # facteur confirme par une 2e estimation independante (echelle residuelle ~1 apres correction) : 15 inliers suffisent
           ok = (n >= 25 and 0.7 < s_ < 1.4) or (n >= 15 and 0.93 < s_ < 1.07 and f not in cands_f)
           if ok and (best is None or n > best[1]): best = (A, n, f)
+          elif n >= 5 and 0.9 < s_ < 1.1: weak.append((A, n, f))   # hypothese faible, a confirmer par l'appariement appris
           # echelle residuelle loin de 1 : le rapport reel n'est pas celui attendu (zoom ou objectif different), on reessaie au facteur mesure
-          elif n >= 10 and not (0.7 < s_ < 1.4) and 0.002 < f * s_ < 5: queue.insert(0, f * s_); log(f'  -> facteur réel probable {f * s_:.4f}, nouvel essai')
+          elif n >= 5 and not (0.7 < s_ < 1.4) and 0.002 < f * s_ < 5: queue.insert(0, f * s_); log(f'  -> facteur réel probable {f * s_:.4f}, nouvel essai')
     # affinage par appariement appris autour de la position trouvee (ou de l'a priori) : des centaines de points au lieu d'une poignee
     if best:
         A, n, f = best
@@ -177,7 +178,13 @@ def match_into_parent(cim, pim, cands_f, prior_box=None, log=print):
         corn = cv2.transform(np.float32([[0, 0], [cs.shape[1], 0], [cs.shape[1], cs.shape[0]], [0, cs.shape[0]]]).reshape(-1, 1, 2), A).reshape(-1, 2)
         ref = refine_learned(cs, pim, [*corn.min(0), *corn.max(0)], log=log)
         if ref and ref[1] > n: best = (ref[0], ref[1], f); log(f'  -> affinage retenu ({ref[1]} inliers au lieu de {n})')
-    elif prior_box is not None:
+    if not best and weak:
+        for A, n, f in sorted(weak, key=lambda w: -w[1])[:3]:
+            cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
+            corn = cv2.transform(np.float32([[0, 0], [cs.shape[1], 0], [cs.shape[1], cs.shape[0]], [0, cs.shape[0]]]).reshape(-1, 1, 2), A).reshape(-1, 2)
+            ref = refine_learned(cs, pim, [*corn.min(0), *corn.max(0)], margin=int(0.3 * max(cs.shape)) + 100, log=log)
+            if ref: best = (ref[0], ref[1], f); log(f'  -> hypothèse faible ({n} inliers SIFT) confirmée par l\'appariement appris'); break
+    if not best and prior_box is not None:
         for f in cands_f:
             cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
             ref = refine_learned(cs, pim, prior_box, margin=0, log=log)

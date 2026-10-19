@@ -773,7 +773,10 @@ if a.parent:
     # 1) mosaique provisoire (chainage des paires) a basse resolution, pour localiser grossierement la prise dans le parent
     c4 = np.vstack([cv2.transform(np.float32([[0, 0], [regs[k].shape[1], 0], [regs[k].shape[1], regs[k].shape[0]], [0, regs[k].shape[0]]])[None], T[k][:2])[0] for k in comp])
     mn_, mx_ = c4.min(0), c4.max(0)
-    prov_s = min(1.0, 1500 / max(mx_ - mn_))
+    po, co = LC.objective_number(pj.get('objective')), LC.objective_number(meta.get('objective'))
+    cands = [po / co] if (po and co) else [0.1, 0.16, 0.25, 0.4, 0.63, 1.0]       # px enfant pleine res -> px parent pleine res
+    # mosaique provisoire rendue directement a l'echelle attendue du parent reduit (facteur ~1 pour le 1er candidat), 4000 px au plus
+    prov_s = min(cands[0] * sp_ / scales[ref], 4000 / max(mx_ - mn_))
     Sp = np.array([[prov_s, 0, -mn_[0] * prov_s], [0, prov_s, -mn_[1] * prov_s], [0, 0, 1]])
     pw, ph = int(math.ceil((mx_ - mn_)[0] * prov_s)) + 1, int(math.ceil((mx_ - mn_)[1] * prov_s)) + 1
     prov = np.full((ph, pw, 3), 255, np.uint8)
@@ -781,8 +784,6 @@ if a.parent:
         Mk = (Sp @ T[k])[:2]
         w_ = cv2.warpAffine(regs[k], Mk, (pw, ph)); m_ = cv2.warpAffine(rmasks[k], Mk, (pw, ph), flags=cv2.INTER_NEAREST) > 0
         prov[m_] = w_[m_]
-    po, co = LC.objective_number(pj.get('objective')), LC.objective_number(meta.get('objective'))
-    cands = [po / co] if (po and co) else [0.1, 0.16, 0.25, 0.4, 0.63, 1.0]       # px enfant pleine res -> px parent pleine res
     f_c = [r_ * sp_ / (scales[ref] * prov_s) for r_ in cands]                       # px mosaique provisoire -> px parent reduit
     prior_box = None
     hint, stage = meta.get('hint'), meta.get('stage')
@@ -794,13 +795,15 @@ if a.parent:
             hw = max(pw * f_c[0], 0.15 * pim.shape[1]); hh = max(ph * f_c[0], 0.15 * pim.shape[0])
             prior_box = (prior[0] * sp_ - hw, prior[1] * sp_ - hh, prior[0] * sp_ + hw, prior[1] * sp_ + hh)
             log(f'a priori ({pk}) : prise attendue vers ({prior[0]:.0f}, {prior[1]:.0f}) px du parent')
+    cv2.imwrite(os.path.join(out, 'prov.jpg'), prov, [cv2.IMWRITE_JPEG_QUALITY, 90])   # mosaique provisoire (diagnostic)
     log(f'ancrage dans la lame d\'ensemble {a.parent} ({pj["width"]}x{pj["height"]} px, objectif {pj.get("objective")}) : mosaïque provisoire {pw}x{ph}')
     best = LC.match_into_parent(prov, pim, f_c, prior_box, log=log)
     if not best: raise RuntimeError('prise non localisée dans la lame d\'ensemble')
     A0, n0, f0 = best
     G0 = A3(A0) @ np.diag([f0, f0, 1]) @ Sp                 # px recalage (repere ref) -> px parent reduit
     G_init = np.linalg.inv(G0) @ np.diag([sp_, sp_, 1])     # px parent pleine res -> px recalage
-    log(f'localisation grossière : {n0} inliers, échelle enfant->parent {math.hypot(G0[0, 0], G0[1, 0]) / (scales[ref] * sp_):.4f}')
+    log(f'localisation grossière : {n0} inliers, échelle enfant->parent {math.hypot(G0[0, 0], G0[1, 0]) * scales[ref] / sp_:.4f}')
+    dbg = os.path.join(out, 'ancrage'); os.makedirs(dbg, exist_ok=True)
     match = LC.learned_matcher()
     if match is None: raise RuntimeError('appariement appris indisponible : pas d\'ancrage par groupes')
     GS = 5
@@ -817,9 +820,10 @@ if a.parent:
             Mk = Mg[k].copy(); Mk[:, 2] -= o_
             w_ = cv2.warpAffine(regs[k], Mk, (cw, ch)); m_ = cv2.warpAffine(rmasks[k], Mk, (cw, ch), flags=cv2.INTER_NEAREST) > 0
             canvas[m_] = w_[m_]
-        margin = int(0.5 * max(cw, ch)) + 60
+        margin = int(0.3 * max(cw, ch)) + 60
         x0_, y0_ = int(max(0, o_[0] - margin)), int(max(0, o_[1] - margin)); x1_, y1_ = int(min(pim.shape[1], o_[0] + cw + margin)), int(min(pim.shape[0], o_[1] + ch + margin))
         if x1_ - x0_ < 60 or y1_ - y0_ < 60: continue
+        cv2.imwrite(os.path.join(dbg, f'g{g[0]:04d}_canvas.jpg'), canvas); cv2.imwrite(os.path.join(dbg, f'g{g[0]:04d}_window.jpg'), pim[y0_:y1_, x0_:x1_])
         src, dst = match(canvas, pim[y0_:y1_, x0_:x1_]); dst = dst + [x0_, y0_]
         Ag, ng, sg = LC.fit(src, dst, thr=4.0)
         rot = math.degrees(math.atan2(Ag[1, 0], Ag[0, 0])) if Ag is not None else 0
