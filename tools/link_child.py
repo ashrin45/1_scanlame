@@ -55,10 +55,13 @@ def learned_matcher():
             print(f'appariement appris indisponible ({e}) : SIFT seul'); _LG = False
     return _LG or None
 
+LAST_INLIERS = {}   # (src, dst) des inliers du dernier fit reussi (pour les ancrages)
 def fit(src, dst, thr=5.0):
     if len(src) < 4: return None, 0, 0
     A, inl = cv2.estimateAffinePartial2D(np.float32(src), np.float32(dst), method=cv2.RANSAC, ransacReprojThreshold=thr, maxIters=5000, confidence=0.999)
     if A is None: return None, 0, 0
+    m = inl.ravel() > 0
+    LAST_INLIERS['pts'] = (np.float32(src)[m], np.float32(dst)[m])
     return A, int(inl.sum()), math.hypot(A[0, 0], A[0, 1])
 
 def refine_learned(cs, pim, box, margin=150, log=print):
@@ -70,7 +73,7 @@ def refine_learned(cs, pim, box, margin=150, log=print):
     src, dst = match(cs, pim[y0:y1, x0:x1]); dst = dst + [x0, y0]
     A, n, s_ = fit(src, dst)
     log(f'appariement appris (fenêtre {x1 - x0}x{y1 - y0}) : {len(src)} appariements, {n} inliers, échelle résiduelle {s_:.3f}')
-    return (A, n, s_) if A is not None and n >= 25 and 0.85 < s_ < 1.15 else None
+    return (A, n, s_, LAST_INLIERS.get('pts')) if A is not None and n >= 25 and 0.85 < s_ < 1.15 else None
 
 def first_field_center(slug):
     """Centre (px pleine resolution) de la premiere photo de la serie dans la mosaique : c'est la ou l'utilisateur etait au depart
@@ -167,28 +170,28 @@ def match_into_parent(cim, pim, cands_f, prior_box=None, log=print):
           log(f'facteur {f:.4f} : {len(good)} appariements, {n} inliers, échelle résiduelle {s_:.2f}')
           # facteur confirme par une 2e estimation independante (echelle residuelle ~1 apres correction) : 15 inliers suffisent
           ok = (n >= 25 and 0.7 < s_ < 1.4) or (n >= 15 and 0.93 < s_ < 1.07 and f not in cands_f)
-          if ok and (best is None or n > best[1]): best = (A, n, f)
+          if ok and (best is None or n > best[1]): best = (A, n, f, LAST_INLIERS.get('pts'))
           elif n >= 5 and 0.9 < s_ < 1.1: weak.append((A, n, f))   # hypothese faible, a confirmer par l'appariement appris
           # echelle residuelle loin de 1 : le rapport reel n'est pas celui attendu (zoom ou objectif different), on reessaie au facteur mesure
           elif n >= 5 and not (0.7 < s_ < 1.4) and 0.002 < f * s_ < 5: queue.insert(0, f * s_); log(f'  -> facteur réel probable {f * s_:.4f}, nouvel essai')
     # affinage par appariement appris autour de la position trouvee (ou de l'a priori) : des centaines de points au lieu d'une poignee
     if best:
-        A, n, f = best
+        A, n, f = best[:3]
         cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
         corn = cv2.transform(np.float32([[0, 0], [cs.shape[1], 0], [cs.shape[1], cs.shape[0]], [0, cs.shape[0]]]).reshape(-1, 1, 2), A).reshape(-1, 2)
         ref = refine_learned(cs, pim, [*corn.min(0), *corn.max(0)], log=log)
-        if ref and ref[1] > n: best = (ref[0], ref[1], f); log(f'  -> affinage retenu ({ref[1]} inliers au lieu de {n})')
+        if ref and ref[1] > n: best = (ref[0], ref[1], f, ref[3]); log(f'  -> affinage retenu ({ref[1]} inliers au lieu de {n})')
     if not best and weak:
         for A, n, f in sorted(weak, key=lambda w: -w[1])[:3]:
             cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
             corn = cv2.transform(np.float32([[0, 0], [cs.shape[1], 0], [cs.shape[1], cs.shape[0]], [0, cs.shape[0]]]).reshape(-1, 1, 2), A).reshape(-1, 2)
             ref = refine_learned(cs, pim, [*corn.min(0), *corn.max(0)], margin=int(0.3 * max(cs.shape)) + 100, log=log)
-            if ref: best = (ref[0], ref[1], f); log(f'  -> hypothèse faible ({n} inliers SIFT) confirmée par l\'appariement appris'); break
+            if ref: best = (ref[0], ref[1], f, ref[3]); log(f'  -> hypothèse faible ({n} inliers SIFT) confirmée par l\'appariement appris'); break
     if not best and prior_box is not None:
         for f in cands_f:
             cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
             ref = refine_learned(cs, pim, prior_box, margin=0, log=log)
-            if ref: best = (ref[0], ref[1], f); log(f'  -> appariement appris autour de l\'a priori retenu (facteur {f:.4f})'); break
+            if ref: best = (ref[0], ref[1], f, ref[3]); log(f'  -> appariement appris autour de l\'a priori retenu (facteur {f:.4f})'); break
     return best
 
 def main():

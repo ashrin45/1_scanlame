@@ -799,9 +799,29 @@ if a.parent:
     log(f'ancrage dans la lame d\'ensemble {a.parent} ({pj["width"]}x{pj["height"]} px, objectif {pj.get("objective")}) : mosaïque provisoire {pw}x{ph}')
     best = LC.match_into_parent(prov, pim, f_c, prior_box, log=log)
     if not best: raise RuntimeError('prise non localisée dans la lame d\'ensemble')
-    A0, n0, f0 = best
+    A0, n0, f0 = best[:3]; pts0 = best[3] if len(best) > 3 else None
     G0 = A3(A0) @ np.diag([f0, f0, 1]) @ Sp                 # px recalage (repere ref) -> px parent reduit
     G_init = np.linalg.inv(G0) @ np.diag([sp_, sp_, 1])     # px parent pleine res -> px recalage
+    Tinv = {k: np.linalg.inv(T[k]) for k in comp}
+    def owner(pr):
+        # image de la prise qui contient ce point du repere de recalage (la plus centree), et le point dans ses coordonnees
+        bestk = None
+        for k in comp:
+            q = Tinv[k][:2] @ [pr[0], pr[1], 1]
+            h_, w_ = rmasks[k].shape
+            if 0 <= q[0] < w_ and 0 <= q[1] < h_ and rmasks[k][int(q[1]), int(q[0])] > 0:
+                d = min(q[0], w_ - q[0], q[1], h_ - q[1])
+                if bestk is None or d > bestk[0]: bestk = (d, k, q)
+        return (bestk[1], bestk[2]) if bestk else (None, None)
+    # 2) les points communs de la localisation grossiere sont deja des ancrages (epars, la ou la lame a du contenu)
+    if pts0 is not None:
+        Spinv = np.linalg.inv(Sp)
+        for s_pt, d_pt in zip(*pts0):
+            pr = Spinv[:2] @ [s_pt[0] / f0, s_pt[1] / f0, 1]
+            k, q = owner(pr)
+            if k is None: continue
+            anchor_corr.append((k, q, d_pt / sp_)); anchored_imgs.add(k)
+        log(f'ancrage global : {len(anchor_corr)} points sur {len(anchored_imgs)} images')
     log(f'localisation grossière : {n0} inliers, échelle enfant->parent {math.hypot(G0[0, 0], G0[1, 0]) * scales[ref] / sp_:.4f}')
     dbg = os.path.join(out, 'ancrage'); os.makedirs(dbg, exist_ok=True)
     match = LC.learned_matcher()
