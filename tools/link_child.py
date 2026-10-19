@@ -34,6 +34,44 @@ def objective_number(o):
     m = re.search(r'(\d+(?:[.,]\d+)?)', str(o or ''))
     return float(m[1].replace(',', '.')) if m else None
 
+_LG = None
+def learned_matcher():
+    """DISK + LightGlue (appariement appris) si installes, sinon None : bien plus d'appariements que SIFT entre deux echelles."""
+    global _LG
+    if _LG is None:
+        try:
+            import torch
+            from lightglue import LightGlue, DISK
+            from lightglue.utils import rbd
+            torch.set_grad_enabled(False)
+            ext = DISK(max_num_keypoints=8192).eval(); m = LightGlue(features='disk').eval()
+            def match(img0, img1):
+                F = lambda im: ext.extract(torch.from_numpy(cv2.cvtColor(im, cv2.COLOR_BGR2RGB)).permute(2, 0, 1).float()[None] / 255.)
+                fa, fb = F(img0), F(img1); out = m({'image0': fa, 'image1': fb}); fa, fb, out = [rbd(x) for x in [fa, fb, out]]
+                mt = out['matches']
+                return fa['keypoints'][mt[:, 0]].numpy(), fb['keypoints'][mt[:, 1]].numpy()
+            _LG = match
+        except Exception as e:
+            print(f'appariement appris indisponible ({e}) : SIFT seul'); _LG = False
+    return _LG or None
+
+def fit(src, dst, thr=5.0):
+    if len(src) < 4: return None, 0, 0
+    A, inl = cv2.estimateAffinePartial2D(np.float32(src), np.float32(dst), method=cv2.RANSAC, ransacReprojThreshold=thr, maxIters=5000, confidence=0.999)
+    if A is None: return None, 0, 0
+    return A, int(inl.sum()), math.hypot(A[0, 0], A[0, 1])
+
+def refine_learned(cs, pim, box, margin=150):
+    """Appariement appris de l'enfant reduit dans une fenetre du parent reduit (boite en px parent reduit)."""
+    match = learned_matcher()
+    if match is None: return None
+    x0, y0 = int(max(0, box[0] - margin)), int(max(0, box[1] - margin)); x1, y1 = int(min(pim.shape[1], box[2] + margin)), int(min(pim.shape[0], box[3] + margin))
+    if x1 - x0 < 50 or y1 - y0 < 50: return None
+    src, dst = match(cs, pim[y0:y1, x0:x1]); dst = dst + [x0, y0]
+    A, n, s_ = fit(src, dst)
+    print(f'appariement appris (fenêtre {x1 - x0}x{y1 - y0}) : {len(src)} appariements, {n} inliers, échelle résiduelle {s_:.3f}')
+    return (A, n, s_) if A is not None and n >= 25 and 0.85 < s_ < 1.15 else None
+
 def first_field_center(slug):
     """Centre (px pleine resolution) de la premiere photo de la serie dans la mosaique : c'est la ou l'utilisateur etait au depart
     (la ou il a touche le repere, et la ou il a releve la platine)."""
@@ -149,6 +187,20 @@ def main():
           if ok and (best is None or n > best[0]): best = (n, A, f)
           # echelle residuelle loin de 1 : le rapport reel n'est pas celui attendu (zoom ou objectif different), on reessaie au rapport mesure
           elif n >= 10 and not (0.7 < s_ < 1.4) and 0.02 < rr * s_ < 1.5: queue.insert(0, rr * s_); print(f'  -> rapport réel probable {rr * s_:.3f}, nouvel essai')
+    # affinage par appariement appris autour de la position trouvee (ou de l'a priori) : des centaines de points au lieu d'une poignee
+    if best:
+        n, A, f = best
+        cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
+        corn = cv2.transform(np.float32([[0, 0], [cs.shape[1], 0], [cs.shape[1], cs.shape[0]], [0, cs.shape[0]]]).reshape(-1, 1, 2), A).reshape(-1, 2)
+        ref = refine_learned(cs, pim, [*corn.min(0), *corn.max(0)])
+        if ref and ref[1] > n: best = (ref[1], ref[0], f); print(f'  -> affinage retenu ({ref[1]} inliers au lieu de {n})')
+    elif prior is not None:
+        for rr in cands:
+            f = rr * sp / sc
+            cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
+            hw, hh = max(cs.shape[1], 0.15 * pim.shape[1]), max(cs.shape[0], 0.15 * pim.shape[0])
+            ref = refine_learned(cs, pim, [prior[0] * sp - hw, prior[1] * sp - hh, prior[0] * sp + hw, prior[1] * sp + hh], margin=0)
+            if ref: best = (ref[1], ref[0], f); print(f'  -> appariement appris autour de l\'a priori retenu (rapport {rr:.3f})'); break
     if best:
         n, A, f = best
         k = sc * f / sp
