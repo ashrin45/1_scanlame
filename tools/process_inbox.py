@@ -5,7 +5,7 @@ puis supprime la serie du bucket. Lance par GitHub Actions ; utilisable aussi a 
 
 Env : SUPABASE_URL, SUPABASE_SERVICE_KEY. Options : --keep (ne pas supprimer du bucket), --only <serie>
 """
-import argparse, json, os, shutil, subprocess, sys, time
+import argparse, glob, json, os, shutil, subprocess, sys, time
 import requests
 
 ap = argparse.ArgumentParser()
@@ -249,9 +249,19 @@ while True:
               subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'link_child.py'), parent, slug])
           else:
               print(f'  lame parente {parent} introuvable, publiée seule')
+      # details publies avant leur lame d'ensemble (prise x100 envoyee avant que la x10 soit assemblee) : rattaches maintenant
+      extra_paths = []
+      for cdir in sorted(glob.glob(os.path.join(ROOT, 'lames', '*', 'lame.json'))):
+          try: cj = json.load(open(cdir))
+          except Exception: continue
+          cslug = os.path.basename(os.path.dirname(cdir))
+          if cslug != slug and cj.get('parent') == slug and not cj.get('parent_transform'):
+              print(f'  détail en attente {cslug} : recalage dans {slug}')
+              subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'link_child.py'), slug, cslug])
+              extra_paths.append(f'lames/{cslug}')
       # sous GitHub Actions : publication immediate de cette lame. Seul son dossier est commite ; la galerie
       # (fichiers derives) est regeneree apres synchronisation pour ne jamais entrer en conflit.
-      pushed = git_publish([f'lames/{slug}'] + ([f'lames/{parent}'] if parent and os.path.isdir(os.path.join(ROOT, 'lames', parent)) else []), f'Lame : {slug}') if os.environ.get('GITHUB_ACTIONS') else True
+      pushed = git_publish([f'lames/{slug}'] + ([f'lames/{parent}'] if parent and os.path.isdir(os.path.join(ROOT, 'lames', parent)) else []) + extra_paths, f'Lame : {slug}') if os.environ.get('GITHUB_ACTIONS') else True
       if not pushed: print('  publication immédiate impossible, la prise reste à traiter au prochain passage'); published_ok = False
       print(f'  publiée : lames/{slug}/ en {time.time() - t0:.0f} s')
       if published_ok: published.append(slug)

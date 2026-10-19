@@ -49,6 +49,12 @@ class Settings(ctx: Context) {
     var analysisSide: Int get() = p.getInt("aside", 640); set(v) = p.edit().putInt("aside", v).apply()
     var galleryUrl: String get() = str("gallery", "https://ashrin45.github.io/1_scanlame/"); set(v) = set("gallery", v.trim().trimEnd('/') + "/")
 
+    /** Séries envoyées par ce téléphone (slug prévu côté serveur, titre, objectif), les plus récentes d'abord ; 20 au plus. */
+    fun recentSeries(): List<Triple<String, String, String>> = str("recent", "").split('\n').filter { it.contains('\t') }.map { it.split('\t') }.filter { it.size >= 3 }.map { Triple(it[0], it[1], it[2]) }
+    fun addRecentSeries(slug: String, title: String, objective: String) {
+        val l = listOf(listOf(slug, title.replace('\t', ' ').replace('\n', ' '), objective).joinToString("\t")) + str("recent", "").split('\n').filter { it.contains('\t') && !it.startsWith("$slug\t") }
+        set("recent", l.take(20).joinToString("\n"))
+    }
     fun umPerPx(obj: String): Float = p.getFloat("umpx.$obj", 0f)
     fun setUmPerPx(obj: String, v: Float) = p.edit().putFloat("umpx.$obj", v).apply()
     fun calibrations(): Map<String, Float> = OBJECTIVES.mapNotNull { o -> umPerPx(o).takeIf { it > 0 }?.let { o to it } }.toMap()

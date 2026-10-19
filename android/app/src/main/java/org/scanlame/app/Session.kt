@@ -282,6 +282,12 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
 
     // ---------------------------------------------------------------- début et fin
     private fun stamp() = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.ROOT).format(Date())
+    /** Même règle que process_inbox.py : titre + MMJJ + HHMM si titre, sinon l'identifiant avec des tirets. */
+    private fun predictedSlug(seriesId: String, title: String): String {
+        val parts = seriesId.split('_')
+        if (title.isNotBlank() && parts.size >= 3) return Normalizer.normalize(title, Normalizer.Form.NFKD).replace(Regex("[^\\x00-\\x7F]"), "").lowercase().replace(Regex("[^a-z0-9]+"), "-").trim('-').take(40) + "-" + parts[1].drop(4) + parts[2].take(4)
+        return seriesId.lowercase().replace('_', '-')
+    }
     private fun slug(s: String) = Normalizer.normalize(s, Normalizer.Form.NFD).replace(Regex("[\\u0300-\\u036f]"), "").lowercase().replace(Regex("[^a-z0-9]+"), "-").trim('-').take(30)
 
     fun start(title: String, sample: String, comment: String, parent: String?, complete: String?) {
@@ -371,6 +377,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
                 Journal.log("série ${s.seriesId} : $seq photos, $sampleSeq échantillons de position")
             }
             File(dir, "finish.json").writeText(m.toString())
+            // slug que le serveur donnera a cette lame (meme regle que process_inbox) : pour la proposer comme lame d'ensemble sans attendre
+            st.addRecentSeries(predictedSlug(s.seriesId, meta.optString("title", "")), meta.optString("title", "").ifBlank { s.seriesId }, st.objective)
             Uploader.kick(ctx)
             val bilan = if (s.mode == Settings.MODE_PHOTOS) " Bilan : $seq photos, ${nBlurred} floue(s), ${nBigSteps} pas trop grand(s)." else ""
             state.value = state.value.copy(message = "Prise ${s.seriesId.takeLast(6)} en file d'envoi.$bilan L'assemblage se fait côté serveur, la lame apparaîtra dans la galerie.", warn = "")
