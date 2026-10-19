@@ -1,0 +1,46 @@
+[    0.0s] segment 1/1 : objectif x100, 116 images entre 0 s et 214 s
+[    0.0s] 116 images candidates
+[    1.5s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[    1.5s] netteté médiane 73.0, seuil 29.2
+[    2.0s] 82 images retenues (nettes, non redondantes)
+[    2.7s] flat-field : médiane temporelle de 40 images (vignettage et poussières fixes de l'oculaire)
+[    4.6s] aberration chromatique : échelle R 1.0015, B 1.0000
+[    5.1s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 5 %)
+[   12.6s] prétraitement terminé, 82 images, recalage à 900 x 1200
+[   21.0s] points SIFT : 3312 par image en moyenne
+[   21.0s] 733 paires à tester
+[   92.0s] 195 paires valides
+[   92.8s] 3 paire(s) SIFT rejetée(s) : les images ne se superposent pas à l'endroit trouvé (motif répétitif)
+[  106.7s] 14 paire(s) recalée(s) par corrélation d'images (champs répétitifs ou pauvres en points)
+[  107.5s] distorsion radiale k1 = -0.0220 (résidu 0.79 px contre 1.28 px sans correction)
+[  107.5s] composantes : [82] -> on assemble la n°0 : 82 images
+[  108.0s] ancrage dans la lame d'ensemble pv-multi-10191835 (6713x2324 px, objectif x10) : mosaïque provisoire 1501x666
+[  108.5s] facteur 0.5197 : 78 appariements, 29 inliers, échelle résiduelle 1.01
+[  127.3s] appariement appris (fenêtre 1108x698) : 2057 appariements, 1049 inliers, échelle résiduelle 0.968
+[  127.3s]   -> affinage retenu (1049 inliers au lieu de 29)
+[  127.3s] localisation grossière : 1049 inliers, échelle enfant->parent 0.2478
+[  140.9s]   groupe 0000-0004 : 0 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  152.2s]   groupe 0005-0009 : 3 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  175.3s]   groupe 0010-0014 : 3 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  187.5s]   groupe 0015-0019 : 2 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  199.1s]   groupe 0020-0024 : 0 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  216.7s]   groupe 0025-0029 : 2 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  229.2s]   groupe 0030-0034 : 3 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  240.3s]   groupe 0035-0039 : 6 appariements, 2 inliers, échelle 3.142, rotation -6.9°, décalage 101 px parent : rejeté
+[  253.3s]   groupe 0040-0044 : 0 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  269.4s]   groupe 0045-0049 : 1 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  281.8s]   groupe 0050-0054 : 0 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  293.8s]   groupe 0055-0059 : 2 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  310.5s]   groupe 0060-0064 : 3 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  322.6s]   groupe 0065-0069 : 4 appariements, 2 inliers, échelle 0.202, rotation -142.6°, décalage 231 px parent : rejeté
+[  335.8s]   groupe 0075-0081 : 0 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  349.1s]   groupe 0075-0081 : 0 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  349.1s] ancrage : 0/16 groupes appariés, 0 images ancrées, 0 points
+[  355.0s] ajustement global : 25859 correspondances, 81 images
+[  355.3s] compensation photométrique : écart de gain max 8.3 %
+[  355.3s] recalage : erreur médiane 1.03 px (échelle recalage), max 8.16
+[  356.3s] mosaïque 19808 x 8632
+[  356.3s] position dans la lame d'ensemble : échelle 0.0857, rotation -0.3°, 0 images ancrées
+[  515.8s] composition : 50 tuiles en 157 s
+[  517.6s] qualité : note B (2 trou(s) dans la couverture)
+[  517.6s] terminé : pano.jpg 19808 x 8632 , 82 images utilisées sur 82
