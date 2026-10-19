@@ -14,7 +14,12 @@
  "captured": "19/10/2026 18:35",
  "parent": null,
  "parent_transform": null,
- "children": [],
+ "children": [
+  {
+   "slug": "pv-multi-obj-x50-10191835",
+   "transform": null
+  }
+ ],
  "quality": {
   "grade": "A",
   "notes": [],
