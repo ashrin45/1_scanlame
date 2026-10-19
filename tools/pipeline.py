@@ -852,7 +852,7 @@ if a.parent:
             Ag, ng, sg = LC.fit(src, dst, thr=4.0)
             rot = math.degrees(math.atan2(Ag[1, 0], Ag[0, 0])) if Ag is not None else 0
             shift = np.hypot(*(cv2.transform(np.float32([[cw / 2, ch / 2]])[None], Ag)[0][0] - o_ - [cw / 2, ch / 2])) if Ag is not None else 0
-            good = Ag is not None and ng >= 25 and 0.9 < sg < 1.1 and abs(rot) < 6
+            good = Ag is not None and ng >= 25 and 0.9 < sg < 1.1 and (abs(rot) < 6 or (ng >= 200 and abs(rot) < 15))   # beaucoup de points : une rotation forte (debut d'arc) est credible
             log(f'  groupe {g[0]:04d}-{g[-1]:04d} : {len(src)} appariements, {ng} inliers, échelle {sg:.3f}, rotation {rot:+.1f}°, décalage {shift:.0f} px parent' + ('' if good else ' : rejeté'))
             if not good: continue
             ok_g += 1; done.append(g)
