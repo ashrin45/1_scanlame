@@ -1,0 +1,23 @@
+[    0.0s] 22 images candidates
+[    0.7s] planche-contact impossible : unsupported operand type(s) for /: 'NoneType' and 'int'
+[    0.7s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[    0.7s] netteté médiane 5.3, seuil 3.0
+[    1.0s] 22 images retenues (nettes, non redondantes)
+[    2.4s] flat-field : médiane temporelle de 22 images (vignettage et poussières fixes de l'oculaire)
+[   12.8s] aberration chromatique : échelle R 1.0000, B 1.0000
+[   13.4s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 19 %)
+[   21.2s] prétraitement terminé, 22 images, recalage à 900 x 1200
+[   22.6s] points SIFT : 999 par image en moyenne
+[   22.6s] 140 paires à tester
+[   23.9s] 26 paires valides
+[   24.1s] 1 paire(s) SIFT rejetée(s) : les images ne se superposent pas à l'endroit trouvé (motif répétitif)
+[   25.5s] 1 paire(s) recalée(s) par corrélation d'images (champs répétitifs ou pauvres en points)
+[   25.6s] distorsion radiale k1 = -0.0260 (résidu 0.74 px contre 1.25 px sans correction)
+[   25.6s] composantes : [8, 5, 4, 3, 1, 1] -> on assemble la n°0 : 8 images
+[   26.0s] ajustement global : 647 correspondances, 7 images
+[   26.0s] compensation photométrique : écart de gain max 1.7 %
+[   26.0s] recalage : erreur médiane 0.76 px (échelle recalage), max 1.01
+[   26.4s] mosaïque 12002 x 6723
+[   56.3s] composition : 24 tuiles en 29 s
+[   57.1s] qualité : note A (aucune remarque)
+[   57.1s] terminé : pano.jpg 12002 x 6723 , 8 images utilisées sur 22
