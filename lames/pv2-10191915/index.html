@@ -93,7 +93,7 @@ const FIELDS = [{"id":"0000","pts":[[1565,211],[1436,2125],[0,2029],[129,114]],"
 const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
 const ZSTACK = null;      // {levels, tiles:[...]} ou null
 const QUALITY = {"grade": "A", "notes": [], "frames": {"candidates": 61, "blurred": 3, "selected": 27, "used": 27, "tracked_only": 0}, "residual_px": 1.25, "residual_max_px": 2.4, "holes": [], "holes_frac": 0.0, "coverage_px": 31761056, "coverage_mm2": null, "low_sharp_frac": 0.0, "gain_spread_pct": 8.0, "flat_field": "médiane", "k1": -0.01, "zstack_fields": 0, "zstack_levels": 0};    // rapport du pipeline ({} si absent)
-const CHILDREN = [];  // lames de détail (autre objectif) recalées dans celle-ci
+const CHILDREN = [{"slug": "pv2-10191919", "title": "pv2", "objective": "x10", "width": 23782, "height": 4367, "maxlvl": 15, "tile": 512, "transform": null, "outline": null}];  // lames de détail (autre objectif) recalées dans celle-ci
 const PARENT = null;      // lame d'ensemble, si celle-ci est un détail
 const svgNS = 'http://www.w3.org/2000/svg';
 const $ = id => document.getElementById(id);

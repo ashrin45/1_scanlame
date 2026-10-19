@@ -24,7 +24,12 @@
  },
  "stage_cal": null,
  "stage_obs": null,
- "children": [],
+ "children": [
+  {
+   "slug": "pv2-10191919",
+   "transform": null
+  }
+ ],
  "quality": {
   "grade": "A",
   "notes": [],
