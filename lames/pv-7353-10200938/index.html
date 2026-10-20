@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>pv 7353</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+[hidden] { display: none !important; }
+/* Layout: one-screen viewer, slim instrument bar on top, the slide fills the rest */
+:root {
+  --bg: #f3f0f4; --panel: #ffffff; --fg: #2b2433; --muted: #6e6478; --line: #d9d2de;
+  --accent: #7a2e8c; --accent-soft: rgba(122,46,140,.14); --stage: #e9e4ec; --ok: #1b9466; --warn: #b7791f; --bad: #c0392b;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; color-scheme: dark }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-ui); display: flex; flex-direction: column; overflow: hidden; }
+header { flex: 0 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  padding-block: 8px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: var(--panel); border-bottom: 1px solid var(--line); }
+.title { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+h1 { font-size: 15px; font-weight: 600; margin: 0; letter-spacing: .01em; }
+.info { font-size: 12px; color: var(--muted); }
+.info a { color: var(--accent); text-decoration: none; }
+.meta { font-family: var(--font-data); font-size: 12px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.meta b { color: var(--fg); font-weight: 500; }
+.meta a { color: var(--accent); text-decoration: none; } .meta a:hover { text-decoration: underline; }
+.tools { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+button { font: 500 13px var(--font-ui); color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; min-width: 36px; }
+button:hover { border-color: var(--accent); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+button .g { display: inline-block; min-width: 16px; padding: 0 4px; border-radius: 4px; color: #fff; font-weight: 600; margin-left: 4px; }
+.gA { background: var(--ok); } .gB { background: var(--warn); } .gC { background: var(--bad); }
+.zctl { display: flex; align-items: center; gap: 6px; font: 500 12px var(--font-data); color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; }
+.zctl input { width: 110px; accent-color: var(--accent); margin: 0; }
+.zctl b { color: var(--fg); font-weight: 500; min-width: 7.5em; }
+#viewer { flex: 1 1 auto; min-height: 0; background: var(--stage); position: relative; }
+#epanel { position: absolute; right: max(12px, env(safe-area-inset-right, 0px)); top: 12px; z-index: 7; width: min(340px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 13px var(--font-ui); color: var(--fg); display: flex; flex-direction: column; gap: 8px; }
+#epanel input { font: 13px var(--font-data); padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--fg); width: 100%; box-sizing: border-box; }
+#epanel .row { display: flex; gap: 8px; flex-wrap: wrap; }
+#epanel .danger { border-color: #c0392b; color: #c0392b; }
+#epanel .msg { font-size: 12px; opacity: .85; }
+#cropper { position: absolute; inset: 0; z-index: 6; cursor: crosshair; touch-action: none; }
+#croprect { position: absolute; border: 2px solid #e8a33d; background: rgba(232, 163, 61, .12); box-shadow: 0 0 0 9999px rgba(0, 0, 0, .35); pointer-events: none; display: none; }
+#cropbar { position: absolute; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 8; display: flex; gap: 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px; font: 13px var(--font-ui); color: var(--fg); align-items: center; }
+#viewer .navigator { border: 1px solid var(--line) !important; background: var(--panel) !important; }
+.hud { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 5;
+  font-family: var(--font-data); font-size: 12px; color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; pointer-events: none; font-variant-numeric: tabular-nums; }
+svg.fields polygon { fill: none; stroke: var(--accent); stroke-width: 1.5px; vector-effect: non-scaling-stroke; opacity: .9; }
+svg.fields text { fill: var(--accent); font: 500 40px var(--font-data); paint-order: stroke; stroke: var(--panel); stroke-width: 10px; opacity: .8; }
+svg.quality polygon { stroke-width: 1px; vector-effect: non-scaling-stroke; }
+svg.quality polygon.s2 { fill: rgba(27,148,102,.18); stroke: rgba(27,148,102,.7); }
+svg.quality polygon.s1 { fill: rgba(183,121,31,.28); stroke: rgba(183,121,31,.8); }
+svg.quality polygon.s0 { fill: rgba(192,57,43,.32); stroke: rgba(192,57,43,.9); }
+svg.quality polygon.tracked { stroke-dasharray: 6 4; }
+svg.quality polygon.hole { fill: rgba(192,57,43,.25); stroke: #c0392b; stroke-width: 2px; stroke-dasharray: 8 5; }
+svg.children polygon { fill: none; stroke: #e8a33d; stroke-width: 2px; vector-effect: non-scaling-stroke; }
+svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order: stroke; stroke: #000; stroke-width: 8px; }
+#qpanel { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); top: 12px; z-index: 6; max-width: min(360px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; font-size: 13px; box-shadow: 0 4px 18px rgba(0,0,0,.18); }
+#qpanel h2 { font-size: 13px; margin: 0 0 6px; display: flex; align-items: center; gap: 8px; }
+#qpanel ul { margin: 0 0 8px; padding-left: 18px; } #qpanel li { margin: 2px 0; }
+#qpanel .kv { font-family: var(--font-data); font-size: 11px; color: var(--muted); display: grid; grid-template-columns: auto auto; gap: 2px 12px; font-variant-numeric: tabular-nums; }
+#qpanel .leg { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; font-size: 11px; color: var(--muted); }
+#qpanel .leg i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 3px; }
+#bar { position: absolute; right: max(14px, env(safe-area-inset-right, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px)); text-align: right; z-index: 5; pointer-events: none; font: 500 12px var(--font-data); color: #fff; text-shadow: 0 0 4px #000, 0 0 2px #000; }
+#bar i { display: block; margin-left: auto; height: 4px; background: #fff; border: 1px solid #000; border-top: 0; box-shadow: 0 0 3px #000; margin-bottom: 3px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="title"><h1>pv 7353</h1><div class="info" id="info">Gram · objectif x10 · 20/10/2026 09:38</div></div>
+  <div class="meta"><span><b>43</b> champs</span><span><b>7521 × 4663</b> px</span><span><b>14</b> niveaux de zoom</span><span>échelle non calibrée</span><span>v1 · profondeur off, coutures fond, recalage 1200 px, code b283af6</span><span>journaux : <a href="journaux/20261020_093825_pv-7353-assemblage.txt">assemblage 20261020</a> <a href="journaux/20261020_093825_pv-7353-planche.jpg">planche 20261020</a> <a href="journaux/20261020_093825_pv-7353-telephone.txt">téléphone 20261020</a></span></div>
+  <div class="tools">
+    <button id="zin" aria-label="Zoom avant">+</button>
+    <button id="zout" aria-label="Zoom arrière">−</button>
+    <button id="home" aria-label="Vue entière">⌂</button>
+    <button id="fields" aria-pressed="false">Champs</button>
+    <button id="qbtn" aria-pressed="false" hidden>Qualité<span class="g" id="qg"></span></button>
+    <button id="kids" aria-pressed="true" hidden>Détails</button>
+    <button id="editbtn" aria-pressed="false" title="Rogner ou supprimer cette lame">Modifier</button>
+    <label class="zctl" id="zctl" hidden><span>profondeur</span><input id="zr" type="range" min="0" max="1" value="0" step="1" aria-label="Plan de profondeur"><b id="zl">net partout</b></label>
+  </div>
+</header>
+<div id="viewer">
+  <div class="hud" id="hud">zoom 1.00×</div>
+  <div id="bar" hidden><i></i><span></span></div>
+  <div id="qpanel" hidden></div>
+  <div id="epanel" hidden>
+    <b>Modifier la lame</b>
+    <input id="eurl" placeholder="URL du serveur (…/functions/v1/scanlame)" autocomplete="off">
+    <input id="etoken" placeholder="Jeton" type="password" autocomplete="off">
+    <div class="row"><button id="ecrop">Rogner…</button><button id="edelete" class="danger">Supprimer la lame</button></div>
+    <div class="msg" id="emsg">Les mêmes réglages que la page de capture. La modification est faite par GitHub Actions en quelques minutes.</div>
+  </div>
+  <div id="cropper" hidden><div id="croprect"></div></div>
+  <div id="cropbar" hidden><span id="cropinfo">Tracez un rectangle à garder</span><button id="cropok" disabled>Valider le rognage</button><button id="cropcancel">Annuler</button></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+<script>
+const SLUG = "pv-7353-10200938";
+const W = 7521, H = 4663, TILE = 512, MAXLVL = 13;
+const FIELDS = [{"id":"0000","pts":[[2210,117],[2055,2033],[617,1917],[773,0]],"scale":0.998,"sharp":1.12,"z":false,"tracked":false},{"id":"0031","pts":[[1731,1181],[1558,3141],[88,3011],[261,1051]],"scale":0.975,"sharp":1.06,"z":false,"tracked":false},{"id":"0034","pts":[[2965,2641],[2831,4653],[1323,4552],[1457,2541]],"scale":0.952,"sharp":0.95,"z":false,"tracked":false},{"id":"0036","pts":[[4380,2644],[4301,4657],[2791,4597],[2871,2584]],"scale":0.953,"sharp":0.91,"z":false,"tracked":false},{"id":"0039","pts":[[5650,2616],[5615,4629],[4106,4603],[4140,2590]],"scale":0.953,"sharp":0.84,"z":false,"tracked":false},{"id":"0042","pts":[[6661,2574],[6660,4589],[5149,4589],[5149,2573]],"scale":0.952,"sharp":0.76,"z":false,"tracked":false},{"id":"0041","pts":[[6366,2587],[6355,4603],[4843,4595],[4854,2579]],"scale":0.952,"sharp":0.78,"z":false,"tracked":false},{"id":"0040","pts":[[6034,2602],[6012,4617],[4501,4601],[4522,2585]],"scale":0.952,"sharp":0.81,"z":false,"tracked":false},{"id":"0038","pts":[[5354,2625],[5309,4639],[3799,4606],[3844,2592]],"scale":0.953,"sharp":0.89,"z":false,"tracked":false},{"id":"0037","pts":[[4761,2639],[4695,4653],[3185,4604],[3250,2590]],"scale":0.952,"sharp":0.91,"z":false,"tracked":false},{"id":"0035","pts":[[3595,2647],[3485,4661],[1975,4578],[2085,2564]],"scale":0.952,"sharp":0.95,"z":false,"tracked":false},{"id":"0028","pts":[[2930,1213],[2800,3176],[1327,3078],[1458,1115]],"scale":0.975,"sharp":1.04,"z":false,"tracked":false},{"id":"0033","pts":[[2140,2623],[1976,4632],[469,4509],[633,2499]],"scale":0.952,"sharp":1.01,"z":false,"tracked":false},{"id":"0032","pts":[[1675,2251],[1496,4246],[0,4113],[178,2117]],"scale":0.958,"sharp":1.06,"z":false,"tracked":false},{"id":"0030","pts":[[2034,1191],[1871,3154],[399,3032],[562,1069]],"scale":0.974,"sharp":0.99,"z":false,"tracked":false},{"id":"0029","pts":[[2358,1201],[2207,3164],[735,3051],[886,1087]],"scale":0.975,"sharp":1.04,"z":false,"tracked":false},{"id":"0027","pts":[[3242,1216],[3122,3181],[1648,3092],[1768,1126]],"scale":0.975,"sharp":1.01,"z":false,"tracked":false},{"id":"0026","pts":[[3998,1220],[3905,3185],[2432,3115],[2525,1150]],"scale":0.976,"sharp":1.05,"z":false,"tracked":false},{"id":"0025","pts":[[4283,1218],[4200,3184],[2725,3122],[2808,1155]],"scale":0.975,"sharp":0.97,"z":false,"tracked":false},{"id":"0024","pts":[[5335,1198],[5292,3165],[3816,3132],[3860,1165]],"scale":0.975,"sharp":1.0,"z":false,"tracked":false},{"id":"0023","pts":[[5767,1184],[5738,3152],[4263,3130],[4291,1162]],"scale":0.975,"sharp":1.0,"z":false,"tracked":false},{"id":"0022","pts":[[6126,1169],[6111,3140],[4633,3128],[4648,1158]],"scale":0.974,"sharp":0.99,"z":false,"tracked":false},{"id":"0021","pts":[[6444,1154],[6440,3125],[4962,3122],[4966,1152]],"scale":0.974,"sharp":0.97,"z":false,"tracked":false},{"id":"0020","pts":[[6926,1128],[6940,3099],[5462,3109],[5448,1138]],"scale":0.974,"sharp":0.91,"z":false,"tracked":false},{"id":"0019","pts":[[7270,1107],[7297,3079],[5818,3099],[5791,1127]],"scale":0.973,"sharp":0.87,"z":false,"tracked":false},{"id":"0018","pts":[[7485,856],[7519,2816],[6050,2841],[6015,881]],"scale":0.979,"sharp":0.89,"z":false,"tracked":false},{"id":"0017","pts":[[7295,24],[7324,1945],[5883,1967],[5854,46]],"scale":0.999,"sharp":0.88,"z":false,"tracked":false},{"id":"0016","pts":[[6906,50],[6920,1970],[5481,1980],[5467,61]],"scale":1.0,"sharp":0.8,"z":false,"tracked":false},{"id":"0015","pts":[[7206,29],[7232,1951],[5791,1971],[5765,49]],"scale":0.998,"sharp":0.9,"z":false,"tracked":false},{"id":"0014","pts":[[6850,51],[6863,1973],[5421,1983],[5409,61]],"scale":0.998,"sharp":0.97,"z":false,"tracked":false},{"id":"0013","pts":[[6469,72],[6469,1994],[5027,1994],[5027,72]],"scale":0.998,"sharp":1.05,"z":false,"tracked":false},{"id":"0012","pts":[[6195,85],[6185,2008],[4743,2000],[4753,77]],"scale":0.998,"sharp":1.09,"z":false,"tracked":false},{"id":"0011","pts":[[5782,103],[5757,2024],[4316,2005],[4341,84]],"scale":0.999,"sharp":1.08,"z":false,"tracked":false},{"id":"0010","pts":[[5502,112],[5467,2035],[4025,2008],[4061,85]],"scale":0.998,"sharp":1.12,"z":false,"tracked":false},{"id":"0009","pts":[[5195,123],[5148,2041],[3709,2006],[3756,88]],"scale":1.0,"sharp":1.02,"z":false,"tracked":false},{"id":"0008","pts":[[4876,129],[4818,2051],[3377,2007],[3435,85]],"scale":0.998,"sharp":1.07,"z":false,"tracked":false},{"id":"0007","pts":[[4570,134],[4501,2055],[3060,2003],[3129,82]],"scale":0.998,"sharp":1.08,"z":false,"tracked":false},{"id":"0006","pts":[[4244,138],[4164,2057],[2724,1997],[2805,78]],"scale":0.999,"sharp":1.08,"z":false,"tracked":false},{"id":"0005","pts":[[3888,139],[3795,2059],[2355,1989],[2449,69]],"scale":0.998,"sharp":1.12,"z":false,"tracked":false},{"id":"0004","pts":[[3599,139],[3494,2059],[2055,1981],[2159,61]],"scale":0.998,"sharp":1.15,"z":false,"tracked":false},{"id":"0003","pts":[[3125,135],[3004,2055],[1564,1963],[1686,44]],"scale":0.998,"sharp":1.15,"z":false,"tracked":false},{"id":"0002","pts":[[2835,130],[2703,2049],[1264,1950],[1396,31]],"scale":0.998,"sharp":1.15,"z":false,"tracked":false},{"id":"0001","pts":[[2550,125],[2408,2041],[971,1935],[1113,18]],"scale":0.999,"sharp":1.11,"z":false,"tracked":false}];
+const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
+const ZSTACK = null;      // {levels, tiles:[...]} ou null
+const QUALITY = {"grade": "A", "notes": [], "frames": {"candidates": 143, "blurred": 7, "selected": 43, "used": 43, "tracked_only": 0}, "residual_px": 1.28, "residual_max_px": 3.51, "holes": [], "holes_frac": 0.0, "coverage_px": 31260162, "coverage_mm2": null, "low_sharp_frac": 0.0, "gain_spread_pct": 5.0, "flat_field": "médiane", "k1": -0.006, "zstack_fields": 0, "zstack_levels": 0};    // rapport du pipeline ({} si absent)
+const CHILDREN = [];  // lames de détail (autre objectif) recalées dans celle-ci
+const PARENT = null;      // lame d'ensemble, si celle-ci est un détail
+const svgNS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+
+// tile source : pyramide Deep Zoom de cette lame ; pour un plan z, les tuiles manquantes retombent sur la base
+function source(prefix, keys) {
+  return { width: W, height: H, tileSize: TILE, tileOverlap: 1, minLevel: 0, maxLevel: MAXLVL,
+    getTileUrl: (l, x, y) => (keys && keys.has(l + '/' + x + '_' + y) ? prefix : 'lame_files') + `/${l}/${x}_${y}.jpg` };
+}
+const viewer = OpenSeadragon({
+  id: 'viewer', showNavigationControl: false, showNavigator: true, navigatorPosition: 'TOP_RIGHT', navigatorSizeRatio: 0.16,
+  gestureSettingsTouch: { pinchToZoom: true, flickEnabled: true }, maxZoomPixelRatio: 3, minZoomImageRatio: 0.6, visibilityRatio: 0.5,
+  animationTime: 0.6, immediateRender: true, preserveViewport: false, tileSources: source()
+});
+$('zin').onclick = () => viewer.viewport.zoomBy(1.6);
+$('zout').onclick = () => viewer.viewport.zoomBy(1 / 1.6);
+$('home').onclick = () => viewer.viewport.goHome();
+
+// ---- lame parente / enfants ----
+if (PARENT) $('info').insertAdjacentHTML('beforeend', `${$('info').textContent ? ' · ' : ''}<a href="../${PARENT.slug}/">↖ vue d'ensemble : ${PARENT.title}</a>${PARENT.placed ? '' : ' (position non retrouvée)'}`);
+const placed = CHILDREN.filter(c => c.transform);
+const unplaced = CHILDREN.filter(c => !c.transform);
+if (CHILDREN.length) {
+  $('info').insertAdjacentHTML('beforeend', ($('info').textContent ? ' · ' : '') + CHILDREN.map(c => `<a href="../${c.slug}/">↗ ${c.title}${c.objective ? ' (obj. ' + c.objective + ')' : ''}</a>`).join(' · '));
+}
+const kidLayers = [];
+const kidSvg = document.createElementNS(svgNS, 'svg');
+kidSvg.setAttribute('viewBox', `0 0 ${W} ${H}`); kidSvg.setAttribute('class', 'children'); kidSvg.setAttribute('width', '100%'); kidSvg.setAttribute('height', '100%'); kidSvg.style.overflow = 'visible';
+for (const c of placed) {
+  const [a, b, tx, ty] = c.transform;   // x' = a x - b y + tx ; y' = b x + a y + ty  (enfant px -> parent px)
+  const s = Math.hypot(a, b), deg = Math.atan2(b, a) * 180 / Math.PI;
+  const corners = [[0, 0], [c.width, 0], [c.width, c.height], [0, c.height]].map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty]);
+  const polys = (c.outline && c.outline.length) ? c.outline.map(poly => poly.map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty])) : [corners];
+  for (const poly of polys) { const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', poly.map(q => q.map(v => v.toFixed(1)).join(',')).join(' ')); kidSvg.appendChild(p); }
+  const t = document.createElementNS(svgNS, 'text'); t.setAttribute('x', corners[0][0] + 30); t.setAttribute('y', corners[0][1] - 20); t.textContent = c.objective ? 'obj. ' + c.objective : c.title; kidSvg.appendChild(t);
+  viewer.addHandler('open', () => viewer.addTiledImage({
+    tileSource: { width: c.width, height: c.height, tileSize: c.tile, tileOverlap: 1, minLevel: 0, maxLevel: c.maxlvl, getTileUrl: (l, x, y) => `../${c.slug}/lame_files/${l}/${x}_${y}.jpg` },
+    // OpenSeadragon tourne l'image autour de son centre : on place le rectangle non tourné pour que son centre tombe au bon endroit
+    x: (a * c.width / 2 - b * c.height / 2 + tx - s * c.width / 2) / W, y: (b * c.width / 2 + a * c.height / 2 + ty - s * c.height / 2) / W, width: s * c.width / W, degrees: deg,
+    success: e => { kidLayers.push(e.item); if (c.outline && c.outline.length && e.item.setCroppingPolygons) e.item.setCroppingPolygons(c.outline.map(poly => poly.map(([x, y]) => ({ x, y })))); }   // fond blanc hors couverture rogné
+  }));
+}
+if (placed.length) {
+  $('kids').hidden = false;
+  let on = true;
+  const apply = () => { kidLayers.forEach(l => l.setOpacity(on ? 1 : 0)); if (on) viewer.addOverlay({ element: kidSvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(kidSvg); };
+  $('kids').onclick = () => { on = !on; $('kids').setAttribute('aria-pressed', String(on)); apply(); };
+  viewer.addHandler('open', () => viewer.addOverlay({ element: kidSvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }));
+}
+
+// ---- contours des champs (sur demande) ----
+const svg = document.createElementNS(svgNS, 'svg');
+svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'fields'); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%');
+svg.style.overflow = 'visible';
+for (const f of FIELDS) {
+  const p = document.createElementNS(svgNS, 'polygon');
+  p.setAttribute('points', f.pts.map(q => q.join(',')).join(' '));
+  svg.appendChild(p);
+  const t = document.createElementNS(svgNS, 'text');
+  const [x, y] = f.pts[0]; t.setAttribute('x', x + 40); t.setAttribute('y', y + 110); t.textContent = f.id + (f.z ? ' z' : ''); svg.appendChild(t);
+}
+let fieldsShown = false;
+$('fields').onclick = () => { fieldsShown = !fieldsShown; $('fields').setAttribute('aria-pressed', String(fieldsShown)); if (fieldsShown) viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(svg); };
+
+// ---- rapport de qualité : panneau + calque (netteté par champ, trous) ----
+if (QUALITY && QUALITY.grade) {
+  $('qbtn').hidden = false; $('qg').textContent = QUALITY.grade; $('qg').className = 'g g' + QUALITY.grade;
+  const qsvg = document.createElementNS(svgNS, 'svg');
+  qsvg.setAttribute('viewBox', `0 0 ${W} ${H}`); qsvg.setAttribute('class', 'quality'); qsvg.setAttribute('width', '100%'); qsvg.setAttribute('height', '100%'); qsvg.style.overflow = 'visible';
+  for (const f of FIELDS) {
+    const p = document.createElementNS(svgNS, 'polygon');
+    p.setAttribute('points', f.pts.map(q => q.join(',')).join(' '));
+    const s = f.sharp == null ? 1 : f.sharp;
+    p.setAttribute('class', (s >= 0.8 ? 's2' : s >= 0.5 ? 's1' : 's0') + (f.tracked ? ' tracked' : ''));
+    qsvg.appendChild(p);
+  }
+  for (const h of QUALITY.holes || []) {
+    const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', h.map(q => q.join(',')).join(' ')); p.setAttribute('class', 'hole'); qsvg.appendChild(p);
+  }
+  const fr = QUALITY.frames || {};
+  const fmt = v => v == null ? '' : (typeof v === 'number' ? v.toLocaleString('fr-FR') : v);
+  $('qpanel').innerHTML = `<h2>Qualité <span class="g g${QUALITY.grade}" style="padding:0 6px;border-radius:4px;color:#fff">${QUALITY.grade}</span></h2>` +
+    (QUALITY.notes && QUALITY.notes.length ? '<ul>' + QUALITY.notes.map(n => `<li>${n}</li>`).join('') + '</ul>' : '<p style="margin:0 0 8px">Aucune remarque : couverture continue, champs nets, recalage précis.</p>') +
+    `<div class="kv"><span>images extraites</span><span>${fmt(fr.candidates)}</span><span>floues rejetées</span><span>${fmt(fr.blurred)}</span><span>champs assemblés</span><span>${fmt(fr.used)} / ${fmt(fr.selected)}</span>` +
+    `<span>recalage médian</span><span>${fmt(QUALITY.residual_px)} px</span><span>surface couverte</span><span>${QUALITY.coverage_mm2 != null ? fmt(QUALITY.coverage_mm2) + ' mm²' : fmt(QUALITY.coverage_px) + ' px'}</span>` +
+    `<span>flat-field</span><span>${fmt(QUALITY.flat_field)}</span>${QUALITY.zstack_fields ? `<span>piles de profondeur</span><span>${QUALITY.zstack_fields} (${QUALITY.zstack_levels} plans)</span>` : ''}</div>` +
+    `<div class="leg"><span><i style="background:rgba(27,148,102,.5)"></i>net</span><span><i style="background:rgba(183,121,31,.6)"></i>moyen</span><span><i style="background:rgba(192,57,43,.6)"></i>peu net</span><span><i style="border:2px dashed #c0392b;box-sizing:border-box"></i>trou</span><span><i style="border:1px dashed #666;box-sizing:border-box"></i>placé sans recalage</span></div>`;
+  let qOn = false;
+  $('qbtn').onclick = () => { qOn = !qOn; $('qbtn').setAttribute('aria-pressed', String(qOn)); $('qpanel').hidden = !qOn; if (qOn) viewer.addOverlay({ element: qsvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(qsvg); };
+}
+
+// ---- z-stack : un calque par plan, seul le plan choisi est visible (la base EDF reste dessous) ----
+if (ZSTACK && ZSTACK.levels > 0) {
+  const keys = new Set(ZSTACK.tiles || []);
+  const layers = [];
+  viewer.addHandler('open', () => {
+    for (let z = 0; z < ZSTACK.levels; z++) viewer.addTiledImage({ tileSource: source('lame_z' + z, keys), opacity: 0, success: e => { layers[z] = e.item; } });
+  });
+  $('zctl').hidden = false; $('zr').max = ZSTACK.levels;
+  const setZ = v => {
+    v = Math.max(0, Math.min(ZSTACK.levels, v)); $('zr').value = v;
+    $('zl').textContent = v === 0 ? 'net partout' : `plan ${v} / ${ZSTACK.levels}`;
+    layers.forEach((l, z) => l && l.setOpacity(z === v - 1 ? 1 : 0));
+  };
+  $('zr').oninput = () => setZ(+$('zr').value);
+  document.addEventListener('keydown', e => { if (e.key === '[') setZ(+$('zr').value - 1); if (e.key === ']') setZ(+$('zr').value + 1); });
+}
+
+// ---- zoom + barre d'échelle ----
+const hud = $('hud'), bar = $('bar');
+function updateBar() {
+  if (!UMPX) return;
+  const z = imgZoom();   // pixels écran par pixel image
+  const umPerScreenPx = UMPX / z;
+  const target = 120 * umPerScreenPx;
+  const p = Math.pow(10, Math.floor(Math.log10(target)));
+  const len = [1, 2, 5, 10].map(m => m * p).reduce((a, b) => Math.abs(b - target) < Math.abs(a - target) ? b : a);
+  bar.querySelector('i').style.width = (len / umPerScreenPx).toFixed(1) + 'px';
+  bar.querySelector('span').textContent = len >= 1000 ? (len / 1000).toLocaleString('fr-FR') + ' mm' : len.toLocaleString('fr-FR') + ' µm';
+  bar.hidden = false;
+}
+const imgZoom = () => { const it = viewer.world.getItemAt(0); return it ? it.viewportToImageZoom(viewer.viewport.getZoom(true)) : viewer.viewport.getZoom(true) / W; };
+function updateHud() {
+  const z = imgZoom();
+  hud.textContent = 'zoom ' + z.toFixed(2) + '× (1,00× = pixels natifs)';
+  updateBar();
+}
+viewer.addHandler('zoom', updateHud);
+viewer.addHandler('animation', updateHud);
+viewer.addHandler('animation-finish', updateHud);
+viewer.addHandler('open', updateHud);
+
+// ---- modifier la lame : rogner, supprimer (demande envoyee a la fonction Supabase, executee par GitHub Actions) ----
+const LS = { get: k => { try { return localStorage.getItem(k) || ''; } catch (_) { return ''; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (_) {} } };
+$('eurl').value = LS.get('scanlame.url'); $('etoken').value = LS.get('scanlame.token');
+$('eurl').onchange = () => LS.set('scanlame.url', $('eurl').value.trim()); $('etoken').onchange = () => LS.set('scanlame.token', $('etoken').value.trim());
+$('editbtn').onclick = () => { const on = $('epanel').hidden; $('epanel').hidden = !on; $('editbtn').setAttribute('aria-pressed', on); };
+async function sendEdit(payload) {
+  const url = $('eurl').value.trim().replace(/\/+$/, ''), token = $('etoken').value.trim();
+  if (!url || !token) { $('emsg').textContent = 'URL du serveur et jeton nécessaires (voir la page de capture).'; return false; }
+  $('emsg').textContent = 'envoi…';
+  try {
+    const r = await fetch(url + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Token': token },
+      body: JSON.stringify({ series: 'edit_' + Date.now(), slug: SLUG, ...payload }) });
+    if (!r.ok) { $('emsg').textContent = 'refusé : HTTP ' + r.status; return false; }
+    const j = await r.json();
+    $('emsg').textContent = 'Demande envoyée' + (j.dispatched ? ' : GitHub Actions est réveillé, ' : ' (traitement au prochain passage, 15 min au plus) : ') + 'rechargez la page dans quelques minutes.';
+    return true;
+  } catch (e) { $('emsg').textContent = 'erreur : ' + e.message; return false; }
+}
+$('edelete').onclick = async () => {
+  if (!confirm('Supprimer définitivement cette lame de la galerie ?')) return;
+  if (await sendEdit({ action: 'delete' })) $('edelete').disabled = true;
+};
+// rognage : rectangle trace au doigt ou a la souris sur la vue, converti en px de la lame
+let crop = null, cropStart = null;
+const rectEl = $('croprect');
+function imgPt(ev) {
+  const r = $('viewer').getBoundingClientRect();
+  const p = viewer.world.getItemAt(0).viewerElementToImageCoordinates(new OpenSeadragon.Point(ev.clientX - r.left, ev.clientY - r.top));   // image principale (les calques sont d'autres images)
+  return { x: Math.max(0, Math.min(W, p.x)), y: Math.max(0, Math.min(H, p.y)) };
+}
+function drawCrop() {
+  if (!crop) { rectEl.style.display = 'none'; $('cropok').disabled = true; return; }
+  const main = viewer.world.getItemAt(0);
+  const a = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(crop.x0, crop.y0));
+  const b = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(crop.x1, crop.y1));
+  rectEl.style.display = 'block'; rectEl.style.left = a.x + 'px'; rectEl.style.top = a.y + 'px'; rectEl.style.width = (b.x - a.x) + 'px'; rectEl.style.height = (b.y - a.y) + 'px';
+  const ok = crop.x1 - crop.x0 >= 64 && crop.y1 - crop.y0 >= 64;
+  $('cropok').disabled = !ok;
+  $('cropinfo').textContent = ok ? `zone gardée : ${Math.round(crop.x1 - crop.x0)} × ${Math.round(crop.y1 - crop.y0)} px` : 'Tracez un rectangle à garder';
+}
+$('ecrop').onclick = () => {
+  $('epanel').hidden = true; $('editbtn').setAttribute('aria-pressed', 'false');
+  $('cropper').hidden = false; $('cropbar').hidden = false; crop = null; drawCrop();
+  viewer.setMouseNavEnabled(false);
+};
+const endCrop = () => { $('cropper').hidden = true; $('cropbar').hidden = true; crop = null; drawCrop(); viewer.setMouseNavEnabled(true); };
+$('cropcancel').onclick = endCrop;
+$('cropper').onpointerdown = ev => { ev.preventDefault(); $('cropper').setPointerCapture(ev.pointerId); cropStart = imgPt(ev); crop = { x0: cropStart.x, y0: cropStart.y, x1: cropStart.x, y1: cropStart.y }; drawCrop(); };
+$('cropper').onpointermove = ev => { if (!cropStart) return; const p = imgPt(ev); crop = { x0: Math.min(cropStart.x, p.x), y0: Math.min(cropStart.y, p.y), x1: Math.max(cropStart.x, p.x), y1: Math.max(cropStart.y, p.y) }; drawCrop(); };
+$('cropper').onpointerup = $('cropper').onpointercancel = () => { cropStart = null; };
+viewer.addHandler('animation', () => { if (crop) drawCrop(); });
+$('cropok').onclick = async () => {
+  if (!crop) return;
+  const rect = [crop.x0, crop.y0, crop.x1, crop.y1].map(Math.round);
+  if (!confirm(`Garder seulement la zone ${rect[2] - rect[0]} × ${rect[3] - rect[1]} px et jeter le reste ? (irréversible)`)) return;
+  $('epanel').hidden = false;
+  if (await sendEdit({ action: 'crop', rect })) endCrop();
+};
+</script>
+</body>
+</html>
