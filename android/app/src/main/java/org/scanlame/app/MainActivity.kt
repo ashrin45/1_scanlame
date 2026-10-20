@@ -588,6 +588,26 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
             Text("Relevés de la platine au premier champ de la série (facultatif). Avec ceux de la lame d'ensemble, ils servent à placer le détail ; la correspondance est apprise au premier recalage réussi.", color = MUTED, fontSize = 11.sp)
             Select("Compléter une lame existante (reprise des zones manquantes, même objectif)", listOf("" to "Non : nouvelle lame") + lames.map { it.slug to "${it.title}${it.objective?.let { o -> " (obj. $o)" } ?: ""}" }, complete) { complete = it; if (it.isNotEmpty()) { parent = ""; lames.firstOrNull { l -> l.slug == it }?.objective?.let { o -> objective = o } } }
             OutlinedTextField(umpx, { umpx = it }, label = { Text("Échelle pour cet objectif : µm par pixel de photo (optionnel)") }, placeholder = { Text("ex. 0.085 (mesuré avec un micromètre objet, à ce zoom)") }, singleLine = true, modifier = Modifier.fillMaxWidth())
+            // calibration par les hematies : une photo du champ courant (frottis sanguin, zone ou les hematies sont isolees), diametre median = 7,5 µm
+            var calMsg by remember { mutableStateOf("") }; var calBusy by remember { mutableStateOf(false) }
+            val calScope = androidx.compose.runtime.rememberCoroutineScope()
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                WebButton(if (calBusy) "Mesure…" else "Mesurer sur les hématies", small = true, enabled = cameraOn && !calBusy) {
+                    calBusy = true; calMsg = "photo du champ…"
+                    val f = File(ctx.cacheDir, "calib.jpg")
+                    engine.takePhoto(f) { ok, err ->
+                        if (!ok) { calBusy = false; calMsg = "photo impossible : $err"; return@takePhoto }
+                        calScope.launch {
+                            val r = withContext(Dispatchers.IO) { try { Calibrate.measureRbc(f) } catch (e: Exception) { null } }
+                            calBusy = false
+                            if (r == null || r.umPerPx <= 0) calMsg = "mesure impossible" + (r?.note?.let { " : $it" } ?: "")
+                            else { umpx = Calibrate.fmt(r.umPerPx); calMsg = "${r.n} hématies, diamètre médian ${Calibrate.fmt1(r.diamPx)} px (dispersion ${(100 * r.spread).roundToInt()} %) → ${Calibrate.fmt(r.umPerPx)} µm/px" + (if (r.note.isNotEmpty()) " ; ${r.note}" else "") + ". Enregistré à la fermeture des réglages." }
+                            Journal.log("calibration $objective : $calMsg")
+                        }
+                    }
+                }
+                Text(if (calMsg.isEmpty()) "Frottis sanguin, hématies isolées dans le champ, mise au point faite : hématie = 7,5 µm." else calMsg, color = MUTED, fontSize = 11.sp, modifier = Modifier.weight(1f))
+            }
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Select("Mode", listOf(Settings.MODE_PHOTOS to "Photos à chaque arrêt de platine", Settings.MODE_VIDEO to "Vidéo (encodeur matériel)"), mode, Modifier.weight(1f)) { mode = it }
                 Select("Profondeur (vis micrométrique)", listOf("off" to "désactivée : image la plus nette à chaque arrêt", "on" to "fusion + plans navigables (en essai)"), depth, Modifier.weight(1f)) { depth = it }
