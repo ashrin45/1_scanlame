@@ -78,7 +78,23 @@ def crop(slug, x0, y0, x1, y1):
         json.dump(kept, open(fp, 'w'))
         j['fields'] = len(kept)
     if j.get('outline'):
-        j['outline'] = [[[x - x0, y - y0] for x, y in poly] for poly in j['outline']]
+        def clip_rect(poly, w, h):
+            # Sutherland-Hodgman contre le rectangle [0,w]x[0,h]
+            out = [list(p) for p in poly]
+            for axis, lim, keep_le in ((0, 0, False), (0, w, True), (1, 0, False), (1, h, True)):
+                inp, out = out, []
+                for k in range(len(inp)):
+                    p, q = inp[k], inp[(k + 1) % len(inp)]
+                    pin = (p[axis] <= lim) if keep_le else (p[axis] >= lim); qin = (q[axis] <= lim) if keep_le else (q[axis] >= lim)
+                    def inter():
+                        t = (lim - p[axis]) / ((q[axis] - p[axis]) or 1e-9); return [p[0] + t * (q[0] - p[0]), p[1] + t * (q[1] - p[1])]
+                    if pin:
+                        out.append(p)
+                        if not qin: out.append(inter())
+                    elif qin: out.append(inter())
+                if not out: break
+            return [[round(x, 1), round(y, 1)] for x, y in out]
+        j['outline'] = [cp for cp in (clip_rect([[x - x0, y - y0] for x, y in poly], nW, nH) for poly in j['outline']) if len(cp) >= 3]
     if j.get('parent_transform'):
         j['parent_transform'] = shift_transform(j['parent_transform'], x0, y0)
         pj = load_lame(j['parent'])

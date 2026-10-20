@@ -163,7 +163,10 @@ for (const c of placed) {
   const [a, b, tx, ty] = c.transform;   // x' = a x - b y + tx ; y' = b x + a y + ty  (enfant px -> parent px)
   const s = Math.hypot(a, b), deg = Math.atan2(b, a) * 180 / Math.PI;
   const corners = [[0, 0], [c.width, 0], [c.width, c.height], [0, c.height]].map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty]);
-  const polys = (c.outline && c.outline.length) ? c.outline.map(poly => poly.map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty])) : [corners];
+  // contour en px parent, limite a l'emprise de la lame d'ensemble (meme borne que le calque)
+  const pbounds = [{ x: 0, y: 0 }, { x: W, y: 0 }, { x: W, y: H }, { x: 0, y: H }];
+  const polys = ((c.outline && c.outline.length) ? c.outline.map(poly => poly.map(([x, y]) => ({ x: a * x - b * y + tx, y: b * x + a * y + ty }))) : [corners.map(([x, y]) => ({ x, y }))])
+    .map(poly => clipPoly(poly, pbounds)).filter(p => p.length >= 3).map(poly => poly.map(p => [p.x, p.y]));
   for (const poly of polys) { const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', poly.map(q => q.map(v => v.toFixed(1)).join(',')).join(' ')); kidSvg.appendChild(p); }
   const t = document.createElementNS(svgNS, 'text'); t.setAttribute('x', corners[0][0] + 30); t.setAttribute('y', corners[0][1] - 20); t.textContent = c.objective ? 'obj. ' + c.objective : c.title; kidSvg.appendChild(t);
   viewer.addHandler('open', () => viewer.addTiledImage({
