@@ -103,13 +103,15 @@ def pos_at(t_ms):
 # nettete + sous-echantillonnage spatial (on saute les images quasi identiques)
 # ---- netteté et deplacement image a image (correlation de phase sur 256 px) ----
 def sharpness(g):
-    """(variance du laplacien, mesure normalisee par le contenu : energie haute frequence / energie du gradient)"""
+    """(variance du laplacien, mesure normalisee par le contenu : energie haute frequence / energie du gradient, energie du gradient)"""
     lap = cv2.Laplacian(g, cv2.CV_64F); gx = cv2.Sobel(g, cv2.CV_64F, 1, 0); gy = cv2.Sobel(g, cv2.CV_64F, 0, 1)
-    return float(lap.var()), float(lap.var() / (gx.var() + gy.var() + 1e-6))
-sharps, sharpn, smalls = [], [], []
+    content = gx.var() + gy.var()
+    return float(lap.var()), float(lap.var() / (content + 1e-6)), float(content)
+sharps, sharpn, contents, smalls = [], [], [], []
+orig_paths = [p for p, _ in items]
 for p, t in items:
     g = cv2.imread(p, cv2.IMREAD_REDUCED_GRAYSCALE_4)
-    sv, sn = sharpness(g); sharps.append(sv); sharpn.append(sn)
+    sv, sn, ct = sharpness(g); sharps.append(sv); sharpn.append(sn); contents.append(ct)
     smalls.append(cv2.resize(g, (256, 256), interpolation=cv2.INTER_AREA).astype(np.float32))
 h4, w4 = cv2.imread(items[0][0], cv2.IMREAD_REDUCED_GRAYSCALE_4).shape
 win = cv2.createHanningWindow((256, 256), cv2.CV_32F)
@@ -278,12 +280,19 @@ items = [(p, t) for p, t, _, _, _ in merged]; sharps = [sh for _, _, sh, _, _ in
 n_candidates = len(items)
 
 thr = max(3.0, 0.4 * float(np.median(sharps)))   # relative threshold: drops the blurred frames of this series only
+# un champ presque vide a un laplacien faible sans etre flou : il n'est rejete que si sa nettete normalisee (independante du contenu) est basse aussi
+med_sn = float(np.median(sharpn)); med_ct = float(np.median(contents))
+content_of = dict(zip(orig_paths, contents))
+def is_blurred(p, sharp):
+    if sharp >= thr: return False
+    empty = content_of.get(p, med_ct) < 0.25 * med_ct
+    return (not empty) or sharpn_of.get(p, med_sn) < 0.5 * med_sn
 log(f'netteté médiane {np.median(sharps):.1f}, seuil {thr:.1f}')
 sel = []
 last_pos = None
 n_dark = 0
 for (p, t), sharp in zip(items, sharps):
-    if sharp < thr:
+    if is_blurred(p, sharp):
         continue
     g8 = cv2.imread(p, cv2.IMREAD_REDUCED_GRAYSCALE_8)
     if g8 is not None and float(np.percentile(g8, 90)) < 70:   # image sombre : telephone hors de l'oculaire, pas un champ
@@ -295,7 +304,7 @@ for (p, t), sharp in zip(items, sharps):
         else: continue
     if pos: last_pos = pos
     sel.append(dict(path=p, t=t, sharp=sharp, sharpn=sharpn_of[p], pos=pos, planes=planes))
-n_blurred = sum(1 for sh in sharps if sh < thr)
+n_blurred = sum(1 for (p, _), sh in zip(items, sharps) if is_blurred(p, sh))
 if len(sel) > a.max_frames:
     step = len(sel) / a.max_frames
     sel = [sel[int(i * step)] for i in range(a.max_frames)]

@@ -89,21 +89,26 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         return gray
     }
 
+    /** Nettete normalisee par le contenu : energie du laplacien / energie du gradient (x100). Un champ vide n'est plus note flou
+     *  (la variance brute du laplacien chute avec le contenu, pas seulement avec le flou) ; un champ plein et defocalise reste bas. */
     private fun sharpness(g: FloatArray): Float {
-        val S = Tracker.S2; var sum = 0.0; var sum2 = 0.0; var n = 0
+        val S = Tracker.S2; var l2 = 0.0; var g2 = 0.0; var n = 0
         var y = 1
         while (y < S - 1) {
             var x = 1
             while (x < S - 1) {
-                val l = 4 * g[y * S + x] - g[y * S + x - 1] - g[y * S + x + 1] - g[(y - 1) * S + x] - g[(y + 1) * S + x]
-                sum += l; sum2 += l * l; n++
+                val c = g[y * S + x]
+                val l = 4 * c - g[y * S + x - 1] - g[y * S + x + 1] - g[(y - 1) * S + x] - g[(y + 1) * S + x]
+                val gx = g[y * S + x + 1] - g[y * S + x - 1]; val gy = g[(y + 1) * S + x] - g[(y - 1) * S + x]
+                l2 += l * l; g2 += gx * gx + gy * gy; n++
                 x += 2
             }
             y += 2
         }
-        val m = sum / n
-        return sqrt(sum2 / n - m * m).toFloat()
+        lastContent = sqrt(g2 / n).toFloat()
+        return (100.0 * l2 / (g2 + 1e-3)).toFloat()
     }
+    @Volatile var lastContent = 0f   // energie du gradient de la derniere image analysee (richesse du champ)
 
     private fun makeMask(g: FloatArray): ByteArray {
         val sorted = g.copyOf(); sorted.sort()
