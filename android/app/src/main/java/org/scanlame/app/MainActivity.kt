@@ -45,6 +45,8 @@ import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MenuAnchorType
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.TextButton
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Slider
@@ -151,6 +153,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     var cameraOn by remember { mutableStateOf(false) }
     var preview by remember { mutableStateOf<PreviewView?>(null) }
     var sheet by remember { mutableStateOf(false) }
+    var startDlg by remember { mutableStateOf(false) }
     var msg by remember { mutableStateOf("Touche le bouton violet pour démarrer la caméra.") }
     var msgErr by remember { mutableStateOf(false) }
     var showObjPick by remember { mutableStateOf(false) }
@@ -279,10 +282,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     when {
                         !cameraOn -> { cameraOn = true; say("Démarrage de la caméra...", false) }
                         stop -> { say("Clôture en cours...", false); session.stop { Uploader.refresh(ctx) } }
-                        else -> {
-                            if (st.serverUrl.isEmpty()) say("Serveur non réglé : la prise restera sur le téléphone (file d'attente).", true)
-                            session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
-                        }
+                        else -> startDlg = true   // nom de la lame et objectif demandés au départ
                     }
                 }, contentAlignment = Alignment.Center) {
                     if (stop) Box(Modifier.size(38.dp).background(REC, RoundedCornerShape(8.dp)))
@@ -302,6 +302,26 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
         if (!granted) Box(Modifier.fillMaxSize().background(Color(0xCC000000)), contentAlignment = Alignment.Center) { Text("Autorisation caméra nécessaire.", color = FG) }
     }
 
+    if (startDlg) {
+        var t by remember { mutableStateOf(title) }; var smp by remember { mutableStateOf(sample) }; var obj by remember { mutableStateOf(st.objective) }
+        AlertDialog(onDismissRequest = { startDlg = false }, containerColor = PANEL, titleContentColor = FG, textContentColor = FG,
+            title = { Text("Nouvelle lame") },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    OutlinedTextField(t, { t = it }, label = { Text("Nom de la lame") }, placeholder = { Text("ex. hémoculture 1234") }, singleLine = true, modifier = Modifier.fillMaxWidth())
+                    Select("Objectif", Settings.OBJECTIVES.map { it to (if (it == "x50" || it == "x100") "$it (immersion)" else it) }, obj) { obj = it }
+                    OutlinedTextField(smp, { smp = it }, label = { Text("Prélèvement (optionnel)") }, singleLine = true, modifier = Modifier.fillMaxWidth())
+                    val par = lames.firstOrNull { it.slug == parent }?.title ?: st.recentSeries().firstOrNull { it.first == parent }?.second
+                    Text(if (par != null) "Détail de la lame d'ensemble « $par » (changer dans les réglages)" else "Autres options (coloration, lame d'ensemble, caméra) dans les réglages ⚙", color = MUTED, fontSize = 12.sp)
+                }
+            },
+            confirmButton = { TextButton(onClick = {
+                title = t; sample = smp; st.objective = obj; startDlg = false
+                if (st.serverUrl.isEmpty()) say("Serveur non réglé : la prise restera sur le téléphone (file d'attente).", true)
+                session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
+            }) { Text("Lancer la série", color = ACCENT) } },
+            dismissButton = { TextButton(onClick = { startDlg = false }) { Text("Annuler", color = MUTED) } })
+    }
     if (sheet) SettingsSheet(engine, st, cameraOn, lames, title, sample, comment, parent, complete,
         onFields = { t, s, c, p, co -> title = t; sample = s; comment = c; parent = p; complete = co },
         onClose = { changedCamera ->
