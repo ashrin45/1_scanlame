@@ -1,0 +1,521 @@
+     0.000  ScanLame 0.33 démarré sur samsung SM-S928B (Android 16)
+     8.601  liaison : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+     9.073  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+    68.359  verrouillage : focus infini, pose 1.151479 ms, ISO 50, WB figée
+    68.595  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   105.380  === série lame_20261020_115524_placenta-187187 (photos) « placenta 187187 », gram, objectif x10 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+   105.465  masque oculaire : 99 % du cadre utile (p95 140)
+   105.758  t0000376 suivi ok score 1.00 pos 0,0 net 30 (20 ms) carte 0 photos + 3 positions
+   106.081  photo 187_0001 à 0,0 (723 ko, 225 ms)
+   106.094  t0000715 suivi ok score 1.00 pos 0,0 net 30 (23 ms) carte 1 photos + 6 positions
+   106.425  t0001044 suivi ok score 1.00 pos 0,0 net 30 (23 ms) carte 1 photos + 10 positions
+   106.760  t0001380 suivi ok score 1.00 pos 0,0 net 30 (21 ms) carte 1 photos + 13 positions
+   107.100  t0001720 suivi ok score 1.00 pos 0,0 net 30 (22 ms) carte 1 photos + 16 positions
+   107.430  t0002050 suivi ok score 1.00 pos 0,0 net 30 (21 ms) carte 1 photos + 20 positions
+   107.775  t0002395 suivi ok score 1.00 pos 0,0 net 30 (21 ms) carte 1 photos + 23 positions
+   108.091  t0002712 suivi ok score 1.00 pos 0,0 net 31 (20 ms) carte 1 photos + 26 positions
+   108.429  t0003049 suivi ok score 1.00 pos 0,0 net 30 (22 ms) carte 1 photos + 30 positions
+   108.759  t0003379 suivi ok score 1.00 pos 0,0 net 30 (19 ms) carte 1 photos + 33 positions
+   109.097  t0003717 suivi ok score 1.00 pos 0,0 net 29 (27 ms) carte 1 photos + 36 positions
+   109.447  t0004065 suivi ok score 1.00 pos 0,0 net 29 (37 ms) carte 1 photos + 40 positions
+   109.589  envoyé lame_20261020_115524_placenta-187187_0001.jpg (723 ko)
+   109.765  t0004385 suivi ok score 1.00 pos 0,0 net 29 (21 ms) carte 1 photos + 43 positions
+   110.094  t0004715 suivi ok score 1.00 pos 0,0 net 29 (24 ms) carte 1 photos + 46 positions
+   110.446  t0005066 suivi ok score 1.00 pos 0,0 net 29 (21 ms) carte 1 photos + 50 positions
+   110.758  t0005379 suivi ok score 1.00 pos 0,0 net 29 (20 ms) carte 1 photos + 53 positions
+   111.090  t0005711 suivi ok score 1.00 pos 0,0 net 30 (17 ms) carte 1 photos + 56 positions
+   111.426  t0006046 suivi ok score 1.00 pos 0,0 net 30 (18 ms) carte 1 photos + 60 positions
+   111.763  t0006384 suivi ok score 1.00 pos 0,0 net 30 (19 ms) carte 1 photos + 63 positions
+   112.113  t0006733 suivi ok score 1.00 pos 0,0 net 30 (36 ms) carte 1 photos + 66 positions
+   112.429  t0007050 suivi ok score 1.00 pos 0,0 net 30 (22 ms) carte 1 photos + 70 positions
+   112.769  t0007389 suivi ok score 1.00 pos 0,0 net 30 (25 ms) carte 1 photos + 73 positions
+   113.112  t0007732 suivi ok score 1.00 pos 0,0 net 30 (30 ms) carte 1 photos + 76 positions
+   113.427  t0008047 suivi ok score 1.00 pos 0,0 net 29 (18 ms) carte 1 photos + 80 positions
+   113.774  t0008395 suivi ok score 1.00 pos 0,0 net 29 (23 ms) carte 1 photos + 83 positions
+   114.096  t0008716 suivi ok score 1.00 pos 0,0 net 29 (20 ms) carte 1 photos + 86 positions
+   114.426  t0009047 suivi ok score 1.00 pos 0,0 net 29 (19 ms) carte 1 photos + 90 positions
+   114.760  t0009381 suivi ok score 1.00 pos 0,0 net 29 (19 ms) carte 1 photos + 93 positions
+   115.102  t0009722 suivi ok score 1.00 pos 0,0 net 29 (26 ms) carte 1 photos + 96 positions
+   115.441  t0010061 suivi ok score 1.00 pos 0,0 net 27 (24 ms) carte 1 photos + 100 positions
+   115.765  t0010385 suivi ok score 1.00 pos 0,0 net 29 (17 ms) carte 1 photos + 103 positions
+   116.096  t0010717 suivi ok score 1.00 pos 0,0 net 30 (18 ms) carte 1 photos + 106 positions
+   116.440  t0011061 suivi ok score 1.00 pos 0,0 net 30 (21 ms) carte 1 photos + 110 positions
+   116.765  t0011385 suivi ok score 1.00 pos 0,0 net 30 (22 ms) carte 1 photos + 113 positions
+   117.102  t0011722 suivi ok score 1.00 pos 0,0 net 30 (25 ms) carte 1 photos + 116 positions
+   117.442  t0012062 suivi ok score 1.00 pos 0,0 net 30 (19 ms) carte 1 photos + 120 positions
+   117.759  t0012380 suivi ok score 1.00 pos 0,0 net 29 (18 ms) carte 1 photos + 123 positions
+   118.094  t0012715 suivi ok score 1.00 pos 0,0 net 29 (17 ms) carte 1 photos + 126 positions
+   118.425  t0013045 suivi ok score 1.00 pos 0,0 net 29 (20 ms) carte 1 photos + 130 positions
+   118.756  t0013377 suivi ok score 0.95 pos -60,0 net 29 (18 ms) carte 1 photos + 133 positions
+   119.109  t0013729 suivi ok score 0.92 pos -501,39 net 30 (34 ms) carte 1 photos + 136 positions
+   119.425  t0014046 suivi ok score 0.94 pos -539,39 net 30 (20 ms) carte 1 photos + 140 positions
+   119.760  t0014381 suivi ok score 0.98 pos -224,15 net 29 (18 ms) carte 1 photos + 143 positions
+   120.095  t0014716 suivi ok score 0.98 pos -12,0 net 29 (19 ms) carte 1 photos + 146 positions
+   120.436  t0015056 suivi ok score 0.98 pos 182,-3 net 29 (24 ms) carte 1 photos + 150 positions
+   120.772  t0015392 suivi ok score 0.98 pos 506,-35 net 28 (28 ms) carte 1 photos + 153 positions
+   121.098  t0015718 suivi ok score 0.98 pos 993,-64 net 27 (23 ms) carte 1 photos + 156 positions
+   121.467  t0016086 suivi ok score 0.95 pos 1553,-109 net 25 (35 ms) carte 1 photos + 160 positions
+   121.628  photo en mouvement lent (57 % du champ, 30 u/s)
+   121.762  t0016383 suivi ok score 0.99 pos 1834,-112 net 24 (22 ms) carte 1 photos + 163 positions
+   121.837  photo 187_0002 à 1736,-124 (586 ko, 209 ms)
+   122.091  t0016712 suivi ok score 1.00 pos 1928,-122 net 24 (21 ms) carte 2 photos + 166 positions
+   122.426  t0017046 suivi ok score 1.00 pos 1943,-112 net 24 (19 ms) carte 2 photos + 170 positions
+   122.586  photo 187_0003 à 1945,-111 (589 ko, 243 ms)
+   122.754  t0017375 suivi ok score 1.00 pos 1943,-112 net 25 (18 ms) carte 3 photos + 173 positions
+   123.102  t0017722 suivi ok score 0.99 pos 1943,-112 net 25 (28 ms) carte 3 photos + 176 positions
+   123.430  t0018051 suivi ok score 0.97 pos 1930,-256 net 25 (21 ms) carte 3 photos + 180 positions
+   123.666  envoyé lame_20261020_115524_placenta-187187_0002.jpg (586 ko)
+   123.760  t0018380 suivi ok score 0.99 pos 1931,-284 net 25 (18 ms) carte 3 photos + 183 positions
+   124.097  t0018718 suivi ok score 0.99 pos 1939,-144 net 24 (25 ms) carte 3 photos + 186 positions
+   124.430  t0019050 suivi ok score 0.98 pos 1957,100 net 23 (21 ms) carte 3 photos + 190 positions
+   124.765  t0019385 suivi ok score 1.00 pos 1967,184 net 23 (22 ms) carte 3 photos + 193 positions
+   125.087  t0019708 suivi ok score 1.00 pos 1968,186 net 23 (18 ms) carte 3 photos + 196 positions
+   125.138  photo 187_0004 à 1968,186 (587 ko, 204 ms)
+   125.425  t0020046 suivi ok score 0.99 pos 1562,201 net 25 (20 ms) carte 4 photos + 200 positions
+   125.763  t0020384 suivi ok score 1.00 pos 1503,195 net 25 (21 ms) carte 4 photos + 203 positions
+   126.097  t0020718 suivi ok score 0.99 pos 1660,176 net 24 (24 ms) carte 4 photos + 206 positions
+   126.447  t0021067 suivi ok score 0.97 pos 1241,211 net 26 (36 ms) carte 4 photos + 210 positions
+   126.764  t0021385 suivi ok score 0.98 pos 1044,224 net 26 (20 ms) carte 4 photos + 213 positions
+   127.105  t0021726 suivi ok score 0.98 pos 2207,170 net 22 (17 ms) carte 4 photos + 216 positions
+   127.263  envoyé lame_20261020_115524_placenta-187187_0003.jpg (589 ko)
+   127.431  t0022051 suivi ok score 1.00 pos 2315,158 net 22 (21 ms) carte 4 photos + 220 positions
+   127.775  t0022396 suivi ok score 0.98 pos 2555,140 net 21 (19 ms) carte 4 photos + 223 positions
+   127.844  photo 187_0005 à 2328,156 (579 ko, 220 ms)
+   128.095  t0022716 suivi ok score 0.99 pos 2873,115 net 20 (23 ms) carte 5 photos + 226 positions
+   128.428  t0023049 suivi ok score 0.99 pos 3095,108 net 19 (22 ms) carte 5 photos + 230 positions
+   128.772  t0023392 suivi ok score 0.99 pos 3386,68 net 18 (23 ms) carte 5 photos + 233 positions
+   129.102  t0023723 suivi ok score 0.99 pos 3692,43 net 17 (21 ms) carte 5 photos + 236 positions
+   129.427  t0024048 suivi ok score 1.00 pos 3840,38 net 17 (18 ms) carte 5 photos + 240 positions
+   129.471  envoyé lame_20261020_115524_placenta-187187_0004.jpg (587 ko)
+   129.761  t0024382 suivi ok score 1.00 pos 3838,37 net 17 (21 ms) carte 5 photos + 243 positions
+   129.776  photo 187_0006 à 3839,37 (567 ko, 213 ms)
+   130.096  t0024715 suivi ok score 0.99 pos 3951,28 net 17 (17 ms) carte 6 photos + 246 positions
+   130.429  t0025049 suivi ok score 0.99 pos 4342,10 net 16 (23 ms) carte 6 photos + 250 positions
+   130.765  t0025386 suivi ok score 0.99 pos 4596,-8 net 16 (22 ms) carte 6 photos + 253 positions
+   131.102  t0025722 suivi ok score 0.99 pos 4894,-40 net 15 (23 ms) carte 6 photos + 256 positions
+   131.444  t0026063 suivi ok score 0.99 pos 5214,-66 net 15 (29 ms) carte 6 photos + 260 positions
+   131.770  t0026390 suivi ok score 0.99 pos 5716,-91 net 14 (23 ms) carte 6 photos + 263 positions
+   131.863  photo en mouvement lent (64 % du champ, 37 u/s)
+   132.090  photo 187_0007 à 5790,-100 (527 ko, 226 ms)
+   132.098  t0026719 suivi ok score 1.00 pos 5885,-109 net 13 (20 ms) carte 7 photos + 266 positions
+   132.289  envoyé lame_20261020_115524_placenta-187187_0005.jpg (579 ko)
+   132.421  t0027042 suivi ok score 1.00 pos 5896,-100 net 13 (19 ms) carte 7 photos + 270 positions
+   132.766  t0027387 suivi ok score 1.00 pos 5896,-100 net 13 (22 ms) carte 7 photos + 273 positions
+   133.096  t0027716 suivi ok score 1.00 pos 5896,-100 net 13 (19 ms) carte 7 photos + 276 positions
+   133.444  t0028064 suivi ok score 1.00 pos 5896,-100 net 13 (29 ms) carte 7 photos + 280 positions
+   133.766  t0028387 suivi ok score 1.00 pos 5896,-100 net 13 (22 ms) carte 7 photos + 283 positions
+   134.104  t0028725 suivi ok score 0.99 pos 5968,-100 net 13 (21 ms) carte 7 photos + 286 positions
+   134.222  photo 187_0008 à 5911,-100 (523 ko, 228 ms)
+   134.443  t0029063 suivi ok score 1.00 pos 6466,-148 net 13 (29 ms) carte 8 photos + 290 positions
+   134.769  t0029389 suivi ok score 1.00 pos 6676,-164 net 14 (26 ms) carte 8 photos + 293 positions
+   134.791  envoyé lame_20261020_115524_placenta-187187_0006.jpg (567 ko)
+   135.093  t0029713 suivi ok score 1.00 pos 6780,-164 net 13 (17 ms) carte 8 photos + 296 positions
+   135.431  t0030052 suivi ok score 0.99 pos 6957,-180 net 13 (21 ms) carte 8 photos + 300 positions
+   135.768  t0030388 suivi ok score 1.00 pos 7151,-196 net 13 (19 ms) carte 8 photos + 300 positions
+   136.094  t0030715 suivi ok score 1.00 pos 7263,-196 net 13 (15 ms) carte 8 photos + 300 positions
+   136.450  t0031070 suivi ok score 1.00 pos 7490,-212 net 14 (22 ms) carte 8 photos + 300 positions
+   136.450  photo en mouvement lent (52 % du champ, 39 u/s)
+   136.643  photo 187_0009 à 7490,-212 (528 ko, 193 ms)
+   136.757  t0031377 suivi ok score 1.00 pos 7546,-228 net 14 (11 ms) carte 9 photos + 300 positions
+   137.097  t0031716 suivi ok score 0.99 pos 7665,-228 net 15 (17 ms) carte 9 photos + 300 positions
+   137.437  t0032056 suivi ok score 0.99 pos 7785,-228 net 15 (23 ms) carte 9 photos + 300 positions
+   137.766  t0032386 suivi ok score 1.00 pos 7869,-228 net 15 (18 ms) carte 9 photos + 300 positions
+   137.975  photo 187_0010 à 7869,-228 (535 ko, 209 ms)
+   138.095  t0032715 suivi ok score 1.00 pos 7869,-228 net 16 (17 ms) carte 10 photos + 300 positions
+   138.430  t0033050 suivi ok score 1.00 pos 7869,-228 net 15 (20 ms) carte 10 photos + 300 positions
+   138.527  envoyé lame_20261020_115524_placenta-187187_0007.jpg (527 ko)
+   138.770  t0033390 suivi ok score 1.00 pos 7869,-228 net 16 (17 ms) carte 10 photos + 300 positions
+   139.107  t0033727 suivi ok score 1.00 pos 7869,-228 net 16 (18 ms) carte 10 photos + 300 positions
+   139.433  t0034053 suivi ok score 1.00 pos 7869,-228 net 15 (17 ms) carte 10 photos + 300 positions
+   139.770  t0034389 suivi ok score 1.00 pos 7869,-228 net 16 (17 ms) carte 10 photos + 300 positions
+   140.105  t0034724 suivi ok score 1.00 pos 7869,-228 net 15 (21 ms) carte 10 photos + 300 positions
+   140.295  envoyé lame_20261020_115524_placenta-187187_0008.jpg (523 ko)
+   140.441  t0035060 suivi ok score 1.00 pos 7869,-228 net 15 (27 ms) carte 10 photos + 300 positions
+   140.784  t0035404 suivi ok score 1.00 pos 7869,-228 net 15 (28 ms) carte 10 photos + 300 positions
+   141.114  t0035733 suivi ok score 0.99 pos 7892,-228 net 15 (20 ms) carte 10 photos + 300 positions
+   141.439  t0036059 suivi ok score 1.00 pos 8251,-228 net 15 (20 ms) carte 10 photos + 300 positions
+   141.775  t0036395 suivi ok score 1.00 pos 8263,-228 net 15 (18 ms) carte 10 photos + 300 positions
+   142.043  envoyé lame_20261020_115524_placenta-187187_0009.jpg (528 ko)
+   142.046  photo 187_0011 à 8263,-228 (528 ko, 208 ms)
+   142.108  t0036729 suivi ok score 0.99 pos 8490,-228 net 16 (13 ms) carte 11 photos + 300 positions
+   142.444  t0037063 suivi ok score 0.99 pos 8586,-228 net 16 (19 ms) carte 11 photos + 300 positions
+   142.715  photo 187_0012 à 8610,-228 (532 ko, 202 ms)
+   142.757  t0037377 suivi ok score 0.99 pos 8717,-228 net 17 (14 ms) carte 12 photos + 300 positions
+   143.106  t0037726 suivi ok score 0.99 pos 8944,-228 net 18 (23 ms) carte 12 photos + 300 positions
+   143.445  t0038064 suivi ok score 1.00 pos 9088,-228 net 18 (24 ms) carte 12 photos + 300 positions
+   143.776  t0038396 suivi ok score 1.00 pos 9088,-228 net 17 (21 ms) carte 12 photos + 300 positions
+   143.892  photo 187_0013 à 9088,-228 (528 ko, 226 ms)
+   144.115  t0038734 suivi ok score 1.00 pos 9088,-228 net 18 (26 ms) carte 13 photos + 300 positions
+   144.138  envoyé lame_20261020_115524_placenta-187187_0010.jpg (535 ko)
+   144.435  t0039056 suivi ok score 1.00 pos 9088,-228 net 18 (19 ms) carte 13 photos + 300 positions
+   144.765  t0039384 suivi ok score 1.00 pos 9088,-228 net 18 (19 ms) carte 13 photos + 300 positions
+   145.092  t0039712 suivi ok score 1.00 pos 9088,-228 net 18 (13 ms) carte 13 photos + 300 positions
+   145.437  t0040057 suivi ok score 1.00 pos 9088,-228 net 18 (19 ms) carte 13 photos + 300 positions
+   145.782  t0040401 suivi ok score 1.00 pos 9088,-228 net 18 (27 ms) carte 13 photos + 300 positions
+   146.120  t0040739 suivi ok score 1.00 pos 9088,-228 net 18 (30 ms) carte 13 photos + 300 positions
+   146.370  envoyé lame_20261020_115524_placenta-187187_0011.jpg (528 ko)
+   146.433  t0041053 suivi ok score 1.00 pos 9088,-228 net 18 (12 ms) carte 13 photos + 300 positions
+   146.767  t0041388 suivi ok score 1.00 pos 9088,-228 net 18 (18 ms) carte 13 photos + 300 positions
+   147.100  t0041719 suivi ok score 1.00 pos 9088,-228 net 18 (18 ms) carte 13 photos + 300 positions
+   147.447  t0042066 suivi ok score 1.00 pos 9088,-228 net 18 (27 ms) carte 13 photos + 300 positions
+   147.773  t0042394 suivi ok score 1.00 pos 9088,-228 net 18 (18 ms) carte 13 photos + 300 positions
+   148.106  t0042725 suivi ok score 0.97 pos 9219,-228 net 18 (21 ms) carte 13 photos + 300 positions
+   148.430  t0043050 suivi ok score 0.96 pos 9817,-228 net 19 (16 ms) carte 13 photos + 300 positions
+   148.774  t0043394 suivi ok score 0.99 pos 9984,-228 net 20 (17 ms) carte 13 photos + 300 positions
+   149.094  t0043715 suivi ok score 0.96 pos 10295,-228 net 20 (14 ms) carte 13 photos + 300 positions
+   149.443  t0044062 suivi ok score 0.96 pos 10630,-228 net 20 (24 ms) carte 13 photos + 300 positions
+   149.504  photo en mouvement lent (52 % du champ, 31 u/s)
+   149.720  photo 187_0014 à 10666,-228 (533 ko, 215 ms)
+   149.761  t0044382 suivi ok score 0.96 pos 10773,-228 net 20 (15 ms) carte 14 photos + 300 positions
+   150.096  t0044717 suivi ok score 0.97 pos 10929,-228 net 20 (18 ms) carte 14 photos + 300 positions
+   150.435  t0045056 suivi ok score 0.95 pos 11120,-228 net 20 (17 ms) carte 14 photos + 300 positions
+   150.790  t0045409 suivi ok score 0.97 pos 11395,-228 net 20 (26 ms) carte 14 photos + 300 positions
+   151.101  t0045721 suivi ok score 0.96 pos 11634,-228 net 19 (18 ms) carte 14 photos + 300 positions
+   151.435  t0046055 suivi ok score 0.98 pos 11741,-228 net 18 (17 ms) carte 14 photos + 300 positions
+   151.761  t0046381 suivi ok score 0.99 pos 11777,-228 net 18 (15 ms) carte 14 photos + 300 positions
+   151.815  photo 187_0015 à 11777,-228 (508 ko, 206 ms)
+   152.120  t0046739 suivi ok score 0.99 pos 11777,-228 net 19 (29 ms) carte 15 photos + 300 positions
+   152.131  envoyé lame_20261020_115524_placenta-187187_0012.jpg (532 ko)
+   152.426  t0047047 suivi ok score 1.00 pos 11777,-228 net 19 (12 ms) carte 15 photos + 300 positions
+   152.778  t0047397 suivi ok score 0.99 pos 11789,-228 net 19 (22 ms) carte 15 photos + 300 positions
+   153.110  t0047730 suivi ok score 0.97 pos 12028,-228 net 18 (22 ms) carte 15 photos + 300 positions
+   153.433  t0048053 suivi ok score 0.98 pos 12136,-228 net 18 (14 ms) carte 15 photos + 300 positions
+   153.731  photo 187_0016 à 12160,-228 (505 ko, 230 ms)
+   153.735  envoyé lame_20261020_115524_placenta-187187_0013.jpg (528 ko)
+   153.758  t0048379 suivi ok score 0.97 pos 12471,-228 net 17 (12 ms) carte 16 photos + 300 positions
+   154.113  t0048733 suivi ok score 0.99 pos 12686,-228 net 17 (28 ms) carte 16 photos + 300 positions
+   154.435  t0049055 suivi ok score 0.98 pos 12698,-228 net 17 (16 ms) carte 16 photos + 300 positions
+   154.579  photo 187_0017 à 12686,-228 (503 ko, 211 ms)
+   154.768  t0049388 suivi ok score 0.97 pos 12769,-228 net 17 (21 ms) carte 17 photos + 300 positions
+   155.102  t0049723 suivi ok score 0.98 pos 12817,-228 net 17 (17 ms) carte 17 photos + 300 positions
+   155.435  t0050055 suivi ok score 0.99 pos 12877,-228 net 17 (17 ms) carte 17 photos + 300 positions
+   155.445  photo 187_0018 à 12865,-228 (502 ko, 207 ms)
+   155.767  t0050387 suivi ok score 0.98 pos 13104,-228 net 17 (16 ms) carte 18 photos + 300 positions
+   155.800  envoyé lame_20261020_115524_placenta-187187_0014.jpg (533 ko)
+   156.105  t0050725 suivi ok score 0.98 pos 13367,-228 net 16 (20 ms) carte 18 photos + 300 positions
+   156.445  t0051065 suivi ok score 0.98 pos 13415,-228 net 16 (22 ms) carte 18 photos + 300 positions
+   156.562  photo 187_0019 à 13391,-228 (489 ko, 212 ms)
+   156.759  t0051379 suivi ok score 0.98 pos 13451,-228 net 16 (12 ms) carte 19 photos + 300 positions
+   157.105  t0051725 suivi ok score 1.00 pos 13463,-228 net 17 (22 ms) carte 19 photos + 300 positions
+   157.451  t0052070 suivi ok score 1.00 pos 13463,-228 net 17 (26 ms) carte 19 photos + 300 positions
+   157.762  t0052382 suivi ok score 0.97 pos 13534,-228 net 17 (13 ms) carte 19 photos + 300 positions
+   158.095  t0052716 suivi ok score 0.99 pos 13917,-244 net 17 (13 ms) carte 19 photos + 300 positions
+   158.220  envoyé lame_20261020_115524_placenta-187187_0015.jpg (508 ko)
+   158.447  t0053067 suivi ok score 0.98 pos 14108,-244 net 16 (23 ms) carte 19 photos + 300 positions
+   158.769  t0053390 suivi ok score 0.97 pos 14395,-244 net 16 (18 ms) carte 19 photos + 300 positions
+   159.105  t0053726 suivi ok score 0.99 pos 14538,-244 net 16 (19 ms) carte 19 photos + 300 positions
+   159.439  t0054060 suivi ok score 0.98 pos 14670,-244 net 16 (17 ms) carte 19 photos + 300 positions
+   159.759  photo 187_0020 à 14694,-244 (476 ko, 203 ms)
+   159.772  t0054393 suivi ok score 1.00 pos 14706,-244 net 17 (20 ms) carte 20 photos + 300 positions
+   159.810  envoyé lame_20261020_115524_placenta-187187_0016.jpg (505 ko)
+   160.093  t0054715 suivi ok score 1.00 pos 14706,-244 net 17 (12 ms) carte 20 photos + 300 positions
+   160.448  t0055068 suivi ok score 0.99 pos 14706,-244 net 17 (24 ms) carte 20 photos + 300 positions
+   160.766  t0055387 suivi ok score 1.00 pos 14706,-244 net 16 (15 ms) carte 20 photos + 300 positions
+   161.128  t0055747 suivi ok score 1.00 pos 14706,-244 net 16 (29 ms) carte 20 photos + 300 positions
+   161.437  t0056058 suivi ok score 0.99 pos 14706,-244 net 17 (20 ms) carte 20 photos + 300 positions
+   161.640  envoyé lame_20261020_115524_placenta-187187_0017.jpg (503 ko)
+   161.780  t0056400 suivi ok score 0.99 pos 14706,-244 net 17 (21 ms) carte 20 photos + 300 positions
+   162.095  t0056716 suivi ok score 0.99 pos 14706,-244 net 17 (13 ms) carte 20 photos + 300 positions
+   162.429  t0057050 suivi ok score 0.99 pos 14706,-244 net 17 (12 ms) carte 20 photos + 300 positions
+   162.769  t0057389 suivi ok score 0.99 pos 14706,-212 net 17 (13 ms) carte 20 photos + 300 positions
+   163.121  t0057740 suivi ok score 1.00 pos 14706,-212 net 17 (26 ms) carte 20 photos + 300 positions
+   163.150  envoyé lame_20261020_115524_placenta-187187_0018.jpg (502 ko)
+   163.429  t0058049 suivi ok score 0.95 pos 14706,-355 net 17 (13 ms) carte 20 photos + 300 positions
+   163.779  t0058398 suivi ok score 0.98 pos 14706,-451 net 18 (25 ms) carte 20 photos + 300 positions
+   164.121  t0058741 suivi ok score 0.99 pos 14706,-626 net 19 (28 ms) carte 20 photos + 300 positions
+   164.435  t0059055 suivi ok score 0.99 pos 14706,-849 net 19 (14 ms) carte 20 photos + 300 positions
+   164.627  envoyé lame_20261020_115524_placenta-187187_0019.jpg (489 ko)
+   164.776  t0059396 suivi ok score 0.94 pos 14706,-1264 net 19 (20 ms) carte 20 photos + 300 positions
+   165.110  t0059730 suivi ok score 0.96 pos 14706,-1519 net 20 (22 ms) carte 20 photos + 300 positions
+   165.437  t0060058 suivi ok score 0.93 pos 14706,-1742 net 20 (17 ms) carte 20 photos + 300 positions
+   165.770  t0060390 suivi ok score 0.90 pos 14706,-2156 net 21 (16 ms) carte 20 photos + 300 positions
+   166.031  photo en mouvement lent (50 % du champ, 30 u/s)
+   166.103  t0060724 suivi ok score 0.96 pos 14706,-2315 net 22 (14 ms) carte 20 photos + 300 positions
+   166.264  photo 187_0021 à 14706,-2284 (541 ko, 232 ms)
+   166.437  t0061058 suivi ok score 0.93 pos 14706,-2554 net 23 (16 ms) carte 21 photos + 300 positions
+   166.777  t0061397 suivi ok score 0.99 pos 14706,-2570 net 23 (19 ms) carte 21 photos + 300 positions
+   167.065  photo 187_0022 à 14706,-2570 (548 ko, 233 ms)
+   167.105  t0061726 suivi ok score 0.99 pos 14706,-2570 net 23 (21 ms) carte 22 photos + 300 positions
+   167.429  envoyé lame_20261020_115524_placenta-187187_0020.jpg (476 ko)
+   167.438  t0062058 suivi ok score 0.99 pos 14706,-2570 net 23 (20 ms) carte 22 photos + 300 positions
+   167.769  t0062389 suivi ok score 0.98 pos 14706,-2570 net 23 (18 ms) carte 22 photos + 300 positions
+   168.117  t0062737 suivi ok score 0.95 pos 14467,-2570 net 23 (26 ms) carte 22 photos + 300 positions
+   168.442  t0063063 suivi ok score 0.89 pos 14132,-2570 net 24 (17 ms) carte 22 photos + 300 positions
+   168.779  t0063398 suivi ok score 0.98 pos 13833,-2570 net 24 (19 ms) carte 22 photos + 300 positions
+   168.789  envoyé lame_20261020_115524_placenta-187187_0021.jpg (541 ko)
+   169.109  t0063729 suivi ok score 0.95 pos 13654,-2570 net 24 (20 ms) carte 22 photos + 300 positions
+   169.451  t0064071 suivi ok score 0.98 pos 13582,-2570 net 25 (18 ms) carte 22 photos + 300 positions
+   169.777  t0064397 suivi ok score 0.98 pos 13582,-2570 net 25 (22 ms) carte 22 photos + 300 positions
+   169.811  photo 187_0023 à 13582,-2570 (566 ko, 234 ms)
+   170.093  t0064713 suivi ok score 0.97 pos 13487,-2570 net 25 (11 ms) carte 23 photos + 300 positions
+   170.428  t0065049 suivi ok score 0.96 pos 13391,-2570 net 25 (15 ms) carte 23 photos + 300 positions
+   170.491  photo 187_0024 à 13463,-2570 (570 ko, 216 ms)
+   170.772  t0065392 suivi ok score 0.93 pos 13176,-2570 net 24 (17 ms) carte 24 photos + 300 positions
+   171.120  t0065740 suivi ok score 0.95 pos 13008,-2570 net 25 (29 ms) carte 24 photos + 300 positions
+   171.438  t0066059 suivi ok score 0.99 pos 12925,-2570 net 25 (19 ms) carte 24 photos + 300 positions
+   171.670  envoyé lame_20261020_115524_placenta-187187_0022.jpg (548 ko)
+   171.768  t0066389 suivi ok score 0.99 pos 12925,-2570 net 25 (16 ms) carte 24 photos + 300 positions
+   171.823  photo 187_0025 à 12925,-2570 (571 ko, 207 ms)
+   172.110  t0066730 suivi ok score 0.92 pos 12662,-2570 net 25 (20 ms) carte 25 photos + 300 positions
+   172.442  t0067061 suivi ok score 0.96 pos 12542,-2570 net 25 (21 ms) carte 25 photos + 300 positions
+   172.780  t0067401 suivi ok score 0.95 pos 12255,-2570 net 25 (14 ms) carte 25 photos + 300 positions
+   173.127  t0067746 suivi ok score 0.98 pos 11682,-2539 net 25 (29 ms) carte 25 photos + 300 positions
+   173.251  envoyé lame_20261020_115524_placenta-187187_0023.jpg (566 ko)
+   173.437  t0068058 suivi ok score 0.97 pos 11574,-2539 net 25 (18 ms) carte 25 photos + 300 positions
+   173.623  photo 187_0026 à 11586,-2539 (580 ko, 212 ms)
+   173.759  t0068380 suivi ok score 0.97 pos 11419,-2539 net 25 (11 ms) carte 26 photos + 300 positions
+   174.102  t0068723 suivi ok score 0.94 pos 11215,-2539 net 25 (11 ms) carte 26 photos + 300 positions
+   174.439  t0069060 suivi ok score 0.94 pos 10869,-2539 net 24 (14 ms) carte 26 photos + 300 positions
+   174.773  t0069393 suivi ok score 0.95 pos 10713,-2539 net 24 (15 ms) carte 26 photos + 300 positions
+   175.105  t0069726 suivi ok score 0.97 pos 10450,-2539 net 24 (14 ms) carte 26 photos + 300 positions
+   175.446  t0070066 suivi ok score 1.00 pos 10415,-2539 net 24 (18 ms) carte 26 photos + 300 positions
+   175.654  photo 187_0027 à 10415,-2539 (583 ko, 207 ms)
+   175.779  t0070399 suivi ok score 1.00 pos 10415,-2539 net 24 (21 ms) carte 27 photos + 300 positions
+   175.787  envoyé lame_20261020_115524_placenta-187187_0024.jpg (570 ko)
+   176.109  t0070729 suivi ok score 0.99 pos 10415,-2539 net 24 (19 ms) carte 27 photos + 300 positions
+   176.450  t0071070 suivi ok score 0.96 pos 10283,-2539 net 25 (23 ms) carte 27 photos + 300 positions
+   176.775  t0071395 suivi ok score 0.94 pos 10104,-2539 net 24 (18 ms) carte 27 photos + 300 positions
+   177.111  t0071731 suivi ok score 0.99 pos 9817,-2539 net 23 (19 ms) carte 27 photos + 300 positions
+   177.436  t0072057 suivi ok score 0.95 pos 9757,-2539 net 23 (15 ms) carte 27 photos + 300 positions
+   177.700  photo 187_0028 à 9757,-2539 (577 ko, 217 ms)
+   177.779  t0072399 suivi ok score 0.99 pos 9685,-2539 net 23 (22 ms) carte 28 photos + 300 positions
+   178.059  envoyé lame_20261020_115524_placenta-187187_0025.jpg (571 ko)
+   178.108  t0072729 suivi ok score 0.99 pos 9685,-2539 net 23 (15 ms) carte 28 photos + 300 positions
+   178.440  t0073060 suivi ok score 0.97 pos 9578,-2539 net 23 (16 ms) carte 28 photos + 300 positions
+   178.538  photo 187_0029 à 9638,-2539 (572 ko, 233 ms)
+   178.783  t0073402 suivi ok score 0.96 pos 9207,-2539 net 22 (24 ms) carte 29 photos + 300 positions
+   179.108  t0073729 suivi ok score 0.97 pos 8849,-2539 net 20 (15 ms) carte 29 photos + 300 positions
+   179.457  t0074077 suivi ok score 0.97 pos 8586,-2539 net 21 (28 ms) carte 29 photos + 300 positions
+   179.783  t0074402 suivi ok score 0.95 pos 8371,-2539 net 20 (20 ms) carte 29 photos + 300 positions
+   180.108  t0074728 suivi ok score 0.97 pos 8012,-2539 net 20 (19 ms) carte 29 photos + 300 positions
+   180.137  photo en mouvement lent (54 % du champ, 31 u/s)
+   180.291  envoyé lame_20261020_115524_placenta-187187_0026.jpg (580 ko)
+   180.351  photo 187_0030 à 8000,-2539 (531 ko, 214 ms)
+   180.439  t0075059 suivi ok score 0.95 pos 7881,-2539 net 19 (18 ms) carte 30 photos + 300 positions
+   180.770  t0075391 suivi ok score 0.99 pos 7737,-2539 net 20 (19 ms) carte 30 photos + 300 positions
+   181.109  t0075729 suivi ok score 0.97 pos 7570,-2539 net 20 (17 ms) carte 30 photos + 300 positions
+   181.459  t0076078 suivi ok score 0.96 pos 7283,-2539 net 20 (27 ms) carte 30 photos + 300 positions
+   181.793  t0076412 suivi ok score 0.97 pos 7116,-2539 net 20 (29 ms) carte 30 photos + 300 positions
+   182.122  t0076742 suivi ok score 0.97 pos 6876,-2539 net 19 (21 ms) carte 30 photos + 300 positions
+   182.368  envoyé lame_20261020_115524_placenta-187187_0027.jpg (583 ko)
+   182.455  t0077074 suivi ok score 0.99 pos 6709,-2539 net 19 (27 ms) carte 30 photos + 300 positions
+   182.795  t0077415 suivi ok score 0.99 pos 6506,-2539 net 20 (31 ms) carte 30 photos + 300 positions
+   183.045  photo en mouvement lent (52 % du champ, 30 u/s)
+   183.113  t0077732 suivi ok score 0.99 pos 6398,-2539 net 20 (19 ms) carte 30 photos + 300 positions
+   183.260  photo 187_0031 à 6422,-2539 (525 ko, 214 ms)
+   183.476  t0078095 suivi ok score 0.99 pos 6255,-2539 net 20 (28 ms) carte 31 photos + 300 positions
+   183.770  t0078391 suivi ok score 0.98 pos 6111,-2539 net 20 (11 ms) carte 31 photos + 300 positions
+   184.113  t0078733 suivi ok score 1.00 pos 6004,-2539 net 21 (21 ms) carte 31 photos + 300 positions
+   184.449  envoyé lame_20261020_115524_placenta-187187_0028.jpg (577 ko)
+   184.459  t0079078 suivi ok score 1.00 pos 5849,-2539 net 21 (26 ms) carte 31 photos + 300 positions
+   184.767  t0079388 suivi ok score 1.00 pos 5849,-2539 net 20 (13 ms) carte 31 photos + 300 positions
+   184.991  photo 187_0032 à 5849,-2539 (532 ko, 224 ms)
+   185.127  t0079746 suivi ok score 1.00 pos 5849,-2539 net 20 (26 ms) carte 32 photos + 300 positions
+   185.439  t0080060 suivi ok score 1.00 pos 5849,-2539 net 20 (12 ms) carte 32 photos + 300 positions
+   185.788  t0080408 suivi ok score 1.00 pos 5849,-2539 net 20 (20 ms) carte 32 photos + 300 positions
+   186.131  t0080751 suivi ok score 1.00 pos 5849,-2539 net 20 (31 ms) carte 32 photos + 300 positions
+   186.358  envoyé lame_20261020_115524_placenta-187187_0029.jpg (572 ko)
+   186.456  t0081074 suivi ok score 1.00 pos 5849,-2539 net 20 (27 ms) carte 32 photos + 300 positions
+   186.778  t0081398 suivi ok score 1.00 pos 5849,-2539 net 20 (18 ms) carte 32 photos + 300 positions
+   187.124  t0081744 suivi ok score 1.00 pos 5849,-2539 net 20 (27 ms) carte 32 photos + 300 positions
+   187.452  t0082072 suivi ok score 1.00 pos 5849,-2539 net 20 (22 ms) carte 32 photos + 300 positions
+   187.795  t0082414 suivi ok score 1.00 pos 5849,-2539 net 20 (28 ms) carte 32 photos + 300 positions
+   188.122  t0082742 suivi ok score 0.98 pos 5430,-2539 net 21 (19 ms) carte 32 photos + 300 positions
+   188.243  envoyé lame_20261020_115524_placenta-187187_0030.jpg (531 ko)
+   188.455  t0083073 suivi ok score 0.99 pos 5131,-2539 net 22 (27 ms) carte 32 photos + 300 positions
+   188.774  t0083395 suivi ok score 0.97 pos 4856,-2539 net 22 (16 ms) carte 32 photos + 300 positions
+   189.109  t0083729 suivi ok score 0.98 pos 4402,-2539 net 24 (17 ms) carte 32 photos + 300 positions
+   189.252  photo en mouvement lent (50 % du champ, 30 u/s)
+   189.440  t0084061 suivi ok score 0.99 pos 4211,-2539 net 23 (15 ms) carte 32 photos + 300 positions
+   189.467  photo 187_0033 à 4307,-2539 (557 ko, 215 ms)
+   189.771  t0084391 suivi ok score 0.99 pos 4020,-2539 net 24 (13 ms) carte 33 photos + 300 positions
+   190.119  t0084739 suivi ok score 0.98 pos 3816,-2539 net 25 (23 ms) carte 33 photos + 300 positions
+   190.442  t0085062 suivi ok score 0.98 pos 3745,-2539 net 25 (14 ms) carte 33 photos + 300 positions
+   190.770  photo 187_0034 à 3709,-2539 (565 ko, 228 ms)
+   190.772  t0085392 suivi ok score 0.99 pos 3589,-2539 net 25 (13 ms) carte 34 photos + 300 positions
+   191.114  t0085733 suivi ok score 0.99 pos 3350,-2539 net 25 (19 ms) carte 34 photos + 300 positions
+   191.443  t0086063 suivi ok score 0.97 pos 3243,-2539 net 25 (13 ms) carte 34 photos + 300 positions
+   191.784  t0086404 suivi ok score 0.97 pos 3051,-2539 net 26 (20 ms) carte 34 photos + 300 positions
+   191.970  envoyé lame_20261020_115524_placenta-187187_0031.jpg (525 ko)
+   192.115  t0086735 suivi ok score 0.92 pos 2717,-2539 net 26 (20 ms) carte 34 photos + 300 positions
+   192.454  t0087073 suivi ok score 0.99 pos 2466,-2539 net 27 (24 ms) carte 34 photos + 300 positions
+   192.786  t0087406 suivi ok score 0.94 pos 2215,-2539 net 28 (23 ms) carte 34 photos + 300 positions
+   193.021  photo en mouvement lent (57 % du champ, 31 u/s)
+   193.137  t0087757 suivi ok score 0.94 pos 1904,-2539 net 28 (33 ms) carte 34 photos + 300 positions
+   193.229  photo 187_0035 à 1952,-2539 (586 ko, 207 ms)
+   193.445  t0088066 suivi ok score 1.00 pos 1892,-2539 net 29 (19 ms) carte 35 photos + 300 positions
+   193.777  t0088398 suivi ok score 0.95 pos 1868,-2539 net 29 (15 ms) carte 35 photos + 300 positions
+   194.122  t0088743 suivi ok score 0.95 pos 1282,-2539 net 32 (19 ms) carte 35 photos + 300 positions
+   194.210  envoyé lame_20261020_115524_placenta-187187_0032.jpg (532 ko)
+   194.459  t0089079 suivi ok score 0.95 pos 900,-2539 net 32 (18 ms) carte 35 photos + 300 positions
+   194.783  t0089403 suivi ok score 0.93 pos 553,-2539 net 33 (22 ms) carte 35 photos + 300 positions
+   195.101  t0089722 suivi ok score 0.95 pos 15,-2539 net 35 (12 ms) carte 35 photos + 300 positions
+   195.180  photo en mouvement lent (64 % du champ, 31 u/s)
+   195.396  photo 187_0036 à -20,-2539 (644 ko, 215 ms)
+   195.449  t0090068 suivi ok score 1.00 pos -32,-2539 net 36 (21 ms) carte 36 photos + 300 positions
+   195.783  t0090402 suivi ok score 1.00 pos -44,-2539 net 35 (17 ms) carte 36 photos + 300 positions
+   196.109  t0090730 suivi ok score 1.00 pos -44,-2539 net 35 (12 ms) carte 36 photos + 300 positions
+   196.171  envoyé lame_20261020_115524_placenta-187187_0033.jpg (557 ko)
+   196.453  t0091072 suivi ok score 1.00 pos -44,-2539 net 36 (26 ms) carte 36 photos + 300 positions
+   196.780  t0091400 suivi ok score 1.00 pos -44,-2539 net 36 (17 ms) carte 36 photos + 300 positions
+   197.114  t0091734 suivi ok score 0.93 pos -44,-2570 net 36 (20 ms) carte 36 photos + 300 positions
+   197.443  t0092063 suivi ok score 0.95 pos -44,-2794 net 36 (16 ms) carte 36 photos + 300 positions
+   197.788  t0092408 suivi ok score 0.92 pos -44,-2905 net 35 (19 ms) carte 36 photos + 300 positions
+   197.991  photo 187_0037 à -44,-2873 (648 ko, 228 ms)
+   198.107  t0092727 suivi ok score 0.98 pos -44,-3112 net 34 (17 ms) carte 37 photos + 300 positions
+   198.455  t0093074 suivi ok score 0.93 pos -44,-3367 net 33 (23 ms) carte 37 photos + 300 positions
+   198.780  t0093399 suivi ok score 0.97 pos -44,-3543 net 33 (17 ms) carte 37 photos + 300 positions
+   199.124  t0093744 suivi ok score 0.95 pos -44,-3877 net 32 (22 ms) carte 37 photos + 300 positions
+   199.457  t0094077 suivi ok score 0.98 pos -44,-4100 net 32 (23 ms) carte 37 photos + 300 positions
+   199.783  t0094403 suivi ok score 1.00 pos -44,-4308 net 31 (20 ms) carte 37 photos + 300 positions
+   200.124  t0094743 suivi ok score 0.94 pos -44,-4419 net 31 (20 ms) carte 37 photos + 300 positions
+   200.306  photo 187_0038 à -44,-4403 (626 ko, 220 ms)
+   200.452  t0095071 suivi ok score 0.94 pos -44,-4658 net 30 (22 ms) carte 38 photos + 300 positions
+   200.786  t0095406 suivi ok score 0.99 pos -44,-4913 net 29 (23 ms) carte 38 photos + 300 positions
+   200.797  envoyé lame_20261020_115524_placenta-187187_0034.jpg (565 ko)
+   201.119  t0095733 suivi ok score 0.96 pos -44,-5089 net 28 (17 ms) carte 38 photos + 300 positions
+   201.456  t0096075 suivi ok score 1.00 pos -44,-5104 net 28 (26 ms) carte 38 photos + 300 positions
+   201.706  photo 187_0039 à -44,-5104 (582 ko, 250 ms)
+   201.773  t0096394 suivi ok score 1.00 pos -44,-5104 net 27 (16 ms) carte 39 photos + 300 positions
+   202.120  t0096740 suivi ok score 1.00 pos -44,-5104 net 27 (22 ms) carte 39 photos + 300 positions
+   202.452  t0097072 suivi ok score 1.00 pos -44,-5104 net 28 (18 ms) carte 39 photos + 300 positions
+   202.783  t0097403 suivi ok score 1.00 pos -44,-5104 net 28 (19 ms) carte 39 photos + 300 positions
+   202.908  envoyé lame_20261020_115524_placenta-187187_0035.jpg (586 ko)
+   203.121  t0097741 suivi ok score 0.99 pos 111,-5104 net 27 (23 ms) carte 39 photos + 300 positions
+   203.438  t0098059 suivi ok score 0.98 pos 350,-5104 net 27 (14 ms) carte 39 photos + 300 positions
+   203.783  t0098403 suivi ok score 0.98 pos 649,-5104 net 26 (18 ms) carte 39 photos + 300 positions
+   204.116  t0098736 suivi ok score 0.97 pos 1091,-5104 net 26 (22 ms) carte 39 photos + 300 positions
+   204.445  t0099065 suivi ok score 0.97 pos 1450,-5104 net 24 (18 ms) carte 39 photos + 300 positions
+   204.680  envoyé lame_20261020_115524_placenta-187187_0036.jpg (644 ko)
+   204.741  photo en mouvement lent (59 % du champ, 30 u/s)
+   204.791  t0099410 suivi ok score 0.98 pos 1761,-5104 net 23 (25 ms) carte 39 photos + 300 positions
+   204.966  photo 187_0040 à 1749,-5104 (520 ko, 224 ms)
+   205.115  t0099735 suivi ok score 0.94 pos 1988,-5104 net 22 (21 ms) carte 40 photos + 300 positions
+   205.449  t0100068 suivi ok score 0.96 pos 2059,-5104 net 23 (18 ms) carte 40 photos + 300 positions
+   205.749  photo 187_0041 à 2071,-5104 (508 ko, 246 ms)
+   205.786  t0100407 suivi ok score 0.98 pos 2155,-5104 net 21 (16 ms) carte 41 photos + 300 positions
+   206.133  t0100752 suivi ok score 0.92 pos 2478,-5104 net 20 (28 ms) carte 41 photos + 300 positions
+   206.318  envoyé lame_20261020_115524_placenta-187187_0037.jpg (648 ko)
+   206.440  t0101060 suivi ok score 0.96 pos 2812,-5104 net 18 (15 ms) carte 41 photos + 300 positions
+   206.785  t0101406 suivi ok score 0.99 pos 2896,-5104 net 19 (23 ms) carte 41 photos + 300 positions
+   207.109  t0101730 suivi ok score 0.99 pos 2896,-5104 net 18 (17 ms) carte 41 photos + 300 positions
+   207.164  photo 187_0042 à 2896,-5104 (484 ko, 215 ms)
+   207.442  t0102063 suivi ok score 0.97 pos 2968,-5104 net 18 (12 ms) carte 42 photos + 300 positions
+   207.780  t0102401 suivi ok score 0.96 pos 3016,-5104 net 18 (21 ms) carte 42 photos + 300 positions
+   207.797  photo 187_0043 à 3016,-5104 (482 ko, 216 ms)
+   208.117  t0102737 suivi ok score 0.98 pos 3040,-5104 net 18 (20 ms) carte 43 photos + 300 positions
+   208.454  t0103074 suivi ok score 0.98 pos 3040,-5104 net 18 (16 ms) carte 43 photos + 300 positions
+   208.791  t0103411 suivi ok score 0.99 pos 3040,-5104 net 18 (22 ms) carte 43 photos + 300 positions
+   209.116  t0103737 suivi ok score 0.99 pos 3040,-5104 net 18 (18 ms) carte 43 photos + 300 positions
+   209.445  t0104065 suivi ok score 0.98 pos 3040,-5104 net 18 (13 ms) carte 43 photos + 300 positions
+   209.569  envoyé lame_20261020_115524_placenta-187187_0038.jpg (626 ko)
+   209.774  t0104395 suivi ok score 0.99 pos 3040,-5104 net 18 (12 ms) carte 43 photos + 300 positions
+   210.116  t0104737 suivi ok score 0.99 pos 3040,-5104 net 18 (16 ms) carte 43 photos + 300 positions
+   210.454  t0105074 suivi ok score 0.90 pos 3219,-5104 net 17 (20 ms) carte 43 photos + 300 positions
+   210.785  t0105405 suivi ok score 0.98 pos 3470,-5104 net 17 (22 ms) carte 43 photos + 300 positions
+   211.122  t0105742 suivi ok score 0.95 pos 3625,-5104 net 16 (22 ms) carte 43 photos + 300 positions
+   211.452  t0106071 suivi ok score 0.96 pos 3840,-5104 net 16 (19 ms) carte 43 photos + 300 positions
+   211.590  envoyé lame_20261020_115524_placenta-187187_0039.jpg (582 ko)
+   211.799  t0106419 suivi ok score 0.93 pos 4079,-5104 net 16 (28 ms) carte 43 photos + 300 positions
+   212.124  t0106745 suivi ok score 0.97 pos 4330,-5104 net 16 (21 ms) carte 43 photos + 300 positions
+   212.348  photo en mouvement lent (50 % du champ, 31 u/s)
+   212.445  t0107066 suivi ok score 0.98 pos 4558,-5104 net 16 (13 ms) carte 43 photos + 300 positions
+   212.574  photo 187_0044 à 4558,-5104 (474 ko, 226 ms)
+   212.783  t0107404 suivi ok score 0.99 pos 4558,-5104 net 16 (20 ms) carte 44 photos + 300 positions
+   213.081  envoyé lame_20261020_115524_placenta-187187_0040.jpg (520 ko)
+   213.111  t0107731 suivi ok score 0.98 pos 4558,-5104 net 16 (14 ms) carte 44 photos + 300 positions
+   213.446  t0108066 suivi ok score 0.96 pos 4558,-5104 net 16 (16 ms) carte 44 photos + 300 positions
+   213.780  t0108401 suivi ok score 0.98 pos 4785,-5104 net 16 (14 ms) carte 44 photos + 300 positions
+   214.127  t0108747 suivi ok score 0.98 pos 4785,-5104 net 16 (24 ms) carte 44 photos + 300 positions
+   214.306  photo 187_0045 à 4785,-5104 (473 ko, 219 ms)
+   214.467  t0109087 suivi ok score 0.98 pos 4785,-5104 net 16 (29 ms) carte 45 photos + 300 positions
+   214.531  envoyé lame_20261020_115524_placenta-187187_0041.jpg (508 ko)
+   214.785  t0109406 suivi ok score 0.98 pos 4785,-5104 net 16 (12 ms) carte 45 photos + 300 positions
+   215.121  t0109741 suivi ok score 0.98 pos 4785,-5104 net 15 (21 ms) carte 45 photos + 300 positions
+   215.453  t0110073 suivi ok score 0.98 pos 4785,-5104 net 15 (20 ms) carte 45 photos + 300 positions
+   215.791  t0110412 suivi ok score 0.98 pos 4785,-5104 net 15 (17 ms) carte 45 photos + 300 positions
+   216.118  t0110739 suivi ok score 0.98 pos 4785,-5104 net 13 (18 ms) carte 45 photos + 300 positions
+   216.446  t0111067 suivi ok score 0.98 pos 4785,-5104 net 17 (14 ms) carte 45 photos + 300 positions
+   216.798  t0111419 suivi ok score 0.98 pos 4785,-5104 net 17 (18 ms) carte 45 photos + 300 positions
+   217.004  envoyé lame_20261020_115524_placenta-187187_0042.jpg (484 ko)
+   217.111  t0111732 suivi ok score 0.99 pos 4785,-5104 net 17 (13 ms) carte 45 photos + 300 positions
+   217.462  t0112081 suivi ok score 0.93 pos 4892,-5104 net 17 (26 ms) carte 45 photos + 300 positions
+   217.787  t0112408 suivi ok score 0.93 pos 5346,-5104 net 18 (19 ms) carte 45 photos + 300 positions
+   218.111  t0112732 suivi ok score 0.94 pos 5514,-5104 net 17 (10 ms) carte 45 photos + 300 positions
+   218.446  t0113067 suivi ok score 0.89 pos 5765,-5104 net 18 (14 ms) carte 45 photos + 300 positions
+   218.783  t0113404 suivi ok score 0.91 pos 5956,-5104 net 17 (17 ms) carte 45 photos + 300 positions
+   219.129  t0113749 suivi ok score 0.94 pos 6147,-5104 net 18 (21 ms) carte 45 photos + 300 positions
+   219.463  t0114082 suivi ok score 0.99 pos 6267,-5104 net 18 (29 ms) carte 45 photos + 300 positions
+   219.781  t0114402 suivi ok score 0.99 pos 6267,-5104 net 18 (15 ms) carte 45 photos + 300 positions
+   219.830  photo 187_0046 à 6267,-5104 (500 ko, 212 ms)
+   220.114  t0114735 suivi ok score 0.99 pos 6267,-5104 net 18 (12 ms) carte 46 photos + 300 positions
+   220.460  t0115080 suivi ok score 0.99 pos 6267,-5104 net 18 (24 ms) carte 46 photos + 300 positions
+   220.780  t0115402 suivi ok score 0.84 pos 6649,-5104 net 19 (15 ms) carte 46 photos + 300 positions
+   221.117  t0115738 suivi ok score 0.94 pos 6865,-5104 net 20 (17 ms) carte 46 photos + 300 positions
+   221.416  envoyé lame_20261020_115524_placenta-187187_0043.jpg (482 ko)
+   221.451  t0116071 suivi ok score 0.92 pos 7127,-5104 net 20 (16 ms) carte 46 photos + 300 positions
+   221.787  t0116408 suivi ok score 0.91 pos 7247,-5104 net 20 (19 ms) carte 46 photos + 300 positions
+   222.111  photo 187_0047 à 7283,-5104 (521 ko, 224 ms)
+   222.119  t0116739 suivi ok score 0.95 pos 7414,-5104 net 20 (19 ms) carte 47 photos + 300 positions
+   222.460  t0117080 suivi ok score 0.95 pos 7630,-5104 net 21 (20 ms) carte 47 photos + 300 positions
+   222.808  t0117428 suivi ok score 0.97 pos 7809,-5104 net 22 (31 ms) carte 47 photos + 300 positions
+   223.116  envoyé lame_20261020_115524_placenta-187187_0044.jpg (474 ko)
+   223.116  t0117738 suivi ok score 0.93 pos 8060,-5104 net 22 (15 ms) carte 47 photos + 300 positions
+   223.438  t0118059 suivi ok score 0.99 pos 8179,-5104 net 23 (7 ms) carte 47 photos + 300 positions
+   223.773  t0118394 suivi ok score 0.99 pos 8179,-5104 net 23 (11 ms) carte 47 photos + 300 positions
+   223.844  photo 187_0048 à 8179,-5104 (538 ko, 201 ms)
+   224.123  t0118743 suivi ok score 0.99 pos 8179,-5104 net 23 (20 ms) carte 48 photos + 300 positions
+   224.412  envoyé lame_20261020_115524_placenta-187187_0045.jpg (473 ko)
+   224.455  t0119075 suivi ok score 0.80 pos 8287,-5104 net 23 (16 ms) carte 48 photos + 300 positions
+   224.788  t0119408 suivi ok score 0.97 pos 8717,-5104 net 24 (24 ms) carte 48 photos + 300 positions
+   225.116  t0119736 suivi ok score 0.93 pos 9040,-5104 net 25 (17 ms) carte 48 photos + 300 positions
+   225.445  t0120066 suivi ok score 0.95 pos 9243,-5104 net 25 (14 ms) carte 48 photos + 300 positions
+   225.798  t0120417 suivi ok score 0.99 pos 9279,-5104 net 25 (23 ms) carte 48 photos + 300 positions
+   225.888  envoyé lame_20261020_115524_placenta-187187_0046.jpg (500 ko)
+   225.995  photo 187_0049 à 9279,-5104 (552 ko, 197 ms)
+   226.110  t0120731 suivi ok score 0.99 pos 9279,-5104 net 25 (16 ms) carte 49 photos + 300 positions
+   226.452  t0121072 suivi ok score 0.96 pos 9434,-5104 net 26 (18 ms) carte 49 photos + 300 positions
+   226.789  t0121409 suivi ok score 0.96 pos 9865,-5104 net 28 (16 ms) carte 49 photos + 300 positions
+   227.127  t0121747 suivi ok score 0.97 pos 10092,-5104 net 29 (16 ms) carte 49 photos + 300 positions
+   227.255  envoyé lame_20261020_115524_placenta-187187_0047.jpg (521 ko)
+   227.458  t0122078 suivi ok score 0.94 pos 10331,-5104 net 31 (23 ms) carte 49 photos + 300 positions
+   227.785  t0122405 suivi ok score 1.00 pos 10606,-5104 net 31 (17 ms) carte 49 photos + 300 positions
+   228.144  t0122764 suivi ok score 1.00 pos 10606,-5104 net 31 (28 ms) carte 49 photos + 300 positions
+   228.262  photo 187_0050 à 10606,-5104 (585 ko, 209 ms)
+   228.451  t0123071 suivi ok score 0.90 pos 10988,-5104 net 32 (17 ms) carte 50 photos + 300 positions
+   228.789  t0123410 suivi ok score 0.94 pos 11359,-5104 net 32 (16 ms) carte 50 photos + 300 positions
+   228.929  envoyé lame_20261020_115524_placenta-187187_0048.jpg (538 ko)
+   229.143  t0123763 suivi ok score 0.94 pos 11825,-5104 net 32 (31 ms) carte 50 photos + 300 positions
+   229.458  t0124077 suivi ok score 0.95 pos 12148,-5104 net 33 (22 ms) carte 50 photos + 300 positions
+   229.794  t0124414 suivi ok score 0.95 pos 12518,-5104 net 35 (20 ms) carte 50 photos + 300 positions
+   229.823  photo en mouvement lent (63 % du champ, 30 u/s)
+   230.035  photo 187_0051 à 12530,-5104 (622 ko, 211 ms)
+   230.123  t0124742 suivi ok score 0.92 pos 12710,-5104 net 34 (20 ms) carte 51 photos + 300 positions
+   230.235  envoyé lame_20261020_115524_placenta-187187_0049.jpg (552 ko)
+   230.462  t0125083 suivi ok score 0.94 pos 12889,-5104 net 34 (16 ms) carte 51 photos + 300 positions
+   230.782  t0125403 suivi ok score 0.92 pos 13140,-5104 net 33 (11 ms) carte 51 photos + 300 positions
+   231.133  t0125753 suivi ok score 0.90 pos 13463,-5104 net 33 (24 ms) carte 51 photos + 300 positions
+   231.469  t0126089 suivi ok score 0.91 pos 13797,-5104 net 33 (28 ms) carte 51 photos + 300 positions
+   231.790  t0126411 suivi ok score 0.97 pos 14036,-5104 net 32 (20 ms) carte 51 photos + 300 positions
+   232.115  t0126736 suivi ok score 0.98 pos 14108,-5104 net 33 (14 ms) carte 51 photos + 300 positions
+   232.216  photo 187_0052 à 14048,-5104 (615 ko, 239 ms)
+   232.452  t0127071 suivi ok score 0.94 pos 14252,-5104 net 32 (14 ms) carte 52 photos + 300 positions
+   232.565  photo 187_0053 à 14168,-5104 (613 ko, 213 ms)
+   232.790  t0127411 suivi ok score 0.94 pos 14371,-5104 net 32 (17 ms) carte 53 photos + 300 positions
+   233.081  photo 187_0054 à 14383,-5104 (612 ko, 222 ms)
+   233.115  t0127736 suivi ok score 0.92 pos 14467,-5104 net 31 (14 ms) carte 54 photos + 300 positions
+   233.455  t0128076 suivi ok score 0.96 pos 14586,-5104 net 31 (18 ms) carte 54 photos + 300 positions
+   233.548  photo 187_0055 à 14538,-5104 (609 ko, 237 ms)
+   233.660  envoyé lame_20261020_115524_placenta-187187_0050.jpg (585 ko)
+   233.784  t0128402 suivi ok score 0.99 pos 14682,-5104 net 31 (14 ms) carte 55 photos + 300 positions
+   234.123  t0128743 suivi ok score 0.99 pos 14682,-5104 net 31 (19 ms) carte 55 photos + 300 positions
+   234.280  photo 187_0056 à 14682,-5104 (609 ko, 230 ms)
+   234.450  t0129070 suivi ok score 0.99 pos 14682,-5104 net 32 (15 ms) carte 56 photos + 300 positions
+   234.798  t0129418 suivi ok score 0.99 pos 14682,-5104 net 32 (23 ms) carte 56 photos + 300 positions
+   235.022  envoyé lame_20261020_115524_placenta-187187_0051.jpg (622 ko)
+   235.128  t0129748 suivi ok score 0.99 pos 14682,-5104 net 32 (23 ms) carte 56 photos + 300 positions
+   235.462  t0130082 suivi ok score 0.99 pos 14682,-5104 net 32 (23 ms) carte 56 photos + 300 positions
+   235.801  t0130421 suivi ok score 0.99 pos 14682,-5104 net 32 (26 ms) carte 56 photos + 300 positions
+   236.120  t0130740 suivi ok score 1.00 pos 14682,-5104 net 32 (16 ms) carte 56 photos + 300 positions
+   236.320  envoyé lame_20261020_115524_placenta-187187_0052.jpg (615 ko)
+   236.456  t0131076 suivi ok score 1.00 pos 14682,-5104 net 32 (20 ms) carte 56 photos + 300 positions
