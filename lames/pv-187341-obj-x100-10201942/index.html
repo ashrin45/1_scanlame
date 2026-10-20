@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>pv 187341 (obj. x100)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+[hidden] { display: none !important; }
+/* Layout: one-screen viewer, slim instrument bar on top, the slide fills the rest */
+:root {
+  --bg: #f3f0f4; --panel: #ffffff; --fg: #2b2433; --muted: #6e6478; --line: #d9d2de;
+  --accent: #7a2e8c; --accent-soft: rgba(122,46,140,.14); --stage: #e9e4ec; --ok: #1b9466; --warn: #b7791f; --bad: #c0392b;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; color-scheme: dark }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-ui); display: flex; flex-direction: column; overflow: hidden; }
+header { flex: 0 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  padding-block: 8px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: var(--panel); border-bottom: 1px solid var(--line); }
+.title { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+h1 { font-size: 15px; font-weight: 600; margin: 0; letter-spacing: .01em; }
+.info { font-size: 12px; color: var(--muted); }
+.info a { color: var(--accent); text-decoration: none; }
+.meta { font-family: var(--font-data); font-size: 12px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.meta b { color: var(--fg); font-weight: 500; }
+.meta a { color: var(--accent); text-decoration: none; } .meta a:hover { text-decoration: underline; }
+.tools { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+button { font: 500 13px var(--font-ui); color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; min-width: 36px; }
+button:hover { border-color: var(--accent); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+button .g { display: inline-block; min-width: 16px; padding: 0 4px; border-radius: 4px; color: #fff; font-weight: 600; margin-left: 4px; }
+.gA { background: var(--ok); } .gB { background: var(--warn); } .gC { background: var(--bad); }
+.zctl { display: flex; align-items: center; gap: 6px; font: 500 12px var(--font-data); color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; }
+.zctl input { width: 110px; accent-color: var(--accent); margin: 0; }
+.zctl b { color: var(--fg); font-weight: 500; min-width: 7.5em; }
+#viewer { flex: 1 1 auto; min-height: 0; background: var(--stage); position: relative; }
+#epanel { position: absolute; right: max(12px, env(safe-area-inset-right, 0px)); top: 12px; z-index: 7; width: min(340px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 13px var(--font-ui); color: var(--fg); display: flex; flex-direction: column; gap: 8px; }
+#epanel input { font: 13px var(--font-data); padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--fg); width: 100%; box-sizing: border-box; }
+#epanel .row { display: flex; gap: 8px; flex-wrap: wrap; }
+#epanel .danger { border-color: #c0392b; color: #c0392b; }
+#epanel .msg { font-size: 12px; opacity: .85; }
+#cropper { position: absolute; inset: 0; z-index: 6; cursor: crosshair; touch-action: none; }
+#croprect { position: absolute; border: 2px solid #e8a33d; background: rgba(232, 163, 61, .12); box-shadow: 0 0 0 9999px rgba(0, 0, 0, .35); pointer-events: none; display: none; }
+#cropbar { position: absolute; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 8; display: flex; gap: 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px; font: 13px var(--font-ui); color: var(--fg); align-items: center; }
+#viewer .navigator { border: 1px solid var(--line) !important; background: var(--panel) !important; }
+.hud { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 5;
+  font-family: var(--font-data); font-size: 12px; color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; pointer-events: none; font-variant-numeric: tabular-nums; }
+svg.fields polygon { fill: none; stroke: var(--accent); stroke-width: 1.5px; vector-effect: non-scaling-stroke; opacity: .9; }
+svg.fields text { fill: var(--accent); font: 500 40px var(--font-data); paint-order: stroke; stroke: var(--panel); stroke-width: 10px; opacity: .8; }
+svg.quality polygon { stroke-width: 1px; vector-effect: non-scaling-stroke; }
+svg.quality polygon.s2 { fill: rgba(27,148,102,.18); stroke: rgba(27,148,102,.7); }
+svg.quality polygon.s1 { fill: rgba(183,121,31,.28); stroke: rgba(183,121,31,.8); }
+svg.quality polygon.s0 { fill: rgba(192,57,43,.32); stroke: rgba(192,57,43,.9); }
+svg.quality polygon.tracked { stroke-dasharray: 6 4; }
+svg.quality polygon.hole { fill: rgba(192,57,43,.25); stroke: #c0392b; stroke-width: 2px; stroke-dasharray: 8 5; }
+svg.children polygon { fill: none; stroke: #e8a33d; stroke-width: 2px; vector-effect: non-scaling-stroke; }
+svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order: stroke; stroke: #000; stroke-width: 8px; }
+#qpanel { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); top: 12px; z-index: 6; max-width: min(360px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; font-size: 13px; box-shadow: 0 4px 18px rgba(0,0,0,.18); }
+#qpanel h2 { font-size: 13px; margin: 0 0 6px; display: flex; align-items: center; gap: 8px; }
+#qpanel ul { margin: 0 0 8px; padding-left: 18px; } #qpanel li { margin: 2px 0; }
+#qpanel .kv { font-family: var(--font-data); font-size: 11px; color: var(--muted); display: grid; grid-template-columns: auto auto; gap: 2px 12px; font-variant-numeric: tabular-nums; }
+#qpanel .leg { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; font-size: 11px; color: var(--muted); }
+#qpanel .leg i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 3px; }
+#bar { position: absolute; right: max(14px, env(safe-area-inset-right, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px)); text-align: right; z-index: 5; pointer-events: none; font: 500 12px var(--font-data); color: #fff; text-shadow: 0 0 4px #000, 0 0 2px #000; }
+#bar i { display: block; margin-left: auto; height: 4px; background: #fff; border: 1px solid #000; border-top: 0; box-shadow: 0 0 3px #000; margin-bottom: 3px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="title"><h1>pv 187341 (obj. x100)</h1><div class="info" id="info">Gram · objectif x100 · 20/10/2026 19:42</div></div>
+  <div class="meta"><span><b>58</b> champs</span><span><b>6720 × 8832</b> px</span><span><b>15</b> niveaux de zoom</span><span>échelle non calibrée</span><span>v1 · profondeur off, coutures fond, recalage 1200 px, code 559bf90</span><span>journaux : <a href="journaux/20261020_194243_pv-187341-assemblage.txt">assemblage 20261020</a> <a href="journaux/20261020_194243_pv-187341-planche.jpg">planche 20261020</a> <a href="journaux/20261020_194243_pv-187341-telephone.txt">téléphone 20261020</a></span></div>
+  <div class="tools">
+    <button id="zin" aria-label="Zoom avant">+</button>
+    <button id="zout" aria-label="Zoom arrière">−</button>
+    <button id="home" aria-label="Vue entière">⌂</button>
+    <button id="fields" aria-pressed="false">Champs</button>
+    <button id="qbtn" aria-pressed="false" hidden>Qualité<span class="g" id="qg"></span></button>
+    <button id="kids" aria-pressed="true" hidden>Détails</button>
+    <button id="editbtn" aria-pressed="false" title="Rogner ou supprimer cette lame">Modifier</button>
+    <label class="zctl" id="zctl" hidden><span>profondeur</span><input id="zr" type="range" min="0" max="1" value="0" step="1" aria-label="Plan de profondeur"><b id="zl">net partout</b></label>
+  </div>
+</header>
+<div id="viewer">
+  <div class="hud" id="hud">zoom 1.00×</div>
+  <div id="bar" hidden><i></i><span></span></div>
+  <div id="qpanel" hidden></div>
+  <div id="epanel" hidden>
+    <b>Modifier la lame</b>
+    <input id="eurl" placeholder="URL du serveur (…/functions/v1/scanlame)" autocomplete="off">
+    <input id="etoken" placeholder="Jeton" type="password" autocomplete="off">
+    <div class="row"><button id="ecrop">Rogner…</button><button id="edelete" class="danger">Supprimer la lame</button></div>
+    <div class="row"><button id="eresume">Reprendre (QR)</button><button id="edetail">Ajouter un détail (QR)</button></div>
+    <div id="qrbox" hidden style="display:flex;gap:12px;align-items:center"><div id="qr"></div><div class="msg" id="qrmsg"></div></div>
+    <div class="msg">Télécharger : <a id="dlfull" href="#" target="_blank" rel="noopener">image entière (JPEG pleine résolution)</a> · <a id="dlzip" href="#" target="_blank" rel="noopener">dossier avec visionneuse hors ligne (zip)</a> · ou <code>python tools/telecharger_lame.py pv-187341-obj-x100-10201942 --patches 512</code> pour l'image, des vignettes et les champs (dépôt GitHub).</div>
+    <div class="msg" id="emsg">Les mêmes réglages que la page de capture. La modification est faite par GitHub Actions en quelques minutes.</div>
+  </div>
+  <div id="cropper" hidden><div id="croprect"></div></div>
+  <div id="cropbar" hidden><span id="cropinfo">Tracez un rectangle à garder</span><button id="cropok" disabled>Valider le rognage</button><button id="cropcancel">Annuler</button></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const SLUG = "pv-187341-obj-x100-10201942";
+const W = 6720, H = 8832, TILE = 512, MAXLVL = 14;
+const FIELDS = [{"id":"0006","pts":[[5738,-103],[5751,1839],[4294,1849],[4282,-94]],"scale":0.988,"sharp":1.95,"z":false,"tracked":false},{"id":"0014","pts":[[5166,1539],[5181,3486],[3722,3497],[3706,1551]],"scale":0.986,"sharp":1.97,"z":false,"tracked":false},{"id":"0030","pts":[[5692,2617],[5702,4557],[4247,4564],[4237,2624]],"scale":0.989,"sharp":1.85,"z":false,"tracked":false},{"id":"0013","pts":[[5997,1519],[6011,3466],[4551,3476],[4538,1529]],"scale":0.986,"sharp":1.08,"z":false,"tracked":false},{"id":"0029","pts":[[4857,2635],[4877,4582],[3417,4597],[3397,2650]],"scale":0.986,"sharp":2.38,"z":false,"tracked":false},{"id":"0012","pts":[[6820,1496],[6839,3446],[5377,3461],[5357,1511]],"scale":0.984,"sharp":1.0,"z":false,"tracked":false},{"id":"0031","pts":[[6752,2592],[6737,4538],[5278,4527],[5293,2581]],"scale":0.986,"sharp":1.96,"z":false,"tracked":false},{"id":"0033","pts":[[6251,4046],[6232,6001],[4767,5987],[4785,4032]],"scale":0.982,"sharp":1.97,"z":false,"tracked":false},{"id":"0032","pts":[[6830,4016],[6811,5960],[5354,5946],[5373,4002]],"scale":0.987,"sharp":1.64,"z":false,"tracked":false},{"id":"0008","pts":[[7147,-121],[7169,1802],[5727,1818],[5705,-105]],"scale":0.998,"sharp":1.55,"z":false,"tracked":false},{"id":"0010","pts":[[7740,659],[7776,2602],[6320,2629],[6283,687]],"scale":0.988,"sharp":1.01,"z":false,"tracked":false},{"id":"0007","pts":[[6703,-123],[6729,1809],[5280,1828],[5254,-104]],"scale":0.993,"sharp":1.58,"z":false,"tracked":false},{"id":"0011","pts":[[7035,699],[7057,2620],[5616,2636],[5595,715]],"scale":0.999,"sharp":1.03,"z":false,"tracked":false},{"id":"0009","pts":[[7703,-141],[7742,1778],[6303,1807],[6264,-112]],"scale":1.0,"sharp":1.68,"z":false,"tracked":false},{"id":"0028","pts":[[3958,2656],[3975,4625],[2499,4638],[2481,2669]],"scale":0.975,"sharp":2.0,"z":false,"tracked":false},{"id":"0027","pts":[[3195,2679],[3207,4656],[1724,4665],[1712,2687]],"scale":0.97,"sharp":1.39,"z":false,"tracked":false},{"id":"0026","pts":[[2546,2694],[2553,4676],[1067,4681],[1060,2699]],"scale":0.968,"sharp":0.94,"z":false,"tracked":false},{"id":"0017","pts":[[2923,1587],[2936,3562],[1456,3572],[1442,1598]],"scale":0.972,"sharp":0.61,"z":false,"tracked":false},{"id":"0025","pts":[[2210,2703],[2208,4687],[721,4686],[723,2702]],"scale":0.967,"sharp":0.78,"z":false,"tracked":false},{"id":"0023","pts":[[904,2730],[881,4703],[-599,4686],[-575,2713]],"scale":0.973,"sharp":0.96,"z":false,"tracked":false},{"id":"0020","pts":[[183,1655],[157,3614],[-1312,3595],[-1286,1635]],"scale":0.979,"sharp":1.04,"z":false,"tracked":false},{"id":"0019","pts":[[1232,1636],[1210,3596],[-259,3580],[-238,1620]],"scale":0.979,"sharp":0.73,"z":false,"tracked":false},{"id":"0024","pts":[[1776,2716],[1763,4697],[276,4688],[289,2706]],"scale":0.968,"sharp":0.77,"z":false,"tracked":false},{"id":"0022","pts":[[912,1661],[890,3609],[-571,3593],[-549,1644]],"scale":0.985,"sharp":0.74,"z":false,"tracked":false},{"id":"0018","pts":[[2057,1610],[2057,3584],[576,3584],[576,1610]],"scale":0.972,"sharp":0.72,"z":false,"tracked":false},{"id":"0016","pts":[[3383,1576],[3397,3547],[1919,3558],[1904,1587]],"scale":0.973,"sharp":0.75,"z":false,"tracked":false},{"id":"0021","pts":[[2336,1617],[2345,3588],[867,3595],[858,1624]],"scale":0.974,"sharp":0.52,"z":false,"tracked":false},{"id":"0015","pts":[[4437,1550],[4455,3518],[2979,3532],[2961,1564]],"scale":0.975,"sharp":1.95,"z":false,"tracked":false},{"id":"0034","pts":[[5151,4178],[5204,6126],[3742,6166],[3690,4217]],"scale":0.984,"sharp":1.26,"z":false,"tracked":true},{"id":"0035","pts":[[4564,4217],[4604,6160],[3147,6190],[3108,4247]],"scale":0.988,"sharp":1.09,"z":false,"tracked":true},{"id":"0044","pts":[[4319,5566],[4359,7508],[2902,7538],[2862,5595]],"scale":0.988,"sharp":1.16,"z":false,"tracked":true},{"id":"0052","pts":[[3950,6956],[3977,8935],[2494,8955],[2466,6976]],"scale":0.97,"sharp":0.93,"z":false,"tracked":true},{"id":"0051","pts":[[4915,6926],[4942,8905],[3458,8925],[3431,6947]],"scale":0.97,"sharp":0.97,"z":false,"tracked":true},{"id":"0050","pts":[[5739,6900],[5766,8879],[4283,8899],[4256,6921]],"scale":0.97,"sharp":0.94,"z":false,"tracked":true},{"id":"0049","pts":[[6806,6848],[6850,8852],[5347,8884],[5304,6881]],"scale":0.958,"sharp":1.16,"z":false,"tracked":true},{"id":"0047","pts":[[7321,5415],[7365,7418],[5863,7451],[5819,5448]],"scale":0.958,"sharp":1.56,"z":false,"tracked":true},{"id":"0048","pts":[[7364,6814],[7425,8823],[5918,8869],[5857,6860]],"scale":0.955,"sharp":0.93,"z":false,"tracked":true},{"id":"0046","pts":[[6059,5516],[6105,7450],[4654,7485],[4608,5551]],"scale":0.992,"sharp":1.17,"z":false,"tracked":true},{"id":"0045","pts":[[5022,5524],[5080,7474],[3617,7518],[3559,5567]],"scale":0.983,"sharp":1.31,"z":false,"tracked":true},{"id":"0043","pts":[[3639,5588],[3679,7531],[2222,7561],[2182,5618]],"scale":0.988,"sharp":0.96,"z":false,"tracked":true},{"id":"0036","pts":[[3408,4276],[3423,6201],[1979,6212],[1965,4287]],"scale":0.997,"sharp":1.15,"z":false,"tracked":true},{"id":"0042","pts":[[2704,5634],[2707,7565],[1259,7567],[1256,5636]],"scale":0.994,"sharp":0.82,"z":false,"tracked":true},{"id":"0037","pts":[[2523,4295],[2537,6220],[1094,6231],[1079,4306]],"scale":0.997,"sharp":1.75,"z":false,"tracked":true},{"id":"0041","pts":[[1745,5648],[1724,7587],[270,7571],[291,5632]],"scale":0.99,"sharp":0.81,"z":false,"tracked":true},{"id":"0055","pts":[[2317,7019],[2301,8988],[825,8975],[841,7007]],"scale":0.975,"sharp":0.88,"z":false,"tracked":true},{"id":"0057","pts":[[1273,5904],[1237,7848],[-221,7821],[-185,5876]],"scale":0.987,"sharp":0.99,"z":false,"tracked":true},{"id":"0040","pts":[[610,5663],[589,7602],[-865,7586],[-844,5647]],"scale":0.99,"sharp":1.01,"z":false,"tracked":true},{"id":"0056","pts":[[1266,7033],[1216,8995],[-255,8958],[-205,6996]],"scale":0.978,"sharp":0.96,"z":false,"tracked":true},{"id":"0039","pts":[[604,4344],[567,6278],[-883,6250],[-846,4316]],"scale":0.992,"sharp":0.76,"z":false,"tracked":true},{"id":"0038","pts":[[1227,4333],[1205,6273],[-249,6257],[-227,4317]],"scale":0.99,"sharp":0.91,"z":false,"tracked":true},{"id":"0054","pts":[[2977,6997],[2977,8971],[1497,8971],[1497,6997]],"scale":0.972,"sharp":0.96,"z":false,"tracked":true},{"id":"0053","pts":[[3312,6988],[3321,8960],[1842,8967],[1833,6995]],"scale":0.973,"sharp":1.0,"z":false,"tracked":true},{"id":"0000","pts":[[1455,-21],[1432,1942],[-40,1925],[-17,-38]],"scale":0.978,"sharp":0.77,"z":false,"tracked":true},{"id":"0002","pts":[[2665,-56],[2673,1924],[1188,1930],[1180,-50]],"scale":0.97,"sharp":0.73,"z":false,"tracked":true},{"id":"0003","pts":[[3615,-90],[3642,1896],[2152,1916],[2126,-70]],"scale":0.966,"sharp":0.94,"z":false,"tracked":true},{"id":"0004","pts":[[4312,-127],[4358,1866],[2863,1901],[2817,-93]],"scale":0.962,"sharp":0.85,"z":false,"tracked":true},{"id":"0005","pts":[[5065,-160],[5110,1834],[3616,1868],[3570,-126]],"scale":0.962,"sharp":2.05,"z":false,"tracked":true},{"id":"0001","pts":[[2293,-44],[2293,1930],[813,1930],[813,-44]],"scale":0.972,"sharp":0.71,"z":false,"tracked":true}];
+const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
+const ZSTACK = null;      // {levels, tiles:[...]} ou null
+const QUALITY = {"grade": "B", "notes": ["recalage moyen (1.6 px)", "30 champ(s) placé(s) sans recalage fin"], "frames": {"candidates": 68, "blurred": 0, "selected": 58, "used": 58, "tracked_only": 30}, "residual_px": 1.63, "residual_max_px": 28.22, "holes": [], "holes_frac": 0.0, "coverage_px": 72213862, "coverage_mm2": null, "low_sharp_frac": 0.0, "gain_spread_pct": 3.6, "flat_field": "médiane", "k1": 0.0, "zstack_fields": 0, "zstack_levels": 0};    // rapport du pipeline ({} si absent)
+const CHILDREN = [];  // lames de détail (autre objectif) recalées dans celle-ci
+const PARENT = {"slug": "pv-187341-10201942", "title": "pv 187341", "placed": true};      // lame d'ensemble, si celle-ci est un détail
+const svgNS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+
+// tile source : pyramide Deep Zoom de cette lame ; pour un plan z, les tuiles manquantes retombent sur la base
+function source(prefix, keys) {
+  return { width: W, height: H, tileSize: TILE, tileOverlap: 1, minLevel: 0, maxLevel: MAXLVL,
+    getTileUrl: (l, x, y) => (keys && keys.has(l + '/' + x + '_' + y) ? prefix : 'lame_files') + `/${l}/${x}_${y}.jpg` };
+}
+const viewer = OpenSeadragon({
+  id: 'viewer', showNavigationControl: false, showNavigator: true, navigatorPosition: 'TOP_RIGHT', navigatorSizeRatio: 0.16,
+  gestureSettingsTouch: { pinchToZoom: true, flickEnabled: true }, maxZoomPixelRatio: 3, minZoomImageRatio: 0.6, visibilityRatio: 0.5,
+  animationTime: 0.6, immediateRender: true, preserveViewport: false, tileSources: source()
+});
+$('zin').onclick = () => viewer.viewport.zoomBy(1.6);
+$('zout').onclick = () => viewer.viewport.zoomBy(1 / 1.6);
+$('home').onclick = () => viewer.viewport.goHome();
+
+// ---- lame parente / enfants ----
+if (PARENT) $('info').insertAdjacentHTML('beforeend', `${$('info').textContent ? ' · ' : ''}<a href="../${PARENT.slug}/">↖ vue d'ensemble : ${PARENT.title}</a>${PARENT.placed ? '' : ' (position non retrouvée)'}`);
+const placed = CHILDREN.filter(c => c.transform);
+const unplaced = CHILDREN.filter(c => !c.transform);
+if (CHILDREN.length) {
+  $('info').insertAdjacentHTML('beforeend', ($('info').textContent ? ' · ' : '') + CHILDREN.map(c => `<a href="../${c.slug}/">↗ ${c.title}${c.objective ? ' (obj. ' + c.objective + ')' : ''}</a>`).join(' · '));
+}
+const kidLayers = [];
+// intersection d'un polygone avec un quadrilatère convexe (Sutherland-Hodgman)
+function clipPoly(poly, clip) {
+  let out = poly;
+  for (let i = 0; i < clip.length && out.length; i++) {
+    const A = clip[i], B = clip[(i + 1) % clip.length], inp = out; out = [];
+    const side = p => (B.x - A.x) * (p.y - A.y) - (B.y - A.y) * (p.x - A.x);
+    const inter = (p, q) => { const t = side(p) / (side(p) - side(q)); return { x: p.x + t * (q.x - p.x), y: p.y + t * (q.y - p.y) }; };
+    // orientation du quadrilatère : on garde le côté où se trouve son centre
+    const cx = clip.reduce((s, p) => s + p.x, 0) / clip.length, cy = clip.reduce((s, p) => s + p.y, 0) / clip.length;
+    const sgn = Math.sign(side({ x: cx, y: cy })) || 1;
+    for (let k = 0; k < inp.length; k++) {
+      const p = inp[k], q = inp[(k + 1) % inp.length], pin = side(p) * sgn >= 0, qin = side(q) * sgn >= 0;
+      if (pin) { out.push(p); if (!qin) out.push(inter(p, q)); } else if (qin) out.push(inter(p, q));
+    }
+  }
+  return out;
+}
+const kidSvg = document.createElementNS(svgNS, 'svg');
+kidSvg.setAttribute('viewBox', `0 0 ${W} ${H}`); kidSvg.setAttribute('class', 'children'); kidSvg.setAttribute('width', '100%'); kidSvg.setAttribute('height', '100%'); kidSvg.style.overflow = 'visible';
+for (const c of placed) {
+  const [a, b, tx, ty] = c.transform;   // x' = a x - b y + tx ; y' = b x + a y + ty  (enfant px -> parent px)
+  const s = Math.hypot(a, b), deg = Math.atan2(b, a) * 180 / Math.PI;
+  const corners = [[0, 0], [c.width, 0], [c.width, c.height], [0, c.height]].map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty]);
+  // contour en px parent, limite a l'emprise de la lame d'ensemble (meme borne que le calque)
+  const pbounds = [{ x: 0, y: 0 }, { x: W, y: 0 }, { x: W, y: H }, { x: 0, y: H }];
+  const polys = ((c.outline && c.outline.length) ? c.outline.map(poly => poly.map(([x, y]) => ({ x: a * x - b * y + tx, y: b * x + a * y + ty }))) : [corners.map(([x, y]) => ({ x, y }))])
+    .map(poly => clipPoly(poly, pbounds)).filter(p => p.length >= 3).map(poly => poly.map(p => [p.x, p.y]));
+  for (const poly of polys) { const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', poly.map(q => q.map(v => v.toFixed(1)).join(',')).join(' ')); kidSvg.appendChild(p); }
+  const t = document.createElementNS(svgNS, 'text'); t.setAttribute('x', corners[0][0] + 30); t.setAttribute('y', corners[0][1] - 20); t.textContent = c.objective ? 'obj. ' + c.objective : c.title; kidSvg.appendChild(t);
+  viewer.addHandler('open', () => viewer.addTiledImage({
+    tileSource: { width: c.width, height: c.height, tileSize: c.tile, tileOverlap: 1, minLevel: 0, maxLevel: c.maxlvl, getTileUrl: (l, x, y) => `../${c.slug}/lame_files/${l}/${x}_${y}.jpg` },
+    // OpenSeadragon tourne l'image autour de son centre : on place le rectangle non tourné pour que son centre tombe au bon endroit
+    x: (a * c.width / 2 - b * c.height / 2 + tx - s * c.width / 2) / W, y: (b * c.width / 2 + a * c.height / 2 + ty - s * c.height / 2) / W, width: s * c.width / W, degrees: deg,
+    success: e => {
+      kidLayers.push(e.item);
+      if (!e.item.setCroppingPolygons) return;
+      // rogné au contour couvert, et à l'emprise de la lame d'ensemble (un détail qui en déborde n'est pas affiché au-delà)
+      const inv = 1 / (a * a + b * b);
+      const toChild = ([X, Y]) => ({ x: inv * (a * (X - tx) + b * (Y - ty)), y: inv * (-b * (X - tx) + a * (Y - ty)) });
+      const bounds = [[0, 0], [W, 0], [W, H], [0, H]].map(toChild);
+      const polys = (c.outline && c.outline.length) ? c.outline.map(poly => poly.map(([x, y]) => ({ x, y }))) : [[{ x: 0, y: 0 }, { x: c.width, y: 0 }, { x: c.width, y: c.height }, { x: 0, y: c.height }]];
+      e.item.setCroppingPolygons(polys.map(poly => clipPoly(poly, bounds)).filter(p => p.length >= 3));
+    }
+  }));
+}
+if (placed.length) {
+  $('kids').hidden = false;
+  let on = true;
+  const apply = () => { kidLayers.forEach(l => l.setOpacity(on ? 1 : 0)); if (on) viewer.addOverlay({ element: kidSvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(kidSvg); };
+  $('kids').onclick = () => { on = !on; $('kids').setAttribute('aria-pressed', String(on)); apply(); };
+  viewer.addHandler('open', () => viewer.addOverlay({ element: kidSvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }));
+}
+
+// ---- contours des champs (sur demande) ----
+const svg = document.createElementNS(svgNS, 'svg');
+svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'fields'); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%');
+svg.style.overflow = 'visible';
+for (const f of FIELDS) {
+  const p = document.createElementNS(svgNS, 'polygon');
+  p.setAttribute('points', f.pts.map(q => q.join(',')).join(' '));
+  svg.appendChild(p);
+  const t = document.createElementNS(svgNS, 'text');
+  const [x, y] = f.pts[0]; t.setAttribute('x', x + 40); t.setAttribute('y', y + 110); t.textContent = f.id + (f.z ? ' z' : ''); svg.appendChild(t);
+}
+let fieldsShown = false;
+$('fields').onclick = () => { fieldsShown = !fieldsShown; $('fields').setAttribute('aria-pressed', String(fieldsShown)); if (fieldsShown) viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(svg); };
+
+// ---- rapport de qualité : panneau + calque (netteté par champ, trous) ----
+if (QUALITY && QUALITY.grade) {
+  $('qbtn').hidden = false; $('qg').textContent = QUALITY.grade; $('qg').className = 'g g' + QUALITY.grade;
+  const qsvg = document.createElementNS(svgNS, 'svg');
+  qsvg.setAttribute('viewBox', `0 0 ${W} ${H}`); qsvg.setAttribute('class', 'quality'); qsvg.setAttribute('width', '100%'); qsvg.setAttribute('height', '100%'); qsvg.style.overflow = 'visible';
+  for (const f of FIELDS) {
+    const p = document.createElementNS(svgNS, 'polygon');
+    p.setAttribute('points', f.pts.map(q => q.join(',')).join(' '));
+    const s = f.sharp == null ? 1 : f.sharp;
+    p.setAttribute('class', (s >= 0.8 ? 's2' : s >= 0.5 ? 's1' : 's0') + (f.tracked ? ' tracked' : ''));
+    qsvg.appendChild(p);
+  }
+  for (const h of QUALITY.holes || []) {
+    const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', h.map(q => q.join(',')).join(' ')); p.setAttribute('class', 'hole'); qsvg.appendChild(p);
+  }
+  const fr = QUALITY.frames || {};
+  const fmt = v => v == null ? '' : (typeof v === 'number' ? v.toLocaleString('fr-FR') : v);
+  $('qpanel').innerHTML = `<h2>Qualité <span class="g g${QUALITY.grade}" style="padding:0 6px;border-radius:4px;color:#fff">${QUALITY.grade}</span></h2>` +
+    (QUALITY.notes && QUALITY.notes.length ? '<ul>' + QUALITY.notes.map(n => `<li>${n}</li>`).join('') + '</ul>' : '<p style="margin:0 0 8px">Aucune remarque : couverture continue, champs nets, recalage précis.</p>') +
+    `<div class="kv"><span>images extraites</span><span>${fmt(fr.candidates)}</span><span>floues rejetées</span><span>${fmt(fr.blurred)}</span><span>champs assemblés</span><span>${fmt(fr.used)} / ${fmt(fr.selected)}</span>` +
+    `<span>recalage médian</span><span>${fmt(QUALITY.residual_px)} px</span><span>surface couverte</span><span>${QUALITY.coverage_mm2 != null ? fmt(QUALITY.coverage_mm2) + ' mm²' : fmt(QUALITY.coverage_px) + ' px'}</span>` +
+    `<span>flat-field</span><span>${fmt(QUALITY.flat_field)}</span>${QUALITY.zstack_fields ? `<span>piles de profondeur</span><span>${QUALITY.zstack_fields} (${QUALITY.zstack_levels} plans)</span>` : ''}</div>` +
+    `<div class="leg"><span><i style="background:rgba(27,148,102,.5)"></i>net</span><span><i style="background:rgba(183,121,31,.6)"></i>moyen</span><span><i style="background:rgba(192,57,43,.6)"></i>peu net</span><span><i style="border:2px dashed #c0392b;box-sizing:border-box"></i>trou</span><span><i style="border:1px dashed #666;box-sizing:border-box"></i>placé sans recalage</span></div>`;
+  let qOn = false;
+  $('qbtn').onclick = () => { qOn = !qOn; $('qbtn').setAttribute('aria-pressed', String(qOn)); $('qpanel').hidden = !qOn; if (qOn) viewer.addOverlay({ element: qsvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(qsvg); };
+}
+
+// ---- z-stack : un calque par plan, seul le plan choisi est visible (la base EDF reste dessous) ----
+if (ZSTACK && ZSTACK.levels > 0) {
+  const keys = new Set(ZSTACK.tiles || []);
+  const layers = [];
+  viewer.addHandler('open', () => {
+    for (let z = 0; z < ZSTACK.levels; z++) viewer.addTiledImage({ tileSource: source('lame_z' + z, keys), opacity: 0, success: e => { layers[z] = e.item; } });
+  });
+  $('zctl').hidden = false; $('zr').max = ZSTACK.levels;
+  const setZ = v => {
+    v = Math.max(0, Math.min(ZSTACK.levels, v)); $('zr').value = v;
+    $('zl').textContent = v === 0 ? 'net partout' : `plan ${v} / ${ZSTACK.levels}`;
+    layers.forEach((l, z) => l && l.setOpacity(z === v - 1 ? 1 : 0));
+  };
+  $('zr').oninput = () => setZ(+$('zr').value);
+  document.addEventListener('keydown', e => { if (e.key === '[') setZ(+$('zr').value - 1); if (e.key === ']') setZ(+$('zr').value + 1); });
+}
+
+// ---- zoom + barre d'échelle ----
+const hud = $('hud'), bar = $('bar');
+function updateBar() {
+  if (!UMPX) return;
+  const z = imgZoom();   // pixels écran par pixel image
+  const umPerScreenPx = UMPX / z;
+  const target = 120 * umPerScreenPx;
+  const p = Math.pow(10, Math.floor(Math.log10(target)));
+  const len = [1, 2, 5, 10].map(m => m * p).reduce((a, b) => Math.abs(b - target) < Math.abs(a - target) ? b : a);
+  bar.querySelector('i').style.width = (len / umPerScreenPx).toFixed(1) + 'px';
+  bar.querySelector('span').textContent = len >= 1000 ? (len / 1000).toLocaleString('fr-FR') + ' mm' : len.toLocaleString('fr-FR') + ' µm';
+  bar.hidden = false;
+}
+const imgZoom = () => { const it = viewer.world.getItemAt(0); return it ? it.viewportToImageZoom(viewer.viewport.getZoom(true)) : viewer.viewport.getZoom(true) / W; };
+function updateHud() {
+  const z = imgZoom();
+  hud.textContent = 'zoom ' + z.toFixed(2) + '× (1,00× = pixels natifs)';
+  updateBar();
+}
+viewer.addHandler('zoom', updateHud);
+viewer.addHandler('animation', updateHud);
+viewer.addHandler('animation-finish', updateHud);
+viewer.addHandler('open', updateHud);
+
+// ---- modifier la lame : rogner, supprimer (demande envoyee a la fonction Supabase, executee par GitHub Actions) ----
+const LS = { get: k => { try { return localStorage.getItem(k) || ''; } catch (_) { return ''; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (_) {} } };
+$('eurl').value = LS.get('scanlame.url'); $('etoken').value = LS.get('scanlame.token');
+$('eurl').onchange = () => LS.set('scanlame.url', $('eurl').value.trim()); $('etoken').onchange = () => LS.set('scanlame.token', $('etoken').value.trim());
+$('dlfull').href = 'https://github.com/ashrin45/1_scanlame/releases/download/lames/' + SLUG + '.jpg';
+$('dlzip').href = 'https://github.com/ashrin45/1_scanlame/releases/download/lames/' + SLUG + '-visionneuse.zip';
+// QR codes vers l'appli : scanlame://reprendre/<slug> (completer les zones manquantes) et scanlame://ensemble/<slug> (prendre un detail x100 rattache)
+function showQr(kind, msg) {
+  const url = 'scanlame://' + kind + '/' + SLUG;
+  $('qr').innerHTML = ''; $('qrbox').hidden = false;
+  try { new QRCode($('qr'), { text: url, width: 132, height: 132, correctLevel: QRCode.CorrectLevel.M }); } catch (e) { $('qr').textContent = url; }
+  $('qrmsg').innerHTML = msg + '<br>Scanner avec l\'appareil photo du téléphone : l\'appli s\'ouvre avec la lame déjà choisie. Sur le téléphone, <a href="' + url + '">ouvrir directement</a>.';
+}
+$('eresume').onclick = () => showQr('reprendre', 'Reprendre cette lame : filmer seulement les zones manquantes (même objectif), la reprise est recalée et fondue dedans.');
+$('edetail').onclick = () => showQr('ensemble', 'Ajouter un détail : série au fort grossissement, rattachée à cette lame d\'ensemble.');
+$('editbtn').onclick = () => { const on = $('epanel').hidden; $('epanel').hidden = !on; $('editbtn').setAttribute('aria-pressed', on); };
+async function sendEdit(payload) {
+  const url = $('eurl').value.trim().replace(/\/+$/, ''), token = $('etoken').value.trim();
+  if (!url || !token) { $('emsg').textContent = 'URL du serveur et jeton nécessaires (voir la page de capture).'; return false; }
+  $('emsg').textContent = 'envoi…';
+  try {
+    const r = await fetch(url + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Token': token },
+      body: JSON.stringify({ series: 'edit_' + Date.now(), slug: SLUG, ...payload }) });
+    if (!r.ok) { $('emsg').textContent = 'refusé : HTTP ' + r.status; return false; }
+    const j = await r.json();
+    $('emsg').textContent = 'Demande envoyée' + (j.dispatched ? ' : GitHub Actions est réveillé, ' : ' (traitement au prochain passage, 15 min au plus) : ') + 'rechargez la page dans quelques minutes.';
+    return true;
+  } catch (e) { $('emsg').textContent = 'erreur : ' + e.message; return false; }
+}
+$('edelete').onclick = async () => {
+  if (!confirm('Supprimer définitivement cette lame de la galerie ?')) return;
+  if (await sendEdit({ action: 'delete' })) $('edelete').disabled = true;
+};
+// rognage : rectangle trace au doigt ou a la souris sur la vue, converti en px de la lame
+let crop = null, cropStart = null;
+const rectEl = $('croprect');
+function imgPt(ev) {
+  const r = $('viewer').getBoundingClientRect();
+  const p = viewer.world.getItemAt(0).viewerElementToImageCoordinates(new OpenSeadragon.Point(ev.clientX - r.left, ev.clientY - r.top));   // image principale (les calques sont d'autres images)
+  return { x: Math.max(0, Math.min(W, p.x)), y: Math.max(0, Math.min(H, p.y)) };
+}
+function drawCrop() {
+  if (!crop) { rectEl.style.display = 'none'; $('cropok').disabled = true; return; }
+  const main = viewer.world.getItemAt(0);
+  const a = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(crop.x0, crop.y0));
+  const b = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(crop.x1, crop.y1));
+  rectEl.style.display = 'block'; rectEl.style.left = a.x + 'px'; rectEl.style.top = a.y + 'px'; rectEl.style.width = (b.x - a.x) + 'px'; rectEl.style.height = (b.y - a.y) + 'px';
+  const ok = crop.x1 - crop.x0 >= 64 && crop.y1 - crop.y0 >= 64;
+  $('cropok').disabled = !ok;
+  $('cropinfo').textContent = ok ? `zone gardée : ${Math.round(crop.x1 - crop.x0)} × ${Math.round(crop.y1 - crop.y0)} px` : 'Tracez un rectangle à garder';
+}
+$('ecrop').onclick = () => {
+  $('epanel').hidden = true; $('editbtn').setAttribute('aria-pressed', 'false');
+  $('cropper').hidden = false; $('cropbar').hidden = false; crop = null; drawCrop();
+  viewer.setMouseNavEnabled(false);
+};
+const endCrop = () => { $('cropper').hidden = true; $('cropbar').hidden = true; crop = null; drawCrop(); viewer.setMouseNavEnabled(true); };
+$('cropcancel').onclick = endCrop;
+$('cropper').onpointerdown = ev => { ev.preventDefault(); $('cropper').setPointerCapture(ev.pointerId); cropStart = imgPt(ev); crop = { x0: cropStart.x, y0: cropStart.y, x1: cropStart.x, y1: cropStart.y }; drawCrop(); };
+$('cropper').onpointermove = ev => { if (!cropStart) return; const p = imgPt(ev); crop = { x0: Math.min(cropStart.x, p.x), y0: Math.min(cropStart.y, p.y), x1: Math.max(cropStart.x, p.x), y1: Math.max(cropStart.y, p.y) }; drawCrop(); };
+$('cropper').onpointerup = $('cropper').onpointercancel = () => { cropStart = null; };
+viewer.addHandler('animation', () => { if (crop) drawCrop(); });
+$('cropok').onclick = async () => {
+  if (!crop) return;
+  const rect = [crop.x0, crop.y0, crop.x1, crop.y1].map(Math.round);
+  if (!confirm(`Garder seulement la zone ${rect[2] - rect[0]} × ${rect[3] - rect[1]} px et jeter le reste ? (irréversible)`)) return;
+  $('epanel').hidden = false;
+  if (await sendEdit({ action: 'crop', rect })) endCrop();
+};
+</script>
+</body>
+</html>
