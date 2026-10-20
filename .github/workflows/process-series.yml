@@ -41,6 +41,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          GH_TOKEN: ${{ github.token }}
           PYTHONUNBUFFERED: '1'
         run: |
           ONLY="${{ inputs.only || github.event.client_payload.only || '' }}"

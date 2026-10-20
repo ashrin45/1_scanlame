@@ -110,7 +110,7 @@ def write_pages(slug):
         if pj: parent = dict(slug=j['parent'], title=pj['title'], placed=bool(j.get('parent_transform')))
     tpl = open(os.path.join(ROOT, 'tools', 'viewer_template.html'), encoding='utf-8').read()
     page = (tpl.replace('__TITLE__', html.escape(j['title'])).replace('__INFO__', info_line(j)).replace('__META__', meta)
-            .replace('__SLUG__', json.dumps(slug)).replace('__W__', str(W)).replace('__H__', str(H)).replace('__TILE__', str(j['tile'])).replace('__MAXLVL__', str(j['maxlvl']))
+            .replace('__SLUG_TXT__', html.escape(slug)).replace('__SLUG__', json.dumps(slug)).replace('__W__', str(W)).replace('__H__', str(H)).replace('__TILE__', str(j['tile'])).replace('__MAXLVL__', str(j['maxlvl']))
             .replace('__FIELDS__', json.dumps(fields, separators=(',', ':'))).replace('__UMPX__', json.dumps(j.get('um_per_px')))
             .replace('__ZSTACK__', json.dumps(dict(levels=j['zstack'], tiles=j['zstack_tiles']) if j.get('zstack') else None))
             .replace('__QUALITY__', json.dumps(q, ensure_ascii=False)).replace('__CHILDREN__', json.dumps(children, ensure_ascii=False))

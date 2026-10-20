@@ -67,6 +67,20 @@ def git_publish(paths, message):
     except subprocess.CalledProcessError as e:
         print(f'  git : {e.stderr[-400:] if e.stderr else e}'); return False
 
+def release_full(slug, pano):
+    """Image entiere de la lame (JPEG pleine resolution) deposee dans la release GitHub « lames » : telechargement direct
+    (https://github.com/<repo>/releases/download/lames/<slug>.jpg), pour l'analyse hors ligne (CNN, QuPath...)."""
+    if not os.environ.get('GITHUB_ACTIONS') or not os.path.isfile(pano): return
+    repo = os.environ.get('GITHUB_REPOSITORY', '')
+    try:
+        if subprocess.run(['gh', 'release', 'view', 'lames', '-R', repo], capture_output=True).returncode != 0:
+            subprocess.run(['gh', 'release', 'create', 'lames', '-R', repo, '--title', 'Lames entières (JPEG pleine résolution)', '--notes', 'Une image par lame, nommée <slug>.jpg, remplacée à chaque réassemblage ou rognage.', '--latest=false'], check=True, capture_output=True)
+        tmp = os.path.join(os.path.dirname(pano), f'{slug}.jpg'); shutil.copyfile(pano, tmp)
+        r = subprocess.run(['gh', 'release', 'upload', 'lames', tmp, '-R', repo, '--clobber'], capture_output=True, text=True)
+        os.remove(tmp)
+        print(f'  image entière déposée ({os.path.getsize(pano) >> 20} Mo) : {slug}.jpg' if r.returncode == 0 else f'  dépôt de l\'image entière refusé : {r.stderr[-200:]}')
+    except Exception as e: print(f'  dépôt de l\'image entière impossible : {e}')
+
 def slugify(t):
     import unicodedata, re
     t = unicodedata.normalize('NFKD', t).encode('ascii', 'ignore').decode().lower()
@@ -101,12 +115,18 @@ while True:
             elif action == 'delete':
                 print(f'{s} : suppression de {slug}')
                 subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'edit_lame.py'), 'delete', slug], check=True)
-                if os.environ.get('GITHUB_ACTIONS'): git_publish(['lames'], f'Suppression : {slug}')
+                if os.environ.get('GITHUB_ACTIONS'):
+                    git_publish(['lames'], f'Suppression : {slug}')
+                    subprocess.run(['gh', 'release', 'delete-asset', 'lames', f'{slug}.jpg', '-R', os.environ.get('GITHUB_REPOSITORY', ''), '-y'], capture_output=True)
             elif action == 'crop' and isinstance(cmd.get('rect'), list) and len(cmd['rect']) == 4:
                 r_ = [str(int(v)) for v in cmd['rect']]
                 print(f'{s} : rognage de {slug} à {r_}')
                 subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'edit_lame.py'), 'crop', slug] + r_, check=True)
-                if os.environ.get('GITHUB_ACTIONS'): git_publish(['lames'], f'Rognage : {slug}')
+                if os.environ.get('GITHUB_ACTIONS'):
+                    git_publish(['lames'], f'Rognage : {slug}')
+                    fullp = os.path.join(a.work, f'{slug}_full.jpg')
+                    subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'telecharger_lame.py'), slug, '--local', '-o', fullp])
+                    release_full(slug, fullp)
             else:
                 print(f'{s} : action inconnue {action}')
         except Exception as e:
@@ -261,6 +281,7 @@ while True:
       rc = subprocess.run(cmd).returncode
       if rc != 0:
           print('  ÉCHEC de la publication'); put_text(f'{s}/failed.txt', 'publication'); break
+      release_full(slug, os.path.join(res, 'pano.jpg'))
       # journaux publies a cote de la lame (telephone + assemblage), le temps de la mise au point
       logs = os.path.join(ROOT, 'lames', slug, 'journaux'); os.makedirs(logs, exist_ok=True)
       stampf = s.replace('lame_', '')
