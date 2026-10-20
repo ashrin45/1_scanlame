@@ -31,6 +31,7 @@ h1 { font-size: 15px; font-weight: 600; margin: 0; letter-spacing: .01em; }
 .info a { color: var(--accent); text-decoration: none; }
 .meta { font-family: var(--font-data); font-size: 12px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
 .meta b { color: var(--fg); font-weight: 500; }
+.meta a { color: var(--accent); text-decoration: none; } .meta a:hover { text-decoration: underline; }
 .tools { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
 button { font: 500 13px var(--font-ui); color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; min-width: 36px; }
 button:hover { border-color: var(--accent); }
@@ -42,6 +43,14 @@ button .g { display: inline-block; min-width: 16px; padding: 0 4px; border-radiu
 .zctl input { width: 110px; accent-color: var(--accent); margin: 0; }
 .zctl b { color: var(--fg); font-weight: 500; min-width: 7.5em; }
 #viewer { flex: 1 1 auto; min-height: 0; background: var(--stage); position: relative; }
+#epanel { position: absolute; right: max(12px, env(safe-area-inset-right, 0px)); top: 12px; z-index: 7; width: min(340px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 13px var(--font-ui); color: var(--fg); display: flex; flex-direction: column; gap: 8px; }
+#epanel input { font: 13px var(--font-data); padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--fg); width: 100%; box-sizing: border-box; }
+#epanel .row { display: flex; gap: 8px; flex-wrap: wrap; }
+#epanel .danger { border-color: #c0392b; color: #c0392b; }
+#epanel .msg { font-size: 12px; opacity: .85; }
+#cropper { position: absolute; inset: 0; z-index: 6; cursor: crosshair; touch-action: none; }
+#croprect { position: absolute; border: 2px solid #e8a33d; background: rgba(232, 163, 61, .12); box-shadow: 0 0 0 9999px rgba(0, 0, 0, .35); pointer-events: none; display: none; }
+#cropbar { position: absolute; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 8; display: flex; gap: 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px; font: 13px var(--font-ui); color: var(--fg); align-items: center; }
 #viewer .navigator { border: 1px solid var(--line) !important; background: var(--panel) !important; }
 .hud { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 5;
   font-family: var(--font-data); font-size: 12px; color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; pointer-events: none; font-variant-numeric: tabular-nums; }
@@ -77,6 +86,7 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
     <button id="fields" aria-pressed="false">Champs</button>
     <button id="qbtn" aria-pressed="false" hidden>Qualité<span class="g" id="qg"></span></button>
     <button id="kids" aria-pressed="true" hidden>Détails</button>
+    <button id="editbtn" aria-pressed="false" title="Rogner ou supprimer cette lame">Modifier</button>
     <label class="zctl" id="zctl" hidden><span>profondeur</span><input id="zr" type="range" min="0" max="1" value="0" step="1" aria-label="Plan de profondeur"><b id="zl">net partout</b></label>
   </div>
 </header>
@@ -84,9 +94,19 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
   <div class="hud" id="hud">zoom 1.00×</div>
   <div id="bar" hidden><i></i><span></span></div>
   <div id="qpanel" hidden></div>
+  <div id="epanel" hidden>
+    <b>Modifier la lame</b>
+    <input id="eurl" placeholder="URL du serveur (…/functions/v1/scanlame)" autocomplete="off">
+    <input id="etoken" placeholder="Jeton" type="password" autocomplete="off">
+    <div class="row"><button id="ecrop">Rogner…</button><button id="edelete" class="danger">Supprimer la lame</button></div>
+    <div class="msg" id="emsg">Les mêmes réglages que la page de capture. La modification est faite par GitHub Actions en quelques minutes.</div>
+  </div>
+  <div id="cropper" hidden><div id="croprect"></div></div>
+  <div id="cropbar" hidden><span id="cropinfo">Tracez un rectangle à garder</span><button id="cropok" disabled>Valider le rognage</button><button id="cropcancel">Annuler</button></div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
 <script>
+const SLUG = "lame-20261014-193731";
 const W = 12000, H = 6966, TILE = 512, MAXLVL = 14;
 const FIELDS = [{"id":"0100","pts":[[1171,210],[2271,238],[2233,1705],[1133,1676]],"scale":1.548},{"id":"0102","pts":[[2018,260],[3127,272],[3110,1750],[2002,1738]],"scale":1.537},{"id":"0104","pts":[[2670,240],[3784,239],[3784,1725],[2670,1725]],"scale":1.529},{"id":"0107","pts":[[3634,328],[4760,308],[4788,1810],[3661,1831]],"scale":1.512},{"id":"0110","pts":[[4633,304],[5768,264],[5821,1777],[4687,1817]],"scale":1.501},{"id":"0111","pts":[[4952,343],[6090,296],[6153,1814],[5014,1861]],"scale":1.496},{"id":"0112","pts":[[5974,295],[7121,228],[7210,1757],[6064,1824]],"scale":1.484},{"id":"0114","pts":[[6563,276],[7721,195],[7829,1740],[6671,1821]],"scale":1.468},{"id":"0116","pts":[[7453,248],[8618,149],[8750,1702],[7585,1801]],"scale":1.458},{"id":"0118","pts":[[8436,198],[9609,80],[9766,1644],[8593,1761]],"scale":1.446},{"id":"0121","pts":[[9421,138],[10597,0],[10781,1567],[9606,1705]],"scale":1.44},{"id":"0129","pts":[[9264,1409],[10457,1282],[10627,2873],[9434,3000]],"scale":1.42},{"id":"0190","pts":[[10414,2030],[11625,1879],[11827,3493],[10616,3644]],"scale":1.396},{"id":"0193","pts":[[10471,2857],[11697,2705],[11899,4340],[10673,4492]],"scale":1.379},{"id":"0196","pts":[[9696,3781],[10929,3649],[11105,5293],[9872,5425]],"scale":1.374},{"id":"0198","pts":[[8597,3835],[9833,3723],[9982,5371],[8746,5483]],"scale":1.373},{"id":"0201","pts":[[7557,3876],[8785,3784],[8907,5422],[7679,5513]],"scale":1.384},{"id":"0204","pts":[[6484,3902],[7696,3831],[7790,5446],[6579,5517]],"scale":1.404},{"id":"0206","pts":[[5804,3905],[7008,3849],[7083,5455],[5879,5511]],"scale":1.413},{"id":"0208","pts":[[5004,3896],[6205,3857],[6257,5457],[5056,5496]],"scale":1.419},{"id":"0209","pts":[[4347,3884],[5530,3858],[5565,5435],[4382,5461]],"scale":1.44},{"id":"0211","pts":[[3675,3871],[4843,3857],[4862,5415],[3693,5429]],"scale":1.458},{"id":"0230","pts":[[4122,4185],[5300,4161],[5332,5732],[4154,5756]],"scale":1.446},{"id":"0210","pts":[[3756,3869],[4928,3853],[4948,5417],[3776,5432]],"scale":1.453},{"id":"0213","pts":[[2924,3829],[4078,3829],[4077,5368],[2923,5367]],"scale":1.477},{"id":"0228","pts":[[1963,4105],[3118,4121],[3096,5661],[1941,5645]],"scale":1.475},{"id":"0229","pts":[[1777,4095],[2930,4114],[2904,5651],[1751,5631]],"scale":1.478},{"id":"0227","pts":[[2637,4112],[3794,4118],[3787,5660],[2630,5655]],"scale":1.473},{"id":"0226","pts":[[2565,5384],[3741,5398],[3722,6966],[2546,6952]],"scale":1.449},{"id":"0225","pts":[[2105,5361],[3277,5383],[3248,6946],[2076,6924]],"scale":1.454},{"id":"0224","pts":[[1884,5345],[3053,5372],[3018,6931],[1849,6905]],"scale":1.457},{"id":"0223","pts":[[1195,5296],[2358,5333],[2308,6883],[1146,6846]],"scale":1.465},{"id":"0222","pts":[[709,5255],[1867,5303],[1803,6846],[645,6798]],"scale":1.471},{"id":"0221","pts":[[82,5193],[1234,5254],[1152,6790],[0,6729]],"scale":1.477},{"id":"0220","pts":[[140,5143],[1305,5204],[1223,6757],[59,6696]],"scale":1.461},{"id":"0219","pts":[[201,4583],[1355,4640],[1278,6178],[125,6120]],"scale":1.476},{"id":"0218","pts":[[350,3619],[1495,3674],[1421,5201],[276,5146]],"scale":1.487},{"id":"0157","pts":[[1152,2857],[2273,2892],[2226,4387],[1105,4352]],"scale":1.519},{"id":"0217","pts":[[1420,3738],[2564,3765],[2528,5291],[1384,5264]],"scale":1.488},{"id":"0216","pts":[[1708,3759],[2855,3780],[2826,5309],[1679,5288]],"scale":1.485},{"id":"0215","pts":[[1939,3774],[3088,3791],[3065,5322],[1916,5305]],"scale":1.484},{"id":"0214","pts":[[2604,3812],[3756,3818],[3748,5355],[2595,5349]],"scale":1.478},{"id":"0212","pts":[[3029,3834],[4184,3832],[4186,5373],[3031,5374]],"scale":1.475},{"id":"0164","pts":[[3793,3027],[4941,3013],[4960,4543],[3812,4557]],"scale":1.484},{"id":"0182","pts":[[4124,2306],[5264,2282],[5296,3802],[4156,3826]],"scale":1.494},{"id":"0181","pts":[[4742,2285],[5886,2249],[5934,3774],[4790,3810]],"scale":1.489},{"id":"0184","pts":[[5728,2304],[6893,2250],[6965,3803],[5800,3857]],"scale":1.461},{"id":"0183","pts":[[5392,2308],[6554,2260],[6619,3809],[5457,3858]],"scale":1.465},{"id":"0172","pts":[[4611,2325],[5753,2292],[5797,3815],[4655,3848]],"scale":1.491},{"id":"0180","pts":[[4028,2268],[5167,2246],[5196,3764],[4058,3786]],"scale":1.497},{"id":"0179","pts":[[3611,2257],[4745,2243],[4764,3754],[3631,3769]],"scale":1.503},{"id":"0177","pts":[[2889,2269],[4019,2269],[4020,3776],[2890,3776]],"scale":1.508},{"id":"0178","pts":[[2506,2253],[3633,2259],[3624,3762],[2497,3755]],"scale":1.512},{"id":"0176","pts":[[3077,2281],[4209,2277],[4214,3785],[3083,3789]],"scale":1.506},{"id":"0175","pts":[[3335,2291],[4468,2282],[4481,3793],[3347,3803]],"scale":1.503},{"id":"0174","pts":[[3530,2296],[4666,2283],[4684,3797],[3548,3810]],"scale":1.5},{"id":"0173","pts":[[4281,2317],[5422,2291],[5458,3812],[4317,3839]],"scale":1.493},{"id":"0167","pts":[[4945,3060],[6115,3020],[6169,4581],[4998,4621]],"scale":1.455},{"id":"0207","pts":[[5246,3898],[6448,3854],[6506,5456],[5304,5500]],"scale":1.417},{"id":"0205","pts":[[6183,3905],[7392,3841],[7478,5453],[6269,5517]],"scale":1.407},{"id":"0203","pts":[[6815,3895],[8031,3818],[8133,5439],[6917,5516]],"scale":1.398},{"id":"0202","pts":[[7391,3879],[8616,3791],[8734,5425],[7508,5513]],"scale":1.387},{"id":"0200","pts":[[7851,3864],[9081,3767],[9210,5408],[7980,5505]],"scale":1.381},{"id":"0199","pts":[[8207,3852],[9441,3747],[9580,5393],[8346,5497]],"scale":1.376},{"id":"0197","pts":[[8904,3829],[10130,3712],[10287,5347],[9061,5464]],"scale":1.383},{"id":"0195","pts":[[9894,3764],[11134,3626],[11317,5279],[10078,5417]],"scale":1.366},{"id":"0194","pts":[[10532,3684],[11770,3535],[11969,5186],[10731,5335]],"scale":1.366},{"id":"0192","pts":[[10454,2661],[11677,2509],[11880,4139],[10657,4292]],"scale":1.383},{"id":"0191","pts":[[10557,3987],[11802,3838],[12000,5498],[10755,5647]],"scale":1.359},{"id":"0189","pts":[[10361,2048],[11570,1898],[11770,3511],[10561,3661]],"scale":1.398},{"id":"0188","pts":[[9981,2072],[11188,1930],[11378,3540],[10170,3683]],"scale":1.401},{"id":"0187","pts":[[9410,2106],[10613,1977],[10786,3581],[9582,3711]],"scale":1.408},{"id":"0130","pts":[[8660,1481],[9851,1366],[10004,2954],[8813,3069]],"scale":1.424},{"id":"0131","pts":[[7931,1610],[9107,1513],[9237,3080],[8061,3177]],"scale":1.445},{"id":"0186","pts":[[8057,2267],[9249,2169],[9381,3758],[8189,3856]],"scale":1.425},{"id":"0185","pts":[[7858,2273],[9047,2179],[9173,3765],[7983,3859]],"scale":1.428},{"id":"0133","pts":[[7517,1636],[8689,1546],[8809,3108],[7637,3198]],"scale":1.45},{"id":"0134","pts":[[6729,1620],[7894,1547],[7992,3100],[6827,3173]],"scale":1.46},{"id":"0137","pts":[[5855,1659],[7012,1603],[7087,3145],[5930,3202]],"scale":1.471},{"id":"0171","pts":[[6073,2272],[7240,2212],[7321,3769],[6153,3829]],"scale":1.458},{"id":"0170","pts":[[6073,2258],[7241,2198],[7321,3754],[6154,3814]],"scale":1.458},{"id":"0169","pts":[[5775,3060],[6951,3005],[7024,4574],[5848,4628]],"scale":1.447},{"id":"0168","pts":[[5659,3057],[6835,3004],[6905,4572],[5729,4625]],"scale":1.448},{"id":"0138","pts":[[5614,1659],[6769,1607],[6839,3147],[5683,3199]],"scale":1.473},{"id":"0139","pts":[[4824,1653],[5976,1616],[6025,3151],[4874,3188]],"scale":1.479},{"id":"0141","pts":[[3863,1677],[4991,1659],[5015,3164],[3886,3182]],"scale":1.509},{"id":"0143","pts":[[2905,1647],[4025,1646],[4027,3139],[2907,3141]],"scale":1.521},{"id":"0146","pts":[[2101,1605],[3214,1619],[3195,3104],[2081,3090]],"scale":1.53},{"id":"0148","pts":[[1213,1500],[2318,1538],[2268,3012],[1162,2975]],"scale":1.54},{"id":"0156","pts":[[827,2868],[1945,2910],[1889,4401],[771,4359]],"scale":1.523},{"id":"0155","pts":[[681,2854],[1797,2899],[1737,4387],[621,4342]],"scale":1.525},{"id":"0147","pts":[[1031,1486],[2132,1526],[2078,2994],[978,2954]],"scale":1.547},{"id":"0145","pts":[[2554,1630],[3671,1636],[3663,3125],[2547,3119]],"scale":1.526},{"id":"0144","pts":[[2654,1636],[3772,1639],[3767,3130],[2649,3126]],"scale":1.524},{"id":"0142","pts":[[3740,1674],[4867,1659],[4887,3161],[3760,3176]],"scale":1.512},{"id":"0140","pts":[[4208,1685],[5340,1661],[5373,3170],[4241,3194]],"scale":1.505},{"id":"0136","pts":[[6358,1639],[7518,1572],[7607,3119],[6446,3186]],"scale":1.466},{"id":"0135","pts":[[6413,1630],[7575,1563],[7664,3112],[6502,3179]],"scale":1.464},{"id":"0132","pts":[[7520,1634],[8692,1544],[8812,3106],[7640,3196]],"scale":1.45},{"id":"0127","pts":[[8522,1948],[9719,1835],[9869,3431],[8672,3544]],"scale":1.417},{"id":"0128","pts":[[9287,1915],[10489,1788],[10659,3389],[9458,3517]],"scale":1.411},{"id":"0126","pts":[[8635,1946],[9832,1831],[9986,3428],[8788,3543]],"scale":1.416},{"id":"0125","pts":[[9056,1928],[10257,1805],[10421,3407],[9220,3529]],"scale":1.411},{"id":"0124","pts":[[10274,1855],[11480,1707],[11677,3316],[10470,3464]],"scale":1.402},{"id":"0123","pts":[[10176,655],[11389,496],[11601,2114],[10388,2273]],"scale":1.393},{"id":"0122","pts":[[9951,151],[11130,2],[11330,1574],[10150,1724]],"scale":1.433},{"id":"0120","pts":[[9111,160],[10284,28],[10460,1591],[9287,1723]],"scale":1.444},{"id":"0119","pts":[[8680,190],[9850,68],[10013,1628],[8843,1750]],"scale":1.449},{"id":"0117","pts":[[8142,215],[9311,103],[9460,1663],[8290,1774]],"scale":1.451},{"id":"0115","pts":[[7291,255],[8453,159],[8581,1709],[7418,1805]],"scale":1.461},{"id":"0166","pts":[[4007,3034],[5159,3014],[5186,4550],[4034,4570]],"scale":1.479},{"id":"0165","pts":[[3937,3031],[5088,3012],[5113,4547],[3962,4566]],"scale":1.48},{"id":"0163","pts":[[3099,2985],[4241,2982],[4245,4505],[3103,4507]],"scale":1.493},{"id":"0162","pts":[[2863,2996],[4003,2996],[4003,4517],[2863,4517]],"scale":1.494},{"id":"0161","pts":[[2761,2991],[3900,2993],[3897,4511],[2759,4510]],"scale":1.496},{"id":"0160","pts":[[2314,2965],[3449,2975],[3437,4489],[2301,4479]],"scale":1.501},{"id":"0159","pts":[[2189,2939],[3322,2950],[3307,4460],[2174,4449]],"scale":1.504},{"id":"0158","pts":[[1942,2910],[3072,2926],[3051,4433],[1921,4417]],"scale":1.507},{"id":"0113","pts":[[6049,330],[7204,260],[7296,1799],[6142,1869]],"scale":1.474},{"id":"0109","pts":[[4514,300],[5648,262],[5698,1773],[4565,1811]],"scale":1.503},{"id":"0108","pts":[[4019,290],[5148,262],[5185,1768],[4056,1796]],"scale":1.508},{"id":"0106","pts":[[3491,324],[4616,306],[4639,1806],[3515,1824]],"scale":1.515},{"id":"0105","pts":[[3134,312],[4255,302],[4269,1796],[3148,1807]],"scale":1.52},{"id":"0103","pts":[[2296,233],[3407,240],[3397,1721],[2286,1714]],"scale":1.534},{"id":"0101","pts":[[1648,242],[2753,262],[2727,1735],[1622,1716]],"scale":1.542}];
 const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
@@ -125,12 +145,14 @@ for (const c of placed) {
   const [a, b, tx, ty] = c.transform;   // x' = a x - b y + tx ; y' = b x + a y + ty  (enfant px -> parent px)
   const s = Math.hypot(a, b), deg = Math.atan2(b, a) * 180 / Math.PI;
   const corners = [[0, 0], [c.width, 0], [c.width, c.height], [0, c.height]].map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty]);
-  const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', corners.map(q => q.map(v => v.toFixed(1)).join(',')).join(' ')); kidSvg.appendChild(p);
+  const polys = (c.outline && c.outline.length) ? c.outline.map(poly => poly.map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty])) : [corners];
+  for (const poly of polys) { const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', poly.map(q => q.map(v => v.toFixed(1)).join(',')).join(' ')); kidSvg.appendChild(p); }
   const t = document.createElementNS(svgNS, 'text'); t.setAttribute('x', corners[0][0] + 30); t.setAttribute('y', corners[0][1] - 20); t.textContent = c.objective ? 'obj. ' + c.objective : c.title; kidSvg.appendChild(t);
   viewer.addHandler('open', () => viewer.addTiledImage({
     tileSource: { width: c.width, height: c.height, tileSize: c.tile, tileOverlap: 1, minLevel: 0, maxLevel: c.maxlvl, getTileUrl: (l, x, y) => `../${c.slug}/lame_files/${l}/${x}_${y}.jpg` },
-    x: tx / W, y: ty / W, width: s * c.width / W, degrees: deg,
-    success: e => kidLayers.push(e.item)
+    // OpenSeadragon tourne l'image autour de son centre : on place le rectangle non tourné pour que son centre tombe au bon endroit
+    x: (a * c.width / 2 - b * c.height / 2 + tx - s * c.width / 2) / W, y: (b * c.width / 2 + a * c.height / 2 + ty - s * c.height / 2) / W, width: s * c.width / W, degrees: deg,
+    success: e => { kidLayers.push(e.item); if (c.outline && c.outline.length && e.item.setCroppingPolygons) e.item.setCroppingPolygons(c.outline.map(poly => poly.map(([x, y]) => ({ x, y })))); }   // fond blanc hors couverture rogné
   }));
 }
 if (placed.length) {
@@ -222,6 +244,65 @@ viewer.addHandler('zoom', updateHud);
 viewer.addHandler('animation', updateHud);
 viewer.addHandler('animation-finish', updateHud);
 viewer.addHandler('open', updateHud);
+
+// ---- modifier la lame : rogner, supprimer (demande envoyee a la fonction Supabase, executee par GitHub Actions) ----
+const LS = { get: k => { try { return localStorage.getItem(k) || ''; } catch (_) { return ''; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (_) {} } };
+$('eurl').value = LS.get('scanlame.url'); $('etoken').value = LS.get('scanlame.token');
+$('eurl').onchange = () => LS.set('scanlame.url', $('eurl').value.trim()); $('etoken').onchange = () => LS.set('scanlame.token', $('etoken').value.trim());
+$('editbtn').onclick = () => { const on = $('epanel').hidden; $('epanel').hidden = !on; $('editbtn').setAttribute('aria-pressed', on); };
+async function sendEdit(payload) {
+  const url = $('eurl').value.trim().replace(/\/+$/, ''), token = $('etoken').value.trim();
+  if (!url || !token) { $('emsg').textContent = 'URL du serveur et jeton nécessaires (voir la page de capture).'; return false; }
+  $('emsg').textContent = 'envoi…';
+  try {
+    const r = await fetch(url + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Token': token },
+      body: JSON.stringify({ series: 'edit_' + Date.now(), slug: SLUG, ...payload }) });
+    if (!r.ok) { $('emsg').textContent = 'refusé : HTTP ' + r.status; return false; }
+    const j = await r.json();
+    $('emsg').textContent = 'Demande envoyée' + (j.dispatched ? ' : GitHub Actions est réveillé, ' : ' (traitement au prochain passage, 15 min au plus) : ') + 'rechargez la page dans quelques minutes.';
+    return true;
+  } catch (e) { $('emsg').textContent = 'erreur : ' + e.message; return false; }
+}
+$('edelete').onclick = async () => {
+  if (!confirm('Supprimer définitivement cette lame de la galerie ?')) return;
+  if (await sendEdit({ action: 'delete' })) $('edelete').disabled = true;
+};
+// rognage : rectangle trace au doigt ou a la souris sur la vue, converti en px de la lame
+let crop = null, cropStart = null;
+const rectEl = $('croprect');
+function imgPt(ev) {
+  const r = $('viewer').getBoundingClientRect();
+  const p = viewer.world.getItemAt(0).viewerElementToImageCoordinates(new OpenSeadragon.Point(ev.clientX - r.left, ev.clientY - r.top));   // image principale (les calques sont d'autres images)
+  return { x: Math.max(0, Math.min(W, p.x)), y: Math.max(0, Math.min(H, p.y)) };
+}
+function drawCrop() {
+  if (!crop) { rectEl.style.display = 'none'; $('cropok').disabled = true; return; }
+  const main = viewer.world.getItemAt(0);
+  const a = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(crop.x0, crop.y0));
+  const b = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(crop.x1, crop.y1));
+  rectEl.style.display = 'block'; rectEl.style.left = a.x + 'px'; rectEl.style.top = a.y + 'px'; rectEl.style.width = (b.x - a.x) + 'px'; rectEl.style.height = (b.y - a.y) + 'px';
+  const ok = crop.x1 - crop.x0 >= 64 && crop.y1 - crop.y0 >= 64;
+  $('cropok').disabled = !ok;
+  $('cropinfo').textContent = ok ? `zone gardée : ${Math.round(crop.x1 - crop.x0)} × ${Math.round(crop.y1 - crop.y0)} px` : 'Tracez un rectangle à garder';
+}
+$('ecrop').onclick = () => {
+  $('epanel').hidden = true; $('editbtn').setAttribute('aria-pressed', 'false');
+  $('cropper').hidden = false; $('cropbar').hidden = false; crop = null; drawCrop();
+  viewer.setMouseNavEnabled(false);
+};
+const endCrop = () => { $('cropper').hidden = true; $('cropbar').hidden = true; crop = null; drawCrop(); viewer.setMouseNavEnabled(true); };
+$('cropcancel').onclick = endCrop;
+$('cropper').onpointerdown = ev => { ev.preventDefault(); $('cropper').setPointerCapture(ev.pointerId); cropStart = imgPt(ev); crop = { x0: cropStart.x, y0: cropStart.y, x1: cropStart.x, y1: cropStart.y }; drawCrop(); };
+$('cropper').onpointermove = ev => { if (!cropStart) return; const p = imgPt(ev); crop = { x0: Math.min(cropStart.x, p.x), y0: Math.min(cropStart.y, p.y), x1: Math.max(cropStart.x, p.x), y1: Math.max(cropStart.y, p.y) }; drawCrop(); };
+$('cropper').onpointerup = $('cropper').onpointercancel = () => { cropStart = null; };
+viewer.addHandler('animation', () => { if (crop) drawCrop(); });
+$('cropok').onclick = async () => {
+  if (!crop) return;
+  const rect = [crop.x0, crop.y0, crop.x1, crop.y1].map(Math.round);
+  if (!confirm(`Garder seulement la zone ${rect[2] - rect[0]} × ${rect[3] - rect[1]} px et jeter le reste ? (irréversible)`)) return;
+  $('epanel').hidden = false;
+  if (await sendEdit({ action: 'crop', rect })) endCrop();
+};
 </script>
 </body>
 </html>

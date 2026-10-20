@@ -43,6 +43,14 @@ button .g { display: inline-block; min-width: 16px; padding: 0 4px; border-radiu
 .zctl input { width: 110px; accent-color: var(--accent); margin: 0; }
 .zctl b { color: var(--fg); font-weight: 500; min-width: 7.5em; }
 #viewer { flex: 1 1 auto; min-height: 0; background: var(--stage); position: relative; }
+#epanel { position: absolute; right: max(12px, env(safe-area-inset-right, 0px)); top: 12px; z-index: 7; width: min(340px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 13px var(--font-ui); color: var(--fg); display: flex; flex-direction: column; gap: 8px; }
+#epanel input { font: 13px var(--font-data); padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--fg); width: 100%; box-sizing: border-box; }
+#epanel .row { display: flex; gap: 8px; flex-wrap: wrap; }
+#epanel .danger { border-color: #c0392b; color: #c0392b; }
+#epanel .msg { font-size: 12px; opacity: .85; }
+#cropper { position: absolute; inset: 0; z-index: 6; cursor: crosshair; touch-action: none; }
+#croprect { position: absolute; border: 2px solid #e8a33d; background: rgba(232, 163, 61, .12); box-shadow: 0 0 0 9999px rgba(0, 0, 0, .35); pointer-events: none; display: none; }
+#cropbar { position: absolute; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 8; display: flex; gap: 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px; font: 13px var(--font-ui); color: var(--fg); align-items: center; }
 #viewer .navigator { border: 1px solid var(--line) !important; background: var(--panel) !important; }
 .hud { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 5;
   font-family: var(--font-data); font-size: 12px; color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; pointer-events: none; font-variant-numeric: tabular-nums; }
@@ -78,6 +86,7 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
     <button id="fields" aria-pressed="false">Champs</button>
     <button id="qbtn" aria-pressed="false" hidden>Qualité<span class="g" id="qg"></span></button>
     <button id="kids" aria-pressed="true" hidden>Détails</button>
+    <button id="editbtn" aria-pressed="false" title="Rogner ou supprimer cette lame">Modifier</button>
     <label class="zctl" id="zctl" hidden><span>profondeur</span><input id="zr" type="range" min="0" max="1" value="0" step="1" aria-label="Plan de profondeur"><b id="zl">net partout</b></label>
   </div>
 </header>
@@ -85,9 +94,19 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
   <div class="hud" id="hud">zoom 1.00×</div>
   <div id="bar" hidden><i></i><span></span></div>
   <div id="qpanel" hidden></div>
+  <div id="epanel" hidden>
+    <b>Modifier la lame</b>
+    <input id="eurl" placeholder="URL du serveur (…/functions/v1/scanlame)" autocomplete="off">
+    <input id="etoken" placeholder="Jeton" type="password" autocomplete="off">
+    <div class="row"><button id="ecrop">Rogner…</button><button id="edelete" class="danger">Supprimer la lame</button></div>
+    <div class="msg" id="emsg">Les mêmes réglages que la page de capture. La modification est faite par GitHub Actions en quelques minutes.</div>
+  </div>
+  <div id="cropper" hidden><div id="croprect"></div></div>
+  <div id="cropbar" hidden><span id="cropinfo">Tracez un rectangle à garder</span><button id="cropok" disabled>Valider le rognage</button><button id="cropcancel">Annuler</button></div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
 <script>
+const SLUG = "pv-multi-obj-x50-10191835";
 const W = 25568, H = 3693, TILE = 512, MAXLVL = 15;
 const FIELDS = [{"id":"0000","pts":[[1569,1632],[1436,3547],[0,3447],[134,1532]],"scale":1.0,"sharp":1.08,"z":false,"tracked":false},{"id":"0001","pts":[[2767,1666],[2669,3611],[1211,3537],[1309,1592]],"scale":0.986,"sharp":1.03,"z":false,"tracked":false},{"id":"0002","pts":[[3645,1679],[3572,3643],[2117,3589],[2173,1624]],"scale":0.977,"sharp":0.76,"z":false,"tracked":false},{"id":"0004","pts":[[4888,1683],[4853,3670],[3363,3623],[3397,1657]],"scale":0.965,"sharp":1.13,"z":false,"tracked":false},{"id":"0005","pts":[[5599,1666],[5555,3689],[4037,3656],[4081,1633]],"scale":0.948,"sharp":0.92,"z":false,"tracked":false},{"id":"0064","pts":[[5392,533],[5342,2513],[3857,2476],[3907,496]],"scale":0.969,"sharp":1.18,"z":false,"tracked":false},{"id":"0063","pts":[[6377,514],[6355,2508],[4860,2491],[4882,497]],"scale":0.962,"sharp":1.07,"z":false,"tracked":false},{"id":"0062","pts":[[7040,510],[7031,2496],[5541,2490],[5550,503]],"scale":0.966,"sharp":1.01,"z":false,"tracked":false},{"id":"0061","pts":[[7488,493],[7492,2494],[5992,2498],[5987,497]],"scale":0.959,"sharp":1.03,"z":false,"tracked":false},{"id":"0060","pts":[[8532,474],[8557,2477],[7056,2496],[7030,494]],"scale":0.958,"sharp":1.03,"z":false,"tracked":false},{"id":"0059","pts":[[9346,471],[9352,2481],[7845,2485],[7839,475]],"scale":0.955,"sharp":1.02,"z":false,"tracked":false},{"id":"0058","pts":[[10161,468],[10165,2474],[8661,2477],[8657,471]],"scale":0.957,"sharp":0.99,"z":false,"tracked":false},{"id":"0057","pts":[[10700,464],[10704,2480],[9192,2483],[9188,467]],"scale":0.952,"sharp":0.96,"z":false,"tracked":false},{"id":"0056","pts":[[11059,455],[11070,2476],[9578,2485],[9543,464]],"scale":0.949,"sharp":0.9,"z":false,"tracked":false},{"id":"0055","pts":[[11755,427],[11776,2463],[10250,2479],[10228,443]],"scale":0.943,"sharp":0.96,"z":false,"tracked":false},{"id":"0054","pts":[[12499,453],[12486,2473],[10970,2463],[10984,442]],"scale":0.95,"sharp":1.0,"z":false,"tracked":false},{"id":"0053","pts":[[13374,439],[13386,2461],[11885,2471],[11857,448]],"scale":0.949,"sharp":1.07,"z":false,"tracked":false},{"id":"0052","pts":[[13768,434],[13785,2460],[12265,2473],[12248,447]],"scale":0.947,"sharp":1.02,"z":false,"tracked":false},{"id":"0051","pts":[[14985,391],[15032,2428],[13505,2463],[13458,426]],"scale":0.942,"sharp":1.11,"z":false,"tracked":false},{"id":"0050","pts":[[15649,365],[15710,2404],[14181,2450],[14120,411]],"scale":0.941,"sharp":1.02,"z":false,"tracked":false},{"id":"0049","pts":[[16718,393],[16713,2404],[15205,2400],[15210,389]],"scale":0.954,"sharp":1.09,"z":false,"tracked":false},{"id":"0048","pts":[[17136,396],[17131,2405],[15625,2400],[15630,392]],"scale":0.956,"sharp":1.01,"z":false,"tracked":false},{"id":"0047","pts":[[18348,371],[18363,2393],[16860,2404],[16831,382]],"scale":0.949,"sharp":0.82,"z":false,"tracked":false},{"id":"0046","pts":[[19345,337],[19377,2373],[17850,2397],[17819,361]],"scale":0.942,"sharp":0.87,"z":false,"tracked":false},{"id":"0028","pts":[[20431,1495],[20459,3559],[18912,3581],[18883,1517]],"scale":0.93,"sharp":0.97,"z":false,"tracked":false},{"id":"0045","pts":[[19680,327],[19717,2365],[18190,2392],[18152,355]],"scale":0.942,"sharp":0.84,"z":false,"tracked":false},{"id":"0044","pts":[[20030,312],[20071,2357],[18552,2387],[18497,343]],"scale":0.939,"sharp":0.93,"z":false,"tracked":false},{"id":"0029","pts":[[21156,1470],[21199,3542],[19645,3573],[19603,1502]],"scale":0.926,"sharp":0.89,"z":false,"tracked":false},{"id":"0043","pts":[[21062,275],[21118,2324],[19582,2366],[19526,318]],"scale":0.936,"sharp":1.02,"z":false,"tracked":false},{"id":"0042","pts":[[21811,245],[21876,2295],[20339,2344],[20274,294]],"scale":0.936,"sharp":1.05,"z":false,"tracked":false},{"id":"0041","pts":[[22582,203],[22669,2259],[21128,2324],[21041,268]],"scale":0.933,"sharp":1.01,"z":false,"tracked":false},{"id":"0040","pts":[[23591,128],[23712,2194],[22163,2285],[22042,219]],"scale":0.927,"sharp":0.96,"z":false,"tracked":false},{"id":"0031","pts":[[22765,1396],[22842,3486],[21275,3544],[21198,1454]],"scale":0.918,"sharp":0.83,"z":false,"tracked":false},{"id":"0033","pts":[[24117,1301],[24234,3411],[22651,3499],[22535,1388]],"scale":0.908,"sharp":0.84,"z":false,"tracked":false},{"id":"0039","pts":[[24303,66],[24448,2145],[22889,2254],[22744,175]],"scale":0.921,"sharp":0.99,"z":false,"tracked":false},{"id":"0038","pts":[[24950,0],[25114,2091],[23546,2214],[23382,123]],"scale":0.915,"sharp":1.06,"z":false,"tracked":false},{"id":"0037","pts":[[25299,88],[25471,2189],[23895,2318],[23724,217]],"scale":0.91,"sharp":1.0,"z":false,"tracked":false},{"id":"0036","pts":[[25337,450],[25501,2563],[23917,2685],[23754,573]],"scale":0.906,"sharp":0.99,"z":false,"tracked":false},{"id":"0035","pts":[[25415,1183],[25567,3322],[23963,3436],[23811,1297]],"scale":0.895,"sharp":0.81,"z":false,"tracked":false},{"id":"0034","pts":[[24867,1233],[25008,3357],[23415,3462],[23275,1339]],"scale":0.902,"sharp":0.9,"z":false,"tracked":false},{"id":"0032","pts":[[23703,1333],[23807,3436],[22230,3513],[22127,1411]],"scale":0.912,"sharp":0.84,"z":false,"tracked":false},{"id":"0030","pts":[[22413,1419],[22481,3499],[20921,3550],[20854,1470]],"scale":0.922,"sharp":0.86,"z":false,"tracked":false},{"id":"0027","pts":[[19915,1506],[19936,3564],[18393,3580],[18371,1522]],"scale":0.932,"sharp":0.9,"z":false,"tracked":false},{"id":"0026","pts":[[19198,1526],[19222,3579],[17774,3596],[17682,3560],[17658,1544]],"scale":0.934,"sharp":0.76,"z":false,"tracked":false},{"id":"0025","pts":[[18118,1554],[18119,3594],[16605,3595],[16588,1555]],"scale":0.941,"sharp":0.89,"z":false,"tracked":false},{"id":"0024","pts":[[17757,1554],[17754,3600],[16221,3578],[16223,1551]],"scale":0.938,"sharp":0.97,"z":false,"tracked":false},{"id":"0023","pts":[[17257,1564],[17243,3605],[15713,3595],[15726,1554]],"scale":0.94,"sharp":0.87,"z":false,"tracked":false},{"id":"0022","pts":[[15862,1544],[15912,3609],[14364,3634],[14314,1582]],"scale":0.929,"sharp":1.08,"z":false,"tracked":false},{"id":"0021","pts":[[15354,1567],[15394,3622],[13887,3651],[13853,3624],[13813,1597]],"scale":0.934,"sharp":1.1,"z":false,"tracked":false},{"id":"0020","pts":[[14826,1588],[14854,3633],[13321,3655],[13293,1609]],"scale":0.938,"sharp":1.09,"z":false,"tracked":false},{"id":"0019","pts":[[14149,1602],[14168,3651],[12710,3665],[12632,3620],[12613,1616]],"scale":0.936,"sharp":1.0,"z":false,"tracked":false},{"id":"0018","pts":[[13808,1612],[13820,3657],[12307,3665],[12275,1621]],"scale":0.939,"sharp":1.03,"z":false,"tracked":false},{"id":"0017","pts":[[13386,1618],[13386,3666],[11850,3666],[11850,1618]],"scale":0.937,"sharp":1.07,"z":false,"tracked":false},{"id":"0016","pts":[[13065,1630],[13050,3665],[11524,3654],[11539,1619]],"scale":0.943,"sharp":1.04,"z":false,"tracked":false},{"id":"0015","pts":[[12676,1634],[12667,3666],[11143,3659],[11153,1626]],"scale":0.944,"sharp":1.0,"z":false,"tracked":false},{"id":"0014","pts":[[11510,1632],[11511,3666],[10041,3667],[9985,3602],[9984,1632]],"scale":0.943,"sharp":1.1,"z":false,"tracked":false},{"id":"0013","pts":[[11119,1639],[11115,3669],[9593,3666],[9597,1636]],"scale":0.945,"sharp":1.08,"z":false,"tracked":false},{"id":"0012","pts":[[10417,1652],[10400,3668],[8888,3655],[8905,1639]],"scale":0.952,"sharp":0.99,"z":false,"tracked":false},{"id":"0011","pts":[[9570,1642],[9573,3660],[8060,3662],[8057,1644]],"scale":0.951,"sharp":1.02,"z":false,"tracked":false},{"id":"0010","pts":[[8928,1630],[8950,3670],[7619,3684],[7419,3590],[7398,1647]],"scale":0.941,"sharp":1.03,"z":false,"tracked":false},{"id":"0009","pts":[[8347,1644],[8357,3678],[6831,3685],[6822,1651]],"scale":0.943,"sharp":0.98,"z":false,"tracked":false},{"id":"0008","pts":[[7664,1660],[7656,3548],[7498,3682],[6140,3677],[6147,1654]],"scale":0.949,"sharp":0.99,"z":false,"tracked":false},{"id":"0007","pts":[[7130,1663],[7113,3680],[5600,3668],[5617,1651]],"scale":0.951,"sharp":0.98,"z":false,"tracked":false},{"id":"0006","pts":[[6341,1665],[6314,3691],[4826,3669],[4795,3644],[4822,1645]],"scale":0.947,"sharp":0.91,"z":false,"tracked":false},{"id":"0003","pts":[[4283,1689],[4230,3666],[2748,3626],[2801,1649]],"scale":0.97,"sharp":0.94,"z":false,"tracked":false}];
 const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
@@ -225,6 +244,65 @@ viewer.addHandler('zoom', updateHud);
 viewer.addHandler('animation', updateHud);
 viewer.addHandler('animation-finish', updateHud);
 viewer.addHandler('open', updateHud);
+
+// ---- modifier la lame : rogner, supprimer (demande envoyee a la fonction Supabase, executee par GitHub Actions) ----
+const LS = { get: k => { try { return localStorage.getItem(k) || ''; } catch (_) { return ''; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (_) {} } };
+$('eurl').value = LS.get('scanlame.url'); $('etoken').value = LS.get('scanlame.token');
+$('eurl').onchange = () => LS.set('scanlame.url', $('eurl').value.trim()); $('etoken').onchange = () => LS.set('scanlame.token', $('etoken').value.trim());
+$('editbtn').onclick = () => { const on = $('epanel').hidden; $('epanel').hidden = !on; $('editbtn').setAttribute('aria-pressed', on); };
+async function sendEdit(payload) {
+  const url = $('eurl').value.trim().replace(/\/+$/, ''), token = $('etoken').value.trim();
+  if (!url || !token) { $('emsg').textContent = 'URL du serveur et jeton nécessaires (voir la page de capture).'; return false; }
+  $('emsg').textContent = 'envoi…';
+  try {
+    const r = await fetch(url + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Token': token },
+      body: JSON.stringify({ series: 'edit_' + Date.now(), slug: SLUG, ...payload }) });
+    if (!r.ok) { $('emsg').textContent = 'refusé : HTTP ' + r.status; return false; }
+    const j = await r.json();
+    $('emsg').textContent = 'Demande envoyée' + (j.dispatched ? ' : GitHub Actions est réveillé, ' : ' (traitement au prochain passage, 15 min au plus) : ') + 'rechargez la page dans quelques minutes.';
+    return true;
+  } catch (e) { $('emsg').textContent = 'erreur : ' + e.message; return false; }
+}
+$('edelete').onclick = async () => {
+  if (!confirm('Supprimer définitivement cette lame de la galerie ?')) return;
+  if (await sendEdit({ action: 'delete' })) $('edelete').disabled = true;
+};
+// rognage : rectangle trace au doigt ou a la souris sur la vue, converti en px de la lame
+let crop = null, cropStart = null;
+const rectEl = $('croprect');
+function imgPt(ev) {
+  const r = $('viewer').getBoundingClientRect();
+  const p = viewer.world.getItemAt(0).viewerElementToImageCoordinates(new OpenSeadragon.Point(ev.clientX - r.left, ev.clientY - r.top));   // image principale (les calques sont d'autres images)
+  return { x: Math.max(0, Math.min(W, p.x)), y: Math.max(0, Math.min(H, p.y)) };
+}
+function drawCrop() {
+  if (!crop) { rectEl.style.display = 'none'; $('cropok').disabled = true; return; }
+  const main = viewer.world.getItemAt(0);
+  const a = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(crop.x0, crop.y0));
+  const b = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(crop.x1, crop.y1));
+  rectEl.style.display = 'block'; rectEl.style.left = a.x + 'px'; rectEl.style.top = a.y + 'px'; rectEl.style.width = (b.x - a.x) + 'px'; rectEl.style.height = (b.y - a.y) + 'px';
+  const ok = crop.x1 - crop.x0 >= 64 && crop.y1 - crop.y0 >= 64;
+  $('cropok').disabled = !ok;
+  $('cropinfo').textContent = ok ? `zone gardée : ${Math.round(crop.x1 - crop.x0)} × ${Math.round(crop.y1 - crop.y0)} px` : 'Tracez un rectangle à garder';
+}
+$('ecrop').onclick = () => {
+  $('epanel').hidden = true; $('editbtn').setAttribute('aria-pressed', 'false');
+  $('cropper').hidden = false; $('cropbar').hidden = false; crop = null; drawCrop();
+  viewer.setMouseNavEnabled(false);
+};
+const endCrop = () => { $('cropper').hidden = true; $('cropbar').hidden = true; crop = null; drawCrop(); viewer.setMouseNavEnabled(true); };
+$('cropcancel').onclick = endCrop;
+$('cropper').onpointerdown = ev => { ev.preventDefault(); $('cropper').setPointerCapture(ev.pointerId); cropStart = imgPt(ev); crop = { x0: cropStart.x, y0: cropStart.y, x1: cropStart.x, y1: cropStart.y }; drawCrop(); };
+$('cropper').onpointermove = ev => { if (!cropStart) return; const p = imgPt(ev); crop = { x0: Math.min(cropStart.x, p.x), y0: Math.min(cropStart.y, p.y), x1: Math.max(cropStart.x, p.x), y1: Math.max(cropStart.y, p.y) }; drawCrop(); };
+$('cropper').onpointerup = $('cropper').onpointercancel = () => { cropStart = null; };
+viewer.addHandler('animation', () => { if (crop) drawCrop(); });
+$('cropok').onclick = async () => {
+  if (!crop) return;
+  const rect = [crop.x0, crop.y0, crop.x1, crop.y1].map(Math.round);
+  if (!confirm(`Garder seulement la zone ${rect[2] - rect[0]} × ${rect[3] - rect[1]} px et jeter le reste ? (irréversible)`)) return;
+  $('epanel').hidden = false;
+  if (await sendEdit({ action: 'crop', rect })) endCrop();
+};
 </script>
 </body>
 </html>

@@ -5,7 +5,7 @@ puis supprime la serie du bucket. Lance par GitHub Actions ; utilisable aussi a 
 
 Env : SUPABASE_URL, SUPABASE_SERVICE_KEY. Options : --keep (ne pas supprimer du bucket), --only <serie>
 """
-import argparse, glob, json, os, shutil, subprocess, sys, time
+import argparse, glob, json, os, re, shutil, subprocess, sys, time
 import requests
 
 ap = argparse.ArgumentParser()
@@ -90,6 +90,29 @@ while True:
   if True:
     entries = ls(s)
     names = {e['name'] for e in entries}
+    # --- demande d'edition venue de la visionneuse (rogner, supprimer) : serie.json avec un champ action, pas de photos ---
+    if s.startswith('edit_') and 'serie.json' in names:
+        tmpj = os.path.join(a.work, f'{s}.json'); os.makedirs(a.work, exist_ok=True)
+        try:
+            get(f'{s}/serie.json', tmpj); cmd = json.load(open(tmpj))
+            action, slug = cmd.get('action'), re.sub(r'[^a-z0-9-]', '', str(cmd.get('slug') or ''))
+            if not slug or not os.path.isfile(os.path.join(ROOT, 'lames', slug, 'lame.json')):
+                print(f'{s} : {action} sur lame inconnue « {slug} », ignorée')
+            elif action == 'delete':
+                print(f'{s} : suppression de {slug}')
+                subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'edit_lame.py'), 'delete', slug], check=True)
+                if os.environ.get('GITHUB_ACTIONS'): git_publish(['lames'], f'Suppression : {slug}')
+            elif action == 'crop' and isinstance(cmd.get('rect'), list) and len(cmd['rect']) == 4:
+                r_ = [str(int(v)) for v in cmd['rect']]
+                print(f'{s} : rognage de {slug} à {r_}')
+                subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'edit_lame.py'), 'crop', slug] + r_, check=True)
+                if os.environ.get('GITHUB_ACTIONS'): git_publish(['lames'], f'Rognage : {slug}')
+            else:
+                print(f'{s} : action inconnue {action}')
+        except Exception as e:
+            print(f'{s} : échec de l\'édition : {e}')
+        rm([f'{s}/serie.json'])
+        continue
     orphan = False
     if 'serie.json' not in names:
         # recording never closed (page reloaded, double tap...): process it anyway once it has been quiet for 10 min

@@ -43,6 +43,14 @@ button .g { display: inline-block; min-width: 16px; padding: 0 4px; border-radiu
 .zctl input { width: 110px; accent-color: var(--accent); margin: 0; }
 .zctl b { color: var(--fg); font-weight: 500; min-width: 7.5em; }
 #viewer { flex: 1 1 auto; min-height: 0; background: var(--stage); position: relative; }
+#epanel { position: absolute; right: max(12px, env(safe-area-inset-right, 0px)); top: 12px; z-index: 7; width: min(340px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 13px var(--font-ui); color: var(--fg); display: flex; flex-direction: column; gap: 8px; }
+#epanel input { font: 13px var(--font-data); padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--fg); width: 100%; box-sizing: border-box; }
+#epanel .row { display: flex; gap: 8px; flex-wrap: wrap; }
+#epanel .danger { border-color: #c0392b; color: #c0392b; }
+#epanel .msg { font-size: 12px; opacity: .85; }
+#cropper { position: absolute; inset: 0; z-index: 6; cursor: crosshair; touch-action: none; }
+#croprect { position: absolute; border: 2px solid #e8a33d; background: rgba(232, 163, 61, .12); box-shadow: 0 0 0 9999px rgba(0, 0, 0, .35); pointer-events: none; display: none; }
+#cropbar { position: absolute; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 8; display: flex; gap: 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px; font: 13px var(--font-ui); color: var(--fg); align-items: center; }
 #viewer .navigator { border: 1px solid var(--line) !important; background: var(--panel) !important; }
 .hud { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 5;
   font-family: var(--font-data); font-size: 12px; color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; pointer-events: none; font-variant-numeric: tabular-nums; }
@@ -78,6 +86,7 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
     <button id="fields" aria-pressed="false">Champs</button>
     <button id="qbtn" aria-pressed="false" hidden>Qualité<span class="g" id="qg"></span></button>
     <button id="kids" aria-pressed="true" hidden>Détails</button>
+    <button id="editbtn" aria-pressed="false" title="Rogner ou supprimer cette lame">Modifier</button>
     <label class="zctl" id="zctl" hidden><span>profondeur</span><input id="zr" type="range" min="0" max="1" value="0" step="1" aria-label="Plan de profondeur"><b id="zl">net partout</b></label>
   </div>
 </header>
@@ -85,9 +94,19 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
   <div class="hud" id="hud">zoom 1.00×</div>
   <div id="bar" hidden><i></i><span></span></div>
   <div id="qpanel" hidden></div>
+  <div id="epanel" hidden>
+    <b>Modifier la lame</b>
+    <input id="eurl" placeholder="URL du serveur (…/functions/v1/scanlame)" autocomplete="off">
+    <input id="etoken" placeholder="Jeton" type="password" autocomplete="off">
+    <div class="row"><button id="ecrop">Rogner…</button><button id="edelete" class="danger">Supprimer la lame</button></div>
+    <div class="msg" id="emsg">Les mêmes réglages que la page de capture. La modification est faite par GitHub Actions en quelques minutes.</div>
+  </div>
+  <div id="cropper" hidden><div id="croprect"></div></div>
+  <div id="cropbar" hidden><span id="cropinfo">Tracez un rectangle à garder</span><button id="cropok" disabled>Valider le rognage</button><button id="cropcancel">Annuler</button></div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
 <script>
+const SLUG = "pc-obj-x100-zone-3-10151601";
 const W = 16001, H = 4346, TILE = 512, MAXLVL = 14;
 const FIELDS = [{"id":"0009","pts":[[12278,1030],[12282,2293],[11334,2296],[11331,1032]],"scale":1.798,"sharp":1.07,"z":false,"tracked":false},{"id":"0010","pts":[[11902,1047],[11903,2306],[10958,2307],[10958,1048]],"scale":1.803,"sharp":1.14,"z":false,"tracked":false},{"id":"0033","pts":[[11839,1047],[11839,2305],[10896,2305],[10896,1047]],"scale":1.805,"sharp":1.14,"z":false,"tracked":false},{"id":"0036","pts":[[11200,1082],[11188,2326],[10255,2317],[10267,1073]],"scale":1.825,"sharp":1.03,"z":false,"tracked":false},{"id":"0038","pts":[[10538,1110],[10519,2344],[9595,2330],[9613,1097]],"scale":1.841,"sharp":1.03,"z":false,"tracked":false},{"id":"0040","pts":[[9861,1137],[9834,2358],[8919,2338],[8945,1117]],"scale":1.859,"sharp":0.99,"z":false,"tracked":false},{"id":"0039","pts":[[10049,1129],[10025,2355],[9106,2336],[9130,1111]],"scale":1.853,"sharp":0.82,"z":false,"tracked":false},{"id":"0037","pts":[[10802,1099],[10787,2337],[9859,2326],[9873,1088]],"scale":1.834,"sharp":1.15,"z":false,"tracked":false},{"id":"0035","pts":[[11326,1076],[11317,2322],[10382,2315],[10392,1069]],"scale":1.823,"sharp":1.02,"z":false,"tracked":false},{"id":"0034","pts":[[11490,1067],[11483,2317],[10546,2312],[10553,1062]],"scale":1.817,"sharp":0.96,"z":false,"tracked":false},{"id":"0032","pts":[[12133,1031],[12136,2294],[11189,2297],[11185,1033]],"scale":1.797,"sharp":1.25,"z":false,"tracked":false},{"id":"0011","pts":[[11870,1046],[11870,2305],[10926,2305],[10926,1046]],"scale":1.804,"sharp":1.21,"z":false,"tracked":false},{"id":"0000","pts":[[15476,680],[15476,1939],[14533,1939],[14533,680]],"scale":1.805,"sharp":1.1,"z":false,"tracked":true},{"id":"0021","pts":[[15136,355],[15136,1613],[14193,1613],[14193,355]],"scale":1.805,"sharp":1.24,"z":false,"tracked":true},{"id":"0022","pts":[[14761,367],[14761,1625],[13817,1625],[13817,367]],"scale":1.805,"sharp":1.15,"z":false,"tracked":true},{"id":"0024","pts":[[14296,378],[14296,1636],[13353,1636],[13353,378]],"scale":1.805,"sharp":0.99,"z":false,"tracked":true},{"id":"0029","pts":[[13058,1006],[13058,2264],[12115,2264],[12115,1006]],"scale":1.805,"sharp":1.07,"z":false,"tracked":true},{"id":"0030","pts":[[12622,1018],[12622,2276],[11678,2276],[11678,1018]],"scale":1.805,"sharp":1.18,"z":false,"tracked":true},{"id":"0031","pts":[[12368,1025],[12368,2283],[11425,2283],[11425,1025]],"scale":1.805,"sharp":1.37,"z":false,"tracked":true},{"id":"0028","pts":[[13306,413],[13306,1671],[12362,1671],[12362,413]],"scale":1.805,"sharp":1.09,"z":false,"tracked":true},{"id":"0027","pts":[[13496,405],[13496,1664],[12552,1664],[12552,405]],"scale":1.805,"sharp":1.1,"z":false,"tracked":true},{"id":"0026","pts":[[13889,394],[13889,1652],[12945,1652],[12945,394]],"scale":1.805,"sharp":0.94,"z":false,"tracked":true},{"id":"0025","pts":[[14075,386],[14075,1644],[13131,1644],[13131,386]],"scale":1.805,"sharp":1.06,"z":false,"tracked":true},{"id":"0023","pts":[[14532,375],[14532,1633],[13589,1633],[13589,375]],"scale":1.805,"sharp":1.1,"z":false,"tracked":true},{"id":"0006","pts":[[13835,875],[13835,2133],[12891,2133],[12891,875]],"scale":1.805,"sharp":1.08,"z":false,"tracked":true},{"id":"0007","pts":[[13651,879],[13651,2138],[12707,2138],[12707,879]],"scale":1.805,"sharp":0.8,"z":false,"tracked":true},{"id":"0008","pts":[[13363,890],[13363,2148],[12420,2148],[12420,890]],"scale":1.805,"sharp":0.99,"z":false,"tracked":true},{"id":"0020","pts":[[15344,347],[15344,1605],[14400,1605],[14400,347]],"scale":1.805,"sharp":1.12,"z":false,"tracked":true},{"id":"0019","pts":[[15848,332],[15848,1590],[14904,1590],[14904,332]],"scale":1.805,"sharp":0.97,"z":false,"tracked":true},{"id":"0013","pts":[[13551,59],[13716,183],[13716,1317],[12772,1317],[12772,59]],"scale":1.805,"sharp":0.97,"z":false,"tracked":true},{"id":"0014","pts":[[14031,52],[14031,1310],[13087,1310],[13087,52]],"scale":1.805,"sharp":0.94,"z":false,"tracked":true},{"id":"0015","pts":[[14542,36],[14542,1294],[13598,1294],[13598,36]],"scale":1.805,"sharp":1.02,"z":false,"tracked":true},{"id":"0016","pts":[[14835,24],[14835,1282],[13891,1282],[13891,24]],"scale":1.805,"sharp":0.95,"z":false,"tracked":true},{"id":"0018","pts":[[15443,0],[15443,1258],[14499,1258],[14499,0]],"scale":1.805,"sharp":1.2,"z":false,"tracked":true},{"id":"0017","pts":[[15250,8],[15250,1267],[14306,1267],[14306,8]],"scale":1.805,"sharp":0.98,"z":false,"tracked":true},{"id":"0012","pts":[[13201,75],[13201,1333],[12257,1333],[12257,75]],"scale":1.805,"sharp":1.14,"z":false,"tracked":true},{"id":"0004","pts":[[15166,689],[15166,1947],[14223,1947],[14223,689]],"scale":1.805,"sharp":1.09,"z":false,"tracked":true},{"id":"0003","pts":[[15412,685],[15412,1943],[14468,1943],[14468,685]],"scale":1.805,"sharp":0.88,"z":false,"tracked":true},{"id":"0002","pts":[[15631,677],[15631,1935],[14687,1935],[14687,677]],"scale":1.805,"sharp":0.97,"z":false,"tracked":true},{"id":"0001","pts":[[15851,669],[15851,1927],[14908,1927],[14908,669]],"scale":1.805,"sharp":1.04,"z":false,"tracked":true},{"id":"0117","pts":[[10743,2076],[10743,3334],[9799,3334],[9799,2076]],"scale":1.805,"sharp":0.87,"z":false,"tracked":true},{"id":"0120","pts":[[11460,2053],[11460,3312],[10517,3312],[10517,2053]],"scale":1.805,"sharp":0.92,"z":false,"tracked":true},{"id":"0122","pts":[[11963,2038],[11963,3296],[11020,3296],[11020,2038]],"scale":1.805,"sharp":0.98,"z":false,"tracked":true},{"id":"0123","pts":[[12221,2030],[12221,3289],[11277,3289],[11277,2030]],"scale":1.805,"sharp":1.01,"z":false,"tracked":true},{"id":"0126","pts":[[12925,2002],[12925,3261],[11982,3261],[11982,2002]],"scale":1.805,"sharp":0.7,"z":false,"tracked":true},{"id":"0128","pts":[[13361,1989],[13361,3247],[12418,3247],[12418,1989]],"scale":1.805,"sharp":0.65,"z":false,"tracked":true},{"id":"0130","pts":[[14001,1969],[14001,3228],[13058,3228],[13058,1969]],"scale":1.805,"sharp":0.8,"z":false,"tracked":true},{"id":"0132","pts":[[14484,1953],[14484,3212],[13541,3212],[13541,1953]],"scale":1.805,"sharp":0.85,"z":false,"tracked":true},{"id":"0134","pts":[[14942,1943],[14942,3201],[13998,3201],[13998,1943]],"scale":1.805,"sharp":0.79,"z":false,"tracked":true},{"id":"0135","pts":[[15163,1935],[15163,3193],[14220,3193],[14220,1935]],"scale":1.805,"sharp":0.75,"z":false,"tracked":true},{"id":"0133","pts":[[14688,1951],[14688,3209],[13744,3209],[13744,1951]],"scale":1.805,"sharp":0.74,"z":false,"tracked":true},{"id":"0131","pts":[[14191,1961],[14191,3219],[13247,3219],[13247,1961]],"scale":1.805,"sharp":0.77,"z":false,"tracked":true},{"id":"0129","pts":[[13712,1977],[13712,3235],[12768,3235],[12768,1977]],"scale":1.805,"sharp":0.7,"z":false,"tracked":true},{"id":"0127","pts":[[13136,1996],[13136,3254],[12193,3254],[12193,1996]],"scale":1.805,"sharp":0.66,"z":false,"tracked":true},{"id":"0125","pts":[[12728,2007],[12728,3265],[11784,3265],[11784,2007]],"scale":1.805,"sharp":0.68,"z":false,"tracked":true},{"id":"0124","pts":[[12453,2022],[12453,3280],[11509,3280],[11509,2022]],"scale":1.805,"sharp":0.83,"z":false,"tracked":true},{"id":"0121","pts":[[11669,2045],[11669,3303],[10725,3303],[10725,2045]],"scale":1.805,"sharp":0.94,"z":false,"tracked":true},{"id":"0119","pts":[[11261,2061],[11261,3319],[10318,3319],[10318,2061]],"scale":1.805,"sharp":0.97,"z":false,"tracked":true},{"id":"0118","pts":[[11068,2065],[11068,3323],[10125,3323],[10125,2065]],"scale":1.805,"sharp":0.92,"z":false,"tracked":true},{"id":"0253","pts":[[14149,2976],[14149,4235],[13206,4235],[13206,2976]],"scale":1.805,"sharp":0.97,"z":false,"tracked":true},{"id":"0256","pts":[[14961,2944],[14961,4202],[14017,4202],[14017,2944]],"scale":1.805,"sharp":1.05,"z":false,"tracked":true},{"id":"0257","pts":[[15272,2932],[15272,4190],[14328,4190],[14328,2932]],"scale":1.805,"sharp":1.2,"z":false,"tracked":true},{"id":"0258","pts":[[15583,2925],[15583,4183],[14639,4183],[14639,2925]],"scale":1.805,"sharp":1.19,"z":false,"tracked":true},{"id":"0259","pts":[[15904,2917],[15904,4175],[14961,4175],[14961,2917]],"scale":1.805,"sharp":1.12,"z":false,"tracked":true},{"id":"0255","pts":[[14746,2952],[14746,4210],[13803,4210],[13803,2952]],"scale":1.805,"sharp":1.01,"z":false,"tracked":true},{"id":"0254","pts":[[14493,2964],[14493,4222],[13549,4222],[13549,2964]],"scale":1.805,"sharp":1.1,"z":false,"tracked":true},{"id":"0138","pts":[[15951,1321],[15951,2579],[15008,2579],[15008,1321]],"scale":1.805,"sharp":0.96,"z":false,"tracked":true},{"id":"0142","pts":[[15503,2614],[15503,3872],[14559,3872],[14559,2614]],"scale":1.805,"sharp":0.85,"z":false,"tracked":true},{"id":"0143","pts":[[15072,2630],[15072,3888],[14129,3888],[14129,2630]],"scale":1.805,"sharp":1.01,"z":false,"tracked":true},{"id":"0141","pts":[[15717,2607],[15717,3865],[14773,3865],[14773,2607]],"scale":1.805,"sharp":0.9,"z":false,"tracked":true},{"id":"0140","pts":[[15999,2599],[15999,3857],[15056,3857],[15056,2599]],"scale":1.805,"sharp":0.99,"z":false,"tracked":true},{"id":"0139","pts":[[15969,1784],[15969,3042],[15026,3042],[15026,1784]],"scale":1.805,"sharp":1.02,"z":false,"tracked":true},{"id":"0041","pts":[[9687,1124],[9687,2382],[8744,2382],[8744,1124]],"scale":1.805,"sharp":1.17,"z":false,"tracked":true},{"id":"0043","pts":[[9071,1145],[9071,2403],[8127,2403],[8127,1145]],"scale":1.805,"sharp":0.91,"z":false,"tracked":true},{"id":"0045","pts":[[8499,1167],[8499,2426],[7555,2426],[7555,1167]],"scale":1.805,"sharp":1.07,"z":false,"tracked":true},{"id":"0046","pts":[[8048,1200],[8048,2441],[7104,2441],[7104,1183]],"scale":1.805,"sharp":1.14,"z":false,"tracked":true},{"id":"0042","pts":[[9340,1137],[9340,2395],[8397,2395],[8397,1137]],"scale":1.805,"sharp":1.04,"z":false,"tracked":true},{"id":"0114","pts":[[9667,2112],[9667,3370],[8723,3370],[8723,2112]],"scale":1.805,"sharp":0.81,"z":false,"tracked":true},{"id":"0116","pts":[[10453,2089],[10453,3347],[9509,3347],[9509,2089]],"scale":1.805,"sharp":0.91,"z":false,"tracked":true},{"id":"0115","pts":[[10260,2092],[10260,3350],[9317,3350],[9317,2092]],"scale":1.805,"sharp":0.88,"z":false,"tracked":true},{"id":"0144","pts":[[14716,2642],[14716,3900],[13773,3900],[13773,2642]],"scale":1.805,"sharp":1.28,"z":false,"tracked":true},{"id":"0145","pts":[[14520,2650],[14520,3909],[13576,3909],[13576,2650]],"scale":1.805,"sharp":1.35,"z":false,"tracked":true},{"id":"0146","pts":[[14287,2658],[14287,3916],[13344,3916],[13344,2658]],"scale":1.805,"sharp":1.3,"z":false,"tracked":true},{"id":"0147","pts":[[14066,2661],[14066,3919],[13122,3919],[13122,2661]],"scale":1.805,"sharp":1.33,"z":false,"tracked":true},{"id":"0005","pts":[[14279,859],[14279,2117],[13335,2117],[13335,859]],"scale":1.805,"sharp":0.93,"z":false,"tracked":true},{"id":"0044","pts":[[8803,1156],[8803,2414],[7859,2414],[7859,1156]],"scale":1.805,"sharp":1.0,"z":false,"tracked":true},{"id":"0136","pts":[[15933,1308],[15933,2566],[14989,2566],[14989,1308]],"scale":1.805,"sharp":1.06,"z":false,"tracked":true},{"id":"0137","pts":[[15975,1010],[15975,2268],[15032,2268],[15032,1010]],"scale":1.805,"sharp":0.98,"z":false,"tracked":true},{"id":"0194","pts":[[944,3087],[944,4345],[0,4345],[0,3087]],"scale":1.805,"sharp":0.76,"z":false,"tracked":true},{"id":"0243","pts":[[11157,3069],[11157,4327],[10214,4327],[10214,3069]],"scale":1.805,"sharp":1.0,"z":false,"tracked":true}];
 const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
@@ -126,12 +145,14 @@ for (const c of placed) {
   const [a, b, tx, ty] = c.transform;   // x' = a x - b y + tx ; y' = b x + a y + ty  (enfant px -> parent px)
   const s = Math.hypot(a, b), deg = Math.atan2(b, a) * 180 / Math.PI;
   const corners = [[0, 0], [c.width, 0], [c.width, c.height], [0, c.height]].map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty]);
-  const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', corners.map(q => q.map(v => v.toFixed(1)).join(',')).join(' ')); kidSvg.appendChild(p);
+  const polys = (c.outline && c.outline.length) ? c.outline.map(poly => poly.map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty])) : [corners];
+  for (const poly of polys) { const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', poly.map(q => q.map(v => v.toFixed(1)).join(',')).join(' ')); kidSvg.appendChild(p); }
   const t = document.createElementNS(svgNS, 'text'); t.setAttribute('x', corners[0][0] + 30); t.setAttribute('y', corners[0][1] - 20); t.textContent = c.objective ? 'obj. ' + c.objective : c.title; kidSvg.appendChild(t);
   viewer.addHandler('open', () => viewer.addTiledImage({
     tileSource: { width: c.width, height: c.height, tileSize: c.tile, tileOverlap: 1, minLevel: 0, maxLevel: c.maxlvl, getTileUrl: (l, x, y) => `../${c.slug}/lame_files/${l}/${x}_${y}.jpg` },
-    x: tx / W, y: ty / W, width: s * c.width / W, degrees: deg,
-    success: e => kidLayers.push(e.item)
+    // OpenSeadragon tourne l'image autour de son centre : on place le rectangle non tourné pour que son centre tombe au bon endroit
+    x: (a * c.width / 2 - b * c.height / 2 + tx - s * c.width / 2) / W, y: (b * c.width / 2 + a * c.height / 2 + ty - s * c.height / 2) / W, width: s * c.width / W, degrees: deg,
+    success: e => { kidLayers.push(e.item); if (c.outline && c.outline.length && e.item.setCroppingPolygons) e.item.setCroppingPolygons(c.outline.map(poly => poly.map(([x, y]) => ({ x, y })))); }   // fond blanc hors couverture rogné
   }));
 }
 if (placed.length) {
@@ -223,6 +244,65 @@ viewer.addHandler('zoom', updateHud);
 viewer.addHandler('animation', updateHud);
 viewer.addHandler('animation-finish', updateHud);
 viewer.addHandler('open', updateHud);
+
+// ---- modifier la lame : rogner, supprimer (demande envoyee a la fonction Supabase, executee par GitHub Actions) ----
+const LS = { get: k => { try { return localStorage.getItem(k) || ''; } catch (_) { return ''; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (_) {} } };
+$('eurl').value = LS.get('scanlame.url'); $('etoken').value = LS.get('scanlame.token');
+$('eurl').onchange = () => LS.set('scanlame.url', $('eurl').value.trim()); $('etoken').onchange = () => LS.set('scanlame.token', $('etoken').value.trim());
+$('editbtn').onclick = () => { const on = $('epanel').hidden; $('epanel').hidden = !on; $('editbtn').setAttribute('aria-pressed', on); };
+async function sendEdit(payload) {
+  const url = $('eurl').value.trim().replace(/\/+$/, ''), token = $('etoken').value.trim();
+  if (!url || !token) { $('emsg').textContent = 'URL du serveur et jeton nécessaires (voir la page de capture).'; return false; }
+  $('emsg').textContent = 'envoi…';
+  try {
+    const r = await fetch(url + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Token': token },
+      body: JSON.stringify({ series: 'edit_' + Date.now(), slug: SLUG, ...payload }) });
+    if (!r.ok) { $('emsg').textContent = 'refusé : HTTP ' + r.status; return false; }
+    const j = await r.json();
+    $('emsg').textContent = 'Demande envoyée' + (j.dispatched ? ' : GitHub Actions est réveillé, ' : ' (traitement au prochain passage, 15 min au plus) : ') + 'rechargez la page dans quelques minutes.';
+    return true;
+  } catch (e) { $('emsg').textContent = 'erreur : ' + e.message; return false; }
+}
+$('edelete').onclick = async () => {
+  if (!confirm('Supprimer définitivement cette lame de la galerie ?')) return;
+  if (await sendEdit({ action: 'delete' })) $('edelete').disabled = true;
+};
+// rognage : rectangle trace au doigt ou a la souris sur la vue, converti en px de la lame
+let crop = null, cropStart = null;
+const rectEl = $('croprect');
+function imgPt(ev) {
+  const r = $('viewer').getBoundingClientRect();
+  const p = viewer.world.getItemAt(0).viewerElementToImageCoordinates(new OpenSeadragon.Point(ev.clientX - r.left, ev.clientY - r.top));   // image principale (les calques sont d'autres images)
+  return { x: Math.max(0, Math.min(W, p.x)), y: Math.max(0, Math.min(H, p.y)) };
+}
+function drawCrop() {
+  if (!crop) { rectEl.style.display = 'none'; $('cropok').disabled = true; return; }
+  const main = viewer.world.getItemAt(0);
+  const a = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(crop.x0, crop.y0));
+  const b = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(crop.x1, crop.y1));
+  rectEl.style.display = 'block'; rectEl.style.left = a.x + 'px'; rectEl.style.top = a.y + 'px'; rectEl.style.width = (b.x - a.x) + 'px'; rectEl.style.height = (b.y - a.y) + 'px';
+  const ok = crop.x1 - crop.x0 >= 64 && crop.y1 - crop.y0 >= 64;
+  $('cropok').disabled = !ok;
+  $('cropinfo').textContent = ok ? `zone gardée : ${Math.round(crop.x1 - crop.x0)} × ${Math.round(crop.y1 - crop.y0)} px` : 'Tracez un rectangle à garder';
+}
+$('ecrop').onclick = () => {
+  $('epanel').hidden = true; $('editbtn').setAttribute('aria-pressed', 'false');
+  $('cropper').hidden = false; $('cropbar').hidden = false; crop = null; drawCrop();
+  viewer.setMouseNavEnabled(false);
+};
+const endCrop = () => { $('cropper').hidden = true; $('cropbar').hidden = true; crop = null; drawCrop(); viewer.setMouseNavEnabled(true); };
+$('cropcancel').onclick = endCrop;
+$('cropper').onpointerdown = ev => { ev.preventDefault(); $('cropper').setPointerCapture(ev.pointerId); cropStart = imgPt(ev); crop = { x0: cropStart.x, y0: cropStart.y, x1: cropStart.x, y1: cropStart.y }; drawCrop(); };
+$('cropper').onpointermove = ev => { if (!cropStart) return; const p = imgPt(ev); crop = { x0: Math.min(cropStart.x, p.x), y0: Math.min(cropStart.y, p.y), x1: Math.max(cropStart.x, p.x), y1: Math.max(cropStart.y, p.y) }; drawCrop(); };
+$('cropper').onpointerup = $('cropper').onpointercancel = () => { cropStart = null; };
+viewer.addHandler('animation', () => { if (crop) drawCrop(); });
+$('cropok').onclick = async () => {
+  if (!crop) return;
+  const rect = [crop.x0, crop.y0, crop.x1, crop.y1].map(Math.round);
+  if (!confirm(`Garder seulement la zone ${rect[2] - rect[0]} × ${rect[3] - rect[1]} px et jeter le reste ? (irréversible)`)) return;
+  $('epanel').hidden = false;
+  if (await sendEdit({ action: 'crop', rect })) endCrop();
+};
 </script>
 </body>
 </html>
