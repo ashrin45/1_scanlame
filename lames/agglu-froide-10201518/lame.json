@@ -21,7 +21,17 @@
  "stage": null,
  "stage_cal": null,
  "stage_obs": null,
- "children": [],
+ "children": [
+  {
+   "slug": "agglu-froide-obj-x100-10201518",
+   "transform": [
+    0.10194188590527628,
+    -0.0056928616027017475,
+    6011.43046435925,
+    1525.883548766636
+   ]
+  }
+ ],
  "quality": {
   "grade": "A",
   "notes": [],
