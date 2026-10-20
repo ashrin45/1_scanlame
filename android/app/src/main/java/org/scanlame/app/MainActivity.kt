@@ -309,7 +309,11 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
             text = {
                 Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     OutlinedTextField(t, { t = it }, label = { Text("Nom de la lame") }, placeholder = { Text("ex. hémoculture 1234") }, singleLine = true, modifier = Modifier.fillMaxWidth())
-                    Select("Objectif", Settings.OBJECTIVES.map { it to (if (it == "x50" || it == "x100") "$it (immersion)" else it) }, obj) { obj = it }
+                    Text("Objectif", color = MUTED, fontSize = 12.sp)
+                    // boutons plutot qu'une liste deroulante : les menus deroulants ne s'ouvrent pas correctement dans une boite de dialogue
+                    FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                        for (o in Settings.OBJECTIVES) WebButton(o, pressed = o == obj, small = true) { obj = o }
+                    }
                     OutlinedTextField(smp, { smp = it }, label = { Text("Prélèvement (optionnel)") }, singleLine = true, modifier = Modifier.fillMaxWidth())
                     val par = lames.firstOrNull { it.slug == parent }?.title ?: st.recentSeries().firstOrNull { it.first == parent }?.second
                     Text(if (par != null) "Détail de la lame d'ensemble « $par » (changer dans les réglages)" else "Autres options (coloration, lame d'ensemble, caméra) dans les réglages ⚙", color = MUTED, fontSize = 12.sp)
