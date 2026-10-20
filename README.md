@@ -1,5 +1,10 @@
 # Scan lame
 
+## Version 1.0 stable (20/10/2026)
+
+Point de référence validé sur lames réelles : application Android 0.33, pipeline avec ancrage multi-objectif (x10 d'ensemble, x100 de détail dans la même série, appariement DISK + LightGlue), visionneuse avec rognage, suppression et téléchargements (JPEG entier, dossier hors ligne). Commit de référence : voir le journal git à cette date.
+
+
 Capture de champs microscopiques depuis un smartphone pose sur l'oculaire, avec suivi de position en direct
 et carte de couverture. Les images sont assemblees ensuite en lame virtuelle.
 
