@@ -382,6 +382,11 @@ fun CoverageMap(s: Session.State, modifier: Modifier) {
         }
         val cur = all.last()
         drawRect(if (s.track == "lost") REC else if (s.track == "relocated") WARN else OK, Offset(ox + (cur.x.toFloat() - x0) * sc, oy + (cur.y.toFloat() - y0) * sc), Size(W * sc, H * sc), style = Stroke(2f))
+        // emplacement du detail pris au plus fort grossissement (centre du premier champ apres le changement d'objectif) : a garder au milieu du balayage
+        s.detailAt?.let { d ->
+            val c = Offset(ox + (d.first.toFloat() + W / 2 - x0) * sc, oy + (d.second.toFloat() + H / 2 - y0) * sc)
+            drawCircle(Color(0xFFE8A33D), 7f, c, style = Stroke(3f)); drawCircle(Color(0xFFE8A33D), 2f, c)
+        }
     }
 }
 

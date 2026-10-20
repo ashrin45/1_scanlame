@@ -31,7 +31,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val phase: String = "", val objective: String = "x100", val placed: List<Placed> = emptyList(), val fieldW: Double = 1.0, val fieldH: Double = 1.0,
         val message: String = "", val trackMs: Int = 0, val fps: Float = 0f,
         val warn: String = "", val sharpRef: Float = 0f, val blurred: Int = 0, val bigSteps: Int = 0, val exposure: String = "",
-        val lastGrade: Int = -1, val lastShotAt: Long = 0L   // derniere photo : -1 aucune, 0 bonne, 1 moyenne, 2 ratee (floue, suivi perdu ou pas trop grand) ; horodatage pour le clignotement du cadre
+        val lastGrade: Int = -1, val lastShotAt: Long = 0L,
+        val detailAt: Pair<Double, Double>? = null   // position (repere courant) du dernier champ pris au plus fort grossissement, apres passage a un objectif plus faible   // derniere photo : -1 aucune, 0 bonne, 1 moyenne, 2 ratee (floue, suivi perdu ou pas trop grand) ; horodatage pour le clignotement du cadre
     )
     val state = MutableStateFlow(State())
 
@@ -151,6 +152,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             if (moved <= st.stillPx) { if (stillSince == 0L) stillSince = now(); still = now() - stillSince >= st.stillMs } else stillSince = 0L
             lastPos = f.x to f.y
         } else { stillSince = 0L }
+        if (markDetail && f.status != "lost") { markDetail = false; state.value = state.value.copy(detailAt = px to py) }
         liveWarn = when {
             exposureNote.isNotEmpty() -> exposureNote
             sharpRef > 0 && still && sh < 0.5f * sharpRef -> "flou : retouche la vis micrométrique"
@@ -216,6 +218,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
     private var sharpRef = 0f; private var nBlurred = 0; private var nBigSteps = 0
     private var lastShotT = 0L
     private var bigStepPending = false
+    private var markDetail = false
     @Volatile private var exposureNote = ""; @Volatile private var liveWarn = ""
     private val photoSharps = ArrayList<Float>()
 
@@ -283,6 +286,11 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val cal = st.umPerPx(obj)
         segments.add(JSONObject().put("objective", obj).put("t0", t).put("t1", JSONObject.NULL).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL)
             .put("from_x", sw.opt("from_x")).put("from_y", sw.opt("from_y")).put("from_track", sw.opt("from_track")))
+        // si on passe a un grossissement plus faible, le point de depart du nouveau repere est l'emplacement du detail : repere sur la carte
+        val prevObj = Regex("\\d+").find(segments.getOrNull(segments.size - 2)?.optString("objective") ?: "")?.value?.toIntOrNull() ?: 0
+        val newObj = Regex("\\d+").find(obj)?.value?.toIntOrNull() ?: 0
+        markDetail = prevObj > newObj
+        state.value = state.value.copy(detailAt = null)
         // nouvel objectif = nouvelle reference de nettete (celle du x10 n'a rien a voir avec celle du x100) ; le cadre repart neutre
         photoSharps.clear(); sharpRef = 0f; bigStepPending = false; lastShot = null
         state.value = state.value.copy(lastGrade = -1, sharpRef = 0f)

@@ -789,7 +789,20 @@ if a.parent:
     prior_box = None
     hint, stage = meta.get('hint'), meta.get('stage')
     seg_from = (segs[a.segment] if segs and a.segment < len(segs) else {}) if 'segs' in dir() else {}
-    if seg_from.get('from_x') is not None and os.path.isdir(a.parent) and plj.get('track_to_mosaic'):
+    parent_after = os.path.isdir(a.parent) and segs and plj.get('segment') is not None and plj['segment'] < len(segs) and (segs[plj['segment']].get('t0') or 0) > (segs[a.segment].get('t0') or 0)
+    pfields = None; anchor_last = None
+    if parent_after:
+        try: pfields = [x for x in json.load(open(os.path.join(a.parent, 'fields.json'))) if x.get('pts')]
+        except Exception: pfields = None
+    if parent_after and pfields:
+        # la lame d'ensemble a ete enregistree APRES le detail : la platine n'a pas bouge au changement d'objectif,
+        # donc la derniere photo du detail est au centre du premier champ de l'ensemble : a priori exact
+        p0 = np.array(min(pfields, key=lambda e: e['id'])['pts'], float).mean(axis=0)
+        anchor_last = p0
+        hw = pw * f_c[0] * 1.1 + 0.05 * pim.shape[1]; hh = ph * f_c[0] * 1.1 + 0.05 * pim.shape[0]
+        prior_box = (p0[0] * sp_ - hw, p0[1] * sp_ - hh, p0[0] * sp_ + hw, p0[1] * sp_ + hh)
+        log(f'a priori (ensemble enregistré après le détail) : dernière photo du détail au centre du premier champ de l\'ensemble ({p0[0]:.0f}, {p0[1]:.0f})')
+    elif seg_from.get('from_x') is not None and os.path.isdir(a.parent) and plj.get('track_to_mosaic'):
         # position de la platine au clic « changer d'objectif », convertie en px de la lame d'ensemble (segment 0 de la meme prise)
         fx_, fy_ = cv2.transform(np.float32([[seg_from['from_x'], seg_from['from_y']]])[None], np.float32(plj['track_to_mosaic']))[0][0]
         hw = max(pw * f_c[0], 0.2 * pim.shape[1]); hh = max(ph * f_c[0], 0.2 * pim.shape[0])
@@ -830,6 +843,18 @@ if a.parent:
             if k is None: continue
             anchor_corr.append((k, q, d_pt / sp_)); anchored_imgs.add(k)
         log(f'ancrage global : {len(anchor_corr)} points sur {len(anchored_imgs)} images')
+    if parent_after and pfields and anchor_last is not None:
+        # ancrage de la derniere photo du detail sur le premier champ de l'ensemble : centre sur centre, orientation donnee par la
+        # localisation grossiere (G0) ; poids via 4 points autour du centre
+        kl = max(comp); h_, w_ = rmasks[kl].shape
+        Mk = (G0 @ T[kl])[:2]; c_pim = cv2.transform(np.float32([[w_ / 2, h_ / 2]])[None], Mk)[0][0]
+        shift = anchor_last * sp_ - c_pim        # decalage a appliquer (px parent reduit) pour amener le centre au bon endroit
+        for dx, dy in ((-0.25, -0.25), (0.25, -0.25), (0.25, 0.25), (-0.25, 0.25)):
+            p_ = np.array([w_ * (0.5 + dx), h_ * (0.5 + dy)])
+            q_ = (cv2.transform(np.float32([p_])[None], Mk)[0][0] + shift) / sp_
+            anchor_corr.append((kl, p_, q_))
+        anchored_imgs.add(kl)
+        log(f'  dernière photo ({kl:04d}) ancrée au centre du premier champ de l\'ensemble (écart à la localisation grossière : {np.hypot(*shift) / sp_:.0f} px parent)')
     log(f'localisation grossière : {n0} inliers, échelle enfant->parent {math.hypot(G0[0, 0], G0[1, 0]) * scales[ref] / sp_:.4f}')
     dbg = os.path.join(out, 'ancrage'); os.makedirs(dbg, exist_ok=True)
     match = LC.learned_matcher()

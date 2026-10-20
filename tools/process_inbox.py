@@ -202,7 +202,13 @@ while True:
     res = os.path.join(d, 'result')
     PARGS = os.environ.get('PIPELINE_ARGS', '').split()
     PAR0 = ['--parent', meta['parent']] if meta.get('parent') and os.path.isfile(os.path.join(ROOT, 'lames', meta['parent'], 'lame.json')) else []
-    rc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'pipeline.py'), d, '--out', res] + PAR0 + PARGS).returncode
+    # segment d'ensemble = objectif le plus faible de la prise (x100 puis x10 est permis : le detail est enregistre d'abord)
+    def objective_number(o):
+        import re as _re; m = _re.search(r'(\d+(?:[.,]\d+)?)', str(o or '')); return float(m[1].replace(',', '.')) if m else 1e9
+    segs_meta = meta.get('segments') or []
+    pseg = min(range(len(segs_meta)), key=lambda i: (objective_number(segs_meta[i].get('objective')), i)) if segs_meta else 0
+    if pseg: print(f'  lame d\'ensemble = segment {pseg + 1} ({segs_meta[pseg].get("objective")}), enregistré après le détail')
+    rc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'pipeline.py'), d, '--out', res] + (['--segment', str(pseg)] if pseg else []) + PAR0 + PARGS).returncode
     if rc != 0:
         print(f'  ÉCHEC du pipeline (code {rc}), série marquée en échec dans le bucket')
         logp = os.path.join(res, 'pipeline.log')
@@ -226,30 +232,31 @@ while True:
     lay0 = layout_of(res)
     nseg = int(lay0.get('segments') or 0)
     # jobs : (dossier result, numero de zone ou None, numero de segment, parent explicite ou None)
-    jobs = [(res, None, 0, None)]
+    jobs = [(res, None, pseg, None)]
     def add_zones(r, seg):
         others = layout_of(r).get('zone_components') or []      # numeros reels des composantes a assembler a part
         for n_, comp_i in enumerate(others, start=1):
             rc_ = os.path.join(d, f'result_s{seg}_c{n_}')
-            if run_pipeline(rc_, ['--segment', str(seg), '--component', str(comp_i)] + (['--parent', res] if seg > 0 else PAR0)): jobs.append((rc_, n_, seg, None))
+            if run_pipeline(rc_, ['--segment', str(seg), '--component', str(comp_i)] + (['--parent', res] if seg != pseg else PAR0)): jobs.append((rc_, n_, seg, None))
             else: print(f'  segment {seg + 1} zone {ci + 1} : échec de l\'assemblage, ignorée')
-    if meta.get('parent'): add_zones(res, 0)
-    for seg in range(1, nseg):
+    if meta.get('parent'): add_zones(res, pseg)
+    for seg in range(nseg):
+        if seg == pseg: continue
         rs = os.path.join(d, f'result_s{seg}')
-        if run_pipeline(rs, ['--segment', str(seg), '--parent', res]):   # segment 0 (premier objectif) = lame d'ensemble : les photos y sont ancrées
+        if run_pipeline(rs, ['--segment', str(seg), '--parent', res]):   # segment d'ensemble (objectif le plus faible) : les photos des autres y sont ancrées
             jobs.append((rs, None, seg, 'SEG0')); add_zones(rs, seg)
         else: print(f'  segment {seg + 1} : échec de l\'assemblage, ignoré')
-    # les zones des segments > 0 heritent aussi du parent SEG0
-    jobs = [(r, ci, seg, ('SEG0' if seg > 0 else par)) for (r, ci, seg, par) in jobs]
+    # les zones des autres segments heritent aussi du parent SEG0 (segment d'ensemble)
+    jobs = [(r, ci, seg, ('SEG0' if seg != pseg else par)) for (r, ci, seg, par) in jobs]
     if len(jobs) > 1: print(f'  {len(jobs)} lame(s) dans cette prise (segments et zones)')
     base_title = meta.get('title') or s
     published = []; published_ok = True
     seg0_slug = None
     for res, ci, seg, par in jobs:
       lay = layout_of(res)
-      title = base_title + (f' (obj. {lay.get("objective")})' if seg > 0 else '') + ('' if ci is None else f' (zone {ci + 1})')
-      slug = (slugify(title) + '-' + s.split('_')[1][4:] + s.split('_')[2][:4]) if meta.get('title') and s.count('_') >= 2 else s.lower().replace('_', '-') + ('' if seg == 0 else f'-obj{seg}') + ('' if ci is None else f'-zone{ci + 1}')
-      parent = seg0_slug if par == 'SEG0' else (meta.get('parent') if seg == 0 else None)
+      title = base_title + (f' (obj. {lay.get("objective")})' if seg != pseg else '') + ('' if ci is None else f' (zone {ci + 1})')
+      slug = (slugify(title) + '-' + s.split('_')[1][4:] + s.split('_')[2][:4]) if meta.get('title') and s.count('_') >= 2 else s.lower().replace('_', '-') + ('' if seg == pseg else f'-obj{seg}') + ('' if ci is None else f'-zone{ci + 1}')
+      parent = seg0_slug if par == 'SEG0' else (meta.get('parent') if seg == pseg else None)
       if parent:
           lay['parent'] = parent; json.dump(lay, open(os.path.join(res, 'layout.json'), 'w'))
       # relance d'une prise deja publiee (--force) : nouvelle version a cote de l'ancienne, pour comparer les reglages
@@ -293,7 +300,7 @@ while True:
       for src, dst in ((os.path.join(d, 'journal-telephone.txt'), f'{stampf}-telephone.txt'), (os.path.join(base_res, 'pipeline.log'), f'{stampf}-assemblage.txt'), (os.path.join(base_res, 'planche.jpg'), f'{stampf}-planche.jpg')):
           if os.path.isfile(src): shutil.copyfile(src, os.path.join(logs, dst))
       subprocess.run([sys.executable, '-c', 'import sys; sys.path.insert(0, sys.argv[1]); from publish_lame import write_pages; write_pages(sys.argv[2])', os.path.join(ROOT, 'tools'), slug])
-      if seg == 0 and ci is None: seg0_slug = slug
+      if seg == pseg and ci is None: seg0_slug = slug
       if parent:
           if os.path.isfile(os.path.join(ROOT, 'lames', parent, 'lame.json')):
               print(f'  lame de détail de {parent} : recalage dans la lame d\'ensemble')
