@@ -265,8 +265,11 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
                 synchronized(placed) { placedPhotos.add(Placed(px, py, f.status, true, th, grade)) }
                 if (state.value.patron == null && st.patron != "libre") {
                     val (cols, rows) = st.patron.split('x').map { it.toInt() }
-                    state.value = state.value.copy(patron = doubleArrayOf(px, py, cols * W, rows * H))
-                    Journal.log("patron ${st.patron} champs posé à ${px.roundToInt()},${py.roundToInt()}")
+                    // apres un passage a un objectif plus faible, le detail (= cette premiere photo) doit etre au centre du patron ; sinon coin haut-gauche
+                    val centered = state.value.detailAt != null
+                    val x0 = if (centered) px + W / 2 - cols * W / 2 else px; val y0 = if (centered) py + H / 2 - rows * H / 2 else py
+                    state.value = state.value.copy(patron = doubleArrayOf(x0, y0, cols * W, rows * H))
+                    Journal.log("patron ${st.patron} champs posé ${if (centered) "autour du détail" else "en haut à gauche"} (${x0.roundToInt()},${y0.roundToInt()})")
                 }
                 state.value.patron?.let { pt -> state.value = state.value.copy(patronFill = patronFill(pt)) }
                 state.value = state.value.copy(photos = seq, bytes = state.value.bytes + len)
@@ -314,7 +317,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val prevObj = Regex("\\d+").find(segments.getOrNull(segments.size - 2)?.optString("objective") ?: "")?.value?.toIntOrNull() ?: 0
         val newObj = Regex("\\d+").find(obj)?.value?.toIntOrNull() ?: 0
         markDetail = prevObj > newObj
-        state.value = state.value.copy(detailAt = null)
+        state.value = state.value.copy(detailAt = null, patron = null, patronFill = 0f)   // nouveau repere : le patron se repose a la premiere photo du nouvel objectif
         // nouvel objectif = nouvelle reference de nettete (celle du x10 n'a rien a voir avec celle du x100) ; le cadre repart neutre
         photoSharps.clear(); sharpRef = 0f; bigStepPending = false; lastShot = null
         state.value = state.value.copy(lastGrade = -1, sharpRef = 0f)
