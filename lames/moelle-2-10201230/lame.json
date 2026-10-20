@@ -1,11 +1,11 @@
 {
  "title": "moelle 2",
- "width": 8246,
- "height": 4584,
+ "width": 7008,
+ "height": 2659,
  "fields": 45,
- "tiles": 231,
+ "tiles": 125,
  "tile": 512,
- "maxlvl": 14,
+ "maxlvl": 13,
  "um_per_px": null,
  "stain": "gram",
  "objective": "x10",
@@ -27,8 +27,8 @@
    "transform": [
     0.09948788469327832,
     -0.0034484440904917683,
-    409.05885912729036,
-    2426.989557326363
+    -455.94114087270964,
+    1333.989557326363
    ]
   }
  ],
@@ -70,9 +70,17 @@
   "code": "2dc06a2"
  },
  "published": "2026-10-20T11:05:02+00:00",
- "updated": "2026-10-20T11:05:02+00:00",
+ "updated": "2026-10-20T11:12:29+00:00",
  "retakes": 0,
  "retake_series": [],
  "zstack": 0,
- "zstack_tiles": null
+ "zstack_tiles": null,
+ "cropped": [
+  [
+   865,
+   1093,
+   7873,
+   3752
+  ]
+ ]
 }
