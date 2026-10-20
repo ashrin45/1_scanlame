@@ -291,6 +291,7 @@ log(f'netteté médiane {np.median(sharps):.1f}, seuil {thr:.1f}')
 sel = []
 last_pos = None
 n_dark = 0
+RETAKE = {f.get('name'): bool(f.get('retake')) for f in (meta.get('frames') or []) if f.get('name')}   # photos reprises au meme endroit apres retouche de la vis (appli)
 for (p, t), sharp in zip(items, sharps):
     if is_blurred(p, sharp):
         continue
@@ -301,6 +302,7 @@ for (p, t), sharp in zip(items, sharps):
     planes = planes_of.get(p)
     if pos and last_pos and W0 and math.hypot(pos[0] - last_pos[0], pos[1] - last_pos[1]) < 0.15 * max(W0, H0):
         if planes and sel and not sel[-1].get('planes'): sel.pop()     # une pile de profondeur remplace l'image simple prise au meme endroit
+        elif RETAKE.get(os.path.basename(p)) and sel and not sel[-1].get('planes') and sharp > sel[-1]['sharp']: sel.pop()   # reprise de mise au point : la plus nette remplace
         else: continue
     if pos: last_pos = pos
     sel.append(dict(path=p, t=t, sharp=sharp, sharpn=sharpn_of[p], pos=pos, planes=planes))

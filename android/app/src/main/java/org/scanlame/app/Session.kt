@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import kotlin.math.hypot
+import kotlin.math.abs
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
@@ -180,8 +181,14 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
                 if (gap > 0.7 * Tracker.S2) { nBigSteps++; Journal.log("ATTENTION pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recouvrement insuffisant"); state.value = state.value.copy(message = "Pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recule d'un demi-champ, les photos doivent se recouvrir d'au moins 30 %.") }
                 else if (state.value.message.startsWith("Pas trop grand")) state.value = state.value.copy(message = "Série en cours : déplace la platine d'un demi-champ, arrête-toi, une photo part à chaque arrêt.")
                 shoot(f, px, py, t, sh, img)
+            } else if (still && lastShotSharp > 0 && sh > 1.3f * lastShotSharp && retakes < 3 && now() - lastShotT > 900 && abs(sh - prevSharp) < 0.08f * sh) {
+                // meme endroit, nettete nettement meilleure et stabilisee : la vis micrometrique a ete retouchee -> nouvelle photo (le pipeline garde la plus nette)
+                retakes++
+                Journal.log("reprise de mise au point au même endroit : netteté ${sh.roundToInt()} contre ${lastShotSharp.roundToInt()} (reprise $retakes)")
+                shoot(f, px, py, t, sh, img, retake = true)
             }
         }
+        prevSharp = sh
         state.value = state.value.copy(track = f.status, score = f.score, posX = px, posY = py, sharp = sh, still = still, samples = sampleSeq,
             elapsedMs = t, placed = synchronized(placed) { ArrayList<Placed>(placedPhotos.size + placed.size).apply { addAll(placedPhotos); addAll(placed) } }, trackMs = ms, fps = fpsAcc, shooting = shooting,
             warn = liveWarn, sharpRef = sharpRef, blurred = nBlurred, bigSteps = nBigSteps, exposure = exposureNote)
@@ -223,6 +230,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
 
     private var sharpRef = 0f; private var nBlurred = 0; private var nBigSteps = 0
     private var lastShotT = 0L
+    private var lastShotSharp = 0f; private var prevSharp = 0f; private var retakes = 0   // reprise de mise au point au meme endroit
     private var bigStepPending = false
     private var markDetail = false
     @Volatile private var exposureNote = ""; @Volatile private var liveWarn = ""
@@ -240,7 +248,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         return hit.count { it }.toFloat() / (G * G)
     }
 
-    private fun shoot(f: Tracker.Frame, px: Double, py: Double, t: Long, sh: Float, img: ImageProxy) {
+    private fun shoot(f: Tracker.Frame, px: Double, py: Double, t: Long, sh: Float, img: ImageProxy, retake: Boolean = false) {
         val dir = seriesDir ?: return
         val th = thumbColor(img)   // avant la photo : le tampon d'analyse est réutilisé par l'image suivante
         // reference de nettete : mediane des 5 meilleures photos de la serie ; une photo sous 50 % est notee floue, sous 70 % douce
@@ -252,7 +260,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         bigStepPending = false
         state.value = state.value.copy(lastGrade = frameGrade, lastShotAt = now())
         shooting = true
-        lastShot = f.x to f.y; lastShotT = now()
+        lastShot = f.x to f.y; lastShotT = now(); lastShotSharp = sh; if (!retake) retakes = 0
         seq++
         val name = "${state.value.seriesId}_${String.format(Locale.ROOT, "%04d", seq)}.jpg"
         val file = File(File(dir, "photos").apply { mkdirs() }, name)
@@ -261,7 +269,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             shooting = false
             if (ok) {
                 val len = file.length()
-                synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("enc_ms", now() - tt).put("sharp", sh.toDouble())) }
+                synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("retake", retake).put("enc_ms", now() - tt).put("sharp", sh.toDouble())) }
                 synchronized(placed) { placedPhotos.add(Placed(px, py, f.status, true, th, grade)) }
                 val patronSpec = st.patronFor(state.value.objective)
                 if (state.value.patron == null && patronSpec != "libre") {
