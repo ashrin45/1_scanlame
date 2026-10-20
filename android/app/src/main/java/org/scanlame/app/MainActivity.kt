@@ -316,9 +316,18 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     }
                     OutlinedTextField(smp, { smp = it }, label = { Text("Prélèvement (optionnel)") }, singleLine = true, modifier = Modifier.fillMaxWidth())
                     var patron by remember { mutableStateOf(st.patron) }; var autoCrop by remember { mutableStateOf(st.autoCrop) }
-                    Text("Patron (champs à remplir, posé sur la première photo)", color = MUTED, fontSize = 12.sp)
+                    var pc by remember { mutableStateOf(patron.substringBefore('x').takeIf { patron != "libre" } ?: "") }
+                    var pr by remember { mutableStateOf(patron.substringAfter('x').takeIf { patron != "libre" } ?: "") }
+                    fun setPatron(c: String, r: String) { pc = c; pr = r; val ci = c.toIntOrNull() ?: 0; val ri = r.toIntOrNull() ?: 0; patron = if (ci in 1..40 && ri in 1..40) "${ci}x${ri}" else "libre"; st.patron = patron }
+                    Text("Patron : champs à remplir (colonnes x lignes), posé sur la première photo", color = MUTED, fontSize = 12.sp)
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+                        OutlinedTextField(pc, { setPatron(it.filter { ch -> ch.isDigit() }.take(2), pr) }, label = { Text("colonnes", fontSize = 11.sp) }, singleLine = true, modifier = Modifier.weight(1f), keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
+                        Text("x", color = MUTED)
+                        OutlinedTextField(pr, { setPatron(pc, it.filter { ch -> ch.isDigit() }.take(2)) }, label = { Text("lignes", fontSize = 11.sp) }, singleLine = true, modifier = Modifier.weight(1f), keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
+                        WebButton("libre", pressed = patron == "libre", small = true) { setPatron("", "") }
+                    }
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                        for (o in listOf("libre", "2x2", "3x3", "4x4", "6x4")) WebButton(o, pressed = o == patron, small = true) { patron = o; st.patron = o }
+                        for (o in listOf("2x2", "3x3", "4x4", "5x5", "6x4", "8x6")) WebButton(o, pressed = o == patron, small = true) { setPatron(o.substringBefore('x'), o.substringAfter('x')) }
                     }
                     Row(verticalAlignment = Alignment.CenterVertically) { Checkbox(autoCrop, { autoCrop = it; st.autoCrop = it }); Text("Rogner la lame au plus grand rectangle couvert", fontSize = 13.sp, color = FG) }
                     val par = lames.firstOrNull { it.slug == parent }?.title ?: st.recentSeries().firstOrNull { it.first == parent }?.second
