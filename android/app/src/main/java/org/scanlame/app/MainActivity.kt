@@ -64,6 +64,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.foundation.gestures.transformable
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.ui.text.input.KeyboardType
@@ -484,19 +487,37 @@ fun ParentHint(gallery: String, ref: LameRef, st: Settings) {
     Text("Repère : touchez l'endroit approximatif du détail sur la lame d'ensemble (facultatif, aide le recalage)", color = MUTED, fontSize = 11.sp)
     val b = bmp
     if (b != null) {
-        Box(Modifier.fillMaxWidth().aspectRatio(b.width.toFloat() / b.height).pointerInput(ref.slug) {
-            detectTapGestures { o -> val f = listOf(o.x / size.width, o.y / size.height); hint = f; st.hint = "${f[0]},${f[1]}" }
-        }) {
-            Image(b.asImageBitmap(), null, Modifier.fillMaxSize())
-            hint?.let { h ->
-                Canvas(Modifier.fillMaxSize()) {
-                    val c = Offset(h[0] * size.width, h[1] * size.height)
-                    drawCircle(Color.Red, 16f, c, style = Stroke(3f))
-                    drawLine(Color.Red, Offset(c.x - 28, c.y), Offset(c.x + 28, c.y), 3f); drawLine(Color.Red, Offset(c.x, c.y - 28), Offset(c.x, c.y + 28), 3f)
+        // zoom (pincement) et deplacement pour poser le repere avec precision ; un toucher pose le repere
+        var scale by remember(ref.slug) { mutableStateOf(1f) }; var offset by remember(ref.slug) { mutableStateOf(Offset.Zero) }
+        val tstate = androidx.compose.foundation.gestures.rememberTransformableState { zoomChange, panChange, _ ->
+            scale = (scale * zoomChange).coerceIn(1f, 8f); offset += panChange
+        }
+        Box(Modifier.fillMaxWidth().aspectRatio(b.width.toFloat() / b.height).clipToBounds()
+            .transformable(tstate)
+            .pointerInput(ref.slug) {
+                detectTapGestures { o ->
+                    // ecran -> image : la transformation est centree (graphicsLayer) : s = c + (p - c) * k + offset
+                    val cx = size.width / 2f; val cy = size.height / 2f
+                    val px = cx + (o.x - offset.x - cx) / scale; val py = cy + (o.y - offset.y - cy) / scale
+                    val f = listOf((px / size.width).coerceIn(0f, 1f), (py / size.height).coerceIn(0f, 1f)); hint = f; st.hint = "${f[0]},${f[1]}"
+                }
+            }) {
+            Box(Modifier.fillMaxSize().graphicsLayer(scaleX = scale, scaleY = scale, translationX = offset.x, translationY = offset.y)) {
+                Image(b.asImageBitmap(), null, Modifier.fillMaxSize())
+                hint?.let { h ->
+                    Canvas(Modifier.fillMaxSize()) {
+                        val c = Offset(h[0] * size.width, h[1] * size.height); val r = 16f / scale; val w = 3f / scale
+                        drawCircle(Color.Red, r, c, style = Stroke(w))
+                        drawLine(Color.Red, Offset(c.x - 1.8f * r, c.y), Offset(c.x + 1.8f * r, c.y), w); drawLine(Color.Red, Offset(c.x, c.y - 1.8f * r), Offset(c.x, c.y + 1.8f * r), w)
+                    }
                 }
             }
+            if (scale > 1.01f) Text("${String.format(Locale.ROOT, "%.1f", scale)}×", Modifier.align(Alignment.TopEnd).padding(6.dp).background(Color(0x99000000), RoundedCornerShape(6.dp)).padding(6.dp, 2.dp), color = FG, fontSize = 11.sp)
         }
-        Text(hint?.let { "repère : ${(it[0] * 100).roundToInt()} % de la largeur, ${(it[1] * 100).roundToInt()} % de la hauteur" } ?: "aucun repère", color = MUTED, fontSize = 11.sp)
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+            Text(hint?.let { "repère : ${(it[0] * 100).roundToInt()} % de la largeur, ${(it[1] * 100).roundToInt()} % de la hauteur" } ?: "aucun repère (pince pour zoomer, touche pour poser)", color = MUTED, fontSize = 11.sp, modifier = Modifier.weight(1f))
+            if (scale > 1.01f) WebButton("Vue entière", small = true) { scale = 1f; offset = Offset.Zero }
+        }
     } else Text(if (failed) "aperçu indisponible (galerie injoignable)" else "chargement de l'aperçu…", color = MUTED, fontSize = 11.sp)
 }
 
