@@ -283,6 +283,9 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val cal = st.umPerPx(obj)
         segments.add(JSONObject().put("objective", obj).put("t0", t).put("t1", JSONObject.NULL).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL)
             .put("from_x", sw.opt("from_x")).put("from_y", sw.opt("from_y")).put("from_track", sw.opt("from_track")))
+        // nouvel objectif = nouvelle reference de nettete (celle du x10 n'a rien a voir avec celle du x100) ; le cadre repart neutre
+        photoSharps.clear(); sharpRef = 0f; bigStepPending = false; lastShot = null
+        state.value = state.value.copy(lastGrade = -1, sharpRef = 0f)
         st.objective = obj
         tracker = Tracker(); synchronized(placed) { placed.clear(); placedPhotos.clear() }; lastPos = null; lastShot = null; stillSince = 0L
         Journal.log("objectif $obj : reprise à $t ms (calibration ${if (cal > 0) cal else "absente"})")
