@@ -117,7 +117,7 @@ const UMPX = null;          // micromètres par pixel de la mosaïque, null si n
 const ZSTACK = null;      // {levels, tiles:[...]} ou null
 const QUALITY = {"grade": "B", "notes": ["recalage moyen (1.6 px)", "5 champ(s) placé(s) sans recalage fin"], "frames": {"candidates": 41, "blurred": 0, "selected": 33, "used": 33, "tracked_only": 5}, "residual_px": 1.61, "residual_max_px": 281.0, "holes": [], "holes_frac": 0.0, "coverage_px": 114528841, "coverage_mm2": null, "low_sharp_frac": 0.0, "gain_spread_pct": 2.0, "flat_field": "médiane", "k1": 0.0, "zstack_fields": 0, "zstack_levels": 0};    // rapport du pipeline ({} si absent)
 const CHILDREN = [];  // lames de détail (autre objectif) recalées dans celle-ci
-const PARENT = null;      // lame d'ensemble, si celle-ci est un détail
+const PARENT = {"slug": "pv-1375-10201832", "title": "pv 1375", "placed": false};      // lame d'ensemble, si celle-ci est un détail
 const svgNS = 'http://www.w3.org/2000/svg';
 const $ = id => document.getElementById(id);
 
