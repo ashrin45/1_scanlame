@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ScanLame : le disque de l'oculaire assemblé en quatre tuiles (la couture violette), des cellules à cheval sur les coutures ; teintes Paillasse -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
-    <path android:fillColor="#f3f0f4" android:pathData="M54,30a24,24 0 1,0 0.01,0z" />
-    <path android:fillColor="#c58ad6" android:pathData="M54,40a14,14 0 1,0 0.01,0z" />
-    <path android:fillColor="#f3f0f4" android:pathData="M30,78h48v4h-48z" />
+    <group>
+        <clip-path android:pathData="M54,27a27,27 0 1,0 0.01,0z" />
+        <path android:fillColor="#5747ad" android:pathData="M20,20h68v68h-68z" />
+        <path android:fillColor="#f4e9f0" android:pathData="M20,20h32.5v32.5h-32.5z" />
+        <path android:fillColor="#f4e9f0" android:pathData="M55.5,20h32.5v32.5h-32.5z" />
+        <path android:fillColor="#f4e9f0" android:pathData="M20,55.5h32.5v32.5h-32.5z" />
+        <path android:fillColor="#f4e9f0" android:pathData="M55.5,55.5h32.5v32.5h-32.5z" />
+        <path android:fillColor="#a99af0" android:pathData="M53,39a5,5 0 1,0 0.01,0z" />
+        <path android:fillColor="#e2779c" android:pathData="M64,54.4a3.6,3.6 0 1,0 0.01,0z" />
+        <path android:fillColor="#e2779c" android:pathData="M40,56a4,4 0 1,0 0.01,0z" />
+        <path android:fillColor="#5747ad" android:pathData="M47,65.4a2.6,2.6 0 1,0 0.01,0z" />
+        <path android:fillColor="#5747ad" android:pathData="M66,37.6a2.4,2.4 0 1,0 0.01,0z" />
+    </group>
+    <path android:strokeColor="#a99af0" android:strokeWidth="3" android:fillColor="#00000000" android:pathData="M54,27a27,27 0 1,0 0.01,0z" />
 </vector>
