@@ -21,7 +21,17 @@
  "stage": null,
  "stage_cal": null,
  "stage_obs": null,
- "children": [],
+ "children": [
+  {
+   "slug": "pv-7353-obj-x100-10200938",
+   "transform": [
+    0.10210353474694785,
+    -0.004520717704513794,
+    4632.088360708508,
+    3619.4545735213437
+   ]
+  }
+ ],
  "quality": {
   "grade": "A",
   "notes": [],

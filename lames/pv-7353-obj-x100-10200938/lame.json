@@ -1,0 +1,202 @@
+{
+ "title": "pv 7353 (obj. x100)",
+ "width": 16443,
+ "height": 5179,
+ "fields": 80,
+ "tiles": 517,
+ "tile": 512,
+ "maxlvl": 15,
+ "um_per_px": null,
+ "stain": "gram",
+ "objective": "x100",
+ "sample": null,
+ "comment": null,
+ "captured": "20/10/2026 09:38",
+ "parent": "pv-7353-10200938",
+ "parent_transform": [
+  0.10210353474694785,
+  -0.004520717704513794,
+  4632.088360708508,
+  3619.4545735213437
+ ],
+ "parent_anchored": 80,
+ "parent_approx": null,
+ "outline": [
+  [
+   [
+    93.2,
+    0.0
+   ],
+   [
+    21.9,
+    1556.6
+   ],
+   [
+    0.0,
+    1562.1
+   ],
+   [
+    0.0,
+    1918.3
+   ],
+   [
+    378.2,
+    1940.3
+   ],
+   [
+    339.8,
+    3096.8
+   ],
+   [
+    383.7,
+    3107.7
+   ],
+   [
+    339.8,
+    4450.6
+   ],
+   [
+    3770.9,
+    4565.7
+   ],
+   [
+    8610.7,
+    4631.4
+   ],
+   [
+    10567.4,
+    4691.7
+   ],
+   [
+    12759.8,
+    4719.1
+   ],
+   [
+    13702.5,
+    4686.3
+   ],
+   [
+    14930.2,
+    4708.2
+   ],
+   [
+    14941.2,
+    5174.1
+   ],
+   [
+    16437.5,
+    5174.1
+   ],
+   [
+    16437.5,
+    2291.1
+   ],
+   [
+    16415.6,
+    2285.6
+   ],
+   [
+    16437.5,
+    2060.9
+   ],
+   [
+    16415.6,
+    2055.4
+   ],
+   [
+    16399.2,
+    586.5
+   ],
+   [
+    15072.8,
+    581.0
+   ],
+   [
+    15056.3,
+    235.7
+   ],
+   [
+    11323.7,
+    246.6
+   ],
+   [
+    10413.9,
+    224.7
+   ],
+   [
+    10413.9,
+    186.4
+   ],
+   [
+    10364.6,
+    186.4
+   ],
+   [
+    10359.1,
+    230.2
+   ],
+   [
+    8555.8,
+    175.4
+   ],
+   [
+    3858.6,
+    126.1
+   ],
+   [
+    1112.6,
+    54.8
+   ]
+  ]
+ ],
+ "hint": null,
+ "stage": null,
+ "stage_cal": null,
+ "stage_obs": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "recalage moyen (2.1 px)"
+  ],
+  "frames": {
+   "candidates": 145,
+   "blurred": 4,
+   "selected": 80,
+   "used": 80,
+   "tracked_only": 0
+  },
+  "residual_px": 2.1,
+  "residual_max_px": 104.15,
+  "holes": [],
+  "holes_frac": 0.0,
+  "coverage_px": 72362856,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 4.8,
+  "flat_field": "médiane",
+  "k1": -0.018,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "series": "lame_20261020_093825_pv-7353",
+ "version": 1,
+ "params": {
+  "depth": "off",
+  "seams": true,
+  "fps": 4.0,
+  "reg_size": 1200,
+  "max_side": 32000,
+  "core": 0.7,
+  "tile": 2048,
+  "distortion": true,
+  "chroma": true,
+  "code": "b283af6"
+ },
+ "published": "2026-10-20T08:12:15+00:00",
+ "updated": "2026-10-20T08:12:15+00:00",
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null
+}
