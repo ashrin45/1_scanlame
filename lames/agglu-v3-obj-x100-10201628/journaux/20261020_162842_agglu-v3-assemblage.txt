@@ -1,0 +1,48 @@
+[    0.0s] segment 1/2 : objectif x100, 56 images entre 0 s et 80 s
+[    0.0s] 56 images candidates
+[    0.7s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[    0.7s] netteté médiane 19.0, seuil 7.6
+[    1.0s] 47 images retenues (nettes, non redondantes)
+[    1.6s] flat-field : médiane temporelle de 40 images (vignettage et poussières fixes de l'oculaire)
+[    3.5s] aberration chromatique : échelle R 1.0000, B 1.0000
+[    3.8s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 6 %)
+[    7.5s] prétraitement terminé, 47 images, recalage à 900 x 1200
+[   11.2s] points SIFT : 1659 par image en moyenne
+[   11.2s] 402 paires à tester
+[   19.4s] 178 paires valides
+[   24.8s] 8 paire(s) recalée(s) par corrélation d'images (champs répétitifs ou pauvres en points)
+[   25.1s] distorsion radiale k1 = -0.0260 (résidu 0.98 px contre 1.77 px sans correction)
+[   25.2s] composantes : [47] -> on assemble la n°0 : 47 images
+[   25.4s] a priori (ensemble enregistré après le détail) : dernière photo du détail au centre du premier champ de l'ensemble (2054, 2486)
+[   25.4s] ancrage dans la lame d'ensemble inbox/lame_20261020_162842_agglu-v3/result (5353x5374 px, objectif x10) : mosaïque provisoire 698x572
+[   25.5s] recherche dans la fenêtre (1018, 1588, 3089, 3383)
+[   26.6s] facteur 1.0000 : 236 appariements, 161 inliers, échelle résiduelle 1.07
+[   55.3s] appariement appris (fenêtre 1054x919) : 3051 appariements, 1981 inliers, échelle résiduelle 1.070
+[   55.3s]   -> affinage retenu (1981 inliers au lieu de 161)
+[   55.4s] ancrage global : 1979 points sur 38 images
+[   55.4s]   dernière photo (0046) ancrée au centre du premier champ de l'ensemble (écart à la localisation grossière : 289 px parent)
+[   55.4s] localisation grossière : 1981 inliers, échelle enfant->parent 0.1070
+[   68.4s]   groupe 0000-0004 : 1486 appariements, 1389 inliers, échelle 1.000, rotation +0.5°, décalage 1 px parent
+[   98.7s]   groupe 0005-0009 : 2258 appariements, 2107 inliers, échelle 1.025, rotation -1.8°, décalage 1 px parent
+[  115.8s]   groupe 0010-0014 : 1562 appariements, 1354 inliers, échelle 0.994, rotation +0.0°, décalage 1 px parent
+[  133.8s]   groupe 0015-0019 : 34 appariements, 31 inliers, échelle 1.002, rotation +0.6°, décalage 2 px parent
+[  146.1s]   groupe 0020-0024 : 97 appariements, 81 inliers, échelle 0.998, rotation +0.3°, décalage 1 px parent
+[  160.5s]   groupe 0025-0029 : 0 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  172.4s]   groupe 0030-0034 : 2 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  180.9s]   groupe 0040-0046 : 13 appariements, 2 inliers, échelle 14.524, rotation +7.5°, décalage 1034 px parent : rejeté
+[  189.3s]   groupe 0040-0046 : 13 appariements, 2 inliers, échelle 14.524, rotation +7.5°, décalage 1034 px parent : rejeté
+[  189.3s] ancrage : 5/9 groupes appariés, 39 images ancrées, 2883 points
+[  189.6s] échelles relatives après ajustement : min 0.959, max 1.027
+[  189.6s] ancrages (1re passe) : résidu médian 9.6 px de recalage, 90e centile 20.4
+[  202.3s]   groupe 0025-0034 : 6 appariements, 2 inliers, échelle 6.728, rotation -21.5°, décalage 1139 px parent : rejeté
+[  210.8s]   groupe 0040-0046 : 3 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  219.3s]   groupe 0040-0046 : 3 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  219.3s] ancrages (final) : résidu médian 9.6 px de recalage, 90e centile 20.4
+[  219.3s] ajustement global : 24057 correspondances, 46 images, 2883 ancrages
+[  219.5s] compensation photométrique : écart de gain max 3.4 %
+[  219.5s] recalage : erreur médiane 1.26 px (échelle recalage), max 4.58
+[  219.9s] mosaïque 7266 x 5965
+[  219.9s] position dans la lame d'ensemble : échelle 0.1019, rotation -0.4°, 39 images ancrées
+[  302.9s] composition : 12 tuiles en 82 s
+[  303.5s] qualité : note B (1 trou(s) dans la couverture)
+[  303.5s] terminé : pano.jpg 7266 x 5965 , 47 images utilisées sur 47

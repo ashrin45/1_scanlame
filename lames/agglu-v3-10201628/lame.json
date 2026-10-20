@@ -21,7 +21,17 @@
  "stage": null,
  "stage_cal": null,
  "stage_obs": null,
- "children": [],
+ "children": [
+  {
+   "slug": "agglu-v3-obj-x100-10201628",
+   "transform": [
+    0.10187632610146176,
+    -0.0007405157043438044,
+    2023.1303638415955,
+    2272.279932043477
+   ]
+  }
+ ],
  "quality": {
   "grade": "A",
   "notes": [],
