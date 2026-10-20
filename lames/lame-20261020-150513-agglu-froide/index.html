@@ -99,6 +99,8 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
     <input id="eurl" placeholder="URL du serveur (…/functions/v1/scanlame)" autocomplete="off">
     <input id="etoken" placeholder="Jeton" type="password" autocomplete="off">
     <div class="row"><button id="ecrop">Rogner…</button><button id="edelete" class="danger">Supprimer la lame</button></div>
+    <div class="row"><button id="eresume">Reprendre (QR)</button><button id="edetail">Ajouter un détail (QR)</button></div>
+    <div id="qrbox" hidden style="display:flex;gap:12px;align-items:center"><div id="qr"></div><div class="msg" id="qrmsg"></div></div>
     <div class="msg">Télécharger : <a id="dlfull" href="#" target="_blank" rel="noopener">image entière (JPEG pleine résolution)</a> · <a id="dlzip" href="#" target="_blank" rel="noopener">dossier avec visionneuse hors ligne (zip)</a> · ou <code>python tools/telecharger_lame.py lame-20261020-150513-agglu-froide --patches 512</code> pour l'image, des vignettes et les champs (dépôt GitHub).</div>
     <div class="msg" id="emsg">Les mêmes réglages que la page de capture. La modification est faite par GitHub Actions en quelques minutes.</div>
   </div>
@@ -106,6 +108,7 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
   <div id="cropbar" hidden><span id="cropinfo">Tracez un rectangle à garder</span><button id="cropok" disabled>Valider le rognage</button><button id="cropcancel">Annuler</button></div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 const SLUG = "lame-20261020-150513-agglu-froide";
 const W = 11675, H = 3638, TILE = 512, MAXLVL = 14;
@@ -163,7 +166,10 @@ for (const c of placed) {
   const [a, b, tx, ty] = c.transform;   // x' = a x - b y + tx ; y' = b x + a y + ty  (enfant px -> parent px)
   const s = Math.hypot(a, b), deg = Math.atan2(b, a) * 180 / Math.PI;
   const corners = [[0, 0], [c.width, 0], [c.width, c.height], [0, c.height]].map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty]);
-  const polys = (c.outline && c.outline.length) ? c.outline.map(poly => poly.map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty])) : [corners];
+  // contour en px parent, limite a l'emprise de la lame d'ensemble (meme borne que le calque)
+  const pbounds = [{ x: 0, y: 0 }, { x: W, y: 0 }, { x: W, y: H }, { x: 0, y: H }];
+  const polys = ((c.outline && c.outline.length) ? c.outline.map(poly => poly.map(([x, y]) => ({ x: a * x - b * y + tx, y: b * x + a * y + ty }))) : [corners.map(([x, y]) => ({ x, y }))])
+    .map(poly => clipPoly(poly, pbounds)).filter(p => p.length >= 3).map(poly => poly.map(p => [p.x, p.y]));
   for (const poly of polys) { const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', poly.map(q => q.map(v => v.toFixed(1)).join(',')).join(' ')); kidSvg.appendChild(p); }
   const t = document.createElementNS(svgNS, 'text'); t.setAttribute('x', corners[0][0] + 30); t.setAttribute('y', corners[0][1] - 20); t.textContent = c.objective ? 'obj. ' + c.objective : c.title; kidSvg.appendChild(t);
   viewer.addHandler('open', () => viewer.addTiledImage({
@@ -278,6 +284,15 @@ $('eurl').value = LS.get('scanlame.url'); $('etoken').value = LS.get('scanlame.t
 $('eurl').onchange = () => LS.set('scanlame.url', $('eurl').value.trim()); $('etoken').onchange = () => LS.set('scanlame.token', $('etoken').value.trim());
 $('dlfull').href = 'https://github.com/ashrin45/1_scanlame/releases/download/lames/' + SLUG + '.jpg';
 $('dlzip').href = 'https://github.com/ashrin45/1_scanlame/releases/download/lames/' + SLUG + '-visionneuse.zip';
+// QR codes vers l'appli : scanlame://reprendre/<slug> (completer les zones manquantes) et scanlame://ensemble/<slug> (prendre un detail x100 rattache)
+function showQr(kind, msg) {
+  const url = 'scanlame://' + kind + '/' + SLUG;
+  $('qr').innerHTML = ''; $('qrbox').hidden = false;
+  try { new QRCode($('qr'), { text: url, width: 132, height: 132, correctLevel: QRCode.CorrectLevel.M }); } catch (e) { $('qr').textContent = url; }
+  $('qrmsg').innerHTML = msg + '<br>Scanner avec l\'appareil photo du téléphone : l\'appli s\'ouvre avec la lame déjà choisie. Sur le téléphone, <a href="' + url + '">ouvrir directement</a>.';
+}
+$('eresume').onclick = () => showQr('reprendre', 'Reprendre cette lame : filmer seulement les zones manquantes (même objectif), la reprise est recalée et fondue dedans.');
+$('edetail').onclick = () => showQr('ensemble', 'Ajouter un détail : série au fort grossissement, rattachée à cette lame d\'ensemble.');
 $('editbtn').onclick = () => { const on = $('epanel').hidden; $('epanel').hidden = !on; $('editbtn').setAttribute('aria-pressed', on); };
 async function sendEdit(payload) {
   const url = $('eurl').value.trim().replace(/\/+$/, ''), token = $('etoken').value.trim();

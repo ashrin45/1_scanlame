@@ -124,6 +124,7 @@ def write_offline_zip(slug, out_zip):
     d = os.path.join(LAMES, slug)
     page = open(os.path.join(d, 'index.html'), encoding='utf-8').read()
     page = page.replace('https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js', 'openseadragon.min.js')
+    page = re.sub(r'<script src="https://cdnjs\.cloudflare\.com/ajax/libs/qrcodejs[^>]*></script>\n', '', page)
     page = re.sub(r'<link rel="stylesheet" href="https://fonts\.googleapis\.com[^>]*>', '', page)
     page = re.sub(r'const CHILDREN = .*?;\n', 'const CHILDREN = [];\n', page, count=1)
     page = re.sub(r'const PARENT = .*?;\n', 'const PARENT = null;\n', page, count=1)

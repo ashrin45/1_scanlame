@@ -89,6 +89,8 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import android.content.Intent
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
@@ -109,6 +111,8 @@ class MainActivity : ComponentActivity() {
     private lateinit var settings: Settings
     private lateinit var session: Session
 
+    override fun onNewIntent(intent: Intent) { super.onNewIntent(intent); handleLink(intent) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -119,12 +123,24 @@ class MainActivity : ComponentActivity() {
         Journal.log("ScanLame ${BuildConfig.VERSION_NAME} démarré sur ${Build.MANUFACTURER} ${Build.MODEL} (Android ${Build.VERSION.RELEASE})")
         Uploader.refresh(this)
         if (Uploader.pendingSeries(this).isNotEmpty()) Uploader.kick(this)
+        handleLink(intent)
         setContent {
             MaterialTheme(colorScheme = darkColorScheme(primary = ACCENT, background = BG, surface = PANEL, onSurface = FG, onBackground = FG, outline = LINE)) {
                 Surface(Modifier.fillMaxSize(), color = BG) { App(engine, settings, session) }
             }
         }
     }
+}
+
+/** Lien scanlame://reprendre/<slug> (QR code de la page de la lame) ou scanlame://ensemble/<slug> : la lame est preselectionnee. */
+val pendingLink = MutableStateFlow<Pair<String, String>?>(null)
+fun handleLink(intent: Intent?) {
+    val u = intent?.data ?: return
+    if (u.scheme != "scanlame") return
+    val slug = u.pathSegments?.firstOrNull()?.lowercase()?.filter { it.isLetterOrDigit() || it == '-' } ?: return
+    val kind = u.host ?: return
+    Journal.log("lien reçu : $kind $slug")
+    pendingLink.value = kind to slug
 }
 
 /** Entrée de la galerie (lames.json) pour les listes « lame d'ensemble » et « compléter ». */
@@ -184,6 +200,17 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
 
     LaunchedEffect(sess.message) { if (sess.message.isNotEmpty()) say(sess.message, false) }
     LaunchedEffect(camErr) { camErr?.let { say(it, true) } }
+    // lien QR « Reprendre » / « Ajouter un détail » : lame preselectionnee, titre affiche
+    val link by pendingLink.collectAsState()
+    LaunchedEffect(link) {
+        val l = link ?: return@LaunchedEffect
+        val ll = withContext(Dispatchers.IO) { loadLames(st.galleryUrl) }; if (ll.isNotEmpty()) lames = ll
+        val ref = ll.firstOrNull { it.slug == l.second }
+        val name = ref?.title ?: l.second
+        if (l.first == "reprendre") { complete = l.second; parent = ""; title = ref?.title ?: title; say("Reprise de « $name » : filme seulement les zones manquantes (même objectif), puis clôture.", false) }
+        else if (l.first == "ensemble") { parent = l.second; complete = ""; say("Détail de « $name » : lance la série au fort grossissement, la lame d'ensemble est déjà choisie.", false) }
+        pendingLink.value = null
+    }
     // galerie relue à chaque ouverture des réglages (une lame publiée pendant que l'appli tourne doit apparaître)
     LaunchedEffect(sheet) { val l = withContext(Dispatchers.IO) { loadLames(st.galleryUrl) }; if (l.isNotEmpty()) lames = l }
     LaunchedEffect(cameraOn, preview, bindKey) {
