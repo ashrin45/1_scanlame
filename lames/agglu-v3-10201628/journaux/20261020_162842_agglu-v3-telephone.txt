@@ -1,0 +1,732 @@
+     0.000  ScanLame 0.35 démarré sur samsung SM-S928B (Android 16)
+     3.251  liaison : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+     3.670  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+    28.970  === série lame_20261020_162842_agglu-v3 (photos) « agglu v3 », gram, objectif x100 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+    28.996  masque oculaire : 100 % du cadre utile (p95 198)
+    29.282  t0000308 suivi ok score 0.97 pos 0,0 net 48 (13 ms) carte 0 photos + 3 positions
+    29.621  t0000651 suivi ok score 0.96 pos 0,0 net 48 (23 ms) carte 0 photos + 6 positions
+    29.660  photo -v3_0001 à 0,0 (432 ko, 236 ms)
+    29.962  t0000988 suivi ok score 0.97 pos 0,0 net 48 (14 ms) carte 1 photos + 10 positions
+    30.294  t0001323 suivi ok score 0.97 pos 0,0 net 48 (24 ms) carte 1 photos + 13 positions
+    30.627  t0001657 suivi ok score 0.96 pos 0,0 net 43 (22 ms) carte 1 photos + 16 positions
+    30.967  t0001995 suivi ok score 0.97 pos 0,-3 net 46 (22 ms) carte 1 photos + 20 positions
+    31.296  t0002325 suivi ok score 0.97 pos 0,0 net 47 (23 ms) carte 1 photos + 23 positions
+    31.626  t0002656 suivi ok score 0.97 pos -61,0 net 42 (23 ms) carte 1 photos + 26 positions
+    31.978  t0003006 suivi ok score 0.96 pos -1048,36 net 38 (32 ms) carte 1 photos + 30 positions
+    32.157  envoyé lame_20261020_162842_agglu-v3_0001.jpg (432 ko)
+    32.162  photo en mouvement lent (52 % du champ, 18 u/s)
+    32.288  t0003317 suivi ok score 0.97 pos -1589,55 net 37 (21 ms) carte 1 photos + 33 positions
+    32.375  photo -v3_0002 à -1591,52 (435 ko, 211 ms)
+    32.633  t0003662 suivi ok score 0.97 pos -1586,59 net 39 (29 ms) carte 2 photos + 36 positions
+    32.958  t0003986 suivi ok score 0.97 pos -1632,46 net 39 (21 ms) carte 2 photos + 40 positions
+    33.297  t0004326 suivi ok score 0.97 pos -1625,47 net 37 (22 ms) carte 2 photos + 43 positions
+    33.492  envoyé lame_20261020_162842_agglu-v3_0002.jpg (435 ko)
+    33.628  t0004657 suivi ok score 0.97 pos -1621,46 net 40 (27 ms) carte 2 photos + 46 positions
+    33.969  t0004997 suivi ok score 0.98 pos -1621,46 net 49 (30 ms) carte 2 photos + 50 positions
+    34.301  t0005330 suivi ok score 0.97 pos -1621,46 net 50 (26 ms) carte 2 photos + 53 positions
+    34.630  t0005660 suivi ok score 0.96 pos -1668,47 net 45 (22 ms) carte 2 photos + 56 positions
+    34.960  t0005988 suivi ok score 0.97 pos -2164,63 net 43 (20 ms) carte 2 photos + 60 positions
+    35.288  t0006318 suivi ok score 0.97 pos -3038,89 net 42 (13 ms) carte 2 photos + 63 positions
+    35.538  photo en mouvement lent (69 % du champ, 33 u/s)
+    35.643  t0006672 suivi ok score 0.97 pos -3713,95 net 46 (33 ms) carte 2 photos + 66 positions
+    35.783  photo -v3_0003 à -3714,106 (432 ko, 244 ms)
+    35.956  t0006985 suivi ok score 0.98 pos -3692,106 net 46 (17 ms) carte 3 photos + 70 positions
+    36.294  t0007324 suivi ok score 0.96 pos -3714,118 net 48 (22 ms) carte 3 photos + 73 positions
+    36.627  t0007656 suivi ok score 0.96 pos -4215,125 net 43 (22 ms) carte 3 photos + 76 positions
+    36.961  t0007989 suivi ok score 0.97 pos -4460,129 net 42 (22 ms) carte 3 photos + 80 positions
+    37.187  envoyé lame_20261020_162842_agglu-v3_0003.jpg (432 ko)
+    37.309  t0008338 suivi ok score 0.97 pos -4841,127 net 43 (29 ms) carte 3 photos + 83 positions
+    37.628  t0008658 suivi ok score 0.97 pos -5016,136 net 44 (19 ms) carte 3 photos + 86 positions
+    37.958  t0008987 suivi ok score 0.98 pos -5016,138 net 39 (21 ms) carte 3 photos + 90 positions
+    38.115  photo -v3_0004 à -5016,141 (420 ko, 223 ms)
+    38.292  t0009322 suivi ok score 0.97 pos -5016,138 net 46 (24 ms) carte 4 photos + 93 positions
+    38.620  t0009649 suivi ok score 0.93 pos -6301,177 net 34 (16 ms) carte 4 photos + 96 positions
+    38.889  photo en mouvement lent (77 % du champ, 15 u/s)
+    38.889  ATTENTION pas trop grand (77 % du champ) : recouvrement insuffisant
+    38.962  t0009991 suivi ok score 0.97 pos -7357,210 net 48 (22 ms) carte 4 photos + 100 positions
+    39.114  photo -v3_0005 à -7378,213 (429 ko, 224 ms)
+    39.265  envoyé lame_20261020_162842_agglu-v3_0004.jpg (420 ko)
+    39.295  t0010324 suivi ok score 0.96 pos -7381,224 net 49 (24 ms) carte 5 photos + 103 positions
+    39.626  t0010656 suivi ok score 0.97 pos -7455,229 net 47 (21 ms) carte 5 photos + 106 positions
+    39.970  t0010998 suivi ok score 0.97 pos -8162,251 net 50 (27 ms) carte 5 photos + 110 positions
+    40.293  t0011323 suivi ok score 0.97 pos -8184,245 net 51 (24 ms) carte 5 photos + 113 positions
+    40.581  photo -v3_0006 à -8184,245 (431 ko, 220 ms)
+    40.621  t0011650 suivi ok score 0.97 pos -8175,253 net 46 (20 ms) carte 6 photos + 116 positions
+    40.964  t0011993 suivi ok score 0.97 pos -8663,255 net 47 (26 ms) carte 6 photos + 120 positions
+    41.293  t0012323 suivi ok score 0.97 pos -9244,280 net 52 (22 ms) carte 6 photos + 123 positions
+    41.635  t0012665 suivi ok score 0.98 pos -9250,272 net 51 (21 ms) carte 6 photos + 126 positions
+    41.741  envoyé lame_20261020_162842_agglu-v3_0005.jpg (429 ko)
+    41.778  photo -v3_0007 à -9250,272 (430 ko, 218 ms)
+    41.975  t0013004 suivi ok score 0.97 pos -9286,272 net 46 (26 ms) carte 7 photos + 130 positions
+    42.294  t0013324 suivi ok score 0.95 pos -10182,298 net 46 (24 ms) carte 7 photos + 133 positions
+    42.633  t0013663 suivi ok score 0.98 pos -10302,305 net 50 (19 ms) carte 7 photos + 136 positions
+    42.698  envoyé lame_20261020_162842_agglu-v3_0006.jpg (431 ko)
+    42.960  t0013989 suivi ok score 0.97 pos -10302,303 net 47 (23 ms) carte 7 photos + 140 positions
+    43.007  photo -v3_0008 à -10302,303 (434 ko, 209 ms)
+    43.305  t0014335 suivi ok score 0.96 pos -10473,303 net 44 (21 ms) carte 8 photos + 143 positions
+    43.643  t0014673 suivi ok score 0.97 pos -10684,319 net 53 (21 ms) carte 8 photos + 146 positions
+    43.959  t0014988 suivi ok score 0.96 pos -10684,319 net 49 (24 ms) carte 8 photos + 150 positions
+    44.047  photo -v3_0009 à -10684,323 (434 ko, 211 ms)
+    44.228  envoyé lame_20261020_162842_agglu-v3_0007.jpg (430 ko)
+    44.310  t0015339 suivi ok score 0.96 pos -10676,366 net 48 (35 ms) carte 9 photos + 153 positions
+    44.627  t0015656 suivi ok score 0.97 pos -10657,929 net 49 (22 ms) carte 9 photos + 156 positions
+    44.972  t0016001 suivi ok score 0.96 pos -10628,1399 net 47 (24 ms) carte 9 photos + 160 positions
+    45.301  t0016330 suivi ok score 0.97 pos -10603,2113 net 48 (22 ms) carte 9 photos + 163 positions
+    45.329  envoyé lame_20261020_162842_agglu-v3_0008.jpg (434 ko)
+    45.631  t0016661 suivi ok score 0.97 pos -10599,2183 net 45 (22 ms) carte 9 photos + 166 positions
+    45.957  photo -v3_0010 à -10600,2178 (431 ko, 228 ms)
+    45.963  t0016991 suivi ok score 0.96 pos -10611,2177 net 47 (21 ms) carte 10 photos + 170 positions
+    46.333  t0017363 suivi ok score 0.97 pos -10600,2193 net 49 (17 ms) carte 10 photos + 173 positions
+    46.676  t0017705 suivi ok score 0.95 pos -10461,2186 net 47 (20 ms) carte 10 photos + 176 positions
+    46.996  t0018025 suivi ok score 0.95 pos -9116,2149 net 47 (19 ms) carte 10 photos + 180 positions
+    47.096  photo en mouvement lent (51 % du champ, 24 u/s)
+    47.260  envoyé lame_20261020_162842_agglu-v3_0009.jpg (434 ko)
+    47.304  photo -v3_0011 à -9033,2142 (430 ko, 207 ms)
+    47.324  t0018354 suivi ok score 0.98 pos -9028,2151 net 49 (21 ms) carte 11 photos + 183 positions
+    47.661  t0018690 suivi ok score 0.97 pos -9026,2150 net 47 (20 ms) carte 11 photos + 186 positions
+    47.998  t0019028 suivi ok score 0.98 pos -9026,2150 net 45 (22 ms) carte 11 photos + 190 positions
+    48.329  t0019358 suivi ok score 0.97 pos -9005,2150 net 46 (22 ms) carte 11 photos + 193 positions
+    48.474  envoyé lame_20261020_162842_agglu-v3_0010.jpg (431 ko)
+    48.665  t0019694 suivi ok score 0.96 pos -8859,2150 net 43 (23 ms) carte 11 photos + 196 positions
+    48.999  t0020028 suivi ok score 0.98 pos -8693,2136 net 44 (25 ms) carte 11 photos + 200 positions
+    49.323  t0020352 suivi ok score 0.92 pos -7273,2091 net 45 (17 ms) carte 11 photos + 203 positions
+    49.424  photo en mouvement lent (62 % du champ, 4 u/s)
+    49.652  photo -v3_0012 à -7151,2089 (431 ko, 227 ms)
+    49.662  t0020692 suivi ok score 0.97 pos -7170,2092 net 53 (22 ms) carte 12 photos + 206 positions
+    49.997  t0021026 suivi ok score 0.97 pos -7168,2092 net 48 (20 ms) carte 12 photos + 210 positions
+    50.345  t0021375 suivi ok score 0.96 pos -6663,2068 net 46 (35 ms) carte 12 photos + 213 positions
+    50.666  t0021696 suivi ok score 0.96 pos -6033,2047 net 44 (26 ms) carte 12 photos + 216 positions
+    50.953  envoyé lame_20261020_162842_agglu-v3_0011.jpg (430 ko)
+    50.959  photo en mouvement lent (59 % du champ, 31 u/s)
+    50.998  t0022027 suivi ok score 0.97 pos -5345,2030 net 45 (23 ms) carte 12 photos + 220 positions
+    51.177  photo -v3_0013 à -5356,2027 (430 ko, 217 ms)
+    51.328  t0022358 suivi ok score 0.96 pos -5314,2030 net 44 (22 ms) carte 13 photos + 223 positions
+    51.665  t0022694 suivi ok score 0.96 pos -5109,2030 net 45 (21 ms) carte 13 photos + 226 positions
+    51.914  envoyé lame_20261020_162842_agglu-v3_0012.jpg (431 ko)
+    51.988  t0023018 suivi ok score 0.97 pos -4834,2030 net 43 (14 ms) carte 13 photos + 230 positions
+    52.333  t0023362 suivi ok score 0.96 pos -4538,2030 net 45 (21 ms) carte 13 photos + 233 positions
+    52.666  t0023696 suivi ok score 0.95 pos -4145,2022 net 44 (23 ms) carte 13 photos + 236 positions
+    52.997  t0024027 suivi ok score 0.96 pos -3969,2003 net 43 (23 ms) carte 13 photos + 240 positions
+    53.258  photo en mouvement lent (50 % du champ, 37 u/s)
+    53.328  t0024357 suivi ok score 0.95 pos -3776,2005 net 46 (20 ms) carte 13 photos + 243 positions
+    53.480  photo -v3_0014 à -3814,2007 (437 ko, 221 ms)
+    53.670  t0024699 suivi ok score 0.96 pos -3744,2003 net 45 (21 ms) carte 14 photos + 246 positions
+    54.001  t0025030 suivi ok score 0.97 pos -3745,2003 net 45 (22 ms) carte 14 photos + 250 positions
+    54.329  t0025358 suivi ok score 0.96 pos -3622,2005 net 46 (23 ms) carte 14 photos + 253 positions
+    54.377  photo -v3_0015 à -3694,2005 (435 ko, 205 ms)
+    54.677  t0025706 suivi ok score 0.95 pos -3227,1993 net 46 (34 ms) carte 15 photos + 256 positions
+    54.859  envoyé lame_20261020_162842_agglu-v3_0013.jpg (430 ko)
+    55.005  t0026034 suivi ok score 0.96 pos -2730,1973 net 46 (21 ms) carte 15 photos + 260 positions
+    55.327  t0026357 suivi ok score 0.97 pos -2727,1984 net 46 (16 ms) carte 15 photos + 263 positions
+    55.649  photo -v3_0016 à -2727,1984 (437 ko, 233 ms)
+    55.670  t0026700 suivi ok score 0.96 pos -2679,1984 net 46 (27 ms) carte 16 photos + 266 positions
+    56.008  t0027037 suivi ok score 0.96 pos -2105,1968 net 49 (24 ms) carte 16 photos + 270 positions
+    56.203  envoyé lame_20261020_162842_agglu-v3_0014.jpg (437 ko)
+    56.332  t0027362 suivi ok score 0.97 pos -1770,1952 net 48 (19 ms) carte 16 photos + 273 positions
+    56.661  t0027691 suivi ok score 0.97 pos -1771,1952 net 47 (21 ms) carte 16 photos + 276 positions
+    56.827  photo -v3_0017 à -1771,1952 (438 ko, 234 ms)
+    57.006  t0028034 suivi ok score 0.97 pos -1771,1952 net 48 (25 ms) carte 17 photos + 280 positions
+    57.319  t0028349 suivi ok score 0.96 pos -1534,1952 net 48 (13 ms) carte 17 photos + 283 positions
+    57.672  t0028701 suivi ok score 0.96 pos -1139,1898 net 49 (25 ms) carte 17 photos + 286 positions
+    57.995  t0029025 suivi ok score 0.97 pos -1138,1898 net 49 (18 ms) carte 17 photos + 290 positions
+    58.159  envoyé lame_20261020_162842_agglu-v3_0015.jpg (435 ko)
+    58.273  photo -v3_0018 à -1138,1898 (435 ko, 212 ms)
+    58.337  t0029365 suivi ok score 0.97 pos -1138,1898 net 48 (26 ms) carte 18 photos + 293 positions
+    58.669  t0029699 suivi ok score 0.96 pos -953,1897 net 44 (25 ms) carte 18 photos + 296 positions
+    59.003  t0030032 suivi ok score 0.96 pos -604,1895 net 44 (23 ms) carte 18 photos + 300 positions
+    59.332  envoyé lame_20261020_162842_agglu-v3_0016.jpg (437 ko)
+    59.334  t0030364 suivi ok score 0.96 pos -272,1879 net 46 (21 ms) carte 18 photos + 300 positions
+    59.659  t0030689 suivi ok score 0.96 pos -204,1865 net 47 (18 ms) carte 18 photos + 300 positions
+    59.921  photo -v3_0019 à -192,1865 (437 ko, 230 ms)
+    59.998  t0031027 suivi ok score 0.97 pos -140,1865 net 47 (22 ms) carte 19 photos + 300 positions
+    60.333  t0031363 suivi ok score 0.96 pos -140,1853 net 46 (21 ms) carte 19 photos + 300 positions
+    60.622  envoyé lame_20261020_162842_agglu-v3_0017.jpg (438 ko)
+    60.677  t0031706 suivi ok score 0.97 pos -140,1865 net 47 (18 ms) carte 19 photos + 300 positions
+    61.000  t0032029 suivi ok score 0.96 pos -106,1865 net 47 (24 ms) carte 19 photos + 300 positions
+    61.336  t0032365 suivi ok score 0.97 pos 203,1849 net 45 (22 ms) carte 19 photos + 300 positions
+    61.663  t0032692 suivi ok score 0.97 pos 191,1833 net 45 (18 ms) carte 19 photos + 300 positions
+    61.883  photo -v3_0020 à 191,1833 (436 ko, 220 ms)
+    61.997  t0033026 suivi ok score 0.97 pos 191,1833 net 41 (19 ms) carte 20 photos + 300 positions
+    62.329  t0033359 suivi ok score 0.96 pos 191,2056 net 39 (19 ms) carte 20 photos + 300 positions
+    62.666  t0033695 suivi ok score 0.98 pos 202,2662 net 42 (21 ms) carte 20 photos + 300 positions
+    62.995  t0034023 suivi ok score 0.96 pos 202,3634 net 45 (19 ms) carte 20 photos + 300 positions
+    63.294  envoyé lame_20261020_162842_agglu-v3_0018.jpg (435 ko)
+    63.330  t0034359 suivi ok score 0.97 pos 202,3682 net 44 (15 ms) carte 20 photos + 300 positions
+    63.650  photo -v3_0021 à 202,3682 (443 ko, 222 ms)
+    63.656  t0034685 suivi ok score 0.98 pos 202,3682 net 46 (14 ms) carte 21 photos + 300 positions
+    64.002  t0035030 suivi ok score 0.98 pos 202,3682 net 46 (21 ms) carte 21 photos + 300 positions
+    64.342  t0035370 suivi ok score 0.97 pos 202,3682 net 45 (25 ms) carte 21 photos + 300 positions
+    64.526  envoyé lame_20261020_162842_agglu-v3_0019.jpg (437 ko)
+    64.674  t0035703 suivi ok score 0.97 pos -37,3682 net 47 (26 ms) carte 21 photos + 300 positions
+    65.004  t0036032 suivi ok score 0.97 pos -324,3682 net 46 (24 ms) carte 21 photos + 300 positions
+    65.339  t0036367 suivi ok score 0.97 pos -372,3682 net 47 (24 ms) carte 21 photos + 300 positions
+    65.526  envoyé lame_20261020_162842_agglu-v3_0020.jpg (436 ko)
+    65.657  t0036686 suivi ok score 0.98 pos -372,3682 net 46 (15 ms) carte 21 photos + 300 positions
+    65.674  photo -v3_0022 à -372,3682 (443 ko, 204 ms)
+    65.991  t0037020 suivi ok score 0.97 pos -1693,3784 net 47 (16 ms) carte 22 photos + 300 positions
+    66.343  t0037373 suivi ok score 0.97 pos -1693,3784 net 46 (22 ms) carte 22 photos + 300 positions
+    66.580  photo -v3_0023 à -1693,3784 (441 ko, 236 ms)
+    66.669  t0037698 suivi ok score 0.97 pos -1693,3784 net 46 (17 ms) carte 23 photos + 300 positions
+    66.973  photo en mouvement lent (53 % du champ, 4 u/s)
+    66.998  t0038027 suivi ok score 0.97 pos -3326,3837 net 46 (17 ms) carte 23 photos + 300 positions
+    67.195  photo -v3_0024 à -3326,3837 (441 ko, 221 ms)
+    67.297  envoyé lame_20261020_162842_agglu-v3_0021.jpg (443 ko)
+    67.335  t0038365 suivi ok score 0.97 pos -3326,3837 net 46 (19 ms) carte 24 photos + 300 positions
+    67.659  t0038688 suivi ok score 0.91 pos -4462,3853 net 30 (16 ms) carte 24 photos + 300 positions
+    67.839  photo en mouvement lent (67 % du champ, 5 u/s)
+    67.994  t0039023 suivi ok score 0.97 pos -5367,3864 net 45 (19 ms) carte 24 photos + 300 positions
+    68.043  photo -v3_0025 à -5366,3864 (433 ko, 203 ms)
+    68.343  t0039372 suivi ok score 0.96 pos -5367,3864 net 46 (20 ms) carte 25 photos + 300 positions
+    68.374  envoyé lame_20261020_162842_agglu-v3_0022.jpg (443 ko)
+    68.669  t0039698 suivi ok score 0.88 pos -8167,3968 net 44 (25 ms) carte 25 photos + 300 positions
+    68.730  photo en mouvement lent (92 % du champ, 12 u/s)
+    68.731  ATTENTION pas trop grand (92 % du champ) : recouvrement insuffisant
+    68.939  photo -v3_0026 à -8188,3970 (433 ko, 208 ms)
+    69.002  t0040031 suivi ok score 0.97 pos -8190,3954 net 49 (20 ms) carte 26 photos + 300 positions
+    69.337  t0040366 suivi ok score 0.90 pos -7727,3939 net 33 (22 ms) carte 26 photos + 300 positions
+    69.511  photo en mouvement lent (119 % du champ, 30 u/s)
+    69.511  ATTENTION pas trop grand (119 % du champ) : recouvrement insuffisant
+    69.668  t0040697 suivi ok score 0.97 pos -4897,3863 net 45 (20 ms) carte 26 photos + 300 positions
+    69.757  photo -v3_0027 à -4559,3827 (430 ko, 246 ms)
+    69.969  envoyé lame_20261020_162842_agglu-v3_0023.jpg (441 ko)
+    70.000  t0041028 suivi ok score 0.96 pos -5802,3863 net 33 (17 ms) carte 27 photos + 300 positions
+    70.297  photo en mouvement lent (135 % du champ, 34 u/s)
+    70.297  ATTENTION pas trop grand (135 % du champ) : recouvrement insuffisant
+    70.331  t0041361 suivi ok score 0.97 pos -8681,3971 net 46 (20 ms) carte 27 photos + 300 positions
+    70.507  photo -v3_0028 à -8675,3969 (428 ko, 210 ms)
+    70.664  t0041693 suivi ok score 0.97 pos -8683,3960 net 46 (19 ms) carte 28 photos + 300 positions
+    70.998  t0042027 suivi ok score 0.90 pos -8932,3965 net 40 (18 ms) carte 28 photos + 300 positions
+    71.298  envoyé lame_20261020_162842_agglu-v3_0024.jpg (441 ko)
+    71.332  t0042361 suivi ok score 0.97 pos -9862,4009 net 48 (19 ms) carte 28 photos + 300 positions
+    71.662  t0042692 suivi ok score 0.97 pos -9860,3997 net 50 (18 ms) carte 28 photos + 300 positions
+    71.791  photo -v3_0029 à -9860,3999 (428 ko, 229 ms)
+    72.000  t0043029 suivi ok score 0.95 pos -10809,4030 net 47 (21 ms) carte 29 photos + 300 positions
+    72.337  t0043366 suivi ok score 0.97 pos -10858,4046 net 47 (18 ms) carte 29 photos + 300 positions
+    72.513  envoyé lame_20261020_162842_agglu-v3_0025.jpg (433 ko)
+    72.654  photo -v3_0030 à -10858,4046 (430 ko, 218 ms)
+    72.676  t0043706 suivi ok score 0.96 pos -10858,4046 net 47 (24 ms) carte 30 photos + 300 positions
+    72.997  t0044026 suivi ok score 0.91 pos -10831,4402 net 32 (22 ms) carte 30 photos + 300 positions
+    73.233  photo en mouvement lent (83 % du champ, 0 u/s)
+    73.233  ATTENTION pas trop grand (83 % du champ) : recouvrement insuffisant
+    73.330  t0044359 suivi ok score 0.97 pos -10712,7430 net 48 (15 ms) carte 30 photos + 300 positions
+    73.452  photo -v3_0031 à -10712,7430 (430 ko, 219 ms)
+    73.559  envoyé lame_20261020_162842_agglu-v3_0026.jpg (433 ko)
+    73.659  t0044688 suivi ok score 0.69 pos -10724,6968 net 25 (14 ms) carte 31 photos + 300 positions
+    73.868  photo en mouvement lent (60 % du champ, 30 u/s)
+    73.998  t0045027 suivi ok score 0.97 pos -10795,4992 net 49 (16 ms) carte 31 photos + 300 positions
+    74.091  photo -v3_0032 à -10795,4992 (414 ko, 221 ms)
+    74.332  t0045361 suivi ok score 0.98 pos -10795,4992 net 47 (19 ms) carte 32 photos + 300 positions
+    74.663  t0045693 suivi ok score 0.97 pos -10795,4992 net 47 (16 ms) carte 32 photos + 300 positions
+    74.999  t0046028 suivi ok score 0.96 pos -10795,5486 net 46 (16 ms) carte 32 photos + 300 positions
+    75.336  t0046365 suivi ok score 0.97 pos -10795,5693 net 47 (18 ms) carte 32 photos + 300 positions
+    75.656  envoyé lame_20261020_162842_agglu-v3_0027.jpg (430 ko)
+    75.686  t0046715 suivi ok score 0.96 pos -10795,5964 net 49 (27 ms) carte 32 photos + 300 positions
+    75.994  t0047023 suivi ok score 0.95 pos -10795,6028 net 44 (14 ms) carte 32 photos + 300 positions
+    76.185  photo -v3_0033 à -10795,6028 (426 ko, 220 ms)
+    76.328  t0047357 suivi ok score 0.97 pos -10795,6107 net 48 (13 ms) carte 33 photos + 300 positions
+    76.678  t0047707 suivi ok score 0.94 pos -10795,6123 net 44 (19 ms) carte 33 photos + 300 positions
+    76.880  envoyé lame_20261020_162842_agglu-v3_0028.jpg (428 ko)
+    77.002  t0048030 suivi ok score 0.92 pos -9923,6107 net 40 (21 ms) carte 33 photos + 300 positions
+    77.159  photo en mouvement lent (63 % du champ, 0 u/s)
+    77.333  t0048361 suivi ok score 0.97 pos -8871,6076 net 49 (19 ms) carte 33 photos + 300 positions
+    77.383  photo -v3_0034 à -8871,6076 (422 ko, 223 ms)
+    77.686  t0048715 suivi ok score 0.96 pos -8871,6076 net 51 (27 ms) carte 34 photos + 300 positions
+    77.895  envoyé lame_20261020_162842_agglu-v3_0029.jpg (428 ko)
+    77.939  photo en mouvement lent (88 % du champ, 31 u/s)
+    77.940  ATTENTION pas trop grand (88 % du champ) : recouvrement insuffisant
+    78.006  t0049035 suivi ok score 0.97 pos -6194,5980 net 46 (20 ms) carte 34 photos + 300 positions
+    78.151  photo -v3_0035 à -6194,5980 (427 ko, 211 ms)
+    78.350  t0049378 suivi ok score 0.97 pos -6194,5980 net 46 (26 ms) carte 35 photos + 300 positions
+    78.666  t0049695 suivi ok score 0.97 pos -6205,5980 net 46 (19 ms) carte 35 photos + 300 positions
+    78.859  envoyé lame_20261020_162842_agglu-v3_0030.jpg (430 ko)
+    79.008  t0050036 suivi ok score 0.98 pos -5668,5980 net 44 (20 ms) carte 35 photos + 300 positions
+    79.334  t0050363 suivi ok score 0.97 pos -5668,5980 net 44 (20 ms) carte 35 photos + 300 positions
+    79.548  photo -v3_0036 à -5668,5980 (429 ko, 213 ms)
+    79.668  t0050697 suivi ok score 0.96 pos -5656,5980 net 45 (21 ms) carte 36 photos + 300 positions
+    80.004  t0051032 suivi ok score 0.97 pos -5046,5980 net 43 (18 ms) carte 36 photos + 300 positions
+    80.337  t0051366 suivi ok score 0.97 pos -5046,5980 net 46 (20 ms) carte 36 photos + 300 positions
+    80.400  envoyé lame_20261020_162842_agglu-v3_0031.jpg (430 ko)
+    80.579  photo -v3_0037 à -5046,5980 (433 ko, 214 ms)
+    80.671  t0051700 suivi ok score 0.93 pos -4293,5948 net 34 (15 ms) carte 37 photos + 300 positions
+    80.868  photo en mouvement lent (66 % du champ, 0 u/s)
+    81.014  t0052041 suivi ok score 0.98 pos -3038,5900 net 44 (29 ms) carte 37 photos + 300 positions
+    81.095  photo -v3_0038 à -3026,5900 (433 ko, 226 ms)
+    81.335  t0052365 suivi ok score 0.98 pos -3038,5900 net 43 (18 ms) carte 38 photos + 300 positions
+    81.673  t0052702 suivi ok score 0.92 pos -2703,5900 net 39 (21 ms) carte 38 photos + 300 positions
+    81.806  envoyé lame_20261020_162842_agglu-v3_0032.jpg (414 ko)
+    81.997  t0053026 suivi ok score 0.98 pos -1926,5884 net 45 (16 ms) carte 38 photos + 300 positions
+    82.330  t0053359 suivi ok score 0.97 pos -1926,5884 net 45 (16 ms) carte 38 photos + 300 positions
+    82.494  photo -v3_0039 à -1926,5884 (433 ko, 232 ms)
+    82.677  t0053706 suivi ok score 0.97 pos -1926,5884 net 45 (23 ms) carte 39 photos + 300 positions
+    82.998  t0054028 suivi ok score 0.98 pos -1926,5884 net 44 (16 ms) carte 39 photos + 300 positions
+    83.337  t0054366 suivi ok score 0.97 pos -1926,5884 net 44 (19 ms) carte 39 photos + 300 positions
+    83.676  t0054705 suivi ok score 0.97 pos -1926,5884 net 45 (24 ms) carte 39 photos + 300 positions
+    83.999  t0055028 suivi ok score 0.97 pos -1926,5884 net 18 (19 ms) carte 39 photos + 300 positions
+    84.334  t0055363 suivi ok score 0.97 pos -1926,5884 net 44 (16 ms) carte 39 photos + 300 positions
+    84.602  envoyé lame_20261020_162842_agglu-v3_0033.jpg (426 ko)
+    84.671  t0055699 suivi ok score 0.97 pos -1926,5884 net 45 (19 ms) carte 39 photos + 300 positions
+    84.997  t0056025 suivi ok score 0.98 pos -1926,5884 net 44 (14 ms) carte 39 photos + 300 positions
+    85.353  t0056382 suivi ok score 0.96 pos -1699,5884 net 44 (28 ms) carte 39 photos + 300 positions
+    85.674  t0056703 suivi ok score 0.97 pos -1161,5884 net 44 (17 ms) carte 39 photos + 300 positions
+    86.000  t0057028 suivi ok score 0.98 pos -1137,5884 net 44 (16 ms) carte 39 photos + 300 positions
+    86.159  envoyé lame_20261020_162842_agglu-v3_0034.jpg (422 ko)
+    86.257  photo -v3_0040 à -1137,5884 (433 ko, 221 ms)
+    86.330  t0057360 suivi ok score 0.97 pos -1137,5884 net 44 (15 ms) carte 40 photos + 300 positions
+    86.667  t0057696 suivi ok score 0.97 pos -994,5884 net 44 (15 ms) carte 40 photos + 300 positions
+    87.005  t0058034 suivi ok score 0.96 pos -587,5884 net 45 (15 ms) carte 40 photos + 300 positions
+    87.270  envoyé lame_20261020_162842_agglu-v3_0035.jpg (427 ko)
+    87.345  t0058374 suivi ok score 0.97 pos -301,5884 net 44 (19 ms) carte 40 photos + 300 positions
+    87.672  t0058701 suivi ok score 0.97 pos -26,5884 net 44 (14 ms) carte 40 photos + 300 positions
+    88.001  t0059030 suivi ok score 0.98 pos -38,5884 net 46 (17 ms) carte 40 photos + 300 positions
+    88.217  photo -v3_0041 à -38,5884 (433 ko, 215 ms)
+    88.337  t0059366 suivi ok score 0.97 pos -38,5884 net 47 (21 ms) carte 41 photos + 300 positions
+    88.402  envoyé lame_20261020_162842_agglu-v3_0036.jpg (429 ko)
+    88.680  t0059710 suivi ok score 0.98 pos -38,5884 net 47 (18 ms) carte 41 photos + 300 positions
+    89.017  t0060045 suivi ok score 0.97 pos 106,5884 net 47 (23 ms) carte 41 photos + 300 positions
+    89.331  t0060361 suivi ok score 0.97 pos 106,5884 net 46 (16 ms) carte 41 photos + 300 positions
+    89.537  envoyé lame_20261020_162842_agglu-v3_0037.jpg (433 ko)
+    89.584  photo -v3_0042 à 106,5884 (435 ko, 212 ms)
+    89.665  t0060694 suivi ok score 0.97 pos 142,5884 net 45 (16 ms) carte 42 photos + 300 positions
+    90.008  t0061037 suivi ok score 0.97 pos 524,5884 net 45 (17 ms) carte 42 photos + 300 positions
+    90.341  t0061370 suivi ok score 0.97 pos 524,5884 net 47 (20 ms) carte 42 photos + 300 positions
+    90.572  photo -v3_0043 à 524,5884 (436 ko, 230 ms)
+    90.674  t0061701 suivi ok score 0.98 pos 524,5884 net 36 (17 ms) carte 43 photos + 300 positions
+    90.745  envoyé lame_20261020_162842_agglu-v3_0038.jpg (433 ko)
+    91.013  t0062042 suivi ok score 0.97 pos 524,6235 net 39 (21 ms) carte 43 photos + 300 positions
+    91.340  t0062369 suivi ok score 0.96 pos 524,6872 net 43 (17 ms) carte 43 photos + 300 positions
+    91.680  t0062709 suivi ok score 0.96 pos 524,6904 net 45 (21 ms) carte 43 photos + 300 positions
+    91.719  envoyé lame_20261020_162842_agglu-v3_0039.jpg (433 ko)
+    91.932  photo -v3_0044 à 524,6920 (433 ko, 232 ms)
+    92.003  t0063031 suivi ok score 0.95 pos 524,7096 net 48 (16 ms) carte 44 photos + 300 positions
+    92.328  t0063357 suivi ok score 0.96 pos 524,7351 net 48 (15 ms) carte 44 photos + 300 positions
+    92.672  t0063700 suivi ok score 0.97 pos 524,7606 net 48 (15 ms) carte 44 photos + 300 positions
+    93.011  t0064039 suivi ok score 0.97 pos 524,7940 net 48 (19 ms) carte 44 photos + 300 positions
+    93.137  envoyé lame_20261020_162842_agglu-v3_0040.jpg (433 ko)
+    93.340  t0064369 suivi ok score 0.97 pos 524,8100 net 47 (18 ms) carte 44 photos + 300 positions
+    93.668  t0064697 suivi ok score 0.98 pos 524,8100 net 48 (17 ms) carte 44 photos + 300 positions
+    93.763  photo -v3_0045 à 524,8100 (437 ko, 231 ms)
+    94.004  t0065033 suivi ok score 0.96 pos 405,8100 net 44 (18 ms) carte 45 photos + 300 positions
+    94.335  t0065364 suivi ok score 0.95 pos -408,8116 net 39 (15 ms) carte 45 photos + 300 positions
+    94.367  envoyé lame_20261020_162842_agglu-v3_0041.jpg (433 ko)
+    94.666  t0065695 suivi ok score 0.98 pos -850,8116 net 49 (14 ms) carte 45 photos + 300 positions
+    95.008  t0066036 suivi ok score 0.97 pos -850,8116 net 49 (17 ms) carte 45 photos + 300 positions
+    95.131  photo -v3_0046 à -850,8116 (438 ko, 222 ms)
+    95.335  envoyé lame_20261020_162842_agglu-v3_0042.jpg (435 ko)
+    95.335  t0066364 suivi ok score 0.96 pos -862,8116 net 49 (13 ms) carte 46 photos + 300 positions
+    95.673  t0066702 suivi ok score 0.96 pos -1831,8116 net 47 (20 ms) carte 46 photos + 300 positions
+    96.008  t0067036 suivi ok score 0.97 pos -1866,8116 net 49 (20 ms) carte 46 photos + 300 positions
+    96.325  photo -v3_0047 à -1866,8116 (438 ko, 221 ms)
+    96.335  t0067365 suivi ok score 0.98 pos -1866,8116 net 47 (18 ms) carte 47 photos + 300 positions
+    96.545  envoyé lame_20261020_162842_agglu-v3_0043.jpg (436 ko)
+    96.666  t0067694 suivi ok score 0.98 pos -1878,8116 net 47 (13 ms) carte 47 photos + 300 positions
+    97.004  t0068034 suivi ok score 0.97 pos -2213,8116 net 45 (18 ms) carte 47 photos + 300 positions
+    97.339  t0068368 suivi ok score 0.97 pos -2691,8116 net 47 (18 ms) carte 47 photos + 300 positions
+    97.669  t0068699 suivi ok score 0.98 pos -2691,8116 net 48 (17 ms) carte 47 photos + 300 positions
+    97.718  envoyé lame_20261020_162842_agglu-v3_0044.jpg (433 ko)
+    97.818  photo -v3_0048 à -2691,8116 (438 ko, 214 ms)
+    98.003  t0069033 suivi ok score 0.95 pos -2775,8116 net 43 (19 ms) carte 48 photos + 300 positions
+    98.341  t0069370 suivi ok score 0.96 pos -3289,8116 net 44 (19 ms) carte 48 photos + 300 positions
+    98.669  t0069698 suivi ok score 0.98 pos -3277,8116 net 46 (16 ms) carte 48 photos + 300 positions
+    98.824  photo -v3_0049 à -3277,8116 (437 ko, 224 ms)
+    99.008  envoyé lame_20261020_162842_agglu-v3_0045.jpg (437 ko)
+    99.023  t0070052 suivi ok score 0.95 pos -3875,8132 net 36 (25 ms) carte 49 photos + 300 positions
+    99.207  photo en mouvement lent (57 % du champ, 32 u/s)
+    99.332  t0070362 suivi ok score 0.97 pos -5022,8179 net 48 (15 ms) carte 49 photos + 300 positions
+    99.422  photo -v3_0050 à -5022,8179 (435 ko, 214 ms)
+    99.669  t0070698 suivi ok score 0.98 pos -5022,8179 net 48 (15 ms) carte 50 photos + 300 positions
+    99.934  envoyé lame_20261020_162842_agglu-v3_0046.jpg (438 ko)
+   100.029  t0071057 suivi ok score 0.96 pos -5345,8179 net 43 (30 ms) carte 50 photos + 300 positions
+   100.340  t0071369 suivi ok score 0.98 pos -5536,8179 net 46 (14 ms) carte 50 photos + 300 positions
+   100.666  t0071695 suivi ok score 0.98 pos -5536,8179 net 46 (14 ms) carte 50 photos + 300 positions
+   100.719  photo -v3_0051 à -5536,8179 (430 ko, 213 ms)
+   100.894  envoyé lame_20261020_162842_agglu-v3_0047.jpg (438 ko)
+   101.006  t0072034 suivi ok score 0.94 pos -6146,8195 net 44 (18 ms) carte 51 photos + 300 positions
+   101.350  t0072379 suivi ok score 0.98 pos -6229,8195 net 50 (23 ms) carte 51 photos + 300 positions
+   101.668  photo -v3_0052 à -6229,8195 (424 ko, 226 ms)
+   101.682  t0072711 suivi ok score 0.98 pos -6229,8195 net 50 (18 ms) carte 52 photos + 300 positions
+   102.004  t0073033 suivi ok score 0.97 pos -6433,8195 net 49 (15 ms) carte 52 photos + 300 positions
+   102.056  envoyé lame_20261020_162842_agglu-v3_0048.jpg (438 ko)
+   102.341  t0073370 suivi ok score 0.97 pos -6875,8195 net 48 (18 ms) carte 52 photos + 300 positions
+   102.679  t0073708 suivi ok score 0.97 pos -6911,8195 net 48 (19 ms) carte 52 photos + 300 positions
+   103.000  photo -v3_0053 à -6911,8195 (431 ko, 225 ms)
+   103.006  t0074035 suivi ok score 0.97 pos -6935,8195 net 47 (16 ms) carte 53 photos + 300 positions
+   103.337  t0074367 suivi ok score 0.97 pos -7568,8195 net 45 (16 ms) carte 53 photos + 300 positions
+   103.680  t0074709 suivi ok score 0.96 pos -7915,8195 net 44 (22 ms) carte 53 photos + 300 positions
+   104.015  t0075044 suivi ok score 0.97 pos -7915,8195 net 47 (19 ms) carte 53 photos + 300 positions
+   104.021  envoyé lame_20261020_162842_agglu-v3_0049.jpg (437 ko)
+   104.140  photo -v3_0054 à -7915,8195 (429 ko, 238 ms)
+   104.337  t0075367 suivi ok score 0.97 pos -7975,8195 net 47 (19 ms) carte 54 photos + 300 positions
+   104.675  t0075703 suivi ok score 0.94 pos -8967,8195 net 45 (21 ms) carte 54 photos + 300 positions
+   104.979  envoyé lame_20261020_162842_agglu-v3_0050.jpg (435 ko)
+   105.002  t0076031 suivi ok score 0.97 pos -9170,8195 net 50 (14 ms) carte 54 photos + 300 positions
+   105.336  t0076365 suivi ok score 0.97 pos -9170,8195 net 49 (17 ms) carte 54 photos + 300 positions
+   105.432  photo -v3_0055 à -9170,8195 (432 ko, 229 ms)
+   105.675  t0076704 suivi ok score 0.96 pos -9337,8195 net 49 (17 ms) carte 55 photos + 300 positions
+   106.012  t0077041 suivi ok score 0.96 pos -10317,8195 net 52 (18 ms) carte 55 photos + 300 positions
+   106.210  photo en mouvement lent (53 % du champ, 30 u/s)
+   106.342  t0077372 suivi ok score 0.97 pos -10784,8195 net 50 (19 ms) carte 55 photos + 300 positions
+   106.430  photo -v3_0056 à -10784,8195 (432 ko, 219 ms)
+   106.626  envoyé lame_20261020_162842_agglu-v3_0051.jpg (430 ko)
+   106.678  t0077707 suivi ok score 0.97 pos -10784,8195 net 50 (21 ms) carte 56 photos + 300 positions
+   107.002  t0078031 suivi ok score 0.97 pos -10784,8195 net 50 (16 ms) carte 56 photos + 300 positions
+   107.338  t0078367 suivi ok score 0.98 pos -10784,8195 net 50 (15 ms) carte 56 photos + 300 positions
+   107.678  t0078707 suivi ok score 0.97 pos -10784,8195 net 50 (18 ms) carte 56 photos + 300 positions
+   108.006  envoyé lame_20261020_162842_agglu-v3_0052.jpg (424 ko)
+   108.009  t0079039 suivi ok score 0.97 pos -10784,8195 net 50 (16 ms) carte 56 photos + 300 positions
+   108.345  t0079375 suivi ok score 0.98 pos -10784,8195 net 50 (22 ms) carte 56 photos + 300 positions
+   108.680  t0079709 suivi ok score 0.97 pos -10784,8195 net 50 (21 ms) carte 56 photos + 300 positions
+   108.820  changement d'objectif vers x10 : début à 79852 ms, position -10784,8195 (ok)
+   110.013  envoyé lame_20261020_162842_agglu-v3_0053.jpg (431 ko)
+   121.721  verrouillage : focus infini, pose 0.166935 ms, ISO 50, WB figée
+   121.968  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   128.363  objectif x10 : reprise à 99394 ms (calibration absente)
+   128.379  masque oculaire : 100 % du cadre utile (p95 209)
+   128.581  t0099611 suivi ok score 0.95 pos 0,0 net 174 (34 ms) carte 0 photos + 2 positions
+   128.889  t0099918 suivi ok score 0.96 pos 0,0 net 174 (21 ms) carte 0 photos + 5 positions
+   129.006  photo -v3_0057 à 0,0 (662 ko, 215 ms)
+   129.221  t0100250 suivi ok score 0.95 pos 0,0 net 174 (24 ms) carte 1 photos + 8 positions
+   129.555  t0100583 suivi ok score 0.95 pos 0,0 net 173 (19 ms) carte 1 photos + 12 positions
+   129.903  t0100932 suivi ok score 0.95 pos 18,0 net 174 (29 ms) carte 1 photos + 15 positions
+   130.225  t0101254 suivi ok score 0.93 pos 72,0 net 168 (22 ms) carte 1 photos + 18 positions
+   130.561  t0101590 suivi ok score 0.93 pos 218,0 net 169 (16 ms) carte 1 photos + 22 positions
+   130.917  t0101946 suivi ok score 0.91 pos 330,0 net 164 (40 ms) carte 1 photos + 25 positions
+   131.232  t0102260 suivi ok score 0.89 pos 510,0 net 169 (27 ms) carte 1 photos + 28 positions
+   131.558  t0102587 suivi ok score 0.84 pos 719,0 net 169 (22 ms) carte 1 photos + 32 positions
+   131.891  t0102920 suivi ok score 0.94 pos 1013,0 net 159 (22 ms) carte 1 photos + 35 positions
+   132.229  t0103258 suivi ok score 0.88 pos 1203,0 net 157 (21 ms) carte 1 photos + 38 positions
+   132.563  t0103592 suivi ok score 0.90 pos 1404,0 net 167 (25 ms) carte 1 photos + 42 positions
+   132.822  photo en mouvement lent (52 % du champ, 27 u/s)
+   132.904  t0103933 suivi ok score 0.90 pos 1597,0 net 160 (27 ms) carte 1 photos + 45 positions
+   133.047  photo -v3_0058 à 1576,0 (622 ko, 224 ms)
+   133.229  t0104258 suivi ok score 0.90 pos 1815,0 net 158 (22 ms) carte 2 photos + 48 positions
+   133.568  t0104597 suivi ok score 0.84 pos 2000,0 net 157 (27 ms) carte 2 photos + 52 positions
+   133.897  t0104927 suivi ok score 0.87 pos 2293,0 net 153 (24 ms) carte 2 photos + 55 positions
+   134.234  t0105263 suivi ok score 0.91 pos 2603,0 net 146 (27 ms) carte 2 photos + 58 positions
+   134.567  t0105596 suivi ok score 0.86 pos 2765,0 net 146 (24 ms) carte 2 photos + 62 positions
+   134.897  t0105926 suivi ok score 0.94 pos 2930,0 net 143 (23 ms) carte 2 photos + 65 positions
+   135.239  t0106269 suivi ok score 0.93 pos 3034,0 net 140 (29 ms) carte 2 photos + 68 positions
+   135.343  photo -v3_0059 à 3002,0 (577 ko, 219 ms)
+   135.555  t0106583 suivi ok score 0.94 pos 3105,0 net 141 (22 ms) carte 3 photos + 72 positions
+   135.912  t0106941 suivi ok score 0.95 pos 3095,0 net 141 (37 ms) carte 3 photos + 75 positions
+   136.288  t0107318 suivi relocated score 0.89 pos 3347,0 net 132 (76 ms) carte 3 photos + 78 positions
+   136.592  t0107621 suivi ok score 0.94 pos 3570,-5 net 128 (22 ms) carte 3 photos + 82 positions
+   136.924  t0107954 suivi ok score 0.92 pos 3756,-13 net 124 (23 ms) carte 3 photos + 85 positions
+   137.076  envoyé lame_20261020_162842_agglu-v3_0054.jpg (429 ko)
+   137.262  t0108292 suivi ok score 0.91 pos 3918,-8 net 126 (23 ms) carte 3 photos + 88 positions
+   137.584  t0108613 suivi ok score 0.93 pos 4260,-11 net 116 (16 ms) carte 3 photos + 92 positions
+   137.934  t0108962 suivi ok score 0.92 pos 4434,-18 net 110 (28 ms) carte 3 photos + 95 positions
+   138.260  t0109290 suivi ok score 0.91 pos 4533,-9 net 109 (23 ms) carte 3 photos + 98 positions
+   138.338  envoyé lame_20261020_162842_agglu-v3_0055.jpg (432 ko)
+   138.399  photo -v3_0060 à 4521,-13 (539 ko, 211 ms)
+   138.605  t0109634 suivi ok score 0.91 pos 4661,-14 net 108 (23 ms) carte 4 photos + 102 positions
+   138.917  t0109947 suivi ok score 0.89 pos 4732,-15 net 106 (13 ms) carte 4 photos + 105 positions
+   139.137  photo -v3_0061 à 4732,-15 (534 ko, 220 ms)
+   139.250  t0110280 suivi ok score 0.90 pos 4865,-11 net 102 (20 ms) carte 5 photos + 108 positions
+   139.291  envoyé lame_20261020_162842_agglu-v3_0056.jpg (432 ko)
+   139.590  t0110619 suivi ok score 0.90 pos 4985,-14 net 101 (21 ms) carte 5 photos + 112 positions
+   139.923  t0110953 suivi ok score 0.89 pos 5135,-14 net 96 (21 ms) carte 5 photos + 115 positions
+   140.259  t0111288 suivi ok score 0.92 pos 5199,-12 net 95 (22 ms) carte 5 photos + 118 positions
+   140.537  photo -v3_0062 à 5198,-13 (525 ko, 201 ms)
+   140.594  t0111623 suivi ok score 0.94 pos 5197,-14 net 95 (23 ms) carte 6 photos + 122 positions
+   140.946  t0111975 suivi ok score 0.93 pos 5197,-14 net 95 (34 ms) carte 6 photos + 125 positions
+   141.261  t0112290 suivi ok score 0.92 pos 5197,-14 net 95 (19 ms) carte 6 photos + 128 positions
+   141.588  t0112617 suivi ok score 0.94 pos 5197,-14 net 94 (13 ms) carte 6 photos + 132 positions
+   141.789  envoyé lame_20261020_162842_agglu-v3_0057.jpg (662 ko)
+   141.933  t0112962 suivi ok score 0.91 pos 5197,-109 net 91 (26 ms) carte 6 photos + 135 positions
+   142.259  t0113288 suivi ok score 0.90 pos 5197,-303 net 92 (19 ms) carte 6 photos + 138 positions
+   142.592  t0113622 suivi ok score 0.91 pos 5187,-626 net 90 (20 ms) carte 6 photos + 142 positions
+   143.025  t0114055 suivi ok score 0.92 pos 5174,-1151 net 89 (15 ms) carte 6 photos + 145 positions
+   143.359  t0114389 suivi ok score 0.90 pos 5165,-1449 net 90 (20 ms) carte 6 photos + 148 positions
+   143.706  t0114735 suivi ok score 0.89 pos 5165,-1671 net 86 (31 ms) carte 6 photos + 152 positions
+   144.030  t0115060 suivi ok score 0.91 pos 5164,-1919 net 84 (23 ms) carte 6 photos + 155 positions
+   144.194  photo en mouvement lent (50 % du champ, 27 u/s)
+   144.358  t0115388 suivi ok score 0.89 pos 5153,-2252 net 89 (21 ms) carte 6 photos + 158 positions
+   144.420  photo -v3_0063 à 5164,-2060 (509 ko, 225 ms)
+   144.709  t0115735 suivi ok score 0.92 pos 5153,-2434 net 84 (32 ms) carte 7 photos + 162 positions
+   145.030  t0116060 suivi ok score 0.92 pos 5150,-2545 net 83 (27 ms) carte 7 photos + 165 positions
+   145.360  t0116390 suivi ok score 0.92 pos 5149,-2550 net 88 (22 ms) carte 7 photos + 168 positions
+   145.384  photo -v3_0064 à 5149,-2552 (512 ko, 227 ms)
+   145.703  t0116732 suivi ok score 0.93 pos 5149,-2550 net 87 (23 ms) carte 8 photos + 172 positions
+   146.032  t0117061 suivi ok score 0.86 pos 5149,-2600 net 86 (21 ms) carte 8 photos + 175 positions
+   146.091  envoyé lame_20261020_162842_agglu-v3_0058.jpg (622 ko)
+   146.366  t0117396 suivi ok score 0.85 pos 5149,-2800 net 85 (21 ms) carte 8 photos + 178 positions
+   146.703  t0117731 suivi ok score 0.93 pos 5149,-2821 net 93 (29 ms) carte 8 photos + 182 positions
+   146.946  photo -v3_0065 à 5149,-2821 (507 ko, 215 ms)
+   147.028  t0118058 suivi ok score 0.87 pos 5104,-2821 net 92 (24 ms) carte 9 photos + 185 positions
+   147.352  envoyé lame_20261020_162842_agglu-v3_0059.jpg (577 ko)
+   147.371  t0118400 suivi ok score 0.92 pos 4789,-2810 net 92 (27 ms) carte 9 photos + 188 positions
+   147.695  t0118724 suivi ok score 0.92 pos 4791,-2805 net 93 (21 ms) carte 9 photos + 192 positions
+   147.843  photo -v3_0066 à 4791,-2805 (516 ko, 205 ms)
+   148.031  t0119060 suivi ok score 0.91 pos 4765,-2807 net 94 (28 ms) carte 10 photos + 195 positions
+   148.372  t0119401 suivi ok score 0.90 pos 4639,-2806 net 97 (30 ms) carte 10 photos + 198 positions
+   148.529  envoyé lame_20261020_162842_agglu-v3_0060.jpg (539 ko)
+   148.704  t0119733 suivi ok score 0.90 pos 4451,-2806 net 107 (27 ms) carte 10 photos + 202 positions
+   149.092  t0120121 suivi ok score 0.90 pos 4058,-2791 net 106 (39 ms) carte 10 photos + 205 positions
+   149.393  t0120422 suivi ok score 0.88 pos 3639,-2774 net 115 (20 ms) carte 10 photos + 208 positions
+   149.610  envoyé lame_20261020_162842_agglu-v3_0061.jpg (534 ko)
+   149.744  t0120772 suivi ok score 0.86 pos 3420,-2776 net 118 (34 ms) carte 10 photos + 212 positions
+   149.858  photo en mouvement lent (50 % du champ, 31 u/s)
+   150.074  photo -v3_0067 à 3257,-2760 (540 ko, 215 ms)
+   150.096  t0121126 suivi ok score 0.91 pos 3108,-2764 net 120 (16 ms) carte 11 photos + 215 positions
+   150.456  t0121485 suivi ok score 0.94 pos 3038,-2760 net 118 (41 ms) carte 11 photos + 218 positions
+   150.808  photo -v3_0068 à 3041,-2760 (545 ko, 197 ms)
+   150.833  t0121863 suivi ok score 0.79 pos 2719,-2749 net 127 (14 ms) carte 12 photos + 222 positions
+   151.160  t0122190 suivi ok score 0.93 pos 2500,-2744 net 132 (21 ms) carte 12 photos + 225 positions
+   151.394  envoyé lame_20261020_162842_agglu-v3_0062.jpg (525 ko)
+   151.522  t0122550 suivi ok score 0.90 pos 2489,-2745 net 129 (37 ms) carte 12 photos + 228 positions
+   151.624  photo -v3_0069 à 2506,-2746 (550 ko, 229 ms)
+   151.824  t0122854 suivi ok score 0.95 pos 1981,-2732 net 131 (15 ms) carte 13 photos + 232 positions
+   152.180  t0123209 suivi ok score 0.67 pos 1817,-2728 net 137 (22 ms) carte 13 photos + 235 positions
+   152.390  photo -v3_0070 à 1961,-2729 (571 ko, 237 ms)
+   152.500  t0123530 suivi ok score 0.94 pos 1503,-2713 net 136 (23 ms) carte 14 photos + 238 positions
+   152.829  envoyé lame_20261020_162842_agglu-v3_0063.jpg (509 ko)
+   152.835  t0123864 suivi ok score 0.95 pos 1153,-2697 net 138 (22 ms) carte 14 photos + 242 positions
+   153.162  t0124191 suivi ok score 0.72 pos 604,-2687 net 142 (20 ms) carte 14 photos + 245 positions
+   153.518  t0124546 suivi ok score 0.85 pos 589,-2686 net 142 (35 ms) carte 14 photos + 248 positions
+   153.706  photo en mouvement lent (60 % du champ, 1 u/s)
+   153.830  t0124860 suivi ok score 0.95 pos 134,-2672 net 139 (22 ms) carte 14 photos + 252 positions
+   153.953  photo -v3_0071 à 135,-2670 (578 ko, 247 ms)
+   154.162  t0125191 suivi ok score 0.80 pos -120,-2674 net 138 (20 ms) carte 15 photos + 255 positions
+   154.494  t0125524 suivi ok score 0.84 pos -352,-2658 net 143 (20 ms) carte 15 photos + 258 positions
+   154.842  t0125870 suivi ok score 0.95 pos -499,-2642 net 145 (26 ms) carte 15 photos + 262 positions
+   155.056  envoyé lame_20261020_162842_agglu-v3_0064.jpg (512 ko)
+   155.173  t0126202 suivi ok score 0.94 pos -749,-2642 net 136 (26 ms) carte 15 photos + 265 positions
+   155.501  t0126530 suivi ok score 0.94 pos -1194,-2626 net 129 (22 ms) carte 15 photos + 268 positions
+   155.837  t0126866 suivi ok score 0.80 pos -1465,-2626 net 135 (24 ms) carte 15 photos + 272 positions
+   155.902  photo en mouvement lent (54 % du champ, 13 u/s)
+   156.120  photo -v3_0072 à -1520,-2612 (573 ko, 217 ms)
+   156.163  t0127192 suivi ok score 0.95 pos -1517,-2610 net 136 (23 ms) carte 16 photos + 275 positions
+   156.263  envoyé lame_20261020_162842_agglu-v3_0065.jpg (507 ko)
+   156.498  t0127527 suivi ok score 0.94 pos -1863,-2610 net 131 (20 ms) carte 16 photos + 278 positions
+   156.836  t0127865 suivi ok score 0.95 pos -2146,-2594 net 128 (25 ms) carte 16 photos + 282 positions
+   157.172  t0128200 suivi ok score 0.85 pos -2218,-2594 net 129 (24 ms) carte 16 photos + 285 positions
+   157.453  envoyé lame_20261020_162842_agglu-v3_0066.jpg (516 ko)
+   157.498  t0128527 suivi ok score 0.93 pos -2234,-2594 net 124 (17 ms) carte 16 photos + 288 positions
+   157.836  t0128865 suivi ok score 0.95 pos -2389,-2579 net 125 (23 ms) carte 16 photos + 292 positions
+   158.166  t0129195 suivi ok score 0.93 pos -2474,-2578 net 128 (22 ms) carte 16 photos + 295 positions
+   158.498  envoyé lame_20261020_162842_agglu-v3_0067.jpg (540 ko)
+   158.500  t0129529 suivi ok score 0.94 pos -2510,-2578 net 124 (19 ms) carte 16 photos + 298 positions
+   158.823  t0129852 suivi ok score 0.95 pos -2641,-2578 net 121 (14 ms) carte 16 photos + 300 positions
+   159.161  t0130191 suivi ok score 0.90 pos -2701,-2578 net 121 (15 ms) carte 16 photos + 300 positions
+   159.312  photo -v3_0073 à -2653,-2578 (562 ko, 217 ms)
+   159.498  t0130527 suivi ok score 0.94 pos -2713,-2578 net 119 (20 ms) carte 17 photos + 300 positions
+   159.836  t0130864 suivi ok score 0.95 pos -2713,-2578 net 121 (21 ms) carte 17 photos + 300 positions
+   159.850  envoyé lame_20261020_162842_agglu-v3_0068.jpg (545 ko)
+   160.166  t0131195 suivi ok score 0.95 pos -2713,-2578 net 122 (16 ms) carte 17 photos + 300 positions
+   160.514  t0131542 suivi ok score 0.91 pos -2713,-2515 net 120 (28 ms) carte 17 photos + 300 positions
+   160.837  t0131866 suivi ok score 0.87 pos -2713,-2180 net 125 (19 ms) carte 17 photos + 300 positions
+   161.130  envoyé lame_20261020_162842_agglu-v3_0069.jpg (550 ko)
+   161.159  t0132189 suivi ok score 0.95 pos -2713,-2180 net 119 (15 ms) carte 17 photos + 300 positions
+   161.413  photo -v3_0074 à -2713,-2180 (559 ko, 206 ms)
+   161.486  t0132515 suivi ok score 0.94 pos -2713,-2180 net 120 (16 ms) carte 18 photos + 300 positions
+   161.827  t0132856 suivi ok score 0.94 pos -2713,-2180 net 117 (16 ms) carte 18 photos + 300 positions
+   162.177  t0133205 suivi ok score 0.92 pos -2713,-2100 net 119 (27 ms) carte 18 photos + 300 positions
+   162.508  t0133536 suivi ok score 0.94 pos -2713,-2100 net 118 (26 ms) carte 18 photos + 300 positions
+   162.832  t0133860 suivi ok score 0.90 pos -2713,-2005 net 120 (20 ms) carte 18 photos + 300 positions
+   163.174  envoyé lame_20261020_162842_agglu-v3_0070.jpg (571 ko)
+   163.174  t0134202 suivi ok score 0.84 pos -2713,-1813 net 120 (28 ms) carte 18 photos + 300 positions
+   163.495  t0134524 suivi ok score 0.94 pos -2713,-1702 net 121 (15 ms) carte 18 photos + 300 positions
+   163.835  t0134862 suivi ok score 0.90 pos -2713,-1670 net 121 (24 ms) carte 18 photos + 300 positions
+   163.857  photo -v3_0075 à -2713,-1702 (556 ko, 225 ms)
+   164.161  t0135190 suivi ok score 0.95 pos -2713,-1176 net 125 (15 ms) carte 19 photos + 300 positions
+   164.500  t0135528 suivi ok score 0.94 pos -2713,-1176 net 125 (19 ms) carte 19 photos + 300 positions
+   164.691  photo -v3_0076 à -2713,-1176 (561 ko, 225 ms)
+   164.753  envoyé lame_20261020_162842_agglu-v3_0071.jpg (578 ko)
+   164.829  t0135859 suivi ok score 0.88 pos -2713,-889 net 120 (16 ms) carte 20 photos + 300 positions
+   165.173  t0136201 suivi ok score 0.95 pos -2713,-762 net 118 (24 ms) carte 20 photos + 300 positions
+   165.497  t0136526 suivi ok score 0.94 pos -2713,-762 net 119 (19 ms) carte 20 photos + 300 positions
+   165.521  photo -v3_0077 à -2713,-762 (562 ko, 231 ms)
+   165.828  t0136855 suivi ok score 0.94 pos -2713,-459 net 119 (15 ms) carte 21 photos + 300 positions
+   166.158  t0137187 suivi ok score 0.95 pos -2713,-459 net 120 (16 ms) carte 21 photos + 300 positions
+   166.323  photo -v3_0078 à -2713,-459 (562 ko, 234 ms)
+   166.489  t0137518 suivi ok score 0.89 pos -2713,147 net 124 (13 ms) carte 22 photos + 300 positions
+   166.835  t0137863 suivi ok score 0.94 pos -2713,147 net 120 (18 ms) carte 22 photos + 300 positions
+   166.996  envoyé lame_20261020_162842_agglu-v3_0072.jpg (573 ko)
+   167.086  photo -v3_0079 à -2713,147 (560 ko, 228 ms)
+   167.162  t0138191 suivi ok score 0.93 pos -2713,258 net 120 (19 ms) carte 23 photos + 300 positions
+   167.496  t0138525 suivi ok score 0.88 pos -2713,641 net 114 (20 ms) carte 23 photos + 300 positions
+   167.836  t0138864 suivi ok score 0.87 pos -2713,1103 net 112 (21 ms) carte 23 photos + 300 positions
+   168.163  t0139191 suivi ok score 0.95 pos -2701,1725 net 105 (18 ms) carte 23 photos + 300 positions
+   168.495  t0139525 suivi ok score 0.94 pos -2701,1725 net 105 (15 ms) carte 23 photos + 300 positions
+   168.555  envoyé lame_20261020_162842_agglu-v3_0073.jpg (562 ko)
+   168.574  photo -v3_0080 à -2701,1725 (545 ko, 212 ms)
+   168.831  t0139860 suivi ok score 0.94 pos -2701,1725 net 106 (16 ms) carte 24 photos + 300 positions
+   169.162  t0140191 suivi ok score 0.95 pos -2701,2155 net 96 (16 ms) carte 24 photos + 300 positions
+   169.501  t0140529 suivi ok score 0.94 pos -2701,2155 net 94 (16 ms) carte 24 photos + 300 positions
+   169.616  photo -v3_0081 à -2701,2155 (538 ko, 203 ms)
+   169.833  t0140861 suivi ok score 0.94 pos -2701,2155 net 94 (19 ms) carte 25 photos + 300 positions
+   170.067  envoyé lame_20261020_162842_agglu-v3_0074.jpg (559 ko)
+   170.170  t0141198 suivi ok score 0.93 pos -2701,2235 net 96 (23 ms) carte 25 photos + 300 positions
+   170.494  t0141523 suivi ok score 0.94 pos -2701,2267 net 92 (15 ms) carte 25 photos + 300 positions
+   170.850  t0141878 suivi ok score 0.94 pos -2701,2267 net 91 (25 ms) carte 25 photos + 300 positions
+   171.165  t0142194 suivi ok score 0.92 pos -2605,2267 net 93 (15 ms) carte 25 photos + 300 positions
+   171.415  envoyé lame_20261020_162842_agglu-v3_0075.jpg (556 ko)
+   171.494  t0142523 suivi ok score 0.94 pos -2115,2267 net 94 (18 ms) carte 25 photos + 300 positions
+   171.844  t0142872 suivi ok score 0.93 pos -2115,2267 net 93 (24 ms) carte 25 photos + 300 positions
+   172.047  photo -v3_0082 à -2115,2267 (534 ko, 202 ms)
+   172.165  t0143194 suivi ok score 0.91 pos -1912,2267 net 97 (20 ms) carte 26 photos + 300 positions
+   172.502  t0143531 suivi ok score 0.94 pos -1553,2267 net 98 (18 ms) carte 26 photos + 300 positions
+   172.849  t0143877 suivi ok score 0.93 pos -1553,2267 net 98 (27 ms) carte 26 photos + 300 positions
+   172.965  photo -v3_0083 à -1553,2267 (533 ko, 233 ms)
+   173.166  t0144195 suivi ok score 0.91 pos -1362,2267 net 97 (18 ms) carte 27 photos + 300 positions
+   173.193  envoyé lame_20261020_162842_agglu-v3_0076.jpg (561 ko)
+   173.497  t0144527 suivi ok score 0.94 pos -1195,2267 net 99 (15 ms) carte 27 photos + 300 positions
+   173.841  t0144869 suivi ok score 0.84 pos -1135,2267 net 99 (22 ms) carte 27 photos + 300 positions
+   173.928  photo -v3_0084 à -1195,2267 (530 ko, 232 ms)
+   174.177  t0145205 suivi ok score 0.94 pos -693,2267 net 98 (24 ms) carte 28 photos + 300 positions
+   174.499  t0145528 suivi ok score 0.85 pos -609,2267 net 97 (17 ms) carte 28 photos + 300 positions
+   174.660  photo -v3_0085 à -693,2267 (531 ko, 226 ms)
+   174.834  t0145863 suivi ok score 0.93 pos -274,2267 net 102 (17 ms) carte 29 photos + 300 positions
+   175.060  envoyé lame_20261020_162842_agglu-v3_0077.jpg (562 ko)
+   175.166  t0146196 suivi ok score 0.91 pos -167,2267 net 100 (16 ms) carte 29 photos + 300 positions
+   175.277  photo -v3_0086 à -274,2267 (530 ko, 216 ms)
+   175.493  t0146522 suivi ok score 0.94 pos 108,2267 net 98 (16 ms) carte 30 photos + 300 positions
+   175.854  t0146883 suivi ok score 0.87 pos 287,2267 net 100 (13 ms) carte 30 photos + 300 positions
+   175.889  photo -v3_0087 à 108,2267 (528 ko, 220 ms)
+   176.175  t0147203 suivi ok score 0.94 pos 443,2267 net 100 (25 ms) carte 31 photos + 300 positions
+   176.498  t0147526 suivi ok score 0.88 pos 694,2267 net 99 (17 ms) carte 31 photos + 300 positions
+   176.590  photo -v3_0088 à 443,2267 (529 ko, 244 ms)
+   176.726  envoyé lame_20261020_162842_agglu-v3_0078.jpg (562 ko)
+   176.837  t0147865 suivi ok score 0.93 pos 813,2267 net 97 (20 ms) carte 32 photos + 300 positions
+   177.161  t0148190 suivi ok score 0.82 pos 1124,2267 net 96 (9 ms) carte 32 photos + 300 positions
+   177.190  photo -v3_0089 à 813,2267 (526 ko, 230 ms)
+   177.503  t0148532 suivi ok score 0.94 pos 1160,2267 net 97 (18 ms) carte 33 photos + 300 positions
+   177.824  photo -v3_0090 à 1160,2267 (525 ko, 219 ms)
+   177.835  t0148863 suivi ok score 0.92 pos 1160,2267 net 97 (16 ms) carte 34 photos + 300 positions
+   178.130  envoyé lame_20261020_162842_agglu-v3_0079.jpg (560 ko)
+   178.170  t0149199 suivi ok score 0.94 pos 1160,2267 net 96 (16 ms) carte 34 photos + 300 positions
+   178.501  t0149530 suivi ok score 0.94 pos 1160,2267 net 95 (21 ms) carte 34 photos + 300 positions
+   178.839  t0149867 suivi ok score 0.92 pos 1160,2267 net 97 (21 ms) carte 34 photos + 300 positions
+   179.166  t0150194 suivi ok score 0.94 pos 1160,2267 net 107 (15 ms) carte 34 photos + 300 positions
+   179.494  t0150523 suivi ok score 0.94 pos 1160,2267 net 106 (13 ms) carte 34 photos + 300 positions
+   179.852  t0150880 suivi ok score 0.93 pos 1160,2267 net 107 (27 ms) carte 34 photos + 300 positions
+   180.077  envoyé lame_20261020_162842_agglu-v3_0080.jpg (545 ko)
+   180.167  t0151196 suivi ok score 0.90 pos 1291,2267 net 109 (17 ms) carte 34 photos + 300 positions
+   180.504  t0151533 suivi ok score 0.94 pos 1315,2267 net 105 (22 ms) carte 34 photos + 300 positions
+   180.791  photo -v3_0091 à 1315,2267 (536 ko, 219 ms)
+   180.840  t0151869 suivi ok score 0.86 pos 1387,2267 net 105 (16 ms) carte 35 photos + 300 positions
+   181.169  t0152197 suivi ok score 0.93 pos 1805,2267 net 103 (18 ms) carte 35 photos + 300 positions
+   181.503  t0152531 suivi ok score 0.89 pos 1817,2267 net 103 (18 ms) carte 35 photos + 300 positions
+   181.618  photo -v3_0092 à 1805,2267 (531 ko, 214 ms)
+   181.863  t0152892 suivi ok score 0.92 pos 2496,2104 net 97 (26 ms) carte 36 photos + 300 positions
+   182.183  t0153212 suivi ok score 0.93 pos 2496,2104 net 96 (30 ms) carte 36 photos + 300 positions
+   182.417  photo -v3_0093 à 2496,2104 (526 ko, 234 ms)
+   182.498  t0153527 suivi ok score 0.88 pos 2508,2104 net 96 (20 ms) carte 37 photos + 300 positions
+   182.631  envoyé lame_20261020_162842_agglu-v3_0081.jpg (538 ko)
+   182.856  t0153885 suivi ok score 0.92 pos 2885,2105 net 96 (30 ms) carte 37 photos + 300 positions
+   183.170  t0154198 suivi ok score 0.93 pos 2885,2105 net 96 (18 ms) carte 37 photos + 300 positions
+   183.250  photo -v3_0094 à 2885,2105 (522 ko, 213 ms)
+   183.543  t0154573 suivi ok score 0.92 pos 3258,2104 net 89 (17 ms) carte 38 photos + 300 positions
+   183.887  t0154915 suivi ok score 0.73 pos 3346,2104 net 87 (33 ms) carte 38 photos + 300 positions
+   184.200  t0155229 suivi ok score 0.93 pos 3751,2100 net 85 (19 ms) carte 38 photos + 300 positions
+   184.542  t0155570 suivi ok score 0.92 pos 4391,2095 net 80 (24 ms) carte 38 photos + 300 positions
+   184.871  t0155900 suivi ok score 0.92 pos 4387,2096 net 79 (18 ms) carte 38 photos + 300 positions
+   185.114  photo -v3_0095 à 4387,2096 (507 ko, 214 ms)
+   185.199  t0156228 suivi ok score 0.90 pos 4567,2095 net 76 (18 ms) carte 39 photos + 300 positions
+   185.233  envoyé lame_20261020_162842_agglu-v3_0082.jpg (534 ko)
+   185.569  t0156598 suivi ok score 0.91 pos 4913,2094 net 70 (22 ms) carte 39 photos + 300 positions
+   185.908  t0156936 suivi ok score 0.90 pos 4955,2093 net 72 (22 ms) carte 39 photos + 300 positions
+   186.109  photo -v3_0096 à 4955,2093 (502 ko, 201 ms)
+   186.242  t0157270 suivi ok score 0.91 pos 5005,2093 net 72 (29 ms) carte 40 photos + 300 positions
+   186.578  t0157605 suivi ok score 0.92 pos 5005,2093 net 71 (24 ms) carte 40 photos + 300 positions
+   186.781  envoyé lame_20261020_162842_agglu-v3_0083.jpg (533 ko)
+   186.904  t0157933 suivi ok score 0.91 pos 5005,2093 net 68 (20 ms) carte 40 photos + 300 positions
+   187.238  t0158267 suivi ok score 0.92 pos 5090,2093 net 69 (23 ms) carte 40 photos + 300 positions
+   187.329  photo -v3_0097 à 5078,2093 (500 ko, 233 ms)
+   187.567  t0158596 suivi ok score 0.92 pos 5090,2093 net 69 (17 ms) carte 41 photos + 300 positions
+   187.905  t0158934 suivi ok score 0.93 pos 5090,2093 net 72 (19 ms) carte 41 photos + 300 positions
+   187.911  envoyé lame_20261020_162842_agglu-v3_0084.jpg (530 ko)
+   188.261  t0159290 suivi ok score 0.85 pos 5102,2635 net 72 (12 ms) carte 41 photos + 300 positions
+   188.606  t0159634 suivi ok score 0.88 pos 5114,2889 net 66 (14 ms) carte 41 photos + 300 positions
+   188.937  t0159966 suivi ok score 0.91 pos 5138,3909 net 57 (15 ms) carte 41 photos + 300 positions
+   189.196  photo floue (netteté 56 contre 139 de référence)
+   189.267  t0160296 suivi ok score 0.90 pos 5138,3909 net 56 (15 ms) carte 41 photos + 300 positions
+   189.269  envoyé lame_20261020_162842_agglu-v3_0085.jpg (531 ko)
+   189.425  photo -v3_0098 à 5138,3909 (485 ko, 229 ms)
+   189.610  t0160639 suivi ok score 0.92 pos 5138,3909 net 54 (20 ms) carte 42 photos + 300 positions
+   189.943  t0160971 suivi ok score 0.90 pos 5138,3909 net 54 (20 ms) carte 42 photos + 300 positions
+   190.274  t0161303 suivi ok score 0.90 pos 5138,3909 net 54 (22 ms) carte 42 photos + 300 positions
+   190.513  envoyé lame_20261020_162842_agglu-v3_0086.jpg (530 ko)
+   190.598  t0161626 suivi ok score 0.92 pos 5138,3909 net 53 (14 ms) carte 42 photos + 300 positions
+   190.933  t0161963 suivi ok score 0.90 pos 5138,3909 net 54 (18 ms) carte 42 photos + 300 positions
+   191.283  t0162311 suivi ok score 0.90 pos 5114,3909 net 55 (28 ms) carte 42 photos + 300 positions
+   191.610  t0162638 suivi ok score 0.92 pos 5114,3909 net 58 (22 ms) carte 42 photos + 300 positions
+   191.944  t0162973 suivi ok score 0.89 pos 5114,3909 net 49 (14 ms) carte 42 photos + 300 positions
+   192.268  t0163297 suivi ok score 0.90 pos 5114,3909 net 57 (14 ms) carte 42 photos + 300 positions
+   192.605  t0163634 suivi ok score 0.93 pos 5114,3909 net 71 (17 ms) carte 42 photos + 300 positions
+   192.943  t0163972 suivi ok score 0.93 pos 5114,3909 net 85 (18 ms) carte 42 photos + 300 positions
+   193.279  t0164307 suivi ok score 0.93 pos 5114,3909 net 107 (23 ms) carte 42 photos + 300 positions
+   193.629  t0164657 suivi ok score 0.96 pos 5114,3909 net 129 (31 ms) carte 42 photos + 300 positions
+   193.938  t0164966 suivi ok score 0.94 pos 5114,3909 net 128 (16 ms) carte 42 photos + 300 positions
+   194.277  t0165306 suivi ok score 0.94 pos 5114,3909 net 128 (18 ms) carte 42 photos + 300 positions
+   194.611  t0165640 suivi ok score 0.96 pos 5114,3909 net 129 (16 ms) carte 42 photos + 300 positions
+   194.947  t0165974 suivi ok score 0.80 pos 4577,3909 net 137 (26 ms) carte 42 photos + 300 positions
+   195.272  t0166301 suivi ok score 0.94 pos 4565,3909 net 130 (16 ms) carte 42 photos + 300 positions
+   195.554  photo -v3_0099 à 4565,3909 (580 ko, 217 ms)
+   195.624  t0166653 suivi ok score 0.92 pos 4397,3909 net 136 (16 ms) carte 43 photos + 300 positions
+   195.930  t0166959 suivi ok score 0.95 pos 4266,3909 net 137 (16 ms) carte 43 photos + 300 positions
+   196.283  t0167311 suivi ok score 0.91 pos 4039,3909 net 143 (25 ms) carte 43 photos + 300 positions
+   196.613  t0167641 suivi ok score 0.90 pos 4027,3909 net 145 (23 ms) carte 43 photos + 300 positions
+   196.833  photo -v3_0100 à 4027,3909 (595 ko, 219 ms)
+   196.946  t0167974 suivi ok score 0.78 pos 3537,3909 net 144 (16 ms) carte 44 photos + 300 positions
+   197.175  envoyé lame_20261020_162842_agglu-v3_0087.jpg (528 ko)
+   197.283  t0168311 suivi ok score 0.94 pos 3501,3909 net 145 (25 ms) carte 44 photos + 300 positions
+   197.582  photo -v3_0101 à 3501,3909 (603 ko, 200 ms)
+   197.599  t0168628 suivi ok score 0.91 pos 3238,3909 net 151 (16 ms) carte 45 photos + 300 positions
+   197.936  t0168965 suivi ok score 0.95 pos 3082,3909 net 146 (15 ms) carte 45 photos + 300 positions
+   198.264  t0169293 suivi ok score 0.91 pos 2939,3909 net 152 (16 ms) carte 45 photos + 300 positions
+   198.332  photo -v3_0102 à 3082,3909 (611 ko, 222 ms)
+   198.622  t0169649 suivi ok score 0.96 pos 2533,3909 net 150 (29 ms) carte 46 photos + 300 positions
+   198.756  envoyé lame_20261020_162842_agglu-v3_0088.jpg (529 ko)
+   198.936  t0169965 suivi ok score 0.95 pos 2533,3909 net 149 (15 ms) carte 46 photos + 300 positions
+   199.147  photo -v3_0103 à 2533,3909 (619 ko, 210 ms)
+   199.266  t0170295 suivi ok score 0.82 pos 2186,3909 net 157 (18 ms) carte 47 photos + 300 positions
+   199.605  t0170634 suivi ok score 0.96 pos 2066,3909 net 151 (18 ms) carte 47 photos + 300 positions
+   199.945  t0170974 suivi ok score 0.87 pos 1779,3909 net 157 (20 ms) carte 47 photos + 300 positions
+   200.163  envoyé lame_20261020_162842_agglu-v3_0089.jpg (526 ko)
+   200.267  t0171296 suivi ok score 0.95 pos 1768,3909 net 152 (15 ms) carte 47 photos + 300 positions
+   200.562  photo -v3_0104 à 1768,3909 (630 ko, 217 ms)
+   200.602  t0171631 suivi ok score 0.93 pos 1576,3909 net 156 (14 ms) carte 48 photos + 300 positions
+   200.944  t0171971 suivi ok score 0.95 pos 1552,3909 net 153 (18 ms) carte 48 photos + 300 positions
+   201.264  photo -v3_0105 à 1540,3909 (633 ko, 228 ms)
+   201.268  t0172298 suivi ok score 0.79 pos 1146,3909 net 157 (16 ms) carte 49 photos + 300 positions
+   201.626  t0172654 suivi ok score 0.96 pos 1098,3909 net 157 (30 ms) carte 49 photos + 300 positions
+   201.679  envoyé lame_20261020_162842_agglu-v3_0090.jpg (525 ko)
+   201.943  t0172972 suivi ok score 0.80 pos 477,3909 net 152 (18 ms) carte 49 photos + 300 positions
+   202.275  t0173304 suivi ok score 0.95 pos 465,3909 net 151 (20 ms) carte 49 photos + 300 positions
+   202.561  photo -v3_0106 à 465,3909 (632 ko, 222 ms)
+   202.605  t0173634 suivi ok score 0.85 pos 34,3909 net 155 (19 ms) carte 50 photos + 300 positions
+   202.943  t0173971 suivi ok score 0.94 pos 22,3909 net 150 (18 ms) carte 50 photos + 300 positions
+   203.032  envoyé lame_20261020_162842_agglu-v3_0091.jpg (536 ko)
+   203.284  t0174313 suivi ok score 0.94 pos -456,3909 net 145 (15 ms) carte 50 photos + 300 positions
+   203.614  t0174643 suivi ok score 0.96 pos -456,3909 net 145 (25 ms) carte 50 photos + 300 positions
+   203.823  photo -v3_0107 à -456,3909 (625 ko, 208 ms)
+   203.940  t0174969 suivi ok score 0.92 pos -970,3909 net 146 (19 ms) carte 51 photos + 300 positions
+   204.276  t0175304 suivi ok score 0.95 pos -970,3909 net 145 (20 ms) carte 51 photos + 300 positions
+   204.349  envoyé lame_20261020_162842_agglu-v3_0092.jpg (531 ko)
+   204.525  photo -v3_0108 à -970,3909 (628 ko, 219 ms)
+   204.606  t0175635 suivi ok score 0.96 pos -1281,3909 net 146 (15 ms) carte 52 photos + 300 positions
+   204.939  t0175968 suivi ok score 0.95 pos -1281,3909 net 144 (18 ms) carte 52 photos + 300 positions
+   205.155  photo -v3_0109 à -1281,3909 (620 ko, 215 ms)
+   205.270  t0176299 suivi ok score 0.95 pos -1699,3909 net 142 (18 ms) carte 53 photos + 300 positions
+   205.618  t0176646 suivi ok score 0.91 pos -1794,3909 net 139 (20 ms) carte 53 photos + 300 positions
+   205.754  photo -v3_0110 à -1711,3909 (619 ko, 215 ms)
+   205.874  envoyé lame_20261020_162842_agglu-v3_0093.jpg (526 ko)
+   205.932  t0176961 suivi ok score 0.96 pos -2141,3909 net 139 (16 ms) carte 54 photos + 300 positions
+   206.266  t0177295 suivi ok score 0.92 pos -2249,3909 net 139 (13 ms) carte 54 photos + 300 positions
+   206.387  photo -v3_0111 à -2141,3909 (623 ko, 222 ms)
+   206.608  t0177636 suivi ok score 0.96 pos -2464,3909 net 135 (21 ms) carte 55 photos + 300 positions
+   206.949  t0177977 suivi ok score 0.93 pos -2524,3909 net 134 (21 ms) carte 55 photos + 300 positions
+   206.967  envoyé lame_20261020_162842_agglu-v3_0094.jpg (522 ko)
+   207.088  photo -v3_0112 à -2488,3909 (615 ko, 229 ms)
+   207.268  t0178298 suivi ok score 0.88 pos -2583,3909 net 137 (16 ms) carte 56 photos + 300 positions
+   207.599  t0178629 suivi ok score 0.92 pos -2619,3909 net 136 (14 ms) carte 56 photos + 300 positions
+   207.703  photo -v3_0113 à -2607,3909 (615 ko, 230 ms)
+   207.948  t0178976 suivi ok score 0.96 pos -2703,3909 net 133 (22 ms) carte 57 photos + 300 positions
+   208.235  envoyé lame_20261020_162842_agglu-v3_0095.jpg (507 ko)
+   208.276  t0179305 suivi ok score 0.95 pos -2703,3909 net 132 (19 ms) carte 57 photos + 300 positions
+   208.598  t0179627 suivi ok score 0.96 pos -2703,3909 net 131 (14 ms) carte 57 photos + 300 positions
+   208.942  t0179970 suivi ok score 0.96 pos -2703,3909 net 131 (14 ms) carte 57 photos + 300 positions
+   209.275  t0180304 suivi ok score 0.95 pos -2703,3909 net 131 (15 ms) carte 57 photos + 300 positions
+   209.510  envoyé lame_20261020_162842_agglu-v3_0096.jpg (502 ko)
+   209.610  t0180639 suivi ok score 0.96 pos -2703,3909 net 130 (21 ms) carte 57 photos + 300 positions
