@@ -788,7 +788,14 @@ if a.parent:
     f_c = [r_ * sp_ / (scales[ref] * prov_s) for r_ in cands]                       # px mosaique provisoire -> px parent reduit
     prior_box = None
     hint, stage = meta.get('hint'), meta.get('stage')
-    if hint or stage:
+    seg_from = (segs[a.segment] if segs and a.segment < len(segs) else {}) if 'segs' in dir() else {}
+    if seg_from.get('from_x') is not None and os.path.isdir(a.parent) and plj.get('track_to_mosaic'):
+        # position de la platine au clic « changer d'objectif », convertie en px de la lame d'ensemble (segment 0 de la meme prise)
+        fx_, fy_ = cv2.transform(np.float32([[seg_from['from_x'], seg_from['from_y']]])[None], np.float32(plj['track_to_mosaic']))[0][0]
+        hw = max(pw * f_c[0], 0.2 * pim.shape[1]); hh = max(ph * f_c[0], 0.2 * pim.shape[0])
+        prior_box = (fx_ * sp_ - hw, fy_ * sp_ - hh, fx_ * sp_ + hw, fy_ * sp_ + hh)
+        log(f'a priori (position au changement d\'objectif, suivi {seg_from.get("from_track")}) : premier champ attendu vers ({fx_:.0f}, {fy_:.0f}) px de la lame d\'ensemble')
+    elif hint or stage:
         pj['_slug'] = a.parent if not os.path.isdir(a.parent) else None
         try: prior, pk = LC.prior_center(pj, dict(hint=hint, stage=stage)) if pj.get('_slug') else ((np.array([hint['fx'] * pj['width'], hint['fy'] * pj['height']]), 'repère') if hint else (None, None))
         except Exception: prior, pk = None, None
@@ -1375,7 +1382,16 @@ quality = dict(grade=grade, notes=notes, frames=dict(candidates=n_candidates, bl
 json.dump(quality, open(os.path.join(out, 'quality.json'), 'w'), indent=1)
 log(f'qualité : note {grade}' + (' (' + ', '.join(notes) + ')' if notes else ' (aucune remarque)'))
 
-json.dump(dict(size=[W, H], images=len(comp), of=N, placements=placements, k1=k1, chroma=chroma,
+# correspondance position suivie par le telephone (px du flux) -> px de la mosaique : sert a placer le premier champ d'un autre objectif
+track_to_mosaic = None
+try:
+    tk = [k for k in comp if P[k]]
+    if len(tk) >= 3:
+        src_ = np.float32([P[k] for k in tk]); dst_ = np.float32([cv2.transform(np.float32([[sizes[k][1] / 2, sizes[k][0] / 2]])[None], M[k])[0][0] for k in tk])
+        Atm, _ = cv2.estimateAffinePartial2D(src_, dst_, method=cv2.LMEDS)
+        if Atm is not None: track_to_mosaic = Atm.tolist()
+except Exception as e: log(f'correspondance suivi -> mosaïque non calculée : {e}')
+json.dump(dict(size=[W, H], images=len(comp), of=N, placements=placements, k1=k1, chroma=chroma, track_to_mosaic=track_to_mosaic,
                flat_field=flat_kind or 'estimé', residual_px=res_med,
                um_per_px=um_px, zstack=ZL, quality=quality,
                title=meta.get('title'), stain=meta.get('stain'), objective=meta.get('objective'), sample=meta.get('sample'),

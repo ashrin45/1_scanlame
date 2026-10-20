@@ -270,8 +270,10 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
     fun startSwitch(obj: String) {
         if (!state.value.running || curBlank != null) return
         segments.last().put("t1", tnow())
-        switching = JSONObject().put("objective", obj).put("t0", tnow())
-        Journal.log("changement d'objectif vers $obj : début à ${tnow()} ms")
+        // position de la platine au moment du clic (px du flux, repere du segment en cours) : le premier champ du nouvel objectif en est proche
+        val sv = state.value
+        switching = JSONObject().put("objective", obj).put("t0", tnow()).put("from_x", sv.posX.roundToInt()).put("from_y", sv.posY.roundToInt()).put("from_track", sv.track)
+        Journal.log("changement d'objectif vers $obj : début à ${tnow()} ms, position ${sv.posX.roundToInt()},${sv.posY.roundToInt()} (${sv.track})")
         state.value = state.value.copy(phase = "switching", message = "Change l'objectif ($obj), refais la mise au point, puis touche Reprendre.")
     }
 
@@ -279,7 +281,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val sw = switching ?: return
         val obj = sw.getString("objective"); val t = tnow()
         val cal = st.umPerPx(obj)
-        segments.add(JSONObject().put("objective", obj).put("t0", t).put("t1", JSONObject.NULL).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL))
+        segments.add(JSONObject().put("objective", obj).put("t0", t).put("t1", JSONObject.NULL).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL)
+            .put("from_x", sw.opt("from_x")).put("from_y", sw.opt("from_y")).put("from_track", sw.opt("from_track")))
         st.objective = obj
         tracker = Tracker(); synchronized(placed) { placed.clear(); placedPhotos.clear() }; lastPos = null; lastShot = null; stillSince = 0L
         Journal.log("objectif $obj : reprise à $t ms (calibration ${if (cal > 0) cal else "absente"})")
