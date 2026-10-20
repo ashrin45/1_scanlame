@@ -1,0 +1,1551 @@
+     0.000  ScanLame 0.42 démarré sur samsung SM-S928B (Android 16)
+    45.348  lien reçu : reprendre pv-1375-10201832
+    52.089  liaison : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+    52.533  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+   115.163  verrouillage : focus infini, pose 9.991324 ms, ISO 93, WB figée
+   115.389  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   144.103  réglages enregistrés
+   144.361  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   151.662  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+   152.899  verrouillage : focus infini, pose 9.991324 ms, ISO 93, WB figée
+   153.130  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   157.162  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+   159.290  verrouillage : focus infini, pose 9.991324 ms, ISO 93, WB figée
+   159.529  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   178.235  === série lame_20261020_192630_pv-1375 (photos) « pv 1375 », gram, objectif x100 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+   178.260  masque oculaire : 99 % du cadre utile (p95 184)
+   178.567  t0000327 suivi ok score 1.00 pos 0,0 net 75 (26 ms) carte 0 photos + 3 positions
+   178.882  patron 5x5 champs posé en haut à gauche (0,0)
+   178.882  photo 375_0001 à 0,0 (526 ko, 226 ms)
+   178.882  t0000648 suivi ok score 1.00 pos 0,0 net 74 (20 ms) carte 1 photos + 6 positions
+   179.216  t0000981 suivi ok score 1.00 pos 0,0 net 75 (17 ms) carte 1 photos + 10 positions
+   179.550  t0001316 suivi ok score 1.00 pos 0,0 net 74 (19 ms) carte 1 photos + 13 positions
+   179.885  t0001650 suivi ok score 1.00 pos 0,0 net 75 (20 ms) carte 1 photos + 16 positions
+   180.224  t0001990 suivi ok score 1.00 pos 0,0 net 75 (17 ms) carte 1 photos + 20 positions
+   180.556  t0002322 suivi ok score 1.00 pos 0,0 net 76 (19 ms) carte 1 photos + 23 positions
+   180.900  t0002665 suivi ok score 1.00 pos 0,0 net 75 (25 ms) carte 1 photos + 26 positions
+   180.961  envoyé lame_20261020_192630_pv-1375_0001.jpg (526 ko)
+   181.225  t0002991 suivi ok score 1.00 pos 0,0 net 75 (22 ms) carte 1 photos + 30 positions
+   181.572  t0003337 suivi ok score 1.00 pos 0,0 net 54 (31 ms) carte 1 photos + 33 positions
+   181.902  t0003667 suivi ok score 1.00 pos 0,0 net 64 (28 ms) carte 1 photos + 36 positions
+   182.234  t0003999 suivi ok score 1.00 pos 0,0 net 64 (31 ms) carte 1 photos + 40 positions
+   182.573  t0004339 suivi ok score 1.00 pos 0,0 net 62 (36 ms) carte 1 photos + 43 positions
+   182.888  t0004654 suivi ok score 1.00 pos 0,0 net 63 (19 ms) carte 1 photos + 46 positions
+   183.234  t0004998 suivi ok score 1.00 pos 0,0 net 61 (27 ms) carte 1 photos + 50 positions
+   183.552  t0005318 suivi ok score 1.00 pos 0,0 net 61 (17 ms) carte 1 photos + 53 positions
+   183.895  t0005661 suivi ok score 1.00 pos 0,0 net 64 (21 ms) carte 1 photos + 56 positions
+   184.220  t0005986 suivi ok score 1.00 pos 0,0 net 58 (17 ms) carte 1 photos + 60 positions
+   184.556  t0006322 suivi ok score 1.00 pos 0,0 net 58 (21 ms) carte 1 photos + 63 positions
+   184.895  t0006661 suivi ok score 1.00 pos 0,0 net 58 (22 ms) carte 1 photos + 66 positions
+   185.231  t0006997 suivi ok score 1.00 pos 0,0 net 58 (25 ms) carte 1 photos + 70 positions
+   185.557  t0007323 suivi ok score 1.00 pos 0,0 net 59 (20 ms) carte 1 photos + 73 positions
+   185.890  t0007656 suivi ok score 1.00 pos 0,0 net 59 (19 ms) carte 1 photos + 76 positions
+   186.241  t0008006 suivi ok score 1.00 pos 0,0 net 60 (22 ms) carte 1 photos + 80 positions
+   186.564  t0008330 suivi ok score 1.00 pos 0,0 net 31 (21 ms) carte 1 photos + 83 positions
+   186.895  t0008661 suivi ok score 1.00 pos 0,0 net 21 (21 ms) carte 1 photos + 86 positions
+   187.227  t0008992 suivi ok score 1.00 pos 0,0 net 56 (23 ms) carte 1 photos + 90 positions
+   187.561  t0009327 suivi ok score 1.00 pos 0,0 net 33 (25 ms) carte 1 photos + 93 positions
+   187.890  t0009656 suivi ok score 1.00 pos 0,0 net 67 (20 ms) carte 1 photos + 96 positions
+   188.235  t0010000 suivi ok score 1.00 pos 0,0 net 70 (27 ms) carte 1 photos + 100 positions
+   188.567  t0010333 suivi ok score 1.00 pos 0,0 net 68 (25 ms) carte 1 photos + 103 positions
+   188.902  t0010668 suivi ok score 1.00 pos 0,0 net 68 (29 ms) carte 1 photos + 106 positions
+   189.227  t0010993 suivi ok score 1.00 pos 0,0 net 68 (21 ms) carte 1 photos + 110 positions
+   189.549  t0011316 suivi ok score 1.00 pos 0,0 net 66 (16 ms) carte 1 photos + 113 positions
+   189.911  t0011676 suivi ok score 1.00 pos 0,0 net 67 (35 ms) carte 1 photos + 116 positions
+   190.241  t0012006 suivi ok score 1.00 pos 0,0 net 65 (34 ms) carte 1 photos + 120 positions
+   190.564  t0012329 suivi ok score 1.00 pos 0,0 net 61 (27 ms) carte 1 photos + 123 positions
+   190.906  t0012672 suivi ok score 1.00 pos 0,0 net 61 (23 ms) carte 1 photos + 126 positions
+   191.219  t0012985 suivi ok score 1.00 pos 0,0 net 54 (16 ms) carte 1 photos + 130 positions
+   191.556  t0013322 suivi ok score 1.00 pos 0,0 net 55 (19 ms) carte 1 photos + 133 positions
+   191.906  t0013671 suivi ok score 1.00 pos 0,0 net 52 (31 ms) carte 1 photos + 136 positions
+   192.221  t0013987 suivi ok score 0.99 pos 0,11 net 54 (17 ms) carte 1 photos + 140 positions
+   192.551  t0014318 suivi ok score 1.00 pos 93,136 net 38 (16 ms) carte 1 photos + 143 positions
+   192.887  t0014653 suivi ok score 1.00 pos 184,206 net 34 (17 ms) carte 1 photos + 146 positions
+   193.224  t0014989 suivi ok score 1.00 pos 232,227 net 39 (20 ms) carte 1 photos + 150 positions
+   193.237  photo 375_0002 à 210,225 (453 ko, 207 ms)
+   193.559  t0015326 suivi ok score 1.00 pos 231,254 net 65 (20 ms) carte 2 photos + 153 positions
+   193.886  t0015652 suivi ok score 1.00 pos 231,251 net 69 (16 ms) carte 2 photos + 156 positions
+   194.232  t0015997 suivi ok score 1.00 pos 240,251 net 59 (21 ms) carte 2 photos + 160 positions
+   194.561  t0016327 suivi ok score 1.00 pos 332,310 net 63 (21 ms) carte 2 photos + 163 positions
+   194.638  envoyé lame_20261020_192630_pv-1375_0002.jpg (453 ko)
+   194.902  t0016667 suivi ok score 0.99 pos 941,321 net 37 (25 ms) carte 2 photos + 166 positions
+   195.191  photo en mouvement lent (50 % du champ, 7 u/s)
+   195.231  t0016997 suivi ok score 1.00 pos 1747,308 net 69 (24 ms) carte 2 photos + 170 positions
+   195.417  photo 375_0003 à 1741,297 (465 ko, 226 ms)
+   195.561  t0017327 suivi ok score 1.00 pos 1741,297 net 69 (22 ms) carte 3 photos + 173 positions
+   195.891  t0017657 suivi ok score 1.00 pos 1741,297 net 69 (19 ms) carte 3 photos + 176 positions
+   196.229  t0017995 suivi ok score 1.00 pos 1741,297 net 68 (20 ms) carte 3 photos + 180 positions
+   196.567  t0018333 suivi ok score 1.00 pos 1760,311 net 62 (24 ms) carte 3 photos + 183 positions
+   196.572  envoyé lame_20261020_192630_pv-1375_0003.jpg (465 ko)
+   196.897  t0018663 suivi ok score 1.00 pos 1760,310 net 56 (24 ms) carte 3 photos + 186 positions
+   197.235  t0019001 suivi ok score 1.00 pos 1760,244 net 68 (21 ms) carte 3 photos + 190 positions
+   197.572  t0019338 suivi ok score 0.99 pos 1754,12 net 71 (21 ms) carte 3 photos + 193 positions
+   197.887  t0019654 suivi ok score 1.00 pos 1743,31 net 72 (17 ms) carte 3 photos + 196 positions
+   198.149  photo 375_0004 à 1743,31 (465 ko, 224 ms)
+   198.230  t0019996 suivi ok score 0.99 pos 1747,30 net 70 (19 ms) carte 4 photos + 200 positions
+   198.551  t0020317 suivi ok score 0.99 pos 1743,12 net 72 (17 ms) carte 4 photos + 203 positions
+   198.906  t0020671 suivi ok score 1.00 pos 1743,31 net 74 (27 ms) carte 4 photos + 206 positions
+   199.249  t0021014 suivi ok score 0.99 pos 2095,81 net 75 (35 ms) carte 4 photos + 210 positions
+   199.564  t0021330 suivi ok score 0.99 pos 2530,103 net 74 (24 ms) carte 4 photos + 213 positions
+   199.614  envoyé lame_20261020_192630_pv-1375_0004.jpg (465 ko)
+   199.895  t0021661 suivi ok score 1.00 pos 2574,131 net 72 (17 ms) carte 4 photos + 216 positions
+   200.045  photo 375_0005 à 2569,135 (469 ko, 219 ms)
+   200.230  t0021995 suivi ok score 1.00 pos 2584,129 net 77 (26 ms) carte 5 photos + 220 positions
+   200.561  t0022327 suivi ok score 0.98 pos 2620,179 net 71 (23 ms) carte 5 photos + 223 positions
+   200.894  t0022660 suivi ok score 0.99 pos 2673,230 net 78 (21 ms) carte 5 photos + 226 positions
+   201.078  photo 375_0006 à 2671,220 (470 ko, 221 ms)
+   201.154  envoyé lame_20261020_192630_pv-1375_0005.jpg (469 ko)
+   201.215  t0022982 suivi ok score 1.00 pos 2679,233 net 66 (14 ms) carte 6 photos + 230 positions
+   201.561  t0023327 suivi ok score 1.00 pos 2679,233 net 72 (22 ms) carte 6 photos + 233 positions
+   201.891  t0023656 suivi ok score 0.99 pos 2679,233 net 75 (20 ms) carte 6 photos + 236 positions
+   202.225  t0023991 suivi ok score 0.99 pos 2856,341 net 68 (20 ms) carte 6 photos + 240 positions
+   202.569  t0024335 suivi ok score 0.99 pos 3335,401 net 60 (27 ms) carte 6 photos + 243 positions
+   202.897  t0024662 suivi ok score 1.00 pos 3497,441 net 57 (25 ms) carte 6 photos + 246 positions
+   203.199  photo en mouvement lent (89 % du champ, 0 u/s)
+   203.199  ATTENTION pas trop grand (89 % du champ) : recouvrement insuffisant
+   203.234  t0025000 suivi ok score 1.00 pos 5395,209 net 87 (20 ms) carte 6 photos + 250 positions
+   203.411  photo 375_0007 à 5395,209 (467 ko, 211 ms)
+   203.562  t0025328 suivi ok score 0.97 pos 5443,-3 net 85 (24 ms) carte 7 photos + 253 positions
+   203.916  t0025682 suivi ok score 0.99 pos 5448,-64 net 84 (36 ms) carte 7 photos + 256 positions
+   204.207  photo 375_0008 à 5444,-62 (469 ko, 201 ms)
+   204.224  t0025990 suivi ok score 1.00 pos 5443,-78 net 88 (19 ms) carte 8 photos + 260 positions
+   204.570  t0026336 suivi ok score 1.00 pos 5443,-77 net 42 (28 ms) carte 8 photos + 263 positions
+   204.732  envoyé lame_20261020_192630_pv-1375_0006.jpg (470 ko)
+   204.897  t0026663 suivi ok score 1.00 pos 5443,-77 net 52 (25 ms) carte 8 photos + 266 positions
+   205.225  t0026991 suivi ok score 1.00 pos 5443,-98 net 78 (21 ms) carte 8 photos + 270 positions
+   205.560  t0027326 suivi ok score 1.00 pos 5443,-95 net 50 (21 ms) carte 8 photos + 273 positions
+   205.828  envoyé lame_20261020_192630_pv-1375_0007.jpg (467 ko)
+   205.884  t0027650 suivi ok score 1.00 pos 5443,-95 net 51 (15 ms) carte 8 photos + 276 positions
+   206.235  t0028001 suivi ok score 1.00 pos 5443,-95 net 79 (23 ms) carte 8 photos + 280 positions
+   206.564  t0028329 suivi ok score 1.00 pos 5443,-110 net 79 (20 ms) carte 8 photos + 283 positions
+   206.897  t0028664 suivi ok score 1.00 pos 5455,-122 net 92 (17 ms) carte 8 photos + 286 positions
+   207.231  t0028997 suivi ok score 1.00 pos 5455,-111 net 90 (23 ms) carte 8 photos + 290 positions
+   207.561  t0029327 suivi ok score 0.99 pos 5598,147 net 66 (20 ms) carte 8 photos + 293 positions
+   207.897  t0029662 suivi ok score 1.00 pos 7148,250 net 57 (18 ms) carte 8 photos + 296 positions
+   207.897  photo en mouvement lent (56 % du champ, 30 u/s)
+   208.118  photo 375_0009 à 7148,250 (485 ko, 220 ms)
+   208.225  t0029991 suivi ok score 1.00 pos 7172,250 net 64 (16 ms) carte 9 photos + 300 positions
+   208.566  t0030331 suivi ok score 1.00 pos 7172,250 net 65 (22 ms) carte 9 photos + 300 positions
+   208.914  t0030679 suivi ok score 1.00 pos 7172,250 net 51 (26 ms) carte 9 photos + 300 positions
+   209.232  t0030997 suivi ok score 1.00 pos 7172,106 net 43 (19 ms) carte 9 photos + 300 positions
+   209.335  envoyé lame_20261020_192630_pv-1375_0008.jpg (469 ko)
+   209.576  t0031342 suivi ok score 1.00 pos 7148,-372 net 46 (25 ms) carte 9 photos + 300 positions
+   209.897  t0031663 suivi ok score 1.00 pos 7148,-372 net 64 (15 ms) carte 9 photos + 300 positions
+   210.018  photo 375_0010 à 7148,-372 (487 ko, 227 ms)
+   210.227  t0031991 suivi ok score 1.00 pos 7148,-372 net 65 (14 ms) carte 10 photos + 300 positions
+   210.444  envoyé lame_20261020_192630_pv-1375_0009.jpg (485 ko)
+   210.556  t0032321 suivi ok score 0.99 pos 7148,-356 net 61 (17 ms) carte 10 photos + 300 positions
+   210.900  t0032664 suivi ok score 0.98 pos 8869,-324 net 39 (19 ms) carte 10 photos + 300 positions
+   211.067  photo en mouvement lent (67 % du champ, 0 u/s)
+   211.230  t0032995 suivi ok score 1.00 pos 9204,-324 net 66 (19 ms) carte 10 photos + 300 positions
+   211.281  photo 375_0011 à 9204,-324 (502 ko, 214 ms)
+   211.577  t0033343 suivi ok score 1.00 pos 9204,-324 net 66 (17 ms) carte 11 photos + 300 positions
+   211.902  t0033667 suivi ok score 1.00 pos 9204,-5 net 49 (21 ms) carte 11 photos + 300 positions
+   212.236  t0034000 suivi ok score 1.00 pos 9228,1827 net 59 (20 ms) carte 11 photos + 300 positions
+   212.236  photo en mouvement lent (53 % du champ, 30 u/s)
+   212.464  photo 375_0012 à 9228,1827 (511 ko, 228 ms)
+   212.481  envoyé lame_20261020_192630_pv-1375_0010.jpg (487 ko)
+   212.555  t0034321 suivi ok score 1.00 pos 9228,1827 net 49 (15 ms) carte 12 photos + 300 positions
+   212.894  t0034660 suivi ok score 1.00 pos 9228,1827 net 47 (16 ms) carte 12 photos + 300 positions
+   213.234  t0034999 suivi ok score 1.00 pos 9228,1827 net 52 (18 ms) carte 12 photos + 300 positions
+[... 525 lignes omises ...]
+   525.748  réglages enregistrés
+   525.988  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   533.186  === série lame_20261020_193225_pv-7445 (photos) « pv 7445 », gram, objectif x100 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+   533.194  masque oculaire : 100 % du cadre utile (p95 188)
+   533.500  t0000314 suivi ok score 0.97 pos 0,0 net 123 (16 ms) carte 0 photos + 3 positions
+   533.825  patron 5x5 champs posé en haut à gauche (0,0)
+   533.826  photo 445_0001 à 0,0 (425 ko, 217 ms)
+   533.836  t0000650 suivi ok score 0.96 pos 0,0 net 123 (20 ms) carte 1 photos + 6 positions
+   534.177  t0000990 suivi ok score 0.95 pos 0,0 net 128 (26 ms) carte 1 photos + 10 positions
+   534.507  t0001321 suivi ok score 0.97 pos 0,0 net 126 (21 ms) carte 1 photos + 13 positions
+   534.837  t0001652 suivi ok score 0.96 pos 0,0 net 124 (16 ms) carte 1 photos + 16 positions
+   535.181  t0001995 suivi ok score 0.96 pos 0,0 net 127 (22 ms) carte 1 photos + 20 positions
+   535.510  t0002323 suivi ok score 0.97 pos 0,0 net 124 (21 ms) carte 1 photos + 23 positions
+   535.847  t0002662 suivi ok score 0.96 pos 0,0 net 129 (24 ms) carte 1 photos + 26 positions
+   535.897  envoyé lame_20261020_193225_pv-7445_0001.jpg (425 ko)
+   536.167  t0002981 suivi ok score 0.95 pos 0,0 net 115 (16 ms) carte 1 photos + 30 positions
+   536.526  t0003340 suivi ok score 0.97 pos 0,0 net 137 (30 ms) carte 1 photos + 33 positions
+   536.872  t0003685 suivi ok score 0.96 pos 0,0 net 127 (39 ms) carte 1 photos + 36 positions
+   537.177  t0003991 suivi ok score 0.95 pos 0,0 net 121 (20 ms) carte 1 photos + 40 positions
+   537.519  t0004333 suivi ok score 0.97 pos 0,0 net 124 (22 ms) carte 1 photos + 43 positions
+   537.849  t0004663 suivi ok score 0.96 pos 0,0 net 135 (22 ms) carte 1 photos + 46 positions
+   538.178  t0004992 suivi ok score 0.94 pos 18,-12 net 145 (17 ms) carte 1 photos + 50 positions
+   538.512  t0005326 suivi ok score 0.96 pos 63,-13 net 143 (23 ms) carte 1 photos + 53 positions
+   538.852  t0005666 suivi ok score 0.95 pos 142,-14 net 153 (22 ms) carte 1 photos + 56 positions
+   539.048  photo 445_0002 à 125,-12 (422 ko, 222 ms)
+   539.167  t0005981 suivi ok score 0.93 pos 437,-27 net 125 (16 ms) carte 2 photos + 60 positions
+   539.506  t0006321 suivi ok score 0.95 pos 504,-28 net 118 (17 ms) carte 2 photos + 63 positions
+   539.841  t0006656 suivi ok score 0.95 pos 325,-16 net 118 (18 ms) carte 2 photos + 66 positions
+   540.183  t0006996 suivi ok score 0.94 pos 814,-43 net 108 (25 ms) carte 2 photos + 70 positions
+   540.513  t0007327 suivi ok score 0.97 pos 930,-19 net 144 (22 ms) carte 2 photos + 73 positions
+   540.717  envoyé lame_20261020_193225_pv-7445_0002.jpg (422 ko)
+   540.856  t0007670 suivi ok score 0.96 pos 939,-27 net 153 (30 ms) carte 2 photos + 76 positions
+   540.882  photo 445_0003 à 938,-26 (427 ko, 209 ms)
+   541.177  t0007991 suivi ok score 0.95 pos 938,-26 net 71 (16 ms) carte 3 photos + 80 positions
+   541.511  t0008325 suivi ok score 0.97 pos 938,-26 net 152 (23 ms) carte 3 photos + 83 positions
+   541.841  t0008655 suivi ok score 0.96 pos 938,-26 net 137 (16 ms) carte 3 photos + 86 positions
+   542.183  t0008997 suivi ok score 0.93 pos 1234,-46 net 111 (28 ms) carte 3 photos + 90 positions
+   542.513  t0009327 suivi ok score 0.97 pos 1039,-41 net 125 (22 ms) carte 3 photos + 93 positions
+   542.774  envoyé lame_20261020_193225_pv-7445_0003.jpg (427 ko)
+   542.840  t0009655 suivi ok score 0.96 pos 1345,-46 net 129 (17 ms) carte 3 photos + 96 positions
+   543.180  t0009994 suivi ok score 0.96 pos 1491,-47 net 121 (21 ms) carte 3 photos + 100 positions
+   543.530  t0010343 suivi ok score 0.96 pos 1600,-45 net 111 (33 ms) carte 3 photos + 103 positions
+   543.686  photo 445_0004 à 1582,-46 (433 ko, 211 ms)
+   543.849  t0010663 suivi ok score 0.97 pos 1667,-46 net 108 (27 ms) carte 4 photos + 106 positions
+   544.179  t0010992 suivi ok score 0.98 pos 1841,-45 net 107 (26 ms) carte 4 photos + 110 positions
+   544.230  photo 445_0005 à 1702,-45 (437 ko, 227 ms)
+   544.521  t0011335 suivi ok score 0.98 pos 2393,-72 net 88 (26 ms) carte 5 photos + 113 positions
+   544.868  t0011681 suivi ok score 0.99 pos 2958,-93 net 88 (37 ms) carte 5 photos + 116 positions
+   545.184  t0011997 suivi ok score 0.99 pos 3094,-103 net 89 (25 ms) carte 5 photos + 120 positions
+   545.433  envoyé lame_20261020_193225_pv-7445_0004.jpg (433 ko)
+   545.512  t0012327 suivi ok score 0.98 pos 3385,-102 net 89 (20 ms) carte 5 photos + 123 positions
+   545.813  photo en mouvement lent (66 % du champ, 34 u/s)
+   545.847  t0012660 suivi ok score 0.99 pos 3731,-122 net 79 (22 ms) carte 5 photos + 126 positions
+   546.029  photo 445_0006 à 3729,-131 (447 ko, 216 ms)
+   546.193  t0013006 suivi ok score 0.99 pos 3736,-103 net 96 (30 ms) carte 6 photos + 130 positions
+   546.533  t0013346 suivi ok score 1.00 pos 3736,-105 net 82 (37 ms) carte 6 photos + 133 positions
+   546.855  t0013668 suivi ok score 0.99 pos 3736,-105 net 86 (28 ms) carte 6 photos + 136 positions
+   547.206  t0014019 suivi ok score 0.99 pos 3736,-105 net 100 (38 ms) carte 6 photos + 140 positions
+   547.417  envoyé lame_20261020_193225_pv-7445_0005.jpg (437 ko)
+   547.510  t0014324 suivi ok score 1.00 pos 3736,-105 net 101 (18 ms) carte 6 photos + 143 positions
+   547.848  t0014661 suivi ok score 0.98 pos 4901,-167 net 90 (22 ms) carte 6 photos + 146 positions
+   548.201  t0015015 suivi ok score 0.99 pos 4961,-173 net 99 (34 ms) carte 6 photos + 150 positions
+   548.506  t0015321 suivi ok score 0.99 pos 4961,-173 net 92 (19 ms) carte 6 photos + 153 positions
+   548.518  photo 445_0007 à 4961,-173 (437 ko, 209 ms)
+   548.843  t0015658 suivi ok score 0.99 pos 4961,-173 net 94 (16 ms) carte 7 photos + 156 positions
+   549.192  t0016005 suivi ok score 0.99 pos 4961,-173 net 92 (24 ms) carte 7 photos + 160 positions
+   549.336  envoyé lame_20261020_193225_pv-7445_0006.jpg (447 ko)
+   549.514  t0016329 suivi ok score 0.98 pos 5044,-170 net 85 (21 ms) carte 7 photos + 163 positions
+   549.846  t0016660 suivi ok score 0.97 pos 5354,-177 net 87 (18 ms) carte 7 photos + 166 positions
+   550.185  t0016999 suivi ok score 0.97 pos 5354,-174 net 102 (22 ms) carte 7 photos + 170 positions
+   550.357  photo 445_0008 à 5353,-174 (425 ko, 198 ms)
+   550.518  t0017332 suivi ok score 0.99 pos 5354,-174 net 105 (21 ms) carte 8 photos + 173 positions
+   550.856  t0017670 suivi ok score 0.98 pos 5350,-136 net 94 (33 ms) carte 8 photos + 176 positions
+   551.175  t0017989 suivi ok score 0.98 pos 5370,92 net 74 (19 ms) carte 8 photos + 180 positions
+   551.515  t0018329 suivi ok score 0.99 pos 5349,97 net 102 (23 ms) carte 8 photos + 183 positions
+   551.685  photo 445_0009 à 5349,97 (428 ko, 206 ms)
+   551.843  t0018657 suivi ok score 0.95 pos 5587,63 net 85 (22 ms) carte 9 photos + 186 positions
+   552.181  t0018994 suivi ok score 0.96 pos 6759,-49 net 90 (22 ms) carte 9 photos + 190 positions
+   552.345  photo en mouvement lent (54 % du champ, 27 u/s)
+   552.516  t0019329 suivi ok score 0.99 pos 6855,-49 net 101 (29 ms) carte 9 photos + 193 positions
+   552.560  photo 445_0010 à 7011,7 (430 ko, 215 ms)
+   552.755  envoyé lame_20261020_193225_pv-7445_0007.jpg (437 ko)
+   552.847  t0019661 suivi ok score 0.98 pos 6881,-44 net 98 (23 ms) carte 10 photos + 196 positions
+   553.038  photo 445_0011 à 6869,-44 (412 ko, 229 ms)
+   553.186  t0019999 suivi ok score 0.99 pos 7714,-40 net 75 (26 ms) carte 11 photos + 200 positions
+   553.513  t0020327 suivi ok score 0.99 pos 7715,-38 net 79 (22 ms) carte 11 photos + 203 positions
+   553.803  photo 445_0012 à 7708,-43 (424 ko, 228 ms)
+   553.842  t0020655 suivi ok score 0.98 pos 8064,-56 net 81 (16 ms) carte 12 photos + 206 positions
+   554.167  envoyé lame_20261020_193225_pv-7445_0008.jpg (425 ko)
+   554.198  t0021012 suivi ok score 0.98 pos 8742,-82 net 63 (34 ms) carte 12 photos + 210 positions
+   554.514  t0021328 suivi ok score 1.00 pos 8943,-89 net 88 (21 ms) carte 12 photos + 213 positions
+   554.847  t0021661 suivi ok score 0.99 pos 8945,-94 net 85 (23 ms) carte 12 photos + 216 positions
+   554.866  photo 445_0013 à 8945,-94 (445 ko, 222 ms)
+   555.165  t0021979 suivi ok score 0.99 pos 8987,-89 net 73 (11 ms) carte 13 photos + 220 positions
+   555.511  t0022325 suivi ok score 1.00 pos 9006,-89 net 69 (22 ms) carte 13 photos + 223 positions
+   555.872  t0022686 suivi ok score 0.99 pos 9129,-89 net 76 (22 ms) carte 13 photos + 226 positions
+   556.186  t0022999 suivi ok score 0.99 pos 9778,-119 net 74 (22 ms) carte 13 photos + 230 positions
+   556.472  envoyé lame_20261020_193225_pv-7445_0009.jpg (428 ko)
+   556.507  t0023322 suivi ok score 0.99 pos 10267,-144 net 76 (16 ms) carte 13 photos + 233 positions
+   556.842  t0023656 suivi ok score 1.00 pos 10422,-150 net 70 (18 ms) carte 13 photos + 236 positions
+   557.183  t0023997 suivi ok score 1.00 pos 10413,-149 net 75 (20 ms) carte 13 photos + 240 positions
+   557.303  photo 445_0014 à 10421,-149 (451 ko, 204 ms)
+   557.514  t0024328 suivi ok score 0.99 pos 10480,-142 net 63 (21 ms) carte 14 photos + 243 positions
+   557.534  envoyé lame_20261020_193225_pv-7445_0010.jpg (430 ko)
+   557.842  t0024656 suivi ok score 0.99 pos 11340,-169 net 74 (16 ms) carte 14 photos + 246 positions
+   558.183  t0024996 suivi ok score 1.00 pos 11432,-184 net 78 (18 ms) carte 14 photos + 250 positions
+   558.509  t0025324 suivi ok score 1.00 pos 11432,-183 net 87 (18 ms) carte 14 photos + 253 positions
+   558.529  photo 445_0015 à 11429,-184 (440 ko, 210 ms)
+   558.853  t0025666 suivi ok score 0.99 pos 11616,-178 net 70 (23 ms) carte 15 photos + 256 positions
+   559.199  t0026012 suivi ok score 0.99 pos 12079,-198 net 71 (23 ms) carte 15 photos + 260 positions
+   559.271  envoyé lame_20261020_193225_pv-7445_0011.jpg (412 ko)
+   559.536  t0026350 suivi ok score 1.00 pos 12061,-208 net 78 (25 ms) carte 15 photos + 263 positions
+   559.766  photo 445_0016 à 12061,-208 (435 ko, 230 ms)
+   559.840  t0026654 suivi ok score 1.00 pos 12069,-207 net 25 (18 ms) carte 16 photos + 266 positions
+   560.191  t0027003 suivi ok score 0.99 pos 12069,-207 net 81 (22 ms) carte 16 photos + 270 positions
+   560.521  t0027335 suivi ok score 1.00 pos 12069,-207 net 97 (23 ms) carte 16 photos + 273 positions
+   560.847  t0027662 suivi ok score 1.00 pos 12066,-207 net 90 (21 ms) carte 16 photos + 276 positions
+   560.852  envoyé lame_20261020_193225_pv-7445_0012.jpg (424 ko)
+   561.181  t0027995 suivi ok score 0.99 pos 12061,-194 net 78 (21 ms) carte 16 photos + 280 positions
+   561.519  t0028332 suivi ok score 1.00 pos 12061,-194 net 84 (25 ms) carte 16 photos + 283 positions
+   561.850  t0028664 suivi ok score 1.00 pos 12061,-194 net 96 (20 ms) carte 16 photos + 286 positions
+   562.061  envoyé lame_20261020_193225_pv-7445_0013.jpg (445 ko)
+   562.190  t0029003 suivi ok score 0.97 pos 12515,-206 net 83 (25 ms) carte 16 photos + 290 positions
+   562.511  t0029325 suivi ok score 0.98 pos 13266,-243 net 94 (14 ms) carte 16 photos + 293 positions
+   562.858  t0029672 suivi ok score 0.97 pos 13265,-243 net 100 (22 ms) carte 16 photos + 296 positions
+   562.976  photo 445_0017 à 13265,-243 (415 ko, 214 ms)
+   563.180  t0029994 suivi ok score 0.96 pos 13265,-243 net 109 (17 ms) carte 17 photos + 300 positions
+   563.516  t0030330 suivi ok score 0.94 pos 13276,92 net 111 (22 ms) carte 17 photos + 300 positions
+   563.845  t0030658 suivi ok score 0.92 pos 13285,650 net 113 (15 ms) carte 17 photos + 300 positions
+   564.175  t0030988 suivi ok score 0.95 pos 13321,2020 net 112 (13 ms) carte 17 photos + 300 positions
+   564.310  photo en mouvement lent (60 % du champ, 30 u/s)
+   564.456  envoyé lame_20261020_193225_pv-7445_0014.jpg (451 ko)
+   564.504  t0031319 suivi ok score 0.98 pos 13321,2211 net 102 (11 ms) carte 17 photos + 300 positions
+   564.538  photo 445_0018 à 13321,2211 (408 ko, 227 ms)
+   564.845  t0031659 suivi ok score 0.98 pos 13321,2211 net 85 (17 ms) carte 18 photos + 300 positions
+   565.187  t0032000 suivi ok score 0.98 pos 13321,2211 net 103 (24 ms) carte 18 photos + 300 positions
+   565.420  envoyé lame_20261020_193225_pv-7445_0015.jpg (440 ko)
+   565.533  t0032346 suivi ok score 0.98 pos 13321,2211 net 106 (28 ms) carte 18 photos + 300 positions
+   565.850  t0032664 suivi ok score 0.98 pos 13261,2211 net 106 (17 ms) carte 18 photos + 300 positions
+   566.210  t0033023 suivi ok score 0.96 pos 12866,2211 net 105 (30 ms) carte 18 photos + 300 positions
+   566.527  t0033340 suivi ok score 0.93 pos 12269,2211 net 90 (25 ms) carte 18 photos + 300 positions
+   566.725  envoyé lame_20261020_193225_pv-7445_0016.jpg (435 ko)
+   566.849  t0033662 suivi ok score 0.96 pos 11839,2227 net 159 (16 ms) carte 18 photos + 300 positions
+   567.192  t0034004 suivi ok score 0.95 pos 11839,2227 net 125 (21 ms) carte 18 photos + 300 positions
+   567.302  photo 445_0019 à 11839,2227 (408 ko, 198 ms)
+   567.526  t0034339 suivi ok score 0.96 pos 11839,2227 net 123 (26 ms) carte 19 photos + 300 positions
+   567.862  t0034675 suivi ok score 0.96 pos 11839,2227 net 131 (24 ms) carte 19 photos + 300 positions
+   567.880  envoyé lame_20261020_193225_pv-7445_0017.jpg (415 ko)
+   568.190  t0035003 suivi ok score 0.92 pos 11444,2227 net 118 (25 ms) carte 19 photos + 300 positions
+   568.519  t0035332 suivi ok score 0.95 pos 10631,2227 net 96 (21 ms) carte 19 photos + 300 positions
+   568.850  t0035664 suivi ok score 0.98 pos 10452,2227 net 114 (20 ms) carte 19 photos + 300 positions
+   569.176  t0035990 suivi ok score 0.97 pos 10452,2227 net 136 (16 ms) carte 19 photos + 300 positions
+   569.223  photo 445_0020 à 10452,2227 (410 ko, 209 ms)
+   569.508  t0036322 suivi ok score 0.97 pos 10452,2227 net 84 (8 ms) carte 20 photos + 300 positions
+   569.866  t0036679 suivi ok score 0.98 pos 10452,2227 net 121 (27 ms) carte 20 photos + 300 positions
+   570.187  t0037000 suivi ok score 0.97 pos 10452,2227 net 117 (22 ms) carte 20 photos + 300 positions
+   570.509  t0037323 suivi ok score 0.95 pos 9185,2259 net 77 (13 ms) carte 20 photos + 300 positions
+   570.666  photo en mouvement lent (54 % du champ, 30 u/s)
+   570.728  envoyé lame_20261020_193225_pv-7445_0018.jpg (408 ko)
+   570.843  t0037657 suivi ok score 0.98 pos 8802,2259 net 112 (18 ms) carte 20 photos + 300 positions
+   570.897  photo 445_0021 à 8814,2259 (413 ko, 230 ms)
+   571.183  t0037997 suivi ok score 0.97 pos 8802,2259 net 87 (15 ms) carte 21 photos + 300 positions
+   571.526  t0038339 suivi ok score 0.98 pos 8802,2259 net 111 (22 ms) carte 21 photos + 300 positions
+   571.855  t0038668 suivi ok score 0.98 pos 8790,2259 net 110 (17 ms) carte 21 photos + 300 positions
+   572.098  envoyé lame_20261020_193225_pv-7445_0019.jpg (408 ko)
+   572.176  t0038990 suivi ok score 0.97 pos 8276,2259 net 111 (12 ms) carte 21 photos + 300 positions
+   572.529  t0039342 suivi ok score 0.98 pos 8241,2259 net 131 (26 ms) carte 21 photos + 300 positions
+   572.848  t0039662 suivi ok score 0.98 pos 8241,2259 net 124 (17 ms) carte 21 photos + 300 positions
+   572.863  photo 445_0022 à 8241,2259 (407 ko, 206 ms)
+   573.186  t0039999 suivi ok score 0.98 pos 8241,2259 net 140 (19 ms) carte 22 photos + 300 positions
+   573.516  t0040330 suivi ok score 0.95 pos 7643,2259 net 114 (15 ms) carte 22 photos + 300 positions
+   573.858  t0040671 suivi ok score 0.99 pos 7392,2259 net 107 (22 ms) carte 22 photos + 300 positions
+   574.032  envoyé lame_20261020_193225_pv-7445_0020.jpg (410 ko)
+   574.180  t0040994 suivi ok score 0.99 pos 7392,2259 net 64 (16 ms) carte 22 photos + 300 positions
+   574.293  photo 445_0023 à 7392,2259 (418 ko, 210 ms)
+   574.517  t0041330 suivi ok score 0.98 pos 7392,2259 net 106 (17 ms) carte 23 photos + 300 positions
+   574.847  t0041661 suivi ok score 0.99 pos 7153,2259 net 67 (15 ms) carte 23 photos + 300 positions
+   575.192  t0042005 suivi ok score 0.99 pos 6818,2259 net 61 (19 ms) carte 23 photos + 300 positions
+   575.528  t0042341 suivi ok score 1.00 pos 6758,2259 net 82 (21 ms) carte 23 photos + 300 positions
+   575.713  photo floue (netteté 49 contre 134 de référence)
+   575.852  t0042665 suivi ok score 1.00 pos 6758,2259 net 51 (16 ms) carte 23 photos + 300 positions
+   575.857  envoyé lame_20261020_193225_pv-7445_0021.jpg (413 ko)
+   575.925  photo 445_0024 à 6758,2259 (422 ko, 212 ms)
+   576.172  t0042986 suivi ok score 1.00 pos 6758,2259 net 91 (11 ms) carte 24 photos + 300 positions
+   576.514  t0043328 suivi ok score 0.99 pos 6758,2259 net 97 (15 ms) carte 24 photos + 300 positions
+   576.856  t0043670 suivi ok score 0.99 pos 6424,2259 net 92 (21 ms) carte 24 photos + 300 positions
+   577.043  envoyé lame_20261020_193225_pv-7445_0022.jpg (407 ko)
+   577.180  t0043994 suivi ok score 0.99 pos 5264,2291 net 81 (17 ms) carte 24 photos + 300 positions
+   577.520  t0044333 suivi ok score 1.00 pos 5264,2291 net 88 (24 ms) carte 24 photos + 300 positions
+   577.805  photo 445_0025 à 5264,2291 (428 ko, 217 ms)
+   577.857  t0044670 suivi ok score 1.00 pos 5264,2291 net 68 (26 ms) carte 25 photos + 300 positions
+   578.192  t0045005 suivi ok score 1.00 pos 5264,2291 net 85 (24 ms) carte 25 photos + 300 positions
+   578.524  t0045337 suivi ok score 1.00 pos 5264,2291 net 82 (22 ms) carte 25 photos + 300 positions
+   578.862  t0045675 suivi ok score 0.99 pos 4332,2323 net 86 (25 ms) carte 25 photos + 300 positions
+   579.191  t0046003 suivi ok score 0.99 pos 4296,2323 net 72 (20 ms) carte 25 photos + 300 positions
+   579.289  photo floue (netteté 59 contre 134 de référence)
+   579.504  photo 445_0026 à 4296,2323 (407 ko, 214 ms)
+   579.510  t0046324 suivi ok score 0.99 pos 4296,2323 net 68 (12 ms) carte 26 photos + 300 positions
+   579.613  envoyé lame_20261020_193225_pv-7445_0023.jpg (418 ko)
+   579.853  t0046666 suivi ok score 1.00 pos 4296,2323 net 77 (17 ms) carte 26 photos + 300 positions
+   580.195  t0047008 suivi ok score 0.99 pos 4296,2323 net 50 (18 ms) carte 26 photos + 300 positions
+   580.533  t0047346 suivi ok score 0.99 pos 4296,2323 net 36 (27 ms) carte 26 photos + 300 positions
+   580.867  t0047680 suivi ok score 1.00 pos 4296,2323 net 71 (24 ms) carte 26 photos + 300 positions
+   581.198  t0048011 suivi ok score 0.99 pos 4296,2323 net 67 (22 ms) carte 26 photos + 300 positions
+   581.537  t0048350 suivi ok score 0.99 pos 4296,2323 net 68 (26 ms) carte 26 photos + 300 positions
+   581.865  t0048678 suivi ok score 1.00 pos 4296,2323 net 69 (21 ms) carte 26 photos + 300 positions
+   582.207  t0049020 suivi ok score 0.98 pos 3949,2323 net 101 (27 ms) carte 26 photos + 300 positions
+   582.528  t0049342 suivi ok score 0.98 pos 3949,2323 net 109 (23 ms) carte 26 photos + 300 positions
+   582.847  photo 445_0027 à 3949,2323 (409 ko, 243 ms)
+   582.851  t0049664 suivi ok score 0.97 pos 3854,2323 net 96 (16 ms) carte 27 photos + 300 positions
+   583.177  t0049991 suivi ok score 0.97 pos 2659,2323 net 91 (13 ms) carte 27 photos + 300 positions
+   583.510  t0050325 suivi ok score 0.98 pos 2659,2323 net 89 (11 ms) carte 27 photos + 300 positions
+   583.767  photo 445_0028 à 2659,2323 (404 ko, 196 ms)
+   583.848  t0050662 suivi ok score 0.99 pos 2659,2323 net 93 (18 ms) carte 28 photos + 300 positions
+   584.180  t0050994 suivi ok score 0.98 pos 2659,2323 net 90 (10 ms) carte 28 photos + 300 positions
+   584.335  envoyé lame_20261020_193225_pv-7445_0024.jpg (422 ko)
+   584.519  t0051333 suivi ok score 0.96 pos 2121,2323 net 62 (19 ms) carte 28 photos + 300 positions
+   584.850  t0051663 suivi ok score 0.99 pos 1870,2323 net 93 (14 ms) carte 28 photos + 300 positions
+   585.179  t0051993 suivi ok score 0.99 pos 1870,2323 net 83 (12 ms) carte 28 photos + 300 positions
+   585.281  photo 445_0029 à 1870,2323 (408 ko, 237 ms)
+   585.314  envoyé lame_20261020_193225_pv-7445_0025.jpg (428 ko)
+   585.522  t0052336 suivi ok score 0.98 pos 1870,2323 net 93 (18 ms) carte 29 photos + 300 positions
+   585.850  t0052664 suivi ok score 0.99 pos 1870,2323 net 99 (15 ms) carte 29 photos + 300 positions
+   586.185  t0052999 suivi ok score 0.98 pos 1666,2323 net 90 (19 ms) carte 29 photos + 300 positions
+   586.285  envoyé lame_20261020_193225_pv-7445_0026.jpg (407 ko)
+   586.536  t0053349 suivi ok score 0.98 pos 1117,2323 net 88 (35 ms) carte 29 photos + 300 positions
+   586.851  t0053664 suivi ok score 0.99 pos 1117,2323 net 95 (15 ms) carte 29 photos + 300 positions
+   587.079  photo 445_0030 à 1117,2323 (407 ko, 227 ms)
+   587.184  t0053997 suivi ok score 0.99 pos 1117,2323 net 97 (17 ms) carte 30 photos + 300 positions
+   587.513  t0054327 suivi ok score 0.98 pos 1117,2323 net 79 (15 ms) carte 30 photos + 300 positions
+   587.829  envoyé lame_20261020_193225_pv-7445_0027.jpg (409 ko)
+   587.850  t0054664 suivi ok score 0.98 pos 1117,2323 net 85 (19 ms) carte 30 photos + 300 positions
+   588.189  t0055003 suivi ok score 0.99 pos 1117,2323 net 88 (20 ms) carte 30 photos + 300 positions
+   588.526  t0055339 suivi ok score 0.95 pos 53,2323 net 104 (21 ms) carte 30 photos + 300 positions
+   588.851  t0055665 suivi ok score 0.97 pos 29,2323 net 109 (14 ms) carte 30 photos + 300 positions
+   589.189  t0056002 suivi ok score 0.97 pos 29,2323 net 73 (17 ms) carte 30 photos + 300 positions
+   589.210  photo 445_0031 à 29,2323 (402 ko, 219 ms)
+   589.517  t0056331 suivi ok score 0.97 pos 29,2323 net 63 (11 ms) carte 31 photos + 300 positions
+   589.855  t0056669 suivi ok score 0.97 pos 29,2323 net 80 (16 ms) carte 31 photos + 300 positions
+   590.193  t0057007 suivi ok score 0.97 pos 29,2403 net 97 (20 ms) carte 31 photos + 300 positions
+   590.446  envoyé lame_20261020_193225_pv-7445_0028.jpg (404 ko)
+   590.510  t0057324 suivi ok score 0.95 pos 29,2530 net 128 (11 ms) carte 31 photos + 300 positions
+   590.598  photo 445_0032 à 29,2482 (405 ko, 206 ms)
+   590.857  t0057670 suivi ok score 0.96 pos 29,2849 net 137 (20 ms) carte 32 photos + 300 positions
+   591.192  t0058005 suivi ok score 0.94 pos 29,3566 net 92 (20 ms) carte 32 photos + 300 positions
+   591.323  envoyé lame_20261020_193225_pv-7445_0029.jpg (408 ko)
+   591.486  photo en mouvement lent (64 % du champ, 0 u/s)
+   591.524  t0058337 suivi ok score 0.99 pos 65,5080 net 105 (18 ms) carte 32 photos + 300 positions
+   591.706  photo 445_0033 à 65,5080 (425 ko, 219 ms)
+   591.861  t0058675 suivi ok score 0.98 pos 65,5080 net 110 (17 ms) carte 33 photos + 300 positions
+   592.189  t0059003 suivi ok score 0.99 pos 65,5080 net 70 (12 ms) carte 33 photos + 300 positions
+   592.501  envoyé lame_20261020_193225_pv-7445_0030.jpg (407 ko)
+   592.524  t0059337 suivi ok score 0.99 pos 65,5080 net 120 (16 ms) carte 33 photos + 300 positions
+   592.848  t0059662 suivi ok score 0.98 pos 65,5080 net 104 (12 ms) carte 33 photos + 300 positions
+   593.189  t0060002 suivi ok score 0.99 pos 65,5080 net 95 (18 ms) carte 33 photos + 300 positions
+   593.529  t0060342 suivi ok score 0.97 pos 268,5080 net 86 (20 ms) carte 33 photos + 300 positions
+   593.654  envoyé lame_20261020_193225_pv-7445_0031.jpg (402 ko)
+   593.854  t0060667 suivi ok score 0.98 pos 1427,5064 net 79 (17 ms) carte 33 photos + 300 positions
+   594.192  t0061005 suivi ok score 1.00 pos 1475,5064 net 90 (18 ms) carte 33 photos + 300 positions
+   594.502  photo 445_0034 à 1475,5064 (433 ko, 217 ms)
+   594.519  t0061332 suivi ok score 0.99 pos 1475,5064 net 95 (17 ms) carte 34 photos + 300 positions
+   594.866  t0061679 suivi ok score 1.00 pos 1475,5064 net 92 (26 ms) carte 34 photos + 300 positions
+   595.189  t0062003 suivi ok score 0.99 pos 1595,5064 net 84 (21 ms) carte 34 photos + 300 positions
+   595.519  t0062333 suivi ok score 0.99 pos 1953,5064 net 83 (14 ms) carte 34 photos + 300 positions
+   595.859  t0062672 suivi ok score 0.99 pos 2240,5064 net 89 (18 ms) carte 34 photos + 300 positions
+   596.005  envoyé lame_20261020_193225_pv-7445_0032.jpg (405 ko)
+   596.187  t0063001 suivi ok score 0.99 pos 2264,5064 net 91 (15 ms) carte 34 photos + 300 positions
+   596.400  photo 445_0035 à 2264,5064 (440 ko, 212 ms)
+   596.520  t0063333 suivi ok score 1.00 pos 2264,5064 net 96 (16 ms) carte 35 photos + 300 positions
+   596.854  t0063667 suivi ok score 0.99 pos 2300,5064 net 91 (14 ms) carte 35 photos + 300 positions
+   597.178  envoyé lame_20261020_193225_pv-7445_0033.jpg (425 ko)
+   597.194  t0064005 suivi ok score 0.99 pos 2790,5064 net 93 (20 ms) carte 35 photos + 300 positions
+   597.532  t0064345 suivi ok score 0.99 pos 3292,5064 net 90 (25 ms) carte 35 photos + 300 positions
+   597.861  t0064674 suivi ok score 0.98 pos 4296,5064 net 83 (17 ms) carte 35 photos + 300 positions
+   598.085  photo en mouvement lent (78 % du champ, 0 u/s)
+   598.085  ATTENTION pas trop grand (78 % du champ) : recouvrement insuffisant
+   598.206  t0065018 suivi ok score 1.00 pos 4643,5064 net 96 (26 ms) carte 35 photos + 300 positions
+   598.318  photo 445_0036 à 4643,5064 (452 ko, 232 ms)
+   598.527  t0065340 suivi ok score 0.99 pos 4643,5064 net 94 (22 ms) carte 36 photos + 300 positions
+   598.868  t0065681 suivi ok score 0.99 pos 4643,5064 net 93 (25 ms) carte 36 photos + 300 positions
+   599.058  envoyé lame_20261020_193225_pv-7445_0034.jpg (433 ko)
+   599.195  t0066007 suivi ok score 0.99 pos 4786,5064 net 99 (20 ms) carte 36 photos + 300 positions
+   599.521  t0066334 suivi ok score 0.99 pos 5444,5064 net 100 (14 ms) carte 36 photos + 300 positions
+   599.863  t0066675 suivi ok score 0.99 pos 5766,5064 net 96 (20 ms) carte 36 photos + 300 positions
+   600.183  t0066997 suivi ok score 1.00 pos 5826,5064 net 105 (13 ms) carte 36 photos + 300 positions
+   600.515  photo 445_0037 à 5826,5064 (457 ko, 225 ms)
+   600.519  t0067333 suivi ok score 1.00 pos 5826,5064 net 104 (16 ms) carte 37 photos + 300 positions
+   600.846  t0067660 suivi ok score 1.00 pos 5826,5064 net 98 (11 ms) carte 37 photos + 300 positions
+   601.208  t0068020 suivi ok score 0.99 pos 5862,5064 net 103 (25 ms) carte 37 photos + 300 positions
+   601.544  t0068357 suivi ok score 0.99 pos 6316,5064 net 93 (25 ms) carte 37 photos + 300 positions
+   601.859  t0068672 suivi ok score 0.99 pos 6591,5064 net 85 (16 ms) carte 37 photos + 300 positions
+   602.127  envoyé lame_20261020_193225_pv-7445_0035.jpg (440 ko)
+   602.192  t0069005 suivi ok score 0.99 pos 6758,5064 net 91 (17 ms) carte 37 photos + 300 positions
+   602.531  t0069344 suivi ok score 1.00 pos 6782,5064 net 79 (24 ms) carte 37 photos + 300 positions
+   602.759  photo 445_0038 à 6782,5064 (440 ko, 227 ms)
+   602.864  t0069678 suivi ok score 1.00 pos 6782,5064 net 94 (18 ms) carte 38 photos + 300 positions
+   603.191  t0070003 suivi ok score 1.00 pos 6782,5064 net 105 (16 ms) carte 38 photos + 300 positions
+   603.542  t0070354 suivi ok score 1.00 pos 6782,5064 net 102 (27 ms) carte 38 photos + 300 positions
+   603.580  envoyé lame_20261020_193225_pv-7445_0036.jpg (452 ko)
+   603.859  t0070673 suivi ok score 1.00 pos 6782,5064 net 84 (14 ms) carte 38 photos + 300 positions
+   604.201  t0071013 suivi ok score 0.99 pos 6854,5064 net 85 (21 ms) carte 38 photos + 300 positions
+   604.528  t0071341 suivi ok score 0.99 pos 7069,5064 net 87 (17 ms) carte 38 photos + 300 positions
+   604.874  t0071686 suivi ok score 0.97 pos 7416,5064 net 94 (25 ms) carte 38 photos + 300 positions
+   605.172  envoyé lame_20261020_193225_pv-7445_0037.jpg (457 ko)
+   605.199  t0072012 suivi ok score 0.98 pos 8324,5064 net 101 (17 ms) carte 38 photos + 300 positions
+   605.290  photo en mouvement lent (53 % du champ, 30 u/s)
+   605.504  photo 445_0039 à 8408,5064 (433 ko, 213 ms)
+   605.514  t0072328 suivi ok score 0.99 pos 8408,5064 net 115 (13 ms) carte 39 photos + 300 positions
+   605.847  t0072661 suivi ok score 0.99 pos 8408,5064 net 112 (10 ms) carte 39 photos + 300 positions
+   606.197  t0073010 suivi ok score 0.98 pos 8420,5064 net 115 (20 ms) carte 39 photos + 300 positions
+   606.528  t0073342 suivi ok score 0.95 pos 9532,5048 net 127 (17 ms) carte 39 photos + 300 positions
+   606.858  t0073672 suivi ok score 0.97 pos 9783,5048 net 129 (18 ms) carte 39 photos + 300 positions
+   606.896  envoyé lame_20261020_193225_pv-7445_0038.jpg (440 ko)
+   607.183  t0073997 suivi ok score 0.98 pos 9783,5048 net 124 (10 ms) carte 39 photos + 300 positions
+   607.384  photo 445_0040 à 9783,5048 (418 ko, 228 ms)
+   607.526  t0074339 suivi ok score 0.97 pos 9783,5048 net 124 (18 ms) carte 40 photos + 300 positions
+   607.866  t0074680 suivi ok score 0.93 pos 10141,5048 net 101 (18 ms) carte 40 photos + 300 positions
+   608.202  t0075015 suivi ok score 0.96 pos 10822,5048 net 136 (23 ms) carte 40 photos + 300 positions
+   608.291  envoyé lame_20261020_193225_pv-7445_0039.jpg (433 ko)
+   608.524  t0075337 suivi ok score 0.95 pos 11313,5048 net 116 (15 ms) carte 40 photos + 300 positions
+   608.629  photo en mouvement lent (52 % du champ, 30 u/s)
+   608.850  photo 445_0041 à 11384,5048 (414 ko, 220 ms)
+   608.851  t0075665 suivi ok score 0.97 pos 11372,5048 net 89 (13 ms) carte 41 photos + 300 positions
+   609.182  t0075996 suivi ok score 0.98 pos 11372,5048 net 93 (12 ms) carte 41 photos + 300 positions
+   609.529  t0076342 suivi ok score 0.97 pos 11372,5048 net 122 (21 ms) carte 41 photos + 300 positions
+   609.857  t0076671 suivi ok score 0.91 pos 11946,5048 net 79 (18 ms) carte 41 photos + 300 positions
+   610.129  envoyé lame_20261020_193225_pv-7445_0040.jpg (418 ko)
+   610.195  t0077008 suivi ok score 0.99 pos 12711,5032 net 82 (18 ms) carte 41 photos + 300 positions
+   610.452  photo floue (netteté 40 contre 134 de référence)
+   610.523  t0077337 suivi ok score 0.99 pos 12711,5032 net 39 (15 ms) carte 41 photos + 300 positions
+   610.647  photo 445_0042 à 12711,5032 (406 ko, 194 ms)
+   610.862  t0077676 suivi ok score 0.99 pos 12711,5032 net 88 (20 ms) carte 42 photos + 300 positions
+   611.184  t0077997 suivi ok score 0.99 pos 12711,5032 net 87 (12 ms) carte 42 photos + 300 positions
+   611.409  envoyé lame_20261020_193225_pv-7445_0041.jpg (414 ko)
+   611.530  t0078344 suivi ok score 0.99 pos 12711,5032 net 91 (18 ms) carte 42 photos + 300 positions
+   611.861  t0078674 suivi ok score 0.99 pos 12711,5032 net 99 (19 ms) carte 42 photos + 300 positions
+   612.207  t0079020 suivi ok score 0.99 pos 12711,5032 net 109 (25 ms) carte 42 photos + 300 positions
+   612.530  t0079343 suivi ok score 0.99 pos 12711,5032 net 115 (18 ms) carte 42 photos + 300 positions
+   612.856  t0079670 suivi ok score 0.99 pos 12711,5032 net 104 (16 ms) carte 42 photos + 300 positions
+   613.194  t0080008 suivi ok score 0.98 pos 12711,5096 net 108 (17 ms) carte 42 photos + 300 positions
+   613.539  t0080353 suivi ok score 0.97 pos 12711,5590 net 86 (17 ms) carte 42 photos + 300 positions
+   613.864  t0080677 suivi ok score 0.98 pos 12723,6610 net 82 (16 ms) carte 42 photos + 300 positions
+   614.196  t0081009 suivi ok score 0.99 pos 12723,6722 net 109 (17 ms) carte 42 photos + 300 positions
+   614.534  t0081347 suivi ok score 0.98 pos 12723,6801 net 76 (25 ms) carte 42 photos + 300 positions
+   614.546  photo 445_0043 à 12723,6722 (420 ko, 216 ms)
+   614.845  t0081660 suivi ok score 0.99 pos 12723,6897 net 59 (10 ms) carte 43 photos + 300 positions
+   614.911  photo floue (netteté 60 contre 134 de référence)
+   615.126  photo 445_0044 à 12723,6913 (417 ko, 215 ms)
+   615.185  t0081998 suivi ok score 0.99 pos 12723,6929 net 49 (14 ms) carte 44 photos + 300 positions
+   615.522  t0082336 suivi ok score 0.99 pos 12723,6929 net 49 (13 ms) carte 44 photos + 300 positions
+   615.853  envoyé lame_20261020_193225_pv-7445_0042.jpg (406 ko)
+   615.881  t0082695 suivi ok score 0.99 pos 12723,6929 net 53 (28 ms) carte 44 photos + 300 positions
+   616.196  t0083009 suivi ok score 0.99 pos 12723,6929 net 93 (19 ms) carte 44 photos + 300 positions
+   616.536  t0083349 suivi ok score 0.99 pos 12723,6929 net 61 (19 ms) carte 44 photos + 300 positions
+   616.860  t0083674 suivi ok score 0.99 pos 12723,6929 net 132 (15 ms) carte 44 photos + 300 positions
+   617.068  envoyé lame_20261020_193225_pv-7445_0043.jpg (420 ko)
+   617.218  t0084030 suivi ok score 0.99 pos 12723,6929 net 132 (31 ms) carte 44 photos + 300 positions
+   617.534  t0084347 suivi ok score 0.99 pos 12723,6929 net 129 (21 ms) carte 44 photos + 300 positions
+   617.859  t0084672 suivi ok score 0.99 pos 12723,6929 net 115 (16 ms) carte 44 photos + 300 positions
+   618.193  t0085006 suivi ok score 0.99 pos 12723,6929 net 106 (14 ms) carte 44 photos + 300 positions
+   618.532  t0085345 suivi ok score 0.99 pos 12723,6929 net 107 (17 ms) carte 44 photos + 300 positions
+   618.859  t0085673 suivi ok score 0.98 pos 12723,6977 net 118 (17 ms) carte 44 photos + 300 positions
+   619.196  t0086009 suivi ok score 0.99 pos 12723,7088 net 99 (17 ms) carte 44 photos + 300 positions
+   619.289  photo 445_0045 à 12723,7072 (433 ko, 218 ms)
+   619.537  t0086350 suivi ok score 0.99 pos 12723,7088 net 95 (22 ms) carte 45 photos + 300 positions
+   619.867  t0086681 suivi ok score 0.99 pos 12723,7088 net 89 (20 ms) carte 45 photos + 300 positions
+   620.193  t0087007 suivi ok score 0.99 pos 12723,7088 net 87 (14 ms) carte 45 photos + 300 positions
+   620.530  t0087343 suivi ok score 0.99 pos 12723,7088 net 120 (18 ms) carte 45 photos + 300 positions
+   620.630  envoyé lame_20261020_193225_pv-7445_0044.jpg (417 ko)
+   620.863  t0087677 suivi ok score 0.98 pos 12556,7088 net 113 (15 ms) carte 45 photos + 300 positions
+   621.212  t0088024 suivi ok score 0.91 pos 11468,7088 net 123 (26 ms) carte 45 photos + 300 positions
+   621.519  t0088334 suivi ok score 0.95 pos 11074,7088 net 132 (12 ms) carte 45 photos + 300 positions
+   621.767  photo en mouvement lent (64 % du champ, 31 u/s)
+   621.865  t0088678 suivi ok score 0.95 pos 10763,7088 net 92 (19 ms) carte 45 photos + 300 positions
+   621.909  envoyé lame_20261020_193225_pv-7445_0045.jpg (433 ko)
+   621.987  photo 445_0046 à 10763,7088 (412 ko, 219 ms)
+   622.195  t0089008 suivi ok score 0.96 pos 10763,7088 net 98 (19 ms) carte 46 photos + 300 positions
+   622.525  t0089339 suivi ok score 0.97 pos 10763,7088 net 126 (15 ms) carte 46 photos + 300 positions
+   622.861  t0089675 suivi ok score 0.95 pos 10739,7088 net 119 (15 ms) carte 46 photos + 300 positions
+   623.210  t0090022 suivi ok score 0.93 pos 10500,7088 net 130 (26 ms) carte 46 photos + 300 positions
+   623.278  envoyé lame_20261020_193225_pv-7445_0046.jpg (412 ko)
+   623.550  t0090363 suivi ok score 0.95 pos 9627,7088 net 128 (30 ms) carte 46 photos + 300 positions
+   623.876  t0090689 suivi ok score 0.96 pos 9532,7088 net 137 (25 ms) carte 46 photos + 300 positions
+   624.191  t0091005 suivi ok score 0.97 pos 9532,7088 net 134 (16 ms) carte 46 photos + 300 positions
+   624.214  photo 445_0047 à 9532,7088 (416 ko, 222 ms)
+   624.520  t0091334 suivi ok score 0.95 pos 9520,7088 net 140 (11 ms) carte 47 photos + 300 positions
+   624.873  t0091686 suivi ok score 0.95 pos 8982,7088 net 119 (20 ms) carte 47 photos + 300 positions
+   625.202  t0092015 suivi ok score 0.98 pos 8085,7088 net 114 (17 ms) carte 47 photos + 300 positions
+   625.332  photo en mouvement lent (51 % du champ, 30 u/s)
+   625.524  t0092337 suivi ok score 0.99 pos 7978,7088 net 73 (15 ms) carte 47 photos + 300 positions
+   625.546  photo 445_0048 à 7978,7088 (430 ko, 213 ms)
+   625.600  envoyé lame_20261020_193225_pv-7445_0047.jpg (416 ko)
+   625.860  t0092673 suivi ok score 0.99 pos 7978,7088 net 115 (16 ms) carte 48 photos + 300 positions
+   626.208  t0093020 suivi ok score 0.99 pos 7978,7088 net 115 (24 ms) carte 48 photos + 300 positions
+   626.528  t0093341 suivi ok score 0.99 pos 7619,7088 net 107 (16 ms) carte 48 photos + 300 positions
+   626.872  t0093684 suivi ok score 0.98 pos 7201,7088 net 109 (21 ms) carte 48 photos + 300 positions
+   627.204  t0094016 suivi ok score 0.99 pos 6866,7088 net 118 (18 ms) carte 48 photos + 300 positions
+   627.538  t0094351 suivi ok score 0.99 pos 6866,7088 net 78 (26 ms) carte 48 photos + 300 positions
+   627.726  photo 445_0049 à 6866,7088 (434 ko, 232 ms)
+   627.863  t0094676 suivi ok score 0.99 pos 6866,7088 net 117 (19 ms) carte 49 photos + 300 positions
+   628.198  t0095011 suivi ok score 0.98 pos 6830,7088 net 113 (19 ms) carte 49 photos + 300 positions
+   628.542  t0095355 suivi ok score 0.99 pos 6292,7088 net 96 (23 ms) carte 49 photos + 300 positions
+   628.864  t0095677 suivi ok score 1.00 pos 5946,7088 net 94 (16 ms) carte 49 photos + 300 positions
+   629.203  t0096015 suivi ok score 1.00 pos 5946,7088 net 74 (17 ms) carte 49 photos + 300 positions
+   629.327  photo 445_0050 à 5946,7088 (467 ko, 227 ms)
+   629.364  envoyé lame_20261020_193225_pv-7445_0048.jpg (430 ko)
+   629.532  t0096345 suivi ok score 0.99 pos 5910,7088 net 93 (18 ms) carte 50 photos + 300 positions
+   629.869  t0096682 suivi ok score 1.00 pos 4918,7120 net 84 (19 ms) carte 50 photos + 300 positions
+   630.201  t0097013 suivi ok score 1.00 pos 4858,7120 net 70 (17 ms) carte 50 photos + 300 positions
+   630.512  photo 445_0051 à 4858,7120 (488 ko, 210 ms)
+   630.528  t0097341 suivi ok score 1.00 pos 4858,7120 net 86 (16 ms) carte 51 photos + 300 positions
+   630.609  envoyé lame_20261020_193225_pv-7445_0049.jpg (434 ko)
+   630.858  t0097672 suivi ok score 0.99 pos 4810,7120 net 84 (12 ms) carte 51 photos + 300 positions
+   631.204  t0098016 suivi ok score 0.99 pos 4260,7120 net 65 (17 ms) carte 51 photos + 300 positions
+   631.472  photo en mouvement lent (52 % du champ, 30 u/s)
+   631.530  t0098344 suivi ok score 1.00 pos 3280,7136 net 99 (17 ms) carte 51 photos + 300 positions
+   631.691  photo 445_0052 à 3280,7136 (474 ko, 218 ms)
+   631.867  t0098679 suivi ok score 1.00 pos 3280,7136 net 77 (21 ms) carte 52 photos + 300 positions
+   632.199  t0099011 suivi ok score 1.00 pos 3280,7136 net 102 (17 ms) carte 52 photos + 300 positions
+   632.539  t0099352 suivi ok score 1.00 pos 3280,7136 net 102 (19 ms) carte 52 photos + 300 positions
+   632.871  t0099683 suivi ok score 1.00 pos 3161,7136 net 95 (22 ms) carte 52 photos + 300 positions
+   633.204  t0100017 suivi ok score 0.99 pos 2623,7136 net 99 (18 ms) carte 52 photos + 300 positions
+   633.246  envoyé lame_20261020_193225_pv-7445_0050.jpg (467 ko)
+   633.524  t0100336 suivi ok score 0.99 pos 2121,7136 net 95 (13 ms) carte 52 photos + 300 positions
+   633.883  t0100696 suivi ok score 1.00 pos 2073,7136 net 110 (28 ms) carte 52 photos + 300 positions
+   634.151  photo 445_0053 à 2073,7136 (434 ko, 215 ms)
+   634.197  t0101010 suivi ok score 0.99 pos 2073,7136 net 108 (16 ms) carte 53 photos + 300 positions
+   634.445  envoyé lame_20261020_193225_pv-7445_0051.jpg (488 ko)
+   634.536  t0101349 suivi ok score 0.99 pos 2073,7136 net 99 (16 ms) carte 53 photos + 300 positions
+   634.862  t0101676 suivi ok score 0.99 pos 1714,7136 net 101 (16 ms) carte 53 photos + 300 positions
+   635.194  t0102007 suivi ok score 0.95 pos 1105,7136 net 117 (17 ms) carte 53 photos + 300 positions
+   635.538  t0102351 suivi ok score 0.98 pos 1093,7136 net 123 (21 ms) carte 53 photos + 300 positions
+   635.595  envoyé lame_20261020_193225_pv-7445_0052.jpg (474 ko)
+   635.816  photo 445_0054 à 1093,7136 (418 ko, 223 ms)
+   635.860  t0102672 suivi ok score 0.99 pos 1093,7136 net 110 (13 ms) carte 54 photos + 300 positions
+   636.200  t0103012 suivi ok score 0.98 pos 1093,7136 net 119 (21 ms) carte 54 photos + 300 positions
+   636.533  t0103346 suivi ok score 0.98 pos 268,7136 net 102 (17 ms) carte 54 photos + 300 positions
+   636.873  t0103686 suivi ok score 0.98 pos -43,7136 net 102 (19 ms) carte 54 photos + 300 positions
+   637.203  t0104016 suivi ok score 0.99 pos -294,7136 net 117 (18 ms) carte 54 photos + 300 positions
+   637.232  envoyé lame_20261020_193225_pv-7445_0053.jpg (434 ko)
+   637.534  t0104348 suivi ok score 0.99 pos -294,7136 net 105 (11 ms) carte 54 photos + 300 positions
+   637.648  photo 445_0055 à -294,7136 (442 ko, 208 ms)
+   637.876  t0104688 suivi ok score 0.99 pos -294,7136 net 95 (20 ms) carte 55 photos + 300 positions
+   638.211  t0105024 suivi ok score 0.98 pos -330,7136 net 118 (26 ms) carte 55 photos + 300 positions
+   638.540  t0105353 suivi ok score 0.99 pos -330,7136 net 115 (21 ms) carte 55 photos + 300 positions
+   638.868  t0105681 suivi ok score 0.98 pos -676,7136 net 99 (16 ms) carte 55 photos + 300 positions
+   638.936  envoyé lame_20261020_193225_pv-7445_0054.jpg (418 ko)
+   639.201  t0106014 suivi ok score 0.99 pos -1047,7136 net 108 (14 ms) carte 55 photos + 300 positions
+   639.534  t0106348 suivi ok score 0.99 pos -1155,7136 net 105 (17 ms) carte 55 photos + 300 positions
+   639.863  t0106677 suivi ok score 0.99 pos -1155,7120 net 50 (17 ms) carte 55 photos + 300 positions
+   639.928  photo 445_0056 à -1155,7136 (447 ko, 228 ms)
+   640.202  t0107017 suivi ok score 0.99 pos -1155,7152 net 50 (12 ms) carte 56 photos + 300 positions
+   640.537  t0107351 suivi ok score 0.98 pos -1131,7885 net 57 (19 ms) carte 56 photos + 300 positions
+   640.869  t0107682 suivi ok score 0.97 pos -1083,9112 net 112 (14 ms) carte 56 photos + 300 positions
+   641.208  t0108021 suivi ok score 0.98 pos -1083,9128 net 111 (23 ms) carte 56 photos + 300 positions
+   641.361  envoyé lame_20261020_193225_pv-7445_0055.jpg (442 ko)
+   641.460  photo 445_0057 à -1083,9128 (426 ko, 217 ms)
+   641.539  t0108352 suivi ok score 0.98 pos -1083,9128 net 108 (20 ms) carte 57 photos + 300 positions
+   641.867  t0108680 suivi ok score 0.99 pos -1083,9128 net 111 (18 ms) carte 57 photos + 300 positions
+   642.199  t0109013 suivi ok score 0.99 pos -1083,9128 net 110 (15 ms) carte 57 photos + 300 positions
+   642.531  t0109345 suivi ok score 0.97 pos -1083,9240 net 107 (16 ms) carte 57 photos + 300 positions
+   642.724  envoyé lame_20261020_193225_pv-7445_0056.jpg (447 ko)
+   642.868  t0109681 suivi ok score 0.99 pos -1083,9877 net 86 (18 ms) carte 57 photos + 300 positions
+   643.210  t0110023 suivi ok score 1.00 pos -1083,9877 net 83 (24 ms) carte 57 photos + 300 positions
+   643.456  photo 445_0058 à -1083,9877 (429 ko, 221 ms)
+   643.533  t0110347 suivi ok score 0.99 pos -1083,9877 net 65 (17 ms) carte 58 photos + 300 positions
+   643.862  t0110675 suivi ok score 1.00 pos -1083,9877 net 85 (15 ms) carte 58 photos + 300 positions
+   644.204  t0111017 suivi ok score 1.00 pos -1083,9877 net 73 (19 ms) carte 58 photos + 300 positions
+   644.538  t0111351 suivi ok score 0.99 pos -1083,9877 net 76 (21 ms) carte 58 photos + 300 positions
+   644.766  envoyé lame_20261020_193225_pv-7445_0057.jpg (426 ko)
+   644.876  t0111689 suivi ok score 1.00 pos -1083,9877 net 95 (23 ms) carte 58 photos + 300 positions
+   645.194  t0112009 suivi ok score 0.96 pos -808,9877 net 79 (16 ms) carte 58 photos + 300 positions
+   645.540  t0112353 suivi ok score 0.98 pos 340,9830 net 133 (18 ms) carte 58 photos + 300 positions
+   645.862  envoyé lame_20261020_193225_pv-7445_0058.jpg (429 ko)
+   645.873  t0112686 suivi ok score 0.98 pos 340,9830 net 89 (18 ms) carte 58 photos + 300 positions
+   646.053  photo 445_0059 à 340,9830 (405 ko, 221 ms)
+   646.204  t0113016 suivi ok score 0.98 pos 340,9830 net 114 (23 ms) carte 59 photos + 300 positions
+   646.537  t0113351 suivi ok score 0.90 pos 854,9814 net 129 (22 ms) carte 59 photos + 300 positions
+   646.829  photo en mouvement lent (53 % du champ, 0 u/s)
+   646.881  t0113694 suivi ok score 0.96 pos 1953,9782 net 129 (24 ms) carte 59 photos + 300 positions
+   647.054  photo 445_0060 à 1953,9782 (415 ko, 225 ms)
+   647.193  t0114007 suivi ok score 0.97 pos 1953,9782 net 83 (12 ms) carte 60 photos + 300 positions
+   647.266  envoyé lame_20261020_193225_pv-7445_0059.jpg (405 ko)
+   647.545  t0114359 suivi ok score 0.96 pos 1953,9782 net 109 (20 ms) carte 60 photos + 300 positions
+   647.878  t0114691 suivi ok score 0.96 pos 1953,9782 net 117 (20 ms) carte 60 photos + 300 positions
+   648.218  t0115031 suivi ok score 0.98 pos 2575,9782 net 101 (26 ms) carte 60 photos + 300 positions
+   648.546  t0115359 suivi ok score 0.99 pos 3101,9782 net 101 (19 ms) carte 60 photos + 300 positions
+   648.874  t0115687 suivi ok score 0.99 pos 3567,9782 net 95 (18 ms) carte 60 photos + 300 positions
+   649.202  t0116014 suivi ok score 0.98 pos 4571,9782 net 78 (13 ms) carte 60 photos + 300 positions
+   649.268  photo en mouvement lent (89 % du champ, 30 u/s)
+   649.268  ATTENTION pas trop grand (89 % du champ) : recouvrement insuffisant
+   649.501  photo 445_0061 à 4667,9782 (488 ko, 232 ms)
+   649.534  t0116348 suivi ok score 1.00 pos 4667,9782 net 75 (11 ms) carte 61 photos + 300 positions
+   649.866  t0116680 suivi ok score 1.00 pos 4667,9782 net 90 (11 ms) carte 61 photos + 300 positions
+   650.215  t0117027 suivi ok score 1.00 pos 4667,9782 net 75 (23 ms) carte 61 photos + 300 positions
+   650.542  t0117355 suivi ok score 1.00 pos 4667,9782 net 76 (17 ms) carte 61 photos + 300 positions
+   650.875  t0117688 suivi ok score 1.00 pos 4667,9782 net 85 (19 ms) carte 61 photos + 300 positions
+   651.009  envoyé lame_20261020_193225_pv-7445_0060.jpg (415 ko)
+   651.208  t0118020 suivi ok score 0.99 pos 4834,9782 net 78 (19 ms) carte 61 photos + 300 positions
+   651.537  t0118350 suivi ok score 0.99 pos 6543,9734 net 68 (17 ms) carte 61 photos + 300 positions
+   651.641  photo en mouvement lent (67 % du champ, 30 u/s)
+   651.863  photo 445_0062 à 6711,9734 (452 ko, 221 ms)
+   651.871  t0118684 suivi ok score 1.00 pos 6711,9734 net 91 (18 ms) carte 62 photos + 300 positions
+   652.205  t0119018 suivi ok score 1.00 pos 6711,9734 net 89 (20 ms) carte 62 photos + 300 positions
+   652.436  envoyé lame_20261020_193225_pv-7445_0061.jpg (488 ko)
+   652.534  t0119348 suivi ok score 0.99 pos 6723,9734 net 87 (15 ms) carte 62 photos + 300 positions
+   652.874  t0119687 suivi ok score 0.96 pos 8073,9734 net 67 (22 ms) carte 62 photos + 300 positions
+   653.197  t0120011 suivi ok score 0.99 pos 8181,9734 net 78 (13 ms) carte 62 photos + 300 positions
+   653.337  photo floue (netteté 52 contre 134 de référence)
+   653.531  t0120345 suivi ok score 0.98 pos 8181,9734 net 68 (12 ms) carte 62 photos + 300 positions
+   653.568  photo 445_0063 à 8181,9734 (406 ko, 230 ms)
+   653.861  t0120675 suivi ok score 0.98 pos 8181,9734 net 85 (10 ms) carte 63 photos + 300 positions
+   654.205  t0121018 suivi ok score 0.99 pos 8181,9734 net 82 (16 ms) carte 63 photos + 300 positions
+   654.538  t0121351 suivi ok score 0.98 pos 8181,9734 net 84 (18 ms) carte 63 photos + 300 positions
+   654.889  t0121703 suivi ok score 0.93 pos 8814,9702 net 99 (24 ms) carte 63 photos + 300 positions
+   655.098  photo en mouvement lent (52 % du champ, 31 u/s)
+   655.208  t0122021 suivi ok score 0.98 pos 9771,9670 net 126 (19 ms) carte 63 photos + 300 positions
+   655.326  photo 445_0064 à 9771,9670 (416 ko, 228 ms)
+   655.413  envoyé lame_20261020_193225_pv-7445_0062.jpg (452 ko)
+   655.534  t0122348 suivi ok score 0.98 pos 9771,9670 net 107 (15 ms) carte 64 photos + 300 positions
+   655.873  t0122686 suivi ok score 0.97 pos 9771,9670 net 128 (19 ms) carte 64 photos + 300 positions
+   656.198  t0123012 suivi ok score 0.98 pos 9771,9670 net 132 (14 ms) carte 64 photos + 300 positions
+   656.542  t0123355 suivi ok score 0.97 pos 9771,9670 net 108 (20 ms) carte 64 photos + 300 positions
+   656.873  t0123687 suivi ok score 0.95 pos 8635,9702 net 89 (18 ms) carte 64 photos + 300 positions
+   656.904  envoyé lame_20261020_193225_pv-7445_0063.jpg (406 ko)
+   657.214  t0124027 suivi ok score 0.97 pos 8241,9702 net 80 (16 ms) carte 64 photos + 300 positions
+   657.465  photo en mouvement lent (66 % du champ, 31 u/s)
+   657.541  t0124354 suivi ok score 0.99 pos 7762,9702 net 107 (18 ms) carte 64 photos + 300 positions
+   657.691  photo 445_0065 à 7762,9702 (422 ko, 225 ms)
+   657.870  t0124684 suivi ok score 0.99 pos 7762,9702 net 100 (18 ms) carte 65 photos + 300 positions
+   658.205  t0125018 suivi ok score 0.99 pos 7762,9702 net 111 (16 ms) carte 65 photos + 300 positions
+   658.549  t0125362 suivi ok score 0.98 pos 7918,9702 net 76 (18 ms) carte 65 photos + 300 positions
+   658.887  t0125700 suivi ok score 0.94 pos 8695,9702 net 105 (23 ms) carte 65 photos + 300 positions
+   659.093  envoyé lame_20261020_193225_pv-7445_0064.jpg (416 ko)
+   659.213  t0126026 suivi ok score 0.95 pos 9520,9702 net 106 (25 ms) carte 65 photos + 300 positions
+   659.530  t0126344 suivi ok score 0.94 pos 10607,9702 net 89 (16 ms) carte 65 photos + 300 positions
+   659.777  photo en mouvement lent (113 % du champ, 30 u/s)
+   659.777  ATTENTION pas trop grand (113 % du champ) : recouvrement insuffisant
+   659.865  t0126679 suivi ok score 0.96 pos 11217,9702 net 96 (12 ms) carte 65 photos + 300 positions
+   660.003  photo 445_0066 à 11217,9702 (410 ko, 225 ms)
+   660.204  t0127017 suivi ok score 0.98 pos 11217,9702 net 113 (17 ms) carte 66 photos + 300 positions
+   660.415  envoyé lame_20261020_193225_pv-7445_0065.jpg (422 ko)
+   660.533  t0127346 suivi ok score 0.98 pos 11217,9702 net 118 (16 ms) carte 66 photos + 300 positions
+   660.865  t0127679 suivi ok score 0.93 pos 11564,9702 net 79 (12 ms) carte 66 photos + 300 positions
+   661.221  t0128034 suivi ok score 0.97 pos 12651,9702 net 101 (23 ms) carte 66 photos + 300 positions
+   661.543  t0128357 suivi ok score 0.99 pos 12663,9702 net 72 (20 ms) carte 66 photos + 300 positions
+   661.818  photo 445_0067 à 12663,9702 (411 ko, 212 ms)
+   661.868  t0128682 suivi ok score 0.98 pos 12663,9702 net 125 (10 ms) carte 67 photos + 300 positions
+   662.220  t0129032 suivi ok score 0.98 pos 12663,9702 net 122 (27 ms) carte 67 photos + 300 positions
+   662.537  t0129351 suivi ok score 0.99 pos 12663,9702 net 121 (17 ms) carte 67 photos + 300 positions
+   662.875  t0129689 suivi ok score 0.97 pos 12663,9830 net 112 (20 ms) carte 67 photos + 300 positions
+   663.081  envoyé lame_20261020_193225_pv-7445_0066.jpg (410 ko)
+   663.219  t0130032 suivi ok score 0.94 pos 12663,10563 net 97 (20 ms) carte 67 photos + 300 positions
+   663.535  t0130349 suivi ok score 0.97 pos 12699,11901 net 86 (13 ms) carte 67 photos + 300 positions
+   663.636  photo en mouvement lent (56 % du champ, 31 u/s)
+   663.637  photo floue (netteté 64 contre 134 de référence)
+   663.868  photo 445_0068 à 12699,11997 (414 ko, 231 ms)
+   663.871  t0130684 suivi ok score 0.98 pos 12699,11997 net 85 (18 ms) carte 68 photos + 300 positions
+   664.206  t0131020 suivi ok score 0.98 pos 12699,11997 net 48 (17 ms) carte 68 photos + 300 positions
+   664.541  t0131354 suivi ok score 0.99 pos 12699,11997 net 84 (17 ms) carte 68 photos + 300 positions
+   664.667  envoyé lame_20261020_193225_pv-7445_0067.jpg (411 ko)
+   664.873  t0131687 suivi ok score 0.98 pos 12699,11997 net 93 (16 ms) carte 68 photos + 300 positions
+   665.203  t0132017 suivi ok score 0.94 pos 11839,12045 net 71 (16 ms) carte 68 photos + 300 positions
+   665.538  t0132352 suivi ok score 0.98 pos 11528,12045 net 83 (18 ms) carte 68 photos + 300 positions
+   665.808  photo floue (netteté 67 contre 134 de référence)
+   665.873  t0132686 suivi ok score 0.99 pos 11528,12045 net 79 (13 ms) carte 68 photos + 300 positions
+   666.031  photo 445_0069 à 11528,12045 (418 ko, 223 ms)
+   666.217  t0133030 suivi ok score 0.99 pos 11528,12045 net 94 (23 ms) carte 69 photos + 300 positions
+   666.554  t0133367 suivi ok score 0.99 pos 11492,12045 net 83 (25 ms) carte 69 photos + 300 positions
+   666.886  t0133699 suivi ok score 0.98 pos 10715,12045 net 77 (27 ms) carte 69 photos + 300 positions
+   667.209  t0134022 suivi ok score 0.99 pos 10655,12045 net 98 (20 ms) carte 69 photos + 300 positions
+   667.470  envoyé lame_20261020_193225_pv-7445_0068.jpg (414 ko)
+   667.492  photo 445_0070 à 10655,12045 (420 ko, 201 ms)
+   667.530  t0134344 suivi ok score 0.99 pos 10655,12045 net 102 (11 ms) carte 70 photos + 300 positions
+   667.880  t0134693 suivi ok score 0.99 pos 10655,12045 net 93 (22 ms) carte 70 photos + 300 positions
+   668.204  t0135018 suivi ok score 0.97 pos 10392,12045 net 81 (14 ms) carte 70 photos + 300 positions
+   668.559  t0135372 suivi ok score 0.99 pos 9304,12045 net 82 (30 ms) carte 70 photos + 300 positions
+   668.675  envoyé lame_20261020_193225_pv-7445_0069.jpg (418 ko)
+   668.731  photo en mouvement lent (55 % du champ, 31 u/s)
+   668.861  t0135675 suivi ok score 0.99 pos 8970,12045 net 88 (12 ms) carte 70 photos + 300 positions
+   668.917  photo 445_0071 à 8970,12045 (425 ko, 185 ms)
+   669.200  t0136014 suivi ok score 0.99 pos 8970,12045 net 92 (10 ms) carte 71 photos + 300 positions
+   669.539  t0136352 suivi ok score 0.99 pos 8970,12045 net 83 (17 ms) carte 71 photos + 300 positions
+   669.880  t0136694 suivi ok score 0.97 pos 8384,12077 net 59 (18 ms) carte 71 photos + 300 positions
+   670.009  envoyé lame_20261020_193225_pv-7445_0070.jpg (420 ko)
+   670.203  t0137017 suivi ok score 0.98 pos 7045,12077 net 87 (15 ms) carte 71 photos + 300 positions
+   670.331  photo en mouvement lent (68 % du champ, 0 u/s)
+   670.539  t0137352 suivi ok score 0.99 pos 6902,12077 net 69 (20 ms) carte 71 photos + 300 positions
+   670.557  photo 445_0072 à 6902,12077 (439 ko, 226 ms)
+   670.882  t0137695 suivi ok score 0.99 pos 6902,12077 net 72 (19 ms) carte 72 photos + 300 positions
+   671.169  envoyé lame_20261020_193225_pv-7445_0071.jpg (425 ko)
+   671.214  t0138028 suivi ok score 0.99 pos 6902,12077 net 95 (12 ms) carte 72 photos + 300 positions
+   671.549  t0138363 suivi ok score 0.99 pos 6842,12077 net 97 (20 ms) carte 72 photos + 300 positions
+   671.882  t0138695 suivi ok score 0.97 pos 5683,12093 net 102 (20 ms) carte 72 photos + 300 positions
+   672.214  t0139027 suivi ok score 0.99 pos 5647,12093 net 103 (17 ms) carte 72 photos + 300 positions
+   672.505  photo 445_0073 à 5647,12093 (436 ko, 216 ms)
+   672.547  t0139361 suivi ok score 0.99 pos 5647,12093 net 87 (14 ms) carte 73 photos + 300 positions
+   672.872  t0139685 suivi ok score 0.99 pos 5647,12093 net 92 (15 ms) carte 73 photos + 300 positions
+   673.208  t0140022 suivi ok score 0.99 pos 4667,12093 net 106 (17 ms) carte 73 photos + 300 positions
+   673.545  t0140359 suivi ok score 0.99 pos 4595,12093 net 82 (19 ms) carte 73 photos + 300 positions
+   673.874  t0140688 suivi ok score 1.00 pos 4595,12093 net 107 (18 ms) carte 73 photos + 300 positions
+   673.954  photo 445_0074 à 4595,12093 (432 ko, 209 ms)
+   674.212  t0141025 suivi ok score 0.98 pos 3746,12125 net 80 (20 ms) carte 74 photos + 300 positions
+   674.293  envoyé lame_20261020_193225_pv-7445_0072.jpg (439 ko)
+   674.534  t0141348 suivi ok score 0.87 pos 2145,12188 net 109 (10 ms) carte 74 photos + 300 positions
+   674.564  photo en mouvement lent (80 % du champ, 0 u/s)
+   674.564  ATTENTION pas trop grand (80 % du champ) : recouvrement insuffisant
+   674.803  photo 445_0075 à 2145,12188 (400 ko, 239 ms)
+   674.872  t0141686 suivi ok score 0.96 pos 2145,12188 net 89 (16 ms) carte 75 photos + 300 positions
+   675.209  t0142021 suivi ok score 0.95 pos 2145,12188 net 136 (18 ms) carte 75 photos + 300 positions
+   675.411  envoyé lame_20261020_193225_pv-7445_0073.jpg (436 ko)
+   675.540  t0142353 suivi ok score 0.92 pos 1726,12204 net 137 (19 ms) carte 75 photos + 300 positions
+   675.880  t0142694 suivi ok score 0.96 pos 1499,12204 net 138 (16 ms) carte 75 photos + 300 positions
+   676.217  t0143031 suivi ok score 0.94 pos 1152,12188 net 99 (24 ms) carte 75 photos + 300 positions
+   676.539  t0143353 suivi ok score 0.94 pos 1152,12188 net 99 (16 ms) carte 75 photos + 300 positions
+   676.804  photo 445_0076 à 1152,12188 (397 ko, 228 ms)
+   676.872  t0143687 suivi ok score 0.96 pos 1152,12188 net 104 (10 ms) carte 76 photos + 300 positions
+   677.194  t0144008 suivi ok score 0.95 pos 1093,12188 net 115 (10 ms) carte 76 photos + 300 positions
+   677.554  t0144366 suivi ok score 0.93 pos 1093,12188 net 116 (26 ms) carte 76 photos + 300 positions
+   677.867  t0144681 suivi ok score 0.97 pos 842,12188 net 73 (15 ms) carte 76 photos + 300 positions
+   677.933  photo 445_0077 à 1033,12188 (397 ko, 218 ms)
+   678.124  envoyé lame_20261020_193225_pv-7445_0074.jpg (432 ko)
+   678.205  t0145018 suivi ok score 0.99 pos 41,12188 net 73 (14 ms) carte 77 photos + 300 positions
+   678.540  t0145354 suivi ok score 0.99 pos -354,12188 net 78 (16 ms) carte 77 photos + 300 positions
+   678.892  t0145705 suivi ok score 1.00 pos -629,12188 net 64 (26 ms) carte 77 photos + 300 positions
+   678.892  photo en mouvement lent (54 % du champ, 30 u/s)
+   678.893  photo floue (netteté 64 contre 134 de référence)
+   679.086  photo 445_0078 à -629,12188 (424 ko, 193 ms)
+   679.200  t0146014 suivi ok score 1.00 pos -629,12188 net 37 (13 ms) carte 78 photos + 300 positions
+   679.208  envoyé lame_20261020_193225_pv-7445_0075.jpg (400 ko)
+   679.538  t0146351 suivi ok score 1.00 pos -629,12188 net 81 (15 ms) carte 78 photos + 300 positions
+   679.874  t0146687 suivi ok score 1.00 pos -629,12188 net 58 (14 ms) carte 78 photos + 300 positions
+   680.208  t0147022 suivi ok score 1.00 pos -629,12188 net 39 (16 ms) carte 78 photos + 300 positions
+   680.534  t0147348 suivi ok score 1.00 pos -629,12188 net 34 (10 ms) carte 78 photos + 300 positions
+   680.580  envoyé lame_20261020_193225_pv-7445_0076.jpg (397 ko)
+   680.873  t0147687 suivi ok score 1.00 pos -629,12188 net 41 (13 ms) carte 78 photos + 300 positions
+   681.213  t0148027 suivi ok score 1.00 pos -629,12188 net 31 (19 ms) carte 78 photos + 300 positions
+   681.541  t0148353 suivi ok score 0.99 pos -629,12204 net 48 (16 ms) carte 78 photos + 300 positions
+   681.881  t0148695 suivi ok score 0.99 pos -593,13224 net 43 (19 ms) carte 78 photos + 300 positions
+   682.226  t0149039 suivi ok score 0.99 pos -581,13559 net 83 (27 ms) carte 78 photos + 300 positions
+   682.536  t0149350 suivi ok score 0.99 pos -581,13591 net 94 (14 ms) carte 78 photos + 300 positions
+   682.595  photo 445_0079 à -581,13559 (421 ko, 213 ms)
+   682.889  t0149704 suivi ok score 0.99 pos -581,13750 net 92 (11 ms) carte 79 photos + 300 positions
+   683.025  photo 445_0080 à -581,13718 (416 ko, 223 ms)
+   683.220  t0150033 suivi ok score 0.97 pos -581,13941 net 88 (22 ms) carte 80 photos + 300 positions
+   683.549  t0150362 suivi ok score 0.96 pos -581,14117 net 77 (21 ms) carte 80 photos + 300 positions
+   683.884  t0150697 suivi ok score 0.97 pos -581,14196 net 45 (20 ms) carte 80 photos + 300 positions
+   683.907  photo floue (netteté 43 contre 134 de référence)
+   683.990  envoyé lame_20261020_193225_pv-7445_0077.jpg (397 ko)
+   684.141  photo 445_0081 à -581,14196 (399 ko, 234 ms)
+   684.206  t0151019 suivi ok score 0.98 pos -581,14196 net 44 (17 ms) carte 81 photos + 300 positions
+   684.542  t0151356 suivi ok score 0.75 pos -581,14786 net 35 (18 ms) carte 81 photos + 300 positions
+   684.712  photo en mouvement lent (58 % du champ, 0 u/s)
+   684.713  photo floue (netteté 37 contre 134 de référence)
+   684.877  t0151691 suivi ok score 0.99 pos -497,16571 net 51 (16 ms) carte 81 photos + 300 positions
+   684.922  photo 445_0082 à -497,16571 (414 ko, 209 ms)
+   685.210  t0152024 suivi ok score 0.99 pos -497,16507 net 41 (20 ms) carte 82 photos + 300 positions
+   685.558  t0152371 suivi ok score 0.98 pos -545,15328 net 47 (25 ms) carte 82 photos + 300 positions
+   685.813  envoyé lame_20261020_193225_pv-7445_0078.jpg (424 ko)
+   685.879  t0152693 suivi ok score 0.98 pos -545,15200 net 52 (18 ms) carte 82 photos + 300 positions
+   686.214  t0153027 suivi ok score 0.97 pos -545,14930 net 71 (19 ms) carte 82 photos + 300 positions
+   686.384  photo en mouvement lent (51 % du champ, 30 u/s)
+   686.384  photo floue (netteté 62 contre 134 de référence)
+   686.542  t0153356 suivi ok score 0.95 pos -569,14483 net 98 (17 ms) carte 82 photos + 300 positions
+   686.606  photo 445_0083 à -569,14483 (404 ko, 221 ms)
+   686.884  t0153697 suivi ok score 0.98 pos -569,14483 net 114 (17 ms) carte 83 photos + 300 positions
+   687.139  envoyé lame_20261020_193225_pv-7445_0079.jpg (421 ko)
+   687.199  t0154014 suivi ok score 0.98 pos -569,14483 net 109 (11 ms) carte 83 photos + 300 positions
+   687.542  t0154355 suivi ok score 0.98 pos -569,14483 net 89 (16 ms) carte 83 photos + 300 positions
+   687.879  t0154693 suivi ok score 0.94 pos 567,14435 net 47 (18 ms) carte 83 photos + 300 positions
+   688.148  photo en mouvement lent (95 % du champ, 0 u/s)
+   688.148  ATTENTION pas trop grand (95 % du champ) : recouvrement insuffisant
+   688.149  photo floue (netteté 40 contre 134 de référence)
+   688.215  t0155028 suivi ok score 0.99 pos 2348,14388 net 57 (17 ms) carte 83 photos + 300 positions
+   688.369  photo 445_0084 à 2348,14388 (409 ko, 220 ms)
+   688.541  t0155355 suivi ok score 0.99 pos 2348,14388 net 77 (18 ms) carte 84 photos + 300 positions
+   688.874  t0155689 suivi ok score 0.99 pos 2348,14388 net 51 (13 ms) carte 84 photos + 300 positions
+   689.216  t0156029 suivi ok score 0.99 pos 2407,14388 net 86 (18 ms) carte 84 photos + 300 positions
+   689.543  t0156357 suivi ok score 0.98 pos 3089,14356 net 94 (16 ms) carte 84 photos + 300 positions
+   689.577  envoyé lame_20261020_193225_pv-7445_0080.jpg (416 ko)
+   689.874  t0156689 suivi ok score 0.98 pos 3244,14356 net 96 (16 ms) carte 84 photos + 300 positions
+   690.205  t0157019 suivi ok score 0.98 pos 3089,14356 net 70 (12 ms) carte 84 photos + 300 positions
+   690.355  photo 445_0085 à 3232,14356 (410 ko, 224 ms)
+   690.545  t0157359 suivi ok score 0.98 pos 1415,14388 net 52 (20 ms) carte 85 photos + 300 positions
+   690.688  envoyé lame_20261020_193225_pv-7445_0081.jpg (399 ko)
+   690.854  photo en mouvement lent (95 % du champ, 30 u/s)
+   690.855  ATTENTION pas trop grand (95 % du champ) : recouvrement insuffisant
+   690.877  t0157691 suivi ok score 0.98 pos 316,14388 net 92 (12 ms) carte 85 photos + 300 positions
+   691.063  photo 445_0086 à 316,14388 (407 ko, 208 ms)
+   691.217  t0158030 suivi ok score 0.99 pos 316,14388 net 88 (23 ms) carte 86 photos + 300 positions
+   691.552  t0158366 suivi ok score 0.98 pos 316,14388 net 102 (16 ms) carte 86 photos + 300 positions
+   691.886  t0158700 suivi ok score 0.94 pos 1858,14324 net 49 (16 ms) carte 86 photos + 300 positions
+   692.040  envoyé lame_20261020_193225_pv-7445_0082.jpg (414 ko)
+   692.072  photo en mouvement lent (63 % du champ, 31 u/s)
+   692.210  t0159023 suivi ok score 0.98 pos 2300,14324 net 53 (17 ms) carte 86 photos + 300 positions
+   692.282  photo 445_0087 à 2240,14324 (412 ko, 210 ms)
+   692.552  t0159364 suivi ok score 0.99 pos 2300,14324 net 85 (21 ms) carte 87 photos + 300 positions
+   692.883  t0159696 suivi ok score 0.99 pos 2300,14324 net 88 (19 ms) carte 87 photos + 300 positions
+   693.146  envoyé lame_20261020_193225_pv-7445_0083.jpg (404 ko)
+   693.210  t0160023 suivi ok score 0.98 pos 3029,14308 net 97 (17 ms) carte 87 photos + 300 positions
+   693.557  t0160370 suivi ok score 0.96 pos 3435,14308 net 95 (27 ms) carte 87 photos + 300 positions
+   693.722  photo en mouvement lent (52 % du champ, 30 u/s)
+   693.867  t0160681 suivi ok score 0.97 pos 3842,14308 net 137 (11 ms) carte 87 photos + 300 positions
+   693.928  photo 445_0088 à 3842,14308 (412 ko, 205 ms)
+   694.219  t0161032 suivi ok score 0.98 pos 3842,14308 net 128 (20 ms) carte 88 photos + 300 positions
+   694.261  envoyé lame_20261020_193225_pv-7445_0084.jpg (409 ko)
+   694.542  t0161356 suivi ok score 0.98 pos 3842,14308 net 119 (14 ms) carte 88 photos + 300 positions
+   694.881  t0161694 suivi ok score 0.84 pos 5061,14244 net 122 (16 ms) carte 88 photos + 300 positions
+   695.205  t0162019 suivi ok score 0.96 pos 5336,14244 net 132 (12 ms) carte 88 photos + 300 positions
+   695.544  t0162358 suivi ok score 0.96 pos 5336,14244 net 139 (15 ms) carte 88 photos + 300 positions
+   695.659  photo 445_0089 à 5336,14244 (410 ko, 206 ms)
+   695.876  t0162689 suivi ok score 0.95 pos 5336,14244 net 99 (15 ms) carte 89 photos + 300 positions
+   696.218  t0163032 suivi ok score 0.96 pos 5348,14244 net 115 (21 ms) carte 89 photos + 300 positions
+   696.554  t0163368 suivi ok score 0.94 pos 6304,14228 net 88 (21 ms) carte 89 photos + 300 positions
+   696.816  envoyé lame_20261020_193225_pv-7445_0085.jpg (410 ko)
+   696.891  t0163704 suivi ok score 0.95 pos 6555,14228 net 145 (25 ms) carte 89 photos + 300 positions
+   697.214  t0164028 suivi ok score 0.96 pos 6555,14228 net 97 (17 ms) carte 89 photos + 300 positions
+   697.340  photo 445_0090 à 6555,14228 (408 ko, 235 ms)
+   697.547  t0164360 suivi ok score 0.95 pos 6567,14228 net 93 (16 ms) carte 90 photos + 300 positions
+   697.784  envoyé lame_20261020_193225_pv-7445_0086.jpg (407 ko)
+   697.890  t0164704 suivi ok score 0.98 pos 7942,14180 net 61 (21 ms) carte 90 photos + 300 positions
+   698.011  photo en mouvement lent (50 % du champ, 0 u/s)
+   698.011  photo floue (netteté 50 contre 146 de référence)
+   698.208  t0165021 suivi ok score 0.99 pos 8097,14180 net 98 (13 ms) carte 90 photos + 300 positions
+   698.222  photo 445_0091 à 8097,14180 (420 ko, 211 ms)
+   698.547  t0165360 suivi ok score 0.99 pos 8097,14180 net 58 (15 ms) carte 91 photos + 300 positions
+   698.879  t0165692 suivi ok score 0.99 pos 8097,14180 net 97 (15 ms) carte 91 photos + 300 positions
+   698.989  envoyé lame_20261020_193225_pv-7445_0087.jpg (412 ko)
+   699.212  t0166026 suivi ok score 0.99 pos 8097,14180 net 98 (17 ms) carte 91 photos + 300 positions
+   699.554  t0166367 suivi ok score 1.00 pos 8097,14180 net 96 (18 ms) carte 91 photos + 300 positions
+   699.881  t0166694 suivi ok score 0.98 pos 8444,14180 net 78 (16 ms) carte 91 photos + 300 positions
+   700.041  envoyé lame_20261020_193225_pv-7445_0088.jpg (412 ko)
+   700.211  t0167024 suivi ok score 0.99 pos 8994,14180 net 99 (15 ms) carte 91 photos + 300 positions
+   700.548  t0167363 suivi ok score 1.00 pos 8994,14180 net 54 (20 ms) carte 91 photos + 300 positions
+   700.549  photo floue (netteté 54 contre 146 de référence)
+   700.768  photo 445_0092 à 8994,14180 (431 ko, 219 ms)
+   700.890  t0167703 suivi ok score 0.99 pos 8994,14180 net 97 (24 ms) carte 92 photos + 300 positions
+   701.210  t0168023 suivi ok score 0.99 pos 9053,14180 net 93 (14 ms) carte 92 photos + 300 positions
+   701.388  envoyé lame_20261020_193225_pv-7445_0089.jpg (410 ko)
+   701.543  t0168357 suivi ok score 0.97 pos 10464,14165 net 95 (14 ms) carte 92 photos + 300 positions
+   701.892  t0168704 suivi ok score 0.99 pos 10476,14165 net 77 (24 ms) carte 92 photos + 300 positions
+   701.939  photo floue (netteté 72 contre 146 de référence)
+   702.135  photo 445_0093 à 10476,14165 (423 ko, 196 ms)
+   702.202  t0169016 suivi ok score 0.99 pos 10476,14165 net 102 (10 ms) carte 93 photos + 300 positions
+   702.554  t0169367 suivi ok score 0.99 pos 10476,14165 net 91 (21 ms) carte 93 photos + 300 positions
+   702.887  t0169700 suivi ok score 0.96 pos 11372,14149 net 100 (15 ms) carte 93 photos + 300 positions
+   703.209  t0170023 suivi ok score 0.98 pos 11791,14149 net 90 (11 ms) carte 93 photos + 300 positions
+   703.237  envoyé lame_20261020_193225_pv-7445_0090.jpg (408 ko)
+   703.538  t0170351 suivi ok score 0.99 pos 11839,14149 net 91 (11 ms) carte 93 photos + 300 positions
+   703.831  photo 445_0094 à 11839,14149 (427 ko, 191 ms)
+   703.879  t0170692 suivi ok score 0.99 pos 11839,14149 net 84 (17 ms) carte 94 photos + 300 positions
+   704.228  t0171041 suivi ok score 0.99 pos 11839,14149 net 83 (23 ms) carte 94 photos + 300 positions
+   704.438  envoyé lame_20261020_193225_pv-7445_0091.jpg (420 ko)
+   704.549  t0171362 suivi ok score 0.99 pos 11922,14149 net 80 (18 ms) carte 94 photos + 300 positions
+   704.885  t0171697 suivi ok score 0.99 pos 12436,14149 net 81 (17 ms) carte 94 photos + 300 positions
+   705.224  t0172037 suivi ok score 0.99 pos 12496,14149 net 78 (19 ms) carte 94 photos + 300 positions
+   705.547  t0172361 suivi ok score 1.00 pos 12496,14149 net 71 (20 ms) carte 94 photos + 300 positions
+   705.564  photo 445_0095 à 12496,14149 (431 ko, 214 ms)
+   705.802  envoyé lame_20261020_193225_pv-7445_0092.jpg (431 ko)
+   705.877  t0172691 suivi ok score 0.99 pos 12496,14149 net 78 (15 ms) carte 95 photos + 300 positions
+   706.223  t0173035 suivi ok score 0.99 pos 12496,14149 net 77 (21 ms) carte 95 photos + 300 positions
+   706.547  t0173361 suivi ok score 0.98 pos 12496,14276 net 85 (15 ms) carte 95 photos + 300 positions
+   706.884  t0173697 suivi ok score 0.98 pos 12532,15312 net 89 (16 ms) carte 95 photos + 300 positions
+   707.116  envoyé lame_20261020_193225_pv-7445_0093.jpg (423 ko)
+   707.206  t0174020 suivi ok score 0.96 pos 12544,16252 net 100 (12 ms) carte 95 photos + 300 positions
+   707.242  photo en mouvement lent (52 % du champ, 33 u/s)
+   707.478  photo 445_0096 à 12544,16268 (406 ko, 235 ms)
+   707.543  t0174357 suivi ok score 0.97 pos 12544,16380 net 55 (12 ms) carte 96 photos + 300 positions
+   707.888  t0174701 suivi ok score 0.97 pos 12544,16380 net 116 (23 ms) carte 96 photos + 300 positions
+   708.222  t0175035 suivi ok score 0.97 pos 12544,16380 net 148 (20 ms) carte 96 photos + 300 positions
+   708.556  t0175369 suivi ok score 0.98 pos 12544,16380 net 94 (21 ms) carte 96 photos + 300 positions
+   708.889  t0175702 suivi ok score 0.98 pos 12544,16380 net 138 (20 ms) carte 96 photos + 300 positions
+   709.012  envoyé lame_20261020_193225_pv-7445_0094.jpg (427 ko)
+   709.223  t0176036 suivi ok score 0.97 pos 12544,16380 net 91 (17 ms) carte 96 photos + 300 positions
+   709.554  t0176367 suivi ok score 0.98 pos 12544,16380 net 142 (19 ms) carte 96 photos + 300 positions
+   709.892  t0176705 suivi ok score 0.98 pos 12544,16380 net 145 (21 ms) carte 96 photos + 300 positions
+   710.196  envoyé lame_20261020_193225_pv-7445_0095.jpg (431 ko)
+   710.211  t0177026 suivi ok score 0.95 pos 12352,16380 net 97 (15 ms) carte 96 photos + 300 positions
+   710.546  t0177360 suivi ok score 0.98 pos 11313,16396 net 93 (16 ms) carte 96 photos + 300 positions
+   710.744  photo en mouvement lent (56 % du champ, 30 u/s)
+   710.882  t0177696 suivi ok score 0.99 pos 10846,16396 net 105 (16 ms) carte 96 photos + 300 positions
+   710.976  photo 445_0097 à 10846,16396 (423 ko, 232 ms)
+   711.211  t0178025 suivi ok score 0.99 pos 10846,16396 net 94 (15 ms) carte 97 photos + 300 positions
+   711.274  envoyé lame_20261020_193225_pv-7445_0096.jpg (406 ko)
+   711.546  t0178360 suivi ok score 0.99 pos 10846,16396 net 97 (16 ms) carte 97 photos + 300 positions
+   711.884  t0178698 suivi ok score 0.99 pos 10822,16396 net 101 (18 ms) carte 97 photos + 300 positions
+   712.213  t0179027 suivi ok score 0.99 pos 10344,16396 net 103 (15 ms) carte 97 photos + 300 positions
+   712.574  t0179387 suivi ok score 0.99 pos 9053,16412 net 108 (27 ms) carte 97 photos + 300 positions
+   712.593  photo en mouvement lent (59 % du champ, 30 u/s)
+   712.804  photo 445_0098 à 9041,16412 (449 ko, 211 ms)
+   712.887  t0179700 suivi ok score 1.00 pos 9041,16412 net 95 (12 ms) carte 98 photos + 300 positions
+   713.211  t0180025 suivi ok score 0.99 pos 9041,16412 net 111 (16 ms) carte 98 photos + 300 positions
+   713.552  t0180365 suivi ok score 0.99 pos 9041,16412 net 117 (16 ms) carte 98 photos + 300 positions
+   713.890  t0180704 suivi ok score 0.99 pos 9041,16412 net 110 (16 ms) carte 98 photos + 300 positions
+   713.905  envoyé lame_20261020_193225_pv-7445_0097.jpg (423 ko)
+   714.220  t0181033 suivi ok score 0.99 pos 8755,16412 net 95 (17 ms) carte 98 photos + 300 positions
+   714.559  t0181372 suivi ok score 0.98 pos 8217,16412 net 102 (24 ms) carte 98 photos + 300 positions
+   714.893  t0181707 suivi ok score 0.98 pos 7595,16412 net 107 (20 ms) carte 98 photos + 300 positions
+   715.125  envoyé lame_20261020_193225_pv-7445_0098.jpg (449 ko)
+   715.209  t0182023 suivi ok score 0.99 pos 7595,16412 net 76 (13 ms) carte 98 photos + 300 positions
+   715.491  photo 445_0099 à 7595,16412 (421 ko, 246 ms)
+   715.541  t0182355 suivi ok score 0.99 pos 7595,16412 net 119 (10 ms) carte 99 photos + 300 positions
+   715.875  t0182688 suivi ok score 0.99 pos 7595,16412 net 119 (13 ms) carte 99 photos + 300 positions
+   716.228  t0183041 suivi ok score 0.98 pos 7583,16412 net 105 (21 ms) carte 99 photos + 300 positions
+   716.563  t0183376 suivi ok score 0.84 pos 6053,16460 net 94 (25 ms) carte 99 photos + 300 positions
+   716.728  photo en mouvement lent (62 % du champ, 30 u/s)
+   716.886  t0183699 suivi ok score 0.96 pos 5719,16444 net 134 (16 ms) carte 99 photos + 300 positions
+   716.931  photo 445_0100 à 5707,16460 (400 ko, 202 ms)
+   717.039  envoyé lame_20261020_193225_pv-7445_0099.jpg (421 ko)
+   717.218  t0184031 suivi ok score 0.95 pos 5719,16444 net 121 (16 ms) carte 100 photos + 300 positions
+   717.560  t0184373 suivi ok score 0.95 pos 5719,16444 net 151 (22 ms) carte 100 photos + 300 positions
+   717.892  t0184706 suivi ok score 0.95 pos 5467,16444 net 139 (21 ms) carte 100 photos + 300 positions
+   718.221  t0185035 suivi ok score 0.97 pos 4906,16444 net 116 (20 ms) carte 100 photos + 300 positions
+   718.558  t0185372 suivi ok score 0.95 pos 4404,16444 net 80 (19 ms) carte 100 photos + 300 positions
+   718.895  t0185708 suivi ok score 0.99 pos 3101,16460 net 78 (24 ms) carte 100 photos + 300 positions
+   718.895  photo en mouvement lent (85 % du champ, 0 u/s)
+   718.895  ATTENTION pas trop grand (85 % du champ) : recouvrement insuffisant
+   719.100  photo 445_0101 à 3101,16460 (405 ko, 204 ms)
+   719.215  t0186029 suivi ok score 0.99 pos 3101,16460 net 60 (14 ms) carte 101 photos + 300 positions
+   719.558  t0186371 suivi ok score 0.99 pos 3101,16460 net 77 (21 ms) carte 101 photos + 300 positions
+   719.889  t0186703 suivi ok score 0.99 pos 3101,16460 net 77 (17 ms) carte 101 photos + 300 positions
+   720.224  t0187038 suivi ok score 0.99 pos 3101,16460 net 76 (15 ms) carte 101 photos + 300 positions
+   720.361  envoyé lame_20261020_193225_pv-7445_0100.jpg (400 ko)
+   720.554  t0187368 suivi ok score 0.98 pos 3053,16460 net 65 (18 ms) carte 101 photos + 300 positions
+   720.890  t0187704 suivi ok score 0.99 pos 1905,16475 net 68 (21 ms) carte 101 photos + 300 positions
+   721.233  t0188046 suivi ok score 0.99 pos 1798,16475 net 86 (26 ms) carte 101 photos + 300 positions
+   721.545  t0188360 suivi ok score 0.99 pos 1798,16475 net 88 (14 ms) carte 101 photos + 300 positions
+   721.575  photo 445_0102 à 1798,16475 (412 ko, 213 ms)
+   721.635  envoyé lame_20261020_193225_pv-7445_0101.jpg (405 ko)
+   721.879  t0188693 suivi ok score 0.99 pos 1798,16475 net 90 (15 ms) carte 102 photos + 300 positions
+   722.221  t0189034 suivi ok score 0.99 pos 1762,16475 net 76 (16 ms) carte 102 photos + 300 positions
+   722.557  t0189370 suivi ok score 0.97 pos 459,16507 net 72 (21 ms) carte 102 photos + 300 positions
+   722.885  t0189698 suivi ok score 0.99 pos -413,16507 net 64 (13 ms) carte 102 photos + 300 positions
+   723.003  photo en mouvement lent (75 % du champ, 30 u/s)
+   723.003  ATTENTION pas trop grand (75 % du champ) : recouvrement insuffisant
+   723.004  photo floue (netteté 71 contre 146 de référence)
+   723.207  photo 445_0103 à -485,16507 (425 ko, 203 ms)
+   723.227  t0190041 suivi ok score 1.00 pos -485,16507 net 71 (21 ms) carte 103 photos + 300 positions
+   723.546  t0190360 suivi ok score 1.00 pos -485,16507 net 51 (16 ms) carte 103 photos + 300 positions
+   723.884  t0190698 suivi ok score 1.00 pos -485,16507 net 71 (15 ms) carte 103 photos + 300 positions
+   724.218  t0191031 suivi ok score 1.00 pos -485,16507 net 70 (16 ms) carte 103 photos + 300 positions
+   724.558  t0191371 suivi ok score 1.00 pos -485,16507 net 49 (19 ms) carte 103 photos + 300 positions
+   724.728  envoyé lame_20261020_193225_pv-7445_0102.jpg (412 ko)
+   724.886  t0191699 suivi ok score 1.00 pos -485,16507 net 56 (15 ms) carte 103 photos + 300 positions
+   725.230  t0192042 suivi ok score 1.00 pos -485,16507 net 59 (24 ms) carte 103 photos + 300 positions
+   725.553  t0192366 suivi ok score 1.00 pos -485,16507 net 53 (18 ms) carte 103 photos + 300 positions
+   725.888  t0192702 suivi ok score 1.00 pos -485,16507 net 45 (18 ms) carte 103 photos + 300 positions
+   726.047  envoyé lame_20261020_193225_pv-7445_0103.jpg (425 ko)
+   726.216  t0193030 suivi ok score 1.00 pos -485,16507 net 25 (17 ms) carte 103 photos + 300 positions
+   726.556  t0193369 suivi ok score 0.99 pos -485,16507 net 25 (14 ms) carte 103 photos + 300 positions
+   726.888  t0193702 suivi ok score 1.00 pos -485,16507 net 36 (15 ms) carte 103 photos + 300 positions
+   727.231  t0194044 suivi ok score 1.00 pos -485,16507 net 72 (22 ms) carte 103 photos + 300 positions
+   727.560  t0194372 suivi ok score 1.00 pos -485,16507 net 68 (18 ms) carte 103 photos + 300 positions
+   727.892  t0194705 suivi ok score 1.00 pos -485,16507 net 59 (18 ms) carte 103 photos + 300 positions
+   728.229  t0195041 suivi ok score 1.00 pos -485,16507 net 73 (20 ms) carte 103 photos + 300 positions
+   728.561  t0195374 suivi ok score 0.99 pos -485,16507 net 69 (20 ms) carte 103 photos + 300 positions
+   728.889  t0195702 suivi ok score 1.00 pos -485,16507 net 61 (18 ms) carte 103 photos + 300 positions
+   729.218  t0196030 suivi ok score 1.00 pos -485,16507 net 72 (12 ms) carte 103 photos + 300 positions
+   729.556  t0196369 suivi ok score 1.00 pos -485,16507 net 67 (17 ms) carte 103 photos + 300 positions
+   729.893  t0196706 suivi ok score 1.00 pos -485,16507 net 74 (20 ms) carte 103 photos + 300 positions
+   730.230  t0197042 suivi ok score 1.00 pos -485,16507 net 64 (19 ms) carte 103 photos + 300 positions
+   730.562  t0197375 suivi ok score 1.00 pos -485,16507 net 63 (15 ms) carte 103 photos + 300 positions
+   730.889  t0197703 suivi ok score 1.00 pos -485,16507 net 66 (17 ms) carte 103 photos + 300 positions
+   731.217  t0198031 suivi ok score 1.00 pos -485,16507 net 59 (13 ms) carte 103 photos + 300 positions
+   731.560  t0198373 suivi ok score 1.00 pos -485,16507 net 75 (17 ms) carte 103 photos + 300 positions
+   731.895  t0198708 suivi ok score 1.00 pos -485,16507 net 73 (18 ms) carte 103 photos + 300 positions
+   732.230  t0199042 suivi ok score 1.00 pos -485,16507 net 74 (23 ms) carte 103 photos + 300 positions
+   732.563  t0199376 suivi ok score 1.00 pos -485,16762 net 60 (21 ms) carte 103 photos + 300 positions
+   732.888  t0199701 suivi ok score 1.00 pos -485,16858 net 52 (16 ms) carte 103 photos + 300 positions
+   733.024  photo floue (netteté 55 contre 146 de référence)
+   733.216  t0200030 suivi ok score 0.99 pos -485,16858 net 65 (13 ms) carte 103 photos + 300 positions
+   733.246  photo 445_0104 à -485,16858 (427 ko, 222 ms)
+   733.548  t0200362 suivi ok score 1.00 pos -485,16858 net 41 (12 ms) carte 104 photos + 300 positions
+   733.882  t0200697 suivi ok score 1.00 pos -485,16858 net 27 (16 ms) carte 104 photos + 300 positions
+   734.227  t0201040 suivi ok score 1.00 pos -485,16858 net 30 (19 ms) carte 104 photos + 300 positions
+   734.441  envoyé lame_20261020_193225_pv-7445_0104.jpg (427 ko)
+   734.548  t0201362 suivi ok score 1.00 pos -485,16858 net 45 (11 ms) carte 104 photos + 300 positions
+   734.885  t0201699 suivi ok score 1.00 pos -485,16858 net 60 (15 ms) carte 104 photos + 300 positions
+   735.234  t0202047 suivi ok score 1.00 pos -485,16858 net 58 (26 ms) carte 104 photos + 300 positions
+   735.563  t0202377 suivi ok score 1.00 pos -485,16858 net 56 (22 ms) carte 104 photos + 300 positions
+   735.895  t0202707 suivi ok score 1.00 pos -485,16858 net 57 (20 ms) carte 104 photos + 300 positions
+   736.217  t0203031 suivi ok score 1.00 pos -557,16858 net 54 (10 ms) carte 104 photos + 300 positions
+   736.572  t0203385 suivi ok score 1.00 pos -904,16858 net 60 (23 ms) carte 104 photos + 300 positions
+   736.885  t0203698 suivi ok score 0.99 pos -1047,16858 net 58 (14 ms) carte 104 photos + 300 positions
+   737.240  t0204053 suivi ok score 1.00 pos -1429,16858 net 64 (24 ms) carte 104 photos + 300 positions
+   737.427  photo floue (netteté 60 contre 146 de référence)
+   737.546  t0204360 suivi ok score 1.00 pos -1429,16858 net 55 (11 ms) carte 104 photos + 300 positions
+   737.656  photo 445_0105 à -1429,16858 (415 ko, 229 ms)
+   737.887  t0204700 suivi ok score 0.99 pos -1429,16842 net 65 (15 ms) carte 105 photos + 300 positions
+   738.230  t0205043 suivi ok score 0.99 pos -1441,15886 net 56 (18 ms) carte 105 photos + 300 positions
+   738.562  t0205375 suivi ok score 1.00 pos -1441,15710 net 64 (18 ms) carte 105 photos + 300 positions
+   738.727  photo floue (netteté 55 contre 146 de référence)
+   738.853  envoyé lame_20261020_193225_pv-7445_0105.jpg (415 ko)
+   738.891  t0205705 suivi ok score 1.00 pos -1441,15710 net 49 (15 ms) carte 105 photos + 300 positions
+   738.936  photo 445_0106 à -1441,15710 (412 ko, 209 ms)
+   739.219  t0206033 suivi ok score 1.00 pos -1441,15710 net 65 (12 ms) carte 106 photos + 300 positions
+   739.559  t0206372 suivi ok score 1.00 pos -1441,15710 net 61 (17 ms) carte 106 photos + 300 positions
+   739.890  t0206703 suivi ok score 0.99 pos -1441,15710 net 77 (15 ms) carte 106 photos + 300 positions
+   740.213  envoyé lame_20261020_193225_pv-7445_0106.jpg (412 ko)
+   740.224  t0207037 suivi ok score 0.99 pos -1202,15710 net 73 (14 ms) carte 106 photos + 300 positions
+   740.564  t0207377 suivi ok score 1.00 pos -784,15710 net 63 (18 ms) carte 106 photos + 300 positions
+   740.904  t0207717 suivi ok score 1.00 pos -784,15710 net 59 (25 ms) carte 106 photos + 300 positions
+   740.905  photo floue (netteté 59 contre 146 de référence)
+   741.151  photo 445_0107 à -784,15710 (416 ko, 246 ms)
+   741.216  t0208030 suivi ok score 1.00 pos -784,15710 net 74 (12 ms) carte 107 photos + 300 positions
+   741.564  t0208378 suivi ok score 1.00 pos -784,15710 net 65 (20 ms) carte 107 photos + 300 positions
+   741.894  t0208707 suivi ok score 1.00 pos -784,15710 net 63 (15 ms) carte 107 photos + 300 positions
+   742.230  t0209042 suivi ok score 0.93 pos 531,15663 net 66 (18 ms) carte 107 photos + 300 positions
+   742.257  envoyé lame_20261020_193225_pv-7445_0107.jpg (416 ko)
+   742.418  photo en mouvement lent (61 % du champ, 31 u/s)
+   742.418  photo floue (netteté 71 contre 146 de référence)
+   742.555  t0209369 suivi ok score 0.99 pos 1081,15663 net 65 (15 ms) carte 107 photos + 300 positions
+   742.639  photo 445_0108 à 1081,15663 (406 ko, 220 ms)
+   742.888  t0209701 suivi ok score 0.99 pos 1081,15663 net 66 (19 ms) carte 108 photos + 300 positions
+   743.222  t0210033 suivi ok score 0.99 pos 1081,15663 net 68 (14 ms) carte 108 photos + 300 positions
+   743.560  t0210373 suivi ok score 0.99 pos 1081,15679 net 31 (17 ms) carte 108 photos + 300 positions
+   743.744  envoyé lame_20261020_193225_pv-7445_0108.jpg (406 ko)
+   743.893  t0210707 suivi ok score 0.98 pos 1129,17001 net 30 (13 ms) carte 108 photos + 300 positions
+   744.228  t0211041 suivi ok score 0.99 pos 1129,17049 net 55 (17 ms) carte 108 photos + 300 positions
+   744.317  photo floue (netteté 54 contre 146 de référence)
+   744.535  photo 445_0109 à 1129,17049 (416 ko, 217 ms)
+   744.545  t0211359 suivi ok score 0.99 pos 1129,17049 net 54 (10 ms) carte 109 photos + 300 positions
+   744.890  t0211704 suivi ok score 0.99 pos 1129,17049 net 55 (17 ms) carte 109 photos + 300 positions
+   745.228  t0212042 suivi ok score 0.99 pos 949,17049 net 61 (21 ms) carte 109 photos + 300 positions
+   745.532  photo en mouvement lent (50 % du champ, 30 u/s)
+   745.532  photo floue (netteté 53 contre 146 de référence)
+   745.561  t0212375 suivi ok score 1.00 pos -413,17113 net 50 (17 ms) carte 109 photos + 300 positions
+   745.746  photo 445_0110 à -413,17113 (425 ko, 214 ms)
+   745.799  envoyé lame_20261020_193225_pv-7445_0109.jpg (416 ko)
+   745.880  t0212694 suivi ok score 1.00 pos -413,17113 net 48 (11 ms) carte 110 photos + 300 positions
+   746.220  t0213034 suivi ok score 1.00 pos -413,17113 net 52 (13 ms) carte 110 photos + 300 positions
+   746.564  t0213377 suivi ok score 0.99 pos -1298,17145 net 46 (19 ms) carte 110 photos + 300 positions
+   746.899  t0213713 suivi ok score 1.00 pos -1549,17145 net 46 (18 ms) carte 110 photos + 300 positions
+   747.063  photo floue (netteté 47 contre 146 de référence)
+   747.226  t0214039 suivi ok score 1.00 pos -1549,17145 net 48 (20 ms) carte 110 photos + 300 positions
+   747.278  photo 445_0111 à -1549,17145 (413 ko, 215 ms)
+   747.559  t0214374 suivi ok score 1.00 pos -1549,17145 net 48 (13 ms) carte 111 photos + 300 positions
+   747.909  t0214722 suivi ok score 1.00 pos -1549,17145 net 48 (27 ms) carte 111 photos + 300 positions
+   748.220  t0215034 suivi ok score 1.00 pos -1549,17145 net 48 (14 ms) carte 111 photos + 300 positions
+   748.563  t0215377 suivi ok score 1.00 pos -1549,17145 net 48 (15 ms) carte 111 photos + 300 positions
+   748.891  t0215705 suivi ok score 1.00 pos -1549,17145 net 46 (16 ms) carte 111 photos + 300 positions
+   749.234  t0216048 suivi ok score 1.00 pos -1549,17129 net 48 (18 ms) carte 111 photos + 300 positions
+   749.572  t0216385 suivi ok score 1.00 pos -1549,17129 net 49 (25 ms) carte 111 photos + 300 positions
+   749.889  t0216703 suivi ok score 1.00 pos -1549,17129 net 48 (13 ms) carte 111 photos + 300 positions
+   749.907  envoyé lame_20261020_193225_pv-7445_0110.jpg (425 ko)
+   750.216  t0217030 suivi ok score 1.00 pos -1549,17129 net 48 (12 ms) carte 111 photos + 300 positions
+   750.561  t0217374 suivi ok score 1.00 pos -1549,17129 net 47 (16 ms) carte 111 photos + 300 positions
+   750.892  t0217706 suivi ok score 1.00 pos -1549,17129 net 48 (14 ms) carte 111 photos + 300 positions
+   751.227  t0218041 suivi ok score 1.00 pos -1549,17129 net 46 (16 ms) carte 111 photos + 300 positions
+   751.562  t0218376 suivi ok score 1.00 pos -1549,17129 net 47 (19 ms) carte 111 photos + 300 positions
+   751.893  t0218707 suivi ok score 1.00 pos -1549,17129 net 47 (18 ms) carte 111 photos + 300 positions
+   752.085  envoyé lame_20261020_193225_pv-7445_0111.jpg (413 ko)
+   752.249  t0219063 suivi ok score 1.00 pos -1549,17129 net 47 (10 ms) carte 111 photos + 300 positions
+   752.601  t0219415 suivi ok score 1.00 pos -1549,17129 net 45 (22 ms) carte 111 photos + 300 positions
+   752.926  t0219739 suivi ok score 0.99 pos -1549,17129 net 45 (17 ms) carte 111 photos + 300 positions
+   753.273  t0220086 suivi ok score 1.00 pos -1549,17129 net 46 (22 ms) carte 111 photos + 300 positions
+   753.595  t0220409 suivi ok score 1.00 pos -1549,17129 net 46 (20 ms) carte 111 photos + 300 positions
+   753.923  t0220737 suivi ok score 0.99 pos -1549,17177 net 51 (16 ms) carte 111 photos + 300 positions
+   754.269  t0221081 suivi ok score 0.99 pos -2481,17256 net 60 (22 ms) carte 111 photos + 300 positions
+   754.597  t0221411 suivi lost score 0.28 pos -808,17719 net 435 (20 ms) carte 111 photos + 300 positions
+   754.923  t0221738 suivi lost score 0.27 pos -808,17719 net 437 (17 ms) carte 111 photos + 300 positions
+   755.255  t0222070 suivi lost score 0.27 pos -808,17719 net 431 (18 ms) carte 111 photos + 300 positions
+   755.597  t0222412 suivi lost score 0.27 pos -808,17719 net 434 (16 ms) carte 111 photos + 300 positions
+   755.915  t0222730 suivi lost score -1.00 pos -342,17543 net 0 (7 ms) carte 111 photos + 300 positions
+   756.252  t0223067 suivi lost score -1.00 pos -342,17543 net 0 (11 ms) carte 111 photos + 300 positions
+   756.594  t0223408 suivi lost score -1.00 pos -342,17543 net 0 (15 ms) carte 111 photos + 300 positions
+   756.934  t0223748 suivi lost score -1.00 pos -342,17543 net 0 (20 ms) carte 111 photos + 300 positions
+   757.259  t0224074 suivi lost score -1.00 pos -342,17543 net 0 (13 ms) carte 111 photos + 300 positions
+   757.586  t0224401 suivi lost score -1.00 pos -342,17543 net 0 (10 ms) carte 111 photos + 300 positions
+   757.916  t0224732 suivi lost score -1.00 pos -342,17543 net 0 (10 ms) carte 111 photos + 300 positions
+   758.257  t0225072 suivi lost score -1.00 pos -342,17543 net 0 (14 ms) carte 111 photos + 300 positions
+   758.589  t0225404 suivi lost score -1.00 pos -342,17543 net 0 (11 ms) carte 111 photos + 300 positions
+   758.929  t0225744 suivi lost score -1.00 pos -342,17543 net 0 (16 ms) carte 111 photos + 300 positions
+   759.257  t0226072 suivi lost score -1.00 pos -342,17543 net 0 (11 ms) carte 111 photos + 300 positions
+   759.589  t0226405 suivi lost score -1.00 pos -342,17543 net 0 (8 ms) carte 111 photos + 300 positions
+   759.926  t0226742 suivi lost score -1.00 pos -342,17543 net 0 (12 ms) carte 111 photos + 300 positions
+   760.258  t0227073 suivi lost score -1.00 pos -342,17543 net 0 (14 ms) carte 111 photos + 300 positions
+   760.584  t0227399 suivi lost score -1.00 pos -342,17543 net 0 (9 ms) carte 111 photos + 300 positions
+   760.931  t0227746 suivi lost score -1.00 pos -342,17543 net 0 (15 ms) carte 111 photos + 300 positions
+   761.261  t0228076 suivi lost score -1.00 pos -342,17543 net 0 (13 ms) carte 111 photos + 300 positions
+   761.593  t0228408 suivi lost score -1.00 pos -342,17543 net 0 (11 ms) carte 111 photos + 300 positions
+   761.928  t0228743 suivi lost score -1.00 pos -342,17543 net 0 (13 ms) carte 111 photos + 300 positions
+   762.261  t0229076 suivi lost score -1.00 pos -342,17543 net 0 (16 ms) carte 111 photos + 300 positions
+   762.602  t0229418 suivi lost score -1.00 pos -342,17543 net 0 (16 ms) carte 111 photos + 300 positions
+   762.925  t0229740 suivi lost score -1.00 pos -342,17543 net 0 (11 ms) carte 111 photos + 300 positions
+   763.260  t0230075 suivi lost score -1.00 pos -342,17543 net 0 (14 ms) carte 111 photos + 300 positions
+   763.592  t0230408 suivi lost score -1.00 pos -342,17543 net 0 (14 ms) carte 111 photos + 300 positions
+   763.817  changement d'objectif vers x10 : début à 230633 ms, position -342,17543 (lost)
+   781.111  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+   781.986  verrouillage : focus infini, pose 2.753565 ms, ISO 50, WB figée
+   782.219  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   795.336  objectif x10 : reprise à 262151 ms (calibration absente)
+   795.368  masque oculaire : 100 % du cadre utile (p95 240)
+   795.443  t0262256 suivi ok score 0.99 pos 0,0 net 111 (19 ms) carte 0 photos + 1 positions
+   795.776  t0262590 suivi ok score 0.99 pos 0,0 net 111 (19 ms) carte 0 photos + 5 positions
+   795.997  patron 3x3 champs posé autour du détail (-3060,-4080)
+   795.998  photo 445_0112 à 0,0 (415 ko, 221 ms)
+   796.098  t0262913 suivi ok score 0.99 pos 0,0 net 111 (17 ms) carte 1 photos + 8 positions
+   796.438  t0263252 suivi ok score 0.99 pos 0,0 net 110 (18 ms) carte 1 photos + 11 positions
+   796.770  t0263583 suivi ok score 0.99 pos 0,0 net 110 (17 ms) carte 1 photos + 15 positions
+   797.110  t0263924 suivi ok score 0.99 pos 0,0 net 110 (21 ms) carte 1 photos + 18 positions
+   797.441  t0264255 suivi ok score 0.99 pos 0,0 net 109 (19 ms) carte 1 photos + 21 positions
+   797.771  t0264586 suivi ok score 0.99 pos 0,0 net 109 (17 ms) carte 1 photos + 25 positions
+   797.786  envoyé lame_20261020_193225_pv-7445_0112.jpg (415 ko)
+   798.117  t0264931 suivi ok score 0.99 pos 0,0 net 110 (22 ms) carte 1 photos + 28 positions
+   798.447  t0265261 suivi ok score 1.00 pos 0,0 net 111 (24 ms) carte 1 photos + 31 positions
+   798.778  t0265592 suivi ok score 0.99 pos 0,0 net 112 (23 ms) carte 1 photos + 35 positions
+   799.110  t0265923 suivi ok score 0.97 pos 36,0 net 109 (20 ms) carte 1 photos + 38 positions
+   799.446  t0266259 suivi ok score 0.98 pos 242,0 net 98 (22 ms) carte 1 photos + 41 positions
+   799.785  t0266598 suivi ok score 0.98 pos 434,0 net 102 (25 ms) carte 1 photos + 45 positions
+   800.124  t0266937 suivi ok score 0.98 pos 606,0 net 103 (34 ms) carte 1 photos + 48 positions
+   800.449  t0267262 suivi ok score 0.97 pos 827,0 net 109 (27 ms) carte 1 photos + 51 positions
+   800.778  t0267592 suivi ok score 0.98 pos 1025,0 net 98 (20 ms) carte 1 photos + 55 positions
+   801.132  t0267945 suivi ok score 0.99 pos 1113,0 net 94 (36 ms) carte 1 photos + 58 positions
+   801.433  t0268247 suivi ok score 1.00 pos 1120,0 net 88 (16 ms) carte 1 photos + 61 positions
+   801.523  photo 445_0113 à 1120,0 (390 ko, 214 ms)
+   801.789  t0268603 suivi ok score 0.99 pos 1120,0 net 96 (23 ms) carte 2 photos + 65 positions
+   802.113  t0268927 suivi ok score 0.99 pos 1120,0 net 98 (19 ms) carte 2 photos + 68 positions
+   802.462  t0269276 suivi ok score 1.00 pos 1120,0 net 100 (37 ms) carte 2 photos + 71 positions
+   802.780  t0269594 suivi ok score 0.99 pos 1120,0 net 84 (19 ms) carte 2 photos + 75 positions
+   803.128  t0269942 suivi ok score 0.99 pos 1120,0 net 79 (34 ms) carte 2 photos + 78 positions
+   803.136  envoyé lame_20261020_193225_pv-7445_0113.jpg (390 ko)
+   803.445  t0270258 suivi ok score 1.00 pos 1120,0 net 98 (19 ms) carte 2 photos + 81 positions
+   803.793  t0270607 suivi ok score 0.99 pos 1120,0 net 101 (21 ms) carte 2 photos + 85 positions
+   804.114  t0270928 suivi ok score 0.98 pos 1120,0 net 101 (20 ms) carte 2 photos + 88 positions
+   804.448  t0271262 suivi ok score 0.98 pos 1503,-1 net 97 (20 ms) carte 2 photos + 91 positions
+   804.790  t0271603 suivi ok score 0.99 pos 1840,-28 net 98 (32 ms) carte 2 photos + 95 positions
+   805.114  t0271928 suivi ok score 0.99 pos 1973,-23 net 97 (21 ms) carte 2 photos + 98 positions
+   805.438  t0272252 suivi ok score 0.99 pos 1965,-16 net 97 (16 ms) carte 2 photos + 101 positions
+   805.501  photo 445_0114 à 1966,-16 (402 ko, 221 ms)
+   805.785  t0272600 suivi ok score 0.99 pos 1965,-16 net 99 (20 ms) carte 3 photos + 105 positions
+   806.104  t0272919 suivi ok score 0.96 pos 2209,-39 net 91 (16 ms) carte 3 photos + 108 positions
+   806.446  t0273260 suivi ok score 0.98 pos 2422,-27 net 93 (25 ms) carte 3 photos + 111 positions
+   806.804  t0273616 suivi ok score 0.98 pos 2808,-50 net 89 (37 ms) carte 3 photos + 115 positions
+   806.936  envoyé lame_20261020_193225_pv-7445_0114.jpg (402 ko)
+   807.105  t0273919 suivi ok score 0.99 pos 2965,-37 net 87 (18 ms) carte 3 photos + 118 positions
+   807.440  t0274254 suivi ok score 0.99 pos 2984,-47 net 83 (18 ms) carte 3 photos + 121 positions
+   807.600  photo 445_0115 à 2984,-47 (389 ko, 230 ms)
+   807.778  t0274591 suivi ok score 1.00 pos 2984,-47 net 77 (23 ms) carte 4 photos + 125 positions
+   808.105  t0274920 suivi ok score 0.99 pos 2984,-47 net 84 (18 ms) carte 4 photos + 128 positions
+   808.443  t0275257 suivi ok score 0.99 pos 2984,-47 net 87 (21 ms) carte 4 photos + 131 positions
+   808.777  t0275591 suivi ok score 0.98 pos 2999,-43 net 89 (23 ms) carte 4 photos + 135 positions
+   808.816  envoyé lame_20261020_193225_pv-7445_0115.jpg (389 ko)
+   809.106  t0275920 suivi ok score 0.98 pos 3073,-41 net 88 (19 ms) carte 4 photos + 138 positions
+   809.445  t0276259 suivi ok score 0.99 pos 3190,-43 net 90 (20 ms) carte 4 photos + 141 positions
+   809.795  t0276609 suivi ok score 0.98 pos 3486,-42 net 89 (21 ms) carte 4 photos + 145 positions
+   810.112  t0276926 suivi ok score 0.98 pos 3665,-51 net 91 (21 ms) carte 4 photos + 148 positions
+   810.449  t0277264 suivi ok score 0.99 pos 3665,-51 net 81 (21 ms) carte 4 photos + 151 positions
+   810.528  photo 445_0116 à 3666,-51 (378 ko, 216 ms)
+   810.798  t0277610 suivi ok score 1.00 pos 3665,-51 net 89 (34 ms) carte 5 photos + 155 positions
+   811.120  t0277933 suivi ok score 0.99 pos 3665,-51 net 88 (27 ms) carte 5 photos + 158 positions
+   811.439  t0278253 suivi ok score 0.98 pos 3665,-98 net 84 (16 ms) carte 5 photos + 161 positions
+   811.779  t0278594 suivi ok score 0.99 pos 3665,-190 net 86 (17 ms) carte 5 photos + 165 positions
+   811.796  envoyé lame_20261020_193225_pv-7445_0116.jpg (378 ko)
+   812.109  t0278923 suivi ok score 0.96 pos 3656,-467 net 85 (16 ms) carte 5 photos + 168 positions
+   812.440  t0279255 suivi ok score 0.98 pos 3653,-714 net 82 (16 ms) carte 5 photos + 171 positions
+   812.786  t0279599 suivi ok score 0.97 pos 3644,-963 net 80 (20 ms) carte 5 photos + 175 positions
+   813.124  t0279937 suivi ok score 0.98 pos 3626,-1349 net 85 (29 ms) carte 5 photos + 178 positions
+   813.438  t0280252 suivi ok score 0.98 pos 3618,-1605 net 88 (15 ms) carte 5 photos + 181 positions
+   813.780  t0280593 suivi ok score 0.97 pos 3621,-1633 net 88 (20 ms) carte 5 photos + 185 positions
+   814.026  photo 445_0117 à 3619,-1645 (375 ko, 215 ms)
+   814.103  t0280917 suivi ok score 0.99 pos 3619,-1649 net 81 (17 ms) carte 6 photos + 188 positions
+   814.447  t0281261 suivi ok score 0.99 pos 3619,-1649 net 81 (27 ms) carte 6 photos + 191 positions
+   814.779  t0281592 suivi ok score 0.99 pos 3619,-1649 net 85 (22 ms) carte 6 photos + 195 positions
+   815.110  t0281924 suivi ok score 0.99 pos 3619,-1649 net 85 (19 ms) carte 6 photos + 198 positions
+   815.279  envoyé lame_20261020_193225_pv-7445_0117.jpg (375 ko)
+   815.439  t0282253 suivi ok score 0.97 pos 3366,-1652 net 93 (16 ms) carte 6 photos + 201 positions
+   815.789  t0282602 suivi ok score 0.98 pos 2829,-1626 net 91 (27 ms) carte 6 photos + 205 positions
+   816.114  t0282928 suivi ok score 0.98 pos 2415,-1619 net 93 (17 ms) carte 6 photos + 208 positions
+   816.444  t0283258 suivi ok score 0.99 pos 2399,-1612 net 102 (19 ms) carte 6 photos + 211 positions
+   816.722  photo 445_0118 à 2399,-1612 (377 ko, 211 ms)
+   816.783  t0283597 suivi ok score 0.99 pos 2399,-1612 net 107 (18 ms) carte 7 photos + 215 positions
+   817.108  t0283922 suivi ok score 0.99 pos 2205,-1610 net 99 (16 ms) carte 7 photos + 218 positions
+   817.437  t0284251 suivi ok score 0.97 pos 1936,-1609 net 94 (16 ms) carte 7 photos + 221 positions
+   817.775  t0284589 suivi ok score 0.97 pos 1716,-1607 net 105 (17 ms) carte 7 photos + 225 positions
+   818.113  envoyé lame_20261020_193225_pv-7445_0118.jpg (377 ko)
+   818.114  t0284928 suivi ok score 0.98 pos 1442,-1602 net 103 (21 ms) carte 7 photos + 228 positions
+   818.444  t0285258 suivi ok score 0.99 pos 1322,-1608 net 95 (21 ms) carte 7 photos + 231 positions
+   818.786  t0285599 suivi ok score 0.99 pos 1318,-1606 net 92 (28 ms) carte 7 photos + 235 positions
+   818.819  photo 445_0119 à 1318,-1606 (380 ko, 207 ms)
+   819.111  t0285926 suivi ok score 0.98 pos 1291,-1606 net 87 (19 ms) carte 8 photos + 238 positions
+   819.439  t0286253 suivi ok score 0.98 pos 876,-1580 net 100 (16 ms) carte 8 photos + 241 positions
+   819.805  t0286618 suivi ok score 0.96 pos 386,-1563 net 103 (39 ms) carte 8 photos + 245 positions
+   820.109  t0286924 suivi ok score 0.98 pos 121,-1571 net 102 (17 ms) carte 8 photos + 248 positions
+   820.144  envoyé lame_20261020_193225_pv-7445_0119.jpg (380 ko)
+   820.442  t0287257 suivi ok score 0.98 pos -114,-1550 net 123 (20 ms) carte 8 photos + 251 positions
+   820.797  t0287611 suivi ok score 0.99 pos -114,-1550 net 113 (31 ms) carte 8 photos + 255 positions
+   820.998  photo 445_0120 à -114,-1550 (381 ko, 200 ms)
+   821.104  t0287918 suivi ok score 0.99 pos -114,-1550 net 115 (15 ms) carte 9 photos + 258 positions
+   821.441  t0288255 suivi ok score 0.97 pos -311,-1552 net 109 (17 ms) carte 9 photos + 261 positions
+   821.786  t0288600 suivi ok score 0.95 pos -678,-1555 net 113 (23 ms) carte 9 photos + 265 positions
+   822.110  t0288925 suivi ok score 0.99 pos -866,-1541 net 103 (17 ms) carte 9 photos + 268 positions
+   822.150  envoyé lame_20261020_193225_pv-7445_0120.jpg (381 ko)
+   822.441  t0289256 suivi ok score 0.99 pos -846,-1553 net 104 (19 ms) carte 9 photos + 271 positions
+   822.531  photo 445_0121 à -846,-1553 (384 ko, 212 ms)
+   822.778  t0289592 suivi ok score 0.93 pos -1288,-1538 net 98 (23 ms) carte 10 photos + 275 positions
+   823.111  t0289925 suivi ok score 0.98 pos -1825,-1507 net 103 (18 ms) carte 10 photos + 278 positions
+   823.451  t0290265 suivi ok score 0.99 pos -1827,-1505 net 103 (24 ms) carte 10 photos + 281 positions
+   823.493  envoyé lame_20261020_193225_pv-7445_0121.jpg (384 ko)
+   823.729  photo 445_0122 à -1827,-1505 (393 ko, 234 ms)
+   823.775  t0290588 suivi ok score 0.99 pos -1827,-1505 net 104 (17 ms) carte 11 photos + 285 positions
+   824.135  t0290948 suivi ok score 0.97 pos -2162,-1505 net 107 (35 ms) carte 11 photos + 288 positions
+   824.450  t0291264 suivi ok score 0.98 pos -2771,-1490 net 110 (23 ms) carte 11 photos + 291 positions
+   824.790  t0291603 suivi ok score 0.99 pos -2771,-1490 net 93 (21 ms) carte 11 photos + 295 positions
+   825.029  photo 445_0123 à -2771,-1490 (397 ko, 213 ms)
+   825.089  envoyé lame_20261020_193225_pv-7445_0122.jpg (393 ko)
+   825.131  t0291945 suivi ok score 0.99 pos -2771,-1490 net 90 (14 ms) carte 12 photos + 298 positions
+   825.445  t0292258 suivi ok score 0.99 pos -2771,-1490 net 90 (17 ms) carte 12 photos + 300 positions
+   825.774  t0292588 suivi ok score 0.97 pos -3058,-1490 net 99 (14 ms) carte 12 photos + 300 positions
+   826.118  t0292931 suivi ok score 0.99 pos -3177,-1490 net 98 (19 ms) carte 12 photos + 300 positions
+   826.441  t0293255 suivi ok score 0.99 pos -3177,-1490 net 97 (17 ms) carte 12 photos + 300 positions
+   826.509  photo 445_0124 à -3177,-1490 (386 ko, 223 ms)
+   826.777  t0293591 suivi ok score 0.99 pos -3177,-1490 net 97 (10 ms) carte 13 photos + 300 positions
+   827.127  t0293940 suivi ok score 0.93 pos -3177,-1968 net 93 (25 ms) carte 13 photos + 300 positions
+   827.448  t0294261 suivi ok score 0.95 pos -3177,-2749 net 92 (16 ms) carte 13 photos + 300 positions
+   827.779  t0294592 suivi ok score 0.97 pos -3177,-3163 net 90 (15 ms) carte 13 photos + 300 positions
+   827.947  envoyé lame_20261020_193225_pv-7445_0123.jpg (397 ko)
+   828.125  t0294938 suivi ok score 0.99 pos -3177,-3179 net 88 (25 ms) carte 13 photos + 300 positions
+   828.415  photo 445_0125 à -3177,-3179 (391 ko, 238 ms)
+   828.443  t0295257 suivi ok score 1.00 pos -3177,-3179 net 81 (14 ms) carte 14 photos + 300 positions
+   828.792  t0295605 suivi ok score 0.99 pos -3177,-3179 net 92 (26 ms) carte 14 photos + 300 positions
+   828.976  envoyé lame_20261020_193225_pv-7445_0124.jpg (386 ko)
+   829.126  t0295939 suivi ok score 0.99 pos -3177,-3179 net 99 (28 ms) carte 14 photos + 300 positions
+   829.454  t0296267 suivi ok score 1.00 pos -3177,-3179 net 103 (23 ms) carte 14 photos + 300 positions
+   829.793  t0296606 suivi ok score 0.99 pos -3177,-3179 net 102 (24 ms) carte 14 photos + 300 positions
+   830.128  t0296941 suivi ok score 0.95 pos -3691,-3179 net 102 (25 ms) carte 14 photos + 300 positions
+   830.448  t0297262 suivi ok score 1.00 pos -4062,-3179 net 105 (15 ms) carte 14 photos + 300 positions
+   830.779  t0297592 suivi ok score 0.99 pos -4062,-3179 net 103 (15 ms) carte 14 photos + 300 positions
+   830.871  photo 445_0126 à -4062,-3179 (412 ko, 211 ms)
+   831.121  t0297932 suivi ok score 0.97 pos -4074,-3625 net 100 (22 ms) carte 15 photos + 300 positions
+   831.460  t0298273 suivi ok score 0.97 pos -4074,-3864 net 97 (24 ms) carte 15 photos + 300 positions
+   831.793  t0298605 suivi ok score 0.99 pos -4074,-4119 net 104 (24 ms) carte 15 photos + 300 positions
+   831.947  envoyé lame_20261020_193225_pv-7445_0125.jpg (391 ko)
+   832.120  t0298934 suivi ok score 0.99 pos -4074,-4119 net 105 (18 ms) carte 15 photos + 300 positions
+   832.235  photo 445_0127 à -4074,-4119 (419 ko, 217 ms)
+   832.445  t0299259 suivi ok score 0.99 pos -4062,-4119 net 101 (18 ms) carte 16 photos + 300 positions
+   832.790  t0299603 suivi ok score 0.98 pos -3476,-4119 net 101 (20 ms) carte 16 photos + 300 positions
+   833.019  envoyé lame_20261020_193225_pv-7445_0126.jpg (412 ko)
+   833.106  t0299920 suivi ok score 0.95 pos -2603,-4119 net 98 (12 ms) carte 16 photos + 300 positions
+   833.249  photo en mouvement lent (55 % du champ, 31 u/s)
+   833.443  t0300256 suivi ok score 1.00 pos -2400,-4119 net 102 (16 ms) carte 16 photos + 300 positions
+   833.466  photo 445_0128 à -2400,-4119 (420 ko, 216 ms)
+   833.774  t0300588 suivi ok score 0.99 pos -2400,-4119 net 96 (12 ms) carte 17 photos + 300 positions
+   834.116  t0300929 suivi ok score 0.99 pos -2400,-4119 net 99 (17 ms) carte 17 photos + 300 positions
+   834.454  t0301266 suivi ok score 1.00 pos -2400,-4119 net 86 (20 ms) carte 17 photos + 300 positions
+   834.801  t0301614 suivi ok score 0.99 pos -2400,-4119 net 93 (26 ms) carte 17 photos + 300 positions
+   834.840  envoyé lame_20261020_193225_pv-7445_0127.jpg (419 ko)
+   835.111  t0301924 suivi ok score 0.99 pos -2400,-4119 net 109 (12 ms) carte 17 photos + 300 positions
+   835.456  t0302270 suivi ok score 1.00 pos -2400,-4119 net 110 (18 ms) carte 17 photos + 300 positions
+   835.778  t0302591 suivi ok score 0.98 pos -2424,-4119 net 107 (13 ms) carte 17 photos + 300 positions
+   836.122  t0302936 suivi ok score 0.99 pos -2568,-4119 net 109 (20 ms) carte 17 photos + 300 positions
+   836.184  envoyé lame_20261020_193225_pv-7445_0128.jpg (420 ko)
+   836.442  t0303256 suivi ok score 0.99 pos -2568,-4119 net 108 (14 ms) carte 17 photos + 300 positions
+   836.529  photo 445_0129 à -2568,-4119 (446 ko, 217 ms)
+   836.781  t0303594 suivi ok score 0.99 pos -2568,-4119 net 109 (18 ms) carte 18 photos + 300 positions
+   837.128  t0303941 suivi ok score 0.98 pos -2305,-4119 net 110 (23 ms) carte 18 photos + 300 positions
+   837.457  t0304270 suivi ok score 0.99 pos -2113,-4119 net 119 (18 ms) carte 18 photos + 300 positions
+   837.786  t0304599 suivi ok score 0.99 pos -2113,-4119 net 120 (20 ms) carte 18 photos + 300 positions
+   837.879  photo 445_0130 à -2113,-4119 (442 ko, 234 ms)
+   837.969  envoyé lame_20261020_193225_pv-7445_0129.jpg (446 ko)
+   838.115  t0304928 suivi ok score 0.97 pos -1958,-4119 net 112 (18 ms) carte 19 photos + 300 positions
+   838.462  t0305274 suivi ok score 0.86 pos -1157,-4119 net 107 (26 ms) carte 19 photos + 300 positions
+   838.787  t0305600 suivi ok score 0.99 pos -1085,-4119 net 127 (19 ms) carte 19 photos + 300 positions
+   839.077  photo 445_0131 à -1085,-4119 (425 ko, 216 ms)
+   839.113  t0305927 suivi ok score 0.99 pos -1085,-4119 net 126 (10 ms) carte 20 photos + 300 positions
+   839.455  t0306268 suivi ok score 0.96 pos -930,-4119 net 116 (24 ms) carte 20 photos + 300 positions
+   839.781  t0306593 suivi ok score 0.96 pos -392,-4119 net 111 (15 ms) carte 20 photos + 300 positions
+   840.120  t0306934 suivi ok score 0.98 pos 14,-4119 net 120 (18 ms) carte 20 photos + 300 positions
+   840.260  envoyé lame_20261020_193225_pv-7445_0130.jpg (442 ko)
+   840.454  t0307267 suivi ok score 0.99 pos 14,-4119 net 121 (19 ms) carte 20 photos + 300 positions
+   840.709  photo 445_0132 à 14,-4119 (409 ko, 228 ms)
+   840.780  t0307593 suivi ok score 0.99 pos 14,-4119 net 121 (16 ms) carte 21 photos + 300 positions
+   841.123  t0307936 suivi ok score 0.94 pos 600,-4119 net 109 (23 ms) carte 21 photos + 300 positions
+   841.453  t0308267 suivi ok score 0.99 pos 1245,-4135 net 122 (18 ms) carte 21 photos + 300 positions
+   841.668  envoyé lame_20261020_193225_pv-7445_0131.jpg (425 ko)
+   841.798  t0308611 suivi ok score 0.99 pos 1245,-4135 net 122 (22 ms) carte 21 photos + 300 positions
+   842.007  photo 445_0133 à 1245,-4135 (398 ko, 208 ms)
+   842.107  t0308921 suivi ok score 0.99 pos 1245,-4135 net 120 (13 ms) carte 22 photos + 300 positions
+   842.468  t0309281 suivi ok score 0.96 pos 1783,-4135 net 104 (28 ms) carte 22 photos + 300 positions
+   842.787  t0309599 suivi ok score 0.96 pos 2441,-4135 net 100 (19 ms) carte 22 photos + 300 positions
+   843.111  t0309926 suivi ok score 0.99 pos 2465,-4135 net 104 (13 ms) carte 22 photos + 300 positions
+   843.373  photo 445_0134 à 2465,-4135 (397 ko, 208 ms)
+   843.395  envoyé lame_20261020_193225_pv-7445_0132.jpg (409 ko)
+   843.447  t0310261 suivi ok score 0.99 pos 2465,-4135 net 103 (16 ms) carte 23 photos + 300 positions
+   843.786  t0310599 suivi ok score 0.97 pos 2799,-4135 net 97 (21 ms) carte 23 photos + 300 positions
+   844.128  t0310941 suivi ok score 0.96 pos 3349,-4135 net 98 (24 ms) carte 23 photos + 300 positions
+   844.422  envoyé lame_20261020_193225_pv-7445_0133.jpg (398 ko)
+   844.457  t0311271 suivi ok score 0.99 pos 3349,-4135 net 97 (20 ms) carte 23 photos + 300 positions
+   844.710  photo 445_0135 à 3349,-4135 (392 ko, 215 ms)
+   844.777  t0311591 suivi ok score 0.99 pos 3349,-4135 net 96 (15 ms) carte 24 photos + 300 positions
+   845.108  t0311922 suivi ok score 0.99 pos 3349,-4135 net 92 (11 ms) carte 24 photos + 300 positions
+   845.469  t0312282 suivi ok score 0.99 pos 3349,-4135 net 93 (29 ms) carte 24 photos + 300 positions
+   845.694  envoyé lame_20261020_193225_pv-7445_0134.jpg (397 ko)
+   845.776  t0312590 suivi ok score 0.99 pos 3349,-4135 net 104 (12 ms) carte 24 photos + 300 positions
+   846.117  t0312931 suivi ok score 0.99 pos 3349,-4135 net 105 (15 ms) carte 24 photos + 300 positions
+   846.453  t0313266 suivi ok score 0.99 pos 3349,-4135 net 105 (17 ms) carte 24 photos + 300 positions
+   846.784  t0313597 suivi ok score 0.98 pos 3349,-4071 net 99 (17 ms) carte 24 photos + 300 positions
+   846.938  envoyé lame_20261020_193225_pv-7445_0135.jpg (392 ko)
+   847.110  t0313924 suivi ok score 0.99 pos 3349,-3848 net 125 (13 ms) carte 24 photos + 300 positions
+   847.446  t0314261 suivi ok score 0.99 pos 3349,-3848 net 124 (16 ms) carte 24 photos + 300 positions
+   847.565  photo 445_0136 à 3349,-3848 (404 ko, 215 ms)
+   847.788  t0314601 suivi ok score 0.99 pos 3349,-3848 net 124 (22 ms) carte 25 photos + 300 positions
+   848.123  t0314937 suivi ok score 0.99 pos 3349,-3848 net 125 (21 ms) carte 25 photos + 300 positions
+   848.461  t0315274 suivi ok score 0.97 pos 3361,-3848 net 103 (23 ms) carte 25 photos + 300 positions
+   848.770  envoyé lame_20261020_193225_pv-7445_0136.jpg (404 ko)
+   848.795  t0315608 suivi ok score 0.97 pos 3396,-3962 net 118 (19 ms) carte 25 photos + 300 positions
+   849.110  t0315924 suivi ok score 0.96 pos 3790,-3962 net 105 (14 ms) carte 25 photos + 300 positions
+   849.448  t0316262 suivi ok score 0.99 pos 3802,-3962 net 106 (14 ms) carte 25 photos + 300 positions
+   849.746  photo 445_0137 à 3802,-3962 (397 ko, 245 ms)
+   849.780  t0316593 suivi ok score 0.99 pos 3802,-3962 net 107 (10 ms) carte 26 photos + 300 positions
+   850.133  t0316946 suivi ok score 0.99 pos 3802,-3962 net 101 (28 ms) carte 26 photos + 300 positions
+   850.449  t0317262 suivi ok score 0.97 pos 3802,-3898 net 123 (14 ms) carte 26 photos + 300 positions
+   850.792  t0317605 suivi ok score 0.92 pos 3714,-3708 net 108 (20 ms) carte 26 photos + 300 positions
+   851.019  envoyé lame_20261020_193225_pv-7445_0137.jpg (397 ko)
+   851.121  t0317934 suivi ok score 0.98 pos 3726,-3484 net 103 (20 ms) carte 26 photos + 300 positions
+   851.449  t0318264 suivi ok score 0.98 pos 3738,-3214 net 110 (18 ms) carte 26 photos + 300 positions
+   851.787  t0318600 suivi ok score 0.97 pos 3750,-3055 net 106 (21 ms) carte 26 photos + 300 positions
+   851.911  photo 445_0138 à 3749,-3117 (399 ko, 222 ms)
+   852.122  t0318936 suivi ok score 0.95 pos 3750,-3008 net 103 (23 ms) carte 27 photos + 300 positions
+   852.452  t0319266 suivi ok score 0.97 pos 3758,-2911 net 114 (17 ms) carte 27 photos + 300 positions
+   852.578  photo 445_0139 à 3750,-2943 (397 ko, 234 ms)
+   852.779  t0319594 suivi ok score 0.96 pos 3762,-2828 net 120 (15 ms) carte 28 photos + 300 positions
+   853.123  t0319937 suivi ok score 0.96 pos 3762,-2671 net 114 (20 ms) carte 28 photos + 300 positions
+   853.344  envoyé lame_20261020_193225_pv-7445_0138.jpg (399 ko)
+   853.446  t0320260 suivi ok score 0.93 pos 3773,-2400 net 105 (15 ms) carte 28 photos + 300 positions
+   853.462  photo 445_0140 à 3772,-2609 (398 ko, 209 ms)
+   853.785  t0320599 suivi ok score 0.97 pos 3785,-2083 net 104 (22 ms) carte 29 photos + 300 positions
+   854.115  t0320929 suivi ok score 0.98 pos 3797,-1906 net 107 (18 ms) carte 29 photos + 300 positions
+   854.450  t0321263 suivi ok score 0.97 pos 3797,-1765 net 107 (17 ms) carte 29 photos + 300 positions
+   854.672  photo 445_0141 à 3797,-1765 (403 ko, 222 ms)
+   854.780  t0321594 suivi ok score 0.96 pos 3815,-1586 net 111 (17 ms) carte 30 photos + 300 positions
+   854.884  envoyé lame_20261020_193225_pv-7445_0139.jpg (397 ko)
+   855.129  t0321943 suivi ok score 0.97 pos 3816,-1366 net 101 (16 ms) carte 30 photos + 300 positions
+   855.464  t0322278 suivi ok score 0.98 pos 3828,-1141 net 103 (25 ms) carte 30 photos + 300 positions
+   855.805  t0322618 suivi ok score 0.94 pos 3835,-978 net 104 (32 ms) carte 30 photos + 300 positions
+   856.135  t0322949 suivi ok score 0.99 pos 3844,-583 net 100 (25 ms) carte 30 photos + 300 positions
+   856.222  envoyé lame_20261020_193225_pv-7445_0140.jpg (398 ko)
+   856.449  t0323263 suivi ok score 0.99 pos 3848,-499 net 98 (17 ms) carte 30 photos + 300 positions
+   856.783  t0323597 suivi ok score 0.99 pos 3848,-499 net 101 (16 ms) carte 30 photos + 300 positions
+   856.803  photo 445_0142 à 3848,-499 (406 ko, 210 ms)
+   857.112  t0323926 suivi ok score 0.95 pos 3865,-27 net 96 (16 ms) carte 31 photos + 300 positions
+   857.456  t0324271 suivi ok score 0.98 pos 3877,244 net 99 (17 ms) carte 31 photos + 300 positions
+   857.793  t0324607 suivi ok score 0.94 pos 3898,815 net 91 (24 ms) carte 31 photos + 300 positions
+   857.931  envoyé lame_20261020_193225_pv-7445_0141.jpg (403 ko)
+   858.123  t0324938 suivi ok score 0.98 pos 3902,1025 net 95 (18 ms) carte 31 photos + 300 positions
+   858.468  t0325281 suivi ok score 0.98 pos 3914,1153 net 95 (28 ms) carte 31 photos + 300 positions
+   858.796  t0325609 suivi ok score 0.95 pos 3925,1407 net 97 (23 ms) carte 31 photos + 300 positions
+   858.986  photo en mouvement lent (51 % du champ, 30 u/s)
+   859.040  envoyé lame_20261020_193225_pv-7445_0142.jpg (406 ko)
+   859.109  t0325924 suivi ok score 0.99 pos 3926,1659 net 90 (14 ms) carte 31 photos + 300 positions
+   859.202  photo 445_0143 à 3926,1583 (412 ko, 215 ms)
+   859.453  t0326267 suivi ok score 0.97 pos 3938,2013 net 93 (19 ms) carte 32 photos + 300 positions
+   859.795  t0326608 suivi ok score 0.97 pos 3949,2140 net 86 (17 ms) carte 32 photos + 300 positions
+   860.034  photo 445_0144 à 3949,2152 (413 ko, 214 ms)
+   860.124  t0326937 suivi ok score 0.97 pos 3949,2251 net 81 (17 ms) carte 33 photos + 300 positions
+   860.187  envoyé lame_20261020_193225_pv-7445_0143.jpg (412 ko)
+   860.451  t0327263 suivi ok score 0.98 pos 3949,2331 net 84 (12 ms) carte 33 photos + 300 positions
+   860.631  photo 445_0145 à 3949,2315 (413 ko, 212 ms)
+   860.786  t0327599 suivi ok score 1.00 pos 3949,2554 net 86 (18 ms) carte 34 photos + 300 positions
+   861.118  t0327932 suivi ok score 0.96 pos 3949,2586 net 78 (15 ms) carte 34 photos + 300 positions
+   861.314  photo 445_0146 à 3949,2554 (411 ko, 249 ms)
+   861.462  t0328274 suivi ok score 0.98 pos 3949,2777 net 76 (23 ms) carte 35 photos + 300 positions
+   861.614  photo 445_0147 à 3949,2713 (409 ko, 231 ms)
+   861.790  t0328604 suivi ok score 0.99 pos 3949,2952 net 80 (18 ms) carte 36 photos + 300 positions
+   861.808  envoyé lame_20261020_193225_pv-7445_0144.jpg (413 ko)
+   862.117  t0328931 suivi ok score 0.99 pos 3949,3223 net 70 (15 ms) carte 36 photos + 300 positions
+   862.457  t0329271 suivi ok score 0.98 pos 3949,3319 net 67 (18 ms) carte 36 photos + 300 positions
+   862.714  photo 445_0148 à 3949,3319 (403 ko, 214 ms)
+   862.795  t0329607 suivi ok score 1.00 pos 3949,3319 net 68 (23 ms) carte 37 photos + 300 positions
+   863.121  t0329934 suivi ok score 1.00 pos 3949,3319 net 63 (15 ms) carte 37 photos + 300 positions
+   863.398  envoyé lame_20261020_193225_pv-7445_0145.jpg (413 ko)
+   863.479  t0330293 suivi ok score 1.00 pos 3949,3319 net 71 (20 ms) carte 37 photos + 300 positions
+   863.787  t0330601 suivi ok score 1.00 pos 3949,3319 net 71 (16 ms) carte 37 photos + 300 positions
+   864.129  t0330942 suivi ok score 0.99 pos 3949,3319 net 76 (20 ms) carte 37 photos + 300 positions
+   864.464  t0331277 suivi ok score 0.99 pos 3519,3319 net 77 (23 ms) carte 37 photos + 300 positions
+   864.795  t0331608 suivi ok score 0.97 pos 3196,3319 net 77 (18 ms) carte 37 photos + 300 positions
+   865.132  t0331945 suivi ok score 0.99 pos 2921,3319 net 80 (23 ms) carte 37 photos + 300 positions
+   865.462  t0332274 suivi ok score 0.99 pos 2551,3319 net 88 (18 ms) carte 37 photos + 300 positions
+   865.795  t0332608 suivi ok score 1.00 pos 2527,3319 net 81 (17 ms) carte 37 photos + 300 positions
+   865.975  photo 445_0149 à 2527,3319 (420 ko, 203 ms)
+   866.123  t0332936 suivi ok score 1.00 pos 2527,3319 net 81 (20 ms) carte 38 photos + 300 positions
+   866.459  t0333272 suivi ok score 1.00 pos 2527,3319 net 83 (20 ms) carte 38 photos + 300 positions
+   866.794  t0333607 suivi ok score 0.98 pos 2384,3319 net 79 (20 ms) carte 38 photos + 300 positions
+   867.136  t0333949 suivi ok score 0.99 pos 2013,3319 net 89 (23 ms) carte 38 photos + 300 positions
+   867.225  envoyé lame_20261020_193225_pv-7445_0146.jpg (411 ko)
+   867.461  t0334274 suivi ok score 0.98 pos 1654,3319 net 81 (15 ms) carte 38 photos + 300 positions
+   867.799  t0334611 suivi ok score 1.00 pos 1499,3319 net 79 (23 ms) carte 38 photos + 300 positions
+   868.126  t0334940 suivi ok score 1.00 pos 1499,3319 net 79 (20 ms) carte 38 photos + 300 positions
+   868.207  photo 445_0150 à 1499,3319 (424 ko, 206 ms)
+   868.468  t0335281 suivi ok score 1.00 pos 1499,3319 net 79 (27 ms) carte 39 photos + 300 positions
+   868.595  envoyé lame_20261020_193225_pv-7445_0147.jpg (409 ko)
+   868.796  t0335609 suivi ok score 0.98 pos 1284,3319 net 89 (19 ms) carte 39 photos + 300 positions
+   869.141  t0335954 suivi ok score 0.98 pos 830,3319 net 88 (21 ms) carte 39 photos + 300 positions
+   869.463  t0336276 suivi ok score 0.99 pos 435,3319 net 86 (19 ms) carte 39 photos + 300 positions
+   869.790  envoyé lame_20261020_193225_pv-7445_0148.jpg (403 ko)
+   869.794  t0336607 suivi ok score 0.98 pos 77,3319 net 87 (16 ms) carte 39 photos + 300 positions
+   870.133  t0336945 suivi ok score 1.00 pos 77,3319 net 82 (22 ms) carte 39 photos + 300 positions
+   870.338  photo 445_0151 à 77,3319 (438 ko, 204 ms)
+   870.458  t0337271 suivi ok score 1.00 pos 77,3319 net 82 (20 ms) carte 40 photos + 300 positions
+   870.791  envoyé lame_20261020_193225_pv-7445_0149.jpg (420 ko)
+   870.794  t0337607 suivi ok score 0.97 pos -306,3319 net 86 (19 ms) carte 40 photos + 300 positions
+   871.121  t0337935 suivi ok score 0.98 pos -581,3319 net 80 (14 ms) carte 40 photos + 300 positions
+   871.466  t0338279 suivi ok score 0.99 pos -927,3319 net 88 (22 ms) carte 40 photos + 300 positions
+   871.803  t0338615 suivi ok score 1.00 pos -999,3319 net 84 (22 ms) carte 40 photos + 300 positions
+   872.140  t0338952 suivi ok score 1.00 pos -999,3319 net 84 (25 ms) carte 40 photos + 300 positions
+   872.152  photo 445_0152 à -999,3319 (442 ko, 220 ms)
+   872.449  t0339263 suivi ok score 0.95 pos -1346,3319 net 82 (10 ms) carte 41 photos + 300 positions
+   872.805  t0339617 suivi ok score 0.98 pos -1525,3319 net 88 (24 ms) carte 41 photos + 300 positions
+   873.131  t0339945 suivi ok score 0.99 pos -2003,3319 net 92 (19 ms) carte 41 photos + 300 positions
+   873.170  envoyé lame_20261020_193225_pv-7445_0150.jpg (424 ko)
+   873.446  t0340260 suivi ok score 1.00 pos -2087,3319 net 85 (10 ms) carte 41 photos + 300 positions
+   873.717  photo 445_0153 à -2087,3319 (430 ko, 233 ms)
+   873.791  t0340604 suivi ok score 1.00 pos -2087,3319 net 84 (17 ms) carte 42 photos + 300 positions
+   874.128  t0340941 suivi ok score 0.99 pos -2087,3319 net 84 (19 ms) carte 42 photos + 300 positions
+   874.295  envoyé lame_20261020_193225_pv-7445_0151.jpg (438 ko)
+   874.462  t0341276 suivi ok score 0.98 pos -2493,3319 net 86 (17 ms) carte 42 photos + 300 positions
+   874.807  t0341619 suivi ok score 0.98 pos -2840,3319 net 88 (25 ms) carte 42 photos + 300 positions
+   875.124  t0341937 suivi ok score 0.98 pos -3067,3319 net 86 (14 ms) carte 42 photos + 300 positions
+   875.463  t0342276 suivi ok score 1.00 pos -3091,3319 net 81 (18 ms) carte 42 photos + 300 positions
+   875.524  envoyé lame_20261020_193225_pv-7445_0152.jpg (442 ko)
+   875.747  photo 445_0154 à -3091,3319 (430 ko, 220 ms)
+   875.788  t0342602 suivi ok score 1.00 pos -3091,3319 net 80 (11 ms) carte 43 photos + 300 positions
+   876.122  t0342936 suivi ok score 1.00 pos -3091,3207 net 84 (18 ms) carte 43 photos + 300 positions
+   876.468  t0343281 suivi ok score 0.98 pos -3091,2841 net 91 (23 ms) carte 43 photos + 300 positions
+   876.802  t0343616 suivi ok score 0.98 pos -3091,2570 net 89 (17 ms) carte 43 photos + 300 positions
+   876.853  envoyé lame_20261020_193225_pv-7445_0153.jpg (430 ko)
+   877.116  t0343928 suivi ok score 0.98 pos -3091,1996 net 89 (11 ms) carte 43 photos + 300 positions
+   877.479  t0344291 suivi ok score 0.98 pos -3091,1597 net 95 (24 ms) carte 43 photos + 300 positions
+   877.808  t0344620 suivi ok score 1.00 pos -3091,1390 net 98 (23 ms) carte 43 photos + 300 positions
+   877.931  envoyé lame_20261020_193225_pv-7445_0154.jpg (430 ko)
+   878.125  t0344938 suivi ok score 0.99 pos -3091,1390 net 98 (15 ms) carte 43 photos + 300 positions
+   878.276  photo 445_0155 à -3091,1390 (448 ko, 210 ms)
+   878.469  t0345282 suivi ok score 1.00 pos -3091,1390 net 97 (28 ms) carte 44 photos + 300 positions
+   878.798  t0345611 suivi ok score 1.00 pos -3091,1390 net 98 (16 ms) carte 44 photos + 300 positions
+   879.136  t0345949 suivi ok score 0.98 pos -3091,2076 net 92 (25 ms) carte 44 photos + 300 positions
+   879.389  envoyé lame_20261020_193225_pv-7445_0155.jpg (448 ko)
+   879.454  t0346267 suivi ok score 0.96 pos -3091,2490 net 88 (11 ms) carte 44 photos + 300 positions
+   879.793  t0346607 suivi ok score 0.95 pos -3091,3048 net 81 (13 ms) carte 44 photos + 300 positions
+   880.144  t0346957 suivi ok score 0.96 pos -3091,3335 net 83 (28 ms) carte 44 photos + 300 positions
+   880.470  t0347283 suivi ok score 0.97 pos -3091,3829 net 81 (20 ms) carte 44 photos + 300 positions
+   880.656  photo en mouvement lent (67 % du champ, 31 u/s)
+   880.799  t0347612 suivi ok score 0.99 pos -3091,4195 net 81 (17 ms) carte 44 photos + 300 positions
+   880.892  photo 445_0156 à -3091,4131 (411 ko, 235 ms)
+   881.134  t0347947 suivi ok score 0.99 pos -3091,4466 net 71 (21 ms) carte 45 photos + 300 positions
+   881.455  t0348269 suivi ok score 0.97 pos -3091,4801 net 73 (12 ms) carte 45 photos + 300 positions
+   881.799  t0348612 suivi ok score 1.00 pos -3091,5008 net 66 (19 ms) carte 45 photos + 300 positions
+   882.069  envoyé lame_20261020_193225_pv-7445_0156.jpg (411 ko)
+   882.120  t0348935 suivi ok score 1.00 pos -3091,5008 net 65 (7 ms) carte 45 photos + 300 positions
+   882.240  photo 445_0157 à -3091,5008 (398 ko, 210 ms)
+   882.457  t0349271 suivi ok score 0.99 pos -3079,5008 net 72 (13 ms) carte 46 photos + 300 positions
+   882.808  t0349620 suivi ok score 0.97 pos -2553,5008 net 69 (24 ms) carte 46 photos + 300 positions
+   883.132  t0349945 suivi ok score 0.97 pos -2135,5008 net 72 (21 ms) carte 46 photos + 300 positions
+   883.435  envoyé lame_20261020_193225_pv-7445_0157.jpg (398 ko)
+   883.469  t0350283 suivi ok score 0.98 pos -1800,5008 net 71 (17 ms) carte 46 photos + 300 positions
+   883.809  t0350621 suivi ok score 1.00 pos -1800,5008 net 70 (22 ms) carte 46 photos + 300 positions
+   884.056  photo 445_0158 à -1800,5008 (391 ko, 228 ms)
+   884.118  t0350933 suivi ok score 0.99 pos -1800,5008 net 70 (11 ms) carte 47 photos + 300 positions
+   884.456  t0351270 suivi ok score 1.00 pos -1800,5008 net 67 (15 ms) carte 47 photos + 300 positions
+   884.788  t0351601 suivi ok score 1.00 pos -1800,5008 net 57 (14 ms) carte 47 photos + 300 positions
+   885.140  t0351953 suivi ok score 0.99 pos -1800,5008 net 81 (27 ms) carte 47 photos + 300 positions
+   885.464  t0352277 suivi ok score 1.00 pos -1800,5008 net 85 (19 ms) carte 47 photos + 300 positions
+   885.580  envoyé lame_20261020_193225_pv-7445_0158.jpg (391 ko)
+   885.787  t0352601 suivi ok score 1.00 pos -1800,5008 net 85 (14 ms) carte 47 photos + 300 positions
+   886.128  t0352941 suivi ok score 0.98 pos -1489,5008 net 84 (18 ms) carte 47 photos + 300 positions
+   886.465  t0353278 suivi ok score 0.97 pos -1059,5008 net 84 (18 ms) carte 47 photos + 300 positions
+   886.816  t0353628 suivi ok score 1.00 pos -1059,5008 net 80 (28 ms) carte 47 photos + 300 positions
+   887.025  photo 445_0159 à -1059,5008 (429 ko, 208 ms)
+   887.123  t0353937 suivi ok score 1.00 pos -1059,5008 net 80 (16 ms) carte 48 photos + 300 positions
+   887.470  t0354283 suivi ok score 0.97 pos -557,5008 net 90 (22 ms) carte 48 photos + 300 positions
+   887.805  t0354618 suivi ok score 0.99 pos -186,5008 net 81 (24 ms) carte 48 photos + 300 positions
+   888.125  t0354938 suivi ok score 1.00 pos -174,5008 net 81 (13 ms) carte 48 photos + 300 positions
+   888.332  envoyé lame_20261020_193225_pv-7445_0159.jpg (429 ko)
+   888.405  photo 445_0160 à -174,5008 (435 ko, 208 ms)
+   888.468  t0355282 suivi ok score 1.00 pos -174,5008 net 80 (14 ms) carte 49 photos + 300 positions
+   888.791  t0355604 suivi ok score 0.98 pos 364,5008 net 79 (17 ms) carte 49 photos + 300 positions
+   889.142  t0355954 suivi ok score 0.97 pos 1117,5008 net 76 (27 ms) carte 49 photos + 300 positions
+   889.256  photo en mouvement lent (50 % du champ, 30 u/s)
+   889.340  envoyé lame_20261020_193225_pv-7445_0160.jpg (435 ko)
+   889.455  t0356268 suivi ok score 1.00 pos 1368,5008 net 77 (15 ms) carte 49 photos + 300 positions
+   889.480  photo 445_0161 à 1368,5008 (431 ko, 223 ms)
+   889.788  t0356601 suivi ok score 1.00 pos 1368,5008 net 77 (12 ms) carte 50 photos + 300 positions
+   890.149  t0356962 suivi ok score 0.97 pos 1523,5008 net 76 (28 ms) carte 50 photos + 300 positions
+   890.478  t0357291 suivi ok score 0.97 pos 2109,5008 net 74 (24 ms) carte 50 photos + 300 positions
+   890.591  envoyé lame_20261020_193225_pv-7445_0161.jpg (431 ko)
+   890.797  t0357610 suivi ok score 1.00 pos 2408,5008 net 77 (19 ms) carte 50 photos + 300 positions
+   891.124  t0357937 suivi ok score 1.00 pos 2408,5008 net 78 (15 ms) carte 50 photos + 300 positions
+   891.262  photo 445_0162 à 2408,5008 (425 ko, 222 ms)
+   891.475  t0358288 suivi ok score 0.98 pos 2551,5008 net 75 (23 ms) carte 51 photos + 300 positions
+   891.807  t0358620 suivi ok score 0.98 pos 3125,5008 net 77 (24 ms) carte 51 photos + 300 positions
+   892.146  t0358959 suivi ok score 0.98 pos 3364,5008 net 74 (26 ms) carte 51 photos + 300 positions
+   892.305  envoyé lame_20261020_193225_pv-7445_0162.jpg (425 ko)
+   892.481  t0359293 suivi ok score 0.99 pos 3639,5008 net 71 (26 ms) carte 51 photos + 300 positions
+   892.803  t0359616 suivi ok score 1.00 pos 3651,5008 net 72 (19 ms) carte 51 photos + 300 positions
+   893.093  photo 445_0163 à 3651,5008 (415 ko, 229 ms)
+   893.130  t0359945 suivi ok score 1.00 pos 3651,5008 net 72 (14 ms) carte 52 photos + 300 positions
+   893.463  t0360277 suivi ok score 1.00 pos 3651,5008 net 71 (15 ms) carte 52 photos + 300 positions
+   893.799  t0360612 suivi ok score 1.00 pos 3651,5008 net 72 (19 ms) carte 52 photos + 300 positions
+   894.132  t0360945 suivi ok score 1.00 pos 3651,5008 net 72 (18 ms) carte 52 photos + 300 positions
+   894.376  envoyé lame_20261020_193225_pv-7445_0163.jpg (415 ko)
+   894.457  t0361271 suivi ok score 1.00 pos 3651,5008 net 71 (17 ms) carte 52 photos + 300 positions

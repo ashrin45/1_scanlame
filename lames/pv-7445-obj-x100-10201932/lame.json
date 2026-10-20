@@ -1,0 +1,103 @@
+{
+ "title": "pv 7445 (obj. x100)",
+ "width": 6560,
+ "height": 10176,
+ "fields": 94,
+ "tiles": 368,
+ "tile": 512,
+ "maxlvl": 14,
+ "um_per_px": null,
+ "stain": "gram",
+ "objective": "x100",
+ "sample": null,
+ "comment": null,
+ "captured": "20/10/2026 19:32",
+ "parent": "pv-7445-10201932",
+ "parent_transform": [
+  0.09893044431875726,
+  -0.002244837828949325,
+  839.8357370661913,
+  1918.6654347765173
+ ],
+ "parent_anchored": 81,
+ "parent_approx": null,
+ "outline": [
+  [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    10172.4
+   ],
+   [
+    6556.6,
+    10172.4
+   ],
+   [
+    6556.6,
+    0.0
+   ]
+  ]
+ ],
+ "hint": null,
+ "stage": null,
+ "stage_cal": null,
+ "stage_obs": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "recalage moyen (2.3 px)",
+   "2 trou(s) dans la couverture"
+  ],
+  "frames": {
+   "candidates": 111,
+   "blurred": 0,
+   "selected": 98,
+   "used": 98,
+   "tracked_only": 0
+  },
+  "residual_px": 2.26,
+  "residual_max_px": 132.7,
+  "holes": [],
+  "holes_frac": 0.0,
+  "coverage_px": 87335305,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 7.2,
+  "flat_field": "médiane",
+  "k1": -0.022,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "series": "lame_20261020_193225_pv-7445",
+ "version": 1,
+ "params": {
+  "depth": "off",
+  "seams": true,
+  "fps": 4.0,
+  "reg_size": 1200,
+  "max_side": 32000,
+  "core": 0.7,
+  "tile": 2048,
+  "distortion": true,
+  "chroma": true,
+  "code": "559bf90"
+ },
+ "published": "2026-10-20T18:00:53+00:00",
+ "updated": "2026-10-20T18:00:55+00:00",
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null,
+ "cropped": [
+  [
+   2048,
+   224,
+   8608,
+   10400
+  ]
+ ]
+}

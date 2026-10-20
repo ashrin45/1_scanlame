@@ -116,7 +116,7 @@ const FIELDS = [{"id":"0000","pts":[[1454,1541],[1484,3548],[-21,3571],[-51,1563
 const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
 const ZSTACK = null;      // {levels, tiles:[...]} ou null
 const QUALITY = {"grade": "A", "notes": [], "frames": {"candidates": 52, "blurred": 0, "selected": 42, "used": 42, "tracked_only": 0}, "residual_px": 1.16, "residual_max_px": 5.26, "holes": [], "holes_frac": 0.0, "coverage_px": 33203276, "coverage_mm2": null, "low_sharp_frac": 0.0, "gain_spread_pct": 8.7, "flat_field": "médiane", "k1": -0.01, "zstack_fields": 0, "zstack_levels": 0};    // rapport du pipeline ({} si absent)
-const CHILDREN = [];  // lames de détail (autre objectif) recalées dans celle-ci
+const CHILDREN = [{"slug": "pv-7445-obj-x100-10201932", "title": "pv 7445 (obj. x100)", "objective": "x100", "width": 6560, "height": 10176, "maxlvl": 14, "tile": 512, "transform": [0.09893044431875726, -0.002244837828949325, 839.8357370661913, 1918.6654347765173], "outline": [[[0.0, 0.0], [0.0, 10172.4], [6556.6, 10172.4], [6556.6, 0.0]]]}];  // lames de détail (autre objectif) recalées dans celle-ci
 const PARENT = null;      // lame d'ensemble, si celle-ci est un détail
 const svgNS = 'http://www.w3.org/2000/svg';
 const $ = id => document.getElementById(id);
