@@ -291,7 +291,7 @@ log(f'netteté médiane {np.median(sharps):.1f}, seuil {thr:.1f}')
 sel = []
 last_pos = None
 n_dark = 0
-RETAKE = {f.get('name'): bool(f.get('retake')) for f in (meta.get('frames') or []) if f.get('name')}   # photos reprises au meme endroit apres retouche de la vis (appli)
+RETAKE = {f.get('name'): bool(f.get('retake') or f.get('bonus')) for f in (meta.get('frames') or []) if f.get('name')}   # reprises de mise au point et photos bonus (mode renforcer) : la plus nette remplace au meme endroit
 for (p, t), sharp in zip(items, sharps):
     if is_blurred(p, sharp):
         continue

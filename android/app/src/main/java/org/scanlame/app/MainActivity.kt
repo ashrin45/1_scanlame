@@ -253,7 +253,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                 Column(Modifier.weight(1f).padding(end = 6.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
                     val expo = live.exposureNs?.let { String.format(Locale.ROOT, "%.1f ms", it / 1e6) } ?: "?"
                     Hud(if (cameraOn && bound != null) "${engine.photoSize?.let { "${it.height}x${it.width}" } ?: engine.videoSize?.let { "${it.height}x${it.width}" } ?: ""} · cam ${live.activePhysical ?: "?"}" else "caméra arrêtée")
-                    Hud(if (sess.mode == Settings.MODE_VIDEO && sess.running) "vidéo ${sess.bytes shr 20} Mo" else "${sess.photos} photo${if (sess.photos > 1) "s" else ""}${if (sess.blurred > 0) " · ${sess.blurred} floue(s)" else ""}${if (sess.patron != null) " · patron ${(sess.patronFill * 100).roundToInt()} %" else ""}${if (sess.bigSteps > 0) " · ${sess.bigSteps} pas trop grand(s)" else ""}", if (sess.blurred > 0) WARN else FG)
+                    Hud(if (sess.mode == Settings.MODE_VIDEO && sess.running) "vidéo ${sess.bytes shr 20} Mo" else "${sess.photos} photo${if (sess.photos > 1) "s" else ""}${if (sess.blurred > 0) " · ${sess.blurred} floue(s)" else ""}${if (sess.patron != null) " · patron ${(sess.patronFill * 100).roundToInt()} %" else ""}${if (sess.relocations > 0) " · ${sess.relocations} reloc." else ""}${if (sess.bigSteps > 0) " · ${sess.bigSteps} pas trop grand(s)" else ""}", if (sess.blurred > 0) WARN else FG)
                     Hud("$expo · ISO ${live.iso ?: "?"} · netteté ${sess.sharp.toInt()}")
                     Hud(if (locked) "AF/AE verrouillés" else "AF/AE auto", if (locked) ACCENT else FG)
                     if (up.pendingFiles > 0) Hud("${if (st.autoUpload) "" else "envoi bloqué · "}${up.pendingFiles} en file (${up.pendingBytes shr 20} Mo)${up.lastError?.let { " · $it" } ?: ""}", Color(0xFF1A0F1F), WARN)
@@ -272,6 +272,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                 if (sess.phase != "switching") {
                     WebButton(if (sess.phase == "blank") "Fond blanc ●" else "Fond blanc", pressed = sess.phase == "blank", small = true) { session.setBlank(sess.phase != "blank") }
                     WebButton("Changer d'objectif", small = true, enabled = sess.phase != "blank") { showObjPick = !showObjPick }
+                    WebButton(if (sess.reinforce) "Renforcer : actif" else "Renforcer", small = true, pressed = sess.reinforce) { session.setReinforce(!sess.reinforce) }
                     if (showObjPick) FlowRow(Modifier.background(Color(0xF217151C), RoundedCornerShape(12.dp)).border(1.dp, LINE, RoundedCornerShape(12.dp)).padding(8.dp), verticalArrangement = Arrangement.spacedBy(6.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                         for (o in Settings.OBJECTIVES.filter { it != sess.objective }) WebButton(o, small = true) { showObjPick = false; switchDlg = o }
                     }
@@ -422,6 +423,7 @@ fun CoverageMap(s: Session.State, modifier: Modifier) {
             if (th != null) try { drawImage(th.asImageBitmap(), IntOffset(0, 0), IntSize(th.width, th.height), IntOffset(dx, dy), IntSize(dw, dh), alpha = 0.95f); drawn = true } catch (e: Exception) {}
             if (!drawn) drawRect(if (p.photo) Color(0x66C58AD6) else Color(0x22FFFFFF), Offset(dx.toFloat(), dy.toFloat()), Size(dw.toFloat(), dh.toFloat()))
             if (p.photo && p.grade > 0) drawRect(if (p.grade == 2) REC else WARN, Offset(dx.toFloat(), dy.toFloat()), Size(dw.toFloat(), dh.toFloat()), style = Stroke(2f))
+            if (p.photo && p.bonus) drawRect(Color(0xFF5DADE2), Offset(dx.toFloat(), dy.toFloat()), Size(dw.toFloat(), dh.toFloat()), style = Stroke(1.5f))
         }
         val cur = all.last()
         drawRect(if (s.track == "lost") REC else if (s.track == "relocated") WARN else OK, Offset(ox + (cur.x.toFloat() - x0) * sc, oy + (cur.y.toFloat() - y0) * sc), Size(W * sc, H * sc), style = Stroke(2f))

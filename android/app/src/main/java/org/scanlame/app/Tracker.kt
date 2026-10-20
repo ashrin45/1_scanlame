@@ -116,6 +116,13 @@ class Tracker {
     private val keys = ArrayList<Frame>()
     private var masks: Array<ByteArray>? = null
     private var last: Frame? = null
+    var relocations = 0; private set          // nombre de relocalisations acceptees (journal, bandeau)
+    private var lostFrames = 0                // images consecutives perdues
+    private var scanCursor = 0                // balayage progressif des cles pendant une perte longue
+    private var pendingReloc: Triple<Double, Double, Float>? = null   // relocalisation candidate a confirmer par l'image suivante
+    private var forceKey = false
+    /** La prochaine image devient une image cle (appele a chaque photo : nettes, a l'arret, bien reparties). */
+    fun markKey() { forceKey = true }
 
     fun setMask(bright256: ByteArray) { masks = maskPyramid(bright256) }
     fun hasMask() = masks != null
@@ -130,19 +137,38 @@ class Tracker {
         val m = match(l.pyr!!, pyr, mk)
         var x = l.x - m.vx; var y = l.y - m.vy; var score = m.score; var status = "ok"
         if (m.score < 0.35f) {
-            status = "lost"
-            val cands = keys.filter { it !== l }.sortedBy { hypot(it.x - l.x, it.y - l.y) }.take(6)
-            var bestK: Frame? = null; var bestM: Match? = null
+            status = "lost"; lostFrames++
+            // 1) cles proches de la derniere position connue (perte courte) : meilleure et 2e meilleure, il faut une marge nette
+            val cands = keys.filter { it !== l }.sortedBy { hypot(it.x - l.x, it.y - l.y) }.take(8)
+            var bestK: Frame? = null; var bestM: Match? = null; var second = -2f
             for (k in cands) {
                 val mk2 = match(k.pyr!!, pyr, mk, (k.x - l.x).roundToInt(), (k.y - l.y).roundToInt(), 28)
-                if (mk2.score > 0.5f && (bestM == null || mk2.score > bestM.score)) { bestK = k; bestM = mk2 }
+                if (bestM == null || mk2.score > bestM.score) { second = bestM?.score ?: -2f; bestK = k; bestM = mk2 } else if (mk2.score > second) second = mk2.score
             }
-            if (bestK != null && bestM != null) { x = bestK.x - bestM.vx; y = bestK.y - bestM.vy; score = bestM.score; status = "relocated" }
-            else { x = l.x; y = l.y }
+            // 2) perte longue : balayage progressif de toutes les cles (12 par image), recherche large au niveau grossier
+            if ((bestM == null || bestM.score < 0.5f) && lostFrames > 6 && keys.size > 8) {
+                repeat(minOf(12, keys.size)) {
+                    val k = keys[scanCursor % keys.size]; scanCursor++
+                    if (k === l || k in cands) return@repeat
+                    val mk2 = match(k.pyr!!, pyr, mk, 0, 0, 30)
+                    if (bestM == null || mk2.score > bestM!!.score) { second = bestM?.score ?: -2f; bestK = k; bestM = mk2 } else if (mk2.score > second) second = mk2.score
+                }
+            }
+            val bm = bestM
+            if (bestK != null && bm != null && bm.score > 0.5f && bm.score - second > 0.08f) {
+                val rx = bestK.x - bm.vx; val ry = bestK.y - bm.vy
+                // confirmation : deux images consecutives doivent retomber au meme endroit (a 12 unites pres) avant d'accepter
+                val pr = pendingReloc
+                if (pr != null && hypot(pr.first - rx, pr.second - ry) < 12.0) {
+                    x = rx; y = ry; score = bm.score; status = "relocated"; relocations++; pendingReloc = null; lostFrames = 0
+                } else { pendingReloc = Triple(rx, ry, bm.score); x = l.x; y = l.y }
+            } else { pendingReloc = null; x = l.x; y = l.y }
         } else {
+            lostFrames = 0; pendingReloc = null
+            // fermeture de boucle : une cle deja vue a moins d'un demi-champ ramene la position dessus (corrige la derive)
             val k = keys.filter { it.i < f.i - 4 && hypot(it.x - x, it.y - y) < S2 * 0.55 }.minByOrNull { hypot(it.x - x, it.y - y) }
             if (k != null) {
-                val mk2 = match(k.pyr!!, pyr, mk, (k.x - x).roundToInt(), (k.y - y).roundToInt(), 6)
+                val mk2 = match(k.pyr!!, pyr, mk, (k.x - x).roundToInt(), (k.y - y).roundToInt(), 8)
                 if (mk2.score > 0.45f) { x = 0.3 * x + 0.7 * (k.x - mk2.vx); y = 0.3 * y + 0.7 * (k.y - mk2.vy) }
             }
         }
@@ -151,7 +177,9 @@ class Tracker {
         if (status != "lost") {
             val prev = last
             last = f
-            if (f.i % 2 == 0 && keys.size < 400) keys.add(f)
+            // cles reparties dans l'espace (une cle au plus tous les 0,3 champ) plus toutes les photos ; 800 au plus
+            val near = keys.any { hypot(it.x - x, it.y - y) < S2 * 0.3 }
+            if ((forceKey || !near) && keys.size < 800) { keys.add(f); forceKey = false }
             // mémoire : seules les images clés et la dernière gardent leur pyramide
             if (prev != null && prev !in keys) prev.pyr = null
         } else f.pyr = null

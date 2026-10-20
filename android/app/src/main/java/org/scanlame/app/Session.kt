@@ -24,7 +24,7 @@ import kotlin.math.sqrt
  * changement d'objectif), métadonnées serie.json identiques à celles de la page web, puis file d'envoi.
  */
 class Session(private val ctx: Context, private val engine: CameraEngine, private val st: Settings) {
-    class Placed(val x: Double, val y: Double, val status: String, val photo: Boolean, val thumb: android.graphics.Bitmap?, val grade: Int = 0)   // grade : 0 net, 1 doux, 2 flou ou vide
+    class Placed(val x: Double, val y: Double, val status: String, val photo: Boolean, val thumb: android.graphics.Bitmap?, val grade: Int = 0, val bonus: Boolean = false)   // grade : 0 net, 1 doux, 2 flou ou vide
     data class State(
         val running: Boolean = false, val mode: String = Settings.MODE_PHOTOS, val seriesId: String = "", val elapsedMs: Long = 0,
         val track: String = "", val score: Float = 0f, val posX: Double = 0.0, val posY: Double = 0.0, val sharp: Float = 0f,
@@ -34,7 +34,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val warn: String = "", val sharpRef: Float = 0f, val blurred: Int = 0, val bigSteps: Int = 0, val exposure: String = "",
         val lastGrade: Int = -1, val lastShotAt: Long = 0L,
         val detailAt: Pair<Double, Double>? = null,
-        val patron: DoubleArray? = null, val patronFill: Float = 0f   // rectangle cible [x0,y0,w,h] dans le repere des positions, et fraction remplie   // position (repere courant) du dernier champ pris au plus fort grossissement, apres passage a un objectif plus faible   // derniere photo : -1 aucune, 0 bonne, 1 moyenne, 2 ratee (floue, suivi perdu ou pas trop grand) ; horodatage pour le clignotement du cadre
+        val patron: DoubleArray? = null, val patronFill: Float = 0f,
+        val relocations: Int = 0, val reinforce: Boolean = false   // relocalisations du suivi ; mode renforcer (photos bonus)   // rectangle cible [x0,y0,w,h] dans le repere des positions, et fraction remplie   // position (repere courant) du dernier champ pris au plus fort grossissement, apres passage a un objectif plus faible   // derniere photo : -1 aucune, 0 bonne, 1 moyenne, 2 ratee (floue, suivi perdu ou pas trop grand) ; horodatage pour le clignotement du cadre
     )
     val state = MutableStateFlow(State())
 
@@ -150,6 +151,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             exposureNote = when { p99 >= 254f && p50 > 240f -> "trop clair : baisse la lampe"; p50 < 70f -> "trop sombre : monte la lampe"; else -> "" }
         }
 
+        if (f.status == "relocated") Journal.log("suivi relocalisé (n° ${tracker.relocations}) à ${px.roundToInt()},${py.roundToInt()} score ${String.format(Locale.ROOT, "%.2f", f.score)}")
         if (frameCount % 10 == 0) Journal.log("t${String.format(Locale.ROOT, "%07d", t)} suivi ${f.status} score ${String.format(Locale.ROOT, "%.2f", f.score)} pos ${px.roundToInt()},${py.roundToInt()} net ${sh.roundToInt()} ($ms ms) carte ${synchronized(placed) { placedPhotos.size }} photos + ${synchronized(placed) { placed.size }} positions")
         // ---- détection d'arrêt
         var still = false
@@ -191,7 +193,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         prevSharp = sh
         state.value = state.value.copy(track = f.status, score = f.score, posX = px, posY = py, sharp = sh, still = still, samples = sampleSeq,
             elapsedMs = t, placed = synchronized(placed) { ArrayList<Placed>(placedPhotos.size + placed.size).apply { addAll(placedPhotos); addAll(placed) } }, trackMs = ms, fps = fpsAcc, shooting = shooting,
-            warn = liveWarn, sharpRef = sharpRef, blurred = nBlurred, bigSteps = nBigSteps, exposure = exposureNote)
+            warn = liveWarn, sharpRef = sharpRef, blurred = nBlurred, bigSteps = nBigSteps, exposure = exposureNote, relocations = tracker.relocations)
     }
 
     /** Vignette couleur 48 x 48 tirée des plans YUV de l'image d'analyse, redressée comme le gris (carte de couverture). */
@@ -248,6 +250,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         return hit.count { it }.toFloat() / (G * G)
     }
 
+    fun setReinforce(on: Boolean) { state.value = state.value.copy(reinforce = on); Journal.log(if (on) "mode renforcer : photos bonus (le pipeline garde la plus nette dans les recouvrements)" else "mode renforcer désactivé") }
+
     private fun shoot(f: Tracker.Frame, px: Double, py: Double, t: Long, sh: Float, img: ImageProxy, retake: Boolean = false) {
         val dir = seriesDir ?: return
         val th = thumbColor(img)   // avant la photo : le tampon d'analyse est réutilisé par l'image suivante
@@ -260,6 +264,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         bigStepPending = false
         state.value = state.value.copy(lastGrade = frameGrade, lastShotAt = now())
         shooting = true
+        tracker.markKey()
         lastShot = f.x to f.y; lastShotT = now(); lastShotSharp = sh; if (!retake) retakes = 0
         seq++
         val name = "${state.value.seriesId}_${String.format(Locale.ROOT, "%04d", seq)}.jpg"
@@ -269,8 +274,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             shooting = false
             if (ok) {
                 val len = file.length()
-                synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("retake", retake).put("enc_ms", now() - tt).put("sharp", sh.toDouble())) }
-                synchronized(placed) { placedPhotos.add(Placed(px, py, f.status, true, th, grade)) }
+                synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("retake", retake).put("bonus", state.value.reinforce).put("enc_ms", now() - tt).put("sharp", sh.toDouble())) }
+                synchronized(placed) { placedPhotos.add(Placed(px, py, f.status, true, th, grade, state.value.reinforce)) }
                 val patronSpec = st.patronFor(state.value.objective)
                 if (state.value.patron == null && patronSpec != "libre") {
                     val (cols, rows) = patronSpec.split('x').map { it.toInt() }
