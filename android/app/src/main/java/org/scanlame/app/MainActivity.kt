@@ -364,11 +364,13 @@ fun CoverageMap(s: Session.State, modifier: Modifier) {
         }
         val W = s.fieldW.toFloat().coerceAtLeast(1f); val H = s.fieldH.toFloat().coerceAtLeast(1f)
         var x0 = Float.MAX_VALUE; var y0 = Float.MAX_VALUE; var x1 = -Float.MAX_VALUE; var y1 = -Float.MAX_VALUE
-        for (p in all) { x0 = minOf(x0, p.x.toFloat()); y0 = minOf(y0, p.y.toFloat()); x1 = maxOf(x1, p.x.toFloat() + W); y1 = maxOf(y1, p.y.toFloat() + H) }
+        // etendue : les photos et les positions suivies, sauf celles prises suivi perdu (position non fiable, elles ecraseraient la carte)
+        for (p in all) { if (p.status == "lost" && !p.photo) continue; x0 = minOf(x0, p.x.toFloat()); y0 = minOf(y0, p.y.toFloat()); x1 = maxOf(x1, p.x.toFloat() + W); y1 = maxOf(y1, p.y.toFloat() + H) }
+        if (x0 > x1) { x0 = all.last().x.toFloat(); y0 = all.last().y.toFloat(); x1 = x0 + W; y1 = y0 + H }
         val pad = 8f
         val sc = minOf((size.width - 2 * pad) / (x1 - x0), (size.height - 2 * pad) / (y1 - y0))
         val ox = pad + ((size.width - 2 * pad) - (x1 - x0) * sc) / 2; val oy = pad + ((size.height - 2 * pad) - (y1 - y0) * sc) / 2
-        val pl = all   // photos de toute la serie (jamais effacees) puis les 300 dernieres positions, par-dessus
+        val pl = all.filter { !it.photo } + all.filter { it.photo }   // positions suivies dessous, photos de toute la serie par-dessus : une photo n'est jamais recouverte
         for (p in pl) {
             val dx = (ox + (p.x.toFloat() - x0) * sc).roundToInt(); val dy = (oy + (p.y.toFloat() - y0) * sc).roundToInt()
             val dw = (W * sc).roundToInt().coerceAtLeast(2); val dh = (H * sc).roundToInt().coerceAtLeast(2)
