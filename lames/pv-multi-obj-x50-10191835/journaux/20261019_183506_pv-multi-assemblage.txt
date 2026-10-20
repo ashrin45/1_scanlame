@@ -1,0 +1,54 @@
+[    0.0s] segment 2/2 : objectif x50, 101 images entre 122 s et 274 s
+[    0.0s] 101 images candidates
+[    1.5s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[    1.5s] netteté médiane 107.9, seuil 43.1
+[    2.1s] 65 images retenues (nettes, non redondantes)
+[    2.8s] flat-field : médiane temporelle de 40 images (vignettage et poussières fixes de l'oculaire)
+[    4.7s] aberration chromatique : échelle R 1.0010, B 1.0000
+[    5.2s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 2 %)
+[   10.9s] prétraitement terminé, 65 images, recalage à 900 x 1200
+[   19.3s] points SIFT : 4851 par image en moyenne
+[   19.3s] 562 paires à tester
+[  137.7s] 182 paires valides
+[  138.6s] 3 paire(s) SIFT rejetée(s) : les images ne se superposent pas à l'endroit trouvé (motif répétitif)
+[  147.0s] 3 paire(s) recalée(s) par corrélation d'images (champs répétitifs ou pauvres en points)
+[  148.0s] distorsion radiale k1 = -0.0220 (résidu 0.95 px contre 1.38 px sans correction)
+[  148.1s] composantes : [65] -> on assemble la n°0 : 65 images
+[  149.2s] ancrage dans la lame d'ensemble inbox/lame_20261019_183506_pv-multi/result (6713x2324 px, objectif x10) : mosaïque provisoire 4001x724
+[  152.1s] facteur 1.2130 : 46 appariements, 6 inliers, échelle résiduelle 0.50
+[  152.1s]   -> facteur réel probable 0.6110, nouvel essai
+[  152.5s] facteur 0.6110 : 33 appariements, 10 inliers, échelle résiduelle 0.94
+[  164.9s] appariement appris (fenêtre 4006x2122) : 688 appariements, 139 inliers, échelle résiduelle 0.965
+[  164.9s]   -> hypothèse faible (10 inliers SIFT) confirmée par l'appariement appris
+[  165.0s] ancrage global : 137 points sur 19 images
+[  165.0s] localisation grossière : 139 inliers, échelle enfant->parent 0.0972
+[  190.1s]   groupe 0000-0004 : 0 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  215.8s]   groupe 0005-0009 : 68 appariements, 57 inliers, échelle 1.105, rotation -9.1°, décalage 98 px parent : rejeté
+[  242.0s]   groupe 0010-0014 : 0 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  269.9s]   groupe 0015-0019 : 2 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  299.6s]   groupe 0020-0024 : 129 appariements, 115 inliers, échelle 1.033, rotation -1.8°, décalage 7 px parent
+[  321.3s]   groupe 0025-0029 : 1591 appariements, 1434 inliers, échelle 0.980, rotation +0.3°, décalage 2 px parent
+[  346.6s]   groupe 0030-0034 : 1 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  375.4s]   groupe 0035-0039 : 4 appariements, 2 inliers, échelle 1.115, rotation -25.4°, décalage 150 px parent : rejeté
+[  398.6s]   groupe 0040-0044 : 1328 appariements, 1129 inliers, échelle 0.976, rotation +2.0°, décalage 7 px parent
+[  419.8s]   groupe 0045-0049 : 1519 appariements, 1387 inliers, échelle 0.999, rotation +0.3°, décalage 1 px parent
+[  453.1s]   groupe 0050-0054 : 519 appariements, 425 inliers, échelle 1.044, rotation -2.6°, décalage 17 px parent
+[  479.0s]   groupe 0055-0059 : 0 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  503.7s]   groupe 0060-0064 : 1 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  503.7s] ancrage : 5/13 groupes appariés, 26 images ancrées, 1037 points
+[  504.1s] échelles relatives après ajustement : min 0.888, max 1.054
+[  504.1s] ancrages (1re passe) : résidu médian 7.0 px de recalage, 90e centile 20.8
+[  524.7s]   groupe 0000-0009 : 1955 appariements, 1038 inliers, échelle 1.063, rotation -7.4°, décalage 73 px parent
+[  546.1s]   groupe 0010-0019 : 1826 appariements, 1071 inliers, échelle 1.011, rotation -2.1°, décalage 9 px parent
+[  574.1s]   groupe 0030-0039 : 1 appariements, 0 inliers, échelle 0.000, rotation +0.0°, décalage 0 px parent : rejeté
+[  593.0s]   groupe 0055-0064 : 2127 appariements, 1275 inliers, échelle 1.052, rotation -4.5°, décalage 30 px parent
+[  593.0s] 2e passe : 3/4 groupes appariés, 1080 ancrages de plus ; nouvel ajustement
+[  593.1s] ancrages (final) : résidu médian 10.3 px de recalage, 90e centile 25.8
+[  593.1s] ajustement global : 25502 correspondances, 64 images, 2117 ancrages
+[  593.4s] compensation photométrique : écart de gain max 8.6 %
+[  593.4s] recalage : erreur médiane 1.78 px (échelle recalage), max 26.64
+[  594.2s] mosaïque 25568 x 3693
+[  594.2s] position dans la lame d'ensemble : échelle 0.0956, rotation 0.9°, 56 images ancrées
+[  681.2s] composition : 26 tuiles en 85 s
+[  682.5s] qualité : note B (recalage moyen (1.8 px))
+[  682.5s] terminé : pano.jpg 25568 x 3693 , 65 images utilisées sur 65
