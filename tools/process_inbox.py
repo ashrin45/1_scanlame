@@ -148,10 +148,18 @@ while True:
         newest = max(datetime.fromisoformat(t.replace('Z', '+00:00')) for t in stamps)
         if newest.tzinfo is None: newest = newest.replace(tzinfo=timezone.utc)
         age = datetime.now(timezone.utc) - newest
-        if age < timedelta(minutes=5):
-            print(f'{s} : pas encore close (dernier morceau il y a {int(age.total_seconds())} s), ignorée'); continue
+        if age < timedelta(minutes=45):
+            print(f'{s} : pas encore close (dernier fichier il y a {int(age.total_seconds() // 60)} min), on attend la clôture'); continue
         orphan = True
-        print(f'{s} : non close depuis plus de 10 min, traitée sans positions')
+        print(f'{s} : non close depuis plus de 45 min, traitée sans positions')
+    if 'serie.json' in names and not s.startswith('edit_'):
+        # serie abandonnee depuis l'appli : tout est supprime du bucket, rien n'est assemble
+        try:
+            tmpj = os.path.join(a.work, f'{s}.json'); os.makedirs(a.work, exist_ok=True); get(f'{s}/serie.json', tmpj)
+            if json.load(open(tmpj)).get('discarded'):
+                allp = [f'{s}/{e["name"]}' for e in entries if e.get('id')] + [f'{s}/chunks/{e["name"]}' for e in ls(f'{s}/chunks')] + [f'{s}/photos/{e["name"]}' for e in ls(f'{s}/photos')]
+                rm(allp); print(f'{s} : abandonnée depuis l\'appli, prise supprimée du bucket ({len(allp)} fichiers)'); continue
+        except Exception as e: print(f'{s} : lecture de serie.json impossible ({e})')
     if 'done.txt' in names and not ((a.force or a.fetch_only) and a.only):
         # published earlier: keep the raw take a few days, then delete it
         from datetime import datetime, timezone, timedelta

@@ -398,9 +398,13 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         curBlank = null; switching = null
         if (s.mode == Settings.MODE_VIDEO && engine.isRecording()) { videoDone = { seriesDir?.deleteRecursively() }; engine.stopVideo() }
         val n = seq
-        seriesDir?.let { d -> d.deleteRecursively() }
+        seriesDir?.let { d ->
+            d.deleteRecursively()
+            // des photos sont peut-etre deja parties : une cloture « abandonnee » demande au serveur de les supprimer (sinon il assemblerait un orphelin)
+            if (st.serverUrl.isNotEmpty()) { d.mkdirs(); File(d, "finish.json").writeText(JSONObject().put("series", s.seriesId).put("discarded", true).toString()); Uploader.kick(ctx) }
+        }
         Uploader.refresh(ctx)
-        Journal.log("série ${s.seriesId} abandonnée ($n photo(s) supprimée(s) du téléphone, rien n'est envoyé)")
+        Journal.log("série ${s.seriesId} abandonnée ($n photo(s) supprimée(s) du téléphone ; les photos déjà envoyées seront supprimées du serveur)")
         state.value = state.value.copy(running = false, still = false, warn = "", message = "Série abandonnée : $n photo(s) supprimée(s), rien n'a été envoyé." + (if (s.photos > 0 && st.autoUpload) " Les photos déjà parties restent sur le serveur mais ne seront pas assemblées (pas de clôture)." else ""))
     }
 
