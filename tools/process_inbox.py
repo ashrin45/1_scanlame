@@ -291,6 +291,14 @@ while True:
       json.dump(lay, open(os.path.join(res, 'layout.json'), 'w'))
       complete = meta.get('complete') if (seg == 0 and ci is None) else None
       if complete and os.path.isfile(os.path.join(ROOT, 'lames', complete, 'lame.json')):
+          # « completer » une lame d'un autre objectif n'a pas de sens (une reprise se fond au meme grossissement) : c'est un detail, rattache a cette lame
+          try: cobj = json.load(open(os.path.join(ROOT, 'lames', complete, 'lame.json'), encoding='utf-8')).get('objective')
+          except Exception: cobj = None
+          if cobj and lay.get('objective') and cobj != lay.get('objective') and not parent:
+              print(f'  « compléter » {complete} ({cobj}) avec une prise au {lay.get("objective")} : traité comme lame de détail de {complete}')
+              parent = complete; complete = None
+              lay['parent'] = parent; json.dump(lay, open(os.path.join(res, 'layout.json'), 'w'))
+      if complete and os.path.isfile(os.path.join(ROOT, 'lames', complete, 'lame.json')):
           # reprise ciblee : la prise est fondue dans la lame existante, qui garde son nom
           print(f'  reprise de {complete} : fusion dans la lame existante')
           rc = subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'merge_retake.py'), complete, res]).returncode

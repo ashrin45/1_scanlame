@@ -192,6 +192,20 @@ def match_into_parent(cim, pim, cands_f, prior_box=None, log=print):
             cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
             ref = refine_learned(cs, pim, prior_box, margin=0, log=log)
             if ref: best = (ref[0], ref[1], f, ref[3]); log(f'  -> appariement appris autour de l\'a priori retenu (facteur {f:.4f})'); break
+    if not best and learned_matcher() is not None:
+        # dernier recours : balayage du parent par fenetres (2 fois la taille attendue de l'enfant, recouvrement 50 %) avec l'apparieur appris
+        f = cands_f[0]
+        cs = cv2.resize(cim, None, fx=f, fy=f, interpolation=cv2.INTER_AREA if f < 1 else cv2.INTER_CUBIC)
+        ww, wh = min(pim.shape[1], max(400, 2 * cs.shape[1])), min(pim.shape[0], max(400, 2 * cs.shape[0]))
+        xs = list(range(0, max(1, pim.shape[1] - ww + 1), max(1, ww // 2))) + [max(0, pim.shape[1] - ww)]
+        ys = list(range(0, max(1, pim.shape[0] - wh + 1), max(1, wh // 2))) + [max(0, pim.shape[0] - wh)]
+        wins = sorted({(x, y) for x in xs for y in ys})
+        log(f'balayage du parent par {len(wins)} fenêtres de {ww}x{wh} (appariement appris, facteur {f:.4f})')
+        cand_best = None
+        for (x, y) in wins[:40]:
+            ref = refine_learned(cs, pim, [x, y, x + ww, y + wh], margin=0, log=lambda *_: None)
+            if ref and (cand_best is None or ref[1] > cand_best[1]): cand_best = ref; log(f'  fenêtre ({x},{y}) : {ref[1]} inliers')
+        if cand_best and cand_best[1] >= 40: best = (cand_best[0], cand_best[1], f, cand_best[3]); log(f'  -> localisation par balayage retenue ({cand_best[1]} inliers)')
     return best
 
 def main():
