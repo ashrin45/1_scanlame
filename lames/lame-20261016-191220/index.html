@@ -140,6 +140,23 @@ if (CHILDREN.length) {
   $('info').insertAdjacentHTML('beforeend', ($('info').textContent ? ' · ' : '') + CHILDREN.map(c => `<a href="../${c.slug}/">↗ ${c.title}${c.objective ? ' (obj. ' + c.objective + ')' : ''}</a>`).join(' · '));
 }
 const kidLayers = [];
+// intersection d'un polygone avec un quadrilatère convexe (Sutherland-Hodgman)
+function clipPoly(poly, clip) {
+  let out = poly;
+  for (let i = 0; i < clip.length && out.length; i++) {
+    const A = clip[i], B = clip[(i + 1) % clip.length], inp = out; out = [];
+    const side = p => (B.x - A.x) * (p.y - A.y) - (B.y - A.y) * (p.x - A.x);
+    const inter = (p, q) => { const t = side(p) / (side(p) - side(q)); return { x: p.x + t * (q.x - p.x), y: p.y + t * (q.y - p.y) }; };
+    // orientation du quadrilatère : on garde le côté où se trouve son centre
+    const cx = clip.reduce((s, p) => s + p.x, 0) / clip.length, cy = clip.reduce((s, p) => s + p.y, 0) / clip.length;
+    const sgn = Math.sign(side({ x: cx, y: cy })) || 1;
+    for (let k = 0; k < inp.length; k++) {
+      const p = inp[k], q = inp[(k + 1) % inp.length], pin = side(p) * sgn >= 0, qin = side(q) * sgn >= 0;
+      if (pin) { out.push(p); if (!qin) out.push(inter(p, q)); } else if (qin) out.push(inter(p, q));
+    }
+  }
+  return out;
+}
 const kidSvg = document.createElementNS(svgNS, 'svg');
 kidSvg.setAttribute('viewBox', `0 0 ${W} ${H}`); kidSvg.setAttribute('class', 'children'); kidSvg.setAttribute('width', '100%'); kidSvg.setAttribute('height', '100%'); kidSvg.style.overflow = 'visible';
 for (const c of placed) {
@@ -153,7 +170,16 @@ for (const c of placed) {
     tileSource: { width: c.width, height: c.height, tileSize: c.tile, tileOverlap: 1, minLevel: 0, maxLevel: c.maxlvl, getTileUrl: (l, x, y) => `../${c.slug}/lame_files/${l}/${x}_${y}.jpg` },
     // OpenSeadragon tourne l'image autour de son centre : on place le rectangle non tourné pour que son centre tombe au bon endroit
     x: (a * c.width / 2 - b * c.height / 2 + tx - s * c.width / 2) / W, y: (b * c.width / 2 + a * c.height / 2 + ty - s * c.height / 2) / W, width: s * c.width / W, degrees: deg,
-    success: e => { kidLayers.push(e.item); if (c.outline && c.outline.length && e.item.setCroppingPolygons) e.item.setCroppingPolygons(c.outline.map(poly => poly.map(([x, y]) => ({ x, y })))); }   // fond blanc hors couverture rogné
+    success: e => {
+      kidLayers.push(e.item);
+      if (!e.item.setCroppingPolygons) return;
+      // rogné au contour couvert, et à l'emprise de la lame d'ensemble (un détail qui en déborde n'est pas affiché au-delà)
+      const inv = 1 / (a * a + b * b);
+      const toChild = ([X, Y]) => ({ x: inv * (a * (X - tx) + b * (Y - ty)), y: inv * (-b * (X - tx) + a * (Y - ty)) });
+      const bounds = [[0, 0], [W, 0], [W, H], [0, H]].map(toChild);
+      const polys = (c.outline && c.outline.length) ? c.outline.map(poly => poly.map(([x, y]) => ({ x, y }))) : [[{ x: 0, y: 0 }, { x: c.width, y: 0 }, { x: c.width, y: c.height }, { x: 0, y: c.height }]];
+      e.item.setCroppingPolygons(polys.map(poly => clipPoly(poly, bounds)).filter(p => p.length >= 3));
+    }
   }));
 }
 if (placed.length) {

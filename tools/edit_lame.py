@@ -86,11 +86,21 @@ def crop(slug, x0, y0, x1, y1):
             for c in pj.get('children') or []:
                 if c['slug'] == slug: c['transform'] = j['parent_transform']
             save_lame(j['parent'], pj); write_pages(j['parent'])
+    child_crops = []
     for c in j.get('children') or []:
         if c.get('transform'):
             a, b, tx, ty = c['transform']; c['transform'] = [a, b, tx - x0, ty - y0]
             cj = load_lame(c['slug'])
-            if cj: cj['parent_transform'] = c['transform']; save_lame(c['slug'], cj); write_pages(c['slug'])
+            if cj:
+                cj['parent_transform'] = c['transform']; save_lame(c['slug'], cj); write_pages(c['slug'])
+                # la partie du detail qui sort de la zone gardee est rognee aussi : rectangle garde ramene dans les px du detail
+                A = np.array([[a, -b], [b, a]]); Ai = np.linalg.inv(A)
+                corners = np.array([[0, 0], [nW, 0], [nW, nH], [0, nH]], float) - [tx - x0, ty - y0]
+                cc = (Ai @ corners.T).T
+                cx0, cy0 = np.floor(cc.min(0)); cx1, cy1 = np.ceil(cc.max(0))
+                cx0, cy0 = max(0, int(cx0)), max(0, int(cy0)); cx1, cy1 = min(cj['width'], int(cx1)), min(cj['height'], int(cy1))
+                if (cx0, cy0, cx1, cy1) != (0, 0, cj['width'], cj['height']) and cx1 - cx0 >= 64 and cy1 - cy0 >= 64:
+                    child_crops.append((c['slug'], cx0, cy0, cx1, cy1))
     if j.get('quality'):
         j['quality']['holes'] = []; j['quality']['holes_frac'] = 0.0
     j.update(width=nW, height=nH, maxlvl=nmax, tiles=n, zstack=0, zstack_tiles=None)
@@ -99,6 +109,9 @@ def crop(slug, x0, y0, x1, y1):
     j['updated'] = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')
     save_lame(slug, j); write_pages(slug); write_gallery()
     print(f'lame {slug} rognée : {W}x{H} -> {nW}x{nH} ({n} tuiles)')
+    for (cs, cx0, cy0, cx1, cy1) in child_crops:
+        print(f'  détail {cs} : rogné à la zone gardée')
+        crop(cs, cx0, cy0, cx1, cy1)
 
 if __name__ == '__main__':
     if sys.argv[1] == 'delete': delete(sys.argv[2])
