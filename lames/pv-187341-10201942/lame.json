@@ -1,0 +1,78 @@
+{
+ "title": "pv 187341",
+ "width": 2480,
+ "height": 5792,
+ "fields": 21,
+ "tiles": 96,
+ "tile": 512,
+ "maxlvl": 13,
+ "um_per_px": null,
+ "stain": "gram",
+ "objective": "x10",
+ "sample": null,
+ "comment": null,
+ "captured": "20/10/2026 19:42",
+ "parent": null,
+ "parent_transform": null,
+ "parent_anchored": null,
+ "parent_approx": null,
+ "outline": null,
+ "hint": null,
+ "stage": null,
+ "stage_cal": null,
+ "stage_obs": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "1 trou(s) dans la couverture"
+  ],
+  "frames": {
+   "candidates": 46,
+   "blurred": 6,
+   "selected": 36,
+   "used": 36,
+   "tracked_only": 0
+  },
+  "residual_px": 1.33,
+  "residual_max_px": 2.84,
+  "holes": [],
+  "holes_frac": 0.0,
+  "coverage_px": 29555601,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 7.4,
+  "flat_field": "médiane",
+  "k1": -0.006,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "series": "lame_20261020_194243_pv-187341",
+ "version": 1,
+ "params": {
+  "depth": "off",
+  "seams": true,
+  "fps": 4.0,
+  "reg_size": 1200,
+  "max_side": 32000,
+  "core": 0.7,
+  "tile": 2048,
+  "distortion": true,
+  "chroma": true,
+  "code": "559bf90"
+ },
+ "published": "2026-10-20T18:13:00+00:00",
+ "updated": "2026-10-20T18:13:01+00:00",
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null,
+ "cropped": [
+  [
+   2544,
+   112,
+   5024,
+   5904
+  ]
+ ]
+}
