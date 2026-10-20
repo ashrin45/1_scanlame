@@ -1,0 +1,1551 @@
+     0.000  ScanLame 0.33 démarré sur samsung SM-S928B (Android 16)
+     8.601  liaison : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+     9.073  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+    68.359  verrouillage : focus infini, pose 1.151479 ms, ISO 50, WB figée
+    68.595  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   105.380  === série lame_20261020_115524_placenta-187187 (photos) « placenta 187187 », gram, objectif x10 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+   105.465  masque oculaire : 99 % du cadre utile (p95 140)
+   105.758  t0000376 suivi ok score 1.00 pos 0,0 net 30 (20 ms) carte 0 photos + 3 positions
+   106.081  photo 187_0001 à 0,0 (723 ko, 225 ms)
+   106.094  t0000715 suivi ok score 1.00 pos 0,0 net 30 (23 ms) carte 1 photos + 6 positions
+   106.425  t0001044 suivi ok score 1.00 pos 0,0 net 30 (23 ms) carte 1 photos + 10 positions
+   106.760  t0001380 suivi ok score 1.00 pos 0,0 net 30 (21 ms) carte 1 photos + 13 positions
+   107.100  t0001720 suivi ok score 1.00 pos 0,0 net 30 (22 ms) carte 1 photos + 16 positions
+   107.430  t0002050 suivi ok score 1.00 pos 0,0 net 30 (21 ms) carte 1 photos + 20 positions
+   107.775  t0002395 suivi ok score 1.00 pos 0,0 net 30 (21 ms) carte 1 photos + 23 positions
+   108.091  t0002712 suivi ok score 1.00 pos 0,0 net 31 (20 ms) carte 1 photos + 26 positions
+   108.429  t0003049 suivi ok score 1.00 pos 0,0 net 30 (22 ms) carte 1 photos + 30 positions
+   108.759  t0003379 suivi ok score 1.00 pos 0,0 net 30 (19 ms) carte 1 photos + 33 positions
+   109.097  t0003717 suivi ok score 1.00 pos 0,0 net 29 (27 ms) carte 1 photos + 36 positions
+   109.447  t0004065 suivi ok score 1.00 pos 0,0 net 29 (37 ms) carte 1 photos + 40 positions
+   109.589  envoyé lame_20261020_115524_placenta-187187_0001.jpg (723 ko)
+   109.765  t0004385 suivi ok score 1.00 pos 0,0 net 29 (21 ms) carte 1 photos + 43 positions
+   110.094  t0004715 suivi ok score 1.00 pos 0,0 net 29 (24 ms) carte 1 photos + 46 positions
+   110.446  t0005066 suivi ok score 1.00 pos 0,0 net 29 (21 ms) carte 1 photos + 50 positions
+   110.758  t0005379 suivi ok score 1.00 pos 0,0 net 29 (20 ms) carte 1 photos + 53 positions
+   111.090  t0005711 suivi ok score 1.00 pos 0,0 net 30 (17 ms) carte 1 photos + 56 positions
+   111.426  t0006046 suivi ok score 1.00 pos 0,0 net 30 (18 ms) carte 1 photos + 60 positions
+   111.763  t0006384 suivi ok score 1.00 pos 0,0 net 30 (19 ms) carte 1 photos + 63 positions
+   112.113  t0006733 suivi ok score 1.00 pos 0,0 net 30 (36 ms) carte 1 photos + 66 positions
+   112.429  t0007050 suivi ok score 1.00 pos 0,0 net 30 (22 ms) carte 1 photos + 70 positions
+   112.769  t0007389 suivi ok score 1.00 pos 0,0 net 30 (25 ms) carte 1 photos + 73 positions
+   113.112  t0007732 suivi ok score 1.00 pos 0,0 net 30 (30 ms) carte 1 photos + 76 positions
+   113.427  t0008047 suivi ok score 1.00 pos 0,0 net 29 (18 ms) carte 1 photos + 80 positions
+   113.774  t0008395 suivi ok score 1.00 pos 0,0 net 29 (23 ms) carte 1 photos + 83 positions
+   114.096  t0008716 suivi ok score 1.00 pos 0,0 net 29 (20 ms) carte 1 photos + 86 positions
+   114.426  t0009047 suivi ok score 1.00 pos 0,0 net 29 (19 ms) carte 1 photos + 90 positions
+   114.760  t0009381 suivi ok score 1.00 pos 0,0 net 29 (19 ms) carte 1 photos + 93 positions
+   115.102  t0009722 suivi ok score 1.00 pos 0,0 net 29 (26 ms) carte 1 photos + 96 positions
+   115.441  t0010061 suivi ok score 1.00 pos 0,0 net 27 (24 ms) carte 1 photos + 100 positions
+   115.765  t0010385 suivi ok score 1.00 pos 0,0 net 29 (17 ms) carte 1 photos + 103 positions
+   116.096  t0010717 suivi ok score 1.00 pos 0,0 net 30 (18 ms) carte 1 photos + 106 positions
+   116.440  t0011061 suivi ok score 1.00 pos 0,0 net 30 (21 ms) carte 1 photos + 110 positions
+   116.765  t0011385 suivi ok score 1.00 pos 0,0 net 30 (22 ms) carte 1 photos + 113 positions
+   117.102  t0011722 suivi ok score 1.00 pos 0,0 net 30 (25 ms) carte 1 photos + 116 positions
+   117.442  t0012062 suivi ok score 1.00 pos 0,0 net 30 (19 ms) carte 1 photos + 120 positions
+   117.759  t0012380 suivi ok score 1.00 pos 0,0 net 29 (18 ms) carte 1 photos + 123 positions
+   118.094  t0012715 suivi ok score 1.00 pos 0,0 net 29 (17 ms) carte 1 photos + 126 positions
+   118.425  t0013045 suivi ok score 1.00 pos 0,0 net 29 (20 ms) carte 1 photos + 130 positions
+   118.756  t0013377 suivi ok score 0.95 pos -60,0 net 29 (18 ms) carte 1 photos + 133 positions
+   119.109  t0013729 suivi ok score 0.92 pos -501,39 net 30 (34 ms) carte 1 photos + 136 positions
+   119.425  t0014046 suivi ok score 0.94 pos -539,39 net 30 (20 ms) carte 1 photos + 140 positions
+   119.760  t0014381 suivi ok score 0.98 pos -224,15 net 29 (18 ms) carte 1 photos + 143 positions
+   120.095  t0014716 suivi ok score 0.98 pos -12,0 net 29 (19 ms) carte 1 photos + 146 positions
+   120.436  t0015056 suivi ok score 0.98 pos 182,-3 net 29 (24 ms) carte 1 photos + 150 positions
+   120.772  t0015392 suivi ok score 0.98 pos 506,-35 net 28 (28 ms) carte 1 photos + 153 positions
+   121.098  t0015718 suivi ok score 0.98 pos 993,-64 net 27 (23 ms) carte 1 photos + 156 positions
+   121.467  t0016086 suivi ok score 0.95 pos 1553,-109 net 25 (35 ms) carte 1 photos + 160 positions
+   121.628  photo en mouvement lent (57 % du champ, 30 u/s)
+   121.762  t0016383 suivi ok score 0.99 pos 1834,-112 net 24 (22 ms) carte 1 photos + 163 positions
+   121.837  photo 187_0002 à 1736,-124 (586 ko, 209 ms)
+   122.091  t0016712 suivi ok score 1.00 pos 1928,-122 net 24 (21 ms) carte 2 photos + 166 positions
+   122.426  t0017046 suivi ok score 1.00 pos 1943,-112 net 24 (19 ms) carte 2 photos + 170 positions
+   122.586  photo 187_0003 à 1945,-111 (589 ko, 243 ms)
+   122.754  t0017375 suivi ok score 1.00 pos 1943,-112 net 25 (18 ms) carte 3 photos + 173 positions
+   123.102  t0017722 suivi ok score 0.99 pos 1943,-112 net 25 (28 ms) carte 3 photos + 176 positions
+   123.430  t0018051 suivi ok score 0.97 pos 1930,-256 net 25 (21 ms) carte 3 photos + 180 positions
+   123.666  envoyé lame_20261020_115524_placenta-187187_0002.jpg (586 ko)
+   123.760  t0018380 suivi ok score 0.99 pos 1931,-284 net 25 (18 ms) carte 3 photos + 183 positions
+   124.097  t0018718 suivi ok score 0.99 pos 1939,-144 net 24 (25 ms) carte 3 photos + 186 positions
+   124.430  t0019050 suivi ok score 0.98 pos 1957,100 net 23 (21 ms) carte 3 photos + 190 positions
+   124.765  t0019385 suivi ok score 1.00 pos 1967,184 net 23 (22 ms) carte 3 photos + 193 positions
+   125.087  t0019708 suivi ok score 1.00 pos 1968,186 net 23 (18 ms) carte 3 photos + 196 positions
+   125.138  photo 187_0004 à 1968,186 (587 ko, 204 ms)
+   125.425  t0020046 suivi ok score 0.99 pos 1562,201 net 25 (20 ms) carte 4 photos + 200 positions
+   125.763  t0020384 suivi ok score 1.00 pos 1503,195 net 25 (21 ms) carte 4 photos + 203 positions
+   126.097  t0020718 suivi ok score 0.99 pos 1660,176 net 24 (24 ms) carte 4 photos + 206 positions
+   126.447  t0021067 suivi ok score 0.97 pos 1241,211 net 26 (36 ms) carte 4 photos + 210 positions
+   126.764  t0021385 suivi ok score 0.98 pos 1044,224 net 26 (20 ms) carte 4 photos + 213 positions
+   127.105  t0021726 suivi ok score 0.98 pos 2207,170 net 22 (17 ms) carte 4 photos + 216 positions
+   127.263  envoyé lame_20261020_115524_placenta-187187_0003.jpg (589 ko)
+   127.431  t0022051 suivi ok score 1.00 pos 2315,158 net 22 (21 ms) carte 4 photos + 220 positions
+   127.775  t0022396 suivi ok score 0.98 pos 2555,140 net 21 (19 ms) carte 4 photos + 223 positions
+   127.844  photo 187_0005 à 2328,156 (579 ko, 220 ms)
+   128.095  t0022716 suivi ok score 0.99 pos 2873,115 net 20 (23 ms) carte 5 photos + 226 positions
+   128.428  t0023049 suivi ok score 0.99 pos 3095,108 net 19 (22 ms) carte 5 photos + 230 positions
+   128.772  t0023392 suivi ok score 0.99 pos 3386,68 net 18 (23 ms) carte 5 photos + 233 positions
+   129.102  t0023723 suivi ok score 0.99 pos 3692,43 net 17 (21 ms) carte 5 photos + 236 positions
+   129.427  t0024048 suivi ok score 1.00 pos 3840,38 net 17 (18 ms) carte 5 photos + 240 positions
+   129.471  envoyé lame_20261020_115524_placenta-187187_0004.jpg (587 ko)
+   129.761  t0024382 suivi ok score 1.00 pos 3838,37 net 17 (21 ms) carte 5 photos + 243 positions
+   129.776  photo 187_0006 à 3839,37 (567 ko, 213 ms)
+   130.096  t0024715 suivi ok score 0.99 pos 3951,28 net 17 (17 ms) carte 6 photos + 246 positions
+   130.429  t0025049 suivi ok score 0.99 pos 4342,10 net 16 (23 ms) carte 6 photos + 250 positions
+   130.765  t0025386 suivi ok score 0.99 pos 4596,-8 net 16 (22 ms) carte 6 photos + 253 positions
+   131.102  t0025722 suivi ok score 0.99 pos 4894,-40 net 15 (23 ms) carte 6 photos + 256 positions
+   131.444  t0026063 suivi ok score 0.99 pos 5214,-66 net 15 (29 ms) carte 6 photos + 260 positions
+   131.770  t0026390 suivi ok score 0.99 pos 5716,-91 net 14 (23 ms) carte 6 photos + 263 positions
+   131.863  photo en mouvement lent (64 % du champ, 37 u/s)
+   132.090  photo 187_0007 à 5790,-100 (527 ko, 226 ms)
+   132.098  t0026719 suivi ok score 1.00 pos 5885,-109 net 13 (20 ms) carte 7 photos + 266 positions
+   132.289  envoyé lame_20261020_115524_placenta-187187_0005.jpg (579 ko)
+   132.421  t0027042 suivi ok score 1.00 pos 5896,-100 net 13 (19 ms) carte 7 photos + 270 positions
+   132.766  t0027387 suivi ok score 1.00 pos 5896,-100 net 13 (22 ms) carte 7 photos + 273 positions
+   133.096  t0027716 suivi ok score 1.00 pos 5896,-100 net 13 (19 ms) carte 7 photos + 276 positions
+   133.444  t0028064 suivi ok score 1.00 pos 5896,-100 net 13 (29 ms) carte 7 photos + 280 positions
+   133.766  t0028387 suivi ok score 1.00 pos 5896,-100 net 13 (22 ms) carte 7 photos + 283 positions
+   134.104  t0028725 suivi ok score 0.99 pos 5968,-100 net 13 (21 ms) carte 7 photos + 286 positions
+   134.222  photo 187_0008 à 5911,-100 (523 ko, 228 ms)
+   134.443  t0029063 suivi ok score 1.00 pos 6466,-148 net 13 (29 ms) carte 8 photos + 290 positions
+   134.769  t0029389 suivi ok score 1.00 pos 6676,-164 net 14 (26 ms) carte 8 photos + 293 positions
+   134.791  envoyé lame_20261020_115524_placenta-187187_0006.jpg (567 ko)
+   135.093  t0029713 suivi ok score 1.00 pos 6780,-164 net 13 (17 ms) carte 8 photos + 296 positions
+   135.431  t0030052 suivi ok score 0.99 pos 6957,-180 net 13 (21 ms) carte 8 photos + 300 positions
+   135.768  t0030388 suivi ok score 1.00 pos 7151,-196 net 13 (19 ms) carte 8 photos + 300 positions
+   136.094  t0030715 suivi ok score 1.00 pos 7263,-196 net 13 (15 ms) carte 8 photos + 300 positions
+   136.450  t0031070 suivi ok score 1.00 pos 7490,-212 net 14 (22 ms) carte 8 photos + 300 positions
+   136.450  photo en mouvement lent (52 % du champ, 39 u/s)
+   136.643  photo 187_0009 à 7490,-212 (528 ko, 193 ms)
+   136.757  t0031377 suivi ok score 1.00 pos 7546,-228 net 14 (11 ms) carte 9 photos + 300 positions
+   137.097  t0031716 suivi ok score 0.99 pos 7665,-228 net 15 (17 ms) carte 9 photos + 300 positions
+   137.437  t0032056 suivi ok score 0.99 pos 7785,-228 net 15 (23 ms) carte 9 photos + 300 positions
+   137.766  t0032386 suivi ok score 1.00 pos 7869,-228 net 15 (18 ms) carte 9 photos + 300 positions
+   137.975  photo 187_0010 à 7869,-228 (535 ko, 209 ms)
+   138.095  t0032715 suivi ok score 1.00 pos 7869,-228 net 16 (17 ms) carte 10 photos + 300 positions
+   138.430  t0033050 suivi ok score 1.00 pos 7869,-228 net 15 (20 ms) carte 10 photos + 300 positions
+   138.527  envoyé lame_20261020_115524_placenta-187187_0007.jpg (527 ko)
+   138.770  t0033390 suivi ok score 1.00 pos 7869,-228 net 16 (17 ms) carte 10 photos + 300 positions
+   139.107  t0033727 suivi ok score 1.00 pos 7869,-228 net 16 (18 ms) carte 10 photos + 300 positions
+   139.433  t0034053 suivi ok score 1.00 pos 7869,-228 net 15 (17 ms) carte 10 photos + 300 positions
+   139.770  t0034389 suivi ok score 1.00 pos 7869,-228 net 16 (17 ms) carte 10 photos + 300 positions
+   140.105  t0034724 suivi ok score 1.00 pos 7869,-228 net 15 (21 ms) carte 10 photos + 300 positions
+   140.295  envoyé lame_20261020_115524_placenta-187187_0008.jpg (523 ko)
+   140.441  t0035060 suivi ok score 1.00 pos 7869,-228 net 15 (27 ms) carte 10 photos + 300 positions
+   140.784  t0035404 suivi ok score 1.00 pos 7869,-228 net 15 (28 ms) carte 10 photos + 300 positions
+   141.114  t0035733 suivi ok score 0.99 pos 7892,-228 net 15 (20 ms) carte 10 photos + 300 positions
+   141.439  t0036059 suivi ok score 1.00 pos 8251,-228 net 15 (20 ms) carte 10 photos + 300 positions
+   141.775  t0036395 suivi ok score 1.00 pos 8263,-228 net 15 (18 ms) carte 10 photos + 300 positions
+   142.043  envoyé lame_20261020_115524_placenta-187187_0009.jpg (528 ko)
+   142.046  photo 187_0011 à 8263,-228 (528 ko, 208 ms)
+   142.108  t0036729 suivi ok score 0.99 pos 8490,-228 net 16 (13 ms) carte 11 photos + 300 positions
+   142.444  t0037063 suivi ok score 0.99 pos 8586,-228 net 16 (19 ms) carte 11 photos + 300 positions
+   142.715  photo 187_0012 à 8610,-228 (532 ko, 202 ms)
+   142.757  t0037377 suivi ok score 0.99 pos 8717,-228 net 17 (14 ms) carte 12 photos + 300 positions
+   143.106  t0037726 suivi ok score 0.99 pos 8944,-228 net 18 (23 ms) carte 12 photos + 300 positions
+   143.445  t0038064 suivi ok score 1.00 pos 9088,-228 net 18 (24 ms) carte 12 photos + 300 positions
+   143.776  t0038396 suivi ok score 1.00 pos 9088,-228 net 17 (21 ms) carte 12 photos + 300 positions
+   143.892  photo 187_0013 à 9088,-228 (528 ko, 226 ms)
+   144.115  t0038734 suivi ok score 1.00 pos 9088,-228 net 18 (26 ms) carte 13 photos + 300 positions
+   144.138  envoyé lame_20261020_115524_placenta-187187_0010.jpg (535 ko)
+   144.435  t0039056 suivi ok score 1.00 pos 9088,-228 net 18 (19 ms) carte 13 photos + 300 positions
+[... 1327 lignes omises ...]
+  2416.994  t0211011 suivi ok score 1.00 pos 7915,-469 net 12 (19 ms) carte 8 photos + 223 positions
+  2417.343  t0211359 suivi ok score 1.00 pos 7915,-469 net 13 (34 ms) carte 8 photos + 226 positions
+  2417.660  t0211677 suivi ok score 0.99 pos 7951,-469 net 13 (19 ms) carte 8 photos + 230 positions
+  2418.009  t0212026 suivi ok score 0.98 pos 8223,-488 net 11 (28 ms) carte 8 photos + 233 positions
+  2418.332  t0212349 suivi ok score 0.99 pos 9331,-552 net 12 (24 ms) carte 8 photos + 236 positions
+  2418.484  envoyé lame_20261020_123025_moelle-2_0086.jpg (855 ko)
+  2418.570  photo en mouvement lent (63 % du champ, 35 u/s)
+  2418.664  t0212680 suivi ok score 1.00 pos 9868,-589 net 10 (21 ms) carte 8 photos + 240 positions
+  2418.786  photo e-2_0095 à 9853,-585 (431 ko, 216 ms)
+  2418.995  t0213012 suivi ok score 0.99 pos 10045,-593 net 12 (25 ms) carte 9 photos + 243 positions
+  2419.345  t0213361 suivi ok score 1.00 pos 10056,-584 net 14 (32 ms) carte 9 photos + 246 positions
+  2419.504  envoyé lame_20261020_123025_moelle-2_0087.jpg (411 ko)
+  2419.652  photo e-2_0096 à 10056,-577 (430 ko, 222 ms)
+  2419.659  t0213676 suivi ok score 1.00 pos 10057,-576 net 13 (20 ms) carte 10 photos + 250 positions
+  2419.997  t0214014 suivi ok score 1.00 pos 10074,-583 net 13 (24 ms) carte 10 photos + 253 positions
+  2420.323  t0214340 suivi ok score 0.99 pos 10147,-585 net 14 (18 ms) carte 10 photos + 256 positions
+  2420.655  t0214672 suivi ok score 0.97 pos 11331,-653 net 13 (17 ms) carte 10 photos + 260 positions
+  2420.795  envoyé lame_20261020_123025_moelle-2_0088.jpg (441 ko)
+  2420.995  t0215012 suivi ok score 1.00 pos 11478,-660 net 13 (22 ms) carte 10 photos + 263 positions
+  2421.328  t0215345 suivi ok score 1.00 pos 11475,-659 net 12 (21 ms) carte 10 photos + 266 positions
+  2421.451  photo e-2_0097 à 11478,-659 (440 ko, 220 ms)
+  2421.658  t0215674 suivi ok score 1.00 pos 11478,-658 net 14 (20 ms) carte 11 photos + 270 positions
+  2421.990  t0216007 suivi ok score 1.00 pos 11478,-658 net 14 (19 ms) carte 11 photos + 273 positions
+  2422.169  envoyé lame_20261020_123025_moelle-2_0089.jpg (445 ko)
+  2422.328  t0216345 suivi ok score 1.00 pos 11478,-658 net 14 (20 ms) carte 11 photos + 276 positions
+  2422.661  t0216677 suivi ok score 0.99 pos 11480,-653 net 14 (22 ms) carte 11 photos + 280 positions
+  2422.997  t0217014 suivi ok score 0.98 pos 11634,-664 net 11 (19 ms) carte 11 photos + 283 positions
+  2423.335  t0217352 suivi ok score 0.99 pos 12506,-724 net 11 (24 ms) carte 11 photos + 286 positions
+  2423.374  envoyé lame_20261020_123025_moelle-2_0090.jpg (469 ko)
+  2423.659  t0217675 suivi ok score 0.98 pos 14059,-807 net 11 (16 ms) carte 11 photos + 290 positions
+  2423.719  photo en mouvement lent (85 % du champ, 0 u/s)
+  2423.719  ATTENTION pas trop grand (85 % du champ) : recouvrement insuffisant
+  2423.964  photo e-2_0098 à 14083,-807 (439 ko, 244 ms)
+  2424.006  t0218023 suivi ok score 1.00 pos 14071,-807 net 12 (16 ms) carte 12 photos + 293 positions
+  2424.311  envoyé lame_20261020_123025_moelle-2_0091.jpg (441 ko)
+  2424.339  t0218355 suivi ok score 1.00 pos 14071,-807 net 9 (25 ms) carte 12 photos + 296 positions
+  2424.660  t0218676 suivi ok score 1.00 pos 14071,-807 net 12 (19 ms) carte 12 photos + 300 positions
+  2424.996  t0219012 suivi ok score 1.00 pos 14071,-807 net 13 (16 ms) carte 12 photos + 300 positions
+  2425.260  envoyé lame_20261020_123025_moelle-2_0092.jpg (456 ko)
+  2425.323  t0219340 suivi ok score 1.00 pos 14071,-807 net 12 (14 ms) carte 12 photos + 300 positions
+  2425.663  t0219679 suivi ok score 1.00 pos 14071,-807 net 12 (19 ms) carte 12 photos + 300 positions
+  2426.001  t0220017 suivi ok score 1.00 pos 14083,-807 net 11 (23 ms) carte 12 photos + 300 positions
+  2426.344  t0220360 suivi ok score 0.98 pos 15231,-887 net 9 (27 ms) carte 12 photos + 300 positions
+  2426.369  envoyé lame_20261020_123025_moelle-2_0093.jpg (436 ko)
+  2426.655  t0220672 suivi ok score 0.99 pos 16223,-919 net 11 (13 ms) carte 12 photos + 300 positions
+  2427.013  t0221028 suivi ok score 0.99 pos 16845,-919 net 11 (28 ms) carte 12 photos + 300 positions
+  2427.054  photo en mouvement lent (92 % du champ, 31 u/s)
+  2427.054  ATTENTION pas trop grand (92 % du champ) : recouvrement insuffisant
+  2427.276  photo e-2_0099 à 16892,-919 (455 ko, 222 ms)
+  2427.333  t0221349 suivi ok score 1.00 pos 16892,-919 net 13 (25 ms) carte 13 photos + 300 positions
+  2427.671  t0221687 suivi ok score 1.00 pos 16892,-919 net 11 (19 ms) carte 13 photos + 300 positions
+  2427.727  envoyé lame_20261020_123025_moelle-2_0094.jpg (423 ko)
+  2427.999  t0222016 suivi ok score 1.00 pos 16892,-919 net 13 (15 ms) carte 13 photos + 300 positions
+  2428.333  t0222349 suivi ok score 1.00 pos 16892,-919 net 13 (19 ms) carte 13 photos + 300 positions
+  2428.668  t0222684 suivi ok score 1.00 pos 16892,-919 net 13 (18 ms) carte 13 photos + 300 positions
+  2428.857  envoyé lame_20261020_123025_moelle-2_0095.jpg (431 ko)
+  2429.006  t0223022 suivi ok score 1.00 pos 16892,-919 net 13 (21 ms) carte 13 photos + 300 positions
+  2429.344  t0223360 suivi ok score 1.00 pos 16892,-919 net 13 (30 ms) carte 13 photos + 300 positions
+  2429.663  t0223679 suivi ok score 1.00 pos 16892,-919 net 13 (17 ms) carte 13 photos + 300 positions
+  2429.914  envoyé lame_20261020_123025_moelle-2_0096.jpg (430 ko)
+  2429.996  t0224012 suivi ok score 1.00 pos 16892,-919 net 13 (17 ms) carte 13 photos + 300 positions
+  2430.345  t0224361 suivi ok score 0.96 pos 17430,-935 net 11 (28 ms) carte 13 photos + 300 positions
+  2430.661  t0224677 suivi ok score 0.99 pos 18793,-1015 net 13 (14 ms) carte 13 photos + 300 positions
+  2430.692  photo en mouvement lent (62 % du champ, 0 u/s)
+  2430.922  photo e-2_0100 à 18793,-1015 (462 ko, 230 ms)
+  2430.995  t0225011 suivi ok score 1.00 pos 18781,-1015 net 14 (16 ms) carte 14 photos + 300 positions
+  2431.329  t0225346 suivi ok score 1.00 pos 18781,-1015 net 12 (19 ms) carte 14 photos + 300 positions
+  2431.669  t0225685 suivi ok score 1.00 pos 18781,-1015 net 14 (19 ms) carte 14 photos + 300 positions
+  2431.999  t0226015 suivi ok score 0.99 pos 18793,-1015 net 14 (19 ms) carte 14 photos + 300 positions
+  2432.216  envoyé lame_20261020_123025_moelle-2_0097.jpg (440 ko)
+  2432.345  t0226360 suivi ok score 0.99 pos 19558,-1046 net 14 (26 ms) carte 14 photos + 300 positions
+  2432.657  t0226674 suivi ok score 0.97 pos 20956,-1110 net 14 (12 ms) carte 14 photos + 300 positions
+  2432.762  photo en mouvement lent (76 % du champ, 30 u/s)
+  2432.762  ATTENTION pas trop grand (76 % du champ) : recouvrement insuffisant
+  2432.987  photo e-2_0101 à 21124,-1110 (508 ko, 224 ms)
+  2432.988  t0227005 suivi ok score 1.00 pos 21100,-1110 net 18 (12 ms) carte 15 photos + 300 positions
+  2433.335  t0227350 suivi ok score 1.00 pos 21100,-1110 net 15 (21 ms) carte 15 photos + 300 positions
+  2433.523  envoyé lame_20261020_123025_moelle-2_0098.jpg (439 ko)
+  2433.669  t0227684 suivi ok score 1.00 pos 21100,-1110 net 18 (21 ms) carte 15 photos + 300 positions
+  2434.004  t0228020 suivi ok score 1.00 pos 21100,-1110 net 17 (20 ms) carte 15 photos + 300 positions
+  2434.339  t0228355 suivi ok score 1.00 pos 21100,-1110 net 18 (24 ms) carte 15 photos + 300 positions
+  2434.662  t0228677 suivi ok score 0.99 pos 21686,-1142 net 16 (15 ms) carte 15 photos + 300 positions
+  2435.004  t0229020 suivi ok score 0.99 pos 21817,-1142 net 16 (20 ms) carte 15 photos + 300 positions
+  2435.047  envoyé lame_20261020_123025_moelle-2_0099.jpg (455 ko)
+  2435.324  t0229341 suivi ok score 1.00 pos 21805,-1142 net 19 (12 ms) carte 15 photos + 300 positions
+  2435.482  photo e-2_0102 à 21805,-1142 (517 ko, 233 ms)
+  2435.663  t0229679 suivi ok score 1.00 pos 21805,-1142 net 15 (18 ms) carte 16 photos + 300 positions
+  2436.011  t0230026 suivi ok score 1.00 pos 21805,-1142 net 18 (18 ms) carte 16 photos + 300 positions
+  2436.333  t0230349 suivi ok score 1.00 pos 21805,-1142 net 18 (19 ms) carte 16 photos + 300 positions
+  2436.539  envoyé lame_20261020_123025_moelle-2_0100.jpg (462 ko)
+  2436.661  t0230677 suivi ok score 0.99 pos 21805,-1142 net 19 (16 ms) carte 16 photos + 300 positions
+  2436.993  t0231009 suivi ok score 0.99 pos 21960,-1142 net 18 (12 ms) carte 16 photos + 300 positions
+  2437.341  t0231357 suivi ok score 0.99 pos 22128,-1142 net 17 (25 ms) carte 16 photos + 300 positions
+  2437.670  t0231686 suivi ok score 0.99 pos 22821,-1142 net 14 (16 ms) carte 16 photos + 300 positions
+  2438.001  t0232017 suivi ok score 0.99 pos 23239,-1142 net 12 (21 ms) carte 16 photos + 300 positions
+  2438.171  photo en mouvement lent (55 % du champ, 31 u/s)
+  2438.322  t0232339 suivi ok score 1.00 pos 23622,-1142 net 12 (14 ms) carte 16 photos + 300 positions
+  2438.377  photo e-2_0103 à 23490,-1142 (467 ko, 205 ms)
+  2438.660  t0232677 suivi ok score 1.00 pos 23610,-1142 net 15 (11 ms) carte 17 photos + 300 positions
+  2438.878  photo e-2_0104 à 23610,-1142 (485 ko, 196 ms)
+  2439.003  t0233019 suivi ok score 1.00 pos 23610,-1142 net 13 (17 ms) carte 18 photos + 300 positions
+  2439.330  t0233347 suivi ok score 1.00 pos 23610,-1142 net 15 (14 ms) carte 18 photos + 300 positions
+  2439.573  envoyé lame_20261020_123025_moelle-2_0101.jpg (508 ko)
+  2439.668  t0233684 suivi ok score 1.00 pos 23610,-1142 net 13 (17 ms) carte 18 photos + 300 positions
+  2440.006  t0234021 suivi ok score 1.00 pos 23610,-1142 net 12 (21 ms) carte 18 photos + 300 positions
+  2440.342  t0234357 suivi ok score 0.99 pos 23682,-1142 net 12 (24 ms) carte 18 photos + 300 positions
+  2440.668  t0234684 suivi ok score 0.98 pos 24506,-1142 net 10 (17 ms) carte 18 photos + 300 positions
+  2440.990  envoyé lame_20261020_123025_moelle-2_0102.jpg (517 ko)
+  2441.001  t0235016 suivi ok score 0.98 pos 25917,-1222 net 9 (17 ms) carte 18 photos + 300 positions
+  2441.093  photo en mouvement lent (78 % du champ, 30 u/s)
+  2441.093  ATTENTION pas trop grand (78 % du champ) : recouvrement insuffisant
+  2441.325  photo e-2_0105 à 25989,-1222 (464 ko, 231 ms)
+  2441.339  t0235354 suivi ok score 1.00 pos 25977,-1222 net 13 (22 ms) carte 19 photos + 300 positions
+  2441.669  t0235685 suivi ok score 1.00 pos 25977,-1222 net 12 (19 ms) carte 19 photos + 300 positions
+  2442.001  t0236017 suivi ok score 1.00 pos 25977,-1222 net 14 (19 ms) carte 19 photos + 300 positions
+  2442.103  envoyé lame_20261020_123025_moelle-2_0103.jpg (467 ko)
+  2442.333  t0236350 suivi ok score 1.00 pos 25977,-1222 net 13 (21 ms) carte 19 photos + 300 positions
+  2442.664  t0236680 suivi ok score 0.96 pos 26108,-1222 net 13 (15 ms) carte 19 photos + 300 positions
+  2443.000  t0237015 suivi ok score 0.97 pos 27100,-1254 net 10 (18 ms) carte 19 photos + 300 positions
+  2443.276  photo en mouvement lent (73 % du champ, 30 u/s)
+  2443.276  ATTENTION pas trop grand (73 % du champ) : recouvrement insuffisant
+  2443.339  t0237356 suivi ok score 1.00 pos 28212,-1333 net 11 (17 ms) carte 19 photos + 300 positions
+  2443.489  photo e-2_0106 à 28212,-1333 (445 ko, 212 ms)
+  2443.675  t0237690 suivi ok score 1.00 pos 28212,-1333 net 13 (29 ms) carte 20 photos + 300 positions
+  2444.001  t0238017 suivi ok score 1.00 pos 28212,-1333 net 11 (20 ms) carte 20 photos + 300 positions
+  2444.332  t0238347 suivi ok score 1.00 pos 28212,-1333 net 11 (19 ms) carte 20 photos + 300 positions
+  2444.682  t0238697 suivi ok score 1.00 pos 28212,-1333 net 13 (28 ms) carte 20 photos + 300 positions
+  2444.826  envoyé lame_20261020_123025_moelle-2_0104.jpg (485 ko)
+  2444.997  t0239013 suivi ok score 1.00 pos 28212,-1333 net 12 (16 ms) carte 20 photos + 300 positions
+  2445.331  t0239347 suivi ok score 1.00 pos 28212,-1333 net 12 (16 ms) carte 20 photos + 300 positions
+  2445.665  t0239682 suivi ok score 1.00 pos 28212,-1333 net 13 (19 ms) carte 20 photos + 300 positions
+  2445.880  envoyé lame_20261020_123025_moelle-2_0105.jpg (464 ko)
+  2446.001  t0240017 suivi ok score 1.00 pos 28212,-1333 net 13 (21 ms) carte 20 photos + 300 positions
+  2446.331  t0240346 suivi ok score 1.00 pos 28212,-1333 net 11 (17 ms) carte 20 photos + 300 positions
+  2446.669  t0240686 suivi ok score 1.00 pos 28212,-1333 net 11 (17 ms) carte 20 photos + 300 positions
+  2447.009  t0241025 suivi ok score 0.99 pos 28104,-1333 net 10 (25 ms) carte 20 photos + 300 positions
+  2447.088  envoyé lame_20261020_123025_moelle-2_0106.jpg (445 ko)
+  2447.332  t0241348 suivi ok score 0.99 pos 27435,-1333 net 9 (15 ms) carte 20 photos + 300 positions
+  2447.679  t0241694 suivi ok score 1.00 pos 26969,-1333 net 10 (23 ms) carte 20 photos + 300 positions
+  2448.003  t0242020 suivi ok score 1.00 pos 26945,-1333 net 13 (17 ms) carte 20 photos + 300 positions
+  2448.317  photo e-2_0107 à 26945,-1333 (462 ko, 233 ms)
+  2448.333  t0242350 suivi ok score 1.00 pos 26945,-1333 net 14 (17 ms) carte 21 photos + 300 positions
+  2448.658  t0242674 suivi ok score 1.00 pos 26945,-1333 net 15 (12 ms) carte 21 photos + 300 positions
+  2449.014  t0243030 suivi ok score 1.00 pos 26945,-1333 net 12 (26 ms) carte 21 photos + 300 positions
+  2449.335  t0243351 suivi ok score 1.00 pos 26945,-1333 net 10 (18 ms) carte 21 photos + 300 positions
+  2449.689  t0243704 suivi ok score 1.00 pos 26945,-1333 net 12 (29 ms) carte 21 photos + 300 positions
+  2449.768  envoyé lame_20261020_123025_moelle-2_0107.jpg (462 ko)
+  2449.996  t0244012 suivi ok score 0.98 pos 27148,-1349 net 10 (18 ms) carte 21 photos + 300 positions
+  2450.342  t0244357 suivi ok score 0.99 pos 27602,-1349 net 9 (25 ms) carte 21 photos + 300 positions
+  2450.678  t0244694 suivi ok score 1.00 pos 28571,-1381 net 9 (20 ms) carte 21 photos + 300 positions
+  2450.703  photo en mouvement lent (54 % du champ, 30 u/s)
+  2450.910  photo e-2_0108 à 28582,-1381 (440 ko, 207 ms)
+  2450.997  t0245014 suivi ok score 1.00 pos 28571,-1381 net 11 (16 ms) carte 22 photos + 300 positions
+  2451.325  t0245342 suivi ok score 1.00 pos 28571,-1381 net 11 (12 ms) carte 22 photos + 300 positions
+  2451.665  t0245682 suivi ok score 1.00 pos 28571,-1381 net 13 (15 ms) carte 22 photos + 300 positions
+  2452.008  t0246023 suivi ok score 1.00 pos 28571,-1381 net 13 (18 ms) carte 22 photos + 300 positions
+  2452.039  envoyé lame_20261020_123025_moelle-2_0108.jpg (440 ko)
+  2452.335  t0246351 suivi ok score 1.00 pos 28571,-1381 net 13 (18 ms) carte 22 photos + 300 positions
+  2452.676  t0246692 suivi ok score 1.00 pos 28571,-1381 net 13 (22 ms) carte 22 photos + 300 positions
+  2453.009  t0247025 suivi ok score 1.00 pos 28571,-1381 net 13 (22 ms) carte 22 photos + 300 positions
+  2453.351  t0247367 suivi ok score 1.00 pos 28571,-1381 net 13 (26 ms) carte 22 photos + 300 positions
+  2453.671  t0247687 suivi ok score 1.00 pos 28606,-1381 net 13 (18 ms) carte 22 photos + 300 positions
+  2454.007  t0248023 suivi ok score 0.94 pos 30758,-1525 net 7 (20 ms) carte 22 photos + 300 positions
+  2454.209  photo en mouvement lent (81 % du champ, 0 u/s)
+  2454.209  ATTENTION pas trop grand (81 % du champ) : recouvrement insuffisant
+  2454.331  t0248347 suivi ok score 1.00 pos 31033,-1541 net 13 (12 ms) carte 22 photos + 300 positions
+  2454.426  photo e-2_0109 à 31045,-1541 (461 ko, 216 ms)
+  2454.665  t0248680 suivi ok score 1.00 pos 31033,-1541 net 6 (15 ms) carte 23 photos + 300 positions
+  2455.001  t0249017 suivi ok score 1.00 pos 31033,-1541 net 14 (15 ms) carte 23 photos + 300 positions
+  2455.332  t0249348 suivi ok score 1.00 pos 31033,-1541 net 11 (16 ms) carte 23 photos + 300 positions
+  2455.674  t0249689 suivi ok score 1.00 pos 31033,-1541 net 5 (18 ms) carte 23 photos + 300 positions
+  2455.861  envoyé lame_20261020_123025_moelle-2_0109.jpg (461 ko)
+  2456.009  t0250025 suivi ok score 1.00 pos 31033,-1541 net 8 (23 ms) carte 23 photos + 300 positions
+  2456.346  t0250361 suivi ok score 1.00 pos 31033,-1541 net 12 (21 ms) carte 23 photos + 300 positions
+  2456.691  t0250707 suivi ok score 1.00 pos 31033,-1541 net 12 (32 ms) carte 23 photos + 300 positions
+  2457.001  t0251017 suivi ok score 1.00 pos 31033,-1541 net 14 (17 ms) carte 23 photos + 300 positions
+  2457.349  t0251365 suivi ok score 1.00 pos 31033,-1541 net 14 (24 ms) carte 23 photos + 300 positions
+  2457.680  t0251695 suivi ok score 1.00 pos 31033,-1541 net 14 (24 ms) carte 23 photos + 300 positions
+  2458.009  t0252024 suivi ok score 1.00 pos 31033,-1541 net 14 (21 ms) carte 23 photos + 300 positions
+  2458.336  t0252353 suivi ok score 1.00 pos 31033,-1541 net 13 (16 ms) carte 23 photos + 300 positions
+  2458.671  t0252687 suivi ok score 0.99 pos 31224,-1541 net 12 (20 ms) carte 23 photos + 300 positions
+  2459.018  t0253034 suivi ok score 0.99 pos 31965,-1572 net 14 (27 ms) carte 23 photos + 300 positions
+  2459.342  t0253358 suivi ok score 1.00 pos 31953,-1572 net 15 (23 ms) carte 23 photos + 300 positions
+  2459.618  photo e-2_0110 à 31953,-1572 (473 ko, 218 ms)
+  2459.667  t0253683 suivi ok score 1.00 pos 31953,-1572 net 15 (14 ms) carte 24 photos + 300 positions
+  2460.000  t0254017 suivi ok score 1.00 pos 32001,-1572 net 15 (16 ms) carte 24 photos + 300 positions
+  2460.343  t0254360 suivi ok score 1.00 pos 32204,-1572 net 14 (14 ms) carte 24 photos + 300 positions
+  2460.684  t0254699 suivi ok score 0.99 pos 32372,-1572 net 14 (25 ms) carte 24 photos + 300 positions
+  2461.008  t0255024 suivi ok score 0.99 pos 32718,-1572 net 14 (17 ms) carte 24 photos + 300 positions
+  2461.173  envoyé lame_20261020_123025_moelle-2_0110.jpg (473 ko)
+  2461.352  t0255367 suivi ok score 0.99 pos 32898,-1572 net 16 (24 ms) carte 24 photos + 300 positions
+  2461.678  t0255694 suivi ok score 1.00 pos 32898,-1572 net 16 (18 ms) carte 24 photos + 300 positions
+  2461.783  photo e-2_0111 à 32898,-1572 (488 ko, 208 ms)
+  2462.004  t0256020 suivi ok score 1.00 pos 32898,-1572 net 15 (16 ms) carte 25 photos + 300 positions
+  2462.344  t0256360 suivi ok score 1.00 pos 32898,-1572 net 16 (21 ms) carte 25 photos + 300 positions
+  2462.672  t0256688 suivi ok score 1.00 pos 32898,-1572 net 16 (18 ms) carte 25 photos + 300 positions
+  2462.785  envoyé lame_20261020_123025_moelle-2_0111.jpg (488 ko)
+  2463.006  t0257022 suivi ok score 0.99 pos 33400,-1588 net 16 (22 ms) carte 25 photos + 300 positions
+  2463.335  t0257351 suivi ok score 1.00 pos 33902,-1588 net 16 (15 ms) carte 25 photos + 300 positions
+  2463.665  t0257682 suivi ok score 1.00 pos 33914,-1588 net 17 (14 ms) carte 25 photos + 300 positions
+  2463.965  photo e-2_0112 à 33914,-1588 (487 ko, 225 ms)
+  2463.996  t0258013 suivi ok score 1.00 pos 33914,-1588 net 15 (11 ms) carte 26 photos + 300 positions
+  2464.340  t0258356 suivi ok score 1.00 pos 33914,-1588 net 17 (22 ms) carte 26 photos + 300 positions
+  2464.676  t0258691 suivi ok score 1.00 pos 33914,-1588 net 16 (22 ms) carte 26 photos + 300 positions
+  2465.000  t0259016 suivi ok score 0.99 pos 34404,-1604 net 12 (14 ms) carte 26 photos + 300 positions
+  2465.106  envoyé lame_20261020_123025_moelle-2_0112.jpg (487 ko)
+  2465.331  t0259347 suivi ok score 0.99 pos 34942,-1604 net 13 (13 ms) carte 26 photos + 300 positions
+  2465.671  t0259686 suivi ok score 1.00 pos 35097,-1604 net 15 (16 ms) carte 26 photos + 300 positions
+  2465.996  t0260014 suivi ok score 1.00 pos 35097,-1604 net 13 (15 ms) carte 26 photos + 300 positions
+  2466.066  photo e-2_0113 à 35097,-1604 (458 ko, 218 ms)
+  2466.339  t0260356 suivi ok score 1.00 pos 35097,-1604 net 15 (16 ms) carte 27 photos + 300 positions
+  2466.673  t0260689 suivi ok score 1.00 pos 35097,-1604 net 14 (20 ms) carte 27 photos + 300 positions
+  2467.013  t0261029 suivi ok score 0.99 pos 35240,-1604 net 12 (18 ms) carte 27 photos + 300 positions
+  2467.270  envoyé lame_20261020_123025_moelle-2_0113.jpg (458 ko)
+  2467.334  t0261351 suivi ok score 1.00 pos 36041,-1620 net 13 (12 ms) carte 27 photos + 300 positions
+  2467.671  t0261686 suivi ok score 0.99 pos 36113,-1620 net 14 (16 ms) carte 27 photos + 300 positions
+  2468.001  t0262018 suivi ok score 1.00 pos 36113,-1620 net 14 (15 ms) carte 27 photos + 300 positions
+  2468.091  photo e-2_0114 à 36113,-1620 (471 ko, 219 ms)
+  2468.346  t0262361 suivi ok score 1.00 pos 36113,-1620 net 15 (19 ms) carte 28 photos + 300 positions
+  2468.669  t0262686 suivi ok score 0.99 pos 36113,-1620 net 14 (18 ms) carte 28 photos + 300 positions
+  2469.001  t0263016 suivi ok score 0.98 pos 36818,-1636 net 11 (15 ms) carte 28 photos + 300 positions
+  2469.351  t0263367 suivi ok score 0.99 pos 37559,-1668 net 13 (18 ms) carte 28 photos + 300 positions
+  2469.611  envoyé lame_20261020_123025_moelle-2_0114.jpg (471 ko)
+  2469.672  t0263689 suivi ok score 1.00 pos 37559,-1668 net 13 (11 ms) carte 28 photos + 300 positions
+  2469.813  photo e-2_0115 à 37559,-1668 (442 ko, 202 ms)
+  2469.998  t0264015 suivi ok score 1.00 pos 37559,-1668 net 13 (13 ms) carte 29 photos + 300 positions
+  2470.340  t0264356 suivi ok score 1.00 pos 37559,-1668 net 13 (17 ms) carte 29 photos + 300 positions
+  2470.671  t0264688 suivi ok score 0.99 pos 37894,-1684 net 9 (19 ms) carte 29 photos + 300 positions
+  2470.799  envoyé lame_20261020_123025_moelle-2_0115.jpg (442 ko)
+  2471.001  t0265017 suivi ok score 1.00 pos 38563,-1700 net 10 (16 ms) carte 29 photos + 300 positions
+  2471.355  t0265371 suivi ok score 0.98 pos 39269,-1700 net 8 (28 ms) carte 29 photos + 300 positions
+  2471.410  photo en mouvement lent (59 % du champ, 30 u/s)
+  2471.411  photo floue (netteté 8 contre 17 de référence)
+  2471.613  photo e-2_0116 à 39364,-1700 (422 ko, 202 ms)
+  2471.662  t0265677 suivi ok score 1.00 pos 39424,-1700 net 10 (12 ms) carte 30 photos + 300 positions
+  2472.004  t0266020 suivi ok score 1.00 pos 39436,-1700 net 12 (18 ms) carte 30 photos + 300 positions
+  2472.342  t0266358 suivi ok score 1.00 pos 39436,-1700 net 12 (15 ms) carte 30 photos + 300 positions
+  2472.670  t0266687 suivi ok score 1.00 pos 39436,-1700 net 11 (13 ms) carte 30 photos + 300 positions
+  2472.732  envoyé lame_20261020_123025_moelle-2_0116.jpg (422 ko)
+  2473.014  t0267030 suivi ok score 1.00 pos 39448,-1700 net 11 (26 ms) carte 30 photos + 300 positions
+  2473.337  t0267353 suivi ok score 0.99 pos 39854,-1700 net 10 (14 ms) carte 30 photos + 300 positions
+  2473.681  t0267697 suivi ok score 0.99 pos 40201,-1700 net 11 (21 ms) carte 30 photos + 300 positions
+  2474.011  t0268027 suivi ok score 0.99 pos 40380,-1700 net 10 (18 ms) carte 30 photos + 300 positions
+  2474.343  t0268358 suivi ok score 0.99 pos 40870,-1700 net 10 (19 ms) carte 30 photos + 300 positions
+  2474.673  t0268689 suivi ok score 0.99 pos 41492,-1700 net 10 (18 ms) carte 30 photos + 300 positions
+  2474.817  photo en mouvement lent (73 % du champ, 30 u/s)
+  2474.817  ATTENTION pas trop grand (73 % du champ) : recouvrement insuffisant
+  2475.012  t0269027 suivi ok score 1.00 pos 41683,-1700 net 11 (23 ms) carte 30 photos + 300 positions
+  2475.034  photo e-2_0117 à 41599,-1700 (440 ko, 216 ms)
+  2475.330  t0269347 suivi ok score 1.00 pos 41683,-1700 net 12 (11 ms) carte 31 photos + 300 positions
+  2475.683  t0269699 suivi ok score 1.00 pos 41683,-1700 net 12 (26 ms) carte 31 photos + 300 positions
+  2476.010  t0270026 suivi ok score 1.00 pos 41683,-1700 net 13 (19 ms) carte 31 photos + 300 positions
+  2476.209  envoyé lame_20261020_123025_moelle-2_0117.jpg (440 ko)
+  2476.343  t0270359 suivi ok score 1.00 pos 41683,-1700 net 12 (20 ms) carte 31 photos + 300 positions
+  2476.663  t0270680 suivi ok score 1.00 pos 41683,-1700 net 13 (11 ms) carte 31 photos + 300 positions
+  2477.013  t0271029 suivi ok score 1.00 pos 41683,-1700 net 13 (19 ms) carte 31 photos + 300 positions
+  2477.340  t0271356 suivi ok score 1.00 pos 41683,-1700 net 12 (16 ms) carte 31 photos + 300 positions
+  2477.685  t0271701 suivi ok score 0.99 pos 42125,-1716 net 9 (24 ms) carte 31 photos + 300 positions
+  2477.973  photo en mouvement lent (65 % du champ, 0 u/s)
+  2478.003  t0272019 suivi ok score 1.00 pos 43596,-1811 net 13 (13 ms) carte 31 photos + 300 positions
+  2478.197  photo e-2_0118 à 43596,-1811 (434 ko, 223 ms)
+  2478.334  t0272351 suivi ok score 1.00 pos 43596,-1811 net 13 (16 ms) carte 32 photos + 300 positions
+  2478.692  t0272707 suivi ok score 1.00 pos 43596,-1811 net 12 (27 ms) carte 32 photos + 300 positions
+  2479.016  t0273032 suivi ok score 1.00 pos 43596,-1811 net 10 (21 ms) carte 32 photos + 300 positions
+  2479.353  t0273368 suivi ok score 1.00 pos 43596,-1811 net 13 (24 ms) carte 32 photos + 300 positions
+  2479.484  envoyé lame_20261020_123025_moelle-2_0118.jpg (434 ko)
+  2479.679  t0273695 suivi ok score 1.00 pos 43596,-1811 net 13 (22 ms) carte 32 photos + 300 positions
+  2480.020  t0274035 suivi ok score 1.00 pos 43596,-1811 net 13 (24 ms) carte 32 photos + 300 positions
+  2480.347  t0274363 suivi ok score 0.99 pos 43691,-1811 net 11 (20 ms) carte 32 photos + 300 positions
+  2480.688  t0274704 suivi ok score 0.99 pos 44695,-1843 net 11 (22 ms) carte 32 photos + 300 positions
+  2481.020  t0275035 suivi ok score 0.99 pos 44934,-1843 net 14 (21 ms) carte 32 photos + 300 positions
+  2481.347  t0275364 suivi ok score 1.00 pos 44934,-1843 net 12 (15 ms) carte 32 photos + 300 positions
+  2481.458  photo e-2_0119 à 44934,-1843 (434 ko, 211 ms)
+  2481.683  t0275698 suivi ok score 1.00 pos 44934,-1843 net 14 (25 ms) carte 33 photos + 300 positions
+  2482.003  t0276019 suivi ok score 1.00 pos 44958,-1843 net 15 (13 ms) carte 33 photos + 300 positions
+  2482.345  t0276362 suivi ok score 0.99 pos 45460,-1843 net 14 (16 ms) carte 33 photos + 300 positions
+  2482.693  t0276708 suivi ok score 0.99 pos 46058,-1843 net 14 (26 ms) carte 33 photos + 300 positions
+  2482.950  envoyé lame_20261020_123025_moelle-2_0119.jpg (434 ko)
+  2483.003  t0277020 suivi ok score 0.99 pos 46058,-1843 net 14 (10 ms) carte 33 photos + 300 positions
+  2483.289  photo e-2_0120 à 46058,-1843 (426 ko, 214 ms)
+  2483.339  t0277356 suivi ok score 1.00 pos 46058,-1843 net 11 (11 ms) carte 34 photos + 300 positions
+  2483.678  t0277694 suivi ok score 1.00 pos 46058,-1843 net 14 (23 ms) carte 34 photos + 300 positions
+  2484.013  t0278029 suivi ok score 1.00 pos 46070,-1843 net 14 (18 ms) carte 34 photos + 300 positions
+  2484.341  t0278358 suivi ok score 1.00 pos 46393,-1859 net 12 (15 ms) carte 34 photos + 300 positions
+  2484.666  envoyé lame_20261020_123025_moelle-2_0120.jpg (426 ko)
+  2484.683  t0278699 suivi ok score 0.96 pos 48126,-1939 net 8 (19 ms) carte 34 photos + 300 positions
+  2484.803  photo en mouvement lent (80 % du champ, 31 u/s)
+  2484.803  ATTENTION pas trop grand (80 % du champ) : recouvrement insuffisant
+  2485.016  t0279032 suivi ok score 0.99 pos 48484,-1971 net 12 (21 ms) carte 34 photos + 300 positions
+  2485.022  photo e-2_0121 à 48508,-1971 (439 ko, 218 ms)
+  2485.331  t0279348 suivi ok score 1.00 pos 48484,-1971 net 9 (11 ms) carte 35 photos + 300 positions
+  2485.674  t0279690 suivi ok score 1.00 pos 48484,-1971 net 11 (15 ms) carte 35 photos + 300 positions
+  2486.014  t0280031 suivi ok score 0.99 pos 48484,-1971 net 9 (16 ms) carte 35 photos + 300 positions
+  2486.345  t0280362 suivi ok score 0.98 pos 47504,-1923 net 6 (16 ms) carte 35 photos + 300 positions
+  2486.678  t0280694 suivi ok score 1.00 pos 46990,-1891 net 11 (20 ms) carte 35 photos + 300 positions
+  2487.009  t0281026 suivi ok score 1.00 pos 46990,-1891 net 11 (18 ms) carte 35 photos + 300 positions
+  2487.056  photo e-2_0122 à 46990,-1891 (433 ko, 205 ms)
+  2487.252  envoyé lame_20261020_123025_moelle-2_0121.jpg (439 ko)
+  2487.340  t0281356 suivi ok score 1.00 pos 46990,-1891 net 15 (19 ms) carte 36 photos + 300 positions
+  2487.677  t0281694 suivi ok score 1.00 pos 46990,-1891 net 15 (19 ms) carte 36 photos + 300 positions
+  2488.016  t0282032 suivi ok score 1.00 pos 46990,-1891 net 15 (23 ms) carte 36 photos + 300 positions
+  2488.342  t0282358 suivi ok score 0.95 pos 48939,-2003 net 11 (18 ms) carte 36 photos + 300 positions
+  2488.463  photo en mouvement lent (67 % du champ, 30 u/s)
+  2488.673  t0282689 suivi ok score 1.00 pos 48998,-2003 net 12 (15 ms) carte 36 photos + 300 positions
+  2488.699  photo e-2_0123 à 49034,-2003 (431 ko, 235 ms)
+  2489.006  t0283022 suivi ok score 1.00 pos 48998,-2003 net 10 (17 ms) carte 37 photos + 300 positions
+  2489.348  t0283365 suivi ok score 1.00 pos 48998,-2003 net 12 (21 ms) carte 37 photos + 300 positions
+  2489.683  t0283699 suivi ok score 1.00 pos 48998,-2003 net 11 (22 ms) carte 37 photos + 300 positions
+  2489.809  envoyé lame_20261020_123025_moelle-2_0122.jpg (433 ko)
+  2490.015  t0284031 suivi ok score 1.00 pos 48998,-1987 net 12 (23 ms) carte 37 photos + 300 positions
+  2490.342  t0284358 suivi ok score 0.99 pos 49034,-1413 net 10 (15 ms) carte 37 photos + 300 positions
+  2490.684  t0284699 suivi ok score 0.96 pos 49154,802 net 3 (20 ms) carte 37 photos + 300 positions
+  2490.814  photo en mouvement lent (93 % du champ, 30 u/s)
+  2490.814  ATTENTION pas trop grand (93 % du champ) : recouvrement insuffisant
+  2490.994  envoyé lame_20261020_123025_moelle-2_0123.jpg (431 ko)
+  2491.016  t0285031 suivi ok score 1.00 pos 49214,1790 net 10 (22 ms) carte 37 photos + 300 positions
+  2491.045  photo e-2_0124 à 49214,1790 (419 ko, 230 ms)
+  2491.341  t0285358 suivi ok score 1.00 pos 49214,1790 net 9 (18 ms) carte 38 photos + 300 positions
+  2491.678  t0285694 suivi ok score 0.99 pos 49214,1663 net 9 (21 ms) carte 38 photos + 300 positions
+  2492.020  t0286036 suivi ok score 1.00 pos 49214,1504 net 9 (25 ms) carte 38 photos + 300 positions
+  2492.077  envoyé lame_20261020_123025_moelle-2_0124.jpg (419 ko)
+  2492.362  t0286378 suivi ok score 0.99 pos 49214,1408 net 8 (29 ms) carte 38 photos + 300 positions
+  2492.676  t0286692 suivi ok score 0.99 pos 49214,1041 net 8 (16 ms) carte 38 photos + 300 positions
+  2493.019  t0287035 suivi ok score 1.00 pos 49214,1041 net 7 (18 ms) carte 38 photos + 300 positions
+  2493.038  photo floue (netteté 7 contre 17 de référence)
+  2493.277  photo e-2_0125 à 49214,1041 (400 ko, 239 ms)
+  2493.334  t0287351 suivi ok score 1.00 pos 49214,1041 net 9 (11 ms) carte 39 photos + 300 positions
+  2493.675  t0287692 suivi ok score 1.00 pos 49214,1041 net 8 (18 ms) carte 39 photos + 300 positions
+  2494.017  t0288033 suivi ok score 1.00 pos 49214,1025 net 9 (23 ms) carte 39 photos + 300 positions
+  2494.297  envoyé lame_20261020_123025_moelle-2_0125.jpg (400 ko)
+  2494.348  t0288365 suivi ok score 0.99 pos 49178,372 net 9 (13 ms) carte 39 photos + 300 positions
+  2494.686  t0288702 suivi ok score 1.00 pos 49178,276 net 9 (21 ms) carte 39 photos + 300 positions
+  2495.021  t0289037 suivi ok score 1.00 pos 49178,276 net 9 (27 ms) carte 39 photos + 300 positions
+  2495.041  photo e-2_0126 à 49178,276 (407 ko, 221 ms)
+  2495.337  t0289354 suivi ok score 1.00 pos 49178,276 net 9 (13 ms) carte 40 photos + 300 positions
+  2495.679  t0289696 suivi ok score 1.00 pos 49178,276 net 6 (14 ms) carte 40 photos + 300 positions
+  2496.027  t0290043 suivi ok score 1.00 pos 49178,276 net 7 (26 ms) carte 40 photos + 300 positions
+  2496.310  envoyé lame_20261020_123025_moelle-2_0126.jpg (407 ko)
+  2496.354  t0290371 suivi ok score 1.00 pos 49178,276 net 8 (13 ms) carte 40 photos + 300 positions
+  2496.685  t0290700 suivi ok score 1.00 pos 49166,276 net 8 (20 ms) carte 40 photos + 300 positions
+  2497.028  t0291044 suivi ok score 0.99 pos 48831,276 net 9 (25 ms) carte 40 photos + 300 positions
+  2497.344  t0291361 suivi ok score 0.99 pos 47899,276 net 9 (17 ms) carte 40 photos + 300 positions
+  2497.614  photo en mouvement lent (56 % du champ, 0 u/s)
+  2497.675  t0291691 suivi ok score 1.00 pos 47456,276 net 10 (13 ms) carte 40 photos + 300 positions
+  2497.823  photo e-2_0127 à 47456,276 (417 ko, 208 ms)
+  2498.016  t0292032 suivi ok score 1.00 pos 47456,276 net 10 (22 ms) carte 41 photos + 300 positions
+  2498.336  t0292353 suivi ok score 1.00 pos 47456,276 net 10 (14 ms) carte 41 photos + 300 positions
+  2498.676  t0292692 suivi ok score 0.99 pos 47205,292 net 9 (14 ms) carte 41 photos + 300 positions
+  2498.918  envoyé lame_20261020_123025_moelle-2_0127.jpg (417 ko)
+  2499.009  t0293026 suivi ok score 1.00 pos 46381,356 net 9 (18 ms) carte 41 photos + 300 positions
+  2499.349  t0293365 suivi ok score 1.00 pos 46297,356 net 9 (17 ms) carte 41 photos + 300 positions
+  2499.539  photo e-2_0128 à 46297,356 (409 ko, 220 ms)
+  2499.687  t0293702 suivi ok score 1.00 pos 46297,356 net 9 (26 ms) carte 42 photos + 300 positions
+  2500.021  t0294037 suivi ok score 1.00 pos 46285,356 net 10 (24 ms) carte 42 photos + 300 positions
+  2500.349  t0294366 suivi ok score 0.99 pos 45030,436 net 7 (19 ms) carte 42 photos + 300 positions
+  2500.624  photo en mouvement lent (64 % du champ, 30 u/s)
+  2500.676  t0294693 suivi ok score 1.00 pos 44337,452 net 8 (13 ms) carte 42 photos + 300 positions
+  2500.805  envoyé lame_20261020_123025_moelle-2_0128.jpg (409 ko)
+  2500.835  photo e-2_0129 à 44337,452 (405 ko, 211 ms)
+  2501.006  t0295023 suivi ok score 1.00 pos 44337,452 net 8 (18 ms) carte 43 photos + 300 positions
+  2501.339  t0295356 suivi ok score 1.00 pos 44337,452 net 8 (11 ms) carte 43 photos + 300 positions
+  2501.693  t0295709 suivi ok score 0.99 pos 44157,452 net 8 (24 ms) carte 43 photos + 300 positions
+  2501.955  envoyé lame_20261020_123025_moelle-2_0129.jpg (405 ko)
+  2502.016  t0296033 suivi ok score 0.99 pos 43799,452 net 9 (12 ms) carte 43 photos + 300 positions
+  2502.353  t0296369 suivi ok score 0.99 pos 43631,452 net 10 (24 ms) carte 43 photos + 300 positions
+  2502.674  t0296690 suivi ok score 1.00 pos 43512,452 net 10 (13 ms) carte 43 photos + 300 positions
+  2503.010  t0297027 suivi ok score 0.98 pos 41922,531 net 6 (13 ms) carte 43 photos + 300 positions
+  2503.144  photo en mouvement lent (104 % du champ, 30 u/s)
+  2503.145  ATTENTION pas trop grand (104 % du champ) : recouvrement insuffisant
+  2503.344  t0297360 suivi ok score 1.00 pos 41169,563 net 13 (17 ms) carte 43 photos + 300 positions
+  2503.365  photo e-2_0130 à 41169,563 (453 ko, 220 ms)
+  2503.669  t0297684 suivi ok score 1.00 pos 41253,563 net 14 (12 ms) carte 44 photos + 300 positions
+  2504.027  t0298042 suivi ok score 1.00 pos 41970,531 net 13 (28 ms) carte 44 photos + 300 positions
+  2504.348  t0298364 suivi ok score 0.99 pos 42006,531 net 12 (17 ms) carte 44 photos + 300 positions
+  2504.570  photo e-2_0131 à 42006,531 (438 ko, 222 ms)
+  2504.696  t0298711 suivi ok score 1.00 pos 42006,531 net 12 (27 ms) carte 45 photos + 300 positions
+  2505.030  t0299045 suivi ok score 1.00 pos 42006,531 net 12 (28 ms) carte 45 photos + 300 positions
+  2505.111  envoyé lame_20261020_123025_moelle-2_0130.jpg (453 ko)
+  2505.353  t0299368 suivi ok score 0.99 pos 41910,531 net 12 (17 ms) carte 45 photos + 300 positions
+  2505.699  t0299714 suivi ok score 0.99 pos 40667,595 net 13 (27 ms) carte 45 photos + 300 positions
+  2506.014  t0300030 suivi ok score 1.00 pos 40488,595 net 13 (18 ms) carte 45 photos + 300 positions
+  2506.352  t0300368 suivi ok score 1.00 pos 40488,595 net 13 (20 ms) carte 45 photos + 300 positions
+  2506.478  photo e-2_0132 à 40488,595 (449 ko, 235 ms)
+  2506.686  t0300702 suivi ok score 1.00 pos 40476,595 net 14 (20 ms) carte 46 photos + 300 positions
+  2507.013  t0301029 suivi ok score 0.99 pos 39998,595 net 13 (14 ms) carte 46 photos + 300 positions
+  2507.348  t0301364 suivi ok score 1.00 pos 39795,595 net 14 (17 ms) carte 46 photos + 300 positions
+  2507.699  t0301715 suivi ok score 1.00 pos 39795,595 net 14 (27 ms) carte 46 photos + 300 positions
+  2507.811  photo e-2_0133 à 39795,595 (451 ko, 231 ms)
+  2507.932  envoyé lame_20261020_123025_moelle-2_0131.jpg (438 ko)
+  2508.029  t0302044 suivi ok score 1.00 pos 39795,595 net 13 (25 ms) carte 47 photos + 300 positions
+  2508.354  t0302370 suivi ok score 1.00 pos 39651,595 net 14 (23 ms) carte 47 photos + 300 positions
+  2508.687  t0302703 suivi ok score 0.99 pos 39352,595 net 13 (24 ms) carte 47 photos + 300 positions
+  2509.023  t0303039 suivi ok score 1.00 pos 39018,595 net 14 (20 ms) carte 47 photos + 300 positions
+  2509.343  t0303360 suivi ok score 1.00 pos 38898,595 net 14 (16 ms) carte 47 photos + 300 positions
+  2509.486  envoyé lame_20261020_123025_moelle-2_0132.jpg (449 ko)
+  2509.588  photo e-2_0134 à 38886,595 (462 ko, 203 ms)
+  2509.668  t0303685 suivi ok score 1.00 pos 38850,595 net 15 (12 ms) carte 48 photos + 300 positions
+  2510.015  t0304032 suivi ok score 0.99 pos 38838,595 net 14 (18 ms) carte 48 photos + 300 positions
+  2510.351  t0304367 suivi ok score 0.99 pos 38778,595 net 15 (18 ms) carte 48 photos + 300 positions
+  2510.593  photo e-2_0135 à 38767,595 (465 ko, 209 ms)
+  2510.681  t0304697 suivi ok score 1.00 pos 38623,595 net 15 (20 ms) carte 49 photos + 300 positions
+  2511.017  t0305034 suivi ok score 1.00 pos 38468,595 net 14 (19 ms) carte 49 photos + 300 positions
+  2511.079  envoyé lame_20261020_123025_moelle-2_0133.jpg (451 ko)
+  2511.342  t0305359 suivi ok score 0.99 pos 38348,595 net 14 (12 ms) carte 49 photos + 300 positions
+  2511.404  photo e-2_0136 à 38408,595 (461 ko, 220 ms)
+  2511.679  t0305696 suivi ok score 0.99 pos 38229,595 net 14 (18 ms) carte 50 photos + 300 positions
+  2511.703  photo e-2_0137 à 38288,595 (459 ko, 195 ms)
+  2512.011  t0306027 suivi ok score 0.99 pos 37906,595 net 13 (14 ms) carte 51 photos + 300 positions
+  2512.306  envoyé lame_20261020_123025_moelle-2_0134.jpg (462 ko)
+  2512.349  t0306366 suivi ok score 1.00 pos 37655,595 net 14 (15 ms) carte 51 photos + 300 positions
+  2512.694  t0306709 suivi ok score 0.99 pos 37535,595 net 14 (25 ms) carte 51 photos + 300 positions
+  2512.990  photo e-2_0138 à 37535,595 (455 ko, 219 ms)
+  2513.008  t0307025 suivi ok score 0.99 pos 37535,595 net 14 (16 ms) carte 52 photos + 300 positions
+  2513.357  t0307373 suivi ok score 0.99 pos 37452,595 net 14 (21 ms) carte 52 photos + 300 positions
+  2513.634  photo e-2_0139 à 37416,595 (454 ko, 197 ms)
+  2513.676  t0307693 suivi ok score 1.00 pos 37320,595 net 13 (18 ms) carte 53 photos + 300 positions
+  2514.014  t0308031 suivi ok score 0.99 pos 37093,595 net 12 (19 ms) carte 53 photos + 300 positions
+  2514.253  envoyé lame_20261020_123025_moelle-2_0135.jpg (465 ko)
+  2514.359  t0308376 suivi ok score 0.99 pos 36723,595 net 13 (15 ms) carte 53 photos + 300 positions
+  2514.689  t0308704 suivi ok score 0.99 pos 36232,595 net 12 (21 ms) carte 53 photos + 300 positions
+  2515.034  t0309050 suivi ok score 0.99 pos 35970,595 net 12 (29 ms) carte 53 photos + 300 positions
+  2515.355  t0309370 suivi ok score 1.00 pos 35970,595 net 12 (18 ms) carte 53 photos + 300 positions
+  2515.358  envoyé lame_20261020_123025_moelle-2_0136.jpg (461 ko)
+  2515.518  photo e-2_0140 à 35970,595 (453 ko, 239 ms)
+  2515.674  t0309690 suivi ok score 1.00 pos 35970,595 net 13 (13 ms) carte 54 photos + 300 positions
+  2516.017  t0310034 suivi ok score 1.00 pos 35970,595 net 13 (14 ms) carte 54 photos + 300 positions
+  2516.361  t0310377 suivi ok score 0.99 pos 35970,595 net 12 (25 ms) carte 54 photos + 300 positions
+  2516.508  envoyé lame_20261020_123025_moelle-2_0137.jpg (459 ko)
+  2516.681  t0310698 suivi ok score 1.00 pos 35910,595 net 12 (16 ms) carte 54 photos + 300 positions
+  2517.014  t0311030 suivi ok score 0.99 pos 35742,595 net 12 (17 ms) carte 54 photos + 300 positions
+  2517.362  t0311378 suivi ok score 1.00 pos 35539,595 net 12 (22 ms) carte 54 photos + 300 positions
+  2517.635  envoyé lame_20261020_123025_moelle-2_0138.jpg (455 ko)
+  2517.686  t0311703 suivi ok score 0.99 pos 35360,595 net 13 (11 ms) carte 54 photos + 300 positions
+  2518.017  t0312034 suivi ok score 1.00 pos 35264,595 net 13 (17 ms) carte 54 photos + 300 positions
+  2518.148  photo e-2_0141 à 35276,595 (454 ko, 226 ms)
+  2518.363  t0312378 suivi ok score 1.00 pos 35264,595 net 13 (28 ms) carte 55 photos + 300 positions
+  2518.684  t0312700 suivi ok score 1.00 pos 35240,595 net 13 (18 ms) carte 55 photos + 300 positions
+  2519.017  t0313033 suivi ok score 0.99 pos 34272,611 net 12 (16 ms) carte 55 photos + 300 positions
+  2519.320  envoyé lame_20261020_123025_moelle-2_0139.jpg (454 ko)
+  2519.347  t0313364 suivi ok score 1.00 pos 34165,611 net 14 (12 ms) carte 55 photos + 300 positions
+  2519.671  t0313688 suivi ok score 1.00 pos 34165,611 net 14 (11 ms) carte 55 photos + 300 positions
+  2519.694  photo e-2_0142 à 34165,611 (464 ko, 208 ms)
+  2520.017  t0314034 suivi ok score 1.00 pos 34165,611 net 10 (19 ms) carte 56 photos + 300 positions
+  2520.364  t0314379 suivi ok score 1.00 pos 34165,611 net 14 (24 ms) carte 56 photos + 300 positions
+  2520.503  envoyé lame_20261020_123025_moelle-2_0140.jpg (453 ko)
+  2520.686  t0314702 suivi ok score 1.00 pos 34165,611 net 14 (17 ms) carte 56 photos + 300 positions
+  2521.032  t0315048 suivi ok score 0.99 pos 34093,611 net 14 (26 ms) carte 56 photos + 300 positions
+  2521.360  t0315376 suivi ok score 1.00 pos 33663,611 net 13 (21 ms) carte 56 photos + 300 positions
+  2521.595  envoyé lame_20261020_123025_moelle-2_0141.jpg (454 ko)
+  2521.675  t0315691 suivi ok score 1.00 pos 33567,611 net 14 (12 ms) carte 56 photos + 300 positions
+  2522.012  t0316028 suivi ok score 1.00 pos 33567,611 net 14 (17 ms) carte 56 photos + 300 positions
+  2522.076  photo e-2_0143 à 33567,611 (457 ko, 225 ms)
+  2522.350  t0316367 suivi ok score 0.99 pos 33567,611 net 14 (13 ms) carte 57 photos + 300 positions
+  2522.708  t0316723 suivi ok score 0.99 pos 33519,611 net 13 (31 ms) carte 57 photos + 300 positions
+  2523.009  t0317026 suivi ok score 0.99 pos 33400,611 net 13 (12 ms) carte 57 photos + 300 positions
+  2523.094  photo e-2_0144 à 33447,611 (453 ko, 213 ms)
+  2523.350  t0317366 suivi ok score 0.99 pos 33184,611 net 13 (16 ms) carte 58 photos + 300 positions
+  2523.679  t0317695 suivi ok score 1.00 pos 33149,611 net 13 (15 ms) carte 58 photos + 300 positions
+  2523.704  envoyé lame_20261020_123025_moelle-2_0142.jpg (464 ko)
+  2523.966  photo e-2_0145 à 33149,611 (454 ko, 218 ms)
+  2524.014  t0318031 suivi ok score 0.99 pos 33089,611 net 13 (17 ms) carte 59 photos + 300 positions
+  2524.373  t0318389 suivi ok score 1.00 pos 33089,611 net 13 (26 ms) carte 59 photos + 300 positions
+  2524.705  t0318721 suivi ok score 1.00 pos 33089,611 net 14 (21 ms) carte 59 photos + 300 positions
+  2525.014  t0319031 suivi ok score 1.00 pos 33089,611 net 14 (16 ms) carte 59 photos + 300 positions
+  2525.052  envoyé lame_20261020_123025_moelle-2_0143.jpg (457 ko)
+  2525.350  t0319366 suivi ok score 0.99 pos 33089,611 net 14 (15 ms) carte 59 photos + 300 positions
+  2525.679  t0319695 suivi ok score 0.99 pos 32658,611 net 12 (13 ms) carte 59 photos + 300 positions
+  2526.019  t0320036 suivi ok score 0.99 pos 32168,611 net 12 (16 ms) carte 59 photos + 300 positions
+  2526.354  t0320371 suivi ok score 0.99 pos 31965,611 net 12 (16 ms) carte 59 photos + 300 positions
+  2526.709  t0320724 suivi ok score 0.99 pos 31870,611 net 12 (30 ms) carte 59 photos + 300 positions
+  2526.934  photo e-2_0146 à 31870,611 (434 ko, 224 ms)
+  2527.010  t0321027 suivi ok score 1.00 pos 31774,611 net 12 (10 ms) carte 60 photos + 300 positions
+  2527.362  t0321378 suivi ok score 1.00 pos 31774,611 net 12 (23 ms) carte 60 photos + 300 positions
+  2527.690  t0321705 suivi ok score 1.00 pos 31774,611 net 12 (18 ms) carte 60 photos + 300 positions
+  2528.027  t0322042 suivi ok score 1.00 pos 31774,611 net 12 (20 ms) carte 60 photos + 300 positions
+  2528.360  t0322376 suivi ok score 1.00 pos 31774,611 net 12 (19 ms) carte 60 photos + 300 positions
+  2528.425  envoyé lame_20261020_123025_moelle-2_0144.jpg (453 ko)
+  2528.694  t0322710 suivi ok score 1.00 pos 31774,611 net 12 (22 ms) carte 60 photos + 300 positions
+  2529.024  t0323040 suivi ok score 1.00 pos 31774,611 net 12 (19 ms) carte 60 photos + 300 positions
+  2529.353  t0323369 suivi ok score 1.00 pos 31774,611 net 12 (15 ms) carte 60 photos + 300 positions
+  2529.474  envoyé lame_20261020_123025_moelle-2_0145.jpg (454 ko)
+  2529.684  t0323700 suivi ok score 1.00 pos 31774,611 net 12 (14 ms) carte 60 photos + 300 positions
+  2530.028  t0324043 suivi ok score 1.00 pos 31774,611 net 12 (22 ms) carte 60 photos + 300 positions
+  2530.354  t0324371 suivi ok score 1.00 pos 31774,611 net 11 (18 ms) carte 60 photos + 300 positions
+  2530.694  t0324710 suivi ok score 1.00 pos 31774,611 net 12 (23 ms) carte 60 photos + 300 positions
+  2531.014  t0325031 suivi ok score 1.00 pos 31774,611 net 12 (13 ms) carte 60 photos + 300 positions
+  2531.268  envoyé lame_20261020_123025_moelle-2_0146.jpg (434 ko)
+  2531.364  t0325380 suivi ok score 1.00 pos 31774,611 net 12 (26 ms) carte 60 photos + 300 positions
+  2531.687  t0325703 suivi ok score 1.00 pos 31774,611 net 11 (18 ms) carte 60 photos + 300 positions
+  2532.033  t0326048 suivi ok score 1.00 pos 31774,611 net 12 (24 ms) carte 60 photos + 300 positions
+  2532.354  t0326370 suivi ok score 1.00 pos 31774,611 net 12 (17 ms) carte 60 photos + 300 positions
+  2532.690  t0326706 suivi ok score 1.00 pos 31774,611 net 12 (21 ms) carte 60 photos + 300 positions
+  2533.037  t0327053 suivi ok score 1.00 pos 31774,611 net 12 (27 ms) carte 60 photos + 300 positions
+  2533.359  t0327375 suivi ok score 1.00 pos 31774,611 net 12 (20 ms) carte 60 photos + 300 positions
+  2533.681  t0327698 suivi ok score 1.00 pos 31774,611 net 12 (13 ms) carte 60 photos + 300 positions
+  2534.027  t0328043 suivi ok score 1.00 pos 31774,611 net 12 (19 ms) carte 60 photos + 300 positions
+  2534.356  t0328372 suivi ok score 1.00 pos 31774,611 net 12 (18 ms) carte 60 photos + 300 positions
+  2534.705  t0328720 suivi ok score 1.00 pos 31774,611 net 12 (27 ms) carte 60 photos + 300 positions
+  2535.043  t0329059 suivi ok score 1.00 pos 31774,611 net 11 (27 ms) carte 60 photos + 300 positions
+  2535.356  t0329373 suivi ok score 1.00 pos 31774,611 net 12 (15 ms) carte 60 photos + 300 positions
+  2535.701  t0329716 suivi ok score 1.00 pos 31774,611 net 12 (27 ms) carte 60 photos + 300 positions
+  2536.034  t0330050 suivi ok score 1.00 pos 31774,611 net 12 (24 ms) carte 60 photos + 300 positions
+  2536.351  t0330368 suivi ok score 1.00 pos 31774,611 net 12 (12 ms) carte 60 photos + 300 positions
+  2536.683  t0330700 suivi ok score 1.00 pos 31774,611 net 12 (13 ms) carte 60 photos + 300 positions
+  2537.022  t0331039 suivi ok score 1.00 pos 31774,611 net 12 (18 ms) carte 60 photos + 300 positions
+  2537.352  t0331368 suivi ok score 1.00 pos 31774,611 net 12 (16 ms) carte 60 photos + 300 positions
+  2537.707  t0331722 suivi ok score 1.00 pos 31774,611 net 12 (26 ms) carte 60 photos + 300 positions
+  2538.027  t0332043 suivi ok score 1.00 pos 31774,611 net 12 (21 ms) carte 60 photos + 300 positions
+  2538.357  t0332373 suivi ok score 1.00 pos 31774,611 net 12 (15 ms) carte 60 photos + 300 positions
+  2538.698  t0332713 suivi ok score 1.00 pos 31774,611 net 12 (20 ms) carte 60 photos + 300 positions
+  2539.021  t0333038 suivi ok score 1.00 pos 31774,611 net 12 (18 ms) carte 60 photos + 300 positions
+  2539.366  t0333382 suivi ok score 1.00 pos 31774,611 net 12 (26 ms) carte 60 photos + 300 positions
+  2539.698  t0333713 suivi ok score 1.00 pos 31774,611 net 12 (24 ms) carte 60 photos + 300 positions
+  2540.020  t0334036 suivi ok score 1.00 pos 31774,611 net 12 (13 ms) carte 60 photos + 300 positions
+  2540.362  t0334378 suivi ok score 1.00 pos 31774,611 net 12 (20 ms) carte 60 photos + 300 positions
+  2540.691  t0334707 suivi ok score 1.00 pos 31774,611 net 12 (18 ms) carte 60 photos + 300 positions
+  2541.029  t0335045 suivi ok score 1.00 pos 31774,611 net 12 (21 ms) carte 60 photos + 300 positions
+  2541.370  t0335385 suivi ok score 1.00 pos 31774,611 net 12 (25 ms) carte 60 photos + 300 positions
+  2541.689  t0335704 suivi ok score 1.00 pos 31774,611 net 12 (15 ms) carte 60 photos + 300 positions
+  2542.014  t0336031 suivi ok score 0.99 pos 31774,611 net 12 (11 ms) carte 60 photos + 300 positions
+  2542.357  t0336373 suivi ok score 1.00 pos 31774,611 net 12 (17 ms) carte 60 photos + 300 positions
+  2542.687  t0336704 suivi ok score 0.98 pos 31774,611 net 12 (15 ms) carte 60 photos + 300 positions
+  2543.030  t0337045 suivi ok score 1.00 pos 31774,611 net 12 (23 ms) carte 60 photos + 300 positions
+  2543.377  t0337392 suivi ok score 0.99 pos 31774,611 net 12 (26 ms) carte 60 photos + 300 positions
+  2543.680  photo e-2_0147 à 31750,611 (443 ko, 213 ms)
+  2543.690  t0337706 suivi ok score 0.98 pos 31224,627 net 7 (18 ms) carte 61 photos + 300 positions
+  2544.010  t0338027 suivi ok score 1.00 pos 30244,659 net 10 (11 ms) carte 61 photos + 300 positions
+  2544.357  t0338373 suivi ok score 1.00 pos 30244,659 net 10 (19 ms) carte 61 photos + 300 positions
+  2544.612  photo e-2_0148 à 30244,659 (417 ko, 226 ms)
+  2544.692  t0338708 suivi ok score 1.00 pos 30244,659 net 9 (20 ms) carte 62 photos + 300 positions
+  2545.041  t0339056 suivi ok score 1.00 pos 30244,659 net 9 (27 ms) carte 62 photos + 300 positions
+  2545.208  envoyé lame_20261020_123025_moelle-2_0147.jpg (443 ko)
+  2545.358  t0339375 suivi ok score 1.00 pos 30244,659 net 10 (23 ms) carte 62 photos + 300 positions
+  2545.695  t0339710 suivi ok score 0.99 pos 30029,659 net 10 (20 ms) carte 62 photos + 300 positions
+  2546.039  t0340055 suivi ok score 0.98 pos 29073,691 net 11 (28 ms) carte 62 photos + 300 positions
+  2546.361  t0340377 suivi ok score 1.00 pos 28833,691 net 12 (20 ms) carte 62 photos + 300 positions
+  2546.690  t0340706 suivi ok score 1.00 pos 28845,691 net 11 (17 ms) carte 62 photos + 300 positions
+  2546.909  photo e-2_0149 à 28845,691 (430 ko, 218 ms)
+  2547.018  t0341034 suivi ok score 1.00 pos 28845,691 net 11 (15 ms) carte 63 photos + 300 positions
+  2547.354  t0341370 suivi ok score 1.00 pos 28845,691 net 8 (18 ms) carte 63 photos + 300 positions
+  2547.696  t0341712 suivi ok score 1.00 pos 28845,691 net 12 (15 ms) carte 63 photos + 300 positions
+  2548.043  t0342059 suivi ok score 1.00 pos 28845,691 net 12 (28 ms) carte 63 photos + 300 positions
+  2548.369  t0342384 suivi ok score 0.99 pos 28690,691 net 11 (26 ms) carte 63 photos + 300 positions
+  2548.369  envoyé lame_20261020_123025_moelle-2_0148.jpg (417 ko)
+  2548.686  t0342703 suivi ok score 1.00 pos 28355,691 net 11 (13 ms) carte 63 photos + 300 positions
+  2549.033  t0343048 suivi ok score 0.99 pos 28224,691 net 11 (19 ms) carte 63 photos + 300 positions
+  2549.357  t0343374 suivi ok score 0.98 pos 27566,707 net 9 (17 ms) carte 63 photos + 300 positions
+  2549.635  photo en mouvement lent (63 % du champ, 0 u/s)
+  2549.694  t0343710 suivi ok score 1.00 pos 26921,723 net 12 (16 ms) carte 63 photos + 300 positions
+  2549.740  envoyé lame_20261020_123025_moelle-2_0149.jpg (430 ko)
+  2549.837  photo e-2_0150 à 26921,723 (438 ko, 202 ms)
+  2550.016  t0344033 suivi ok score 1.00 pos 26921,723 net 12 (14 ms) carte 64 photos + 300 positions
+  2550.360  t0344377 suivi ok score 1.00 pos 26921,723 net 11 (21 ms) carte 64 photos + 300 positions
+  2550.688  t0344705 suivi ok score 1.00 pos 26921,723 net 12 (11 ms) carte 64 photos + 300 positions
+  2551.030  t0345047 suivi ok score 0.99 pos 26825,723 net 12 (16 ms) carte 64 photos + 300 positions
+  2551.182  envoyé lame_20261020_123025_moelle-2_0150.jpg (438 ko)
+  2551.360  t0345376 suivi ok score 0.99 pos 26455,723 net 11 (19 ms) carte 64 photos + 300 positions
+  2551.703  t0345718 suivi ok score 1.00 pos 26156,723 net 11 (23 ms) carte 64 photos + 300 positions
+  2552.036  t0346052 suivi ok score 0.99 pos 25965,723 net 11 (26 ms) carte 64 photos + 300 positions
+  2552.362  t0346377 suivi ok score 1.00 pos 25881,723 net 11 (15 ms) carte 64 photos + 300 positions
+  2552.653  photo e-2_0151 à 25881,723 (423 ko, 219 ms)
+  2552.685  t0346702 suivi ok score 1.00 pos 25881,723 net 10 (11 ms) carte 65 photos + 300 positions
+  2553.024  t0347040 suivi ok score 1.00 pos 25881,723 net 11 (22 ms) carte 65 photos + 300 positions
+  2553.368  t0347383 suivi ok score 1.00 pos 25762,723 net 12 (21 ms) carte 65 photos + 300 positions
+  2553.682  t0347699 suivi ok score 0.99 pos 25594,723 net 12 (12 ms) carte 65 photos + 300 positions
+  2554.039  t0348055 suivi ok score 0.99 pos 25463,723 net 12 (26 ms) carte 65 photos + 300 positions
+  2554.335  envoyé lame_20261020_123025_moelle-2_0151.jpg (423 ko)
+  2554.369  t0348386 suivi ok score 0.99 pos 25224,723 net 13 (21 ms) carte 65 photos + 300 positions
+  2554.689  t0348705 suivi ok score 0.99 pos 24841,723 net 13 (15 ms) carte 65 photos + 300 positions
+  2555.024  t0349041 suivi ok score 1.00 pos 24841,723 net 12 (16 ms) carte 65 photos + 300 positions
+  2555.185  photo e-2_0152 à 24841,723 (442 ko, 231 ms)
+  2555.371  t0349386 suivi ok score 1.00 pos 24841,723 net 12 (29 ms) carte 66 photos + 300 positions
+  2555.689  t0349705 suivi ok score 0.99 pos 24829,723 net 13 (15 ms) carte 66 photos + 300 positions
+  2556.028  t0350044 suivi ok score 0.98 pos 23992,754 net 11 (19 ms) carte 66 photos + 300 positions
+  2556.363  t0350378 suivi ok score 1.00 pos 23490,770 net 15 (18 ms) carte 66 photos + 300 positions
+  2556.470  envoyé lame_20261020_123025_moelle-2_0152.jpg (442 ko)
+  2556.683  t0350700 suivi ok score 1.00 pos 23490,770 net 14 (11 ms) carte 66 photos + 300 positions
+  2556.880  photo e-2_0153 à 23490,770 (461 ko, 228 ms)
+  2557.017  t0351034 suivi ok score 1.00 pos 23490,770 net 15 (15 ms) carte 67 photos + 300 positions
+  2557.377  t0351392 suivi ok score 1.00 pos 23467,770 net 15 (25 ms) carte 67 photos + 300 positions
+  2557.707  t0351723 suivi ok score 1.00 pos 23072,770 net 15 (25 ms) carte 67 photos + 300 positions
+  2558.033  t0352048 suivi ok score 0.99 pos 22833,770 net 15 (22 ms) carte 67 photos + 300 positions
+  2558.247  envoyé lame_20261020_123025_moelle-2_0153.jpg (461 ko)
+  2558.354  t0352370 suivi ok score 1.00 pos 22474,770 net 15 (12 ms) carte 67 photos + 300 positions
+  2558.710  t0352726 suivi ok score 1.00 pos 22259,770 net 15 (27 ms) carte 67 photos + 300 positions
+  2559.035  t0353050 suivi ok score 1.00 pos 22259,770 net 14 (22 ms) carte 67 photos + 300 positions
+  2559.209  photo e-2_0154 à 22259,770 (460 ko, 219 ms)
+  2559.358  t0353375 suivi ok score 1.00 pos 22259,770 net 14 (20 ms) carte 68 photos + 300 positions
+  2559.704  t0353720 suivi ok score 0.99 pos 22259,770 net 14 (18 ms) carte 68 photos + 300 positions
+  2560.032  t0354049 suivi ok score 0.99 pos 21996,770 net 15 (19 ms) carte 68 photos + 300 positions
+  2560.364  t0354379 suivi ok score 1.00 pos 21590,770 net 15 (21 ms) carte 68 photos + 300 positions
+  2560.460  envoyé lame_20261020_123025_moelle-2_0154.jpg (460 ko)
+  2560.699  t0354714 suivi ok score 1.00 pos 21470,770 net 14 (17 ms) carte 68 photos + 300 positions
+  2561.021  t0355038 suivi ok score 1.00 pos 21470,770 net 14 (14 ms) carte 68 photos + 300 positions
+  2561.125  photo e-2_0155 à 21470,770 (461 ko, 249 ms)
+  2561.364  t0355380 suivi ok score 1.00 pos 21470,770 net 14 (19 ms) carte 69 photos + 300 positions
+  2561.697  t0355713 suivi ok score 1.00 pos 21375,770 net 15 (18 ms) carte 69 photos + 300 positions
+  2562.035  t0356050 suivi ok score 0.99 pos 20562,802 net 12 (22 ms) carte 69 photos + 300 positions
+  2562.367  t0356383 suivi ok score 1.00 pos 20132,802 net 14 (21 ms) carte 69 photos + 300 positions
+  2562.704  t0356721 suivi ok score 1.00 pos 20132,802 net 13 (19 ms) carte 69 photos + 300 positions
+  2562.839  photo e-2_0156 à 20132,802 (460 ko, 212 ms)
+  2563.030  t0357045 suivi ok score 1.00 pos 20132,802 net 14 (18 ms) carte 70 photos + 300 positions
+  2563.112  envoyé lame_20261020_123025_moelle-2_0155.jpg (461 ko)
+  2563.367  t0357383 suivi ok score 0.99 pos 20048,802 net 14 (19 ms) carte 70 photos + 300 positions
+  2563.693  t0357709 suivi ok score 0.99 pos 19606,802 net 14 (18 ms) carte 70 photos + 300 positions
+  2564.029  t0358046 suivi ok score 0.99 pos 18900,802 net 14 (16 ms) carte 70 photos + 300 positions
+  2564.360  t0358376 suivi ok score 1.00 pos 18877,802 net 14 (15 ms) carte 70 photos + 300 positions
+  2564.674  photo e-2_0157 à 18877,802 (465 ko, 198 ms)
+  2564.695  t0358712 suivi ok score 1.00 pos 18877,802 net 15 (19 ms) carte 71 photos + 300 positions
+  2565.022  t0359038 suivi ok score 0.99 pos 18877,802 net 15 (13 ms) carte 71 photos + 300 positions
+  2565.357  t0359374 suivi ok score 0.99 pos 18064,850 net 15 (15 ms) carte 71 photos + 300 positions
+  2565.709  t0359724 suivi ok score 1.00 pos 17980,850 net 15 (26 ms) carte 71 photos + 300 positions
+  2566.018  photo e-2_0158 à 17980,850 (468 ko, 209 ms)
+  2566.034  t0360050 suivi ok score 1.00 pos 17980,850 net 15 (18 ms) carte 72 photos + 300 positions
+  2566.220  envoyé lame_20261020_123025_moelle-2_0156.jpg (460 ko)
+  2566.360  t0360376 suivi ok score 1.00 pos 17980,850 net 13 (15 ms) carte 72 photos + 300 positions
+  2566.697  t0360712 suivi ok score 1.00 pos 17980,850 net 16 (19 ms) carte 72 photos + 300 positions
+  2567.031  t0361046 suivi ok score 1.00 pos 17980,850 net 16 (19 ms) carte 72 photos + 300 positions
+  2567.368  t0361383 suivi ok score 0.99 pos 17872,850 net 14 (18 ms) carte 72 photos + 300 positions
+  2567.393  envoyé lame_20261020_123025_moelle-2_0157.jpg (465 ko)
+  2567.701  t0361716 suivi ok score 0.99 pos 17299,850 net 14 (18 ms) carte 72 photos + 300 positions
+  2568.028  t0362043 suivi ok score 1.00 pos 17048,850 net 15 (17 ms) carte 72 photos + 300 positions
+  2568.381  t0362396 suivi ok score 1.00 pos 17048,850 net 15 (25 ms) carte 72 photos + 300 positions
+  2568.472  photo e-2_0159 à 17048,850 (463 ko, 212 ms)
+  2568.698  t0362714 suivi ok score 1.00 pos 17048,850 net 15 (18 ms) carte 73 photos + 300 positions
+  2569.030  t0363046 suivi ok score 0.99 pos 17012,850 net 14 (17 ms) carte 73 photos + 300 positions
+  2569.367  t0363383 suivi ok score 0.99 pos 15613,930 net 9 (18 ms) carte 73 photos + 300 positions
+  2569.589  photo en mouvement lent (78 % du champ, 31 u/s)
+  2569.589  ATTENTION pas trop grand (78 % du champ) : recouvrement insuffisant
+  2569.690  t0363706 suivi ok score 1.00 pos 14669,994 net 15 (13 ms) carte 73 photos + 300 positions
+  2569.800  envoyé lame_20261020_123025_moelle-2_0158.jpg (468 ko)
+  2569.821  photo e-2_0160 à 14669,994 (470 ko, 232 ms)
+  2570.031  t0364048 suivi ok score 1.00 pos 14669,994 net 15 (22 ms) carte 74 photos + 300 positions
+  2570.382  t0364398 suivi ok score 1.00 pos 14669,994 net 15 (27 ms) carte 74 photos + 300 positions
+  2570.709  t0364724 suivi ok score 1.00 pos 14681,994 net 15 (23 ms) carte 74 photos + 300 positions
+  2571.039  t0365054 suivi ok score 1.00 pos 14681,994 net 13 (25 ms) carte 74 photos + 300 positions
+  2571.120  envoyé lame_20261020_123025_moelle-2_0159.jpg (463 ko)
+  2571.360  t0365377 suivi ok score 1.00 pos 14681,994 net 15 (14 ms) carte 74 photos + 300 positions
+  2571.704  t0365719 suivi ok score 1.00 pos 14645,994 net 14 (20 ms) carte 74 photos + 300 positions
+  2572.022  t0366039 suivi ok score 0.98 pos 13725,994 net 11 (13 ms) carte 74 photos + 300 positions
+  2572.335  photo en mouvement lent (59 % du champ, 30 u/s)
+  2572.368  t0366384 suivi ok score 1.00 pos 12852,1041 net 16 (15 ms) carte 74 photos + 300 positions
+  2572.560  photo e-2_0161 à 12852,1041 (493 ko, 224 ms)
+  2572.695  t0366711 suivi ok score 1.00 pos 12852,1041 net 18 (15 ms) carte 75 photos + 300 positions
+  2573.025  t0367042 suivi ok score 1.00 pos 12852,1041 net 19 (12 ms) carte 75 photos + 300 positions
+  2573.372  t0367387 suivi ok score 1.00 pos 12840,1041 net 17 (19 ms) carte 75 photos + 300 positions
+  2573.697  t0367713 suivi ok score 0.98 pos 11286,1153 net 14 (20 ms) carte 75 photos + 300 positions
+  2573.788  envoyé lame_20261020_123025_moelle-2_0160.jpg (470 ko)
+  2573.799  photo en mouvement lent (54 % du champ, 0 u/s)
+  2574.025  photo e-2_0162 à 11191,1153 (472 ko, 226 ms)
+  2574.029  t0368045 suivi ok score 1.00 pos 11191,1153 net 16 (19 ms) carte 76 photos + 300 positions
+  2574.365  t0368382 suivi ok score 1.00 pos 11191,1153 net 17 (21 ms) carte 76 photos + 300 positions
+  2574.714  t0368730 suivi ok score 0.99 pos 11191,1153 net 16 (26 ms) carte 76 photos + 300 positions
+  2575.015  envoyé lame_20261020_123025_moelle-2_0161.jpg (493 ko)
+  2575.028  t0369045 suivi ok score 0.97 pos 9601,1264 net 12 (14 ms) carte 76 photos + 300 positions
+  2575.164  photo en mouvement lent (59 % du champ, 0 u/s)
+  2575.374  t0369390 suivi ok score 1.00 pos 9374,1264 net 15 (26 ms) carte 76 photos + 300 positions
+  2575.390  photo e-2_0163 à 9374,1264 (462 ko, 225 ms)
+  2575.691  t0369708 suivi ok score 1.00 pos 9374,1264 net 16 (14 ms) carte 77 photos + 300 positions
+  2576.024  t0370041 suivi ok score 1.00 pos 9362,1264 net 15 (15 ms) carte 77 photos + 300 positions
+  2576.362  t0370378 suivi ok score 0.98 pos 7904,1344 net 13 (15 ms) carte 77 photos + 300 positions
+  2576.533  photo en mouvement lent (56 % du champ, 30 u/s)
+  2576.696  t0370712 suivi ok score 1.00 pos 7676,1344 net 16 (18 ms) carte 77 photos + 300 positions
+  2576.755  photo e-2_0164 à 7676,1344 (480 ko, 221 ms)
+  2576.758  envoyé lame_20261020_123025_moelle-2_0162.jpg (472 ko)
+  2577.027  t0371044 suivi ok score 1.00 pos 7676,1344 net 16 (17 ms) carte 78 photos + 300 positions
+  2577.372  t0371388 suivi ok score 0.99 pos 7569,1344 net 14 (23 ms) carte 78 photos + 300 positions
+  2577.695  t0371712 suivi ok score 0.99 pos 5979,1440 net 15 (17 ms) carte 78 photos + 300 positions
+  2577.728  photo en mouvement lent (56 % du champ, 30 u/s)
+  2577.957  photo e-2_0165 à 5967,1440 (475 ko, 229 ms)
+  2577.969  envoyé lame_20261020_123025_moelle-2_0163.jpg (462 ko)
+  2578.027  t0372044 suivi ok score 1.00 pos 5967,1440 net 15 (15 ms) carte 79 photos + 300 positions
+  2578.364  t0372381 suivi ok score 1.00 pos 5967,1440 net 15 (20 ms) carte 79 photos + 300 positions
+  2578.701  t0372718 suivi ok score 0.99 pos 5704,1440 net 13 (23 ms) carte 79 photos + 300 positions
+  2579.034  t0373050 suivi ok score 0.99 pos 5226,1440 net 13 (20 ms) carte 79 photos + 300 positions
+  2579.366  t0373383 suivi ok score 1.00 pos 5011,1440 net 13 (17 ms) carte 79 photos + 300 positions
+  2579.705  t0373721 suivi ok score 1.00 pos 4700,1472 net 15 (21 ms) carte 79 photos + 300 positions
+  2580.037  t0374053 suivi ok score 1.00 pos 4700,1472 net 15 (19 ms) carte 79 photos + 300 positions
+  2580.182  photo e-2_0166 à 4700,1472 (468 ko, 217 ms)
+  2580.380  t0374396 suivi ok score 0.99 pos 4557,1472 net 13 (33 ms) carte 80 photos + 300 positions
+  2580.701  t0374718 suivi ok score 0.99 pos 3816,1472 net 13 (21 ms) carte 80 photos + 300 positions
+  2581.031  t0375047 suivi ok score 1.00 pos 3577,1472 net 13 (17 ms) carte 80 photos + 300 positions
+  2581.365  t0375381 suivi ok score 1.00 pos 3577,1472 net 15 (16 ms) carte 80 photos + 300 positions
+  2581.515  photo e-2_0167 à 3577,1472 (478 ko, 216 ms)
+  2581.710  t0375725 suivi ok score 1.00 pos 3577,1472 net 15 (29 ms) carte 81 photos + 300 positions
+  2581.803  envoyé lame_20261020_123025_moelle-2_0164.jpg (480 ko)
+  2582.041  t0376058 suivi ok score 0.98 pos 2800,1488 net 9 (15 ms) carte 81 photos + 300 positions
+  2582.313  photo en mouvement lent (52 % du champ, 30 u/s)
+  2582.362  t0376379 suivi ok score 1.00 pos 1999,1551 net 14 (11 ms) carte 81 photos + 300 positions
+  2582.531  photo e-2_0168 à 1999,1551 (470 ko, 218 ms)
+  2582.706  t0376722 suivi ok score 1.00 pos 1999,1551 net 15 (25 ms) carte 82 photos + 300 positions
+  2583.036  t0377052 suivi ok score 1.00 pos 1999,1551 net 15 (18 ms) carte 82 photos + 300 positions
+  2583.385  t0377401 suivi ok score 1.00 pos 1999,1551 net 14 (26 ms) carte 82 photos + 300 positions
+  2583.422  envoyé lame_20261020_123025_moelle-2_0165.jpg (475 ko)
+  2583.693  t0377710 suivi ok score 0.97 pos 1150,1599 net 9 (14 ms) carte 82 photos + 300 positions
+  2584.045  t0378062 suivi ok score 1.00 pos 923,1599 net 14 (25 ms) carte 82 photos + 300 positions
+  2584.385  t0378400 suivi ok score 1.00 pos 923,1599 net 14 (27 ms) carte 82 photos + 300 positions
+  2584.478  photo e-2_0169 à 923,1599 (457 ko, 202 ms)
+  2584.634  envoyé lame_20261020_123025_moelle-2_0166.jpg (468 ko)
+  2584.692  t0378709 suivi ok score 1.00 pos 923,1599 net 13 (11 ms) carte 83 photos + 300 positions
+  2585.038  t0379054 suivi ok score 0.99 pos 839,1599 net 12 (22 ms) carte 83 photos + 300 positions
+  2585.370  t0379386 suivi ok score 0.99 pos 349,1599 net 12 (16 ms) carte 83 photos + 300 positions
+  2585.702  t0379718 suivi ok score 0.99 pos 301,1599 net 12 (17 ms) carte 83 photos + 300 positions
+  2586.007  photo e-2_0170 à 289,1599 (450 ko, 236 ms)
+  2586.035  t0380052 suivi ok score 1.00 pos 254,1599 net 13 (13 ms) carte 84 photos + 300 positions
+  2586.361  t0380377 suivi ok score 1.00 pos 254,1599 net 14 (15 ms) carte 84 photos + 300 positions
+  2586.707  t0380723 suivi ok score 1.00 pos 254,1599 net 14 (22 ms) carte 84 photos + 300 positions
+  2587.050  t0381065 suivi ok score 1.00 pos 254,1599 net 14 (27 ms) carte 84 photos + 300 positions
+  2587.371  t0381386 suivi ok score 1.00 pos 254,1599 net 14 (19 ms) carte 84 photos + 300 positions
+  2587.579  envoyé lame_20261020_123025_moelle-2_0167.jpg (478 ko)
+  2587.699  t0381715 suivi ok score 1.00 pos 254,1599 net 13 (15 ms) carte 84 photos + 300 positions
+  2588.035  t0382051 suivi ok score 1.00 pos 254,1759 net 14 (16 ms) carte 84 photos + 300 positions
+  2588.375  t0382391 suivi ok score 0.99 pos 254,1774 net 14 (20 ms) carte 84 photos + 300 positions
+  2588.510  photo e-2_0171 à 254,1774 (456 ko, 211 ms)
+  2588.698  t0382714 suivi ok score 0.98 pos 254,2109 net 14 (19 ms) carte 85 photos + 300 positions
+  2589.030  t0383046 suivi ok score 0.99 pos 254,2667 net 14 (15 ms) carte 85 photos + 300 positions
+  2589.277  envoyé lame_20261020_123025_moelle-2_0168.jpg (470 ko)
+  2589.364  t0383380 suivi ok score 1.00 pos 254,2986 net 15 (17 ms) carte 85 photos + 300 positions
+  2589.707  t0383722 suivi ok score 0.99 pos 254,3496 net 15 (20 ms) carte 85 photos + 300 positions
+  2590.028  t0384045 suivi ok score 0.99 pos 254,3974 net 15 (15 ms) carte 85 photos + 300 positions
+  2590.261  photo en mouvement lent (63 % du champ, 31 u/s)
+  2590.370  t0384386 suivi ok score 0.99 pos 254,4388 net 14 (17 ms) carte 85 photos + 300 positions
+  2590.453  photo e-2_0172 à 254,4356 (463 ko, 191 ms)
+  2590.662  envoyé lame_20261020_123025_moelle-2_0169.jpg (457 ko)
+  2590.704  t0384720 suivi ok score 1.00 pos 254,4388 net 14 (17 ms) carte 86 photos + 300 positions
+  2591.033  t0385049 suivi ok score 1.00 pos 254,4388 net 15 (17 ms) carte 86 photos + 300 positions
+  2591.365  t0385382 suivi ok score 1.00 pos 254,4388 net 14 (14 ms) carte 86 photos + 300 positions
+  2591.702  t0385718 suivi ok score 0.99 pos 254,4388 net 14 (20 ms) carte 86 photos + 300 positions
+  2592.022  t0386039 suivi ok score 0.99 pos 421,4388 net 14 (11 ms) carte 86 photos + 300 positions
+  2592.139  envoyé lame_20261020_123025_moelle-2_0170.jpg (450 ko)
+  2592.365  t0386382 suivi ok score 0.99 pos 2106,4293 net 9 (18 ms) carte 86 photos + 300 positions
+  2592.531  photo en mouvement lent (75 % du champ, 31 u/s)
+  2592.531  ATTENTION pas trop grand (75 % du champ) : recouvrement insuffisant
+  2592.697  t0386712 suivi ok score 1.00 pos 2561,4261 net 14 (17 ms) carte 86 photos + 300 positions
+  2592.752  photo e-2_0173 à 2561,4261 (460 ko, 220 ms)
+  2593.036  t0387053 suivi ok score 1.00 pos 2561,4261 net 14 (15 ms) carte 87 photos + 300 positions
+  2593.373  t0387389 suivi ok score 1.00 pos 2561,4261 net 14 (18 ms) carte 87 photos + 300 positions
+  2593.697  t0387714 suivi ok score 1.00 pos 2537,4261 net 14 (16 ms) carte 87 photos + 300 positions
+  2594.044  t0388060 suivi ok score 1.00 pos 2537,4261 net 14 (21 ms) carte 87 photos + 300 positions
+  2594.048  envoyé lame_20261020_123025_moelle-2_0171.jpg (456 ko)
+  2594.355  t0388373 suivi ok score 0.99 pos 2644,4261 net 14 (12 ms) carte 87 photos + 300 positions
+  2594.708  t0388724 suivi ok score 1.00 pos 2752,4261 net 13 (20 ms) carte 87 photos + 300 positions
+  2595.036  t0389051 suivi ok score 0.99 pos 2752,4261 net 14 (21 ms) carte 87 photos + 300 positions
+  2595.086  photo e-2_0174 à 2752,4261 (459 ko, 211 ms)
+  2595.375  t0389391 suivi ok score 0.99 pos 3529,4197 net 9 (20 ms) carte 88 photos + 300 positions
+  2595.705  t0389721 suivi ok score 1.00 pos 3875,4181 net 13 (18 ms) carte 88 photos + 300 positions
+  2595.802  envoyé lame_20261020_123025_moelle-2_0172.jpg (463 ko)
+  2596.044  t0390061 suivi ok score 1.00 pos 3875,4181 net 13 (15 ms) carte 88 photos + 300 positions
+  2596.145  photo e-2_0175 à 3875,4181 (452 ko, 200 ms)
+  2596.365  t0390382 suivi ok score 1.00 pos 3875,4181 net 12 (15 ms) carte 89 photos + 300 positions
+  2596.705  t0390721 suivi ok score 0.97 pos 4413,4149 net 9 (24 ms) carte 89 photos + 300 positions
+  2597.036  t0391052 suivi ok score 1.00 pos 4413,4149 net 11 (18 ms) carte 89 photos + 300 positions
+  2597.049  envoyé lame_20261020_123025_moelle-2_0173.jpg (460 ko)
+  2597.314  photo e-2_0176 à 4413,4149 (432 ko, 218 ms)
+  2597.367  t0391385 suivi ok score 1.00 pos 4413,4149 net 11 (15 ms) carte 90 photos + 300 positions
+  2597.697  t0391713 suivi ok score 0.98 pos 4557,4149 net 9 (14 ms) carte 90 photos + 300 positions
+  2598.035  t0392051 suivi ok score 0.99 pos 5668,4085 net 10 (17 ms) carte 90 photos + 300 positions
+  2598.311  envoyé lame_20261020_123025_moelle-2_0174.jpg (459 ko)
+  2598.361  t0392378 suivi ok score 1.00 pos 5668,4085 net 10 (14 ms) carte 90 photos + 300 positions
+  2598.599  photo e-2_0177 à 5668,4085 (427 ko, 275 ms)
+  2598.695  t0392709 suivi ok score 1.00 pos 5668,4085 net 10 (11 ms) carte 91 photos + 300 positions
+  2599.027  t0393043 suivi ok score 1.00 pos 5668,4085 net 10 (12 ms) carte 91 photos + 300 positions
+  2599.375  t0393391 suivi ok score 1.00 pos 5668,4085 net 10 (17 ms) carte 91 photos + 300 positions
+  2599.451  envoyé lame_20261020_123025_moelle-2_0175.jpg (452 ko)
+  2599.694  t0393711 suivi ok score 1.00 pos 5668,4085 net 7 (12 ms) carte 91 photos + 300 positions
+  2600.034  t0394050 suivi ok score 1.00 pos 5668,4085 net 8 (14 ms) carte 91 photos + 300 positions
+  2600.372  t0394388 suivi ok score 1.00 pos 5668,4085 net 8 (19 ms) carte 91 photos + 300 positions
+  2600.607  envoyé lame_20261020_123025_moelle-2_0176.jpg (432 ko)
+  2600.695  t0394712 suivi ok score 1.00 pos 5668,4085 net 6 (13 ms) carte 91 photos + 300 positions
+  2601.044  t0395060 suivi ok score 1.00 pos 5668,4085 net 9 (21 ms) carte 91 photos + 300 positions
+  2601.370  t0395386 suivi ok score 1.00 pos 5668,4085 net 10 (17 ms) carte 91 photos + 300 positions
+  2601.702  t0395718 suivi ok score 1.00 pos 5668,4085 net 10 (17 ms) carte 91 photos + 300 positions
+  2602.037  t0396053 suivi ok score 0.98 pos 6876,4006 net 7 (16 ms) carte 91 photos + 300 positions
+  2602.366  t0396383 suivi ok score 1.00 pos 7115,4006 net 9 (16 ms) carte 91 photos + 300 positions
+  2602.714  t0396730 suivi ok score 1.00 pos 7115,4006 net 9 (18 ms) carte 91 photos + 300 positions
+  2602.789  photo e-2_0178 à 7115,4006 (419 ko, 219 ms)
+  2603.047  t0397063 suivi ok score 1.00 pos 7115,4006 net 9 (18 ms) carte 92 photos + 300 positions
+  2603.374  t0397390 suivi ok score 1.00 pos 7151,4006 net 10 (21 ms) carte 92 photos + 300 positions
+  2603.722  t0397738 suivi ok score 0.99 pos 7318,4006 net 10 (26 ms) carte 92 photos + 300 positions
+  2604.054  t0398069 suivi ok score 0.99 pos 7473,4006 net 10 (25 ms) carte 92 photos + 300 positions
+  2604.268  envoyé lame_20261020_123025_moelle-2_0177.jpg (427 ko)
+  2604.365  t0398382 suivi ok score 0.99 pos 7963,4006 net 10 (12 ms) carte 92 photos + 300 positions
+  2604.718  t0398734 suivi ok score 0.99 pos 8131,4006 net 11 (25 ms) carte 92 photos + 300 positions
+  2605.034  t0399050 suivi ok score 1.00 pos 8131,4006 net 10 (17 ms) carte 92 photos + 300 positions
+  2605.141  photo e-2_0179 à 8131,4006 (432 ko, 235 ms)
+  2605.371  t0399388 suivi ok score 1.00 pos 8119,4006 net 9 (16 ms) carte 93 photos + 300 positions
+  2605.683  envoyé lame_20261020_123025_moelle-2_0178.jpg (419 ko)
+  2605.706  t0399722 suivi ok score 1.00 pos 8167,4006 net 9 (16 ms) carte 93 photos + 300 positions
+  2606.047  t0400063 suivi ok score 0.99 pos 8394,4006 net 10 (23 ms) carte 93 photos + 300 positions
+  2606.373  t0400390 suivi ok score 0.98 pos 8884,4006 net 12 (17 ms) carte 93 photos + 300 positions
+  2606.699  t0400716 suivi ok score 0.99 pos 9087,4006 net 12 (12 ms) carte 93 photos + 300 positions
+  2607.045  t0401061 suivi ok score 0.99 pos 9374,4006 net 12 (21 ms) carte 93 photos + 300 positions
+  2607.373  t0401389 suivi ok score 1.00 pos 9374,4006 net 10 (18 ms) carte 93 photos + 300 positions
+  2607.617  photo e-2_0180 à 9374,4006 (436 ko, 198 ms)
+  2607.699  t0401715 suivi ok score 1.00 pos 9374,4006 net 10 (13 ms) carte 94 photos + 300 positions
+  2608.037  t0402053 suivi ok score 0.99 pos 9374,4006 net 11 (15 ms) carte 94 photos + 300 positions
+  2608.375  t0402391 suivi ok score 0.99 pos 9673,4006 net 12 (20 ms) carte 94 photos + 300 positions
+  2608.707  t0402723 suivi ok score 1.00 pos 9708,4006 net 12 (17 ms) carte 94 photos + 300 positions
+  2608.966  photo e-2_0181 à 9708,4006 (446 ko, 232 ms)
+  2609.002  envoyé lame_20261020_123025_moelle-2_0179.jpg (432 ko)
+  2609.038  t0403055 suivi ok score 0.99 pos 9697,4006 net 11 (15 ms) carte 95 photos + 300 positions
+  2609.373  t0403389 suivi ok score 1.00 pos 9697,4006 net 11 (17 ms) carte 95 photos + 300 positions
+  2609.709  t0403726 suivi ok score 0.99 pos 9936,4006 net 11 (17 ms) carte 95 photos + 300 positions
+  2610.043  t0404058 suivi ok score 0.99 pos 10211,4006 net 12 (21 ms) carte 95 photos + 300 positions
+  2610.351  envoyé lame_20261020_123025_moelle-2_0180.jpg (436 ko)
+  2610.384  t0404402 suivi ok score 1.00 pos 10211,4006 net 10 (13 ms) carte 95 photos + 300 positions
+  2610.598  photo e-2_0182 à 10211,4006 (431 ko, 213 ms)
+  2610.699  t0404716 suivi ok score 1.00 pos 10211,4006 net 10 (15 ms) carte 96 photos + 300 positions
+  2611.033  t0405050 suivi ok score 0.98 pos 10366,4006 net 8 (16 ms) carte 96 photos + 300 positions
+  2611.378  t0405394 suivi ok score 0.98 pos 10832,3990 net 11 (21 ms) carte 96 photos + 300 positions
+  2611.701  t0405717 suivi ok score 1.00 pos 10832,3990 net 10 (14 ms) carte 96 photos + 300 positions
+  2611.794  photo e-2_0183 à 10832,3990 (440 ko, 210 ms)
+  2612.051  t0406067 suivi ok score 1.00 pos 10832,3990 net 11 (26 ms) carte 97 photos + 300 positions
+  2612.205  envoyé lame_20261020_123025_moelle-2_0181.jpg (446 ko)
+  2612.381  t0406397 suivi ok score 1.00 pos 10892,3990 net 11 (24 ms) carte 97 photos + 300 positions
+  2612.702  t0406719 suivi ok score 0.97 pos 11191,3990 net 10 (17 ms) carte 97 photos + 300 positions
+  2612.746  photo e-2_0184 à 10952,3990 (439 ko, 199 ms)
+  2613.046  t0407062 suivi ok score 1.00 pos 11227,3990 net 11 (23 ms) carte 98 photos + 300 positions
+  2613.325  photo e-2_0185 à 11227,3990 (444 ko, 224 ms)
+  2613.369  t0407385 suivi ok score 1.00 pos 11215,3990 net 11 (14 ms) carte 99 photos + 300 positions
+  2613.730  t0407745 suivi ok score 0.99 pos 11215,3990 net 10 (28 ms) carte 99 photos + 300 positions
+  2613.994  envoyé lame_20261020_123025_moelle-2_0182.jpg (431 ko)
+  2614.056  t0408073 suivi ok score 1.00 pos 11262,3990 net 10 (17 ms) carte 99 photos + 300 positions
+  2614.366  t0408383 suivi ok score 0.98 pos 11752,3990 net 10 (13 ms) carte 99 photos + 300 positions
+  2614.709  t0408725 suivi ok score 0.99 pos 12051,3958 net 13 (17 ms) carte 99 photos + 300 positions
+  2615.045  t0409061 suivi ok score 1.00 pos 12051,3958 net 12 (17 ms) carte 99 photos + 300 positions
+  2615.141  photo e-2_0186 à 12051,3958 (447 ko, 236 ms)
+  2615.388  t0409401 suivi ok score 1.00 pos 12051,3958 net 12 (29 ms) carte 100 photos + 300 positions
+  2615.708  t0409724 suivi ok score 1.00 pos 12075,3958 net 14 (18 ms) carte 100 photos + 300 positions
+  2616.044  t0410059 suivi ok score 0.99 pos 12422,3958 net 12 (19 ms) carte 100 photos + 300 positions
+  2616.378  t0410393 suivi ok score 1.00 pos 12984,3910 net 13 (17 ms) carte 100 photos + 300 positions
+  2616.700  t0410717 suivi ok score 1.00 pos 12984,3910 net 13 (14 ms) carte 100 photos + 300 positions
+  2616.805  photo e-2_0187 à 12984,3910 (456 ko, 225 ms)
+  2616.989  envoyé lame_20261020_123025_moelle-2_0183.jpg (440 ko)
+  2617.041  t0411058 suivi ok score 1.00 pos 12984,3910 net 13 (16 ms) carte 101 photos + 300 positions
+  2617.375  t0411391 suivi ok score 0.92 pos 14024,3846 net 9 (19 ms) carte 101 photos + 300 positions
+  2617.704  t0411719 suivi ok score 0.99 pos 14406,3830 net 14 (15 ms) carte 101 photos + 300 positions
+  2618.046  t0412063 suivi ok score 1.00 pos 14406,3830 net 14 (16 ms) carte 101 photos + 300 positions
+  2618.118  photo e-2_0188 à 14406,3830 (464 ko, 195 ms)
+  2618.377  t0412393 suivi ok score 1.00 pos 14406,3830 net 14 (16 ms) carte 102 photos + 300 positions
+  2618.716  t0412731 suivi ok score 0.99 pos 14514,3830 net 13 (20 ms) carte 102 photos + 300 positions
+  2618.726  envoyé lame_20261020_123025_moelle-2_0184.jpg (439 ko)
+  2619.040  t0413057 suivi ok score 1.00 pos 14812,3830 net 13 (17 ms) carte 102 photos + 300 positions
+  2619.372  t0413388 suivi ok score 0.99 pos 15147,3830 net 14 (16 ms) carte 102 photos + 300 positions
+  2619.713  t0413729 suivi ok score 0.99 pos 15350,3830 net 13 (21 ms) carte 102 photos + 300 positions
+  2620.049  t0414065 suivi ok score 1.00 pos 15709,3830 net 13 (20 ms) carte 102 photos + 300 positions
+  2620.358  envoyé lame_20261020_123025_moelle-2_0185.jpg (444 ko)
+  2620.377  t0414393 suivi ok score 1.00 pos 15709,3830 net 12 (13 ms) carte 102 photos + 300 positions
+  2620.536  photo e-2_0189 à 15709,3830 (450 ko, 216 ms)
+  2620.709  t0414724 suivi ok score 1.00 pos 15709,3830 net 12 (18 ms) carte 103 photos + 300 positions
+  2621.034  t0415051 suivi ok score 0.98 pos 16426,3799 net 7 (13 ms) carte 103 photos + 300 positions
+  2621.181  envoyé lame_20261020_123025_moelle-2_0186.jpg (447 ko)
+  2621.302  photo en mouvement lent (59 % du champ, 0 u/s)
+  2621.372  t0415389 suivi ok score 0.99 pos 17502,3735 net 10 (11 ms) carte 103 photos + 300 positions
+  2621.534  photo e-2_0190 à 17502,3735 (420 ko, 232 ms)
+  2621.711  t0415727 suivi ok score 1.00 pos 17490,3735 net 10 (23 ms) carte 104 photos + 300 positions
+  2622.046  t0416062 suivi ok score 0.99 pos 17490,3735 net 10 (19 ms) carte 104 photos + 300 positions
+  2622.370  t0416386 suivi ok score 0.99 pos 18052,3735 net 8 (14 ms) carte 104 photos + 300 positions
+  2622.548  envoyé lame_20261020_123025_moelle-2_0187.jpg (456 ko)
+  2622.710  t0416726 suivi ok score 1.00 pos 18733,3703 net 10 (17 ms) carte 104 photos + 300 positions
+  2623.039  t0417055 suivi ok score 1.00 pos 18709,3703 net 10 (13 ms) carte 104 photos + 300 positions
+  2623.262  photo e-2_0191 à 18709,3703 (424 ko, 223 ms)
+  2623.374  t0417390 suivi ok score 1.00 pos 18709,3703 net 10 (19 ms) carte 105 photos + 300 positions
+  2623.687  envoyé lame_20261020_123025_moelle-2_0188.jpg (464 ko)
+  2623.722  t0417738 suivi ok score 0.99 pos 19391,3687 net 11 (21 ms) carte 105 photos + 300 positions
+  2624.040  t0418056 suivi ok score 1.00 pos 20132,3687 net 12 (17 ms) carte 105 photos + 300 positions
+  2624.387  t0418403 suivi ok score 0.99 pos 20167,3687 net 13 (26 ms) carte 105 photos + 300 positions
+  2624.694  photo e-2_0192 à 20167,3687 (448 ko, 218 ms)
+  2624.708  t0418725 suivi ok score 1.00 pos 20167,3687 net 13 (14 ms) carte 106 photos + 300 positions
+  2624.823  envoyé lame_20261020_123025_moelle-2_0189.jpg (450 ko)
+  2625.052  t0419069 suivi ok score 0.99 pos 20167,3687 net 12 (23 ms) carte 106 photos + 300 positions
+  2625.388  t0419404 suivi ok score 0.98 pos 20502,3687 net 13 (21 ms) carte 106 photos + 300 positions
+  2625.733  t0419748 suivi ok score 0.99 pos 20801,3687 net 13 (28 ms) carte 106 photos + 300 positions
+  2625.948  envoyé lame_20261020_123025_moelle-2_0190.jpg (420 ko)
+  2626.042  t0420058 suivi ok score 1.00 pos 21124,3687 net 13 (15 ms) carte 106 photos + 300 positions
+  2626.387  t0420403 suivi ok score 1.00 pos 21124,3687 net 14 (18 ms) carte 106 photos + 300 positions
+  2626.519  photo e-2_0193 à 21124,3687 (447 ko, 200 ms)
+  2626.702  t0420719 suivi ok score 1.00 pos 21124,3687 net 14 (15 ms) carte 107 photos + 300 positions
+  2627.047  t0421063 suivi ok score 0.99 pos 21614,3655 net 9 (16 ms) carte 107 photos + 300 positions
+  2627.387  t0421403 suivi ok score 0.99 pos 22570,3591 net 15 (21 ms) carte 107 photos + 300 positions
+  2627.579  envoyé lame_20261020_123025_moelle-2_0191.jpg (424 ko)
+  2627.716  t0421732 suivi ok score 1.00 pos 22570,3591 net 15 (18 ms) carte 107 photos + 300 positions
+  2627.990  photo e-2_0194 à 22570,3591 (449 ko, 214 ms)
+  2628.036  t0422053 suivi ok score 1.00 pos 22570,3591 net 15 (13 ms) carte 108 photos + 300 positions
+  2628.381  t0422397 suivi ok score 0.99 pos 22630,3591 net 13 (18 ms) carte 108 photos + 300 positions
+  2628.696  envoyé lame_20261020_123025_moelle-2_0192.jpg (448 ko)
+  2628.713  t0422729 suivi ok score 0.99 pos 22953,3591 net 12 (18 ms) carte 108 photos + 300 positions
+  2629.051  t0423067 suivi ok score 1.00 pos 23120,3591 net 13 (21 ms) carte 108 photos + 300 positions
+  2629.379  t0423396 suivi ok score 0.99 pos 23658,3575 net 13 (17 ms) carte 108 photos + 300 positions
+  2629.718  t0423734 suivi ok score 1.00 pos 23646,3575 net 14 (22 ms) carte 108 photos + 300 positions
+  2629.974  photo e-2_0195 à 23646,3575 (450 ko, 232 ms)
+  2630.047  t0424063 suivi ok score 1.00 pos 23646,3575 net 14 (20 ms) carte 109 photos + 300 positions
+  2630.088  envoyé lame_20261020_123025_moelle-2_0193.jpg (447 ko)
+  2630.390  t0424406 suivi ok score 1.00 pos 23646,3575 net 14 (23 ms) carte 109 photos + 300 positions
+  2630.711  t0424726 suivi ok score 1.00 pos 23718,3575 net 14 (15 ms) carte 109 photos + 300 positions
+  2631.050  t0425066 suivi ok score 0.99 pos 23765,3575 net 15 (21 ms) carte 109 photos + 300 positions
+  2631.252  photo e-2_0196 à 23765,3575 (450 ko, 201 ms)
+  2631.379  t0425395 suivi ok score 0.99 pos 24172,3544 net 15 (21 ms) carte 110 photos + 300 positions
+  2631.704  t0425721 suivi ok score 1.00 pos 24411,3559 net 15 (11 ms) carte 110 photos + 300 positions
+  2632.045  t0426062 suivi ok score 0.99 pos 24793,3559 net 13 (20 ms) carte 110 photos + 300 positions
+  2632.383  t0426400 suivi ok score 0.99 pos 25176,3559 net 12 (21 ms) carte 110 photos + 300 positions
+  2632.390  envoyé lame_20261020_123025_moelle-2_0194.jpg (449 ko)
+  2632.701  t0426718 suivi ok score 1.00 pos 25212,3559 net 12 (10 ms) carte 110 photos + 300 positions
+  2633.035  t0427052 suivi ok score 1.00 pos 25212,3559 net 12 (13 ms) carte 110 photos + 300 positions
+  2633.036  photo e-2_0197 à 25212,3559 (435 ko, 226 ms)
+  2633.373  t0427390 suivi ok score 1.00 pos 25248,3559 net 11 (14 ms) carte 111 photos + 300 positions
+  2633.722  t0427738 suivi ok score 0.99 pos 25702,3559 net 11 (18 ms) carte 111 photos + 300 positions
+  2633.797  envoyé lame_20261020_123025_moelle-2_0195.jpg (450 ko)
+  2634.041  t0428058 suivi ok score 0.99 pos 26359,3559 net 9 (12 ms) carte 111 photos + 300 positions
+  2634.274  photo en mouvement lent (60 % du champ, 0 u/s)
+  2634.387  t0428403 suivi ok score 0.99 pos 27041,3512 net 12 (23 ms) carte 111 photos + 300 positions
+  2634.499  photo e-2_0198 à 27052,3512 (439 ko, 224 ms)
+  2634.713  t0428728 suivi ok score 1.00 pos 27041,3512 net 12 (18 ms) carte 112 photos + 300 positions
+  2634.772  envoyé lame_20261020_123025_moelle-2_0196.jpg (450 ko)
+  2635.046  t0429062 suivi ok score 1.00 pos 27041,3512 net 12 (17 ms) carte 112 photos + 300 positions
+  2635.395  t0429410 suivi ok score 0.96 pos 27794,3464 net 7 (23 ms) carte 112 photos + 300 positions
+  2635.713  t0429730 suivi ok score 1.00 pos 28487,3400 net 12 (15 ms) carte 112 photos + 300 positions
+  2636.042  t0430059 suivi ok score 1.00 pos 28487,3400 net 12 (14 ms) carte 112 photos + 300 positions
+  2636.187  photo e-2_0199 à 28487,3400 (439 ko, 201 ms)
+  2636.398  t0430414 suivi ok score 0.99 pos 28511,3400 net 11 (26 ms) carte 113 photos + 300 positions
+  2636.714  t0430730 suivi ok score 0.98 pos 29049,3384 net 9 (18 ms) carte 113 photos + 300 positions
+  2637.040  t0431057 suivi ok score 1.00 pos 29264,3368 net 11 (15 ms) carte 113 photos + 300 positions
+  2637.378  t0431394 suivi ok score 1.00 pos 29264,3368 net 11 (15 ms) carte 113 photos + 300 positions
+  2637.428  photo e-2_0200 à 29264,3368 (426 ko, 215 ms)
+  2637.632  envoyé lame_20261020_123025_moelle-2_0197.jpg (435 ko)
+  2637.721  t0431736 suivi ok score 0.99 pos 29312,3368 net 10 (22 ms) carte 114 photos + 300 positions
+  2638.050  t0432067 suivi ok score 1.00 pos 30256,3320 net 10 (21 ms) carte 114 photos + 300 positions
+  2638.381  t0432398 suivi ok score 1.00 pos 30208,3320 net 10 (15 ms) carte 114 photos + 300 positions
+  2638.714  t0432729 suivi ok score 1.00 pos 30208,3320 net 9 (20 ms) carte 114 photos + 300 positions
+  2638.726  photo e-2_0201 à 30208,3320 (418 ko, 210 ms)
+  2638.836  envoyé lame_20261020_123025_moelle-2_0198.jpg (439 ko)
+  2639.051  t0433067 suivi ok score 0.99 pos 30447,3320 net 9 (18 ms) carte 115 photos + 300 positions
+  2639.383  t0433400 suivi ok score 0.99 pos 30806,3320 net 9 (16 ms) carte 115 photos + 300 positions
+  2639.716  t0433732 suivi ok score 0.98 pos 31296,3320 net 8 (19 ms) carte 115 photos + 300 positions
+  2640.024  envoyé lame_20261020_123025_moelle-2_0199.jpg (439 ko)
+  2640.055  t0434071 suivi ok score 1.00 pos 31523,3320 net 9 (24 ms) carte 115 photos + 300 positions
+  2640.396  t0434411 suivi ok score 1.00 pos 31523,3320 net 9 (23 ms) carte 115 photos + 300 positions
+  2640.521  photo e-2_0202 à 31523,3320 (412 ko, 208 ms)
+  2640.714  t0434730 suivi ok score 1.00 pos 31523,3320 net 9 (21 ms) carte 116 photos + 300 positions
+  2641.041  t0435058 suivi ok score 0.99 pos 31953,3320 net 9 (14 ms) carte 116 photos + 300 positions
+  2641.376  t0435393 suivi ok score 1.00 pos 32085,3320 net 11 (15 ms) carte 116 photos + 300 positions
+  2641.687  envoyé lame_20261020_123025_moelle-2_0200.jpg (426 ko)
+  2641.709  t0435726 suivi ok score 1.00 pos 32145,3320 net 11 (15 ms) carte 116 photos + 300 positions
+  2641.722  photo e-2_0203 à 32085,3320 (426 ko, 212 ms)
+  2642.047  t0436064 suivi ok score 1.00 pos 32145,3320 net 10 (19 ms) carte 117 photos + 300 positions
+  2642.382  t0436398 suivi ok score 0.99 pos 32156,3320 net 10 (21 ms) carte 117 photos + 300 positions
+  2642.711  t0436727 suivi ok score 0.99 pos 32647,3320 net 10 (15 ms) carte 117 photos + 300 positions
+  2642.782  envoyé lame_20261020_123025_moelle-2_0201.jpg (418 ko)
+  2643.039  t0437056 suivi ok score 0.99 pos 33149,3320 net 11 (13 ms) carte 117 photos + 300 positions
+  2643.380  t0437396 suivi ok score 1.00 pos 33340,3320 net 12 (18 ms) carte 117 photos + 300 positions
+  2643.715  t0437731 suivi ok score 1.00 pos 33340,3320 net 12 (15 ms) carte 117 photos + 300 positions
+  2643.824  envoyé lame_20261020_123025_moelle-2_0202.jpg (412 ko)
+  2643.831  photo e-2_0204 à 33340,3320 (431 ko, 222 ms)
+  2644.042  t0438059 suivi ok score 1.00 pos 33340,3320 net 12 (15 ms) carte 118 photos + 300 positions
+  2644.388  t0438403 suivi ok score 0.99 pos 33352,3320 net 12 (24 ms) carte 118 photos + 300 positions
+  2644.706  t0438722 suivi ok score 0.98 pos 33651,3304 net 10 (12 ms) carte 118 photos + 300 positions
+  2645.048  t0439064 suivi ok score 0.98 pos 34631,3273 net 14 (16 ms) carte 118 photos + 300 positions
+  2645.111  envoyé lame_20261020_123025_moelle-2_0203.jpg (426 ko)
+  2645.388  t0439405 suivi ok score 1.00 pos 34607,3273 net 13 (13 ms) carte 118 photos + 300 positions
+  2645.601  photo e-2_0205 à 34607,3273 (438 ko, 212 ms)
+  2645.707  t0439724 suivi ok score 1.00 pos 34607,3273 net 13 (14 ms) carte 119 photos + 300 positions
+  2646.050  t0440066 suivi ok score 0.99 pos 34643,3273 net 11 (19 ms) carte 119 photos + 300 positions
+  2646.360  envoyé lame_20261020_123025_moelle-2_0204.jpg (431 ko)
+  2646.383  t0440399 suivi ok score 0.99 pos 35312,3273 net 10 (21 ms) carte 119 photos + 300 positions
+  2646.726  t0440742 suivi ok score 1.00 pos 35563,3273 net 12 (19 ms) carte 119 photos + 300 positions
+  2647.047  t0441064 suivi ok score 0.99 pos 35563,3273 net 12 (13 ms) carte 119 photos + 300 positions
+  2647.234  photo e-2_0206 à 35563,3273 (429 ko, 209 ms)
+  2647.379  t0441395 suivi ok score 0.99 pos 35563,3273 net 12 (16 ms) carte 120 photos + 300 positions
+  2647.717  t0441733 suivi ok score 1.00 pos 35563,3273 net 12 (17 ms) carte 120 photos + 300 positions
+  2648.046  t0442063 suivi ok score 0.99 pos 35575,3273 net 12 (17 ms) carte 120 photos + 300 positions
+  2648.386  envoyé lame_20261020_123025_moelle-2_0205.jpg (438 ko)
+  2648.387  t0442403 suivi ok score 0.98 pos 35922,3257 net 10 (23 ms) carte 120 photos + 300 positions
+  2648.709  t0442725 suivi ok score 1.00 pos 36782,3209 net 11 (14 ms) carte 120 photos + 300 positions
+  2649.050  t0443065 suivi ok score 1.00 pos 36770,3209 net 11 (14 ms) carte 120 photos + 300 positions
+  2649.280  photo e-2_0207 à 36770,3209 (425 ko, 229 ms)
+  2649.377  t0443394 suivi ok score 1.00 pos 36770,3209 net 11 (16 ms) carte 121 photos + 300 positions
+  2649.610  envoyé lame_20261020_123025_moelle-2_0206.jpg (429 ko)
+  2649.727  t0443742 suivi ok score 0.98 pos 36854,3209 net 10 (20 ms) carte 121 photos + 300 positions
+  2650.053  t0444069 suivi ok score 0.99 pos 38276,3129 net 12 (15 ms) carte 121 photos + 300 positions
+  2650.382  t0444399 suivi ok score 1.00 pos 38276,3129 net 12 (17 ms) carte 121 photos + 300 positions
+  2650.648  photo e-2_0208 à 38276,3129 (439 ko, 233 ms)
+  2650.711  t0444728 suivi ok score 1.00 pos 38276,3129 net 8 (13 ms) carte 122 photos + 300 positions
+  2651.046  t0445063 suivi ok score 1.00 pos 38276,3129 net 13 (15 ms) carte 122 photos + 300 positions
+  2651.383  t0445398 suivi ok score 1.00 pos 38276,3129 net 13 (17 ms) carte 122 photos + 300 positions
+  2651.719  t0445735 suivi ok score 1.00 pos 38276,3129 net 13 (20 ms) carte 122 photos + 300 positions
+  2651.947  envoyé lame_20261020_123025_moelle-2_0207.jpg (425 ko)
+  2652.051  t0446067 suivi ok score 1.00 pos 38288,3129 net 12 (14 ms) carte 122 photos + 300 positions
+  2652.376  t0446392 suivi ok score 0.99 pos 38826,3129 net 11 (12 ms) carte 122 photos + 300 positions
+  2652.720  t0446737 suivi ok score 1.00 pos 39352,3129 net 13 (16 ms) carte 122 photos + 300 positions
+  2653.039  envoyé lame_20261020_123025_moelle-2_0208.jpg (439 ko)
+  2653.063  t0447080 suivi ok score 1.00 pos 39352,3129 net 14 (22 ms) carte 122 photos + 300 positions
+  2653.226  photo e-2_0209 à 39352,3129 (460 ko, 208 ms)
+  2653.378  t0447394 suivi ok score 1.00 pos 39352,3129 net 14 (14 ms) carte 123 photos + 300 positions
+  2653.711  t0447728 suivi ok score 0.99 pos 39364,3129 net 15 (16 ms) carte 123 photos + 300 positions
+  2654.045  t0448062 suivi ok score 0.99 pos 39914,3129 net 12 (15 ms) carte 123 photos + 300 positions
+  2654.324  envoyé lame_20261020_123025_moelle-2_0209.jpg (460 ko)
+  2654.377  t0448394 suivi ok score 1.00 pos 40165,3129 net 14 (11 ms) carte 123 photos + 300 positions
+  2654.715  t0448732 suivi ok score 0.99 pos 40201,3129 net 14 (13 ms) carte 123 photos + 300 positions
+  2654.875  photo e-2_0210 à 40213,3129 (469 ko, 198 ms)
+  2655.051  t0449067 suivi ok score 1.00 pos 40201,3129 net 14 (19 ms) carte 124 photos + 300 positions
+  2655.384  t0449399 suivi ok score 0.99 pos 40201,3129 net 15 (16 ms) carte 124 photos + 300 positions
+  2655.727  t0449743 suivi ok score 0.98 pos 40727,3129 net 12 (19 ms) carte 124 photos + 300 positions
+  2656.052  t0450068 suivi ok score 1.00 pos 41504,3081 net 14 (17 ms) carte 124 photos + 300 positions
+  2656.133  envoyé lame_20261020_123025_moelle-2_0210.jpg (469 ko)
+  2656.381  t0450396 suivi ok score 1.00 pos 41492,3081 net 15 (18 ms) carte 124 photos + 300 positions
+  2656.603  photo e-2_0211 à 41492,3081 (476 ko, 222 ms)
+  2656.711  t0450727 suivi ok score 1.00 pos 41492,3081 net 15 (16 ms) carte 125 photos + 300 positions
+  2657.052  t0451068 suivi ok score 0.99 pos 41528,3081 net 16 (20 ms) carte 125 photos + 300 positions
+  2657.397  t0451414 suivi ok score 1.00 pos 42101,3081 net 15 (15 ms) carte 125 photos + 300 positions
+  2657.732  t0451747 suivi ok score 0.99 pos 42352,3081 net 14 (23 ms) carte 125 photos + 300 positions
+  2658.062  t0452077 suivi ok score 0.99 pos 42843,3065 net 13 (21 ms) carte 125 photos + 300 positions
+  2658.104  envoyé lame_20261020_123025_moelle-2_0211.jpg (476 ko)
+  2658.410  t0452425 suivi ok score 1.00 pos 42807,3065 net 14 (30 ms) carte 125 photos + 300 positions
+  2658.702  photo e-2_0212 à 42807,3065 (461 ko, 220 ms)
+  2658.714  t0452730 suivi ok score 1.00 pos 42807,3065 net 15 (16 ms) carte 126 photos + 300 positions
+  2659.054  t0453070 suivi ok score 1.00 pos 42807,3065 net 15 (20 ms) carte 126 photos + 300 positions
+  2659.399  t0453414 suivi ok score 1.00 pos 42807,3065 net 11 (24 ms) carte 126 photos + 300 positions
+  2659.717  t0453733 suivi ok score 1.00 pos 42807,3065 net 15 (15 ms) carte 126 photos + 300 positions
+  2660.057  t0454073 suivi ok score 1.00 pos 42807,3065 net 15 (18 ms) carte 126 photos + 300 positions
+  2660.398  t0454413 suivi ok score 1.00 pos 42807,3065 net 15 (25 ms) carte 126 photos + 300 positions
+  2660.719  t0454736 suivi ok score 0.99 pos 42890,3065 net 14 (17 ms) carte 126 photos + 300 positions
+  2660.846  envoyé lame_20261020_123025_moelle-2_0212.jpg (461 ko)
+  2661.060  t0455075 suivi ok score 0.99 pos 44671,2970 net 11 (25 ms) carte 126 photos + 300 positions
+  2661.060  photo en mouvement lent (61 % du champ, 32 u/s)
+  2661.283  photo e-2_0213 à 44671,2970 (422 ko, 223 ms)
+  2661.379  t0455396 suivi ok score 1.00 pos 44647,2970 net 11 (12 ms) carte 127 photos + 300 positions
+  2661.710  t0455727 suivi ok score 1.00 pos 44647,2970 net 11 (15 ms) carte 127 photos + 300 positions
+  2662.053  t0456069 suivi ok score 0.98 pos 44910,2970 net 11 (17 ms) carte 127 photos + 300 positions
+  2662.386  t0456403 suivi ok score 0.99 pos 45628,2954 net 13 (17 ms) carte 127 photos + 300 positions
+  2662.452  envoyé lame_20261020_123025_moelle-2_0213.jpg (422 ko)
+  2662.732  t0456748 suivi ok score 1.00 pos 45699,2954 net 13 (28 ms) carte 127 photos + 300 positions
+  2663.053  t0457070 suivi ok score 1.00 pos 45699,2954 net 13 (23 ms) carte 127 photos + 300 positions
+  2663.079  photo e-2_0214 à 45699,2954 (438 ko, 230 ms)
+  2663.375  t0457392 suivi ok score 0.99 pos 45771,2954 net 12 (11 ms) carte 128 photos + 300 positions
+  2663.724  t0457740 suivi ok score 0.99 pos 47779,2826 net 13 (20 ms) carte 128 photos + 300 positions
+  2663.781  photo en mouvement lent (69 % du champ, 30 u/s)
+  2664.012  photo e-2_0215 à 47815,2826 (455 ko, 230 ms)
+  2664.055  t0458071 suivi ok score 1.00 pos 47803,2826 net 13 (16 ms) carte 129 photos + 300 positions
+  2664.123  envoyé lame_20261020_123025_moelle-2_0214.jpg (438 ko)
+  2664.390  t0458406 suivi ok score 1.00 pos 47803,2826 net 13 (18 ms) carte 129 photos + 300 positions
+  2664.716  t0458730 suivi ok score 0.98 pos 48078,2826 net 13 (13 ms) carte 129 photos + 300 positions
+  2665.052  t0459068 suivi ok score 1.00 pos 48712,2826 net 12 (19 ms) carte 129 photos + 300 positions
+  2665.384  t0459400 suivi ok score 1.00 pos 48855,2826 net 13 (16 ms) carte 129 photos + 300 positions
+  2665.729  t0459745 suivi ok score 0.99 pos 48927,2826 net 13 (16 ms) carte 129 photos + 300 positions
+  2665.797  photo e-2_0216 à 48855,2826 (452 ko, 207 ms)
+  2666.054  t0460071 suivi ok score 1.00 pos 49022,2826 net 13 (22 ms) carte 130 photos + 300 positions
+  2666.392  t0460408 suivi ok score 1.00 pos 48998,2826 net 13 (21 ms) carte 130 photos + 300 positions
+  2666.445  photo e-2_0217 à 49022,2826 (454 ko, 228 ms)
+  2666.723  t0460739 suivi ok score 1.00 pos 49022,2826 net 13 (18 ms) carte 131 photos + 300 positions
+  2667.055  t0461072 suivi ok score 1.00 pos 48998,2826 net 13 (17 ms) carte 131 photos + 300 positions
+  2667.364  envoyé lame_20261020_123025_moelle-2_0215.jpg (455 ko)
+  2667.373  t0461390 suivi ok score 1.00 pos 48998,2826 net 13 (11 ms) carte 131 photos + 300 positions
+  2667.717  t0461734 suivi ok score 1.00 pos 48998,2874 net 13 (13 ms) carte 131 photos + 300 positions
+  2668.048  t0462064 suivi ok score 0.99 pos 48998,3081 net 12 (14 ms) carte 131 photos + 300 positions
+  2668.173  photo e-2_0218 à 48998,2986 (451 ko, 201 ms)
+  2668.398  t0462414 suivi ok score 0.99 pos 49010,3878 net 11 (19 ms) carte 132 photos + 300 positions
+  2668.639  envoyé lame_20261020_123025_moelle-2_0216.jpg (452 ko)
+  2668.713  t0462730 suivi ok score 0.98 pos 49118,5599 net 17 (11 ms) carte 132 photos + 300 positions
+  2668.747  photo en mouvement lent (65 % du champ, 33 u/s)
+  2668.974  photo e-2_0219 à 49118,5615 (493 ko, 226 ms)
+  2669.053  t0463070 suivi ok score 1.00 pos 49118,5631 net 17 (18 ms) carte 133 photos + 300 positions
+  2669.388  t0463404 suivi ok score 1.00 pos 49118,5631 net 17 (20 ms) carte 133 photos + 300 positions
+  2669.727  t0463743 suivi ok score 1.00 pos 49118,5631 net 17 (21 ms) carte 133 photos + 300 positions
+  2670.048  t0464065 suivi ok score 1.00 pos 49082,5631 net 17 (15 ms) carte 133 photos + 300 positions
+  2670.394  t0464410 suivi ok score 0.99 pos 48508,5631 net 14 (18 ms) carte 133 photos + 300 positions
+  2670.425  envoyé lame_20261020_123025_moelle-2_0217.jpg (454 ko)
+  2670.713  t0464730 suivi ok score 0.99 pos 47409,5679 net 17 (14 ms) carte 133 photos + 300 positions
+  2670.713  photo en mouvement lent (56 % du champ, 0 u/s)
+  2670.935  photo e-2_0220 à 47409,5679 (500 ko, 222 ms)
+  2671.053  t0465070 suivi ok score 1.00 pos 47409,5679 net 17 (20 ms) carte 134 photos + 300 positions
+  2671.386  t0465402 suivi ok score 0.99 pos 47409,5679 net 16 (18 ms) carte 134 photos + 300 positions
+  2671.424  envoyé lame_20261020_123025_moelle-2_0218.jpg (451 ko)
+  2671.720  t0465736 suivi ok score 0.98 pos 47170,5679 net 15 (13 ms) carte 134 photos + 300 positions
+  2672.057  t0466072 suivi ok score 0.98 pos 46608,5679 net 16 (19 ms) carte 134 photos + 300 positions
+  2672.388  t0466404 suivi ok score 1.00 pos 46560,5695 net 18 (15 ms) carte 134 photos + 300 positions
+  2672.399  envoyé lame_20261020_123025_moelle-2_0219.jpg (493 ko)
+  2672.700  photo e-2_0221 à 46560,5695 (500 ko, 226 ms)
+  2672.715  t0466731 suivi ok score 1.00 pos 46560,5695 net 18 (15 ms) carte 135 photos + 300 positions
+  2673.045  t0467062 suivi ok score 1.00 pos 46548,5695 net 17 (12 ms) carte 135 photos + 300 positions
+  2673.388  t0467404 suivi ok score 0.98 pos 45711,5743 net 15 (16 ms) carte 135 photos + 300 positions
+  2673.723  t0467738 suivi ok score 1.00 pos 45293,5775 net 18 (18 ms) carte 135 photos + 300 positions
+  2673.978  envoyé lame_20261020_123025_moelle-2_0220.jpg (500 ko)
+  2674.063  t0468079 suivi ok score 1.00 pos 45293,5775 net 18 (23 ms) carte 135 photos + 300 positions
+  2674.116  photo e-2_0222 à 45293,5775 (504 ko, 224 ms)
+  2674.384  t0468400 suivi ok score 1.00 pos 45293,5775 net 18 (17 ms) carte 136 photos + 300 positions
+  2674.719  t0468735 suivi ok score 1.00 pos 45173,5775 net 17 (16 ms) carte 136 photos + 300 positions
+  2675.066  t0469082 suivi ok score 0.99 pos 43978,5839 net 14 (27 ms) carte 136 photos + 300 positions
+  2675.354  envoyé lame_20261020_123025_moelle-2_0221.jpg (500 ko)
+  2675.396  t0469413 suivi ok score 1.00 pos 43775,5854 net 16 (14 ms) carte 136 photos + 300 positions
+  2675.722  t0469737 suivi ok score 1.00 pos 43775,5854 net 16 (18 ms) carte 136 photos + 300 positions
+  2675.750  photo e-2_0223 à 43775,5854 (471 ko, 231 ms)
+  2676.044  t0470061 suivi ok score 1.00 pos 43775,5854 net 16 (11 ms) carte 137 photos + 300 positions
+  2676.387  t0470403 suivi ok score 0.98 pos 43249,5902 net 11 (16 ms) carte 137 photos + 300 positions
+  2676.720  t0470736 suivi ok score 1.00 pos 42831,5918 net 15 (14 ms) carte 137 photos + 300 positions
+  2676.841  envoyé lame_20261020_123025_moelle-2_0222.jpg (504 ko)
+  2677.051  t0471067 suivi ok score 1.00 pos 42831,5918 net 15 (14 ms) carte 137 photos + 300 positions
+  2677.194  photo e-2_0224 à 42831,5918 (477 ko, 206 ms)
+  2677.390  t0471407 suivi ok score 1.00 pos 42819,5918 net 15 (18 ms) carte 138 photos + 300 positions
+  2677.725  t0471740 suivi ok score 0.99 pos 42101,5918 net 15 (18 ms) carte 138 photos + 300 positions
+  2678.032  envoyé lame_20261020_123025_moelle-2_0223.jpg (471 ko)
+  2678.052  t0472068 suivi ok score 1.00 pos 41587,5918 net 17 (14 ms) carte 138 photos + 300 positions
+  2678.384  t0472400 suivi ok score 1.00 pos 41587,5918 net 17 (14 ms) carte 138 photos + 300 positions
+  2678.565  photo e-2_0225 à 41587,5918 (490 ko, 211 ms)
+  2678.718  t0472734 suivi ok score 1.00 pos 41587,5918 net 17 (17 ms) carte 139 photos + 300 positions
+  2679.056  t0473072 suivi ok score 0.98 pos 41277,5918 net 12 (15 ms) carte 139 photos + 300 positions
+  2679.382  t0473399 suivi ok score 1.00 pos 40918,5950 net 17 (11 ms) carte 139 photos + 300 positions
+  2679.720  t0473736 suivi ok score 1.00 pos 40918,5950 net 17 (16 ms) carte 139 photos + 300 positions
+  2679.738  envoyé lame_20261020_123025_moelle-2_0224.jpg (477 ko)
+  2679.775  photo e-2_0226 à 40918,5950 (485 ko, 222 ms)
+  2680.048  t0474064 suivi ok score 1.00 pos 40918,5950 net 16 (12 ms) carte 140 photos + 300 positions
+  2680.383  t0474400 suivi ok score 0.99 pos 40452,5950 net 14 (13 ms) carte 140 photos + 300 positions
+  2680.725  t0474741 suivi ok score 0.99 pos 39711,5950 net 16 (18 ms) carte 140 photos + 300 positions
+  2680.853  envoyé lame_20261020_123025_moelle-2_0225.jpg (490 ko)
+  2681.057  t0475074 suivi ok score 1.00 pos 39723,5950 net 16 (20 ms) carte 140 photos + 300 positions
+  2681.273  photo e-2_0227 à 39723,5950 (470 ko, 215 ms)
+  2681.384  t0475400 suivi ok score 1.00 pos 39723,5950 net 16 (16 ms) carte 141 photos + 300 positions
+  2681.733  t0475748 suivi ok score 0.99 pos 39711,5950 net 15 (25 ms) carte 141 photos + 300 positions
+  2682.067  t0476082 suivi ok score 0.99 pos 39041,5950 net 13 (21 ms) carte 141 photos + 300 positions
+  2682.276  envoyé lame_20261020_123025_moelle-2_0226.jpg (485 ko)
+  2682.402  t0476418 suivi ok score 0.99 pos 38312,5966 net 14 (24 ms) carte 141 photos + 300 positions
+  2682.719  t0476736 suivi ok score 1.00 pos 38312,5966 net 14 (11 ms) carte 141 photos + 300 positions
+  2683.021  photo e-2_0228 à 38312,5966 (444 ko, 225 ms)
+  2683.049  t0477066 suivi ok score 1.00 pos 38312,5966 net 14 (11 ms) carte 142 photos + 300 positions
+  2683.206  envoyé lame_20261020_123025_moelle-2_0227.jpg (470 ko)
+  2683.385  t0477402 suivi ok score 0.99 pos 38300,5966 net 13 (13 ms) carte 142 photos + 300 positions
+  2683.730  t0477746 suivi ok score 0.99 pos 37368,5982 net 14 (17 ms) carte 142 photos + 300 positions
+  2684.064  t0478080 suivi ok score 1.00 pos 37296,5982 net 15 (22 ms) carte 142 photos + 300 positions
+  2684.384  t0478401 suivi ok score 1.00 pos 37296,5982 net 15 (11 ms) carte 142 photos + 300 positions
+  2684.421  photo e-2_0229 à 37296,5982 (455 ko, 228 ms)
+  2684.712  t0478729 suivi ok score 0.98 pos 37296,5982 net 15 (11 ms) carte 143 photos + 300 positions
+  2685.060  t0479076 suivi ok score 0.98 pos 36340,6014 net 11 (16 ms) carte 143 photos + 300 positions
+  2685.390  t0479407 suivi ok score 1.00 pos 35993,6014 net 15 (18 ms) carte 143 photos + 300 positions
+  2685.493  envoyé lame_20261020_123025_moelle-2_0228.jpg (444 ko)
+  2685.721  t0479738 suivi ok score 1.00 pos 35993,6014 net 15 (15 ms) carte 143 photos + 300 positions
+  2685.818  photo e-2_0230 à 35993,6014 (459 ko, 228 ms)
+  2686.069  t0480085 suivi ok score 0.99 pos 35993,6014 net 15 (20 ms) carte 144 photos + 300 positions
+  2686.389  t0480405 suivi ok score 0.99 pos 34750,6094 net 12 (16 ms) carte 144 photos + 300 positions
+  2686.572  photo en mouvement lent (57 % du champ, 0 u/s)
+  2686.717  envoyé lame_20261020_123025_moelle-2_0229.jpg (455 ko)
+  2686.725  t0480741 suivi ok score 1.00 pos 34260,6141 net 17 (20 ms) carte 144 photos + 300 positions
+  2686.767  photo e-2_0231 à 34248,6141 (497 ko, 195 ms)
+  2687.050  t0481067 suivi ok score 1.00 pos 34260,6141 net 17 (11 ms) carte 145 photos + 300 positions
+  2687.399  t0481415 suivi ok score 0.98 pos 34021,6157 net 16 (21 ms) carte 145 photos + 300 positions
+  2687.741  t0481756 suivi ok score 0.98 pos 33220,6205 net 14 (24 ms) carte 145 photos + 300 positions
+  2687.903  envoyé lame_20261020_123025_moelle-2_0230.jpg (459 ko)
+  2687.958  photo en mouvement lent (82 % du champ, 0 u/s)
+  2687.958  ATTENTION pas trop grand (82 % du champ) : recouvrement insuffisant
+  2688.059  t0482076 suivi ok score 1.00 pos 31738,6301 net 14 (15 ms) carte 145 photos + 300 positions
+  2688.182  photo e-2_0232 à 31738,6301 (455 ko, 223 ms)
+  2688.382  t0482397 suivi ok score 1.00 pos 31738,6301 net 14 (11 ms) carte 146 photos + 300 positions
+  2688.722  t0482738 suivi ok score 0.99 pos 32085,6285 net 11 (13 ms) carte 146 photos + 300 positions
+  2689.058  t0483074 suivi ok score 0.99 pos 32874,6237 net 14 (13 ms) carte 146 photos + 300 positions
+  2689.124  envoyé lame_20261020_123025_moelle-2_0231.jpg (497 ko)
+  2689.394  t0483410 suivi ok score 1.00 pos 33089,6221 net 16 (18 ms) carte 146 photos + 300 positions
+  2689.730  t0483746 suivi ok score 1.00 pos 33089,6221 net 16 (21 ms) carte 146 photos + 300 positions
+  2689.834  photo e-2_0233 à 33089,6221 (482 ko, 212 ms)
+  2690.058  t0484074 suivi ok score 0.99 pos 33089,6221 net 16 (16 ms) carte 147 photos + 300 positions
+  2690.392  t0484407 suivi ok score 1.00 pos 33017,6221 net 16 (15 ms) carte 147 photos + 300 positions
+  2690.731  t0484746 suivi ok score 0.98 pos 32300,6253 net 11 (21 ms) carte 147 photos + 300 positions
+  2691.040  envoyé lame_20261020_123025_moelle-2_0232.jpg (455 ko)
+  2691.059  t0485076 suivi ok score 0.97 pos 31320,6285 net 11 (21 ms) carte 147 photos + 300 positions
+  2691.115  photo en mouvement lent (61 % du champ, 30 u/s)
+  2691.300  photo e-2_0234 à 31212,6301 (453 ko, 184 ms)
+  2691.390  t0485406 suivi ok score 1.00 pos 31224,6301 net 14 (21 ms) carte 148 photos + 300 positions
+  2691.724  t0485741 suivi ok score 0.98 pos 31224,6301 net 14 (17 ms) carte 148 photos + 300 positions
+  2692.053  t0486070 suivi ok score 0.98 pos 30806,6317 net 12 (14 ms) carte 148 photos + 300 positions
+  2692.304  envoyé lame_20261020_123025_moelle-2_0233.jpg (482 ko)
+  2692.382  t0486399 suivi ok score 1.00 pos 30698,6317 net 14 (11 ms) carte 148 photos + 300 positions
+  2692.717  t0486734 suivi ok score 1.00 pos 30626,6317 net 15 (13 ms) carte 148 photos + 300 positions
+  2692.736  photo e-2_0235 à 30698,6317 (458 ko, 205 ms)
+  2693.052  t0487070 suivi ok score 0.99 pos 30172,6317 net 11 (11 ms) carte 149 photos + 300 positions
+  2693.400  t0487416 suivi ok score 1.00 pos 29670,6317 net 14 (18 ms) carte 149 photos + 300 positions
+  2693.747  t0487762 suivi ok score 1.00 pos 29682,6317 net 16 (28 ms) carte 149 photos + 300 positions
+  2693.994  photo e-2_0236 à 29682,6317 (473 ko, 246 ms)
+  2694.011  envoyé lame_20261020_123025_moelle-2_0234.jpg (453 ko)
+  2694.059  t0488076 suivi ok score 1.00 pos 29682,6317 net 16 (15 ms) carte 150 photos + 300 positions
+  2694.384  t0488401 suivi ok score 0.99 pos 29682,6317 net 16 (11 ms) carte 150 photos + 300 positions
+  2694.732  t0488747 suivi ok score 0.99 pos 29347,6317 net 16 (22 ms) carte 150 photos + 300 positions
+  2695.068  t0489084 suivi ok score 0.99 pos 28415,6317 net 16 (22 ms) carte 150 photos + 300 positions
+  2695.196  envoyé lame_20261020_123025_moelle-2_0235.jpg (458 ko)
+  2695.399  t0489414 suivi ok score 1.00 pos 28367,6317 net 18 (19 ms) carte 150 photos + 300 positions
+  2695.723  photo e-2_0237 à 28367,6317 (494 ko, 231 ms)
+  2695.732  t0489748 suivi ok score 1.00 pos 28367,6317 net 18 (20 ms) carte 151 photos + 300 positions
+  2696.056  t0490071 suivi ok score 1.00 pos 28367,6317 net 16 (15 ms) carte 151 photos + 300 positions
+  2696.394  t0490409 suivi ok score 1.00 pos 28367,6317 net 15 (17 ms) carte 151 photos + 300 positions
+  2696.720  t0490737 suivi ok score 0.99 pos 28128,6317 net 12 (13 ms) carte 151 photos + 300 positions
+  2697.037  envoyé lame_20261020_123025_moelle-2_0236.jpg (473 ko)
+  2697.060  t0491077 suivi ok score 1.00 pos 27650,6317 net 10 (16 ms) carte 151 photos + 300 positions
+  2697.399  t0491415 suivi ok score 0.99 pos 27064,6333 net 13 (20 ms) carte 151 photos + 300 positions
+  2697.723  t0491739 suivi ok score 1.00 pos 27076,6333 net 17 (14 ms) carte 151 photos + 300 positions
+  2697.888  photo e-2_0238 à 27076,6333 (488 ko, 231 ms)
+  2698.057  t0492073 suivi ok score 1.00 pos 27076,6333 net 17 (16 ms) carte 152 photos + 300 positions
+  2698.385  t0492402 suivi ok score 0.99 pos 26515,6380 net 11 (11 ms) carte 152 photos + 300 positions
+  2698.524  envoyé lame_20261020_123025_moelle-2_0237.jpg (494 ko)
+  2698.722  t0492739 suivi ok score 1.00 pos 25176,6492 net 14 (14 ms) carte 152 photos + 300 positions
+  2698.723  photo en mouvement lent (62 % du champ, 0 u/s)
+  2698.939  photo e-2_0239 à 25176,6492 (461 ko, 216 ms)
+  2699.054  t0493067 suivi ok score 1.00 pos 25200,6492 net 15 (11 ms) carte 153 photos + 300 positions
+  2699.384  t0493400 suivi ok score 0.99 pos 25200,6492 net 15 (11 ms) carte 153 photos + 300 positions
+  2699.731  t0493748 suivi ok score 0.99 pos 25116,6492 net 11 (16 ms) carte 153 photos + 300 positions
+  2700.059  t0494076 suivi ok score 0.99 pos 24710,6492 net 12 (15 ms) carte 153 photos + 300 positions
+  2700.351  envoyé lame_20261020_123025_moelle-2_0238.jpg (488 ko)
+  2700.398  t0494415 suivi ok score 1.00 pos 24363,6492 net 10 (18 ms) carte 153 photos + 300 positions
+  2700.721  t0494738 suivi ok score 1.00 pos 24375,6508 net 16 (13 ms) carte 153 photos + 300 positions
+  2700.848  photo e-2_0240 à 24375,6508 (468 ko, 195 ms)
+  2701.065  t0495081 suivi ok score 1.00 pos 24375,6508 net 15 (20 ms) carte 154 photos + 300 positions
+  2701.389  t0495406 suivi ok score 1.00 pos 24351,6508 net 12 (14 ms) carte 154 photos + 300 positions
+  2701.707  envoyé lame_20261020_123025_moelle-2_0239.jpg (461 ko)
+  2701.738  t0495753 suivi ok score 0.99 pos 23837,6524 net 11 (22 ms) carte 154 photos + 300 positions
+  2702.062  t0496078 suivi ok score 0.98 pos 23275,6524 net 10 (17 ms) carte 154 photos + 300 positions
+  2702.402  t0496417 suivi ok score 1.00 pos 23144,6524 net 15 (23 ms) carte 154 photos + 300 positions
+  2702.735  t0496751 suivi ok score 1.00 pos 23144,6524 net 15 (17 ms) carte 154 photos + 300 positions
+  2702.847  photo e-2_0241 à 23144,6524 (469 ko, 216 ms)
+  2703.063  t0497079 suivi ok score 0.99 pos 23144,6524 net 14 (16 ms) carte 155 photos + 300 positions
+  2703.413  t0497428 suivi ok score 1.00 pos 23084,6524 net 15 (26 ms) carte 155 photos + 300 positions
+  2703.727  t0497744 suivi ok score 1.00 pos 22976,6524 net 15 (17 ms) carte 155 photos + 300 positions
+  2703.878  photo e-2_0242 à 23024,6524 (471 ko, 216 ms)
+  2704.057  t0498073 suivi ok score 0.98 pos 21925,6556 net 13 (14 ms) carte 156 photos + 300 positions
+  2704.346  envoyé lame_20261020_123025_moelle-2_0240.jpg (468 ko)
+  2704.393  t0498409 suivi ok score 1.00 pos 21530,6556 net 17 (11 ms) carte 156 photos + 300 positions
+  2704.728  t0498744 suivi ok score 1.00 pos 21530,6556 net 16 (18 ms) carte 156 photos + 300 positions
+  2704.846  photo e-2_0243 à 21530,6556 (483 ko, 253 ms)
+  2705.064  t0499080 suivi ok score 1.00 pos 21530,6556 net 16 (19 ms) carte 157 photos + 300 positions
+  2705.399  t0499415 suivi ok score 1.00 pos 21411,6556 net 16 (19 ms) carte 157 photos + 300 positions
+  2705.701  envoyé lame_20261020_123025_moelle-2_0241.jpg (469 ko)
+  2705.737  t0499754 suivi ok score 0.99 pos 17562,6763 net 7 (15 ms) carte 157 photos + 300 positions
+  2705.856  photo en mouvement lent (142 % du champ, 31 u/s)
+  2705.856  ATTENTION pas trop grand (142 % du champ) : recouvrement insuffisant
+  2706.055  t0500071 suivi ok score 1.00 pos 17179,6779 net 14 (14 ms) carte 157 photos + 300 positions
+  2706.075  photo e-2_0244 à 17179,6779 (457 ko, 218 ms)
+  2706.395  t0500412 suivi ok score 1.00 pos 17179,6779 net 14 (17 ms) carte 158 photos + 300 positions
+  2706.731  t0500746 suivi ok score 0.95 pos 20502,6588 net 7 (18 ms) carte 158 photos + 300 positions
+  2706.924  photo en mouvement lent (233 % du champ, 0 u/s)
+  2706.924  ATTENTION pas trop grand (233 % du champ) : recouvrement insuffisant
+  2707.059  t0501075 suivi ok score 1.00 pos 24291,6380 net 15 (13 ms) carte 158 photos + 300 positions
+  2707.160  photo e-2_0245 à 24291,6380 (466 ko, 236 ms)
+  2707.390  t0501407 suivi ok score 0.99 pos 21996,6524 net 15 (10 ms) carte 159 photos + 300 positions
+  2707.490  photo en mouvement lent (78 % du champ, 0 u/s)
+  2707.490  ATTENTION pas trop grand (78 % du champ) : recouvrement insuffisant
+  2707.690  photo e-2_0246 à 21901,6524 (475 ko, 200 ms)
+  2707.730  envoyé lame_20261020_123025_moelle-2_0242.jpg (471 ko)
+  2707.737  t0501752 suivi ok score 0.99 pos 21853,6524 net 15 (22 ms) carte 160 photos + 300 positions
+  2708.062  t0502079 suivi ok score 0.98 pos 20418,6619 net 14 (19 ms) carte 160 photos + 300 positions
+  2708.401  t0502418 suivi ok score 1.00 pos 20442,6619 net 15 (19 ms) carte 160 photos + 300 positions
+  2708.690  photo e-2_0247 à 20442,6619 (462 ko, 222 ms)
+  2708.722  t0502738 suivi ok score 1.00 pos 20442,6619 net 15 (11 ms) carte 161 photos + 300 positions
+  2709.060  t0503076 suivi ok score 1.00 pos 20442,6619 net 15 (15 ms) carte 161 photos + 300 positions
+  2709.400  t0503415 suivi ok score 0.99 pos 20442,6619 net 15 (18 ms) carte 161 photos + 300 positions
+  2709.733  t0503749 suivi ok score 0.98 pos 20036,6619 net 10 (18 ms) carte 161 photos + 300 positions
+  2710.061  t0504078 suivi ok score 1.00 pos 19163,6667 net 12 (15 ms) carte 161 photos + 300 positions
+  2710.403  t0504419 suivi ok score 1.00 pos 19163,6667 net 12 (20 ms) carte 161 photos + 300 positions
+  2710.588  photo e-2_0248 à 19163,6667 (442 ko, 218 ms)
+  2710.730  t0504745 suivi ok score 1.00 pos 19163,6667 net 12 (19 ms) carte 162 photos + 300 positions
+  2710.793  envoyé lame_20261020_123025_moelle-2_0243.jpg (483 ko)
+  2711.070  t0505087 suivi ok score 0.99 pos 18315,6715 net 9 (17 ms) carte 162 photos + 300 positions
+  2711.291  photo en mouvement lent (57 % du champ, 31 u/s)
+  2711.404  t0505421 suivi ok score 0.99 pos 17442,6747 net 14 (18 ms) carte 162 photos + 300 positions
+  2711.522  photo e-2_0249 à 17430,6747 (449 ko, 230 ms)
+  2711.730  t0505747 suivi ok score 1.00 pos 17442,6747 net 14 (16 ms) carte 163 photos + 300 positions
+  2712.070  t0506086 suivi ok score 1.00 pos 17442,6747 net 14 (19 ms) carte 163 photos + 300 positions
+  2712.411  t0506427 suivi ok score 0.99 pos 17442,6747 net 14 (29 ms) carte 163 photos + 300 positions
+  2712.744  t0506759 suivi ok score 0.99 pos 17000,6747 net 12 (26 ms) carte 163 photos + 300 positions
+  2712.797  envoyé lame_20261020_123025_moelle-2_0244.jpg (457 ko)
+  2713.069  t0507086 suivi ok score 0.99 pos 16414,6747 net 13 (25 ms) carte 163 photos + 300 positions
+  2713.404  t0507419 suivi ok score 1.00 pos 16235,6747 net 15 (20 ms) carte 163 photos + 300 positions
+  2713.726  t0507743 suivi ok score 1.00 pos 16235,6747 net 15 (17 ms) carte 163 photos + 300 positions
+  2713.815  photo e-2_0250 à 16235,6747 (472 ko, 215 ms)
+  2714.073  t0508090 suivi ok score 1.00 pos 16235,6747 net 15 (24 ms) carte 164 photos + 300 positions
+  2714.398  t0508414 suivi ok score 0.99 pos 15948,6747 net 12 (18 ms) carte 164 photos + 300 positions
+  2714.732  t0508747 suivi ok score 0.99 pos 15315,6747 net 13 (17 ms) carte 164 photos + 300 positions
+  2715.036  envoyé lame_20261020_123025_moelle-2_0245.jpg (466 ko)
+  2715.064  t0509080 suivi ok score 1.00 pos 15279,6747 net 13 (16 ms) carte 164 photos + 300 positions
+  2715.399  photo e-2_0251 à 15279,6747 (459 ko, 239 ms)
+  2715.408  t0509424 suivi ok score 1.00 pos 15279,6747 net 13 (22 ms) carte 165 photos + 300 positions
+  2715.735  t0509751 suivi ok score 0.99 pos 15219,6747 net 13 (16 ms) carte 165 photos + 300 positions
+  2716.066  t0510082 suivi ok score 0.97 pos 14263,6779 net 9 (13 ms) carte 165 photos + 300 positions
+  2716.397  t0510415 suivi ok score 1.00 pos 14095,6795 net 13 (15 ms) carte 165 photos + 300 positions
+  2716.437  envoyé lame_20261020_123025_moelle-2_0246.jpg (475 ko)
+  2716.721  t0510736 suivi ok score 1.00 pos 14095,6795 net 13 (11 ms) carte 165 photos + 300 positions
+  2716.741  photo e-2_0252 à 14095,6795 (462 ko, 204 ms)
+  2717.074  t0511090 suivi ok score 0.99 pos 14083,6795 net 13 (25 ms) carte 166 photos + 300 positions
+  2717.406  t0511422 suivi ok score 0.95 pos 13294,6843 net 8 (19 ms) carte 166 photos + 300 positions
+  2717.674  envoyé lame_20261020_123025_moelle-2_0247.jpg (462 ko)
+  2717.732  t0511748 suivi ok score 1.00 pos 12828,6859 net 13 (16 ms) carte 166 photos + 300 positions
+  2718.059  t0512076 suivi ok score 1.00 pos 12828,6859 net 13 (15 ms) carte 166 photos + 300 positions
+  2718.177  photo e-2_0253 à 12828,6859 (450 ko, 221 ms)
+  2718.396  t0512413 suivi ok score 0.99 pos 12828,6859 net 13 (20 ms) carte 167 photos + 300 positions
+  2718.702  envoyé lame_20261020_123025_moelle-2_0248.jpg (442 ko)
+  2718.740  t0512757 suivi ok score 0.97 pos 11992,6906 net 10 (15 ms) carte 167 photos + 300 positions
+  2719.073  t0513090 suivi ok score 1.00 pos 11585,6938 net 14 (19 ms) carte 167 photos + 300 positions
+  2719.396  t0513412 suivi ok score 1.00 pos 11585,6938 net 14 (16 ms) carte 167 photos + 300 positions
+  2719.492  photo e-2_0254 à 11585,6938 (444 ko, 223 ms)
+  2719.729  t0513746 suivi ok score 1.00 pos 11561,6938 net 13 (16 ms) carte 168 photos + 300 positions
+  2719.885  envoyé lame_20261020_123025_moelle-2_0249.jpg (449 ko)
+  2720.066  t0514083 suivi ok score 0.98 pos 10485,6986 net 10 (18 ms) carte 168 photos + 300 positions
+  2720.399  t0514415 suivi ok score 0.99 pos 9756,6986 net 11 (17 ms) carte 168 photos + 300 positions
+  2720.399  photo en mouvement lent (60 % du champ, 30 u/s)
+  2720.611  photo e-2_0255 à 9756,6986 (437 ko, 212 ms)
+  2720.724  t0514739 suivi ok score 1.00 pos 9768,6970 net 12 (12 ms) carte 169 photos + 300 positions
+  2721.024  envoyé lame_20261020_123025_moelle-2_0250.jpg (472 ko)
+  2721.071  t0515088 suivi ok score 0.98 pos 9661,6970 net 10 (16 ms) carte 169 photos + 300 positions
+  2721.395  t0515411 suivi ok score 0.98 pos 8226,7066 net 11 (13 ms) carte 169 photos + 300 positions
+  2721.571  photo en mouvement lent (54 % du champ, 30 u/s)
+  2721.741  t0515756 suivi ok score 1.00 pos 8107,7066 net 12 (21 ms) carte 169 photos + 300 positions
+  2721.789  photo e-2_0256 à 8107,7066 (440 ko, 217 ms)
+  2722.061  t0516078 suivi ok score 1.00 pos 8107,7066 net 12 (13 ms) carte 170 photos + 300 positions
+  2722.394  t0516411 suivi ok score 0.99 pos 7904,7066 net 11 (17 ms) carte 170 photos + 300 positions
+  2722.740  t0516756 suivi ok score 0.99 pos 7425,7066 net 12 (18 ms) carte 170 photos + 300 positions
+  2723.064  t0517079 suivi ok score 0.99 pos 7342,7066 net 12 (13 ms) carte 170 photos + 300 positions
+  2723.205  envoyé lame_20261020_123025_moelle-2_0251.jpg (459 ko)
+  2723.399  t0517416 suivi ok score 1.00 pos 7342,7066 net 12 (14 ms) carte 170 photos + 300 positions
+  2723.520  photo e-2_0257 à 7342,7066 (447 ko, 217 ms)
+  2723.726  t0517743 suivi ok score 1.00 pos 7342,7066 net 12 (15 ms) carte 171 photos + 300 positions
+  2724.064  t0518081 suivi ok score 0.97 pos 6601,7082 net 8 (15 ms) carte 171 photos + 300 positions
+  2724.381  envoyé lame_20261020_123025_moelle-2_0252.jpg (462 ko)
+  2724.407  t0518424 suivi ok score 0.99 pos 5621,7129 net 10 (20 ms) carte 171 photos + 300 positions
+  2724.407  photo en mouvement lent (56 % du champ, 30 u/s)
+  2724.629  photo e-2_0258 à 5621,7129 (434 ko, 221 ms)
+  2724.725  t0518742 suivi ok score 1.00 pos 5632,7129 net 11 (13 ms) carte 172 photos + 300 positions
+  2725.082  t0519097 suivi ok score 1.00 pos 5632,7129 net 11 (22 ms) carte 172 photos + 300 positions
+  2725.382  envoyé lame_20261020_123025_moelle-2_0253.jpg (450 ko)
+  2725.397  t0519414 suivi ok score 0.99 pos 5632,7129 net 11 (17 ms) carte 172 photos + 300 positions
+  2725.728  t0519744 suivi ok score 0.99 pos 6027,7129 net 12 (15 ms) carte 172 photos + 300 positions
+  2726.063  t0520080 suivi ok score 1.00 pos 6637,7129 net 13 (14 ms) carte 172 photos + 300 positions
+  2726.405  t0520421 suivi ok score 1.00 pos 6696,7129 net 12 (17 ms) carte 172 photos + 300 positions
+  2726.644  envoyé lame_20261020_123025_moelle-2_0254.jpg (444 ko)
+  2726.742  t0520757 suivi ok score 1.00 pos 6696,7129 net 13 (18 ms) carte 172 photos + 300 positions
+  2726.908  photo e-2_0259 à 6696,7129 (452 ko, 223 ms)
+  2727.068  t0521085 suivi ok score 0.99 pos 6696,7129 net 13 (16 ms) carte 173 photos + 300 positions
+  2727.404  t0521421 suivi ok score 0.98 pos 5824,7177 net 9 (17 ms) carte 173 photos + 300 positions
+  2727.740  t0521757 suivi ok score 1.00 pos 5501,7193 net 11 (18 ms) carte 173 photos + 300 positions
+  2728.068  t0522084 suivi ok score 1.00 pos 5501,7193 net 12 (19 ms) carte 173 photos + 300 positions
+  2728.094  envoyé lame_20261020_123025_moelle-2_0255.jpg (437 ko)
+  2728.148  photo e-2_0260 à 5501,7193 (435 ko, 202 ms)
+  2728.396  t0522413 suivi ok score 1.00 pos 5489,7193 net 12 (14 ms) carte 174 photos + 300 positions
+  2728.749  t0522764 suivi ok score 1.00 pos 4999,7193 net 11 (26 ms) carte 174 photos + 300 positions
+  2729.076  t0523092 suivi ok score 0.99 pos 4736,7193 net 11 (22 ms) carte 174 photos + 300 positions
+  2729.335  envoyé lame_20261020_123025_moelle-2_0256.jpg (440 ko)
+  2729.393  t0523411 suivi ok score 1.00 pos 4389,7209 net 11 (12 ms) carte 174 photos + 300 positions
+  2729.732  t0523749 suivi ok score 1.00 pos 4389,7209 net 11 (15 ms) carte 174 photos + 300 positions
+  2729.896  photo e-2_0261 à 4389,7209 (426 ko, 232 ms)
+  2730.078  t0524094 suivi ok score 1.00 pos 4389,7209 net 11 (22 ms) carte 175 photos + 300 positions
+  2730.407  t0524423 suivi ok score 0.97 pos 3075,7273 net 11 (19 ms) carte 175 photos + 300 positions
+  2730.733  t0524750 suivi ok score 1.00 pos 3015,7273 net 11 (13 ms) carte 175 photos + 300 positions
+  2731.066  t0525082 suivi ok score 1.00 pos 3015,7273 net 11 (17 ms) carte 175 photos + 300 positions
+  2731.110  photo e-2_0262 à 3015,7273 (433 ko, 210 ms)
+  2731.299  envoyé lame_20261020_123025_moelle-2_0257.jpg (447 ko)
+  2731.413  t0525429 suivi ok score 1.00 pos 3015,7273 net 11 (27 ms) carte 176 photos + 300 positions
+  2731.735  t0525750 suivi ok score 1.00 pos 3015,7273 net 11 (16 ms) carte 176 photos + 300 positions
+  2732.065  t0526081 suivi ok score 1.00 pos 3015,7273 net 11 (17 ms) carte 176 photos + 300 positions
+  2732.397  t0526414 suivi ok score 1.00 pos 3015,7273 net 11 (15 ms) carte 176 photos + 300 positions
+  2732.699  envoyé lame_20261020_123025_moelle-2_0258.jpg (434 ko)
+  2732.737  t0526753 suivi ok score 1.00 pos 3015,7273 net 11 (14 ms) carte 176 photos + 300 positions
+  2733.072  t0527090 suivi ok score 1.00 pos 3015,7273 net 11 (21 ms) carte 176 photos + 300 positions
+  2733.408  t0527424 suivi ok score 1.00 pos 3015,7273 net 11 (22 ms) carte 176 photos + 300 positions
+  2733.738  t0527753 suivi ok score 1.00 pos 3015,7273 net 11 (16 ms) carte 176 photos + 300 positions
+  2733.745  envoyé lame_20261020_123025_moelle-2_0259.jpg (452 ko)
+  2734.065  t0528082 suivi ok score 1.00 pos 3015,7273 net 11 (16 ms) carte 176 photos + 300 positions
+  2734.404  t0528420 suivi ok score 1.00 pos 3015,7273 net 3 (19 ms) carte 176 photos + 300 positions
+  2734.733  t0528750 suivi ok score 1.00 pos 3015,7273 net 5 (15 ms) carte 176 photos + 300 positions
+  2734.744  envoyé lame_20261020_123025_moelle-2_0260.jpg (435 ko)
+  2735.066  t0529083 suivi ok score 1.00 pos 3015,7273 net 11 (16 ms) carte 176 photos + 300 positions
+  2735.405  t0529422 suivi ok score 1.00 pos 3015,7273 net 12 (20 ms) carte 176 photos + 300 positions
+  2735.747  t0529763 suivi ok score 0.99 pos 3015,7273 net 12 (23 ms) carte 176 photos + 300 positions
+  2735.760  envoyé lame_20261020_123025_moelle-2_0261.jpg (426 ko)
+  2736.073  t0530089 suivi ok score 1.00 pos 3015,7273 net 12 (20 ms) carte 176 photos + 300 positions
+  2736.409  t0530425 suivi ok score 1.00 pos 3015,7273 net 9 (21 ms) carte 176 photos + 300 positions
+  2736.747  t0530762 suivi ok score 1.00 pos 3015,7273 net 11 (20 ms) carte 176 photos + 300 positions
+  2737.081  t0531096 suivi ok score 1.00 pos 3015,7273 net 8 (24 ms) carte 176 photos + 300 positions
+  2737.407  t0531423 suivi ok score 1.00 pos 3015,7273 net 12 (16 ms) carte 176 photos + 300 positions
+  2737.750  t0531765 suivi ok score 1.00 pos 3015,7273 net 12 (27 ms) carte 176 photos + 300 positions
+  2738.073  t0532089 suivi ok score 1.00 pos 3015,7273 net 12 (19 ms) carte 176 photos + 300 positions
+  2738.409  t0532426 suivi ok score 1.00 pos 3015,7273 net 12 (18 ms) carte 176 photos + 300 positions
+  2738.748  t0532763 suivi ok score 1.00 pos 2871,7273 net 11 (19 ms) carte 176 photos + 300 positions
+  2739.080  t0533095 suivi ok score 1.00 pos 2501,7273 net 12 (22 ms) carte 176 photos + 300 positions
+  2739.405  t0533422 suivi ok score 1.00 pos 2429,7273 net 12 (17 ms) carte 176 photos + 300 positions
+  2739.686  photo e-2_0263 à 2429,7273 (435 ko, 209 ms)
+  2739.734  t0533751 suivi ok score 1.00 pos 2441,7273 net 12 (12 ms) carte 177 photos + 300 positions
+  2740.083  t0534099 suivi ok score 1.00 pos 2417,7273 net 11 (26 ms) carte 177 photos + 300 positions
+  2740.406  t0534422 suivi ok score 0.99 pos 1975,7273 net 11 (17 ms) carte 177 photos + 300 positions
+  2740.743  t0534758 suivi ok score 0.99 pos 1258,7289 net 11 (20 ms) carte 177 photos + 300 positions
+  2741.081  t0535097 suivi ok score 1.00 pos 1102,7289 net 11 (21 ms) carte 177 photos + 300 positions
+  2741.104  envoyé lame_20261020_123025_moelle-2_0262.jpg (433 ko)
+  2741.398  t0535415 suivi ok score 1.00 pos 1102,7289 net 11 (13 ms) carte 177 photos + 300 positions
+  2741.500  photo e-2_0264 à 1102,7289 (436 ko, 231 ms)
+  2741.741  t0535757 suivi ok score 0.99 pos 1019,7289 net 11 (20 ms) carte 178 photos + 300 positions
+  2742.069  t0536085 suivi ok score 0.99 pos 552,7289 net 9 (16 ms) carte 178 photos + 300 positions
+  2742.202  envoyé lame_20261020_123025_moelle-2_0263.jpg (435 ko)
+  2742.400  t0536417 suivi ok score 1.00 pos 277,7289 net 9 (15 ms) carte 178 photos + 300 positions
+  2742.735  t0536752 suivi ok score 1.00 pos 289,7289 net 9 (16 ms) carte 178 photos + 300 positions
+  2742.884  photo e-2_0265 à 289,7289 (415 ko, 217 ms)
+  2743.067  t0537083 suivi ok score 1.00 pos 289,7289 net 9 (16 ms) carte 179 photos + 300 positions
+  2743.400  t0537417 suivi ok score 1.00 pos 289,7289 net 9 (15 ms) carte 179 photos + 300 positions
+  2743.743  t0537760 suivi ok score 1.00 pos 289,7289 net 9 (19 ms) carte 179 photos + 300 positions
+  2744.036  envoyé lame_20261020_123025_moelle-2_0264.jpg (436 ko)
+  2744.074  t0538090 suivi ok score 1.00 pos 289,7289 net 9 (15 ms) carte 179 photos + 300 positions
+  2744.404  t0538421 suivi ok score 1.00 pos 289,7289 net 9 (17 ms) carte 179 photos + 300 positions
+  2744.742  t0538758 suivi ok score 1.00 pos 289,7289 net 9 (18 ms) carte 179 photos + 300 positions
+  2745.068  envoyé lame_20261020_123025_moelle-2_0265.jpg (415 ko)
+  2745.074  t0539091 suivi ok score 1.00 pos 289,7289 net 9 (17 ms) carte 179 photos + 300 positions
