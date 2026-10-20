@@ -157,6 +157,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     var msg by remember { mutableStateOf("Touche le bouton violet pour démarrer la caméra.") }
     var msgErr by remember { mutableStateOf(false) }
     var showObjPick by remember { mutableStateOf(false) }
+    var switchDlg by remember { mutableStateOf<String?>(null) }
     var zoom by remember { mutableStateOf(st.zoom) }
     var mapBig by remember { mutableStateOf(false) }
     var title by remember { mutableStateOf("") }
@@ -245,7 +246,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     WebButton(if (sess.phase == "blank") "Fond blanc ●" else "Fond blanc", pressed = sess.phase == "blank", small = true) { session.setBlank(sess.phase != "blank") }
                     WebButton("Changer d'objectif", small = true, enabled = sess.phase != "blank") { showObjPick = !showObjPick }
                     if (showObjPick) FlowRow(Modifier.background(Color(0xF217151C), RoundedCornerShape(12.dp)).border(1.dp, LINE, RoundedCornerShape(12.dp)).padding(8.dp), verticalArrangement = Arrangement.spacedBy(6.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                        for (o in Settings.OBJECTIVES.filter { it != sess.objective }) WebButton(o, small = true) { showObjPick = false; session.startSwitch(o) }
+                        for (o in Settings.OBJECTIVES.filter { it != sess.objective }) WebButton(o, small = true) { showObjPick = false; switchDlg = o }
                     }
                 } else WebButton("Reprendre", small = true) { session.resumeSwitch() }
             }
@@ -302,6 +303,17 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
         if (!granted) Box(Modifier.fillMaxSize().background(Color(0xCC000000)), contentAlignment = Alignment.Center) { Text("Autorisation caméra nécessaire.", color = FG) }
     }
 
+    switchDlg?.let { o ->
+        AlertDialog(onDismissRequest = { switchDlg = null }, containerColor = PANEL, titleContentColor = FG, textContentColor = FG,
+            title = { Text("Passer au $o") },
+            text = { Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                PatronFields(o, st)
+                val lower = (Regex("\\d+").find(o)?.value?.toIntOrNull() ?: 0) < (Regex("\\d+").find(sess.objective)?.value?.toIntOrNull() ?: 0)
+                Text(if (lower) "Le patron sera centré sur le détail que tu viens de prendre." else "Le patron se posera en haut à gauche, sur la première photo.", color = MUTED, fontSize = 12.sp)
+            } },
+            confirmButton = { TextButton(onClick = { switchDlg = null; session.startSwitch(o) }) { Text("Changer d'objectif", color = ACCENT) } },
+            dismissButton = { TextButton(onClick = { switchDlg = null }) { Text("Annuler", color = MUTED) } })
+    }
     if (startDlg) {
         var t by remember { mutableStateOf(title) }; var smp by remember { mutableStateOf(sample) }; var obj by remember { mutableStateOf(st.objective) }
         AlertDialog(onDismissRequest = { startDlg = false }, containerColor = PANEL, titleContentColor = FG, textContentColor = FG,
@@ -315,20 +327,8 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                         for (o in Settings.OBJECTIVES) WebButton(o, pressed = o == obj, small = true) { obj = o }
                     }
                     OutlinedTextField(smp, { smp = it }, label = { Text("Prélèvement (optionnel)") }, singleLine = true, modifier = Modifier.fillMaxWidth())
-                    var patron by remember { mutableStateOf(st.patron) }; var autoCrop by remember { mutableStateOf(st.autoCrop) }
-                    var pc by remember { mutableStateOf(patron.substringBefore('x').takeIf { patron != "libre" } ?: "") }
-                    var pr by remember { mutableStateOf(patron.substringAfter('x').takeIf { patron != "libre" } ?: "") }
-                    fun setPatron(c: String, r: String) { pc = c; pr = r; val ci = c.toIntOrNull() ?: 0; val ri = r.toIntOrNull() ?: 0; patron = if (ci in 1..40 && ri in 1..40) "${ci}x${ri}" else "libre"; st.patron = patron }
-                    Text("Patron : champs à remplir (colonnes x lignes), posé sur la première photo", color = MUTED, fontSize = 12.sp)
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
-                        OutlinedTextField(pc, { setPatron(it.filter { ch -> ch.isDigit() }.take(2), pr) }, label = { Text("colonnes", fontSize = 11.sp) }, singleLine = true, modifier = Modifier.weight(1f), keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
-                        Text("x", color = MUTED)
-                        OutlinedTextField(pr, { setPatron(pc, it.filter { ch -> ch.isDigit() }.take(2)) }, label = { Text("lignes", fontSize = 11.sp) }, singleLine = true, modifier = Modifier.weight(1f), keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
-                        WebButton("libre", pressed = patron == "libre", small = true) { setPatron("", "") }
-                    }
-                    FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                        for (o in listOf("2x2", "3x3", "4x4", "5x5", "6x4", "8x6")) WebButton(o, pressed = o == patron, small = true) { setPatron(o.substringBefore('x'), o.substringAfter('x')) }
-                    }
+                    var autoCrop by remember { mutableStateOf(st.autoCrop) }
+                    PatronFields(obj, st)
                     Row(verticalAlignment = Alignment.CenterVertically) { Checkbox(autoCrop, { autoCrop = it; st.autoCrop = it }); Text("Rogner la lame au plus grand rectangle couvert", fontSize = 13.sp, color = FG) }
                     val par = lames.firstOrNull { it.slug == parent }?.title ?: st.recentSeries().firstOrNull { it.first == parent }?.second
                     Text(if (par != null) "Détail de la lame d'ensemble « $par » (changer dans les réglages)" else "Autres options (coloration, lame d'ensemble, caméra) dans les réglages ⚙", color = MUTED, fontSize = 12.sp)
@@ -421,6 +421,26 @@ fun loadLames(gallery: String): List<LameRef> = try {
     val arr = JSONArray(c.inputStream.bufferedReader().readText()); c.disconnect()
     (0 until arr.length()).map { arr.getJSONObject(it) }.map { LameRef(it.getString("slug"), it.optString("title", it.getString("slug")), it.optString("objective").ifEmpty { null }, it.optInt("width"), it.optInt("height"), it.optInt("tile"), it.optInt("maxlvl"), it.optString("thumb")) }
 } catch (e: Exception) { Journal.log("galerie injoignable : ${e.message}"); emptyList() }
+
+/** Patron (colonnes x lignes de champs) propre à un objectif : champs libres, raccourcis, « libre ». Mémorisé par objectif. */
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+fun PatronFields(obj: String, st: Settings) {
+    var patron by remember(obj) { mutableStateOf(st.patronFor(obj)) }
+    var pc by remember(obj) { mutableStateOf(patron.substringBefore('x').takeIf { patron != "libre" } ?: "") }
+    var pr by remember(obj) { mutableStateOf(patron.substringAfter('x').takeIf { patron != "libre" } ?: "") }
+    fun setPatron(c: String, r: String) { pc = c; pr = r; val ci = c.toIntOrNull() ?: 0; val ri = r.toIntOrNull() ?: 0; patron = if (ci in 1..40 && ri in 1..40) "${ci}x${ri}" else "libre"; st.setPatronFor(obj, patron) }
+    Text("Patron au $obj : champs à remplir (colonnes x lignes)", color = MUTED, fontSize = 12.sp)
+    Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+        OutlinedTextField(pc, { setPatron(it.filter { ch -> ch.isDigit() }.take(2), pr) }, label = { Text("colonnes", fontSize = 11.sp) }, singleLine = true, modifier = Modifier.weight(1f), keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
+        Text("x", color = MUTED)
+        OutlinedTextField(pr, { setPatron(pc, it.filter { ch -> ch.isDigit() }.take(2)) }, label = { Text("lignes", fontSize = 11.sp) }, singleLine = true, modifier = Modifier.weight(1f), keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
+        WebButton("libre", pressed = patron == "libre", small = true) { setPatron("", "") }
+    }
+    FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        for (o in listOf("2x2", "3x3", "4x4", "5x5", "6x4", "8x6")) WebButton(o, pressed = o == patron, small = true) { setPatron(o.substringBefore('x'), o.substringAfter('x')) }
+    }
+}
 
 /** Aperçu de la lame d'ensemble (tuiles du niveau tenant dans ~1024 px) : un toucher marque l'endroit approximatif où se trouve le détail. */
 @Composable

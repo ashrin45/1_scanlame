@@ -263,13 +263,14 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
                 val len = file.length()
                 synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("enc_ms", now() - tt).put("sharp", sh.toDouble())) }
                 synchronized(placed) { placedPhotos.add(Placed(px, py, f.status, true, th, grade)) }
-                if (state.value.patron == null && st.patron != "libre") {
-                    val (cols, rows) = st.patron.split('x').map { it.toInt() }
+                val patronSpec = st.patronFor(state.value.objective)
+                if (state.value.patron == null && patronSpec != "libre") {
+                    val (cols, rows) = patronSpec.split('x').map { it.toInt() }
                     // apres un passage a un objectif plus faible, le detail (= cette premiere photo) doit etre au centre du patron ; sinon coin haut-gauche
                     val centered = state.value.detailAt != null
                     val x0 = if (centered) px + W / 2 - cols * W / 2 else px; val y0 = if (centered) py + H / 2 - rows * H / 2 else py
                     state.value = state.value.copy(patron = doubleArrayOf(x0, y0, cols * W, rows * H))
-                    Journal.log("patron ${st.patron} champs posé ${if (centered) "autour du détail" else "en haut à gauche"} (${x0.roundToInt()},${y0.roundToInt()})")
+                    Journal.log("patron $patronSpec champs posé ${if (centered) "autour du détail" else "en haut à gauche"} (${x0.roundToInt()},${y0.roundToInt()})")
                 }
                 state.value.patron?.let { pt -> state.value = state.value.copy(patronFill = patronFill(pt)) }
                 state.value = state.value.copy(photos = seq, bytes = state.value.bytes + len)
@@ -312,7 +313,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val obj = sw.getString("objective"); val t = tnow()
         val cal = st.umPerPx(obj)
         segments.add(JSONObject().put("objective", obj).put("t0", t).put("t1", JSONObject.NULL).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL)
-            .put("from_x", sw.opt("from_x")).put("from_y", sw.opt("from_y")).put("from_track", sw.opt("from_track")))
+            .put("from_x", sw.opt("from_x")).put("from_y", sw.opt("from_y")).put("from_track", sw.opt("from_track")).put("patron", st.patronFor(obj).takeIf { it != "libre" } ?: JSONObject.NULL))
         // si on passe a un grossissement plus faible, le point de depart du nouveau repere est l'emplacement du detail : repere sur la carte
         val prevObj = Regex("\\d+").find(segments.getOrNull(segments.size - 2)?.optString("objective") ?: "")?.value?.toIntOrNull() ?: 0
         val newObj = Regex("\\d+").find(obj)?.value?.toIntOrNull() ?: 0
@@ -364,7 +365,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             .put("stage", st.stageX.replace(',', '.').toDoubleOrNull()?.let { x -> st.stageY.replace(',', '.').toDoubleOrNull()?.let { y -> JSONObject().put("x", x).put("y", y) } } ?: JSONObject.NULL)
             .put("captured", SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX", Locale.ROOT).format(Date()))
             .put("calibrations", JSONObject(st.calibrations().mapValues { it.value.toDouble() }))
-            .put("patron", st.patron.takeIf { it != "libre" } ?: JSONObject.NULL).put("auto_crop", st.autoCrop)
+            .put("patron", st.patronFor(st.objective).takeIf { it != "libre" } ?: JSONObject.NULL).put("auto_crop", st.autoCrop)
             .put("depth", st.depth).put("mode", mode).put("sample_ms", 100).put("position_unit", "px of the captured image (portrait)")
             .put("width", W.roundToInt()).put("height", H.roundToInt()).put("zoom", st.zoom.toDouble())
             .put("app", "scanlame-android ${BuildConfig.VERSION_NAME}").put("device", "${Build.MANUFACTURER} ${Build.MODEL} Android ${Build.VERSION.RELEASE}")
