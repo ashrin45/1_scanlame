@@ -193,7 +193,13 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     Box(Modifier.fillMaxSize().background(BG)) {
         // ---- scène : caméra plein écran
         AndroidView(factory = { c -> PreviewView(c).apply { implementationMode = PreviewView.ImplementationMode.COMPATIBLE; scaleType = PreviewView.ScaleType.FIT_CENTER; preview = this } }, modifier = Modifier.fillMaxSize())
-        if (sess.running) Box(Modifier.fillMaxSize().border(4.dp, REC))
+        if (sess.running) {
+            // cadre d'enregistrement : couleur de la derniere photo (vert bonne, orange moyenne, rouge ratee ou pas trop grand), clignote a chaque prise
+            var flash by remember { mutableStateOf(false) }
+            LaunchedEffect(sess.lastShotAt) { if (sess.lastShotAt > 0) { repeat(2) { flash = true; delay(140); flash = false; delay(90) } } }
+            val col = when (sess.lastGrade) { 0 -> OK; 1 -> WARN; 2 -> REC; else -> Color(0xAAFFFFFF) }
+            Box(Modifier.fillMaxSize().border(if (flash) 14.dp else 5.dp, col))
+        }
 
         Column(Modifier.fillMaxSize().statusBarsPadding()) {
             // état (pilule centrée)

@@ -30,7 +30,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val still: Boolean = false, val photos: Int = 0, val samples: Int = 0, val bytes: Long = 0, val shooting: Boolean = false,
         val phase: String = "", val objective: String = "x100", val placed: List<Placed> = emptyList(), val fieldW: Double = 1.0, val fieldH: Double = 1.0,
         val message: String = "", val trackMs: Int = 0, val fps: Float = 0f,
-        val warn: String = "", val sharpRef: Float = 0f, val blurred: Int = 0, val bigSteps: Int = 0, val exposure: String = ""
+        val warn: String = "", val sharpRef: Float = 0f, val blurred: Int = 0, val bigSteps: Int = 0, val exposure: String = "",
+        val lastGrade: Int = -1, val lastShotAt: Long = 0L   // derniere photo : -1 aucune, 0 bonne, 1 moyenne, 2 ratee (floue, suivi perdu ou pas trop grand) ; horodatage pour le clignotement du cadre
     )
     val state = MutableStateFlow(State())
 
@@ -167,6 +168,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             if (far) {
                 if (byDistance && !still) Journal.log("photo en mouvement lent (${(100 * gap / Tracker.S2).roundToInt()} % du champ, ${speed.roundToInt()} u/s)")
                 // pas trop grand entre deux arrêts : au-dela de 70 % du champ, les photos ne se recouvrent plus assez pour l'assemblage
+                bigStepPending = gap > 0.7 * Tracker.S2
                 if (gap > 0.7 * Tracker.S2) { nBigSteps++; Journal.log("ATTENTION pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recouvrement insuffisant"); state.value = state.value.copy(message = "Pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recule d'un demi-champ, les photos doivent se recouvrir d'au moins 30 %.") }
                 else if (state.value.message.startsWith("Pas trop grand")) state.value = state.value.copy(message = "Série en cours : déplace la platine d'un demi-champ, arrête-toi, une photo part à chaque arrêt.")
                 shoot(f, px, py, t, sh, img)
@@ -213,6 +215,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
 
     private var sharpRef = 0f; private var nBlurred = 0; private var nBigSteps = 0
     private var lastShotT = 0L
+    private var bigStepPending = false
     @Volatile private var exposureNote = ""; @Volatile private var liveWarn = ""
     private val photoSharps = ArrayList<Float>()
 
@@ -223,6 +226,10 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         photoSharps.add(sh); val best = photoSharps.sortedDescending().take(5); sharpRef = best[best.size / 2]
         val grade = if (photoSharps.size >= 3 && sh < 0.5f * sharpRef) 2 else if (photoSharps.size >= 3 && sh < 0.7f * sharpRef) 1 else 0
         if (grade == 2) { nBlurred++; Journal.log("photo floue (netteté ${sh.roundToInt()} contre ${sharpRef.roundToInt()} de référence)") }
+        // note affichee par le cadre : rouge aussi si le suivi etait perdu ou si le pas depuis la photo precedente est trop grand
+        val frameGrade = if (bigStepPending || f.status == "lost") 2 else grade
+        bigStepPending = false
+        state.value = state.value.copy(lastGrade = frameGrade, lastShotAt = now())
         shooting = true
         lastShot = f.x to f.y; lastShotT = now()
         seq++
