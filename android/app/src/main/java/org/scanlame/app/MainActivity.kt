@@ -225,7 +225,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                 Column(Modifier.weight(1f).padding(end = 6.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
                     val expo = live.exposureNs?.let { String.format(Locale.ROOT, "%.1f ms", it / 1e6) } ?: "?"
                     Hud(if (cameraOn && bound != null) "${engine.photoSize?.let { "${it.height}x${it.width}" } ?: engine.videoSize?.let { "${it.height}x${it.width}" } ?: ""} · cam ${live.activePhysical ?: "?"}" else "caméra arrêtée")
-                    Hud(if (sess.mode == Settings.MODE_VIDEO && sess.running) "vidéo ${sess.bytes shr 20} Mo" else "${sess.photos} photo${if (sess.photos > 1) "s" else ""}${if (sess.blurred > 0) " · ${sess.blurred} floue(s)" else ""}${if (sess.bigSteps > 0) " · ${sess.bigSteps} pas trop grand(s)" else ""}", if (sess.blurred > 0) WARN else FG)
+                    Hud(if (sess.mode == Settings.MODE_VIDEO && sess.running) "vidéo ${sess.bytes shr 20} Mo" else "${sess.photos} photo${if (sess.photos > 1) "s" else ""}${if (sess.blurred > 0) " · ${sess.blurred} floue(s)" else ""}${if (sess.patron != null) " · patron ${(sess.patronFill * 100).roundToInt()} %" else ""}${if (sess.bigSteps > 0) " · ${sess.bigSteps} pas trop grand(s)" else ""}", if (sess.blurred > 0) WARN else FG)
                     Hud("$expo · ISO ${live.iso ?: "?"} · netteté ${sess.sharp.toInt()}")
                     Hud(if (locked) "AF/AE verrouillés" else "AF/AE auto", if (locked) ACCENT else FG)
                     if (up.pendingFiles > 0) Hud("${if (st.autoUpload) "" else "envoi bloqué · "}${up.pendingFiles} en file (${up.pendingBytes shr 20} Mo)${up.lastError?.let { " · $it" } ?: ""}", Color(0xFF1A0F1F), WARN)
@@ -315,6 +315,12 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                         for (o in Settings.OBJECTIVES) WebButton(o, pressed = o == obj, small = true) { obj = o }
                     }
                     OutlinedTextField(smp, { smp = it }, label = { Text("Prélèvement (optionnel)") }, singleLine = true, modifier = Modifier.fillMaxWidth())
+                    var patron by remember { mutableStateOf(st.patron) }; var autoCrop by remember { mutableStateOf(st.autoCrop) }
+                    Text("Patron (champs à remplir, posé sur la première photo)", color = MUTED, fontSize = 12.sp)
+                    FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                        for (o in listOf("libre", "2x2", "3x3", "4x4", "6x4")) WebButton(o, pressed = o == patron, small = true) { patron = o; st.patron = o }
+                    }
+                    Row(verticalAlignment = Alignment.CenterVertically) { Checkbox(autoCrop, { autoCrop = it; st.autoCrop = it }); Text("Rogner la lame au plus grand rectangle couvert", fontSize = 13.sp, color = FG) }
                     val par = lames.firstOrNull { it.slug == parent }?.title ?: st.recentSeries().firstOrNull { it.first == parent }?.second
                     Text(if (par != null) "Détail de la lame d'ensemble « $par » (changer dans les réglages)" else "Autres options (coloration, lame d'ensemble, caméra) dans les réglages ⚙", color = MUTED, fontSize = 12.sp)
                 }
@@ -367,6 +373,7 @@ fun CoverageMap(s: Session.State, modifier: Modifier) {
         // etendue : les photos et les positions suivies, sauf celles prises suivi perdu (position non fiable, elles ecraseraient la carte)
         for (p in all) { if (p.status == "lost" && !p.photo) continue; x0 = minOf(x0, p.x.toFloat()); y0 = minOf(y0, p.y.toFloat()); x1 = maxOf(x1, p.x.toFloat() + W); y1 = maxOf(y1, p.y.toFloat() + H) }
         if (x0 > x1) { x0 = all.last().x.toFloat(); y0 = all.last().y.toFloat(); x1 = x0 + W; y1 = y0 + H }
+        s.patron?.let { pt -> x0 = minOf(x0, pt[0].toFloat()); y0 = minOf(y0, pt[1].toFloat()); x1 = maxOf(x1, (pt[0] + pt[2]).toFloat()); y1 = maxOf(y1, (pt[1] + pt[3]).toFloat()) }
         val pad = 8f
         val sc = minOf((size.width - 2 * pad) / (x1 - x0), (size.height - 2 * pad) / (y1 - y0))
         val ox = pad + ((size.width - 2 * pad) - (x1 - x0) * sc) / 2; val oy = pad + ((size.height - 2 * pad) - (y1 - y0) * sc) / 2
@@ -382,6 +389,14 @@ fun CoverageMap(s: Session.State, modifier: Modifier) {
         }
         val cur = all.last()
         drawRect(if (s.track == "lost") REC else if (s.track == "relocated") WARN else OK, Offset(ox + (cur.x.toFloat() - x0) * sc, oy + (cur.y.toFloat() - y0) * sc), Size(W * sc, H * sc), style = Stroke(2f))
+        // patron : rectangle cible et cases restantes (grille 48x48 trop fine a dessiner : on trace le contour et le taux)
+        s.patron?.let { pt ->
+            val x = ox + (pt[0].toFloat() - x0) * sc; val y = oy + (pt[1].toFloat() - y0) * sc
+            drawRect(Color(0xFFE8A33D), Offset(x, y), Size(pt[2].toFloat() * sc, pt[3].toFloat() * sc), style = Stroke(2f))
+            val cols = (pt[2] / W).roundToInt(); val rows = (pt[3] / H).roundToInt()
+            for (i in 1 until cols) drawLine(Color(0x66E8A33D), Offset(x + i * W * sc, y), Offset(x + i * W * sc, y + pt[3].toFloat() * sc), 1f)
+            for (j in 1 until rows) drawLine(Color(0x66E8A33D), Offset(x, y + j * H * sc), Offset(x + pt[2].toFloat() * sc, y + j * H * sc), 1f)
+        }
         // emplacement du detail pris au plus fort grossissement (centre du premier champ apres le changement d'objectif) : a garder au milieu du balayage
         s.detailAt?.let { d ->
             val c = Offset(ox + (d.first.toFloat() + W / 2 - x0) * sc, oy + (d.second.toFloat() + H / 2 - y0) * sc)

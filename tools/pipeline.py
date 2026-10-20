@@ -1370,6 +1370,35 @@ for k in comp:
                        sharp=round(sel[k]['sharpn'] / max(med_sharp, 1e-9), 2), z=bool(sel[k].get('planes')), tracked=(k not in linked)))
     placements[str(k)] = M[k].tolist()
 json.dump(fields, open(os.path.join(out, 'fields.json'), 'w'))
+# --- rognage automatique : plus grand rectangle entierement couvert par les champs (bords propres, sans escalier ni trou de bordure) ---
+auto_crop = None
+try:
+    DS = 16
+    cov = np.zeros((math.ceil(H / DS), math.ceil(W / DS)), np.uint8)
+    for fd in fields:
+        pts = (np.array(fd['pts'], np.float32) / DS).astype(np.int32)
+        cv2.fillPoly(cov, [pts], 1)
+    cov = cv2.erode(cov, np.ones((5, 5), np.uint8))          # marge de deux blocs (32 px) : les bords de champ (vignettage) restent dehors
+    # plus grand rectangle de 1 : histogrammes par ligne + pile (O(n*m))
+    hgt = np.zeros(cov.shape[1], int); best = (0, 0, 0, 0, 0)
+    for y in range(cov.shape[0]):
+        hgt = np.where(cov[y] > 0, hgt + 1, 0)
+        stack = []
+        for x in range(cov.shape[1] + 1):
+            h = hgt[x] if x < cov.shape[1] else 0
+            start = x
+            while stack and stack[-1][1] >= h:
+                sx, sh = stack.pop(); area = sh * (x - sx)
+                if area > best[0]: best = (area, sx, y - sh + 1, x, y + 1)
+                start = sx
+            stack.append((start, h))
+    area, bx0, by0, bx1, by1 = best
+    if area * DS * DS >= 0.5 * cov.sum() * DS * DS * 0.9 or area * DS * DS >= 0.35 * W * H:
+        auto_crop = [int(bx0 * DS), int(by0 * DS), int(min(W, bx1 * DS)), int(min(H, by1 * DS))]
+        log(f'rognage automatique proposé : {auto_crop[2] - auto_crop[0]} x {auto_crop[3] - auto_crop[1]} px ({100 * area * DS * DS / (W * H):.0f} % de la mosaïque, {100 * area / max(1, cov.sum()):.0f} % de la couverture)')
+    else:
+        log(f'rognage automatique : rectangle plein trop petit ({100 * area / max(1, cov.sum()):.0f} % de la couverture), lame laissée entière')
+except Exception as e: log(f'rognage automatique non calculé : {e}')
 um_px = (float(meta['um_per_px']) * smin / (scales[ref] * shrink)) if meta.get('um_per_px') else None   # µm par pixel de la mosaïque
 
 # --- rapport de qualite : trous, nettete, recalage, images rejetees ---
@@ -1431,7 +1460,7 @@ json.dump(dict(size=[W, H], images=len(comp), of=N, placements=placements, k1=k1
                title=meta.get('title'), stain=meta.get('stain'), objective=meta.get('objective'), sample=meta.get('sample'),
                comment=meta.get('comment'), parent=meta.get('parent'), hint=meta.get('hint'), stage=meta.get('stage'), captured=meta.get('captured'),
                series=meta.get('series'), component=a.component, other_components=other_components,
-               parent_transform=parent_transform, parent_anchored=len(anchored_imgs) if a.parent else None,
+               parent_transform=parent_transform, parent_anchored=len(anchored_imgs) if a.parent else None, auto_crop=auto_crop, patron=meta.get('patron'),
                segment=a.segment, segments=len(segs), zone_components=zone_ids,
                params=dict(depth=DEPTH, seams=not a.no_seams, fps=a.fps, reg_size=a.reg_size, max_side=a.max_side, core=a.core, tile=a.tile,
                            distortion=not a.no_distortion, chroma=not a.no_chroma, code=(os.environ.get('GITHUB_SHA') or '')[:7] or None),

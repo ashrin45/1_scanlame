@@ -32,7 +32,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val message: String = "", val trackMs: Int = 0, val fps: Float = 0f,
         val warn: String = "", val sharpRef: Float = 0f, val blurred: Int = 0, val bigSteps: Int = 0, val exposure: String = "",
         val lastGrade: Int = -1, val lastShotAt: Long = 0L,
-        val detailAt: Pair<Double, Double>? = null   // position (repere courant) du dernier champ pris au plus fort grossissement, apres passage a un objectif plus faible   // derniere photo : -1 aucune, 0 bonne, 1 moyenne, 2 ratee (floue, suivi perdu ou pas trop grand) ; horodatage pour le clignotement du cadre
+        val detailAt: Pair<Double, Double>? = null,
+        val patron: DoubleArray? = null, val patronFill: Float = 0f   // rectangle cible [x0,y0,w,h] dans le repere des positions, et fraction remplie   // position (repere courant) du dernier champ pris au plus fort grossissement, apres passage a un objectif plus faible   // derniere photo : -1 aucune, 0 bonne, 1 moyenne, 2 ratee (floue, suivi perdu ou pas trop grand) ; horodatage pour le clignotement du cadre
     )
     val state = MutableStateFlow(State())
 
@@ -227,6 +228,18 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
     @Volatile private var exposureNote = ""; @Volatile private var liveWarn = ""
     private val photoSharps = ArrayList<Float>()
 
+    /** Fraction du rectangle cible couverte par les photos (grille de 48 x 48 cases). */
+    private fun patronFill(pt: DoubleArray): Float {
+        val G = 48; val hit = BooleanArray(G * G)
+        val photos = synchronized(placed) { placedPhotos.filter { it.photo } }
+        for (p in photos) {
+            val x0 = ((p.x - pt[0]) / pt[2] * G).toInt().coerceIn(0, G); val x1 = ((p.x + W - pt[0]) / pt[2] * G).toInt().coerceIn(0, G)
+            val y0 = ((p.y - pt[1]) / pt[3] * G).toInt().coerceIn(0, G); val y1 = ((p.y + H - pt[1]) / pt[3] * G).toInt().coerceIn(0, G)
+            for (y in y0 until y1) for (x in x0 until x1) hit[y * G + x] = true
+        }
+        return hit.count { it }.toFloat() / (G * G)
+    }
+
     private fun shoot(f: Tracker.Frame, px: Double, py: Double, t: Long, sh: Float, img: ImageProxy) {
         val dir = seriesDir ?: return
         val th = thumbColor(img)   // avant la photo : le tampon d'analyse est réutilisé par l'image suivante
@@ -250,6 +263,12 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
                 val len = file.length()
                 synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("enc_ms", now() - tt).put("sharp", sh.toDouble())) }
                 synchronized(placed) { placedPhotos.add(Placed(px, py, f.status, true, th, grade)) }
+                if (state.value.patron == null && st.patron != "libre") {
+                    val (cols, rows) = st.patron.split('x').map { it.toInt() }
+                    state.value = state.value.copy(patron = doubleArrayOf(px, py, cols * W, rows * H))
+                    Journal.log("patron ${st.patron} champs posé à ${px.roundToInt()},${py.roundToInt()}")
+                }
+                state.value.patron?.let { pt -> state.value = state.value.copy(patronFill = patronFill(pt)) }
                 state.value = state.value.copy(photos = seq, bytes = state.value.bytes + len)
                 Journal.log("photo ${name.takeLast(8, 4)} à ${px.roundToInt()},${py.roundToInt()} (${len shr 10} ko, ${now() - tt} ms)")
                 Uploader.kick(ctx)
@@ -342,6 +361,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             .put("stage", st.stageX.replace(',', '.').toDoubleOrNull()?.let { x -> st.stageY.replace(',', '.').toDoubleOrNull()?.let { y -> JSONObject().put("x", x).put("y", y) } } ?: JSONObject.NULL)
             .put("captured", SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX", Locale.ROOT).format(Date()))
             .put("calibrations", JSONObject(st.calibrations().mapValues { it.value.toDouble() }))
+            .put("patron", st.patron.takeIf { it != "libre" } ?: JSONObject.NULL).put("auto_crop", st.autoCrop)
             .put("depth", st.depth).put("mode", mode).put("sample_ms", 100).put("position_unit", "px of the captured image (portrait)")
             .put("width", W.roundToInt()).put("height", H.roundToInt()).put("zoom", st.zoom.toDouble())
             .put("app", "scanlame-android ${BuildConfig.VERSION_NAME}").put("device", "${Build.MANUFACTURER} ${Build.MODEL} Android ${Build.VERSION.RELEASE}")

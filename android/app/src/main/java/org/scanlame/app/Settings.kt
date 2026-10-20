@@ -55,6 +55,8 @@ class Settings(ctx: Context) {
         val l = listOf(listOf(slug, title.replace('\t', ' ').replace('\n', ' '), objective).joinToString("\t")) + str("recent", "").split('\n').filter { it.contains('\t') && !it.startsWith("$slug\t") }
         set("recent", l.take(20).joinToString("\n"))
     }
+    var patron: String get() = str("patron", "libre"); set(v) = set("patron", v)       // libre | 2x2 | 3x3 | 4x4 | 6x4 : rectangle cible (en champs) dessine sur la carte
+    var autoCrop: Boolean get() = p.getBoolean("autocrop", true); set(v) = p.edit().putBoolean("autocrop", v).apply()   // rognage au plus grand rectangle couvert a la publication
     var hint: String get() = str("hint", ""); set(v) = set("hint", v)           // "fx,fy" : repère touché sur la lame d'ensemble (fraction de l'image), vidé au départ de la série
     var stageX: String get() = str("stagex", ""); set(v) = set("stagex", v)     // coordonnées de la platine (vernier, mm) à la première photo
     var stageY: String get() = str("stagey", ""); set(v) = set("stagey", v)

@@ -252,13 +252,19 @@ while True:
     base_title = meta.get('title') or s
     published = []; published_ok = True
     seg0_slug = None
+    crop_offset = {}
     for res, ci, seg, par in jobs:
       lay = layout_of(res)
       title = base_title + (f' (obj. {lay.get("objective")})' if seg != pseg else '') + ('' if ci is None else f' (zone {ci + 1})')
       slug = (slugify(title) + '-' + s.split('_')[1][4:] + s.split('_')[2][:4]) if meta.get('title') and s.count('_') >= 2 else s.lower().replace('_', '-') + ('' if seg == pseg else f'-obj{seg}') + ('' if ci is None else f'-zone{ci + 1}')
       parent = seg0_slug if par == 'SEG0' else (meta.get('parent') if seg == pseg else None)
       if parent:
-          lay['parent'] = parent; json.dump(lay, open(os.path.join(res, 'layout.json'), 'w'))
+          lay['parent'] = parent
+          # la lame d'ensemble a ete rognee automatiquement avant ce detail : sa transformation (calculee sur l'ensemble entier) est decalee
+          if parent in crop_offset and lay.get('parent_transform'):
+              a_, b_, tx_, ty_ = lay['parent_transform']; ox_, oy_ = crop_offset[parent]
+              lay['parent_transform'] = [a_, b_, tx_ - ox_, ty_ - oy_]
+          json.dump(lay, open(os.path.join(res, 'layout.json'), 'w'))
       # relance d'une prise deja publiee (--force) : nouvelle version a cote de l'ancienne, pour comparer les reglages
       version = 1
       if a.force and os.path.isdir(os.path.join(ROOT, 'lames', slug)) and not meta.get('complete'):
@@ -292,7 +298,17 @@ while True:
       rc = subprocess.run(cmd).returncode
       if rc != 0:
           print('  ÉCHEC de la publication'); put_text(f'{s}/failed.txt', 'publication'); break
-      release_full(slug, os.path.join(res, 'pano.jpg'))
+      # rognage automatique demande par l'appli (patron) : plus grand rectangle couvert, calcule par le pipeline
+      if meta.get('auto_crop') and lay.get('auto_crop') and ci is None:
+          r_ = [str(int(v)) for v in lay['auto_crop']]
+          print(f'  rognage automatique à {r_}')
+          if subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'edit_lame.py'), 'crop', slug] + r_).returncode == 0:
+              crop_offset[slug] = (int(lay['auto_crop'][0]), int(lay['auto_crop'][1]))
+          fullp = os.path.join(a.work, f'{slug}_full.jpg')
+          subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'telecharger_lame.py'), slug, '--local', '-o', fullp])
+          release_full(slug, fullp)
+      else:
+          release_full(slug, os.path.join(res, 'pano.jpg'))
       # journaux publies a cote de la lame (telephone + assemblage), le temps de la mise au point
       logs = os.path.join(ROOT, 'lames', slug, 'journaux'); os.makedirs(logs, exist_ok=True)
       stampf = s.replace('lame_', '')
