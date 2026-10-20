@@ -21,7 +21,17 @@
  "stage": null,
  "stage_cal": null,
  "stage_obs": null,
- "children": [],
+ "children": [
+  {
+   "slug": "moelle-2-obj-x100-10201230",
+   "transform": [
+    0.09948788469327832,
+    -0.0034484440904917683,
+    409.05885912729036,
+    2426.989557326363
+   ]
+  }
+ ],
  "quality": {
   "grade": "A",
   "notes": [],
