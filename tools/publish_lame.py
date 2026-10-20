@@ -117,6 +117,31 @@ def write_pages(slug):
             .replace('__PARENT__', json.dumps(parent, ensure_ascii=False)))
     open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(page)
 
+def write_offline_zip(slug, out_zip):
+    """Dossier autonome de la lame : visionneuse HTML (OpenSeadragon inclus) + tuiles + lame.json/fields.json, dans un zip.
+    S'ouvre hors ligne en double-cliquant sur index.html (les calques de detail et le bouton Modifier sont retires)."""
+    import zipfile
+    d = os.path.join(LAMES, slug)
+    page = open(os.path.join(d, 'index.html'), encoding='utf-8').read()
+    page = page.replace('https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js', 'openseadragon.min.js')
+    page = re.sub(r'<link rel="stylesheet" href="https://fonts\.googleapis\.com[^>]*>', '', page)
+    page = re.sub(r'const CHILDREN = .*?;\n', 'const CHILDREN = [];\n', page, count=1)
+    page = re.sub(r'const PARENT = .*?;\n', 'const PARENT = null;\n', page, count=1)
+    page = page.replace('<button id="editbtn" aria-pressed="false"', '<button id="editbtn" hidden aria-pressed="false"')
+    page = page.replace('<div class="meta">', '<div class="meta"><span style="opacity:.7">copie hors ligne</span> · ', 1)
+    osd = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'vendor', 'openseadragon.min.js')
+    with zipfile.ZipFile(out_zip, 'w', zipfile.ZIP_DEFLATED) as z:
+        z.writestr(f'{slug}/index.html', page)
+        z.write(osd, f'{slug}/openseadragon.min.js')
+        z.writestr(f'{slug}/LISEZMOI.txt', f'Lame « {slug} » de ScanLame.\nOuvrir index.html dans un navigateur (double-clic) : zoom, déplacement, champs, qualité, hors ligne.\n'
+                   'lame.json : métadonnées (taille, objectif, µm/px) ; fields.json : position de chaque photo ; lame_files/ : tuiles Deep Zoom (le dernier niveau = pleine résolution).\n')
+        for f in ('lame.json', 'fields.json', 'lame.dzi'):
+            if os.path.isfile(os.path.join(d, f)): z.write(os.path.join(d, f), f'{slug}/{f}')
+        tiles = os.path.join(d, 'lame_files')
+        for root, _, files in os.walk(tiles):
+            for f in files: z.write(os.path.join(root, f), f'{slug}/lame_files/{os.path.relpath(os.path.join(root, f), tiles)}')
+    return out_zip
+
 def write_gallery():
     items = []
     for d in sorted(os.listdir(LAMES)):

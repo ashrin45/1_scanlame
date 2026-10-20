@@ -20,5 +20,7 @@ jobs:
           gh release view lames -R "$GITHUB_REPOSITORY" >/dev/null 2>&1 || gh release create lames -R "$GITHUB_REPOSITORY" --title "Lames entières (JPEG pleine résolution)" --notes "Une image par lame, nommée <slug>.jpg, remplacée à chaque réassemblage ou rognage." --latest=false
           for d in lames/*/; do
             s=$(basename "$d"); [ -f "lames/$s/lame.json" ] || continue
-            python tools/telecharger_lame.py "$s" --local -o "/tmp/$s.jpg" && gh release upload lames "/tmp/$s.jpg" -R "$GITHUB_REPOSITORY" --clobber && rm -f "/tmp/$s.jpg"
+            python tools/telecharger_lame.py "$s" --local -o "/tmp/$s.jpg" || continue
+            python -c "import sys; sys.path.insert(0, 'tools'); from publish_lame import write_offline_zip; write_offline_zip(sys.argv[1], sys.argv[2])" "$s" "/tmp/$s-visionneuse.zip"
+            gh release upload lames "/tmp/$s.jpg" "/tmp/$s-visionneuse.zip" -R "$GITHUB_REPOSITORY" --clobber && rm -f "/tmp/$s.jpg" "/tmp/$s-visionneuse.zip"
           done

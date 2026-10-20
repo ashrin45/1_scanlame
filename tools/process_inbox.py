@@ -76,9 +76,12 @@ def release_full(slug, pano):
         if subprocess.run(['gh', 'release', 'view', 'lames', '-R', repo], capture_output=True).returncode != 0:
             subprocess.run(['gh', 'release', 'create', 'lames', '-R', repo, '--title', 'Lames entières (JPEG pleine résolution)', '--notes', 'Une image par lame, nommée <slug>.jpg, remplacée à chaque réassemblage ou rognage.', '--latest=false'], check=True, capture_output=True)
         tmp = os.path.join(os.path.dirname(pano), f'{slug}.jpg'); shutil.copyfile(pano, tmp)
-        r = subprocess.run(['gh', 'release', 'upload', 'lames', tmp, '-R', repo, '--clobber'], capture_output=True, text=True)
+        zipp = os.path.join(os.path.dirname(pano), f'{slug}-visionneuse.zip')
+        subprocess.run([sys.executable, '-c', 'import sys; sys.path.insert(0, sys.argv[1]); from publish_lame import write_offline_zip; write_offline_zip(sys.argv[2], sys.argv[3])', os.path.join(ROOT, 'tools'), slug, zipp])
+        r = subprocess.run(['gh', 'release', 'upload', 'lames', tmp] + ([zipp] if os.path.isfile(zipp) else []) + ['-R', repo, '--clobber'], capture_output=True, text=True)
         os.remove(tmp)
-        print(f'  image entière déposée ({os.path.getsize(pano) >> 20} Mo) : {slug}.jpg' if r.returncode == 0 else f'  dépôt de l\'image entière refusé : {r.stderr[-200:]}')
+        if os.path.isfile(zipp): os.remove(zipp)
+        print(f'  image entière ({os.path.getsize(pano) >> 20} Mo) et visionneuse hors ligne déposées : {slug}.jpg, {slug}-visionneuse.zip' if r.returncode == 0 else f'  dépôt refusé : {r.stderr[-200:]}')
     except Exception as e: print(f'  dépôt de l\'image entière impossible : {e}')
 
 def slugify(t):
@@ -117,7 +120,8 @@ while True:
                 subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'edit_lame.py'), 'delete', slug], check=True)
                 if os.environ.get('GITHUB_ACTIONS'):
                     git_publish(['lames'], f'Suppression : {slug}')
-                    subprocess.run(['gh', 'release', 'delete-asset', 'lames', f'{slug}.jpg', '-R', os.environ.get('GITHUB_REPOSITORY', ''), '-y'], capture_output=True)
+                    for asset in (f'{slug}.jpg', f'{slug}-visionneuse.zip'):
+                        subprocess.run(['gh', 'release', 'delete-asset', 'lames', asset, '-R', os.environ.get('GITHUB_REPOSITORY', ''), '-y'], capture_output=True)
             elif action == 'crop' and isinstance(cmd.get('rect'), list) and len(cmd['rect']) == 4:
                 r_ = [str(int(v)) for v in cmd['rect']]
                 print(f'{s} : rognage de {slug} à {r_}')

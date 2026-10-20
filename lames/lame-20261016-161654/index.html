@@ -99,7 +99,7 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
     <input id="eurl" placeholder="URL du serveur (…/functions/v1/scanlame)" autocomplete="off">
     <input id="etoken" placeholder="Jeton" type="password" autocomplete="off">
     <div class="row"><button id="ecrop">Rogner…</button><button id="edelete" class="danger">Supprimer la lame</button></div>
-    <div class="msg">Télécharger : <a id="dlfull" href="#" target="_blank" rel="noopener">image entière (JPEG pleine résolution)</a> · ou <code>python tools/telecharger_lame.py lame-20261016-161654 --patches 512</code> pour l'image, des vignettes et les champs (dépôt GitHub).</div>
+    <div class="msg">Télécharger : <a id="dlfull" href="#" target="_blank" rel="noopener">image entière (JPEG pleine résolution)</a> · <a id="dlzip" href="#" target="_blank" rel="noopener">dossier avec visionneuse hors ligne (zip)</a> · ou <code>python tools/telecharger_lame.py lame-20261016-161654 --patches 512</code> pour l'image, des vignettes et les champs (dépôt GitHub).</div>
     <div class="msg" id="emsg">Les mêmes réglages que la page de capture. La modification est faite par GitHub Actions en quelques minutes.</div>
   </div>
   <div id="cropper" hidden><div id="croprect"></div></div>
@@ -251,6 +251,7 @@ const LS = { get: k => { try { return localStorage.getItem(k) || ''; } catch (_)
 $('eurl').value = LS.get('scanlame.url'); $('etoken').value = LS.get('scanlame.token');
 $('eurl').onchange = () => LS.set('scanlame.url', $('eurl').value.trim()); $('etoken').onchange = () => LS.set('scanlame.token', $('etoken').value.trim());
 $('dlfull').href = 'https://github.com/ashrin45/1_scanlame/releases/download/lames/' + SLUG + '.jpg';
+$('dlzip').href = 'https://github.com/ashrin45/1_scanlame/releases/download/lames/' + SLUG + '-visionneuse.zip';
 $('editbtn').onclick = () => { const on = $('epanel').hidden; $('epanel').hidden = !on; $('editbtn').setAttribute('aria-pressed', on); };
 async function sendEdit(payload) {
   const url = $('eurl').value.trim().replace(/\/+$/, ''), token = $('etoken').value.trim();
