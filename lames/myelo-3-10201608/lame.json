@@ -21,7 +21,17 @@
  "stage": null,
  "stage_cal": null,
  "stage_obs": null,
- "children": [],
+ "children": [
+  {
+   "slug": "myelo-3-obj-x100-10201608",
+   "transform": [
+    0.10279571627204401,
+    0.003049529832163816,
+    2270.7782473254238,
+    2529.0089284662754
+   ]
+  }
+ ],
  "quality": {
   "grade": "A",
   "notes": [],

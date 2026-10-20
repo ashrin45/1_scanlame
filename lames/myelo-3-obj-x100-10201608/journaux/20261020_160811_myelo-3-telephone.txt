@@ -1,0 +1,1551 @@
+     0.000  ScanLame 0.34 démarré sur samsung SM-S928B (Android 16)
+     4.998  liaison : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+     5.491  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+    13.887  === série lame_20261020_160550 (photos) « sans nom », gram, objectif x100 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+    13.929  masque oculaire : 85 % du cadre utile (p95 181)
+    14.227  t0000338 suivi ok score 0.99 pos 832,-78 net 4 (25 ms) carte 0 photos + 3 positions
+    14.545  t0000659 suivi ok score 1.00 pos 2717,-1165 net 5 (14 ms) carte 0 photos + 6 positions
+    14.884  t0000996 suivi ok score 0.99 pos -179,-2552 net 12 (19 ms) carte 0 photos + 10 positions
+    15.215  t0001329 suivi ok score 1.00 pos -1315,-2175 net 12 (18 ms) carte 0 photos + 13 positions
+    15.546  t0001659 suivi ok score 1.00 pos -689,-1320 net 11 (16 ms) carte 0 photos + 16 positions
+    15.879  t0001991 suivi ok score 0.99 pos -2012,-435 net 3 (17 ms) carte 0 photos + 20 positions
+    16.215  t0002329 suivi ok score 1.00 pos -2086,-510 net 4 (15 ms) carte 0 photos + 23 positions
+    16.543  t0002657 suivi ok score 1.00 pos 2305,-592 net 6 (16 ms) carte 0 photos + 26 positions
+    16.888  t0002999 suivi ok score 1.00 pos 11481,-751 net 6 (19 ms) carte 0 photos + 30 positions
+    17.250  t0003363 suivi ok score 1.00 pos 16044,-1117 net 8 (37 ms) carte 0 photos + 33 positions
+    17.548  t0003662 suivi ok score 1.00 pos 15581,-1579 net 12 (16 ms) carte 0 photos + 36 positions
+    17.892  t0004005 suivi ok score 1.00 pos 14962,-1866 net 10 (18 ms) carte 0 photos + 40 positions
+    18.220  t0004333 suivi ok score 1.00 pos 18061,-2102 net 17 (14 ms) carte 0 photos + 43 positions
+    18.549  t0004663 suivi ok score 1.00 pos 17575,-2090 net 15 (16 ms) carte 0 photos + 46 positions
+    18.886  t0004998 suivi ok score 1.00 pos 17282,-2605 net 15 (14 ms) carte 0 photos + 50 positions
+    19.217  t0005331 suivi ok score 1.00 pos 16632,-2613 net 15 (18 ms) carte 0 photos + 53 positions
+    19.559  t0005672 suivi ok score 1.00 pos 16232,-2605 net 17 (23 ms) carte 0 photos + 56 positions
+    19.891  t0006003 suivi ok score 1.00 pos 15586,-2571 net 14 (23 ms) carte 0 photos + 60 positions
+    20.221  t0006334 suivi ok score 1.00 pos 13829,-1792 net 17 (18 ms) carte 0 photos + 63 positions
+    20.553  t0006667 suivi ok score 1.00 pos 13946,-1820 net 14 (15 ms) carte 0 photos + 66 positions
+    20.898  t0007011 suivi ok score 1.00 pos 12715,-1777 net 18 (23 ms) carte 0 photos + 70 positions
+    21.217  t0007331 suivi ok score 1.00 pos 12917,-1800 net 18 (18 ms) carte 0 photos + 73 positions
+    21.543  t0007657 suivi ok score 1.00 pos 13124,-1751 net 12 (15 ms) carte 0 photos + 76 positions
+    21.891  t0008004 suivi ok score 1.00 pos 13030,-1478 net 15 (22 ms) carte 0 photos + 80 positions
+    22.217  t0008331 suivi ok score 1.00 pos 11924,-1553 net 14 (16 ms) carte 0 photos + 83 positions
+    22.548  t0008662 suivi ok score 1.00 pos 11828,-1587 net 13 (14 ms) carte 0 photos + 86 positions
+    22.886  t0008999 suivi ok score 1.00 pos 12116,-1576 net 14 (20 ms) carte 0 photos + 90 positions
+    23.211  t0009325 suivi ok score 1.00 pos 12006,-1638 net 14 (17 ms) carte 0 photos + 93 positions
+    23.548  t0009662 suivi ok score 1.00 pos 11866,-1661 net 16 (15 ms) carte 0 photos + 96 positions
+    23.890  t0010003 suivi ok score 1.00 pos 11819,-1687 net 16 (24 ms) carte 0 photos + 100 positions
+    24.145  photo 550_0001 à 11816,-1687 (887 ko, 233 ms)
+    24.214  t0010329 suivi ok score 1.00 pos 11699,-1695 net 14 (18 ms) carte 1 photos + 103 positions
+    24.514  changement d'objectif vers x10 : début à 10630 ms, position 11391,-1729 (ok)
+    27.786  objectif x10 : reprise à 13901 ms (calibration absente)
+    27.817  masque oculaire : 88 % du cadre utile (p95 243)
+    27.825  t0013938 suivi ok score 1.00 pos 0,0 net 18 (0 ms) carte 0 photos + 0 positions
+    28.161  t0014273 suivi ok score 1.00 pos -29,-80 net 16 (22 ms) carte 0 photos + 4 positions
+    28.498  t0014612 suivi ok score 0.99 pos -1337,-105 net 13 (23 ms) carte 0 photos + 7 positions
+    28.822  t0014935 suivi ok score 1.00 pos -2557,-112 net 17 (23 ms) carte 0 photos + 10 positions
+    29.163  t0015275 suivi ok score 0.99 pos -2225,-171 net 16 (26 ms) carte 0 photos + 14 positions
+    29.493  t0015606 suivi ok score 0.99 pos -1386,-355 net 13 (19 ms) carte 0 photos + 17 positions
+    29.824  t0015937 suivi ok score 1.00 pos -632,-464 net 17 (19 ms) carte 0 photos + 20 positions
+    30.158  t0016270 suivi ok score 0.97 pos 1264,-259 net 15 (16 ms) carte 0 photos + 24 positions
+    30.489  t0016602 suivi ok score 1.00 pos 1492,-90 net 17 (19 ms) carte 0 photos + 27 positions
+    30.830  t0016943 suivi ok score 0.96 pos -99,-132 net 14 (17 ms) carte 0 photos + 30 positions
+    31.158  t0017271 suivi ok score 1.00 pos -4233,-367 net 17 (14 ms) carte 0 photos + 34 positions
+    31.510  t0017622 suivi ok score 1.00 pos -5705,-240 net 20 (29 ms) carte 0 photos + 37 positions
+    31.671  série lame_20261020_160550 : 1 photos, 435 échantillons de position
+    41.404  réglages enregistrés
+    41.648  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+    45.940  file d'attente abandonnée
+    47.483  réglages enregistrés
+    76.845  réglages enregistrés
+    78.052  liaison : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+    78.450  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+   130.054  verrouillage : focus infini, pose 2.776023 ms, ISO 50, WB figée
+   130.294  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   154.508  === série lame_20261020_160811_myelo-3 (photos) « myelo 3 », gram, objectif x100 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+   154.572  masque oculaire : 99 % du cadre utile (p95 206)
+   154.843  t0000334 suivi ok score 1.00 pos 0,0 net 14 (17 ms) carte 0 photos + 3 positions
+   155.164  photo o-3_0001 à 0,0 (534 ko, 221 ms)
+   155.179  t0000670 suivi ok score 1.00 pos 0,0 net 14 (18 ms) carte 1 photos + 6 positions
+   155.518  t0001008 suivi ok score 1.00 pos 0,0 net 14 (24 ms) carte 1 photos + 10 positions
+   155.856  t0001346 suivi ok score 1.00 pos 0,0 net 14 (23 ms) carte 1 photos + 13 positions
+   156.194  t0001684 suivi ok score 1.00 pos 0,0 net 14 (28 ms) carte 1 photos + 16 positions
+   156.526  t0002015 suivi ok score 1.00 pos 0,0 net 14 (27 ms) carte 1 photos + 20 positions
+   156.848  t0002338 suivi ok score 1.00 pos 12,0 net 14 (17 ms) carte 1 photos + 23 positions
+   157.191  t0002682 suivi ok score 1.00 pos 49,0 net 14 (24 ms) carte 1 photos + 26 positions
+   157.514  t0003004 suivi ok score 1.00 pos 119,0 net 13 (17 ms) carte 1 photos + 30 positions
+   157.773  photo o-3_0002 à 120,0 (541 ko, 226 ms)
+   157.860  t0003350 suivi ok score 0.99 pos 495,-15 net 12 (28 ms) carte 2 photos + 33 positions
+   158.191  t0003681 suivi ok score 1.00 pos 1370,-37 net 15 (22 ms) carte 2 photos + 36 positions
+   158.528  t0004018 suivi ok score 1.00 pos 1354,-40 net 14 (27 ms) carte 2 photos + 40 positions
+   158.705  photo o-3_0003 à 1354,-40 (554 ko, 220 ms)
+   158.858  t0004348 suivi ok score 1.00 pos 1359,-38 net 15 (28 ms) carte 3 photos + 43 positions
+   159.195  t0004685 suivi ok score 0.99 pos 1432,-30 net 15 (24 ms) carte 3 photos + 46 positions
+   159.521  t0005011 suivi ok score 0.99 pos 2306,-48 net 14 (21 ms) carte 3 photos + 50 positions
+   159.881  t0005371 suivi ok score 0.99 pos 2472,-58 net 13 (40 ms) carte 3 photos + 53 positions
+   160.183  t0005672 suivi ok score 0.99 pos 2473,-58 net 13 (21 ms) carte 3 photos + 56 positions
+   160.239  photo o-3_0004 à 2472,-58 (495 ko, 214 ms)
+   160.522  t0006012 suivi ok score 0.99 pos 2473,-58 net 12 (24 ms) carte 4 photos + 60 positions
+   160.853  t0006343 suivi ok score 0.99 pos 2654,-54 net 14 (22 ms) carte 4 photos + 63 positions
+   161.193  t0006684 suivi ok score 0.97 pos 2892,-62 net 12 (23 ms) carte 4 photos + 66 positions
+   161.420  photo en mouvement lent (56 % du champ, 22 u/s)
+   161.534  t0007024 suivi ok score 0.99 pos 4223,-81 net 14 (24 ms) carte 4 photos + 70 positions
+   161.638  photo o-3_0005 à 4196,-97 (498 ko, 217 ms)
+   161.863  t0007353 suivi ok score 0.99 pos 4185,-97 net 13 (25 ms) carte 5 photos + 73 positions
+   162.193  t0007684 suivi ok score 0.99 pos 4185,-97 net 13 (22 ms) carte 5 photos + 76 positions
+   162.522  t0008012 suivi ok score 0.99 pos 4195,-97 net 13 (22 ms) carte 5 photos + 80 positions
+   162.854  t0008345 suivi ok score 0.98 pos 4301,-89 net 15 (22 ms) carte 5 photos + 83 positions
+   163.204  t0008693 suivi ok score 0.99 pos 4963,-105 net 16 (32 ms) carte 5 photos + 86 positions
+   163.517  t0009007 suivi ok score 0.98 pos 5295,-105 net 16 (15 ms) carte 5 photos + 90 positions
+   163.849  t0009340 suivi ok score 0.99 pos 5564,-109 net 16 (16 ms) carte 5 photos + 93 positions
+   164.201  t0009691 suivi ok score 0.99 pos 5538,-107 net 15 (34 ms) carte 5 photos + 96 positions
+   164.416  photo o-3_0006 à 5538,-107 (525 ko, 214 ms)
+   164.529  t0010019 suivi ok score 0.99 pos 5551,-109 net 15 (21 ms) carte 6 photos + 100 positions
+   164.856  t0010346 suivi ok score 0.99 pos 5551,-109 net 6 (22 ms) carte 6 photos + 103 positions
+   165.199  t0010689 suivi ok score 0.99 pos 5551,-109 net 13 (26 ms) carte 6 photos + 106 positions
+   165.529  t0011020 suivi ok score 0.99 pos 5551,-109 net 16 (21 ms) carte 6 photos + 110 positions
+   165.869  t0011359 suivi ok score 0.99 pos 5551,-109 net 16 (32 ms) carte 6 photos + 113 positions
+   166.191  t0011681 suivi ok score 0.99 pos 5551,-109 net 15 (21 ms) carte 6 photos + 116 positions
+   166.523  t0012013 suivi ok score 0.99 pos 5551,-109 net 14 (21 ms) carte 6 photos + 120 positions
+   166.850  t0012341 suivi ok score 0.98 pos 5606,-105 net 16 (17 ms) carte 6 photos + 123 positions
+   167.184  t0012674 suivi ok score 0.99 pos 5791,-105 net 18 (16 ms) carte 6 photos + 126 positions
+   167.534  t0013024 suivi ok score 0.98 pos 6115,-113 net 18 (22 ms) carte 6 photos + 130 positions
+   167.861  t0013351 suivi ok score 0.99 pos 6360,-110 net 15 (23 ms) carte 6 photos + 133 positions
+   168.187  t0013678 suivi ok score 0.99 pos 6489,-116 net 15 (18 ms) carte 6 photos + 136 positions
+   168.526  t0014016 suivi ok score 0.99 pos 6505,-112 net 15 (23 ms) carte 6 photos + 140 positions
+   168.711  photo o-3_0007 à 6502,-110 (502 ko, 229 ms)
+   168.856  t0014347 suivi ok score 0.99 pos 6481,-109 net 14 (24 ms) carte 7 photos + 143 positions
+   169.195  t0014685 suivi ok score 0.99 pos 6490,-109 net 15 (27 ms) carte 7 photos + 146 positions
+   169.522  t0015012 suivi ok score 0.99 pos 6624,-116 net 16 (21 ms) carte 7 photos + 150 positions
+   169.850  t0015341 suivi ok score 0.98 pos 7683,-140 net 13 (18 ms) carte 7 photos + 153 positions
+   170.018  photo en mouvement lent (50 % du champ, 12 u/s)
+   170.189  t0015679 suivi ok score 0.99 pos 8023,-148 net 12 (25 ms) carte 7 photos + 156 positions
+   170.242  photo o-3_0008 à 8034,-148 (464 ko, 223 ms)
+   170.516  t0016006 suivi ok score 0.99 pos 8022,-148 net 12 (16 ms) carte 8 photos + 160 positions
+   170.854  t0016344 suivi ok score 0.99 pos 8022,-148 net 11 (19 ms) carte 8 photos + 163 positions
+   171.188  t0016678 suivi ok score 0.98 pos 8276,-150 net 13 (18 ms) carte 8 photos + 166 positions
+   171.527  t0017017 suivi ok score 0.98 pos 8498,-154 net 12 (23 ms) carte 8 photos + 170 positions
+   171.858  t0017349 suivi ok score 0.99 pos 9222,-166 net 11 (21 ms) carte 8 photos + 173 positions
+   172.195  t0017685 suivi ok score 0.99 pos 9202,-173 net 10 (29 ms) carte 8 photos + 176 positions
+   172.441  photo o-3_0009 à 9202,-173 (442 ko, 245 ms)
+   172.514  t0018005 suivi ok score 0.99 pos 9203,-175 net 10 (19 ms) carte 9 photos + 180 positions
+   172.856  t0018347 suivi ok score 0.99 pos 9203,-175 net 10 (22 ms) carte 9 photos + 183 positions
+   173.186  t0018677 suivi ok score 0.99 pos 9221,-166 net 10 (20 ms) carte 9 photos + 186 positions
+   173.535  t0019024 suivi ok score 0.98 pos 9815,-190 net 11 (28 ms) carte 9 photos + 190 positions
+   173.849  t0019340 suivi ok score 0.99 pos 9959,-191 net 10 (16 ms) carte 9 photos + 193 positions
+   174.185  t0019675 suivi ok score 0.99 pos 9959,-191 net 10 (15 ms) carte 9 photos + 196 positions
+   174.337  photo o-3_0010 à 9959,-191 (453 ko, 221 ms)
+   174.528  t0020017 suivi ok score 0.99 pos 9971,-191 net 10 (27 ms) carte 10 photos + 200 positions
+   174.861  t0020352 suivi ok score 0.99 pos 10032,-187 net 12 (19 ms) carte 10 photos + 203 positions
+   175.179  t0020670 suivi ok score 0.98 pos 10421,-198 net 12 (15 ms) carte 10 photos + 206 positions
+   175.202  photo o-3_0011 à 10090,-187 (458 ko, 221 ms)
+   175.518  t0021009 suivi ok score 0.99 pos 10937,-208 net 13 (15 ms) carte 11 photos + 210 positions
+   175.857  t0021348 suivi ok score 0.99 pos 10937,-216 net 11 (24 ms) carte 11 photos + 213 positions
+   176.182  t0021673 suivi ok score 0.99 pos 10958,-205 net 11 (15 ms) carte 11 photos + 216 positions
+   176.201  photo o-3_0012 à 10956,-206 (458 ko, 228 ms)
+   176.513  t0022004 suivi ok score 0.99 pos 10958,-205 net 10 (17 ms) carte 12 photos + 220 positions
+   176.849  t0022340 suivi ok score 0.99 pos 10983,-211 net 12 (15 ms) carte 12 photos + 223 positions
+   177.200  t0022690 suivi ok score 0.99 pos 11065,-205 net 13 (32 ms) carte 12 photos + 226 positions
+   177.529  t0023020 suivi ok score 0.98 pos 11778,-229 net 13 (28 ms) carte 12 photos + 230 positions
+   177.857  t0023347 suivi ok score 0.99 pos 11933,-233 net 11 (19 ms) carte 12 photos + 233 positions
+   178.181  t0023672 suivi ok score 0.99 pos 11921,-233 net 11 (17 ms) carte 12 photos + 236 positions
+   178.228  photo o-3_0013 à 11921,-233 (462 ko, 200 ms)
+[... 219 lignes omises ...]
+   234.533  t0080022 suivi ok score 0.99 pos 6114,-5318 net 10 (16 ms) carte 49 photos + 300 positions
+   234.867  t0080357 suivi ok score 0.99 pos 6114,-5318 net 10 (15 ms) carte 49 photos + 300 positions
+   235.211  t0080701 suivi ok score 0.98 pos 6162,-5318 net 10 (21 ms) carte 49 photos + 300 positions
+   235.541  t0081030 suivi ok score 0.96 pos 8014,-5350 net 11 (22 ms) carte 49 photos + 300 positions
+   235.607  photo en mouvement lent (64 % du champ, 30 u/s)
+   235.828  photo o-3_0050 à 8098,-5350 (442 ko, 220 ms)
+   235.871  t0081361 suivi ok score 0.99 pos 8086,-5350 net 11 (20 ms) carte 50 photos + 300 positions
+   236.207  t0081697 suivi ok score 0.99 pos 8086,-5350 net 11 (18 ms) carte 50 photos + 300 positions
+   236.536  t0082026 suivi ok score 0.97 pos 8337,-5350 net 11 (15 ms) carte 50 photos + 300 positions
+   236.871  t0082361 suivi ok score 0.99 pos 9126,-5350 net 13 (20 ms) carte 50 photos + 300 positions
+   237.209  t0082699 suivi ok score 0.99 pos 9114,-5350 net 12 (21 ms) carte 50 photos + 300 positions
+   237.463  photo o-3_0051 à 9114,-5350 (450 ko, 232 ms)
+   237.545  t0083034 suivi ok score 0.99 pos 9114,-5350 net 12 (22 ms) carte 51 photos + 300 positions
+   237.877  t0083366 suivi ok score 0.99 pos 9174,-5350 net 12 (22 ms) carte 51 photos + 300 positions
+   238.215  t0083704 suivi ok score 0.99 pos 9771,-5350 net 11 (23 ms) carte 51 photos + 300 positions
+   238.542  t0084032 suivi ok score 0.99 pos 9831,-5350 net 11 (22 ms) carte 51 photos + 300 positions
+   238.881  t0084370 suivi ok score 0.99 pos 9831,-5350 net 6 (26 ms) carte 51 photos + 300 positions
+   238.894  photo o-3_0052 à 9831,-5350 (425 ko, 220 ms)
+   239.206  t0084695 suivi ok score 0.99 pos 9831,-5350 net 12 (17 ms) carte 52 photos + 300 positions
+   239.529  t0085019 suivi ok score 0.99 pos 9831,-5350 net 12 (11 ms) carte 52 photos + 300 positions
+   239.871  t0085362 suivi ok score 0.99 pos 9831,-5350 net 12 (19 ms) carte 52 photos + 300 positions
+   240.210  t0085700 suivi ok score 0.99 pos 9831,-5350 net 12 (25 ms) carte 52 photos + 300 positions
+   240.538  t0086028 suivi ok score 0.98 pos 10333,-5350 net 12 (18 ms) carte 52 photos + 300 positions
+   240.884  t0086373 suivi ok score 0.99 pos 10441,-5350 net 11 (27 ms) carte 52 photos + 300 positions
+   241.197  t0086688 suivi ok score 0.99 pos 10441,-5350 net 11 (16 ms) carte 52 photos + 300 positions
+   241.253  photo o-3_0053 à 10441,-5350 (439 ko, 195 ms)
+   241.541  t0087031 suivi ok score 0.98 pos 10524,-5350 net 11 (19 ms) carte 53 photos + 300 positions
+   241.875  t0087366 suivi ok score 0.98 pos 11074,-5350 net 11 (17 ms) carte 53 photos + 300 positions
+   242.211  t0087701 suivi ok score 0.99 pos 11062,-5350 net 11 (16 ms) carte 53 photos + 300 positions
+   242.418  photo o-3_0054 à 11062,-5350 (435 ko, 206 ms)
+   242.539  t0088028 suivi ok score 0.99 pos 11062,-5350 net 11 (20 ms) carte 54 photos + 300 positions
+   242.875  t0088365 suivi ok score 0.97 pos 11684,-5350 net 10 (17 ms) carte 54 photos + 300 positions
+   243.202  t0088692 suivi ok score 0.99 pos 12437,-5350 net 11 (15 ms) carte 54 photos + 300 positions
+   243.536  t0089025 suivi ok score 0.99 pos 12425,-5350 net 10 (17 ms) carte 54 photos + 300 positions
+   243.751  photo o-3_0055 à 12425,-5350 (427 ko, 214 ms)
+   243.872  t0089362 suivi ok score 0.98 pos 12437,-5350 net 10 (22 ms) carte 55 photos + 300 positions
+   244.203  t0089693 suivi ok score 0.96 pos 14469,-5382 net 12 (19 ms) carte 55 photos + 300 positions
+   244.270  photo en mouvement lent (69 % du champ, 30 u/s)
+   244.503  photo o-3_0056 à 14529,-5382 (443 ko, 232 ms)
+   244.545  t0090035 suivi ok score 0.99 pos 14517,-5382 net 12 (18 ms) carte 56 photos + 300 positions
+   244.874  t0090365 suivi ok score 0.99 pos 14517,-5382 net 11 (18 ms) carte 56 photos + 300 positions
+   245.205  t0090695 suivi ok score 0.97 pos 15365,-5382 net 9 (15 ms) carte 56 photos + 300 positions
+   245.545  t0091035 suivi ok score 0.99 pos 15832,-5382 net 11 (21 ms) carte 56 photos + 300 positions
+   245.876  t0091365 suivi ok score 0.98 pos 15832,-5382 net 11 (21 ms) carte 56 photos + 300 positions
+   245.967  photo o-3_0057 à 15832,-5382 (437 ko, 226 ms)
+   246.208  t0091697 suivi ok score 0.96 pos 15975,-5382 net 10 (24 ms) carte 57 photos + 300 positions
+   246.541  t0092031 suivi ok score 0.97 pos 17768,-5413 net 13 (15 ms) carte 57 photos + 300 positions
+   246.568  photo en mouvement lent (64 % du champ, 30 u/s)
+   246.796  photo o-3_0058 à 17780,-5413 (453 ko, 228 ms)
+   246.867  t0092357 suivi ok score 0.99 pos 17768,-5413 net 12 (15 ms) carte 58 photos + 300 positions
+   247.199  t0092689 suivi ok score 0.99 pos 17768,-5413 net 12 (14 ms) carte 58 photos + 300 positions
+   247.550  t0093039 suivi ok score 0.95 pos 18712,-5413 net 12 (20 ms) carte 58 photos + 300 positions
+   247.872  t0093362 suivi ok score 0.99 pos 18856,-5413 net 12 (18 ms) carte 58 photos + 300 positions
+   248.205  t0093695 suivi ok score 0.99 pos 18856,-5413 net 13 (20 ms) carte 58 photos + 300 positions
+   248.228  photo o-3_0059 à 18856,-5413 (456 ko, 211 ms)
+   248.538  t0094028 suivi ok score 0.98 pos 19059,-5413 net 13 (20 ms) carte 59 photos + 300 positions
+   248.875  t0094364 suivi ok score 0.99 pos 19477,-5413 net 12 (21 ms) carte 59 photos + 300 positions
+   249.204  t0094694 suivi ok score 0.99 pos 19477,-5413 net 12 (16 ms) carte 59 photos + 300 positions
+   249.329  photo o-3_0060 à 19477,-5413 (453 ko, 215 ms)
+   249.545  t0095034 suivi ok score 0.99 pos 19477,-5413 net 13 (22 ms) carte 60 photos + 300 positions
+   249.865  t0095356 suivi ok score 0.99 pos 19477,-5413 net 8 (14 ms) carte 60 photos + 300 positions
+   250.206  t0095696 suivi ok score 0.99 pos 19477,-6067 net 5 (17 ms) carte 60 photos + 300 positions
+   250.555  t0096044 suivi ok score 0.96 pos 19453,-7310 net 5 (21 ms) carte 60 photos + 300 positions
+   250.873  t0096364 suivi ok score 0.99 pos 19453,-8266 net 5 (16 ms) carte 60 photos + 300 positions
+   250.873  photo en mouvement lent (70 % du champ, 0 u/s)
+   250.873  photo floue (netteté 5 contre 15 de référence)
+   251.091  photo o-3_0061 à 19453,-8266 (414 ko, 217 ms)
+   251.199  t0096689 suivi ok score 0.99 pos 19442,-8266 net 10 (15 ms) carte 61 photos + 300 positions
+   251.542  t0097031 suivi ok score 0.99 pos 19442,-8266 net 10 (20 ms) carte 61 photos + 300 positions
+   251.869  t0097360 suivi ok score 0.98 pos 19358,-8266 net 11 (14 ms) carte 61 photos + 300 positions
+   252.205  t0097695 suivi ok score 0.97 pos 18246,-8266 net 9 (16 ms) carte 61 photos + 300 positions
+   252.545  t0098034 suivi ok score 0.99 pos 18091,-8266 net 9 (23 ms) carte 61 photos + 300 positions
+   252.879  t0098369 suivi ok score 0.99 pos 18091,-8266 net 10 (24 ms) carte 61 photos + 300 positions
+   252.940  photo o-3_0062 à 18091,-8266 (419 ko, 227 ms)
+   253.229  t0098719 suivi ok score 0.98 pos 18091,-8266 net 9 (26 ms) carte 62 photos + 300 positions
+   253.530  t0099020 suivi ok score 0.98 pos 17649,-8266 net 9 (11 ms) carte 62 photos + 300 positions
+   253.883  t0099372 suivi ok score 0.97 pos 16704,-8266 net 9 (24 ms) carte 62 photos + 300 positions
+   254.212  t0099702 suivi ok score 0.99 pos 16716,-8266 net 9 (18 ms) carte 62 photos + 300 positions
+   254.381  photo o-3_0063 à 16716,-8266 (423 ko, 211 ms)
+   254.538  t0100029 suivi ok score 0.98 pos 16716,-8266 net 9 (18 ms) carte 63 photos + 300 positions
+   254.891  t0100380 suivi ok score 0.99 pos 16716,-8266 net 9 (28 ms) carte 63 photos + 300 positions
+   255.201  t0100692 suivi ok score 0.98 pos 16549,-8266 net 9 (11 ms) carte 63 photos + 300 positions
+   255.550  t0101039 suivi ok score 0.98 pos 15856,-8266 net 9 (23 ms) carte 63 photos + 300 positions
+   255.875  t0101365 suivi ok score 0.98 pos 15306,-8266 net 10 (17 ms) carte 63 photos + 300 positions
+   256.224  t0101714 suivi ok score 0.99 pos 15318,-8266 net 10 (28 ms) carte 63 photos + 300 positions
+   256.473  photo o-3_0064 à 15318,-8266 (432 ko, 229 ms)
+   256.546  t0102035 suivi ok score 0.98 pos 15306,-8266 net 10 (21 ms) carte 64 photos + 300 positions
+   256.875  t0102365 suivi ok score 0.99 pos 14887,-8266 net 11 (16 ms) carte 64 photos + 300 positions
+   257.219  t0102709 suivi ok score 0.97 pos 13991,-8266 net 9 (24 ms) carte 64 photos + 300 positions
+   257.347  photo en mouvement lent (55 % du champ, 30 u/s)
+   257.532  t0103023 suivi ok score 0.98 pos 13632,-8266 net 9 (16 ms) carte 64 photos + 300 positions
+   257.568  photo o-3_0065 à 13620,-8266 (422 ko, 220 ms)
+   257.878  t0103367 suivi ok score 0.99 pos 13632,-8266 net 9 (20 ms) carte 65 photos + 300 positions
+   258.211  t0103701 suivi ok score 0.98 pos 13584,-8266 net 10 (22 ms) carte 65 photos + 300 positions
+   258.542  t0104032 suivi ok score 0.98 pos 12999,-8266 net 9 (19 ms) carte 65 photos + 300 positions
+   258.874  t0104364 suivi ok score 0.99 pos 12999,-8266 net 9 (18 ms) carte 65 photos + 300 positions
+   259.131  photo o-3_0066 à 12999,-8266 (413 ko, 215 ms)
+   259.214  t0104704 suivi ok score 0.98 pos 12999,-8266 net 9 (22 ms) carte 66 photos + 300 positions
+   259.537  t0105027 suivi ok score 0.97 pos 12628,-8266 net 9 (15 ms) carte 66 photos + 300 positions
+   259.883  t0105373 suivi ok score 0.98 pos 11744,-8250 net 9 (26 ms) carte 66 photos + 300 positions
+   260.213  t0105703 suivi ok score 0.99 pos 11756,-8250 net 9 (18 ms) carte 66 photos + 300 positions
+   260.399  photo o-3_0067 à 11756,-8250 (415 ko, 216 ms)
+   260.545  t0106035 suivi ok score 0.98 pos 11744,-8250 net 9 (21 ms) carte 67 photos + 300 positions
+   260.884  t0106373 suivi ok score 0.96 pos 10501,-8250 net 11 (20 ms) carte 67 photos + 300 positions
+   261.207  t0106696 suivi ok score 0.99 pos 10501,-8250 net 10 (16 ms) carte 67 photos + 300 positions
+   261.497  photo o-3_0068 à 10501,-8250 (423 ko, 226 ms)
+   261.532  t0107023 suivi ok score 0.99 pos 10501,-8250 net 11 (13 ms) carte 68 photos + 300 positions
+   261.869  t0107359 suivi ok score 0.98 pos 10106,-8250 net 11 (12 ms) carte 68 photos + 300 positions
+   262.216  t0107706 suivi ok score 0.99 pos 10058,-8250 net 10 (21 ms) carte 68 photos + 300 positions
+   262.535  t0108026 suivi ok score 0.99 pos 10058,-8250 net 10 (15 ms) carte 68 photos + 300 positions
+   262.549  photo o-3_0069 à 10058,-8250 (425 ko, 202 ms)
+   262.867  t0108358 suivi ok score 0.97 pos 9568,-8250 net 10 (14 ms) carte 69 photos + 300 positions
+   263.207  t0108697 suivi ok score 0.99 pos 9365,-8250 net 10 (17 ms) carte 69 photos + 300 positions
+   263.547  t0109036 suivi ok score 0.99 pos 9365,-8250 net 10 (23 ms) carte 69 photos + 300 positions
+   263.592  photo o-3_0070 à 9365,-8250 (423 ko, 219 ms)
+   263.868  t0109359 suivi ok score 0.99 pos 9365,-8250 net 10 (13 ms) carte 70 photos + 300 positions
+   264.204  t0109694 suivi ok score 0.99 pos 9365,-8250 net 10 (14 ms) carte 70 photos + 300 positions
+   264.542  t0110032 suivi ok score 0.97 pos 9365,-8250 net 10 (13 ms) carte 70 photos + 300 positions
+   264.880  t0110371 suivi ok score 0.99 pos 9365,-8250 net 10 (19 ms) carte 70 photos + 300 positions
+   265.207  t0110697 suivi ok score 0.99 pos 9365,-8250 net 10 (13 ms) carte 70 photos + 300 positions
+   265.538  t0111028 suivi ok score 0.99 pos 9365,-8250 net 10 (17 ms) carte 70 photos + 300 positions
+   265.894  t0111384 suivi ok score 0.99 pos 9341,-8250 net 10 (26 ms) carte 70 photos + 300 positions
+   266.221  t0111711 suivi ok score 0.98 pos 9222,-8250 net 10 (27 ms) carte 70 photos + 300 positions
+   266.541  t0112032 suivi ok score 0.97 pos 8875,-8250 net 9 (13 ms) carte 70 photos + 300 positions
+   266.883  t0112373 suivi ok score 0.98 pos 8863,-8250 net 8 (23 ms) carte 70 photos + 300 positions
+   267.120  photo o-3_0071 à 8863,-8250 (412 ko, 211 ms)
+   267.213  t0112703 suivi ok score 0.98 pos 8863,-8250 net 8 (19 ms) carte 71 photos + 300 positions
+   267.548  t0113038 suivi ok score 0.97 pos 8684,-8250 net 8 (18 ms) carte 71 photos + 300 positions
+   267.872  t0113363 suivi ok score 0.96 pos 8122,-8250 net 7 (17 ms) carte 71 photos + 300 positions
+   268.223  t0113713 suivi ok score 0.98 pos 7919,-8250 net 8 (24 ms) carte 71 photos + 300 positions
+   268.543  t0114033 suivi ok score 0.98 pos 7919,-8250 net 7 (18 ms) carte 71 photos + 300 positions
+   268.572  photo o-3_0072 à 7919,-8250 (406 ko, 226 ms)
+   268.738  envoyé lame_20261020_160811_myelo-3_0001.jpg (534 ko)
+   268.875  t0114365 suivi ok score 0.98 pos 7763,-8250 net 8 (17 ms) carte 72 photos + 300 positions
+   269.215  t0114705 suivi ok score 0.98 pos 7285,-8250 net 8 (23 ms) carte 72 photos + 300 positions
+   269.557  t0115046 suivi ok score 0.99 pos 6807,-8250 net 9 (23 ms) carte 72 photos + 300 positions
+   269.871  t0115361 suivi ok score 0.99 pos 6819,-8250 net 8 (17 ms) carte 72 photos + 300 positions
+   270.101  photo o-3_0073 à 6819,-8250 (417 ko, 229 ms)
+   270.210  t0115700 suivi ok score 0.98 pos 6819,-8250 net 9 (19 ms) carte 73 photos + 300 positions
+   270.550  t0116039 suivi ok score 0.98 pos 6688,-8250 net 9 (23 ms) carte 73 photos + 300 positions
+   270.878  t0116369 suivi ok score 0.98 pos 5946,-8250 net 9 (15 ms) carte 73 photos + 300 positions
+   271.194  envoyé lame_20261020_160811_myelo-3_0002.jpg (541 ko)
+   271.214  t0116704 suivi ok score 0.99 pos 5911,-8250 net 9 (17 ms) carte 73 photos + 300 positions
+   271.536  photo o-3_0074 à 5911,-8250 (421 ko, 222 ms)
+   271.537  t0117027 suivi ok score 0.99 pos 5911,-8250 net 9 (16 ms) carte 74 photos + 300 positions
+   271.885  t0117375 suivi ok score 0.99 pos 5827,-8250 net 9 (24 ms) carte 74 photos + 300 positions
+   272.207  t0117697 suivi ok score 0.97 pos 5074,-8250 net 8 (15 ms) carte 74 photos + 300 positions
+   272.476  photo en mouvement lent (50 % du champ, 30 u/s)
+   272.539  t0118029 suivi ok score 0.98 pos 4369,-8250 net 8 (15 ms) carte 74 photos + 300 positions
+   272.697  photo o-3_0075 à 4369,-8250 (419 ko, 220 ms)
+   272.880  t0118370 suivi ok score 0.99 pos 4381,-8250 net 8 (19 ms) carte 75 photos + 300 positions
+   273.120  envoyé lame_20261020_160811_myelo-3_0003.jpg (554 ko)
+   273.205  t0118695 suivi ok score 0.98 pos 4369,-8250 net 9 (15 ms) carte 75 photos + 300 positions
+   273.553  t0119042 suivi ok score 0.98 pos 4118,-8250 net 9 (21 ms) carte 75 photos + 300 positions
+   273.885  t0119375 suivi ok score 0.98 pos 3293,-8250 net 9 (23 ms) carte 75 photos + 300 positions
+   274.213  t0119703 suivi ok score 0.99 pos 3257,-8250 net 9 (19 ms) carte 75 photos + 300 positions
+   274.530  photo o-3_0076 à 3257,-8250 (412 ko, 209 ms)
+   274.542  t0120032 suivi ok score 0.99 pos 3257,-8250 net 9 (15 ms) carte 76 photos + 300 positions
+   274.869  envoyé lame_20261020_160811_myelo-3_0004.jpg (495 ko)
+   274.883  t0120373 suivi ok score 0.99 pos 3114,-8250 net 9 (22 ms) carte 76 photos + 300 positions
+   275.203  t0120694 suivi ok score 0.99 pos 2994,-8250 net 9 (13 ms) carte 76 photos + 300 positions
+   275.543  t0121033 suivi ok score 0.99 pos 2994,-8250 net 9 (17 ms) carte 76 photos + 300 positions
+   275.612  photo o-3_0077 à 2994,-8250 (416 ko, 218 ms)
+   275.884  t0121374 suivi ok score 0.98 pos 2576,-8250 net 9 (19 ms) carte 77 photos + 300 positions
+   276.206  t0121697 suivi ok score 0.99 pos 2157,-8234 net 10 (13 ms) carte 77 photos + 300 positions
+   276.550  t0122039 suivi ok score 0.99 pos 2157,-8234 net 10 (20 ms) carte 77 photos + 300 positions
+   276.659  photo o-3_0078 à 2157,-8234 (417 ko, 202 ms)
+   276.881  t0122371 suivi ok score 0.99 pos 2133,-8234 net 10 (17 ms) carte 78 photos + 300 positions
+   277.216  t0122706 suivi ok score 0.98 pos 1440,-8234 net 9 (16 ms) carte 78 photos + 300 positions
+   277.522  photo en mouvement lent (53 % du champ, 30 u/s)
+   277.544  t0123035 suivi ok score 0.97 pos 556,-8218 net 9 (14 ms) carte 78 photos + 300 positions
+   277.720  photo o-3_0079 à 544,-8218 (419 ko, 197 ms)
+   277.880  t0123370 suivi ok score 0.99 pos 556,-8218 net 9 (16 ms) carte 79 photos + 300 positions
+   278.213  t0123703 suivi ok score 0.98 pos 520,-8218 net 9 (18 ms) carte 79 photos + 300 positions
+   278.537  t0124028 suivi ok score 0.98 pos 460,-8218 net 9 (15 ms) carte 79 photos + 300 positions
+   278.635  envoyé lame_20261020_160811_myelo-3_0005.jpg (498 ko)
+   278.890  t0124381 suivi ok score 0.98 pos -78,-8218 net 8 (19 ms) carte 79 photos + 300 positions
+   279.217  t0124707 suivi ok score 0.98 pos -114,-8218 net 8 (19 ms) carte 79 photos + 300 positions
+   279.507  photo o-3_0080 à -114,-8218 (413 ko, 220 ms)
+   279.543  t0125033 suivi ok score 0.98 pos -114,-8218 net 8 (15 ms) carte 80 photos + 300 positions
+   279.875  t0125364 suivi ok score 0.98 pos -114,-8218 net 8 (14 ms) carte 80 photos + 300 positions
+   280.207  t0125697 suivi ok score 0.98 pos -114,-8218 net 8 (14 ms) carte 80 photos + 300 positions
+   280.546  t0126035 suivi ok score 0.98 pos -114,-8218 net 7 (14 ms) carte 80 photos + 300 positions
+   280.880  t0126370 suivi ok score 0.98 pos -114,-8218 net 6 (21 ms) carte 80 photos + 300 positions
+   281.210  t0126700 suivi ok score 0.97 pos -114,-8410 net 4 (17 ms) carte 80 photos + 300 positions
+   281.544  t0127035 suivi ok score 0.98 pos -114,-8824 net 4 (18 ms) carte 80 photos + 300 positions
+   281.839  envoyé lame_20261020_160811_myelo-3_0006.jpg (525 ko)
+   281.869  t0127360 suivi ok score 0.97 pos -114,-9477 net 4 (10 ms) carte 80 photos + 300 positions
+   282.204  t0127694 suivi ok score 0.97 pos -114,-10466 net 5 (13 ms) carte 80 photos + 300 positions
+   282.382  photo en mouvement lent (60 % du champ, 30 u/s)
+   282.383  photo floue (netteté 5 contre 15 de référence)
+   282.545  t0128034 suivi ok score 0.99 pos -114,-10752 net 6 (19 ms) carte 80 photos + 300 positions
+   282.590  photo o-3_0081 à -114,-10673 (417 ko, 206 ms)
+   282.881  t0128371 suivi ok score 0.98 pos -114,-10752 net 10 (18 ms) carte 81 photos + 300 positions
+   283.218  t0128708 suivi ok score 0.99 pos -114,-10752 net 11 (17 ms) carte 81 photos + 300 positions
+   283.553  t0129043 suivi ok score 0.99 pos -114,-10752 net 11 (22 ms) carte 81 photos + 300 positions
+   283.876  t0129367 suivi ok score 0.99 pos -114,-10752 net 10 (15 ms) carte 81 photos + 300 positions
+   284.070  envoyé lame_20261020_160811_myelo-3_0007.jpg (502 ko)
+   284.213  t0129703 suivi ok score 0.99 pos -114,-10752 net 8 (20 ms) carte 81 photos + 300 positions
+   284.551  t0130041 suivi ok score 0.99 pos -114,-10880 net 7 (19 ms) carte 81 photos + 300 positions
+   284.882  t0130372 suivi ok score 0.99 pos -114,-10960 net 9 (17 ms) carte 81 photos + 300 positions
+   285.198  photo o-3_0082 à -126,-10960 (452 ko, 194 ms)
+   285.206  t0130697 suivi ok score 0.99 pos -126,-10960 net 12 (12 ms) carte 82 photos + 300 positions
+   285.549  t0131038 suivi ok score 0.99 pos -126,-10960 net 11 (20 ms) carte 82 photos + 300 positions
+   285.883  t0131374 suivi ok score 0.99 pos -126,-11613 net 8 (14 ms) carte 82 photos + 300 positions
+   285.946  envoyé lame_20261020_160811_myelo-3_0008.jpg (464 ko)
+   286.229  t0131719 suivi ok score 0.99 pos -138,-11996 net 14 (17 ms) carte 82 photos + 300 positions
+   286.541  t0132032 suivi ok score 0.99 pos -138,-11996 net 14 (13 ms) carte 82 photos + 300 positions
+   286.590  photo o-3_0083 à -138,-11996 (467 ko, 200 ms)
+   286.893  t0132382 suivi ok score 0.99 pos -138,-11996 net 14 (23 ms) carte 83 photos + 300 positions
+   287.221  t0132710 suivi ok score 0.99 pos -138,-11996 net 14 (19 ms) carte 83 photos + 300 positions
+   287.562  t0133051 suivi ok score 0.99 pos -78,-11996 net 13 (23 ms) carte 83 photos + 300 positions
+   287.876  t0133367 suivi ok score 0.98 pos 1309,-11996 net 12 (10 ms) carte 83 photos + 300 positions
+   288.182  envoyé lame_20261020_160811_myelo-3_0009.jpg (442 ko)
+   288.222  t0133712 suivi ok score 0.99 pos 1321,-11996 net 12 (19 ms) carte 83 photos + 300 positions
+   288.488  photo o-3_0084 à 1321,-11996 (439 ko, 195 ms)
+   288.539  t0134029 suivi ok score 0.99 pos 1321,-11996 net 12 (13 ms) carte 84 photos + 300 positions
+   288.880  t0134370 suivi ok score 0.99 pos 1321,-11996 net 10 (13 ms) carte 84 photos + 300 positions
+   289.216  t0134706 suivi ok score 0.97 pos 1309,-13223 net 8 (16 ms) carte 84 photos + 300 positions
+   289.548  t0135038 suivi ok score 0.99 pos 1309,-13478 net 13 (15 ms) carte 84 photos + 300 positions
+   289.880  t0135370 suivi ok score 0.99 pos 1309,-13462 net 13 (21 ms) carte 84 photos + 300 positions
+   289.893  photo o-3_0085 à 1309,-13478 (458 ko, 209 ms)
+   290.146  envoyé lame_20261020_160811_myelo-3_0010.jpg (453 ko)
+   290.214  t0135704 suivi ok score 0.99 pos 1309,-13462 net 12 (17 ms) carte 85 photos + 300 positions
+   290.549  t0136039 suivi ok score 0.99 pos 1309,-13462 net 13 (19 ms) carte 85 photos + 300 positions
+   290.884  t0136373 suivi ok score 0.99 pos 1309,-13271 net 12 (17 ms) carte 85 photos + 300 positions
+   291.225  t0136714 suivi ok score 0.98 pos 1309,-12824 net 11 (24 ms) carte 85 photos + 300 positions
+   291.557  t0137046 suivi ok score 0.99 pos 1309,-12537 net 12 (20 ms) carte 85 photos + 300 positions
+   291.878  t0137369 suivi ok score 0.99 pos 1309,-12155 net 12 (13 ms) carte 85 photos + 300 positions
+   292.214  t0137703 suivi ok score 0.99 pos 1309,-11693 net 12 (16 ms) carte 85 photos + 300 positions
+   292.554  t0138044 suivi ok score 0.99 pos 1309,-11565 net 12 (19 ms) carte 85 photos + 300 positions
+   292.722  photo en mouvement lent (58 % du champ, 30 u/s)
+   292.878  t0138368 suivi ok score 0.99 pos 1309,-11103 net 9 (16 ms) carte 85 photos + 300 positions
+   292.939  photo o-3_0086 à 1309,-11103 (428 ko, 216 ms)
+   293.215  t0138705 suivi ok score 0.99 pos 1297,-11103 net 11 (18 ms) carte 86 photos + 300 positions
+   293.554  t0139043 suivi ok score 0.98 pos 1380,-11103 net 10 (19 ms) carte 86 photos + 300 positions
+   293.883  t0139373 suivi ok score 0.99 pos 1942,-11103 net 10 (20 ms) carte 86 photos + 300 positions
+   294.213  t0139703 suivi ok score 0.99 pos 1930,-11103 net 10 (14 ms) carte 86 photos + 300 positions
+   294.439  photo o-3_0087 à 1930,-11103 (427 ko, 225 ms)
+   294.563  t0140052 suivi ok score 0.98 pos 1942,-11103 net 10 (26 ms) carte 87 photos + 300 positions
+   294.878  t0140369 suivi ok score 0.97 pos 2695,-11103 net 10 (13 ms) carte 87 photos + 300 positions
+   295.167  envoyé lame_20261020_160811_myelo-3_0011.jpg (458 ko)
+   295.210  t0140701 suivi ok score 0.99 pos 3030,-11103 net 10 (11 ms) carte 87 photos + 300 positions
+   295.541  t0141031 suivi ok score 0.99 pos 3030,-11103 net 10 (16 ms) carte 87 photos + 300 positions
+   295.634  photo o-3_0088 à 3030,-11103 (424 ko, 227 ms)
+   295.877  t0141367 suivi ok score 0.98 pos 3233,-11103 net 10 (15 ms) carte 88 photos + 300 positions
+   296.216  t0141707 suivi ok score 0.98 pos 3950,-11103 net 10 (19 ms) carte 88 photos + 300 positions
+   296.554  t0142044 suivi ok score 0.99 pos 4022,-11103 net 10 (23 ms) carte 88 photos + 300 positions
+   296.873  photo o-3_0089 à 4022,-11103 (429 ko, 205 ms)
+   296.873  t0142364 suivi ok score 0.99 pos 4022,-11103 net 10 (13 ms) carte 89 photos + 300 positions
+   297.219  t0142709 suivi ok score 0.99 pos 4142,-11103 net 10 (21 ms) carte 89 photos + 300 positions
+   297.459  envoyé lame_20261020_160811_myelo-3_0012.jpg (458 ko)
+   297.549  t0143040 suivi ok score 0.98 pos 4966,-11103 net 10 (17 ms) carte 89 photos + 300 positions
+   297.884  t0143374 suivi ok score 0.99 pos 5038,-11103 net 9 (21 ms) carte 89 photos + 300 positions
+   298.211  t0143700 suivi ok score 0.99 pos 5038,-11103 net 9 (15 ms) carte 89 photos + 300 positions
+   298.232  photo o-3_0090 à 5038,-11103 (423 ko, 208 ms)
+   298.565  t0144054 suivi ok score 0.99 pos 5217,-11103 net 9 (23 ms) carte 90 photos + 300 positions
+   298.872  t0144363 suivi ok score 0.99 pos 5241,-11103 net 9 (10 ms) carte 90 photos + 300 positions
+   299.031  photo o-3_0091 à 5241,-11103 (419 ko, 190 ms)
+   299.218  t0144708 suivi ok score 0.98 pos 6006,-11103 net 8 (15 ms) carte 91 photos + 300 positions
+   299.554  t0145044 suivi ok score 0.99 pos 6556,-11119 net 8 (18 ms) carte 91 photos + 300 positions
+   299.889  t0145379 suivi ok score 0.99 pos 6556,-11119 net 8 (20 ms) carte 91 photos + 300 positions
+   300.016  photo o-3_0092 à 6556,-11119 (413 ko, 221 ms)
+   300.165  envoyé lame_20261020_160811_myelo-3_0013.jpg (462 ko)
+   300.222  t0145712 suivi ok score 0.98 pos 6556,-11103 net 8 (18 ms) carte 92 photos + 300 positions
+   300.543  t0146033 suivi ok score 0.98 pos 6699,-11103 net 8 (14 ms) carte 92 photos + 300 positions
+   300.890  t0146380 suivi ok score 0.98 pos 7417,-11119 net 7 (20 ms) carte 92 photos + 300 positions
+   301.223  t0146713 suivi ok score 0.99 pos 7429,-11119 net 8 (18 ms) carte 92 photos + 300 positions
+   301.512  photo o-3_0093 à 7429,-11119 (411 ko, 233 ms)
+   301.546  t0147037 suivi ok score 0.99 pos 7429,-11119 net 8 (12 ms) carte 93 photos + 300 positions
+   301.885  t0147375 suivi ok score 0.98 pos 7560,-11119 net 9 (18 ms) carte 93 photos + 300 positions
+   302.150  envoyé lame_20261020_160811_myelo-3_0014.jpg (477 ko)
+   302.220  t0147710 suivi ok score 0.98 pos 7704,-11119 net 9 (21 ms) carte 93 photos + 300 positions
+   302.543  t0148033 suivi ok score 0.99 pos 8457,-11119 net 9 (14 ms) carte 93 photos + 300 positions
+   302.881  t0148371 suivi ok score 0.99 pos 8445,-11119 net 8 (17 ms) carte 93 photos + 300 positions
+   303.143  photo o-3_0094 à 8445,-11119 (413 ko, 224 ms)
+   303.209  t0148700 suivi ok score 0.99 pos 8445,-11119 net 8 (12 ms) carte 94 photos + 300 positions
+   303.555  t0149045 suivi ok score 0.98 pos 8672,-11119 net 9 (20 ms) carte 94 photos + 300 positions
+   303.887  t0149377 suivi ok score 0.98 pos 9700,-11119 net 10 (18 ms) carte 94 photos + 300 positions
+   304.229  t0149719 suivi ok score 0.99 pos 9819,-11119 net 9 (22 ms) carte 94 photos + 300 positions
+   304.543  t0150033 suivi ok score 0.99 pos 9819,-11119 net 10 (11 ms) carte 94 photos + 300 positions
+   304.564  envoyé lame_20261020_160811_myelo-3_0015.jpg (484 ko)
+   304.625  photo o-3_0095 à 9819,-11119 (421 ko, 211 ms)
+   304.873  t0150364 suivi ok score 0.99 pos 9843,-11119 net 10 (11 ms) carte 95 photos + 300 positions
+   305.212  t0150702 suivi ok score 0.98 pos 10369,-11119 net 10 (11 ms) carte 95 photos + 300 positions
+   305.552  t0151041 suivi ok score 0.99 pos 10620,-11119 net 10 (17 ms) carte 95 photos + 300 positions
+   305.880  t0151370 suivi ok score 0.99 pos 10620,-11119 net 10 (15 ms) carte 95 photos + 300 positions
+   306.106  photo o-3_0096 à 10620,-11119 (426 ko, 225 ms)
+   306.221  t0151711 suivi ok score 0.99 pos 10644,-11119 net 11 (20 ms) carte 96 photos + 300 positions
+   306.563  t0152053 suivi ok score 0.96 pos 11660,-11135 net 11 (27 ms) carte 96 photos + 300 positions
+   306.887  t0152377 suivi ok score 0.99 pos 11923,-11135 net 10 (16 ms) carte 96 photos + 300 positions
+   306.921  envoyé lame_20261020_160811_myelo-3_0016.jpg (464 ko)
+   307.207  t0152697 suivi ok score 0.99 pos 11923,-11135 net 9 (11 ms) carte 96 photos + 300 positions
+   307.294  photo o-3_0097 à 11923,-11135 (434 ko, 205 ms)
+   307.544  t0153034 suivi ok score 0.98 pos 12090,-11135 net 11 (12 ms) carte 97 photos + 300 positions
+   307.891  t0153381 suivi ok score 0.98 pos 12903,-11135 net 11 (20 ms) carte 97 photos + 300 positions
+   308.233  t0153723 suivi ok score 0.99 pos 12891,-11135 net 9 (25 ms) carte 97 photos + 300 positions
+   308.436  photo o-3_0098 à 12891,-11135 (433 ko, 202 ms)
+   308.554  t0154043 suivi ok score 0.99 pos 12915,-11135 net 10 (19 ms) carte 98 photos + 300 positions
+   308.705  envoyé lame_20261020_160811_myelo-3_0017.jpg (393 ko)
+   308.889  t0154380 suivi ok score 0.98 pos 14158,-11167 net 11 (16 ms) carte 98 photos + 300 positions
+   309.212  t0154703 suivi ok score 0.99 pos 14158,-11167 net 10 (12 ms) carte 98 photos + 300 positions
+   309.468  photo o-3_0099 à 14158,-11167 (436 ko, 225 ms)
+   309.544  t0155035 suivi ok score 0.97 pos 14278,-11167 net 11 (13 ms) carte 99 photos + 300 positions
+   309.813  photo en mouvement lent (70 % du champ, 31 u/s)
+   309.879  t0155370 suivi ok score 0.98 pos 16286,-11215 net 8 (15 ms) carte 99 photos + 300 positions
+   310.034  photo o-3_0100 à 16298,-11215 (414 ko, 220 ms)
+   310.221  t0155711 suivi ok score 0.98 pos 16286,-11215 net 8 (19 ms) carte 100 photos + 300 positions
+   310.551  t0156041 suivi ok score 0.98 pos 16298,-11215 net 8 (17 ms) carte 100 photos + 300 positions
+   310.802  envoyé lame_20261020_160811_myelo-3_0018.jpg (363 ko)
+   310.890  t0156380 suivi ok score 0.96 pos 17099,-11215 net 8 (18 ms) carte 100 photos + 300 positions
+   311.226  t0156716 suivi ok score 0.98 pos 17194,-11215 net 7 (21 ms) carte 100 photos + 300 positions
+   311.355  photo floue (netteté 7 contre 15 de référence)
+   311.553  t0157043 suivi ok score 0.98 pos 17194,-11215 net 7 (16 ms) carte 100 photos + 300 positions
+   311.561  photo o-3_0101 à 17194,-11215 (409 ko, 206 ms)
+   311.889  t0157379 suivi ok score 0.96 pos 17541,-11215 net 7 (18 ms) carte 101 photos + 300 positions
+   312.218  t0157709 suivi ok score 0.98 pos 17613,-11215 net 7 (16 ms) carte 101 photos + 300 positions
+   312.350  photo floue (netteté 7 contre 15 de référence)
+   312.554  t0158044 suivi ok score 0.98 pos 17613,-11215 net 7 (21 ms) carte 101 photos + 300 positions
+   312.565  photo o-3_0102 à 17613,-11215 (405 ko, 214 ms)
+   312.869  envoyé lame_20261020_160811_myelo-3_0019.jpg (385 ko)
+   312.883  t0158373 suivi ok score 0.97 pos 17613,-11215 net 7 (15 ms) carte 102 photos + 300 positions
+   313.208  t0158699 suivi ok score 0.96 pos 18569,-11215 net 6 (10 ms) carte 102 photos + 300 positions
+   313.561  t0159050 suivi ok score 0.98 pos 18593,-11215 net 6 (22 ms) carte 102 photos + 300 positions
+   313.658  photo floue (netteté 6 contre 15 de référence)
+   313.879  photo o-3_0103 à 18593,-11215 (399 ko, 221 ms)
+   313.887  t0159378 suivi ok score 0.97 pos 18593,-11215 net 6 (16 ms) carte 103 photos + 300 positions
+   314.219  t0159709 suivi ok score 0.92 pos 19286,-11215 net 8 (18 ms) carte 103 photos + 300 positions
+   314.556  t0160046 suivi ok score 0.98 pos 19525,-11215 net 6 (21 ms) carte 103 photos + 300 positions
+   314.709  envoyé lame_20261020_160811_myelo-3_0020.jpg (410 ko)
+   314.878  t0160369 suivi ok score 0.98 pos 19525,-11215 net 7 (11 ms) carte 103 photos + 300 positions
+   314.879  photo floue (netteté 7 contre 15 de référence)
+   315.060  photo o-3_0104 à 19525,-11215 (406 ko, 181 ms)
+   315.217  t0160706 suivi ok score 0.98 pos 19525,-11215 net 6 (14 ms) carte 104 photos + 300 positions
+   315.551  t0161041 suivi ok score 0.98 pos 19525,-11215 net 5 (15 ms) carte 104 photos + 300 positions
+   315.894  t0161383 suivi ok score 0.98 pos 19501,-12761 net 4 (19 ms) carte 104 photos + 300 positions
+   316.231  t0161720 suivi ok score 0.99 pos 19501,-13047 net 9 (25 ms) carte 104 photos + 300 positions
+   316.549  t0162039 suivi ok score 0.99 pos 19501,-13047 net 9 (14 ms) carte 104 photos + 300 positions
+   316.630  envoyé lame_20261020_160811_myelo-3_0021.jpg (418 ko)
+   316.675  photo o-3_0105 à 19501,-13047 (435 ko, 228 ms)
+   316.892  t0162383 suivi ok score 0.98 pos 19501,-13287 net 5 (19 ms) carte 105 photos + 300 positions
+   317.226  t0162716 suivi ok score 0.99 pos 19501,-13430 net 5 (24 ms) carte 105 photos + 300 positions
+   317.285  photo floue (netteté 6 contre 15 de référence)
+   317.517  photo o-3_0106 à 19501,-13430 (431 ko, 232 ms)
+   317.547  t0163037 suivi ok score 0.99 pos 19501,-13430 net 10 (14 ms) carte 106 photos + 300 positions
+   317.885  t0163375 suivi ok score 0.99 pos 19501,-13430 net 9 (16 ms) carte 106 photos + 300 positions
+   318.224  t0163714 suivi ok score 0.99 pos 19238,-13430 net 11 (18 ms) carte 106 photos + 300 positions
+   318.244  envoyé lame_20261020_160811_myelo-3_0022.jpg (423 ko)
+   318.548  t0164039 suivi ok score 0.99 pos 18545,-13430 net 11 (13 ms) carte 106 photos + 300 positions
+   318.889  t0164380 suivi ok score 0.99 pos 18545,-13430 net 10 (15 ms) carte 106 photos + 300 positions
+   319.144  photo o-3_0107 à 18545,-13430 (433 ko, 226 ms)
+   319.213  t0164704 suivi ok score 0.98 pos 18533,-13430 net 10 (14 ms) carte 107 photos + 300 positions
+   319.558  t0165048 suivi ok score 0.98 pos 17338,-13430 net 10 (16 ms) carte 107 photos + 300 positions
+   319.899  t0165388 suivi ok score 0.99 pos 17206,-13430 net 9 (23 ms) carte 107 photos + 300 positions
+   320.216  t0165706 suivi ok score 0.99 pos 17206,-13430 net 9 (14 ms) carte 107 photos + 300 positions
+   320.223  envoyé lame_20261020_160811_myelo-3_0023.jpg (436 ko)
+   320.254  photo o-3_0108 à 17206,-13430 (423 ko, 231 ms)
+   320.546  t0166036 suivi ok score 0.98 pos 17063,-13446 net 11 (12 ms) carte 108 photos + 300 positions
+   320.897  t0166387 suivi ok score 0.99 pos 16561,-13446 net 10 (21 ms) carte 108 photos + 300 positions
+   321.218  t0166708 suivi ok score 0.99 pos 16561,-13446 net 10 (17 ms) carte 108 photos + 300 positions
+   321.320  photo o-3_0109 à 16561,-13446 (434 ko, 227 ms)
+   321.561  t0167051 suivi ok score 0.98 pos 16561,-13446 net 10 (18 ms) carte 109 photos + 300 positions
+   321.825  envoyé lame_20261020_160811_myelo-3_0024.jpg (441 ko)
+   321.889  t0167378 suivi ok score 0.98 pos 15031,-13414 net 9 (15 ms) carte 109 photos + 300 positions
+   321.889  photo en mouvement lent (50 % du champ, 31 u/s)
+   322.118  photo o-3_0110 à 15031,-13414 (440 ko, 228 ms)
+   322.218  t0167709 suivi ok score 0.99 pos 15043,-13414 net 11 (18 ms) carte 110 photos + 300 positions
+   322.558  t0168048 suivi ok score 0.99 pos 15031,-13414 net 12 (17 ms) carte 110 photos + 300 positions
+   322.888  t0168378 suivi ok score 0.97 pos 14182,-13414 net 12 (16 ms) carte 110 photos + 300 positions
+   323.216  t0168707 suivi ok score 0.99 pos 14182,-13414 net 11 (12 ms) carte 110 photos + 300 positions
+   323.507  photo o-3_0111 à 14182,-13414 (447 ko, 220 ms)
+   323.551  t0169041 suivi ok score 0.99 pos 14182,-13414 net 12 (13 ms) carte 111 photos + 300 positions
+   323.847  envoyé lame_20261020_160811_myelo-3_0025.jpg (457 ko)
+   323.891  t0169382 suivi ok score 0.99 pos 13967,-13414 net 12 (11 ms) carte 111 photos + 300 positions
+   324.213  t0169704 suivi ok score 0.99 pos 13537,-13414 net 11 (12 ms) carte 111 photos + 300 positions
+   324.561  t0170051 suivi ok score 0.99 pos 13537,-13414 net 11 (18 ms) carte 111 photos + 300 positions
+   324.650  photo o-3_0112 à 13537,-13414 (445 ko, 230 ms)
+   324.887  t0170376 suivi ok score 0.93 pos 12688,-13398 net 11 (16 ms) carte 112 photos + 300 positions
+   325.223  t0170713 suivi ok score 0.99 pos 12485,-13398 net 11 (15 ms) carte 112 photos + 300 positions
+   325.553  t0171043 suivi ok score 0.99 pos 12485,-13398 net 12 (14 ms) carte 112 photos + 300 positions
+   325.649  photo o-3_0113 à 12485,-13398 (441 ko, 231 ms)
+   325.883  t0171374 suivi ok score 0.99 pos 12305,-13398 net 12 (15 ms) carte 113 photos + 300 positions
+   325.989  envoyé lame_20261020_160811_myelo-3_0026.jpg (461 ko)
+   326.216  t0171707 suivi ok score 0.99 pos 11337,-13398 net 12 (16 ms) carte 113 photos + 300 positions
+   326.567  t0172057 suivi ok score 0.99 pos 11361,-13398 net 11 (22 ms) carte 113 photos + 300 positions
+   326.781  photo o-3_0114 à 11361,-13398 (437 ko, 213 ms)
+   326.879  t0172368 suivi ok score 0.98 pos 11062,-13398 net 11 (11 ms) carte 114 photos + 300 positions
+   327.148  photo en mouvement lent (59 % du champ, 30 u/s)
+   327.221  t0172710 suivi ok score 0.98 pos 9556,-13382 net 10 (14 ms) carte 114 photos + 300 positions
+   327.388  photo o-3_0115 à 9544,-13382 (429 ko, 239 ms)
+   327.546  t0173035 suivi ok score 0.99 pos 9556,-13382 net 10 (11 ms) carte 115 photos + 300 positions
+   327.894  t0173383 suivi ok score 0.99 pos 9544,-13382 net 11 (21 ms) carte 115 photos + 300 positions
+   328.216  t0173707 suivi ok score 0.97 pos 8600,-13382 net 10 (10 ms) carte 115 photos + 300 positions
+   328.473  envoyé lame_20261020_160811_myelo-3_0027.jpg (456 ko)
+   328.552  t0174043 suivi ok score 0.99 pos 8624,-13382 net 10 (14 ms) carte 115 photos + 300 positions
+   328.833  photo o-3_0116 à 8624,-13382 (428 ko, 213 ms)
+   328.886  t0174376 suivi ok score 0.98 pos 8600,-13382 net 10 (18 ms) carte 116 photos + 300 positions
+   329.232  t0174722 suivi ok score 0.98 pos 7692,-13366 net 10 (20 ms) carte 116 photos + 300 positions
+   329.557  t0175047 suivi ok score 0.99 pos 7692,-13366 net 10 (17 ms) carte 116 photos + 300 positions
+   329.742  photo o-3_0117 à 7692,-13366 (420 ko, 221 ms)
+   329.882  t0175373 suivi ok score 0.99 pos 7692,-13366 net 9 (15 ms) carte 117 photos + 300 positions
+   330.223  t0175714 suivi ok score 0.98 pos 7142,-13366 net 9 (16 ms) carte 117 photos + 300 positions
+   330.250  envoyé lame_20261020_160811_myelo-3_0028.jpg (465 ko)
+   330.562  t0176051 suivi ok score 0.99 pos 7166,-13366 net 10 (16 ms) carte 117 photos + 300 positions
+   330.785  photo o-3_0118 à 7166,-13366 (424 ko, 204 ms)
+   330.885  t0176375 suivi ok score 0.99 pos 7166,-13366 net 10 (16 ms) carte 118 photos + 300 positions
+   331.233  t0176723 suivi ok score 0.99 pos 7034,-13366 net 10 (20 ms) carte 118 photos + 300 positions
+   331.567  t0177057 suivi ok score 0.98 pos 6927,-13366 net 10 (22 ms) carte 118 photos + 300 positions
+   331.881  t0177372 suivi ok score 0.98 pos 6939,-13366 net 10 (12 ms) carte 118 photos + 300 positions
+   332.172  photo o-3_0119 à 6939,-13366 (427 ko, 214 ms)
+   332.214  t0177704 suivi ok score 0.98 pos 6891,-13366 net 10 (13 ms) carte 119 photos + 300 positions
+   332.553  t0178043 suivi ok score 0.99 pos 6759,-13366 net 11 (14 ms) carte 119 photos + 300 positions
+   332.837  envoyé lame_20261020_160811_myelo-3_0029.jpg (449 ko)
+   332.893  t0178383 suivi ok score 0.99 pos 6676,-13366 net 11 (15 ms) carte 119 photos + 300 positions
+   333.213  t0178703 suivi ok score 0.98 pos 6532,-13366 net 11 (11 ms) carte 119 photos + 300 positions
+   333.560  t0179050 suivi ok score 0.98 pos 6042,-13366 net 11 (18 ms) carte 119 photos + 300 positions
+   333.897  t0179387 suivi ok score 0.99 pos 5863,-13366 net 11 (20 ms) carte 119 photos + 300 positions
+   334.224  t0179714 suivi ok score 0.99 pos 5863,-13366 net 11 (14 ms) carte 119 photos + 300 positions
+   334.254  photo o-3_0120 à 5863,-13366 (438 ko, 230 ms)
+   334.567  t0180056 suivi ok score 0.95 pos 5146,-13366 net 12 (21 ms) carte 120 photos + 300 positions
+   334.893  t0180383 suivi ok score 0.98 pos 4393,-13366 net 12 (18 ms) carte 120 photos + 300 positions
+   334.933  envoyé lame_20261020_160811_myelo-3_0030.jpg (441 ko)
+   335.215  t0180706 suivi ok score 0.99 pos 4404,-13366 net 12 (10 ms) carte 120 photos + 300 positions
+   335.443  photo o-3_0121 à 4404,-13366 (448 ko, 227 ms)
+   335.551  t0181040 suivi ok score 0.97 pos 4213,-13366 net 12 (14 ms) carte 121 photos + 300 positions
+   335.819  photo en mouvement lent (51 % du champ, 30 u/s)
+   335.887  t0181377 suivi ok score 0.98 pos 2851,-13350 net 12 (11 ms) carte 121 photos + 300 positions
+   336.051  photo o-3_0122 à 2851,-13350 (447 ko, 231 ms)
+   336.223  t0181713 suivi ok score 0.99 pos 2863,-13350 net 12 (15 ms) carte 122 photos + 300 positions
+   336.568  t0182058 suivi ok score 0.95 pos 2588,-13350 net 11 (24 ms) carte 122 photos + 300 positions
+   336.761  envoyé lame_20261020_160811_myelo-3_0031.jpg (429 ko)
+   336.892  t0182382 suivi ok score 0.99 pos 1990,-13350 net 13 (16 ms) carte 122 photos + 300 positions
+   337.223  t0182713 suivi ok score 0.99 pos 1990,-13350 net 13 (16 ms) carte 122 photos + 300 positions
+   337.317  photo o-3_0123 à 1990,-13350 (454 ko, 231 ms)
+   337.552  t0183042 suivi ok score 0.98 pos 1093,-13350 net 14 (14 ms) carte 123 photos + 300 positions
+   337.891  t0183381 suivi ok score 0.99 pos 1046,-13350 net 14 (16 ms) carte 123 photos + 300 positions
+   338.216  photo o-3_0124 à 1046,-13350 (471 ko, 222 ms)
+   338.228  t0183718 suivi ok score 0.99 pos 1034,-13350 net 14 (19 ms) carte 124 photos + 300 positions
+   338.468  envoyé lame_20261020_160811_myelo-3_0032.jpg (422 ko)
+   338.547  t0184038 suivi ok score 0.99 pos 687,-13350 net 14 (10 ms) carte 124 photos + 300 positions
+   338.899  t0184388 suivi ok score 0.99 pos 603,-13350 net 14 (21 ms) carte 124 photos + 300 positions
+   339.225  t0184716 suivi ok score 0.99 pos 603,-13350 net 14 (19 ms) carte 124 photos + 300 positions
+   339.281  photo o-3_0125 à 603,-13350 (463 ko, 203 ms)
+   339.563  t0185053 suivi ok score 0.98 pos 197,-13350 net 14 (19 ms) carte 125 photos + 300 positions
+   339.888  t0185378 suivi ok score 0.99 pos -389,-13350 net 13 (13 ms) carte 125 photos + 300 positions
+   340.234  t0185724 suivi ok score 0.99 pos -377,-13350 net 13 (17 ms) carte 125 photos + 300 positions
+   340.423  envoyé lame_20261020_160811_myelo-3_0033.jpg (435 ko)
+   340.437  photo o-3_0126 à -377,-13350 (451 ko, 203 ms)
+   340.558  t0186048 suivi ok score 0.99 pos -377,-13350 net 13 (18 ms) carte 126 photos + 300 positions
+   340.894  t0186384 suivi ok score 0.99 pos -377,-13350 net 13 (17 ms) carte 126 photos + 300 positions
+   341.249  t0186739 suivi ok score 0.99 pos -377,-13350 net 13 (29 ms) carte 126 photos + 300 positions
+   341.557  t0187046 suivi ok score 0.99 pos -377,-13350 net 13 (15 ms) carte 126 photos + 300 positions
+   341.894  t0187384 suivi ok score 0.99 pos -377,-13350 net 13 (16 ms) carte 126 photos + 300 positions
+   342.088  envoyé lame_20261020_160811_myelo-3_0034.jpg (445 ko)
+   342.127  changement d'objectif vers x10 : début à 187620 ms, position -377,-13350 (ok)
+   344.169  envoyé lame_20261020_160811_myelo-3_0035.jpg (443 ko)
+   346.151  envoyé lame_20261020_160811_myelo-3_0036.jpg (451 ko)
+   347.563  envoyé lame_20261020_160811_myelo-3_0037.jpg (447 ko)
+   349.990  envoyé lame_20261020_160811_myelo-3_0038.jpg (465 ko)
+   352.856  envoyé lame_20261020_160811_myelo-3_0039.jpg (480 ko)
+   354.806  envoyé lame_20261020_160811_myelo-3_0040.jpg (462 ko)
+   356.536  envoyé lame_20261020_160811_myelo-3_0041.jpg (445 ko)
+   358.280  envoyé lame_20261020_160811_myelo-3_0042.jpg (429 ko)
+   360.408  envoyé lame_20261020_160811_myelo-3_0043.jpg (437 ko)
+   362.354  envoyé lame_20261020_160811_myelo-3_0044.jpg (439 ko)
+   364.008  envoyé lame_20261020_160811_myelo-3_0045.jpg (437 ko)
+   365.464  envoyé lame_20261020_160811_myelo-3_0046.jpg (437 ko)
+   366.902  envoyé lame_20261020_160811_myelo-3_0047.jpg (433 ko)
+   367.372  objectif x10 : reprise à 212864 ms (calibration absente)
+   367.395  masque oculaire : 100 % du cadre utile (p95 251)
+   367.479  t0212968 suivi ok score 1.00 pos 0,0 net 37 (21 ms) carte 0 photos + 1 positions
+   367.817  t0213307 suivi ok score 0.99 pos 0,0 net 37 (31 ms) carte 0 photos + 5 positions
+   368.011  photo o-3_0127 à 0,0 (706 ko, 193 ms)
+   368.142  t0213633 suivi ok score 0.99 pos 0,0 net 37 (28 ms) carte 1 photos + 8 positions
+   368.467  t0213958 suivi ok score 1.00 pos 0,0 net 37 (19 ms) carte 1 photos + 11 positions
+   368.608  envoyé lame_20261020_160811_myelo-3_0048.jpg (435 ko)
+   368.813  t0214303 suivi ok score 0.99 pos 0,0 net 37 (23 ms) carte 1 photos + 15 positions
+   369.138  t0214630 suivi ok score 0.99 pos 0,0 net 37 (17 ms) carte 1 photos + 18 positions
+   369.487  t0214978 suivi ok score 0.99 pos 0,0 net 37 (22 ms) carte 1 photos + 21 positions
+   369.832  t0215321 suivi ok score 0.96 pos -12,0 net 37 (38 ms) carte 1 photos + 25 positions
+   370.085  envoyé lame_20261020_160811_myelo-3_0049.jpg (427 ko)
+   370.150  t0215639 suivi ok score 0.97 pos -20,0 net 37 (30 ms) carte 1 photos + 28 positions
+   370.466  t0215956 suivi ok score 0.99 pos -23,0 net 38 (17 ms) carte 1 photos + 31 positions
+   370.799  t0216289 suivi ok score 0.99 pos -23,0 net 38 (18 ms) carte 1 photos + 35 positions
+   371.145  t0216636 suivi ok score 0.99 pos -23,0 net 38 (25 ms) carte 1 photos + 38 positions
+   371.471  t0216961 suivi ok score 0.99 pos -23,0 net 38 (22 ms) carte 1 photos + 41 positions
+   371.576  envoyé lame_20261020_160811_myelo-3_0050.jpg (442 ko)
+   371.805  t0217296 suivi ok score 0.99 pos -23,0 net 37 (20 ms) carte 1 photos + 45 positions
+   372.133  t0217624 suivi ok score 0.99 pos -14,0 net 37 (18 ms) carte 1 photos + 48 positions
+   372.467  t0217958 suivi ok score 0.99 pos -10,0 net 37 (18 ms) carte 1 photos + 51 positions
+   372.820  t0218309 suivi ok score 0.91 pos 72,0 net 37 (33 ms) carte 1 photos + 55 positions
+   373.138  t0218629 suivi ok score 0.98 pos 303,0 net 38 (17 ms) carte 1 photos + 58 positions
+   373.471  t0218961 suivi ok score 0.97 pos 408,0 net 37 (19 ms) carte 1 photos + 61 positions
+   373.686  envoyé lame_20261020_160811_myelo-3_0051.jpg (450 ko)
+   373.803  t0219293 suivi ok score 0.97 pos 501,0 net 38 (23 ms) carte 1 photos + 65 positions
+   373.851  photo o-3_0128 à 455,0 (721 ko, 207 ms)
+   374.137  t0219628 suivi ok score 0.96 pos 671,0 net 37 (24 ms) carte 2 photos + 68 positions
+   374.475  t0219966 suivi ok score 0.95 pos 842,0 net 38 (18 ms) carte 2 photos + 71 positions
+   374.817  t0220307 suivi ok score 0.97 pos 916,0 net 38 (21 ms) carte 2 photos + 75 positions
+   374.884  photo o-3_0129 à 879,0 (727 ko, 216 ms)
+   375.139  t0220630 suivi ok score 0.91 pos 1031,0 net 38 (16 ms) carte 3 photos + 78 positions
+   375.324  envoyé lame_20261020_160811_myelo-3_0052.jpg (425 ko)
+   375.479  t0220970 suivi ok score 0.92 pos 1238,0 net 38 (24 ms) carte 3 photos + 81 positions
+   375.810  t0221300 suivi ok score 0.90 pos 1415,0 net 38 (21 ms) carte 3 photos + 85 positions
+   376.134  t0221625 suivi ok score 0.93 pos 1544,0 net 38 (18 ms) carte 3 photos + 88 positions
+   376.488  t0221978 suivi ok score 0.97 pos 1717,0 net 38 (33 ms) carte 3 photos + 91 positions
+   376.804  t0222294 suivi ok score 0.99 pos 1884,0 net 38 (18 ms) carte 3 photos + 95 positions
+   377.127  t0222618 suivi ok score 0.98 pos 1949,0 net 37 (15 ms) carte 3 photos + 98 positions
+   377.230  photo o-3_0130 à 1923,0 (713 ko, 220 ms)
+   377.233  envoyé lame_20261020_160811_myelo-3_0053.jpg (439 ko)
+   377.468  t0222959 suivi ok score 0.96 pos 2055,0 net 37 (23 ms) carte 4 photos + 101 positions
+   377.806  t0223296 suivi ok score 0.96 pos 2204,0 net 37 (25 ms) carte 4 photos + 105 positions
+   378.139  t0223630 suivi ok score 0.96 pos 2370,0 net 37 (25 ms) carte 4 photos + 108 positions
+   378.476  t0223966 suivi ok score 0.97 pos 2616,0 net 36 (24 ms) carte 4 photos + 111 positions
+   378.815  t0224305 suivi ok score 0.97 pos 2712,0 net 37 (22 ms) carte 4 photos + 115 positions
+   379.141  t0224631 suivi ok score 0.97 pos 2980,0 net 36 (19 ms) carte 4 photos + 118 positions
+   379.269  envoyé lame_20261020_160811_myelo-3_0054.jpg (435 ko)
+   379.479  t0224969 suivi ok score 0.91 pos 3231,0 net 35 (22 ms) carte 4 photos + 121 positions
+   379.822  t0225311 suivi ok score 0.96 pos 3448,0 net 35 (28 ms) carte 4 photos + 125 positions
+   380.008  photo en mouvement lent (56 % du champ, 13 u/s)
+   380.131  t0225621 suivi ok score 0.93 pos 3694,0 net 34 (16 ms) carte 4 photos + 128 positions
+   380.228  photo o-3_0131 à 3630,0 (672 ko, 220 ms)
+   380.483  t0225973 suivi ok score 0.98 pos 4029,0 net 33 (29 ms) carte 5 photos + 131 positions
+   380.796  t0226287 suivi ok score 0.93 pos 4154,0 net 33 (16 ms) carte 5 photos + 135 positions
+   380.935  envoyé lame_20261020_160811_myelo-3_0055.jpg (427 ko)
+   381.140  t0226630 suivi ok score 0.99 pos 4261,0 net 33 (19 ms) carte 5 photos + 138 positions
+   381.475  t0226965 suivi ok score 0.99 pos 4262,0 net 33 (21 ms) carte 5 photos + 141 positions
+   381.525  photo o-3_0132 à 4262,0 (646 ko, 217 ms)
+   381.808  t0227299 suivi ok score 0.99 pos 4262,0 net 33 (22 ms) carte 6 photos + 145 positions
+   382.154  t0227644 suivi ok score 0.99 pos 4262,0 net 32 (33 ms) carte 6 photos + 148 positions
+   382.472  t0227962 suivi ok score 0.99 pos 4262,0 net 32 (21 ms) carte 6 photos + 151 positions
+   382.621  envoyé lame_20261020_160811_myelo-3_0056.jpg (443 ko)
+   382.803  t0228293 suivi ok score 0.95 pos 4262,-60 net 32 (19 ms) carte 6 photos + 155 positions
+   383.134  t0228625 suivi ok score 0.96 pos 4262,-227 net 32 (18 ms) carte 6 photos + 158 positions
+   383.491  t0228981 suivi ok score 0.96 pos 4262,-385 net 32 (35 ms) carte 6 photos + 161 positions
+   383.804  t0229295 suivi ok score 0.93 pos 4262,-507 net 32 (19 ms) carte 6 photos + 165 positions
+   384.131  t0229621 suivi ok score 0.96 pos 4262,-655 net 33 (18 ms) carte 6 photos + 168 positions
+   384.155  photo o-3_0133 à 4262,-562 (628 ko, 217 ms)
+   384.423  envoyé lame_20261020_160811_myelo-3_0057.jpg (437 ko)
+   384.471  t0229962 suivi ok score 0.87 pos 4262,-744 net 32 (19 ms) carte 7 photos + 171 positions
+   384.725  photo o-3_0134 à 4262,-760 (620 ko, 221 ms)
+   384.798  t0230289 suivi ok score 0.87 pos 4262,-868 net 32 (19 ms) carte 8 photos + 175 positions
+   385.149  t0230639 suivi ok score 0.92 pos 4262,-985 net 33 (23 ms) carte 8 photos + 178 positions
+   385.253  photo o-3_0135 à 4262,-921 (621 ko, 209 ms)
+   385.477  t0230967 suivi ok score 0.97 pos 4262,-1129 net 33 (19 ms) carte 9 photos + 181 positions
+   385.808  t0231298 suivi ok score 0.93 pos 4262,-1307 net 33 (18 ms) carte 9 photos + 185 positions
+   386.132  t0231623 suivi ok score 0.92 pos 4262,-1477 net 33 (15 ms) carte 9 photos + 188 positions
+   386.492  t0231982 suivi ok score 0.97 pos 4262,-1662 net 32 (36 ms) carte 9 photos + 191 positions
+   386.803  t0232293 suivi ok score 0.95 pos 4262,-1894 net 33 (17 ms) carte 9 photos + 195 positions
+   386.955  envoyé lame_20261020_160811_myelo-3_0058.jpg (453 ko)
+   387.136  t0232627 suivi ok score 0.93 pos 4262,-2076 net 33 (15 ms) carte 9 photos + 198 positions
+   387.473  t0232964 suivi ok score 0.96 pos 4262,-2240 net 32 (18 ms) carte 9 photos + 201 positions
+   387.815  t0233305 suivi ok score 0.88 pos 4262,-2347 net 33 (24 ms) carte 9 photos + 205 positions
+   387.985  photo o-3_0136 à 4262,-2345 (619 ko, 214 ms)
+   388.168  t0233658 suivi ok score 0.93 pos 4262,-2436 net 32 (40 ms) carte 10 photos + 208 positions
+   388.469  t0233959 suivi ok score 0.97 pos 4262,-2608 net 32 (19 ms) carte 10 photos + 211 positions
+   388.568  photo o-3_0137 à 4262,-2515 (604 ko, 247 ms)
+   388.805  t0234295 suivi ok score 0.91 pos 4262,-2740 net 32 (17 ms) carte 11 photos + 215 positions
+   388.983  photo o-3_0138 à 4262,-2728 (599 ko, 205 ms)
+   389.029  envoyé lame_20261020_160811_myelo-3_0059.jpg (456 ko)
+   389.151  t0234641 suivi ok score 0.94 pos 4262,-2780 net 32 (22 ms) carte 12 photos + 218 positions
+   389.481  t0234971 suivi ok score 1.00 pos 4262,-2786 net 33 (25 ms) carte 12 photos + 221 positions
+   389.811  t0235301 suivi ok score 0.99 pos 4262,-2786 net 34 (22 ms) carte 12 photos + 225 positions
+   390.137  t0235628 suivi ok score 0.99 pos 4253,-2786 net 34 (17 ms) carte 12 photos + 228 positions
+   390.486  t0235976 suivi ok score 0.93 pos 4035,-2786 net 34 (25 ms) carte 12 photos + 231 positions
+   390.594  envoyé lame_20261020_160811_myelo-3_0060.jpg (453 ko)
+   390.811  t0236302 suivi ok score 0.98 pos 3809,-2786 net 35 (23 ms) carte 12 photos + 235 positions
+   391.136  t0236627 suivi ok score 0.94 pos 3552,-2786 net 35 (18 ms) carte 12 photos + 238 positions
+   391.487  t0236976 suivi ok score 0.92 pos 3420,-2786 net 36 (29 ms) carte 12 photos + 241 positions
+   391.808  t0237298 suivi ok score 0.98 pos 3162,-2786 net 36 (18 ms) carte 12 photos + 245 positions
+   392.150  t0237640 suivi ok score 0.91 pos 2917,-2786 net 36 (21 ms) carte 12 photos + 248 positions
+   392.293  envoyé lame_20261020_160811_myelo-3_0061.jpg (414 ko)
+   392.472  t0237963 suivi ok score 0.97 pos 2586,-2786 net 37 (16 ms) carte 12 photos + 251 positions
+   392.541  photo en mouvement lent (56 % du champ, 34 u/s)
+   392.761  photo o-3_0139 à 2556,-2786 (646 ko, 220 ms)
+   392.807  t0238297 suivi ok score 0.93 pos 2442,-2786 net 37 (21 ms) carte 13 photos + 255 positions
+   393.139  t0238629 suivi ok score 0.97 pos 2352,-2786 net 37 (20 ms) carte 13 photos + 258 positions
+   393.261  photo o-3_0140 à 2394,-2786 (646 ko, 212 ms)
+   393.489  t0238978 suivi ok score 0.99 pos 2298,-2786 net 37 (30 ms) carte 14 photos + 261 positions
+   393.804  t0239295 suivi ok score 0.97 pos 2219,-2786 net 38 (19 ms) carte 14 photos + 265 positions
+   393.825  photo o-3_0141 à 2268,-2786 (646 ko, 209 ms)
+   394.139  t0239630 suivi ok score 0.99 pos 2186,-2786 net 37 (19 ms) carte 15 photos + 268 positions
+   394.477  t0239967 suivi ok score 0.94 pos 2126,-2786 net 38 (17 ms) carte 15 photos + 271 positions
+   394.632  envoyé lame_20261020_160811_myelo-3_0062.jpg (419 ko)
+   394.660  photo o-3_0142 à 2147,-2786 (649 ko, 210 ms)
+   394.817  t0240308 suivi ok score 0.94 pos 2064,-2786 net 38 (20 ms) carte 16 photos + 275 positions
+   395.141  t0240631 suivi ok score 0.92 pos 1967,-2786 net 37 (22 ms) carte 16 photos + 278 positions
+   395.211  photo o-3_0143 à 2016,-2786 (652 ko, 246 ms)
+   395.480  t0240970 suivi ok score 0.95 pos 1885,-2770 net 38 (21 ms) carte 17 photos + 281 positions
+   395.607  photo o-3_0144 à 1896,-2775 (651 ko, 227 ms)
+   395.823  t0241312 suivi ok score 0.96 pos 1823,-2770 net 38 (27 ms) carte 18 photos + 285 positions
+   396.137  t0241628 suivi ok score 0.99 pos 1764,-2770 net 38 (18 ms) carte 18 photos + 288 positions
+   396.340  photo o-3_0145 à 1775,-2770 (652 ko, 230 ms)
+   396.477  t0241968 suivi ok score 0.95 pos 1573,-2770 net 38 (21 ms) carte 19 photos + 291 positions
+   396.669  envoyé lame_20261020_160811_myelo-3_0063.jpg (423 ko)
+   396.824  t0242313 suivi ok score 0.95 pos 1489,-2770 net 38 (33 ms) carte 19 photos + 295 positions
+   397.123  photo o-3_0146 à 1478,-2770 (663 ko, 217 ms)
+   397.136  t0242627 suivi ok score 0.96 pos 1378,-2755 net 39 (16 ms) carte 20 photos + 298 positions
+   397.483  t0242973 suivi ok score 1.00 pos 1334,-2754 net 38 (29 ms) carte 20 photos + 300 positions
+   397.688  photo o-3_0147 à 1334,-2754 (659 ko, 204 ms)
+   397.808  t0243298 suivi ok score 0.98 pos 1334,-2754 net 39 (23 ms) carte 21 photos + 300 positions
+   398.141  t0243632 suivi ok score 0.92 pos 1189,-2754 net 39 (15 ms) carte 21 photos + 300 positions
+   398.214  envoyé lame_20261020_160811_myelo-3_0064.jpg (432 ko)
+   398.473  t0243963 suivi ok score 0.98 pos 1048,-2754 net 39 (14 ms) carte 21 photos + 300 positions
+   398.818  t0244308 suivi ok score 0.92 pos 938,-2754 net 39 (23 ms) carte 21 photos + 300 positions
+   399.052  photo o-3_0148 à 927,-2754 (672 ko, 206 ms)
+   399.146  t0244636 suivi ok score 0.96 pos 855,-2751 net 38 (20 ms) carte 22 photos + 300 positions
+   399.479  t0244968 suivi ok score 0.93 pos 748,-2738 net 39 (25 ms) carte 22 photos + 300 positions
+   399.504  photo o-3_0149 à 808,-2738 (671 ko, 237 ms)
+   399.818  t0245308 suivi ok score 0.97 pos 665,-2738 net 39 (23 ms) carte 23 photos + 300 positions
+   400.003  photo o-3_0150 à 677,-2738 (673 ko, 229 ms)
+   400.149  t0245638 suivi ok score 0.97 pos 473,-2738 net 39 (21 ms) carte 24 photos + 300 positions
+   400.486  t0245975 suivi ok score 0.97 pos 306,-2738 net 39 (22 ms) carte 24 photos + 300 positions
+   400.716  envoyé lame_20261020_160811_myelo-3_0065.jpg (422 ko)
+   400.811  t0246300 suivi ok score 0.97 pos 127,-2738 net 39 (20 ms) carte 24 photos + 300 positions
+   401.141  t0246631 suivi ok score 0.94 pos -5,-2738 net 40 (16 ms) carte 24 photos + 300 positions
+   401.466  photo o-3_0151 à -41,-2738 (671 ko, 225 ms)
+   401.469  t0246959 suivi ok score 0.94 pos -124,-2738 net 39 (13 ms) carte 25 photos + 300 positions
+   401.807  t0247296 suivi ok score 0.99 pos -148,-2738 net 39 (16 ms) carte 25 photos + 300 positions
+   402.142  t0247632 suivi ok score 0.92 pos -208,-2738 net 39 (21 ms) carte 25 photos + 300 positions
+   402.237  photo o-3_0152 à -160,-2738 (669 ko, 235 ms)
+   402.481  t0247970 suivi ok score 0.97 pos -328,-2738 net 39 (23 ms) carte 26 photos + 300 positions
+   402.566  photo o-3_0153 à -280,-2738 (671 ko, 232 ms)
+   402.801  t0248290 suivi ok score 0.98 pos -447,-2738 net 39 (12 ms) carte 27 photos + 300 positions
+   402.909  photo o-3_0154 à -399,-2738 (672 ko, 240 ms)
+   402.976  envoyé lame_20261020_160811_myelo-3_0066.jpg (413 ko)
+   403.133  t0248624 suivi ok score 0.98 pos -567,-2738 net 39 (11 ms) carte 28 photos + 300 positions
+   403.235  photo o-3_0155 à -519,-2738 (671 ko, 227 ms)
+   403.472  t0248961 suivi ok score 0.94 pos -734,-2738 net 40 (14 ms) carte 29 photos + 300 positions
+   403.822  t0249311 suivi ok score 0.93 pos -889,-2738 net 39 (25 ms) carte 29 photos + 300 positions
+   404.145  t0249634 suivi ok score 0.97 pos -1021,-2738 net 40 (20 ms) carte 29 photos + 300 positions
+   404.476  t0249966 suivi ok score 0.93 pos -1164,-2738 net 40 (22 ms) carte 29 photos + 300 positions
+   404.496  photo o-3_0156 à -1057,-2738 (669 ko, 214 ms)
+   404.816  t0250305 suivi ok score 0.93 pos -1332,-2738 net 40 (24 ms) carte 30 photos + 300 positions
+   405.029  envoyé lame_20261020_160811_myelo-3_0067.jpg (415 ko)
+   405.147  t0250636 suivi ok score 0.91 pos -1451,-2738 net 39 (21 ms) carte 30 photos + 300 positions
+   405.394  photo o-3_0157 à -1463,-2738 (670 ko, 210 ms)
+   405.470  t0250960 suivi ok score 0.96 pos -1583,-2738 net 39 (13 ms) carte 31 photos + 300 positions
+   405.821  t0251310 suivi ok score 0.98 pos -1726,-2738 net 39 (24 ms) carte 31 photos + 300 positions
+   406.144  t0251633 suivi ok score 0.92 pos -1917,-2738 net 40 (16 ms) carte 31 photos + 300 positions
+   406.484  t0251973 suivi ok score 0.93 pos -2085,-2738 net 40 (17 ms) carte 31 photos + 300 positions
+   406.815  t0252306 suivi ok score 0.92 pos -2180,-2738 net 40 (21 ms) carte 31 photos + 300 positions
+   407.000  envoyé lame_20261020_160811_myelo-3_0068.jpg (423 ko)
+   407.148  t0252638 suivi ok score 0.98 pos -2300,-2738 net 40 (20 ms) carte 31 photos + 300 positions
+   407.325  photo o-3_0158 à -2288,-2738 (658 ko, 210 ms)
+   407.477  t0252966 suivi ok score 0.97 pos -2431,-2738 net 39 (19 ms) carte 32 photos + 300 positions
+   407.824  t0253313 suivi ok score 0.98 pos -2491,-2738 net 39 (26 ms) carte 32 photos + 300 positions
+   408.095  photo o-3_0159 à -2515,-2738 (654 ko, 227 ms)
+   408.146  t0253636 suivi ok score 0.98 pos -2694,-2738 net 41 (16 ms) carte 33 photos + 300 positions
+   408.498  t0253987 suivi ok score 0.97 pos -2826,-2738 net 42 (29 ms) carte 33 photos + 300 positions
+   408.616  envoyé lame_20261020_160811_myelo-3_0069.jpg (425 ko)
+   408.815  t0254305 suivi ok score 0.98 pos -2909,-2738 net 42 (18 ms) carte 33 photos + 300 positions
+   408.886  photo o-3_0160 à -2862,-2738 (685 ko, 194 ms)
+   409.136  t0254626 suivi ok score 0.97 pos -3029,-2738 net 43 (15 ms) carte 34 photos + 300 positions
+   409.191  photo o-3_0161 à -2981,-2738 (697 ko, 196 ms)
+   409.481  t0254971 suivi ok score 0.91 pos -3089,-2738 net 43 (21 ms) carte 35 photos + 300 positions
+   409.741  photo o-3_0162 à -3101,-2738 (704 ko, 227 ms)
+   409.807  t0255297 suivi ok score 1.00 pos -3184,-2738 net 44 (15 ms) carte 36 photos + 300 positions
+   410.155  t0255645 suivi ok score 1.00 pos -3184,-2738 net 44 (23 ms) carte 36 photos + 300 positions
+   410.288  envoyé lame_20261020_160811_myelo-3_0070.jpg (423 ko)
+   410.482  t0255972 suivi ok score 1.00 pos -3184,-2738 net 43 (17 ms) carte 36 photos + 300 positions
+   410.823  t0256311 suivi ok score 1.00 pos -3184,-2738 net 43 (20 ms) carte 36 photos + 300 positions
+   411.145  t0256635 suivi ok score 0.88 pos -3184,-2738 net 41 (17 ms) carte 36 photos + 300 positions
+   411.488  t0256977 suivi ok score 1.00 pos -3184,-2754 net 43 (23 ms) carte 36 photos + 300 positions
+   411.819  t0257308 suivi ok score 1.00 pos -3184,-2754 net 44 (23 ms) carte 36 photos + 300 positions
+   412.163  t0257652 suivi ok score 0.96 pos -3184,-2754 net 43 (28 ms) carte 36 photos + 300 positions
+   412.481  t0257971 suivi ok score 0.94 pos -3184,-2754 net 43 (20 ms) carte 36 photos + 300 positions
+   412.820  t0258309 suivi ok score 0.96 pos -3184,-2610 net 42 (21 ms) carte 36 photos + 300 positions
+   413.151  t0258640 suivi ok score 0.91 pos -3184,-2228 net 42 (23 ms) carte 36 photos + 300 positions
+   413.479  t0258969 suivi ok score 1.00 pos -3184,-2180 net 41 (19 ms) carte 36 photos + 300 positions
+   413.703  photo o-3_0163 à -3184,-2180 (687 ko, 223 ms)
+   413.801  t0259291 suivi ok score 0.96 pos -3184,-2021 net 41 (15 ms) carte 37 photos + 300 positions
+   414.141  t0259631 suivi ok score 0.88 pos -3184,-1861 net 41 (15 ms) carte 37 photos + 300 positions
+   414.271  photo o-3_0164 à -3184,-1909 (688 ko, 219 ms)
+   414.474  t0259965 suivi ok score 0.96 pos -3184,-1702 net 41 (13 ms) carte 38 photos + 300 positions
+   414.601  photo o-3_0165 à -3184,-1750 (687 ko, 220 ms)
+   414.815  t0260304 suivi ok score 0.89 pos -3184,-1670 net 41 (22 ms) carte 39 photos + 300 positions
+   415.142  t0260628 suivi ok score 0.94 pos -3184,-1511 net 40 (16 ms) carte 39 photos + 300 positions
+   415.199  photo o-3_0166 à -3184,-1590 (682 ko, 222 ms)
+   415.480  t0260969 suivi ok score 0.96 pos -3184,-1351 net 39 (19 ms) carte 40 photos + 300 positions
+   415.535  photo o-3_0167 à -3184,-1431 (671 ko, 218 ms)
+   415.808  t0261298 suivi ok score 0.93 pos -3184,-1192 net 38 (17 ms) carte 41 photos + 300 positions
+   415.869  photo o-3_0168 à -3184,-1272 (664 ko, 220 ms)
+   416.142  t0261632 suivi ok score 0.85 pos -3184,-1049 net 37 (15 ms) carte 42 photos + 300 positions
+   416.201  photo o-3_0169 à -3184,-1112 (657 ko, 222 ms)
+   416.445  envoyé lame_20261020_160811_myelo-3_0071.jpg (412 ko)
+   416.485  t0261974 suivi ok score 1.00 pos -3184,-1049 net 37 (21 ms) carte 43 photos + 300 positions
+   416.816  t0262306 suivi ok score 1.00 pos -3184,-1049 net 37 (17 ms) carte 43 photos + 300 positions
+   417.151  t0262641 suivi ok score 0.97 pos -3160,-1049 net 37 (18 ms) carte 43 photos + 300 positions
+   417.495  t0262984 suivi ok score 0.94 pos -3041,-1049 net 37 (22 ms) carte 43 photos + 300 positions
+   417.632  photo o-3_0170 à -3065,-1049 (649 ko, 219 ms)
+   417.815  t0263306 suivi ok score 0.97 pos -2957,-1049 net 36 (15 ms) carte 44 photos + 300 positions
+   418.133  t0263624 suivi ok score 0.99 pos -2957,-1049 net 36 (10 ms) carte 44 photos + 300 positions
+   418.490  t0263980 suivi ok score 1.00 pos -2957,-1049 net 36 (21 ms) carte 44 photos + 300 positions
+   418.813  t0264303 suivi ok score 0.95 pos -2957,-1049 net 36 (15 ms) carte 44 photos + 300 positions
+   419.160  t0264650 suivi ok score 0.91 pos -2957,-1144 net 36 (23 ms) carte 44 photos + 300 positions
+   419.278  photo o-3_0171 à -2957,-1128 (629 ko, 222 ms)
+   419.479  t0264968 suivi ok score 0.90 pos -2957,-1160 net 36 (19 ms) carte 45 photos + 300 positions
+   419.595  envoyé lame_20261020_160811_myelo-3_0072.jpg (406 ko)
+   419.827  t0265316 suivi ok score 1.00 pos -2957,-1176 net 37 (25 ms) carte 45 photos + 300 positions
+   420.155  t0265644 suivi ok score 0.99 pos -2957,-1176 net 37 (21 ms) carte 45 photos + 300 positions
+   420.485  t0265974 suivi ok score 0.93 pos -2957,-1176 net 37 (17 ms) carte 45 photos + 300 positions
+   420.825  t0266314 suivi ok score 0.84 pos -2957,-1065 net 37 (24 ms) carte 45 photos + 300 positions
+   421.156  t0266645 suivi ok score 0.95 pos -2957,-921 net 36 (22 ms) carte 45 photos + 300 positions
+   421.480  t0266971 suivi ok score 0.86 pos -2957,-873 net 36 (15 ms) carte 45 photos + 300 positions
+   421.626  photo o-3_0172 à -2957,-905 (628 ko, 206 ms)
+   421.820  t0267309 suivi ok score 0.93 pos -2957,-810 net 35 (22 ms) carte 46 photos + 300 positions
+   422.145  t0267635 suivi ok score 0.94 pos -2957,-650 net 34 (14 ms) carte 46 photos + 300 positions
+   422.174  photo o-3_0173 à -2957,-746 (619 ko, 227 ms)
+   422.317  envoyé lame_20261020_160811_myelo-3_0073.jpg (417 ko)
+   422.477  t0267968 suivi ok score 1.00 pos -2957,-570 net 34 (14 ms) carte 47 photos + 300 positions
+   422.806  photo o-3_0174 à -2957,-570 (609 ko, 226 ms)
+   422.812  t0268303 suivi ok score 0.91 pos -2957,-491 net 34 (13 ms) carte 48 photos + 300 positions
+   423.143  t0268633 suivi ok score 0.91 pos -2957,-331 net 34 (15 ms) carte 48 photos + 300 positions
+   423.207  photo o-3_0175 à -2957,-411 (611 ko, 219 ms)
+   423.489  t0268978 suivi ok score 0.90 pos -2957,-124 net 33 (23 ms) carte 49 photos + 300 positions
+   423.816  t0269305 suivi ok score 0.95 pos -2957,-45 net 33 (20 ms) carte 49 photos + 300 positions
+   423.905  photo o-3_0176 à -2957,-108 (599 ko, 226 ms)
+   424.148  t0269637 suivi ok score 0.96 pos -2957,51 net 33 (16 ms) carte 50 photos + 300 positions
+   424.239  photo o-3_0177 à -2957,51 (588 ko, 224 ms)
+   424.488  t0269977 suivi ok score 0.99 pos -2957,51 net 32 (21 ms) carte 51 photos + 300 positions
+   424.778  envoyé lame_20261020_160811_myelo-3_0074.jpg (421 ko)
+   424.810  t0270300 suivi ok score 0.99 pos -2957,51 net 32 (12 ms) carte 51 photos + 300 positions
+   425.152  t0270642 suivi ok score 0.99 pos -2957,51 net 33 (17 ms) carte 51 photos + 300 positions
+   425.499  t0270988 suivi ok score 0.99 pos -2957,51 net 32 (28 ms) carte 51 photos + 300 positions
+   425.830  t0271319 suivi ok score 0.98 pos -3017,51 net 32 (28 ms) carte 51 photos + 300 positions
+   426.157  t0271647 suivi ok score 0.97 pos -3220,51 net 33 (23 ms) carte 51 photos + 300 positions
+   426.486  t0271976 suivi ok score 0.99 pos -3304,51 net 33 (18 ms) carte 51 photos + 300 positions
+   426.805  photo o-3_0178 à -3304,51 (588 ko, 218 ms)
+   426.810  t0272301 suivi ok score 0.99 pos -3304,51 net 33 (14 ms) carte 52 photos + 300 positions
+   427.147  t0272638 suivi ok score 0.99 pos -3304,51 net 33 (18 ms) carte 52 photos + 300 positions
+   427.371  envoyé lame_20261020_160811_myelo-3_0075.jpg (419 ko)
+   427.501  t0272991 suivi ok score 0.94 pos -3089,51 net 32 (30 ms) carte 52 photos + 300 positions
+   427.826  t0273315 suivi ok score 0.96 pos -2945,51 net 32 (22 ms) carte 52 photos + 300 positions
+   428.158  t0273647 suivi ok score 0.92 pos -2790,51 net 31 (23 ms) carte 52 photos + 300 positions
+   428.480  t0273969 suivi ok score 0.99 pos -2790,51 net 31 (16 ms) carte 52 photos + 300 positions
+   428.640  photo o-3_0179 à -2790,51 (567 ko, 219 ms)
+   428.817  t0274306 suivi ok score 0.99 pos -2790,51 net 30 (18 ms) carte 53 photos + 300 positions
+   429.156  t0274646 suivi ok score 0.99 pos -2850,51 net 31 (17 ms) carte 53 photos + 300 positions
+   429.307  envoyé lame_20261020_160811_myelo-3_0076.jpg (412 ko)
+   429.497  t0274987 suivi ok score 0.97 pos -2874,51 net 31 (23 ms) carte 53 photos + 300 positions
+   429.838  t0275327 suivi ok score 1.00 pos -2874,51 net 31 (30 ms) carte 53 photos + 300 positions
+   430.155  t0275645 suivi ok score 0.99 pos -2874,51 net 31 (20 ms) carte 53 photos + 300 positions
+   430.493  t0275982 suivi ok score 0.99 pos -2874,51 net 30 (21 ms) carte 53 photos + 300 positions
+   430.826  t0276315 suivi ok score 1.00 pos -2874,51 net 31 (22 ms) carte 53 photos + 300 positions
+   430.917  envoyé lame_20261020_160811_myelo-3_0077.jpg (416 ko)
+   431.159  t0276650 suivi ok score 0.91 pos -3077,51 net 31 (11 ms) carte 53 photos + 300 positions
+   431.479  t0276969 suivi ok score 0.95 pos -3101,51 net 32 (16 ms) carte 53 photos + 300 positions
+   431.762  photo o-3_0180 à -3101,51 (574 ko, 228 ms)
+   431.815  t0277304 suivi ok score 0.96 pos -3137,51 net 32 (18 ms) carte 54 photos + 300 positions
+   432.155  t0277646 suivi ok score 0.99 pos -3137,51 net 32 (17 ms) carte 54 photos + 300 positions
+   432.479  t0277969 suivi ok score 0.99 pos -3137,51 net 32 (16 ms) carte 54 photos + 300 positions
+   432.766  envoyé lame_20261020_160811_myelo-3_0078.jpg (417 ko)
+   432.809  t0278300 suivi ok score 0.99 pos -3137,51 net 32 (11 ms) carte 54 photos + 300 positions
+   433.150  t0278640 suivi ok score 0.99 pos -3137,51 net 31 (21 ms) carte 54 photos + 300 positions
+   433.490  t0278979 suivi ok score 0.93 pos -3137,51 net 31 (21 ms) carte 54 photos + 300 positions
+   433.807  t0279298 suivi ok score 1.00 pos -3137,51 net 31 (10 ms) carte 54 photos + 300 positions
+   434.150  t0279640 suivi ok score 0.99 pos -3137,51 net 32 (16 ms) carte 54 photos + 300 positions
+   434.488  t0279977 suivi ok score 0.99 pos -3137,51 net 31 (19 ms) carte 54 photos + 300 positions
+   434.827  t0280316 suivi ok score 1.00 pos -3137,51 net 31 (23 ms) carte 54 photos + 300 positions
+   435.154  t0280644 suivi ok score 0.99 pos -3137,51 net 31 (18 ms) carte 54 photos + 300 positions
+   435.439  envoyé lame_20261020_160811_myelo-3_0079.jpg (419 ko)
+   435.480  t0280970 suivi ok score 0.99 pos -3137,51 net 31 (13 ms) carte 54 photos + 300 positions
+   435.824  t0281313 suivi ok score 1.00 pos -3137,51 net 33 (23 ms) carte 54 photos + 300 positions
+   436.165  t0281654 suivi ok score 0.99 pos -3137,51 net 35 (26 ms) carte 54 photos + 300 positions
+   436.486  t0281975 suivi ok score 0.99 pos -3137,51 net 37 (19 ms) carte 54 photos + 300 positions
+   436.820  t0282309 suivi ok score 0.99 pos -3137,51 net 39 (20 ms) carte 54 photos + 300 positions
+   436.930  envoyé lame_20261020_160811_myelo-3_0080.jpg (413 ko)
+   437.155  t0282644 suivi ok score 1.00 pos -3137,51 net 39 (19 ms) carte 54 photos + 300 positions
+   437.486  t0282976 suivi ok score 0.99 pos -3137,51 net 39 (18 ms) carte 54 photos + 300 positions
+   437.825  t0283314 suivi ok score 0.99 pos -3137,51 net 38 (17 ms) carte 54 photos + 300 positions
+   438.152  t0283642 suivi ok score 0.90 pos -3137,3 net 38 (16 ms) carte 54 photos + 300 positions
+   438.496  t0283985 suivi ok score 0.99 pos -3137,-29 net 40 (24 ms) carte 54 photos + 300 positions
+   438.632  envoyé lame_20261020_160811_myelo-3_0081.jpg (417 ko)
+   438.829  t0284318 suivi ok score 0.94 pos -3137,-29 net 40 (24 ms) carte 54 photos + 300 positions
+   439.149  t0284639 suivi ok score 0.88 pos -3137,35 net 40 (15 ms) carte 54 photos + 300 positions
+   439.488  t0284977 suivi ok score 0.86 pos -3137,306 net 38 (18 ms) carte 54 photos + 300 positions
+   439.826  t0285315 suivi ok score 0.93 pos -3137,832 net 37 (17 ms) carte 54 photos + 300 positions
+   440.173  t0285662 suivi ok score 0.96 pos -3137,1103 net 36 (28 ms) carte 54 photos + 300 positions
+   440.491  t0285980 suivi ok score 0.94 pos -3137,1342 net 35 (22 ms) carte 54 photos + 300 positions
+   440.828  t0286317 suivi ok score 0.89 pos -3137,1454 net 35 (20 ms) carte 54 photos + 300 positions
+   440.934  photo o-3_0181 à -3137,1438 (624 ko, 210 ms)
+   441.167  t0286656 suivi ok score 0.89 pos -3137,1565 net 35 (23 ms) carte 55 photos + 300 positions
+   441.503  t0286993 suivi ok score 0.99 pos -3137,1565 net 34 (26 ms) carte 55 photos + 300 positions
+   441.830  t0287319 suivi ok score 0.99 pos -3137,1565 net 34 (20 ms) carte 55 photos + 300 positions
+   442.157  t0287647 suivi ok score 0.98 pos -3137,1565 net 34 (19 ms) carte 55 photos + 300 positions
+   442.423  envoyé lame_20261020_160811_myelo-3_0082.jpg (452 ko)
+   442.477  t0287967 suivi ok score 0.87 pos -3137,1756 net 32 (12 ms) carte 55 photos + 300 positions
+   442.568  photo o-3_0182 à -3137,1597 (602 ko, 230 ms)
+   442.823  t0288312 suivi ok score 0.99 pos -3137,1932 net 32 (18 ms) carte 56 photos + 300 positions
+   443.141  t0288632 suivi ok score 0.99 pos -3137,1932 net 32 (11 ms) carte 56 photos + 300 positions
+   443.164  photo o-3_0183 à -3137,1932 (586 ko, 197 ms)
+   443.497  t0288986 suivi ok score 0.99 pos -3137,1948 net 32 (22 ms) carte 57 photos + 300 positions
+   443.829  t0289318 suivi ok score 0.88 pos -3137,2266 net 31 (23 ms) carte 57 photos + 300 positions
+   443.933  envoyé lame_20261020_160811_myelo-3_0083.jpg (467 ko)
+   444.152  t0289642 suivi ok score 0.86 pos -3137,2442 net 30 (15 ms) carte 57 photos + 300 positions
+   444.485  t0289975 suivi ok score 0.99 pos -3137,2442 net 29 (16 ms) carte 57 photos + 300 positions
+   444.713  photo o-3_0184 à -3137,2442 (553 ko, 227 ms)
+   444.816  t0290306 suivi ok score 0.99 pos -3137,2442 net 29 (15 ms) carte 58 photos + 300 positions
+   445.157  t0290646 suivi ok score 0.95 pos -3065,2442 net 29 (19 ms) carte 58 photos + 300 positions
+   445.499  t0290989 suivi ok score 0.96 pos -2766,2442 net 28 (22 ms) carte 58 photos + 300 positions
+   445.807  envoyé lame_20261020_160811_myelo-3_0084.jpg (439 ko)
+   445.817  t0291307 suivi ok score 0.99 pos -2766,2442 net 28 (12 ms) carte 58 photos + 300 positions
+   445.978  photo o-3_0185 à -2766,2442 (534 ko, 225 ms)
+   446.147  t0291638 suivi ok score 0.99 pos -2766,2442 net 28 (13 ms) carte 59 photos + 300 positions
+   446.488  t0291977 suivi ok score 0.94 pos -2718,2442 net 28 (18 ms) carte 59 photos + 300 positions
+   446.828  t0292318 suivi ok score 0.97 pos -2587,2442 net 27 (21 ms) carte 59 photos + 300 positions
+   446.944  photo o-3_0186 à -2646,2442 (522 ko, 231 ms)
+   447.153  t0292643 suivi ok score 0.98 pos -2467,2442 net 27 (18 ms) carte 60 photos + 300 positions
+   447.443  photo o-3_0187 à -2443,2442 (519 ko, 228 ms)
+   447.483  t0292974 suivi ok score 0.98 pos -2348,2442 net 27 (16 ms) carte 61 photos + 300 positions
+   447.564  envoyé lame_20261020_160811_myelo-3_0085.jpg (458 ko)
+   447.776  photo o-3_0188 à -2324,2442 (518 ko, 228 ms)
+   447.817  t0293307 suivi ok score 0.96 pos -2228,2442 net 26 (10 ms) carte 62 photos + 300 positions
+   448.109  photo o-3_0189 à -2204,2442 (510 ko, 225 ms)
+   448.152  t0293642 suivi ok score 0.99 pos -2156,2442 net 26 (14 ms) carte 63 photos + 300 positions
+   448.491  t0293981 suivi ok score 0.99 pos -2156,2442 net 25 (20 ms) carte 63 photos + 300 positions
+   448.828  t0294318 suivi ok score 0.99 pos -2156,2442 net 24 (21 ms) carte 63 photos + 300 positions
+   449.144  t0294635 suivi ok score 0.99 pos -2156,2442 net 26 (10 ms) carte 63 photos + 300 positions
+   449.499  t0294988 suivi ok score 0.99 pos -2156,2442 net 26 (24 ms) carte 63 photos + 300 positions
+   449.510  envoyé lame_20261020_160811_myelo-3_0086.jpg (428 ko)
+   449.813  t0295304 suivi ok score 0.99 pos -2156,2442 net 29 (11 ms) carte 63 photos + 300 positions
+   450.177  t0295667 suivi ok score 0.99 pos -2156,2442 net 30 (27 ms) carte 63 photos + 300 positions
+   450.491  t0295981 suivi ok score 0.99 pos -2156,2442 net 30 (19 ms) carte 63 photos + 300 positions
+   450.819  t0296308 suivi ok score 0.99 pos -2156,2442 net 30 (18 ms) carte 63 photos + 300 positions
+   451.162  t0296651 suivi ok score 0.99 pos -2156,2442 net 30 (20 ms) carte 63 photos + 300 positions
+   451.485  t0296976 suivi ok score 0.98 pos -2109,2442 net 29 (15 ms) carte 63 photos + 300 positions
+   451.788  photo o-3_0190 à -2085,2442 (537 ko, 227 ms)
+   451.814  t0297305 suivi ok score 0.98 pos -2061,2442 net 27 (13 ms) carte 64 photos + 300 positions
+   451.910  envoyé lame_20261020_160811_myelo-3_0087.jpg (427 ko)
+   452.153  t0297643 suivi ok score 0.92 pos -2061,2442 net 27 (14 ms) carte 64 photos + 300 positions
+   452.495  t0297985 suivi ok score 0.95 pos -1941,2442 net 27 (21 ms) carte 64 photos + 300 positions
+   452.836  t0298325 suivi ok score 0.99 pos -1869,2442 net 27 (22 ms) carte 64 photos + 300 positions
+   453.137  photo o-3_0191 à -1869,2442 (516 ko, 217 ms)
+   453.154  t0298644 suivi ok score 0.99 pos -1869,2442 net 28 (18 ms) carte 65 photos + 300 positions
+   453.492  t0298982 suivi ok score 0.98 pos -1858,2442 net 28 (17 ms) carte 65 photos + 300 positions
+   453.830  t0299319 suivi ok score 0.96 pos -1463,2442 net 28 (20 ms) carte 65 photos + 300 positions
+   454.025  envoyé lame_20261020_160811_myelo-3_0088.jpg (424 ko)
+   454.156  t0299646 suivi ok score 0.95 pos -1284,2442 net 28 (15 ms) carte 65 photos + 300 positions
+   454.491  t0299981 suivi ok score 0.93 pos -1176,2442 net 27 (19 ms) carte 65 photos + 300 positions
+   454.820  t0300310 suivi ok score 0.98 pos -1057,2442 net 27 (18 ms) carte 65 photos + 300 positions
+   454.834  photo o-3_0192 à -1128,2442 (501 ko, 203 ms)
+   455.149  t0300640 suivi ok score 0.98 pos -925,2442 net 27 (16 ms) carte 66 photos + 300 positions
+   455.167  photo o-3_0193 à -1009,2442 (500 ko, 211 ms)
+   455.490  t0300980 suivi ok score 0.93 pos -794,2442 net 27 (16 ms) carte 67 photos + 300 positions
+   455.649  photo o-3_0194 à -830,2442 (499 ko, 231 ms)
+   455.838  t0301327 suivi ok score 0.98 pos -662,2442 net 26 (29 ms) carte 68 photos + 300 positions
+   455.840  envoyé lame_20261020_160811_myelo-3_0089.jpg (429 ko)
+   456.146  t0301637 suivi ok score 0.99 pos -626,2442 net 26 (13 ms) carte 68 photos + 300 positions
+   456.165  photo o-3_0195 à -626,2442 (504 ko, 183 ms)
+   456.486  t0301977 suivi ok score 1.00 pos -626,2442 net 22 (17 ms) carte 69 photos + 300 positions
+   456.833  t0302322 suivi ok score 0.99 pos -626,2442 net 24 (26 ms) carte 69 photos + 300 positions
+   457.155  t0302645 suivi ok score 0.99 pos -626,2442 net 25 (16 ms) carte 69 photos + 300 positions
+   457.494  t0302983 suivi ok score 1.00 pos -626,2442 net 26 (20 ms) carte 69 photos + 300 positions
+   457.670  envoyé lame_20261020_160811_myelo-3_0090.jpg (423 ko)
+   457.821  t0303311 suivi ok score 1.00 pos -626,2442 net 27 (16 ms) carte 69 photos + 300 positions
+   458.164  t0303653 suivi ok score 0.97 pos -614,2442 net 27 (21 ms) carte 69 photos + 300 positions
+   458.485  t0303974 suivi ok score 0.98 pos -459,2442 net 27 (12 ms) carte 69 photos + 300 positions
+   458.839  t0304328 suivi ok score 0.96 pos -351,2442 net 27 (25 ms) carte 69 photos + 300 positions
+   459.046  photo o-3_0196 à -351,2442 (509 ko, 206 ms)
+   459.140  t0304632 suivi ok score 0.98 pos -232,2442 net 27 (10 ms) carte 70 photos + 300 positions
+   459.343  photo o-3_0197 à -232,2442 (503 ko, 202 ms)
+   459.502  t0304992 suivi ok score 0.96 pos -112,2442 net 27 (26 ms) carte 71 photos + 300 positions
+   459.709  photo o-3_0198 à -112,2442 (502 ko, 206 ms)
+   459.749  envoyé lame_20261020_160811_myelo-3_0091.jpg (419 ko)
+   459.818  t0305309 suivi ok score 0.93 pos -53,2442 net 27 (17 ms) carte 72 photos + 300 positions
+   460.165  t0305655 suivi ok score 0.98 pos 19,2442 net 27 (23 ms) carte 72 photos + 300 positions
+   460.342  photo o-3_0199 à 7,2442 (499 ko, 222 ms)
+   460.486  t0305977 suivi ok score 0.98 pos 139,2442 net 26 (16 ms) carte 73 photos + 300 positions
+   460.675  photo o-3_0200 à 127,2442 (497 ko, 213 ms)
+   460.822  t0306311 suivi ok score 0.97 pos 246,2442 net 26 (19 ms) carte 74 photos + 300 positions
+   461.042  photo o-3_0201 à 246,2442 (495 ko, 219 ms)
+   461.155  t0306644 suivi ok score 0.95 pos 294,2442 net 26 (19 ms) carte 75 photos + 300 positions
+   461.411  envoyé lame_20261020_160811_myelo-3_0092.jpg (413 ko)
+   461.479  t0306970 suivi ok score 0.95 pos 437,2442 net 26 (13 ms) carte 75 photos + 300 positions
+   461.574  photo o-3_0202 à 366,2442 (489 ko, 213 ms)
+   461.829  t0307318 suivi ok score 0.99 pos 557,2442 net 26 (21 ms) carte 76 photos + 300 positions
+   462.091  photo o-3_0203 à 581,2442 (496 ko, 212 ms)
+   462.165  t0307655 suivi ok score 0.94 pos 665,2442 net 25 (22 ms) carte 77 photos + 300 positions
+   462.506  t0307996 suivi ok score 0.94 pos 688,2442 net 25 (23 ms) carte 77 photos + 300 positions
+   462.823  t0308312 suivi ok score 0.95 pos 688,2442 net 26 (17 ms) carte 77 photos + 300 positions
+   463.002  envoyé lame_20261020_160811_myelo-3_0093.jpg (411 ko)
+   463.164  t0308654 suivi ok score 0.99 pos 688,2442 net 24 (18 ms) carte 77 photos + 300 positions
+   463.505  t0308995 suivi ok score 0.99 pos 688,2442 net 21 (25 ms) carte 77 photos + 300 positions
+   463.831  t0309321 suivi ok score 1.00 pos 688,2442 net 28 (19 ms) carte 77 photos + 300 positions
+   464.162  t0309652 suivi ok score 0.99 pos 688,2442 net 28 (17 ms) carte 77 photos + 300 positions
+   464.324  envoyé lame_20261020_160811_myelo-3_0094.jpg (413 ko)
+   464.506  t0309995 suivi ok score 0.99 pos 688,2442 net 28 (24 ms) carte 77 photos + 300 positions
+   464.829  t0310319 suivi ok score 1.00 pos 688,2442 net 28 (20 ms) carte 77 photos + 300 positions
+   465.160  t0310649 suivi ok score 0.99 pos 688,2442 net 28 (17 ms) carte 77 photos + 300 positions
+   465.500  t0310990 suivi ok score 0.98 pos 688,2442 net 28 (23 ms) carte 77 photos + 300 positions
+   465.824  t0311314 suivi ok score 0.95 pos 700,2442 net 29 (16 ms) carte 77 photos + 300 positions
+   465.910  envoyé lame_20261020_160811_myelo-3_0095.jpg (421 ko)
+   466.055  photo o-3_0204 à 700,2442 (537 ko, 230 ms)
+   466.162  t0311653 suivi ok score 0.95 pos 916,2442 net 28 (10 ms) carte 78 photos + 300 positions
+   466.486  t0311977 suivi ok score 0.97 pos 1023,2442 net 28 (13 ms) carte 78 photos + 300 positions
+   466.754  photo o-3_0205 à 1035,2442 (536 ko, 223 ms)
+   466.823  t0312312 suivi ok score 0.97 pos 1202,2442 net 28 (16 ms) carte 79 photos + 300 positions
+   467.167  t0312657 suivi ok score 0.96 pos 1334,2442 net 29 (20 ms) carte 79 photos + 300 positions
+   467.468  photo o-3_0206 à 1370,2442 (533 ko, 212 ms)
+   467.483  t0312974 suivi ok score 0.98 pos 1453,2442 net 28 (15 ms) carte 80 photos + 300 positions
+   467.536  envoyé lame_20261020_160811_myelo-3_0096.jpg (426 ko)
+   467.800  photo o-3_0207 à 1489,2442 (532 ko, 218 ms)
+   467.820  t0313309 suivi ok score 0.93 pos 1585,2442 net 28 (11 ms) carte 81 photos + 300 positions
+   468.153  t0313644 suivi ok score 0.92 pos 1728,2442 net 27 (15 ms) carte 81 photos + 300 positions
+   468.489  t0313980 suivi ok score 0.95 pos 1848,2442 net 27 (17 ms) carte 81 photos + 300 positions
+   468.785  photo o-3_0208 à 1872,2442 (516 ko, 231 ms)
+   468.827  t0314317 suivi ok score 0.94 pos 1979,2442 net 27 (20 ms) carte 82 photos + 300 positions
+   469.043  envoyé lame_20261020_160811_myelo-3_0097.jpg (434 ko)
+   469.159  t0314650 suivi ok score 0.94 pos 2099,2442 net 27 (14 ms) carte 82 photos + 300 positions
+   469.288  photo o-3_0209 à 2075,2442 (515 ko, 209 ms)
+   469.486  t0314976 suivi ok score 0.96 pos 2111,2442 net 27 (12 ms) carte 83 photos + 300 positions
+   469.834  t0315323 suivi ok score 0.98 pos 2135,2442 net 27 (21 ms) carte 83 photos + 300 positions
+   470.165  t0315655 suivi ok score 0.98 pos 2135,2442 net 27 (18 ms) carte 83 photos + 300 positions
+   470.472  envoyé lame_20261020_160811_myelo-3_0098.jpg (433 ko)
+   470.495  t0315985 suivi ok score 0.98 pos 2135,2442 net 26 (21 ms) carte 83 photos + 300 positions
+   470.827  t0316317 suivi ok score 1.00 pos 2135,2442 net 27 (23 ms) carte 83 photos + 300 positions
+   471.157  t0316646 suivi ok score 0.98 pos 2410,2442 net 27 (17 ms) carte 83 photos + 300 positions
+   471.496  t0316985 suivi ok score 0.99 pos 2493,2442 net 26 (20 ms) carte 83 photos + 300 positions
+   471.823  t0317313 suivi ok score 0.91 pos 2517,2442 net 26 (14 ms) carte 83 photos + 300 positions
+   471.868  photo o-3_0210 à 2493,2442 (498 ko, 203 ms)
+   472.142  envoyé lame_20261020_160811_myelo-3_0099.jpg (436 ko)
+   472.168  t0317658 suivi ok score 0.98 pos 2744,2442 net 25 (25 ms) carte 84 photos + 300 positions
+   472.498  t0317989 suivi ok score 0.99 pos 2792,2442 net 25 (17 ms) carte 84 photos + 300 positions
+   472.610  photo o-3_0211 à 2792,2442 (498 ko, 215 ms)
+   472.837  t0318327 suivi ok score 0.95 pos 2816,2442 net 25 (19 ms) carte 85 photos + 300 positions
+   473.178  t0318668 suivi ok score 0.95 pos 3139,2442 net 25 (25 ms) carte 85 photos + 300 positions
+   473.498  t0318988 suivi ok score 0.99 pos 3187,2442 net 25 (22 ms) carte 85 photos + 300 positions
+   473.768  photo o-3_0212 à 3187,2442 (498 ko, 193 ms)
+   473.817  t0319308 suivi ok score 0.97 pos 3258,2442 net 25 (14 ms) carte 86 photos + 300 positions
+   473.866  envoyé lame_20261020_160811_myelo-3_0100.jpg (414 ko)
+   474.150  t0319642 suivi ok score 0.95 pos 3486,2442 net 25 (11 ms) carte 86 photos + 300 positions
+   474.492  t0319983 suivi ok score 0.99 pos 3569,2442 net 25 (16 ms) carte 86 photos + 300 positions
+   474.832  t0320322 suivi ok score 0.99 pos 3569,2442 net 25 (17 ms) carte 86 photos + 300 positions
+   474.907  photo o-3_0213 à 3569,2442 (492 ko, 208 ms)
+   475.174  t0320664 suivi ok score 0.96 pos 3904,2442 net 25 (25 ms) carte 87 photos + 300 positions
+   475.507  t0320997 suivi ok score 0.99 pos 3952,2442 net 24 (22 ms) carte 87 photos + 300 positions
+   475.740  photo o-3_0214 à 3952,2442 (485 ko, 213 ms)
+   475.818  t0321309 suivi ok score 0.94 pos 3976,2442 net 25 (13 ms) carte 88 photos + 300 positions
+   475.892  envoyé lame_20261020_160811_myelo-3_0101.jpg (409 ko)
+   476.155  t0321646 suivi ok score 0.93 pos 4167,2442 net 24 (10 ms) carte 88 photos + 300 positions
+   476.499  t0321989 suivi ok score 0.96 pos 4167,2442 net 24 (16 ms) carte 88 photos + 300 positions
+   476.636  photo o-3_0215 à 4167,2442 (476 ko, 210 ms)
+   476.830  t0322320 suivi ok score 0.98 pos 4286,2442 net 24 (18 ms) carte 89 photos + 300 positions
+   477.154  t0322645 suivi ok score 0.99 pos 4322,2442 net 23 (12 ms) carte 89 photos + 300 positions
+   477.305  photo o-3_0216 à 4322,2442 (472 ko, 219 ms)
+   477.502  t0322992 suivi ok score 0.98 pos 4322,2442 net 23 (21 ms) carte 90 photos + 300 positions
+   477.832  t0323322 suivi ok score 0.97 pos 4741,2442 net 22 (18 ms) carte 90 photos + 300 positions
+   478.165  t0323654 suivi ok score 0.97 pos 5051,2442 net 21 (21 ms) carte 90 photos + 300 positions
+   478.351  envoyé lame_20261020_160811_myelo-3_0102.jpg (405 ko)
+   478.498  t0323988 suivi ok score 0.98 pos 5302,2442 net 21 (20 ms) carte 90 photos + 300 positions
+   478.814  t0324305 suivi ok score 0.97 pos 5530,2442 net 20 (10 ms) carte 90 photos + 300 positions
+   479.157  t0324647 suivi ok score 0.97 pos 5769,2442 net 20 (16 ms) carte 90 photos + 300 positions
+   479.290  photo en mouvement lent (50 % du champ, 30 u/s)
+   479.291  photo floue (netteté 20 contre 42 de référence)
+   479.490  t0324980 suivi ok score 0.97 pos 5936,2442 net 20 (15 ms) carte 90 photos + 300 positions
+   479.519  photo o-3_0217 à 5864,2442 (425 ko, 228 ms)
+   479.658  photo floue (netteté 20 contre 42 de référence)
+   479.827  t0325317 suivi ok score 0.98 pos 6008,2442 net 19 (19 ms) carte 91 photos + 300 positions
+   479.888  photo o-3_0218 à 5996,2442 (422 ko, 230 ms)
+   480.159  t0325649 suivi ok score 0.99 pos 6008,2442 net 19 (16 ms) carte 92 photos + 300 positions
+   480.437  envoyé lame_20261020_160811_myelo-3_0103.jpg (399 ko)
+   480.489  t0325980 suivi ok score 0.99 pos 6008,2442 net 19 (13 ms) carte 92 photos + 300 positions
+   480.819  t0326310 suivi ok score 0.99 pos 6067,2442 net 19 (13 ms) carte 92 photos + 300 positions
+   480.949  photo floue (netteté 19 contre 42 de référence)
+   481.152  photo o-3_0219 à 6115,2442 (416 ko, 203 ms)
+   481.159  t0326650 suivi ok score 0.99 pos 6187,2442 net 18 (18 ms) carte 93 photos + 300 positions
+   481.288  photo floue (netteté 18 contre 42 de référence)
+   481.492  t0326982 suivi ok score 0.98 pos 6306,2442 net 18 (16 ms) carte 93 photos + 300 positions
+   481.522  photo o-3_0220 à 6235,2442 (407 ko, 234 ms)
+   481.633  photo floue (netteté 18 contre 42 de référence)
+   481.828  t0327318 suivi ok score 0.96 pos 6414,2442 net 18 (20 ms) carte 94 photos + 300 positions
+   481.850  photo o-3_0221 à 6354,2442 (410 ko, 217 ms)
+   482.157  t0327647 suivi ok score 0.97 pos 6450,2442 net 18 (15 ms) carte 95 photos + 300 positions
+   482.495  t0327985 suivi ok score 0.99 pos 6450,2442 net 16 (17 ms) carte 95 photos + 300 positions
+   482.615  envoyé lame_20261020_160811_myelo-3_0104.jpg (406 ko)
+   482.835  t0328325 suivi ok score 0.99 pos 6450,2442 net 14 (20 ms) carte 95 photos + 300 positions
+   483.167  t0328657 suivi ok score 1.00 pos 6450,2442 net 25 (23 ms) carte 95 photos + 300 positions
+   483.506  t0328996 suivi ok score 0.99 pos 6450,2442 net 25 (27 ms) carte 95 photos + 300 positions
+   483.833  t0329323 suivi ok score 0.99 pos 6450,2442 net 25 (21 ms) carte 95 photos + 300 positions
+   484.160  t0329651 suivi ok score 0.94 pos 6342,2442 net 25 (15 ms) carte 95 photos + 300 positions
+   484.502  t0329993 suivi ok score 0.96 pos 5912,2442 net 26 (17 ms) carte 95 photos + 300 positions
+   484.839  t0330329 suivi ok score 0.91 pos 5410,2442 net 27 (25 ms) carte 95 photos + 300 positions
+   485.094  envoyé lame_20261020_160811_myelo-3_0105.jpg (435 ko)
+   485.156  t0330647 suivi ok score 0.95 pos 5267,2442 net 28 (13 ms) carte 95 photos + 300 positions
+   485.495  t0330986 suivi ok score 0.99 pos 5267,2442 net 27 (16 ms) carte 95 photos + 300 positions
+   485.827  photo o-3_0222 à 5267,2442 (520 ko, 245 ms)
+   485.828  t0331318 suivi ok score 0.99 pos 5267,2442 net 27 (15 ms) carte 96 photos + 300 positions
+   486.156  t0331647 suivi ok score 0.99 pos 5267,2442 net 27 (14 ms) carte 96 photos + 300 positions
+   486.488  t0331979 suivi ok score 0.98 pos 5267,2442 net 27 (12 ms) carte 96 photos + 300 positions
+   486.840  t0332329 suivi ok score 0.94 pos 5494,2442 net 26 (19 ms) carte 96 photos + 300 positions
+   486.995  envoyé lame_20261020_160811_myelo-3_0106.jpg (431 ko)
+   487.177  t0332667 suivi ok score 0.99 pos 5637,2442 net 26 (28 ms) carte 96 photos + 300 positions
+   487.493  t0332983 suivi ok score 0.99 pos 5637,2442 net 27 (16 ms) carte 96 photos + 300 positions
+   487.593  photo o-3_0223 à 5637,2442 (505 ko, 229 ms)
+   487.833  t0333324 suivi ok score 0.91 pos 5936,2442 net 25 (17 ms) carte 97 photos + 300 positions
+   488.158  t0333649 suivi ok score 1.00 pos 6079,2442 net 26 (13 ms) carte 97 photos + 300 positions
+   488.457  envoyé lame_20261020_160811_myelo-3_0107.jpg (433 ko)
+   488.489  t0333980 suivi ok score 0.99 pos 6079,2442 net 26 (12 ms) carte 97 photos + 300 positions
+   488.575  photo o-3_0224 à 6079,2442 (485 ko, 216 ms)
+   488.834  t0334323 suivi ok score 0.93 pos 6426,2442 net 24 (18 ms) carte 98 photos + 300 positions
+   489.161  t0334652 suivi ok score 1.00 pos 6474,2442 net 24 (17 ms) carte 98 photos + 300 positions
+   489.489  photo o-3_0225 à 6474,2442 (464 ko, 224 ms)
+   489.496  t0334987 suivi ok score 0.99 pos 6474,2442 net 24 (17 ms) carte 99 photos + 300 positions
+   489.830  t0335320 suivi ok score 0.99 pos 6474,2442 net 24 (13 ms) carte 99 photos + 300 positions
+   490.166  t0335655 suivi ok score 1.00 pos 6474,2442 net 24 (17 ms) carte 99 photos + 300 positions
+   490.440  envoyé lame_20261020_160811_myelo-3_0108.jpg (423 ko)
+   490.493  t0335984 suivi ok score 0.99 pos 6474,2442 net 24 (13 ms) carte 99 photos + 300 positions
+   490.842  t0336331 suivi ok score 0.99 pos 6474,2442 net 24 (25 ms) carte 99 photos + 300 positions
+   491.161  t0336652 suivi ok score 1.00 pos 6474,2442 net 25 (15 ms) carte 99 photos + 300 positions
+   491.497  t0336987 suivi ok score 0.99 pos 6474,2442 net 25 (18 ms) carte 99 photos + 300 positions
+   491.836  t0337326 suivi ok score 0.99 pos 6474,2442 net 27 (18 ms) carte 99 photos + 300 positions
+   492.162  t0337652 suivi ok score 0.99 pos 6474,2442 net 27 (14 ms) carte 99 photos + 300 positions
+   492.434  envoyé lame_20261020_160811_myelo-3_0109.jpg (434 ko)
+   492.502  t0337991 suivi ok score 0.95 pos 6593,2442 net 26 (19 ms) carte 99 photos + 300 positions
+   492.828  t0338318 suivi ok score 0.99 pos 6904,2442 net 25 (16 ms) carte 99 photos + 300 positions
+   493.157  t0338649 suivi ok score 1.00 pos 6904,2442 net 26 (13 ms) carte 99 photos + 300 positions
+   493.317  photo o-3_0226 à 6904,2442 (476 ko, 226 ms)
+   493.500  t0338990 suivi ok score 0.97 pos 6940,2442 net 25 (21 ms) carte 100 photos + 300 positions
+   493.845  t0339335 suivi ok score 0.96 pos 7275,2442 net 24 (18 ms) carte 100 photos + 300 positions
+   494.164  t0339654 suivi ok score 0.96 pos 7442,2442 net 24 (18 ms) carte 100 photos + 300 positions
+   494.507  t0339997 suivi ok score 0.99 pos 7442,2442 net 24 (23 ms) carte 100 photos + 300 positions
+   494.590  envoyé lame_20261020_160811_myelo-3_0110.jpg (440 ko)
+   494.716  photo o-3_0227 à 7442,2442 (447 ko, 208 ms)
+   494.833  t0340324 suivi ok score 0.99 pos 7442,2442 net 24 (10 ms) carte 101 photos + 300 positions
+   495.164  t0340655 suivi ok score 1.00 pos 7442,2442 net 24 (18 ms) carte 101 photos + 300 positions
+   495.495  t0340986 suivi ok score 0.92 pos 7442,2426 net 23 (12 ms) carte 101 photos + 300 positions
+   495.838  t0341328 suivi ok score 0.99 pos 7442,2250 net 24 (18 ms) carte 101 photos + 300 positions
+   496.166  t0341657 suivi ok score 0.96 pos 7442,2235 net 24 (14 ms) carte 101 photos + 300 positions
+   496.346  photo o-3_0228 à 7442,2250 (461 ko, 209 ms)
+   496.470  envoyé lame_20261020_160811_myelo-3_0111.jpg (447 ko)
+   496.505  t0341996 suivi ok score 0.98 pos 7442,1772 net 24 (18 ms) carte 102 photos + 300 positions
+   496.844  t0342333 suivi ok score 0.99 pos 7442,1772 net 25 (21 ms) carte 102 photos + 300 positions
+   497.079  photo o-3_0229 à 7442,1772 (480 ko, 215 ms)
+   497.154  t0342644 suivi ok score 0.98 pos 7442,1645 net 25 (14 ms) carte 103 photos + 300 positions
+   497.503  t0342993 suivi ok score 0.99 pos 7442,1501 net 26 (21 ms) carte 103 photos + 300 positions
+   497.815  t0343306 suivi ok score 0.97 pos 7442,1406 net 26 (10 ms) carte 103 photos + 300 positions
+   497.905  photo o-3_0230 à 7442,1501 (485 ko, 180 ms)
+   498.161  t0343651 suivi ok score 1.00 pos 7442,1215 net 27 (16 ms) carte 104 photos + 300 positions
+   498.487  t0343978 suivi ok score 0.96 pos 7442,1215 net 26 (11 ms) carte 104 photos + 300 positions
+   498.544  photo o-3_0231 à 7442,1215 (505 ko, 213 ms)
+   498.827  t0344318 suivi ok score 0.99 pos 7442,1135 net 28 (12 ms) carte 105 photos + 300 positions
+   499.110  envoyé lame_20261020_160811_myelo-3_0112.jpg (445 ko)
+   499.156  t0344647 suivi ok score 0.94 pos 7442,1135 net 27 (12 ms) carte 105 photos + 300 positions
+   499.487  t0344977 suivi ok score 0.99 pos 6988,1135 net 29 (12 ms) carte 105 photos + 300 positions
+   499.831  t0345321 suivi ok score 0.99 pos 6988,1135 net 29 (17 ms) carte 105 photos + 300 positions
+   500.061  photo o-3_0232 à 6988,1135 (548 ko, 230 ms)
+   500.155  t0345645 suivi ok score 0.99 pos 6988,1135 net 29 (12 ms) carte 106 photos + 300 positions
+   500.502  t0345992 suivi ok score 0.96 pos 6988,1135 net 28 (16 ms) carte 106 photos + 300 positions
+   500.832  t0346322 suivi ok score 0.97 pos 6988,975 net 28 (13 ms) carte 106 photos + 300 positions
+   500.952  envoyé lame_20261020_160811_myelo-3_0113.jpg (441 ko)
+   501.062  photo o-3_0233 à 6988,975 (540 ko, 229 ms)
+   501.161  t0346652 suivi ok score 0.87 pos 6988,784 net 29 (16 ms) carte 107 photos + 300 positions
+   501.492  t0346983 suivi ok score 0.99 pos 6988,752 net 29 (10 ms) carte 107 photos + 300 positions
+   501.658  photo o-3_0234 à 6988,752 (548 ko, 228 ms)
+   501.838  t0347328 suivi ok score 0.95 pos 6988,657 net 29 (24 ms) carte 108 photos + 300 positions
+   502.154  t0347645 suivi ok score 0.92 pos 6988,290 net 29 (11 ms) carte 108 photos + 300 positions
+   502.494  t0347984 suivi ok score 0.90 pos 6988,-29 net 29 (15 ms) carte 108 photos + 300 positions
+   502.829  t0348319 suivi ok score 0.88 pos 6988,-284 net 30 (13 ms) carte 108 photos + 300 positions
+   503.169  t0348659 suivi ok score 0.87 pos 6988,-507 net 31 (16 ms) carte 108 photos + 300 positions
+   503.506  t0348996 suivi ok score 0.99 pos 6988,-507 net 32 (19 ms) carte 108 photos + 300 positions
+   503.604  envoyé lame_20261020_160811_myelo-3_0114.jpg (437 ko)
+   503.724  photo o-3_0235 à 6988,-507 (622 ko, 217 ms)
+   503.832  t0349323 suivi ok score 0.99 pos 6988,-507 net 32 (17 ms) carte 109 photos + 300 positions
+   504.161  t0349651 suivi ok score 0.99 pos 6988,-507 net 32 (13 ms) carte 109 photos + 300 positions
+   504.496  t0349986 suivi ok score 0.91 pos 6988,-602 net 33 (15 ms) carte 109 photos + 300 positions
+   504.829  t0350319 suivi ok score 0.85 pos 6988,-1049 net 33 (14 ms) carte 109 photos + 300 positions
+   505.163  t0350654 suivi ok score 0.97 pos 6988,-1192 net 33 (14 ms) carte 109 photos + 300 positions
+   505.495  t0350985 suivi ok score 0.92 pos 6988,-1447 net 34 (14 ms) carte 109 photos + 300 positions
+   505.600  envoyé lame_20261020_160811_myelo-3_0115.jpg (429 ko)
+   505.836  t0351327 suivi ok score 0.99 pos 6988,-1638 net 35 (19 ms) carte 109 photos + 300 positions
+   506.157  t0351648 suivi ok score 1.00 pos 6988,-1638 net 35 (12 ms) carte 109 photos + 300 positions
+   506.252  photo o-3_0236 à 6988,-1638 (652 ko, 223 ms)
+   506.493  t0351983 suivi ok score 1.00 pos 6988,-1638 net 35 (12 ms) carte 110 photos + 300 positions
+   506.846  t0352335 suivi ok score 0.95 pos 6988,-1654 net 34 (23 ms) carte 110 photos + 300 positions
+   507.170  t0352660 suivi ok score 0.97 pos 6988,-1973 net 35 (18 ms) carte 110 photos + 300 positions
+   507.511  t0353000 suivi ok score 0.96 pos 6988,-2276 net 37 (18 ms) carte 110 photos + 300 positions
+   507.838  t0353328 suivi ok score 0.89 pos 6988,-2387 net 35 (23 ms) carte 110 photos + 300 positions
+   508.157  envoyé lame_20261020_160811_myelo-3_0116.jpg (428 ko)
+   508.178  t0353669 suivi ok score 0.87 pos 6988,-2579 net 37 (28 ms) carte 110 photos + 300 positions
+   508.489  t0353980 suivi ok score 1.00 pos 6988,-2610 net 38 (12 ms) carte 110 photos + 300 positions
+   508.515  photo o-3_0237 à 6988,-2610 (668 ko, 222 ms)
+   508.834  t0354323 suivi ok score 1.00 pos 6988,-2610 net 38 (14 ms) carte 111 photos + 300 positions
+   509.178  t0354668 suivi ok score 0.96 pos 6988,-2610 net 37 (19 ms) carte 111 photos + 300 positions
+   509.508  t0354997 suivi ok score 0.96 pos 6988,-2706 net 37 (20 ms) carte 111 photos + 300 positions
+   509.838  t0355327 suivi ok score 0.98 pos 6988,-2754 net 37 (17 ms) carte 111 photos + 300 positions
+   510.164  t0355654 suivi ok score 1.00 pos 6988,-2786 net 38 (16 ms) carte 111 photos + 300 positions
+   510.230  photo o-3_0238 à 6988,-2770 (668 ko, 229 ms)
+   510.497  t0355987 suivi ok score 1.00 pos 6988,-2786 net 37 (13 ms) carte 112 photos + 300 positions
+   510.838  t0356327 suivi ok score 1.00 pos 6988,-2786 net 38 (18 ms) carte 112 photos + 300 positions
+   511.110  envoyé lame_20261020_160811_myelo-3_0117.jpg (420 ko)
+   511.162  t0356653 suivi ok score 0.97 pos 7024,-2786 net 37 (11 ms) carte 112 photos + 300 positions
+   511.506  t0356995 suivi ok score 0.94 pos 7227,-2786 net 37 (19 ms) carte 112 photos + 300 positions
+   511.839  t0357329 suivi ok score 0.96 pos 7621,-2786 net 35 (16 ms) carte 112 photos + 300 positions
+   512.183  t0357672 suivi ok score 1.00 pos 7621,-2786 net 35 (22 ms) carte 112 photos + 300 positions
+   512.415  photo o-3_0239 à 7621,-2786 (616 ko, 212 ms)
+   512.506  t0357996 suivi ok score 1.00 pos 7621,-2786 net 35 (19 ms) carte 113 photos + 300 positions
+   512.849  t0358338 suivi ok score 0.97 pos 7621,-2786 net 35 (23 ms) carte 113 photos + 300 positions
+   513.166  t0358656 suivi ok score 0.96 pos 7836,-2786 net 34 (15 ms) carte 113 photos + 300 positions
+   513.503  t0358993 suivi ok score 0.97 pos 8243,-2786 net 32 (19 ms) carte 113 photos + 300 positions
+   513.767  envoyé lame_20261020_160811_myelo-3_0118.jpg (424 ko)
+   513.832  t0359322 suivi ok score 1.00 pos 8255,-2786 net 32 (16 ms) carte 113 photos + 300 positions
+   513.997  photo o-3_0240 à 8255,-2786 (558 ko, 229 ms)
+   514.173  t0359664 suivi ok score 1.00 pos 8255,-2786 net 32 (16 ms) carte 114 photos + 300 positions
+   514.506  t0359996 suivi ok score 1.00 pos 8255,-2786 net 29 (20 ms) carte 114 photos + 300 positions
+   514.842  t0360332 suivi ok score 1.00 pos 8255,-2786 net 29 (19 ms) carte 114 photos + 300 positions
+   515.178  t0360668 suivi ok score 1.00 pos 8255,-2786 net 32 (24 ms) carte 114 photos + 300 positions
+   515.512  t0361002 suivi ok score 1.00 pos 8255,-2786 net 32 (21 ms) carte 114 photos + 300 positions
+   515.844  t0361333 suivi ok score 0.97 pos 8470,-2786 net 31 (19 ms) carte 114 photos + 300 positions
+   516.032  envoyé lame_20261020_160811_myelo-3_0119.jpg (427 ko)
+   516.185  t0361675 suivi ok score 0.97 pos 8781,-2786 net 30 (27 ms) carte 114 photos + 300 positions
+   516.504  t0361994 suivi ok score 1.00 pos 8781,-2786 net 29 (19 ms) carte 114 photos + 300 positions
+   516.745  photo o-3_0241 à 8781,-2786 (522 ko, 208 ms)
+   516.833  t0362322 suivi ok score 1.00 pos 8781,-2786 net 30 (17 ms) carte 115 photos + 300 positions
+   517.166  t0362657 suivi ok score 1.00 pos 8781,-2786 net 32 (17 ms) carte 115 photos + 300 positions
+   517.492  t0362983 suivi ok score 0.94 pos 8960,-2786 net 30 (10 ms) carte 115 photos + 300 positions
+   517.839  t0363329 suivi ok score 1.00 pos 9163,-2786 net 30 (17 ms) carte 115 photos + 300 positions
+   518.176  t0363666 suivi ok score 1.00 pos 9163,-2786 net 29 (15 ms) carte 115 photos + 300 positions
+   518.279  photo o-3_0242 à 9163,-2786 (521 ko, 209 ms)
+   518.455  envoyé lame_20261020_160811_myelo-3_0120.jpg (438 ko)
+   518.507  t0363998 suivi ok score 1.00 pos 9163,-2786 net 25 (13 ms) carte 116 photos + 300 positions
+   518.838  t0364327 suivi ok score 1.00 pos 9163,-2786 net 29 (17 ms) carte 116 photos + 300 positions
+   519.174  t0364664 suivi ok score 1.00 pos 9163,-2786 net 31 (20 ms) carte 116 photos + 300 positions
+   519.498  t0364989 suivi ok score 0.95 pos 9331,-2786 net 30 (15 ms) carte 116 photos + 300 positions
+   519.843  t0365332 suivi ok score 0.95 pos 9725,-2786 net 28 (16 ms) carte 116 photos + 300 positions
+   520.181  t0365671 suivi ok score 0.97 pos 9964,-2786 net 26 (20 ms) carte 116 photos + 300 positions
+   520.505  t0365996 suivi ok score 1.00 pos 10096,-2786 net 25 (18 ms) carte 116 photos + 300 positions
+   520.765  envoyé lame_20261020_160811_myelo-3_0121.jpg (448 ko)
+   520.833  t0366324 suivi ok score 1.00 pos 10096,-2786 net 21 (14 ms) carte 116 photos + 300 positions
+   520.883  photo o-3_0243 à 10096,-2786 (435 ko, 209 ms)
+   521.174  t0366663 suivi ok score 1.00 pos 10096,-2786 net 26 (20 ms) carte 117 photos + 300 positions
+   521.503  t0366993 suivi ok score 1.00 pos 10096,-2786 net 28 (15 ms) carte 117 photos + 300 positions
+   521.841  t0367331 suivi ok score 1.00 pos 10096,-2786 net 30 (20 ms) carte 117 photos + 300 positions
+   522.183  t0367672 suivi ok score 1.00 pos 10096,-2786 net 31 (23 ms) carte 117 photos + 300 positions
+   522.517  t0368007 suivi ok score 0.99 pos 10096,-2786 net 31 (23 ms) carte 117 photos + 300 positions
+   522.850  t0368339 suivi ok score 0.95 pos 10430,-2786 net 28 (23 ms) carte 117 photos + 300 positions
+   523.169  t0368659 suivi ok score 0.98 pos 10645,-2786 net 28 (16 ms) carte 117 photos + 300 positions
+   523.301  envoyé lame_20261020_160811_myelo-3_0122.jpg (447 ko)
+   523.501  t0368991 suivi ok score 1.00 pos 10645,-2786 net 27 (16 ms) carte 117 photos + 300 positions
+   523.769  photo o-3_0244 à 10645,-2786 (481 ko, 230 ms)
+   523.836  t0369326 suivi ok score 0.99 pos 10645,-2786 net 27 (16 ms) carte 118 photos + 300 positions
+   524.179  t0369669 suivi ok score 0.95 pos 11028,-2786 net 27 (22 ms) carte 118 photos + 300 positions
+   524.501  t0369992 suivi ok score 1.00 pos 11052,-2786 net 28 (15 ms) carte 118 photos + 300 positions
+   524.799  photo o-3_0245 à 11052,-2786 (491 ko, 229 ms)
+   524.829  t0370319 suivi ok score 1.00 pos 11052,-2786 net 29 (11 ms) carte 119 photos + 300 positions
+   525.184  t0370673 suivi ok score 0.96 pos 11064,-2786 net 29 (23 ms) carte 119 photos + 300 positions
+   525.503  t0370993 suivi ok score 0.99 pos 11638,-2786 net 28 (15 ms) carte 119 photos + 300 positions
+   525.700  envoyé lame_20261020_160811_myelo-3_0123.jpg (454 ko)
+   525.834  t0371325 suivi ok score 1.00 pos 11638,-2786 net 28 (14 ms) carte 119 photos + 300 positions
+   526.064  photo o-3_0246 à 11638,-2786 (489 ko, 229 ms)
+   526.170  t0371661 suivi ok score 0.99 pos 11638,-2786 net 28 (19 ms) carte 120 photos + 300 positions
+   526.508  t0371998 suivi ok score 0.98 pos 12235,-2786 net 28 (19 ms) carte 120 photos + 300 positions
+   526.846  t0372336 suivi ok score 1.00 pos 12307,-2786 net 27 (20 ms) carte 120 photos + 300 positions
+   527.159  photo o-3_0247 à 12307,-2786 (499 ko, 228 ms)
+   527.171  t0372662 suivi ok score 1.00 pos 12307,-2786 net 27 (16 ms) carte 121 photos + 300 positions
+   527.500  envoyé lame_20261020_160811_myelo-3_0124.jpg (471 ko)
+   527.503  t0372994 suivi ok score 0.99 pos 12307,-2786 net 27 (12 ms) carte 121 photos + 300 positions
+   527.831  t0373322 suivi ok score 0.99 pos 12594,-2786 net 28 (11 ms) carte 121 photos + 300 positions
+   528.169  t0373660 suivi ok score 1.00 pos 12833,-2786 net 29 (18 ms) carte 121 photos + 300 positions
+   528.497  t0373986 suivi ok score 1.00 pos 12833,-2786 net 29 (12 ms) carte 121 photos + 300 positions
+   528.689  photo o-3_0248 à 12833,-2786 (535 ko, 191 ms)
+   528.842  t0374332 suivi ok score 0.99 pos 12881,-2786 net 28 (19 ms) carte 122 photos + 300 positions
+   529.182  t0374671 suivi ok score 0.99 pos 13395,-2786 net 30 (23 ms) carte 122 photos + 300 positions
+   529.194  envoyé lame_20261020_160811_myelo-3_0125.jpg (463 ko)
+   529.498  t0374988 suivi ok score 1.00 pos 13574,-2786 net 30 (12 ms) carte 122 photos + 300 positions
+   529.836  t0375326 suivi ok score 1.00 pos 13574,-2786 net 30 (15 ms) carte 122 photos + 300 positions
+   529.922  photo o-3_0249 à 13574,-2786 (587 ko, 222 ms)
+   530.180  t0375670 suivi ok score 0.99 pos 13921,-2786 net 30 (18 ms) carte 123 photos + 300 positions
+   530.508  t0375998 suivi ok score 0.99 pos 14124,-2786 net 30 (16 ms) carte 123 photos + 300 positions
+   530.562  envoyé lame_20261020_160811_myelo-3_0126.jpg (451 ko)
+   530.830  t0376321 suivi ok score 1.00 pos 14196,-2786 net 31 (10 ms) carte 123 photos + 300 positions
+   531.175  t0376663 suivi ok score 1.00 pos 14196,-2786 net 31 (15 ms) carte 123 photos + 300 positions
+   531.188  photo o-3_0250 à 14196,-2786 (632 ko, 196 ms)
+   531.497  t0376988 suivi ok score 0.99 pos 14351,-2786 net 31 (13 ms) carte 124 photos + 300 positions
+   531.845  t0377334 suivi ok score 0.99 pos 14650,-2786 net 31 (16 ms) carte 124 photos + 300 positions
+   532.190  t0377680 suivi ok score 1.00 pos 14757,-2786 net 31 (21 ms) carte 124 photos + 300 positions
+   532.505  t0377995 suivi ok score 1.00 pos 14757,-2786 net 31 (15 ms) carte 124 photos + 300 positions
+   532.603  photo o-3_0251 à 14757,-2786 (648 ko, 235 ms)
+   532.848  t0378337 suivi ok score 0.99 pos 14925,-2786 net 31 (20 ms) carte 125 photos + 300 positions
+   533.172  t0378662 suivi ok score 1.00 pos 15331,-2786 net 30 (14 ms) carte 125 photos + 300 positions
+   533.460  envoyé lame_20261020_160811_myelo-3_0127.jpg (706 ko)
+   533.497  t0378987 suivi ok score 1.00 pos 15439,-2786 net 30 (10 ms) carte 125 photos + 300 positions
+   533.842  t0379331 suivi ok score 1.00 pos 15439,-2786 net 30 (21 ms) carte 125 photos + 300 positions
+   533.868  photo o-3_0252 à 15439,-2786 (633 ko, 219 ms)
+   534.168  t0379657 suivi ok score 1.00 pos 15439,-2786 net 30 (13 ms) carte 126 photos + 300 positions
+   534.512  t0380001 suivi ok score 1.00 pos 15439,-2802 net 30 (20 ms) carte 126 photos + 300 positions
+   534.843  t0380333 suivi ok score 0.99 pos 15439,-2802 net 30 (15 ms) carte 126 photos + 300 positions
+   535.175  t0380664 suivi ok score 0.99 pos 15439,-2148 net 29 (17 ms) carte 126 photos + 300 positions
+   535.507  t0380997 suivi ok score 1.00 pos 15439,-1845 net 27 (17 ms) carte 126 photos + 300 positions
+   535.827  envoyé lame_20261020_160811_myelo-3_0128.jpg (721 ko)
+   535.842  t0381332 suivi ok score 1.00 pos 15439,-1845 net 28 (13 ms) carte 126 photos + 300 positions
+   536.001  photo o-3_0253 à 15439,-1845 (605 ko, 224 ms)
+   536.171  t0381661 suivi ok score 1.00 pos 15439,-1845 net 28 (20 ms) carte 127 photos + 300 positions
+   536.503  t0381992 suivi ok score 0.99 pos 15439,-1447 net 26 (14 ms) carte 127 photos + 300 positions
+   536.842  t0382332 suivi ok score 0.98 pos 15439,-921 net 25 (15 ms) carte 127 photos + 300 positions
+   537.179  t0382668 suivi ok score 1.00 pos 15439,-634 net 24 (22 ms) carte 127 photos + 300 positions
+   537.502  t0382992 suivi ok score 1.00 pos 15439,-634 net 25 (15 ms) carte 127 photos + 300 positions
+   537.597  photo o-3_0254 à 15439,-634 (569 ko, 210 ms)
+   537.838  envoyé lame_20261020_160811_myelo-3_0129.jpg (727 ko)
+   537.842  t0383331 suivi ok score 1.00 pos 15439,-634 net 25 (18 ms) carte 128 photos + 300 positions
+   538.174  t0383663 suivi ok score 0.99 pos 15439,-523 net 23 (15 ms) carte 128 photos + 300 positions
+   538.509  t0383999 suivi ok score 0.97 pos 15439,83 net 20 (15 ms) carte 128 photos + 300 positions
+   538.858  t0384347 suivi ok score 1.00 pos 15439,147 net 20 (24 ms) carte 128 photos + 300 positions
+   538.942  photo floue (netteté 20 contre 42 de référence)
+   539.160  photo o-3_0255 à 15439,147 (510 ko, 218 ms)
+   539.171  t0384662 suivi ok score 1.00 pos 15439,147 net 21 (18 ms) carte 129 photos + 300 positions
+   539.509  t0384998 suivi ok score 1.00 pos 15439,752 net 20 (16 ms) carte 129 photos + 300 positions
+   539.845  t0385335 suivi ok score 1.00 pos 15439,832 net 19 (15 ms) carte 129 photos + 300 positions
+   539.977  photo floue (netteté 19 contre 42 de référence)
+   540.168  t0385660 suivi ok score 1.00 pos 15439,832 net 19 (17 ms) carte 129 photos + 300 positions
+   540.192  photo o-3_0256 à 15439,832 (454 ko, 214 ms)
+   540.346  envoyé lame_20261020_160811_myelo-3_0130.jpg (713 ko)
+   540.512  t0386001 suivi ok score 0.99 pos 15439,386 net 19 (17 ms) carte 130 photos + 300 positions
+   540.850  t0386339 suivi ok score 0.99 pos 15439,147 net 20 (23 ms) carte 130 photos + 300 positions
+   541.183  t0386672 suivi ok score 1.00 pos 15439,-45 net 21 (19 ms) carte 130 photos + 300 positions
+   541.405  photo floue (netteté 21 contre 42 de référence)
+   541.515  t0387005 suivi ok score 1.00 pos 15439,-45 net 21 (18 ms) carte 130 photos + 300 positions
+   541.623  photo o-3_0257 à 15439,-45 (519 ko, 217 ms)
+   541.831  t0387322 suivi ok score 1.00 pos 15439,-13 net 20 (13 ms) carte 131 photos + 300 positions
+   542.173  t0387663 suivi ok score 1.00 pos 15439,-13 net 20 (13 ms) carte 131 photos + 300 positions
+   542.507  t0387998 suivi ok score 1.00 pos 15439,-13 net 20 (14 ms) carte 131 photos + 300 positions
+   542.845  t0388335 suivi ok score 1.00 pos 15439,-13 net 20 (17 ms) carte 131 photos + 300 positions
+   543.055  envoyé lame_20261020_160811_myelo-3_0131.jpg (672 ko)
+   543.181  t0388671 suivi ok score 1.00 pos 15439,-13 net 22 (19 ms) carte 131 photos + 300 positions
+   543.514  t0389005 suivi ok score 1.00 pos 15439,-13 net 23 (17 ms) carte 131 photos + 300 positions
+   543.846  t0389335 suivi ok score 1.00 pos 15439,-13 net 25 (17 ms) carte 131 photos + 300 positions
+   544.175  t0389665 suivi ok score 1.00 pos 15439,-13 net 28 (15 ms) carte 131 photos + 300 positions
+   544.513  t0390002 suivi ok score 1.00 pos 15439,-13 net 29 (18 ms) carte 131 photos + 300 positions
+   544.846  t0390336 suivi ok score 1.00 pos 15439,-13 net 30 (21 ms) carte 131 photos + 300 positions
+   545.185  t0390675 suivi ok score 1.00 pos 15439,-13 net 32 (18 ms) carte 131 photos + 300 positions
+   545.510  t0391000 suivi ok score 1.00 pos 15439,-13 net 32 (17 ms) carte 131 photos + 300 positions
+   545.842  t0391331 suivi ok score 1.00 pos 15439,-13 net 33 (16 ms) carte 131 photos + 300 positions
+   546.175  t0391665 suivi ok score 1.00 pos 15439,-13 net 33 (16 ms) carte 131 photos + 300 positions
+   546.518  t0392007 suivi ok score 1.00 pos 15439,-13 net 34 (19 ms) carte 131 photos + 300 positions
+   546.838  t0392328 suivi ok score 1.00 pos 15439,-13 net 34 (14 ms) carte 131 photos + 300 positions
+   547.179  t0392669 suivi ok score 1.00 pos 15439,-13 net 34 (17 ms) carte 131 photos + 300 positions
+   547.519  t0393008 suivi ok score 1.00 pos 15439,-13 net 34 (21 ms) carte 131 photos + 300 positions
+   547.843  t0393332 suivi ok score 1.00 pos 15439,-13 net 34 (15 ms) carte 131 photos + 300 positions
+   548.186  t0393676 suivi ok score 0.99 pos 15439,35 net 35 (21 ms) carte 131 photos + 300 positions
+   548.227  envoyé lame_20261020_160811_myelo-3_0132.jpg (646 ko)
+   548.502  t0393990 suivi ok score 0.99 pos 15439,306 net 33 (11 ms) carte 131 photos + 300 positions
+   548.555  photo o-3_0258 à 15439,115 (602 ko, 200 ms)
+   548.844  t0394334 suivi ok score 1.00 pos 15439,497 net 32 (16 ms) carte 132 photos + 300 positions
+   549.164  t0394654 suivi ok score 1.00 pos 15439,497 net 32 (10 ms) carte 132 photos + 300 positions
+   549.264  photo o-3_0259 à 15439,497 (563 ko, 225 ms)
+   549.513  t0395004 suivi ok score 0.98 pos 15439,561 net 31 (22 ms) carte 133 photos + 300 positions
+   549.855  t0395345 suivi ok score 0.98 pos 15439,944 net 30 (24 ms) carte 133 photos + 300 positions
+   550.180  t0395671 suivi ok score 0.99 pos 15439,1581 net 26 (20 ms) carte 133 photos + 300 positions
+   550.311  envoyé lame_20261020_160811_myelo-3_0133.jpg (628 ko)
+   550.513  t0396003 suivi ok score 1.00 pos 15439,1597 net 26 (16 ms) carte 133 photos + 300 positions
+   550.764  photo o-3_0260 à 15439,1597 (431 ko, 209 ms)
+   550.844  t0396334 suivi ok score 1.00 pos 15439,1597 net 25 (17 ms) carte 134 photos + 300 positions
+   551.189  t0396679 suivi ok score 1.00 pos 15439,1597 net 21 (16 ms) carte 134 photos + 300 positions
+   551.524  t0397014 suivi ok score 1.00 pos 15439,1597 net 26 (27 ms) carte 134 photos + 300 positions
+   551.848  t0397339 suivi ok score 1.00 pos 15439,1597 net 28 (17 ms) carte 134 photos + 300 positions
+   552.178  t0397669 suivi ok score 1.00 pos 15439,1597 net 29 (15 ms) carte 134 photos + 300 positions
+   552.255  envoyé lame_20261020_160811_myelo-3_0134.jpg (620 ko)
+   552.508  t0397999 suivi ok score 1.00 pos 15439,1597 net 29 (11 ms) carte 134 photos + 300 positions
+   552.857  t0398347 suivi ok score 1.00 pos 15439,1597 net 29 (21 ms) carte 134 photos + 300 positions
+   553.182  t0398673 suivi ok score 0.99 pos 14769,1597 net 26 (18 ms) carte 134 photos + 300 positions
+   553.512  t0399003 suivi ok score 1.00 pos 14733,1597 net 26 (17 ms) carte 134 photos + 300 positions
+   553.826  photo o-3_0261 à 14733,1597 (423 ko, 216 ms)
+   553.837  t0399328 suivi ok score 1.00 pos 14733,1597 net 26 (14 ms) carte 135 photos + 300 positions
+   554.172  t0399663 suivi ok score 0.99 pos 14578,1597 net 24 (14 ms) carte 135 photos + 300 positions
+   554.228  envoyé lame_20261020_160811_myelo-3_0135.jpg (621 ko)
+   554.503  t0399994 suivi ok score 1.00 pos 14231,1597 net 24 (10 ms) carte 135 photos + 300 positions
+   554.844  t0400335 suivi ok score 1.00 pos 14231,1597 net 24 (13 ms) carte 135 photos + 300 positions
+   554.924  photo o-3_0262 à 14231,1597 (389 ko, 212 ms)
+   555.176  t0400667 suivi ok score 0.96 pos 13837,1597 net 21 (15 ms) carte 136 photos + 300 positions
+   555.509  t0401000 suivi ok score 1.00 pos 13682,1597 net 22 (15 ms) carte 136 photos + 300 positions
+   555.856  t0401346 suivi ok score 1.00 pos 13682,1597 net 22 (19 ms) carte 136 photos + 300 positions
+   555.974  photo o-3_0263 à 13682,1597 (353 ko, 230 ms)
+   556.177  t0401668 suivi ok score 0.99 pos 13682,1565 net 22 (15 ms) carte 137 photos + 300 positions
+   556.346  envoyé lame_20261020_160811_myelo-3_0136.jpg (619 ko)
+   556.509  t0402000 suivi ok score 0.97 pos 13682,1246 net 24 (13 ms) carte 137 photos + 300 positions
+   556.842  t0402333 suivi ok score 1.00 pos 13682,1071 net 25 (16 ms) carte 137 photos + 300 positions
+   557.175  t0402666 suivi ok score 1.00 pos 13682,1071 net 25 (15 ms) carte 137 photos + 300 positions
+   557.306  photo o-3_0264 à 13682,1071 (397 ko, 233 ms)
+   557.506  t0402997 suivi ok score 0.98 pos 13634,1071 net 24 (13 ms) carte 138 photos + 300 positions
+   557.841  t0403332 suivi ok score 0.95 pos 12952,1071 net 20 (14 ms) carte 138 photos + 300 positions
+   557.961  envoyé lame_20261020_160811_myelo-3_0137.jpg (604 ko)
+   558.177  t0403666 suivi ok score 1.00 pos 12677,1071 net 19 (15 ms) carte 138 photos + 300 positions
+   558.406  photo floue (netteté 19 contre 42 de référence)
+   558.506  t0403997 suivi ok score 1.00 pos 12677,1071 net 19 (14 ms) carte 138 photos + 300 positions
+   558.637  photo o-3_0265 à 12677,1071 (350 ko, 231 ms)
+   558.841  t0404332 suivi ok score 0.98 pos 12247,1071 net 16 (18 ms) carte 139 photos + 300 positions
+   559.184  t0404674 suivi ok score 0.99 pos 12080,1071 net 16 (17 ms) carte 139 photos + 300 positions
+   559.438  photo floue (netteté 16 contre 42 de référence)
+   559.515  t0405006 suivi ok score 1.00 pos 12080,1071 net 16 (16 ms) carte 139 photos + 300 positions
+   559.636  photo o-3_0266 à 12080,1071 (342 ko, 198 ms)
+   559.844  t0405334 suivi ok score 0.97 pos 12068,1071 net 15 (12 ms) carte 140 photos + 300 positions
+   559.960  envoyé lame_20261020_160811_myelo-3_0138.jpg (599 ko)
+   560.181  t0405672 suivi ok score 0.99 pos 11638,1071 net 13 (17 ms) carte 140 photos + 300 positions
+   560.486  photo floue (netteté 13 contre 42 de référence)
+   560.513  t0406004 suivi ok score 1.00 pos 11638,1071 net 13 (15 ms) carte 140 photos + 300 positions
+   560.700  photo o-3_0267 à 11638,1071 (337 ko, 213 ms)
+   560.860  t0406351 suivi ok score 0.99 pos 11638,1071 net 13 (20 ms) carte 141 photos + 300 positions
+   561.184  t0406675 suivi ok score 0.99 pos 11638,1071 net 13 (12 ms) carte 141 photos + 300 positions
+   561.519  t0407009 suivi ok score 1.00 pos 11638,1071 net 13 (21 ms) carte 141 photos + 300 positions
+   561.847  t0407338 suivi ok score 0.95 pos 12032,1071 net 15 (15 ms) carte 141 photos + 300 positions
+   562.182  t0407672 suivi ok score 0.99 pos 12510,1071 net 17 (16 ms) carte 141 photos + 300 positions
+   562.470  envoyé lame_20261020_160811_myelo-3_0139.jpg (646 ko)
+   562.522  t0408013 suivi ok score 1.00 pos 13024,1071 net 22 (11 ms) carte 141 photos + 300 positions
+   562.838  t0408327 suivi ok score 1.00 pos 13024,1071 net 22 (11 ms) carte 141 photos + 300 positions
+   563.114  photo o-3_0268 à 13024,1071 (370 ko, 243 ms)
+   563.172  t0408664 suivi ok score 1.00 pos 13024,1071 net 22 (15 ms) carte 142 photos + 300 positions
+   563.519  t0409010 suivi ok score 1.00 pos 13024,1071 net 23 (18 ms) carte 142 photos + 300 positions
+   563.854  t0409344 suivi ok score 1.00 pos 13024,1071 net 16 (18 ms) carte 142 photos + 300 positions
+   564.187  t0409678 suivi ok score 1.00 pos 13024,1071 net 19 (18 ms) carte 142 photos + 300 positions
+   564.512  t0410002 suivi ok score 1.00 pos 13024,1071 net 25 (15 ms) carte 142 photos + 300 positions
+   564.841  t0410333 suivi ok score 1.00 pos 13024,1071 net 27 (11 ms) carte 142 photos + 300 positions
+   565.187  t0410678 suivi ok score 1.00 pos 13024,1071 net 27 (18 ms) carte 142 photos + 300 positions
+   565.312  envoyé lame_20261020_160811_myelo-3_0140.jpg (646 ko)
+   565.509  t0411000 suivi ok score 1.00 pos 13024,1071 net 27 (12 ms) carte 142 photos + 300 positions
+   565.835  t0411326 suivi ok score 0.98 pos 12737,1071 net 25 (10 ms) carte 142 photos + 300 positions
+   566.188  t0411678 suivi ok score 1.00 pos 12558,1071 net 23 (19 ms) carte 142 photos + 300 positions
+   566.519  t0412010 suivi ok score 1.00 pos 12558,1071 net 23 (20 ms) carte 142 photos + 300 positions
+   566.626  photo o-3_0269 à 12558,1071 (408 ko, 213 ms)
+   566.846  t0412337 suivi ok score 0.95 pos 12534,1071 net 23 (15 ms) carte 143 photos + 300 positions
+   567.181  t0412672 suivi ok score 0.98 pos 11948,1071 net 21 (13 ms) carte 143 photos + 300 positions
+   567.526  t0413016 suivi ok score 0.99 pos 11733,1071 net 20 (21 ms) carte 143 photos + 300 positions
+   567.751  photo floue (netteté 20 contre 42 de référence)
+   567.771  envoyé lame_20261020_160811_myelo-3_0141.jpg (646 ko)
+   567.843  t0413334 suivi ok score 1.00 pos 11733,1071 net 20 (12 ms) carte 143 photos + 300 positions
+   567.980  photo o-3_0270 à 11733,1071 (390 ko, 229 ms)
+   568.171  t0413663 suivi ok score 0.99 pos 11733,1071 net 20 (12 ms) carte 144 photos + 300 positions
+   568.513  t0414004 suivi ok score 0.95 pos 11136,1071 net 18 (17 ms) carte 144 photos + 300 positions
+   568.841  t0414332 suivi ok score 1.00 pos 11136,1071 net 18 (12 ms) carte 144 photos + 300 positions
+   568.876  photo floue (netteté 18 contre 42 de référence)
+   569.107  photo o-3_0271 à 11136,1071 (393 ko, 231 ms)
+   569.176  t0414667 suivi ok score 0.99 pos 11136,1071 net 18 (17 ms) carte 145 photos + 300 positions
+   569.512  t0415004 suivi ok score 0.96 pos 10418,1071 net 16 (16 ms) carte 145 photos + 300 positions
+   569.726  envoyé lame_20261020_160811_myelo-3_0142.jpg (649 ko)
+   569.844  t0415335 suivi ok score 1.00 pos 10299,1071 net 16 (13 ms) carte 145 photos + 300 positions
+   570.045  photo floue (netteté 16 contre 42 de référence)
+   570.175  t0415665 suivi ok score 0.99 pos 10299,1071 net 16 (13 ms) carte 145 photos + 300 positions
+   570.275  photo o-3_0272 à 10299,1071 (397 ko, 230 ms)
+   570.514  t0416003 suivi ok score 0.99 pos 10299,1071 net 16 (18 ms) carte 146 photos + 300 positions
+   570.839  t0416329 suivi ok score 0.99 pos 10227,1071 net 16 (10 ms) carte 146 photos + 300 positions
+   571.168  t0416660 suivi ok score 0.99 pos 10227,1071 net 16 (10 ms) carte 146 photos + 300 positions
+   571.502  t0416993 suivi ok score 0.96 pos 10227,1055 net 17 (10 ms) carte 146 photos + 300 positions
+   571.848  t0417339 suivi ok score 0.92 pos 10227,593 net 17 (15 ms) carte 146 photos + 300 positions
+   572.109  envoyé lame_20261020_160811_myelo-3_0143.jpg (652 ko)
+   572.177  t0417663 suivi ok score 0.95 pos 10227,577 net 15 (11 ms) carte 146 photos + 300 positions
+   572.506  t0417995 suivi ok score 0.96 pos 10227,1246 net 14 (11 ms) carte 146 photos + 300 positions
+   572.850  t0418341 suivi ok score 0.95 pos 10227,2187 net 13 (18 ms) carte 146 photos + 300 positions
+   573.188  t0418678 suivi ok score 0.99 pos 10227,2601 net 14 (15 ms) carte 146 photos + 300 positions
+   573.381  photo floue (netteté 15 contre 42 de référence)
+   573.512  t0419003 suivi ok score 0.99 pos 10227,2601 net 15 (16 ms) carte 146 photos + 300 positions
+   573.600  photo o-3_0273 à 10227,2601 (335 ko, 219 ms)
+   573.848  t0419339 suivi ok score 1.00 pos 10227,2601 net 15 (16 ms) carte 147 photos + 300 positions
+   574.085  envoyé lame_20261020_160811_myelo-3_0144.jpg (651 ko)
+   574.185  t0419676 suivi ok score 0.98 pos 10299,2601 net 15 (18 ms) carte 147 photos + 300 positions
+   574.523  t0420014 suivi ok score 0.95 pos 10789,2601 net 16 (18 ms) carte 147 photos + 300 positions
+   574.852  t0420343 suivi ok score 1.00 pos 11422,2601 net 17 (14 ms) carte 147 photos + 300 positions
+   575.148  photo floue (netteté 17 contre 42 de référence)
+   575.179  t0420670 suivi ok score 0.99 pos 11422,2601 net 17 (13 ms) carte 147 photos + 300 positions
+   575.366  photo o-3_0274 à 11422,2601 (318 ko, 218 ms)
+   575.524  t0421015 suivi ok score 0.99 pos 11422,2601 net 17 (16 ms) carte 148 photos + 300 positions
+   575.857  t0421347 suivi ok score 0.92 pos 12128,2601 net 17 (15 ms) carte 148 photos + 300 positions
+   576.176  t0421667 suivi ok score 0.99 pos 12283,2601 net 18 (13 ms) carte 148 photos + 300 positions
+   576.371  envoyé lame_20261020_160811_myelo-3_0145.jpg (652 ko)
+   576.382  photo floue (netteté 18 contre 42 de référence)
+   576.519  t0422011 suivi ok score 0.99 pos 12283,2601 net 18 (18 ms) carte 148 photos + 300 positions
+   576.622  photo o-3_0275 à 12283,2601 (306 ko, 240 ms)
+   576.843  t0422334 suivi ok score 1.00 pos 12283,2601 net 17 (13 ms) carte 149 photos + 300 positions
+   577.179  t0422671 suivi ok score 0.99 pos 12283,2601 net 19 (13 ms) carte 149 photos + 300 positions
+   577.519  t0423010 suivi ok score 1.00 pos 12283,2601 net 20 (17 ms) carte 149 photos + 300 positions
+   577.854  t0423345 suivi ok score 0.99 pos 12283,2601 net 20 (20 ms) carte 149 photos + 300 positions
+   578.182  t0423671 suivi ok score 0.93 pos 12474,2601 net 18 (15 ms) carte 149 photos + 300 positions
+   578.511  t0424002 suivi ok score 0.97 pos 12976,2601 net 19 (15 ms) carte 149 photos + 300 positions
+   578.848  t0424339 suivi ok score 0.98 pos 13275,2601 net 17 (15 ms) carte 149 photos + 300 positions
+   579.110  envoyé lame_20261020_160811_myelo-3_0146.jpg (663 ko)
+   579.174  t0424666 suivi ok score 1.00 pos 13359,2601 net 18 (10 ms) carte 149 photos + 300 positions
+   579.322  photo floue (netteté 19 contre 42 de référence)
+   579.513  t0425004 suivi ok score 1.00 pos 13359,2601 net 19 (15 ms) carte 149 photos + 300 positions
+   579.527  photo o-3_0276 à 13359,2601 (299 ko, 204 ms)
+   579.847  t0425336 suivi ok score 1.00 pos 13359,2601 net 19 (15 ms) carte 150 photos + 300 positions
+   580.179  t0425671 suivi ok score 0.99 pos 13717,2601 net 19 (13 ms) carte 150 photos + 300 positions
+   580.514  t0426005 suivi ok score 0.99 pos 13980,2601 net 19 (15 ms) carte 150 photos + 300 positions
+   580.842  t0426333 suivi ok score 1.00 pos 13992,2601 net 20 (12 ms) carte 150 photos + 300 positions
+   580.907  photo floue (netteté 20 contre 42 de référence)
+   581.108  photo o-3_0277 à 13992,2601 (311 ko, 201 ms)
+   581.186  t0426677 suivi ok score 1.00 pos 13992,2601 net 20 (19 ms) carte 151 photos + 300 positions
+   581.509  envoyé lame_20261020_160811_myelo-3_0147.jpg (659 ko)
+   581.528  t0427019 suivi ok score 0.98 pos 14327,2601 net 20 (23 ms) carte 151 photos + 300 positions
+   581.843  t0427332 suivi ok score 1.00 pos 14733,2601 net 20 (11 ms) carte 151 photos + 300 positions
+   582.183  t0427675 suivi ok score 0.99 pos 14901,2601 net 20 (16 ms) carte 151 photos + 300 positions
+   582.516  t0428007 suivi ok score 0.99 pos 15080,2601 net 20 (16 ms) carte 151 photos + 300 positions
+   582.854  t0428345 suivi ok score 0.99 pos 15271,2601 net 20 (16 ms) carte 151 photos + 300 positions
+   583.185  t0428676 suivi ok score 0.99 pos 15475,2601 net 20 (16 ms) carte 151 photos + 300 positions
+   583.377  photo floue (netteté 20 contre 42 de référence)
+   583.513  t0429004 suivi ok score 1.00 pos 15486,2601 net 20 (13 ms) carte 151 photos + 300 positions
+   583.605  photo o-3_0278 à 15486,2601 (320 ko, 227 ms)
+   583.853  t0429344 suivi ok score 1.00 pos 15486,2601 net 20 (16 ms) carte 152 photos + 300 positions
+   584.157  envoyé lame_20261020_160811_myelo-3_0148.jpg (672 ko)
+   584.183  t0429674 suivi ok score 1.00 pos 15486,2601 net 20 (13 ms) carte 152 photos + 300 positions
+   584.511  t0430002 suivi ok score 1.00 pos 15486,2601 net 20 (13 ms) carte 152 photos + 300 positions
+   584.857  t0430348 suivi ok score 1.00 pos 15486,2601 net 20 (15 ms) carte 152 photos + 300 positions
+   585.194  t0430685 suivi ok score 1.00 pos 15486,2601 net 20 (17 ms) carte 152 photos + 300 positions
