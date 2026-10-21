@@ -33,9 +33,8 @@ jobs:
       - name: Outils
         run: |
           sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
-          pip install -q opencv-python-headless numpy scipy requests
+          pip install -q -r tools/requirements-pipeline.txt || { echo "::warning::bibliothèques figées non installées en entier (LightGlue absent ?), recalage SIFT seul"; grep -vE "^(torch|torchvision|lightglue|kornia)" tools/requirements-pipeline.txt > /tmp/req-sans-torch.txt; pip install -q -r /tmp/req-sans-torch.txt; }
           # appariement appris (DISK + LightGlue, CPU) pour le recalage des détails dans leur lame d'ensemble ; facultatif
-          pip install -q torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cpu && pip install -q "git+https://github.com/cvg/LightGlue.git" || echo "::warning::LightGlue non installé, recalage SIFT seul"
       - name: Traiter les séries en attente
         id: run
         env:

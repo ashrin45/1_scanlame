@@ -1,0 +1,52 @@
+name: Veille des versions du pipeline
+# Le 1er de chaque mois : compare les versions figées (tools/requirements-pipeline.txt) aux dernières publiées.
+# S'il y a du nouveau, ouvre (ou met à jour) un ticket « Mises à jour des bibliothèques du pipeline » : GitHub l'envoie par courriel.
+# Rien n'est installé ni changé automatiquement : une mise à jour se teste sur une branche (Tests du pipeline) avant main.
+on:
+  schedule:
+    - cron: '17 6 1 * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  veille:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Comparer
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import re, subprocess, json, os
+          SUIVIS = ['opencv-python-headless', 'opencv-python', 'numpy', 'scipy', 'torch', 'torchvision', 'kornia', 'requests']
+          lignes = []
+          for l in open('tools/requirements-pipeline.txt'):
+              l = l.strip()
+              m = re.match(r'([A-Za-z0-9_.-]+)==([^\s]+)', l)
+              if m and m[1].lower() in SUIVIS:
+                  nom, fige = m[1], m[2]
+                  idx = ['--index-url', 'https://download.pytorch.org/whl/cpu'] if nom in ('torch', 'torchvision') else []
+                  out = subprocess.run(['pip', 'index', 'versions', nom] + idx, capture_output=True, text=True).stdout
+                  m2 = re.search(r'\(([^)]+)\)', out); dern = m2[1] if m2 else '?'
+                  if dern != '?' and dern.split('+')[0] != fige.split('+')[0]: lignes.append(f'| {nom} | {fige} | {dern} |')
+              m = re.match(r'lightglue @ git\+(\S+)@([0-9a-f]{40})', l)
+              if m:
+                  out = subprocess.run(['git', 'ls-remote', m[1], 'HEAD'], capture_output=True, text=True).stdout.split()
+                  if out and out[0] != m[2]: lignes.append(f'| LightGlue | {m[2][:7]} | {out[0][:7]} |')
+          titre = 'Mises à jour des bibliothèques du pipeline'
+          ex = json.loads(subprocess.run(['gh', 'issue', 'list', '--state', 'open', '--search', f'in:title "{titre}"', '--json', 'number'], capture_output=True, text=True).stdout or '[]')
+          if not lignes:
+              print('rien de nouveau'); raise SystemExit
+          corps = ('@ashrin45 de nouvelles versions existent pour des bibliothèques du pipeline (versions figées dans `tools/requirements-pipeline.txt`).\n\n'
+                   '| Bibliothèque | Figée | Disponible |\n|---|---|---|\n' + '\n'.join(lignes) +
+                   '\n\nRien n\'a changé en production. Pour adopter une version : la changer sur une branche, lancer « Tests du pipeline » sur cette branche '
+                   '(toutes les séries), comparer chiffres et aperçus aux références, puis fusionner dans main.')
+          print(corps)
+          if ex: subprocess.run(['gh', 'issue', 'edit', str(ex[0]['number']), '--body', corps], check=True)
+          else: subprocess.run(['gh', 'issue', 'create', '--title', titre, '--body', corps], check=True)
+          PY
