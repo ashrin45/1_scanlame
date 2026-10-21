@@ -41,7 +41,39 @@
   "pv-7353": {
    "series": "lame_20261020_093825_pv-7353",
    "note": "x10 (143) puis x100 (145, serpentin 4 rangées)",
-   "expect": {}
+   "expect": {
+    "ensemble": {
+     "residual_med": 1.28,
+     "residual_max": 3.51,
+     "crop_w": 5856,
+     "crop_h": 4384,
+     "grade": "A",
+     "width": 7521,
+     "height": 4663,
+     "used": 43,
+     "candidates": 43
+    },
+    "detail1": {
+     "groups_ok": 5,
+     "groups": 16,
+     "anchored_pass1": 48,
+     "anchor_residual": 6.4,
+     "residual_med": 2.04,
+     "residual_max": 103.04,
+     "scale": 0.1025,
+     "rotation": -2.7,
+     "anchored": 80,
+     "crop_w": 15936,
+     "crop_h": 3808,
+     "grade": "B",
+     "width": 16396,
+     "height": 5224,
+     "used": 80,
+     "candidates": 80,
+     "tx": 4631,
+     "ty": 3619
+    }
+   }
   },
   "placenta": {
    "series": "lame_20261020_100236_placenta",
