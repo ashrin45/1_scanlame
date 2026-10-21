@@ -50,6 +50,9 @@ jobs:
           git config user.name scanlame && git config user.email scanlame@users.noreply.github.com
           git add tools/tests/reference.json && git commit -m "Tests pipeline : références enregistrées (${{ inputs.only || 'toutes' }})" || true
           git pull --rebase -q origin main && git push -q origin HEAD:main
+      - name: Aperçus pour la comparaison visuelle
+        if: always()
+        run: python tools/tests/apercus.py raw/_tests apercus || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -58,3 +61,4 @@ jobs:
             tests.log
             raw/_tests/**/pipeline.log
             raw/_tests/**/layout.json
+            apercus/*.jpg
