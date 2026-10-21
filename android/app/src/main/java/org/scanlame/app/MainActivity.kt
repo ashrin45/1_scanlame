@@ -169,7 +169,7 @@ fun handleLink(intent: Intent?) {
 /** Entrée de la galerie (lames.json) pour les listes « lame d'ensemble » et « compléter ». */
 data class LameRef(val slug: String, val title: String, val objective: String?, val width: Int = 0, val height: Int = 0, val tile: Int = 0, val maxlvl: Int = 0, val thumb: String = "")
 
-@OptIn(ExperimentalLayoutApi::class)
+@OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun App(engine: CameraEngine, st: Settings, session: Session) {
     val ctx = LocalContext.current
