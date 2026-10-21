@@ -1,0 +1,8 @@
+{
+ "series": {
+  "pv-multi": {"series": "lame_20261019_183506_pv-multi", "quick": true, "note": "x10 (12 photos) puis x100 (65 photos, bande courbe), mode B", "expect": {}},
+  "pv-7353": {"series": "lame_20261020_093825_pv-7353", "note": "x10 (143) puis x100 (145, serpentin 4 rangées)", "expect": {}},
+  "placenta": {"series": "lame_20261020_100236_placenta", "note": "x100 seul (138)", "expect": {}},
+  "moelle-2": {"series": "lame_20261020_123025_moelle-2", "note": "x100 puis x10 : ensemble enregistré après le détail", "expect": {}}
+ }
+}
