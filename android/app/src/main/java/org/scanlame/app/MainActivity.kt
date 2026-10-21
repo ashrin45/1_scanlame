@@ -248,7 +248,13 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
         // ---- scène : caméra plein écran
         AndroidView(factory = { c -> PreviewView(c).apply { implementationMode = PreviewView.ImplementationMode.COMPATIBLE; scaleType = PreviewView.ScaleType.FIT_CENTER; preview = this } }, modifier = Modifier.fillMaxSize())
         // toucher l'image pendant une serie photo : une photo tout de suite (en profondeur : un plan de plus sur le champ en cours)
-        if (sess.running && sess.mode == Settings.MODE_PHOTOS) Box(Modifier.fillMaxSize().pointerInput(Unit) { detectTapGestures { session.requestManualShot() } })
+        if (sess.running && sess.mode == Settings.MODE_PHOTOS) Box(Modifier.fillMaxSize().pointerInput(Unit) {
+            // toucher = une photo (en profondeur : un plan du champ en cours) ; doigt pose (appui long) = rafale jusqu'au leve du doigt
+            detectTapGestures(
+                onPress = { tryAwaitRelease(); session.setBurstHold(false) },
+                onLongPress = { session.setBurstHold(true) },
+                onTap = { session.requestManualShot() })
+        })
         if (sess.running) {
             // cadre d'enregistrement : couleur de la derniere photo (vert bonne, orange moyenne, rouge ratee ou pas trop grand), clignote a chaque prise
             var flash by remember { mutableStateOf(false) }
@@ -279,7 +285,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     val expo = live.exposureNs?.let { String.format(Locale.ROOT, "%.1f ms", it / 1e6) } ?: "?"
                     Hud(if (cameraOn && bound != null) "${engine.photoSize?.let { "${it.height}x${it.width}" } ?: engine.videoSize?.let { "${it.height}x${it.width}" } ?: ""} · cam ${live.activePhysical ?: "?"}" else "caméra arrêtée")
                     Hud(if (sess.mode == Settings.MODE_VIDEO && sess.running) "vidéo ${sess.bytes shr 20} Mo" else "${sess.photos} photo${if (sess.photos > 1) "s" else ""}${if (sess.blurred > 0) " · ${sess.blurred} floue(s)" else ""}${if (sess.patron != null) " · patron ${(sess.patronFill * 100).roundToInt()} %" else ""}${if (sess.relocations > 0) " · ${sess.relocations} reloc." else ""}${if (sess.bigSteps > 0) " · ${sess.bigSteps} pas trop grand(s)" else ""}", if (sess.blurred > 0) WARN else FG)
-                    if (sess.running && sess.depth) Hud("${if (st.burstFor(sess.objective)) "rafale" else "profondeur"} · champ en cours : ${sess.stackPlanes} plan${if (sess.stackPlanes > 1) "s" else ""}", ACCENT)
+                    if (sess.running && sess.depth) Hud("profondeur · champ en cours : ${sess.stackPlanes} plan${if (sess.stackPlanes > 1) "s" else ""}${if (sess.holding) " · rafale" else " · touche = plan, doigt posé = rafale"}", ACCENT)
                     Hud("$expo · ISO ${live.iso ?: "?"} · netteté ${sess.sharp.toInt()}")
                     Hud(if (locked) "AF/AE verrouillés" else "AF/AE auto", if (locked) ACCENT else FG)
                     if (up.pendingFiles > 0) Hud("${if (st.autoUpload) "" else "envoi bloqué · "}${up.pendingFiles} en file (${up.pendingBytes shr 20} Mo)${up.lastError?.let { " · $it" } ?: ""}", Color(0xFF1A0F1F), WARN)
@@ -369,13 +375,6 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                         Checkbox(depth, { depth = it; st.setDepthFor(o, it) }, colors = CheckboxDefaults.colors(checkedColor = ACCENT, checkmarkColor = BG, uncheckedColor = MUTED))
                         Text("Profondeur au $o : plusieurs plans par champ", fontSize = 13.sp, color = FG)
                     }
-                    if (depth) {
-                        var burst by remember(o) { mutableStateOf(st.burstFor(o)) }
-                        Row(Modifier.fillMaxWidth().padding(start = 32.dp).clickable { burst = !burst; st.setBurstFor(o, burst) }, verticalAlignment = Alignment.CenterVertically) {
-                            Checkbox(burst, { burst = it; st.setBurstFor(o, it) }, colors = CheckboxDefaults.colors(checkedColor = ACCENT, checkmarkColor = BG, uncheckedColor = MUTED))
-                            Text("Rafale : toutes les couches", fontSize = 13.sp, color = FG)
-                        }
-                    }
                 }
                 val lower = (Regex("\\d+").find(o)?.value?.toIntOrNull() ?: 0) < (Regex("\\d+").find(sess.objective)?.value?.toIntOrNull() ?: 0)
                 Text(if (lower) "Le patron sera centré sur le détail que tu viens de prendre." else "Le patron se posera en haut à gauche, sur la première photo.", color = MUTED, fontSize = 12.sp)
@@ -416,17 +415,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                         Checkbox(depth, { depth = it; st.setDepthFor(obj, it) }, colors = CheckboxDefaults.colors(checkedColor = ACCENT, checkmarkColor = BG, uncheckedColor = MUTED))
                         Column {
                             Text("Profondeur au $obj : plusieurs plans par champ", fontSize = 15.sp, color = FG)
-                            Text("Préparations épaisses : à chaque champ, tourne doucement la vis micrométrique ; une photo part quand une partie devient nette.", fontSize = 12.sp, color = MUTED)
-                        }
-                    }
-                    if (depth) {
-                        var burst by remember(obj) { mutableStateOf(st.burstFor(obj)) }
-                        Row(Modifier.fillMaxWidth().padding(start = 32.dp).clickable { burst = !burst; st.setBurstFor(obj, burst) }, verticalAlignment = Alignment.CenterVertically) {
-                            Checkbox(burst, { burst = it; st.setBurstFor(obj, it) }, colors = CheckboxDefaults.colors(checkedColor = ACCENT, checkmarkColor = BG, uncheckedColor = MUTED))
-                            Column {
-                                Text("Rafale : toutes les couches", fontSize = 15.sp, color = FG)
-                                Text("Une photo toutes les 300 ms tant que la vis tourne (40 au plus par champ), pour la molette de mise au point du site.", fontSize = 12.sp, color = MUTED)
-                            }
+                            Text("Préparations épaisses : à chaque champ, la première photo part seule ; puis touche l'écran pour chaque plan, ou laisse le doigt posé pour une rafale pendant que tu tournes la vis.", fontSize = 12.sp, color = MUTED)
                         }
                     }
                 }
