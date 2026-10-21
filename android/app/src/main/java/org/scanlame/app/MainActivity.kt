@@ -277,6 +277,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     val expo = live.exposureNs?.let { String.format(Locale.ROOT, "%.1f ms", it / 1e6) } ?: "?"
                     Hud(if (cameraOn && bound != null) "${engine.photoSize?.let { "${it.height}x${it.width}" } ?: engine.videoSize?.let { "${it.height}x${it.width}" } ?: ""} · cam ${live.activePhysical ?: "?"}" else "caméra arrêtée")
                     Hud(if (sess.mode == Settings.MODE_VIDEO && sess.running) "vidéo ${sess.bytes shr 20} Mo" else "${sess.photos} photo${if (sess.photos > 1) "s" else ""}${if (sess.blurred > 0) " · ${sess.blurred} floue(s)" else ""}${if (sess.patron != null) " · patron ${(sess.patronFill * 100).roundToInt()} %" else ""}${if (sess.relocations > 0) " · ${sess.relocations} reloc." else ""}${if (sess.bigSteps > 0) " · ${sess.bigSteps} pas trop grand(s)" else ""}", if (sess.blurred > 0) WARN else FG)
+                    if (sess.running && sess.depth) Hud("profondeur · champ en cours : ${sess.stackPlanes} plan${if (sess.stackPlanes > 1) "s" else ""}", ACCENT)
                     Hud("$expo · ISO ${live.iso ?: "?"} · netteté ${sess.sharp.toInt()}")
                     Hud(if (locked) "AF/AE verrouillés" else "AF/AE auto", if (locked) ACCENT else FG)
                     if (up.pendingFiles > 0) Hud("${if (st.autoUpload) "" else "envoi bloqué · "}${up.pendingFiles} en file (${up.pendingBytes shr 20} Mo)${up.lastError?.let { " · $it" } ?: ""}", Color(0xFF1A0F1F), WARN)
@@ -360,6 +361,13 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
             title = { Text("Passer au $o") },
             text = { Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 PatronFields(o, st)
+                if (st.depthAllowed(o)) {
+                    var depth by remember(o) { mutableStateOf(st.depthFor(o)) }
+                    Row(Modifier.fillMaxWidth().clickable { depth = !depth; st.setDepthFor(o, depth) }, verticalAlignment = Alignment.CenterVertically) {
+                        Checkbox(depth, { depth = it; st.setDepthFor(o, it) }, colors = CheckboxDefaults.colors(checkedColor = ACCENT, checkmarkColor = BG, uncheckedColor = MUTED))
+                        Text("Profondeur au $o : plusieurs plans par champ", fontSize = 13.sp, color = FG)
+                    }
+                }
                 val lower = (Regex("\\d+").find(o)?.value?.toIntOrNull() ?: 0) < (Regex("\\d+").find(sess.objective)?.value?.toIntOrNull() ?: 0)
                 Text(if (lower) "Le patron sera centré sur le détail que tu viens de prendre." else "Le patron se posera en haut à gauche, sur la première photo.", color = MUTED, fontSize = 12.sp)
             } },
@@ -392,6 +400,16 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     }
                     val n = Regex("\\d+").find(obj)?.value?.toIntOrNull() ?: 0
                     if (n >= 100) Text("Commence par le plus fort grossissement : au passage au x10, le détail sera au centre du patron.", fontSize = 13.sp, color = MUTED)
+                }
+                if (st.depthAllowed(obj)) {
+                    var depth by remember(obj) { mutableStateOf(st.depthFor(obj)) }
+                    Row(Modifier.fillMaxWidth().clickable { depth = !depth; st.setDepthFor(obj, depth) }, verticalAlignment = Alignment.CenterVertically) {
+                        Checkbox(depth, { depth = it; st.setDepthFor(obj, it) }, colors = CheckboxDefaults.colors(checkedColor = ACCENT, checkmarkColor = BG, uncheckedColor = MUTED))
+                        Column {
+                            Text("Profondeur au $obj : plusieurs plans par champ", fontSize = 15.sp, color = FG)
+                            Text("Préparations épaisses : à chaque champ, tourne doucement la vis micrométrique ; une photo part quand une partie devient nette.", fontSize = 12.sp, color = MUTED)
+                        }
+                    }
                 }
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) { PatronFields(obj, st) }
                 Row(Modifier.fillMaxWidth().clickable { autoCrop = !autoCrop; st.autoCrop = autoCrop }, verticalAlignment = Alignment.CenterVertically) {

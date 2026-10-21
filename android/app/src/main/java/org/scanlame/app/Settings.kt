@@ -58,6 +58,10 @@ class Settings(ctx: Context) {
     var patron: String get() = str("patron", "libre"); set(v) = set("patron", v)       // (ancien reglage global, conserve comme valeur par defaut)
     fun patronFor(obj: String): String = str("patron.$obj", patron)                     // patron par objectif : CxR ou libre
     fun setPatronFor(obj: String, v: String) = set("patron.$obj", v)
+    /** Profondeur (preparations epaisses) : plusieurs plans de mise au point par champ, fusionnes par le pipeline. Seulement au x40 et au-dela. */
+    fun depthAllowed(obj: String) = (Regex("\\d+").find(obj)?.value?.toIntOrNull() ?: 0) >= 40
+    fun depthFor(obj: String): Boolean = depthAllowed(obj) && p.getBoolean("depth.$obj", false)
+    fun setDepthFor(obj: String, v: Boolean) = p.edit().putBoolean("depth.$obj", v).apply()
     var autoCrop: Boolean get() = p.getBoolean("autocrop", true); set(v) = p.edit().putBoolean("autocrop", v).apply()   // rognage au plus grand rectangle couvert a la publication
     var hint: String get() = str("hint", ""); set(v) = set("hint", v)           // "fx,fy" : repère touché sur la lame d'ensemble (fraction de l'image), vidé au départ de la série
     var stageX: String get() = str("stagex", ""); set(v) = set("stagex", v)     // coordonnées de la platine (vernier, mm) à la première photo

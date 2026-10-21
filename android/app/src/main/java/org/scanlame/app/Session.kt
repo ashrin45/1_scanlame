@@ -36,6 +36,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val detailAt: Pair<Double, Double>? = null,
         val patron: DoubleArray? = null, val patronFill: Float = 0f,
         val relocations: Int = 0, val reinforce: Boolean = false,
+        val stackPlanes: Int = 0, val depth: Boolean = false,   // profondeur : plans pris au champ en cours
         val discFill: Float = 0f, val discOff: Float = 1f, val sharpPeak: Float = 0f   // pre-controle : disque de l'oculaire (fraction du cadre, ecart du centre), nettete de pointe sur 5 s   // relocalisations du suivi ; mode renforcer (photos bonus)   // rectangle cible [x0,y0,w,h] dans le repere des positions, et fraction remplie   // position (repere courant) du dernier champ pris au plus fort grossissement, apres passage a un objectif plus faible   // derniere photo : -1 aucune, 0 bonne, 1 moyenne, 2 ratee (floue, suivi perdu ou pas trop grand) ; horodatage pour le clignotement du cadre
     )
     val state = MutableStateFlow(State())
@@ -114,6 +115,30 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
     }
     @Volatile var lastContent = 0f   // energie du gradient de la derniere image analysee (richesse du champ)
 
+    /** Netteté par zone (grille 4 x 4 du carré 256) : énergie du laplacien / énergie du gradient, et énergie du gradient (contenu).
+     *  Sert au mode profondeur : une photo part quand une partie du champ devient nettement plus nette que dans les plans déjà pris. */
+    private fun zoneSharp(g: FloatArray): Pair<FloatArray, FloatArray> {
+        val S = Tracker.S2; val Z = 4; val zs = S / Z
+        val l2 = DoubleArray(Z * Z); val g2 = DoubleArray(Z * Z); val nn = IntArray(Z * Z)
+        var y = 1
+        while (y < S - 1) {
+            var x = 1
+            while (x < S - 1) {
+                val c = g[y * S + x]
+                val l = 4 * c - g[y * S + x - 1] - g[y * S + x + 1] - g[(y - 1) * S + x] - g[(y + 1) * S + x]
+                val gx = g[y * S + x + 1] - g[y * S + x - 1]; val gy = g[(y + 1) * S + x] - g[(y - 1) * S + x]
+                val z = (y / zs).coerceAtMost(Z - 1) * Z + (x / zs).coerceAtMost(Z - 1)
+                l2[z] += (l * l).toDouble(); g2[z] += (gx * gx + gy * gy).toDouble(); nn[z]++
+                x += 2
+            }
+            y += 2
+        }
+        val sh = FloatArray(Z * Z) { (100.0 * l2[it] / (g2[it] + 1e-3)).toFloat() }
+        val ct = FloatArray(Z * Z) { kotlin.math.sqrt(g2[it] / maxOf(1, nn[it])).toFloat() }
+        return sh to ct
+    }
+    private var stackId = 0; private var stackPlanes = 0; private val zoneBest = FloatArray(16)
+
     private fun makeMask(g: FloatArray): ByteArray {
         val sorted = g.copyOf(); sorted.sort()
         val p95 = sorted[(sorted.size * 0.95).toInt()]
@@ -177,7 +202,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         if (markDetail && f.status != "lost") { markDetail = false; state.value = state.value.copy(detailAt = px to py) }
         liveWarn = when {
             exposureNote.isNotEmpty() -> exposureNote
-            sharpRef > 0 && still && sh < 0.5f * sharpRef -> "flou : retouche la vis micrométrique"
+            sharpRef > 0 && still && sh < 0.5f * sharpRef && !st.depthFor(s.objective) -> "flou : retouche la vis micrométrique"
             else -> ""
         }
         // declenchement : a l'arret (nouvel endroit), ou, platine en mouvement lent, des que la distance a la derniere photo atteint stepFrac du champ
@@ -188,15 +213,34 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         if ((still || byDistance) && s.mode == Settings.MODE_PHOTOS && !shooting) {
             val ls = lastShot
             val gap = if (ls == null) 0.0 else hypot(f.x - ls.first, f.y - ls.second)
-            val far = ls == null || gap >= 10.0   // ~4 % du champ : nouvel arrêt
+            val depthNow = st.depthFor(s.objective)
+            // en profondeur, la vis micrometrique decale un peu l'image : meme champ jusqu'a 15 % du cadre
+            val far = ls == null || gap >= (if (depthNow) 0.15 * Tracker.S2 else 10.0)   // ~4 % du champ : nouvel arrêt
+            val zones = if (depthNow) zoneSharp(g) else null
             if (far) {
+                if (depthNow && zones != null) { stackId++; stackPlanes = 0; zones.first.copyInto(zoneBest) }
                 if (byDistance && !still) Journal.log("photo en mouvement lent (${(100 * gap / Tracker.S2).roundToInt()} % du champ, ${speed.roundToInt()} u/s)")
                 // pas trop grand entre deux arrêts : au-dela de 70 % du champ, les photos ne se recouvrent plus assez pour l'assemblage
                 bigStepPending = gap > 0.7 * Tracker.S2
                 if (gap > 0.7 * Tracker.S2) { nBigSteps++; Journal.log("ATTENTION pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recouvrement insuffisant"); state.value = state.value.copy(message = "Pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recule d'un demi-champ, les photos doivent se recouvrir d'au moins 30 %.") }
                 else if (state.value.message.startsWith("Pas trop grand")) state.value = state.value.copy(message = "Série en cours : déplace la platine d'un demi-champ, arrête-toi, une photo part à chaque arrêt.")
-                shoot(f, px, py, t, sh, img)
-            } else if (still && lastShotSharp > 0 && sh > 1.3f * lastShotSharp && retakes < 3 && now() - lastShotT > 900 && abs(sh - prevSharp) < 0.08f * sh) {
+                shoot(f, px, py, t, sh, img, stack = if (depthNow) stackId else null)
+            } else if (depthNow && zones != null && still && stackPlanes in 1 until 12 && now() - lastShotT > 500 && abs(sh - prevSharp) < 0.10f * sh) {
+                // profondeur : meme champ, une partie de l'image (zone avec du contenu, dans le disque) devient nettement plus nette que dans tous les plans deja pris
+                val (zs, zc) = zones; val med = zc.sorted()[8]; val mk = mask256
+                var up = 0; var strong = false
+                for (z in 0 until 16) {
+                    if (zc[z] < 0.3f * med || zc[z] < 2f) continue
+                    if (mk != null) { val cy = (z / 4) * 64 + 32; val cx = (z % 4) * 64 + 32; if (mk[cy * Tracker.S2 + cx].toInt() == 0) continue }
+                    val r = zs[z] / maxOf(zoneBest[z], 1e-3f)
+                    if (r > 1.25f) up++; if (r > 1.6f) strong = true
+                }
+                if (up >= 2 || strong) {
+                    for (z in 0 until 16) zoneBest[z] = maxOf(zoneBest[z], zs[z])
+                    Journal.log("profondeur : pile $stackId, plan ${stackPlanes + 1} ($up zone(s) plus nette(s)${if (strong) ", nettement" else ""}, netteté ${sh.roundToInt()})")
+                    shoot(f, px, py, t, sh, img, stack = stackId)
+                }
+            } else if (!depthNow && still && lastShotSharp > 0 && sh > 1.3f * lastShotSharp && retakes < 3 && now() - lastShotT > 900 && abs(sh - prevSharp) < 0.08f * sh) {
                 // meme endroit, nettete nettement meilleure et stabilisee : la vis micrometrique a ete retouchee -> nouvelle photo (le pipeline garde la plus nette)
                 retakes++
                 Journal.log("reprise de mise au point au même endroit : netteté ${sh.roundToInt()} contre ${lastShotSharp.roundToInt()} (reprise $retakes)")
@@ -206,7 +250,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         prevSharp = sh
         state.value = state.value.copy(track = f.status, score = f.score, posX = px, posY = py, sharp = sh, still = still, samples = sampleSeq,
             elapsedMs = t, placed = synchronized(placed) { ArrayList<Placed>(placedPhotos.size + placed.size).apply { addAll(placedPhotos); addAll(placed) } }, trackMs = ms, fps = fpsAcc, shooting = shooting,
-            warn = liveWarn, sharpRef = sharpRef, blurred = nBlurred, bigSteps = nBigSteps, exposure = exposureNote, relocations = tracker.relocations)
+            warn = liveWarn, sharpRef = sharpRef, blurred = nBlurred, bigSteps = nBigSteps, exposure = exposureNote, relocations = tracker.relocations,
+            stackPlanes = stackPlanes, depth = st.depthFor(s.objective))
     }
 
     /** Vignette couleur 48 x 48 tirée des plans YUV de l'image d'analyse, redressée comme le gris (carte de couverture). */
@@ -266,8 +311,28 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
 
     fun setReinforce(on: Boolean) { state.value = state.value.copy(reinforce = on); Journal.log(if (on) "mode renforcer : photos bonus (le pipeline garde la plus nette dans les recouvrements)" else "mode renforcer désactivé") }
 
-    private fun shoot(f: Tracker.Frame, px: Double, py: Double, t: Long, sh: Float, img: ImageProxy, retake: Boolean = false) {
+    private fun shoot(f: Tracker.Frame, px: Double, py: Double, t: Long, sh: Float, img: ImageProxy, retake: Boolean = false, stack: Int? = null) {
         val dir = seriesDir ?: return
+        val plane = if (stack != null) stackPlanes else 0     // 0 = premier plan du champ ; les suivants sont des plans de mise au point
+        if (stack != null) stackPlanes++
+        if (plane > 0) {
+            // plan de mise au point supplementaire : ni note de nettete (il est flou ailleurs par construction), ni case sur la carte
+            shooting = true; lastShotT = now()
+            seq++
+            val name = "${state.value.seriesId}_${String.format(Locale.ROOT, "%04d", seq)}.jpg"
+            val file = File(File(dir, "photos").apply { mkdirs() }, name)
+            val tt = now()
+            engine.takePhoto(file) { ok, err ->
+                shooting = false
+                if (ok) {
+                    synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("stack", stack).put("plane", plane).put("enc_ms", now() - tt).put("sharp", sh.toDouble())) }
+                    state.value = state.value.copy(photos = seq, bytes = state.value.bytes + file.length())
+                    Journal.log("plan ${name.takeLast(8, 4)} (pile $stack, plan ${plane + 1}, ${file.length() shr 10} ko)")
+                    Uploader.kick(ctx)
+                } else { seq--; Journal.log("ERREUR plan de mise au point : $err") }
+            }
+            return
+        }
         val th = thumbColor(img)   // avant la photo : le tampon d'analyse est réutilisé par l'image suivante
         // reference de nettete : mediane des 5 meilleures photos de la serie ; une photo sous 50 % est notee floue, sous 70 % douce
         photoSharps.add(sh); val best = photoSharps.sortedDescending().take(5); sharpRef = best[best.size / 2]
@@ -288,7 +353,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             shooting = false
             if (ok) {
                 val len = file.length()
-                synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("retake", retake).put("bonus", state.value.reinforce).put("enc_ms", now() - tt).put("sharp", sh.toDouble())) }
+                synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("retake", retake).put("bonus", state.value.reinforce).put("enc_ms", now() - tt).put("sharp", sh.toDouble()).apply { if (stack != null) { put("stack", stack); put("plane", 0) } }) }
                 synchronized(placed) { placedPhotos.add(Placed(px, py, f.status, true, th, grade, state.value.reinforce)) }
                 val patronSpec = st.patronFor(state.value.objective)
                 if (state.value.patron == null && patronSpec != "libre") {
@@ -340,14 +405,15 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val obj = sw.getString("objective"); val t = tnow()
         val cal = st.umPerPx(obj)
         segments.add(JSONObject().put("objective", obj).put("t0", t).put("t1", JSONObject.NULL).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL)
-            .put("from_x", sw.opt("from_x")).put("from_y", sw.opt("from_y")).put("from_track", sw.opt("from_track")).put("patron", st.patronFor(obj).takeIf { it != "libre" } ?: JSONObject.NULL))
+            .put("from_x", sw.opt("from_x")).put("from_y", sw.opt("from_y")).put("from_track", sw.opt("from_track")).put("patron", st.patronFor(obj).takeIf { it != "libre" } ?: JSONObject.NULL)
+            .put("depth", st.depthFor(obj)))
         // si on passe a un grossissement plus faible, le point de depart du nouveau repere est l'emplacement du detail : repere sur la carte
         val prevObj = Regex("\\d+").find(segments.getOrNull(segments.size - 2)?.optString("objective") ?: "")?.value?.toIntOrNull() ?: 0
         val newObj = Regex("\\d+").find(obj)?.value?.toIntOrNull() ?: 0
         markDetail = prevObj > newObj
         state.value = state.value.copy(detailAt = null, patron = null, patronFill = 0f)   // nouveau repere : le patron se repose a la premiere photo du nouvel objectif
         // nouvel objectif = nouvelle reference de nettete (celle du x10 n'a rien a voir avec celle du x100) ; le cadre repart neutre
-        photoSharps.clear(); sharpRef = 0f; bigStepPending = false; lastShot = null
+        photoSharps.clear(); sharpRef = 0f; bigStepPending = false; lastShot = null; stackPlanes = 0
         state.value = state.value.copy(lastGrade = -1, sharpRef = 0f)
         st.objective = obj
         tracker = Tracker(); synchronized(placed) { placed.clear(); placedPhotos.clear() }; lastPos = null; lastShot = null; stillSince = 0L
@@ -372,12 +438,12 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val id = "lame_${stamp()}${slug(title).takeIf { it.isNotEmpty() }?.let { "_$it" } ?: ""}"
         t0 = now(); seq = 0; sampleSeq = 0; frameCount = 0
         tracker = Tracker(); synchronized(placed) { placed.clear(); placedPhotos.clear() }; lastPos = null; lastShot = null; stillSince = 0L; shooting = false
-        sharpRef = 0f; nBlurred = 0; nBigSteps = 0; photoSharps.clear(); exposureNote = ""; liveWarn = ""; mask256 = null
+        sharpRef = 0f; nBlurred = 0; nBigSteps = 0; photoSharps.clear(); exposureNote = ""; liveWarn = ""; mask256 = null; stackId = 0; stackPlanes = 0
         while (frames.length() > 0) frames.remove(0)
         while (phases.length() > 0) phases.remove(0)
         segments.clear(); curBlank = null; switching = null
         val cal = st.umPerPx(st.objective)
-        segments.add(JSONObject().put("objective", st.objective).put("t0", 0).put("t1", JSONObject.NULL).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL))
+        segments.add(JSONObject().put("objective", st.objective).put("t0", 0).put("t1", JSONObject.NULL).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL).put("depth", st.depthFor(st.objective)))
         // taille du média (portrait) = unité des positions
         val sz = if (mode == Settings.MODE_VIDEO) engine.videoSize else engine.photoSize
         val rot = lastRot   // rotation appliquée par ffmpeg (métadonnée mp4) et par EXIF (photos) : positions dans l'image redressée
