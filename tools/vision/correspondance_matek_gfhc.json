@@ -1,0 +1,36 @@
+{
+ "_commentaire": "Correspondance entre les 21 codes du jeu Matek 2021 (moelle, MLL Munich) et la nomenclature GFHC de vision_ia/taxonomy.py. 'exact' : meme definition ; 'approx' : classe voisine, a interpreter avec prudence ; null : aucune classe en face.",
+ "matek_vers_gfhc": {
+  "NGS": {"cle": "pnn_segmente", "niveau": "exact", "lignee": "granuleux"},
+  "NGB": {"cle": "pnn_non_segmente", "niveau": "exact", "lignee": "granuleux"},
+  "EOS": {"cle": "pne", "niveau": "exact", "lignee": "granuleux"},
+  "ABE": {"cle": "pne", "niveau": "approx", "lignee": "granuleux", "note": "eosinophile anormal, pas de classe GFHC dediee"},
+  "BAS": {"cle": "pnb", "niveau": "exact", "lignee": "granuleux"},
+  "LYT": {"cle": "lymphocyte", "niveau": "exact", "lignee": "mononuc"},
+  "LYI": {"cle": null, "niveau": null, "lignee": "mononuc", "note": "lymphocyte immature, ni lymphocyte ni blaste au sens GFHC"},
+  "MON": {"cle": "monocyte", "niveau": "exact", "lignee": "mononuc"},
+  "PLM": {"cle": "plasmocyte", "niveau": "exact", "lignee": "mononuc"},
+  "BLA": {"cle": "blaste", "niveau": "exact", "lignee": "immature"},
+  "PMO": {"cle": "promyelocyte", "niveau": "exact", "lignee": "immature"},
+  "FGC": {"cle": "promyelocyte", "niveau": "approx", "lignee": "immature", "note": "cellule en fagot, promyelocyte anormal de LAP"},
+  "MYB": {"cle": "myelocyte", "niveau": "exact", "lignee": "immature"},
+  "MMZ": {"cle": "metamyelocyte", "niveau": "exact", "lignee": "immature"},
+  "HAC": {"cle": "tricholeucocyte", "niveau": "exact", "lignee": "immature"},
+  "EBO": {"cle": "erythroblaste", "niveau": "approx", "lignee": "erythro", "note": "Matek ne distingue pas les stades : fusionner erythroblaste_baso, _poly et _acido pour comparer"},
+  "PEB": {"cle": "erythroblaste_baso", "niveau": "approx", "lignee": "erythro", "note": "proerythroblaste, stade le plus proche de l'erythroblaste basophile"},
+  "KSC": {"cle": "ombre_gumprecht", "niveau": "exact", "lignee": "autre"},
+  "ART": {"cle": "artefact", "niveau": "exact", "lignee": "autre"},
+  "NIF": {"cle": "artefact", "niveau": "approx", "lignee": "autre", "note": "non identifiable"},
+  "OTH": {"cle": null, "niveau": null, "lignee": "autre", "note": "autre cellule"}
+ },
+ "gfhc_vers_matek": {
+  "pnn_segmente": "NGS", "pnn_non_segmente": "NGB", "pne": "EOS", "pnb": "BAS",
+  "lymphocyte": "LYT", "lymphocyte_active": null, "lgl": null, "monocyte": "MON", "plasmocyte": "PLM",
+  "blaste": "BLA", "promyelocyte": "PMO", "myelocyte": "MYB", "metamyelocyte": "MMZ", "promonocyte": null,
+  "cellule_lymphomateuse": null, "tricholeucocyte": "HAC", "mastocyte": null,
+  "erythroblaste_acido": "EBO", "erythroblaste_poly": "EBO", "erythroblaste_baso": "EBO",
+  "ombre_gumprecht": "KSC", "amas_plaquettaire": null, "plaquette_geante": null, "megacaryocyte": null, "artefact": "ART"
+ },
+ "sans_equivalent_gfhc": ["lymphocyte_active", "lgl", "promonocyte", "cellule_lymphomateuse", "mastocyte", "amas_plaquettaire", "plaquette_geante", "megacaryocyte"],
+ "sans_equivalent_matek": ["LYI", "OTH"]
+}

@@ -459,5 +459,12 @@
    26577,
    6886
   ]
- ]
+ ],
+ "cellules": {
+  "n": 481,
+  "validees": 36,
+  "propositions": 445,
+  "bord": 36,
+  "comptees": 24
+ }
 }

@@ -113,7 +113,7 @@ def write_pages(slug):
             .replace('__SLUG_TXT__', html.escape(slug)).replace('__SLUG__', json.dumps(slug)).replace('__W__', str(W)).replace('__H__', str(H)).replace('__TILE__', str(j['tile'])).replace('__MAXLVL__', str(j['maxlvl']))
             .replace('__FIELDS__', json.dumps(fields, separators=(',', ':'))).replace('__UMPX__', json.dumps(j.get('um_per_px')))
             .replace('__ZSTACK__', json.dumps(dict(levels=j['zstack'], tiles=j['zstack_tiles']) if j.get('zstack') else None))
-            .replace('__QUALITY__', json.dumps(q, ensure_ascii=False)).replace('__CHILDREN__', json.dumps(children, ensure_ascii=False))
+            .replace('__QUALITY__', json.dumps(q, ensure_ascii=False)).replace('__CELLS__', json.dumps(j.get('cellules') if os.path.isfile(os.path.join(out, 'cellules.json')) else None)).replace('__CHILDREN__', json.dumps(children, ensure_ascii=False))
             .replace('__PARENT__', json.dumps(parent, ensure_ascii=False)))
     open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(page)
 
@@ -136,7 +136,7 @@ def write_offline_zip(slug, out_zip):
         z.write(osd, f'{slug}/openseadragon.min.js')
         z.writestr(f'{slug}/LISEZMOI.txt', f'Lame « {slug} » de ScanLame.\nOuvrir index.html dans un navigateur (double-clic) : zoom, déplacement, champs, qualité, hors ligne.\n'
                    'lame.json : métadonnées (taille, objectif, µm/px) ; fields.json : position de chaque photo ; lame_files/ : tuiles Deep Zoom (le dernier niveau = pleine résolution).\n')
-        for f in ('lame.json', 'fields.json', 'lame.dzi'):
+        for f in ('lame.json', 'fields.json', 'lame.dzi', 'cellules.json'):
             if os.path.isfile(os.path.join(d, f)): z.write(os.path.join(d, f), f'{slug}/{f}')
         tiles = os.path.join(d, 'lame_files')
         for root, _, files in os.walk(tiles):
@@ -151,7 +151,7 @@ def write_gallery():
             thumb = f'{d}/lame_files/{max(0, j["maxlvl"] - 4)}/0_0.jpg'
             items.append(dict(slug=d, title=j['title'], width=j['width'], height=j['height'], stain=j.get('stain'), objective=j.get('objective'),
                               sample=j.get('sample'), captured=j.get('captured'), um_per_px=j.get('um_per_px'), grade=(j.get('quality') or {}).get('grade'),
-                              zstack=j.get('zstack') or 0, parent=j.get('parent'), children=[c['slug'] for c in (j.get('children') or [])], thumb=thumb, tile=j.get('tile'), maxlvl=j.get('maxlvl'),
+                              zstack=j.get('zstack') or 0, parent=j.get('parent'), children=[c['slug'] for c in (j.get('children') or [])], thumb=thumb, tile=j.get('tile'), maxlvl=j.get('maxlvl'), cellules=j.get('cellules'),
                               published=j.get('published'), updated=j.get('updated'), series=j.get('series'), version=j.get('version') or 1, params=j.get('params')))
     json.dump(items, open(os.path.join(LAMES, 'lames.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     tpl = open(os.path.join(ROOT, 'tools', 'gallery_template.html'), encoding='utf-8').read()
@@ -206,7 +206,7 @@ def main():
              stain=layout.get('stain'), objective=layout.get('objective'), sample=layout.get('sample'), comment=layout.get('comment'),
              captured=captured or old.get('captured') or datetime.date.today().strftime('%d/%m/%Y'),
              parent=layout.get('parent') or old.get('parent'), parent_transform=layout.get('parent_transform') or old.get('parent_transform'), parent_anchored=layout.get('parent_anchored') if layout.get('parent_transform') else old.get('parent_anchored'), parent_approx=old.get('parent_approx'),
-             outline=old.get('outline'), hint=layout.get('hint') or old.get('hint'), stage=layout.get('stage') or old.get('stage'), stage_cal=old.get('stage_cal'), stage_obs=old.get('stage_obs'),
+             outline=old.get('outline'), cellules=old.get('cellules'), hint=layout.get('hint') or old.get('hint'), stage=layout.get('stage') or old.get('stage'), stage_cal=old.get('stage_cal'), stage_obs=old.get('stage_obs'),
              children=old.get('children') or [], quality=layout.get('quality'),
              series=layout.get('series') or old.get('series'), version=layout.get('version') or old.get('version') or 1, params=layout.get('params') or old.get('params'),
              published=old.get('published') or datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),

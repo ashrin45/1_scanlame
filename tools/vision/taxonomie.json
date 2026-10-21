@@ -1,0 +1,207 @@
+[
+ {
+  "group": "granuleux",
+  "group_label": "Polynucleaires",
+  "classes": [
+   {
+    "key": "pnn_segmente",
+    "label": "Polynucleaire neutrophile segmente",
+    "abbrev": "PNN",
+    "hint": "Noyau en 2 a 5 lobes relies par un filament fin.",
+    "criticality": 1
+   },
+   {
+    "key": "pnn_non_segmente",
+    "label": "Polynucleaire neutrophile non segmente",
+    "abbrev": "PNN-NS",
+    "hint": "Noyau en bande / fer a cheval, sans filament. Largeur du pont > 1/3 du lobe.",
+    "criticality": 2
+   },
+   {
+    "key": "pne",
+    "label": "Polynucleaire eosinophile",
+    "abbrev": "PNE",
+    "hint": "Granulations orangees refringentes, noyau souvent bilobe.",
+    "criticality": 1
+   },
+   {
+    "key": "pnb",
+    "label": "Polynucleaire basophile",
+    "abbrev": "PNB",
+    "hint": "Granulations violet-noir grossieres masquant le noyau.",
+    "criticality": 2
+   }
+  ]
+ },
+ {
+  "group": "mononuc",
+  "group_label": "Mononuclees",
+  "classes": [
+   {
+    "key": "lymphocyte",
+    "label": "Lymphocyte",
+    "abbrev": "LY",
+    "hint": "Petite cellule, noyau dense, cytoplasme rare et peu basophile.",
+    "criticality": 1
+   },
+   {
+    "key": "lymphocyte_active",
+    "label": "Lymphocyte active (hyperbasophile)",
+    "abbrev": "LY-A",
+    "hint": "Cytoplasme abondant tres basophile, moulage sur les hematies voisines.",
+    "criticality": 3
+   },
+   {
+    "key": "lgl",
+    "label": "Lymphocyte a grains (LGL)",
+    "abbrev": "LGL",
+    "hint": "Grains azurophiles fins, cytoplasme plus abondant qu'un lymphocyte.",
+    "criticality": 2
+   },
+   {
+    "key": "monocyte",
+    "label": "Monocyte",
+    "abbrev": "MONO",
+    "hint": "Noyau contourne/reniforme, cytoplasme gris-bleu vacuole.",
+    "criticality": 2
+   },
+   {
+    "key": "plasmocyte",
+    "label": "Plasmocyte",
+    "abbrev": "PLASMO",
+    "hint": "Noyau excentre en roue de charrette, archoplasme clair perinucleaire.",
+    "criticality": 2
+   }
+  ]
+ },
+ {
+  "group": "immature",
+  "group_label": "Cellules immatures / anormales",
+  "classes": [
+   {
+    "key": "blaste",
+    "label": "Blaste",
+    "abbrev": "BLASTE",
+    "hint": "Chromatine fine, nucleoles visibles, rapport N/C eleve. URGENCE.",
+    "criticality": 3
+   },
+   {
+    "key": "promyelocyte",
+    "label": "Promyelocyte",
+    "abbrev": "PROMYELO",
+    "hint": "Grosses granulations azurophiles, archoplasme, nucleole souvent visible.",
+    "criticality": 3
+   },
+   {
+    "key": "myelocyte",
+    "label": "Myelocyte",
+    "abbrev": "MYELO",
+    "hint": "Noyau rond/ovale non indente, granulations specifiques presentes.",
+    "criticality": 2
+   },
+   {
+    "key": "metamyelocyte",
+    "label": "Metamyelocyte",
+    "abbrev": "METAMYELO",
+    "hint": "Noyau indente (< 1/2 du diametre), chromatine condensee.",
+    "criticality": 2
+   },
+   {
+    "key": "promonocyte",
+    "label": "Promonocyte",
+    "abbrev": "PROMONO",
+    "hint": "Noyau finement plisse, chromatine intermediaire.",
+    "criticality": 3
+   },
+   {
+    "key": "cellule_lymphomateuse",
+    "label": "Cellule lymphomateuse",
+    "abbrev": "LYMPHOM",
+    "hint": "Population monomorphe anormale, contours nucleaires irreguliers.",
+    "criticality": 3
+   },
+   {
+    "key": "tricholeucocyte",
+    "label": "Tricholeucocyte",
+    "abbrev": "TRICHO",
+    "hint": "Expansions cytoplasmiques chevelues sur tout le pourtour.",
+    "criticality": 3
+   },
+   {
+    "key": "mastocyte",
+    "label": "Mastocyte",
+    "abbrev": "MASTO",
+    "hint": "Granulations tres denses, noyau rond central.",
+    "criticality": 2
+   }
+  ]
+ },
+ {
+  "group": "erythro",
+  "group_label": "Lignee erythroide",
+  "classes": [
+   {
+    "key": "erythroblaste_acido",
+    "label": "Erythroblaste acidophile",
+    "abbrev": "EB-A",
+    "hint": "Noyau pycnotique tres dense, cytoplasme rose. A deduire du compte leucocytaire.",
+    "criticality": 2
+   },
+   {
+    "key": "erythroblaste_poly",
+    "label": "Erythroblaste polychromatophile",
+    "abbrev": "EB-P",
+    "hint": "Cytoplasme gris-bleu, chromatine en mottes.",
+    "criticality": 2
+   },
+   {
+    "key": "erythroblaste_baso",
+    "label": "Erythroblaste basophile",
+    "abbrev": "EB-B",
+    "hint": "Cytoplasme franchement bleu, chromatine encore fine.",
+    "criticality": 2
+   }
+  ]
+ },
+ {
+  "group": "autre",
+  "group_label": "Plaquettes, artefacts, autres",
+  "classes": [
+   {
+    "key": "ombre_gumprecht",
+    "label": "Ombre de Gumprecht",
+    "abbrev": "OMBRE",
+    "hint": "Noyau eclate sans membrane. A signaler, ne pas compter dans la formule.",
+    "criticality": 2
+   },
+   {
+    "key": "amas_plaquettaire",
+    "label": "Amas plaquettaire",
+    "abbrev": "AMAS-PLQ",
+    "hint": "Cause classique de fausse thrombopenie. A signaler.",
+    "criticality": 2
+   },
+   {
+    "key": "plaquette_geante",
+    "label": "Plaquette geante",
+    "abbrev": "PLQ-G",
+    "hint": "Diametre proche d'une hematie.",
+    "criticality": 1
+   },
+   {
+    "key": "megacaryocyte",
+    "label": "Megacaryocyte / noyau nu",
+    "abbrev": "MEGA",
+    "hint": "Tres grande cellule polylobee, rare sur sang peripherique.",
+    "criticality": 2
+   },
+   {
+    "key": "artefact",
+    "label": "Artefact / non identifiable",
+    "abbrev": "ARTEFACT",
+    "hint": "Cellule ecrasee, superposee ou hors focus. Reponse legitime.",
+    "criticality": 1
+   }
+  ]
+ }
+]

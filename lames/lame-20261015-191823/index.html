@@ -43,6 +43,23 @@ button .g { display: inline-block; min-width: 16px; padding: 0 4px; border-radiu
 .zctl input { width: 110px; accent-color: var(--accent); margin: 0; }
 .zctl b { color: var(--fg); font-weight: 500; min-width: 7.5em; }
 #viewer { flex: 1 1 auto; min-height: 0; background: var(--stage); position: relative; }
+#cpanel { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); top: 12px; z-index: 6; width: min(340px, calc(100vw - 32px)); max-height: calc(100% - 90px); overflow: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 13px var(--font-ui); color: var(--fg); display: flex; flex-direction: column; gap: 8px; }
+#cpanel h3 { margin: 0; font: 600 14px var(--font-ui); }
+#cpanel .row { display: flex; justify-content: space-between; gap: 8px; align-items: center; min-height: 26px; }
+#cpanel .cls { display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 2px 4px; border-radius: 6px; }
+#cpanel .cls:hover { background: rgba(127,127,127,.12); }
+#cpanel .cls.off { opacity: .4; }
+#cpanel .sw { width: 12px; height: 12px; border-radius: 3px; flex: 0 0 auto; }
+#cpanel .n { font: 12px var(--font-data); margin-left: auto; }
+#cpanel .grp { font: 600 11px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; opacity: .7; margin-top: 4px; }
+#cpanel .msg { font-size: 12px; opacity: .8; }
+#cfiche { position: absolute; right: max(12px, env(safe-area-inset-right, 0px)); bottom: max(60px, env(safe-area-inset-bottom, 0px)); z-index: 7; width: min(300px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 13px var(--font-ui); color: var(--fg); display: flex; flex-direction: column; gap: 6px; }
+#cfiche b.cl { font-size: 15px; }
+#cfiche .k { opacity: .7; }
+svg.cells polygon { fill-opacity: .08; stroke-width: 2px; vector-effect: non-scaling-stroke; cursor: pointer; }
+svg.cells polygon.prop { stroke-dasharray: 6 4; }
+svg.cells polygon.bord { opacity: .45; }
+svg.cells polygon.sel { stroke-width: 4px; fill-opacity: .25; }
 #epanel { position: absolute; right: max(12px, env(safe-area-inset-right, 0px)); top: 12px; z-index: 7; width: min(340px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 13px var(--font-ui); color: var(--fg); display: flex; flex-direction: column; gap: 8px; }
 #epanel input { font: 13px var(--font-data); padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--fg); width: 100%; box-sizing: border-box; }
 #epanel .row { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -86,6 +103,7 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
     <button id="fields" aria-pressed="false">Champs</button>
     <button id="qbtn" aria-pressed="false" hidden>Qualité<span class="g" id="qg"></span></button>
     <button id="kids" aria-pressed="true" hidden>Détails</button>
+    <button id="cellsbtn" aria-pressed="false" hidden>Cellules<span class="g" id="cellsn"></span></button>
     <button id="editbtn" aria-pressed="false" title="Rogner ou supprimer cette lame">Modifier</button>
     <label class="zctl" id="zctl" hidden><span>profondeur</span><input id="zr" type="range" min="0" max="1" value="0" step="1" aria-label="Plan de profondeur"><b id="zl">net partout</b></label>
   </div>
@@ -94,6 +112,8 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
   <div class="hud" id="hud">zoom 1.00×</div>
   <div id="bar" hidden><i></i><span></span></div>
   <div id="qpanel" hidden></div>
+  <div id="cpanel" hidden></div>
+  <div id="cfiche" hidden></div>
   <div id="epanel" hidden>
     <b>Modifier la lame</b>
     <input id="eurl" placeholder="URL du serveur (…/functions/v1/scanlame)" autocomplete="off">
@@ -118,6 +138,7 @@ const ZSTACK = null;      // {levels, tiles:[...]} ou null
 const QUALITY = {"grade": "C", "notes": ["recalage imprécis (17.8 px)", "4 trou(s) dans la couverture (7 %)", "128 champ(s) placé(s) sans recalage fin"], "frames": {"candidates": 386, "blurred": 49, "selected": 177, "used": 142, "tracked_only": 128}, "residual_px": 17.82, "residual_max_px": 365.62, "holes": [[[2016, 8192], [2024, 8672], [2320, 8672], [2328, 8648], [2776, 8632], [2784, 8616], [3272, 8616], [3280, 8584], [3544, 8576], [3552, 8560], [4088, 8560], [4088, 8192], [3408, 8192], [3392, 8440], [2800, 8440], [2792, 8192]], [[3160, 9440], [3160, 9560], [3656, 9560], [3656, 9400], [3392, 9392], [3376, 9432]], [[3760, 9720], [3760, 10232], [4088, 10232], [4088, 9720]], [[2792, 9872], [2792, 10264], [3144, 10240], [3144, 9872]]], "holes_frac": 0.0678, "coverage_px": 16563496, "coverage_mm2": null, "low_sharp_frac": 0.0, "gain_spread_pct": 1.7, "flat_field": "estimé", "k1": -0.018, "zstack_fields": 0, "zstack_levels": 0};    // rapport du pipeline ({} si absent)
 const CHILDREN = [];  // lames de détail (autre objectif) recalées dans celle-ci
 const PARENT = null;      // lame d'ensemble, si celle-ci est un détail
+const CELLS = null;        // effectifs du calque « Cellules » ({n, validees, ...}) ou null : le détail est dans cellules.json
 const svgNS = 'http://www.w3.org/2000/svg';
 const $ = id => document.getElementById(id);
 
@@ -277,6 +298,76 @@ viewer.addHandler('zoom', updateHud);
 viewer.addHandler('animation', updateHud);
 viewer.addHandler('animation-finish', updateHud);
 viewer.addHandler('open', updateHud);
+
+// ---- calque « Cellules » : contours de la segmentation, couleur par lignée, pointillé = proposition non validée ----
+if (CELLS && CELLS.n) {
+  $('cellsbtn').hidden = false; $('cellsn').textContent = CELLS.validees ? `${CELLS.validees} / ${CELLS.n}` : String(CELLS.n);
+  let data = null, on = false, hidden = new Set(), selected = null;
+  const svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'cells'); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%'); svg.style.overflow = 'visible';
+  const colorOf = c => {
+    const key = c.classe || (c.propose && c.propose.cle);
+    if (!key) return '#8a8290';
+    const g = data.taxonomie.find(g => g.classes.some(k => k.key === key));
+    return g ? g.color : '#8a8290';
+  };
+  const labelOf = key => { for (const g of data.taxonomie) { const k = g.classes.find(k => k.key === key); if (k) return k.label; } return key || '?'; };
+  const abbrOf = key => { for (const g of data.taxonomie) { const k = g.classes.find(k => k.key === key); if (k) return k.abbrev; } return key || '?'; };
+  const groupOf = key => { const g = data.taxonomie.find(g => g.classes.some(k => k.key === key)); return g ? g.group : 'sans'; };
+  function draw() {
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    for (const c of data.cellules) {
+      const key = c.classe || (c.propose && c.propose.cle) || null;
+      if (hidden.has(key ? groupOf(key) : 'sans')) continue;
+      const p = document.createElementNS(svgNS, 'polygon');
+      p.setAttribute('points', c.p.map(q => q.join(',')).join(' '));
+      const col = colorOf(c); p.setAttribute('stroke', col); p.setAttribute('fill', col);
+      p.setAttribute('class', (c.classe ? '' : 'prop') + (c.bord ? ' bord' : '') + (selected === c.id ? ' sel' : ''));
+      p.addEventListener('click', ev => { ev.stopPropagation(); selected = c.id; fiche(c); draw(); });
+      svg.appendChild(p);
+    }
+  }
+  function fiche(c) {
+    const f = $('cfiche'); f.hidden = false;
+    const pr = c.propose;
+    f.innerHTML = `<div class="k">cellule ${c.id} · ${c.d} px · ${c.bord ? 'au bord' : 'dans la lame'}</div>
+      <b class="cl">${c.classe ? labelOf(c.classe) : 'non classée'}</b>
+      ${c.classe ? `<div class="k">validée ${c.quand ? new Date(c.quand).toLocaleString('fr-FR') : ''}${c.accepte === true ? ' · proposition acceptée' : c.accepte === false ? ` · corrigée (le modèle proposait ${c.propose_lors})` : ''}</div>` : ''}
+      ${pr ? `<div>Proposition du modèle : <b>${pr.cle ? labelOf(pr.cle) : pr.code}</b> <span class="k">(${pr.code}, ${Math.round(pr.conf * 100)} %${pr.niveau === 'approx' ? ', correspondance approchée' : ''})</span></div>
+      <div class="k">alternatives : ${(pr.top3 || []).slice(1).map(t => `${t[0]} ${Math.round(t[1] * 100)} %`).join(' · ')}</div>` : '<div class="k">aucune proposition</div>'}
+      <div style="display:flex;gap:8px;margin-top:4px"><button type="button" id="cgo">Centrer</button><button type="button" id="cclose">Fermer</button></div>`;
+    $('cgo').onclick = () => { const r = 3 * c.d; viewer.viewport.fitBounds(new OpenSeadragon.Rect((c.c[0] - r) / W, (c.c[1] - r) / W, 2 * r / W, 2 * r / W)); };
+    $('cclose').onclick = () => { f.hidden = true; selected = null; draw(); };
+  }
+  function panel() {
+    const st = data.stats, counts = {};
+    for (const c of data.cellules) { const key = c.classe || (c.propose && c.propose.cle); const g = key ? groupOf(key) : 'sans'; counts[g] = counts[g] || { n: 0, v: 0 }; counts[g].n++; if (c.classe) counts[g].v++; }
+    const tot = Object.values(st.formule || {}).reduce((a, b) => a + b, 0);
+    let h = `<h3>Cellules</h3><div class="msg">${st.segmentees} segmentées · ${st.validees} validées · ${st.propositions} avec seule une proposition · ${st.bord} au bord</div>`;
+    h += `<div class="grp">lignées (afficher / masquer)</div>`;
+    for (const g of data.taxonomie) { const k = counts[g.group] || { n: 0, v: 0 }; h += `<div class="cls${hidden.has(g.group) ? ' off' : ''}" data-g="${g.group}"><span class="sw" style="background:${g.color}"></span>${g.label}<span class="n">${k.v} / ${k.n}</span></div>`; }
+    { const k = counts['sans'] || { n: 0, v: 0 }; h += `<div class="cls${hidden.has('sans') ? ' off' : ''}" data-g="sans"><span class="sw" style="background:#8a8290"></span>sans avis<span class="n">${k.n}</span></div>`; }
+    h += `<div class="grp">formule (${tot} cellules validées comptées)</div>`;
+    if (tot < 200) h += `<div class="msg">moins de 200 cellules validées : effectifs sans pourcentage</div>`;
+    const rows = Object.entries(st.formule || {}).sort((a, b) => b[1] - a[1]);
+    for (const [key, n] of rows) h += `<div class="row"><span><span class="sw" style="display:inline-block;background:${data.taxonomie.find(g => g.group === groupOf(key))?.color || '#8a8290'};vertical-align:middle;margin-right:6px"></span>${labelOf(key)}</span><span class="n">${n}${tot >= 200 ? ` · ${(100 * n / tot).toFixed(1)} %` : ''}</span></div>`;
+    if (data.modele) h += `<div class="msg">propositions : ${data.modele.modele || ''} ${data.modele.date ? '(' + data.modele.date + ')' : ''}. Une proposition seule n'est jamais une étiquette : pointillé tant qu'elle n'est pas validée.</div>`;
+    $('cpanel').innerHTML = h;
+    $('cpanel').querySelectorAll('.cls').forEach(el => el.onclick = () => { const g = el.dataset.g; if (hidden.has(g)) hidden.delete(g); else hidden.add(g); panel(); draw(); });
+  }
+  const applyCells = () => {
+    if (on) { viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); $('cpanel').hidden = false; }
+    else { viewer.removeOverlay(svg); $('cpanel').hidden = true; $('cfiche').hidden = true; }
+  };
+  $('cellsbtn').onclick = async () => {
+    if (!data) {
+      try { data = await (await fetch('cellules.json?t=' + Date.now())).json(); } catch (e) { $('cpanel').hidden = false; $('cpanel').textContent = 'cellules.json illisible : ' + e.message; return; }
+      if (data.largeur !== W || data.hauteur !== H) { $('cpanel').hidden = false; $('cpanel').textContent = `Les cellules ont été calculées sur une lame de ${data.largeur} × ${data.hauteur} px, celle-ci fait ${W} × ${H} : calque désactivé, relancer l'import.`; return; }
+      draw(); panel();
+    }
+    on = !on; $('cellsbtn').setAttribute('aria-pressed', String(on)); applyCells();
+  };
+}
 
 // ---- modifier la lame : rogner, supprimer (demande envoyee a la fonction Supabase, executee par GitHub Actions) ----
 const LS = { get: k => { try { return localStorage.getItem(k) || ''; } catch (_) { return ''; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (_) {} } };
