@@ -137,7 +137,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val ct = FloatArray(Z * Z) { kotlin.math.sqrt(g2[it] / maxOf(1, nn[it])).toFloat() }
         return sh to ct
     }
-    private var stackId = 0; private var stackPlanes = 0; private val zoneBest = FloatArray(16)
+    private var stackId = 0; private var stackPlanes = 0; private val zoneBest = FloatArray(16); private var planeSharp = 0f
 
     private fun makeMask(g: FloatArray): ByteArray {
         val sorted = g.copyOf(); sorted.sort()
@@ -210,7 +210,9 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val gapNow = if (lsd == null) 0.0 else hypot(f.x - lsd.first, f.y - lsd.second)
         val speed = if (lp != null && f.status != "lost") hypot(f.x - lp.first, f.y - lp.second) * fpsAcc else 999.0   // unites (sur 256) par seconde
         val byDistance = st.triggerDistance && f.status != "lost" && lsd != null && gapNow >= st.stepFrac * Tracker.S2 && speed < 40.0 && now() - lastShotT > 400
-        if ((still || byDistance) && s.mode == Settings.MODE_PHOTOS && !shooting) {
+        // profondeur : la vis tourne sur le champ deja pris (pas de deplacement de platine) -> plans sans attendre l'arret
+        val depthTurning = st.depthFor(s.objective) && stackPlanes >= 1 && lsd != null && gapNow < 0.15 * Tracker.S2 && (f.status == "lost" || speed < 15.0)   // platine qui part : pas de plan
+        if ((still || byDistance || depthTurning) && s.mode == Settings.MODE_PHOTOS && !shooting) {
             val ls = lastShot
             val gap = if (ls == null) 0.0 else hypot(f.x - ls.first, f.y - ls.second)
             val depthNow = st.depthFor(s.objective)
@@ -218,26 +220,29 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             val far = ls == null || gap >= (if (depthNow) 0.15 * Tracker.S2 else 10.0)   // ~4 % du champ : nouvel arrêt
             val zones = if (depthNow) zoneSharp(g) else null
             if (far) {
-                if (depthNow && zones != null) { stackId++; stackPlanes = 0; zones.first.copyInto(zoneBest) }
+                if (depthNow && zones != null) { stackId++; stackPlanes = 0; zones.first.copyInto(zoneBest); planeSharp = sh }
                 if (byDistance && !still) Journal.log("photo en mouvement lent (${(100 * gap / Tracker.S2).roundToInt()} % du champ, ${speed.roundToInt()} u/s)")
                 // pas trop grand entre deux arrêts : au-dela de 70 % du champ, les photos ne se recouvrent plus assez pour l'assemblage
                 bigStepPending = gap > 0.7 * Tracker.S2
                 if (gap > 0.7 * Tracker.S2) { nBigSteps++; Journal.log("ATTENTION pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recouvrement insuffisant"); state.value = state.value.copy(message = "Pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recule d'un demi-champ, les photos doivent se recouvrir d'au moins 30 %.") }
                 else if (state.value.message.startsWith("Pas trop grand")) state.value = state.value.copy(message = "Série en cours : déplace la platine d'un demi-champ, arrête-toi, une photo part à chaque arrêt.")
                 shoot(f, px, py, t, sh, img, stack = if (depthNow) stackId else null)
-            } else if (depthNow && zones != null && still && stackPlanes in 1 until 12 && now() - lastShotT > 500 && abs(sh - prevSharp) < 0.10f * sh) {
-                // profondeur : meme champ, une partie de l'image (zone avec du contenu, dans le disque) devient nettement plus nette que dans tous les plans deja pris
+            } else if (depthNow && zones != null && stackPlanes in 1 until 24 && now() - lastShotT > 300) {
+                // profondeur : meme champ (la platine n'a pas bouge de plus de 15 % du cadre), la vis tourne. Pas besoin de s'arreter :
+                // une photo part (a) des qu'une zone avec du contenu devient plus nette que dans tous les plans deja pris, ou
+                // (b) des que la nettete globale a change de 15 % depuis le dernier plan (on traverse l'epaisseur : couches pour la molette)
                 val (zs, zc) = zones; val med = zc.sorted()[8]; val mk = mask256
-                var up = 0; var strong = false
+                var up = 0
                 for (z in 0 until 16) {
                     if (zc[z] < 0.3f * med || zc[z] < 2f) continue
                     if (mk != null) { val cy = (z / 4) * 64 + 32; val cx = (z % 4) * 64 + 32; if (mk[cy * Tracker.S2 + cx].toInt() == 0) continue }
-                    val r = zs[z] / maxOf(zoneBest[z], 1e-3f)
-                    if (r > 1.25f) up++; if (r > 1.6f) strong = true
+                    if (zs[z] > 1.2f * maxOf(zoneBest[z], 1e-3f)) up++
                 }
-                if (up >= 2 || strong) {
+                val moved = abs(sh - planeSharp) > 0.15f * maxOf(sh, planeSharp)
+                if (up >= 1 || moved) {
                     for (z in 0 until 16) zoneBest[z] = maxOf(zoneBest[z], zs[z])
-                    Journal.log("profondeur : pile $stackId, plan ${stackPlanes + 1} ($up zone(s) plus nette(s)${if (strong) ", nettement" else ""}, netteté ${sh.roundToInt()})")
+                    Journal.log("profondeur : pile $stackId, plan ${stackPlanes + 1} (${if (up > 0) "$up zone(s) plus nette(s)" else "netteté ${planeSharp.roundToInt()} -> ${sh.roundToInt()}"})")
+                    planeSharp = sh
                     shoot(f, px, py, t, sh, img, stack = stackId)
                 }
             } else if (!depthNow && still && lastShotSharp > 0 && sh > 1.3f * lastShotSharp && retakes < 3 && now() - lastShotT > 900 && abs(sh - prevSharp) < 0.08f * sh) {
