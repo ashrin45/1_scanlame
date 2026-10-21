@@ -35,7 +35,8 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val lastGrade: Int = -1, val lastShotAt: Long = 0L,
         val detailAt: Pair<Double, Double>? = null,
         val patron: DoubleArray? = null, val patronFill: Float = 0f,
-        val relocations: Int = 0, val reinforce: Boolean = false   // relocalisations du suivi ; mode renforcer (photos bonus)   // rectangle cible [x0,y0,w,h] dans le repere des positions, et fraction remplie   // position (repere courant) du dernier champ pris au plus fort grossissement, apres passage a un objectif plus faible   // derniere photo : -1 aucune, 0 bonne, 1 moyenne, 2 ratee (floue, suivi perdu ou pas trop grand) ; horodatage pour le clignotement du cadre
+        val relocations: Int = 0, val reinforce: Boolean = false,
+        val discFill: Float = 0f, val discOff: Float = 1f, val sharpPeak: Float = 0f   // pre-controle : disque de l'oculaire (fraction du cadre, ecart du centre), nettete de pointe sur 5 s   // relocalisations du suivi ; mode renforcer (photos bonus)   // rectangle cible [x0,y0,w,h] dans le repere des positions, et fraction remplie   // position (repere courant) du dernier champ pris au plus fort grossissement, apres passage a un objectif plus faible   // derniere photo : -1 aucune, 0 bonne, 1 moyenne, 2 ratee (floue, suivi perdu ou pas trop grand) ; horodatage pour le clignotement du cadre
     )
     val state = MutableStateFlow(State())
 
@@ -130,7 +131,19 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val dtf = if (lastFrameT > 0) (tFrame - lastFrameT) else 0; lastFrameT = tFrame
         if (dtf > 0) fpsAcc = 0.9f * fpsAcc + 0.1f * (1000f / dtf)
         val s = state.value
-        if (!s.running || inPause()) { state.value = s.copy(sharp = sh, fps = fpsAcc); return }
+        if (!s.running || inPause()) {
+            // pre-controle avant la serie : centrage et taille du disque de l'oculaire, nettete de pointe recente
+            if (!s.running) {
+                previewSharp.addLast(tFrame to sh); while (previewSharp.isNotEmpty() && tFrame - previewSharp.first().first > 5000) previewSharp.removeFirst()
+                if (frameCount++ % 8 == 0) {
+                    val m = makeMask(g); val S = Tracker.S2; var n = 0; var sx = 0.0; var sy = 0.0
+                    for (y in 0 until S) for (x in 0 until S) if (m[y * S + x].toInt() != 0) { n++; sx += x; sy += y }
+                    discFill = n.toFloat() / (S * S); discOff = if (n > 0) (hypot(sx / n - S / 2.0, sy / n - S / 2.0) / S).toFloat() else 1f
+                }
+            }
+            val peak = previewSharp.maxOfOrNull { it.second } ?: sh
+            state.value = s.copy(sharp = sh, fps = fpsAcc, discFill = discFill, discOff = discOff, sharpPeak = peak); return
+        }
         if (!tracker.hasMask()) { val m = makeMask(g); mask256 = m; tracker.setMask(m) }
         val tt = now()
         val f = tracker.add(g.copyOf())
@@ -234,6 +247,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
     private var lastShotT = 0L
     private var lastShotSharp = 0f; private var prevSharp = 0f; private var retakes = 0   // reprise de mise au point au meme endroit
     private var bigStepPending = false
+    private val previewSharp = ArrayDeque<Pair<Long, Float>>(); @Volatile private var discFill = 0f; @Volatile private var discOff = 1f
     private var markDetail = false
     @Volatile private var exposureNote = ""; @Volatile private var liveWarn = ""
     private val photoSharps = ArrayList<Float>()

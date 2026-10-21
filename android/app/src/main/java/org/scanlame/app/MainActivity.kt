@@ -64,6 +64,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.foundation.gestures.transformable
@@ -106,8 +107,21 @@ import java.util.Locale
 import kotlin.math.roundToInt
 
 // Couleurs de la page web
-val BG = Color(0xFF000000); val PANEL = Color(0xFF17151C); val FG = Color(0xFFF0ECF4); val MUTED = Color(0xFFA79CB1); val LINE = Color(0xFF2D2936)
-val ACCENT = Color(0xFFC58AD6); val OK = Color(0xFF6FCF97); val WARN = Color(0xFFF2C94C); val REC = Color(0xFFEB5757)
+// palette Paillasse, theme « champ polarise » (sombre) : polar = interactif, biref = ce qui s'illumine (patron, reperes), ok / alert = juste et faux
+val BG = Color(0xFF0D1017); val PANEL = Color(0xFF161B26); val FG = Color(0xFFE9EDF4); val MUTED = Color(0xFF9AA4B5); val LINE = Color(0xFF2A3140)
+val ACCENT = Color(0xFFA99AF0); val ACCENT_TINT = Color(0xFF262242); val BIREF = Color(0xFFE3B95C); val BIREF_TINT = Color(0xFF3A2F17)
+val OK = Color(0xFF7FD6A4); val WARN = Color(0xFFE3B95C); val REC = Color(0xFFF08AA3); val REC_TINT = Color(0xFF3B1D26)
+val CAPSULE = Color(0xD10D1017)   // capsules posees sur le flux camera
+val Sans = androidx.compose.ui.text.font.FontFamily(androidx.compose.ui.text.font.Font(R.font.figtree, FontWeight.Normal), androidx.compose.ui.text.font.Font(R.font.figtree, FontWeight.Medium), androidx.compose.ui.text.font.Font(R.font.figtree, FontWeight.SemiBold), androidx.compose.ui.text.font.Font(R.font.figtree, FontWeight.Bold))
+val Mono = androidx.compose.ui.text.font.FontFamily(androidx.compose.ui.text.font.Font(R.font.plex_mono_regular, FontWeight.Normal), androidx.compose.ui.text.font.Font(R.font.plex_mono_semibold, FontWeight.SemiBold))
+val Display = androidx.compose.ui.text.font.FontFamily(androidx.compose.ui.text.font.Font(R.font.young_serif, FontWeight.Normal))
+val AppTypography = androidx.compose.material3.Typography().let { t ->
+    fun androidx.compose.ui.text.TextStyle.sans() = copy(fontFamily = Sans)
+    t.copy(displayLarge = t.displayLarge.copy(fontFamily = Display), displayMedium = t.displayMedium.copy(fontFamily = Display), displaySmall = t.displaySmall.copy(fontFamily = Display),
+        headlineLarge = t.headlineLarge.copy(fontFamily = Display), headlineMedium = t.headlineMedium.copy(fontFamily = Display), headlineSmall = t.headlineSmall.copy(fontFamily = Display),
+        titleLarge = t.titleLarge.copy(fontFamily = Display), titleMedium = t.titleMedium.sans(), titleSmall = t.titleSmall.sans(),
+        bodyLarge = t.bodyLarge.sans(), bodyMedium = t.bodyMedium.sans(), bodySmall = t.bodySmall.sans(), labelLarge = t.labelLarge.sans(), labelMedium = t.labelMedium.sans(), labelSmall = t.labelSmall.sans())
+}
 
 class MainActivity : ComponentActivity() {
     private lateinit var engine: CameraEngine
@@ -128,8 +142,11 @@ class MainActivity : ComponentActivity() {
         if (Uploader.pendingSeries(this).isNotEmpty()) Uploader.kick(this)
         handleLink(intent)
         setContent {
-            MaterialTheme(colorScheme = darkColorScheme(primary = ACCENT, background = BG, surface = PANEL, onSurface = FG, onBackground = FG, outline = LINE)) {
-                Surface(Modifier.fillMaxSize(), color = BG) { App(engine, settings, session) }
+            MaterialTheme(colorScheme = darkColorScheme(primary = ACCENT, onPrimary = BG, primaryContainer = ACCENT_TINT, background = BG, surface = PANEL, surfaceContainerHigh = PANEL, onSurface = FG, onSurfaceVariant = MUTED, onBackground = FG, outline = LINE, outlineVariant = LINE, error = REC),
+                typography = AppTypography) {
+                Surface(Modifier.fillMaxSize(), color = BG) {
+                    androidx.compose.runtime.CompositionLocalProvider(androidx.compose.material3.LocalTextStyle provides androidx.compose.ui.text.TextStyle(fontFamily = Sans, color = FG)) { App(engine, settings, session) }
+                }
             }
         }
     }
@@ -231,7 +248,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
             // cadre d'enregistrement : couleur de la derniere photo (vert bonne, orange moyenne, rouge ratee ou pas trop grand), clignote a chaque prise
             var flash by remember { mutableStateOf(false) }
             LaunchedEffect(sess.lastShotAt) { if (sess.lastShotAt > 0) { repeat(2) { flash = true; delay(140); flash = false; delay(90) } } }
-            val col = when (sess.lastGrade) { 0 -> OK; 1 -> WARN; 2 -> REC; else -> Color(0xAAFFFFFF) }
+            val col = when (sess.lastGrade) { 0 -> OK; 1 -> WARN; 2 -> REC; else -> Color(0x59E9EDF4) }
             Box(Modifier.fillMaxSize().border(if (flash) 14.dp else 5.dp, col))
         }
 
@@ -240,16 +257,16 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
             Box(Modifier.fillMaxWidth().padding(top = 12.dp), contentAlignment = Alignment.Center) {
                 val (txt, bg, fg) = when {
                     sess.phase == "blank" -> Triple("FOND BLANC", Color(0xFFF5F0E6), Color(0xFF1A0F1F))
-                    sess.phase == "switching" -> Triple("CHANGEMENT D'OBJECTIF", Color(0xFF5B2A86), Color.White)
+                    sess.phase == "switching" -> Triple("CHANGEMENT D'OBJECTIF", ACCENT_TINT, ACCENT)
                     sess.running -> Triple("● " + fmtTime(sess.elapsedMs), REC, Color.White)
-                    up.busy -> Triple("ENVOI ${up.pendingFiles} fichier(s)", WARN, Color(0xFF1A0F1F))
-                    cameraOn && bound != null -> Triple("Prêt, caméra active", Color(0xA6000000), FG)
-                    else -> Triple("Caméra arrêtée", Color(0x99000000), MUTED)
+                    up.busy -> Triple("ENVOI ${up.pendingFiles} fichier(s)", BIREF_TINT, BIREF)
+                    cameraOn && bound != null -> Triple("Prêt, caméra active", CAPSULE, FG)
+                    else -> Triple("Caméra arrêtée", CAPSULE, MUTED)
                 }
                 Text(txt, Modifier.background(bg, RoundedCornerShape(999.dp)).padding(16.dp, 8.dp), color = fg, fontSize = 15.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.sp)
             }
             if (sess.running && sess.warn.isNotEmpty()) Box(Modifier.fillMaxWidth().padding(top = 6.dp), contentAlignment = Alignment.Center) {
-                Text(sess.warn.uppercase(), Modifier.background(Color(0xE6EB5757), RoundedCornerShape(999.dp)).padding(14.dp, 6.dp), color = Color.White, fontSize = 13.sp, fontWeight = FontWeight.Bold)
+                Text(sess.warn.uppercase(), Modifier.background(REC_TINT, RoundedCornerShape(999.dp)).border(1.dp, REC, RoundedCornerShape(999.dp)).padding(14.dp, 6.dp), color = REC, fontSize = 13.sp, fontWeight = FontWeight.Bold)
             }
             Row(Modifier.fillMaxWidth().padding(10.dp, 6.dp), horizontalArrangement = Arrangement.SpaceBetween) {
                 // HUD gauche : prend ce qui reste ; la colonne de droite (suivi + carte) garde sa taille
@@ -263,7 +280,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                 }
                 // suivi + carte
                 Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                    Row(Modifier.background(Color(0x8C000000), RoundedCornerShape(5.dp)).padding(7.dp, 3.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    Row(Modifier.background(CAPSULE, RoundedCornerShape(999.dp)).border(1.dp, LINE, RoundedCornerShape(999.dp)).padding(10.dp, 4.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                         Box(Modifier.size(9.dp).background(when (sess.track) { "ok" -> OK; "lost" -> REC; "relocated" -> WARN; else -> MUTED }, CircleShape))
                         Text(when { !sess.running -> "suivi inactif"; sess.track == "ok" -> "suivi ok (${String.format(Locale.ROOT, "%.2f", sess.score)})"; sess.track == "lost" -> "suivi perdu : reviens sur une zone déjà vue"; sess.track == "relocated" -> "recalé sur la carte"; else -> "suivi en cours" }, color = FG, fontSize = 13.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.widthIn(max = 220.dp))
                     }
@@ -276,7 +293,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     WebButton(if (sess.phase == "blank") "Fond blanc ●" else "Fond blanc", pressed = sess.phase == "blank", small = true) { session.setBlank(sess.phase != "blank") }
                     WebButton("Changer d'objectif", small = true, enabled = sess.phase != "blank") { showObjPick = !showObjPick }
                     WebButton(if (sess.reinforce) "Renforcer : actif" else "Renforcer", small = true, pressed = sess.reinforce) { session.setReinforce(!sess.reinforce) }
-                    if (showObjPick) FlowRow(Modifier.background(Color(0xF217151C), RoundedCornerShape(12.dp)).border(1.dp, LINE, RoundedCornerShape(12.dp)).padding(8.dp), verticalArrangement = Arrangement.spacedBy(6.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    if (showObjPick) FlowRow(Modifier.background(PANEL, RoundedCornerShape(12.dp)).border(1.dp, LINE, RoundedCornerShape(12.dp)).padding(8.dp), verticalArrangement = Arrangement.spacedBy(6.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                         for (o in Settings.OBJECTIVES.filter { it != sess.objective }) WebButton(o, small = true) { showObjPick = false; switchDlg = o }
                     }
                 } else WebButton("Reprendre", small = true) { session.resumeSwitch() }
@@ -284,25 +301,26 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
             Spacer(Modifier.weight(1f))
             // message, zoom, netteté (juste au-dessus de la barre)
             Column(Modifier.fillMaxWidth().padding(14.dp, 0.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                if (update != null && !sess.running) Row(Modifier.fillMaxWidth().background(Color(0xE6C58AD6), RoundedCornerShape(10.dp)).clickable { doUpdate() }.padding(12.dp, 10.dp), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                    Text("Mise à jour ${update!!.version} disponible (installée : ${BuildConfig.VERSION_NAME})", color = Color(0xFF1A0F1F), fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
-                    Text(if (updProgress >= 0) "$updProgress %" else "Installer", color = Color(0xFF1A0F1F), fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                if (cameraOn && bound != null && !sess.running && update == null) PreCheck(sess, live, locked)
+                if (update != null && !sess.running) Row(Modifier.fillMaxWidth().background(ACCENT, RoundedCornerShape(12.dp)).clickable { doUpdate() }.padding(12.dp, 10.dp), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+                    Text("Mise à jour ${update!!.version} disponible (installée : ${BuildConfig.VERSION_NAME})", color = BG, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
+                    Text(if (updProgress >= 0) "$updProgress %" else "Installer", color = BG, fontSize = 14.sp, fontWeight = FontWeight.Bold)
                 }
-                if (msg.isNotEmpty()) Text(msg, Modifier.fillMaxWidth().background(if (msgErr) Color(0xD9EB5757) else Color(0xA6000000), RoundedCornerShape(10.dp)).padding(12.dp, 10.dp), color = FG, fontSize = 15.sp)
+                if (msg.isNotEmpty()) Text(msg, Modifier.fillMaxWidth().background(if (msgErr) REC_TINT else CAPSULE, RoundedCornerShape(12.dp)).padding(12.dp, 10.dp), color = FG, fontSize = 15.sp)
                 Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Text("netteté", Modifier.background(Color(0x8C000000), RoundedCornerShape(6.dp)).padding(10.dp, 4.dp).width(60.dp), color = MUTED, fontSize = 14.sp)
+                    Text("netteté", Modifier.background(CAPSULE, RoundedCornerShape(999.dp)).padding(10.dp, 4.dp).width(60.dp), color = MUTED, fontSize = 14.sp)
                     // barre de nettete : echelle = meilleure photo de la serie (sinon 40) ; verte au-dessus de 70 %, orange, rouge sous 50 %
                     val scale = if (sess.sharpRef > 0) sess.sharpRef * 1.1f else 40f
                     val frac = (sess.sharp / scale).coerceIn(0f, 1f)
-                    Box(Modifier.weight(1f).height(8.dp).background(Color(0x2EFFFFFF), RoundedCornerShape(4.dp))) { Box(Modifier.fillMaxWidth(frac).height(8.dp).background(if (sess.sharpRef <= 0 || frac >= 0.64f) OK else if (frac >= 0.45f) WARN else REC, RoundedCornerShape(4.dp))) }
+                    Box(Modifier.weight(1f).height(8.dp).background(Color(0xB30D1017), RoundedCornerShape(4.dp))) { Box(Modifier.fillMaxWidth(frac).height(8.dp).background(if (sess.sharpRef <= 0 || frac >= 0.64f) OK else if (frac >= 0.45f) WARN else REC, RoundedCornerShape(4.dp))) }
                 }
                 Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Text("zoom ${String.format(Locale.ROOT, "%.1f", zoom)}×", Modifier.background(Color(0x8C000000), RoundedCornerShape(6.dp)).padding(10.dp, 4.dp), color = FG, fontSize = 14.sp)
+                    Text("zoom ${String.format(Locale.ROOT, "%.1f", zoom)}×", Modifier.background(CAPSULE, RoundedCornerShape(999.dp)).padding(10.dp, 4.dp), color = FG, fontSize = 14.sp)
                     Slider(zoom, { zoom = (it * 10).roundToInt() / 10f }, valueRange = 1f..st.zoomMax.coerceAtLeast(1.1f), modifier = Modifier.weight(1f), enabled = cameraOn)
                 }
             }
             // ---- barre du bas : verrou | déclencheur | réglages
-            Row(Modifier.fillMaxWidth().background(Color(0xEB0A090C)).navigationBarsPadding().padding(16.dp, 12.dp), verticalAlignment = Alignment.CenterVertically) {
+            Row(Modifier.fillMaxWidth().background(androidx.compose.ui.graphics.Brush.verticalGradient(listOf(Color(0x000D1017), Color(0xEB0D1017)))).navigationBarsPadding().padding(16.dp, 12.dp), verticalAlignment = Alignment.CenterVertically) {
                 var autoUp by remember { mutableStateOf(st.autoUpload) }
                 Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     WebButton(if (locked) "AF/AE verrouillés" else "Verrouiller AF/AE", pressed = locked, enabled = cameraOn && bound != null) { engine.setLocked(st, !locked) }
@@ -310,7 +328,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                 }
                 // déclencheur : violet = démarrer la caméra, blanc = lancer la série, rouge = arrêter
                 val stop = sess.running
-                Box(Modifier.size(88.dp).border(5.dp, if (stop) REC else Color.White, CircleShape).clickable(enabled = cameraOn.not() || bound != null) {
+                Box(Modifier.size(88.dp).border(4.dp, FG, CircleShape).clickable(enabled = cameraOn.not() || bound != null) {
                     when {
                         !cameraOn -> { cameraOn = true; say("Démarrage de la caméra...", false) }
                         stop -> { say("Clôture en cours...", false); session.stop { Uploader.refresh(ctx) } }
@@ -318,7 +336,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     }
                 }, contentAlignment = Alignment.Center) {
                     if (stop) Box(Modifier.size(38.dp).background(REC, RoundedCornerShape(8.dp)))
-                    else Box(Modifier.size(68.dp).background(if (cameraOn) Color.White else ACCENT, CircleShape))
+                    else Box(Modifier.size(66.dp).background(if (cameraOn) FG else ACCENT, CircleShape))
                 }
                 Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     WebButton("Réglages") { sheet = true }
@@ -385,23 +403,26 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
 fun fmtTime(ms: Long): String { val s = ms / 1000; return String.format(Locale.ROOT, "%02d:%02d", s / 60, s % 60) }
 
 @Composable
-fun Hud(t: String, fg: Color = FG, bg: Color = Color(0x8C000000)) {
-    Text(t, Modifier.background(bg, RoundedCornerShape(6.dp)).padding(10.dp, 4.dp), color = fg, fontSize = 14.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
+fun Hud(t: String, fg: Color = FG, bg: Color = CAPSULE) {
+    // capsule posee sur le flux : fond sombre translucide, filet, chiffres en mono
+    Text(t, Modifier.background(bg, RoundedCornerShape(999.dp)).border(1.dp, LINE, RoundedCornerShape(999.dp)).padding(12.dp, 6.dp), color = fg, fontSize = 13.sp, fontFamily = Sans, fontWeight = FontWeight.Medium, maxLines = 1, overflow = TextOverflow.Ellipsis)
 }
 
 /** Bouton au style de la page (fond sombre, bordure, violet quand enfoncé, rouge pour les actions dangereuses). */
 @Composable
 fun WebButton(label: String, pressed: Boolean = false, danger: Boolean = false, small: Boolean = false, enabled: Boolean = true, onClick: () -> Unit) {
-    val border = if (pressed) ACCENT else if (danger) Color(0x99EB5757) else LINE
-    val fg = if (pressed) ACCENT else if (danger) Color(0xFFFF9A9A) else FG
-    Text(label, Modifier.widthIn(max = 160.dp).background(if (pressed) Color(0x1FC58AD6) else Color(0xD91D1A22), RoundedCornerShape(12.dp)).border(1.dp, border, RoundedCornerShape(12.dp))
-        .clickable(enabled = enabled) { onClick() }.padding(if (small) 12.dp else 10.dp, if (small) 10.dp else 12.dp).let { if (!enabled) it else it },
-        color = if (enabled) fg else fg.copy(alpha = 0.4f), fontSize = 14.sp, fontWeight = FontWeight.SemiBold, maxLines = 1, overflow = TextOverflow.Ellipsis)
+    // pilule Paillasse : polar quand actif, alert pour l'action destructrice, sinon panneau sombre et filet ; cible tactile >= 44 dp
+    val border = if (pressed) ACCENT else if (danger) REC_TINT else LINE
+    val fg = if (pressed) ACCENT else if (danger) REC else FG
+    val bg = if (pressed) ACCENT_TINT else CAPSULE
+    Text(label, Modifier.widthIn(max = 180.dp).heightIn(min = if (small) 40.dp else 44.dp).background(bg, RoundedCornerShape(999.dp)).border(1.dp, border, RoundedCornerShape(999.dp))
+        .clickable(enabled = enabled) { onClick() }.padding(horizontal = 14.dp, vertical = if (small) 10.dp else 12.dp),
+        color = if (enabled) fg else fg.copy(alpha = 0.4f), fontSize = if (small) 13.sp else 14.sp, fontFamily = Sans, fontWeight = FontWeight.Medium, maxLines = 1, overflow = TextOverflow.Ellipsis)
 }
 
 @Composable
 fun CoverageMap(s: Session.State, modifier: Modifier) {
-    Canvas(modifier.background(Color(0xD917151C), RoundedCornerShape(8.dp)).border(1.dp, LINE, RoundedCornerShape(8.dp))) {
+    Canvas(modifier.background(Color(0xE60D1017), RoundedCornerShape(12.dp)).border(1.dp, LINE, RoundedCornerShape(8.dp))) {
         val all = s.placed
         if (all.isEmpty()) {
             // rien encore : un repère au centre pour montrer que la carte est vivante
@@ -424,7 +445,7 @@ fun CoverageMap(s: Session.State, modifier: Modifier) {
             val th = p.thumb
             var drawn = false
             if (th != null) try { drawImage(th.asImageBitmap(), IntOffset(0, 0), IntSize(th.width, th.height), IntOffset(dx, dy), IntSize(dw, dh), alpha = 0.95f); drawn = true } catch (e: Exception) {}
-            if (!drawn) drawRect(if (p.photo) Color(0x66C58AD6) else Color(0x22FFFFFF), Offset(dx.toFloat(), dy.toFloat()), Size(dw.toFloat(), dh.toFloat()))
+            if (!drawn) drawRect(if (p.photo) Color(0x66A99AF0) else Color(0x22E9EDF4), Offset(dx.toFloat(), dy.toFloat()), Size(dw.toFloat(), dh.toFloat()))
             if (p.photo && p.grade > 0) drawRect(if (p.grade == 2) REC else WARN, Offset(dx.toFloat(), dy.toFloat()), Size(dw.toFloat(), dh.toFloat()), style = Stroke(2f))
             if (p.photo && p.bonus) drawRect(Color(0xFF5DADE2), Offset(dx.toFloat(), dy.toFloat()), Size(dw.toFloat(), dh.toFloat()), style = Stroke(1.5f))
         }
@@ -433,15 +454,15 @@ fun CoverageMap(s: Session.State, modifier: Modifier) {
         // patron : rectangle cible et cases restantes (grille 48x48 trop fine a dessiner : on trace le contour et le taux)
         s.patron?.let { pt ->
             val x = ox + (pt[0].toFloat() - x0) * sc; val y = oy + (pt[1].toFloat() - y0) * sc
-            drawRect(Color(0xFFE8A33D), Offset(x, y), Size(pt[2].toFloat() * sc, pt[3].toFloat() * sc), style = Stroke(2f))
+            drawRect(BIREF, Offset(x, y), Size(pt[2].toFloat() * sc, pt[3].toFloat() * sc), style = Stroke(2f))
             val cols = (pt[2] / W).roundToInt(); val rows = (pt[3] / H).roundToInt()
-            for (i in 1 until cols) drawLine(Color(0x66E8A33D), Offset(x + i * W * sc, y), Offset(x + i * W * sc, y + pt[3].toFloat() * sc), 1f)
-            for (j in 1 until rows) drawLine(Color(0x66E8A33D), Offset(x, y + j * H * sc), Offset(x + pt[2].toFloat() * sc, y + j * H * sc), 1f)
+            for (i in 1 until cols) drawLine(Color(0x66E3B95C), Offset(x + i * W * sc, y), Offset(x + i * W * sc, y + pt[3].toFloat() * sc), 1f)
+            for (j in 1 until rows) drawLine(Color(0x66E3B95C), Offset(x, y + j * H * sc), Offset(x + pt[2].toFloat() * sc, y + j * H * sc), 1f)
         }
         // emplacement du detail pris au plus fort grossissement (centre du premier champ apres le changement d'objectif) : a garder au milieu du balayage
         s.detailAt?.let { d ->
             val c = Offset(ox + (d.first.toFloat() + W / 2 - x0) * sc, oy + (d.second.toFloat() + H / 2 - y0) * sc)
-            drawCircle(Color(0xFFE8A33D), 7f, c, style = Stroke(3f)); drawCircle(Color(0xFFE8A33D), 2f, c)
+            drawCircle(BIREF, 7f, c, style = Stroke(3f)); drawCircle(BIREF, 2f, c)
         }
     }
 }
@@ -453,6 +474,42 @@ fun loadLames(gallery: String): List<LameRef> = try {
     val arr = JSONArray(c.inputStream.bufferedReader().readText()); c.disconnect()
     (0 until arr.length()).map { arr.getJSONObject(it) }.map { LameRef(it.getString("slug"), it.optString("title", it.getString("slug")), it.optString("objective").ifEmpty { null }, it.optInt("width"), it.optInt("height"), it.optInt("tile"), it.optInt("maxlvl"), it.optString("thumb")) }
 } catch (e: Exception) { Journal.log("galerie injoignable : ${e.message}"); emptyList() }
+
+/** Titre de section des réglages (eyebrow Paillasse : capitales espacées, filet au-dessus). */
+@Composable
+fun SectionTitle(t: String) {
+    Column(Modifier.fillMaxWidth().padding(top = 10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Box(Modifier.fillMaxWidth().height(1.dp).background(LINE))
+        Text(t.uppercase(), fontSize = 12.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.sp, color = MUTED)
+    }
+}
+
+/** Pré-contrôle avant la première photo : disque centré, exposition, mise au point, verrou AF/AE sur zone vide. Indicatif, ne bloque rien. */
+@Composable
+fun PreCheck(s: Session.State, live: CameraEngine.Live, locked: Boolean) {
+    val disc = s.discFill > 0.30f && s.discOff < 0.08f
+    val expoNs = live.exposureNs; val iso = live.iso
+    val expo = iso != null && iso <= 400 && (expoNs == null || expoNs <= 34_000_000L)
+    val focus = s.sharpPeak > 0 && s.sharp >= 0.85f * s.sharpPeak
+    val items = listOf(
+        Triple(disc, "Disque centré", if (s.discFill <= 0f) "en attente de l'image" else if (disc) "bord net, ${(100 * s.discFill).roundToInt()} % du cadre" else if (s.discOff >= 0.08f) "décentré : molettes X et Y de l'adaptateur" else "disque petit : molette Z (hauteur)"),
+        Triple(expo, "Exposition", if (iso == null) "…" else "ISO $iso${expoNs?.let { " · 1/${(1e9 / it).roundToInt()} s" } ?: ""}${if (expo) "" else " : lampe plus forte"}"),
+        Triple(focus, "Mise au point", if (focus) "au plus net des 5 dernières secondes" else "pas au plus net : tourne la vis micrométrique"),
+        Triple(locked, "AF/AE verrouillés", if (locked) "réglages figés pour la série" else "à verrouiller sur une zone vide et claire"))
+    val ok = items.count { it.first }
+    Column(Modifier.fillMaxWidth().background(Color(0xE60D1017), RoundedCornerShape(12.dp)).border(1.dp, LINE, RoundedCornerShape(12.dp)).padding(14.dp, 12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text("Avant de lancer", color = FG, fontSize = 15.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.weight(1f))
+            Text("$ok sur ${items.size}", color = if (ok == items.size) OK else MUTED, fontSize = 12.sp, fontFamily = Mono)
+        }
+        for ((good, title, detail) in items) Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            Box(Modifier.size(18.dp).background(if (good) OK else Color.Transparent, CircleShape).border(2.dp, if (good) OK else BIREF, CircleShape), contentAlignment = Alignment.Center) {
+                if (good) Canvas(Modifier.size(10.dp)) { drawLine(BG, Offset(size.width * 0.1f, size.height * 0.55f), Offset(size.width * 0.4f, size.height * 0.85f), 3f); drawLine(BG, Offset(size.width * 0.4f, size.height * 0.85f), Offset(size.width * 0.95f, size.height * 0.15f), 3f) }
+            }
+            Column { Text(title, color = if (good) FG else BIREF, fontSize = 14.sp, fontWeight = FontWeight.Medium); Text(detail, color = MUTED, fontSize = 12.sp) }
+        }
+    }
+}
 
 /** Patron (colonnes x lignes de champs) propre à un objectif : champs libres, raccourcis, « libre ». Mémorisé par objectif. */
 @OptIn(ExperimentalLayoutApi::class)
@@ -619,9 +676,10 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
     ModalBottomSheet(onDismissRequest = { onClose(save()) }, sheetState = sheetState, containerColor = PANEL, dragHandle = null) {
         Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(16.dp, 12.dp).navigationBarsPadding(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                Text("Réglages · ScanLame ${BuildConfig.VERSION_NAME}", fontSize = 15.sp, fontWeight = FontWeight.Bold, color = FG)
+                Column { Text("Réglages", fontSize = 27.sp, fontFamily = Display, color = FG); Text("ScanLame ${BuildConfig.VERSION_NAME}", fontSize = 12.sp, fontFamily = Mono, color = MUTED) }
                 WebButton("Fermer", small = true) { onClose(save()) }
             }
+            SectionTitle("Lame")
             OutlinedTextField(title, { title = it }, label = { Text("Nom de la lame (pour la galerie)") }, placeholder = { Text("ex. Gram, prélèvement vaginal, 14/10") }, singleLine = true, modifier = Modifier.fillMaxWidth())
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Select("Coloration", Settings.STAINS, stain, Modifier.weight(1f)) { stain = it }
@@ -637,6 +695,7 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
             }
             Text("Relevés de la platine au premier champ de la série (facultatif). Avec ceux de la lame d'ensemble, ils servent à placer le détail ; la correspondance est apprise au premier recalage réussi.", color = MUTED, fontSize = 11.sp)
             Select("Compléter une lame existante (reprise des zones manquantes, même objectif)", listOf("" to "Non : nouvelle lame") + lames.map { it.slug to "${it.title}${it.objective?.let { o -> " (obj. $o)" } ?: ""}" }, complete) { complete = it; if (it.isNotEmpty()) { parent = ""; lames.firstOrNull { l -> l.slug == it }?.objective?.let { o -> objective = o } } }
+            SectionTitle("Échelle")
             OutlinedTextField(umpx, { umpx = it }, label = { Text("Échelle pour cet objectif : µm par pixel de photo (optionnel)") }, placeholder = { Text("ex. 0.085 (mesuré avec un micromètre objet, à ce zoom)") }, singleLine = true, modifier = Modifier.fillMaxWidth())
             // calibration par les hematies : une photo du champ courant (frottis sanguin, zone ou les hematies sont isolees), diametre median = 7,5 µm
             var calMsg by remember { mutableStateOf("") }; var calBusy by remember { mutableStateOf(false) }
@@ -658,6 +717,7 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
                 }
                 Text(if (calMsg.isEmpty()) "Frottis sanguin, hématies isolées dans le champ, mise au point faite : hématie = 7,5 µm." else calMsg, color = MUTED, fontSize = 11.sp, modifier = Modifier.weight(1f))
             }
+            SectionTitle("Prise de vue")
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Select("Mode", listOf(Settings.MODE_PHOTOS to "Photos à chaque arrêt de platine", Settings.MODE_VIDEO to "Vidéo (encodeur matériel)"), mode, Modifier.weight(1f)) { mode = it }
                 Select("Profondeur (vis micrométrique)", listOf("off" to "désactivée : image la plus nette à chaque arrêt", "on" to "fusion + plans navigables (en essai)"), depth, Modifier.weight(1f)) { depth = it }
@@ -683,6 +743,7 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
                 }
                 if (testMsg.isNotEmpty()) Text(testMsg, fontSize = 12.sp, color = MUTED)
             }
+            SectionTitle("Caméra")
             Select("Caméra", cams.map { it.id to it.label }, cameraId) { cameraId = it }
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Select("Zoom maximal", listOf("2.9" to "2,9×", "4" to "4× (recadrage capteur)", "6" to "6× (recadrage capteur)"), zoomMax.toString().removeSuffix(".0"), Modifier.weight(1f)) { zoomMax = it.toFloat() }
@@ -704,7 +765,7 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
                 Select("Taille photo", listOf("0" to "pleine (12 MP)", "3072" to "3/4", "2048" to "1/2"), side.toString(), Modifier.weight(1f)) { side = it.toInt() }
                 Select("Qualité JPEG", listOf("95" to "95 %", "92" to "92 %", "85" to "85 %", "75" to "75 %"), quality.toString(), Modifier.weight(1f)) { quality = it.toInt() }
             }
-            Text("ENVOI AU SERVEUR", fontSize = 12.sp, color = MUTED, letterSpacing = 1.sp, modifier = Modifier.padding(top = 8.dp))
+            SectionTitle("Envoi")
             OutlinedTextField(url, { url = it }, label = { Text("URL du serveur (vide = garder sur le téléphone)") }, placeholder = { Text("https://xxxx.supabase.co/functions/v1/scanlame") }, singleLine = true, modifier = Modifier.fillMaxWidth())
             OutlinedTextField(token, { token = it }, label = { Text("Jeton d'accès") }, placeholder = { Text("le même que sur le serveur") }, singleLine = true, modifier = Modifier.fillMaxWidth())
             Row(verticalAlignment = Alignment.CenterVertically) { Checkbox(sendLog, { sendLog = it }); Text("Joindre le journal du téléphone à la prise (mise au point de l'application)", fontSize = 14.sp, color = FG) }
@@ -721,13 +782,13 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
             if (showLog) {
                 val lines by Journal.flow.collectAsState()
                 Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) { WebButton("Copier le journal", small = true) { copy(ctx, Journal.text()) }; WebButton("Effacer", small = true) { Journal.clear() } }
-                Text(lines.takeLast(300).joinToString("\n"), fontSize = 11.sp, fontFamily = FontFamily.Monospace, color = MUTED, modifier = Modifier.fillMaxWidth().background(BG, RoundedCornerShape(8.dp)).border(1.dp, LINE, RoundedCornerShape(8.dp)).padding(8.dp))
+                Text(lines.takeLast(300).joinToString("\n"), fontSize = 11.sp, fontFamily = Mono, color = MUTED, modifier = Modifier.fillMaxWidth().background(BG, RoundedCornerShape(8.dp)).border(1.dp, LINE, RoundedCornerShape(8.dp)).padding(8.dp))
             }
             Text(if (showDiag) "▾ Diagnostic des caméras" else "▸ Diagnostic des caméras", fontSize = 12.sp, color = MUTED, modifier = Modifier.clickable { showDiag = !showDiag }.padding(vertical = 6.dp))
             if (showDiag) {
                 val txt = remember { engine.diagnosticText() }
                 WebButton("Copier le diagnostic", small = true) { copy(ctx, txt) }
-                Text(txt, fontSize = 11.sp, fontFamily = FontFamily.Monospace, color = MUTED, modifier = Modifier.fillMaxWidth().background(BG, RoundedCornerShape(8.dp)).border(1.dp, LINE, RoundedCornerShape(8.dp)).padding(8.dp))
+                Text(txt, fontSize = 11.sp, fontFamily = Mono, color = MUTED, modifier = Modifier.fillMaxWidth().background(BG, RoundedCornerShape(8.dp)).border(1.dp, LINE, RoundedCornerShape(8.dp)).padding(8.dp))
             }
             Spacer(Modifier.height(16.dp))
         }
