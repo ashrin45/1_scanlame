@@ -137,6 +137,9 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val ct = FloatArray(Z * Z) { kotlin.math.sqrt(g2[it] / maxOf(1, nn[it])).toFloat() }
         return sh to ct
     }
+    @Volatile private var manualReq = false; private var manualInStack = false   // photo au toucher ; des qu'on touche sur un champ, les plans de ce champ sont manuels
+    /** Toucher de l'ecran pendant une serie : une photo tout de suite (traitee a l'image suivante). */
+    fun requestManualShot() { if (state.value.running && switching == null && curBlank == null) manualReq = true }
     private var stackId = 0; private var stackPlanes = 0; private val zoneBest = FloatArray(16); private var planeSharp = 0f
 
     private fun makeMask(g: FloatArray): ByteArray {
@@ -212,7 +215,22 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val byDistance = st.triggerDistance && f.status != "lost" && lsd != null && gapNow >= st.stepFrac * Tracker.S2 && speed < 40.0 && now() - lastShotT > 400
         // profondeur : la vis tourne sur le champ deja pris (pas de deplacement de platine) -> plans sans attendre l'arret
         val depthTurning = st.depthFor(s.objective) && stackPlanes >= 1 && lsd != null && gapNow < 0.15 * Tracker.S2 && (f.status == "lost" || speed < 15.0)   // platine qui part : pas de plan
-        if ((still || byDistance || depthTurning) && s.mode == Settings.MODE_PHOTOS && !shooting) {
+        if (manualReq && s.mode == Settings.MODE_PHOTOS && !shooting) {
+            // photo au toucher de l'ecran : en profondeur, sur le champ deja pris = un plan de plus ; ailleurs = nouveau champ
+            manualReq = false
+            val depthNow = st.depthFor(s.objective)
+            val sameField = lsd != null && gapNow < 0.15 * Tracker.S2 && stackPlanes >= 1
+            if (depthNow && sameField) {
+                manualInStack = true; planeSharp = sh
+                Journal.log("plan manuel (toucher) : pile $stackId, plan ${stackPlanes + 1}, netteté ${sh.roundToInt()}")
+                state.value = state.value.copy(lastShotAt = now())
+                shoot(f, px, py, t, sh, img, stack = stackId)
+            } else {
+                if (depthNow) { stackId++; stackPlanes = 0; zoneSharp(g).first.copyInto(zoneBest); planeSharp = sh; manualInStack = false }
+                Journal.log("photo manuelle (toucher) à ${px.roundToInt()},${py.roundToInt()}")
+                shoot(f, px, py, t, sh, img, stack = if (depthNow) stackId else null)
+            }
+        } else if ((still || byDistance || (depthTurning && !manualInStack)) && s.mode == Settings.MODE_PHOTOS && !shooting) {
             val ls = lastShot
             val gap = if (ls == null) 0.0 else hypot(f.x - ls.first, f.y - ls.second)
             val depthNow = st.depthFor(s.objective)
@@ -220,14 +238,14 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             val far = ls == null || gap >= (if (depthNow) 0.15 * Tracker.S2 else 10.0)   // ~4 % du champ : nouvel arrêt
             val zones = if (depthNow) zoneSharp(g) else null
             if (far) {
-                if (depthNow && zones != null) { stackId++; stackPlanes = 0; zones.first.copyInto(zoneBest); planeSharp = sh }
+                if (depthNow && zones != null) { stackId++; stackPlanes = 0; zones.first.copyInto(zoneBest); planeSharp = sh; manualInStack = false }
                 if (byDistance && !still) Journal.log("photo en mouvement lent (${(100 * gap / Tracker.S2).roundToInt()} % du champ, ${speed.roundToInt()} u/s)")
                 // pas trop grand entre deux arrêts : au-dela de 70 % du champ, les photos ne se recouvrent plus assez pour l'assemblage
                 bigStepPending = gap > 0.7 * Tracker.S2
                 if (gap > 0.7 * Tracker.S2) { nBigSteps++; Journal.log("ATTENTION pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recouvrement insuffisant"); state.value = state.value.copy(message = "Pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recule d'un demi-champ, les photos doivent se recouvrir d'au moins 30 %.") }
                 else if (state.value.message.startsWith("Pas trop grand")) state.value = state.value.copy(message = "Série en cours : déplace la platine d'un demi-champ, arrête-toi, une photo part à chaque arrêt.")
                 shoot(f, px, py, t, sh, img, stack = if (depthNow) stackId else null)
-            } else if (depthNow && zones != null && stackPlanes in 1 until (if (st.burstFor(s.objective)) 40 else 24) && now() - lastShotT > 300) {
+            } else if (depthNow && zones != null && !manualInStack && stackPlanes in 1 until (if (st.burstFor(s.objective)) 40 else 24) && now() - lastShotT > 300) {
                 // profondeur : meme champ (la platine n'a pas bouge de plus de 15 % du cadre), la vis tourne. Pas besoin de s'arreter :
                 // une photo part (a) des qu'une zone avec du contenu devient plus nette que dans tous les plans deja pris, ou
                 // (b) des que la nettete globale a change de 15 % depuis le dernier plan (on traverse l'epaisseur : couches pour la molette)
@@ -424,7 +442,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         state.value = state.value.copy(lastGrade = -1, sharpRef = 0f)
         st.objective = obj
         tracker = Tracker(); synchronized(placed) { placed.clear(); placedPhotos.clear() }; lastPos = null; lastShot = null; stillSince = 0L
-        Journal.log("objectif $obj : reprise à $t ms (calibration ${if (cal > 0) cal else "absente"})")
+        Journal.log("objectif $obj : reprise à $t ms (calibration ${if (cal > 0) cal else "absente"}) ; profondeur ${if (st.depthFor(obj)) "oui" else "non"}, rafale ${if (st.burstFor(obj)) "oui" else "non"}")
         switching = null
         state.value = state.value.copy(phase = "", objective = obj, message = "Objectif $obj : balayage des zones de détail.")
     }
@@ -450,6 +468,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         while (phases.length() > 0) phases.remove(0)
         segments.clear(); curBlank = null; switching = null
         val cal = st.umPerPx(st.objective)
+        Journal.log("départ au ${st.objective} : profondeur ${if (st.depthFor(st.objective)) "oui" else "non"}, rafale ${if (st.burstFor(st.objective)) "oui" else "non"}")
         segments.add(JSONObject().put("objective", st.objective).put("t0", 0).put("t1", JSONObject.NULL).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL).put("depth", st.depthFor(st.objective)).put("burst", st.burstFor(st.objective)))
         // taille du média (portrait) = unité des positions
         val sz = if (mode == Settings.MODE_VIDEO) engine.videoSize else engine.photoSize

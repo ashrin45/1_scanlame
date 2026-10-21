@@ -247,6 +247,8 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     Box(Modifier.fillMaxSize().background(BG)) {
         // ---- scène : caméra plein écran
         AndroidView(factory = { c -> PreviewView(c).apply { implementationMode = PreviewView.ImplementationMode.COMPATIBLE; scaleType = PreviewView.ScaleType.FIT_CENTER; preview = this } }, modifier = Modifier.fillMaxSize())
+        // toucher l'image pendant une serie photo : une photo tout de suite (en profondeur : un plan de plus sur le champ en cours)
+        if (sess.running && sess.mode == Settings.MODE_PHOTOS) Box(Modifier.fillMaxSize().pointerInput(Unit) { detectTapGestures { session.requestManualShot() } })
         if (sess.running) {
             // cadre d'enregistrement : couleur de la derniere photo (vert bonne, orange moyenne, rouge ratee ou pas trop grand), clignote a chaque prise
             var flash by remember { mutableStateOf(false) }
