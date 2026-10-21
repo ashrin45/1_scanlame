@@ -149,8 +149,15 @@ try:
     cv2.imwrite(os.path.join(out, 'planche.jpg'), np.vstack(rows), [cv2.IMWRITE_JPEG_QUALITY, 82])
 except Exception as e_:
     log('planche-contact impossible : ' + str(e_))
-if not videos:   # photos a intervalle : pas de pile de profondeur, chaque photo est un champ
+STACK_OF = {}
+if not videos:   # photos : chaque photo est un champ, sauf les piles de profondeur marquees par l'appli (mode profondeur, x40 et plus)
     moves = [1.0] * len(moves); vecs = [(1.0, 0.0)] * len(vecs)
+    _fr = {f.get('name'): f for f in (meta.get('frames') or []) if f.get('kind') == 'photo'}
+    STACK_OF = {p: _fr[os.path.basename(p)]['stack'] for p, _ in items if _fr.get(os.path.basename(p), {}).get('stack') is not None}
+    for k in range(1, len(items)):
+        sa, sb = STACK_OF.get(items[k - 1][0]), STACK_OF.get(items[k][0])
+        if sa is not None and sa == sb: moves[k] = 0.0; vecs[k] = (0.0, 0.0)
+    if STACK_OF: log(f'profondeur : {len(STACK_OF)} photos en {len(set(STACK_OF.values()))} pile(s) marquée(s) par l\'appli (plusieurs plans de mise au point par champ)')
 del smalls
 
 # ---- piles de profondeur : suites d'images immobiles dont la nettete varie (vis micrometrique tournee) ----
@@ -164,8 +171,18 @@ def align_stack(imgs):
         x = cv2.GaussianBlur(x, (0, 0), 2.0)
         return cv2.magnitude(cv2.Sobel(x, cv2.CV_32F, 1, 0), cv2.Sobel(x, cv2.CV_32F, 0, 1))
     F = [feat(x) for x in g]
-    sharp = [float(cv2.Laplacian(x, cv2.CV_32F).var()) for x in g]
+    # plan de reference = le plus net, mesure a ~1000 px (a 400 px, un defocus de quelques pixels ne se voit pas) ; il n'est pas reechantillonne
+    f2 = min(1.0, 1000.0 / max(H_, W_))
+    def _cen(x): h_, w_ = x.shape[:2]; return x[int(0.2 * h_):int(0.8 * h_), int(0.2 * w_):int(0.8 * w_)]   # centre : sans le bord du disque
+    sharp = [float(cv2.Laplacian(_cen(cv2.resize(cv2.cvtColor(im, cv2.COLOR_BGR2GRAY), None, fx=f2, fy=f2, interpolation=cv2.INTER_AREA)), cv2.CV_32F).var()) for im in imgs]
     ref = int(np.argmax(sharp))
+    # le bord du disque de l'oculaire ne bouge pas quand on tourne la vis (diaphragme de champ), l'image de la lame si :
+    # on l'exclut de l'alignement, sinon il retient tout a « aucun decalage, aucun grossissement »
+    gr = cv2.GaussianBlur(g[ref], (0, 0), 3)
+    emask = (gr > 0.35 * float(np.percentile(gr, 95))).astype(np.uint8)
+    rr = max(3, int(0.06 * max(gr.shape)))
+    emask = cv2.erode(emask, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * rr + 1, 2 * rr + 1)))
+    if emask.mean() < 0.2: emask = None
     shifts, ok = [(0.0, 0.0)] * n, [False] * n
     ok[ref] = True
     crit = (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 60, 1e-4)
@@ -177,14 +194,25 @@ def align_stack(imgs):
             for init in ([prev, (0.0, 0.0)] if prev != (0.0, 0.0) else [(0.0, 0.0)]):
                 W = np.array([[1, 0, init[0]], [0, 1, init[1]]], np.float32)
                 try:
-                    cc, W = cv2.findTransformECC(F[ref], F[k], W, cv2.MOTION_TRANSLATION, crit, None, 5)
+                    cc, W = cv2.findTransformECC(F[ref], F[k], W, cv2.MOTION_TRANSLATION, crit, emask, 5)
                 except cv2.error:
                     continue
                 if abs(W[0, 2]) < lim and abs(W[1, 2]) < lim and (best is None or cc > best[0]): best = (cc, float(W[0, 2]), float(W[1, 2]))
             if best and best[0] > 0.25:
-                shifts[k] = (best[1] / f, best[2] / f); ok[k] = True; prev = (best[1], best[2])
+                M = np.float32([[1, 0, best[1] / f], [0, 1, best[2] / f]])
+                # la vis micrometrique fait aussi « respirer » l'image (grossissement de l'ordre du %) : raffinement affine,
+                # garde seulement s'il ameliore la correlation et reste proche d'une translation
+                try:
+                    Wa = np.array([[1, 0, best[1]], [0, 1, best[2]]], np.float32)
+                    cca, Wa = cv2.findTransformECC(F[ref], F[k], Wa, cv2.MOTION_AFFINE, crit, emask, 5)
+                    if cca >= best[0] and abs(Wa[0, 0] - 1) < 0.04 and abs(Wa[1, 1] - 1) < 0.04 and abs(Wa[0, 1]) < 0.02 and abs(Wa[1, 0]) < 0.02:
+                        M = np.float32([[Wa[0, 0], Wa[0, 1], Wa[0, 2] / f], [Wa[1, 0], Wa[1, 1], Wa[1, 2] / f]])
+                except cv2.error:
+                    pass
+                shifts[k] = M; ok[k] = True; prev = (best[1], best[2])
             else:
                 ok[k] = False   # plan non alignable : exclu de la fusion
+    shifts = [m if isinstance(m, np.ndarray) else np.float32([[1, 0, m[0]], [0, 1, m[1]]]) for m in shifts]
     return shifts, ok, ref
 
 def edf(paths):
@@ -198,11 +226,10 @@ def edf(paths):
     aligned, maps, valids = [], [], []
     refim = imgs[ref]
     for k in keep:
-        im = imgs[k]; sx, sy = shifts[k]
+        im = imgs[k]; M = shifts[k]
         valid = np.ones(im.shape[:2], np.float32)
-        if abs(sx) > 0.5 or abs(sy) > 0.5:
-            M = np.float32([[1, 0, sx], [0, 1, sy]])
-            im = cv2.warpAffine(im, M, (im.shape[1], im.shape[0]), flags=cv2.INTER_LINEAR + cv2.WARP_INVERSE_MAP, borderMode=cv2.BORDER_CONSTANT, borderValue=(0, 0, 0))   # convention ECC
+        if abs(M[0, 2]) > 0.5 or abs(M[1, 2]) > 0.5 or abs(M[0, 0] - 1) > 1e-4 or abs(M[1, 1] - 1) > 1e-4 or abs(M[0, 1]) > 1e-4 or abs(M[1, 0]) > 1e-4:
+            im = cv2.warpAffine(im, M, (im.shape[1], im.shape[0]), flags=cv2.INTER_CUBIC + cv2.WARP_INVERSE_MAP, borderMode=cv2.BORDER_CONSTANT, borderValue=(0, 0, 0))   # convention ECC
             valid = cv2.warpAffine(valid, M, (im.shape[1], im.shape[0]), flags=cv2.INTER_NEAREST + cv2.WARP_INVERSE_MAP, borderMode=cv2.BORDER_CONSTANT, borderValue=0)
             valid = cv2.erode(valid, np.ones((9, 9), np.uint8))          # on s'ecarte du bord du plan decale
             im = np.where(valid[..., None] > 0, im, refim)                # hors champ : pixels du plan de reference
@@ -241,7 +268,7 @@ def spectral_order(maps):
 ZMAX = 5   # plans conserves au plus par pile (z-stack navigable)
 
 DEPTH = a.depth if a.depth != 'auto' else (str(meta.get('depth') or 'off'))
-if DEPTH != 'on': log('profondeur désactivée : à chaque arrêt de platine, l\'image la plus nette est gardée')
+if DEPTH != 'on' and not STACK_OF: log('profondeur désactivée : à chaque arrêt de platine, l\'image la plus nette est gardée')
 STILL, DRIFT = 0.06, 0.15   # pas < 6 % du cadre et derive cumulee < 15 % depuis le debut de l'arret = platine immobile
 merged, i, stacks = [], 0, 0
 while i < len(items):
@@ -251,9 +278,10 @@ while i < len(items):
         if math.hypot(cx, cy) >= DRIFT: break
         j += 1
     run = list(range(i, j))
-    if len(run) >= 3:
+    app_stack = len(run) >= 2 and all(items[k][0] in STACK_OF for k in run)   # pile prise par l'appli : toujours fusionnee
+    if len(run) >= 3 or app_stack:
         sh = [sharps[k] for k in run]
-        if DEPTH == 'on' and max(sh) > 1.5 * min(sh) and max(sh) >= 3.0:
+        if app_stack or (DEPTH == 'on' and max(sh) > 1.5 * min(sh) and max(sh) >= 3.0):
             outp = os.path.join(frames_dir, f'z_{i:06d}.jpg')
             fused, aligned, smaps = edf([items[k][0] for k in run])
             cv2.imwrite(outp, fused, [cv2.IMWRITE_JPEG_QUALITY, 95])
