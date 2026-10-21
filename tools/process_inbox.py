@@ -27,8 +27,12 @@ H = {'apikey': KEY, 'Authorization': f'Bearer {KEY}'}
 BUCKET = 'series'
 
 def ls(prefix):
-    r = requests.post(f'{URL}/storage/v1/object/list/{BUCKET}', headers=H, json={'prefix': prefix, 'limit': 1000, 'sortBy': {'column': 'name', 'order': 'asc'}})
-    r.raise_for_status(); return r.json()
+    # le stockage repond parfois 500 ou 429 : nouvel essai avec attente (une lame publiee ne doit pas finir en echec pour ca)
+    for attempt in range(6):
+        r = requests.post(f'{URL}/storage/v1/object/list/{BUCKET}', headers=H, json={'prefix': prefix, 'limit': 1000, 'sortBy': {'column': 'name', 'order': 'asc'}})
+        if r.status_code in (429, 500, 502, 503, 504) and attempt < 5:
+            print(f'  {r.status_code} sur la liste {prefix or "/"} : nouvel essai dans {2 ** attempt} s'); time.sleep(2 ** attempt); continue
+        r.raise_for_status(); return r.json()
 def get(path, dest):
     # le stockage limite le debit (429) quand plusieurs prises se telechargent en meme temps : on attend et on reessaie
     for attempt in range(8):
