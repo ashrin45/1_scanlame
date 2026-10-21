@@ -1149,9 +1149,18 @@ try:
 except ImportError:
     pass
 
+# image a l'echelle aberrante apres ajustement (ecrasee ou gonflee par de mauvais appariements) : ecartee. Sinon la mosaique
+# est calee sur elle (Sref = 1 / plus petite echelle) et toute la lame est agrandie pour rien (x5 pour une echelle de 0,002)
+_sc = {k: math.hypot(T[k][0, 0], T[k][1, 0]) for k in comp if k in T}
+if _sc:
+    _med = float(np.median(list(_sc.values())))
+    _bad = [k for k, v in _sc.items() if (v < 0.75 * _med or v > 1.33 * _med) and k != ref]
+    if _bad:
+        log(f'{len(_bad)} image(s) écartée(s) : échelle aberrante après ajustement ({", ".join(f"{_sc[k]:.3f}" for k in _bad)} pour une médiane de {_med:.3f})')
+        comp = [k for k in comp if k not in _bad]
 res = []
 for (i, j), (pi, pj, _, _) in pairs.items():
-    if i in T and j in T:
+    if i in T and j in T and i in comp and j in comp:
         d = cv2.transform(pi[None], T[i][:2])[0] - cv2.transform(pj[None], T[j][:2])[0]
         res.append(np.median(np.hypot(d[:, 0], d[:, 1])))
 log(f'recalage : erreur médiane {np.median(res):.2f} px (échelle recalage), max {np.max(res):.2f}')

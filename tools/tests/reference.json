@@ -138,6 +138,14 @@
    "series": "lame_20261020_193225_pv-7445",
    "note": "PV, x100 puis x10",
    "expect": {}
+  },
+  "bleu-aspergillus": {
+   "series": "lame_20261021_115650_bleu-aspergillus",
+   "expect": {}
+  },
+  "pv-1375-x10": {
+   "series": "lame_20261020_192843_pv-1375",
+   "expect": {}
   }
  }
 }
