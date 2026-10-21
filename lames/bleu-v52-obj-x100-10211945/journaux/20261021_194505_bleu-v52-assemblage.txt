@@ -1,0 +1,41 @@
+[    0.0s] segment 1/3 : objectif x100, 319 images entre 0 s et 213 s
+[    0.0s] 319 images candidates
+[    4.2s] profondeur : 319 photos en 24 pile(s) marquée(s) par l'appli (plusieurs plans de mise au point par champ)
+[    6.3s]   pile : 19 plan(s) non alignable(s) écarté(s)
+[   11.2s]   pile : 11 plan(s) non alignable(s) écarté(s)
+[   16.5s]   pile : 9 plan(s) non alignable(s) écarté(s)
+[   21.1s]   pile : 5 plan(s) non alignable(s) écarté(s)
+[   54.1s]   pile : 3 plan(s) non alignable(s) écarté(s)
+[   54.2s] 24 pile(s) de profondeur fusionnée(s) (EDF), plans conservés pour la navigation
+[   54.2s] netteté médiane 28.1, seuil 11.3
+[   54.4s] 23 images retenues (nettes, non redondantes)
+[   54.7s] flat-field : médiane temporelle de 23 images (vignettage et poussières fixes de l'oculaire)
+[   56.3s] aberration chromatique : échelle R 1.0000, B 1.0000
+[   56.5s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 2 %)
+[   63.1s] prétraitement terminé, 23 images, recalage à 900 x 1200
+[   64.6s] points SIFT : 221 par image en moyenne
+[   64.6s] 190 paires à tester
+[   64.7s] 7 paires valides
+[   73.3s] 104 paire(s) recalée(s) par corrélation d'images (champs répétitifs ou pauvres en points)
+[   73.6s] distorsion radiale : aucune correction (résidu 0.12 px, pas d'amélioration nette)
+[   73.6s] composantes : [23] -> on assemble la n°0 : 23 images
+[   73.8s] a priori (ensemble enregistré après le détail) : dernière photo du détail au centre du premier champ de l'ensemble (1628, 2086)
+[   73.8s] ancrage dans la lame d'ensemble inbox/lame_20261021_194505_bleu-v52/result (3415x4202 px, objectif x10) : mosaïque provisoire 381x443
+[   73.8s] recherche dans la fenêtre (1038, 1388, 2217, 2782)
+[   74.0s] facteur 1.0000 : 13 appariements, 9 inliers, échelle résiduelle 1.02
+[   75.6s] facteur 1.0000 : 13 appariements, 8 inliers, échelle résiduelle 1.00
+[   97.5s] appariement appris (fenêtre 858x921) : 11 appariements, 3 inliers, échelle résiduelle 1.007
+[  116.0s] appariement appris (fenêtre 850x911) : 11 appariements, 2 inliers, échelle résiduelle 4.849
+[  134.4s] appariement appris (fenêtre 1179x1394) : 1 appariements, 0 inliers, échelle résiduelle 0.000
+[  134.4s] balayage du parent par 72 fenêtres de 762x886 (appariement appris, facteur 1.0000)
+[  968.1s] ancrage dans la lame d'ensemble impossible : prise non localisée dans la lame d'ensemble
+[  968.3s] échelles relatives après ajustement : min 0.988, max 1.000
+[  968.3s] ajustement global : 5497 correspondances, 22 images
+[  968.5s] compensation photométrique : écart de gain max 3.4 %
+[  968.5s] recalage : erreur médiane 2.95 px (échelle recalage), max 166.39
+[  968.7s] mosaïque 3806 x 4457
+[  994.1s] composition : 6 tuiles en 25 s
+[ 1114.4s] z-stack : 5 plans sur 23 champ(s) en 120 s
+[ 1114.8s] rognage automatique proposé : 3136 x 4304 px (80 % de la mosaïque, 85 % de la couverture)
+[ 1114.8s] qualité : note B (recalage moyen (3.0 px))
+[ 1114.8s] terminé : pano.jpg 3806 x 4457 , 23 images utilisées sur 23

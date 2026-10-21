@@ -22,7 +22,12 @@
  "stage": null,
  "stage_cal": null,
  "stage_obs": null,
- "children": [],
+ "children": [
+  {
+   "slug": "bleu-v52-obj-x100-10211945",
+   "transform": null
+  }
+ ],
  "quality": {
   "grade": "A",
   "notes": [],
