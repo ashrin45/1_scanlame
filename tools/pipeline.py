@@ -1178,6 +1178,13 @@ def distort_pts(pu, c, R):
     return np.float32(c) + d * f[..., None]
 
 TILE, MARGIN, LEVELS = a.tile, 256, 5
+if shrink < 1:
+    # mosaique reduite (--max-side) : une tuile de 2048 px y contient des dizaines d'images ; au-dela de MAX_LAYERS images
+    # par tuile, les pixels des images ecartees restaient vides (mosaique en morceaux). Tuiles a la taille d'environ 1,5 champ.
+    _fp = float(np.median([max(bbox[k][2] - bbox[k][0], bbox[k][3] - bbox[k][1]) for k in comp]))
+    TILE = int(min(a.tile, max(512, 64 * round(1.5 * _fp / 64))))
+    MARGIN = min(256, max(64, TILE // 4))
+    if TILE != a.tile: log(f'mosaïque réduite : tuiles de composition de {TILE} px (champ de {_fp:.0f} px)')
 pano = np.zeros((H, W, 3), np.uint8); pano[:] = 255
 covered = np.zeros((H, W), np.uint8)
 imgs_cache = {}; _cache_lock = threading.Lock()
@@ -1315,7 +1322,7 @@ try:
 except Exception:
     _avail_gb = 8.0
 TILE_WORKERS = max(1, min(NWORK, 6, int(_avail_gb / 3.0)))   # ~3 Go par tuile de 2560 px en pleine charge
-MAX_LAYERS = 12
+MAX_LAYERS = 12 if TILE == a.tile else min(40, max(12, int(12 * (a.tile + 512) ** 2 / (TILE + 2 * MARGIN) ** 2)))   # memoire ~ surface de tuile x couches
 with ThreadPoolExecutor(TILE_WORKERS) as ex:
     for r in ex.map(lambda t: compose_tile(t[0], t[1], load), _tiles):
         if r is None: continue

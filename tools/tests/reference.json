@@ -128,6 +128,16 @@
      "ty": 2427
     }
    }
+  },
+  "pv-1375": {
+   "series": "lame_20261020_183243_pv-1375",
+   "note": "PV, x100 (patron 6x4) puis x10 : ensemble enregistré après le détail",
+   "expect": {}
+  },
+  "pv-7445": {
+   "series": "lame_20261020_193225_pv-7445",
+   "note": "PV, x100 puis x10",
+   "expect": {}
   }
  }
 }
