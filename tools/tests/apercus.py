@@ -43,4 +43,17 @@ for name in sorted(os.listdir(src)):
         cnts, _ = cv2.findContours(mask.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         cv2.drawContours(out, cnts, -1, (120, 214, 127), 2)
         cv2.imwrite(os.path.join(dst, f'{name}_{part}_dans_ensemble.jpg'), out, [cv2.IMWRITE_JPEG_QUALITY, 85])
+        # zoom en damier a pleine resolution de l'ensemble : une case sur deux vient du detail ; un decalage casse les cellules aux bords des cases
+        full = cv2.imread(os.path.join(d, 'ensemble', 'pano.jpg'))
+        if full is None: continue
+        S2 = M @ np.diag([fd, fd, 1])                                          # apercu detail -> px ensemble
+        ys, xs = np.nonzero(mask); x0, x1 = int(xs.min() * fe) - 40, int(xs.max() * fe) + 40; y0, y1 = int(ys.min() * fe) - 40, int(ys.max() * fe) + 40
+        x0, y0 = max(0, x0), max(0, y0); x1, y1 = min(full.shape[1], x1), min(full.shape[0], y1)
+        T = np.array([[1, 0, -x0], [0, 1, -y0], [0, 0, 1]]) @ S2
+        crop = full[y0:y1, x0:x1].copy()
+        wd = cv2.warpAffine(det, T[:2], (x1 - x0, y1 - y0), flags=cv2.INTER_LINEAR)
+        md = cv2.warpAffine((det.max(2) > 8).astype(np.uint8), T[:2], (x1 - x0, y1 - y0)) > 0
+        yy, xx = np.mgrid[0:y1 - y0, 0:x1 - x0]; chk = ((yy // 96 + xx // 96) % 2 == 0) & md
+        crop[chk] = wd[chk]
+        cv2.imwrite(os.path.join(dst, f'{name}_{part}_damier.jpg'), crop, [cv2.IMWRITE_JPEG_QUALITY, 88])
     print(name, 'ok')
