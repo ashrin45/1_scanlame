@@ -1,8 +1,57 @@
 {
  "series": {
-  "pv-multi": {"series": "lame_20261019_183506_pv-multi", "quick": true, "note": "x10 (12 photos) puis x100 (65 photos, bande courbe), mode B", "expect": {}},
-  "pv-7353": {"series": "lame_20261020_093825_pv-7353", "note": "x10 (143) puis x100 (145, serpentin 4 rangées)", "expect": {}},
-  "placenta": {"series": "lame_20261020_100236_placenta", "note": "x100 seul (138)", "expect": {}},
-  "moelle-2": {"series": "lame_20261020_123025_moelle-2", "note": "x100 puis x10 : ensemble enregistré après le détail", "expect": {}}
+  "pv-multi": {
+   "series": "lame_20261019_183506_pv-multi",
+   "quick": true,
+   "note": "x10 (12 photos) puis x100 (65 photos, bande courbe), mode B",
+   "expect": {
+    "ensemble": {
+     "residual_med": 0.96,
+     "residual_max": 1.24,
+     "crop_w": 5936,
+     "crop_h": 1792,
+     "grade": "A",
+     "width": 6713,
+     "height": 2324,
+     "used": 12,
+     "candidates": 12
+    },
+    "detail1": {
+     "groups_ok": 5,
+     "groups": 13,
+     "anchored_pass1": 26,
+     "anchor_residual": 10.7,
+     "residual_med": 1.82,
+     "residual_max": 20.46,
+     "scale": 0.0974,
+     "rotation": 0.8,
+     "anchored": 56,
+     "crop_w": 20992,
+     "crop_h": 2784,
+     "grade": "B",
+     "width": 25147,
+     "height": 3572,
+     "used": 65,
+     "candidates": 65,
+     "tx": 807,
+     "ty": 1251
+    }
+   }
+  },
+  "pv-7353": {
+   "series": "lame_20261020_093825_pv-7353",
+   "note": "x10 (143) puis x100 (145, serpentin 4 rangées)",
+   "expect": {}
+  },
+  "placenta": {
+   "series": "lame_20261020_100236_placenta",
+   "note": "x100 seul (138)",
+   "expect": {}
+  },
+  "moelle-2": {
+   "series": "lame_20261020_123025_moelle-2",
+   "note": "x100 puis x10 : ensemble enregistré après le détail",
+   "expect": {}
+  }
  }
 }
