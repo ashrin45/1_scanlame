@@ -62,6 +62,9 @@ class Settings(ctx: Context) {
     fun depthAllowed(obj: String) = (Regex("\\d+").find(obj)?.value?.toIntOrNull() ?: 0) >= 40
     fun depthFor(obj: String): Boolean = depthAllowed(obj) && p.getBoolean("depth.$obj", false)
     fun setDepthFor(obj: String, v: Boolean) = p.edit().putBoolean("depth.$obj", v).apply()
+    /** Rafale (avec la profondeur) : une photo toutes les 300 ms tant que la vis tourne, toutes les couches gardees pour la molette du site. */
+    fun burstFor(obj: String): Boolean = depthFor(obj) && p.getBoolean("burst.$obj", false)
+    fun setBurstFor(obj: String, v: Boolean) = p.edit().putBoolean("burst.$obj", v).apply()
     var autoCrop: Boolean get() = p.getBoolean("autocrop", true); set(v) = p.edit().putBoolean("autocrop", v).apply()   // rognage au plus grand rectangle couvert a la publication
     var hint: String get() = str("hint", ""); set(v) = set("hint", v)           // "fx,fy" : repère touché sur la lame d'ensemble (fraction de l'image), vidé au départ de la série
     var stageX: String get() = str("stagex", ""); set(v) = set("stagex", v)     // coordonnées de la platine (vernier, mm) à la première photo

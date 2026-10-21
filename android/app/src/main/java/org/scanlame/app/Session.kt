@@ -227,7 +227,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
                 if (gap > 0.7 * Tracker.S2) { nBigSteps++; Journal.log("ATTENTION pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recouvrement insuffisant"); state.value = state.value.copy(message = "Pas trop grand (${(100 * gap / Tracker.S2).roundToInt()} % du champ) : recule d'un demi-champ, les photos doivent se recouvrir d'au moins 30 %.") }
                 else if (state.value.message.startsWith("Pas trop grand")) state.value = state.value.copy(message = "Série en cours : déplace la platine d'un demi-champ, arrête-toi, une photo part à chaque arrêt.")
                 shoot(f, px, py, t, sh, img, stack = if (depthNow) stackId else null)
-            } else if (depthNow && zones != null && stackPlanes in 1 until 24 && now() - lastShotT > 300) {
+            } else if (depthNow && zones != null && stackPlanes in 1 until (if (st.burstFor(s.objective)) 40 else 24) && now() - lastShotT > 300) {
                 // profondeur : meme champ (la platine n'a pas bouge de plus de 15 % du cadre), la vis tourne. Pas besoin de s'arreter :
                 // une photo part (a) des qu'une zone avec du contenu devient plus nette que dans tous les plans deja pris, ou
                 // (b) des que la nettete globale a change de 15 % depuis le dernier plan (on traverse l'epaisseur : couches pour la molette)
@@ -239,7 +239,9 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
                     if (zs[z] > 1.2f * maxOf(zoneBest[z], 1e-3f)) up++
                 }
                 val moved = abs(sh - planeSharp) > 0.15f * maxOf(sh, planeSharp)
-                if (up >= 1 || moved) {
+                // rafale : toutes les couches, une photo toutes les 300 ms des que l'image change (la vis tourne)
+                val burst = st.burstFor(s.objective) && stackPlanes < 40 && abs(sh - prevSharp) > 0.02f * sh
+                if (up >= 1 || moved || burst) {
                     for (z in 0 until 16) zoneBest[z] = maxOf(zoneBest[z], zs[z])
                     Journal.log("profondeur : pile $stackId, plan ${stackPlanes + 1} (${if (up > 0) "$up zone(s) plus nette(s)" else "netteté ${planeSharp.roundToInt()} -> ${sh.roundToInt()}"})")
                     planeSharp = sh
@@ -330,7 +332,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             engine.takePhoto(file) { ok, err ->
                 shooting = false
                 if (ok) {
-                    synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("stack", stack).put("plane", plane).put("enc_ms", now() - tt).put("sharp", sh.toDouble())) }
+                    synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("stack", stack).put("plane", plane).put("burst", st.burstFor(state.value.objective)).put("enc_ms", now() - tt).put("sharp", sh.toDouble())) }
                     state.value = state.value.copy(photos = seq, bytes = state.value.bytes + file.length())
                     Journal.log("plan ${name.takeLast(8, 4)} (pile $stack, plan ${plane + 1}, ${file.length() shr 10} ko)")
                     Uploader.kick(ctx)
@@ -358,7 +360,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             shooting = false
             if (ok) {
                 val len = file.length()
-                synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("retake", retake).put("bonus", state.value.reinforce).put("enc_ms", now() - tt).put("sharp", sh.toDouble()).apply { if (stack != null) { put("stack", stack); put("plane", 0) } }) }
+                synchronized(frames) { frames.put(JSONObject().put("name", name).put("kind", "photo").put("t_ms", t).put("x", px.roundToInt()).put("y", py.roundToInt()).put("score", f.score.toDouble()).put("track", f.status).put("retake", retake).put("bonus", state.value.reinforce).put("enc_ms", now() - tt).put("sharp", sh.toDouble()).apply { if (stack != null) { put("stack", stack); put("plane", 0); put("burst", st.burstFor(state.value.objective)) } }) }
                 synchronized(placed) { placedPhotos.add(Placed(px, py, f.status, true, th, grade, state.value.reinforce)) }
                 val patronSpec = st.patronFor(state.value.objective)
                 if (state.value.patron == null && patronSpec != "libre") {
@@ -411,7 +413,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         val cal = st.umPerPx(obj)
         segments.add(JSONObject().put("objective", obj).put("t0", t).put("t1", JSONObject.NULL).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL)
             .put("from_x", sw.opt("from_x")).put("from_y", sw.opt("from_y")).put("from_track", sw.opt("from_track")).put("patron", st.patronFor(obj).takeIf { it != "libre" } ?: JSONObject.NULL)
-            .put("depth", st.depthFor(obj)))
+            .put("depth", st.depthFor(obj)).put("burst", st.burstFor(obj)))
         // si on passe a un grossissement plus faible, le point de depart du nouveau repere est l'emplacement du detail : repere sur la carte
         val prevObj = Regex("\\d+").find(segments.getOrNull(segments.size - 2)?.optString("objective") ?: "")?.value?.toIntOrNull() ?: 0
         val newObj = Regex("\\d+").find(obj)?.value?.toIntOrNull() ?: 0
@@ -448,7 +450,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         while (phases.length() > 0) phases.remove(0)
         segments.clear(); curBlank = null; switching = null
         val cal = st.umPerPx(st.objective)
-        segments.add(JSONObject().put("objective", st.objective).put("t0", 0).put("t1", JSONObject.NULL).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL).put("depth", st.depthFor(st.objective)))
+        segments.add(JSONObject().put("objective", st.objective).put("t0", 0).put("t1", JSONObject.NULL).put("um_per_px", if (cal > 0) cal.toDouble() else JSONObject.NULL).put("depth", st.depthFor(st.objective)).put("burst", st.burstFor(st.objective)))
         // taille du média (portrait) = unité des positions
         val sz = if (mode == Settings.MODE_VIDEO) engine.videoSize else engine.photoSize
         val rot = lastRot   // rotation appliquée par ffmpeg (métadonnée mp4) et par EXIF (photos) : positions dans l'image redressée
