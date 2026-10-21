@@ -26,6 +26,16 @@ a = ap.parse_args()
 
 ref = json.load(open(REF)) if os.path.isfile(REF) else {'series': {}}
 
+def cpu_model():
+    """Modele de processeur : les derniers chiffres des calculs (SIFT, LightGlue) en dependent, et un cas limite peut basculer."""
+    try:
+        for l in open('/proc/cpuinfo'):
+            if l.startswith('model name'): return ' '.join(l.split(':', 1)[1].split())
+    except Exception: pass
+    return 'inconnu'
+CPU = cpu_model()
+print(f'machine : {CPU}')
+
 def objective_number(o):
     m = re.search(r'(\d+(?:[.,]\d+)?)', str(o or '')); return float(m[1].replace(',', '.')) if m else 1e9
 
@@ -104,16 +114,21 @@ for name, spec in ref['series'].items():
         print(f'  détail {seg} : {r}')
     results[name] = res
     if not a.record:
-        for part, want in (spec.get('expect') or {}).items():
+        # reference de la meme machine si on en a une ; sinon la reference generale, ecarts a lire avec prudence
+        by_cpu = (spec.get('expect_cpu') or {}).get(CPU)
+        if by_cpu is None and spec.get('expect'): print(f'  (pas de référence pour la machine « {CPU} » : comparaison à la référence générale ; un écart peut venir de la machine, voir tools/tests/LISEZMOI)')
+        for part, want in (by_cpu if by_cpu is not None else spec.get('expect') or {}).items():
             errs = check(name, res.get(part, {}), want, TOL)
-            for e in errs: print(f'  ÉCART {part} {e}')
+            for e in errs: print(f'  ÉCART {part} {e}' + ('' if by_cpu is not None else ' [autre machine]'))
             if errs: failed = True
     else:
-        spec['expect'] = {part: {k: v for k, v in r.items() if k != 'seconds'} for part, r in res.items()}
+        rec = {part: {k: v for k, v in r.items() if k != 'seconds'} for part, r in res.items()}
+        spec.setdefault('expect_cpu', {})[CPU] = rec
+        if not spec.get('expect'): spec['expect'] = rec
 
 if a.record:
     os.makedirs(os.path.dirname(REF), exist_ok=True)
     json.dump(ref, open(REF, 'w'), indent=1, ensure_ascii=False)
-    print(f'références enregistrées dans {REF}')
+    print(f'références enregistrées dans {REF} (machine : {CPU})')
 print('RÉSULTAT :', 'écarts détectés' if failed else 'conforme aux références')
 sys.exit(1 if failed else 0)

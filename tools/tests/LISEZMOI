@@ -1,0 +1,19 @@
+Tests de non-régression du pipeline
+===================================
+
+Lancer : GitHub, Actions, « Tests du pipeline (non-régression) », Run workflow (série, ou vide = toutes ; branche à tester).
+
+Machines : GitHub attribue ses machines au hasard (AMD EPYC 7763, 9V74, 9V45... vus en octobre 2026). Sur une même machine,
+le pipeline est reproductible au chiffre près ; d'un processeur à l'autre, les dernières décimales des calculs diffèrent
+et un cas limite (ex. pv 1375 : localisation de la x100 confirmée par 20 points SIFT seulement) peut basculer
+(61, 66 ou 72 photos ancrées selon la machine, même code, mêmes photos).
+
+Références : reference.json garde, par série, une référence par processeur (expect_cpu) et une référence générale (expect).
+Le test compare à la référence de la machine du jour si elle existe, sinon à la générale en marquant les écarts [autre machine].
+Pour enrichir : relancer sur main (code inchangé) avec « record » ; la référence est ajoutée pour le processeur de cette machine.
+
+Comparer deux variantes : lancer chaque variante plusieurs fois, ne comparer que des exécutions faites sur le même processeur
+(machine.txt dans les résultats), regarder les aperçus (apercus/*.jpg). Un écart plus petit que la variation entre machines ne prouve rien.
+
+Bibliothèques : versions figées dans tools/requirements-pipeline.txt (versions.txt dans les résultats). Veille mensuelle :
+workflow « Veille des versions du pipeline », qui ouvre un ticket quand une version plus récente existe.
