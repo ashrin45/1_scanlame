@@ -12,7 +12,7 @@ la transformation vers la lame d'ensemble et celles des lames de detail. Les pla
 import json, math, os, shutil, sys
 import cv2, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from publish_lame import LAMES, load_lame, save_lame, write_pages, write_gallery, build_pyramid
+from publish_lame import LAMES, load_lame, save_lame, write_pages, write_gallery, build_pyramid, build_z_pyramid
 
 def shift_transform(t, dx, dy):
     """t : [a, b, tx, ty] applique a des px de la lame rognee (x' = x - dx) : x_parent = a x - b y + tx -> tx' = tx + a dx - b dy"""
@@ -58,10 +58,27 @@ def crop(slug, x0, y0, x1, y1):
             sx0, sy0 = max(x0, ox), max(y0, oy); sx1, sy1 = min(x1, ox + t.shape[1]), min(y1, oy + t.shape[0])
             if sx1 <= sx0 or sy1 <= sy0: continue
             img[sy0 - y0:sy1 - y0, sx0 - x0:sx1 - x0] = t[sy0 - oy:sy1 - oy, sx0 - ox:sx1 - ox]
+    # plans de profondeur : meme zone, tuiles propres au plan collees sur la base (les autres retombent sur la base)
+    zimgs = []
+    for z in range(int(j.get('zstack') or 0)):
+        zd = os.path.join(d, f'lame_z{z}', str(maxlvl)); zi = img.copy()
+        if os.path.isdir(zd):
+            for fn in os.listdir(zd):
+                tx, ty = (int(v) for v in fn[:-4].split('_'))
+                t = cv2.imread(os.path.join(zd, fn))
+                if t is None: continue
+                ox, oy = max(0, tx * T - 1), max(0, ty * T - 1)
+                sx0, sy0 = max(x0, ox), max(y0, oy); sx1, sy1 = min(x1, ox + t.shape[1]), min(y1, oy + t.shape[0])
+                if sx1 <= sx0 or sy1 <= sy0: continue
+                zi[sy0 - y0:sy1 - y0, sx0 - x0:sx1 - x0] = t[sy0 - oy:sy1 - oy, sx0 - ox:sx1 - ox]
+        zimgs.append(zi)
     shutil.rmtree(tiles); os.makedirs(tiles)
     for f in os.listdir(d):
         if f.startswith('lame_z') and os.path.isdir(os.path.join(d, f)): shutil.rmtree(os.path.join(d, f))
     nW, nH, nmax, n = build_pyramid(img, tiles, T, 90)
+    zkeys = set()
+    for z, zi in enumerate(zimgs): build_z_pyramid(z, zi, tiles, os.path.join(d, f'lame_z{z}'), T, 90, zkeys)
+    del zimgs
     open(os.path.join(d, 'lame.dzi'), 'w').write(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<Image xmlns="http://schemas.microsoft.com/deepzoom/2008" Format="jpg" Overlap="1" TileSize="{T}"><Size Width="{nW}" Height="{nH}"/></Image>')
     s = min(1.0, 3000 / max(nW, nH))
@@ -119,7 +136,7 @@ def crop(slug, x0, y0, x1, y1):
                     child_crops.append((c['slug'], cx0, cy0, cx1, cy1))
     if j.get('quality'):
         j['quality']['holes'] = []; j['quality']['holes_frac'] = 0.0
-    j.update(width=nW, height=nH, maxlvl=nmax, tiles=n, zstack=0, zstack_tiles=None)
+    j.update(width=nW, height=nH, maxlvl=nmax, tiles=n, zstack=(j.get('zstack') or 0) if zkeys else 0, zstack_tiles=sorted(zkeys) if zkeys else None)
     j['cropped'] = (j.get('cropped') or []) + [[x0, y0, x1, y1]]
     import datetime
     j['updated'] = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')
