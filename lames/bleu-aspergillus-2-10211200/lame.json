@@ -22,7 +22,17 @@
  "stage": null,
  "stage_cal": null,
  "stage_obs": null,
- "children": [],
+ "children": [
+  {
+   "slug": "bleu-aspergillus-2-obj-x40-10211200",
+   "transform": [
+    0.24327940760060981,
+    0.013897323134109131,
+    -259.6436113321569,
+    930.362082005261
+   ]
+  }
+ ],
  "quality": {
   "grade": "A",
   "notes": [],

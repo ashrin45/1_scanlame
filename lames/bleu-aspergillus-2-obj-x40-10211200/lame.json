@@ -1,0 +1,104 @@
+{
+ "title": "bleu aspergillus 2 (obj. x40)",
+ "width": 4048,
+ "height": 7936,
+ "fields": 58,
+ "tiles": 180,
+ "tile": 512,
+ "maxlvl": 13,
+ "um_per_px": null,
+ "stain": "gram",
+ "objective": "x40",
+ "sample": null,
+ "comment": null,
+ "captured": "21/10/2026 12:00",
+ "parent": "bleu-aspergillus-2-10211200",
+ "parent_transform": [
+  0.24327940760060981,
+  0.013897323134109131,
+  -259.6436113321569,
+  930.362082005261
+ ],
+ "parent_anchored": 47,
+ "parent_approx": null,
+ "outline": [
+  [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    7934.6
+   ],
+   [
+    4045.4,
+    7934.6
+   ],
+   [
+    4045.4,
+    0.0
+   ]
+  ]
+ ],
+ "cellules": null,
+ "hint": null,
+ "stage": null,
+ "stage_cal": null,
+ "stage_obs": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "recalage moyen (1.8 px)",
+   "4 champ(s) placé(s) sans recalage fin"
+  ],
+  "frames": {
+   "candidates": 96,
+   "blurred": 0,
+   "selected": 65,
+   "used": 65,
+   "tracked_only": 4
+  },
+  "residual_px": 1.83,
+  "residual_max_px": 18.01,
+  "holes": [],
+  "holes_frac": 0.0,
+  "coverage_px": 56847077,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 10.1,
+  "flat_field": "médiane",
+  "k1": -0.022,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "series": "lame_20261021_120006_bleu-aspergillus-2",
+ "version": 1,
+ "params": {
+  "depth": "off",
+  "seams": true,
+  "fps": 4.0,
+  "reg_size": 1200,
+  "max_side": 32000,
+  "core": 0.7,
+  "tile": 2048,
+  "distortion": true,
+  "chroma": true,
+  "code": "58edd50"
+ },
+ "published": "2026-10-21T10:25:26+00:00",
+ "updated": "2026-10-21T10:25:26+00:00",
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null,
+ "cropped": [
+  [
+   3216,
+   240,
+   7264,
+   8176
+  ]
+ ]
+}

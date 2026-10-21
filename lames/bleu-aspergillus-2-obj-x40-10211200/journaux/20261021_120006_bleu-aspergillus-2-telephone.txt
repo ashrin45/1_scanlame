@@ -1,0 +1,1528 @@
+     0.000  ScanLame 0.46 démarré sur samsung SM-S928B (Android 16)
+     7.981  liaison : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+     8.427  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+    76.797  verrouillage : focus infini, pose 0.177705 ms, ISO 51, WB figée
+    77.048  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+    95.248  === série lame_20261021_115650_bleu-aspergillus (photos) « bleu aspergillus », gram, objectif x10 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+    95.300  masque oculaire : 99 % du cadre utile (p95 188)
+    95.574  t0000323 suivi ok score 0.94 pos 0,0 net 98 (17 ms) carte 0 photos + 3 positions
+    95.903  patron 3x3 champs posé en haut à gauche (0,0)
+    95.904  photo lus_0001 à 0,0 (532 ko, 219 ms)
+    95.916  t0000669 suivi ok score 0.93 pos 0,0 net 98 (18 ms) carte 1 photos + 6 positions
+    96.238  t0000989 suivi ok score 0.94 pos 0,0 net 99 (18 ms) carte 1 photos + 10 positions
+    96.587  t0001339 suivi ok score 0.94 pos 0,0 net 99 (27 ms) carte 1 photos + 13 positions
+    96.920  t0001673 suivi ok score 0.93 pos 0,0 net 99 (30 ms) carte 1 photos + 16 positions
+    97.272  t0002023 suivi ok score 0.94 pos 0,0 net 99 (37 ms) carte 1 photos + 20 positions
+    97.578  t0002331 suivi ok score 0.94 pos 0,0 net 98 (21 ms) carte 1 photos + 23 positions
+    97.906  t0002660 suivi ok score 0.93 pos 0,0 net 99 (20 ms) carte 1 photos + 26 positions
+    98.076  envoyé lame_20261021_115650_bleu-aspergillus_0001.jpg (532 ko)
+    98.250  t0003002 suivi ok score 0.94 pos 0,0 net 99 (20 ms) carte 1 photos + 30 positions
+    98.606  t0003357 suivi ok score 0.94 pos 0,0 net 99 (37 ms) carte 1 photos + 33 positions
+    98.921  t0003674 suivi ok score 0.93 pos 0,0 net 100 (22 ms) carte 1 photos + 36 positions
+    99.263  t0004014 suivi ok score 0.94 pos 0,0 net 99 (34 ms) carte 1 photos + 40 positions
+    99.575  t0004328 suivi ok score 0.94 pos 0,0 net 99 (18 ms) carte 1 photos + 43 positions
+    99.905  t0004658 suivi ok score 0.91 pos 0,-35 net 118 (17 ms) carte 1 photos + 46 positions
+   100.245  t0004997 suivi ok score 0.94 pos -11,-303 net 100 (17 ms) carte 1 photos + 50 positions
+   100.582  t0005335 suivi ok score 0.95 pos -12,-590 net 109 (23 ms) carte 1 photos + 53 positions
+   100.927  t0005680 suivi ok score 0.95 pos -12,-861 net 113 (33 ms) carte 1 photos + 56 positions
+   101.248  t0006000 suivi ok score 0.96 pos -12,-924 net 107 (22 ms) carte 1 photos + 60 positions
+   101.573  photo lus_0002 à -12,-924 (530 ko, 218 ms)
+   101.591  t0006344 suivi ok score 0.96 pos -12,-924 net 109 (26 ms) carte 2 photos + 63 positions
+   101.905  t0006658 suivi ok score 0.93 pos -191,-924 net 105 (17 ms) carte 2 photos + 66 positions
+   102.265  t0007017 suivi ok score 0.94 pos -576,-908 net 104 (22 ms) carte 2 photos + 70 positions
+   102.577  t0007330 suivi ok score 0.96 pos -705,-908 net 104 (19 ms) carte 2 photos + 73 positions
+   102.931  t0007683 suivi ok score 0.96 pos -705,-908 net 105 (32 ms) carte 2 photos + 76 positions
+   103.039  photo lus_0003 à -705,-908 (544 ko, 234 ms)
+   103.134  envoyé lame_20261021_115650_bleu-aspergillus_0002.jpg (530 ko)
+   103.243  t0007996 suivi ok score 0.94 pos -705,-824 net 115 (21 ms) carte 3 photos + 80 positions
+   103.574  t0008328 suivi ok score 0.95 pos -693,-96 net 109 (18 ms) carte 3 photos + 83 positions
+   103.916  t0008670 suivi ok score 0.90 pos -681,286 net 124 (20 ms) carte 3 photos + 86 positions
+   104.252  t0009004 suivi ok score 0.96 pos -681,526 net 101 (23 ms) carte 3 photos + 90 positions
+   104.581  t0009334 suivi ok score 0.96 pos -681,526 net 100 (20 ms) carte 3 photos + 93 positions
+   104.767  photo lus_0004 à -681,526 (523 ko, 220 ms)
+   104.954  t0009707 suivi ok score 0.96 pos -681,526 net 101 (30 ms) carte 4 photos + 96 positions
+   105.272  t0010025 suivi ok score 0.92 pos -458,526 net 112 (17 ms) carte 4 photos + 100 positions
+   105.620  t0010373 suivi ok score 0.91 pos -120,511 net 111 (27 ms) carte 4 photos + 103 positions
+   105.946  t0010699 suivi ok score 0.93 pos 155,511 net 105 (23 ms) carte 4 photos + 106 positions
+   106.275  t0011028 suivi ok score 0.96 pos 167,511 net 109 (18 ms) carte 4 photos + 110 positions
+   106.467  photo lus_0005 à 167,511 (511 ko, 226 ms)
+   106.478  envoyé lame_20261021_115650_bleu-aspergillus_0003.jpg (544 ko)
+   106.605  t0011359 suivi ok score 0.95 pos 167,511 net 110 (19 ms) carte 5 photos + 113 positions
+   106.945  t0011698 suivi ok score 0.88 pos 179,1048 net 97 (18 ms) carte 5 photos + 116 positions
+   107.292  t0012045 suivi ok score 0.73 pos 199,1626 net 93 (24 ms) carte 5 photos + 120 positions
+   107.612  t0012365 suivi ok score 0.88 pos 216,2180 net 100 (22 ms) carte 5 photos + 123 positions
+   107.956  t0012709 suivi ok score 0.96 pos 217,2180 net 106 (26 ms) carte 5 photos + 126 positions
+   107.991  envoyé lame_20261021_115650_bleu-aspergillus_0004.jpg (523 ko)
+   108.253  photo lus_0006 à 217,2180 (495 ko, 210 ms)
+   108.277  t0013030 suivi ok score 0.96 pos 217,2180 net 103 (23 ms) carte 6 photos + 130 positions
+   108.633  t0013385 suivi ok score 0.91 pos 753,2164 net 100 (40 ms) carte 6 photos + 133 positions
+   108.952  t0013705 suivi ok score 0.94 pos 1150,2148 net 97 (20 ms) carte 6 photos + 136 positions
+   109.288  t0014041 suivi ok score 0.96 pos 1150,2148 net 96 (23 ms) carte 6 photos + 140 positions
+   109.528  photo lus_0007 à 1150,2148 (493 ko, 218 ms)
+   109.531  envoyé lame_20261021_115650_bleu-aspergillus_0005.jpg (511 ko)
+   109.612  t0014365 suivi ok score 0.95 pos 1150,2148 net 94 (24 ms) carte 7 photos + 143 positions
+   109.959  t0014712 suivi ok score 0.91 pos 1691,2132 net 109 (22 ms) carte 7 photos + 146 positions
+   110.275  t0015028 suivi ok score 0.93 pos 2070,2116 net 94 (17 ms) carte 7 photos + 150 positions
+   110.614  t0015367 suivi ok score 0.95 pos 2497,2100 net 106 (22 ms) carte 7 photos + 153 positions
+   110.738  envoyé lame_20261021_115650_bleu-aspergillus_0006.jpg (495 ko)
+   110.946  t0015699 suivi ok score 0.96 pos 2500,2100 net 104 (22 ms) carte 7 photos + 156 positions
+   111.125  photo lus_0008 à 2500,2100 (498 ko, 213 ms)
+   111.271  t0016024 suivi ok score 0.96 pos 2500,2100 net 97 (18 ms) carte 8 photos + 160 positions
+   111.612  t0016365 suivi ok score 0.89 pos 3035,2084 net 122 (23 ms) carte 8 photos + 163 positions
+   111.953  t0016706 suivi ok score 0.93 pos 3445,2068 net 133 (22 ms) carte 8 photos + 166 positions
+   112.283  t0017035 suivi ok score 0.96 pos 3757,2052 net 117 (22 ms) carte 8 photos + 170 positions
+   112.300  envoyé lame_20261021_115650_bleu-aspergillus_0007.jpg (493 ko)
+   112.604  t0017357 suivi ok score 0.95 pos 3745,2068 net 118 (11 ms) carte 8 photos + 173 positions
+   112.757  photo lus_0009 à 3745,2068 (498 ko, 211 ms)
+   112.945  t0017698 suivi ok score 0.96 pos 3745,2068 net 118 (24 ms) carte 9 photos + 176 positions
+   113.287  t0018040 suivi ok score 0.94 pos 4019,2057 net 113 (27 ms) carte 9 photos + 180 positions
+   113.625  envoyé lame_20261021_115650_bleu-aspergillus_0008.jpg (498 ko)
+   113.625  t0018378 suivi ok score 0.95 pos 4151,2052 net 116 (22 ms) carte 9 photos + 183 positions
+   113.938  t0018692 suivi ok score 0.97 pos 4151,2052 net 116 (18 ms) carte 9 photos + 186 positions
+   114.024  photo lus_0010 à 4151,2052 (503 ko, 214 ms)
+   114.277  t0019030 suivi ok score 0.95 pos 4151,2052 net 125 (22 ms) carte 10 photos + 190 positions
+   114.613  t0019366 suivi ok score 0.94 pos 4510,2037 net 114 (19 ms) carte 10 photos + 193 positions
+   114.948  t0019701 suivi ok score 0.91 pos 4976,2036 net 114 (20 ms) carte 10 photos + 196 positions
+   115.279  t0020032 suivi ok score 0.96 pos 4988,2025 net 124 (17 ms) carte 10 photos + 200 positions
+   115.345  envoyé lame_20261021_115650_bleu-aspergillus_0009.jpg (498 ko)
+   115.575  photo lus_0011 à 4988,2035 (515 ko, 224 ms)
+   115.613  t0020366 suivi ok score 0.96 pos 4988,2025 net 124 (19 ms) carte 11 photos + 203 positions
+   115.943  t0020696 suivi ok score 0.95 pos 5215,2025 net 120 (20 ms) carte 11 photos + 206 positions
+   116.281  t0021033 suivi ok score 0.94 pos 5654,2009 net 132 (20 ms) carte 11 photos + 210 positions
+   116.554  envoyé lame_20261021_115650_bleu-aspergillus_0010.jpg (503 ko)
+   116.612  t0021365 suivi ok score 0.97 pos 5884,2009 net 129 (17 ms) carte 11 photos + 213 positions
+   116.969  t0021721 suivi ok score 0.97 pos 5884,2009 net 127 (32 ms) carte 11 photos + 216 positions
+   117.067  photo lus_0012 à 5884,2009 (529 ko, 201 ms)
+   117.288  t0022040 suivi ok score 0.97 pos 5884,2009 net 127 (22 ms) carte 12 photos + 220 positions
+   117.612  t0022365 suivi ok score 0.94 pos 6103,2009 net 133 (24 ms) carte 12 photos + 223 positions
+   117.951  t0022704 suivi ok score 0.96 pos 6457,1993 net 136 (24 ms) carte 12 photos + 226 positions
+   118.280  t0023032 suivi ok score 0.97 pos 6554,1993 net 148 (21 ms) carte 12 photos + 230 positions
+   118.467  envoyé lame_20261021_115650_bleu-aspergillus_0011.jpg (515 ko)
+   118.615  t0023368 suivi ok score 0.97 pos 6554,1993 net 141 (20 ms) carte 12 photos + 233 positions
+   118.633  photo lus_0013 à 6554,1993 (528 ko, 222 ms)
+   118.944  t0023698 suivi ok score 0.98 pos 6554,1993 net 141 (20 ms) carte 13 photos + 236 positions
+   119.280  t0024033 suivi ok score 0.97 pos 6554,1993 net 139 (18 ms) carte 13 photos + 240 positions
+   119.610  t0024364 suivi ok score 0.97 pos 6554,1993 net 139 (18 ms) carte 13 photos + 243 positions
+   119.955  t0024707 suivi ok score 0.98 pos 6554,1993 net 141 (28 ms) carte 13 photos + 246 positions
+   119.991  envoyé lame_20261021_115650_bleu-aspergillus_0012.jpg (529 ko)
+   120.317  t0025070 suivi ok score 0.97 pos 6554,1993 net 138 (25 ms) carte 13 photos + 250 positions
+   120.664  t0025416 suivi ok score 0.98 pos 6554,1993 net 142 (32 ms) carte 13 photos + 253 positions
+   120.989  t0025742 suivi ok score 0.97 pos 6554,1993 net 143 (22 ms) carte 13 photos + 256 positions
+   121.314  t0026068 suivi ok score 0.97 pos 6554,1993 net 142 (20 ms) carte 13 photos + 260 positions
+   121.653  t0026406 suivi ok score 0.97 pos 6554,1993 net 139 (21 ms) carte 13 photos + 263 positions
+   121.988  t0026741 suivi ok score 0.94 pos 6530,941 net 161 (21 ms) carte 13 photos + 266 positions
+   122.323  t0027076 suivi ok score 0.93 pos 6508,371 net 146 (24 ms) carte 13 photos + 270 positions
+   122.519  photo en mouvement lent (52 % du champ, 29 u/s)
+   122.643  t0027396 suivi ok score 0.96 pos 6495,-127 net 174 (17 ms) carte 13 photos + 273 positions
+   122.745  photo lus_0014 à 6504,-122 (510 ko, 226 ms)
+   122.976  t0027729 suivi ok score 0.95 pos 6498,-125 net 175 (19 ms) carte 14 photos + 276 positions
+   123.322  t0028074 suivi ok score 0.95 pos 6498,-125 net 175 (21 ms) carte 14 photos + 280 positions
+   123.649  t0028402 suivi ok score 0.96 pos 6498,-125 net 176 (20 ms) carte 14 photos + 283 positions
+   123.996  t0028749 suivi ok score 0.90 pos 5616,-110 net 117 (26 ms) carte 14 photos + 286 positions
+   124.220  envoyé lame_20261021_115650_bleu-aspergillus_0013.jpg (528 ko)
+   124.313  t0029066 suivi ok score 0.96 pos 5136,-110 net 115 (16 ms) carte 14 photos + 290 positions
+   124.651  t0029404 suivi ok score 0.97 pos 5136,-94 net 115 (25 ms) carte 14 photos + 293 positions
+   124.877  photo lus_0015 à 5136,-94 (513 ko, 226 ms)
+   124.977  t0029731 suivi ok score 0.96 pos 5136,-94 net 115 (22 ms) carte 15 photos + 296 positions
+   125.321  t0030073 suivi ok score 0.93 pos 4805,-94 net 126 (23 ms) carte 15 photos + 300 positions
+   125.653  t0030406 suivi ok score 0.92 pos 3916,-62 net 106 (22 ms) carte 15 photos + 300 positions
+   125.751  envoyé lame_20261021_115650_bleu-aspergillus_0014.jpg (510 ko)
+   125.989  t0030742 suivi ok score 0.96 pos 3701,-62 net 117 (20 ms) carte 15 photos + 300 positions
+   126.320  t0031073 suivi ok score 0.96 pos 3702,-62 net 117 (24 ms) carte 15 photos + 300 positions
+   126.441  photo lus_0016 à 3702,-62 (499 ko, 229 ms)
+   126.647  t0031400 suivi ok score 0.97 pos 3702,-62 net 115 (18 ms) carte 16 photos + 300 positions
+   126.979  t0031732 suivi ok score 0.90 pos 3081,-46 net 108 (18 ms) carte 16 photos + 300 positions
+   127.325  t0032078 suivi ok score 0.95 pos 2686,-46 net 122 (28 ms) carte 16 photos + 300 positions
+   127.590  envoyé lame_20261021_115650_bleu-aspergillus_0015.jpg (513 ko)
+   127.655  t0032408 suivi ok score 0.97 pos 2650,-46 net 122 (22 ms) carte 16 photos + 300 positions
+   127.979  t0032732 suivi ok score 0.96 pos 2650,-46 net 122 (21 ms) carte 16 photos + 300 positions
+   128.004  photo lus_0017 à 2650,-46 (498 ko, 222 ms)
+   128.326  t0033079 suivi ok score 0.92 pos 1945,-30 net 104 (21 ms) carte 17 photos + 300 positions
+   128.661  t0033413 suivi ok score 0.95 pos 1476,-30 net 101 (29 ms) carte 17 photos + 300 positions
+   128.674  envoyé lame_20261021_115650_bleu-aspergillus_0016.jpg (499 ko)
+   128.977  t0033730 suivi ok score 0.96 pos 1464,-30 net 110 (17 ms) carte 17 photos + 300 positions
+   129.268  photo lus_0018 à 1464,-30 (499 ko, 218 ms)
+   129.315  t0034068 suivi ok score 0.91 pos 1464,-30 net 97 (19 ms) carte 18 photos + 300 positions
+   129.648  t0034401 suivi ok score 0.92 pos 1487,909 net 87 (17 ms) carte 18 photos + 300 positions
+   129.988  t0034741 suivi ok score 0.86 pos 1519,1904 net 105 (19 ms) carte 18 photos + 300 positions
+   130.081  photo en mouvement lent (54 % du champ, 37 u/s)
+   130.303  photo lus_0019 à 1520,2162 (488 ko, 222 ms)
+   130.319  t0035072 suivi ok score 0.96 pos 1521,2264 net 103 (24 ms) carte 19 photos + 300 positions
+   130.589  envoyé lame_20261021_115650_bleu-aspergillus_0017.jpg (498 ko)
+   130.688  t0035440 suivi ok score 0.97 pos 1520,2264 net 97 (43 ms) carte 19 photos + 300 positions
+   130.980  t0035734 suivi ok score 0.96 pos 1520,2264 net 99 (20 ms) carte 19 photos + 300 positions
+   131.316  t0036069 suivi ok score 0.94 pos 1520,2300 net 90 (20 ms) carte 19 photos + 300 positions
+   131.651  t0036404 suivi ok score 0.90 pos 1532,2874 net 109 (19 ms) carte 19 photos + 300 positions
+   131.830  envoyé lame_20261021_115650_bleu-aspergillus_0018.jpg (499 ko)
+   131.979  t0036732 suivi ok score 0.84 pos 1329,3559 net 106 (19 ms) carte 19 photos + 300 positions
+   132.346  t0037097 suivi ok score 0.90 pos 1407,3449 net 106 (40 ms) carte 19 photos + 300 positions
+   132.648  t0037401 suivi ok score 0.92 pos 1450,3466 net 109 (17 ms) carte 19 photos + 300 positions
+   132.986  t0037739 suivi ok score 0.90 pos 1261,3453 net 107 (24 ms) carte 19 photos + 300 positions
+   133.319  t0038071 suivi ok score 0.90 pos 1417,3450 net 101 (21 ms) carte 19 photos + 300 positions
+   133.661  t0038414 suivi ok score 0.93 pos 1504,3448 net 96 (26 ms) carte 19 photos + 300 positions
+   133.995  t0038748 suivi ok score 0.91 pos 1530,3448 net 116 (24 ms) carte 19 photos + 300 positions
+   134.098  photo lus_0020 à 1514,3448 (474 ko, 213 ms)
+   134.331  t0039084 suivi ok score 0.92 pos 1451,3448 net 114 (22 ms) carte 20 photos + 300 positions
+   134.652  t0039406 suivi ok score 0.93 pos 1451,3448 net 115 (22 ms) carte 20 photos + 300 positions
+   134.997  t0039750 suivi ok score 0.92 pos 1451,3448 net 115 (23 ms) carte 20 photos + 300 positions
+   135.232  envoyé lame_20261021_115650_bleu-aspergillus_0019.jpg (488 ko)
+   135.324  t0040077 suivi ok score 0.92 pos 1451,3448 net 117 (24 ms) carte 20 photos + 300 positions
+   135.679  t0040432 suivi ok score 0.92 pos 1531,3448 net 128 (45 ms) carte 20 photos + 300 positions
+   135.982  t0040736 suivi ok score 0.90 pos 1368,3448 net 144 (19 ms) carte 20 photos + 300 positions
+   136.318  t0041071 suivi ok score 0.89 pos 1458,3446 net 114 (20 ms) carte 20 photos + 300 positions
+   136.399  envoyé lame_20261021_115650_bleu-aspergillus_0020.jpg (474 ko)
+   136.652  t0041405 suivi ok score 0.90 pos 1361,3418 net 116 (21 ms) carte 20 photos + 300 positions
+   136.987  t0041741 suivi ok score 0.88 pos 1411,3428 net 117 (24 ms) carte 20 photos + 300 positions
+   137.321  t0042074 suivi ok score 0.91 pos 1494,3420 net 122 (20 ms) carte 20 photos + 300 positions
+   137.653  t0042407 suivi ok score 0.90 pos 1351,3414 net 124 (20 ms) carte 20 photos + 300 positions
+   137.984  t0042737 suivi ok score 0.86 pos 1128,2766 net 110 (19 ms) carte 20 photos + 300 positions
+   138.334  t0043086 suivi ok score 0.84 pos 1128,1491 net 121 (30 ms) carte 20 photos + 300 positions
+   138.664  t0043417 suivi ok score 0.96 pos 1128,1475 net 131 (29 ms) carte 20 photos + 300 positions
+   138.940  photo lus_0021 à 1128,1475 (493 ko, 199 ms)
+   138.983  t0043735 suivi ok score 0.88 pos 722,1491 net 121 (19 ms) carte 21 photos + 300 positions
+   139.322  t0044075 suivi ok score 0.96 pos 519,1491 net 103 (21 ms) carte 21 photos + 300 positions
+   139.654  t0044407 suivi ok score 0.97 pos 519,1491 net 105 (21 ms) carte 21 photos + 300 positions
+   139.772  photo lus_0022 à 519,1491 (496 ko, 222 ms)
+   139.984  t0044737 suivi ok score 0.90 pos 124,1491 net 109 (20 ms) carte 22 photos + 300 positions
+   140.324  t0045077 suivi ok score 0.95 pos -366,1491 net 100 (20 ms) carte 22 photos + 300 positions
+   140.600  envoyé lame_20261021_115650_bleu-aspergillus_0021.jpg (493 ko)
+   140.660  t0045414 suivi ok score 0.97 pos -808,1491 net 94 (19 ms) carte 22 photos + 300 positions
+   140.982  t0045735 suivi ok score 0.96 pos -808,1491 net 93 (21 ms) carte 22 photos + 300 positions
+   141.038  photo lus_0023 à -808,1491 (494 ko, 221 ms)
+   141.323  t0046077 suivi ok score 0.96 pos -808,1491 net 94 (20 ms) carte 23 photos + 300 positions
+   141.647  t0046400 suivi ok score 0.95 pos -844,1491 net 89 (17 ms) carte 23 photos + 300 positions
+   141.980  t0046733 suivi ok score 0.95 pos -1370,1507 net 113 (16 ms) carte 23 photos + 300 positions
+   142.295  envoyé lame_20261021_115650_bleu-aspergillus_0022.jpg (496 ko)
+   142.321  t0047074 suivi ok score 0.96 pos -1370,1507 net 113 (21 ms) carte 23 photos + 300 positions
+   142.560  photo lus_0024 à -1370,1507 (504 ko, 205 ms)
+   142.647  t0047400 suivi ok score 0.91 pos -1359,1774 net 92 (19 ms) carte 24 photos + 300 positions
+   142.998  t0047751 suivi ok score 0.91 pos -1337,2608 net 81 (23 ms) carte 24 photos + 300 positions
+   143.276  envoyé lame_20261021_115650_bleu-aspergillus_0023.jpg (494 ko)
+   143.334  t0048087 suivi ok score 0.93 pos -1335,2814 net 116 (18 ms) carte 24 photos + 300 positions
+   143.651  t0048404 suivi ok score 0.95 pos -1335,2811 net 118 (17 ms) carte 24 photos + 300 positions
+   143.902  photo lus_0025 à -1335,2802 (480 ko, 214 ms)
+   143.979  t0048732 suivi ok score 0.93 pos -1335,2799 net 121 (20 ms) carte 25 photos + 300 positions
+   144.332  t0049085 suivi ok score 0.90 pos -1426,2874 net 108 (22 ms) carte 25 photos + 300 positions
+   144.667  t0049420 suivi ok score 0.94 pos -1807,2800 net 106 (32 ms) carte 25 photos + 300 positions
+   145.009  t0049762 suivi ok score 0.92 pos -1477,2799 net 108 (37 ms) carte 25 photos + 300 positions
+   145.329  t0050082 suivi ok score 0.92 pos -1571,2799 net 109 (23 ms) carte 25 photos + 300 positions
+   145.371  envoyé lame_20261021_115650_bleu-aspergillus_0024.jpg (504 ko)
+   145.650  t0050403 suivi ok score 0.94 pos -1824,2799 net 106 (19 ms) carte 25 photos + 300 positions
+   145.997  t0050750 suivi ok score 0.91 pos -1482,2804 net 113 (26 ms) carte 25 photos + 300 positions
+   146.327  t0051080 suivi ok score 0.92 pos -1357,2894 net 99 (18 ms) carte 25 photos + 300 positions
+   146.568  envoyé lame_20261021_115650_bleu-aspergillus_0025.jpg (480 ko)
+   146.645  t0051399 suivi ok score 0.94 pos -1646,2800 net 94 (14 ms) carte 25 photos + 300 positions
+   146.986  t0051739 suivi ok score 0.92 pos -1409,2899 net 96 (22 ms) carte 25 photos + 300 positions
+   147.321  t0052073 suivi ok score 0.91 pos -2013,2726 net 112 (19 ms) carte 25 photos + 300 positions
+   147.652  t0052405 suivi ok score 0.94 pos -2225,2559 net 95 (16 ms) carte 25 photos + 300 positions
+   147.986  t0052740 suivi ok score 0.92 pos -2238,2548 net 94 (18 ms) carte 25 photos + 300 positions
+   148.281  photo lus_0026 à -2238,2548 (476 ko, 225 ms)
+   148.321  t0053074 suivi ok score 0.92 pos -2238,2548 net 93 (18 ms) carte 26 photos + 300 positions
+   148.655  t0053408 suivi ok score 0.94 pos -2238,2548 net 94 (23 ms) carte 26 photos + 300 positions
+   148.988  t0053742 suivi ok score 0.92 pos -2238,2548 net 94 (20 ms) carte 26 photos + 300 positions
+   149.325  t0054078 suivi ok score 0.87 pos -2456,2545 net 90 (17 ms) carte 26 photos + 300 positions
+   149.653  t0054407 suivi ok score 0.91 pos -2203,2548 net 112 (20 ms) carte 26 photos + 300 positions
+   149.968  envoyé lame_20261021_115650_bleu-aspergillus_0026.jpg (476 ko)
+   149.991  t0054744 suivi ok score 0.91 pos -2240,2548 net 96 (24 ms) carte 26 photos + 300 positions
+   150.326  t0055078 suivi ok score 0.83 pos -2641,2548 net 81 (21 ms) carte 26 photos + 300 positions
+   150.656  t0055409 suivi ok score 0.94 pos -1618,2541 net 87 (20 ms) carte 26 photos + 300 positions
+   151.003  t0055756 suivi ok score 0.95 pos -1618,2541 net 93 (23 ms) carte 26 photos + 300 positions
+   151.264  photo lus_0027 à -1618,2541 (478 ko, 211 ms)
+   151.320  t0056073 suivi ok score 0.94 pos -1618,2541 net 96 (17 ms) carte 27 photos + 300 positions
+   151.653  t0056407 suivi ok score 0.92 pos -1618,2425 net 98 (18 ms) carte 27 photos + 300 positions
+   151.987  t0056741 suivi ok score 0.91 pos -1630,1681 net 122 (20 ms) carte 27 photos + 300 positions
+   152.321  t0057074 suivi ok score 0.95 pos -1630,1506 net 111 (18 ms) carte 27 photos + 300 positions
+   152.548  envoyé lame_20261021_115650_bleu-aspergillus_0027.jpg (478 ko)
+   152.653  t0057406 suivi ok score 0.96 pos -1630,1506 net 111 (19 ms) carte 27 photos + 300 positions
+   152.698  photo lus_0028 à -1630,1506 (493 ko, 209 ms)
+   152.989  t0057742 suivi ok score 0.92 pos -1355,1506 net 110 (20 ms) carte 28 photos + 300 positions
+   153.322  t0058075 suivi ok score 0.91 pos -805,1506 net 106 (20 ms) carte 28 photos + 300 positions
+   153.663  t0058416 suivi ok score 0.96 pos -554,1506 net 126 (22 ms) carte 28 photos + 300 positions
+   153.863  envoyé lame_20261021_115650_bleu-aspergillus_0028.jpg (493 ko)
+   153.974  t0058728 suivi ok score 0.96 pos -554,1506 net 127 (10 ms) carte 28 photos + 300 positions
+   154.040  photo lus_0029 à -554,1506 (505 ko, 218 ms)
+   154.326  t0059079 suivi ok score 0.91 pos -64,1494 net 113 (18 ms) carte 29 photos + 300 positions
+   154.660  t0059413 suivi ok score 0.90 pos 558,1494 net 129 (27 ms) carte 29 photos + 300 positions
+   154.994  t0059747 suivi ok score 0.97 pos 677,1494 net 127 (17 ms) carte 29 photos + 300 positions
+   155.188  envoyé lame_20261021_115650_bleu-aspergillus_0029.jpg (505 ko)
+   155.321  t0060074 suivi ok score 0.96 pos 677,1494 net 128 (21 ms) carte 29 photos + 300 positions
+   155.338  photo lus_0030 à 677,1494 (525 ko, 207 ms)
+   155.657  t0060410 suivi ok score 0.93 pos 688,2006 net 129 (19 ms) carte 30 photos + 300 positions
+   155.992  t0060745 suivi ok score 0.95 pos 689,2877 net 134 (22 ms) carte 30 photos + 300 positions
+   156.319  t0061072 suivi ok score 0.95 pos 689,3100 net 151 (17 ms) carte 30 photos + 300 positions
+   156.543  envoyé lame_20261021_115650_bleu-aspergillus_0030.jpg (525 ko)
+   156.650  t0061403 suivi ok score 0.96 pos 689,3100 net 151 (17 ms) carte 30 photos + 300 positions
+   156.737  photo lus_0031 à 689,3100 (508 ko, 233 ms)
+   156.988  t0061741 suivi ok score 0.92 pos 1094,3085 net 156 (23 ms) carte 31 photos + 300 positions
+   157.327  t0062080 suivi ok score 0.94 pos 1601,3447 net 140 (21 ms) carte 31 photos + 300 positions
+   157.681  t0062434 suivi ok score 0.98 pos 1809,3437 net 130 (34 ms) carte 31 photos + 300 positions
+   157.943  envoyé lame_20261021_115650_bleu-aspergillus_0031.jpg (508 ko)
+   158.000  t0062753 suivi ok score 0.98 pos 1833,3444 net 131 (17 ms) carte 31 photos + 300 positions
+   158.323  t0063076 suivi ok score 0.92 pos 1723,3429 net 112 (19 ms) carte 31 photos + 300 positions
+   158.665  t0063418 suivi ok score 0.91 pos 1700,3589 net 123 (25 ms) carte 31 photos + 300 positions
+   158.993  t0063746 suivi ok score 0.98 pos 1711,3450 net 121 (23 ms) carte 31 photos + 300 positions
+   159.329  t0064082 suivi ok score 0.97 pos 1700,3448 net 122 (27 ms) carte 31 photos + 300 positions
+   159.400  photo lus_0032 à 1700,3448 (530 ko, 207 ms)
+   159.657  t0064410 suivi ok score 0.98 pos 1700,3448 net 121 (21 ms) carte 32 photos + 300 positions
+   159.990  t0064743 suivi ok score 0.95 pos 1712,4020 net 120 (20 ms) carte 32 photos + 300 positions
+   160.333  t0065086 suivi ok score 0.98 pos 1724,4388 net 115 (24 ms) carte 32 photos + 300 positions
+   160.659  t0065412 suivi ok score 0.98 pos 1724,4388 net 116 (16 ms) carte 32 photos + 300 positions
+   160.768  envoyé lame_20261021_115650_bleu-aspergillus_0032.jpg (530 ko)
+   160.790  photo lus_0033 à 1724,4388 (527 ko, 239 ms)
+   160.988  t0065741 suivi ok score 0.90 pos 1724,4399 net 126 (20 ms) carte 33 photos + 300 positions
+   161.327  t0066079 suivi ok score 0.91 pos 1748,5201 net 136 (22 ms) carte 33 photos + 300 positions
+   161.666  t0066419 suivi ok score 0.97 pos 1748,5233 net 123 (24 ms) carte 33 photos + 300 positions
+   161.978  photo lus_0034 à 1748,5233 (538 ko, 217 ms)
+   161.994  t0066747 suivi ok score 0.96 pos 1867,5233 net 136 (20 ms) carte 34 photos + 300 positions
+   162.322  t0067075 suivi ok score 0.97 pos 2202,5217 net 127 (18 ms) carte 34 photos + 300 positions
+   162.391  envoyé lame_20261021_115650_bleu-aspergillus_0033.jpg (527 ko)
+   162.657  t0067410 suivi ok score 0.98 pos 2203,5217 net 129 (21 ms) carte 34 photos + 300 positions
+   162.944  photo lus_0035 à 2203,5217 (545 ko, 207 ms)
+   162.993  t0067746 suivi ok score 0.90 pos 2203,5264 net 126 (18 ms) carte 35 photos + 300 positions
+   163.326  t0068078 suivi ok score 0.91 pos 2214,5826 net 124 (24 ms) carte 35 photos + 300 positions
+   163.662  t0068415 suivi ok score 0.98 pos 2226,5982 net 125 (24 ms) carte 35 photos + 300 positions
+   164.002  t0068755 suivi ok score 0.98 pos 2226,5982 net 125 (21 ms) carte 35 photos + 300 positions
+   164.110  photo lus_0036 à 2226,5982 (554 ko, 214 ms)
+   164.290  envoyé lame_20261021_115650_bleu-aspergillus_0034.jpg (538 ko)
+   164.327  t0069080 suivi ok score 0.98 pos 2226,5982 net 125 (20 ms) carte 36 photos + 300 positions
+   164.656  t0069410 suivi ok score 0.96 pos 2226,6049 net 122 (18 ms) carte 36 photos + 300 positions
+   165.004  t0069756 suivi ok score 0.94 pos 2238,6544 net 124 (32 ms) carte 36 photos + 300 positions
+   165.325  t0070078 suivi ok score 0.98 pos 2250,6811 net 120 (18 ms) carte 36 photos + 300 positions
+   165.672  t0070424 suivi ok score 0.98 pos 2250,6811 net 121 (31 ms) carte 36 photos + 300 positions
+   165.708  photo lus_0037 à 2250,6811 (563 ko, 210 ms)
+   165.763  envoyé lame_20261021_115650_bleu-aspergillus_0035.jpg (545 ko)
+   165.991  t0070743 suivi ok score 0.98 pos 2250,6811 net 120 (19 ms) carte 37 photos + 300 positions
+   166.341  t0071093 suivi ok score 0.96 pos 2262,7113 net 122 (32 ms) carte 37 photos + 300 positions
+   166.654  t0071407 suivi ok score 0.98 pos 2274,7942 net 117 (16 ms) carte 37 photos + 300 positions
+   167.001  t0071753 suivi ok score 0.98 pos 2274,7942 net 117 (23 ms) carte 37 photos + 300 positions
+   167.206  photo lus_0038 à 2274,7942 (549 ko, 205 ms)
+   167.324  t0072077 suivi ok score 0.98 pos 2274,7942 net 117 (22 ms) carte 38 photos + 300 positions
+   167.673  t0072426 suivi ok score 0.93 pos 2739,7927 net 104 (30 ms) carte 38 photos + 300 positions
+   167.998  t0072750 suivi ok score 0.99 pos 2991,7926 net 102 (22 ms) carte 38 photos + 300 positions
+   168.336  t0073089 suivi ok score 0.99 pos 2991,7926 net 102 (24 ms) carte 38 photos + 300 positions
+   168.472  photo lus_0039 à 2991,7926 (569 ko, 228 ms)
+   168.485  envoyé lame_20261021_115650_bleu-aspergillus_0036.jpg (554 ko)
+   168.666  t0073419 suivi ok score 0.90 pos 3048,7926 net 104 (24 ms) carte 39 photos + 300 positions
+   168.993  t0073746 suivi ok score 0.98 pos 3778,7910 net 96 (18 ms) carte 39 photos + 300 positions
+   169.328  t0074080 suivi ok score 0.99 pos 3768,7910 net 95 (19 ms) carte 39 photos + 300 positions
+   169.521  photo lus_0040 à 3768,7910 (565 ko, 221 ms)
+   169.661  t0074414 suivi ok score 0.98 pos 3768,7910 net 95 (21 ms) carte 40 photos + 300 positions
+   169.926  envoyé lame_20261021_115650_bleu-aspergillus_0037.jpg (563 ko)
+   170.000  t0074753 suivi ok score 0.99 pos 3768,7910 net 95 (26 ms) carte 40 photos + 300 positions
+   170.330  t0075083 suivi ok score 0.99 pos 3768,7910 net 95 (23 ms) carte 40 photos + 300 positions
+   170.657  t0075410 suivi ok score 0.98 pos 3768,7910 net 95 (18 ms) carte 40 photos + 300 positions
+   170.996  t0075749 suivi ok score 0.99 pos 3768,7910 net 96 (18 ms) carte 40 photos + 300 positions
+   171.155  envoyé lame_20261021_115650_bleu-aspergillus_0038.jpg (549 ko)
+   171.330  t0076083 suivi ok score 0.99 pos 3768,7910 net 81 (25 ms) carte 40 photos + 300 positions
+   171.663  t0076415 suivi ok score 0.98 pos 3768,7910 net 58 (24 ms) carte 40 photos + 300 positions
+   171.992  t0076745 suivi ok score 0.99 pos 3768,7910 net 94 (21 ms) carte 40 photos + 300 positions
+   172.329  t0077082 suivi ok score 0.99 pos 3768,7910 net 97 (19 ms) carte 40 photos + 300 positions
+   172.661  t0077414 suivi ok score 0.99 pos 3768,7910 net 95 (21 ms) carte 40 photos + 300 positions
+   173.003  t0077756 suivi ok score 0.99 pos 3768,7910 net 94 (27 ms) carte 40 photos + 300 positions
+   173.341  t0078094 suivi ok score 0.99 pos 3768,7910 net 96 (29 ms) carte 40 photos + 300 positions
+   173.665  t0078418 suivi ok score 0.95 pos 4067,7899 net 95 (23 ms) carte 40 photos + 300 positions
+   173.990  t0078743 suivi ok score 0.95 pos 4414,7894 net 100 (18 ms) carte 40 photos + 300 positions
+   174.351  t0079103 suivi ok score 0.99 pos 4521,7894 net 97 (36 ms) carte 40 photos + 300 positions
+   174.660  t0079412 suivi ok score 0.99 pos 4521,7894 net 98 (19 ms) carte 40 photos + 300 positions
+   174.712  photo lus_0041 à 4521,7894 (548 ko, 226 ms)
+   174.995  t0079748 suivi ok score 0.95 pos 4690,7894 net 93 (18 ms) carte 41 photos + 300 positions
+   175.334  t0080086 suivi ok score 0.97 pos 5236,7878 net 90 (24 ms) carte 41 photos + 300 positions
+   175.664  t0080418 suivi ok score 0.98 pos 5358,7878 net 86 (19 ms) carte 41 photos + 300 positions
+   175.997  t0080750 suivi ok score 0.98 pos 5358,7878 net 86 (22 ms) carte 41 photos + 300 positions
+   176.116  photo lus_0042 à 5358,7878 (530 ko, 209 ms)
+   176.274  envoyé lame_20261021_115650_bleu-aspergillus_0039.jpg (569 ko)
+   176.325  t0081077 suivi ok score 0.97 pos 5537,7878 net 88 (18 ms) carte 42 photos + 300 positions
+   176.656  t0081409 suivi ok score 0.97 pos 6073,7862 net 96 (16 ms) carte 42 photos + 300 positions
+   176.997  t0081750 suivi ok score 0.97 pos 6097,7862 net 101 (24 ms) carte 42 photos + 300 positions
+   177.209  photo lus_0043 à 6097,7862 (522 ko, 211 ms)
+   177.327  t0082080 suivi ok score 0.98 pos 6098,7862 net 101 (22 ms) carte 43 photos + 300 positions
+   177.675  t0082428 suivi ok score 0.96 pos 6098,7925 net 94 (18 ms) carte 43 photos + 300 positions
+   177.748  envoyé lame_20261021_115650_bleu-aspergillus_0040.jpg (565 ko)
+   178.001  t0082755 suivi ok score 0.97 pos 6110,8436 net 110 (18 ms) carte 43 photos + 300 positions
+   178.325  t0083078 suivi ok score 0.98 pos 6110,8436 net 110 (17 ms) carte 43 photos + 300 positions
+   178.441  photo lus_0044 à 6110,8436 (524 ko, 215 ms)
+   178.670  t0083423 suivi ok score 0.96 pos 6090,8436 net 109 (25 ms) carte 44 photos + 300 positions
+   179.006  t0083758 suivi ok score 0.85 pos 4272,8468 net 105 (25 ms) carte 44 photos + 300 positions
+   179.100  photo en mouvement lent (66 % du champ, 0 u/s)
+   179.308  photo lus_0045 à 4091,8468 (558 ko, 208 ms)
+   179.332  t0084085 suivi ok score 0.99 pos 4091,8468 net 94 (25 ms) carte 45 photos + 300 positions
+   179.361  envoyé lame_20261021_115650_bleu-aspergillus_0041.jpg (548 ko)
+   179.658  t0084411 suivi ok score 0.98 pos 4091,8468 net 94 (20 ms) carte 45 photos + 300 positions
+   179.994  t0084747 suivi ok score 0.97 pos 3382,8488 net 110 (17 ms) carte 45 photos + 300 positions
+   180.343  t0085096 suivi ok score 0.98 pos 2788,8500 net 110 (23 ms) carte 45 photos + 300 positions
+   180.658  t0085412 suivi ok score 0.98 pos 2788,8500 net 109 (17 ms) carte 45 photos + 300 positions
+   180.857  photo lus_0046 à 2788,8500 (556 ko, 244 ms)
+   181.002  t0085754 suivi ok score 0.97 pos 2776,8500 net 101 (21 ms) carte 46 photos + 300 positions
+   181.329  t0086081 suivi ok score 0.95 pos 1952,8527 net 120 (18 ms) carte 46 photos + 300 positions
+   181.671  t0086424 suivi ok score 0.96 pos 1653,8532 net 116 (24 ms) carte 46 photos + 300 positions
+   181.997  t0086750 suivi ok score 0.96 pos 1653,8532 net 116 (22 ms) carte 46 photos + 300 positions
+   182.086  photo lus_0047 à 1653,8532 (513 ko, 224 ms)
+   182.311  envoyé lame_20261021_115650_bleu-aspergillus_0042.jpg (530 ko)
+   182.334  t0087087 suivi ok score 0.94 pos 1605,8532 net 121 (25 ms) carte 47 photos + 300 positions
+   182.667  t0087420 suivi ok score 0.91 pos 816,8563 net 125 (24 ms) carte 47 photos + 300 positions
+   182.996  t0087749 suivi ok score 0.92 pos 708,8564 net 149 (19 ms) carte 47 photos + 300 positions
+   183.330  t0088083 suivi ok score 0.94 pos 708,8564 net 150 (25 ms) carte 47 photos + 300 positions
+   183.387  envoyé lame_20261021_115650_bleu-aspergillus_0043.jpg (522 ko)
+   183.392  photo lus_0048 à 708,8564 (483 ko, 228 ms)
+   183.660  t0088414 suivi ok score 0.92 pos 708,8564 net 151 (22 ms) carte 48 photos + 300 positions
+   183.994  t0088747 suivi ok score 0.91 pos 413,8575 net 143 (21 ms) carte 48 photos + 300 positions
+   184.326  t0089078 suivi ok score 0.93 pos 325,8564 net 268 (19 ms) carte 48 photos + 300 positions
+   184.662  t0089416 suivi ok score 0.91 pos 584,8564 net 174 (24 ms) carte 48 photos + 300 positions
+   184.855  envoyé lame_20261021_115650_bleu-aspergillus_0044.jpg (524 ko)
+   184.998  t0089751 suivi ok score 0.88 pos 556,8564 net 185 (21 ms) carte 48 photos + 300 positions
+   185.324  t0090078 suivi ok score 0.91 pos 286,8564 net 195 (18 ms) carte 48 photos + 300 positions
+   185.664  t0090418 suivi ok score 0.91 pos 611,8570 net 135 (17 ms) carte 48 photos + 300 positions
+   186.012  t0090764 suivi ok score 0.90 pos 936,8564 net 159 (33 ms) carte 48 photos + 300 positions
+   186.334  t0091088 suivi ok score 0.94 pos 1524,8532 net 131 (21 ms) carte 48 photos + 300 positions
+   186.665  t0091418 suivi ok score 0.96 pos 1581,8532 net 116 (21 ms) carte 48 photos + 300 positions
+   186.999  t0091752 suivi ok score 0.95 pos 1569,8532 net 124 (19 ms) carte 48 photos + 300 positions
+   187.082  photo lus_0049 à 1569,8532 (512 ko, 218 ms)
+   187.283  envoyé lame_20261021_115650_bleu-aspergillus_0045.jpg (558 ko)
+   187.331  t0092083 suivi ok score 0.92 pos 1555,7818 net 124 (19 ms) carte 49 photos + 300 positions
+   187.677  t0092430 suivi ok score 0.97 pos 1545,7305 net 120 (33 ms) carte 49 photos + 300 positions
+   188.018  t0092771 suivi ok score 0.97 pos 1545,7305 net 123 (22 ms) carte 49 photos + 300 positions
+   188.213  photo lus_0050 à 1545,7305 (533 ko, 222 ms)
+   188.337  t0093089 suivi ok score 0.97 pos 1545,7305 net 124 (23 ms) carte 50 photos + 300 positions
+   188.658  t0093411 suivi ok score 0.90 pos 800,7321 net 162 (17 ms) carte 50 photos + 300 positions
+   188.877  envoyé lame_20261021_115650_bleu-aspergillus_0046.jpg (556 ko)
+   189.006  t0093759 suivi ok score 0.92 pos 541,7336 net 171 (29 ms) carte 50 photos + 300 positions
+   189.340  t0094093 suivi ok score 0.93 pos 437,7336 net 165 (17 ms) carte 50 photos + 300 positions
+   189.666  t0094419 suivi ok score 0.92 pos 375,7352 net 157 (17 ms) carte 50 photos + 300 positions
+   190.012  t0094765 suivi ok score 0.90 pos 206,7352 net 205 (27 ms) carte 50 photos + 300 positions
+   190.129  photo lus_0051 à 334,7352 (480 ko, 230 ms)
+   190.322  t0095075 suivi ok score 0.91 pos 127,7352 net 227 (17 ms) carte 51 photos + 300 positions
+   190.672  t0095425 suivi ok score 0.91 pos 6,7352 net 242 (25 ms) carte 51 photos + 300 positions
+   190.997  t0095750 suivi ok score 0.89 pos 92,7352 net 247 (18 ms) carte 51 photos + 300 positions
+   191.343  t0096095 suivi ok score 0.91 pos 115,7352 net 234 (27 ms) carte 51 photos + 300 positions
+   191.670  t0096423 suivi ok score 0.91 pos 4,7352 net 234 (23 ms) carte 51 photos + 300 positions
+   191.736  envoyé lame_20261021_115650_bleu-aspergillus_0047.jpg (513 ko)
+   191.995  t0096749 suivi ok score 0.89 pos 80,7355 net 240 (17 ms) carte 51 photos + 300 positions
+   192.340  t0097093 suivi ok score 0.91 pos 135,7352 net 233 (27 ms) carte 51 photos + 300 positions
+   192.669  t0097422 suivi ok score 0.90 pos 122,7337 net 204 (21 ms) carte 51 photos + 300 positions
+   192.940  envoyé lame_20261021_115650_bleu-aspergillus_0048.jpg (483 ko)
+   192.993  t0097747 suivi ok score 0.89 pos 443,7354 net 130 (18 ms) carte 51 photos + 300 positions
+   193.329  t0098083 suivi ok score 0.92 pos 293,7319 net 202 (20 ms) carte 51 photos + 300 positions
+   193.661  t0098415 suivi ok score 0.90 pos 217,7344 net 153 (19 ms) carte 51 photos + 300 positions
+   193.997  t0098750 suivi ok score 0.90 pos 425,7352 net 159 (21 ms) carte 51 photos + 300 positions
+   194.031  envoyé lame_20261021_115650_bleu-aspergillus_0049.jpg (512 ko)
+   194.335  t0099089 suivi ok score 0.90 pos 737,7333 net 162 (18 ms) carte 51 photos + 300 positions
+   194.678  t0099430 suivi ok score 0.95 pos 639,7325 net 151 (29 ms) carte 51 photos + 300 positions
+   195.009  t0099762 suivi ok score 0.95 pos 1524,7336 net 133 (26 ms) carte 51 photos + 300 positions
+   195.190  envoyé lame_20261021_115650_bleu-aspergillus_0050.jpg (533 ko)
+   195.332  t0100085 suivi ok score 0.98 pos 1667,7336 net 131 (20 ms) carte 51 photos + 300 positions
+   195.666  t0100419 suivi ok score 0.96 pos 1691,8181 net 131 (22 ms) carte 51 photos + 300 positions
+   195.719  photo lus_0052 à 1667,7352 (550 ko, 213 ms)
+   196.001  t0100755 suivi ok score 0.97 pos 1691,8181 net 133 (21 ms) carte 52 photos + 300 positions
+   196.285  photo lus_0053 à 1691,8181 (549 ko, 221 ms)
+   196.288  envoyé lame_20261021_115650_bleu-aspergillus_0051.jpg (480 ko)
+   196.335  t0101088 suivi ok score 0.97 pos 1691,8181 net 132 (17 ms) carte 53 photos + 300 positions
+   196.669  t0101422 suivi ok score 0.93 pos 1667,6638 net 129 (22 ms) carte 53 photos + 300 positions
+   196.974  photo en mouvement lent (63 % du champ, 0 u/s)
+   197.001  t0101754 suivi ok score 0.97 pos 1667,5618 net 113 (19 ms) carte 53 photos + 300 positions
+   197.184  photo lus_0054 à 1667,5618 (529 ko, 209 ms)
+   197.336  t0102089 suivi ok score 0.98 pos 1667,5618 net 116 (19 ms) carte 54 photos + 300 positions
+   197.667  t0102420 suivi ok score 0.89 pos -38,5650 net 173 (22 ms) carte 54 photos + 300 positions
+   197.835  photo en mouvement lent (70 % du champ, 36 u/s)
+   198.008  t0102760 suivi ok score 0.92 pos -455,5650 net 155 (29 ms) carte 54 photos + 300 positions
+   198.051  photo lus_0055 à -466,5666 (481 ko, 215 ms)
+   198.348  t0103100 suivi ok score 0.94 pos -458,5655 net 158 (33 ms) carte 55 photos + 300 positions
+   198.624  envoyé lame_20261021_115650_bleu-aspergillus_0052.jpg (550 ko)
+   198.688  t0103441 suivi ok score 0.81 pos 2563,5596 net 110 (32 ms) carte 55 photos + 300 positions
+   198.735  photo en mouvement lent (102 % du champ, 0 u/s)
+   198.735  ATTENTION pas trop grand (102 % du champ) : recouvrement insuffisant
+   198.952  photo lus_0056 à 2647,5596 (530 ko, 216 ms)
+   198.994  t0103747 suivi ok score 0.98 pos 2647,5596 net 107 (18 ms) carte 56 photos + 300 positions
+   199.330  t0104083 suivi ok score 0.95 pos 2730,5596 net 116 (19 ms) carte 56 photos + 300 positions
+   199.667  t0104420 suivi ok score 0.95 pos 3256,5580 net 103 (21 ms) carte 56 photos + 300 positions
+   199.997  t0104750 suivi ok score 0.95 pos 3363,5580 net 94 (20 ms) carte 56 photos + 300 positions
+   200.335  t0105089 suivi ok score 0.98 pos 3972,5580 net 107 (18 ms) carte 56 photos + 300 positions
+   200.670  t0105423 suivi ok score 0.98 pos 3984,5580 net 109 (17 ms) carte 56 photos + 300 positions
+   200.814  photo lus_0057 à 3984,5580 (509 ko, 216 ms)
+   200.963  envoyé lame_20261021_115650_bleu-aspergillus_0053.jpg (549 ko)
+   201.005  t0105758 suivi ok score 0.97 pos 3984,5580 net 109 (18 ms) carte 57 photos + 300 positions
+   201.332  t0106085 suivi ok score 0.94 pos 4547,5565 net 96 (19 ms) carte 57 photos + 300 positions
+   201.677  t0106430 suivi ok score 0.96 pos 4941,5564 net 112 (30 ms) carte 57 photos + 300 positions
+   202.014  t0106767 suivi ok score 0.96 pos 4944,5564 net 118 (23 ms) carte 57 photos + 300 positions
+   202.246  photo lus_0058 à 4944,5564 (501 ko, 213 ms)
+   202.340  t0107093 suivi ok score 0.94 pos 5315,5564 net 117 (21 ms) carte 58 photos + 300 positions
+   202.517  envoyé lame_20261021_115650_bleu-aspergillus_0054.jpg (529 ko)
+   202.664  t0107416 suivi ok score 0.96 pos 5706,5548 net 112 (19 ms) carte 58 photos + 300 positions
+   203.010  t0107762 suivi ok score 0.95 pos 5706,5548 net 115 (28 ms) carte 58 photos + 300 positions
+   203.245  photo lus_0059 à 5706,5548 (502 ko, 212 ms)
+   203.327  t0108080 suivi ok score 0.94 pos 5909,5548 net 123 (17 ms) carte 59 photos + 300 positions
+   203.666  t0108419 suivi ok score 0.96 pos 6772,5516 net 125 (19 ms) carte 59 photos + 300 positions
+   204.002  t0108755 suivi ok score 0.95 pos 6785,5521 net 127 (22 ms) carte 59 photos + 300 positions
+   204.212  photo lus_0060 à 6785,5521 (521 ko, 209 ms)
+   204.340  t0109092 suivi ok score 0.96 pos 6785,5521 net 134 (26 ms) carte 60 photos + 300 positions
+   204.501  envoyé lame_20261021_115650_bleu-aspergillus_0055.jpg (481 ko)
+   204.668  t0109421 suivi ok score 0.96 pos 6785,5521 net 127 (23 ms) carte 60 photos + 300 positions
+   205.005  t0109758 suivi ok score 0.95 pos 6785,5521 net 132 (20 ms) carte 60 photos + 300 positions
+   205.337  t0110090 suivi ok score 0.96 pos 6952,5521 net 151 (21 ms) carte 60 photos + 300 positions
+   205.667  t0110420 suivi ok score 0.96 pos 6952,5521 net 151 (19 ms) carte 60 photos + 300 positions
+   205.824  photo lus_0061 à 6952,5521 (524 ko, 220 ms)
+   206.005  t0110758 suivi ok score 0.95 pos 6952,5521 net 150 (20 ms) carte 61 photos + 300 positions
+   206.110  envoyé lame_20261021_115650_bleu-aspergillus_0056.jpg (530 ko)
+   206.335  t0111088 suivi ok score 0.96 pos 6952,5521 net 150 (18 ms) carte 61 photos + 300 positions
+   206.683  t0111436 suivi ok score 0.96 pos 6952,5521 net 151 (29 ms) carte 61 photos + 300 positions
+   207.012  t0111765 suivi ok score 0.95 pos 6952,5521 net 150 (28 ms) carte 61 photos + 300 positions
+   207.338  t0112091 suivi ok score 0.96 pos 6952,5521 net 150 (22 ms) carte 61 photos + 300 positions
+   207.482  série lame_20261021_115650_bleu-aspergillus : 61 photos, 3364 échantillons de position
+   207.720  envoyé lame_20261021_115650_bleu-aspergillus_0057.jpg (509 ko)
+   209.284  envoyé lame_20261021_115650_bleu-aspergillus_0058.jpg (501 ko)
+   210.821  envoyé lame_20261021_115650_bleu-aspergillus_0059.jpg (502 ko)
+   212.837  série lame_20261021_115650_bleu-aspergillus clôturée côté serveur : HTTP 200, réveil GitHub oui
+   243.062  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+   257.538  verrouillage : focus infini, pose 0.458617 ms, ISO 50, WB figée
+   257.762  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   291.597  === série lame_20261021_120006_bleu-aspergillus-2 (photos) « bleu aspergillus 2 », gram, objectif x40 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+   291.632  masque oculaire : 98 % du cadre utile (p95 176)
+   291.925  t0000329 suivi ok score 0.96 pos 0,0 net 51 (19 ms) carte 0 photos + 3 positions
+   292.234  patron 4x4 champs posé en haut à gauche (0,0)
+   292.234  photo s-2_0001 à 0,0 (551 ko, 215 ms)
+   292.258  t0000663 suivi ok score 0.97 pos 0,0 net 51 (23 ms) carte 1 photos + 6 positions
+   292.597  t0001000 suivi ok score 0.97 pos 0,0 net 51 (25 ms) carte 1 photos + 10 positions
+   292.930  t0001334 suivi ok score 0.96 pos 0,0 net 51 (24 ms) carte 1 photos + 13 positions
+   293.261  t0001665 suivi ok score 0.97 pos 0,0 net 51 (23 ms) carte 1 photos + 16 positions
+   293.591  t0001994 suivi ok score 0.97 pos 0,0 net 51 (21 ms) carte 1 photos + 20 positions
+   293.843  envoyé lame_20261021_120006_bleu-aspergillus-2_0001.jpg (551 ko)
+   293.924  t0002328 suivi ok score 0.96 pos 0,0 net 53 (19 ms) carte 1 photos + 23 positions
+   294.267  t0002671 suivi ok score 0.96 pos 299,-11 net 53 (27 ms) carte 1 photos + 26 positions
+   294.602  t0003006 suivi ok score 0.98 pos 708,-27 net 48 (26 ms) carte 1 photos + 30 positions
+   294.929  t0003333 suivi ok score 0.98 pos 1144,-32 net 52 (19 ms) carte 1 photos + 33 positions
+   295.262  t0003666 suivi ok score 0.98 pos 1456,-48 net 54 (23 ms) carte 1 photos + 36 positions
+   295.594  t0003997 suivi ok score 0.98 pos 1758,-59 net 54 (21 ms) carte 1 photos + 40 positions
+   295.822  photo en mouvement lent (65 % du champ, 30 u/s)
+   295.944  t0004347 suivi ok score 0.98 pos 2040,-63 net 51 (29 ms) carte 1 photos + 43 positions
+   296.042  photo s-2_0002 à 1994,-64 (540 ko, 219 ms)
+   296.266  t0004669 suivi ok score 0.98 pos 2240,-63 net 54 (29 ms) carte 2 photos + 46 positions
+   296.592  t0004996 suivi ok score 0.99 pos 2469,-63 net 55 (21 ms) carte 2 photos + 50 positions
+   296.933  t0005336 suivi ok score 0.98 pos 2815,-79 net 58 (29 ms) carte 2 photos + 53 positions
+   297.263  t0005667 suivi ok score 0.98 pos 3413,-79 net 54 (23 ms) carte 2 photos + 56 positions
+   297.596  t0005999 suivi ok score 0.98 pos 3400,-79 net 56 (22 ms) carte 2 photos + 60 positions
+   297.749  envoyé lame_20261021_120006_bleu-aspergillus-2_0002.jpg (540 ko)
+   297.776  photo s-2_0003 à 3401,-79 (532 ko, 214 ms)
+   297.924  t0006328 suivi ok score 0.98 pos 3400,-79 net 61 (24 ms) carte 3 photos + 63 positions
+   298.257  t0006661 suivi ok score 0.98 pos 3400,-79 net 60 (22 ms) carte 3 photos + 66 positions
+   298.591  t0006995 suivi ok score 0.98 pos 3400,-79 net 54 (24 ms) carte 3 photos + 70 positions
+   298.924  t0007328 suivi ok score 0.98 pos 3400,-79 net 65 (18 ms) carte 3 photos + 73 positions
+   299.268  t0007672 suivi ok score 0.98 pos 3400,-79 net 60 (21 ms) carte 3 photos + 76 positions
+   299.603  t0008007 suivi ok score 0.98 pos 3400,-79 net 61 (22 ms) carte 3 photos + 80 positions
+   299.669  envoyé lame_20261021_120006_bleu-aspergillus-2_0003.jpg (532 ko)
+   299.930  t0008333 suivi ok score 0.96 pos 3987,-94 net 68 (26 ms) carte 3 photos + 83 positions
+   300.264  t0008667 suivi ok score 0.96 pos 4946,-125 net 74 (28 ms) carte 3 photos + 86 positions
+   300.608  t0009012 suivi ok score 0.96 pos 5503,-125 net 61 (23 ms) carte 3 photos + 90 positions
+   300.890  photo en mouvement lent (81 % du champ, 10 u/s)
+   300.890  ATTENTION pas trop grand (81 % du champ) : recouvrement insuffisant
+   300.929  t0009333 suivi ok score 0.98 pos 5896,-141 net 55 (24 ms) carte 3 photos + 93 positions
+   301.104  photo s-2_0004 à 5878,-141 (529 ko, 213 ms)
+   301.277  t0009681 suivi ok score 0.98 pos 6231,-141 net 58 (36 ms) carte 4 photos + 96 positions
+   301.593  t0009997 suivi ok score 0.98 pos 6458,-157 net 58 (22 ms) carte 4 photos + 100 positions
+   301.940  t0010343 suivi ok score 0.98 pos 6730,-157 net 66 (34 ms) carte 4 photos + 103 positions
+   302.275  t0010678 suivi ok score 0.98 pos 6873,-157 net 61 (37 ms) carte 4 photos + 106 positions
+   302.407  envoyé lame_20261021_120006_bleu-aspergillus-2_0004.jpg (529 ko)
+   302.592  t0010996 suivi ok score 0.98 pos 6901,-157 net 63 (18 ms) carte 4 photos + 110 positions
+   302.702  photo s-2_0005 à 6900,-157 (530 ko, 208 ms)
+   302.921  t0011325 suivi ok score 0.99 pos 6909,-157 net 64 (19 ms) carte 5 photos + 113 positions
+   303.262  t0011666 suivi ok score 0.98 pos 6909,-157 net 63 (24 ms) carte 5 photos + 116 positions
+   303.592  t0011995 suivi ok score 0.98 pos 6909,-157 net 59 (20 ms) carte 5 photos + 120 positions
+   303.862  envoyé lame_20261021_120006_bleu-aspergillus-2_0005.jpg (530 ko)
+   303.914  t0012319 suivi ok score 0.98 pos 7254,-168 net 57 (11 ms) carte 5 photos + 123 positions
+   304.257  t0012661 suivi ok score 0.98 pos 7997,-173 net 61 (16 ms) carte 5 photos + 126 positions
+   304.525  photo en mouvement lent (51 % du champ, 31 u/s)
+   304.590  t0012994 suivi ok score 0.97 pos 8490,-189 net 64 (17 ms) carte 5 photos + 130 positions
+   304.749  photo s-2_0006 à 8454,-189 (523 ko, 223 ms)
+   304.952  t0013356 suivi ok score 0.97 pos 8645,-189 net 66 (24 ms) carte 6 photos + 133 positions
+   305.254  t0013658 suivi ok score 0.97 pos 8921,-204 net 73 (17 ms) carte 6 photos + 136 positions
+   305.609  t0014012 suivi ok score 0.96 pos 9112,-205 net 69 (30 ms) carte 6 photos + 140 positions
+   305.930  t0014334 suivi ok score 0.97 pos 9219,-205 net 71 (21 ms) carte 6 photos + 143 positions
+   306.027  envoyé lame_20261021_120006_bleu-aspergillus-2_0006.jpg (523 ko)
+   306.270  t0014675 suivi ok score 0.97 pos 9223,-205 net 72 (19 ms) carte 6 photos + 146 positions
+   306.546  photo s-2_0007 à 9219,-205 (513 ko, 218 ms)
+   306.591  t0014995 suivi ok score 0.96 pos 9219,-205 net 72 (20 ms) carte 7 photos + 150 positions
+   306.925  t0015329 suivi ok score 0.95 pos 9219,-82 net 68 (22 ms) carte 7 photos + 153 positions
+   307.259  t0015663 suivi ok score 0.94 pos 9254,1069 net 67 (20 ms) carte 7 photos + 156 positions
+   307.604  t0016008 suivi ok score 0.97 pos 9269,1710 net 62 (22 ms) carte 7 photos + 160 positions
+   307.943  t0016346 suivi ok score 0.97 pos 9278,1802 net 59 (30 ms) carte 7 photos + 163 positions
+   307.989  envoyé lame_20261021_120006_bleu-aspergillus-2_0007.jpg (513 ko)
+   308.168  photo s-2_0008 à 9278,1818 (515 ko, 201 ms)
+   308.254  t0016658 suivi ok score 0.97 pos 9278,1930 net 60 (17 ms) carte 8 photos + 166 positions
+   308.595  t0016999 suivi ok score 0.97 pos 9278,1946 net 59 (24 ms) carte 8 photos + 170 positions
+   308.927  t0017332 suivi ok score 0.97 pos 9434,1931 net 65 (21 ms) carte 8 photos + 173 positions
+   309.277  t0017681 suivi ok score 0.97 pos 9625,1930 net 64 (34 ms) carte 8 photos + 176 positions
+   309.378  envoyé lame_20261021_120006_bleu-aspergillus-2_0008.jpg (515 ko)
+   309.602  t0018006 suivi ok score 0.97 pos 9625,1930 net 64 (20 ms) carte 8 photos + 180 positions
+   309.817  photo s-2_0009 à 9625,1930 (511 ko, 239 ms)
+   309.933  t0018337 suivi ok score 0.97 pos 9617,1930 net 67 (20 ms) carte 9 photos + 183 positions
+   310.256  t0018661 suivi ok score 0.96 pos 8940,1946 net 64 (18 ms) carte 9 photos + 186 positions
+   310.603  t0019006 suivi ok score 0.97 pos 8513,1962 net 61 (29 ms) carte 9 photos + 190 positions
+   310.934  t0019338 suivi ok score 0.98 pos 8230,1962 net 60 (17 ms) carte 9 photos + 193 positions
+   311.273  t0019676 suivi ok score 0.98 pos 7968,1962 net 59 (22 ms) carte 9 photos + 196 positions
+   311.293  photo en mouvement lent (54 % du champ, 24 u/s)
+   311.355  envoyé lame_20261021_120006_bleu-aspergillus-2_0009.jpg (511 ko)
+   311.501  photo s-2_0010 à 7964,1973 (519 ko, 208 ms)
+   311.587  t0019991 suivi ok score 0.98 pos 7755,1965 net 55 (19 ms) carte 10 photos + 200 positions
+   311.929  t0020333 suivi ok score 0.98 pos 7515,1981 net 45 (18 ms) carte 10 photos + 203 positions
+   312.266  t0020670 suivi ok score 0.98 pos 7297,1981 net 45 (22 ms) carte 10 photos + 206 positions
+   312.607  t0021010 suivi ok score 0.99 pos 6953,1981 net 43 (26 ms) carte 10 photos + 210 positions
+   312.928  t0021332 suivi ok score 0.99 pos 6887,1981 net 48 (18 ms) carte 10 photos + 213 positions
+   312.987  envoyé lame_20261021_120006_bleu-aspergillus-2_0010.jpg (519 ko)
+   313.254  photo s-2_0011 à 6876,1981 (529 ko, 220 ms)
+   313.262  t0021666 suivi ok score 0.99 pos 6863,1981 net 43 (20 ms) carte 11 photos + 216 positions
+   313.590  t0021994 suivi ok score 0.99 pos 6863,1981 net 37 (18 ms) carte 11 photos + 220 positions
+   313.935  t0022339 suivi ok score 0.99 pos 6863,1981 net 42 (23 ms) carte 11 photos + 223 positions
+   314.270  t0022674 suivi ok score 0.99 pos 6704,1981 net 45 (22 ms) carte 11 photos + 226 positions
+   314.605  t0023009 suivi ok score 0.99 pos 6648,1981 net 44 (24 ms) carte 11 photos + 230 positions
+   314.788  photo s-2_0012 à 6661,1981 (525 ko, 217 ms)
+   314.929  t0023333 suivi ok score 0.98 pos 6123,1995 net 44 (20 ms) carte 12 photos + 233 positions
+   315.191  envoyé lame_20261021_120006_bleu-aspergillus-2_0011.jpg (529 ko)
+   315.265  t0023669 suivi ok score 0.98 pos 5862,1997 net 41 (26 ms) carte 12 photos + 236 positions
+   315.592  t0023995 suivi ok score 0.98 pos 5752,1997 net 40 (16 ms) carte 12 photos + 240 positions
+   315.945  t0024348 suivi ok score 0.98 pos 5174,2013 net 46 (30 ms) carte 12 photos + 243 positions
+   316.061  photo en mouvement lent (51 % du champ, 37 u/s)
+   316.259  t0024663 suivi ok score 0.98 pos 5068,2013 net 43 (20 ms) carte 12 photos + 246 positions
+   316.286  photo s-2_0013 à 5104,2013 (526 ko, 224 ms)
+   316.588  t0024992 suivi ok score 0.98 pos 4876,2013 net 38 (17 ms) carte 13 photos + 250 positions
+   316.927  t0025331 suivi ok score 0.98 pos 4362,2029 net 63 (18 ms) carte 13 photos + 253 positions
+   317.268  t0025672 suivi ok score 0.98 pos 4183,2029 net 60 (25 ms) carte 13 photos + 256 positions
+   317.601  t0026005 suivi ok score 0.98 pos 3943,2040 net 58 (24 ms) carte 13 photos + 260 positions
+   317.730  envoyé lame_20261021_120006_bleu-aspergillus-2_0012.jpg (525 ko)
+   317.940  t0026344 suivi ok score 0.98 pos 3788,2056 net 63 (23 ms) carte 13 photos + 263 positions
+   318.273  t0026677 suivi ok score 0.98 pos 3788,2056 net 52 (17 ms) carte 13 photos + 266 positions
+   318.371  photo s-2_0014 à 3788,2056 (532 ko, 201 ms)
+   318.591  t0026995 suivi ok score 0.98 pos 3788,2056 net 62 (19 ms) carte 14 photos + 270 positions
+   318.947  t0027350 suivi ok score 0.98 pos 3788,2056 net 61 (33 ms) carte 14 photos + 273 positions
+   319.142  envoyé lame_20261021_120006_bleu-aspergillus-2_0013.jpg (526 ko)
+   319.263  t0027668 suivi ok score 0.98 pos 3788,2056 net 59 (18 ms) carte 14 photos + 276 positions
+   319.608  t0028012 suivi ok score 0.98 pos 3788,2056 net 60 (24 ms) carte 14 photos + 280 positions
+   319.941  t0028344 suivi ok score 0.98 pos 3358,2072 net 55 (29 ms) carte 14 photos + 283 positions
+   320.275  t0028678 suivi ok score 0.98 pos 3131,2072 net 55 (27 ms) carte 14 photos + 286 positions
+   320.609  t0029012 suivi ok score 0.98 pos 2870,2072 net 52 (28 ms) carte 14 photos + 290 positions
+   320.943  t0029347 suivi ok score 0.98 pos 2869,2072 net 51 (28 ms) carte 14 photos + 293 positions
+   321.078  photo s-2_0015 à 2869,2072 (532 ko, 212 ms)
+   321.277  t0029681 suivi ok score 0.98 pos 2869,2072 net 52 (33 ms) carte 15 photos + 296 positions
+   321.597  t0030001 suivi ok score 0.98 pos 2725,2072 net 50 (21 ms) carte 15 photos + 300 positions
+   321.932  t0030336 suivi ok score 0.98 pos 2642,2072 net 53 (22 ms) carte 15 photos + 300 positions
+   322.275  t0030678 suivi ok score 0.97 pos 2139,2088 net 53 (25 ms) carte 15 photos + 300 positions
+   322.404  envoyé lame_20261021_120006_bleu-aspergillus-2_0014.jpg (532 ko)
+   322.609  t0031012 suivi ok score 0.96 pos 1856,2092 net 52 (27 ms) carte 15 photos + 300 positions
+   322.934  t0031338 suivi ok score 0.96 pos 1852,2104 net 52 (18 ms) carte 15 photos + 300 positions
+   323.111  photo s-2_0016 à 1852,2104 (529 ko, 209 ms)
+   323.274  t0031678 suivi ok score 0.96 pos 1852,2104 net 53 (23 ms) carte 16 photos + 300 positions
+   323.600  t0032004 suivi ok score 0.95 pos 1852,2104 net 53 (21 ms) carte 16 photos + 300 positions
+   323.646  envoyé lame_20261021_120006_bleu-aspergillus-2_0015.jpg (532 ko)
+   323.929  t0032332 suivi ok score 0.95 pos 1661,2104 net 54 (20 ms) carte 16 photos + 300 positions
+   324.258  t0032662 suivi ok score 0.95 pos 920,2131 net 46 (16 ms) carte 16 photos + 300 positions
+   324.597  t0033000 suivi ok score 0.95 pos 908,2120 net 47 (18 ms) carte 16 photos + 300 positions
+   324.842  photo s-2_0017 à 908,2120 (521 ko, 207 ms)
+   324.923  t0033327 suivi ok score 0.95 pos 908,2120 net 49 (17 ms) carte 17 photos + 300 positions
+   325.281  t0033685 suivi ok score 0.95 pos 908,2120 net 49 (35 ms) carte 17 photos + 300 positions
+   325.597  t0034001 suivi ok score 0.94 pos 908,2120 net 47 (20 ms) carte 17 photos + 300 positions
+   325.938  t0034341 suivi ok score 0.95 pos 908,2120 net 49 (26 ms) carte 17 photos + 300 positions
+   326.026  envoyé lame_20261021_120006_bleu-aspergillus-2_0016.jpg (529 ko)
+   326.266  t0034670 suivi ok score 0.95 pos 908,2120 net 47 (18 ms) carte 17 photos + 300 positions
+   326.600  t0035003 suivi ok score 0.95 pos 908,2120 net 47 (21 ms) carte 17 photos + 300 positions
+   326.933  t0035337 suivi ok score 0.95 pos 908,2120 net 48 (24 ms) carte 17 photos + 300 positions
+   327.274  t0035678 suivi ok score 0.95 pos 908,2120 net 48 (29 ms) carte 17 photos + 300 positions
+   327.463  envoyé lame_20261021_120006_bleu-aspergillus-2_0017.jpg (521 ko)
+   327.598  t0036002 suivi ok score 0.94 pos 908,2120 net 49 (22 ms) carte 17 photos + 300 positions
+   327.934  t0036338 suivi ok score 0.98 pos 967,2309 net 50 (25 ms) carte 17 photos + 300 positions
+   328.266  t0036670 suivi ok score 0.90 pos 905,2119 net 57 (21 ms) carte 17 photos + 300 positions
+   328.601  t0037005 suivi ok score 0.89 pos 928,2167 net 59 (25 ms) carte 17 photos + 300 positions
+   328.931  t0037335 suivi ok score 0.90 pos 920,2152 net 61 (20 ms) carte 17 photos + 300 positions
+   329.267  t0037671 suivi ok score 0.93 pos 932,2136 net 48 (23 ms) carte 17 photos + 300 positions
+   329.601  t0038005 suivi ok score 0.93 pos 924,2124 net 47 (19 ms) carte 17 photos + 300 positions
+   329.945  t0038349 suivi ok score 0.93 pos 929,2132 net 49 (31 ms) carte 17 photos + 300 positions
+   330.284  t0038687 suivi ok score 0.90 pos 940,2147 net 50 (32 ms) carte 17 photos + 300 positions
+   330.593  t0038997 suivi ok score 0.92 pos 975,2126 net 60 (18 ms) carte 17 photos + 300 positions
+   330.943  t0039347 suivi ok score 0.92 pos 933,2135 net 51 (21 ms) carte 17 photos + 300 positions
+   331.285  t0039690 suivi ok score 0.93 pos 935,2136 net 56 (25 ms) carte 17 photos + 300 positions
+   331.607  t0040010 suivi ok score 0.93 pos 941,2136 net 57 (28 ms) carte 17 photos + 300 positions
+   331.941  t0040344 suivi ok score 0.93 pos 943,2136 net 59 (28 ms) carte 17 photos + 300 positions
+   332.284  t0040688 suivi ok score 0.93 pos 935,2136 net 59 (22 ms) carte 17 photos + 300 positions
+   332.604  t0041008 suivi ok score 0.93 pos 932,2136 net 50 (24 ms) carte 17 photos + 300 positions
+   332.818  reprise de mise au point au même endroit : netteté 66 contre 48 (reprise 1)
+   332.946  t0041350 suivi ok score 0.94 pos 932,2124 net 71 (23 ms) carte 17 photos + 300 positions
+   333.048  photo s-2_0018 à 932,2132 (526 ko, 229 ms)
+   333.275  t0041680 suivi ok score 0.93 pos 932,2135 net 57 (18 ms) carte 18 photos + 300 positions
+   333.605  t0042008 suivi ok score 0.94 pos 932,2135 net 56 (24 ms) carte 18 photos + 300 positions
+   333.935  t0042340 suivi ok score 0.94 pos 932,2135 net 53 (18 ms) carte 18 photos + 300 positions
+   334.262  t0042667 suivi ok score 0.93 pos 932,2135 net 49 (18 ms) carte 18 photos + 300 positions
+   334.602  t0043006 suivi ok score 0.92 pos 940,2105 net 48 (19 ms) carte 18 photos + 300 positions
+   334.656  envoyé lame_20261021_120006_bleu-aspergillus-2_0018.jpg (526 ko)
+   334.932  t0043335 suivi ok score 0.87 pos 916,1293 net 49 (16 ms) carte 18 photos + 300 positions
+   335.272  t0043676 suivi ok score 0.98 pos 751,749 net 48 (22 ms) carte 18 photos + 300 positions
+   335.608  t0044011 suivi ok score 0.98 pos 751,765 net 54 (26 ms) carte 18 photos + 300 positions
+   335.645  photo s-2_0019 à 751,765 (541 ko, 208 ms)
+   335.944  t0044348 suivi ok score 0.98 pos 751,765 net 50 (25 ms) carte 19 photos + 300 positions
+   336.271  t0044675 suivi ok score 0.97 pos 620,765 net 44 (24 ms) carte 19 photos + 300 positions
+   336.606  t0045009 suivi ok score 0.97 pos -980,812 net 55 (22 ms) carte 19 photos + 300 positions
+   336.606  photo en mouvement lent (57 % du champ, 2 u/s)
+   336.826  photo s-2_0020 à -980,812 (548 ko, 220 ms)
+   336.931  t0045335 suivi ok score 0.97 pos -980,813 net 60 (21 ms) carte 20 photos + 300 positions
+   336.984  envoyé lame_20261021_120006_bleu-aspergillus-2_0019.jpg (541 ko)
+   337.275  t0045679 suivi ok score 0.98 pos -980,813 net 79 (23 ms) carte 20 photos + 300 positions
+   337.515  reprise de mise au point au même endroit : netteté 79 contre 55 (reprise 1)
+   337.603  t0046006 suivi ok score 0.97 pos -980,813 net 81 (18 ms) carte 20 photos + 300 positions
+   337.759  photo s-2_0021 à -980,813 (577 ko, 243 ms)
+   337.936  t0046340 suivi ok score 0.94 pos -968,924 net 79 (21 ms) carte 21 photos + 300 positions
+   338.268  t0046672 suivi ok score 0.94 pos -968,1115 net 85 (20 ms) carte 21 photos + 300 positions
+   338.602  t0047006 suivi ok score 0.96 pos -956,1404 net 86 (17 ms) carte 21 photos + 300 positions
+   338.944  t0047348 suivi ok score 0.93 pos -930,2215 net 97 (23 ms) carte 21 photos + 300 positions
+   339.270  t0047674 suivi ok score 0.94 pos -931,2214 net 101 (19 ms) carte 21 photos + 300 positions
+   339.388  photo s-2_0022 à -931,2214 (545 ko, 209 ms)
+   339.611  t0048015 suivi ok score 0.93 pos -931,2214 net 92 (25 ms) carte 22 photos + 300 positions
+   339.669  envoyé lame_20261021_120006_bleu-aspergillus-2_0020.jpg (548 ko)
+   339.934  t0048339 suivi ok score 0.94 pos -931,2214 net 96 (19 ms) carte 22 photos + 300 positions
+   340.288  t0048692 suivi ok score 0.90 pos -931,2229 net 90 (35 ms) carte 22 photos + 300 positions
+   340.624  t0049028 suivi ok score 0.92 pos -931,2309 net 102 (34 ms) carte 22 photos + 300 positions
+   340.939  t0049343 suivi ok score 0.86 pos -911,2581 net 98 (23 ms) carte 22 photos + 300 positions
+   340.988  photo s-2_0023 à -920,2374 (540 ko, 215 ms)
+   341.198  envoyé lame_20261021_120006_bleu-aspergillus-2_0021.jpg (577 ko)
+   341.266  t0049670 suivi ok score 0.87 pos -884,3424 net 90 (16 ms) carte 23 photos + 300 positions
+   341.615  t0050018 suivi ok score 0.88 pos -874,3525 net 107 (28 ms) carte 23 photos + 300 positions
+   341.936  t0050341 suivi ok score 0.90 pos -884,3553 net 106 (19 ms) carte 23 photos + 300 positions
+   342.220  photo s-2_0024 à -884,3553 (524 ko, 218 ms)
+   342.270  t0050674 suivi ok score 0.88 pos -848,3553 net 99 (21 ms) carte 24 photos + 300 positions
+   342.596  t0051000 suivi ok score 0.87 pos 504,3186 net 108 (16 ms) carte 24 photos + 300 positions
+   342.832  photo en mouvement lent (61 % du champ, 30 u/s)
+   342.929  t0051333 suivi ok score 0.91 pos 947,3170 net 92 (17 ms) carte 24 photos + 300 positions
+   343.052  photo s-2_0025 à 947,3170 (530 ko, 220 ms)
+   343.264  t0051669 suivi ok score 0.91 pos 947,3170 net 93 (19 ms) carte 25 photos + 300 positions
+   343.600  t0052004 suivi ok score 0.91 pos 947,3170 net 99 (19 ms) carte 25 photos + 300 positions
+   343.666  envoyé lame_20261021_120006_bleu-aspergillus-2_0022.jpg (545 ko)
+   343.936  t0052341 suivi ok score 0.90 pos 947,3170 net 91 (23 ms) carte 25 photos + 300 positions
+   344.268  t0052672 suivi ok score 0.91 pos 947,3170 net 77 (22 ms) carte 25 photos + 300 positions
+   344.605  t0053009 suivi ok score 0.86 pos 1397,3159 net 78 (23 ms) carte 25 photos + 300 positions
+   344.938  t0053341 suivi ok score 0.90 pos 1998,3154 net 79 (18 ms) carte 25 photos + 300 positions
+   345.056  envoyé lame_20261021_120006_bleu-aspergillus-2_0023.jpg (540 ko)
+   345.272  t0053675 suivi ok score 0.92 pos 1998,3154 net 105 (18 ms) carte 25 photos + 300 positions
+   345.499  photo s-2_0026 à 1998,3154 (539 ko, 227 ms)
+   345.605  t0054009 suivi ok score 0.91 pos 1998,3154 net 68 (27 ms) carte 26 photos + 300 positions
+   345.932  t0054337 suivi ok score 0.91 pos 1998,3154 net 92 (18 ms) carte 26 photos + 300 positions
+   346.077  envoyé lame_20261021_120006_bleu-aspergillus-2_0024.jpg (524 ko)
+   346.272  t0054676 suivi ok score 0.92 pos 1998,3154 net 96 (21 ms) carte 26 photos + 300 positions
+   346.611  t0055015 suivi ok score 0.87 pos 2010,3503 net 100 (27 ms) carte 26 photos + 300 positions
+   346.939  t0055343 suivi ok score 0.93 pos 2022,3825 net 90 (21 ms) carte 26 photos + 300 positions
+   347.271  t0055675 suivi ok score 0.93 pos 2022,3839 net 98 (19 ms) carte 26 photos + 300 positions
+   347.296  photo s-2_0027 à 2022,3839 (537 ko, 204 ms)
+   347.602  t0056006 suivi ok score 0.93 pos 2022,3839 net 85 (19 ms) carte 27 photos + 300 positions
+   347.953  t0056356 suivi ok score 0.93 pos 2013,3839 net 82 (34 ms) carte 27 photos + 300 positions
+   348.274  t0056678 suivi ok score 0.88 pos 711,3855 net 85 (21 ms) carte 27 photos + 300 positions
+   348.454  photo en mouvement lent (55 % du champ, 30 u/s)
+   348.611  t0057014 suivi ok score 0.89 pos 300,3855 net 90 (28 ms) carte 27 photos + 300 positions
+   348.613  envoyé lame_20261021_120006_bleu-aspergillus-2_0025.jpg (530 ko)
+   348.661  photo s-2_0028 à 334,3855 (519 ko, 206 ms)
+   348.935  t0057339 suivi ok score 0.89 pos 310,3855 net 104 (20 ms) carte 28 photos + 300 positions
+   349.272  t0057676 suivi ok score 0.89 pos 310,3855 net 90 (20 ms) carte 28 photos + 300 positions
+   349.612  t0058016 suivi ok score 0.87 pos 310,3874 net 94 (27 ms) carte 28 photos + 300 positions
+   349.935  t0058339 suivi ok score 0.89 pos 322,4206 net 89 (17 ms) carte 28 photos + 300 positions
+   350.084  envoyé lame_20261021_120006_bleu-aspergillus-2_0026.jpg (539 ko)
+   350.274  t0058678 suivi ok score 0.89 pos 334,4317 net 92 (22 ms) carte 28 photos + 300 positions
+   350.614  t0059018 suivi ok score 0.91 pos 322,4317 net 92 (25 ms) carte 28 photos + 300 positions
+   350.724  photo s-2_0029 à 326,4317 (525 ko, 224 ms)
+   350.934  t0059339 suivi ok score 0.90 pos 323,4317 net 89 (21 ms) carte 29 photos + 300 positions
+   351.157  envoyé lame_20261021_120006_bleu-aspergillus-2_0027.jpg (537 ko)
+   351.271  t0059675 suivi ok score 0.88 pos 157,4317 net 103 (20 ms) carte 29 photos + 300 positions
+   351.605  t0060009 suivi ok score 0.87 pos -3,4317 net 114 (20 ms) carte 29 photos + 300 positions
+   351.943  t0060347 suivi ok score 0.88 pos -12,4333 net 104 (23 ms) carte 29 photos + 300 positions
+   352.091  photo s-2_0030 à -12,4332 (519 ko, 213 ms)
+   352.274  t0060678 suivi ok score 0.87 pos -12,4333 net 116 (24 ms) carte 30 photos + 300 positions
+   352.606  t0061010 suivi ok score 0.89 pos -12,4333 net 112 (23 ms) carte 30 photos + 300 positions
+   352.935  t0061339 suivi ok score 0.72 pos 327,4317 net 95 (19 ms) carte 30 photos + 300 positions
+   353.271  t0061676 suivi ok score 0.87 pos 2308,4274 net 90 (17 ms) carte 30 photos + 300 positions
+   353.509  photo en mouvement lent (88 % du champ, 0 u/s)
+   353.509  ATTENTION pas trop grand (88 % du champ) : recouvrement insuffisant
+   353.618  t0062022 suivi ok score 0.94 pos 2679,4269 net 85 (25 ms) carte 30 photos + 300 positions
+   353.739  photo s-2_0031 à 2679,4269 (541 ko, 230 ms)
+   353.937  t0062342 suivi ok score 0.93 pos 2679,4269 net 63 (19 ms) carte 31 photos + 300 positions
+   354.275  t0062679 suivi ok score 0.94 pos 2679,4269 net 77 (18 ms) carte 31 photos + 300 positions
+   354.618  t0063021 suivi ok score 0.93 pos 2679,4269 net 69 (22 ms) carte 31 photos + 300 positions
+   354.658  envoyé lame_20261021_120006_bleu-aspergillus-2_0028.jpg (519 ko)
+   354.936  t0063341 suivi ok score 0.90 pos 2787,4269 net 67 (19 ms) carte 31 photos + 300 positions
+   355.286  t0063690 suivi ok score 0.96 pos 3480,4238 net 58 (29 ms) carte 31 photos + 300 positions
+   355.618  t0064022 suivi ok score 0.96 pos 3480,4238 net 78 (24 ms) carte 31 photos + 300 positions
+   355.870  photo s-2_0032 à 3480,4238 (536 ko, 232 ms)
+   355.940  t0064344 suivi ok score 0.96 pos 3480,4238 net 73 (25 ms) carte 32 photos + 300 positions
+   355.987  envoyé lame_20261021_120006_bleu-aspergillus-2_0029.jpg (525 ko)
+   356.273  t0064677 suivi ok score 0.96 pos 3731,4238 net 73 (17 ms) carte 32 photos + 300 positions
+   356.610  t0065014 suivi ok score 0.97 pos 4293,4206 net 58 (25 ms) carte 32 photos + 300 positions
+   356.950  t0065354 suivi ok score 0.97 pos 4293,4206 net 59 (27 ms) carte 32 photos + 300 positions
+   357.102  photo s-2_0033 à 4293,4206 (520 ko, 228 ms)
+   357.267  t0065671 suivi ok score 0.97 pos 4293,4206 net 57 (18 ms) carte 33 photos + 300 positions
+   357.541  envoyé lame_20261021_120006_bleu-aspergillus-2_0030.jpg (519 ko)
+   357.609  t0066013 suivi ok score 0.97 pos 4293,4191 net 39 (19 ms) carte 33 photos + 300 positions
+   357.944  t0066347 suivi ok score 0.97 pos 4293,4206 net 39 (22 ms) carte 33 photos + 300 positions
+   358.277  t0066681 suivi ok score 0.96 pos 4293,4206 net 68 (27 ms) carte 33 photos + 300 positions
+   358.601  t0067005 suivi ok score 0.96 pos 4293,4206 net 37 (18 ms) carte 33 photos + 300 positions
+   358.938  t0067342 suivi ok score 0.97 pos 4293,4206 net 38 (20 ms) carte 33 photos + 300 positions
+   359.268  t0067672 suivi ok score 0.97 pos 4293,4190 net 38 (17 ms) carte 33 photos + 300 positions
+   359.604  t0068008 suivi ok score 0.97 pos 4293,4190 net 40 (19 ms) carte 33 photos + 300 positions
+   359.945  t0068348 suivi ok score 0.97 pos 4293,4190 net 42 (21 ms) carte 33 photos + 300 positions
+   360.278  t0068682 suivi ok score 0.97 pos 4293,4190 net 41 (19 ms) carte 33 photos + 300 positions
+   360.622  t0069026 suivi ok score 0.96 pos 4301,4249 net 42 (30 ms) carte 33 photos + 300 positions
+   360.943  t0069347 suivi ok score 0.96 pos 4305,4354 net 47 (21 ms) carte 33 photos + 300 positions
+   361.009  photo floue (netteté 42 contre 103 de référence)
+   361.228  photo s-2_0034 à 4305,4381 (511 ko, 219 ms)
+   361.275  t0069678 suivi ok score 0.97 pos 4317,4732 net 50 (20 ms) carte 34 photos + 300 positions
+   361.617  t0070021 suivi ok score 0.97 pos 4326,4791 net 52 (26 ms) carte 34 photos + 300 positions
+   361.914  photo s-2_0035 à 4329,4815 (512 ko, 209 ms)
+   361.933  t0070338 suivi ok score 0.96 pos 4329,4936 net 52 (18 ms) carte 35 photos + 300 positions
+   362.274  t0070678 suivi ok score 0.96 pos 4329,4951 net 56 (23 ms) carte 35 photos + 300 positions
+   362.603  envoyé lame_20261021_120006_bleu-aspergillus-2_0031.jpg (541 ko)
+   362.606  t0071011 suivi ok score 0.97 pos 4329,4952 net 54 (20 ms) carte 35 photos + 300 positions
+   362.949  t0071352 suivi ok score 0.97 pos 4329,4951 net 56 (27 ms) carte 35 photos + 300 positions
+   363.281  t0071685 suivi ok score 0.96 pos 4329,4951 net 57 (28 ms) carte 35 photos + 300 positions
+   363.376  reprise de mise au point au même endroit : netteté 79 contre 55 (reprise 1)
+   363.596  photo s-2_0036 à 4318,4951 (535 ko, 220 ms)
+   363.612  t0072016 suivi ok score 0.96 pos 4325,4951 net 46 (23 ms) carte 36 photos + 300 positions
+   363.943  t0072347 suivi ok score 0.96 pos 4326,4951 net 59 (25 ms) carte 36 photos + 300 positions
+   364.014  envoyé lame_20261021_120006_bleu-aspergillus-2_0032.jpg (536 ko)
+   364.276  t0072680 suivi ok score 0.97 pos 4326,4951 net 89 (17 ms) carte 36 photos + 300 positions
+   364.612  t0073015 suivi ok score 0.97 pos 4326,4951 net 88 (24 ms) carte 36 photos + 300 positions
+   364.951  t0073355 suivi ok score 0.97 pos 4326,4951 net 85 (21 ms) carte 36 photos + 300 positions
+   365.152  envoyé lame_20261021_120006_bleu-aspergillus-2_0033.jpg (520 ko)
+   365.280  t0073684 suivi ok score 0.92 pos 4317,4465 net 63 (24 ms) carte 36 photos + 300 positions
+   365.610  t0074013 suivi ok score 0.98 pos 4281,3775 net 50 (21 ms) carte 36 photos + 300 positions
+   365.950  t0074355 suivi ok score 0.97 pos 4281,3775 net 54 (21 ms) carte 36 photos + 300 positions
+   366.021  photo s-2_0037 à 4281,3775 (517 ko, 199 ms)
+   366.292  t0074695 suivi ok score 0.97 pos 4342,3775 net 52 (30 ms) carte 37 photos + 300 positions
+   366.409  envoyé lame_20261021_120006_bleu-aspergillus-2_0034.jpg (511 ko)
+   366.608  t0075012 suivi ok score 0.97 pos 5106,3744 net 47 (17 ms) carte 37 photos + 300 positions
+   366.951  t0075355 suivi ok score 0.98 pos 5401,3728 net 41 (21 ms) carte 37 photos + 300 positions
+   367.276  t0075680 suivi ok score 0.98 pos 5401,3716 net 47 (23 ms) carte 37 photos + 300 positions
+   367.276  photo floue (netteté 47 contre 103 de référence)
+   367.488  photo s-2_0038 à 5401,3716 (514 ko, 211 ms)
+   367.604  t0076008 suivi ok score 0.98 pos 5436,3716 net 41 (21 ms) carte 38 photos + 300 positions
+   367.942  t0076346 suivi ok score 0.97 pos 6163,3689 net 36 (21 ms) carte 38 photos + 300 positions
+   368.277  t0076681 suivi ok score 0.97 pos 6444,3685 net 50 (20 ms) carte 38 photos + 300 positions
+   368.476  photo floue (netteté 51 contre 103 de référence)
+   368.603  t0077007 suivi ok score 0.97 pos 6445,3685 net 51 (18 ms) carte 38 photos + 300 positions
+   368.683  photo s-2_0039 à 6445,3685 (507 ko, 207 ms)
+   368.936  t0077340 suivi ok score 0.96 pos 6453,3878 net 46 (17 ms) carte 39 photos + 300 positions
+   369.280  t0077684 suivi ok score 0.95 pos 6468,4302 net 73 (25 ms) carte 39 photos + 300 positions
+   369.315  envoyé lame_20261021_120006_bleu-aspergillus-2_0035.jpg (512 ko)
+   369.608  t0078011 suivi ok score 0.91 pos 6471,4483 net 81 (19 ms) carte 39 photos + 300 positions
+   369.948  t0078353 suivi ok score 0.92 pos 6469,4493 net 88 (23 ms) carte 39 photos + 300 positions
+   370.033  photo s-2_0040 à 6472,4493 (509 ko, 224 ms)
+   370.278  t0078682 suivi ok score 0.93 pos 6478,4485 net 87 (21 ms) carte 40 photos + 300 positions
+   370.624  t0079027 suivi ok score 0.93 pos 6478,4485 net 43 (32 ms) carte 40 photos + 300 positions
+   370.945  t0079349 suivi ok score 0.94 pos 6478,4474 net 84 (23 ms) carte 40 photos + 300 positions
+   371.029  envoyé lame_20261021_120006_bleu-aspergillus-2_0036.jpg (535 ko)
+   371.275  t0079679 suivi ok score 0.94 pos 6478,4469 net 73 (19 ms) carte 40 photos + 300 positions
+   371.611  t0080015 suivi ok score 0.94 pos 6478,4469 net 72 (22 ms) carte 40 photos + 300 positions
+   371.944  t0080347 suivi ok score 0.94 pos 6478,4469 net 75 (22 ms) carte 40 photos + 300 positions
+   372.068  envoyé lame_20261021_120006_bleu-aspergillus-2_0037.jpg (517 ko)
+   372.274  t0080678 suivi ok score 0.94 pos 6478,4469 net 76 (21 ms) carte 40 photos + 300 positions
+   372.633  t0081036 suivi ok score 0.94 pos 6478,4485 net 88 (33 ms) carte 40 photos + 300 positions
+   372.942  t0081346 suivi ok score 0.94 pos 6478,4485 net 87 (20 ms) carte 40 photos + 300 positions
+   373.246  envoyé lame_20261021_120006_bleu-aspergillus-2_0038.jpg (514 ko)
+   373.281  t0081685 suivi ok score 0.94 pos 6478,4485 net 86 (19 ms) carte 40 photos + 300 positions
+   373.607  t0082011 suivi ok score 0.94 pos 6478,4473 net 86 (19 ms) carte 40 photos + 300 positions
+   373.942  t0082346 suivi ok score 0.94 pos 6478,4470 net 86 (20 ms) carte 40 photos + 300 positions
+   374.276  t0082680 suivi ok score 0.94 pos 6478,4485 net 82 (20 ms) carte 40 photos + 300 positions
+   374.619  t0083023 suivi ok score 0.91 pos 6475,4520 net 55 (20 ms) carte 40 photos + 300 positions
+   374.941  t0083345 suivi ok score 0.92 pos 6478,4579 net 88 (17 ms) carte 40 photos + 300 positions
+   375.311  t0083715 suivi ok score 0.93 pos 6478,4581 net 85 (40 ms) carte 40 photos + 300 positions
+   375.626  t0084029 suivi ok score 0.92 pos 6478,4581 net 81 (32 ms) carte 40 photos + 300 positions
+   375.970  t0084373 suivi ok score 0.89 pos 6540,4581 net 77 (39 ms) carte 40 photos + 300 positions
+   376.296  t0084700 suivi ok score 0.93 pos 7023,4566 net 99 (34 ms) carte 40 photos + 300 positions
+   376.615  t0085018 suivi ok score 0.95 pos 7542,4549 net 91 (21 ms) carte 40 photos + 300 positions
+   376.938  t0085342 suivi ok score 0.96 pos 7769,4533 net 90 (15 ms) carte 40 photos + 300 positions
+   377.279  t0085683 suivi ok score 0.97 pos 7769,4533 net 82 (19 ms) carte 40 photos + 300 positions
+   377.360  photo s-2_0041 à 7769,4533 (506 ko, 217 ms)
+   377.605  t0086009 suivi ok score 0.97 pos 7769,4533 net 91 (20 ms) carte 41 photos + 300 positions
+   377.941  t0086345 suivi ok score 0.96 pos 7888,4533 net 85 (19 ms) carte 41 photos + 300 positions
+   378.280  t0086684 suivi ok score 0.94 pos 8438,4517 net 100 (18 ms) carte 41 photos + 300 positions
+   378.619  t0087022 suivi ok score 0.95 pos 8689,4501 net 70 (22 ms) carte 41 photos + 300 positions
+   378.751  envoyé lame_20261021_120006_bleu-aspergillus-2_0039.jpg (507 ko)
+   378.940  t0087344 suivi ok score 0.95 pos 8689,4501 net 73 (18 ms) carte 41 photos + 300 positions
+   379.093  photo s-2_0042 à 8689,4501 (501 ko, 210 ms)
+   379.282  t0087687 suivi ok score 0.95 pos 8689,4501 net 77 (26 ms) carte 42 photos + 300 positions
+   379.618  t0088022 suivi ok score 0.95 pos 8856,4501 net 65 (24 ms) carte 42 photos + 300 positions
+   379.842  envoyé lame_20261021_120006_bleu-aspergillus-2_0040.jpg (509 ko)
+   379.947  t0088351 suivi ok score 0.94 pos 8844,4501 net 53 (18 ms) carte 42 photos + 300 positions
+   380.090  photo s-2_0043 à 8845,4501 (504 ko, 209 ms)
+   380.279  t0088683 suivi ok score 0.94 pos 8842,4501 net 83 (25 ms) carte 43 photos + 300 positions
+   380.618  t0089021 suivi ok score 0.94 pos 8844,4501 net 58 (23 ms) carte 43 photos + 300 positions
+   380.782  reprise de mise au point au même endroit : netteté 91 contre 54 (reprise 1)
+   380.944  t0089348 suivi ok score 0.94 pos 8836,4501 net 111 (23 ms) carte 43 photos + 300 positions
+   380.973  envoyé lame_20261021_120006_bleu-aspergillus-2_0041.jpg (506 ko)
+   381.009  photo s-2_0044 à 8842,4501 (509 ko, 227 ms)
+   381.278  t0089682 suivi ok score 0.94 pos 8844,4501 net 108 (18 ms) carte 44 photos + 300 positions
+   381.610  t0090014 suivi ok score 0.95 pos 8844,4501 net 108 (20 ms) carte 44 photos + 300 positions
+   381.945  t0090348 suivi ok score 0.94 pos 8844,4501 net 108 (20 ms) carte 44 photos + 300 positions
+   382.281  t0090686 suivi ok score 0.92 pos 9274,4487 net 91 (21 ms) carte 44 photos + 300 positions
+   382.309  envoyé lame_20261021_120006_bleu-aspergillus-2_0042.jpg (501 ko)
+   382.611  t0091015 suivi ok score 0.94 pos 9860,4469 net 98 (17 ms) carte 44 photos + 300 positions
+   382.946  t0091350 suivi ok score 0.94 pos 9861,4470 net 100 (21 ms) carte 44 photos + 300 positions
+   383.210  photo s-2_0045 à 9861,4470 (512 ko, 235 ms)
+   383.277  t0091681 suivi ok score 0.93 pos 9861,4470 net 100 (21 ms) carte 45 photos + 300 positions
+   383.473  envoyé lame_20261021_120006_bleu-aspergillus-2_0043.jpg (504 ko)
+   383.617  t0092021 suivi ok score 0.91 pos 10211,4455 net 103 (25 ms) carte 45 photos + 300 positions
+   383.955  t0092359 suivi ok score 0.89 pos 10778,4438 net 117 (25 ms) carte 45 photos + 300 positions
+   384.286  t0092689 suivi ok score 0.88 pos 10702,4438 net 116 (25 ms) carte 45 photos + 300 positions
+   384.627  t0093030 suivi ok score 0.72 pos 10487,4501 net 110 (29 ms) carte 45 photos + 300 positions
+   384.863  envoyé lame_20261021_120006_bleu-aspergillus-2_0044.jpg (509 ko)
+   384.944  t0093348 suivi ok score 0.93 pos 10617,5649 net 74 (17 ms) carte 45 photos + 300 positions
+   385.277  t0093682 suivi ok score 0.95 pos 10620,5745 net 70 (20 ms) carte 45 photos + 300 positions
+   385.615  t0094019 suivi ok score 0.96 pos 10618,5745 net 70 (25 ms) carte 45 photos + 300 positions
+   385.633  photo s-2_0046 à 10612,5745 (518 ko, 227 ms)
+   385.941  t0094346 suivi ok score 0.95 pos 10626,5756 net 60 (14 ms) carte 46 photos + 300 positions
+   386.283  t0094687 suivi ok score 0.94 pos 10641,6116 net 68 (23 ms) carte 46 photos + 300 positions
+   386.620  t0095024 suivi ok score 0.94 pos 10662,6696 net 68 (23 ms) carte 46 photos + 300 positions
+   386.938  envoyé lame_20261021_120006_bleu-aspergillus-2_0045.jpg (512 ko)
+   386.954  t0095358 suivi ok score 0.95 pos 10654,6717 net 65 (20 ms) carte 46 photos + 300 positions
+   387.262  photo s-2_0047 à 10654,6717 (512 ko, 198 ms)
+   387.276  t0095681 suivi ok score 0.96 pos 10654,6717 net 67 (19 ms) carte 47 photos + 300 positions
+   387.612  t0096016 suivi ok score 0.96 pos 10654,6717 net 65 (24 ms) carte 47 photos + 300 positions
+   387.949  t0096354 suivi ok score 0.96 pos 10654,6717 net 66 (18 ms) carte 47 photos + 300 positions
+   388.268  envoyé lame_20261021_120006_bleu-aspergillus-2_0046.jpg (518 ko)
+   388.282  t0096687 suivi ok score 0.96 pos 10654,6717 net 66 (18 ms) carte 47 photos + 300 positions
+   388.610  t0097014 suivi ok score 0.96 pos 10654,6717 net 66 (18 ms) carte 47 photos + 300 positions
+   388.964  t0097368 suivi ok score 0.96 pos 10654,6717 net 66 (31 ms) carte 47 photos + 300 positions
+   389.280  t0097684 suivi ok score 0.94 pos 10662,6732 net 65 (18 ms) carte 47 photos + 300 positions
+   389.626  t0098030 suivi ok score 0.96 pos 10687,7259 net 67 (22 ms) carte 47 photos + 300 positions
+   389.949  t0098353 suivi ok score 0.97 pos 10666,7259 net 65 (22 ms) carte 47 photos + 300 positions
+   390.227  photo s-2_0048 à 10666,7259 (511 ko, 225 ms)
+   390.276  t0098681 suivi ok score 0.96 pos 10666,7259 net 68 (20 ms) carte 48 photos + 300 positions
+   390.618  t0099022 suivi ok score 0.96 pos 10585,7259 net 65 (22 ms) carte 48 photos + 300 positions
+   390.951  t0099355 suivi ok score 0.98 pos 9769,7290 net 64 (21 ms) carte 48 photos + 300 positions
+   391.282  t0099687 suivi ok score 0.98 pos 9614,7291 net 63 (19 ms) carte 48 photos + 300 positions
+   391.530  envoyé lame_20261021_120006_bleu-aspergillus-2_0047.jpg (512 ko)
+   391.607  t0100011 suivi ok score 0.98 pos 9614,7290 net 63 (17 ms) carte 48 photos + 300 positions
+   391.676  photo s-2_0049 à 9614,7290 (520 ko, 221 ms)
+   391.950  t0100354 suivi ok score 0.98 pos 9614,7290 net 71 (26 ms) carte 49 photos + 300 positions
+   392.282  t0100686 suivi ok score 0.98 pos 9614,7290 net 69 (21 ms) carte 49 photos + 300 positions
+   392.613  t0101017 suivi ok score 0.97 pos 9493,7290 net 64 (19 ms) carte 49 photos + 300 positions
+   392.627  envoyé lame_20261021_120006_bleu-aspergillus-2_0048.jpg (511 ko)
+   392.954  t0101358 suivi ok score 0.98 pos 8956,7322 net 65 (19 ms) carte 49 photos + 300 positions
+   393.278  t0101682 suivi ok score 0.98 pos 8956,7321 net 63 (19 ms) carte 49 photos + 300 positions
+   393.376  photo s-2_0050 à 8948,7311 (520 ko, 230 ms)
+   393.618  t0102021 suivi ok score 0.97 pos 8979,7941 net 71 (25 ms) carte 50 photos + 300 positions
+   393.957  t0102360 suivi ok score 0.98 pos 8978,7957 net 66 (28 ms) carte 50 photos + 300 positions
+   394.237  photo s-2_0051 à 8978,7957 (510 ko, 227 ms)
+   394.279  t0102682 suivi ok score 0.98 pos 8978,7957 net 67 (19 ms) carte 51 photos + 300 positions
+   394.621  t0103025 suivi ok score 0.98 pos 8978,7957 net 69 (26 ms) carte 51 photos + 300 positions
+   394.825  envoyé lame_20261021_120006_bleu-aspergillus-2_0049.jpg (520 ko)
+   394.946  t0103351 suivi ok score 0.98 pos 8978,7957 net 62 (21 ms) carte 51 photos + 300 positions
+   395.275  t0103679 suivi ok score 0.98 pos 8978,7957 net 65 (17 ms) carte 51 photos + 300 positions
+   395.623  t0104026 suivi ok score 0.98 pos 8978,7957 net 71 (30 ms) carte 51 photos + 300 positions
+   395.907  envoyé lame_20261021_120006_bleu-aspergillus-2_0050.jpg (520 ko)
+   395.953  t0104357 suivi ok score 0.98 pos 8969,7957 net 71 (16 ms) carte 51 photos + 300 positions
+   396.284  t0104688 suivi ok score 0.98 pos 7893,7988 net 66 (25 ms) carte 51 photos + 300 positions
+   396.610  t0105015 suivi ok score 0.98 pos 7891,7988 net 68 (18 ms) carte 51 photos + 300 positions
+   396.901  photo s-2_0052 à 7891,7988 (512 ko, 219 ms)
+   396.948  t0105352 suivi ok score 0.98 pos 7891,7988 net 62 (18 ms) carte 52 photos + 300 positions
+   397.284  t0105688 suivi ok score 0.98 pos 7891,7988 net 66 (22 ms) carte 52 photos + 300 positions
+   397.614  t0106019 suivi ok score 0.98 pos 7891,7988 net 69 (18 ms) carte 52 photos + 300 positions
+   397.973  t0106377 suivi ok score 0.98 pos 7365,8004 net 63 (22 ms) carte 52 photos + 300 positions
+   398.279  t0106683 suivi ok score 0.98 pos 6828,8020 net 60 (16 ms) carte 52 photos + 300 positions
+   398.618  t0107022 suivi ok score 0.98 pos 6779,8036 net 73 (20 ms) carte 52 photos + 300 positions
+   398.955  t0107358 suivi ok score 0.98 pos 6779,8036 net 79 (23 ms) carte 52 photos + 300 positions
+   399.132  photo s-2_0053 à 6779,8036 (513 ko, 219 ms)
+   399.189  envoyé lame_20261021_120006_bleu-aspergillus-2_0051.jpg (510 ko)
+   399.294  t0107698 suivi ok score 0.98 pos 6779,8036 net 60 (25 ms) carte 53 photos + 300 positions
+   399.630  t0108034 suivi ok score 0.98 pos 6779,8036 net 67 (26 ms) carte 53 photos + 300 positions
+   399.949  t0108353 suivi ok score 0.98 pos 6744,8036 net 67 (19 ms) carte 53 photos + 300 positions
+   400.296  t0108700 suivi ok score 0.97 pos 5402,8099 net 73 (29 ms) carte 53 photos + 300 positions
+   400.618  t0109021 suivi ok score 0.97 pos 5407,8101 net 68 (17 ms) carte 53 photos + 300 positions
+   400.863  photo s-2_0054 à 5407,8101 (515 ko, 206 ms)
+   400.948  t0109352 suivi ok score 0.97 pos 5407,8101 net 77 (22 ms) carte 54 photos + 300 positions
+   400.949  envoyé lame_20261021_120006_bleu-aspergillus-2_0052.jpg (512 ko)
+   401.290  t0109693 suivi ok score 0.97 pos 5407,8101 net 74 (22 ms) carte 54 photos + 300 positions
+   401.616  t0110020 suivi ok score 0.97 pos 5407,8101 net 74 (17 ms) carte 54 photos + 300 positions
+   401.965  t0110368 suivi ok score 0.95 pos 5072,8101 net 71 (30 ms) carte 54 photos + 300 positions
+   402.285  t0110689 suivi ok score 0.98 pos 3645,8168 net 61 (20 ms) carte 54 photos + 300 positions
+   402.285  photo en mouvement lent (58 % du champ, 36 u/s)
+   402.494  photo s-2_0055 à 3645,8168 (522 ko, 208 ms)
+   402.625  t0111028 suivi ok score 0.98 pos 3644,8168 net 63 (26 ms) carte 55 photos + 300 positions
+   402.955  t0111359 suivi ok score 0.98 pos 3644,8168 net 62 (23 ms) carte 55 photos + 300 positions
+   403.288  t0111692 suivi ok score 0.98 pos 3644,8168 net 50 (20 ms) carte 55 photos + 300 positions
+   403.617  t0112021 suivi ok score 0.98 pos 3644,8168 net 53 (18 ms) carte 55 photos + 300 positions
+   403.954  t0112358 suivi ok score 0.98 pos 3644,8168 net 62 (24 ms) carte 55 photos + 300 positions
+   404.148  envoyé lame_20261021_120006_bleu-aspergillus-2_0053.jpg (513 ko)
+   404.288  t0112692 suivi ok score 0.98 pos 3644,8168 net 49 (22 ms) carte 55 photos + 300 positions
+   404.615  t0113019 suivi ok score 0.98 pos 3644,8168 net 48 (20 ms) carte 55 photos + 300 positions
+   404.949  t0113353 suivi ok score 0.98 pos 3644,8168 net 55 (18 ms) carte 55 photos + 300 positions
+   405.281  t0113686 suivi ok score 0.98 pos 3644,8168 net 48 (19 ms) carte 55 photos + 300 positions
+   405.353  envoyé lame_20261021_120006_bleu-aspergillus-2_0054.jpg (515 ko)
+   405.619  t0114024 suivi ok score 0.98 pos 3644,8168 net 48 (21 ms) carte 55 photos + 300 positions
+   405.912  reprise de mise au point au même endroit : netteté 80 contre 61 (reprise 1)
+   405.951  t0114355 suivi ok score 0.98 pos 3633,8168 net 85 (19 ms) carte 55 photos + 300 positions
+   406.126  photo s-2_0056 à 3635,8168 (558 ko, 213 ms)
+   406.284  t0114688 suivi ok score 0.98 pos 3633,8168 net 86 (23 ms) carte 56 photos + 300 positions
+   406.582  envoyé lame_20261021_120006_bleu-aspergillus-2_0055.jpg (522 ko)
+   406.617  t0115021 suivi ok score 0.98 pos 3633,8168 net 84 (11 ms) carte 56 photos + 300 positions
+   406.974  t0115377 suivi ok score 0.98 pos 3633,8168 net 85 (37 ms) carte 56 photos + 300 positions
+   407.298  t0115701 suivi ok score 0.98 pos 3633,8168 net 86 (26 ms) carte 56 photos + 300 positions
+   407.620  t0116024 suivi ok score 0.97 pos 3621,8168 net 87 (20 ms) carte 56 photos + 300 positions
+   407.955  t0116359 suivi ok score 0.97 pos 3095,8184 net 90 (16 ms) carte 56 photos + 300 positions
+   408.289  t0116693 suivi ok score 0.97 pos 2763,8200 net 93 (22 ms) carte 56 photos + 300 positions
+   408.618  t0117022 suivi ok score 0.98 pos 2333,8216 net 89 (17 ms) carte 56 photos + 300 positions
+   408.973  t0117376 suivi ok score 0.97 pos 2162,8216 net 88 (34 ms) carte 56 photos + 300 positions
+   409.218  photo en mouvement lent (54 % du champ, 31 u/s)
+   409.291  t0117694 suivi ok score 0.98 pos 1950,8232 net 91 (21 ms) carte 56 photos + 300 positions
+   409.436  photo s-2_0057 à 1974,8232 (580 ko, 218 ms)
+   409.624  t0118027 suivi ok score 0.97 pos 1863,8232 net 89 (26 ms) carte 57 photos + 300 positions
+   409.959  t0118363 suivi ok score 0.98 pos 1867,8248 net 60 (25 ms) carte 57 photos + 300 positions
+   410.291  t0118695 suivi ok score 0.97 pos 1867,8248 net 59 (19 ms) carte 57 photos + 300 positions
+   410.621  t0119024 suivi ok score 0.97 pos 1876,8248 net 60 (23 ms) carte 57 photos + 300 positions
+   410.850  envoyé lame_20261021_120006_bleu-aspergillus-2_0056.jpg (558 ko)
+   410.946  t0119350 suivi ok score 0.97 pos 1869,8248 net 59 (18 ms) carte 57 photos + 300 positions
+   411.282  t0119686 suivi ok score 0.98 pos 1858,8248 net 49 (17 ms) carte 57 photos + 300 positions
+   411.623  t0120026 suivi ok score 0.97 pos 1866,8248 net 44 (24 ms) carte 57 photos + 300 positions
+   411.894  envoyé lame_20261021_120006_bleu-aspergillus-2_0057.jpg (580 ko)
+   411.955  t0120359 suivi ok score 0.98 pos 1855,8248 net 73 (20 ms) carte 57 photos + 300 positions
+   412.132  photo s-2_0058 à 1855,8248 (568 ko, 210 ms)
+   412.287  t0120691 suivi ok score 0.98 pos 1855,8248 net 86 (24 ms) carte 58 photos + 300 positions
+   412.616  t0121020 suivi ok score 0.98 pos 1855,8248 net 81 (18 ms) carte 58 photos + 300 positions
+   412.949  t0121353 suivi ok score 0.98 pos 1855,8232 net 77 (19 ms) carte 58 photos + 300 positions
+   413.289  t0121693 suivi ok score 0.95 pos 1857,8212 net 74 (22 ms) carte 58 photos + 300 positions
+   413.402  envoyé lame_20261021_120006_bleu-aspergillus-2_0058.jpg (568 ko)
+   413.617  t0122021 suivi ok score 0.97 pos 1855,8041 net 67 (18 ms) carte 58 photos + 300 positions
+   413.951  t0122355 suivi ok score 0.98 pos 1843,7913 net 82 (19 ms) carte 58 photos + 300 positions
+   414.285  t0122689 suivi ok score 0.98 pos 1843,7913 net 62 (19 ms) carte 58 photos + 300 positions
+   414.330  photo s-2_0059 à 1843,7913 (570 ko, 208 ms)
+   414.615  t0123019 suivi ok score 0.97 pos 1855,7913 net 56 (20 ms) carte 59 photos + 300 positions
+   414.960  t0123363 suivi ok score 0.98 pos 1855,7913 net 56 (25 ms) carte 59 photos + 300 positions
+   415.290  t0123694 suivi ok score 0.97 pos 1855,7913 net 56 (25 ms) carte 59 photos + 300 positions
+   415.622  t0124025 suivi ok score 0.97 pos 1855,7913 net 51 (22 ms) carte 59 photos + 300 positions
+   415.970  t0124374 suivi ok score 0.98 pos 1845,7913 net 47 (20 ms) carte 59 photos + 300 positions
+   416.287  t0124691 suivi ok score 0.97 pos 1843,7913 net 48 (20 ms) carte 59 photos + 300 positions
+   416.621  t0125025 suivi ok score 0.97 pos 1735,7913 net 45 (21 ms) carte 59 photos + 300 positions
+   416.954  t0125358 suivi ok score 0.97 pos 1349,7929 net 54 (19 ms) carte 59 photos + 300 positions
+   417.282  t0125685 suivi ok score 0.97 pos 899,7945 net 48 (17 ms) carte 59 photos + 300 positions
+   417.614  t0126018 suivi ok score 0.96 pos 433,7961 net 45 (15 ms) carte 59 photos + 300 positions
+   417.822  photo en mouvement lent (57 % du champ, 31 u/s)
+   417.822  photo floue (netteté 43 contre 103 de référence)
+   417.947  t0126351 suivi ok score 0.95 pos 111,7977 net 54 (17 ms) carte 59 photos + 300 positions
+   418.041  photo s-2_0060 à 111,7977 (530 ko, 219 ms)
+   418.283  t0126687 suivi ok score 0.94 pos 123,7977 net 80 (21 ms) carte 60 photos + 300 positions
+   418.618  t0127022 suivi ok score 0.94 pos 123,7977 net 79 (22 ms) carte 60 photos + 300 positions
+   418.752  reprise de mise au point au même endroit : netteté 69 contre 43 (reprise 1)
+   418.953  t0127357 suivi ok score 0.95 pos 123,7977 net 61 (23 ms) carte 60 photos + 300 positions
+   418.973  photo s-2_0061 à 123,7977 (523 ko, 221 ms)
+   419.292  t0127696 suivi ok score 0.95 pos 123,7977 net 44 (24 ms) carte 61 photos + 300 positions
+   419.511  envoyé lame_20261021_120006_bleu-aspergillus-2_0059.jpg (570 ko)
+   419.624  t0128028 suivi ok score 0.96 pos 111,7977 net 46 (20 ms) carte 61 photos + 300 positions
+   419.953  t0128357 suivi ok score 0.95 pos 121,7977 net 52 (20 ms) carte 61 photos + 300 positions
+   420.290  t0128694 suivi ok score 0.95 pos 114,7977 net 50 (19 ms) carte 61 photos + 300 positions
+   420.622  t0129026 suivi ok score 0.94 pos 63,7977 net 48 (24 ms) carte 61 photos + 300 positions
+   420.960  t0129363 suivi ok score 0.93 pos -129,7977 net 43 (26 ms) carte 61 photos + 300 positions
+   421.293  t0129696 suivi ok score 0.93 pos -296,7993 net 38 (22 ms) carte 61 photos + 300 positions
+   421.620  t0130024 suivi ok score 0.94 pos -356,7993 net 61 (21 ms) carte 61 photos + 300 positions
+   421.969  t0130373 suivi ok score 0.96 pos -356,7993 net 100 (33 ms) carte 61 photos + 300 positions
+   422.008  photo s-2_0062 à -356,7993 (579 ko, 210 ms)
+   422.293  t0130697 suivi ok score 0.96 pos -356,7993 net 89 (20 ms) carte 62 photos + 300 positions
+   422.616  t0131020 suivi ok score 0.95 pos -356,7993 net 89 (19 ms) carte 62 photos + 300 positions
+   422.952  t0131357 suivi ok score 0.96 pos -356,7993 net 93 (20 ms) carte 62 photos + 300 positions
+   423.289  t0131693 suivi ok score 0.91 pos -346,8007 net 98 (21 ms) carte 62 photos + 300 positions
+   423.484  envoyé lame_20261021_120006_bleu-aspergillus-2_0060.jpg (530 ko)
+   423.626  t0132030 suivi ok score 0.94 pos -333,8265 net 96 (23 ms) carte 62 photos + 300 positions
+   423.961  t0132365 suivi ok score 0.97 pos -332,8295 net 91 (22 ms) carte 62 photos + 300 positions
+   424.167  photo s-2_0063 à -332,8295 (585 ko, 205 ms)
+   424.291  t0132696 suivi ok score 0.97 pos -332,8295 net 91 (22 ms) carte 63 photos + 300 positions
+   424.626  t0133030 suivi ok score 0.90 pos -312,8619 net 89 (23 ms) carte 63 photos + 300 positions
+   424.949  envoyé lame_20261021_120006_bleu-aspergillus-2_0061.jpg (523 ko)
+   424.957  t0133361 suivi ok score 0.98 pos -296,9188 net 95 (21 ms) carte 63 photos + 300 positions
+   425.287  t0133691 suivi ok score 0.98 pos -296,9188 net 87 (19 ms) carte 63 photos + 300 positions
+   425.382  photo s-2_0064 à -296,9188 (591 ko, 230 ms)
+   425.623  t0134026 suivi ok score 0.98 pos -296,9188 net 92 (20 ms) carte 64 photos + 300 positions
+   425.949  t0134353 suivi ok score 0.96 pos -247,10240 net 94 (15 ms) carte 64 photos + 300 positions
+   426.081  envoyé lame_20261021_120006_bleu-aspergillus-2_0062.jpg (579 ko)
+   426.298  t0134702 suivi ok score 0.98 pos -236,10591 net 98 (27 ms) carte 64 photos + 300 positions
+   426.624  t0135028 suivi ok score 0.98 pos -236,10591 net 96 (24 ms) carte 64 photos + 300 positions
+   426.680  photo s-2_0065 à -236,10591 (581 ko, 225 ms)
+   426.965  t0135369 suivi ok score 0.97 pos -236,10591 net 50 (19 ms) carte 65 photos + 300 positions
+   427.289  t0135693 suivi ok score 0.97 pos -224,10591 net 62 (21 ms) carte 65 photos + 300 positions
+   427.618  t0136022 suivi ok score 0.97 pos -224,10591 net 63 (18 ms) carte 65 photos + 300 positions
+   427.786  envoyé lame_20261021_120006_bleu-aspergillus-2_0063.jpg (585 ko)
+   427.962  t0136366 suivi ok score 0.97 pos -226,10591 net 59 (27 ms) carte 65 photos + 300 positions
+   428.291  t0136695 suivi ok score 0.97 pos -236,10591 net 52 (22 ms) carte 65 photos + 300 positions
+   428.629  t0137033 suivi ok score 0.97 pos -224,10591 net 53 (18 ms) carte 65 photos + 300 positions
+   428.935  envoyé lame_20261021_120006_bleu-aspergillus-2_0064.jpg (591 ko)
+   428.956  t0137360 suivi ok score 0.97 pos -224,10591 net 51 (19 ms) carte 65 photos + 300 positions
+   429.291  t0137694 suivi ok score 0.97 pos -224,10591 net 51 (22 ms) carte 65 photos + 300 positions
+   429.623  t0138027 suivi ok score 0.96 pos -224,10672 net 48 (21 ms) carte 65 photos + 300 positions
+   429.826  photo floue (netteté 51 contre 103 de référence)
+   429.963  t0138367 suivi ok score 0.97 pos -212,10782 net 49 (22 ms) carte 65 photos + 300 positions
+   430.042  photo s-2_0066 à -212,10751 (532 ko, 215 ms)
+   430.297  t0138701 suivi ok score 0.97 pos -212,10782 net 51 (27 ms) carte 66 photos + 300 positions
+   430.637  t0139041 suivi ok score 0.97 pos -212,10782 net 50 (30 ms) carte 66 photos + 300 positions
+   430.974  t0139378 suivi ok score 0.97 pos -212,10782 net 49 (30 ms) carte 66 photos + 300 positions
+   431.301  t0139704 suivi ok score 0.97 pos -201,11022 net 49 (29 ms) carte 66 photos + 300 positions
+   431.625  t0140028 suivi ok score 0.97 pos -200,11228 net 47 (21 ms) carte 66 photos + 300 positions
+   431.818  photo floue (netteté 49 contre 103 de référence)
+   431.954  t0140359 suivi ok score 0.97 pos -188,11229 net 51 (19 ms) carte 66 photos + 300 positions
+   432.043  photo s-2_0067 à -200,11229 (528 ko, 225 ms)
+   432.303  t0140707 suivi ok score 0.96 pos -183,11229 net 71 (32 ms) carte 67 photos + 300 positions
+   432.622  t0141026 suivi ok score 0.97 pos -192,11229 net 49 (16 ms) carte 67 photos + 300 positions
+   432.721  reprise de mise au point au même endroit : netteté 64 contre 49 (reprise 1)
+   432.791  envoyé lame_20261021_120006_bleu-aspergillus-2_0065.jpg (581 ko)
+   432.931  photo s-2_0068 à -192,11229 (563 ko, 209 ms)
+   432.946  t0141350 suivi ok score 0.98 pos -192,11229 net 59 (14 ms) carte 68 photos + 300 positions
+   433.286  t0141690 suivi ok score 0.98 pos -192,11229 net 54 (19 ms) carte 68 photos + 300 positions
+   433.642  t0142045 suivi ok score 0.97 pos -192,11229 net 47 (32 ms) carte 68 photos + 300 positions
+   433.964  t0142367 suivi ok score 0.97 pos -192,11229 net 46 (25 ms) carte 68 photos + 300 positions
+   434.157  envoyé lame_20261021_120006_bleu-aspergillus-2_0066.jpg (532 ko)
+   434.291  t0142695 suivi ok score 0.97 pos -192,11308 net 47 (22 ms) carte 68 photos + 300 positions
+   434.627  t0143031 suivi ok score 0.96 pos -159,11706 net 48 (22 ms) carte 68 photos + 300 positions
+   434.965  t0143368 suivi ok score 0.97 pos -156,11803 net 46 (29 ms) carte 68 photos + 300 positions
+   434.990  photo floue (netteté 45 contre 103 de référence)
+   435.220  photo s-2_0069 à -156,11818 (535 ko, 229 ms)
+   435.292  t0143696 suivi ok score 0.97 pos -156,11941 net 45 (23 ms) carte 69 photos + 300 positions
+   435.330  envoyé lame_20261021_120006_bleu-aspergillus-2_0067.jpg (528 ko)
+   435.625  t0144029 suivi ok score 0.97 pos -156,11946 net 44 (20 ms) carte 69 photos + 300 positions
+   435.756  photo floue (netteté 46 contre 103 de référence)
+   435.955  t0144359 suivi ok score 0.96 pos -144,12034 net 46 (21 ms) carte 69 photos + 300 positions
+   435.968  photo s-2_0070 à -145,11978 (536 ko, 212 ms)
+   436.292  t0144696 suivi ok score 0.96 pos -144,12111 net 47 (20 ms) carte 70 photos + 300 positions
+   436.427  photo floue (netteté 47 contre 103 de référence)
+   436.630  t0145034 suivi ok score 0.96 pos -133,12172 net 47 (24 ms) carte 70 photos + 300 positions
+   436.650  photo s-2_0071 à -135,12143 (535 ko, 223 ms)
+   436.956  t0145360 suivi ok score 0.97 pos -133,12205 net 43 (22 ms) carte 71 photos + 300 positions
+   437.292  t0145696 suivi ok score 0.96 pos -133,12206 net 60 (22 ms) carte 71 photos + 300 positions
+   437.359  reprise de mise au point au même endroit : netteté 65 contre 47 (reprise 1)
+   437.539  envoyé lame_20261021_120006_bleu-aspergillus-2_0068.jpg (563 ko)
+   437.584  photo s-2_0072 à -133,12206 (516 ko, 224 ms)
+   437.617  t0146021 suivi ok score 0.95 pos -133,12206 net 61 (18 ms) carte 72 photos + 300 positions
+   437.964  t0146368 suivi ok score 0.97 pos -145,12206 net 48 (27 ms) carte 72 photos + 300 positions
+   438.293  t0146697 suivi ok score 0.97 pos -145,12206 net 49 (22 ms) carte 72 photos + 300 positions
+   438.626  t0147030 suivi ok score 0.97 pos -145,12206 net 48 (18 ms) carte 72 photos + 300 positions
+   438.692  envoyé lame_20261021_120006_bleu-aspergillus-2_0069.jpg (535 ko)
+   438.959  t0147363 suivi ok score 0.98 pos -145,12206 net 84 (19 ms) carte 72 photos + 300 positions
+   438.992  reprise de mise au point au même endroit : netteté 85 contre 65 (reprise 2)
+   439.216  photo s-2_0073 à -145,12206 (577 ko, 224 ms)
+   439.298  t0147702 suivi ok score 0.98 pos -145,12206 net 86 (27 ms) carte 73 photos + 300 positions
+   439.649  t0148052 suivi ok score 0.97 pos -145,12206 net 86 (37 ms) carte 73 photos + 300 positions
+   439.784  envoyé lame_20261021_120006_bleu-aspergillus-2_0070.jpg (536 ko)
+   439.971  t0148375 suivi ok score 0.98 pos -145,12206 net 86 (30 ms) carte 73 photos + 300 positions
+   440.299  t0148703 suivi ok score 0.98 pos -145,12206 net 87 (25 ms) carte 73 photos + 300 positions
+   440.637  t0149040 suivi ok score 0.96 pos -61,12206 net 88 (26 ms) carte 73 photos + 300 positions
+   440.960  t0149364 suivi ok score 0.96 pos 513,12174 net 87 (17 ms) carte 73 photos + 300 positions
+   441.087  envoyé lame_20261021_120006_bleu-aspergillus-2_0071.jpg (535 ko)
+   441.313  t0149716 suivi ok score 0.97 pos 824,12158 net 85 (34 ms) carte 73 photos + 300 positions
+   441.624  t0150027 suivi ok score 0.96 pos 1052,12144 net 82 (18 ms) carte 73 photos + 300 positions
+   441.965  t0150369 suivi ok score 0.98 pos 1063,12159 net 82 (24 ms) carte 73 photos + 300 positions
+   442.110  photo s-2_0074 à 1063,12156 (604 ko, 220 ms)
+   442.243  envoyé lame_20261021_120006_bleu-aspergillus-2_0072.jpg (516 ko)
+   442.293  t0150697 suivi ok score 0.96 pos 1099,12158 net 80 (19 ms) carte 74 photos + 300 positions
+   442.626  t0151030 suivi ok score 0.96 pos 1300,12143 net 80 (19 ms) carte 74 photos + 300 positions
+   442.981  t0151384 suivi ok score 0.96 pos 1652,12128 net 82 (36 ms) carte 74 photos + 300 positions
+   443.293  t0151697 suivi ok score 0.97 pos 1911,12126 net 78 (20 ms) carte 74 photos + 300 positions
+   443.624  t0152028 suivi ok score 0.97 pos 2127,12125 net 80 (18 ms) carte 74 photos + 300 positions
+   443.971  t0152375 suivi ok score 0.98 pos 2343,12111 net 82 (21 ms) carte 74 photos + 300 positions
+   444.293  t0152697 suivi ok score 0.98 pos 2426,12111 net 74 (18 ms) carte 74 photos + 300 positions
+   444.459  photo floue (netteté 50 contre 103 de référence)
+   444.626  t0153030 suivi ok score 0.98 pos 2437,12111 net 62 (21 ms) carte 74 photos + 300 positions
+   444.671  photo s-2_0075 à 2426,12111 (546 ko, 212 ms)
+   444.962  t0153366 suivi ok score 0.98 pos 2426,12111 net 58 (18 ms) carte 75 photos + 300 positions
+   445.323  t0153726 suivi ok score 0.98 pos 2426,12111 net 58 (41 ms) carte 75 photos + 300 positions
+   445.634  t0154038 suivi ok score 0.98 pos 2426,12111 net 60 (20 ms) carte 75 photos + 300 positions
+   445.846  envoyé lame_20261021_120006_bleu-aspergillus-2_0073.jpg (577 ko)
+   445.930  reprise de mise au point au même endroit : netteté 65 contre 50 (reprise 1)
+   445.970  t0154374 suivi ok score 0.98 pos 2426,12111 net 64 (25 ms) carte 75 photos + 300 positions
+   446.159  photo s-2_0076 à 2426,12111 (540 ko, 229 ms)
+   446.290  t0154694 suivi ok score 0.98 pos 2426,12111 net 60 (18 ms) carte 76 photos + 300 positions
+   446.633  t0155036 suivi ok score 0.98 pos 2426,12111 net 51 (21 ms) carte 76 photos + 300 positions
+   446.966  t0155370 suivi ok score 0.98 pos 2450,12111 net 52 (24 ms) carte 76 photos + 300 positions
+   447.056  envoyé lame_20261021_120006_bleu-aspergillus-2_0074.jpg (604 ko)
+   447.307  t0155711 suivi ok score 0.98 pos 2438,12111 net 52 (30 ms) carte 76 photos + 300 positions
+   447.632  t0156036 suivi ok score 0.97 pos 3036,12095 net 54 (24 ms) carte 76 photos + 300 positions
+   447.967  t0156371 suivi ok score 0.98 pos 3179,12079 net 53 (26 ms) carte 76 photos + 300 positions
+   448.296  t0156699 suivi ok score 0.98 pos 3263,12079 net 52 (21 ms) carte 76 photos + 300 positions
+   448.354  photo s-2_0077 à 3199,12079 (539 ko, 221 ms)
+   448.468  envoyé lame_20261021_120006_bleu-aspergillus-2_0075.jpg (546 ko)
+   448.638  t0157042 suivi ok score 0.98 pos 3516,12063 net 50 (23 ms) carte 77 photos + 300 positions
+   448.959  t0157364 suivi ok score 0.98 pos 3612,12063 net 65 (19 ms) carte 77 photos + 300 positions
+   449.295  t0157699 suivi ok score 0.98 pos 3612,12063 net 63 (24 ms) carte 77 photos + 300 positions
+   449.366  photo s-2_0078 à 3612,12063 (526 ko, 240 ms)
+   449.632  t0158036 suivi ok score 0.98 pos 3612,12063 net 66 (27 ms) carte 78 photos + 300 positions
+   449.966  t0158370 suivi ok score 0.98 pos 3612,12063 net 67 (23 ms) carte 78 photos + 300 positions
+   450.299  t0158703 suivi ok score 0.98 pos 3612,12063 net 64 (19 ms) carte 78 photos + 300 positions
+   450.567  envoyé lame_20261021_120006_bleu-aspergillus-2_0076.jpg (540 ko)
+   450.627  t0159031 suivi ok score 0.98 pos 3612,12063 net 64 (20 ms) carte 78 photos + 300 positions
+   450.974  t0159378 suivi ok score 0.97 pos 4497,12031 net 72 (29 ms) carte 78 photos + 300 positions
+   451.301  t0159705 suivi ok score 0.97 pos 4580,12031 net 72 (25 ms) carte 78 photos + 300 positions
+   451.638  t0160042 suivi ok score 0.97 pos 4580,12031 net 64 (29 ms) carte 78 photos + 300 positions
+   451.650  photo s-2_0079 à 4580,12031 (516 ko, 226 ms)
+   451.859  envoyé lame_20261021_120006_bleu-aspergillus-2_0077.jpg (539 ko)
+   451.969  t0160373 suivi ok score 0.97 pos 4580,12031 net 53 (26 ms) carte 79 photos + 300 positions
+   452.300  t0160704 suivi ok score 0.96 pos 4580,12031 net 61 (22 ms) carte 79 photos + 300 positions
+   452.624  t0161028 suivi ok score 0.95 pos 4579,12031 net 61 (18 ms) carte 79 photos + 300 positions
+   452.791  envoyé lame_20261021_120006_bleu-aspergillus-2_0078.jpg (526 ko)
+   452.977  t0161381 suivi ok score 0.97 pos 4580,12031 net 47 (29 ms) carte 79 photos + 300 positions
+   453.294  t0161699 suivi ok score 0.97 pos 4568,12031 net 65 (20 ms) carte 79 photos + 300 positions
+   453.665  t0162068 suivi ok score 0.97 pos 4568,12031 net 93 (41 ms) carte 79 photos + 300 positions
+   453.967  t0162371 suivi ok score 0.97 pos 4579,12031 net 90 (20 ms) carte 79 photos + 300 positions
+   454.301  t0162705 suivi ok score 0.97 pos 4757,12028 net 99 (19 ms) carte 79 photos + 300 positions
+   454.643  t0163046 suivi ok score 0.97 pos 4795,12026 net 92 (27 ms) carte 79 photos + 300 positions
+   454.912  photo s-2_0080 à 4795,12031 (542 ko, 213 ms)
+   454.962  t0163367 suivi ok score 0.97 pos 4795,12031 net 88 (18 ms) carte 80 photos + 300 positions
+   455.293  t0163698 suivi ok score 0.97 pos 4831,12031 net 100 (19 ms) carte 80 photos + 300 positions
+   455.640  t0164044 suivi ok score 0.90 pos 5153,12015 net 100 (24 ms) carte 80 photos + 300 positions
+   455.973  t0164376 suivi ok score 0.91 pos 5285,12015 net 102 (26 ms) carte 80 photos + 300 positions
+   455.997  envoyé lame_20261021_120006_bleu-aspergillus-2_0079.jpg (516 ko)
+   456.301  t0164705 suivi ok score 0.90 pos 5285,12015 net 101 (21 ms) carte 80 photos + 300 positions
+   456.411  photo s-2_0081 à 5285,12015 (532 ko, 214 ms)
+   456.632  t0165035 suivi ok score 0.90 pos 5285,12015 net 103 (23 ms) carte 81 photos + 300 positions
+   456.961  t0165365 suivi ok score 0.88 pos 5285,12015 net 122 (19 ms) carte 81 photos + 300 positions
+   457.079  envoyé lame_20261021_120006_bleu-aspergillus-2_0080.jpg (542 ko)
+   457.296  t0165700 suivi ok score 0.93 pos 5297,12429 net 105 (17 ms) carte 81 photos + 300 positions
+   457.648  t0166052 suivi ok score 0.96 pos 5297,12509 net 92 (30 ms) carte 81 photos + 300 positions
+   457.941  photo s-2_0082 à 5297,12520 (534 ko, 201 ms)
+   457.969  t0166373 suivi ok score 0.96 pos 5297,12512 net 92 (24 ms) carte 82 photos + 300 positions
+   458.291  t0166695 suivi ok score 0.94 pos 5516,12498 net 90 (13 ms) carte 82 photos + 300 positions
+   458.634  t0167038 suivi ok score 0.95 pos 5858,12495 net 108 (23 ms) carte 82 photos + 300 positions
+   458.962  t0167366 suivi ok score 0.95 pos 5847,12496 net 100 (17 ms) carte 82 photos + 300 positions
+   459.095  envoyé lame_20261021_120006_bleu-aspergillus-2_0081.jpg (532 ko)
+   459.140  photo s-2_0083 à 5847,12496 (529 ko, 209 ms)
+   459.294  t0167698 suivi ok score 0.95 pos 5847,12496 net 102 (18 ms) carte 83 photos + 300 positions
+   459.631  t0168035 suivi ok score 0.93 pos 6413,12469 net 102 (22 ms) carte 83 photos + 300 positions
+   459.962  t0168366 suivi ok score 0.95 pos 6684,12464 net 96 (20 ms) carte 83 photos + 300 positions
+   460.302  t0168707 suivi ok score 0.95 pos 6675,12464 net 92 (20 ms) carte 83 photos + 300 positions
+   460.422  photo s-2_0084 à 6675,12464 (523 ko, 220 ms)
+   460.632  t0169036 suivi ok score 0.95 pos 6673,12464 net 91 (20 ms) carte 84 photos + 300 positions
+   460.736  envoyé lame_20261021_120006_bleu-aspergillus-2_0082.jpg (534 ko)
+   460.961  t0169365 suivi ok score 0.95 pos 6675,12464 net 59 (19 ms) carte 84 photos + 300 positions
+   461.295  t0169699 suivi ok score 0.95 pos 6682,12464 net 70 (22 ms) carte 84 photos + 300 positions
+   461.636  t0170039 suivi ok score 0.95 pos 6684,12464 net 72 (24 ms) carte 84 photos + 300 positions
+   461.965  t0170369 suivi ok score 0.96 pos 6676,12464 net 69 (21 ms) carte 84 photos + 300 positions
+   462.295  t0170699 suivi ok score 0.96 pos 6682,12464 net 72 (19 ms) carte 84 photos + 300 positions
+   462.630  t0171034 suivi ok score 0.96 pos 6685,12592 net 61 (20 ms) carte 84 photos + 300 positions
+   462.960  t0171364 suivi ok score 0.95 pos 6685,12619 net 64 (18 ms) carte 84 photos + 300 positions
+   463.300  t0171704 suivi ok score 0.96 pos 6685,12795 net 68 (23 ms) carte 84 photos + 300 positions
+   463.631  t0172035 suivi ok score 0.96 pos 6685,12799 net 63 (19 ms) carte 84 photos + 300 positions
+   463.772  photo s-2_0085 à 6685,12799 (506 ko, 197 ms)
+   463.962  t0172366 suivi ok score 0.96 pos 6685,12799 net 65 (22 ms) carte 85 photos + 300 positions
+   464.299  t0172703 suivi ok score 0.95 pos 6685,12640 net 73 (20 ms) carte 85 photos + 300 positions
+   464.630  t0173033 suivi ok score 0.76 pos 7235,12242 net 133 (19 ms) carte 85 photos + 300 positions
+   464.874  envoyé lame_20261021_120006_bleu-aspergillus-2_0083.jpg (529 ko)
+   464.958  t0173363 suivi ok score 0.80 pos -45,12179 net 155 (19 ms) carte 85 photos + 300 positions
+   465.156  photo en mouvement lent (349 % du champ, 31 u/s)
+   465.156  ATTENTION pas trop grand (349 % du champ) : recouvrement insuffisant
+   465.294  t0173699 suivi ok score 0.75 pos -1443,12160 net 68 (21 ms) carte 85 photos + 300 positions
+   465.371  photo s-2_0086 à -4001,12258 (499 ko, 215 ms)
+   465.631  t0174035 suivi ok score 0.85 pos -2901,12180 net 67 (24 ms) carte 86 photos + 300 positions
+   465.972  t0174376 suivi ok score 0.85 pos -2909,12180 net 72 (29 ms) carte 86 photos + 300 positions
+   466.192  envoyé lame_20261021_120006_bleu-aspergillus-2_0084.jpg (523 ko)
+   466.301  t0174705 suivi ok score 0.83 pos -2907,12180 net 72 (24 ms) carte 86 photos + 300 positions
+   466.627  t0175031 suivi ok score 0.84 pos -2915,12180 net 70 (19 ms) carte 86 photos + 300 positions
+   466.679  photo s-2_0087 à -2909,12180 (500 ko, 203 ms)
+   466.967  t0175371 suivi ok score 0.85 pos -2907,12180 net 73 (24 ms) carte 87 photos + 300 positions
+   467.307  t0175711 suivi ok score 0.84 pos -2907,12180 net 67 (27 ms) carte 87 photos + 300 positions
+   467.404  envoyé lame_20261021_120006_bleu-aspergillus-2_0085.jpg (506 ko)
+   467.629  t0176034 suivi ok score 0.84 pos -2916,12180 net 57 (20 ms) carte 87 photos + 300 positions
+   467.901  reprise de mise au point au même endroit : netteté 99 contre 72 (reprise 1)
+   467.968  t0176373 suivi ok score 0.86 pos -2907,12180 net 101 (18 ms) carte 87 photos + 300 positions
+   468.112  photo s-2_0088 à -2908,12180 (515 ko, 210 ms)
+   468.295  t0176699 suivi ok score 0.84 pos -2907,12180 net 101 (20 ms) carte 88 photos + 300 positions
+   468.636  t0177040 suivi ok score 0.85 pos -2907,12180 net 99 (21 ms) carte 88 photos + 300 positions
+   468.965  t0177370 suivi ok score 0.86 pos -2907,12180 net 99 (22 ms) carte 88 photos + 300 positions
+   469.297  t0177702 suivi ok score 0.84 pos -2907,12180 net 96 (18 ms) carte 88 photos + 300 positions
+   469.395  envoyé lame_20261021_120006_bleu-aspergillus-2_0086.jpg (499 ko)
+   469.634  t0178039 suivi ok score 0.94 pos -913,12070 net 82 (17 ms) carte 88 photos + 300 positions
+   469.798  photo en mouvement lent (84 % du champ, 30 u/s)
+   469.798  ATTENTION pas trop grand (84 % du champ) : recouvrement insuffisant
+   469.971  t0178375 suivi ok score 0.96 pos -4,12054 net 86 (24 ms) carte 88 photos + 300 positions
+   470.010  photo s-2_0089 à -327,12054 (529 ko, 211 ms)
+   470.306  t0178709 suivi ok score 0.89 pos 1753,12006 net 99 (26 ms) carte 89 photos + 300 positions
+   470.306  photo en mouvement lent (68 % du champ, 30 u/s)
+   470.525  photo s-2_0090 à 1753,12006 (531 ko, 218 ms)
+   470.634  t0179037 suivi ok score 0.91 pos 1597,12006 net 93 (20 ms) carte 90 photos + 300 positions
+   470.719  envoyé lame_20261021_120006_bleu-aspergillus-2_0087.jpg (500 ko)
+   470.938  photo en mouvement lent (64 % du champ, 30 u/s)
+   470.969  t0179373 suivi ok score 0.97 pos -220,12097 net 86 (17 ms) carte 90 photos + 300 positions
+   471.141  photo s-2_0091 à -208,12097 (528 ko, 202 ms)
+   471.301  t0179705 suivi ok score 0.97 pos -518,12069 net 74 (22 ms) carte 91 photos + 300 positions
+   471.434  photo floue (netteté 50 contre 103 de référence)
+   471.638  t0180042 suivi ok score 0.97 pos -518,12070 net 60 (23 ms) carte 91 photos + 300 positions
+   471.658  photo s-2_0092 à -518,12070 (513 ko, 224 ms)
+   471.950  envoyé lame_20261021_120006_bleu-aspergillus-2_0088.jpg (515 ko)
+   471.965  t0180370 suivi ok score 0.98 pos -518,12070 net 61 (21 ms) carte 92 photos + 300 positions
+   472.299  t0180704 suivi ok score 0.97 pos -518,12070 net 69 (22 ms) carte 92 photos + 300 positions
+   472.631  t0181035 suivi ok score 0.97 pos -518,12070 net 60 (20 ms) carte 92 photos + 300 positions
+   472.969  t0181373 suivi ok score 0.97 pos -411,12059 net 63 (21 ms) carte 92 photos + 300 positions
+   473.312  t0181716 suivi ok score 0.92 pos 1287,12024 net 88 (25 ms) carte 92 photos + 300 positions
+   473.506  photo en mouvement lent (80 % du champ, 30 u/s)
+   473.506  ATTENTION pas trop grand (80 % du champ) : recouvrement insuffisant
+   473.638  t0182042 suivi ok score 0.86 pos 1956,12006 net 123 (21 ms) carte 92 photos + 300 positions
+   473.722  photo s-2_0093 à 1920,12006 (506 ko, 215 ms)
+   473.980  t0182384 suivi ok score 0.81 pos 2275,12006 net 80 (32 ms) carte 93 photos + 300 positions
+   474.302  t0182707 suivi ok score 0.92 pos 3028,12006 net 89 (22 ms) carte 93 photos + 300 positions
+   474.636  t0183040 suivi ok score 0.92 pos 4737,11943 net 80 (22 ms) carte 93 photos + 300 positions
+   474.899  envoyé lame_20261021_120006_bleu-aspergillus-2_0089.jpg (529 ko)
+   474.970  t0183374 suivi ok score 0.93 pos 5598,11927 net 83 (22 ms) carte 93 photos + 300 positions
+   475.298  t0183702 suivi ok score 0.93 pos 7676,12211 net 81 (18 ms) carte 93 photos + 300 positions
+   475.476  photo en mouvement lent (190 % du champ, 30 u/s)
+   475.476  ATTENTION pas trop grand (190 % du champ) : recouvrement insuffisant
+   475.633  t0184037 suivi ok score 0.94 pos 7756,12242 net 79 (21 ms) carte 93 photos + 300 positions
+   475.686  photo s-2_0094 à 7723,12240 (502 ko, 209 ms)
+   475.989  t0184394 suivi ok score 0.93 pos 7745,12242 net 85 (25 ms) carte 94 photos + 300 positions
+   476.307  t0184711 suivi ok score 0.93 pos 7745,12242 net 103 (21 ms) carte 94 photos + 300 positions
+   476.379  envoyé lame_20261021_120006_bleu-aspergillus-2_0090.jpg (531 ko)
+   476.634  t0185038 suivi ok score 0.94 pos 7745,12242 net 72 (19 ms) carte 94 photos + 300 positions
+   476.967  t0185371 suivi ok score 0.95 pos 7745,12242 net 71 (21 ms) carte 94 photos + 300 positions
+   477.324  t0185728 suivi ok score 0.94 pos 7819,12242 net 76 (41 ms) carte 94 photos + 300 positions
+   477.429  envoyé lame_20261021_120006_bleu-aspergillus-2_0091.jpg (528 ko)
+   477.636  t0186040 suivi ok score 0.93 pos 8294,12226 net 84 (21 ms) carte 94 photos + 300 positions
+   477.969  t0186373 suivi ok score 0.94 pos 8796,12210 net 91 (16 ms) carte 94 photos + 300 positions
+   478.303  t0186707 suivi ok score 0.94 pos 8963,12210 net 93 (24 ms) carte 94 photos + 300 positions
+   478.650  t0187054 suivi ok score 0.93 pos 8976,12210 net 88 (31 ms) carte 94 photos + 300 positions
+   478.749  photo s-2_0095 à 8978,12210 (502 ko, 210 ms)
+   478.937  envoyé lame_20261021_120006_bleu-aspergillus-2_0092.jpg (513 ko)
+   478.974  t0187378 suivi ok score 0.94 pos 8977,12210 net 84 (18 ms) carte 95 photos + 300 positions
+   479.300  t0187704 suivi ok score 0.92 pos 8977,12191 net 92 (18 ms) carte 95 photos + 300 positions
+   479.643  t0188047 suivi ok score 0.91 pos 8965,11811 net 100 (24 ms) carte 95 photos + 300 positions
+   479.949  envoyé lame_20261021_120006_bleu-aspergillus-2_0093.jpg (506 ko)
+   479.980  t0188384 suivi ok score 0.92 pos 8941,11316 net 91 (28 ms) carte 95 photos + 300 positions
+   480.307  t0188711 suivi ok score 0.91 pos 8941,11317 net 77 (27 ms) carte 95 photos + 300 positions
+   480.513  photo s-2_0096 à 8941,11317 (494 ko, 205 ms)
+   480.627  t0189031 suivi ok score 0.90 pos 8941,11317 net 93 (17 ms) carte 96 photos + 300 positions
+   480.967  t0189371 suivi ok score 0.94 pos 8941,11317 net 77 (19 ms) carte 96 photos + 300 positions
+   481.304  t0189708 suivi ok score 0.94 pos 8941,11317 net 82 (22 ms) carte 96 photos + 300 positions
+   481.636  t0190040 suivi ok score 0.93 pos 8941,11317 net 81 (19 ms) carte 96 photos + 300 positions
+   481.975  t0190379 suivi ok score 0.94 pos 8941,11317 net 82 (23 ms) carte 96 photos + 300 positions
+   482.304  t0190708 suivi ok score 0.94 pos 8941,11317 net 85 (20 ms) carte 96 photos + 300 positions
+   482.388  envoyé lame_20261021_120006_bleu-aspergillus-2_0094.jpg (502 ko)
+   482.640  t0191044 suivi ok score 0.93 pos 8941,11317 net 86 (18 ms) carte 96 photos + 300 positions
+   482.974  t0191378 suivi ok score 0.94 pos 8941,11317 net 84 (26 ms) carte 96 photos + 300 positions
+   483.301  t0191705 suivi ok score 0.94 pos 8941,11317 net 82 (19 ms) carte 96 photos + 300 positions
+   483.642  t0192045 suivi ok score 0.93 pos 8941,11317 net 81 (23 ms) carte 96 photos + 300 positions
+   483.969  t0192373 suivi ok score 0.94 pos 8941,11317 net 79 (20 ms) carte 96 photos + 300 positions
+   484.166  envoyé lame_20261021_120006_bleu-aspergillus-2_0095.jpg (502 ko)
+   484.302  t0192707 suivi ok score 0.94 pos 8941,11317 net 78 (24 ms) carte 96 photos + 300 positions
+   484.657  t0193060 suivi ok score 0.93 pos 8941,11317 net 76 (36 ms) carte 96 photos + 300 positions
+   484.976  t0193381 suivi ok score 0.94 pos 8941,11317 net 77 (24 ms) carte 96 photos + 300 positions
+   485.308  t0193713 suivi ok score 0.94 pos 8941,11317 net 78 (24 ms) carte 96 photos + 300 positions
+   485.548  envoyé lame_20261021_120006_bleu-aspergillus-2_0096.jpg (494 ko)
+   485.634  t0194038 suivi ok score 0.93 pos 8941,11317 net 78 (20 ms) carte 96 photos + 300 positions
+   485.969  t0194374 suivi ok score 0.94 pos 8941,11317 net 82 (18 ms) carte 96 photos + 300 positions
+   486.303  t0194707 suivi ok score 0.94 pos 8941,11317 net 82 (18 ms) carte 96 photos + 300 positions
+   486.635  t0195040 suivi ok score 0.93 pos 8941,11317 net 86 (22 ms) carte 96 photos + 300 positions
+   486.970  t0195373 suivi ok score 0.94 pos 8941,11317 net 87 (22 ms) carte 96 photos + 300 positions
+   487.299  t0195704 suivi ok score 0.93 pos 8941,11317 net 88 (19 ms) carte 96 photos + 300 positions
+   487.637  t0196041 suivi ok score 0.93 pos 8941,11317 net 90 (23 ms) carte 96 photos + 300 positions
+   487.976  t0196380 suivi ok score 0.94 pos 8941,11317 net 91 (25 ms) carte 96 photos + 300 positions
+   488.303  t0196707 suivi ok score 0.94 pos 8941,11317 net 88 (18 ms) carte 96 photos + 300 positions
+   488.643  t0197046 suivi ok score 0.93 pos 8940,11317 net 90 (27 ms) carte 96 photos + 300 positions
+   488.973  t0197378 suivi ok score 0.93 pos 8929,11306 net 79 (23 ms) carte 96 photos + 300 positions
+   489.306  t0197710 suivi ok score 0.93 pos 8929,11301 net 76 (20 ms) carte 96 photos + 300 positions
+   489.634  t0198038 suivi ok score 0.93 pos 8940,11317 net 73 (18 ms) carte 96 photos + 300 positions
+   489.974  t0198379 suivi ok score 0.94 pos 8941,11317 net 91 (20 ms) carte 96 photos + 300 positions
+   490.326  t0198730 suivi ok score 0.93 pos 8985,11333 net 78 (38 ms) carte 96 photos + 300 positions
+   490.646  t0199050 suivi ok score 0.93 pos 8941,11317 net 84 (24 ms) carte 96 photos + 300 positions
+   490.974  t0199379 suivi ok score 0.94 pos 8941,11317 net 89 (22 ms) carte 96 photos + 300 positions
+   491.003  changement d'objectif vers x10 : début à 199409 ms, position 8941,11317 (ok)
+   497.204  objectif x10 : reprise à 205609 ms (calibration absente)
+   497.233  masque oculaire : 99 % du cadre utile (p95 241)
+   497.506  t0205910 suivi ok score 0.98 pos 0,0 net 132 (18 ms) carte 0 photos + 3 positions
+   497.838  t0206242 suivi ok score 0.98 pos 0,0 net 132 (19 ms) carte 0 photos + 7 positions
+   497.857  patron 2x2 champs posé autour du détail (-1530,-2040)
+   497.857  photo s-2_0097 à 0,0 (434 ko, 213 ms)
+   498.170  t0206574 suivi ok score 0.98 pos 0,0 net 132 (19 ms) carte 1 photos + 10 positions
+   498.509  t0206913 suivi ok score 0.98 pos 0,0 net 132 (24 ms) carte 1 photos + 13 positions
+   498.841  t0207245 suivi ok score 0.98 pos 0,0 net 132 (20 ms) carte 1 photos + 17 positions
+   499.145  envoyé lame_20261021_120006_bleu-aspergillus-2_0097.jpg (434 ko)
+   499.177  t0207581 suivi ok score 0.98 pos 0,0 net 131 (22 ms) carte 1 photos + 20 positions
+   499.504  t0207908 suivi ok score 0.98 pos 0,0 net 129 (17 ms) carte 1 photos + 23 positions
+   499.838  t0208242 suivi ok score 0.95 pos -335,15 net 124 (17 ms) carte 1 photos + 27 positions
+   500.174  t0208578 suivi ok score 0.98 pos -645,30 net 103 (16 ms) carte 1 photos + 30 positions
+   500.512  t0208916 suivi ok score 0.98 pos -873,32 net 99 (21 ms) carte 1 photos + 33 positions
+   500.858  t0209261 suivi ok score 0.97 pos -1204,46 net 96 (33 ms) carte 1 photos + 37 positions
+   501.179  t0209583 suivi ok score 0.98 pos -1375,48 net 90 (22 ms) carte 1 photos + 40 positions
+   501.520  t0209924 suivi ok score 0.99 pos -1387,48 net 93 (26 ms) carte 1 photos + 43 positions
+   501.619  photo s-2_0098 à -1387,48 (425 ko, 205 ms)
+   501.862  t0210265 suivi ok score 0.99 pos -1395,48 net 92 (37 ms) carte 2 photos + 47 positions
+   502.202  t0210605 suivi ok score 0.99 pos -1505,48 net 92 (38 ms) carte 2 photos + 50 positions
+   502.516  t0210920 suivi ok score 0.99 pos -1506,48 net 92 (20 ms) carte 2 photos + 53 positions
+   502.733  photo s-2_0099 à -1506,48 (428 ko, 241 ms)
+   502.846  t0211250 suivi ok score 0.99 pos -1506,48 net 92 (24 ms) carte 3 photos + 57 positions
+   502.855  envoyé lame_20261021_120006_bleu-aspergillus-2_0098.jpg (425 ko)
+   503.173  t0211577 suivi ok score 0.99 pos -1660,48 net 88 (18 ms) carte 3 photos + 60 positions
+   503.508  t0211912 suivi ok score 0.99 pos -1936,64 net 94 (19 ms) carte 3 photos + 63 positions
+   503.840  t0212244 suivi ok score 0.99 pos -1924,64 net 95 (17 ms) carte 3 photos + 67 positions
+   504.032  photo s-2_0100 à -1924,64 (437 ko, 220 ms)
+   504.193  t0212596 suivi ok score 0.95 pos -1935,-218 net 91 (32 ms) carte 4 photos + 70 positions
+   504.513  t0212917 suivi ok score 0.96 pos -1948,-572 net 86 (25 ms) carte 4 photos + 73 positions
+   504.848  t0213251 suivi ok score 0.98 pos -1948,-590 net 89 (23 ms) carte 4 photos + 77 positions
+   505.000  photo s-2_0101 à -1948,-590 (433 ko, 212 ms)
+   505.173  t0213577 suivi ok score 0.94 pos -1948,-698 net 89 (18 ms) carte 5 photos + 80 positions
+   505.439  envoyé lame_20261021_120006_bleu-aspergillus-2_0099.jpg (428 ko)
+   505.511  t0213915 suivi ok score 0.98 pos -1960,-908 net 93 (17 ms) carte 5 photos + 83 positions
+   505.848  t0214251 suivi ok score 0.97 pos -1972,-1213 net 87 (21 ms) carte 5 photos + 87 positions
+   506.174  t0214578 suivi ok score 0.95 pos -1984,-1497 net 88 (15 ms) carte 5 photos + 90 positions
+   506.539  t0214943 suivi ok score 0.93 pos -1984,-1646 net 89 (38 ms) carte 5 photos + 93 positions
+   506.635  photo s-2_0102 à -1984,-1606 (422 ko, 207 ms)
+   506.850  t0215254 suivi ok score 0.99 pos -1984,-1672 net 97 (25 ms) carte 6 photos + 97 positions
+   506.869  envoyé lame_20261021_120006_bleu-aspergillus-2_0100.jpg (437 ko)
+   507.174  t0215578 suivi ok score 0.99 pos -1984,-1784 net 100 (21 ms) carte 6 photos + 100 positions
+   507.510  t0215914 suivi ok score 0.97 pos -1996,-2039 net 98 (22 ms) carte 6 photos + 103 positions
+   507.850  t0216254 suivi ok score 0.94 pos -2008,-2358 net 94 (27 ms) carte 6 photos + 107 positions
+   508.199  t0216602 suivi ok score 0.99 pos -2008,-2358 net 98 (22 ms) carte 6 photos + 110 positions
+   508.395  photo s-2_0103 à -2008,-2358 (413 ko, 223 ms)
+   508.513  t0216917 suivi ok score 0.99 pos -2008,-2358 net 97 (25 ms) carte 7 photos + 113 positions
+   508.856  t0217259 suivi ok score 0.97 pos -1996,-2358 net 95 (31 ms) carte 7 photos + 117 positions
+   509.191  t0217595 suivi ok score 0.93 pos -1837,-2358 net 101 (31 ms) carte 7 photos + 120 positions
+   509.360  photo s-2_0104 à -1877,-2358 (413 ko, 215 ms)
+   509.508  t0217912 suivi ok score 0.93 pos -1144,-2385 net 110 (18 ms) carte 8 photos + 123 positions
+   509.669  envoyé lame_20261021_120006_bleu-aspergillus-2_0101.jpg (433 ko)
+   509.845  t0218249 suivi ok score 0.97 pos -658,-2405 net 131 (19 ms) carte 8 photos + 127 positions
+   510.181  t0218585 suivi ok score 0.97 pos -658,-2405 net 132 (21 ms) carte 8 photos + 130 positions
+   510.317  photo s-2_0105 à -658,-2405 (418 ko, 209 ms)
+   510.527  t0218930 suivi ok score 0.93 pos -571,-2405 net 131 (37 ms) carte 9 photos + 133 positions
+   510.597  envoyé lame_20261021_120006_bleu-aspergillus-2_0102.jpg (422 ko)
+   510.844  t0219249 suivi ok score 0.85 pos 82,-2436 net 157 (16 ms) carte 9 photos + 137 positions
+   511.179  t0219583 suivi ok score 0.89 pos 658,-2453 net 157 (20 ms) carte 9 photos + 140 positions
+   511.537  t0219941 suivi ok score 0.97 pos 830,-2464 net 165 (38 ms) carte 9 photos + 143 positions
+   511.854  t0220258 suivi ok score 0.97 pos 822,-2453 net 165 (22 ms) carte 9 photos + 147 positions
+   511.939  photo s-2_0106 à 822,-2454 (428 ko, 250 ms)
+   512.020  envoyé lame_20261021_120006_bleu-aspergillus-2_0103.jpg (413 ko)
+   512.194  t0220597 suivi ok score 0.95 pos 846,-2453 net 168 (31 ms) carte 10 photos + 150 positions
+   512.522  t0220926 suivi ok score 0.93 pos 1105,-2468 net 180 (26 ms) carte 10 photos + 153 positions
+   512.845  t0221249 suivi ok score 0.96 pos 1491,-2485 net 174 (20 ms) carte 10 photos + 157 positions
+   513.189  t0221593 suivi ok score 0.97 pos 1539,-2485 net 175 (22 ms) carte 10 photos + 160 positions
+   513.454  photo s-2_0107 à 1539,-2485 (434 ko, 212 ms)
+   513.508  t0221912 suivi ok score 0.97 pos 1539,-2485 net 177 (17 ms) carte 11 photos + 163 positions
+   513.855  t0222259 suivi ok score 0.95 pos 1635,-2485 net 177 (27 ms) carte 11 photos + 167 positions
+   514.176  t0222580 suivi ok score 0.93 pos 2256,-2517 net 181 (17 ms) carte 11 photos + 170 positions
+   514.519  t0222923 suivi ok score 0.97 pos 2460,-2517 net 181 (24 ms) carte 11 photos + 173 positions
+   514.533  envoyé lame_20261021_120006_bleu-aspergillus-2_0104.jpg (413 ko)
+   514.845  t0223249 suivi ok score 0.97 pos 2460,-2517 net 181 (18 ms) carte 11 photos + 177 positions
+   514.970  photo s-2_0108 à 2460,-2517 (417 ko, 223 ms)
+   515.176  t0223580 suivi ok score 0.94 pos 2460,-2437 net 167 (20 ms) carte 12 photos + 180 positions
+   515.508  t0223913 suivi ok score 0.95 pos 2487,-1821 net 171 (16 ms) carte 12 photos + 183 positions
+   515.608  envoyé lame_20261021_120006_bleu-aspergillus-2_0105.jpg (418 ko)
+   515.849  t0224253 suivi ok score 0.98 pos 2496,-1816 net 188 (18 ms) carte 12 photos + 187 positions
+   515.952  photo s-2_0109 à 2496,-1816 (430 ko, 201 ms)
+   516.171  t0224576 suivi ok score 0.98 pos 2496,-1816 net 188 (18 ms) carte 13 photos + 190 positions
+   516.517  t0224920 suivi ok score 0.88 pos 2508,-1384 net 174 (27 ms) carte 13 photos + 193 positions
+   516.648  envoyé lame_20261021_120006_bleu-aspergillus-2_0106.jpg (428 ko)
+   516.897  t0225302 suivi lost score 0.15 pos 2519,-1241 net 167 (72 ms) carte 13 photos + 196 positions
+   517.208  t0225612 suivi ok score 0.84 pos 2529,-925 net 164 (19 ms) carte 13 photos + 199 positions
+   517.557  t0225961 suivi ok score 0.99 pos 2532,-907 net 164 (25 ms) carte 13 photos + 202 positions
+   517.649  envoyé lame_20261021_120006_bleu-aspergillus-2_0107.jpg (434 ko)
+   517.802  photo s-2_0110 à 2532,-907 (463 ko, 224 ms)
+   517.874  t0226279 suivi ok score 0.99 pos 2532,-907 net 164 (20 ms) carte 14 photos + 206 positions
+   518.207  t0226612 suivi ok score 0.83 pos 2532,-807 net 164 (17 ms) carte 14 photos + 209 positions
+   518.543  t0226948 suivi ok score 0.80 pos 2556,-191 net 173 (16 ms) carte 14 photos + 212 positions
+   518.788  envoyé lame_20261021_120006_bleu-aspergillus-2_0108.jpg (417 ko)
+   518.894  t0227297 suivi ok score 0.96 pos 2576,336 net 171 (29 ms) carte 14 photos + 216 positions
+   519.216  t0227620 suivi ok score 0.99 pos 2568,336 net 172 (22 ms) carte 14 photos + 219 positions
+   519.497  photo s-2_0111 à 2568,336 (479 ko, 216 ms)
+   519.551  t0227955 suivi ok score 0.99 pos 2568,336 net 172 (25 ms) carte 15 photos + 222 positions
+   519.876  t0228280 suivi ok score 0.95 pos 2568,355 net 172 (18 ms) carte 15 photos + 226 positions
+   520.222  t0228625 suivi ok score 0.89 pos 2580,723 net 169 (26 ms) carte 15 photos + 229 positions
+   520.309  envoyé lame_20261021_120006_bleu-aspergillus-2_0109.jpg (430 ko)
+   520.559  t0228963 suivi ok score 0.85 pos 2615,1467 net 176 (24 ms) carte 15 photos + 232 positions
+   520.889  t0229292 suivi ok score 0.99 pos 2616,1674 net 167 (22 ms) carte 15 photos + 236 positions
+   521.214  t0229618 suivi ok score 0.99 pos 2616,1674 net 167 (18 ms) carte 15 photos + 239 positions
+   521.295  photo s-2_0112 à 2616,1674 (471 ko, 204 ms)
+   521.479  envoyé lame_20261021_120006_bleu-aspergillus-2_0110.jpg (463 ko)
+   521.556  t0229960 suivi ok score 0.99 pos 2616,1674 net 167 (21 ms) carte 16 photos + 242 positions
+   521.882  t0230286 suivi ok score 0.91 pos 2616,1770 net 167 (23 ms) carte 16 photos + 246 positions
+   522.216  t0230620 suivi ok score 0.82 pos 2650,2583 net 166 (18 ms) carte 16 photos + 249 positions
+   522.553  t0230957 suivi ok score 0.98 pos 2651,2726 net 167 (26 ms) carte 16 photos + 252 positions
+   522.880  t0231284 suivi ok score 0.98 pos 2651,2726 net 168 (19 ms) carte 16 photos + 256 positions
+   522.960  photo s-2_0113 à 2651,2726 (452 ko, 213 ms)
+   523.215  t0231619 suivi ok score 0.89 pos 2341,2741 net 170 (25 ms) carte 17 photos + 259 positions
+   523.548  t0231952 suivi ok score 0.92 pos 1337,2785 net 150 (23 ms) carte 17 photos + 262 positions
+   523.810  photo en mouvement lent (54 % du champ, 6 u/s)
+   523.881  t0232285 suivi ok score 0.98 pos 998,2801 net 146 (19 ms) carte 17 photos + 266 positions
+   524.025  photo s-2_0114 à 999,2801 (455 ko, 214 ms)
+   524.077  envoyé lame_20261021_120006_bleu-aspergillus-2_0111.jpg (479 ko)
+   524.218  t0232622 suivi ok score 0.98 pos 999,2801 net 144 (23 ms) carte 18 photos + 269 positions
+   524.546  t0232951 suivi ok score 0.98 pos 999,2801 net 145 (19 ms) carte 18 photos + 272 positions
+   524.892  t0233296 suivi ok score 0.91 pos 464,2817 net 131 (24 ms) carte 18 photos + 276 positions
+   525.233  t0233637 suivi ok score 0.98 pos -200,2849 net 120 (34 ms) carte 18 photos + 279 positions
+   525.549  t0233953 suivi ok score 0.98 pos -244,2849 net 120 (22 ms) carte 18 photos + 282 positions
+   525.747  envoyé lame_20261021_120006_bleu-aspergillus-2_0112.jpg (471 ko)
+   525.856  photo s-2_0115 à -244,2849 (443 ko, 210 ms)
+   525.876  t0234280 suivi ok score 0.98 pos -244,2849 net 120 (21 ms) carte 19 photos + 286 positions
+   526.217  t0234621 suivi ok score 0.88 pos -770,2863 net 108 (22 ms) carte 19 photos + 289 positions
+   526.544  t0234948 suivi ok score 0.96 pos -1523,2897 net 93 (18 ms) carte 19 photos + 292 positions
+   526.895  t0235298 suivi ok score 0.99 pos -1546,2897 net 96 (31 ms) carte 19 photos + 296 positions
+   527.203  envoyé lame_20261021_120006_bleu-aspergillus-2_0113.jpg (452 ko)
+   527.205  photo s-2_0116 à -1546,2897 (443 ko, 216 ms)
+   527.211  t0235616 suivi ok score 0.99 pos -1546,2897 net 96 (20 ms) carte 20 photos + 299 positions
+   527.544  t0235948 suivi ok score 0.98 pos -2096,2912 net 98 (19 ms) carte 20 photos + 300 positions
+   527.883  t0236287 suivi ok score 0.98 pos -2419,2928 net 98 (22 ms) carte 20 photos + 300 positions
+   528.213  t0236617 suivi ok score 0.99 pos -2431,2928 net 101 (18 ms) carte 20 photos + 300 positions
+   528.435  photo s-2_0117 à -2431,2928 (454 ko, 221 ms)
+   528.541  t0236945 suivi ok score 0.99 pos -2431,2928 net 101 (18 ms) carte 21 photos + 300 positions
+   528.883  t0237288 suivi ok score 0.99 pos -2431,2928 net 103 (23 ms) carte 21 photos + 300 positions
+   529.239  t0237643 suivi ok score 0.99 pos -2431,2928 net 101 (23 ms) carte 21 photos + 300 positions
+   529.560  t0237964 suivi ok score 0.99 pos -2431,2928 net 101 (30 ms) carte 21 photos + 300 positions
+   529.832  envoyé lame_20261021_120006_bleu-aspergillus-2_0114.jpg (455 ko)
+   529.885  t0238289 suivi ok score 0.99 pos -2431,2928 net 102 (20 ms) carte 21 photos + 300 positions
+   530.213  t0238617 suivi ok score 0.99 pos -2431,2928 net 102 (17 ms) carte 21 photos + 300 positions
+   530.553  t0238957 suivi ok score 0.99 pos -2431,2928 net 102 (23 ms) carte 21 photos + 300 positions
+   530.813  envoyé lame_20261021_120006_bleu-aspergillus-2_0115.jpg (443 ko)
+   530.880  t0239284 suivi ok score 0.99 pos -2431,2928 net 102 (19 ms) carte 21 photos + 300 positions
+   531.212  t0239616 suivi ok score 0.99 pos -2431,2928 net 101 (17 ms) carte 21 photos + 300 positions
+   531.550  t0239954 suivi ok score 0.99 pos -2431,2928 net 102 (20 ms) carte 21 photos + 300 positions
+   531.885  t0240289 suivi ok score 0.99 pos -2431,2928 net 100 (22 ms) carte 21 photos + 300 positions
+   531.927  envoyé lame_20261021_120006_bleu-aspergillus-2_0116.jpg (443 ko)
+   532.221  t0240625 suivi ok score 0.99 pos -2431,2928 net 103 (17 ms) carte 21 photos + 300 positions
+   532.563  t0240966 suivi ok score 0.99 pos -2431,2928 net 102 (29 ms) carte 21 photos + 300 positions
+   532.887  t0241290 suivi ok score 0.99 pos -2431,2928 net 102 (23 ms) carte 21 photos + 300 positions
+   533.122  envoyé lame_20261021_120006_bleu-aspergillus-2_0117.jpg (454 ko)
+   533.209  t0241613 suivi ok score 0.97 pos -2445,2928 net 103 (17 ms) carte 21 photos + 300 positions
+   533.552  t0241957 suivi lost score 0.21 pos -5607,4108 net 422 (22 ms) carte 21 photos + 300 positions
+   534.168  t0242573 suivi lost score 0.29 pos -5607,4108 net 429 (78 ms) carte 21 photos + 300 positions
+   534.859  t0243264 suivi lost score 0.32 pos -5607,4108 net 427 (45 ms) carte 21 photos + 300 positions
+   535.312  t0243717 suivi lost score 0.30 pos -5786,3152 net 83 (18 ms) carte 21 photos + 300 positions
+   535.671  t0244075 suivi ok score 0.63 pos -6010,3166 net 420 (11 ms) carte 21 photos + 300 positions
+   535.671  photo en mouvement lent (117 % du champ, 0 u/s)
+   535.671  ATTENTION pas trop grand (117 % du champ) : recouvrement insuffisant
+   535.894  photo s-2_0118 à -6010,3166 (303 ko, 223 ms)
+   536.020  t0244425 suivi ok score 0.52 pos -6010,3166 net 429 (28 ms) carte 22 photos + 300 positions
+   536.349  t0244754 suivi ok score 0.52 pos -6010,3166 net 439 (23 ms) carte 22 photos + 300 positions
+   536.685  t0245090 suivi ok score 0.52 pos -6010,3166 net 424 (21 ms) carte 22 photos + 300 positions
+   536.733  envoyé lame_20261021_120006_bleu-aspergillus-2_0118.jpg (303 ko)
+   537.011  t0245416 suivi ok score 0.52 pos -6010,3166 net 433 (19 ms) carte 22 photos + 300 positions
+   537.347  t0245752 suivi ok score 0.52 pos -6010,3166 net 447 (18 ms) carte 22 photos + 300 positions
+   537.684  t0246089 suivi ok score 0.52 pos -6010,3166 net 436 (19 ms) carte 22 photos + 300 positions
+   538.013  t0246418 suivi ok score 0.51 pos -6010,3166 net 434 (17 ms) carte 22 photos + 300 positions
+   538.345  t0246750 suivi ok score 0.52 pos -6010,3166 net 440 (17 ms) carte 22 photos + 300 positions
+   538.690  t0247094 suivi ok score 0.52 pos -6010,3166 net 439 (27 ms) carte 22 photos + 300 positions
+   539.014  t0247419 suivi ok score 0.52 pos -6010,3166 net 430 (20 ms) carte 22 photos + 300 positions
+   539.350  t0247755 suivi ok score 0.51 pos -6010,3166 net 438 (20 ms) carte 22 photos + 300 positions
+   539.693  t0248098 suivi ok score 0.61 pos -6010,3166 net 430 (24 ms) carte 22 photos + 300 positions
+   540.015  t0248420 suivi ok score 0.78 pos -6018,3230 net 355 (18 ms) carte 22 photos + 300 positions
+   540.349  t0248753 suivi ok score 0.83 pos -6066,3162 net 342 (20 ms) carte 22 photos + 300 positions
+   540.679  t0249083 suivi ok score 0.93 pos -6160,3160 net 338 (18 ms) carte 22 photos + 300 positions
+   541.025  t0249428 suivi ok score 0.82 pos -6069,3164 net 340 (26 ms) carte 22 photos + 300 positions
+   541.355  t0249759 suivi ok score 0.83 pos -6074,3162 net 341 (24 ms) carte 22 photos + 300 positions
+   541.679  t0250083 suivi ok score 0.93 pos -6155,3161 net 344 (17 ms) carte 22 photos + 300 positions
+   542.029  t0250433 suivi ok score 0.82 pos -6067,3164 net 343 (28 ms) carte 22 photos + 300 positions
+   542.360  t0250764 suivi ok score 0.84 pos -6077,3165 net 339 (27 ms) carte 22 photos + 300 positions
+   542.695  t0251098 suivi ok score 0.93 pos -6175,3160 net 333 (30 ms) carte 22 photos + 300 positions
+   543.026  t0251430 suivi ok score 0.82 pos -6073,3153 net 351 (24 ms) carte 22 photos + 300 positions
+   543.352  t0251756 suivi ok score 0.84 pos -6091,3162 net 343 (19 ms) carte 22 photos + 300 positions
+   543.682  t0252086 suivi ok score 0.93 pos -6158,3160 net 342 (18 ms) carte 22 photos + 300 positions
+   544.018  t0252422 suivi ok score 0.86 pos -5118,3053 net 377 (20 ms) carte 22 photos + 300 positions
+   544.360  t0252765 suivi ok score 0.52 pos -6217,3180 net 433 (21 ms) carte 22 photos + 300 positions
+   544.700  t0253104 suivi ok score 0.52 pos -6217,3180 net 422 (33 ms) carte 22 photos + 300 positions
+   544.726  photo s-2_0119 à -6217,3180 (299 ko, 213 ms)
+   545.014  t0253420 suivi ok score 0.52 pos -6217,3180 net 429 (17 ms) carte 23 photos + 300 positions
+   545.354  t0253758 suivi ok score 0.51 pos -6217,3180 net 444 (19 ms) carte 23 photos + 300 positions
+   545.689  t0254094 suivi ok score 0.51 pos -6217,3180 net 427 (24 ms) carte 23 photos + 300 positions
+   545.848  envoyé lame_20261021_120006_bleu-aspergillus-2_0119.jpg (299 ko)
+   546.028  t0254432 suivi ok score 0.84 pos -6083,2904 net 374 (24 ms) carte 23 photos + 300 positions
+   546.363  t0254767 suivi ok score 0.76 pos -10061,3121 net 372 (27 ms) carte 23 photos + 300 positions
+   546.689  t0255092 suivi ok score 0.87 pos -17281,3153 net 375 (19 ms) carte 23 photos + 300 positions
+   547.012  t0255416 suivi ok score 0.78 pos -25827,3169 net 369 (14 ms) carte 23 photos + 300 positions
+   547.367  t0255770 suivi ok score 0.77 pos -32916,3248 net 370 (28 ms) carte 23 photos + 300 positions
+   547.694  t0256097 suivi ok score 0.87 pos -40219,3280 net 375 (22 ms) carte 23 photos + 300 positions
+   548.012  t0256416 suivi ok score 0.79 pos -48993,3344 net 380 (11 ms) carte 23 photos + 300 positions
+   548.355  t0256758 suivi ok score 0.77 pos -56296,3376 net 373 (18 ms) carte 23 photos + 300 positions
+   548.684  t0257088 suivi ok score 0.86 pos -63659,3408 net 365 (16 ms) carte 23 photos + 300 positions
+   549.010  t0257414 suivi ok score 0.80 pos -72457,3424 net 380 (11 ms) carte 23 photos + 300 positions
+   549.358  t0257762 suivi ok score 0.78 pos -79796,3440 net 377 (22 ms) carte 23 photos + 300 positions
+   549.687  t0258091 suivi ok score 0.86 pos -87207,3488 net 364 (17 ms) carte 23 photos + 300 positions
+   550.020  t0258423 suivi ok score 0.81 pos -96016,3551 net 365 (16 ms) carte 23 photos + 300 positions
+   550.357  t0258760 suivi ok score 0.78 pos -103463,3551 net 365 (21 ms) carte 23 photos + 300 positions
+   550.680  t0259083 suivi ok score 0.86 pos -110910,3583 net 373 (15 ms) carte 23 photos + 300 positions
+   551.020  t0259423 suivi ok score 0.82 pos -119755,3647 net 364 (16 ms) carte 23 photos + 300 positions
+   551.358  t0259761 suivi ok score 0.79 pos -127202,3727 net 367 (22 ms) carte 23 photos + 300 positions
