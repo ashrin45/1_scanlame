@@ -1,0 +1,79 @@
+{
+ "title": "bleu v52 (obj. x50)",
+ "width": 2880,
+ "height": 1840,
+ "fields": 5,
+ "tiles": 42,
+ "tile": 512,
+ "maxlvl": 12,
+ "um_per_px": null,
+ "stain": "lactophenol",
+ "objective": "x50",
+ "sample": null,
+ "comment": null,
+ "captured": "21/10/2026 19:45",
+ "parent": "bleu-v52-10211945",
+ "parent_transform": null,
+ "parent_anchored": null,
+ "parent_approx": null,
+ "outline": null,
+ "cellules": null,
+ "hint": null,
+ "stage": null,
+ "stage_cal": null,
+ "stage_obs": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "recalage moyen (2.2 px)"
+  ],
+  "frames": {
+   "candidates": 7,
+   "blurred": 0,
+   "selected": 5,
+   "used": 5,
+   "tracked_only": 0
+  },
+  "residual_px": 2.16,
+  "residual_max_px": 11.44,
+  "holes": [],
+  "holes_frac": 0.0,
+  "coverage_px": 7405932,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 17.7,
+  "flat_field": "estimé",
+  "k1": 0.0,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "series": "lame_20261021_194505_bleu-v52",
+ "version": 1,
+ "params": {
+  "depth": "off",
+  "seams": true,
+  "fps": 4.0,
+  "reg_size": 1200,
+  "max_side": 32000,
+  "core": 0.7,
+  "tile": 2048,
+  "distortion": true,
+  "chroma": true,
+  "code": "f9def17"
+ },
+ "published": "2026-10-21T19:05:42+00:00",
+ "updated": "2026-10-21T19:05:42+00:00",
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null,
+ "cropped": [
+  [
+   0,
+   80,
+   2880,
+   1920
+  ]
+ ]
+}

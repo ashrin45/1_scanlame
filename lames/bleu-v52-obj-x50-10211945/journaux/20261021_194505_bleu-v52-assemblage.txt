@@ -1,0 +1,36 @@
+[    0.0s] segment 3/3 : objectif x50, 7 images entre 320 s et 437 s
+[    0.0s] 7 images candidates
+[    0.2s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[    0.2s] netteté médiane 29.2, seuil 11.7
+[    0.3s] 5 images retenues (nettes, non redondantes)
+[    0.3s] pas de champ vide filmé : vignettage estimé par lissage
+[    2.0s] aberration chromatique : échelle R 1.0000, B 1.0000
+[    2.0s] balance des blancs : blanc estimé par image, lissé sur 5 images (variation max 2 %)
+[    2.6s] prétraitement terminé, 5 images, recalage à 900 x 1200
+[    3.0s] points SIFT : 613 par image en moyenne
+[    3.0s] 10 paires à tester
+[    3.0s] 1 paires valides
+[    3.5s] 6 paire(s) recalée(s) par corrélation d'images (champs répétitifs ou pauvres en points)
+[    3.5s] distorsion radiale : aucune correction (résidu 0.16 px, pas d'amélioration nette)
+[    3.5s] composantes : [5] -> on assemble la n°0 : 5 images
+[    3.6s] a priori (position au changement d'objectif, suivi ok) : premier champ attendu vers (1986, 1805) px de la lame d'ensemble
+[    3.6s] ancrage dans la lame d'ensemble inbox/lame_20261021_194505_bleu-v52/result (3415x4202 px, objectif x10) : mosaïque provisoire 588x625
+[    3.7s] recherche dans la fenêtre (1303, 965, 2669, 2645)
+[    4.1s] facteur 1.0000 : 26 appariements, 7 inliers, échelle résiduelle 0.51
+[    4.1s]   -> facteur réel probable 0.5128, nouvel essai
+[    4.1s] facteur 0.5128 : 17 appariements, 7 inliers, échelle résiduelle 1.00
+[    5.8s] facteur 1.0000 : 18 appariements, 6 inliers, échelle résiduelle 0.51
+[    5.8s]   -> facteur réel probable 0.5113, nouvel essai
+[   24.1s] appariement appris (fenêtre 695x714) : 4 appariements, 2 inliers, échelle résiduelle 5.470
+[   52.0s] appariement appris (fenêtre 1366x1680) : 0 appariements, 0 inliers, échelle résiduelle 0.000
+[   52.0s] balayage du parent par 30 fenêtres de 1176x1250 (appariement appris, facteur 1.0000)
+[  751.9s] ancrage dans la lame d'ensemble impossible : prise non localisée dans la lame d'ensemble
+[  752.1s] échelles relatives après ajustement : min 0.994, max 1.000
+[  752.1s] ajustement global : 393 correspondances, 4 images
+[  752.1s] compensation photométrique : écart de gain max 17.7 %
+[  752.1s] recalage : erreur médiane 2.16 px (échelle recalage), max 11.44
+[  752.2s] mosaïque 2951 x 3147
+[  757.7s] composition : 4 tuiles en 5 s
+[  757.8s] rognage automatique proposé : 2880 x 1840 px (57 % de la mosaïque, 73 % de la couverture)
+[  757.9s] qualité : note B (recalage moyen (2.2 px))
+[  757.9s] terminé : pano.jpg 2951 x 3147 , 5 images utilisées sur 5

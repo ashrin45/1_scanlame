@@ -26,6 +26,10 @@
   {
    "slug": "bleu-v52-obj-x100-10211945",
    "transform": null
+  },
+  {
+   "slug": "bleu-v52-obj-x50-10211945",
+   "transform": null
   }
  ],
  "quality": {
