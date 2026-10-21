@@ -1,0 +1,32 @@
+name: Récupérer une prise brute
+# Télécharge les photos brutes d'une série depuis Supabase et les joint en artefact (essais hors ligne, démonstrations).
+# Ne traite rien, ne publie rien, et n'entre pas dans la file de l'assemblage.
+on:
+  workflow_dispatch:
+    inputs:
+      serie:
+        description: 'Nom de la série (ex. lame_20261021_194505_bleu-v52)'
+        required: true
+permissions:
+  contents: read
+jobs:
+  recuperer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -q requests
+      - name: Télécharger
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python tools/process_inbox.py --only "${{ inputs.serie }}" --fetch-only --work raw
+      - uses: actions/upload-artifact@v4
+        with:
+          name: brut-${{ inputs.serie }}
+          path: raw/${{ inputs.serie }}
+          retention-days: 3
+          compression-level: 0
