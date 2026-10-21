@@ -30,10 +30,16 @@ def ls(prefix):
     r = requests.post(f'{URL}/storage/v1/object/list/{BUCKET}', headers=H, json={'prefix': prefix, 'limit': 1000, 'sortBy': {'column': 'name', 'order': 'asc'}})
     r.raise_for_status(); return r.json()
 def get(path, dest):
-    with requests.get(f'{URL}/storage/v1/object/{BUCKET}/{path}', headers=H, stream=True) as r:
-        r.raise_for_status()
-        with open(dest, 'wb') as f:
-            for c in r.iter_content(1 << 20): f.write(c)
+    # le stockage limite le debit (429) quand plusieurs prises se telechargent en meme temps : on attend et on reessaie
+    for attempt in range(8):
+        with requests.get(f'{URL}/storage/v1/object/{BUCKET}/{path}', headers=H, stream=True) as r:
+            if r.status_code in (429, 500, 502, 503, 504) and attempt < 7:
+                wait = float(r.headers.get('Retry-After') or 0) or min(60, 2 ** attempt)
+                print(f'  {r.status_code} sur {path.rsplit("/", 1)[-1]} : nouvel essai dans {wait:.0f} s'); time.sleep(wait); continue
+            r.raise_for_status()
+            with open(dest, 'wb') as f:
+                for c in r.iter_content(1 << 20): f.write(c)
+            return
 def put_text(path, text):
     r = requests.post(f'{URL}/storage/v1/object/{BUCKET}/{path}', headers={**H, 'Content-Type': 'text/plain', 'x-upsert': 'true'}, data=text.encode()); r.raise_for_status()
 def git(*args, check=False):
