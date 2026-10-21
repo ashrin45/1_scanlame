@@ -9,6 +9,9 @@ on:
         description: 'Enregistrer les valeurs mesurées comme nouvelles références'
         type: boolean
         default: false
+      env:
+        description: 'Variables pour le pipeline, séparées par des espaces (ex. SCANLAME_ANCHOR_PASSES=2), pour comparer deux variantes'
+        required: false
 permissions:
   contents: write
 jobs:
@@ -42,7 +45,9 @@ jobs:
       - name: Jouer les assemblages et comparer
         env:
           ONLY: ${{ inputs.only }}
+          VARS: ${{ inputs.env }}
         run: |
+          for v in $VARS; do export "$v"; echo "variable : $v"; done
           python tools/test_pipeline.py raw ${ONLY:+--only "$ONLY"} ${{ inputs.record && '--record' || '' }} | tee tests.log
       - name: Enregistrer les références
         if: inputs.record
@@ -53,7 +58,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: tests-pipeline
+          name: tests-pipeline-${{ inputs.only || 'toutes' }}
           path: |
             tests.log
             raw/_tests/**/pipeline.log

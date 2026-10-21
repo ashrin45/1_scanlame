@@ -981,36 +981,45 @@ try:
         a_, b_, tx, ty = x[base_g:base_g + 4]; G_fit = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
         ra = rp[is_anchor]
         log(f'ancrages (1re passe) : résidu médian {np.median(ra):.1f} px de recalage, 90e centile {np.percentile(ra, 90):.1f}')
-        # 2e passe : les groupes non apparies, fusionnes deux a deux, sont recherches la ou la solution ancree les place (fenetre etroite)
-        if groups_failed and os.environ.get('SCANLAME_NO_PASS2') is None:
-            merged = []
-            i_ = 0
-            while i_ < len(groups_failed):
-                g = list(groups_failed[i_])
-                if i_ + 1 < len(groups_failed) and groups_failed[i_ + 1][0] == g[-1] + 1: g += groups_failed[i_ + 1]; i_ += 1
+        # passes suivantes : les groupes non apparies sont fusionnes avec leur voisin non apparie (5 -> 10 -> 20 photos : plus de
+        # matiere quand la lame d'ensemble est pauvre en details) et recherches la ou la solution ancree les place (fenetre etroite).
+        # Nombre de passes : SCANLAME_ANCHOR_PASSES (2 = comportement de la v1, une seule fusion ; defaut 4).
+        n_passes = int(os.environ.get('SCANLAME_ANCHOR_PASSES', '4'))
+        if os.environ.get('SCANLAME_NO_PASS2') is not None: n_passes = 1
+        posn = {k: i_ for i_, k in enumerate(order)}            # rang de chaque photo dans la prise
+        failed = [g for g in groups if g not in done]
+        for pnum in range(2, n_passes + 1):
+            if not failed: break
+            # fusion avec le groupe non apparie qui suit immediatement dans la prise (bande continue), 40 photos au plus
+            merged = []; i_ = 0
+            while i_ < len(failed):
+                g = list(failed[i_])
+                if i_ + 1 < len(failed) and posn[failed[i_ + 1][0]] == posn[g[-1]] + 1 and len(g) + len(failed[i_ + 1]) <= 40: g += failed[i_ + 1]; i_ += 1
                 merged.append(g); i_ += 1
+            if len(merged) == len(failed) and pnum > 2 and not any(len(g) < 40 for g in merged): break
             Gcur = np.diag([sp_, sp_, 1]) @ np.linalg.inv(G_fit)      # px recalage -> px parent reduit
             n_before = len(anchor_corr)
-            ok2, _ = anchor_groups(merged, T, Gcur, 0.15, 'p2_')
-            if len(anchor_corr) > n_before:
-                log(f'2e passe : {ok2}/{len(merged)} groupes appariés, {len(anchor_corr) - n_before} ancrages de plus ; nouvel ajustement')
-                for (k, p, q) in anchor_corr[n_before:]:
-                    r1 = add(eq, k, float(p[0]), float(p[1]), 1.0)
-                    rows.extend([eq, eq, eq, eq + 1, eq + 1, eq + 1]); cols.extend([base_g, base_g + 1, base_g + 2, base_g, base_g + 1, base_g + 3])
-                    vals.extend([-float(q[0]), float(q[1]), -1.0, -float(q[1]), -float(q[0]), -1.0])
-                    rhs.extend([r1[0], r1[1]]); eq += 2
-                Amat = sp.csr_matrix((vals, (rows, cols)), shape=(eq, 4 * len(idx) + nG)); bvec = np.array(rhs)
-                is_anchor = np.zeros(eq // 2, bool); is_anchor[n_pair_eq // 2:] = True
-                w = np.where(np.repeat(is_anchor, 2), W_ANCHOR, 1.0)
-                for it in range(5):
-                    Wd = sp.diags(w); AtWA = (Amat.T @ Wd @ Amat).toarray(); AtWb = Amat.T @ (w * bvec)
-                    x = np.linalg.solve(AtWA + 1e-9 * np.eye(len(AtWA)), AtWb)
-                    res_v = Amat @ x - bvec; rp = np.hypot(res_v[0::2], res_v[1::2])
-                    delta = np.where(is_anchor, DELTA_ANCHOR, 2.0)
-                    wp = np.where(rp <= delta, 1.0, delta / np.maximum(rp, 1e-6)) * np.where(is_anchor, W_ANCHOR, 1.0); w = np.repeat(wp, 2)
-                for k, n in idx.items():
-                    a_, b_, tx, ty = x[4 * n:4 * n + 4]; T[k] = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
-                a_, b_, tx, ty = x[base_g:base_g + 4]; G_fit = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
+            okp, donep = anchor_groups(merged, T, Gcur, 0.15, f'p{pnum}_')
+            log(f'passe {pnum} : {okp}/{len(merged)} groupes appariés (jusqu\'à {max(len(g) for g in merged)} photos par groupe), {len(anchor_corr) - n_before} ancrages de plus')
+            failed = [g for g in merged if g not in donep]
+            if len(anchor_corr) == n_before: continue                 # rien de nouveau : pas de re-ajustement, groupes plus grands au tour suivant
+            for (k, p, q) in anchor_corr[n_before:]:
+                r1 = add(eq, k, float(p[0]), float(p[1]), 1.0)
+                rows.extend([eq, eq, eq, eq + 1, eq + 1, eq + 1]); cols.extend([base_g, base_g + 1, base_g + 2, base_g, base_g + 1, base_g + 3])
+                vals.extend([-float(q[0]), float(q[1]), -1.0, -float(q[1]), -float(q[0]), -1.0])
+                rhs.extend([r1[0], r1[1]]); eq += 2
+            Amat = sp.csr_matrix((vals, (rows, cols)), shape=(eq, 4 * len(idx) + nG)); bvec = np.array(rhs)
+            is_anchor = np.zeros(eq // 2, bool); is_anchor[n_pair_eq // 2:] = True
+            w = np.where(np.repeat(is_anchor, 2), W_ANCHOR, 1.0)
+            for it in range(5):
+                Wd = sp.diags(w); AtWA = (Amat.T @ Wd @ Amat).toarray(); AtWb = Amat.T @ (w * bvec)
+                x = np.linalg.solve(AtWA + 1e-9 * np.eye(len(AtWA)), AtWb)
+                res_v = Amat @ x - bvec; rp = np.hypot(res_v[0::2], res_v[1::2])
+                delta = np.where(is_anchor, DELTA_ANCHOR, 2.0)
+                wp = np.where(rp <= delta, 1.0, delta / np.maximum(rp, 1e-6)) * np.where(is_anchor, W_ANCHOR, 1.0); w = np.repeat(wp, 2)
+            for k, n in idx.items():
+                a_, b_, tx, ty = x[4 * n:4 * n + 4]; T[k] = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
+            a_, b_, tx, ty = x[base_g:base_g + 4]; G_fit = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
         ra = rp[is_anchor]
         log(f'ancrages (final) : résidu médian {np.median(ra):.1f} px de recalage, 90e centile {np.percentile(ra, 90):.1f}')
     elif G_init is not None: G_fit = G_init
