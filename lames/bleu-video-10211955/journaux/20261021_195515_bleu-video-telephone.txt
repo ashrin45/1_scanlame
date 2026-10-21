@@ -1,0 +1,1551 @@
+     0.000  ScanLame 0.52 démarré sur samsung SM-S928B (Android 16)
+     1.649  liaison : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+     2.097  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+     2.110  masque oculaire : 100 % du cadre utile (p95 255)
+     2.432  masque oculaire : 100 % du cadre utile (p95 238)
+     2.698  masque oculaire : 99 % du cadre utile (p95 191)
+     2.969  masque oculaire : 99 % du cadre utile (p95 191)
+     3.230  masque oculaire : 98 % du cadre utile (p95 191)
+     3.496  masque oculaire : 98 % du cadre utile (p95 191)
+     3.768  masque oculaire : 99 % du cadre utile (p95 191)
+     4.039  masque oculaire : 99 % du cadre utile (p95 191)
+     4.300  masque oculaire : 99 % du cadre utile (p95 191)
+     4.569  masque oculaire : 99 % du cadre utile (p95 191)
+     4.838  masque oculaire : 99 % du cadre utile (p95 192)
+     5.102  masque oculaire : 99 % du cadre utile (p95 191)
+     5.379  masque oculaire : 98 % du cadre utile (p95 191)
+     5.649  masque oculaire : 99 % du cadre utile (p95 191)
+     5.915  masque oculaire : 99 % du cadre utile (p95 192)
+     6.174  masque oculaire : 98 % du cadre utile (p95 194)
+     6.449  masque oculaire : 100 % du cadre utile (p95 192)
+     6.715  masque oculaire : 100 % du cadre utile (p95 190)
+     6.980  masque oculaire : 100 % du cadre utile (p95 190)
+     7.247  masque oculaire : 100 % du cadre utile (p95 190)
+     7.511  masque oculaire : 100 % du cadre utile (p95 189)
+     7.780  masque oculaire : 100 % du cadre utile (p95 190)
+     8.047  masque oculaire : 100 % du cadre utile (p95 191)
+     8.316  masque oculaire : 100 % du cadre utile (p95 191)
+     8.580  masque oculaire : 100 % du cadre utile (p95 190)
+     8.843  masque oculaire : 100 % du cadre utile (p95 191)
+     9.109  masque oculaire : 100 % du cadre utile (p95 190)
+     9.366  masque oculaire : 100 % du cadre utile (p95 190)
+     9.646  masque oculaire : 100 % du cadre utile (p95 190)
+     9.911  masque oculaire : 100 % du cadre utile (p95 191)
+    10.180  masque oculaire : 100 % du cadre utile (p95 191)
+    10.449  masque oculaire : 100 % du cadre utile (p95 191)
+    10.705  masque oculaire : 100 % du cadre utile (p95 191)
+    10.992  masque oculaire : 100 % du cadre utile (p95 191)
+    11.246  masque oculaire : 100 % du cadre utile (p95 191)
+    11.512  masque oculaire : 100 % du cadre utile (p95 190)
+    11.780  masque oculaire : 100 % du cadre utile (p95 190)
+    12.053  masque oculaire : 100 % du cadre utile (p95 191)
+    12.307  masque oculaire : 100 % du cadre utile (p95 190)
+    12.420  verrouillage : focus infini, pose 19.982648 ms, ISO 98, WB figée
+    12.574  masque oculaire : 100 % du cadre utile (p95 190)
+    12.675  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+    12.847  masque oculaire : 100 % du cadre utile (p95 189)
+    13.118  masque oculaire : 100 % du cadre utile (p95 188)
+    13.379  masque oculaire : 100 % du cadre utile (p95 188)
+    13.653  masque oculaire : 100 % du cadre utile (p95 188)
+    13.917  masque oculaire : 100 % du cadre utile (p95 188)
+    14.179  masque oculaire : 100 % du cadre utile (p95 188)
+    14.449  masque oculaire : 100 % du cadre utile (p95 188)
+    14.715  masque oculaire : 100 % du cadre utile (p95 188)
+    14.983  masque oculaire : 100 % du cadre utile (p95 188)
+    15.251  masque oculaire : 100 % du cadre utile (p95 188)
+    15.519  masque oculaire : 98 % du cadre utile (p95 188)
+    15.797  masque oculaire : 98 % du cadre utile (p95 188)
+    16.057  masque oculaire : 98 % du cadre utile (p95 188)
+    16.316  masque oculaire : 98 % du cadre utile (p95 188)
+    16.585  masque oculaire : 98 % du cadre utile (p95 188)
+    16.851  masque oculaire : 98 % du cadre utile (p95 188)
+    17.122  masque oculaire : 98 % du cadre utile (p95 188)
+    17.389  masque oculaire : 98 % du cadre utile (p95 188)
+    17.650  masque oculaire : 98 % du cadre utile (p95 188)
+    17.925  masque oculaire : 98 % du cadre utile (p95 188)
+    18.186  masque oculaire : 98 % du cadre utile (p95 188)
+    18.457  masque oculaire : 98 % du cadre utile (p95 188)
+    18.718  masque oculaire : 98 % du cadre utile (p95 188)
+    18.992  masque oculaire : 98 % du cadre utile (p95 188)
+    19.253  masque oculaire : 98 % du cadre utile (p95 188)
+    19.530  masque oculaire : 100 % du cadre utile (p95 188)
+    19.785  masque oculaire : 100 % du cadre utile (p95 186)
+    20.054  masque oculaire : 97 % du cadre utile (p95 188)
+    20.330  masque oculaire : 97 % du cadre utile (p95 185)
+    20.599  masque oculaire : 97 % du cadre utile (p95 184)
+    20.862  masque oculaire : 97 % du cadre utile (p95 184)
+    21.129  masque oculaire : 97 % du cadre utile (p95 184)
+    21.390  masque oculaire : 97 % du cadre utile (p95 184)
+    21.658  masque oculaire : 97 % du cadre utile (p95 185)
+    21.919  masque oculaire : 98 % du cadre utile (p95 186)
+    22.186  masque oculaire : 97 % du cadre utile (p95 187)
+    22.451  masque oculaire : 97 % du cadre utile (p95 187)
+    22.719  masque oculaire : 97 % du cadre utile (p95 187)
+    22.987  masque oculaire : 97 % du cadre utile (p95 187)
+    23.251  masque oculaire : 97 % du cadre utile (p95 187)
+    23.524  masque oculaire : 97 % du cadre utile (p95 187)
+    23.790  masque oculaire : 97 % du cadre utile (p95 187)
+    24.055  masque oculaire : 97 % du cadre utile (p95 187)
+    24.325  masque oculaire : 98 % du cadre utile (p95 187)
+    24.592  masque oculaire : 98 % du cadre utile (p95 186)
+    24.854  masque oculaire : 97 % du cadre utile (p95 187)
+    25.120  masque oculaire : 97 % du cadre utile (p95 187)
+    25.393  masque oculaire : 97 % du cadre utile (p95 187)
+    25.664  masque oculaire : 97 % du cadre utile (p95 188)
+    25.921  masque oculaire : 98 % du cadre utile (p95 188)
+    26.191  masque oculaire : 98 % du cadre utile (p95 188)
+    26.459  masque oculaire : 98 % du cadre utile (p95 188)
+    26.724  masque oculaire : 99 % du cadre utile (p95 188)
+    26.996  masque oculaire : 99 % du cadre utile (p95 188)
+    27.257  masque oculaire : 98 % du cadre utile (p95 188)
+    27.525  masque oculaire : 98 % du cadre utile (p95 188)
+    27.792  masque oculaire : 98 % du cadre utile (p95 188)
+    28.067  masque oculaire : 97 % du cadre utile (p95 187)
+    28.326  masque oculaire : 97 % du cadre utile (p95 187)
+    28.599  masque oculaire : 97 % du cadre utile (p95 187)
+    28.865  masque oculaire : 97 % du cadre utile (p95 187)
+    29.125  masque oculaire : 97 % du cadre utile (p95 186)
+    29.395  masque oculaire : 97 % du cadre utile (p95 186)
+    29.664  masque oculaire : 97 % du cadre utile (p95 186)
+    29.926  masque oculaire : 97 % du cadre utile (p95 186)
+    30.193  masque oculaire : 97 % du cadre utile (p95 186)
+    30.462  masque oculaire : 97 % du cadre utile (p95 186)
+    30.727  masque oculaire : 97 % du cadre utile (p95 187)
+    31.045  masque oculaire : 97 % du cadre utile (p95 187)
+    31.317  masque oculaire : 97 % du cadre utile (p95 187)
+    31.591  masque oculaire : 97 % du cadre utile (p95 187)
+    31.853  masque oculaire : 97 % du cadre utile (p95 187)
+    32.123  masque oculaire : 97 % du cadre utile (p95 186)
+    32.389  masque oculaire : 97 % du cadre utile (p95 186)
+    32.648  masque oculaire : 97 % du cadre utile (p95 187)
+    32.924  masque oculaire : 97 % du cadre utile (p95 187)
+    33.183  masque oculaire : 97 % du cadre utile (p95 186)
+    33.455  masque oculaire : 97 % du cadre utile (p95 187)
+    33.730  masque oculaire : 97 % du cadre utile (p95 187)
+    33.995  masque oculaire : 97 % du cadre utile (p95 187)
+    34.263  masque oculaire : 97 % du cadre utile (p95 187)
+    34.507  masque oculaire : 97 % du cadre utile (p95 187)
+    34.777  masque oculaire : 97 % du cadre utile (p95 187)
+    35.054  masque oculaire : 97 % du cadre utile (p95 186)
+    35.324  masque oculaire : 97 % du cadre utile (p95 186)
+    35.588  masque oculaire : 97 % du cadre utile (p95 187)
+    35.862  masque oculaire : 97 % du cadre utile (p95 187)
+    36.123  masque oculaire : 97 % du cadre utile (p95 187)
+    36.389  masque oculaire : 97 % du cadre utile (p95 187)
+    36.650  masque oculaire : 97 % du cadre utile (p95 187)
+    36.917  masque oculaire : 97 % du cadre utile (p95 187)
+    37.177  masque oculaire : 97 % du cadre utile (p95 187)
+    37.461  masque oculaire : 97 % du cadre utile (p95 187)
+    37.726  masque oculaire : 97 % du cadre utile (p95 187)
+    37.988  masque oculaire : 97 % du cadre utile (p95 186)
+    38.238  masque oculaire : 97 % du cadre utile (p95 186)
+    38.509  masque oculaire : 97 % du cadre utile (p95 186)
+    38.777  masque oculaire : 97 % du cadre utile (p95 186)
+    39.051  masque oculaire : 97 % du cadre utile (p95 186)
+    39.314  masque oculaire : 97 % du cadre utile (p95 187)
+    39.589  masque oculaire : 97 % du cadre utile (p95 187)
+    39.852  masque oculaire : 97 % du cadre utile (p95 186)
+    40.123  masque oculaire : 97 % du cadre utile (p95 186)
+    40.393  masque oculaire : 97 % du cadre utile (p95 186)
+    40.662  masque oculaire : 97 % du cadre utile (p95 186)
+[... 1932 lignes omises ...]
+   426.366  t0365270 suivi ok score 1.00 pos 3244,3091 net 26 (26 ms) carte 7 photos + 300 positions
+   426.695  t0365598 suivi ok score 1.00 pos 3244,3188 net 25 (22 ms) carte 7 photos + 300 positions
+   426.718  photo v52_0360 à 3244,3108 (550 ko, 217 ms)
+   427.032  t0365935 suivi ok score 1.00 pos 3232,3188 net 29 (23 ms) carte 8 photos + 300 positions
+   427.055  envoyé lame_20261021_194505_bleu-v52_0242.jpg (572 ko)
+   427.361  t0366265 suivi ok score 1.00 pos 3232,3188 net 33 (23 ms) carte 8 photos + 300 positions
+   427.429  reprise de mise au point au même endroit : netteté 33 contre 25 (reprise 1)
+   427.651  photo v52_0361 à 3232,3188 (536 ko, 222 ms)
+   427.701  t0366604 suivi ok score 1.00 pos 3232,3188 net 34 (22 ms) carte 9 photos + 300 positions
+   428.038  t0366942 suivi ok score 1.00 pos 3232,3188 net 37 (23 ms) carte 9 photos + 300 positions
+   428.117  envoyé lame_20261021_194505_bleu-v52_0243.jpg (572 ko)
+   428.353  t0367257 suivi ok score 1.00 pos 3232,3188 net 34 (14 ms) carte 9 photos + 300 positions
+   428.698  t0367602 suivi ok score 1.00 pos 3232,3188 net 28 (27 ms) carte 9 photos + 300 positions
+   429.037  t0367941 suivi ok score 1.00 pos 3221,3187 net 30 (23 ms) carte 9 photos + 300 positions
+   429.352  t0368256 suivi ok score 1.00 pos 3221,3187 net 30 (14 ms) carte 9 photos + 300 positions
+   429.450  envoyé lame_20261021_194505_bleu-v52_0244.jpg (572 ko)
+   429.690  t0368594 suivi ok score 1.00 pos 3223,3184 net 30 (14 ms) carte 9 photos + 300 positions
+   430.024  t0368928 suivi ok score 1.00 pos 3220,3172 net 34 (14 ms) carte 9 photos + 300 positions
+   430.362  t0369265 suivi ok score 1.00 pos 3220,3172 net 40 (21 ms) carte 9 photos + 300 positions
+   430.717  t0369620 suivi ok score 1.00 pos 3220,3172 net 39 (35 ms) carte 9 photos + 300 positions
+   430.841  envoyé lame_20261021_194505_bleu-v52_0245.jpg (573 ko)
+   431.042  t0369946 suivi ok score 1.00 pos 3220,3172 net 37 (22 ms) carte 9 photos + 300 positions
+   431.359  t0370262 suivi ok score 1.00 pos 3209,3172 net 28 (15 ms) carte 9 photos + 300 positions
+   431.698  t0370602 suivi ok score 1.00 pos 3208,3172 net 25 (16 ms) carte 9 photos + 300 positions
+   432.041  t0370944 suivi ok score 1.00 pos 3220,3172 net 36 (31 ms) carte 9 photos + 300 positions
+   432.156  envoyé lame_20261021_194505_bleu-v52_0246.jpg (573 ko)
+   432.366  t0371269 suivi ok score 1.00 pos 3220,3172 net 41 (26 ms) carte 9 photos + 300 positions
+   432.706  t0371609 suivi ok score 1.00 pos 3220,3172 net 39 (23 ms) carte 9 photos + 300 positions
+   433.045  t0371948 suivi ok score 1.00 pos 3232,3172 net 33 (23 ms) carte 9 photos + 300 positions
+   433.244  envoyé lame_20261021_194505_bleu-v52_0247.jpg (573 ko)
+   433.388  t0372292 suivi ok score 1.00 pos 3232,3188 net 24 (21 ms) carte 9 photos + 300 positions
+   433.722  t0372625 suivi ok score 1.00 pos 3232,3188 net 27 (38 ms) carte 9 photos + 300 positions
+   434.047  t0372950 suivi ok score 1.00 pos 3232,3188 net 31 (37 ms) carte 9 photos + 300 positions
+   434.357  t0373260 suivi ok score 1.00 pos 3232,3188 net 32 (17 ms) carte 9 photos + 300 positions
+   434.444  envoyé lame_20261021_194505_bleu-v52_0248.jpg (571 ko)
+   434.710  t0373613 suivi ok score 1.00 pos 3232,3188 net 34 (23 ms) carte 9 photos + 300 positions
+   435.036  t0373939 suivi ok score 1.00 pos 3232,3188 net 35 (28 ms) carte 9 photos + 300 positions
+   435.362  t0374266 suivi ok score 1.00 pos 3232,3188 net 34 (22 ms) carte 9 photos + 300 positions
+   435.533  envoyé lame_20261021_194505_bleu-v52_0249.jpg (571 ko)
+   435.688  t0374592 suivi ok score 1.00 pos 3232,3188 net 34 (14 ms) carte 9 photos + 300 positions
+   436.034  t0374938 suivi ok score 1.00 pos 3232,3188 net 34 (23 ms) carte 9 photos + 300 positions
+   436.371  t0375275 suivi ok score 1.00 pos 3232,3188 net 35 (28 ms) carte 9 photos + 300 positions
+   436.533  envoyé lame_20261021_194505_bleu-v52_0250.jpg (572 ko)
+   436.700  t0375603 suivi ok score 1.00 pos 3232,3176 net 34 (23 ms) carte 9 photos + 300 positions
+   437.036  t0375939 suivi ok score 1.00 pos 3252,3343 net 31 (25 ms) carte 9 photos + 300 positions
+   437.371  t0376275 suivi ok score 1.00 pos 3292,4855 net 45 (27 ms) carte 9 photos + 300 positions
+   437.664  envoyé lame_20261021_194505_bleu-v52_0251.jpg (572 ko)
+   437.702  t0376606 suivi ok score 1.00 pos 3292,4845 net 40 (23 ms) carte 9 photos + 300 positions
+   437.940  photo v52_0362 à 3292,4845 (483 ko, 207 ms)
+   438.055  t0376959 suivi ok score 1.00 pos 3284,4845 net 37 (43 ms) carte 10 photos + 300 positions
+   438.360  t0377264 suivi ok score 1.00 pos 3272,4845 net 36 (14 ms) carte 10 photos + 300 positions
+   438.699  t0377602 suivi ok score 1.00 pos 3272,4845 net 31 (25 ms) carte 10 photos + 300 positions
+   439.029  t0377932 suivi ok score 1.00 pos 3272,4845 net 28 (21 ms) carte 10 photos + 300 positions
+   439.058  envoyé lame_20261021_194505_bleu-v52_0252.jpg (571 ko)
+   439.368  t0378272 suivi ok score 1.00 pos 3272,4829 net 39 (22 ms) carte 10 photos + 300 positions
+   439.697  t0378600 suivi ok score 1.00 pos 3272,4840 net 31 (22 ms) carte 10 photos + 300 positions
+   440.030  t0378934 suivi ok score 1.00 pos 3272,4829 net 40 (22 ms) carte 10 photos + 300 positions
+   440.223  envoyé lame_20261021_194505_bleu-v52_0253.jpg (572 ko)
+   440.359  t0379263 suivi ok score 1.00 pos 3260,4829 net 26 (21 ms) carte 10 photos + 300 positions
+   440.705  t0379609 suivi ok score 1.00 pos 3268,4829 net 38 (28 ms) carte 10 photos + 300 positions
+   441.034  t0379938 suivi ok score 1.00 pos 3272,4829 net 34 (20 ms) carte 10 photos + 300 positions
+   441.314  envoyé lame_20261021_194505_bleu-v52_0254.jpg (586 ko)
+   441.369  t0380273 suivi ok score 1.00 pos 3272,4845 net 26 (21 ms) carte 10 photos + 300 positions
+   441.703  t0380604 suivi ok score 1.00 pos 3272,4845 net 33 (23 ms) carte 10 photos + 300 positions
+   442.032  t0380935 suivi ok score 1.00 pos 3284,4845 net 50 (22 ms) carte 10 photos + 300 positions
+   442.358  t0381262 suivi ok score 1.00 pos 3287,4845 net 50 (14 ms) carte 10 photos + 300 positions
+   442.521  envoyé lame_20261021_194505_bleu-v52_0255.jpg (587 ko)
+   442.711  t0381615 suivi ok score 1.00 pos 3272,4845 net 36 (23 ms) carte 10 photos + 300 positions
+   443.031  t0381935 suivi ok score 1.00 pos 3272,4845 net 31 (22 ms) carte 10 photos + 300 positions
+   443.379  t0382283 suivi ok score 1.00 pos 3272,4829 net 38 (31 ms) carte 10 photos + 300 positions
+   443.702  t0382605 suivi ok score 1.00 pos 3272,4829 net 44 (22 ms) carte 10 photos + 300 positions
+   443.819  envoyé lame_20261021_194505_bleu-v52_0256.jpg (588 ko)
+   444.033  t0382937 suivi ok score 1.00 pos 3272,4829 net 45 (16 ms) carte 10 photos + 300 positions
+   444.369  t0383273 suivi ok score 1.00 pos 3272,4829 net 43 (27 ms) carte 10 photos + 300 positions
+   444.695  t0383599 suivi ok score 1.00 pos 3272,4845 net 30 (17 ms) carte 10 photos + 300 positions
+   445.026  t0383930 suivi ok score 1.00 pos 3272,4845 net 31 (15 ms) carte 10 photos + 300 positions
+   445.163  envoyé lame_20261021_194505_bleu-v52_0257.jpg (589 ko)
+   445.366  t0384270 suivi ok score 1.00 pos 3272,4845 net 30 (14 ms) carte 10 photos + 300 positions
+   445.697  t0384600 suivi ok score 1.00 pos 3233,4842 net 29 (22 ms) carte 10 photos + 300 positions
+   446.031  t0384935 suivi ok score 1.00 pos 3081,4845 net 27 (21 ms) carte 10 photos + 300 positions
+   446.219  envoyé lame_20261021_194505_bleu-v52_0258.jpg (608 ko)
+   446.376  t0385279 suivi ok score 1.00 pos 2006,4877 net 25 (26 ms) carte 10 photos + 300 positions
+   446.699  t0385602 suivi ok score 1.00 pos 1993,4877 net 27 (21 ms) carte 10 photos + 300 positions
+   447.016  photo v52_0363 à 2001,4877 (521 ko, 216 ms)
+   447.027  t0385932 suivi ok score 1.00 pos 2004,4877 net 33 (15 ms) carte 11 photos + 300 positions
+   447.378  t0386282 suivi ok score 1.00 pos 2004,4877 net 30 (24 ms) carte 11 photos + 300 positions
+   447.387  envoyé lame_20261021_194505_bleu-v52_0259.jpg (606 ko)
+   447.702  t0386606 suivi ok score 1.00 pos 2016,4877 net 33 (24 ms) carte 11 photos + 300 positions
+   448.040  t0386944 suivi ok score 1.00 pos 2005,4877 net 34 (21 ms) carte 11 photos + 300 positions
+   448.368  t0387272 suivi ok score 1.00 pos 2004,4877 net 29 (22 ms) carte 11 photos + 300 positions
+   448.709  t0387612 suivi ok score 1.00 pos 2004,4877 net 31 (28 ms) carte 11 photos + 300 positions
+   448.795  envoyé lame_20261021_194505_bleu-v52_0260.jpg (606 ko)
+   449.037  t0387941 suivi ok score 1.00 pos 2004,4877 net 26 (24 ms) carte 11 photos + 300 positions
+   449.367  t0388271 suivi ok score 1.00 pos 1992,4877 net 22 (24 ms) carte 11 photos + 300 positions
+   449.704  t0388608 suivi ok score 1.00 pos 1992,4877 net 22 (25 ms) carte 11 photos + 300 positions
+   449.999  envoyé lame_20261021_194505_bleu-v52_0261.jpg (588 ko)
+   450.034  t0388937 suivi ok score 1.00 pos 1992,4877 net 23 (23 ms) carte 11 photos + 300 positions
+   450.371  t0389275 suivi ok score 1.00 pos 1992,4877 net 23 (27 ms) carte 11 photos + 300 positions
+   450.705  t0389608 suivi ok score 1.00 pos 2004,4877 net 28 (22 ms) carte 11 photos + 300 positions
+   451.036  t0389940 suivi ok score 1.00 pos 2004,4877 net 30 (20 ms) carte 11 photos + 300 positions
+   451.101  envoyé lame_20261021_194505_bleu-v52_0262.jpg (586 ko)
+   451.379  t0390283 suivi ok score 1.00 pos 1977,4877 net 31 (22 ms) carte 11 photos + 300 positions
+   451.709  t0390612 suivi ok score 1.00 pos 1538,4891 net 29 (27 ms) carte 11 photos + 300 positions
+   452.033  t0390937 suivi ok score 1.00 pos 1036,4909 net 27 (19 ms) carte 11 photos + 300 positions
+   452.199  envoyé lame_20261021_194505_bleu-v52_0263.jpg (586 ko)
+   452.369  t0391273 suivi ok score 1.00 pos 913,4921 net 35 (23 ms) carte 11 photos + 300 positions
+   452.698  t0391602 suivi ok score 1.00 pos 916,4925 net 32 (24 ms) carte 11 photos + 300 positions
+   452.772  photo v52_0364 à 916,4925 (531 ko, 234 ms)
+   453.046  t0391949 suivi ok score 1.00 pos 916,4925 net 35 (35 ms) carte 12 photos + 300 positions
+   453.386  t0392289 suivi ok score 1.00 pos 916,4925 net 33 (38 ms) carte 12 photos + 300 positions
+   453.485  envoyé lame_20261021_194505_bleu-v52_0264.jpg (586 ko)
+   453.709  t0392613 suivi ok score 1.00 pos 916,4925 net 30 (25 ms) carte 12 photos + 300 positions
+   454.040  t0392943 suivi ok score 1.00 pos 916,4925 net 32 (26 ms) carte 12 photos + 300 positions
+   454.361  t0393266 suivi ok score 1.00 pos 916,4925 net 29 (15 ms) carte 12 photos + 300 positions
+   454.692  envoyé lame_20261021_194505_bleu-v52_0265.jpg (583 ko)
+   454.704  t0393608 suivi ok score 1.00 pos 893,4925 net 28 (23 ms) carte 12 photos + 300 positions
+   455.030  t0393934 suivi ok score 1.00 pos 884,4925 net 30 (18 ms) carte 12 photos + 300 positions
+   455.381  t0394284 suivi ok score 1.00 pos 892,4925 net 27 (23 ms) carte 12 photos + 300 positions
+   455.717  t0394620 suivi ok score 1.00 pos 904,4925 net 24 (23 ms) carte 12 photos + 300 positions
+   455.857  envoyé lame_20261021_194505_bleu-v52_0266.jpg (583 ko)
+   456.051  t0394955 suivi ok score 1.00 pos 896,4925 net 25 (24 ms) carte 12 photos + 300 positions
+   456.367  t0395271 suivi ok score 1.00 pos 892,4925 net 24 (24 ms) carte 12 photos + 300 positions
+   456.708  t0395612 suivi ok score 1.00 pos 904,4925 net 24 (15 ms) carte 12 photos + 300 positions
+   456.990  envoyé lame_20261021_194505_bleu-v52_0267.jpg (580 ko)
+   457.034  t0395937 suivi ok score 1.00 pos 904,4925 net 24 (14 ms) carte 12 photos + 300 positions
+   457.368  t0396271 suivi ok score 1.00 pos 892,4913 net 24 (22 ms) carte 12 photos + 300 positions
+   457.722  t0396625 suivi ok score 1.00 pos 904,4913 net 25 (37 ms) carte 12 photos + 300 positions
+   458.033  t0396936 suivi ok score 1.00 pos 859,4924 net 23 (16 ms) carte 12 photos + 300 positions
+   458.358  t0397262 suivi ok score 1.00 pos 701,4925 net 23 (14 ms) carte 12 photos + 300 positions
+   458.673  envoyé lame_20261021_194505_bleu-v52_0268.jpg (585 ko)
+   458.710  t0397614 suivi ok score 1.00 pos 498,4940 net 22 (25 ms) carte 12 photos + 300 positions
+   459.029  t0397933 suivi ok score 1.00 pos 174,4941 net 24 (20 ms) carte 12 photos + 300 positions
+   459.372  t0398276 suivi ok score 1.00 pos -40,4971 net 23 (22 ms) carte 12 photos + 300 positions
+   459.708  t0398611 suivi ok score 1.00 pos -40,4957 net 29 (24 ms) carte 12 photos + 300 positions
+   459.876  photo v52_0365 à -40,4957 (555 ko, 201 ms)
+   459.949  envoyé lame_20261021_194505_bleu-v52_0269.jpg (587 ko)
+   460.031  t0398935 suivi ok score 1.00 pos -40,4957 net 32 (22 ms) carte 13 photos + 300 positions
+   460.364  t0399268 suivi ok score 1.00 pos -40,4957 net 28 (14 ms) carte 13 photos + 300 positions
+   460.711  t0399614 suivi ok score 1.00 pos -28,4957 net 31 (21 ms) carte 13 photos + 300 positions
+   461.041  t0399944 suivi ok score 1.00 pos -28,4957 net 28 (22 ms) carte 13 photos + 300 positions
+   461.225  envoyé lame_20261021_194505_bleu-v52_0270.jpg (586 ko)
+   461.370  t0400274 suivi ok score 1.00 pos -28,4957 net 30 (22 ms) carte 13 photos + 300 positions
+   461.701  t0400604 suivi ok score 1.00 pos -28,4957 net 25 (23 ms) carte 13 photos + 300 positions
+   462.055  t0400958 suivi ok score 1.00 pos -40,4957 net 28 (37 ms) carte 13 photos + 300 positions
+   462.366  t0401270 suivi ok score 1.00 pos -40,4957 net 32 (22 ms) carte 13 photos + 300 positions
+   462.515  envoyé lame_20261021_194505_bleu-v52_0271.jpg (586 ko)
+   462.695  t0401599 suivi ok score 1.00 pos -40,4957 net 40 (15 ms) carte 13 photos + 300 positions
+   462.748  reprise de mise au point au même endroit : netteté 39 contre 29 (reprise 1)
+   462.990  photo v52_0366 à -40,4957 (561 ko, 241 ms)
+   463.034  t0401938 suivi ok score 1.00 pos -40,4957 net 40 (23 ms) carte 14 photos + 300 positions
+   463.363  t0402267 suivi ok score 1.00 pos -40,4957 net 34 (17 ms) carte 14 photos + 300 positions
+   463.556  envoyé lame_20261021_194505_bleu-v52_0272.jpg (589 ko)
+   463.723  t0402626 suivi ok score 1.00 pos -40,4957 net 35 (36 ms) carte 14 photos + 300 positions
+   464.030  t0402934 suivi ok score 1.00 pos -40,4957 net 36 (16 ms) carte 14 photos + 300 positions
+   464.368  t0403271 suivi ok score 1.00 pos -40,4945 net 36 (22 ms) carte 14 photos + 300 positions
+   464.702  t0403605 suivi ok score 1.00 pos -63,4227 net 27 (23 ms) carte 14 photos + 300 positions
+   464.990  envoyé lame_20261021_194505_bleu-v52_0273.jpg (589 ko)
+   465.045  t0403948 suivi ok score 1.00 pos -64,4031 net 33 (24 ms) carte 14 photos + 300 positions
+   465.380  t0404283 suivi ok score 1.00 pos -64,3873 net 25 (29 ms) carte 14 photos + 300 positions
+   465.704  t0404607 suivi ok score 1.00 pos -99,2757 net 32 (21 ms) carte 14 photos + 300 positions
+   465.739  photo en mouvement lent (54 % du champ, 2 u/s)
+   465.952  photo v52_0367 à -100,2757 (644 ko, 212 ms)
+   466.050  t0404952 suivi ok score 1.00 pos -100,2757 net 31 (32 ms) carte 15 photos + 300 positions
+   466.128  envoyé lame_20261021_194505_bleu-v52_0274.jpg (590 ko)
+   466.374  t0405278 suivi ok score 1.00 pos -88,2757 net 29 (14 ms) carte 15 photos + 300 positions
+   466.700  t0405603 suivi ok score 1.00 pos -88,2757 net 29 (19 ms) carte 15 photos + 300 positions
+   467.038  t0405941 suivi ok score 1.00 pos -99,2757 net 22 (22 ms) carte 15 photos + 300 positions
+   467.368  t0406271 suivi ok score 1.00 pos -111,2757 net 31 (14 ms) carte 15 photos + 300 positions
+   467.381  envoyé lame_20261021_194505_bleu-v52_0275.jpg (590 ko)
+   467.705  t0406608 suivi ok score 1.00 pos -112,2757 net 29 (21 ms) carte 15 photos + 300 positions
+   468.059  t0406962 suivi ok score 1.00 pos -112,2757 net 20 (40 ms) carte 15 photos + 300 positions
+   468.395  t0407298 suivi ok score 1.00 pos -112,2757 net 27 (39 ms) carte 15 photos + 300 positions
+   468.704  t0407607 suivi ok score 1.00 pos -112,2757 net 30 (16 ms) carte 15 photos + 300 positions
+   468.869  envoyé lame_20261021_194505_bleu-v52_0276.jpg (585 ko)
+   469.043  t0407947 suivi ok score 1.00 pos -100,2757 net 31 (16 ms) carte 15 photos + 300 positions
+   469.381  t0408285 suivi ok score 1.00 pos -100,2757 net 28 (28 ms) carte 15 photos + 300 positions
+   469.712  t0408615 suivi ok score 1.00 pos -100,2757 net 26 (25 ms) carte 15 photos + 300 positions
+   469.948  envoyé lame_20261021_194505_bleu-v52_0277.jpg (567 ko)
+   470.042  t0408945 suivi ok score 1.00 pos -100,2757 net 21 (21 ms) carte 15 photos + 300 positions
+   470.375  t0409279 suivi ok score 1.00 pos -100,2757 net 20 (23 ms) carte 15 photos + 300 positions
+   470.721  t0409623 suivi ok score 1.00 pos -88,2757 net 23 (31 ms) carte 15 photos + 300 positions
+   471.064  t0409967 suivi ok score 1.00 pos -88,2757 net 28 (42 ms) carte 15 photos + 300 positions
+   471.065  envoyé lame_20261021_194505_bleu-v52_0278.jpg (568 ko)
+   471.373  t0410276 suivi ok score 1.00 pos -88,2757 net 26 (23 ms) carte 15 photos + 300 positions
+   471.705  t0410608 suivi ok score 1.00 pos -88,2757 net 25 (22 ms) carte 15 photos + 300 positions
+   472.051  t0410954 suivi ok score 1.00 pos -88,2757 net 29 (27 ms) carte 15 photos + 300 positions
+   472.364  envoyé lame_20261021_194505_bleu-v52_0279.jpg (566 ko)
+   472.374  t0411278 suivi ok score 1.00 pos -88,2757 net 29 (15 ms) carte 15 photos + 300 positions
+   472.709  t0411613 suivi ok score 1.00 pos -88,2757 net 29 (23 ms) carte 15 photos + 300 positions
+   473.042  t0411945 suivi ok score 1.00 pos -88,2757 net 27 (16 ms) carte 15 photos + 300 positions
+   473.396  t0412299 suivi ok score 1.00 pos -88,2757 net 26 (40 ms) carte 15 photos + 300 positions
+   473.716  t0412619 suivi ok score 1.00 pos -88,2757 net 25 (24 ms) carte 15 photos + 300 positions
+   473.802  envoyé lame_20261021_194505_bleu-v52_0280.jpg (565 ko)
+   474.042  t0412945 suivi ok score 1.00 pos -88,2757 net 28 (20 ms) carte 15 photos + 300 positions
+   474.370  t0413273 suivi ok score 1.00 pos -88,2757 net 28 (22 ms) carte 15 photos + 300 positions
+   474.715  t0413618 suivi ok score 1.00 pos -88,2757 net 23 (26 ms) carte 15 photos + 300 positions
+   474.919  envoyé lame_20261021_194505_bleu-v52_0281.jpg (564 ko)
+   475.041  t0413945 suivi ok score 1.00 pos -88,2757 net 22 (24 ms) carte 15 photos + 300 positions
+   475.396  t0414299 suivi ok score 1.00 pos -100,2757 net 20 (41 ms) carte 15 photos + 300 positions
+   475.703  t0414607 suivi ok score 1.00 pos -100,2757 net 26 (14 ms) carte 15 photos + 300 positions
+   476.052  t0414956 suivi ok score 1.00 pos -100,2757 net 32 (15 ms) carte 15 photos + 300 positions
+   476.373  t0415277 suivi ok score 1.00 pos -112,2757 net 27 (22 ms) carte 15 photos + 300 positions
+   476.492  envoyé lame_20261021_194505_bleu-v52_0282.jpg (564 ko)
+   476.712  t0415615 suivi ok score 1.00 pos -112,2757 net 21 (26 ms) carte 15 photos + 300 positions
+   477.039  t0415943 suivi ok score 1.00 pos -112,2757 net 24 (22 ms) carte 15 photos + 300 positions
+   477.367  t0416271 suivi ok score 1.00 pos -112,2757 net 29 (14 ms) carte 15 photos + 300 positions
+   477.706  t0416610 suivi ok score 1.00 pos -112,2757 net 30 (20 ms) carte 15 photos + 300 positions
+   477.731  envoyé lame_20261021_194505_bleu-v52_0283.jpg (575 ko)
+   478.042  t0416946 suivi ok score 1.00 pos -112,2757 net 31 (20 ms) carte 15 photos + 300 positions
+   478.382  t0417286 suivi ok score 1.00 pos -112,2757 net 31 (23 ms) carte 15 photos + 300 positions
+   478.718  t0417621 suivi ok score 1.00 pos -100,2757 net 31 (28 ms) carte 15 photos + 300 positions
+   479.046  envoyé lame_20261021_194505_bleu-v52_0284.jpg (575 ko)
+   479.052  t0417956 suivi ok score 1.00 pos -88,2757 net 22 (28 ms) carte 15 photos + 300 positions
+   479.370  t0418274 suivi ok score 1.00 pos -88,2757 net 27 (22 ms) carte 15 photos + 300 positions
+   479.715  t0418618 suivi ok score 1.00 pos -99,2757 net 21 (15 ms) carte 15 photos + 300 positions
+   480.048  t0418951 suivi ok score 1.00 pos -100,2757 net 25 (23 ms) carte 15 photos + 300 positions
+   480.145  envoyé lame_20261021_194505_bleu-v52_0285.jpg (574 ko)
+   480.376  t0419279 suivi ok score 1.00 pos -100,2757 net 30 (22 ms) carte 15 photos + 300 positions
+   480.715  t0419618 suivi ok score 1.00 pos -100,2757 net 30 (26 ms) carte 15 photos + 300 positions
+   481.041  t0419944 suivi ok score 1.00 pos -100,2757 net 20 (16 ms) carte 15 photos + 300 positions
+   481.382  t0420286 suivi ok score 1.00 pos -100,2757 net 20 (26 ms) carte 15 photos + 300 positions
+   481.712  t0420615 suivi ok score 1.00 pos -88,2757 net 21 (16 ms) carte 15 photos + 300 positions
+   482.046  t0420950 suivi ok score 1.00 pos -88,2757 net 22 (22 ms) carte 15 photos + 300 positions
+   482.102  envoyé lame_20261021_194505_bleu-v52_0286.jpg (575 ko)
+   482.381  t0421284 suivi ok score 1.00 pos -88,2757 net 25 (19 ms) carte 15 photos + 300 positions
+   482.700  t0421603 suivi ok score 1.00 pos -88,2757 net 27 (15 ms) carte 15 photos + 300 positions
+   483.047  t0421951 suivi ok score 1.00 pos -88,2757 net 28 (28 ms) carte 15 photos + 300 positions
+   483.301  envoyé lame_20261021_194505_bleu-v52_0287.jpg (571 ko)
+   483.364  t0422268 suivi ok score 1.00 pos -88,2757 net 29 (14 ms) carte 15 photos + 300 positions
+   483.704  t0422608 suivi ok score 1.00 pos -88,2757 net 29 (19 ms) carte 15 photos + 300 positions
+   484.045  t0422948 suivi ok score 1.00 pos -88,2757 net 28 (26 ms) carte 15 photos + 300 positions
+   484.378  t0423282 suivi ok score 1.00 pos -88,2757 net 27 (27 ms) carte 15 photos + 300 positions
+   484.422  envoyé lame_20261021_194505_bleu-v52_0288.jpg (572 ko)
+   484.717  t0423621 suivi ok score 1.00 pos -88,2757 net 27 (23 ms) carte 15 photos + 300 positions
+   485.043  t0423946 suivi ok score 1.00 pos -88,2757 net 26 (25 ms) carte 15 photos + 300 positions
+   485.382  t0424285 suivi ok score 1.00 pos -88,2757 net 26 (24 ms) carte 15 photos + 300 positions
+   485.585  envoyé lame_20261021_194505_bleu-v52_0289.jpg (572 ko)
+   485.699  t0424603 suivi ok score 1.00 pos -88,2757 net 28 (15 ms) carte 15 photos + 300 positions
+   486.039  t0424943 suivi ok score 1.00 pos -88,2757 net 29 (14 ms) carte 15 photos + 300 positions
+   486.395  t0425298 suivi ok score 1.00 pos -88,2757 net 32 (38 ms) carte 15 photos + 300 positions
+   486.717  envoyé lame_20261021_194505_bleu-v52_0290.jpg (580 ko)
+   486.727  t0425631 suivi ok score 1.00 pos -88,2757 net 30 (24 ms) carte 15 photos + 300 positions
+   487.040  t0425943 suivi ok score 1.00 pos -88,2757 net 27 (22 ms) carte 15 photos + 300 positions
+   487.376  t0426280 suivi ok score 1.00 pos -88,2757 net 26 (22 ms) carte 15 photos + 300 positions
+   487.737  t0426639 suivi ok score 1.00 pos -88,2757 net 28 (37 ms) carte 15 photos + 300 positions
+   487.792  envoyé lame_20261021_194505_bleu-v52_0291.jpg (583 ko)
+   488.038  t0426942 suivi ok score 1.00 pos -100,2757 net 21 (18 ms) carte 15 photos + 300 positions
+   488.396  t0427299 suivi ok score 1.00 pos -100,2757 net 21 (39 ms) carte 15 photos + 300 positions
+   488.714  t0427616 suivi ok score 1.00 pos -100,2746 net 21 (27 ms) carte 15 photos + 300 positions
+   488.830  envoyé lame_20261021_194505_bleu-v52_0292.jpg (580 ko)
+   489.063  t0427967 suivi ok score 1.00 pos -100,2757 net 21 (22 ms) carte 15 photos + 300 positions
+   489.388  t0428291 suivi ok score 1.00 pos -100,2757 net 21 (27 ms) carte 15 photos + 300 positions
+   489.703  t0428607 suivi ok score 1.00 pos -100,2757 net 23 (14 ms) carte 15 photos + 300 positions
+   489.916  envoyé lame_20261021_194505_bleu-v52_0293.jpg (581 ko)
+   490.068  t0428971 suivi ok score 1.00 pos -100,2757 net 26 (35 ms) carte 15 photos + 300 positions
+   490.398  t0429301 suivi ok score 1.00 pos -100,2757 net 28 (35 ms) carte 15 photos + 300 positions
+   490.705  t0429608 suivi ok score 1.00 pos -100,2757 net 31 (16 ms) carte 15 photos + 300 positions
+   490.961  envoyé lame_20261021_194505_bleu-v52_0294.jpg (580 ko)
+   491.043  t0429946 suivi ok score 1.00 pos -100,2757 net 32 (18 ms) carte 15 photos + 300 positions
+   491.384  t0430287 suivi ok score 1.00 pos -111,2757 net 31 (22 ms) carte 15 photos + 300 positions
+   491.718  t0430621 suivi ok score 1.00 pos -112,2757 net 32 (25 ms) carte 15 photos + 300 positions
+   492.055  t0430959 suivi ok score 1.00 pos -100,2757 net 31 (23 ms) carte 15 photos + 300 positions
+   492.090  envoyé lame_20261021_194505_bleu-v52_0295.jpg (581 ko)
+   492.372  t0431276 suivi ok score 1.00 pos -100,2757 net 28 (17 ms) carte 15 photos + 300 positions
+   492.728  t0431631 suivi ok score 1.00 pos -100,2757 net 27 (37 ms) carte 15 photos + 300 positions
+   493.049  t0431953 suivi ok score 1.00 pos -40,2757 net 26 (21 ms) carte 15 photos + 300 positions
+   493.352  envoyé lame_20261021_194505_bleu-v52_0296.jpg (581 ko)
+   493.374  t0432278 suivi ok score 1.00 pos -1,2757 net 26 (18 ms) carte 15 photos + 300 positions
+   493.681  photo v52_0368 à 20,2757 (643 ko, 239 ms)
+   493.715  t0432618 suivi ok score 1.00 pos 486,2741 net 23 (21 ms) carte 16 photos + 300 positions
+   494.052  t0432955 suivi ok score 1.00 pos 1192,2721 net 21 (27 ms) carte 16 photos + 300 positions
+   494.398  t0433301 suivi ok score 1.00 pos 1381,2709 net 24 (34 ms) carte 16 photos + 300 positions
+   494.442  envoyé lame_20261021_194505_bleu-v52_0297.jpg (582 ko)
+   494.715  t0433618 suivi ok score 1.00 pos 1384,2709 net 21 (23 ms) carte 16 photos + 300 positions
+   494.864  photo v52_0369 à 1383,2709 (615 ko, 217 ms)
+   495.046  t0433950 suivi ok score 1.00 pos 1383,2709 net 27 (22 ms) carte 17 photos + 300 positions
+   495.371  t0434275 suivi ok score 1.00 pos 1383,2709 net 29 (14 ms) carte 17 photos + 300 positions
+   495.468  envoyé lame_20261021_194505_bleu-v52_0298.jpg (584 ko)
+   495.588  reprise de mise au point au même endroit : netteté 28 contre 22 (reprise 1)
+   495.724  t0434628 suivi ok score 1.00 pos 1383,2709 net 28 (22 ms) carte 17 photos + 300 positions
+   495.796  photo v52_0370 à 1383,2709 (608 ko, 207 ms)
+   496.042  t0434946 suivi ok score 1.00 pos 1383,2709 net 28 (14 ms) carte 18 photos + 300 positions
+   496.393  t0435297 suivi ok score 1.00 pos 1383,2709 net 29 (33 ms) carte 18 photos + 300 positions
+   496.531  envoyé lame_20261021_194505_bleu-v52_0299.jpg (583 ko)
+   496.738  t0435641 suivi ok score 1.00 pos 1383,2709 net 28 (24 ms) carte 18 photos + 300 positions
+   497.051  t0435954 suivi ok score 1.00 pos 1383,2709 net 28 (23 ms) carte 18 photos + 300 positions
+   497.376  t0436280 suivi ok score 1.00 pos 1383,2709 net 28 (22 ms) carte 18 photos + 300 positions
+   497.604  envoyé lame_20261021_194505_bleu-v52_0300.jpg (583 ko)
+   497.715  t0436619 suivi ok score 1.00 pos 1383,2709 net 28 (24 ms) carte 18 photos + 300 positions
+   498.041  t0436945 suivi ok score 1.00 pos 1383,2709 net 28 (19 ms) carte 18 photos + 300 positions
+   498.112  série lame_20261021_194505_bleu-v52 : 370 photos, 11440 échantillons de position
+   498.149  masque oculaire : 98 % du cadre utile (p95 212)
+   498.395  masque oculaire : 97 % du cadre utile (p95 211)
+   498.667  masque oculaire : 97 % du cadre utile (p95 211)
+   498.712  envoyé lame_20261021_194505_bleu-v52_0301.jpg (580 ko)
+   498.936  masque oculaire : 98 % du cadre utile (p95 211)
+   499.204  masque oculaire : 98 % du cadre utile (p95 212)
+   499.470  masque oculaire : 98 % du cadre utile (p95 212)
+   499.733  masque oculaire : 98 % du cadre utile (p95 212)
+   499.952  envoyé lame_20261021_194505_bleu-v52_0302.jpg (580 ko)
+   499.998  masque oculaire : 98 % du cadre utile (p95 212)
+   500.264  masque oculaire : 98 % du cadre utile (p95 212)
+   500.533  masque oculaire : 98 % du cadre utile (p95 212)
+   500.800  masque oculaire : 98 % du cadre utile (p95 212)
+   501.080  masque oculaire : 98 % du cadre utile (p95 212)
+   501.335  masque oculaire : 98 % du cadre utile (p95 212)
+   501.603  masque oculaire : 98 % du cadre utile (p95 212)
+   501.881  masque oculaire : 98 % du cadre utile (p95 212)
+   501.971  envoyé lame_20261021_194505_bleu-v52_0303.jpg (580 ko)
+   502.139  masque oculaire : 98 % du cadre utile (p95 212)
+   502.405  masque oculaire : 98 % du cadre utile (p95 212)
+   502.670  masque oculaire : 98 % du cadre utile (p95 212)
+   502.938  masque oculaire : 98 % du cadre utile (p95 212)
+   503.202  masque oculaire : 98 % du cadre utile (p95 212)
+   503.480  masque oculaire : 98 % du cadre utile (p95 212)
+   503.714  envoyé lame_20261021_194505_bleu-v52_0304.jpg (581 ko)
+   503.732  masque oculaire : 98 % du cadre utile (p95 212)
+   504.002  masque oculaire : 98 % du cadre utile (p95 212)
+   504.272  masque oculaire : 98 % du cadre utile (p95 212)
+   504.548  masque oculaire : 98 % du cadre utile (p95 212)
+   504.805  masque oculaire : 98 % du cadre utile (p95 212)
+   505.074  masque oculaire : 98 % du cadre utile (p95 212)
+   505.339  masque oculaire : 98 % du cadre utile (p95 212)
+   505.606  masque oculaire : 98 % du cadre utile (p95 212)
+   505.663  envoyé lame_20261021_194505_bleu-v52_0305.jpg (581 ko)
+   505.878  masque oculaire : 98 % du cadre utile (p95 212)
+   506.140  masque oculaire : 98 % du cadre utile (p95 212)
+   506.406  masque oculaire : 98 % du cadre utile (p95 212)
+   506.674  masque oculaire : 98 % du cadre utile (p95 212)
+   506.939  masque oculaire : 98 % du cadre utile (p95 212)
+   507.203  masque oculaire : 98 % du cadre utile (p95 212)
+   507.474  masque oculaire : 98 % du cadre utile (p95 212)
+   507.737  masque oculaire : 98 % du cadre utile (p95 212)
+   507.992  envoyé lame_20261021_194505_bleu-v52_0306.jpg (581 ko)
+   508.015  masque oculaire : 98 % du cadre utile (p95 212)
+   508.263  masque oculaire : 98 % du cadre utile (p95 212)
+   508.542  masque oculaire : 98 % du cadre utile (p95 212)
+   508.804  masque oculaire : 98 % du cadre utile (p95 212)
+   509.075  masque oculaire : 98 % du cadre utile (p95 212)
+   509.337  masque oculaire : 98 % du cadre utile (p95 212)
+   509.608  masque oculaire : 98 % du cadre utile (p95 212)
+   509.812  envoyé lame_20261021_194505_bleu-v52_0307.jpg (583 ko)
+   509.866  masque oculaire : 98 % du cadre utile (p95 212)
+   510.131  masque oculaire : 98 % du cadre utile (p95 212)
+   510.406  masque oculaire : 98 % du cadre utile (p95 212)
+   510.678  masque oculaire : 98 % du cadre utile (p95 212)
+   510.941  masque oculaire : 98 % du cadre utile (p95 212)
+   511.204  masque oculaire : 98 % du cadre utile (p95 212)
+   511.470  masque oculaire : 98 % du cadre utile (p95 212)
+   511.749  masque oculaire : 98 % du cadre utile (p95 212)
+   511.905  envoyé lame_20261021_194505_bleu-v52_0308.jpg (584 ko)
+   512.008  masque oculaire : 98 % du cadre utile (p95 212)
+   512.263  masque oculaire : 98 % du cadre utile (p95 212)
+   512.537  masque oculaire : 98 % du cadre utile (p95 212)
+   512.804  masque oculaire : 98 % du cadre utile (p95 212)
+   513.088  masque oculaire : 98 % du cadre utile (p95 212)
+   513.344  masque oculaire : 98 % du cadre utile (p95 212)
+   513.601  masque oculaire : 98 % du cadre utile (p95 212)
+   513.875  masque oculaire : 98 % du cadre utile (p95 212)
+   514.139  masque oculaire : 98 % du cadre utile (p95 212)
+   514.407  masque oculaire : 98 % du cadre utile (p95 212)
+   514.674  masque oculaire : 98 % du cadre utile (p95 212)
+   514.941  masque oculaire : 98 % du cadre utile (p95 212)
+   515.222  masque oculaire : 98 % du cadre utile (p95 212)
+   515.355  envoyé lame_20261021_194505_bleu-v52_0309.jpg (583 ko)
+   515.471  masque oculaire : 98 % du cadre utile (p95 212)
+   515.737  masque oculaire : 98 % du cadre utile (p95 212)
+   516.006  masque oculaire : 98 % du cadre utile (p95 212)
+   516.278  masque oculaire : 98 % du cadre utile (p95 212)
+   516.542  masque oculaire : 98 % du cadre utile (p95 212)
+   516.806  masque oculaire : 98 % du cadre utile (p95 212)
+   517.071  masque oculaire : 98 % du cadre utile (p95 212)
+   517.343  masque oculaire : 98 % du cadre utile (p95 212)
+   517.604  masque oculaire : 98 % du cadre utile (p95 212)
+   517.872  masque oculaire : 98 % du cadre utile (p95 212)
+   518.142  masque oculaire : 98 % du cadre utile (p95 212)
+   518.242  envoyé lame_20261021_194505_bleu-v52_0310.jpg (581 ko)
+   518.405  masque oculaire : 98 % du cadre utile (p95 212)
+   518.672  masque oculaire : 98 % du cadre utile (p95 212)
+   518.944  masque oculaire : 98 % du cadre utile (p95 212)
+   519.207  masque oculaire : 98 % du cadre utile (p95 212)
+   519.480  masque oculaire : 98 % du cadre utile (p95 212)
+   519.731  masque oculaire : 98 % du cadre utile (p95 212)
+   520.006  masque oculaire : 98 % du cadre utile (p95 212)
+   520.274  masque oculaire : 98 % du cadre utile (p95 212)
+   520.539  masque oculaire : 98 % du cadre utile (p95 212)
+   520.811  masque oculaire : 98 % du cadre utile (p95 212)
+   520.819  envoyé lame_20261021_194505_bleu-v52_0311.jpg (583 ko)
+   521.080  masque oculaire : 98 % du cadre utile (p95 212)
+   521.339  masque oculaire : 98 % du cadre utile (p95 212)
+   521.611  masque oculaire : 97 % du cadre utile (p95 211)
+   521.879  masque oculaire : 98 % du cadre utile (p95 211)
+   522.144  masque oculaire : 98 % du cadre utile (p95 211)
+   522.416  masque oculaire : 98 % du cadre utile (p95 212)
+   522.675  masque oculaire : 98 % du cadre utile (p95 212)
+   522.940  masque oculaire : 98 % du cadre utile (p95 212)
+   523.023  envoyé lame_20261021_194505_bleu-v52_0312.jpg (582 ko)
+   523.206  masque oculaire : 98 % du cadre utile (p95 211)
+   523.480  masque oculaire : 98 % du cadre utile (p95 211)
+   523.745  masque oculaire : 98 % du cadre utile (p95 212)
+   524.009  masque oculaire : 98 % du cadre utile (p95 212)
+   524.277  masque oculaire : 98 % du cadre utile (p95 212)
+   524.392  envoyé lame_20261021_194505_bleu-v52_0313.jpg (584 ko)
+   524.546  masque oculaire : 98 % du cadre utile (p95 212)
+   524.816  masque oculaire : 98 % du cadre utile (p95 212)
+   525.067  masque oculaire : 98 % du cadre utile (p95 212)
+   525.333  masque oculaire : 98 % du cadre utile (p95 212)
+   525.600  masque oculaire : 98 % du cadre utile (p95 212)
+   525.804  envoyé lame_20261021_194505_bleu-v52_0314.jpg (583 ko)
+   525.862  masque oculaire : 98 % du cadre utile (p95 212)
+   526.130  masque oculaire : 98 % du cadre utile (p95 212)
+   526.397  masque oculaire : 98 % du cadre utile (p95 212)
+   526.665  masque oculaire : 98 % du cadre utile (p95 212)
+   526.934  masque oculaire : 98 % du cadre utile (p95 212)
+   527.198  masque oculaire : 98 % du cadre utile (p95 212)
+   527.341  envoyé lame_20261021_194505_bleu-v52_0315.jpg (583 ko)
+   527.468  masque oculaire : 98 % du cadre utile (p95 212)
+   527.733  masque oculaire : 98 % du cadre utile (p95 212)
+   527.997  masque oculaire : 98 % du cadre utile (p95 212)
+   528.191  envoyé lame_20261021_194505_bleu-v52_0316.jpg (298 ko)
+   528.263  masque oculaire : 98 % du cadre utile (p95 212)
+   528.529  masque oculaire : 98 % du cadre utile (p95 211)
+   528.796  masque oculaire : 98 % du cadre utile (p95 212)
+   528.988  envoyé lame_20261021_194505_bleu-v52_0317.jpg (256 ko)
+   529.063  masque oculaire : 98 % du cadre utile (p95 211)
+   529.327  masque oculaire : 98 % du cadre utile (p95 211)
+   529.608  masque oculaire : 98 % du cadre utile (p95 212)
+   529.871  masque oculaire : 98 % du cadre utile (p95 212)
+   529.949  envoyé lame_20261021_194505_bleu-v52_0318.jpg (254 ko)
+   530.140  masque oculaire : 98 % du cadre utile (p95 212)
+   530.414  masque oculaire : 98 % du cadre utile (p95 212)
+   530.676  masque oculaire : 98 % du cadre utile (p95 212)
+   530.939  masque oculaire : 98 % du cadre utile (p95 212)
+   531.078  envoyé lame_20261021_194505_bleu-v52_0319.jpg (260 ko)
+   531.215  masque oculaire : 98 % du cadre utile (p95 212)
+   531.470  masque oculaire : 98 % du cadre utile (p95 212)
+   531.743  masque oculaire : 98 % du cadre utile (p95 212)
+   532.011  masque oculaire : 98 % du cadre utile (p95 212)
+   532.137  envoyé lame_20261021_194505_bleu-v52_0320.jpg (504 ko)
+   532.279  masque oculaire : 98 % du cadre utile (p95 212)
+   532.546  masque oculaire : 98 % du cadre utile (p95 212)
+   532.815  masque oculaire : 98 % du cadre utile (p95 212)
+   533.071  masque oculaire : 98 % du cadre utile (p95 212)
+   533.293  envoyé lame_20261021_194505_bleu-v52_0321.jpg (500 ko)
+   533.341  masque oculaire : 98 % du cadre utile (p95 212)
+   533.601  masque oculaire : 98 % du cadre utile (p95 212)
+   533.876  masque oculaire : 98 % du cadre utile (p95 212)
+   534.143  masque oculaire : 98 % du cadre utile (p95 212)
+   534.414  masque oculaire : 98 % du cadre utile (p95 212)
+   534.577  envoyé lame_20261021_194505_bleu-v52_0322.jpg (502 ko)
+   534.676  masque oculaire : 98 % du cadre utile (p95 212)
+   534.939  masque oculaire : 98 % du cadre utile (p95 212)
+   535.212  masque oculaire : 98 % du cadre utile (p95 212)
+   535.474  masque oculaire : 98 % du cadre utile (p95 212)
+   535.744  masque oculaire : 98 % du cadre utile (p95 212)
+   535.937  envoyé lame_20261021_194505_bleu-v52_0323.jpg (512 ko)
+   536.011  masque oculaire : 98 % du cadre utile (p95 211)
+   536.265  masque oculaire : 98 % du cadre utile (p95 212)
+   536.544  masque oculaire : 98 % du cadre utile (p95 212)
+   536.813  masque oculaire : 98 % du cadre utile (p95 212)
+   537.076  masque oculaire : 98 % du cadre utile (p95 212)
+   537.078  envoyé lame_20261021_194505_bleu-v52_0324.jpg (509 ko)
+   537.352  masque oculaire : 98 % du cadre utile (p95 212)
+   537.613  masque oculaire : 98 % du cadre utile (p95 212)
+   537.874  masque oculaire : 98 % du cadre utile (p95 212)
+   538.147  masque oculaire : 98 % du cadre utile (p95 212)
+   538.265  envoyé lame_20261021_194505_bleu-v52_0325.jpg (514 ko)
+   538.417  masque oculaire : 98 % du cadre utile (p95 212)
+   538.682  masque oculaire : 98 % du cadre utile (p95 212)
+   538.945  masque oculaire : 98 % du cadre utile (p95 212)
+   539.215  masque oculaire : 98 % du cadre utile (p95 212)
+   539.372  envoyé lame_20261021_194505_bleu-v52_0326.jpg (482 ko)
+   539.479  masque oculaire : 98 % du cadre utile (p95 212)
+   539.729  masque oculaire : 98 % du cadre utile (p95 212)
+   540.012  masque oculaire : 98 % du cadre utile (p95 212)
+   540.281  masque oculaire : 98 % du cadre utile (p95 212)
+   540.545  masque oculaire : 98 % du cadre utile (p95 212)
+   540.734  envoyé lame_20261021_194505_bleu-v52_0327.jpg (488 ko)
+   540.809  masque oculaire : 98 % du cadre utile (p95 212)
+   541.071  masque oculaire : 98 % du cadre utile (p95 212)
+   541.348  masque oculaire : 98 % du cadre utile (p95 212)
+   541.613  masque oculaire : 98 % du cadre utile (p95 212)
+   541.755  envoyé lame_20261021_194505_bleu-v52_0328.jpg (480 ko)
+   541.883  masque oculaire : 98 % du cadre utile (p95 212)
+   542.140  masque oculaire : 98 % du cadre utile (p95 212)
+   542.410  masque oculaire : 98 % du cadre utile (p95 212)
+   542.684  masque oculaire : 98 % du cadre utile (p95 212)
+   542.714  envoyé lame_20261021_194505_bleu-v52_0329.jpg (469 ko)
+   542.948  masque oculaire : 98 % du cadre utile (p95 212)
+   543.203  masque oculaire : 98 % du cadre utile (p95 212)
+   543.481  masque oculaire : 98 % du cadre utile (p95 212)
+   543.641  envoyé lame_20261021_194505_bleu-v52_0330.jpg (451 ko)
+   543.745  masque oculaire : 98 % du cadre utile (p95 212)
+   544.009  masque oculaire : 98 % du cadre utile (p95 212)
+   544.288  masque oculaire : 98 % du cadre utile (p95 212)
+   544.435  envoyé lame_20261021_194505_bleu-v52_0331.jpg (442 ko)
+   544.541  masque oculaire : 98 % du cadre utile (p95 211)
+   544.802  masque oculaire : 98 % du cadre utile (p95 211)
+   545.076  masque oculaire : 98 % du cadre utile (p95 212)
+   545.344  masque oculaire : 98 % du cadre utile (p95 212)
+   545.474  envoyé lame_20261021_194505_bleu-v52_0332.jpg (439 ko)
+   545.610  masque oculaire : 98 % du cadre utile (p95 212)
+   545.875  masque oculaire : 98 % du cadre utile (p95 212)
+   546.147  masque oculaire : 98 % du cadre utile (p95 212)
+   546.419  masque oculaire : 98 % du cadre utile (p95 212)
+   546.567  envoyé lame_20261021_194505_bleu-v52_0333.jpg (395 ko)
+   546.678  masque oculaire : 98 % du cadre utile (p95 212)
+   546.942  masque oculaire : 98 % du cadre utile (p95 212)
+   547.216  masque oculaire : 98 % du cadre utile (p95 212)
+   547.483  masque oculaire : 98 % du cadre utile (p95 212)
+   547.597  envoyé lame_20261021_194505_bleu-v52_0334.jpg (398 ko)
+   547.744  masque oculaire : 98 % du cadre utile (p95 212)
+   548.015  masque oculaire : 98 % du cadre utile (p95 212)
+   548.284  masque oculaire : 98 % du cadre utile (p95 212)
+   548.546  masque oculaire : 98 % du cadre utile (p95 212)
+   548.612  envoyé lame_20261021_194505_bleu-v52_0335.jpg (406 ko)
+   548.814  masque oculaire : 98 % du cadre utile (p95 212)
+   549.075  masque oculaire : 98 % du cadre utile (p95 212)
+   549.348  masque oculaire : 98 % du cadre utile (p95 212)
+   549.559  envoyé lame_20261021_194505_bleu-v52_0336.jpg (494 ko)
+   549.612  masque oculaire : 98 % du cadre utile (p95 212)
+   549.873  masque oculaire : 98 % du cadre utile (p95 212)
+   550.148  masque oculaire : 98 % du cadre utile (p95 211)
+   550.418  masque oculaire : 98 % du cadre utile (p95 212)
+   550.550  envoyé lame_20261021_194505_bleu-v52_0337.jpg (478 ko)
+   550.686  masque oculaire : 98 % du cadre utile (p95 212)
+   550.953  masque oculaire : 98 % du cadre utile (p95 212)
+   551.216  masque oculaire : 98 % du cadre utile (p95 212)
+   551.490  masque oculaire : 98 % du cadre utile (p95 212)
+   551.552  envoyé lame_20261021_194505_bleu-v52_0338.jpg (464 ko)
+   551.749  masque oculaire : 98 % du cadre utile (p95 211)
+   552.012  masque oculaire : 97 % du cadre utile (p95 211)
+   552.283  masque oculaire : 98 % du cadre utile (p95 211)
+   552.547  masque oculaire : 98 % du cadre utile (p95 211)
+   552.678  envoyé lame_20261021_194505_bleu-v52_0339.jpg (514 ko)
+   552.818  masque oculaire : 98 % du cadre utile (p95 211)
+   553.086  masque oculaire : 98 % du cadre utile (p95 211)
+   553.348  masque oculaire : 98 % du cadre utile (p95 212)
+   553.614  masque oculaire : 98 % du cadre utile (p95 212)
+   553.734  envoyé lame_20261021_194505_bleu-v52_0340.jpg (496 ko)
+   553.885  masque oculaire : 98 % du cadre utile (p95 212)
+   554.147  masque oculaire : 98 % du cadre utile (p95 212)
+   554.413  masque oculaire : 98 % du cadre utile (p95 212)
+   554.683  envoyé lame_20261021_194505_bleu-v52_0341.jpg (459 ko)
+   554.686  masque oculaire : 98 % du cadre utile (p95 212)
+   554.951  masque oculaire : 98 % du cadre utile (p95 212)
+   555.219  masque oculaire : 98 % du cadre utile (p95 212)
+   555.488  masque oculaire : 98 % du cadre utile (p95 212)
+   555.744  masque oculaire : 98 % du cadre utile (p95 212)
+   555.950  envoyé lame_20261021_194505_bleu-v52_0342.jpg (457 ko)
+   556.012  masque oculaire : 98 % du cadre utile (p95 212)
+   556.274  masque oculaire : 98 % du cadre utile (p95 212)
+   556.554  masque oculaire : 98 % du cadre utile (p95 212)
+   556.821  masque oculaire : 98 % du cadre utile (p95 212)
+   556.959  envoyé lame_20261021_194505_bleu-v52_0343.jpg (428 ko)
+   557.087  masque oculaire : 98 % du cadre utile (p95 212)
+   557.347  masque oculaire : 98 % du cadre utile (p95 212)
+   557.620  masque oculaire : 98 % du cadre utile (p95 211)
+   557.890  masque oculaire : 98 % du cadre utile (p95 211)
+   558.154  masque oculaire : 98 % du cadre utile (p95 212)
+   558.295  envoyé lame_20261021_194505_bleu-v52_0344.jpg (447 ko)
+   558.418  masque oculaire : 98 % du cadre utile (p95 212)
+   558.678  masque oculaire : 98 % du cadre utile (p95 212)
+   558.953  masque oculaire : 98 % du cadre utile (p95 212)
+   559.217  masque oculaire : 98 % du cadre utile (p95 212)
+   559.483  masque oculaire : 98 % du cadre utile (p95 212)
+   559.709  envoyé lame_20261021_194505_bleu-v52_0345.jpg (424 ko)
+   559.751  masque oculaire : 98 % du cadre utile (p95 212)
+   560.011  masque oculaire : 98 % du cadre utile (p95 212)
+   560.287  masque oculaire : 98 % du cadre utile (p95 212)
+   560.553  masque oculaire : 98 % du cadre utile (p95 212)
+   560.819  masque oculaire : 98 % du cadre utile (p95 212)
+   561.082  masque oculaire : 98 % du cadre utile (p95 212)
+   561.354  masque oculaire : 98 % du cadre utile (p95 212)
+   561.619  masque oculaire : 98 % du cadre utile (p95 212)
+   561.886  masque oculaire : 98 % du cadre utile (p95 212)
+   561.949  envoyé lame_20261021_194505_bleu-v52_0346.jpg (421 ko)
+   562.152  masque oculaire : 98 % du cadre utile (p95 212)
+   562.415  masque oculaire : 98 % du cadre utile (p95 212)
+   562.691  masque oculaire : 98 % du cadre utile (p95 212)
+   562.954  masque oculaire : 98 % du cadre utile (p95 212)
+   563.216  masque oculaire : 98 % du cadre utile (p95 212)
+   563.484  masque oculaire : 98 % du cadre utile (p95 211)
+   563.755  masque oculaire : 98 % du cadre utile (p95 212)
+   564.016  masque oculaire : 98 % du cadre utile (p95 212)
+   564.288  masque oculaire : 98 % du cadre utile (p95 212)
+   564.547  envoyé lame_20261021_194505_bleu-v52_0347.jpg (406 ko)
+   564.561  masque oculaire : 98 % du cadre utile (p95 212)
+   564.817  masque oculaire : 98 % du cadre utile (p95 212)
+   565.089  masque oculaire : 98 % du cadre utile (p95 212)
+   565.354  masque oculaire : 98 % du cadre utile (p95 212)
+   565.617  masque oculaire : 98 % du cadre utile (p95 212)
+   565.889  masque oculaire : 98 % du cadre utile (p95 212)
+   566.155  masque oculaire : 98 % du cadre utile (p95 212)
+   566.314  envoyé lame_20261021_194505_bleu-v52_0348.jpg (423 ko)
+   566.419  masque oculaire : 98 % du cadre utile (p95 212)
+   566.676  masque oculaire : 98 % du cadre utile (p95 212)
+   566.948  masque oculaire : 98 % du cadre utile (p95 211)
+   567.222  masque oculaire : 98 % du cadre utile (p95 211)
+   567.488  masque oculaire : 98 % du cadre utile (p95 212)
+   567.755  masque oculaire : 98 % du cadre utile (p95 212)
+   567.794  envoyé lame_20261021_194505_bleu-v52_0349.jpg (524 ko)
+   568.017  masque oculaire : 98 % du cadre utile (p95 212)
+   568.287  masque oculaire : 98 % du cadre utile (p95 212)
+   568.553  masque oculaire : 98 % du cadre utile (p95 212)
+   568.818  masque oculaire : 98 % du cadre utile (p95 212)
+   569.090  masque oculaire : 98 % du cadre utile (p95 212)
+   569.354  masque oculaire : 98 % du cadre utile (p95 212)
+   569.619  masque oculaire : 98 % du cadre utile (p95 212)
+   569.621  envoyé lame_20261021_194505_bleu-v52_0350.jpg (520 ko)
+   569.888  masque oculaire : 98 % du cadre utile (p95 212)
+   570.151  masque oculaire : 98 % du cadre utile (p95 212)
+   570.421  masque oculaire : 98 % du cadre utile (p95 212)
+   570.685  masque oculaire : 98 % du cadre utile (p95 212)
+   570.955  masque oculaire : 98 % du cadre utile (p95 212)
+   571.225  masque oculaire : 98 % du cadre utile (p95 212)
+   571.238  envoyé lame_20261021_194505_bleu-v52_0351.jpg (523 ko)
+   571.485  masque oculaire : 98 % du cadre utile (p95 212)
+   571.750  masque oculaire : 98 % du cadre utile (p95 212)
+   572.018  masque oculaire : 98 % du cadre utile (p95 212)
+   572.290  masque oculaire : 98 % du cadre utile (p95 212)
+   572.409  envoyé lame_20261021_194505_bleu-v52_0352.jpg (683 ko)
+   572.559  masque oculaire : 98 % du cadre utile (p95 212)
+   572.820  masque oculaire : 98 % du cadre utile (p95 212)
+   573.089  masque oculaire : 98 % du cadre utile (p95 212)
+   573.357  masque oculaire : 98 % du cadre utile (p95 212)
+   573.620  masque oculaire : 98 % du cadre utile (p95 212)
+   573.878  envoyé lame_20261021_194505_bleu-v52_0353.jpg (621 ko)
+   573.886  masque oculaire : 98 % du cadre utile (p95 212)
+   574.145  masque oculaire : 98 % du cadre utile (p95 212)
+   574.421  masque oculaire : 98 % du cadre utile (p95 212)
+   574.693  masque oculaire : 98 % du cadre utile (p95 212)
+   574.962  masque oculaire : 98 % du cadre utile (p95 212)
+   575.219  masque oculaire : 98 % du cadre utile (p95 212)
+   575.466  envoyé lame_20261021_194505_bleu-v52_0354.jpg (596 ko)
+   575.487  masque oculaire : 98 % du cadre utile (p95 212)
+   575.742  masque oculaire : 98 % du cadre utile (p95 212)
+   576.024  masque oculaire : 98 % du cadre utile (p95 212)
+   576.288  masque oculaire : 98 % du cadre utile (p95 212)
+   576.553  masque oculaire : 98 % du cadre utile (p95 212)
+   576.654  envoyé lame_20261021_194505_bleu-v52_0355.jpg (620 ko)
+   576.823  masque oculaire : 98 % du cadre utile (p95 212)
+   577.087  masque oculaire : 98 % du cadre utile (p95 212)
+   577.354  masque oculaire : 98 % du cadre utile (p95 212)
+   577.624  masque oculaire : 98 % du cadre utile (p95 212)
+   577.779  envoyé lame_20261021_194505_bleu-v52_0356.jpg (542 ko)
+   577.888  masque oculaire : 98 % du cadre utile (p95 212)
+   578.163  masque oculaire : 98 % du cadre utile (p95 212)
+   578.426  masque oculaire : 98 % du cadre utile (p95 213)
+   578.700  masque oculaire : 98 % du cadre utile (p95 213)
+   578.954  masque oculaire : 98 % du cadre utile (p95 212)
+   579.240  masque oculaire : 98 % du cadre utile (p95 213)
+   579.389  envoyé lame_20261021_194505_bleu-v52_0357.jpg (467 ko)
+   579.493  masque oculaire : 98 % du cadre utile (p95 212)
+   579.753  masque oculaire : 98 % du cadre utile (p95 212)
+   580.026  masque oculaire : 98 % du cadre utile (p95 212)
+   580.290  masque oculaire : 98 % du cadre utile (p95 212)
+   580.559  masque oculaire : 98 % du cadre utile (p95 212)
+   580.835  masque oculaire : 98 % du cadre utile (p95 212)
+   581.074  masque oculaire : 98 % du cadre utile (p95 212)
+   581.356  masque oculaire : 98 % du cadre utile (p95 213)
+   581.624  masque oculaire : 98 % du cadre utile (p95 213)
+   581.891  masque oculaire : 98 % du cadre utile (p95 213)
+   582.093  envoyé lame_20261021_194505_bleu-v52_0358.jpg (500 ko)
+   582.158  masque oculaire : 98 % du cadre utile (p95 212)
+   582.414  masque oculaire : 98 % du cadre utile (p95 212)
+   582.689  masque oculaire : 98 % du cadre utile (p95 212)
+   582.956  masque oculaire : 98 % du cadre utile (p95 213)
+   583.226  masque oculaire : 98 % du cadre utile (p95 213)
+   583.486  masque oculaire : 98 % du cadre utile (p95 213)
+   583.757  masque oculaire : 98 % du cadre utile (p95 213)
+   583.898  envoyé lame_20261021_194505_bleu-v52_0359.jpg (528 ko)
+   584.024  masque oculaire : 98 % du cadre utile (p95 213)
+   584.279  masque oculaire : 98 % du cadre utile (p95 212)
+   584.557  masque oculaire : 98 % du cadre utile (p95 212)
+   584.827  masque oculaire : 98 % du cadre utile (p95 212)
+   585.089  masque oculaire : 98 % du cadre utile (p95 212)
+   585.357  masque oculaire : 98 % du cadre utile (p95 212)
+   585.621  masque oculaire : 98 % du cadre utile (p95 212)
+   585.887  masque oculaire : 98 % du cadre utile (p95 212)
+   586.158  masque oculaire : 98 % du cadre utile (p95 212)
+   586.422  masque oculaire : 98 % du cadre utile (p95 212)
+   586.571  série lame_20261021_194505_bleu-v52 clôturée côté serveur : HTTP 200, réveil GitHub oui
+   586.677  masque oculaire : 98 % du cadre utile (p95 212)
+   586.959  masque oculaire : 98 % du cadre utile (p95 212)
+   587.225  masque oculaire : 98 % du cadre utile (p95 212)
+   587.488  masque oculaire : 98 % du cadre utile (p95 212)
+   587.755  masque oculaire : 98 % du cadre utile (p95 212)
+   588.025  masque oculaire : 98 % du cadre utile (p95 212)
+   588.294  masque oculaire : 98 % du cadre utile (p95 212)
+   588.561  masque oculaire : 98 % du cadre utile (p95 212)
+   588.825  masque oculaire : 98 % du cadre utile (p95 212)
+   589.100  masque oculaire : 98 % du cadre utile (p95 212)
+   589.361  masque oculaire : 98 % du cadre utile (p95 212)
+   589.624  masque oculaire : 98 % du cadre utile (p95 212)
+   589.889  masque oculaire : 98 % du cadre utile (p95 212)
+   590.165  masque oculaire : 98 % du cadre utile (p95 212)
+   590.427  masque oculaire : 98 % du cadre utile (p95 212)
+   590.696  masque oculaire : 98 % du cadre utile (p95 212)
+   590.966  masque oculaire : 98 % du cadre utile (p95 212)
+   591.234  masque oculaire : 98 % du cadre utile (p95 212)
+   591.496  masque oculaire : 98 % du cadre utile (p95 212)
+   591.766  masque oculaire : 98 % du cadre utile (p95 211)
+   592.035  masque oculaire : 98 % du cadre utile (p95 212)
+   592.296  masque oculaire : 98 % du cadre utile (p95 212)
+   592.566  masque oculaire : 98 % du cadre utile (p95 212)
+   592.827  masque oculaire : 98 % du cadre utile (p95 212)
+   593.092  masque oculaire : 98 % du cadre utile (p95 212)
+   593.370  masque oculaire : 98 % du cadre utile (p95 212)
+   593.626  masque oculaire : 98 % du cadre utile (p95 212)
+   593.894  masque oculaire : 98 % du cadre utile (p95 212)
+   594.162  masque oculaire : 98 % du cadre utile (p95 212)
+   594.426  masque oculaire : 98 % du cadre utile (p95 212)
+   594.694  masque oculaire : 98 % du cadre utile (p95 212)
+   594.951  masque oculaire : 98 % du cadre utile (p95 212)
+   595.257  masque oculaire : 98 % du cadre utile (p95 212)
+   595.525  masque oculaire : 98 % du cadre utile (p95 212)
+   595.790  masque oculaire : 98 % du cadre utile (p95 212)
+   596.057  masque oculaire : 98 % du cadre utile (p95 212)
+   596.325  masque oculaire : 98 % du cadre utile (p95 212)
+   596.593  masque oculaire : 98 % du cadre utile (p95 212)
+   596.846  masque oculaire : 98 % du cadre utile (p95 212)
+   597.118  masque oculaire : 98 % du cadre utile (p95 212)
+   597.397  masque oculaire : 98 % du cadre utile (p95 212)
+   597.658  masque oculaire : 98 % du cadre utile (p95 212)
+   597.929  masque oculaire : 98 % du cadre utile (p95 212)
+   598.188  masque oculaire : 98 % du cadre utile (p95 212)
+   598.465  masque oculaire : 98 % du cadre utile (p95 212)
+   598.726  masque oculaire : 98 % du cadre utile (p95 212)
+   598.989  masque oculaire : 98 % du cadre utile (p95 212)
+   599.261  masque oculaire : 98 % du cadre utile (p95 212)
+   599.525  masque oculaire : 98 % du cadre utile (p95 212)
+   599.793  masque oculaire : 98 % du cadre utile (p95 212)
+   600.063  masque oculaire : 98 % du cadre utile (p95 212)
+   600.328  masque oculaire : 98 % du cadre utile (p95 212)
+   600.585  masque oculaire : 98 % du cadre utile (p95 212)
+   600.858  masque oculaire : 98 % du cadre utile (p95 212)
+   601.125  masque oculaire : 98 % du cadre utile (p95 212)
+   601.393  masque oculaire : 98 % du cadre utile (p95 212)
+   601.661  masque oculaire : 98 % du cadre utile (p95 212)
+   601.926  masque oculaire : 98 % du cadre utile (p95 212)
+   602.200  masque oculaire : 98 % du cadre utile (p95 212)
+   602.462  masque oculaire : 98 % du cadre utile (p95 212)
+   602.726  masque oculaire : 98 % du cadre utile (p95 212)
+   603.000  masque oculaire : 98 % du cadre utile (p95 212)
+   603.255  masque oculaire : 98 % du cadre utile (p95 212)
+   603.524  masque oculaire : 98 % du cadre utile (p95 212)
+   603.790  masque oculaire : 98 % du cadre utile (p95 212)
+   604.061  masque oculaire : 98 % du cadre utile (p95 212)
+   604.326  masque oculaire : 98 % du cadre utile (p95 212)
+   604.600  masque oculaire : 98 % du cadre utile (p95 212)
+   604.865  masque oculaire : 98 % du cadre utile (p95 212)
+   605.132  masque oculaire : 98 % du cadre utile (p95 212)
+   605.396  masque oculaire : 98 % du cadre utile (p95 212)
+   605.657  === série lame_20261021_195409_bleu-video (photos) « bleu video », lactophenol, objectif x50 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+   605.697  masque oculaire : 98 % du cadre utile (p95 212)
+   606.012  t0000375 suivi ok score 1.00 pos 0,0 net 28 (29 ms) carte 0 photos + 3 positions
+   606.322  patron 2x2 champs posé en haut à gauche (0,0)
+   606.322  photo deo_0001 à 0,0 (604 ko, 221 ms)
+   606.346  t0000709 suivi ok score 1.00 pos 0,0 net 28 (20 ms) carte 1 photos + 6 positions
+   606.690  t0001053 suivi ok score 1.00 pos 0,0 net 27 (24 ms) carte 1 photos + 10 positions
+   606.835  série lame_20261021_195409_bleu-video : 1 photos, 35 échantillons de position
+   607.035  masque oculaire : 98 % du cadre utile (p95 212)
+   607.303  masque oculaire : 98 % du cadre utile (p95 212)
+   607.572  masque oculaire : 98 % du cadre utile (p95 212)
+   607.833  masque oculaire : 98 % du cadre utile (p95 212)
+   608.095  envoyé lame_20261021_195409_bleu-video_0001.jpg (604 ko)
+   608.260  masque oculaire : 98 % du cadre utile (p95 213)
+   608.521  masque oculaire : 98 % du cadre utile (p95 213)
+   608.798  masque oculaire : 98 % du cadre utile (p95 213)
+   609.055  masque oculaire : 98 % du cadre utile (p95 213)
+   609.327  masque oculaire : 98 % du cadre utile (p95 213)
+   609.451  série lame_20261021_195409_bleu-video clôturée côté serveur : HTTP 200, réveil GitHub oui
+   609.586  masque oculaire : 98 % du cadre utile (p95 213)
+   609.874  masque oculaire : 98 % du cadre utile (p95 213)
+   610.140  masque oculaire : 98 % du cadre utile (p95 213)
+   610.402  masque oculaire : 98 % du cadre utile (p95 213)
+   610.671  masque oculaire : 98 % du cadre utile (p95 213)
+   610.940  masque oculaire : 98 % du cadre utile (p95 213)
+   611.194  masque oculaire : 98 % du cadre utile (p95 213)
+   611.464  masque oculaire : 98 % du cadre utile (p95 213)
+   611.726  masque oculaire : 98 % du cadre utile (p95 213)
+   611.991  masque oculaire : 98 % du cadre utile (p95 213)
+   612.270  masque oculaire : 98 % du cadre utile (p95 212)
+   612.531  masque oculaire : 98 % du cadre utile (p95 212)
+   612.792  masque oculaire : 98 % du cadre utile (p95 212)
+   613.069  masque oculaire : 98 % du cadre utile (p95 212)
+   613.334  masque oculaire : 98 % du cadre utile (p95 212)
+   613.598  masque oculaire : 98 % du cadre utile (p95 212)
+   613.862  masque oculaire : 98 % du cadre utile (p95 213)
+   614.138  masque oculaire : 98 % du cadre utile (p95 212)
+   614.405  masque oculaire : 98 % du cadre utile (p95 212)
+   614.689  masque oculaire : 98 % du cadre utile (p95 212)
+   614.971  masque oculaire : 98 % du cadre utile (p95 212)
+   615.237  masque oculaire : 98 % du cadre utile (p95 213)
+   615.509  masque oculaire : 98 % du cadre utile (p95 213)
+   615.768  masque oculaire : 98 % du cadre utile (p95 213)
+   616.021  masque oculaire : 98 % du cadre utile (p95 213)
+   616.310  masque oculaire : 98 % du cadre utile (p95 213)
+   616.570  masque oculaire : 98 % du cadre utile (p95 212)
+   616.836  masque oculaire : 98 % du cadre utile (p95 212)
+   617.106  masque oculaire : 98 % du cadre utile (p95 212)
+   617.372  masque oculaire : 98 % du cadre utile (p95 213)
+   617.642  masque oculaire : 98 % du cadre utile (p95 213)
+   617.896  masque oculaire : 98 % du cadre utile (p95 213)
+   618.172  masque oculaire : 98 % du cadre utile (p95 213)
+   618.437  masque oculaire : 98 % du cadre utile (p95 213)
+   618.694  masque oculaire : 98 % du cadre utile (p95 213)
+   618.961  masque oculaire : 98 % du cadre utile (p95 212)
+   619.232  masque oculaire : 98 % du cadre utile (p95 212)
+   619.506  masque oculaire : 98 % du cadre utile (p95 212)
+   619.774  masque oculaire : 98 % du cadre utile (p95 212)
+   620.029  masque oculaire : 98 % du cadre utile (p95 212)
+   620.298  masque oculaire : 98 % du cadre utile (p95 213)
+   620.570  masque oculaire : 98 % du cadre utile (p95 213)
+   620.828  masque oculaire : 98 % du cadre utile (p95 213)
+   621.100  masque oculaire : 98 % du cadre utile (p95 213)
+   621.359  masque oculaire : 98 % du cadre utile (p95 213)
+   621.635  masque oculaire : 98 % du cadre utile (p95 213)
+   621.906  masque oculaire : 98 % du cadre utile (p95 213)
+   622.170  masque oculaire : 98 % du cadre utile (p95 213)
+   622.436  masque oculaire : 98 % du cadre utile (p95 212)
+   622.705  masque oculaire : 98 % du cadre utile (p95 212)
+   622.974  masque oculaire : 98 % du cadre utile (p95 212)
+   623.245  masque oculaire : 98 % du cadre utile (p95 212)
+   623.501  masque oculaire : 98 % du cadre utile (p95 212)
+   623.796  masque oculaire : 98 % du cadre utile (p95 212)
+   624.076  masque oculaire : 98 % du cadre utile (p95 213)
+   624.337  masque oculaire : 98 % du cadre utile (p95 213)
+   624.608  masque oculaire : 98 % du cadre utile (p95 213)
+   624.873  masque oculaire : 98 % du cadre utile (p95 213)
+   625.137  masque oculaire : 98 % du cadre utile (p95 213)
+   625.402  masque oculaire : 98 % du cadre utile (p95 213)
+   625.670  masque oculaire : 98 % du cadre utile (p95 213)
+   625.936  masque oculaire : 98 % du cadre utile (p95 213)
+   626.206  masque oculaire : 98 % du cadre utile (p95 213)
+   626.472  masque oculaire : 98 % du cadre utile (p95 213)
+   626.729  masque oculaire : 98 % du cadre utile (p95 213)
+   627.003  masque oculaire : 98 % du cadre utile (p95 213)
+   627.277  masque oculaire : 98 % du cadre utile (p95 213)
+   627.529  masque oculaire : 98 % du cadre utile (p95 213)
+   627.805  masque oculaire : 98 % du cadre utile (p95 213)
+   628.071  masque oculaire : 98 % du cadre utile (p95 213)
+   628.341  masque oculaire : 98 % du cadre utile (p95 213)
+   628.606  masque oculaire : 98 % du cadre utile (p95 213)
+   628.864  masque oculaire : 98 % du cadre utile (p95 213)
+   629.136  masque oculaire : 98 % du cadre utile (p95 213)
+   629.413  masque oculaire : 98 % du cadre utile (p95 212)
+   629.664  masque oculaire : 98 % du cadre utile (p95 212)
+   629.937  masque oculaire : 98 % du cadre utile (p95 212)
+   630.206  masque oculaire : 98 % du cadre utile (p95 212)
+   630.473  masque oculaire : 98 % du cadre utile (p95 212)
+   630.735  masque oculaire : 98 % du cadre utile (p95 212)
+   630.746  réglages enregistrés
+   630.946  liaison : caméra logique 0, module physique 6, analyse 640x360, vidéo 1280x720
+   631.687  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   631.820  masque oculaire : 99 % du cadre utile (p95 206)
+   631.982  masque oculaire : 99 % du cadre utile (p95 206)
+   632.146  masque oculaire : 99 % du cadre utile (p95 206)
+   632.306  masque oculaire : 99 % du cadre utile (p95 206)
+   632.466  masque oculaire : 99 % du cadre utile (p95 206)
+   632.627  masque oculaire : 99 % du cadre utile (p95 206)
+   632.789  masque oculaire : 99 % du cadre utile (p95 206)
+   632.951  masque oculaire : 99 % du cadre utile (p95 206)
+   633.111  masque oculaire : 99 % du cadre utile (p95 206)
+   633.273  masque oculaire : 99 % du cadre utile (p95 206)
+   633.435  masque oculaire : 99 % du cadre utile (p95 206)
+   633.595  masque oculaire : 99 % du cadre utile (p95 206)
+   633.757  masque oculaire : 99 % du cadre utile (p95 206)
+   633.916  masque oculaire : 99 % du cadre utile (p95 206)
+   634.078  masque oculaire : 99 % du cadre utile (p95 206)
+   634.239  masque oculaire : 99 % du cadre utile (p95 206)
+   634.398  masque oculaire : 99 % du cadre utile (p95 206)
+   634.569  masque oculaire : 99 % du cadre utile (p95 206)
+   634.589  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+   634.812  masque oculaire : 99 % du cadre utile (p95 201)
+   635.081  masque oculaire : 92 % du cadre utile (p95 194)
+   635.352  masque oculaire : 91 % du cadre utile (p95 193)
+   635.581  verrouillage : focus infini, pose 19.982648 ms, ISO 71, WB figée
+   635.614  masque oculaire : 92 % du cadre utile (p95 192)
+   635.838  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   635.864  masque oculaire : 91 % du cadre utile (p95 191)
+   636.016  masque oculaire : 91 % du cadre utile (p95 191)
+   636.181  masque oculaire : 91 % du cadre utile (p95 191)
+   636.341  masque oculaire : 91 % du cadre utile (p95 191)
+   636.502  masque oculaire : 91 % du cadre utile (p95 191)
+   636.663  masque oculaire : 92 % du cadre utile (p95 191)
+   636.822  masque oculaire : 92 % du cadre utile (p95 191)
+   636.982  masque oculaire : 92 % du cadre utile (p95 191)
+   637.144  masque oculaire : 92 % du cadre utile (p95 191)
+   637.307  masque oculaire : 92 % du cadre utile (p95 192)
+   637.461  masque oculaire : 92 % du cadre utile (p95 192)
+   637.621  masque oculaire : 92 % du cadre utile (p95 192)
+   637.783  masque oculaire : 92 % du cadre utile (p95 192)
+   637.947  masque oculaire : 92 % du cadre utile (p95 192)
+   638.106  masque oculaire : 92 % du cadre utile (p95 192)
+   638.268  masque oculaire : 92 % du cadre utile (p95 192)
+   638.429  masque oculaire : 92 % du cadre utile (p95 192)
+   638.586  masque oculaire : 92 % du cadre utile (p95 192)
+   638.750  masque oculaire : 92 % du cadre utile (p95 192)
+   638.919  masque oculaire : 92 % du cadre utile (p95 192)
+   639.107  masque oculaire : 92 % du cadre utile (p95 192)
+   639.277  masque oculaire : 92 % du cadre utile (p95 192)
+   639.431  masque oculaire : 92 % du cadre utile (p95 192)
+   639.596  masque oculaire : 92 % du cadre utile (p95 192)
+   639.754  masque oculaire : 92 % du cadre utile (p95 192)
+   639.912  masque oculaire : 92 % du cadre utile (p95 192)
+   640.076  masque oculaire : 92 % du cadre utile (p95 191)
+   640.235  masque oculaire : 92 % du cadre utile (p95 192)
+   640.395  masque oculaire : 92 % du cadre utile (p95 192)
+   640.558  masque oculaire : 92 % du cadre utile (p95 192)
+   640.715  masque oculaire : 92 % du cadre utile (p95 192)
+   640.878  masque oculaire : 92 % du cadre utile (p95 192)
+   641.044  masque oculaire : 92 % du cadre utile (p95 192)
+   641.201  masque oculaire : 92 % du cadre utile (p95 192)
+   641.360  masque oculaire : 92 % du cadre utile (p95 192)
+   641.520  masque oculaire : 92 % du cadre utile (p95 192)
+   641.681  masque oculaire : 92 % du cadre utile (p95 192)
+   641.841  masque oculaire : 92 % du cadre utile (p95 192)
+   642.001  masque oculaire : 92 % du cadre utile (p95 192)
+   642.158  masque oculaire : 92 % du cadre utile (p95 192)
+   642.325  masque oculaire : 92 % du cadre utile (p95 192)
+   642.484  masque oculaire : 92 % du cadre utile (p95 192)
+   642.643  masque oculaire : 92 % du cadre utile (p95 191)
+   642.806  masque oculaire : 92 % du cadre utile (p95 192)
+   642.964  masque oculaire : 92 % du cadre utile (p95 192)
+   643.160  masque oculaire : 91 % du cadre utile (p95 192)
+   643.326  masque oculaire : 92 % du cadre utile (p95 192)
+   643.486  masque oculaire : 92 % du cadre utile (p95 192)
+   643.649  masque oculaire : 92 % du cadre utile (p95 192)
+   643.802  masque oculaire : 92 % du cadre utile (p95 192)
+   643.967  masque oculaire : 92 % du cadre utile (p95 192)
+   644.128  masque oculaire : 92 % du cadre utile (p95 192)
+   644.292  masque oculaire : 92 % du cadre utile (p95 192)
+   644.454  masque oculaire : 92 % du cadre utile (p95 192)
+   644.610  masque oculaire : 92 % du cadre utile (p95 192)
+   644.778  masque oculaire : 92 % du cadre utile (p95 192)
+   644.930  masque oculaire : 92 % du cadre utile (p95 192)
+   645.096  masque oculaire : 92 % du cadre utile (p95 192)
+   645.254  masque oculaire : 92 % du cadre utile (p95 193)
+   645.413  masque oculaire : 92 % du cadre utile (p95 193)
+   645.572  masque oculaire : 92 % du cadre utile (p95 193)
+   645.735  masque oculaire : 92 % du cadre utile (p95 192)
+   645.892  masque oculaire : 92 % du cadre utile (p95 192)
+   646.053  masque oculaire : 92 % du cadre utile (p95 192)
+   646.218  masque oculaire : 92 % du cadre utile (p95 192)
+   646.379  masque oculaire : 92 % du cadre utile (p95 192)
+   646.532  masque oculaire : 92 % du cadre utile (p95 192)
+   646.699  masque oculaire : 92 % du cadre utile (p95 192)
+   646.852  masque oculaire : 92 % du cadre utile (p95 192)
+   647.027  masque oculaire : 92 % du cadre utile (p95 192)
+   647.183  masque oculaire : 92 % du cadre utile (p95 192)
+   647.341  masque oculaire : 92 % du cadre utile (p95 192)
+   647.505  masque oculaire : 92 % du cadre utile (p95 192)
+   647.661  masque oculaire : 92 % du cadre utile (p95 192)
+   647.820  masque oculaire : 92 % du cadre utile (p95 192)
+   647.987  masque oculaire : 92 % du cadre utile (p95 192)
+   648.153  masque oculaire : 92 % du cadre utile (p95 192)
+   648.315  masque oculaire : 92 % du cadre utile (p95 192)
+   648.467  masque oculaire : 92 % du cadre utile (p95 192)
+   648.624  masque oculaire : 92 % du cadre utile (p95 192)
+   648.794  masque oculaire : 92 % du cadre utile (p95 192)
+   648.948  masque oculaire : 92 % du cadre utile (p95 193)
+   649.120  masque oculaire : 92 % du cadre utile (p95 193)
+   649.272  masque oculaire : 92 % du cadre utile (p95 192)
+   649.428  masque oculaire : 92 % du cadre utile (p95 192)
+   649.591  masque oculaire : 92 % du cadre utile (p95 192)
+   649.748  masque oculaire : 92 % du cadre utile (p95 192)
+   649.914  masque oculaire : 92 % du cadre utile (p95 192)
+   650.081  masque oculaire : 92 % du cadre utile (p95 193)
+   650.228  masque oculaire : 92 % du cadre utile (p95 193)
+   650.396  masque oculaire : 92 % du cadre utile (p95 193)
+   650.555  masque oculaire : 92 % du cadre utile (p95 193)
+   650.811  masque oculaire : 92 % du cadre utile (p95 193)
+   650.973  masque oculaire : 92 % du cadre utile (p95 193)
+   651.130  masque oculaire : 92 % du cadre utile (p95 193)
+   651.300  masque oculaire : 92 % du cadre utile (p95 193)
+   651.457  masque oculaire : 92 % du cadre utile (p95 193)
+   651.610  masque oculaire : 92 % du cadre utile (p95 193)
+   651.780  masque oculaire : 92 % du cadre utile (p95 193)
+   651.945  masque oculaire : 92 % du cadre utile (p95 193)
+   652.104  masque oculaire : 92 % du cadre utile (p95 193)
+   652.261  masque oculaire : 92 % du cadre utile (p95 193)
+   652.420  masque oculaire : 92 % du cadre utile (p95 193)
+   652.591  masque oculaire : 92 % du cadre utile (p95 193)
+   652.759  masque oculaire : 92 % du cadre utile (p95 193)
+   652.924  masque oculaire : 92 % du cadre utile (p95 193)
+   653.082  masque oculaire : 92 % du cadre utile (p95 193)
+   653.245  masque oculaire : 92 % du cadre utile (p95 193)
+   653.397  masque oculaire : 92 % du cadre utile (p95 193)
+   653.574  masque oculaire : 92 % du cadre utile (p95 193)
+   653.726  masque oculaire : 92 % du cadre utile (p95 193)
+   653.890  masque oculaire : 92 % du cadre utile (p95 193)
+   654.046  masque oculaire : 92 % du cadre utile (p95 192)
+   654.207  masque oculaire : 92 % du cadre utile (p95 192)
+   654.363  masque oculaire : 92 % du cadre utile (p95 192)
+   654.532  masque oculaire : 92 % du cadre utile (p95 192)
+   654.691  masque oculaire : 92 % du cadre utile (p95 192)
+   654.854  masque oculaire : 92 % du cadre utile (p95 192)
+   655.011  masque oculaire : 92 % du cadre utile (p95 192)
+   655.176  masque oculaire : 92 % du cadre utile (p95 192)
+   655.333  masque oculaire : 92 % du cadre utile (p95 192)
+   655.488  masque oculaire : 92 % du cadre utile (p95 192)
+   655.672  masque oculaire : 92 % du cadre utile (p95 192)
+   655.830  masque oculaire : 92 % du cadre utile (p95 192)
+   655.991  masque oculaire : 92 % du cadre utile (p95 192)
+   656.157  masque oculaire : 92 % du cadre utile (p95 192)
+   656.314  masque oculaire : 92 % du cadre utile (p95 192)
+   656.474  masque oculaire : 92 % du cadre utile (p95 192)
+   656.638  masque oculaire : 92 % du cadre utile (p95 192)
+   656.799  masque oculaire : 92 % du cadre utile (p95 192)
+   656.954  masque oculaire : 92 % du cadre utile (p95 192)
+   657.116  masque oculaire : 92 % du cadre utile (p95 192)
+   657.270  masque oculaire : 92 % du cadre utile (p95 192)
+   657.444  masque oculaire : 92 % du cadre utile (p95 192)
+   657.602  masque oculaire : 92 % du cadre utile (p95 192)
+   657.755  masque oculaire : 92 % du cadre utile (p95 192)
+   657.920  masque oculaire : 92 % du cadre utile (p95 192)
+   658.079  masque oculaire : 92 % du cadre utile (p95 192)
+   658.238  masque oculaire : 92 % du cadre utile (p95 192)
+   658.408  masque oculaire : 92 % du cadre utile (p95 192)
+   658.558  masque oculaire : 92 % du cadre utile (p95 192)
+   658.722  masque oculaire : 92 % du cadre utile (p95 192)
+   658.884  masque oculaire : 92 % du cadre utile (p95 192)
+   659.042  masque oculaire : 92 % du cadre utile (p95 192)
+   659.204  masque oculaire : 92 % du cadre utile (p95 192)
+   659.365  masque oculaire : 92 % du cadre utile (p95 192)
+   659.527  masque oculaire : 92 % du cadre utile (p95 192)
+   659.685  masque oculaire : 92 % du cadre utile (p95 192)
+   659.850  masque oculaire : 92 % du cadre utile (p95 192)
+   660.008  masque oculaire : 92 % du cadre utile (p95 192)
+   660.171  masque oculaire : 92 % du cadre utile (p95 192)
+   660.336  masque oculaire : 92 % du cadre utile (p95 192)
+   660.487  masque oculaire : 92 % du cadre utile (p95 192)
+   660.650  masque oculaire : 92 % du cadre utile (p95 192)
+   660.806  masque oculaire : 92 % du cadre utile (p95 192)
+   660.968  masque oculaire : 92 % du cadre utile (p95 192)
+   661.132  masque oculaire : 92 % du cadre utile (p95 192)
+   661.288  masque oculaire : 92 % du cadre utile (p95 192)
+   661.454  masque oculaire : 92 % du cadre utile (p95 192)
+   661.613  masque oculaire : 92 % du cadre utile (p95 192)
+   661.774  masque oculaire : 92 % du cadre utile (p95 191)
+   661.932  masque oculaire : 92 % du cadre utile (p95 192)
+   662.099  masque oculaire : 92 % du cadre utile (p95 192)
+   662.254  masque oculaire : 92 % du cadre utile (p95 192)
+   662.417  masque oculaire : 92 % du cadre utile (p95 192)
+   662.589  masque oculaire : 92 % du cadre utile (p95 192)
+   662.739  masque oculaire : 92 % du cadre utile (p95 192)
+   662.898  masque oculaire : 92 % du cadre utile (p95 191)
+   663.058  masque oculaire : 91 % du cadre utile (p95 191)
+   663.223  masque oculaire : 92 % du cadre utile (p95 191)
+   663.383  masque oculaire : 92 % du cadre utile (p95 191)
+   663.537  masque oculaire : 91 % du cadre utile (p95 191)
+   663.698  masque oculaire : 91 % du cadre utile (p95 191)
+   663.878  masque oculaire : 92 % du cadre utile (p95 191)
+   664.044  masque oculaire : 92 % du cadre utile (p95 192)
+   664.205  masque oculaire : 92 % du cadre utile (p95 192)
+   664.361  masque oculaire : 92 % du cadre utile (p95 192)
+   664.522  masque oculaire : 92 % du cadre utile (p95 192)
+   664.670  réglages enregistrés
+   664.683  masque oculaire : 92 % du cadre utile (p95 191)
+   664.815  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   664.865  masque oculaire : 92 % du cadre utile (p95 191)
+   665.030  masque oculaire : 92 % du cadre utile (p95 191)
+   665.226  masque oculaire : 92 % du cadre utile (p95 191)
+   665.384  masque oculaire : 92 % du cadre utile (p95 191)
+   665.545  masque oculaire : 92 % du cadre utile (p95 192)
+   665.718  masque oculaire : 92 % du cadre utile (p95 192)
+   665.869  masque oculaire : 92 % du cadre utile (p95 191)
+   666.029  masque oculaire : 92 % du cadre utile (p95 191)
+   666.194  masque oculaire : 92 % du cadre utile (p95 191)
+   666.353  masque oculaire : 92 % du cadre utile (p95 191)
+   666.512  masque oculaire : 91 % du cadre utile (p95 191)
+   666.680  masque oculaire : 91 % du cadre utile (p95 191)
+   666.833  masque oculaire : 91 % du cadre utile (p95 191)
+   666.993  masque oculaire : 91 % du cadre utile (p95 191)
+   667.152  masque oculaire : 91 % du cadre utile (p95 191)
+   667.312  masque oculaire : 91 % du cadre utile (p95 191)
+   667.474  masque oculaire : 91 % du cadre utile (p95 191)
+   667.634  masque oculaire : 91 % du cadre utile (p95 191)
+   667.801  masque oculaire : 91 % du cadre utile (p95 191)
+   667.957  masque oculaire : 91 % du cadre utile (p95 191)
+   668.116  masque oculaire : 91 % du cadre utile (p95 191)
+   668.276  masque oculaire : 91 % du cadre utile (p95 191)
+   668.439  masque oculaire : 91 % du cadre utile (p95 191)
+   668.598  masque oculaire : 91 % du cadre utile (p95 191)
+   668.765  masque oculaire : 92 % du cadre utile (p95 191)
+   668.923  masque oculaire : 92 % du cadre utile (p95 192)
+   669.078  masque oculaire : 92 % du cadre utile (p95 191)
+   669.238  masque oculaire : 91 % du cadre utile (p95 191)
+   669.404  masque oculaire : 91 % du cadre utile (p95 191)
+   669.561  masque oculaire : 92 % du cadre utile (p95 191)
+   669.724  masque oculaire : 92 % du cadre utile (p95 192)
+   669.881  masque oculaire : 92 % du cadre utile (p95 192)
+   670.041  masque oculaire : 92 % du cadre utile (p95 192)
+   670.213  masque oculaire : 92 % du cadre utile (p95 191)
+   670.367  masque oculaire : 91 % du cadre utile (p95 191)
+   670.526  masque oculaire : 91 % du cadre utile (p95 191)
+   670.691  masque oculaire : 91 % du cadre utile (p95 191)
+   670.846  masque oculaire : 91 % du cadre utile (p95 191)
+   671.008  masque oculaire : 91 % du cadre utile (p95 191)
+   671.170  masque oculaire : 91 % du cadre utile (p95 191)
+   671.329  masque oculaire : 91 % du cadre utile (p95 191)
+   671.487  masque oculaire : 91 % du cadre utile (p95 191)
+   671.648  === série lame_20261021_195515_bleu-video (video) « bleu video », lactophenol, objectif x50 : caméra logique 0, module physique 6, analyse 640x360, vidéo 1280x720
+   671.658  masque oculaire : 91 % du cadre utile (p95 191)
+   671.723  vidéo : enregistrement démarré
+   671.890  t0000242 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 3 positions
+   672.080  t0000432 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 6 positions
+   672.290  t0000642 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 10 positions
+   672.482  t0000834 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 13 positions
+   672.683  t0001035 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 16 positions
+   672.883  t0001235 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 20 positions
+   673.092  t0001444 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 23 positions
+   673.285  t0001637 suivi ok score 1.00 pos 0,0 net 28 (15 ms) carte 0 photos + 26 positions
+   673.486  t0001838 suivi ok score 1.00 pos 0,0 net 28 (15 ms) carte 0 photos + 30 positions
+   673.687  t0002039 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 33 positions
+   673.888  t0002240 suivi ok score 1.00 pos 0,0 net 29 (15 ms) carte 0 photos + 36 positions
+   674.093  t0002444 suivi ok score 1.00 pos 0,0 net 28 (15 ms) carte 0 photos + 40 positions
+   674.301  t0002653 suivi ok score 1.00 pos 0,0 net 29 (16 ms) carte 0 photos + 43 positions
+   674.502  t0002853 suivi ok score 1.00 pos 0,0 net 29 (22 ms) carte 0 photos + 46 positions
+   674.698  t0003049 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 50 positions
+   674.897  t0003249 suivi ok score 1.00 pos 0,0 net 29 (16 ms) carte 0 photos + 53 positions
+   675.092  t0003444 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 56 positions
+   675.296  t0003647 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 60 positions
+   675.496  t0003848 suivi ok score 1.00 pos 0,0 net 28 (14 ms) carte 0 photos + 63 positions
+   675.702  t0004054 suivi ok score 1.00 pos 0,0 net 28 (15 ms) carte 0 photos + 66 positions
+   675.910  t0004262 suivi ok score 1.00 pos 0,0 net 26 (14 ms) carte 0 photos + 70 positions
+   676.114  t0004467 suivi ok score 1.00 pos 0,0 net 25 (15 ms) carte 0 photos + 73 positions
+   676.320  t0004672 suivi ok score 1.00 pos 0,0 net 24 (16 ms) carte 0 photos + 76 positions
+   676.517  t0004869 suivi ok score 1.00 pos 0,0 net 23 (14 ms) carte 0 photos + 80 positions
+   676.720  t0005072 suivi ok score 1.00 pos 0,0 net 23 (14 ms) carte 0 photos + 83 positions
+   676.925  t0005277 suivi ok score 1.00 pos 0,0 net 23 (15 ms) carte 0 photos + 86 positions
+   677.123  t0005475 suivi ok score 1.00 pos -3,0 net 23 (14 ms) carte 0 photos + 90 positions
+   677.320  t0005672 suivi ok score 1.00 pos -3,0 net 23 (14 ms) carte 0 photos + 93 positions
+   677.525  t0005877 suivi ok score 1.00 pos -3,0 net 25 (14 ms) carte 0 photos + 96 positions
+   677.723  t0006075 suivi ok score 1.00 pos -3,0 net 25 (15 ms) carte 0 photos + 100 positions
+   677.923  t0006275 suivi ok score 1.00 pos -6,0 net 24 (14 ms) carte 0 photos + 103 positions
+   678.130  t0006482 suivi ok score 1.00 pos -6,0 net 24 (14 ms) carte 0 photos + 106 positions
+   678.324  t0006676 suivi ok score 1.00 pos -6,0 net 26 (14 ms) carte 0 photos + 110 positions
+   678.532  t0006884 suivi ok score 1.00 pos -6,0 net 24 (17 ms) carte 0 photos + 113 positions
+   678.726  t0007078 suivi ok score 1.00 pos -6,0 net 25 (15 ms) carte 0 photos + 116 positions
+   678.947  t0007298 suivi ok score 1.00 pos -6,0 net 24 (23 ms) carte 0 photos + 120 positions
+   679.129  t0007481 suivi ok score 1.00 pos -6,0 net 26 (17 ms) carte 0 photos + 123 positions
+   679.329  t0007681 suivi ok score 1.00 pos -8,0 net 31 (14 ms) carte 0 photos + 126 positions
+   679.528  t0007880 suivi ok score 1.00 pos -8,0 net 30 (14 ms) carte 0 photos + 130 positions
+   679.728  t0008080 suivi ok score 1.00 pos -8,0 net 29 (14 ms) carte 0 photos + 133 positions
+   679.929  t0008281 suivi ok score 1.00 pos -8,0 net 24 (14 ms) carte 0 photos + 136 positions
+   680.128  t0008480 suivi ok score 1.00 pos -8,0 net 20 (14 ms) carte 0 photos + 140 positions
+   680.328  t0008680 suivi ok score 1.00 pos -8,0 net 19 (14 ms) carte 0 photos + 143 positions
+   680.557  t0008909 suivi ok score 1.00 pos -8,0 net 19 (19 ms) carte 0 photos + 146 positions
+   680.753  t0009104 suivi ok score 1.00 pos -8,0 net 20 (16 ms) carte 0 photos + 150 positions
+   680.954  t0009306 suivi ok score 1.00 pos -8,0 net 21 (15 ms) carte 0 photos + 153 positions
+   681.153  t0009505 suivi ok score 1.00 pos -8,0 net 22 (14 ms) carte 0 photos + 156 positions
+   681.351  t0009703 suivi ok score 1.00 pos -8,0 net 26 (14 ms) carte 0 photos + 160 positions
+   681.554  t0009906 suivi ok score 1.00 pos -8,0 net 27 (16 ms) carte 0 photos + 163 positions
+   681.756  t0010108 suivi ok score 1.00 pos -8,0 net 25 (14 ms) carte 0 photos + 166 positions
+   681.955  t0010307 suivi ok score 1.00 pos -8,0 net 21 (14 ms) carte 0 photos + 170 positions
+   682.165  t0010516 suivi ok score 1.00 pos -8,0 net 19 (22 ms) carte 0 photos + 173 positions
+   682.365  t0010716 suivi ok score 1.00 pos -8,0 net 22 (15 ms) carte 0 photos + 176 positions
+   682.565  t0010917 suivi ok score 1.00 pos -8,0 net 31 (14 ms) carte 0 photos + 180 positions
+   682.758  t0011110 suivi ok score 1.00 pos -6,0 net 30 (15 ms) carte 0 photos + 183 positions
+   682.962  t0011314 suivi ok score 1.00 pos -6,0 net 30 (14 ms) carte 0 photos + 186 positions
+   683.171  t0011522 suivi ok score 1.00 pos -6,0 net 26 (17 ms) carte 0 photos + 190 positions
+   683.367  t0011719 suivi ok score 1.00 pos -6,0 net 25 (14 ms) carte 0 photos + 193 positions
+   683.566  t0011918 suivi ok score 1.00 pos -6,0 net 24 (15 ms) carte 0 photos + 196 positions
+   683.765  t0012116 suivi ok score 1.00 pos -6,0 net 24 (14 ms) carte 0 photos + 200 positions
+   683.969  t0012321 suivi ok score 1.00 pos -3,0 net 25 (14 ms) carte 0 photos + 203 positions
+   684.160  t0012512 suivi ok score 1.00 pos -3,0 net 25 (14 ms) carte 0 photos + 206 positions
+   684.368  t0012720 suivi ok score 1.00 pos -3,0 net 25 (15 ms) carte 0 photos + 210 positions
+   684.570  t0012922 suivi ok score 1.00 pos -3,0 net 23 (15 ms) carte 0 photos + 213 positions
+   684.768  t0013120 suivi ok score 1.00 pos 0,0 net 23 (14 ms) carte 0 photos + 216 positions
+   684.970  t0013321 suivi ok score 1.00 pos 0,0 net 23 (14 ms) carte 0 photos + 220 positions
+   685.167  t0013519 suivi ok score 1.00 pos 0,0 net 23 (14 ms) carte 0 photos + 223 positions
+   685.370  t0013722 suivi ok score 1.00 pos 0,0 net 24 (14 ms) carte 0 photos + 226 positions
+   685.595  t0013947 suivi ok score 1.00 pos 0,0 net 24 (15 ms) carte 0 photos + 230 positions
+   685.805  t0014157 suivi ok score 1.00 pos 0,0 net 25 (14 ms) carte 0 photos + 233 positions
+   685.989  t0014341 suivi ok score 1.00 pos 0,0 net 25 (15 ms) carte 0 photos + 236 positions
+   686.198  t0014550 suivi ok score 1.00 pos 0,0 net 26 (14 ms) carte 0 photos + 240 positions
+   686.393  t0014745 suivi ok score 1.00 pos 0,0 net 27 (14 ms) carte 0 photos + 243 positions
+   686.597  t0014949 suivi ok score 1.00 pos 0,0 net 27 (15 ms) carte 0 photos + 246 positions
+   686.816  t0015168 suivi ok score 1.00 pos 0,0 net 28 (14 ms) carte 0 photos + 250 positions
+   687.024  t0015376 suivi ok score 1.00 pos 0,0 net 29 (18 ms) carte 0 photos + 253 positions
+   687.216  t0015568 suivi ok score 1.00 pos 0,0 net 28 (14 ms) carte 0 photos + 256 positions
+   687.438  t0015789 suivi ok score 1.00 pos 0,0 net 28 (14 ms) carte 0 photos + 260 positions
+   687.637  t0015989 suivi ok score 1.00 pos 0,0 net 28 (15 ms) carte 0 photos + 263 positions
+   687.853  t0016205 suivi ok score 1.00 pos 0,0 net 28 (21 ms) carte 0 photos + 266 positions
+   688.043  t0016395 suivi ok score 1.00 pos 0,0 net 28 (15 ms) carte 0 photos + 270 positions
+   688.244  t0016596 suivi ok score 1.00 pos 0,0 net 28 (14 ms) carte 0 photos + 273 positions
+   688.450  t0016802 suivi ok score 1.00 pos 0,0 net 28 (14 ms) carte 0 photos + 276 positions
+   688.645  t0016996 suivi ok score 1.00 pos 0,0 net 28 (14 ms) carte 0 photos + 280 positions
+   688.843  t0017195 suivi ok score 1.00 pos 0,0 net 28 (14 ms) carte 0 photos + 283 positions
+   689.043  t0017395 suivi ok score 1.00 pos 0,0 net 27 (14 ms) carte 0 photos + 286 positions
+   689.244  t0017596 suivi ok score 1.00 pos 0,0 net 27 (15 ms) carte 0 photos + 290 positions
+   689.450  t0017802 suivi ok score 1.00 pos 0,0 net 26 (14 ms) carte 0 photos + 293 positions
+   689.650  t0018002 suivi ok score 1.00 pos 0,0 net 27 (16 ms) carte 0 photos + 296 positions
+   689.854  t0018205 suivi ok score 1.00 pos 0,0 net 26 (19 ms) carte 0 photos + 300 positions
+   690.048  t0018400 suivi ok score 1.00 pos 0,0 net 27 (14 ms) carte 0 photos + 300 positions
+   690.255  t0018607 suivi ok score 1.00 pos 0,0 net 26 (14 ms) carte 0 photos + 300 positions
+   690.452  t0018804 suivi ok score 1.00 pos 0,0 net 27 (14 ms) carte 0 photos + 300 positions
+   690.650  t0019001 suivi ok score 1.00 pos 0,0 net 25 (14 ms) carte 0 photos + 300 positions
+   690.863  t0019216 suivi ok score 1.00 pos 0,0 net 24 (15 ms) carte 0 photos + 300 positions
+   691.072  t0019424 suivi ok score 1.00 pos 0,0 net 29 (15 ms) carte 0 photos + 300 positions
+   691.279  t0019631 suivi ok score 1.00 pos 3,0 net 29 (18 ms) carte 0 photos + 300 positions
+   691.486  t0019838 suivi ok score 1.00 pos 3,0 net 29 (23 ms) carte 0 photos + 300 positions
+   691.674  t0020026 suivi ok score 1.00 pos 3,0 net 27 (15 ms) carte 0 photos + 300 positions
+   691.875  t0020227 suivi ok score 1.00 pos 3,0 net 24 (14 ms) carte 0 photos + 300 positions
+   692.078  t0020430 suivi ok score 1.00 pos 3,0 net 23 (15 ms) carte 0 photos + 300 positions
+   692.282  t0020634 suivi ok score 1.00 pos 3,0 net 21 (15 ms) carte 0 photos + 300 positions
+   692.474  t0020826 suivi ok score 1.00 pos 3,0 net 22 (14 ms) carte 0 photos + 300 positions
+   692.687  t0021039 suivi ok score 1.00 pos 3,0 net 22 (18 ms) carte 0 photos + 300 positions
+   692.877  t0021228 suivi ok score 1.00 pos 3,0 net 23 (15 ms) carte 0 photos + 300 positions
+   693.073  t0021425 suivi ok score 1.00 pos 3,0 net 23 (14 ms) carte 0 photos + 300 positions
+   693.278  t0021630 suivi ok score 1.00 pos 3,0 net 28 (14 ms) carte 0 photos + 300 positions
+   693.480  t0021832 suivi ok score 1.00 pos 3,0 net 26 (15 ms) carte 0 photos + 300 positions
+   693.680  t0022032 suivi ok score 1.00 pos 0,0 net 30 (15 ms) carte 0 photos + 300 positions
+   693.893  t0022245 suivi ok score 1.00 pos 0,0 net 26 (16 ms) carte 0 photos + 300 positions
+   694.085  t0022437 suivi ok score 1.00 pos 0,0 net 26 (16 ms) carte 0 photos + 300 positions
+   694.286  t0022638 suivi ok score 1.00 pos 0,0 net 29 (15 ms) carte 0 photos + 300 positions
+   694.484  t0022836 suivi ok score 1.00 pos 0,0 net 26 (14 ms) carte 0 photos + 300 positions
+   694.696  t0023048 suivi ok score 1.00 pos 0,0 net 27 (18 ms) carte 0 photos + 300 positions
+   694.886  t0023238 suivi ok score 1.00 pos 0,0 net 27 (16 ms) carte 0 photos + 300 positions
+   695.094  t0023446 suivi ok score 1.00 pos 0,0 net 27 (14 ms) carte 0 photos + 300 positions
+   695.288  t0023640 suivi ok score 1.00 pos 0,0 net 28 (15 ms) carte 0 photos + 300 positions
+   695.498  t0023850 suivi ok score 1.00 pos 0,0 net 28 (21 ms) carte 0 photos + 300 positions
+   695.687  t0024039 suivi ok score 1.00 pos 0,0 net 28 (14 ms) carte 0 photos + 300 positions
+   695.892  t0024244 suivi ok score 1.00 pos 0,0 net 27 (15 ms) carte 0 photos + 300 positions
+   696.090  t0024442 suivi ok score 1.00 pos 0,0 net 26 (14 ms) carte 0 photos + 300 positions
+   696.306  t0024658 suivi ok score 1.00 pos 0,0 net 25 (17 ms) carte 0 photos + 300 positions
+   696.485  t0024837 suivi ok score 1.00 pos 0,0 net 24 (14 ms) carte 0 photos + 300 positions
+   696.687  t0025039 suivi ok score 1.00 pos 0,0 net 24 (14 ms) carte 0 photos + 300 positions
+   696.896  t0025248 suivi ok score 1.00 pos 0,0 net 24 (14 ms) carte 0 photos + 300 positions
+   697.104  t0025455 suivi ok score 1.00 pos 0,0 net 24 (17 ms) carte 0 photos + 300 positions
+   697.301  t0025653 suivi ok score 1.00 pos 0,0 net 23 (14 ms) carte 0 photos + 300 positions
+   697.497  t0025849 suivi ok score 1.00 pos 0,0 net 23 (14 ms) carte 0 photos + 300 positions
+   697.697  t0026049 suivi ok score 1.00 pos -3,0 net 23 (15 ms) carte 0 photos + 300 positions
+   697.896  t0026248 suivi ok score 1.00 pos -3,0 net 24 (17 ms) carte 0 photos + 300 positions
+   698.097  t0026449 suivi ok score 1.00 pos -3,0 net 24 (14 ms) carte 0 photos + 300 positions
+   698.310  t0026662 suivi ok score 1.00 pos -3,0 net 25 (22 ms) carte 0 photos + 300 positions
+   698.499  t0026851 suivi ok score 1.00 pos 0,0 net 23 (14 ms) carte 0 photos + 300 positions
+   698.702  t0027054 suivi ok score 1.00 pos 0,0 net 23 (15 ms) carte 0 photos + 300 positions
+   698.897  t0027249 suivi ok score 1.00 pos 0,0 net 23 (14 ms) carte 0 photos + 300 positions
+   699.108  t0027460 suivi ok score 1.00 pos 0,0 net 25 (14 ms) carte 0 photos + 300 positions
+   699.298  t0027650 suivi ok score 1.00 pos 0,0 net 27 (14 ms) carte 0 photos + 300 positions
+   699.502  t0027854 suivi ok score 1.00 pos 0,0 net 28 (15 ms) carte 0 photos + 300 positions
+   699.718  t0028070 suivi ok score 1.00 pos 0,0 net 29 (22 ms) carte 0 photos + 300 positions
+   699.905  t0028256 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 300 positions
+   700.101  t0028453 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 300 positions
+   700.310  t0028662 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 300 positions
+   700.506  t0028858 suivi ok score 1.00 pos 0,0 net 29 (15 ms) carte 0 photos + 300 positions
+   700.710  t0029062 suivi ok score 1.00 pos 0,0 net 29 (15 ms) carte 0 photos + 300 positions
+   700.922  t0029273 suivi ok score 1.00 pos 0,0 net 28 (22 ms) carte 0 photos + 300 positions
+   701.107  t0029459 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 300 positions
+   701.314  t0029665 suivi ok score 1.00 pos 0,0 net 28 (16 ms) carte 0 photos + 300 positions
+   701.513  t0029865 suivi ok score 1.00 pos 0,0 net 28 (15 ms) carte 0 photos + 300 positions
+   701.712  t0030064 suivi ok score 1.00 pos 0,0 net 29 (15 ms) carte 0 photos + 300 positions
+   701.921  t0030273 suivi ok score 1.00 pos 0,0 net 29 (17 ms) carte 0 photos + 300 positions
+   702.112  t0030464 suivi ok score 1.00 pos 0,0 net 29 (14 ms) carte 0 photos + 300 positions
+   702.312  t0030664 suivi ok score 1.00 pos 3,5 net 29 (14 ms) carte 0 photos + 300 positions
+   702.522  t0030873 suivi ok score 1.00 pos 3,-23 net 27 (21 ms) carte 0 photos + 300 positions
+   702.714  t0031066 suivi ok score 1.00 pos 0,-81 net 26 (14 ms) carte 0 photos + 300 positions
+   702.916  t0031268 suivi ok score 1.00 pos -3,-154 net 24 (14 ms) carte 0 photos + 300 positions
+   703.116  t0031468 suivi ok score 1.00 pos -10,-389 net 24 (12 ms) carte 0 photos + 300 positions
+   703.313  t0031665 suivi ok score 1.00 pos -24,-683 net 29 (14 ms) carte 0 photos + 300 positions
+   703.524  t0031876 suivi ok score 1.00 pos -24,-684 net 29 (16 ms) carte 0 photos + 300 positions
+   703.716  t0032067 suivi ok score 1.00 pos -24,-684 net 29 (13 ms) carte 0 photos + 300 positions
+   703.923  t0032275 suivi ok score 1.00 pos -24,-684 net 29 (16 ms) carte 0 photos + 300 positions
+   704.131  t0032483 suivi ok score 1.00 pos -24,-684 net 28 (17 ms) carte 0 photos + 300 positions
+   704.327  t0032679 suivi ok score 1.00 pos -24,-684 net 28 (21 ms) carte 0 photos + 300 positions
+   704.517  t0032869 suivi ok score 1.00 pos -24,-684 net 30 (12 ms) carte 0 photos + 300 positions
+   704.722  t0033074 suivi ok score 1.00 pos -24,-684 net 31 (13 ms) carte 0 photos + 300 positions
+   704.929  t0033280 suivi ok score 1.00 pos -24,-684 net 32 (15 ms) carte 0 photos + 300 positions
+   705.134  t0033486 suivi ok score 1.00 pos -24,-684 net 35 (13 ms) carte 0 photos + 300 positions
+   705.330  t0033682 suivi ok score 1.00 pos -24,-684 net 37 (21 ms) carte 0 photos + 300 positions
+   705.528  t0033880 suivi ok score 1.00 pos -22,-684 net 33 (13 ms) carte 0 photos + 300 positions
+   705.726  t0034078 suivi ok score 1.00 pos -22,-684 net 34 (13 ms) carte 0 photos + 300 positions
+   705.926  t0034278 suivi ok score 1.00 pos -24,-684 net 34 (13 ms) carte 0 photos + 300 positions
+   706.123  t0034475 suivi ok score 1.00 pos -24,-684 net 34 (14 ms) carte 0 photos + 300 positions
+   706.329  t0034681 suivi ok score 1.00 pos -24,-684 net 34 (13 ms) carte 0 photos + 300 positions
+   706.526  t0034878 suivi ok score 1.00 pos -24,-684 net 32 (13 ms) carte 0 photos + 300 positions
+   706.727  t0035079 suivi ok score 1.00 pos -24,-684 net 35 (13 ms) carte 0 photos + 300 positions
+   706.941  t0035293 suivi ok score 1.00 pos -24,-684 net 34 (21 ms) carte 0 photos + 300 positions
+   707.129  t0035481 suivi ok score 1.00 pos -24,-684 net 31 (13 ms) carte 0 photos + 300 positions
+   707.342  t0035694 suivi ok score 1.00 pos -24,-684 net 31 (21 ms) carte 0 photos + 300 positions
+   707.533  t0035885 suivi ok score 1.00 pos -24,-684 net 30 (15 ms) carte 0 photos + 300 positions
+   707.743  t0036095 suivi ok score 1.00 pos -24,-684 net 30 (16 ms) carte 0 photos + 300 positions
+   707.942  t0036292 suivi ok score 1.00 pos -24,-684 net 30 (17 ms) carte 0 photos + 300 positions
+   708.137  t0036489 suivi ok score 1.00 pos -24,-684 net 28 (12 ms) carte 0 photos + 300 positions
+   708.342  t0036694 suivi ok score 1.00 pos -27,-684 net 28 (21 ms) carte 0 photos + 300 positions
+   708.541  t0036893 suivi ok score 1.00 pos -27,-684 net 29 (13 ms) carte 0 photos + 300 positions
+   708.746  t0037098 suivi ok score 1.00 pos -27,-685 net 29 (20 ms) carte 0 photos + 300 positions
+   708.938  t0037289 suivi ok score 1.00 pos -27,-685 net 29 (13 ms) carte 0 photos + 300 positions
+   709.137  t0037489 suivi ok score 1.00 pos -27,-685 net 29 (13 ms) carte 0 photos + 300 positions
+   709.335  t0037687 suivi ok score 1.00 pos -27,-689 net 30 (13 ms) carte 0 photos + 300 positions
+   709.536  t0037888 suivi ok score 1.00 pos -27,-689 net 30 (13 ms) carte 0 photos + 300 positions
+   709.746  t0038098 suivi ok score 1.00 pos -27,-687 net 29 (21 ms) carte 0 photos + 300 positions
+   709.949  t0038300 suivi ok score 1.00 pos -27,-684 net 26 (15 ms) carte 0 photos + 300 positions
+   710.139  t0038491 suivi ok score 1.00 pos -28,-685 net 26 (14 ms) carte 0 photos + 300 positions
+   710.347  t0038699 suivi ok score 1.00 pos -27,-684 net 26 (15 ms) carte 0 photos + 300 positions
+   710.552  t0038904 suivi ok score 1.00 pos -30,-684 net 27 (20 ms) carte 0 photos + 300 positions
+   710.743  t0039095 suivi ok score 1.00 pos -30,-684 net 29 (12 ms) carte 0 photos + 300 positions
+   710.946  t0039298 suivi ok score 1.00 pos -30,-684 net 30 (15 ms) carte 0 photos + 300 positions
+   711.153  t0039505 suivi ok score 1.00 pos -30,-684 net 29 (15 ms) carte 0 photos + 300 positions
+   711.347  t0039699 suivi ok score 1.00 pos -30,-684 net 28 (15 ms) carte 0 photos + 300 positions
+   711.547  t0039898 suivi ok score 1.00 pos -30,-684 net 29 (13 ms) carte 0 photos + 300 positions
+   711.754  t0040106 suivi ok score 1.00 pos -30,-684 net 30 (19 ms) carte 0 photos + 300 positions
+   711.947  t0040299 suivi ok score 1.00 pos -30,-689 net 26 (13 ms) carte 0 photos + 300 positions
+   712.155  t0040507 suivi ok score 1.00 pos -27,-689 net 26 (19 ms) carte 0 photos + 300 positions
+   712.353  t0040705 suivi ok score 1.00 pos -30,-689 net 28 (15 ms) carte 0 photos + 300 positions
+   712.565  t0040917 suivi ok score 1.00 pos -47,-689 net 28 (13 ms) carte 0 photos + 300 positions
+   712.775  t0041127 suivi ok score 1.00 pos -154,-684 net 22 (19 ms) carte 0 photos + 300 positions
+   712.968  t0041320 suivi ok score 1.00 pos -308,-679 net 21 (13 ms) carte 0 photos + 300 positions
+   713.186  t0041537 suivi ok score 1.00 pos -452,-669 net 24 (15 ms) carte 0 photos + 300 positions
+   713.386  t0041737 suivi ok score 1.00 pos -474,-669 net 28 (13 ms) carte 0 photos + 300 positions
+   713.584  t0041935 suivi ok score 1.00 pos -472,-669 net 28 (24 ms) carte 0 photos + 300 positions
+   713.777  t0042129 suivi ok score 1.00 pos -469,-669 net 27 (15 ms) carte 0 photos + 300 positions
+   713.988  t0042339 suivi ok score 1.00 pos -469,-669 net 29 (14 ms) carte 0 photos + 300 positions
+   714.189  t0042541 suivi ok score 1.00 pos -469,-669 net 31 (14 ms) carte 0 photos + 300 positions
+   714.384  t0042735 suivi ok score 1.00 pos -469,-669 net 32 (16 ms) carte 0 photos + 300 positions
+   714.590  t0042942 suivi ok score 1.00 pos -466,-669 net 30 (14 ms) carte 0 photos + 300 positions
+   714.796  t0043148 suivi ok score 1.00 pos -466,-669 net 30 (19 ms) carte 0 photos + 300 positions
+   714.985  t0043337 suivi ok score 1.00 pos -463,-669 net 31 (14 ms) carte 0 photos + 300 positions
+   715.179  t0043530 suivi ok score 1.00 pos -463,-664 net 34 (13 ms) carte 0 photos + 300 positions
+   715.375  t0043727 suivi ok score 1.00 pos -461,-664 net 28 (13 ms) carte 0 photos + 300 positions
+   715.591  t0043943 suivi ok score 1.00 pos -458,-664 net 37 (14 ms) carte 0 photos + 300 positions
+   715.785  t0044137 suivi ok score 1.00 pos -458,-664 net 35 (14 ms) carte 0 photos + 300 positions
+   715.978  t0044330 suivi ok score 1.00 pos -460,-664 net 32 (14 ms) carte 0 photos + 300 positions
+   716.183  t0044535 suivi ok score 1.00 pos -463,-664 net 30 (14 ms) carte 0 photos + 300 positions
+   716.381  t0044733 suivi ok score 1.00 pos -463,-664 net 28 (14 ms) carte 0 photos + 300 positions
+   716.582  t0044933 suivi ok score 1.00 pos -466,-669 net 33 (13 ms) carte 0 photos + 300 positions
+   716.786  t0045137 suivi ok score 1.00 pos -466,-669 net 32 (14 ms) carte 0 photos + 300 positions
+   716.982  t0045334 suivi ok score 1.00 pos -466,-669 net 31 (14 ms) carte 0 photos + 300 positions
+   717.189  t0045541 suivi ok score 1.00 pos -466,-669 net 32 (16 ms) carte 0 photos + 300 positions
+   717.391  t0045743 suivi ok score 1.00 pos -469,-669 net 32 (13 ms) carte 0 photos + 300 positions
+   717.589  t0045941 suivi ok score 1.00 pos -469,-669 net 32 (14 ms) carte 0 photos + 300 positions
+   717.789  t0046141 suivi ok score 1.00 pos -469,-669 net 32 (14 ms) carte 0 photos + 300 positions
+   718.002  t0046354 suivi ok score 1.00 pos -469,-669 net 32 (14 ms) carte 0 photos + 300 positions
+   718.198  t0046549 suivi ok score 1.00 pos -469,-669 net 31 (13 ms) carte 0 photos + 300 positions
+   718.393  t0046745 suivi ok score 1.00 pos -469,-669 net 31 (15 ms) carte 0 photos + 300 positions
+   718.596  t0046948 suivi ok score 1.00 pos -469,-669 net 29 (13 ms) carte 0 photos + 300 positions
+   718.794  t0047146 suivi ok score 1.00 pos -469,-669 net 29 (14 ms) carte 0 photos + 300 positions
+   719.000  t0047352 suivi ok score 1.00 pos -469,-669 net 29 (14 ms) carte 0 photos + 300 positions
+   719.202  t0047553 suivi ok score 1.00 pos -469,-669 net 29 (13 ms) carte 0 photos + 300 positions
+   719.398  t0047749 suivi ok score 1.00 pos -469,-669 net 28 (15 ms) carte 0 photos + 300 positions
+   719.593  t0047944 suivi ok score 1.00 pos -472,-669 net 27 (13 ms) carte 0 photos + 300 positions
+   719.809  t0048161 suivi ok score 1.00 pos -472,-669 net 26 (22 ms) carte 0 photos + 300 positions
+   720.008  t0048359 suivi ok score 1.00 pos -472,-669 net 26 (13 ms) carte 0 photos + 300 positions
+   720.199  t0048551 suivi ok score 1.00 pos -472,-669 net 26 (13 ms) carte 0 photos + 300 positions
+   720.405  t0048756 suivi ok score 1.00 pos -472,-669 net 27 (13 ms) carte 0 photos + 300 positions
+   720.602  t0048953 suivi ok score 1.00 pos -472,-669 net 28 (14 ms) carte 0 photos + 300 positions
+   720.814  t0049166 suivi ok score 1.00 pos -472,-669 net 29 (14 ms) carte 0 photos + 300 positions
+   721.018  t0049370 suivi ok score 1.00 pos -472,-669 net 28 (14 ms) carte 0 photos + 300 positions
+   721.222  t0049573 suivi ok score 1.00 pos -472,-669 net 28 (13 ms) carte 0 photos + 300 positions
+   721.429  t0049781 suivi ok score 1.00 pos -472,-669 net 27 (14 ms) carte 0 photos + 300 positions
+   721.620  t0049972 suivi ok score 1.00 pos -472,-669 net 28 (14 ms) carte 0 photos + 300 positions
+   721.841  t0050192 suivi ok score 1.00 pos -472,-669 net 28 (27 ms) carte 0 photos + 300 positions
+   722.024  t0050375 suivi ok score 1.00 pos -472,-669 net 27 (13 ms) carte 0 photos + 300 positions
+   722.226  t0050578 suivi ok score 1.00 pos -469,-669 net 28 (15 ms) carte 0 photos + 300 positions
+   722.427  t0050778 suivi ok score 1.00 pos -469,-669 net 27 (14 ms) carte 0 photos + 300 positions
+   722.626  t0050978 suivi ok score 1.00 pos -469,-669 net 26 (15 ms) carte 0 photos + 300 positions
+   722.830  t0051182 suivi ok score 1.00 pos -469,-669 net 27 (18 ms) carte 0 photos + 300 positions
+   723.033  t0051385 suivi ok score 1.00 pos -469,-669 net 27 (14 ms) carte 0 photos + 300 positions
+   723.234  t0051586 suivi ok score 1.00 pos -469,-669 net 27 (14 ms) carte 0 photos + 300 positions
+   723.431  t0051783 suivi ok score 1.00 pos -469,-669 net 30 (13 ms) carte 0 photos + 300 positions
+   723.633  t0051984 suivi ok score 1.00 pos -467,-669 net 30 (13 ms) carte 0 photos + 300 positions
+   723.834  t0052185 suivi ok score 1.00 pos -466,-669 net 31 (13 ms) carte 0 photos + 300 positions
+   724.033  t0052385 suivi ok score 1.00 pos -466,-669 net 31 (14 ms) carte 0 photos + 300 positions
+   724.261  t0052613 suivi ok score 1.00 pos -466,-669 net 30 (14 ms) carte 0 photos + 300 positions
+   724.456  t0052808 suivi ok score 1.00 pos -463,-654 net 31 (14 ms) carte 0 photos + 300 positions
+   724.655  t0053007 suivi ok score 1.00 pos -460,-619 net 28 (13 ms) carte 0 photos + 300 positions
+   724.850  t0053201 suivi ok score 1.00 pos -456,-514 net 19 (13 ms) carte 0 photos + 300 positions
+   725.057  t0053409 suivi ok score 1.00 pos -449,-323 net 18 (13 ms) carte 0 photos + 300 positions
+   725.262  t0053614 suivi ok score 1.00 pos -435,20 net 19 (15 ms) carte 0 photos + 300 positions
+   725.463  t0053815 suivi ok score 1.00 pos -430,150 net 21 (14 ms) carte 0 photos + 300 positions
+   725.657  t0054009 suivi ok score 1.00 pos -430,171 net 30 (14 ms) carte 0 photos + 300 positions
+   725.857  t0054208 suivi ok score 1.00 pos -430,176 net 30 (13 ms) carte 0 photos + 300 positions
+   726.064  t0054415 suivi ok score 1.00 pos -432,176 net 29 (14 ms) carte 0 photos + 300 positions
+   726.262  t0054614 suivi ok score 1.00 pos -430,181 net 25 (14 ms) carte 0 photos + 300 positions
+   726.466  t0054817 suivi ok score 1.00 pos -430,181 net 27 (17 ms) carte 0 photos + 300 positions
+   726.665  t0055017 suivi ok score 1.00 pos -430,181 net 28 (15 ms) carte 0 photos + 300 positions
+   726.857  t0055209 suivi ok score 1.00 pos -430,181 net 34 (14 ms) carte 0 photos + 300 positions
+   727.065  t0055417 suivi ok score 1.00 pos -427,181 net 34 (17 ms) carte 0 photos + 300 positions
+   727.261  t0055613 suivi ok score 1.00 pos -427,181 net 30 (14 ms) carte 0 photos + 300 positions
+   727.469  t0055821 suivi ok score 1.00 pos -427,181 net 23 (17 ms) carte 0 photos + 300 positions
+   727.662  t0056014 suivi ok score 1.00 pos -424,186 net 26 (15 ms) carte 0 photos + 300 positions
+   727.880  t0056232 suivi ok score 1.00 pos -424,186 net 26 (14 ms) carte 0 photos + 300 positions
+   728.090  t0056442 suivi ok score 1.00 pos -427,181 net 24 (16 ms) carte 0 photos + 300 positions
+   728.283  t0056635 suivi ok score 1.00 pos -430,181 net 34 (14 ms) carte 0 photos + 300 positions
+   728.494  t0056845 suivi ok score 1.00 pos -430,181 net 27 (16 ms) carte 0 photos + 300 positions
+   728.694  t0057046 suivi ok score 1.00 pos -432,181 net 26 (14 ms) carte 0 photos + 300 positions
+   728.893  t0057244 suivi ok score 1.00 pos -432,176 net 28 (14 ms) carte 0 photos + 300 positions
+   729.095  t0057447 suivi ok score 1.00 pos -432,176 net 31 (14 ms) carte 0 photos + 300 positions
+   729.293  t0057645 suivi ok score 1.00 pos -432,176 net 32 (14 ms) carte 0 photos + 300 positions
+   729.492  t0057844 suivi ok score 1.00 pos -432,176 net 32 (14 ms) carte 0 photos + 300 positions
+   729.704  t0058056 suivi ok score 1.00 pos -432,176 net 31 (22 ms) carte 0 photos + 300 positions
+   729.899  t0058251 suivi ok score 1.00 pos -432,176 net 32 (14 ms) carte 0 photos + 300 positions
+   730.102  t0058454 suivi ok score 1.00 pos -432,176 net 32 (14 ms) carte 0 photos + 300 positions
+   730.296  t0058648 suivi ok score 1.00 pos -432,176 net 32 (14 ms) carte 0 photos + 300 positions
+   730.496  t0058848 suivi ok score 1.00 pos -432,176 net 32 (14 ms) carte 0 photos + 300 positions
+   730.799  vidéo : fin (708 Mo, erreur 0)
