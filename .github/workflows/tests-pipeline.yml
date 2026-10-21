@@ -20,6 +20,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Machine
+        run: |
+          echo "processeur : $(lscpu | sed -n 's/^Model name: *//p') ; $(nproc) coeurs ; $(lscpu | grep -o 'avx512[a-z]*' | head -1 || true)" | tee machine.txt
       - name: Outils
         run: |
           sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
@@ -59,6 +62,7 @@ jobs:
           name: tests-pipeline
           path: |
             tests.log
+            machine.txt
             raw/_tests/**/pipeline.log
             raw/_tests/**/layout.json
             apercus/*.jpg
