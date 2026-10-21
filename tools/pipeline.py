@@ -979,13 +979,23 @@ try:
         rows.extend([eq, eq, eq, eq + 1, eq + 1, eq + 1]); cols.extend([base_g, base_g + 1, base_g + 2, base_g, base_g + 1, base_g + 3])
         vals.extend([-float(q[0]), float(q[1]), -1.0, -float(q[1]), -float(q[0]), -1.0])
         rhs.extend([r1[0], r1[1]]); eq += 2
+    # rappel d'echelle : toutes les photos viennent du meme objectif, leur echelle relative reste proche de 1. Sans ce rappel,
+    # un groupe d'images mal relie au reste peut « s'effondrer » (echelle -> 0 : ses residus internes s'annulent) ;
+    # 22 images sur 53 de bleu aspergillus x10 l'avaient fait. Residu en px de recalage : R (a - cos t0), R (b - sin t0), R = demi-diagonale.
+    n_anchor_eq = eq
+    R_PRIOR = 0.5 * math.hypot(*regs[ref].shape[:2])
+    for k, n in idx.items():
+        t0_ = math.atan2(T[k][1, 0], T[k][0, 0]); base = 4 * n
+        rows.extend([eq, eq + 1]); cols.extend([base, base + 1]); vals.extend([R_PRIOR, R_PRIOR])
+        rhs.extend([R_PRIOR * math.cos(t0_), R_PRIOR * math.sin(t0_)]); eq += 2
     Amat = sp.csr_matrix((vals, (rows, cols)), shape=(eq, 4 * len(idx) + nG))
     bvec = np.array(rhs)
     x0 = np.zeros(4 * len(idx) + nG)
     for k, n in idx.items():
         x0[4 * n:4 * n + 4] = [T[k][0, 0], T[k][1, 0], T[k][0, 2], T[k][1, 2]]
     if nG: x0[base_g:base_g + 4] = [G_init[0, 0], G_init[1, 0], G_init[0, 2], G_init[1, 2]]
-    is_anchor = np.zeros(eq // 2, bool); is_anchor[n_pair_eq // 2:] = True
+    is_anchor = np.zeros(eq // 2, bool); is_anchor[n_pair_eq // 2:n_anchor_eq // 2] = True
+    is_prior = np.zeros(eq // 2, bool); is_prior[n_anchor_eq // 2:] = True
     W_ANCHOR, DELTA_ANCHOR = 0.5, 8.0    # poids relatif et seuil Huber (px de recalage) des ancrages : ils corrigent la derive sans ecraser le recalage fin
     x = x0.copy(); w = np.where(np.repeat(is_anchor, 2), W_ANCHOR, 1.0)
     for it in range(5):
@@ -996,7 +1006,7 @@ try:
         except np.linalg.LinAlgError: x = spl.lsqr(sp.diags(np.sqrt(w)) @ Amat, np.sqrt(w) * bvec, x0=x, atol=1e-10, btol=1e-10, iter_lim=20000)[0]
         res_v = Amat @ x - bvec
         rp = np.hypot(res_v[0::2], res_v[1::2])
-        delta = np.where(is_anchor, DELTA_ANCHOR, 2.0)
+        delta = np.where(is_anchor, DELTA_ANCHOR, np.where(is_prior, 1e9, 2.0))
         wp = np.where(rp <= delta, 1.0, delta / np.maximum(rp, 1e-6)) * np.where(is_anchor, W_ANCHOR, 1.0)
         w = np.repeat(wp, 2)
     for k, n in idx.items():
@@ -1028,13 +1038,14 @@ try:
                     vals.extend([-float(q[0]), float(q[1]), -1.0, -float(q[1]), -float(q[0]), -1.0])
                     rhs.extend([r1[0], r1[1]]); eq += 2
                 Amat = sp.csr_matrix((vals, (rows, cols)), shape=(eq, 4 * len(idx) + nG)); bvec = np.array(rhs)
-                is_anchor = np.zeros(eq // 2, bool); is_anchor[n_pair_eq // 2:] = True
+                is_prior = np.concatenate([is_prior, np.zeros(eq // 2 - len(is_prior), bool)])   # les nouveaux ancrages viennent apres le rappel d'echelle
+                is_anchor = np.zeros(eq // 2, bool); is_anchor[n_pair_eq // 2:] = True; is_anchor &= ~is_prior
                 w = np.where(np.repeat(is_anchor, 2), W_ANCHOR, 1.0)
                 for it in range(5):
                     Wd = sp.diags(w); AtWA = (Amat.T @ Wd @ Amat).toarray(); AtWb = Amat.T @ (w * bvec)
                     x = np.linalg.solve(AtWA + 1e-9 * np.eye(len(AtWA)), AtWb)
                     res_v = Amat @ x - bvec; rp = np.hypot(res_v[0::2], res_v[1::2])
-                    delta = np.where(is_anchor, DELTA_ANCHOR, 2.0)
+                    delta = np.where(is_anchor, DELTA_ANCHOR, np.where(is_prior, 1e9, 2.0))
                     wp = np.where(rp <= delta, 1.0, delta / np.maximum(rp, 1e-6)) * np.where(is_anchor, W_ANCHOR, 1.0); w = np.repeat(wp, 2)
                 for k, n in idx.items():
                     a_, b_, tx, ty = x[4 * n:4 * n + 4]; T[k] = np.array([[a_, -b_, tx], [b_, a_, ty], [0, 0, 1]])
