@@ -136,7 +136,7 @@ const FIELDS = [{"id":"0000","pts":[[1454,1541],[1484,3548],[-21,3571],[-51,1563
 const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
 const ZSTACK = null;      // {levels, tiles:[...]} ou null
 const QUALITY = {"grade": "A", "notes": [], "frames": {"candidates": 52, "blurred": 0, "selected": 42, "used": 42, "tracked_only": 0}, "residual_px": 1.16, "residual_max_px": 5.26, "holes": [], "holes_frac": 0.0, "coverage_px": 33203276, "coverage_mm2": null, "low_sharp_frac": 0.0, "gain_spread_pct": 8.7, "flat_field": "médiane", "k1": -0.01, "zstack_fields": 0, "zstack_levels": 0};    // rapport du pipeline ({} si absent)
-const CHILDREN = [{"slug": "pv-7445-obj-x100-10201932", "title": "pv 7445 (obj. x100)", "objective": "x100", "width": 6560, "height": 10176, "maxlvl": 14, "tile": 512, "transform": [0.09893044431875726, -0.002244837828949325, 839.8357370661913, 1918.6654347765173], "outline": [[[0.0, 0.0], [0.0, 10172.4], [6556.6, 10172.4], [6556.6, 0.0]]]}];  // lames de détail (autre objectif) recalées dans celle-ci
+const CHILDREN = [{"slug": "pv-7445-obj-x100-10201932", "title": "pv 7445 (obj. x100)", "objective": "x100", "width": 6560, "height": 10176, "maxlvl": 14, "tile": 512, "transform": [0.09893044431875726, -0.002244837828949325, 839.8357370661913, 1918.6654347765173], "outline": [[[0.0, 0.0], [0.0, 10172.4], [6556.6, 10172.4], [6556.6, 0.0]]], "cellules": null}];  // lames de détail (autre objectif) recalées dans celle-ci
 const PARENT = null;      // lame d'ensemble, si celle-ci est un détail
 const CELLS = null;        // effectifs du calque « Cellules » ({n, validees, ...}) ou null : le détail est dans cellules.json
 const svgNS = 'http://www.w3.org/2000/svg';
@@ -300,8 +300,13 @@ viewer.addHandler('animation-finish', updateHud);
 viewer.addHandler('open', updateHud);
 
 // ---- calque « Cellules » : contours de la segmentation, couleur par lignée, pointillé = proposition non validée ----
-if (CELLS && CELLS.n) {
-  $('cellsbtn').hidden = false; $('cellsn').textContent = CELLS.validees ? `${CELLS.validees} / ${CELLS.n}` : String(CELLS.n);
+// sources : les cellules de cette lame, et celles de ses lames de detail placees (ramenees dans ce repere par leur transformation)
+const CELL_SOURCES = [];
+if (CELLS && CELLS.n) CELL_SOURCES.push({ path: 'cellules.json', T: null, n: CELLS.n, v: CELLS.validees || 0, w: W, h: H, title: '' });
+for (const c of CHILDREN) if (c.cellules && c.cellules.n && c.transform) CELL_SOURCES.push({ path: `../${c.slug}/cellules.json`, T: c.transform, n: c.cellules.n, v: c.cellules.validees || 0, w: c.width, h: c.height, title: c.title });
+if (CELL_SOURCES.length) {
+  const totN = CELL_SOURCES.reduce((s, x) => s + x.n, 0), totV = CELL_SOURCES.reduce((s, x) => s + x.v, 0);
+  $('cellsbtn').hidden = false; $('cellsn').textContent = totV ? `${totV} / ${totN}` : String(totN);
   let data = null, on = false, hidden = new Set(), selected = null;
   const svg = document.createElementNS(svgNS, 'svg');
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'cells'); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%'); svg.style.overflow = 'visible';
@@ -330,7 +335,7 @@ if (CELLS && CELLS.n) {
   function fiche(c) {
     const f = $('cfiche'); f.hidden = false;
     const pr = c.propose;
-    f.innerHTML = `<div class="k">cellule ${c.id} · ${c.d} px · ${c.bord ? 'au bord' : 'dans la lame'}</div>
+    f.innerHTML = `<div class="k">cellule ${c.id}${c.from ? ' · ' + c.from : ''} · ${Math.round(c.d)} px · ${c.bord ? 'au bord' : 'dans la lame'}</div>
       <b class="cl">${c.classe ? labelOf(c.classe) : 'non classée'}</b>
       ${c.classe ? `<div class="k">validée ${c.quand ? new Date(c.quand).toLocaleString('fr-FR') : ''}${c.accepte === true ? ' · proposition acceptée' : c.accepte === false ? ` · corrigée (le modèle proposait ${c.propose_lors})` : ''}</div>` : ''}
       ${pr ? `<div>Proposition du modèle : <b>${pr.cle ? labelOf(pr.cle) : pr.code}</b> <span class="k">(${pr.code}, ${Math.round(pr.conf * 100)} %${pr.niveau === 'approx' ? ', correspondance approchée' : ''})</span></div>
@@ -359,11 +364,30 @@ if (CELLS && CELLS.n) {
     if (on) { viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); $('cpanel').hidden = false; }
     else { viewer.removeOverlay(svg); $('cpanel').hidden = true; $('cfiche').hidden = true; }
   };
+  async function loadAll() {
+    const merged = { taxonomie: null, modele: null, stats: { segmentees: 0, validees: 0, propositions: 0, bord: 0, formule: {} }, cellules: [] };
+    const problems = [];
+    for (const src of CELL_SOURCES) {
+      let d;
+      try { d = await (await fetch(src.path + '?t=' + Date.now())).json(); } catch (e) { problems.push(`${src.title || 'cette lame'} : cellules.json illisible`); continue; }
+      if (d.largeur !== src.w || d.hauteur !== src.h) { problems.push(`${src.title || 'cette lame'} : cellules calculées sur ${d.largeur} × ${d.hauteur} px, lame de ${src.w} × ${src.h} : ignorées, relancer l'import`); continue; }
+      merged.taxonomie = merged.taxonomie || d.taxonomie; merged.modele = merged.modele || d.modele;
+      for (const k of ['segmentees', 'validees', 'propositions', 'bord']) merged.stats[k] += (d.stats && d.stats[k]) || 0;
+      for (const [k, n] of Object.entries((d.stats && d.stats.formule) || {})) merged.stats.formule[k] = (merged.stats.formule[k] || 0) + n;
+      const T = src.T;   // enfant -> parent : x' = a x - b y + tx ; y' = b x + a y + ty
+      const map = ([x, y]) => T ? [T[0] * x - T[1] * y + T[2], T[1] * x + T[0] * y + T[3]] : [x, y];
+      const scale = T ? Math.hypot(T[0], T[1]) : 1;
+      for (const c of d.cellules) merged.cellules.push({ ...c, p: c.p.map(map).map(q => [Math.round(q[0] * 10) / 10, Math.round(q[1] * 10) / 10]), c: map(c.c), d: c.d * scale, from: src.title });
+    }
+    merged.problems = problems;
+    return merged;
+  }
   $('cellsbtn').onclick = async () => {
     if (!data) {
-      try { data = await (await fetch('cellules.json?t=' + Date.now())).json(); } catch (e) { $('cpanel').hidden = false; $('cpanel').textContent = 'cellules.json illisible : ' + e.message; return; }
-      if (data.largeur !== W || data.hauteur !== H) { $('cpanel').hidden = false; $('cpanel').textContent = `Les cellules ont été calculées sur une lame de ${data.largeur} × ${data.hauteur} px, celle-ci fait ${W} × ${H} : calque désactivé, relancer l'import.`; return; }
+      data = await loadAll();
+      if (!data.taxonomie) { $('cpanel').hidden = false; $('cpanel').textContent = data.problems.join(' · ') || 'aucune cellule lisible'; data = null; return; }
       draw(); panel();
+      if (data.problems.length) $('cpanel').insertAdjacentHTML('beforeend', `<div class="msg" style="color:#c0392b">${data.problems.join('<br>')}</div>`);
     }
     on = !on; $('cellsbtn').setAttribute('aria-pressed', String(on)); applyCells();
   };

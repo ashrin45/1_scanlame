@@ -103,7 +103,7 @@ def write_pages(slug):
     children = []
     for c in j.get('children') or []:
         cj = load_lame(c['slug'])
-        if cj: children.append(dict(slug=c['slug'], title=cj['title'], objective=cj.get('objective'), width=cj['width'], height=cj['height'], maxlvl=cj['maxlvl'], tile=cj['tile'], transform=c.get('transform'), outline=cj.get('outline')))
+        if cj: children.append(dict(slug=c['slug'], title=cj['title'], objective=cj.get('objective'), width=cj['width'], height=cj['height'], maxlvl=cj['maxlvl'], tile=cj['tile'], transform=c.get('transform'), outline=cj.get('outline'), cellules=cj.get('cellules') if os.path.isfile(os.path.join(LAMES, c['slug'], 'cellules.json')) else None))
     parent = None
     if j.get('parent'):
         pj = load_lame(j['parent'])

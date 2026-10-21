@@ -136,7 +136,7 @@ const FIELDS = [{"id":"0000","pts":[[2947,1408],[2890,3394],[1402,3351],[1458,13
 const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
 const ZSTACK = null;      // {levels, tiles:[...]} ou null
 const QUALITY = {"grade": "A", "notes": [], "frames": {"candidates": 37, "blurred": 0, "selected": 14, "used": 14, "tracked_only": 0}, "residual_px": 1.43, "residual_max_px": 2.72, "holes": [], "holes_frac": 0.0, "coverage_px": 14624998, "coverage_mm2": null, "low_sharp_frac": 0.0, "gain_spread_pct": 2.6, "flat_field": "médiane", "k1": -0.006, "zstack_fields": 0, "zstack_levels": 0};    // rapport du pipeline ({} si absent)
-const CHILDREN = [{"slug": "myelo-3-obj-x100-10201608", "title": "myelo 3 (obj. x100)", "objective": "x100", "width": 12260, "height": 8544, "maxlvl": 14, "tile": 512, "transform": [0.10279571627204401, 0.003049529832163816, 2270.7782473254238, 2529.0089284662754], "outline": [[[11050.3, 159.4], [10592.6, 167.6], [10584.5, 0.0], [10188.1, 0.0], [10184.0, 16.3], [9150.0, 36.8], [9125.5, 57.2], [8177.4, 85.8], [8169.2, 106.3], [7454.1, 122.6], [6146.3, 192.1], [4319.6, 228.9], [4295.1, 249.3], [2971.0, 290.2], [2382.5, 273.8], [1213.7, 282.0], [1209.7, 306.5], [658.0, 314.7], [649.8, 371.9], [16.3, 371.9], [16.3, 490.4], [0.0, 494.5], [0.0, 2264.0], [543.5, 2276.3], [547.6, 3383.8], [564.0, 3387.8], [555.8, 4675.1], [1091.1, 4691.5], [1083.0, 7151.7], [1369.0, 7168.0], [1352.7, 8492.1], [2562.3, 8520.7], [2672.7, 8541.1], [2676.8, 8524.8], [4037.6, 8504.4], [4054.0, 8455.3], [5933.8, 8422.6], [5950.2, 8394.0], [6632.7, 8389.9], [7715.6, 8349.1], [10159.5, 8320.5], [10224.8, 8304.1], [11042.2, 8283.7], [11046.3, 8259.2], [12255.9, 8222.4], [12186.4, 6207.6], [12092.4, 6203.6], [12051.6, 4875.4], [11626.6, 4875.4], [11598.0, 3755.6], [11557.1, 3751.6], [11508.1, 2403.0], [11136.2, 2403.0], [11103.5, 1054.4], [11079.0, 1046.2]]]}];  // lames de détail (autre objectif) recalées dans celle-ci
+const CHILDREN = [{"slug": "myelo-3-obj-x100-10201608", "title": "myelo 3 (obj. x100)", "objective": "x100", "width": 12260, "height": 8544, "maxlvl": 14, "tile": 512, "transform": [0.10279571627204401, 0.003049529832163816, 2270.7782473254238, 2529.0089284662754], "outline": [[[11050.3, 159.4], [10592.6, 167.6], [10584.5, 0.0], [10188.1, 0.0], [10184.0, 16.3], [9150.0, 36.8], [9125.5, 57.2], [8177.4, 85.8], [8169.2, 106.3], [7454.1, 122.6], [6146.3, 192.1], [4319.6, 228.9], [4295.1, 249.3], [2971.0, 290.2], [2382.5, 273.8], [1213.7, 282.0], [1209.7, 306.5], [658.0, 314.7], [649.8, 371.9], [16.3, 371.9], [16.3, 490.4], [0.0, 494.5], [0.0, 2264.0], [543.5, 2276.3], [547.6, 3383.8], [564.0, 3387.8], [555.8, 4675.1], [1091.1, 4691.5], [1083.0, 7151.7], [1369.0, 7168.0], [1352.7, 8492.1], [2562.3, 8520.7], [2672.7, 8541.1], [2676.8, 8524.8], [4037.6, 8504.4], [4054.0, 8455.3], [5933.8, 8422.6], [5950.2, 8394.0], [6632.7, 8389.9], [7715.6, 8349.1], [10159.5, 8320.5], [10224.8, 8304.1], [11042.2, 8283.7], [11046.3, 8259.2], [12255.9, 8222.4], [12186.4, 6207.6], [12092.4, 6203.6], [12051.6, 4875.4], [11626.6, 4875.4], [11598.0, 3755.6], [11557.1, 3751.6], [11508.1, 2403.0], [11136.2, 2403.0], [11103.5, 1054.4], [11079.0, 1046.2]]], "cellules": null}];  // lames de détail (autre objectif) recalées dans celle-ci
 const PARENT = null;      // lame d'ensemble, si celle-ci est un détail
 const CELLS = null;        // effectifs du calque « Cellules » ({n, validees, ...}) ou null : le détail est dans cellules.json
 const svgNS = 'http://www.w3.org/2000/svg';
@@ -300,8 +300,13 @@ viewer.addHandler('animation-finish', updateHud);
 viewer.addHandler('open', updateHud);
 
 // ---- calque « Cellules » : contours de la segmentation, couleur par lignée, pointillé = proposition non validée ----
-if (CELLS && CELLS.n) {
-  $('cellsbtn').hidden = false; $('cellsn').textContent = CELLS.validees ? `${CELLS.validees} / ${CELLS.n}` : String(CELLS.n);
+// sources : les cellules de cette lame, et celles de ses lames de detail placees (ramenees dans ce repere par leur transformation)
+const CELL_SOURCES = [];
+if (CELLS && CELLS.n) CELL_SOURCES.push({ path: 'cellules.json', T: null, n: CELLS.n, v: CELLS.validees || 0, w: W, h: H, title: '' });
+for (const c of CHILDREN) if (c.cellules && c.cellules.n && c.transform) CELL_SOURCES.push({ path: `../${c.slug}/cellules.json`, T: c.transform, n: c.cellules.n, v: c.cellules.validees || 0, w: c.width, h: c.height, title: c.title });
+if (CELL_SOURCES.length) {
+  const totN = CELL_SOURCES.reduce((s, x) => s + x.n, 0), totV = CELL_SOURCES.reduce((s, x) => s + x.v, 0);
+  $('cellsbtn').hidden = false; $('cellsn').textContent = totV ? `${totV} / ${totN}` : String(totN);
   let data = null, on = false, hidden = new Set(), selected = null;
   const svg = document.createElementNS(svgNS, 'svg');
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'cells'); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%'); svg.style.overflow = 'visible';
@@ -330,7 +335,7 @@ if (CELLS && CELLS.n) {
   function fiche(c) {
     const f = $('cfiche'); f.hidden = false;
     const pr = c.propose;
-    f.innerHTML = `<div class="k">cellule ${c.id} · ${c.d} px · ${c.bord ? 'au bord' : 'dans la lame'}</div>
+    f.innerHTML = `<div class="k">cellule ${c.id}${c.from ? ' · ' + c.from : ''} · ${Math.round(c.d)} px · ${c.bord ? 'au bord' : 'dans la lame'}</div>
       <b class="cl">${c.classe ? labelOf(c.classe) : 'non classée'}</b>
       ${c.classe ? `<div class="k">validée ${c.quand ? new Date(c.quand).toLocaleString('fr-FR') : ''}${c.accepte === true ? ' · proposition acceptée' : c.accepte === false ? ` · corrigée (le modèle proposait ${c.propose_lors})` : ''}</div>` : ''}
       ${pr ? `<div>Proposition du modèle : <b>${pr.cle ? labelOf(pr.cle) : pr.code}</b> <span class="k">(${pr.code}, ${Math.round(pr.conf * 100)} %${pr.niveau === 'approx' ? ', correspondance approchée' : ''})</span></div>
@@ -359,11 +364,30 @@ if (CELLS && CELLS.n) {
     if (on) { viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); $('cpanel').hidden = false; }
     else { viewer.removeOverlay(svg); $('cpanel').hidden = true; $('cfiche').hidden = true; }
   };
+  async function loadAll() {
+    const merged = { taxonomie: null, modele: null, stats: { segmentees: 0, validees: 0, propositions: 0, bord: 0, formule: {} }, cellules: [] };
+    const problems = [];
+    for (const src of CELL_SOURCES) {
+      let d;
+      try { d = await (await fetch(src.path + '?t=' + Date.now())).json(); } catch (e) { problems.push(`${src.title || 'cette lame'} : cellules.json illisible`); continue; }
+      if (d.largeur !== src.w || d.hauteur !== src.h) { problems.push(`${src.title || 'cette lame'} : cellules calculées sur ${d.largeur} × ${d.hauteur} px, lame de ${src.w} × ${src.h} : ignorées, relancer l'import`); continue; }
+      merged.taxonomie = merged.taxonomie || d.taxonomie; merged.modele = merged.modele || d.modele;
+      for (const k of ['segmentees', 'validees', 'propositions', 'bord']) merged.stats[k] += (d.stats && d.stats[k]) || 0;
+      for (const [k, n] of Object.entries((d.stats && d.stats.formule) || {})) merged.stats.formule[k] = (merged.stats.formule[k] || 0) + n;
+      const T = src.T;   // enfant -> parent : x' = a x - b y + tx ; y' = b x + a y + ty
+      const map = ([x, y]) => T ? [T[0] * x - T[1] * y + T[2], T[1] * x + T[0] * y + T[3]] : [x, y];
+      const scale = T ? Math.hypot(T[0], T[1]) : 1;
+      for (const c of d.cellules) merged.cellules.push({ ...c, p: c.p.map(map).map(q => [Math.round(q[0] * 10) / 10, Math.round(q[1] * 10) / 10]), c: map(c.c), d: c.d * scale, from: src.title });
+    }
+    merged.problems = problems;
+    return merged;
+  }
   $('cellsbtn').onclick = async () => {
     if (!data) {
-      try { data = await (await fetch('cellules.json?t=' + Date.now())).json(); } catch (e) { $('cpanel').hidden = false; $('cpanel').textContent = 'cellules.json illisible : ' + e.message; return; }
-      if (data.largeur !== W || data.hauteur !== H) { $('cpanel').hidden = false; $('cpanel').textContent = `Les cellules ont été calculées sur une lame de ${data.largeur} × ${data.hauteur} px, celle-ci fait ${W} × ${H} : calque désactivé, relancer l'import.`; return; }
+      data = await loadAll();
+      if (!data.taxonomie) { $('cpanel').hidden = false; $('cpanel').textContent = data.problems.join(' · ') || 'aucune cellule lisible'; data = null; return; }
       draw(); panel();
+      if (data.problems.length) $('cpanel').insertAdjacentHTML('beforeend', `<div class="msg" style="color:#c0392b">${data.problems.join('<br>')}</div>`);
     }
     on = !on; $('cellsbtn').setAttribute('aria-pressed', String(on)); applyCells();
   };

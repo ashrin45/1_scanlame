@@ -136,7 +136,7 @@ const FIELDS = [{"id":"0000","pts":[[1278,-209],[1123,1707],[-315,1591],[-159,-3
 const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
 const ZSTACK = null;      // {levels, tiles:[...]} ou null
 const QUALITY = {"grade": "A", "notes": [], "frames": {"candidates": 143, "blurred": 7, "selected": 43, "used": 43, "tracked_only": 0}, "residual_px": 1.28, "residual_max_px": 3.51, "holes": [], "holes_frac": 0.0, "coverage_px": 31260162, "coverage_mm2": null, "low_sharp_frac": 0.0, "gain_spread_pct": 5.0, "flat_field": "médiane", "k1": -0.006, "zstack_fields": 0, "zstack_levels": 0};    // rapport du pipeline ({} si absent)
-const CHILDREN = [{"slug": "pv-7353-obj-x100-10200938", "title": "pv 7353 (obj. x100)", "objective": "x100", "width": 16443, "height": 5179, "maxlvl": 15, "tile": 512, "transform": [0.10210353474694785, -0.004520717704513794, 3700.088360708508, 3293.4545735213437], "outline": [[[93.2, 0.0], [21.9, 1556.6], [0.0, 1562.1], [0.0, 1918.3], [378.2, 1940.3], [339.8, 3096.8], [383.7, 3107.7], [339.8, 4450.6], [3770.9, 4565.7], [8610.7, 4631.4], [10567.4, 4691.7], [12759.8, 4719.1], [13702.5, 4686.3], [14930.2, 4708.2], [14941.2, 5174.1], [16437.5, 5174.1], [16437.5, 2291.1], [16415.6, 2285.6], [16437.5, 2060.9], [16415.6, 2055.4], [16399.2, 586.5], [15072.8, 581.0], [15056.3, 235.7], [11323.7, 246.6], [10413.9, 224.7], [10413.9, 186.4], [10364.6, 186.4], [10359.1, 230.2], [8555.8, 175.4], [3858.6, 126.1], [1112.6, 54.8]]]}];  // lames de détail (autre objectif) recalées dans celle-ci
+const CHILDREN = [{"slug": "pv-7353-obj-x100-10200938", "title": "pv 7353 (obj. x100)", "objective": "x100", "width": 16443, "height": 5179, "maxlvl": 15, "tile": 512, "transform": [0.10210353474694785, -0.004520717704513794, 3700.088360708508, 3293.4545735213437], "outline": [[[93.2, 0.0], [21.9, 1556.6], [0.0, 1562.1], [0.0, 1918.3], [378.2, 1940.3], [339.8, 3096.8], [383.7, 3107.7], [339.8, 4450.6], [3770.9, 4565.7], [8610.7, 4631.4], [10567.4, 4691.7], [12759.8, 4719.1], [13702.5, 4686.3], [14930.2, 4708.2], [14941.2, 5174.1], [16437.5, 5174.1], [16437.5, 2291.1], [16415.6, 2285.6], [16437.5, 2060.9], [16415.6, 2055.4], [16399.2, 586.5], [15072.8, 581.0], [15056.3, 235.7], [11323.7, 246.6], [10413.9, 224.7], [10413.9, 186.4], [10364.6, 186.4], [10359.1, 230.2], [8555.8, 175.4], [3858.6, 126.1], [1112.6, 54.8]]], "cellules": null}];  // lames de détail (autre objectif) recalées dans celle-ci
 const PARENT = null;      // lame d'ensemble, si celle-ci est un détail
 const CELLS = null;        // effectifs du calque « Cellules » ({n, validees, ...}) ou null : le détail est dans cellules.json
 const svgNS = 'http://www.w3.org/2000/svg';
@@ -300,8 +300,13 @@ viewer.addHandler('animation-finish', updateHud);
 viewer.addHandler('open', updateHud);
 
 // ---- calque « Cellules » : contours de la segmentation, couleur par lignée, pointillé = proposition non validée ----
-if (CELLS && CELLS.n) {
-  $('cellsbtn').hidden = false; $('cellsn').textContent = CELLS.validees ? `${CELLS.validees} / ${CELLS.n}` : String(CELLS.n);
+// sources : les cellules de cette lame, et celles de ses lames de detail placees (ramenees dans ce repere par leur transformation)
+const CELL_SOURCES = [];
+if (CELLS && CELLS.n) CELL_SOURCES.push({ path: 'cellules.json', T: null, n: CELLS.n, v: CELLS.validees || 0, w: W, h: H, title: '' });
+for (const c of CHILDREN) if (c.cellules && c.cellules.n && c.transform) CELL_SOURCES.push({ path: `../${c.slug}/cellules.json`, T: c.transform, n: c.cellules.n, v: c.cellules.validees || 0, w: c.width, h: c.height, title: c.title });
+if (CELL_SOURCES.length) {
+  const totN = CELL_SOURCES.reduce((s, x) => s + x.n, 0), totV = CELL_SOURCES.reduce((s, x) => s + x.v, 0);
+  $('cellsbtn').hidden = false; $('cellsn').textContent = totV ? `${totV} / ${totN}` : String(totN);
   let data = null, on = false, hidden = new Set(), selected = null;
   const svg = document.createElementNS(svgNS, 'svg');
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'cells'); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%'); svg.style.overflow = 'visible';
@@ -330,7 +335,7 @@ if (CELLS && CELLS.n) {
   function fiche(c) {
     const f = $('cfiche'); f.hidden = false;
     const pr = c.propose;
-    f.innerHTML = `<div class="k">cellule ${c.id} · ${c.d} px · ${c.bord ? 'au bord' : 'dans la lame'}</div>
+    f.innerHTML = `<div class="k">cellule ${c.id}${c.from ? ' · ' + c.from : ''} · ${Math.round(c.d)} px · ${c.bord ? 'au bord' : 'dans la lame'}</div>
       <b class="cl">${c.classe ? labelOf(c.classe) : 'non classée'}</b>
       ${c.classe ? `<div class="k">validée ${c.quand ? new Date(c.quand).toLocaleString('fr-FR') : ''}${c.accepte === true ? ' · proposition acceptée' : c.accepte === false ? ` · corrigée (le modèle proposait ${c.propose_lors})` : ''}</div>` : ''}
       ${pr ? `<div>Proposition du modèle : <b>${pr.cle ? labelOf(pr.cle) : pr.code}</b> <span class="k">(${pr.code}, ${Math.round(pr.conf * 100)} %${pr.niveau === 'approx' ? ', correspondance approchée' : ''})</span></div>
@@ -359,11 +364,30 @@ if (CELLS && CELLS.n) {
     if (on) { viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); $('cpanel').hidden = false; }
     else { viewer.removeOverlay(svg); $('cpanel').hidden = true; $('cfiche').hidden = true; }
   };
+  async function loadAll() {
+    const merged = { taxonomie: null, modele: null, stats: { segmentees: 0, validees: 0, propositions: 0, bord: 0, formule: {} }, cellules: [] };
+    const problems = [];
+    for (const src of CELL_SOURCES) {
+      let d;
+      try { d = await (await fetch(src.path + '?t=' + Date.now())).json(); } catch (e) { problems.push(`${src.title || 'cette lame'} : cellules.json illisible`); continue; }
+      if (d.largeur !== src.w || d.hauteur !== src.h) { problems.push(`${src.title || 'cette lame'} : cellules calculées sur ${d.largeur} × ${d.hauteur} px, lame de ${src.w} × ${src.h} : ignorées, relancer l'import`); continue; }
+      merged.taxonomie = merged.taxonomie || d.taxonomie; merged.modele = merged.modele || d.modele;
+      for (const k of ['segmentees', 'validees', 'propositions', 'bord']) merged.stats[k] += (d.stats && d.stats[k]) || 0;
+      for (const [k, n] of Object.entries((d.stats && d.stats.formule) || {})) merged.stats.formule[k] = (merged.stats.formule[k] || 0) + n;
+      const T = src.T;   // enfant -> parent : x' = a x - b y + tx ; y' = b x + a y + ty
+      const map = ([x, y]) => T ? [T[0] * x - T[1] * y + T[2], T[1] * x + T[0] * y + T[3]] : [x, y];
+      const scale = T ? Math.hypot(T[0], T[1]) : 1;
+      for (const c of d.cellules) merged.cellules.push({ ...c, p: c.p.map(map).map(q => [Math.round(q[0] * 10) / 10, Math.round(q[1] * 10) / 10]), c: map(c.c), d: c.d * scale, from: src.title });
+    }
+    merged.problems = problems;
+    return merged;
+  }
   $('cellsbtn').onclick = async () => {
     if (!data) {
-      try { data = await (await fetch('cellules.json?t=' + Date.now())).json(); } catch (e) { $('cpanel').hidden = false; $('cpanel').textContent = 'cellules.json illisible : ' + e.message; return; }
-      if (data.largeur !== W || data.hauteur !== H) { $('cpanel').hidden = false; $('cpanel').textContent = `Les cellules ont été calculées sur une lame de ${data.largeur} × ${data.hauteur} px, celle-ci fait ${W} × ${H} : calque désactivé, relancer l'import.`; return; }
+      data = await loadAll();
+      if (!data.taxonomie) { $('cpanel').hidden = false; $('cpanel').textContent = data.problems.join(' · ') || 'aucune cellule lisible'; data = null; return; }
       draw(); panel();
+      if (data.problems.length) $('cpanel').insertAdjacentHTML('beforeend', `<div class="msg" style="color:#c0392b">${data.problems.join('<br>')}</div>`);
     }
     on = !on; $('cellsbtn').setAttribute('aria-pressed', String(on)); applyCells();
   };
