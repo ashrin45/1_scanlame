@@ -22,7 +22,17 @@
  "stage": null,
  "stage_cal": null,
  "stage_obs": null,
- "children": [],
+ "children": [
+  {
+   "slug": "tedt-bleu-v2-obj-x40-10211909",
+   "transform": [
+    0.25154327148562833,
+    0.00340699826438425,
+    -184.15783823342596,
+    2067.8791630790624
+   ]
+  }
+ ],
  "quality": {
   "grade": "B",
   "notes": [

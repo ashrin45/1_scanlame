@@ -1,0 +1,103 @@
+{
+ "title": "tedt bleu v2 (obj. x40)",
+ "width": 7776,
+ "height": 3040,
+ "fields": 52,
+ "tiles": 140,
+ "tile": 512,
+ "maxlvl": 13,
+ "um_per_px": null,
+ "stain": "gram",
+ "objective": "x40",
+ "sample": null,
+ "comment": null,
+ "captured": "21/10/2026 19:09",
+ "parent": "tedt-bleu-v2-10211909",
+ "parent_transform": [
+  0.25154327148562833,
+  0.00340699826438425,
+  -184.15783823342596,
+  2067.8791630790624
+ ],
+ "parent_anchored": 47,
+ "parent_approx": null,
+ "outline": [
+  [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    3037.8
+   ],
+   [
+    7773.4,
+    3037.8
+   ],
+   [
+    7773.4,
+    0.0
+   ]
+  ]
+ ],
+ "cellules": null,
+ "hint": null,
+ "stage": null,
+ "stage_cal": null,
+ "stage_obs": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "recalage moyen (2.3 px)"
+  ],
+  "frames": {
+   "candidates": 85,
+   "blurred": 1,
+   "selected": 52,
+   "used": 52,
+   "tracked_only": 0
+  },
+  "residual_px": 2.25,
+  "residual_max_px": 79.46,
+  "holes": [],
+  "holes_frac": 0.0,
+  "coverage_px": 32326913,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 6.1,
+  "flat_field": "médiane",
+  "k1": -0.022,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "series": "lame_20261021_190939_tedt-bleu-v2",
+ "version": 1,
+ "params": {
+  "depth": "off",
+  "seams": true,
+  "fps": 4.0,
+  "reg_size": 1200,
+  "max_side": 32000,
+  "core": 0.7,
+  "tile": 2048,
+  "distortion": true,
+  "chroma": true,
+  "code": "f9def17"
+ },
+ "published": "2026-10-21T17:41:42+00:00",
+ "updated": "2026-10-21T17:41:42+00:00",
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null,
+ "cropped": [
+  [
+   512,
+   880,
+   8288,
+   3920
+  ]
+ ]
+}
