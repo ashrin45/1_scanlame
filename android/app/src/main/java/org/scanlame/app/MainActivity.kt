@@ -26,6 +26,9 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.material3.CheckboxDefaults
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -166,7 +169,7 @@ fun handleLink(intent: Intent?) {
 /** Entrée de la galerie (lames.json) pour les listes « lame d'ensemble » et « compléter ». */
 data class LameRef(val slug: String, val title: String, val objective: String?, val width: Int = 0, val height: Int = 0, val tile: Int = 0, val maxlvl: Int = 0, val thumb: String = "")
 
-@OptIn(ExperimentalLayoutApi::class)
+@OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun App(engine: CameraEngine, st: Settings, session: Session) {
     val ctx = LocalContext.current
@@ -364,31 +367,56 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
             dismissButton = { TextButton(onClick = { switchDlg = null }) { Text("Annuler", color = MUTED) } })
     }
     if (startDlg) {
+        // feuille de depart (canevas « Nouvelle lame ») : nom, objectif en quatre gros boutons, patron, rognage, prelevement
         var t by remember { mutableStateOf(title) }; var smp by remember { mutableStateOf(sample) }; var obj by remember { mutableStateOf(st.objective) }
-        AlertDialog(onDismissRequest = { startDlg = false }, containerColor = PANEL, titleContentColor = FG, textContentColor = FG,
-            title = { Text("Nouvelle lame") },
-            text = {
-                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    OutlinedTextField(t, { t = it }, label = { Text("Nom de la lame") }, placeholder = { Text("ex. hémoculture 1234") }, singleLine = true, modifier = Modifier.fillMaxWidth())
-                    Text("Objectif", color = MUTED, fontSize = 12.sp)
-                    // boutons plutot qu'une liste deroulante : les menus deroulants ne s'ouvrent pas correctement dans une boite de dialogue
-                    FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                        for (o in Settings.OBJECTIVES) WebButton(o, pressed = o == obj, small = true) { obj = o }
-                    }
-                    OutlinedTextField(smp, { smp = it }, label = { Text("Prélèvement (optionnel)") }, singleLine = true, modifier = Modifier.fillMaxWidth())
-                    var autoCrop by remember { mutableStateOf(st.autoCrop) }
-                    PatronFields(obj, st)
-                    Row(verticalAlignment = Alignment.CenterVertically) { Checkbox(autoCrop, { autoCrop = it; st.autoCrop = it }); Text("Rogner la lame au plus grand rectangle couvert", fontSize = 13.sp, color = FG) }
-                    val par = lames.firstOrNull { it.slug == parent }?.title ?: st.recentSeries().firstOrNull { it.first == parent }?.second
-                    Text(if (par != null) "Détail de la lame d'ensemble « $par » (changer dans les réglages)" else "Autres options (coloration, lame d'ensemble, caméra) dans les réglages ⚙", color = MUTED, fontSize = 12.sp)
+        var autoCrop by remember { mutableStateOf(st.autoCrop) }
+        val startState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+        ModalBottomSheet(onDismissRequest = { startDlg = false }, sheetState = startState, containerColor = PANEL, shape = RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp),
+            dragHandle = { Box(Modifier.padding(top = 12.dp).size(40.dp, 4.dp).background(LINE, RoundedCornerShape(999.dp))) }) {
+            Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).imePadding().navigationBarsPadding().padding(start = 20.dp, end = 20.dp, top = 12.dp, bottom = 20.dp),
+                verticalArrangement = Arrangement.spacedBy(18.dp)) {
+                Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    Text("Nouvelle lame", fontSize = 27.sp, lineHeight = 34.sp, fontFamily = Display, color = FG)
+                    val stain = Settings.STAINS.firstOrNull { it.first == st.stain }?.second ?: st.stain
+                    Text("$stain · zoom ${"%.1f".format(java.util.Locale.FRANCE, st.zoom)} · " + if (locked) "AF/AE verrouillés" else "AF/AE à verrouiller sur une zone vide", fontSize = 14.sp, color = if (locked) MUTED else BIREF)
                 }
-            },
-            confirmButton = { TextButton(onClick = {
-                title = t; sample = smp; st.objective = obj; startDlg = false
-                if (st.serverUrl.isEmpty()) say("Serveur non réglé : la prise restera sur le téléphone (file d'attente).", true)
-                session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
-            }) { Text("Lancer la série", color = ACCENT) } },
-            dismissButton = { TextButton(onClick = { startDlg = false }) { Text("Annuler", color = MUTED) } })
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    FieldLabel("Nom de la lame")
+                    OutlinedTextField(t, { t = it }, placeholder = { Text("ex. hémoculture 1234") }, singleLine = true, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(6.dp))
+                }
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    FieldLabel("Objectif")
+                    // boutons plutot qu'une liste deroulante (les menus deroulants s'ouvrent mal dans une feuille)
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        for (o in Settings.OBJECTIVES) GridPill(o, o == obj, Modifier.weight(1f)) { obj = o }
+                    }
+                    val n = Regex("\\d+").find(obj)?.value?.toIntOrNull() ?: 0
+                    if (n >= 100) Text("Commence par le plus fort grossissement : au passage au x10, le détail sera au centre du patron.", fontSize = 13.sp, color = MUTED)
+                }
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) { PatronFields(obj, st) }
+                Row(Modifier.fillMaxWidth().clickable { autoCrop = !autoCrop; st.autoCrop = autoCrop }, verticalAlignment = Alignment.CenterVertically) {
+                    Checkbox(autoCrop, { autoCrop = it; st.autoCrop = it }, colors = CheckboxDefaults.colors(checkedColor = ACCENT, checkmarkColor = BG, uncheckedColor = MUTED))
+                    Text("Rogner la lame au plus grand rectangle couvert", fontSize = 15.sp, color = FG)
+                }
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    FieldLabel("Prélèvement (optionnel)")
+                    OutlinedTextField(smp, { smp = it }, placeholder = { Text("ex. hémoculture, ECBU, LCR") }, singleLine = true, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(6.dp))
+                }
+                val par = lames.firstOrNull { it.slug == parent }?.title ?: st.recentSeries().firstOrNull { it.first == parent }?.second
+                Row(Modifier.fillMaxWidth().background(ACCENT_TINT, RoundedCornerShape(12.dp)).padding(12.dp, 10.dp), horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Text("i", Modifier.size(18.dp).border(2.dp, ACCENT, RoundedCornerShape(999.dp)), color = ACCENT, fontSize = 11.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
+                    Text(if (par != null) "Détail de la lame d'ensemble « $par » (changer dans les réglages)." else "Autres options (coloration, lame d'ensemble, caméra) dans les réglages.", fontSize = 13.sp, color = FG)
+                }
+                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    Text("Annuler", Modifier.heightIn(min = 52.dp).border(1.dp, LINE, RoundedCornerShape(6.dp)).clickable { startDlg = false }.padding(horizontal = 18.dp, vertical = 15.dp), color = MUTED, fontSize = 15.sp, fontWeight = FontWeight.Medium)
+                    Text("Lancer la série", Modifier.weight(1f).heightIn(min = 52.dp).background(ACCENT, RoundedCornerShape(6.dp)).clickable {
+                        title = t; sample = smp; st.objective = obj; startDlg = false
+                        if (st.serverUrl.isEmpty()) say("Serveur non réglé : la prise restera sur le téléphone (file d'attente).", true)
+                        session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
+                    }.padding(vertical = 15.dp), color = BG, fontSize = 16.sp, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
+                }
+            }
+        }
     }
     if (sheet) SettingsSheet(engine, st, cameraOn, lames, title, sample, comment, parent, complete,
         onFields = { t, s, c, p, co -> title = t; sample = s; comment = c; parent = p; complete = co },
@@ -476,6 +504,19 @@ fun loadLames(gallery: String): List<LameRef> = try {
 } catch (e: Exception) { Journal.log("galerie injoignable : ${e.message}"); emptyList() }
 
 /** Titre de section des réglages (eyebrow Paillasse : capitales espacées, filet au-dessus). */
+/** Etiquette de champ (capitales espacees, gris), comme sur la page. */
+@Composable
+fun FieldLabel(t: String) = Text(t.uppercase(), fontSize = 12.sp, fontWeight = FontWeight.Bold, letterSpacing = 0.7.sp, color = MUTED)
+
+/** Bouton de grille (objectifs) : coins de 6 dp, polar quand choisi. */
+@Composable
+fun GridPill(label: String, on: Boolean, modifier: Modifier = Modifier, onClick: () -> Unit) {
+    Box(modifier.heightIn(min = 48.dp).background(if (on) ACCENT_TINT else CAPSULE, RoundedCornerShape(6.dp)).border(1.dp, if (on) ACCENT else LINE, RoundedCornerShape(6.dp)).clickable { onClick() },
+        contentAlignment = Alignment.Center) {
+        Text(label, color = if (on) ACCENT else FG, fontSize = 15.sp, fontWeight = if (on) FontWeight.SemiBold else FontWeight.Medium, fontFamily = Sans)
+    }
+}
+
 @Composable
 fun SectionTitle(t: String) {
     Column(Modifier.fillMaxWidth().padding(top = 10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -519,11 +560,13 @@ fun PatronFields(obj: String, st: Settings) {
     var pc by remember(obj) { mutableStateOf(patron.substringBefore('x').takeIf { patron != "libre" } ?: "") }
     var pr by remember(obj) { mutableStateOf(patron.substringAfter('x').takeIf { patron != "libre" } ?: "") }
     fun setPatron(c: String, r: String) { pc = c; pr = r; val ci = c.toIntOrNull() ?: 0; val ri = r.toIntOrNull() ?: 0; patron = if (ci in 1..40 && ri in 1..40) "${ci}x${ri}" else "libre"; st.setPatronFor(obj, patron) }
-    Text("Patron au $obj : champs à remplir (colonnes x lignes)", color = MUTED, fontSize = 12.sp)
+    FieldLabel("Patron au $obj · champs à remplir")
     Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
         OutlinedTextField(pc, { setPatron(it.filter { ch -> ch.isDigit() }.take(2), pr) }, label = { Text("colonnes", fontSize = 11.sp) }, singleLine = true, modifier = Modifier.weight(1f), keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
         Text("x", color = MUTED)
         OutlinedTextField(pr, { setPatron(pc, it.filter { ch -> ch.isDigit() }.take(2)) }, label = { Text("lignes", fontSize = 11.sp) }, singleLine = true, modifier = Modifier.weight(1f), keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
+        val nc = (pc.toIntOrNull() ?: 0) * (pr.toIntOrNull() ?: 0)
+        if (nc > 0) Text("$nc champs", fontSize = 13.sp, color = MUTED)
         WebButton("libre", pressed = patron == "libre", small = true) { setPatron("", "") }
     }
     FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
