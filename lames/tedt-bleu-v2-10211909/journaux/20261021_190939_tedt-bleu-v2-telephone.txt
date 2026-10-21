@@ -1,0 +1,1309 @@
+     0.000  ScanLame 0.49 démarré sur samsung SM-S928B (Android 16)
+     0.902  mise à jour disponible : 0.50 (installée : 0.49)
+     2.506  liaison : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+     2.958  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+     2.980  masque oculaire : 46 % du cadre utile (p95 164)
+     3.255  masque oculaire : 100 % du cadre utile (p95 61)
+     3.522  masque oculaire : 100 % du cadre utile (p95 190)
+     3.795  masque oculaire : 100 % du cadre utile (p95 102)
+     4.068  masque oculaire : 99 % du cadre utile (p95 125)
+     4.333  masque oculaire : 100 % du cadre utile (p95 100)
+     4.600  masque oculaire : 100 % du cadre utile (p95 158)
+     4.866  masque oculaire : 100 % du cadre utile (p95 71)
+     5.131  masque oculaire : 100 % du cadre utile (p95 13)
+     5.506  masque oculaire : 99 % du cadre utile (p95 255)
+     5.792  masque oculaire : 100 % du cadre utile (p95 203)
+     6.065  masque oculaire : 100 % du cadre utile (p95 155)
+     6.326  masque oculaire : 100 % du cadre utile (p95 159)
+     6.589  masque oculaire : 100 % du cadre utile (p95 159)
+     6.865  masque oculaire : 100 % du cadre utile (p95 169)
+     7.131  masque oculaire : 100 % du cadre utile (p95 169)
+     7.396  masque oculaire : 100 % du cadre utile (p95 166)
+     7.661  masque oculaire : 100 % du cadre utile (p95 165)
+     7.932  masque oculaire : 100 % du cadre utile (p95 164)
+     8.196  masque oculaire : 100 % du cadre utile (p95 166)
+     8.463  masque oculaire : 100 % du cadre utile (p95 168)
+     8.732  masque oculaire : 100 % du cadre utile (p95 168)
+     8.991  masque oculaire : 100 % du cadre utile (p95 168)
+     9.262  masque oculaire : 100 % du cadre utile (p95 168)
+     9.542  masque oculaire : 100 % du cadre utile (p95 168)
+     9.794  masque oculaire : 100 % du cadre utile (p95 169)
+    10.060  masque oculaire : 100 % du cadre utile (p95 169)
+    10.327  masque oculaire : 100 % du cadre utile (p95 170)
+    10.591  masque oculaire : 100 % du cadre utile (p95 170)
+    10.857  masque oculaire : 100 % du cadre utile (p95 170)
+    11.122  masque oculaire : 100 % du cadre utile (p95 170)
+    11.389  masque oculaire : 100 % du cadre utile (p95 170)
+    11.656  masque oculaire : 100 % du cadre utile (p95 169)
+    11.923  masque oculaire : 100 % du cadre utile (p95 170)
+    12.190  masque oculaire : 100 % du cadre utile (p95 166)
+    12.455  masque oculaire : 100 % du cadre utile (p95 165)
+    12.723  masque oculaire : 100 % du cadre utile (p95 165)
+    12.988  masque oculaire : 100 % du cadre utile (p95 165)
+    13.256  masque oculaire : 100 % du cadre utile (p95 164)
+    13.525  masque oculaire : 100 % du cadre utile (p95 164)
+    13.792  masque oculaire : 100 % du cadre utile (p95 164)
+    14.057  masque oculaire : 100 % du cadre utile (p95 165)
+    14.323  masque oculaire : 100 % du cadre utile (p95 164)
+    14.589  masque oculaire : 100 % du cadre utile (p95 164)
+    14.860  masque oculaire : 100 % du cadre utile (p95 164)
+    15.138  masque oculaire : 100 % du cadre utile (p95 164)
+    15.404  masque oculaire : 100 % du cadre utile (p95 163)
+    15.676  masque oculaire : 100 % du cadre utile (p95 161)
+    15.933  masque oculaire : 100 % du cadre utile (p95 162)
+    16.208  masque oculaire : 100 % du cadre utile (p95 163)
+    16.476  masque oculaire : 100 % du cadre utile (p95 164)
+    16.734  masque oculaire : 100 % du cadre utile (p95 165)
+    17.015  masque oculaire : 100 % du cadre utile (p95 164)
+    17.273  masque oculaire : 100 % du cadre utile (p95 165)
+    17.539  masque oculaire : 100 % du cadre utile (p95 165)
+    17.797  masque oculaire : 100 % du cadre utile (p95 165)
+    18.065  masque oculaire : 100 % du cadre utile (p95 164)
+    18.333  masque oculaire : 100 % du cadre utile (p95 164)
+    18.608  masque oculaire : 100 % du cadre utile (p95 158)
+    18.870  masque oculaire : 100 % du cadre utile (p95 170)
+    19.140  masque oculaire : 100 % du cadre utile (p95 167)
+    19.405  masque oculaire : 100 % du cadre utile (p95 167)
+    19.672  masque oculaire : 100 % du cadre utile (p95 167)
+    19.947  masque oculaire : 100 % du cadre utile (p95 167)
+    20.210  masque oculaire : 100 % du cadre utile (p95 168)
+    20.463  masque oculaire : 100 % du cadre utile (p95 167)
+    20.749  masque oculaire : 100 % du cadre utile (p95 167)
+    21.007  masque oculaire : 100 % du cadre utile (p95 167)
+    21.278  masque oculaire : 100 % du cadre utile (p95 167)
+    21.532  masque oculaire : 100 % du cadre utile (p95 166)
+    21.810  masque oculaire : 100 % du cadre utile (p95 167)
+    22.068  masque oculaire : 100 % du cadre utile (p95 166)
+    22.334  masque oculaire : 100 % du cadre utile (p95 167)
+    22.609  masque oculaire : 100 % du cadre utile (p95 168)
+    22.880  masque oculaire : 100 % du cadre utile (p95 168)
+    23.144  masque oculaire : 100 % du cadre utile (p95 168)
+    23.411  masque oculaire : 100 % du cadre utile (p95 168)
+    23.676  masque oculaire : 100 % du cadre utile (p95 162)
+    23.938  masque oculaire : 100 % du cadre utile (p95 175)
+    24.207  masque oculaire : 100 % du cadre utile (p95 174)
+    24.478  masque oculaire : 100 % du cadre utile (p95 173)
+    24.738  masque oculaire : 100 % du cadre utile (p95 170)
+    25.005  masque oculaire : 100 % du cadre utile (p95 173)
+    25.278  masque oculaire : 100 % du cadre utile (p95 175)
+    25.542  masque oculaire : 100 % du cadre utile (p95 175)
+    25.807  masque oculaire : 100 % du cadre utile (p95 175)
+    26.084  masque oculaire : 100 % du cadre utile (p95 179)
+    26.352  masque oculaire : 100 % du cadre utile (p95 177)
+    26.601  masque oculaire : 99 % du cadre utile (p95 173)
+    26.880  masque oculaire : 99 % du cadre utile (p95 173)
+    27.148  masque oculaire : 99 % du cadre utile (p95 173)
+    27.418  masque oculaire : 99 % du cadre utile (p95 179)
+    27.681  masque oculaire : 99 % du cadre utile (p95 179)
+    27.949  masque oculaire : 99 % du cadre utile (p95 179)
+    28.215  masque oculaire : 98 % du cadre utile (p95 180)
+    28.481  masque oculaire : 99 % du cadre utile (p95 180)
+    28.746  masque oculaire : 99 % du cadre utile (p95 178)
+    29.015  masque oculaire : 99 % du cadre utile (p95 178)
+    29.282  masque oculaire : 98 % du cadre utile (p95 178)
+    29.545  masque oculaire : 99 % du cadre utile (p95 180)
+    29.814  masque oculaire : 99 % du cadre utile (p95 179)
+    30.077  masque oculaire : 99 % du cadre utile (p95 178)
+    30.347  masque oculaire : 99 % du cadre utile (p95 179)
+    30.615  masque oculaire : 99 % du cadre utile (p95 180)
+    30.863  masque oculaire : 99 % du cadre utile (p95 180)
+    31.149  masque oculaire : 99 % du cadre utile (p95 181)
+    31.410  masque oculaire : 99 % du cadre utile (p95 180)
+    31.675  masque oculaire : 99 % du cadre utile (p95 181)
+    31.944  masque oculaire : 99 % du cadre utile (p95 180)
+    32.214  masque oculaire : 99 % du cadre utile (p95 180)
+    32.484  masque oculaire : 99 % du cadre utile (p95 182)
+    32.748  masque oculaire : 99 % du cadre utile (p95 181)
+    33.023  masque oculaire : 99 % du cadre utile (p95 181)
+    33.281  masque oculaire : 99 % du cadre utile (p95 181)
+    33.556  masque oculaire : 99 % du cadre utile (p95 181)
+    33.817  masque oculaire : 99 % du cadre utile (p95 181)
+    34.084  masque oculaire : 99 % du cadre utile (p95 180)
+    34.347  masque oculaire : 99 % du cadre utile (p95 180)
+    34.604  masque oculaire : 99 % du cadre utile (p95 181)
+    34.885  masque oculaire : 99 % du cadre utile (p95 180)
+    35.151  masque oculaire : 99 % du cadre utile (p95 180)
+    35.426  masque oculaire : 99 % du cadre utile (p95 179)
+    35.464  verrouillage : focus infini, pose 19.982648 ms, ISO 179, WB figée
+    35.686  masque oculaire : 99 % du cadre utile (p95 179)
+    35.699  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+    35.961  masque oculaire : 99 % du cadre utile (p95 178)
+    36.202  masque oculaire : 99 % du cadre utile (p95 178)
+    36.468  masque oculaire : 99 % du cadre utile (p95 178)
+    36.734  masque oculaire : 99 % du cadre utile (p95 177)
+    37.021  masque oculaire : 99 % du cadre utile (p95 177)
+    37.280  masque oculaire : 99 % du cadre utile (p95 177)
+    37.554  masque oculaire : 99 % du cadre utile (p95 177)
+    37.819  masque oculaire : 99 % du cadre utile (p95 178)
+    38.085  masque oculaire : 99 % du cadre utile (p95 177)
+    38.351  masque oculaire : 99 % du cadre utile (p95 177)
+    38.614  masque oculaire : 99 % du cadre utile (p95 177)
+    38.879  masque oculaire : 99 % du cadre utile (p95 178)
+    39.155  masque oculaire : 99 % du cadre utile (p95 178)
+    39.419  masque oculaire : 99 % du cadre utile (p95 178)
+    39.688  masque oculaire : 99 % du cadre utile (p95 178)
+    39.948  masque oculaire : 99 % du cadre utile (p95 177)
+    40.217  masque oculaire : 99 % du cadre utile (p95 177)
+    40.484  masque oculaire : 99 % du cadre utile (p95 178)
+    40.752  masque oculaire : 99 % du cadre utile (p95 178)
+    41.020  masque oculaire : 99 % du cadre utile (p95 178)
+    41.277  masque oculaire : 99 % du cadre utile (p95 178)
+    41.552  masque oculaire : 99 % du cadre utile (p95 178)
+    41.821  masque oculaire : 99 % du cadre utile (p95 208)
+    42.083  masque oculaire : 99 % du cadre utile (p95 244)
+    42.355  masque oculaire : 99 % du cadre utile (p95 248)
+    42.618  masque oculaire : 99 % du cadre utile (p95 249)
+    42.886  masque oculaire : 99 % du cadre utile (p95 248)
+    43.154  masque oculaire : 99 % du cadre utile (p95 227)
+    43.413  masque oculaire : 99 % du cadre utile (p95 223)
+    43.682  masque oculaire : 99 % du cadre utile (p95 221)
+    43.949  masque oculaire : 99 % du cadre utile (p95 224)
+    44.217  masque oculaire : 99 % du cadre utile (p95 225)
+    44.483  masque oculaire : 99 % du cadre utile (p95 226)
+    44.750  masque oculaire : 99 % du cadre utile (p95 220)
+    45.016  masque oculaire : 99 % du cadre utile (p95 204)
+    45.286  masque oculaire : 99 % du cadre utile (p95 204)
+    45.551  masque oculaire : 99 % du cadre utile (p95 222)
+    45.829  masque oculaire : 99 % du cadre utile (p95 228)
+    46.078  masque oculaire : 99 % du cadre utile (p95 230)
+    46.347  masque oculaire : 99 % du cadre utile (p95 220)
+    46.616  masque oculaire : 99 % du cadre utile (p95 216)
+    46.882  masque oculaire : 99 % du cadre utile (p95 215)
+    47.151  masque oculaire : 99 % du cadre utile (p95 215)
+    47.422  masque oculaire : 99 % du cadre utile (p95 215)
+    47.682  masque oculaire : 99 % du cadre utile (p95 215)
+    47.953  masque oculaire : 99 % du cadre utile (p95 215)
+    48.217  masque oculaire : 99 % du cadre utile (p95 215)
+    48.572  masque oculaire : 99 % du cadre utile (p95 215)
+    48.836  masque oculaire : 99 % du cadre utile (p95 215)
+    49.114  masque oculaire : 99 % du cadre utile (p95 215)
+    49.380  masque oculaire : 99 % du cadre utile (p95 215)
+    49.653  masque oculaire : 99 % du cadre utile (p95 215)
+    49.928  masque oculaire : 99 % du cadre utile (p95 215)
+    50.170  masque oculaire : 99 % du cadre utile (p95 215)
+    50.445  masque oculaire : 99 % du cadre utile (p95 215)
+    50.712  masque oculaire : 99 % du cadre utile (p95 215)
+    50.981  masque oculaire : 99 % du cadre utile (p95 215)
+    51.246  masque oculaire : 99 % du cadre utile (p95 215)
+    51.513  masque oculaire : 99 % du cadre utile (p95 215)
+    51.789  masque oculaire : 99 % du cadre utile (p95 215)
+    52.052  masque oculaire : 99 % du cadre utile (p95 215)
+    52.314  masque oculaire : 99 % du cadre utile (p95 215)
+    52.584  masque oculaire : 99 % du cadre utile (p95 215)
+    52.848  masque oculaire : 99 % du cadre utile (p95 215)
+    53.117  masque oculaire : 99 % du cadre utile (p95 215)
+    53.371  masque oculaire : 99 % du cadre utile (p95 215)
+    53.648  masque oculaire : 99 % du cadre utile (p95 215)
+    53.919  masque oculaire : 99 % du cadre utile (p95 215)
+    54.178  masque oculaire : 99 % du cadre utile (p95 215)
+    54.449  masque oculaire : 99 % du cadre utile (p95 215)
+    54.716  masque oculaire : 99 % du cadre utile (p95 215)
+    54.979  masque oculaire : 99 % du cadre utile (p95 215)
+    55.250  masque oculaire : 99 % du cadre utile (p95 215)
+    55.516  masque oculaire : 99 % du cadre utile (p95 215)
+    55.783  masque oculaire : 99 % du cadre utile (p95 215)
+    56.047  masque oculaire : 99 % du cadre utile (p95 215)
+    56.316  masque oculaire : 99 % du cadre utile (p95 215)
+    56.584  masque oculaire : 99 % du cadre utile (p95 215)
+    56.850  masque oculaire : 99 % du cadre utile (p95 215)
+    57.123  masque oculaire : 99 % du cadre utile (p95 215)
+    57.389  masque oculaire : 99 % du cadre utile (p95 215)
+    57.649  masque oculaire : 99 % du cadre utile (p95 215)
+    57.919  masque oculaire : 99 % du cadre utile (p95 215)
+    58.184  masque oculaire : 99 % du cadre utile (p95 216)
+    58.456  masque oculaire : 99 % du cadre utile (p95 216)
+    58.724  masque oculaire : 99 % du cadre utile (p95 216)
+    58.979  masque oculaire : 99 % du cadre utile (p95 216)
+    59.255  masque oculaire : 99 % du cadre utile (p95 215)
+    59.518  masque oculaire : 99 % du cadre utile (p95 215)
+    59.769  masque oculaire : 99 % du cadre utile (p95 215)
+    60.041  masque oculaire : 99 % du cadre utile (p95 215)
+    60.319  masque oculaire : 99 % du cadre utile (p95 215)
+    60.584  masque oculaire : 99 % du cadre utile (p95 215)
+    60.852  masque oculaire : 99 % du cadre utile (p95 215)
+    61.118  masque oculaire : 99 % du cadre utile (p95 215)
+    61.384  masque oculaire : 99 % du cadre utile (p95 215)
+    61.653  masque oculaire : 99 % du cadre utile (p95 216)
+    61.918  masque oculaire : 99 % du cadre utile (p95 216)
+    62.192  masque oculaire : 99 % du cadre utile (p95 216)
+    62.459  masque oculaire : 99 % du cadre utile (p95 216)
+    62.720  masque oculaire : 99 % du cadre utile (p95 216)
+    62.989  masque oculaire : 99 % du cadre utile (p95 215)
+    63.255  masque oculaire : 99 % du cadre utile (p95 216)
+    63.509  masque oculaire : 99 % du cadre utile (p95 216)
+    63.784  masque oculaire : 99 % du cadre utile (p95 216)
+    64.048  masque oculaire : 99 % du cadre utile (p95 216)
+    64.318  masque oculaire : 99 % du cadre utile (p95 215)
+    64.587  masque oculaire : 99 % du cadre utile (p95 216)
+    64.851  masque oculaire : 99 % du cadre utile (p95 216)
+    65.127  masque oculaire : 99 % du cadre utile (p95 216)
+    65.391  masque oculaire : 99 % du cadre utile (p95 216)
+    65.659  masque oculaire : 99 % du cadre utile (p95 215)
+    65.916  masque oculaire : 99 % du cadre utile (p95 215)
+    66.170  masque oculaire : 99 % du cadre utile (p95 215)
+    66.449  masque oculaire : 99 % du cadre utile (p95 215)
+    66.722  masque oculaire : 99 % du cadre utile (p95 215)
+    66.991  masque oculaire : 99 % du cadre utile (p95 215)
+    67.260  masque oculaire : 99 % du cadre utile (p95 215)
+    67.523  masque oculaire : 99 % du cadre utile (p95 215)
+    67.791  masque oculaire : 99 % du cadre utile (p95 215)
+    68.054  masque oculaire : 99 % du cadre utile (p95 215)
+    68.357  masque oculaire : 99 % du cadre utile (p95 215)
+    68.629  masque oculaire : 99 % du cadre utile (p95 215)
+    68.893  masque oculaire : 99 % du cadre utile (p95 215)
+    69.157  masque oculaire : 99 % du cadre utile (p95 215)
+    69.424  masque oculaire : 99 % du cadre utile (p95 214)
+    69.695  masque oculaire : 99 % du cadre utile (p95 214)
+    69.953  masque oculaire : 99 % du cadre utile (p95 215)
+    70.230  masque oculaire : 99 % du cadre utile (p95 215)
+    70.495  masque oculaire : 99 % du cadre utile (p95 215)
+    70.753  masque oculaire : 100 % du cadre utile (p95 6)
+    71.015  masque oculaire : 100 % du cadre utile (p95 3)
+    71.282  masque oculaire : 100 % du cadre utile (p95 2)
+    71.546  masque oculaire : 100 % du cadre utile (p95 3)
+    71.820  masque oculaire : 100 % du cadre utile (p95 3)
+    72.093  masque oculaire : 100 % du cadre utile (p95 132)
+    72.353  masque oculaire : 100 % du cadre utile (p95 133)
+    72.623  masque oculaire : 100 % du cadre utile (p95 133)
+    72.885  masque oculaire : 100 % du cadre utile (p95 133)
+    73.158  masque oculaire : 100 % du cadre utile (p95 133)
+    73.419  masque oculaire : 100 % du cadre utile (p95 133)
+    73.680  masque oculaire : 100 % du cadre utile (p95 133)
+    73.925  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+    73.946  masque oculaire : 100 % du cadre utile (p95 160)
+    74.224  masque oculaire : 100 % du cadre utile (p95 187)
+    74.486  masque oculaire : 100 % du cadre utile (p95 188)
+    74.761  masque oculaire : 100 % du cadre utile (p95 187)
+    75.018  masque oculaire : 100 % du cadre utile (p95 187)
+    75.282  masque oculaire : 100 % du cadre utile (p95 187)
+    75.558  masque oculaire : 100 % du cadre utile (p95 188)
+    75.823  masque oculaire : 100 % du cadre utile (p95 203)
+    76.087  masque oculaire : 100 % du cadre utile (p95 184)
+    76.366  masque oculaire : 100 % du cadre utile (p95 171)
+    76.614  masque oculaire : 100 % du cadre utile (p95 184)
+    76.881  masque oculaire : 100 % du cadre utile (p95 176)
+    77.153  masque oculaire : 100 % du cadre utile (p95 129)
+    77.419  masque oculaire : 100 % du cadre utile (p95 141)
+    77.691  masque oculaire : 100 % du cadre utile (p95 164)
+    77.963  masque oculaire : 100 % du cadre utile (p95 171)
+    78.213  masque oculaire : 100 % du cadre utile (p95 171)
+    78.489  masque oculaire : 100 % du cadre utile (p95 172)
+    78.758  masque oculaire : 99 % du cadre utile (p95 173)
+    79.030  masque oculaire : 98 % du cadre utile (p95 174)
+    79.299  masque oculaire : 98 % du cadre utile (p95 174)
+    79.574  masque oculaire : 99 % du cadre utile (p95 175)
+    79.827  masque oculaire : 99 % du cadre utile (p95 174)
+    80.094  masque oculaire : 99 % du cadre utile (p95 174)
+    80.358  masque oculaire : 99 % du cadre utile (p95 174)
+    80.630  masque oculaire : 99 % du cadre utile (p95 174)
+    80.890  masque oculaire : 99 % du cadre utile (p95 174)
+    81.154  masque oculaire : 99 % du cadre utile (p95 174)
+    81.430  masque oculaire : 99 % du cadre utile (p95 175)
+    81.702  masque oculaire : 99 % du cadre utile (p95 176)
+    81.960  masque oculaire : 99 % du cadre utile (p95 176)
+    82.227  masque oculaire : 99 % du cadre utile (p95 177)
+    82.488  masque oculaire : 99 % du cadre utile (p95 177)
+    82.526  verrouillage : focus infini, pose 29.994234 ms, ISO 867, WB figée
+    82.767  masque oculaire : 98 % du cadre utile (p95 176)
+    82.779  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+    83.027  masque oculaire : 98 % du cadre utile (p95 174)
+    83.298  masque oculaire : 98 % du cadre utile (p95 174)
+    83.567  masque oculaire : 98 % du cadre utile (p95 175)
+    83.831  masque oculaire : 98 % du cadre utile (p95 175)
+    84.096  masque oculaire : 98 % du cadre utile (p95 175)
+    84.361  masque oculaire : 98 % du cadre utile (p95 175)
+    84.626  masque oculaire : 98 % du cadre utile (p95 175)
+    84.896  masque oculaire : 98 % du cadre utile (p95 175)
+    85.164  masque oculaire : 98 % du cadre utile (p95 175)
+    85.429  masque oculaire : 98 % du cadre utile (p95 175)
+    85.685  masque oculaire : 98 % du cadre utile (p95 176)
+    85.958  masque oculaire : 98 % du cadre utile (p95 176)
+    86.228  masque oculaire : 98 % du cadre utile (p95 176)
+    86.552  masque oculaire : 98 % du cadre utile (p95 176)
+    86.825  masque oculaire : 98 % du cadre utile (p95 176)
+    87.091  masque oculaire : 98 % du cadre utile (p95 175)
+    87.360  masque oculaire : 98 % du cadre utile (p95 175)
+    87.625  masque oculaire : 98 % du cadre utile (p95 175)
+    87.887  masque oculaire : 98 % du cadre utile (p95 175)
+    88.156  masque oculaire : 98 % du cadre utile (p95 175)
+    88.425  masque oculaire : 98 % du cadre utile (p95 175)
+    88.700  masque oculaire : 98 % du cadre utile (p95 176)
+    88.962  masque oculaire : 98 % du cadre utile (p95 176)
+    89.226  masque oculaire : 98 % du cadre utile (p95 175)
+    89.491  masque oculaire : 98 % du cadre utile (p95 176)
+    89.764  masque oculaire : 98 % du cadre utile (p95 176)
+    90.035  masque oculaire : 98 % du cadre utile (p95 176)
+    90.301  masque oculaire : 98 % du cadre utile (p95 176)
+    90.543  masque oculaire : 98 % du cadre utile (p95 176)
+    90.812  masque oculaire : 98 % du cadre utile (p95 176)
+    91.095  masque oculaire : 98 % du cadre utile (p95 175)
+    91.354  masque oculaire : 98 % du cadre utile (p95 175)
+    91.621  masque oculaire : 98 % du cadre utile (p95 176)
+    91.895  masque oculaire : 98 % du cadre utile (p95 176)
+    92.164  masque oculaire : 98 % du cadre utile (p95 176)
+    92.421  masque oculaire : 98 % du cadre utile (p95 176)
+    92.699  masque oculaire : 98 % du cadre utile (p95 177)
+    92.966  masque oculaire : 98 % du cadre utile (p95 177)
+    93.229  masque oculaire : 98 % du cadre utile (p95 176)
+    93.479  masque oculaire : 98 % du cadre utile (p95 176)
+    93.758  masque oculaire : 98 % du cadre utile (p95 176)
+    94.029  masque oculaire : 98 % du cadre utile (p95 176)
+    94.296  masque oculaire : 98 % du cadre utile (p95 176)
+    94.553  masque oculaire : 98 % du cadre utile (p95 176)
+    94.827  masque oculaire : 98 % du cadre utile (p95 176)
+    95.093  masque oculaire : 98 % du cadre utile (p95 177)
+    95.362  masque oculaire : 98 % du cadre utile (p95 177)
+    95.629  masque oculaire : 98 % du cadre utile (p95 178)
+    95.878  masque oculaire : 98 % du cadre utile (p95 178)
+    96.149  masque oculaire : 98 % du cadre utile (p95 178)
+    96.426  masque oculaire : 98 % du cadre utile (p95 177)
+    96.693  masque oculaire : 98 % du cadre utile (p95 177)
+    96.963  masque oculaire : 98 % du cadre utile (p95 177)
+    97.235  masque oculaire : 98 % du cadre utile (p95 177)
+    97.507  masque oculaire : 98 % du cadre utile (p95 177)
+    97.765  masque oculaire : 98 % du cadre utile (p95 177)
+    98.030  masque oculaire : 98 % du cadre utile (p95 177)
+    98.291  masque oculaire : 98 % du cadre utile (p95 177)
+    98.563  masque oculaire : 98 % du cadre utile (p95 177)
+    98.829  masque oculaire : 98 % du cadre utile (p95 178)
+    99.093  masque oculaire : 98 % du cadre utile (p95 178)
+    99.357  masque oculaire : 99 % du cadre utile (p95 178)
+    99.627  masque oculaire : 98 % du cadre utile (p95 178)
+    99.885  masque oculaire : 98 % du cadre utile (p95 178)
+   100.159  masque oculaire : 98 % du cadre utile (p95 178)
+   100.417  masque oculaire : 98 % du cadre utile (p95 177)
+   100.689  masque oculaire : 98 % du cadre utile (p95 177)
+   100.947  masque oculaire : 98 % du cadre utile (p95 177)
+   101.215  masque oculaire : 98 % du cadre utile (p95 177)
+   101.485  masque oculaire : 98 % du cadre utile (p95 177)
+   101.761  masque oculaire : 98 % du cadre utile (p95 177)
+   102.026  masque oculaire : 99 % du cadre utile (p95 177)
+   102.301  masque oculaire : 98 % du cadre utile (p95 178)
+   102.568  masque oculaire : 99 % du cadre utile (p95 178)
+   102.825  masque oculaire : 98 % du cadre utile (p95 177)
+   103.099  masque oculaire : 98 % du cadre utile (p95 178)
+   103.362  masque oculaire : 99 % du cadre utile (p95 178)
+   103.625  masque oculaire : 98 % du cadre utile (p95 177)
+   103.898  masque oculaire : 98 % du cadre utile (p95 177)
+   104.165  masque oculaire : 98 % du cadre utile (p95 177)
+   104.438  masque oculaire : 98 % du cadre utile (p95 176)
+   104.704  masque oculaire : 99 % du cadre utile (p95 176)
+   104.958  masque oculaire : 98 % du cadre utile (p95 177)
+   105.235  masque oculaire : 98 % du cadre utile (p95 177)
+   105.504  masque oculaire : 98 % du cadre utile (p95 178)
+   105.769  masque oculaire : 98 % du cadre utile (p95 178)
+   106.038  masque oculaire : 98 % du cadre utile (p95 178)
+   106.307  masque oculaire : 98 % du cadre utile (p95 177)
+   106.566  masque oculaire : 98 % du cadre utile (p95 177)
+   106.838  masque oculaire : 98 % du cadre utile (p95 177)
+   107.107  masque oculaire : 98 % du cadre utile (p95 177)
+   107.201  === série lame_20261021_190939_tedt-bleu-v2 (photos) « tedt bleu v2 », gram, objectif x40 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+   107.256  masque oculaire : 98 % du cadre utile (p95 177)
+   107.568  t0000368 suivi ok score 1.00 pos 0,0 net 59 (21 ms) carte 0 photos + 3 positions
+   107.895  patron 4x4 champs posé en haut à gauche (0,0)
+   107.895  photo -v2_0001 à 0,0 (1137 ko, 224 ms)
+   107.905  t0000705 suivi ok score 1.00 pos 0,0 net 60 (22 ms) carte 1 photos + 6 positions
+   108.235  t0001032 suivi ok score 1.00 pos 0,0 net 59 (21 ms) carte 1 photos + 10 positions
+   108.569  t0001368 suivi ok score 1.00 pos 0,0 net 60 (21 ms) carte 1 photos + 13 positions
+   108.908  t0001707 suivi ok score 1.00 pos 0,0 net 60 (21 ms) carte 1 photos + 16 positions
+   109.243  t0002041 suivi ok score 1.00 pos 0,0 net 59 (22 ms) carte 1 photos + 20 positions
+   109.576  t0002375 suivi ok score 1.00 pos 0,0 net 60 (21 ms) carte 1 photos + 23 positions
+   109.903  t0002703 suivi ok score 1.00 pos 0,0 net 60 (21 ms) carte 1 photos + 26 positions
+   110.240  t0003039 suivi ok score 1.00 pos 0,0 net 60 (23 ms) carte 1 photos + 30 positions
+   110.582  t0003381 suivi ok score 1.00 pos 0,0 net 59 (27 ms) carte 1 photos + 33 positions
+   110.907  t0003706 suivi ok score 1.00 pos 0,0 net 59 (22 ms) carte 1 photos + 36 positions
+   111.184  envoyé lame_20261021_190939_tedt-bleu-v2_0001.jpg (1137 ko)
+   111.243  t0004041 suivi ok score 1.00 pos 0,0 net 59 (21 ms) carte 1 photos + 40 positions
+   111.575  t0004375 suivi ok score 1.00 pos 0,0 net 60 (21 ms) carte 1 photos + 43 positions
+   111.909  t0004708 suivi ok score 1.00 pos 0,0 net 60 (21 ms) carte 1 photos + 46 positions
+   112.240  t0005039 suivi ok score 1.00 pos 0,0 net 59 (21 ms) carte 1 photos + 50 positions
+   112.577  t0005377 suivi ok score 1.00 pos 0,0 net 58 (26 ms) carte 1 photos + 53 positions
+   112.909  t0005709 suivi ok score 1.00 pos 0,0 net 59 (16 ms) carte 1 photos + 56 positions
+   113.244  t0006043 suivi ok score 1.00 pos 0,0 net 59 (25 ms) carte 1 photos + 60 positions
+   113.581  t0006380 suivi ok score 1.00 pos 0,0 net 59 (27 ms) carte 1 photos + 63 positions
+   113.915  t0006714 suivi ok score 1.00 pos 0,0 net 59 (22 ms) carte 1 photos + 66 positions
+   114.238  t0007037 suivi ok score 1.00 pos 0,0 net 59 (17 ms) carte 1 photos + 70 positions
+   114.577  t0007377 suivi ok score 1.00 pos 0,0 net 59 (21 ms) carte 1 photos + 73 positions
+   114.917  t0007716 suivi ok score 1.00 pos 8,0 net 59 (30 ms) carte 1 photos + 76 positions
+   115.266  t0008065 suivi ok score 1.00 pos 24,0 net 59 (41 ms) carte 1 photos + 80 positions
+   115.570  t0008369 suivi ok score 0.99 pos 812,-31 net 53 (19 ms) carte 1 photos + 83 positions
+   115.906  t0008705 suivi ok score 0.99 pos 1187,-32 net 42 (20 ms) carte 1 photos + 86 positions
+   116.238  t0009037 suivi ok score 1.00 pos 1223,-48 net 56 (15 ms) carte 1 photos + 90 positions
+   116.565  photo -v2_0002 à 1246,-48 (1137 ko, 231 ms)
+   116.570  t0009369 suivi ok score 1.00 pos 1566,-59 net 40 (22 ms) carte 2 photos + 93 positions
+   116.898  t0009698 suivi ok score 1.00 pos 1688,-64 net 56 (19 ms) carte 2 photos + 96 positions
+   117.236  t0010035 suivi ok score 1.00 pos 1770,-64 net 54 (21 ms) carte 2 photos + 100 positions
+   117.251  photo -v2_0003 à 1715,-64 (1147 ko, 208 ms)
+   117.577  t0010377 suivi ok score 1.00 pos 1829,-64 net 53 (23 ms) carte 3 photos + 103 positions
+   117.913  t0010712 suivi ok score 1.00 pos 2080,-80 net 41 (26 ms) carte 3 photos + 106 positions
+   118.246  t0011044 suivi ok score 1.00 pos 2199,-80 net 49 (24 ms) carte 3 photos + 110 positions
+   118.575  t0011374 suivi ok score 1.00 pos 2199,-80 net 52 (22 ms) carte 3 photos + 113 positions
+   118.586  photo -v2_0004 à 2200,-80 (1161 ko, 229 ms)
+   118.912  t0011711 suivi ok score 1.00 pos 2189,-80 net 51 (23 ms) carte 4 photos + 116 positions
+   118.976  envoyé lame_20261021_190939_tedt-bleu-v2_0002.jpg (1137 ko)
+   119.238  t0012037 suivi ok score 1.00 pos 2188,-80 net 51 (19 ms) carte 4 photos + 120 positions
+   119.572  t0012371 suivi ok score 1.00 pos 2197,-80 net 53 (21 ms) carte 4 photos + 123 positions
+   119.905  t0012704 suivi ok score 0.99 pos 2188,-80 net 53 (21 ms) carte 4 photos + 126 positions
+   120.110  reprise de mise au point au même endroit : netteté 66 contre 50 (reprise 1)
+   120.242  t0013041 suivi ok score 1.00 pos 2188,-80 net 71 (22 ms) carte 4 photos + 130 positions
+   120.335  photo -v2_0005 à 2188,-80 (1195 ko, 224 ms)
+   120.572  t0013371 suivi ok score 1.00 pos 2188,-80 net 73 (21 ms) carte 5 photos + 133 positions
+   120.926  t0013724 suivi ok score 1.00 pos 2188,-80 net 73 (33 ms) carte 5 photos + 136 positions
+   121.246  t0014045 suivi ok score 1.00 pos 2179,-80 net 73 (24 ms) carte 5 photos + 140 positions
+   121.581  t0014380 suivi ok score 1.00 pos 2167,-80 net 73 (25 ms) carte 5 photos + 143 positions
+   121.907  t0014706 suivi ok score 0.99 pos 2140,-80 net 73 (22 ms) carte 5 photos + 146 positions
+   121.990  envoyé lame_20261021_190939_tedt-bleu-v2_0003.jpg (1147 ko)
+   122.242  t0015041 suivi ok score 0.98 pos 1901,-80 net 60 (22 ms) carte 5 photos + 150 positions
+   122.583  t0015382 suivi ok score 0.99 pos 1686,-64 net 85 (26 ms) carte 5 photos + 153 positions
+   122.926  t0015725 suivi ok score 1.00 pos 1639,-64 net 87 (37 ms) carte 5 photos + 156 positions
+   122.999  photo -v2_0006 à 1653,-64 (1185 ko, 227 ms)
+   123.242  t0016041 suivi ok score 0.99 pos 1619,-64 net 86 (22 ms) carte 6 photos + 160 positions
+   123.579  t0016378 suivi ok score 1.00 pos 1379,-64 net 71 (20 ms) carte 6 photos + 163 positions
+   123.699  envoyé lame_20261021_190939_tedt-bleu-v2_0004.jpg (1161 ko)
+   123.932  t0016731 suivi ok score 1.00 pos 1187,-48 net 80 (38 ms) carte 6 photos + 166 positions
+   124.256  t0017055 suivi ok score 0.99 pos 1079,-48 net 82 (23 ms) carte 6 photos + 170 positions
+   124.447  photo -v2_0007 à 1091,-48 (1167 ko, 234 ms)
+   124.574  t0017373 suivi ok score 0.99 pos 880,-33 net 84 (21 ms) carte 7 photos + 173 positions
+   124.920  t0017719 suivi ok score 1.00 pos 541,-32 net 83 (23 ms) carte 7 photos + 176 positions
+   125.245  t0018043 suivi ok score 0.98 pos 471,-32 net 97 (22 ms) carte 7 photos + 180 positions
+   125.504  photo -v2_0008 à 468,-32 (1169 ko, 229 ms)
+   125.579  envoyé lame_20261021_190939_tedt-bleu-v2_0005.jpg (1195 ko)
+   125.590  t0018389 suivi ok score 1.00 pos 444,-32 net 100 (32 ms) carte 8 photos + 183 positions
+   125.926  t0018725 suivi ok score 0.99 pos 383,-32 net 92 (29 ms) carte 8 photos + 186 positions
+   126.259  t0019058 suivi ok score 0.98 pos 188,-16 net 93 (29 ms) carte 8 photos + 190 positions
+   126.587  t0019386 suivi ok score 0.97 pos 130,-16 net 92 (31 ms) carte 8 photos + 193 positions
+   126.836  photo -v2_0009 à 130,-16 (1160 ko, 248 ms)
+   126.907  t0019706 suivi ok score 0.97 pos 0,-16 net 93 (21 ms) carte 9 photos + 196 positions
+   127.239  t0020038 suivi ok score 1.00 pos -24,-16 net 51 (21 ms) carte 9 photos + 200 positions
+   127.421  photo -v2_0010 à -24,-16 (1134 ko, 214 ms)
+   127.578  t0020377 suivi ok score 1.00 pos -36,-16 net 72 (24 ms) carte 10 photos + 203 positions
+   127.905  t0020705 suivi ok score 1.00 pos -47,-16 net 105 (21 ms) carte 10 photos + 206 positions
+   128.145  reprise de mise au point au même endroit : netteté 106 contre 53 (reprise 1)
+   128.242  t0021041 suivi ok score 0.98 pos -56,-16 net 104 (23 ms) carte 10 photos + 210 positions
+   128.356  photo -v2_0011 à -48,-16 (1174 ko, 210 ms)
+   128.575  t0021374 suivi ok score 0.98 pos -104,-16 net 105 (15 ms) carte 11 photos + 213 positions
+   128.907  t0021706 suivi ok score 0.98 pos -140,-16 net 104 (20 ms) carte 11 photos + 216 positions
+   129.098  envoyé lame_20261021_190939_tedt-bleu-v2_0006.jpg (1185 ko)
+   129.244  t0022043 suivi ok score 1.00 pos -167,-16 net 105 (20 ms) carte 11 photos + 220 positions
+   129.573  t0022372 suivi ok score 0.98 pos -116,-16 net 102 (21 ms) carte 11 photos + 223 positions
+   129.907  t0022707 suivi ok score 0.97 pos -25,-16 net 96 (22 ms) carte 11 photos + 226 positions
+   130.247  t0023046 suivi ok score 1.00 pos 430,-30 net 69 (25 ms) carte 11 photos + 230 positions
+   130.579  t0023378 suivi ok score 1.00 pos 706,-32 net 98 (24 ms) carte 11 photos + 233 positions
+   130.909  t0023708 suivi ok score 1.00 pos 706,-32 net 98 (21 ms) carte 11 photos + 236 positions
+   131.068  photo -v2_0012 à 706,-32 (1187 ko, 248 ms)
+   131.141  envoyé lame_20261021_190939_tedt-bleu-v2_0007.jpg (1167 ko)
+   131.242  t0024041 suivi ok score 1.00 pos 706,-32 net 99 (21 ms) carte 12 photos + 240 positions
+   131.574  t0024374 suivi ok score 1.00 pos 706,-32 net 86 (20 ms) carte 12 photos + 243 positions
+   131.914  t0024714 suivi ok score 1.00 pos 706,-32 net 78 (21 ms) carte 12 photos + 246 positions
+   132.248  t0025047 suivi ok score 1.00 pos 706,-32 net 78 (24 ms) carte 12 photos + 250 positions
+   132.587  t0025386 suivi ok score 1.00 pos 706,-32 net 69 (24 ms) carte 12 photos + 253 positions
+   132.914  t0025714 suivi ok score 1.00 pos 706,-32 net 55 (21 ms) carte 12 photos + 256 positions
+   133.244  t0026043 suivi ok score 1.00 pos 706,-32 net 56 (22 ms) carte 12 photos + 260 positions
+   133.359  envoyé lame_20261021_190939_tedt-bleu-v2_0008.jpg (1169 ko)
+   133.600  t0026399 suivi ok score 0.99 pos 1378,-48 net 36 (38 ms) carte 12 photos + 263 positions
+   133.912  t0026711 suivi ok score 1.00 pos 1504,-48 net 54 (23 ms) carte 12 photos + 266 positions
+   134.256  t0027055 suivi ok score 1.00 pos 1496,-48 net 54 (22 ms) carte 12 photos + 270 positions
+   134.362  photo -v2_0013 à 1508,-48 (1170 ko, 216 ms)
+   134.580  t0027380 suivi ok score 0.99 pos 1510,-48 net 54 (21 ms) carte 13 photos + 273 positions
+   134.914  t0027713 suivi ok score 1.00 pos 1758,-64 net 44 (25 ms) carte 13 photos + 276 positions
+   135.247  t0028046 suivi ok score 1.00 pos 1901,-64 net 51 (20 ms) carte 13 photos + 280 positions
+   135.527  envoyé lame_20261021_190939_tedt-bleu-v2_0009.jpg (1160 ko)
+   135.591  t0028390 suivi ok score 1.00 pos 2023,-71 net 49 (22 ms) carte 13 photos + 283 positions
+   135.591  photo -v2_0014 à 1949,-75 (1172 ko, 215 ms)
+   135.906  t0028705 suivi ok score 0.99 pos 2224,-80 net 47 (14 ms) carte 14 photos + 286 positions
+   136.248  t0029047 suivi ok score 1.00 pos 2427,-96 net 44 (22 ms) carte 14 photos + 290 positions
+   136.579  t0029379 suivi ok score 1.00 pos 2499,-96 net 50 (21 ms) carte 14 photos + 293 positions
+   136.810  photo -v2_0015 à 2499,-96 (1180 ko, 230 ms)
+   136.911  t0029710 suivi ok score 1.00 pos 2490,-96 net 50 (21 ms) carte 15 photos + 296 positions
+   137.244  t0030043 suivi ok score 1.00 pos 2499,-96 net 50 (22 ms) carte 15 photos + 300 positions
+   137.584  t0030383 suivi ok score 1.00 pos 2499,-96 net 52 (25 ms) carte 15 photos + 300 positions
+   137.640  envoyé lame_20261021_190939_tedt-bleu-v2_0010.jpg (1134 ko)
+   137.908  t0030708 suivi ok score 1.00 pos 2499,-96 net 52 (19 ms) carte 15 photos + 300 positions
+   138.260  t0031060 suivi ok score 1.00 pos 2523,-96 net 50 (30 ms) carte 15 photos + 300 positions
+   138.599  t0031398 suivi ok score 1.00 pos 2715,-96 net 37 (34 ms) carte 15 photos + 300 positions
+   138.925  t0031724 suivi ok score 1.00 pos 2940,-112 net 45 (21 ms) carte 15 photos + 300 positions
+   139.246  t0032046 suivi ok score 1.00 pos 2941,-112 net 52 (20 ms) carte 15 photos + 300 positions
+   139.509  photo -v2_0016 à 2941,-112 (1173 ko, 232 ms)
+   139.571  t0032371 suivi ok score 1.00 pos 2941,-112 net 53 (14 ms) carte 16 photos + 300 positions
+   139.682  envoyé lame_20261021_190939_tedt-bleu-v2_0011.jpg (1174 ko)
+   139.918  t0032718 suivi ok score 1.00 pos 2941,-112 net 52 (16 ms) carte 16 photos + 300 positions
+   140.245  t0033044 suivi ok score 1.00 pos 2941,-112 net 52 (22 ms) carte 16 photos + 300 positions
+   140.585  t0033384 suivi ok score 1.00 pos 2941,-112 net 47 (21 ms) carte 16 photos + 300 positions
+   140.919  t0033718 suivi ok score 1.00 pos 2941,-112 net 51 (22 ms) carte 16 photos + 300 positions
+   141.252  t0034051 suivi ok score 1.00 pos 2941,-112 net 53 (26 ms) carte 16 photos + 300 positions
+   141.580  t0034379 suivi ok score 1.00 pos 2941,-112 net 47 (21 ms) carte 16 photos + 300 positions
+   141.809  envoyé lame_20261021_190939_tedt-bleu-v2_0012.jpg (1187 ko)
+   141.920  t0034719 suivi ok score 1.00 pos 2941,-112 net 50 (25 ms) carte 16 photos + 300 positions
+   142.247  t0035046 suivi ok score 1.00 pos 2941,-112 net 52 (20 ms) carte 16 photos + 300 positions
+   142.584  t0035383 suivi ok score 1.00 pos 2941,-112 net 52 (24 ms) carte 16 photos + 300 positions
+   142.932  t0035732 suivi ok score 1.00 pos 2941,-112 net 52 (21 ms) carte 16 photos + 300 positions
+   143.257  t0036055 suivi ok score 1.00 pos 2952,-112 net 51 (29 ms) carte 16 photos + 300 positions
+   143.583  t0036382 suivi ok score 1.00 pos 2977,-112 net 51 (24 ms) carte 16 photos + 300 positions
+   143.929  t0036727 suivi ok score 1.00 pos 3025,-112 net 47 (30 ms) carte 16 photos + 300 positions
+   143.957  envoyé lame_20261021_190939_tedt-bleu-v2_0013.jpg (1170 ko)
+   144.246  t0037045 suivi ok score 1.00 pos 3144,-113 net 51 (21 ms) carte 16 photos + 300 positions
+   144.582  t0037381 suivi ok score 1.00 pos 3132,-112 net 51 (23 ms) carte 16 photos + 300 positions
+   144.703  photo -v2_0017 à 3132,-112 (1183 ko, 215 ms)
+   144.934  t0037732 suivi ok score 1.00 pos 3132,-112 net 51 (36 ms) carte 17 photos + 300 positions
+   145.272  t0038071 suivi ok score 1.00 pos 3132,-112 net 52 (35 ms) carte 17 photos + 300 positions
+   145.590  t0038389 suivi ok score 1.00 pos 3132,-112 net 54 (27 ms) carte 17 photos + 300 positions
+   145.758  envoyé lame_20261021_190939_tedt-bleu-v2_0014.jpg (1172 ko)
+   145.925  t0038724 suivi ok score 1.00 pos 3132,-112 net 57 (29 ms) carte 17 photos + 300 positions
+   146.044  reprise de mise au point au même endroit : netteté 68 contre 50 (reprise 1)
+   146.245  t0039044 suivi ok score 1.00 pos 3120,-112 net 74 (22 ms) carte 17 photos + 300 positions
+   146.267  photo -v2_0018 à 3132,-112 (1207 ko, 222 ms)
+   146.584  t0039383 suivi ok score 1.00 pos 3132,-112 net 61 (18 ms) carte 18 photos + 300 positions
+   146.919  t0039718 suivi ok score 1.00 pos 3132,-112 net 66 (26 ms) carte 18 photos + 300 positions
+   147.259  t0040057 suivi ok score 1.00 pos 3120,-112 net 70 (29 ms) carte 18 photos + 300 positions
+   147.587  t0040386 suivi ok score 1.00 pos 3120,-112 net 70 (26 ms) carte 18 photos + 300 positions
+   147.923  t0040723 suivi ok score 1.00 pos 3132,-112 net 69 (22 ms) carte 18 photos + 300 positions
+   148.257  t0041056 suivi ok score 1.00 pos 3132,-112 net 70 (23 ms) carte 18 photos + 300 positions
+   148.580  t0041379 suivi ok score 1.00 pos 3132,-112 net 71 (21 ms) carte 18 photos + 300 positions
+   148.929  t0041728 suivi ok score 1.00 pos 3164,-112 net 70 (22 ms) carte 18 photos + 300 positions
+   149.137  envoyé lame_20261021_190939_tedt-bleu-v2_0015.jpg (1180 ko)
+   149.280  t0042078 suivi ok score 0.99 pos 3240,-112 net 66 (40 ms) carte 18 photos + 300 positions
+   149.527  photo -v2_0019 à 3253,-112 (1177 ko, 204 ms)
+   149.576  t0042375 suivi ok score 1.00 pos 3635,-127 net 52 (20 ms) carte 19 photos + 300 positions
+   149.929  t0042728 suivi ok score 1.00 pos 3670,-127 net 68 (30 ms) carte 19 photos + 300 positions
+   150.210  photo -v2_0020 à 3660,-127 (1209 ko, 225 ms)
+   150.254  t0043053 suivi ok score 1.00 pos 3659,-127 net 65 (22 ms) carte 20 photos + 300 positions
+   150.586  t0043385 suivi ok score 1.00 pos 3659,-127 net 65 (22 ms) carte 20 photos + 300 positions
+   150.922  t0043722 suivi ok score 1.00 pos 3659,-127 net 65 (23 ms) carte 20 photos + 300 positions
+   151.256  t0044055 suivi ok score 1.00 pos 3659,-127 net 65 (23 ms) carte 20 photos + 300 positions
+   151.599  t0044398 suivi ok score 1.00 pos 3659,-127 net 69 (31 ms) carte 20 photos + 300 positions
+   151.618  envoyé lame_20261021_190939_tedt-bleu-v2_0016.jpg (1173 ko)
+   151.918  t0044717 suivi ok score 1.00 pos 3695,-127 net 67 (21 ms) carte 20 photos + 300 positions
+   152.250  t0045049 suivi ok score 1.00 pos 3744,-127 net 63 (21 ms) carte 20 photos + 300 positions
+   152.598  t0045397 suivi ok score 1.00 pos 3909,-142 net 59 (33 ms) carte 20 photos + 300 positions
+   152.921  t0045720 suivi ok score 1.00 pos 4101,-143 net 50 (20 ms) carte 20 photos + 300 positions
+   153.257  t0046056 suivi ok score 1.00 pos 4221,-143 net 62 (27 ms) carte 20 photos + 300 positions
+   153.586  t0046385 suivi ok score 1.00 pos 4221,-143 net 64 (24 ms) carte 20 photos + 300 positions
+   153.589  photo -v2_0021 à 4221,-143 (1191 ko, 250 ms)
+   153.769  envoyé lame_20261021_190939_tedt-bleu-v2_0017.jpg (1183 ko)
+   153.915  t0046715 suivi ok score 1.00 pos 4221,-143 net 51 (22 ms) carte 21 photos + 300 positions
+   154.249  t0047048 suivi ok score 1.00 pos 4221,-143 net 50 (21 ms) carte 21 photos + 300 positions
+   154.594  t0047393 suivi ok score 1.00 pos 4221,-143 net 63 (27 ms) carte 21 photos + 300 positions
+   154.923  t0047722 suivi ok score 1.00 pos 4221,-143 net 67 (21 ms) carte 21 photos + 300 positions
+   155.260  t0048059 suivi ok score 1.00 pos 4221,-143 net 65 (27 ms) carte 21 photos + 300 positions
+   155.590  t0048389 suivi ok score 1.00 pos 4221,-143 net 64 (26 ms) carte 21 photos + 300 positions
+   155.915  t0048715 suivi ok score 1.00 pos 4351,-143 net 47 (21 ms) carte 21 photos + 300 positions
+   156.207  envoyé lame_20261021_190939_tedt-bleu-v2_0018.jpg (1207 ko)
+   156.262  t0049061 suivi ok score 1.00 pos 4842,-159 net 40 (20 ms) carte 21 photos + 300 positions
+   156.586  t0049385 suivi ok score 1.00 pos 4941,-159 net 61 (19 ms) carte 21 photos + 300 positions
+   156.876  photo -v2_0022 à 4950,-159 (1168 ko, 226 ms)
+   156.918  t0049717 suivi ok score 1.00 pos 4982,-170 net 65 (19 ms) carte 22 photos + 300 positions
+   157.244  t0050043 suivi ok score 1.00 pos 4970,-170 net 68 (17 ms) carte 22 photos + 300 positions
+   157.585  t0050384 suivi ok score 1.00 pos 4970,-170 net 66 (24 ms) carte 22 photos + 300 positions
+   157.916  t0050715 suivi ok score 1.00 pos 4970,-170 net 56 (23 ms) carte 22 photos + 300 positions
+   158.252  t0051051 suivi ok score 1.00 pos 4970,-170 net 68 (22 ms) carte 22 photos + 300 positions
+   158.586  t0051385 suivi ok score 1.00 pos 4970,-170 net 55 (21 ms) carte 22 photos + 300 positions
+   158.911  t0051711 suivi ok score 1.00 pos 4970,-170 net 51 (18 ms) carte 22 photos + 300 positions
+   158.915  envoyé lame_20261021_190939_tedt-bleu-v2_0019.jpg (1177 ko)
+   159.252  t0052051 suivi ok score 1.00 pos 4970,-170 net 62 (24 ms) carte 22 photos + 300 positions
+   159.599  t0052398 suivi ok score 1.00 pos 4970,-170 net 70 (30 ms) carte 22 photos + 300 positions
+   159.925  t0052724 suivi ok score 1.00 pos 4970,-170 net 70 (21 ms) carte 22 photos + 300 positions
+   160.261  t0053060 suivi ok score 1.00 pos 4970,-170 net 69 (25 ms) carte 22 photos + 300 positions
+   160.592  t0053391 suivi ok score 1.00 pos 4970,-170 net 68 (23 ms) carte 22 photos + 300 positions
+   160.922  t0053721 suivi ok score 1.00 pos 4970,-170 net 69 (21 ms) carte 22 photos + 300 positions
+   161.146  envoyé lame_20261021_190939_tedt-bleu-v2_0020.jpg (1209 ko)
+   161.249  t0054048 suivi ok score 1.00 pos 4982,-170 net 69 (14 ms) carte 22 photos + 300 positions
+   161.590  t0054390 suivi ok score 1.00 pos 5030,-170 net 65 (22 ms) carte 22 photos + 300 positions
+   161.917  t0054716 suivi ok score 0.99 pos 5482,-186 net 47 (21 ms) carte 22 photos + 300 positions
+   162.257  t0055056 suivi ok score 1.00 pos 5986,-202 net 47 (23 ms) carte 22 photos + 300 positions
+   162.591  t0055391 suivi ok score 1.00 pos 6249,-218 net 62 (21 ms) carte 22 photos + 300 positions
+   162.922  t0055722 suivi ok score 1.00 pos 6261,-218 net 71 (21 ms) carte 22 photos + 300 positions
+   163.078  photo -v2_0023 à 6261,-218 (1127 ko, 224 ms)
+   163.256  t0056056 suivi ok score 1.00 pos 6261,-218 net 67 (25 ms) carte 23 photos + 300 positions
+   163.513  envoyé lame_20261021_190939_tedt-bleu-v2_0021.jpg (1191 ko)
+   163.601  t0056400 suivi ok score 1.00 pos 6261,-218 net 69 (33 ms) carte 23 photos + 300 positions
+   163.920  t0056719 suivi ok score 1.00 pos 6269,-218 net 72 (23 ms) carte 23 photos + 300 positions
+   164.252  t0057051 suivi ok score 1.00 pos 6475,-218 net 42 (21 ms) carte 23 photos + 300 positions
+   164.589  t0057388 suivi ok score 0.99 pos 6862,-234 net 66 (21 ms) carte 23 photos + 300 positions
+   164.919  t0057718 suivi ok score 0.99 pos 7062,-250 net 62 (20 ms) carte 23 photos + 300 positions
+   165.249  t0058049 suivi ok score 1.00 pos 7269,-250 net 72 (20 ms) carte 23 photos + 300 positions
+   165.476  envoyé lame_20261021_190939_tedt-bleu-v2_0022.jpg (1168 ko)
+   165.588  t0058387 suivi ok score 1.00 pos 7298,-250 net 88 (23 ms) carte 23 photos + 300 positions
+   165.907  photo -v2_0024 à 7297,-250 (1108 ko, 217 ms)
+   165.916  t0058715 suivi ok score 1.00 pos 7297,-250 net 87 (21 ms) carte 24 photos + 300 positions
+   166.250  t0059050 suivi ok score 1.00 pos 7297,-250 net 84 (21 ms) carte 24 photos + 300 positions
+   166.580  t0059381 suivi ok score 1.00 pos 7333,-250 net 92 (15 ms) carte 24 photos + 300 positions
+   166.911  t0059711 suivi ok score 0.98 pos 7891,-277 net 79 (14 ms) carte 24 photos + 300 positions
+   167.249  t0060049 suivi ok score 1.00 pos 8493,-298 net 62 (19 ms) carte 24 photos + 300 positions
+   167.590  t0060389 suivi ok score 1.00 pos 8553,-282 net 98 (27 ms) carte 24 photos + 300 positions
+   167.903  photo -v2_0025 à 8553,-282 (1098 ko, 215 ms)
+   167.907  envoyé lame_20261021_190939_tedt-bleu-v2_0023.jpg (1127 ko)
+   167.922  t0060722 suivi ok score 1.00 pos 8553,-282 net 96 (14 ms) carte 25 photos + 300 positions
+   168.249  t0061049 suivi ok score 1.00 pos 8553,-282 net 52 (24 ms) carte 25 photos + 300 positions
+   168.585  t0061385 suivi ok score 1.00 pos 8553,-282 net 90 (17 ms) carte 25 photos + 300 positions
+   168.923  t0061723 suivi ok score 1.00 pos 8553,-282 net 96 (24 ms) carte 25 photos + 300 positions
+   169.270  t0062069 suivi ok score 0.97 pos 8588,-282 net 65 (36 ms) carte 25 photos + 300 positions
+   169.600  t0062399 suivi ok score 0.99 pos 9434,-314 net 96 (33 ms) carte 25 photos + 300 positions
+   169.924  t0062723 suivi ok score 1.00 pos 9437,-314 net 95 (22 ms) carte 25 photos + 300 positions
+   170.071  photo -v2_0026 à 9437,-314 (1096 ko, 216 ms)
+   170.252  t0063052 suivi ok score 1.00 pos 9437,-314 net 47 (22 ms) carte 26 photos + 300 positions
+   170.271  envoyé lame_20261021_190939_tedt-bleu-v2_0024.jpg (1108 ko)
+   170.586  t0063386 suivi ok score 1.00 pos 9437,-314 net 60 (22 ms) carte 26 photos + 300 positions
+   170.944  t0063743 suivi ok score 1.00 pos 9437,-314 net 66 (41 ms) carte 26 photos + 300 positions
+   171.277  t0064076 suivi ok score 1.00 pos 9437,-314 net 66 (35 ms) carte 26 photos + 300 positions
+   171.589  t0064388 suivi ok score 1.00 pos 9437,-314 net 67 (25 ms) carte 26 photos + 300 positions
+   171.918  t0064717 suivi ok score 1.00 pos 9437,-314 net 62 (22 ms) carte 26 photos + 300 positions
+   172.255  t0065054 suivi ok score 1.00 pos 9437,-314 net 60 (23 ms) carte 26 photos + 300 positions
+   172.592  t0065392 suivi ok score 1.00 pos 9448,-314 net 62 (22 ms) carte 26 photos + 300 positions
+   172.926  t0065726 suivi ok score 1.00 pos 9473,-314 net 66 (23 ms) carte 26 photos + 300 positions
+   173.256  t0066055 suivi ok score 1.00 pos 9473,-314 net 63 (20 ms) carte 26 photos + 300 positions
+   173.589  t0066389 suivi ok score 1.00 pos 9449,-314 net 63 (21 ms) carte 26 photos + 300 positions
+   173.934  t0066733 suivi ok score 1.00 pos 9426,-314 net 59 (32 ms) carte 26 photos + 300 positions
+   174.258  t0067057 suivi ok score 0.99 pos 9282,-303 net 56 (23 ms) carte 26 photos + 300 positions
+   174.588  t0067387 suivi ok score 1.00 pos 9294,-314 net 59 (20 ms) carte 26 photos + 300 positions
+   174.778  photo -v2_0027 à 9294,-314 (1086 ko, 243 ms)
+   174.924  t0067723 suivi ok score 1.00 pos 9294,-314 net 60 (28 ms) carte 27 photos + 300 positions
+   175.272  t0068071 suivi ok score 1.00 pos 9294,-314 net 58 (34 ms) carte 27 photos + 300 positions
+   175.591  t0068391 suivi ok score 1.00 pos 9294,-314 net 53 (25 ms) carte 27 photos + 300 positions
+   175.920  t0068720 suivi ok score 1.00 pos 9294,-314 net 47 (21 ms) carte 27 photos + 300 positions
+   176.258  t0069058 suivi ok score 1.00 pos 9294,-314 net 76 (25 ms) carte 27 photos + 300 positions
+   176.587  t0069387 suivi ok score 1.00 pos 9294,-314 net 57 (21 ms) carte 27 photos + 300 positions
+   176.924  t0069723 suivi ok score 1.00 pos 9302,-314 net 48 (24 ms) carte 27 photos + 300 positions
+   177.096  envoyé lame_20261021_190939_tedt-bleu-v2_0025.jpg (1098 ko)
+   177.255  t0070055 suivi ok score 1.00 pos 9362,-314 net 51 (23 ms) carte 27 photos + 300 positions
+   177.598  t0070397 suivi ok score 1.00 pos 9354,-314 net 48 (28 ms) carte 27 photos + 300 positions
+   177.924  t0070724 suivi ok score 1.00 pos 9354,-314 net 58 (26 ms) carte 27 photos + 300 positions
+   178.259  t0071058 suivi ok score 1.00 pos 9354,-314 net 65 (22 ms) carte 27 photos + 300 positions
+   178.600  t0071400 suivi ok score 1.00 pos 9354,-314 net 66 (23 ms) carte 27 photos + 300 positions
+   178.929  t0071729 suivi ok score 1.00 pos 9354,-314 net 65 (25 ms) carte 27 photos + 300 positions
+   179.262  t0072062 suivi ok score 0.99 pos 9580,-314 net 52 (24 ms) carte 27 photos + 300 positions
+   179.438  envoyé lame_20261021_190939_tedt-bleu-v2_0026.jpg (1096 ko)
+   179.603  t0072402 suivi ok score 0.99 pos 10382,-345 net 53 (27 ms) carte 27 photos + 300 positions
+   179.926  t0072726 suivi ok score 1.00 pos 10560,-345 net 63 (26 ms) carte 27 photos + 300 positions
+   180.273  t0073073 suivi ok score 1.00 pos 10549,-345 net 51 (34 ms) carte 27 photos + 300 positions
+   180.383  photo -v2_0028 à 10549,-345 (1090 ko, 231 ms)
+   180.590  t0073389 suivi ok score 1.00 pos 10549,-345 net 45 (22 ms) carte 28 photos + 300 positions
+   180.921  t0073721 suivi ok score 1.00 pos 10549,-345 net 53 (21 ms) carte 28 photos + 300 positions
+   181.190  reprise de mise au point au même endroit : netteté 76 contre 57 (reprise 1)
+   181.263  t0074062 suivi ok score 1.00 pos 10537,-345 net 79 (26 ms) carte 28 photos + 300 positions
+   181.339  envoyé lame_20261021_190939_tedt-bleu-v2_0027.jpg (1086 ko)
+   181.405  photo -v2_0029 à 10537,-345 (1106 ko, 214 ms)
+   181.603  t0074402 suivi ok score 1.00 pos 10537,-345 net 81 (37 ms) carte 29 photos + 300 positions
+   181.923  t0074722 suivi ok score 1.00 pos 10537,-345 net 80 (23 ms) carte 29 photos + 300 positions
+   182.259  t0075058 suivi ok score 0.99 pos 10633,-345 net 75 (25 ms) carte 29 photos + 300 positions
+   182.595  t0075395 suivi ok score 1.00 pos 10727,-361 net 72 (22 ms) carte 29 photos + 300 positions
+   182.741  photo -v2_0030 à 10692,-345 (1099 ko, 233 ms)
+   182.923  t0075723 suivi ok score 1.00 pos 10848,-357 net 70 (23 ms) carte 30 photos + 300 positions
+   183.253  t0076052 suivi ok score 1.00 pos 10836,-357 net 71 (21 ms) carte 30 photos + 300 positions
+   183.268  photo -v2_0031 à 10836,-357 (1097 ko, 203 ms)
+   183.322  envoyé lame_20261021_190939_tedt-bleu-v2_0028.jpg (1090 ko)
+   183.589  t0076389 suivi ok score 1.00 pos 10836,-357 net 73 (21 ms) carte 31 photos + 300 positions
+   183.925  t0076724 suivi ok score 1.00 pos 10836,-357 net 73 (26 ms) carte 31 photos + 300 positions
+   184.261  t0077061 suivi ok score 1.00 pos 10836,-357 net 74 (22 ms) carte 31 photos + 300 positions
+   184.594  t0077394 suivi ok score 1.00 pos 10844,-229 net 41 (22 ms) carte 31 photos + 300 positions
+   184.928  t0077727 suivi ok score 1.00 pos 10884,982 net 65 (23 ms) carte 31 photos + 300 positions
+   185.265  t0078065 suivi ok score 1.00 pos 10883,998 net 71 (25 ms) carte 31 photos + 300 positions
+   185.368  envoyé lame_20261021_190939_tedt-bleu-v2_0029.jpg (1106 ko)
+   185.468  photo -v2_0032 à 10883,998 (1111 ko, 202 ms)
+   185.584  t0078384 suivi ok score 1.00 pos 10883,998 net 72 (15 ms) carte 32 photos + 300 positions
+   185.929  t0078728 suivi ok score 1.00 pos 10883,998 net 70 (29 ms) carte 32 photos + 300 positions
+   186.265  t0079064 suivi ok score 1.00 pos 10883,998 net 74 (29 ms) carte 32 photos + 300 positions
+   186.593  t0079392 suivi ok score 1.00 pos 10883,998 net 45 (23 ms) carte 32 photos + 300 positions
+   186.922  t0079722 suivi ok score 1.00 pos 10883,1003 net 63 (21 ms) carte 32 photos + 300 positions
+   187.263  t0080063 suivi ok score 1.00 pos 10883,1003 net 68 (22 ms) carte 32 photos + 300 positions
+   187.504  envoyé lame_20261021_190939_tedt-bleu-v2_0030.jpg (1099 ko)
+   187.590  t0080389 suivi ok score 1.00 pos 10883,999 net 61 (21 ms) carte 32 photos + 300 positions
+   187.928  t0080728 suivi ok score 1.00 pos 10883,998 net 59 (27 ms) carte 32 photos + 300 positions
+   188.260  t0081059 suivi ok score 1.00 pos 10883,998 net 55 (25 ms) carte 32 photos + 300 positions
+   188.592  t0081392 suivi ok score 0.99 pos 10883,987 net 54 (23 ms) carte 32 photos + 300 positions
+   188.931  t0081730 suivi ok score 1.00 pos 10883,935 net 51 (24 ms) carte 32 photos + 300 positions
+   189.264  t0082063 suivi ok score 1.00 pos 10875,771 net 62 (24 ms) carte 32 photos + 300 positions
+   189.578  envoyé lame_20261021_190939_tedt-bleu-v2_0031.jpg (1097 ko)
+   189.590  t0082390 suivi ok score 1.00 pos 10871,775 net 56 (26 ms) carte 32 photos + 300 positions
+   189.644  photo -v2_0033 à 10871,775 (1096 ko, 219 ms)
+   189.924  t0082723 suivi ok score 1.00 pos 10871,775 net 60 (21 ms) carte 33 photos + 300 positions
+   190.268  t0083067 suivi ok score 1.00 pos 10871,775 net 52 (22 ms) carte 33 photos + 300 positions
+   190.592  t0083392 suivi ok score 1.00 pos 10871,775 net 47 (23 ms) carte 33 photos + 300 positions
+   190.928  t0083728 suivi ok score 1.00 pos 10871,775 net 46 (24 ms) carte 33 photos + 300 positions
+   191.261  t0084060 suivi ok score 1.00 pos 10871,775 net 43 (22 ms) carte 33 photos + 300 positions
+   191.592  t0084391 suivi ok score 1.00 pos 10871,775 net 43 (21 ms) carte 33 photos + 300 positions
+   191.615  envoyé lame_20261021_190939_tedt-bleu-v2_0032.jpg (1111 ko)
+   191.922  t0084722 suivi ok score 1.00 pos 10871,775 net 50 (21 ms) carte 33 photos + 300 positions
+   192.267  t0085067 suivi ok score 1.00 pos 10871,775 net 62 (23 ms) carte 33 photos + 300 positions
+   192.600  t0085400 suivi ok score 1.00 pos 10871,775 net 66 (21 ms) carte 33 photos + 300 positions
+   192.922  t0085722 suivi ok score 1.00 pos 10871,775 net 61 (21 ms) carte 33 photos + 300 positions
+   193.259  t0086059 suivi ok score 1.00 pos 10871,775 net 60 (21 ms) carte 33 photos + 300 positions
+   193.596  t0086396 suivi ok score 1.00 pos 10871,775 net 66 (23 ms) carte 33 photos + 300 positions
+   193.692  reprise de mise au point au même endroit : netteté 73 contre 56 (reprise 1)
+   193.919  photo -v2_0034 à 10871,775 (1105 ko, 226 ms)
+   193.926  t0086726 suivi ok score 1.00 pos 10871,775 net 86 (23 ms) carte 34 photos + 300 positions
+   194.260  t0087060 suivi ok score 1.00 pos 10871,775 net 66 (15 ms) carte 34 photos + 300 positions
+   194.616  t0087415 suivi ok score 1.00 pos 10871,775 net 80 (33 ms) carte 34 photos + 300 positions
+   194.927  t0087727 suivi ok score 1.00 pos 10871,775 net 72 (23 ms) carte 34 photos + 300 positions
+   195.261  t0088061 suivi ok score 1.00 pos 10871,775 net 68 (15 ms) carte 34 photos + 300 positions
+   195.598  t0088397 suivi ok score 1.00 pos 10871,775 net 56 (22 ms) carte 34 photos + 300 positions
+   195.935  t0088735 suivi ok score 1.00 pos 10871,775 net 49 (22 ms) carte 34 photos + 300 positions
+   196.208  envoyé lame_20261021_190939_tedt-bleu-v2_0033.jpg (1096 ko)
+   196.273  t0089073 suivi ok score 1.00 pos 10859,775 net 49 (22 ms) carte 34 photos + 300 positions
+   196.600  t0089400 suivi ok score 1.00 pos 10847,775 net 49 (26 ms) carte 34 photos + 300 positions
+   196.923  t0089722 suivi ok score 1.00 pos 10847,775 net 54 (21 ms) carte 34 photos + 300 positions
+   197.290  t0090089 suivi ok score 1.00 pos 10847,775 net 53 (35 ms) carte 34 photos + 300 positions
+   197.593  t0090393 suivi ok score 1.00 pos 10847,775 net 47 (22 ms) carte 34 photos + 300 positions
+   197.926  t0090725 suivi ok score 1.00 pos 10847,775 net 46 (20 ms) carte 34 photos + 300 positions
+   198.234  envoyé lame_20261021_190939_tedt-bleu-v2_0034.jpg (1105 ko)
+   198.271  t0091069 suivi ok score 0.99 pos 10433,786 net 46 (24 ms) carte 34 photos + 300 positions
+   198.597  t0091396 suivi ok score 1.00 pos 10201,791 net 57 (23 ms) carte 34 photos + 300 positions
+   198.931  t0091731 suivi ok score 1.00 pos 10202,791 net 60 (22 ms) carte 34 photos + 300 positions
+   199.083  photo -v2_0035 à 10202,791 (1108 ko, 225 ms)
+   199.258  t0092057 suivi ok score 1.00 pos 10202,791 net 64 (21 ms) carte 35 photos + 300 positions
+   199.591  t0092391 suivi ok score 1.00 pos 10202,791 net 62 (22 ms) carte 35 photos + 300 positions
+   199.930  t0092729 suivi ok score 1.00 pos 10178,791 net 62 (26 ms) carte 35 photos + 300 positions
+   200.264  t0093064 suivi ok score 1.00 pos 10178,791 net 52 (22 ms) carte 35 photos + 300 positions
+   200.611  t0093410 suivi ok score 1.00 pos 10178,791 net 52 (34 ms) carte 35 photos + 300 positions
+   200.943  t0093742 suivi ok score 1.00 pos 10178,791 net 68 (32 ms) carte 35 photos + 300 positions
+   201.200  reprise de mise au point au même endroit : netteté 76 contre 58 (reprise 1)
+   201.261  t0094061 suivi ok score 1.00 pos 10178,791 net 78 (22 ms) carte 35 photos + 300 positions
+   201.413  photo -v2_0036 à 10178,791 (1114 ko, 212 ms)
+   201.596  t0094396 suivi ok score 1.00 pos 10178,791 net 82 (24 ms) carte 36 photos + 300 positions
+   201.937  envoyé lame_20261021_190939_tedt-bleu-v2_0035.jpg (1108 ko)
+   201.942  t0094741 suivi ok score 0.98 pos 9832,805 net 65 (30 ms) carte 36 photos + 300 positions
+   202.263  t0095062 suivi ok score 1.00 pos 9819,807 net 74 (25 ms) carte 36 photos + 300 positions
+   202.559  photo -v2_0037 à 9819,807 (1116 ko, 224 ms)
+   202.597  t0095397 suivi ok score 1.00 pos 9819,807 net 60 (22 ms) carte 37 photos + 300 positions
+   202.951  t0095749 suivi ok score 1.00 pos 9819,807 net 45 (33 ms) carte 37 photos + 300 positions
+   203.260  t0096060 suivi ok score 1.00 pos 9819,807 net 52 (21 ms) carte 37 photos + 300 positions
+   203.595  t0096395 suivi ok score 1.00 pos 9819,807 net 59 (22 ms) carte 37 photos + 300 positions
+   203.926  t0096726 suivi ok score 1.00 pos 9819,807 net 60 (21 ms) carte 37 photos + 300 positions
+   204.268  t0097068 suivi ok score 1.00 pos 9819,807 net 60 (23 ms) carte 37 photos + 300 positions
+   204.619  t0097419 suivi ok score 1.00 pos 9808,807 net 62 (23 ms) carte 37 photos + 300 positions
+   204.858  envoyé lame_20261021_190939_tedt-bleu-v2_0036.jpg (1114 ko)
+   204.917  t0097717 suivi ok score 1.00 pos 9604,822 net 45 (13 ms) carte 37 photos + 300 positions
+   205.260  t0098060 suivi ok score 1.00 pos 9389,823 net 48 (21 ms) carte 37 photos + 300 positions
+   205.595  t0098395 suivi ok score 1.00 pos 9257,823 net 52 (22 ms) carte 37 photos + 300 positions
+   205.924  t0098724 suivi ok score 1.00 pos 9189,823 net 61 (13 ms) carte 37 photos + 300 positions
+   206.041  photo -v2_0038 à 9201,823 (1106 ko, 218 ms)
+   206.257  t0099056 suivi ok score 1.00 pos 9163,823 net 60 (20 ms) carte 38 photos + 300 positions
+   206.601  t0099401 suivi ok score 1.00 pos 9163,823 net 60 (24 ms) carte 38 photos + 300 positions
+   206.776  envoyé lame_20261021_190939_tedt-bleu-v2_0037.jpg (1116 ko)
+   206.943  t0099742 suivi ok score 1.00 pos 9163,823 net 62 (32 ms) carte 38 photos + 300 positions
+   207.267  t0100067 suivi ok score 1.00 pos 9154,823 net 61 (22 ms) carte 38 photos + 300 positions
+   207.593  t0100393 suivi ok score 1.00 pos 9139,823 net 58 (21 ms) carte 38 photos + 300 positions
+   207.933  t0100733 suivi ok score 1.00 pos 8972,837 net 46 (21 ms) carte 38 photos + 300 positions
+   208.031  photo -v2_0039 à 9079,823 (1106 ko, 235 ms)
+   208.257  t0101057 suivi ok score 1.00 pos 8254,854 net 42 (20 ms) carte 39 photos + 300 positions
+   208.598  t0101397 suivi ok score 1.00 pos 8072,850 net 56 (22 ms) carte 39 photos + 300 positions
+   208.930  t0101730 suivi ok score 1.00 pos 8075,865 net 57 (21 ms) carte 39 photos + 300 positions
+   209.189  photo -v2_0040 à 8075,865 (1098 ko, 220 ms)
+   209.250  t0102050 suivi ok score 1.00 pos 8075,865 net 57 (14 ms) carte 40 photos + 300 positions
+   209.609  t0102408 suivi ok score 1.00 pos 8075,865 net 59 (33 ms) carte 40 photos + 300 positions
+   209.946  t0102746 suivi ok score 0.99 pos 8075,877 net 59 (22 ms) carte 40 photos + 300 positions
+   210.265  t0103064 suivi ok score 1.00 pos 8087,1136 net 46 (20 ms) carte 40 photos + 300 positions
+   210.443  envoyé lame_20261021_190939_tedt-bleu-v2_0038.jpg (1106 ko)
+   210.595  t0103395 suivi ok score 0.99 pos 8109,1694 net 64 (20 ms) carte 40 photos + 300 positions
+   210.931  t0103731 suivi ok score 0.99 pos 8142,2503 net 55 (22 ms) carte 40 photos + 300 positions
+   211.260  t0104060 suivi ok score 1.00 pos 8143,2535 net 68 (21 ms) carte 40 photos + 300 positions
+   211.495  photo -v2_0041 à 8143,2535 (1091 ko, 234 ms)
+   211.598  t0104398 suivi ok score 1.00 pos 8143,2535 net 52 (27 ms) carte 41 photos + 300 positions
+   211.929  t0104729 suivi ok score 1.00 pos 8143,2535 net 72 (21 ms) carte 41 photos + 300 positions
+   212.272  t0105071 suivi ok score 1.00 pos 8131,2535 net 73 (22 ms) carte 41 photos + 300 positions
+   212.574  envoyé lame_20261021_190939_tedt-bleu-v2_0039.jpg (1106 ko)
+   212.601  t0105401 suivi ok score 1.00 pos 8131,2535 net 72 (21 ms) carte 41 photos + 300 positions
+   212.934  t0105733 suivi ok score 0.99 pos 8226,2535 net 64 (21 ms) carte 41 photos + 300 positions
+   213.268  t0106067 suivi ok score 1.00 pos 8820,2503 net 75 (23 ms) carte 41 photos + 300 positions
+   213.599  t0106399 suivi ok score 1.00 pos 8824,2503 net 76 (21 ms) carte 41 photos + 300 positions
+   213.813  photo -v2_0042 à 8824,2503 (1106 ko, 213 ms)
+   213.930  t0106729 suivi ok score 1.00 pos 8824,2503 net 77 (21 ms) carte 42 photos + 300 positions
+   214.261  t0107061 suivi ok score 0.99 pos 9323,2489 net 80 (22 ms) carte 42 photos + 300 positions
+   214.603  t0107403 suivi ok score 1.00 pos 9972,2471 net 77 (23 ms) carte 42 photos + 300 positions
+   214.935  t0107735 suivi ok score 1.00 pos 9972,2472 net 78 (28 ms) carte 42 photos + 300 positions
+   215.015  photo -v2_0043 à 9972,2472 (1100 ko, 222 ms)
+   215.273  t0108072 suivi ok score 1.00 pos 9972,2472 net 79 (28 ms) carte 43 photos + 300 positions
+   215.595  t0108395 suivi ok score 1.00 pos 9972,2472 net 62 (16 ms) carte 43 photos + 300 positions
+   215.914  envoyé lame_20261021_190939_tedt-bleu-v2_0040.jpg (1098 ko)
+   215.932  t0108731 suivi ok score 1.00 pos 9968,2472 net 76 (26 ms) carte 43 photos + 300 positions
+   216.261  t0109060 suivi ok score 1.00 pos 9972,2472 net 48 (20 ms) carte 43 photos + 300 positions
+   216.613  t0109413 suivi ok score 1.00 pos 9972,2472 net 42 (23 ms) carte 43 photos + 300 positions
+   216.944  t0109744 suivi ok score 1.00 pos 9984,2472 net 45 (28 ms) carte 43 photos + 300 positions
+   217.269  t0110068 suivi ok score 1.00 pos 9972,2472 net 48 (21 ms) carte 43 photos + 300 positions
+   217.593  t0110393 suivi ok score 1.00 pos 9948,2472 net 46 (21 ms) carte 43 photos + 300 positions
+   217.929  t0110729 suivi ok score 0.99 pos 9204,2487 net 50 (20 ms) carte 43 photos + 300 positions
+   218.277  t0111076 suivi ok score 1.00 pos 9179,2487 net 50 (23 ms) carte 43 photos + 300 positions
+   218.505  envoyé lame_20261021_190939_tedt-bleu-v2_0041.jpg (1091 ko)
+   218.581  photo -v2_0044 à 9182,2487 (1093 ko, 220 ms)
+   218.600  t0111399 suivi ok score 1.00 pos 9183,2487 net 48 (25 ms) carte 44 photos + 300 positions
+   218.929  t0111729 suivi ok score 1.00 pos 9183,2487 net 48 (24 ms) carte 44 photos + 300 positions
+   219.266  t0112066 suivi ok score 1.00 pos 9183,2487 net 49 (21 ms) carte 44 photos + 300 positions
+   219.604  t0112404 suivi ok score 1.00 pos 9183,2487 net 48 (27 ms) carte 44 photos + 300 positions
+   219.934  t0112734 suivi ok score 1.00 pos 9193,2487 net 52 (23 ms) carte 44 photos + 300 positions
+   220.264  t0113064 suivi ok score 1.00 pos 9434,2473 net 44 (21 ms) carte 44 photos + 300 positions
+   220.343  envoyé lame_20261021_190939_tedt-bleu-v2_0042.jpg (1106 ko)
+   220.604  t0113403 suivi ok score 1.00 pos 9863,2472 net 54 (21 ms) carte 44 photos + 300 positions
+   220.872  photo floue (netteté 49 contre 98 de référence)
+   220.936  t0113736 suivi ok score 1.00 pos 9864,2472 net 49 (25 ms) carte 44 photos + 300 positions
+   221.087  photo -v2_0045 à 9864,2472 (1100 ko, 215 ms)
+   221.264  t0114064 suivi ok score 1.00 pos 9864,2472 net 48 (22 ms) carte 45 photos + 300 positions
+   221.593  t0114393 suivi ok score 1.00 pos 9864,2472 net 49 (17 ms) carte 45 photos + 300 positions
+   221.947  t0114747 suivi ok score 1.00 pos 9864,2472 net 48 (23 ms) carte 45 photos + 300 positions
+   222.276  t0115075 suivi ok score 1.00 pos 9861,2472 net 51 (26 ms) carte 45 photos + 300 positions
+   222.602  t0115402 suivi ok score 1.00 pos 9864,2472 net 50 (17 ms) carte 45 photos + 300 positions
+   222.932  t0115732 suivi ok score 1.00 pos 9864,2472 net 49 (21 ms) carte 45 photos + 300 positions
+   223.271  t0116071 suivi ok score 1.00 pos 9864,2472 net 49 (24 ms) carte 45 photos + 300 positions
+   223.280  envoyé lame_20261021_190939_tedt-bleu-v2_0043.jpg (1100 ko)
+   223.598  t0116397 suivi ok score 1.00 pos 9841,2472 net 49 (23 ms) carte 45 photos + 300 positions
+   223.957  t0116756 suivi ok score 1.00 pos 9816,2472 net 50 (32 ms) carte 45 photos + 300 positions
+   224.267  t0117066 suivi ok score 1.00 pos 9832,2472 net 48 (16 ms) carte 45 photos + 300 positions
+   224.600  t0117399 suivi ok score 0.99 pos 10462,2457 net 54 (19 ms) carte 45 photos + 300 positions
+   224.790  envoyé lame_20261021_190939_tedt-bleu-v2_0044.jpg (1093 ko)
+   224.958  t0117756 suivi ok score 1.00 pos 10486,2456 net 47 (39 ms) carte 45 photos + 300 positions
+   225.030  photo floue (netteté 47 contre 98 de référence)
+   225.264  photo -v2_0046 à 10486,2456 (1103 ko, 234 ms)
+   225.287  t0118087 suivi ok score 1.00 pos 10486,2456 net 47 (22 ms) carte 46 photos + 300 positions
+   225.599  t0118398 suivi ok score 1.00 pos 10486,2456 net 47 (22 ms) carte 46 photos + 300 positions
+   225.940  t0118740 suivi ok score 1.00 pos 10486,2456 net 48 (26 ms) carte 46 photos + 300 positions
+   226.266  t0119065 suivi ok score 1.00 pos 10259,2456 net 53 (20 ms) carte 46 photos + 300 positions
+   226.541  photo floue (netteté 46 contre 98 de référence)
+   226.617  t0119416 suivi ok score 1.00 pos 10259,2456 net 46 (29 ms) carte 46 photos + 300 positions
+   226.750  photo -v2_0047 à 10259,2456 (1108 ko, 209 ms)
+   226.755  envoyé lame_20261021_190939_tedt-bleu-v2_0045.jpg (1100 ko)
+   226.940  t0119739 suivi ok score 1.00 pos 10259,2456 net 45 (29 ms) carte 47 photos + 300 positions
+   227.280  t0120080 suivi ok score 1.00 pos 10259,2456 net 43 (22 ms) carte 47 photos + 300 positions
+   227.607  t0120406 suivi ok score 1.00 pos 10259,2456 net 44 (28 ms) carte 47 photos + 300 positions
+   227.937  t0120737 suivi ok score 1.00 pos 10259,2456 net 52 (21 ms) carte 47 photos + 300 positions
+   228.137  reprise de mise au point au même endroit : netteté 60 contre 46 (reprise 1)
+   228.265  t0121064 suivi ok score 1.00 pos 10259,2456 net 62 (21 ms) carte 47 photos + 300 positions
+   228.345  photo -v2_0048 à 10259,2456 (1118 ko, 208 ms)
+   228.594  t0121394 suivi ok score 1.00 pos 10259,2456 net 57 (19 ms) carte 48 photos + 300 positions
+   228.926  t0121726 suivi ok score 1.00 pos 10259,2456 net 57 (14 ms) carte 48 photos + 300 positions
+   229.268  t0122068 suivi ok score 1.00 pos 10247,2456 net 58 (20 ms) carte 48 photos + 300 positions
+   229.606  t0122405 suivi ok score 1.00 pos 10259,2456 net 59 (24 ms) carte 48 photos + 300 positions
+   229.955  t0122754 suivi ok score 1.00 pos 10282,2456 net 59 (35 ms) carte 48 photos + 300 positions
+   230.269  t0123068 suivi ok score 1.00 pos 10244,2456 net 51 (21 ms) carte 48 photos + 300 positions
+   230.601  t0123401 suivi ok score 1.00 pos 8633,2503 net 66 (21 ms) carte 48 photos + 300 positions
+   230.601  photo en mouvement lent (53 % du champ, 34 u/s)
+   230.827  photo -v2_0049 à 8633,2503 (1119 ko, 225 ms)
+   230.927  t0123726 suivi ok score 1.00 pos 8621,2503 net 63 (17 ms) carte 49 photos + 300 positions
+   231.250  envoyé lame_20261021_190939_tedt-bleu-v2_0046.jpg (1103 ko)
+   231.272  t0124072 suivi ok score 1.00 pos 8621,2503 net 62 (25 ms) carte 49 photos + 300 positions
+   231.600  t0124399 suivi ok score 1.00 pos 8236,2535 net 70 (21 ms) carte 49 photos + 300 positions
+   231.933  t0124733 suivi ok score 1.00 pos 7892,2535 net 51 (22 ms) carte 49 photos + 300 positions
+   232.269  t0125068 suivi ok score 1.00 pos 7378,2567 net 44 (22 ms) carte 49 photos + 300 positions
+   232.600  t0125400 suivi ok score 1.00 pos 7342,2567 net 46 (19 ms) carte 49 photos + 300 positions
+   232.701  photo floue (netteté 46 contre 98 de référence)
+   232.921  photo -v2_0050 à 7342,2567 (1129 ko, 220 ms)
+   232.946  t0125745 suivi ok score 1.00 pos 7342,2567 net 46 (34 ms) carte 50 photos + 300 positions
+   233.265  t0126065 suivi ok score 0.99 pos 6692,2583 net 61 (22 ms) carte 50 photos + 300 positions
+   233.563  photo en mouvement lent (60 % du champ, 30 u/s)
+   233.600  t0126399 suivi ok score 1.00 pos 5507,2626 net 52 (20 ms) carte 50 photos + 300 positions
+   233.804  photo -v2_0051 à 5507,2626 (1168 ko, 241 ms)
+   233.807  envoyé lame_20261021_190939_tedt-bleu-v2_0047.jpg (1108 ko)
+   233.946  t0126745 suivi ok score 1.00 pos 5507,2626 net 48 (22 ms) carte 51 photos + 300 positions
+   234.270  t0127069 suivi ok score 1.00 pos 5507,2626 net 48 (22 ms) carte 51 photos + 300 positions
+   234.610  t0127409 suivi ok score 1.00 pos 5459,2626 net 40 (23 ms) carte 51 photos + 300 positions
+   234.939  t0127739 suivi ok score 1.00 pos 5076,2642 net 38 (20 ms) carte 51 photos + 300 positions
+   235.276  t0128075 suivi ok score 1.00 pos 5029,2642 net 47 (23 ms) carte 51 photos + 300 positions
+   235.365  photo floue (netteté 47 contre 98 de référence)
+   235.587  photo -v2_0052 à 5039,2642 (1180 ko, 222 ms)
+   235.604  t0128404 suivi ok score 1.00 pos 5040,2642 net 49 (25 ms) carte 52 photos + 300 positions
+   235.939  t0128739 suivi ok score 1.00 pos 5040,2642 net 49 (24 ms) carte 52 photos + 300 positions
+   236.270  t0129069 suivi ok score 1.00 pos 5040,2642 net 47 (23 ms) carte 52 photos + 300 positions
+   236.336  envoyé lame_20261021_190939_tedt-bleu-v2_0048.jpg (1118 ko)
+   236.603  t0129402 suivi ok score 1.00 pos 5040,2642 net 53 (21 ms) carte 52 photos + 300 positions
+   236.948  t0129748 suivi ok score 1.00 pos 5029,2642 net 60 (21 ms) carte 52 photos + 300 positions
+   237.278  t0130077 suivi ok score 0.99 pos 4954,2642 net 53 (22 ms) carte 52 photos + 300 positions
+   237.613  t0130412 suivi ok score 0.97 pos 4121,2672 net 52 (21 ms) carte 52 photos + 300 positions
+   237.948  t0130747 suivi ok score 1.00 pos 4049,2687 net 66 (26 ms) carte 52 photos + 300 positions
+   238.272  t0131071 suivi ok score 1.00 pos 4049,2688 net 67 (23 ms) carte 52 photos + 300 positions
+   238.283  photo -v2_0053 à 4049,2688 (1219 ko, 213 ms)
+   238.604  t0131403 suivi ok score 1.00 pos 4049,2688 net 67 (21 ms) carte 53 photos + 300 positions
+   238.965  t0131764 suivi ok score 1.00 pos 4049,2688 net 72 (36 ms) carte 53 photos + 300 positions
+   239.279  t0132079 suivi ok score 1.00 pos 4037,2688 net 59 (23 ms) carte 53 photos + 300 positions
+   239.609  t0132409 suivi ok score 0.99 pos 2868,2720 net 64 (22 ms) carte 53 photos + 300 positions
+   239.939  t0132738 suivi ok score 1.00 pos 2878,2736 net 76 (21 ms) carte 53 photos + 300 positions
+   240.161  photo -v2_0054 à 2878,2736 (1214 ko, 221 ms)
+   240.275  t0133074 suivi ok score 1.00 pos 2879,2736 net 77 (23 ms) carte 54 photos + 300 positions
+   240.604  t0133404 suivi ok score 1.00 pos 2879,2736 net 64 (23 ms) carte 54 photos + 300 positions
+   240.882  envoyé lame_20261021_190939_tedt-bleu-v2_0049.jpg (1119 ko)
+   240.933  t0133733 suivi ok score 0.91 pos 2639,2741 net 111 (20 ms) carte 54 photos + 300 positions
+   241.275  t0134074 suivi ok score 1.00 pos 2053,2768 net 52 (20 ms) carte 54 photos + 300 positions
+   241.601  t0134401 suivi ok score 1.00 pos 2054,2768 net 73 (19 ms) carte 54 photos + 300 positions
+   241.682  photo -v2_0055 à 2054,2768 (1190 ko, 214 ms)
+   241.938  t0134737 suivi ok score 1.00 pos 2054,2768 net 54 (22 ms) carte 55 photos + 300 positions
+   242.273  t0135072 suivi ok score 1.00 pos 2054,2768 net 55 (22 ms) carte 55 photos + 300 positions
+   242.602  t0135401 suivi ok score 0.97 pos 3557,2709 net 55 (20 ms) carte 55 photos + 300 positions
+   242.708  photo en mouvement lent (52 % du champ, 8 u/s)
+   242.930  photo -v2_0056 à 3659,2704 (1193 ko, 221 ms)
+   242.936  t0135736 suivi ok score 1.00 pos 3656,2704 net 54 (21 ms) carte 56 photos + 300 positions
+   243.268  t0136067 suivi ok score 1.00 pos 3656,2704 net 53 (21 ms) carte 56 photos + 300 positions
+   243.377  envoyé lame_20261021_190939_tedt-bleu-v2_0050.jpg (1129 ko)
+   243.608  t0136408 suivi ok score 0.99 pos 3525,2704 net 44 (24 ms) carte 56 photos + 300 positions
+   243.934  t0136733 suivi ok score 0.97 pos 2556,2736 net 71 (20 ms) carte 56 photos + 300 positions
+   244.270  t0137069 suivi ok score 1.00 pos 2208,2767 net 64 (22 ms) carte 56 photos + 300 positions
+   244.617  t0137416 suivi ok score 1.00 pos 2209,2768 net 60 (33 ms) carte 56 photos + 300 positions
+   244.659  photo -v2_0057 à 2209,2768 (1159 ko, 215 ms)
+   244.938  t0137737 suivi ok score 1.00 pos 2209,2768 net 63 (22 ms) carte 57 photos + 300 positions
+   245.280  t0138079 suivi ok score 0.99 pos 1613,2783 net 58 (22 ms) carte 57 photos + 300 positions
+   245.510  envoyé lame_20261021_190939_tedt-bleu-v2_0051.jpg (1168 ko)
+   245.613  t0138412 suivi ok score 1.00 pos 1623,2784 net 58 (21 ms) carte 57 photos + 300 positions
+   245.858  photo -v2_0058 à 1623,2784 (1131 ko, 220 ms)
+   245.931  t0138730 suivi ok score 1.00 pos 1623,2784 net 52 (16 ms) carte 58 photos + 300 positions
+   246.271  t0139070 suivi ok score 1.00 pos 1623,2784 net 80 (21 ms) carte 58 photos + 300 positions
+   246.569  reprise de mise au point au même endroit : netteté 88 contre 56 (reprise 1)
+   246.604  t0139403 suivi ok score 1.00 pos 1623,2784 net 89 (21 ms) carte 58 photos + 300 positions
+   246.788  photo -v2_0059 à 1623,2784 (1171 ko, 218 ms)
+   246.938  t0139737 suivi ok score 1.00 pos 1611,2784 net 88 (21 ms) carte 59 photos + 300 positions
+   247.269  t0140069 suivi ok score 0.99 pos 1250,2795 net 66 (15 ms) carte 59 photos + 300 positions
+   247.621  t0140420 suivi ok score 0.99 pos 942,2814 net 97 (19 ms) carte 59 photos + 300 positions
+   247.705  envoyé lame_20261021_190939_tedt-bleu-v2_0052.jpg (1180 ko)
+   247.940  t0140740 suivi ok score 1.00 pos 942,2816 net 99 (19 ms) carte 59 photos + 300 positions
+   248.034  photo -v2_0060 à 942,2816 (1165 ko, 229 ms)
+   248.264  t0141063 suivi ok score 1.00 pos 942,2816 net 59 (15 ms) carte 60 photos + 300 positions
+   248.616  t0141416 suivi ok score 1.00 pos 942,2816 net 55 (21 ms) carte 60 photos + 300 positions
+   248.941  t0141740 suivi ok score 1.00 pos 942,2816 net 56 (22 ms) carte 60 photos + 300 positions
+   249.266  t0142066 suivi ok score 1.00 pos 942,2816 net 56 (18 ms) carte 60 photos + 300 positions
+   249.602  t0142402 suivi ok score 1.00 pos 942,2816 net 61 (22 ms) carte 60 photos + 300 positions
+   249.776  envoyé lame_20261021_190939_tedt-bleu-v2_0053.jpg (1219 ko)
+   249.945  t0142745 suivi ok score 0.99 pos 628,2827 net 67 (29 ms) carte 60 photos + 300 positions
+   250.270  t0143070 suivi ok score 1.00 pos 583,2832 net 58 (23 ms) carte 60 photos + 300 positions
+   250.584  photo -v2_0061 à 583,2832 (1122 ko, 213 ms)
+   250.604  t0143404 suivi ok score 1.00 pos 583,2832 net 55 (23 ms) carte 61 photos + 300 positions
+   250.928  t0143728 suivi ok score 1.00 pos 595,2832 net 60 (14 ms) carte 61 photos + 300 positions
+   251.276  t0144075 suivi ok score 0.99 pos -285,2863 net 59 (19 ms) carte 61 photos + 300 positions
+   251.616  t0144415 suivi ok score 1.00 pos -289,2864 net 64 (27 ms) carte 61 photos + 300 positions
+   251.900  photo -v2_0062 à -289,2864 (1112 ko, 232 ms)
+   251.959  t0144759 suivi ok score 1.00 pos -289,2864 net 61 (36 ms) carte 62 photos + 300 positions
+   252.276  t0145075 suivi ok score 1.00 pos -289,2864 net 63 (21 ms) carte 62 photos + 300 positions
+   252.606  t0145406 suivi ok score 1.00 pos -289,2864 net 56 (21 ms) carte 62 photos + 300 positions
+   252.702  envoyé lame_20261021_190939_tedt-bleu-v2_0054.jpg (1214 ko)
+   252.941  t0145740 suivi ok score 1.00 pos -289,2864 net 73 (22 ms) carte 62 photos + 300 positions
+   253.003  reprise de mise au point au même endroit : netteté 83 contre 61 (reprise 1)
+   253.231  photo -v2_0063 à -289,2864 (1149 ko, 227 ms)
+   253.284  t0146083 suivi ok score 1.00 pos -289,2864 net 97 (26 ms) carte 63 photos + 300 positions
+   253.606  t0146405 suivi ok score 1.00 pos -289,2864 net 101 (21 ms) carte 63 photos + 300 positions
+   253.942  t0146741 suivi ok score 1.00 pos -289,2864 net 106 (22 ms) carte 63 photos + 300 positions
+   254.278  t0147077 suivi ok score 1.00 pos -289,2864 net 100 (24 ms) carte 63 photos + 300 positions
+   254.610  t0147410 suivi ok score 0.98 pos -671,2875 net 72 (25 ms) carte 63 photos + 300 positions
+   254.955  t0147754 suivi ok score 1.00 pos -899,2892 net 104 (28 ms) carte 63 photos + 300 positions
+   255.217  envoyé lame_20261021_190939_tedt-bleu-v2_0055.jpg (1190 ko)
+   255.273  t0148072 suivi ok score 1.00 pos -899,2881 net 108 (21 ms) carte 63 photos + 300 positions
+   255.328  photo -v2_0064 à -899,2894 (1150 ko, 220 ms)
+   255.607  t0148407 suivi ok score 1.00 pos -890,2895 net 108 (24 ms) carte 64 photos + 300 positions
+   255.955  t0148755 suivi ok score 0.98 pos -887,3051 net 88 (21 ms) carte 64 photos + 300 positions
+   256.270  t0149069 suivi ok score 0.92 pos -843,4169 net 91 (21 ms) carte 64 photos + 300 positions
+   256.608  t0149407 suivi ok score 0.98 pos -831,4504 net 131 (23 ms) carte 64 photos + 300 positions
+   256.937  t0149737 suivi ok score 1.00 pos -843,4504 net 121 (21 ms) carte 64 photos + 300 positions
+   257.103  photo -v2_0065 à -843,4504 (1087 ko, 230 ms)
+   257.280  t0150080 suivi ok score 0.98 pos -831,4504 net 121 (29 ms) carte 65 photos + 300 positions
+   257.295  envoyé lame_20261021_190939_tedt-bleu-v2_0056.jpg (1193 ko)
+   257.602  t0150402 suivi ok score 0.94 pos 1576,4382 net 161 (20 ms) carte 65 photos + 300 positions
+   257.938  t0150738 suivi ok score 0.99 pos 2210,4377 net 100 (20 ms) carte 65 photos + 300 positions
+   257.938  photo en mouvement lent (100 % du champ, 8 u/s)
+   257.938  ATTENTION pas trop grand (100 % du champ) : recouvrement insuffisant
+   258.158  photo -v2_0066 à 2210,4377 (1115 ko, 219 ms)
+   258.282  t0151081 suivi ok score 1.00 pos 2218,4377 net 92 (30 ms) carte 66 photos + 300 positions
+   258.610  t0151410 suivi ok score 0.99 pos 2226,4377 net 91 (20 ms) carte 66 photos + 300 positions
+   258.944  t0151744 suivi ok score 0.98 pos 3509,4319 net 64 (23 ms) carte 66 photos + 300 positions
+   259.256  envoyé lame_20261021_190939_tedt-bleu-v2_0057.jpg (1159 ko)
+   259.279  t0152078 suivi ok score 1.00 pos 3671,4324 net 77 (24 ms) carte 66 photos + 300 positions
+   259.599  t0152399 suivi ok score 1.00 pos 3671,4324 net 75 (16 ms) carte 66 photos + 300 positions
+   259.670  photo -v2_0067 à 3671,4324 (1157 ko, 229 ms)
+   259.965  t0152763 suivi ok score 1.00 pos 3671,4324 net 74 (37 ms) carte 67 photos + 300 positions
+   260.272  t0153071 suivi ok score 0.96 pos 3916,4312 net 75 (18 ms) carte 67 photos + 300 positions
+   260.617  t0153417 suivi ok score 0.99 pos 4613,4292 net 50 (21 ms) carte 67 photos + 300 positions
+   260.940  t0153740 suivi ok score 1.00 pos 4636,4292 net 73 (22 ms) carte 67 photos + 300 positions
+   261.121  envoyé lame_20261021_190939_tedt-bleu-v2_0058.jpg (1131 ko)
+   261.268  photo -v2_0068 à 4636,4292 (1157 ko, 219 ms)
+   261.276  t0154075 suivi ok score 1.00 pos 4636,4292 net 61 (24 ms) carte 68 photos + 300 positions
+   261.610  t0154410 suivi ok score 1.00 pos 4636,4292 net 45 (18 ms) carte 68 photos + 300 positions
+   261.943  t0154742 suivi ok score 1.00 pos 4636,4292 net 46 (22 ms) carte 68 photos + 300 positions
+   262.286  t0155085 suivi ok score 1.00 pos 4636,4292 net 45 (32 ms) carte 68 photos + 300 positions
+   262.613  t0155413 suivi ok score 1.00 pos 4640,4272 net 45 (23 ms) carte 68 photos + 300 positions
+   262.942  t0155741 suivi ok score 1.00 pos 4625,3846 net 45 (22 ms) carte 68 photos + 300 positions
+   263.194  envoyé lame_20261021_190939_tedt-bleu-v2_0059.jpg (1171 ko)
+   263.274  t0156074 suivi ok score 1.00 pos 4624,3846 net 47 (22 ms) carte 68 photos + 300 positions
+   263.275  photo floue (netteté 47 contre 106 de référence)
+   263.489  photo -v2_0069 à 4624,3846 (1150 ko, 214 ms)
+   263.604  t0156404 suivi ok score 1.00 pos 4624,3846 net 45 (21 ms) carte 69 photos + 300 positions
+   263.943  t0156742 suivi ok score 1.00 pos 4831,3834 net 39 (20 ms) carte 69 photos + 300 positions
+   264.277  t0157077 suivi ok score 1.00 pos 5517,3781 net 37 (23 ms) carte 69 photos + 300 positions
+   264.505  photo en mouvement lent (59 % du champ, 30 u/s)
+   264.506  photo floue (netteté 49 contre 106 de référence)
+   264.611  t0157410 suivi ok score 1.00 pos 6419,3746 net 49 (23 ms) carte 69 photos + 300 positions
+   264.732  photo -v2_0070 à 6415,3742 (1121 ko, 226 ms)
+   264.802  envoyé lame_20261021_190939_tedt-bleu-v2_0060.jpg (1165 ko)
+   264.950  t0157749 suivi ok score 1.00 pos 6418,3745 net 46 (25 ms) carte 70 photos + 300 positions
+   265.281  t0158081 suivi ok score 1.00 pos 6418,3745 net 49 (25 ms) carte 70 photos + 300 positions
+   265.610  t0158410 suivi ok score 1.00 pos 6418,3745 net 47 (23 ms) carte 70 photos + 300 positions
+   265.946  t0158746 suivi ok score 1.00 pos 6406,3745 net 61 (22 ms) carte 70 photos + 300 positions
+   265.972  reprise de mise au point au même endroit : netteté 65 contre 49 (reprise 1)
+   266.200  photo -v2_0071 à 6406,3745 (1135 ko, 228 ms)
+   266.274  t0159074 suivi ok score 1.00 pos 6406,3745 net 74 (23 ms) carte 71 photos + 300 positions
+   266.445  envoyé lame_20261021_190939_tedt-bleu-v2_0061.jpg (1122 ko)
+   266.616  t0159415 suivi ok score 1.00 pos 6406,3745 net 71 (27 ms) carte 71 photos + 300 positions
+   266.951  t0159750 suivi ok score 0.99 pos 6395,3234 net 39 (25 ms) carte 71 photos + 300 positions
+   267.277  t0160076 suivi ok score 1.00 pos 6379,2945 net 58 (20 ms) carte 71 photos + 300 positions
+   267.611  t0160411 suivi ok score 0.99 pos 6379,2738 net 55 (22 ms) carte 71 photos + 300 positions
+   267.954  t0160753 suivi ok score 1.00 pos 6367,2722 net 64 (22 ms) carte 71 photos + 300 positions
+   268.129  photo -v2_0072 à 6367,2722 (1162 ko, 202 ms)
+   268.273  t0161072 suivi ok score 1.00 pos 6367,2722 net 65 (18 ms) carte 72 photos + 300 positions
+   268.620  t0161419 suivi ok score 1.00 pos 6367,2722 net 65 (28 ms) carte 72 photos + 300 positions
+   268.946  t0161745 suivi ok score 1.00 pos 6367,2706 net 54 (22 ms) carte 72 photos + 300 positions
+   269.279  t0162078 suivi ok score 1.00 pos 6356,2291 net 34 (23 ms) carte 72 photos + 300 positions
+   269.611  t0162410 suivi ok score 1.00 pos 6343,2084 net 63 (20 ms) carte 72 photos + 300 positions
+   269.942  t0162741 suivi ok score 1.00 pos 6343,2084 net 64 (20 ms) carte 72 photos + 300 positions
+   269.993  photo -v2_0073 à 6343,2084 (1177 ko, 219 ms)
+   270.171  envoyé lame_20261021_190939_tedt-bleu-v2_0062.jpg (1112 ko)
+   270.280  t0163079 suivi ok score 1.00 pos 6520,2084 net 40 (23 ms) carte 73 photos + 300 positions
+   270.626  t0163425 suivi ok score 1.00 pos 7198,2046 net 41 (27 ms) carte 73 photos + 300 positions
+   270.951  t0163750 suivi ok score 1.00 pos 7282,2041 net 70 (21 ms) carte 73 photos + 300 positions
+   271.259  photo -v2_0074 à 7282,2041 (1152 ko, 209 ms)
+   271.279  t0164078 suivi ok score 1.00 pos 7282,2041 net 52 (26 ms) carte 74 photos + 300 positions
+   271.609  t0164409 suivi ok score 1.00 pos 7282,2041 net 50 (23 ms) carte 74 photos + 300 positions
+   271.919  envoyé lame_20261021_190939_tedt-bleu-v2_0063.jpg (1149 ko)
+   271.952  t0164751 suivi ok score 1.00 pos 7282,2041 net 53 (27 ms) carte 74 photos + 300 positions
+   272.281  t0165081 suivi ok score 0.99 pos 6399,2083 net 44 (21 ms) carte 74 photos + 300 positions
+   272.619  t0165417 suivi ok score 1.00 pos 6140,2084 net 51 (28 ms) carte 74 photos + 300 positions
+   272.958  t0165757 suivi ok score 0.99 pos 6583,2073 net 44 (28 ms) carte 74 photos + 300 positions
+   273.280  t0166080 suivi ok score 1.00 pos 8131,2011 net 53 (21 ms) carte 74 photos + 300 positions
+   273.589  envoyé lame_20261021_190939_tedt-bleu-v2_0064.jpg (1150 ko)
+   273.613  t0166412 suivi ok score 1.00 pos 8155,2025 net 68 (20 ms) carte 74 photos + 300 positions
+   273.902  photo -v2_0075 à 8155,2025 (1116 ko, 222 ms)
+   273.951  t0166751 suivi ok score 1.00 pos 8155,2041 net 45 (31 ms) carte 75 photos + 300 positions
+   274.287  t0167086 suivi ok score 0.99 pos 8238,4196 net 73 (33 ms) carte 75 photos + 300 positions
+   274.287  photo en mouvement lent (53 % du champ, 16 u/s)
+   274.488  photo -v2_0076 à 8238,4196 (1104 ko, 200 ms)
+   274.607  t0167406 suivi ok score 0.98 pos 8262,4742 net 164 (21 ms) carte 76 photos + 300 positions
+   274.948  t0167748 suivi ok score 0.99 pos 8250,4747 net 165 (23 ms) carte 76 photos + 300 positions
+   275.134  photo -v2_0077 à 8250,4747 (1092 ko, 223 ms)
+   275.285  t0168085 suivi ok score 0.99 pos 8250,4747 net 166 (27 ms) carte 77 photos + 300 positions
+   275.585  envoyé lame_20261021_190939_tedt-bleu-v2_0065.jpg (1087 ko)
+   275.614  t0168414 suivi ok score 0.91 pos 8482,4761 net 395 (23 ms) carte 77 photos + 300 positions
+   275.942  t0168742 suivi ok score 0.98 pos 9003,4635 net 86 (20 ms) carte 77 photos + 300 positions
+   276.273  t0169072 suivi ok score 0.98 pos 9003,4635 net 86 (19 ms) carte 77 photos + 300 positions
+   276.368  photo -v2_0078 à 9003,4635 (1089 ko, 227 ms)
+   276.607  t0169406 suivi ok score 0.98 pos 9015,4635 net 90 (22 ms) carte 78 photos + 300 positions
+   276.945  t0169744 suivi ok score 0.95 pos 9137,4621 net 86 (22 ms) carte 78 photos + 300 positions
+   277.275  t0170074 suivi ok score 0.96 pos 9864,4588 net 130 (19 ms) carte 78 photos + 300 positions
+   277.610  t0170410 suivi ok score 1.00 pos 10079,4576 net 120 (22 ms) carte 78 photos + 300 positions
+   277.948  envoyé lame_20261021_190939_tedt-bleu-v2_0066.jpg (1115 ko)
+   277.953  t0170753 suivi ok score 1.00 pos 10079,4576 net 119 (28 ms) carte 78 photos + 300 positions
+   278.002  photo -v2_0079 à 10079,4576 (1104 ko, 221 ms)
+   278.278  t0171078 suivi ok score 0.97 pos 10115,4576 net 98 (22 ms) carte 79 photos + 300 positions
+   278.612  t0171411 suivi ok score 0.94 pos 11418,4528 net 84 (23 ms) carte 79 photos + 300 positions
+   278.952  t0171751 suivi ok score 1.00 pos 11432,4513 net 88 (25 ms) carte 79 photos + 300 positions
+   279.233  photo -v2_0080 à 11432,4513 (1123 ko, 220 ms)
+   279.289  t0172088 suivi ok score 1.00 pos 11432,4513 net 88 (29 ms) carte 80 photos + 300 positions
+   279.618  t0172418 suivi ok score 0.98 pos 11981,4481 net 62 (24 ms) carte 80 photos + 300 positions
+   279.647  envoyé lame_20261021_190939_tedt-bleu-v2_0067.jpg (1157 ko)
+   279.941  t0172741 suivi ok score 0.99 pos 12129,4481 net 66 (19 ms) carte 80 photos + 300 positions
+   280.288  t0173087 suivi ok score 0.99 pos 12542,4455 net 60 (25 ms) carte 80 photos + 300 positions
+   280.617  t0173417 suivi ok score 1.00 pos 12554,4466 net 79 (26 ms) carte 80 photos + 300 positions
+   280.897  photo -v2_0081 à 12554,4466 (1153 ko, 216 ms)
+   280.947  t0173746 suivi ok score 1.00 pos 12554,4466 net 80 (24 ms) carte 81 photos + 300 positions
+   281.279  t0174079 suivi ok score 0.95 pos 12546,4159 net 50 (23 ms) carte 81 photos + 300 positions
+   281.613  t0174412 suivi ok score 1.00 pos 12485,2599 net 68 (21 ms) carte 81 photos + 300 positions
+   281.652  envoyé lame_20261021_190939_tedt-bleu-v2_0068.jpg (1157 ko)
+   281.943  t0174743 suivi ok score 1.00 pos 12481,2605 net 73 (20 ms) carte 81 photos + 300 positions
+   282.208  photo -v2_0082 à 12481,2605 (1182 ko, 233 ms)
+   282.280  t0175079 suivi ok score 1.00 pos 12481,2605 net 73 (21 ms) carte 82 photos + 300 positions
+   282.621  t0175420 suivi ok score 1.00 pos 12481,2573 net 67 (28 ms) carte 82 photos + 300 positions
+   282.960  t0175759 suivi ok score 0.99 pos 12446,1501 net 40 (27 ms) carte 82 photos + 300 positions
+   283.285  t0176084 suivi ok score 1.00 pos 12426,1326 net 72 (24 ms) carte 82 photos + 300 positions
+   283.466  envoyé lame_20261021_190939_tedt-bleu-v2_0069.jpg (1150 ko)
+   283.616  t0176415 suivi ok score 1.00 pos 12425,1326 net 74 (24 ms) carte 82 photos + 300 positions
+   283.626  photo -v2_0083 à 12425,1326 (1167 ko, 213 ms)
+   283.944  t0176744 suivi ok score 1.00 pos 12425,1326 net 73 (21 ms) carte 83 photos + 300 positions
+   284.284  t0177083 suivi ok score 1.00 pos 12425,1326 net 74 (21 ms) carte 83 photos + 300 positions
+   284.618  t0177417 suivi ok score 1.00 pos 12425,1326 net 73 (21 ms) carte 83 photos + 300 positions
+   284.967  t0177766 suivi ok score 1.00 pos 12425,1326 net 74 (23 ms) carte 83 photos + 300 positions
+   285.176  envoyé lame_20261021_190939_tedt-bleu-v2_0070.jpg (1121 ko)
+   285.312  t0178111 suivi ok score 1.00 pos 12425,1326 net 74 (40 ms) carte 83 photos + 300 positions
+   285.618  t0178417 suivi ok score 1.00 pos 12425,1326 net 73 (22 ms) carte 83 photos + 300 positions
+   285.948  t0178748 suivi ok score 1.00 pos 12425,1326 net 73 (21 ms) carte 83 photos + 300 positions
+   286.282  t0179081 suivi ok score 1.00 pos 12425,1326 net 74 (21 ms) carte 83 photos + 300 positions
+   286.652  t0179452 suivi ok score 1.00 pos 12425,1326 net 74 (23 ms) carte 83 photos + 300 positions
+   286.987  t0179786 suivi ok score 1.00 pos 12425,1326 net 73 (26 ms) carte 83 photos + 300 positions
+   287.321  t0180119 suivi ok score 1.00 pos 12425,1326 net 73 (27 ms) carte 83 photos + 300 positions
+   287.649  t0180449 suivi ok score 1.00 pos 12425,1326 net 74 (24 ms) carte 83 photos + 300 positions
+   287.709  envoyé lame_20261021_190939_tedt-bleu-v2_0071.jpg (1135 ko)
+   287.985  t0180785 suivi ok score 1.00 pos 12425,1326 net 73 (23 ms) carte 83 photos + 300 positions
+   288.316  t0181115 suivi ok score 0.99 pos 12425,1326 net 71 (21 ms) carte 83 photos + 300 positions
+   288.649  t0181448 suivi ok score 0.99 pos 12629,1358 net 44 (23 ms) carte 83 photos + 300 positions
+   288.990  t0181790 suivi ok score 1.00 pos 12425,1326 net 70 (25 ms) carte 83 photos + 300 positions
+   289.322  t0182121 suivi ok score 0.98 pos 12449,1354 net 59 (29 ms) carte 83 photos + 300 positions
+   289.646  t0182446 suivi ok score 0.56 pos 13788,1353 net 426 (20 ms) carte 83 photos + 300 positions
+   289.798  envoyé lame_20261021_190939_tedt-bleu-v2_0072.jpg (1162 ko)
+   290.015  t0182815 suivi lost score 0.30 pos 13788,1353 net 435 (58 ms) carte 83 photos + 300 positions
+   290.101  photo -v2_0084 à 13788,1353 (689 ko, 220 ms)
+   290.388  t0183188 suivi ok score 0.78 pos 12987,1241 net 164 (19 ms) carte 84 photos + 300 positions
+   290.448  photo en mouvement lent (67 % du champ, 0 u/s)
+   290.448  photo floue (netteté 26 contre 126 de référence)
+   290.667  photo -v2_0085 à 11744,1273 (550 ko, 219 ms)
+   290.714  t0183513 suivi ok score 1.00 pos 11744,1273 net 25 (21 ms) carte 85 photos + 300 positions
+   291.050  t0183850 suivi ok score 1.00 pos 11744,1273 net 24 (22 ms) carte 85 photos + 300 positions
+   291.389  t0184189 suivi ok score 1.00 pos 11744,1273 net 24 (26 ms) carte 85 photos + 300 positions
+   291.717  t0184517 suivi ok score 1.00 pos 11744,1273 net 24 (23 ms) carte 85 photos + 300 positions
+   291.992  envoyé lame_20261021_190939_tedt-bleu-v2_0073.jpg (1177 ko)
+   292.068  t0184867 suivi ok score 1.00 pos 11744,1273 net 25 (37 ms) carte 85 photos + 300 positions
+   292.376  t0185176 suivi ok score 1.00 pos 11744,1273 net 25 (15 ms) carte 85 photos + 300 positions
+   292.713  t0185514 suivi ok score 1.00 pos 11744,1273 net 25 (18 ms) carte 85 photos + 300 positions
+   293.049  t0185849 suivi ok score 1.00 pos 11744,1273 net 24 (21 ms) carte 85 photos + 300 positions
+   293.385  t0186185 suivi ok score 1.00 pos 11744,1273 net 25 (22 ms) carte 85 photos + 300 positions
+   293.550  changement d'objectif vers x10 : début à 186352 ms, position 11744,1273 (ok)
+   294.121  envoyé lame_20261021_190939_tedt-bleu-v2_0074.jpg (1152 ko)
+   296.818  envoyé lame_20261021_190939_tedt-bleu-v2_0075.jpg (1116 ko)
+   299.242  envoyé lame_20261021_190939_tedt-bleu-v2_0076.jpg (1104 ko)
+   301.144  envoyé lame_20261021_190939_tedt-bleu-v2_0077.jpg (1092 ko)
+   303.477  envoyé lame_20261021_190939_tedt-bleu-v2_0078.jpg (1089 ko)
+   303.988  objectif x10 : reprise à 196789 ms (calibration absente)
+   304.022  masque oculaire : 100 % du cadre utile (p95 253)
+   304.151  t0196950 suivi ok score 1.00 pos 0,0 net 101 (17 ms) carte 0 photos + 2 positions
+   304.493  t0197292 suivi ok score 1.00 pos 0,0 net 101 (23 ms) carte 0 photos + 5 positions
+   304.666  patron 2x2 champs posé autour du détail (-1530,-2040)
+   304.666  photo -v2_0086 à 0,0 (571 ko, 236 ms)
+   304.818  t0197617 suivi ok score 1.00 pos 0,0 net 101 (21 ms) carte 1 photos + 9 positions
+   305.162  t0197962 suivi ok score 1.00 pos 0,0 net 101 (31 ms) carte 1 photos + 12 positions
+   305.489  t0198289 suivi ok score 1.00 pos 0,0 net 101 (22 ms) carte 1 photos + 15 positions
+   305.830  t0198630 suivi ok score 1.00 pos 0,0 net 103 (24 ms) carte 1 photos + 19 positions
+   305.928  envoyé lame_20261021_190939_tedt-bleu-v2_0079.jpg (1104 ko)
+   306.151  t0198951 suivi ok score 0.98 pos -203,0 net 70 (21 ms) carte 1 photos + 22 positions
+   306.498  t0199298 suivi ok score 1.00 pos -347,16 net 91 (28 ms) carte 1 photos + 25 positions
+   306.829  t0199629 suivi ok score 0.99 pos -430,16 net 94 (27 ms) carte 1 photos + 29 positions
+   306.911  photo -v2_0087 à -418,16 (568 ko, 223 ms)
+   307.158  t0199957 suivi ok score 1.00 pos -463,16 net 94 (24 ms) carte 2 photos + 32 positions
+   307.483  t0200283 suivi ok score 0.98 pos -550,16 net 81 (21 ms) carte 2 photos + 35 positions
+   307.695  photo -v2_0088 à -550,16 (544 ko, 211 ms)
+   307.824  t0200623 suivi ok score 1.00 pos -631,16 net 96 (22 ms) carte 3 photos + 39 positions
+   308.053  envoyé lame_20261021_190939_tedt-bleu-v2_0080.jpg (1123 ko)
+   308.154  t0200954 suivi ok score 1.00 pos -631,16 net 101 (22 ms) carte 3 photos + 42 positions
+   308.485  t0201285 suivi ok score 1.00 pos -631,16 net 95 (21 ms) carte 3 photos + 45 positions
+   308.832  t0201632 suivi ok score 1.00 pos -631,16 net 88 (26 ms) carte 3 photos + 49 positions
+   309.156  t0201956 suivi ok score 1.00 pos -631,16 net 101 (23 ms) carte 3 photos + 52 positions
+   309.492  t0202291 suivi ok score 0.99 pos -654,16 net 87 (25 ms) carte 3 photos + 55 positions
+   309.741  photo -v2_0089 à -670,16 (560 ko, 219 ms)
+   309.832  t0202631 suivi ok score 0.98 pos -967,27 net 72 (30 ms) carte 4 photos + 59 positions
+   310.156  t0202956 suivi ok score 0.98 pos -1242,32 net 68 (20 ms) carte 4 photos + 62 positions
+   310.489  t0203289 suivi ok score 0.98 pos -1537,48 net 70 (20 ms) carte 4 photos + 65 positions
+   310.825  t0203624 suivi ok score 1.00 pos -1600,48 net 96 (19 ms) carte 4 photos + 69 positions
+   311.159  t0203958 suivi ok score 1.00 pos -1600,48 net 97 (28 ms) carte 4 photos + 72 positions
+   311.164  photo -v2_0090 à -1600,48 (596 ko, 204 ms)
+   311.490  t0204290 suivi ok score 1.00 pos -1600,48 net 95 (23 ms) carte 5 photos + 75 positions
+   311.825  t0204625 suivi ok score 1.00 pos -1600,48 net 91 (25 ms) carte 5 photos + 79 positions
+   312.016  ERREUR envoi lame_20261021_190939_tedt-bleu-v2_0081.jpg : stockage HTTP 429 {"statusCode":"429","error":"too_many_connections","message":"Too many connections issued to the database","code":"SlowD
+   312.156  t0204956 suivi ok score 0.99 pos -1935,63 net 67 (24 ms) carte 5 photos + 82 positions
+   312.495  t0205294 suivi ok score 1.00 pos -1971,64 net 97 (26 ms) carte 5 photos + 85 positions
+   312.819  photo -v2_0091 à -1971,64 (574 ko, 229 ms)
+   312.828  t0205628 suivi ok score 1.00 pos -1972,64 net 92 (23 ms) carte 6 photos + 89 positions
+   313.171  t0205971 suivi ok score 1.00 pos -1971,64 net 91 (32 ms) carte 6 photos + 92 positions
+   313.489  t0206289 suivi ok score 0.99 pos -1983,-365 net 48 (18 ms) carte 6 photos + 95 positions
+   313.818  t0206618 suivi ok score 1.00 pos -1995,-638 net 91 (15 ms) carte 6 photos + 99 positions
+   314.159  t0206959 suivi ok score 0.98 pos -2006,-956 net 79 (23 ms) carte 6 photos + 102 positions
+   314.502  t0207301 suivi ok score 0.97 pos -2007,-1223 net 44 (26 ms) carte 6 photos + 105 positions
+   314.835  t0207635 suivi ok score 1.00 pos -2019,-1613 net 57 (27 ms) carte 6 photos + 109 positions
+   315.168  t0207968 suivi ok score 1.00 pos -2019,-1755 net 80 (27 ms) carte 6 photos + 112 positions
+   315.500  t0208300 suivi ok score 1.00 pos -2030,-1755 net 81 (26 ms) carte 6 photos + 115 positions
+   315.618  photo -v2_0092 à -2019,-1755 (529 ko, 252 ms)
+   315.822  t0208622 suivi ok score 1.00 pos -2027,-1755 net 82 (15 ms) carte 7 photos + 119 positions
+   316.162  t0208962 suivi ok score 1.00 pos -2027,-1755 net 82 (25 ms) carte 7 photos + 122 positions
+   316.488  t0209287 suivi ok score 0.97 pos -2003,-1755 net 76 (21 ms) carte 7 photos + 125 positions
+   316.833  t0209633 suivi ok score 1.00 pos -1955,-1755 net 79 (22 ms) carte 7 photos + 129 positions
+   317.167  t0209967 suivi ok score 1.00 pos -1955,-1755 net 80 (22 ms) carte 7 photos + 132 positions
+   317.506  t0210306 suivi ok score 0.97 pos -1967,-2185 net 69 (36 ms) carte 7 photos + 135 positions
+   317.823  t0210623 suivi ok score 1.00 pos -1979,-2392 net 78 (21 ms) carte 7 photos + 139 positions
+   318.157  t0210958 suivi ok score 1.00 pos -1979,-2392 net 81 (22 ms) carte 7 photos + 142 positions
+   318.322  photo -v2_0093 à -1979,-2392 (504 ko, 231 ms)
+   318.489  t0211289 suivi ok score 0.99 pos -1907,-2392 net 63 (21 ms) carte 8 photos + 145 positions
+   318.832  t0211631 suivi ok score 0.93 pos -1418,-2408 net 53 (26 ms) carte 8 photos + 149 positions
+   319.158  t0211959 suivi ok score 0.98 pos -1038,-2424 net 52 (21 ms) carte 8 photos + 152 positions
+   319.490  t0212290 suivi ok score 0.98 pos -775,-2438 net 90 (21 ms) carte 8 photos + 155 positions
+   319.843  t0212642 suivi ok score 1.00 pos -775,-2440 net 102 (35 ms) carte 8 photos + 159 positions
+   320.042  photo -v2_0094 à -775,-2440 (517 ko, 199 ms)
+   320.154  t0212954 suivi ok score 1.00 pos -775,-2440 net 102 (21 ms) carte 9 photos + 162 positions
+   320.491  t0213291 suivi ok score 1.00 pos -775,-2440 net 102 (22 ms) carte 9 photos + 165 positions
+   320.822  t0213622 suivi ok score 0.99 pos -452,-2456 net 112 (22 ms) carte 9 photos + 169 positions
+   321.157  t0213958 suivi ok score 0.98 pos -201,-2456 net 103 (22 ms) carte 9 photos + 172 positions
+   321.498  t0214297 suivi ok score 0.95 pos 208,-2472 net 77 (29 ms) carte 9 photos + 175 positions
+   321.833  t0214633 suivi ok score 1.00 pos 240,-2472 net 120 (22 ms) carte 9 photos + 179 positions
+   322.129  photo -v2_0095 à 240,-2472 (514 ko, 189 ms)
+   322.152  t0214952 suivi ok score 1.00 pos 240,-2472 net 121 (21 ms) carte 10 photos + 182 positions
+   322.487  t0215287 suivi ok score 0.97 pos 291,-2472 net 103 (21 ms) carte 10 photos + 185 positions
+   322.824  t0215624 suivi ok score 0.98 pos 658,-2488 net 70 (20 ms) carte 10 photos + 189 positions
+   323.158  t0215958 suivi ok score 0.99 pos 1025,-2504 net 89 (17 ms) carte 10 photos + 192 positions
+   323.507  t0216307 suivi ok score 0.99 pos 1315,-2504 net 83 (34 ms) carte 10 photos + 195 positions
+   323.832  t0216631 suivi ok score 0.98 pos 1588,-2519 net 102 (28 ms) carte 10 photos + 199 positions
+   324.163  t0216963 suivi ok score 0.98 pos 1722,-2520 net 104 (26 ms) carte 10 photos + 202 positions
+   324.489  t0217289 suivi ok score 1.00 pos 1722,-2520 net 116 (20 ms) carte 10 photos + 205 positions
+   324.739  photo -v2_0096 à 1722,-2520 (521 ko, 220 ms)
+   324.819  t0217619 suivi ok score 1.00 pos 1722,-2520 net 115 (18 ms) carte 11 photos + 209 positions
+   325.159  t0217959 suivi ok score 1.00 pos 1722,-2504 net 117 (26 ms) carte 11 photos + 212 positions
+   325.485  t0218285 suivi ok score 0.98 pos 1734,-2265 net 62 (17 ms) carte 11 photos + 215 positions
+   325.827  t0218627 suivi ok score 0.99 pos 1746,-1691 net 41 (25 ms) carte 11 photos + 219 positions
+   326.159  t0218959 suivi ok score 0.97 pos 1778,-942 net 49 (20 ms) carte 11 photos + 222 positions
+   326.501  t0219301 suivi ok score 0.98 pos 1778,-575 net 91 (24 ms) carte 11 photos + 225 positions
+   326.853  t0219653 suivi ok score 1.00 pos 1778,-543 net 97 (39 ms) carte 11 photos + 229 positions
+   327.087  photo -v2_0097 à 1778,-543 (597 ko, 233 ms)
+   327.156  t0219956 suivi ok score 1.00 pos 1778,-543 net 97 (19 ms) carte 12 photos + 232 positions
+   327.490  t0220290 suivi ok score 1.00 pos 1778,-543 net 97 (21 ms) carte 12 photos + 235 positions
+   327.826  t0220625 suivi ok score 1.00 pos 1778,-543 net 98 (23 ms) carte 12 photos + 239 positions
+   328.173  t0220972 suivi ok score 1.00 pos 1778,-543 net 97 (32 ms) carte 12 photos + 242 positions
+   328.503  t0221303 suivi ok score 0.96 pos 1778,-479 net 70 (27 ms) carte 12 photos + 245 positions
+   328.781  envoyé lame_20261021_190939_tedt-bleu-v2_0081.jpg (1153 ko)
+   328.832  t0221632 suivi ok score 0.99 pos 1790,-162 net 77 (22 ms) carte 12 photos + 249 positions
+   329.163  t0221963 suivi ok score 0.98 pos 1802,206 net 54 (21 ms) carte 12 photos + 252 positions
+   329.496  t0222296 suivi ok score 1.00 pos 1814,525 net 100 (20 ms) carte 12 photos + 255 positions
+   329.838  t0222637 suivi ok score 1.00 pos 1814,525 net 102 (27 ms) carte 12 photos + 259 positions
+   330.019  photo -v2_0098 à 1814,525 (587 ko, 228 ms)
+   330.156  t0222956 suivi ok score 1.00 pos 1814,525 net 103 (17 ms) carte 13 photos + 262 positions
+   330.492  t0223292 suivi ok score 1.00 pos 1814,525 net 103 (21 ms) carte 13 photos + 265 positions
+   330.831  t0223631 suivi ok score 0.99 pos 1826,859 net 42 (23 ms) carte 13 photos + 269 positions
+   331.028  envoyé lame_20261021_190939_tedt-bleu-v2_0082.jpg (1182 ko)
+   331.166  t0223966 suivi ok score 0.99 pos 1847,1418 net 45 (25 ms) carte 13 photos + 272 positions
+   331.495  t0224294 suivi ok score 1.00 pos 1850,1608 net 90 (24 ms) carte 13 photos + 275 positions
+   331.826  t0224626 suivi ok score 1.00 pos 1850,1608 net 91 (22 ms) carte 13 photos + 279 positions
+   331.891  photo -v2_0099 à 1850,1608 (592 ko, 231 ms)
+   332.158  t0224958 suivi ok score 1.00 pos 1850,1608 net 92 (23 ms) carte 14 photos + 282 positions
+   332.503  t0225302 suivi ok score 0.99 pos 1850,1640 net 89 (28 ms) carte 14 photos + 285 positions
+   332.831  t0225631 suivi ok score 1.00 pos 1862,1943 net 94 (24 ms) carte 14 photos + 289 positions
+   332.997  envoyé lame_20261021_190939_tedt-bleu-v2_0083.jpg (1167 ko)
+   333.165  t0225965 suivi ok score 0.95 pos 1874,2213 net 87 (21 ms) carte 14 photos + 292 positions
+   333.492  t0226293 suivi ok score 1.00 pos 1874,2214 net 90 (23 ms) carte 14 photos + 295 positions
+   333.747  photo -v2_0100 à 1874,2214 (579 ko, 230 ms)
+   333.827  t0226627 suivi ok score 1.00 pos 1874,2214 net 90 (26 ms) carte 15 photos + 299 positions
+   334.166  t0226965 suivi ok score 0.98 pos 1038,2244 net 76 (26 ms) carte 15 photos + 300 positions
+   334.280  envoyé lame_20261021_190939_tedt-bleu-v2_0084.jpg (689 ko)
+   334.501  t0227301 suivi ok score 1.00 pos 551,2261 net 96 (23 ms) carte 15 photos + 300 positions
+   334.827  t0227627 suivi ok score 1.00 pos 551,2261 net 95 (21 ms) carte 15 photos + 300 positions
+   335.010  photo -v2_0101 à 551,2261 (591 ko, 211 ms)
+   335.158  t0227958 suivi ok score 1.00 pos 551,2261 net 95 (22 ms) carte 16 photos + 300 positions
+   335.497  t0228297 suivi ok score 1.00 pos 551,2261 net 100 (22 ms) carte 16 photos + 300 positions
+   335.831  t0228631 suivi ok score 1.00 pos 551,2261 net 99 (22 ms) carte 16 photos + 300 positions
+   336.159  t0228959 suivi ok score 1.00 pos 551,2261 net 97 (21 ms) carte 16 photos + 300 positions
+   336.500  t0229299 suivi ok score 0.99 pos 73,2277 net 65 (26 ms) carte 16 photos + 300 positions
+   336.826  t0229626 suivi ok score 0.99 pos -274,2293 net 65 (19 ms) carte 16 photos + 300 positions
+   337.180  t0229979 suivi ok score 1.00 pos -298,2309 net 100 (33 ms) carte 16 photos + 300 positions
+   337.475  photo -v2_0102 à -298,2309 (577 ko, 218 ms)
+   337.493  t0230293 suivi ok score 1.00 pos -298,2309 net 99 (23 ms) carte 17 photos + 300 positions
+   337.776  envoyé lame_20261021_190939_tedt-bleu-v2_0085.jpg (550 ko)
+   337.829  t0230628 suivi ok score 0.99 pos -572,2324 net 52 (22 ms) carte 17 photos + 300 positions
+   338.157  t0230957 suivi ok score 0.98 pos -1003,2341 net 70 (23 ms) carte 17 photos + 300 positions
+   338.492  t0231292 suivi ok score 0.98 pos -1370,2356 net 96 (20 ms) carte 17 photos + 300 positions
+   338.828  t0231627 suivi ok score 1.00 pos -1385,2341 net 114 (22 ms) carte 17 photos + 300 positions
+   339.028  envoyé lame_20261021_190939_tedt-bleu-v2_0086.jpg (571 ko)
+   339.107  photo -v2_0103 à -1385,2341 (543 ko, 206 ms)
+   339.168  t0231968 suivi ok score 1.00 pos -1385,2341 net 113 (28 ms) carte 18 photos + 300 positions
+   339.498  t0232298 suivi ok score 0.99 pos -1456,2341 net 81 (21 ms) carte 18 photos + 300 positions
+   339.835  t0232635 suivi ok score 0.99 pos -1640,2355 net 67 (22 ms) carte 18 photos + 300 positions
+   340.159  t0232959 suivi ok score 0.98 pos -2019,2371 net 64 (20 ms) carte 18 photos + 300 positions
+   340.203  envoyé lame_20261021_190939_tedt-bleu-v2_0087.jpg (568 ko)
+   340.496  t0233296 suivi ok score 1.00 pos -2270,2373 net 121 (21 ms) carte 18 photos + 300 positions
+   340.834  t0233634 suivi ok score 1.00 pos -2270,2373 net 119 (23 ms) carte 18 photos + 300 positions
+   340.952  photo -v2_0104 à -2270,2373 (564 ko, 213 ms)
+   341.165  t0233964 suivi ok score 0.98 pos -2270,2362 net 119 (22 ms) carte 19 photos + 300 positions
+   341.504  t0234304 suivi ok score 0.98 pos -2293,1691 net 48 (24 ms) carte 19 photos + 300 positions
+   341.530  envoyé lame_20261021_190939_tedt-bleu-v2_0088.jpg (544 ko)
+   341.825  t0234625 suivi ok score 0.97 pos -2371,1117 net 59 (18 ms) carte 19 photos + 300 positions
+   342.169  t0234968 suivi ok score 1.00 pos -2389,797 net 97 (26 ms) carte 19 photos + 300 positions
+   342.499  t0235299 suivi ok score 1.00 pos -2389,797 net 101 (21 ms) carte 19 photos + 300 positions
+   342.685  photo -v2_0105 à -2389,797 (572 ko, 222 ms)
+   342.757  envoyé lame_20261021_190939_tedt-bleu-v2_0089.jpg (560 ko)
+   342.828  t0235628 suivi ok score 1.00 pos -2389,797 net 101 (22 ms) carte 20 photos + 300 positions
+   343.186  t0235985 suivi ok score 1.00 pos -2389,797 net 101 (34 ms) carte 20 photos + 300 positions
+   343.494  t0236295 suivi ok score 1.00 pos -2389,797 net 101 (20 ms) carte 20 photos + 300 positions
+   343.829  t0236629 suivi ok score 1.00 pos -2389,797 net 101 (21 ms) carte 20 photos + 300 positions
+   344.169  t0236969 suivi ok score 1.00 pos -2389,797 net 101 (24 ms) carte 20 photos + 300 positions
+   344.497  t0237297 suivi ok score 1.00 pos -2389,797 net 101 (23 ms) carte 20 photos + 300 positions
+   344.510  envoyé lame_20261021_190939_tedt-bleu-v2_0090.jpg (596 ko)
+   344.783  masque oculaire : 100 % du cadre utile (p95 254)
