@@ -1,0 +1,60 @@
+name: Tests du pipeline (non-régression)
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Une série de référence (pv-multi, pv-7353, placenta, moelle-2) ; vide = toutes'
+        required: false
+      record:
+        description: 'Enregistrer les valeurs mesurées comme nouvelles références'
+        type: boolean
+        default: false
+permissions:
+  contents: write
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Outils
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+          pip install -q opencv-python-headless numpy scipy requests
+          pip install -q torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cpu && pip install -q "git+https://github.com/cvg/LightGlue.git" || echo "::warning::LightGlue non installé"
+      - name: Prises brutes de référence (téléchargées depuis Supabase)
+        env:
+          ONLY: ${{ inputs.only }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          python - <<'PY'
+          import json, os, subprocess, sys
+          ref = json.load(open('tools/tests/reference.json'))
+          only = os.environ.get('ONLY', '')
+          for name, spec in ref['series'].items():
+              if only and name != only: continue
+              subprocess.run([sys.executable, 'tools/process_inbox.py', '--only', spec['series'], '--fetch-only', '--work', 'raw'], check=False)
+          PY
+      - name: Jouer les assemblages et comparer
+        env:
+          ONLY: ${{ inputs.only }}
+        run: |
+          python tools/test_pipeline.py raw ${ONLY:+--only "$ONLY"} ${{ inputs.record && '--record' || '' }} | tee tests.log
+      - name: Enregistrer les références
+        if: inputs.record
+        run: |
+          git config user.name scanlame && git config user.email scanlame@users.noreply.github.com
+          git add tools/tests/reference.json && git commit -m "Tests pipeline : références enregistrées (${{ inputs.only || 'toutes' }})" || true
+          git pull --rebase -q origin main && git push -q origin HEAD:main
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tests-pipeline
+          path: |
+            tests.log
+            raw/_tests/**/pipeline.log
+            raw/_tests/**/layout.json
