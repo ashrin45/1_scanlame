@@ -28,6 +28,8 @@ jobs:
           sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
           pip install -q opencv-python-headless numpy scipy requests
           pip install -q torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cpu && pip install -q "git+https://github.com/cvg/LightGlue.git" || echo "::warning::LightGlue non installé"
+      - name: Versions installées
+        run: pip freeze | tee versions.txt
       - name: Prises brutes de référence (téléchargées depuis Supabase)
         env:
           ONLY: ${{ inputs.only }}
@@ -63,6 +65,7 @@ jobs:
           path: |
             tests.log
             machine.txt
+            versions.txt
             raw/_tests/**/pipeline.log
             raw/_tests/**/layout.json
             apercus/*.jpg
