@@ -244,6 +244,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     // zoom en direct
     LaunchedEffect(zoom) { if (cameraOn && bound != null) { delay(150); st.zoom = zoom; engine.applyControls(st) } }
 
+    var clean by remember { mutableStateOf(false) }   // aperçu : l'image seule, sans texte ni boutons
     Box(Modifier.fillMaxSize().background(BG)) {
         // ---- scène : caméra plein écran
         AndroidView(factory = { c -> PreviewView(c).apply { implementationMode = PreviewView.ImplementationMode.COMPATIBLE; scaleType = PreviewView.ScaleType.FIT_CENTER; preview = this } }, modifier = Modifier.fillMaxSize())
@@ -263,7 +264,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
             Box(Modifier.fillMaxSize().border(if (flash) 14.dp else 5.dp, col))
         }
 
-        Column(Modifier.fillMaxSize().statusBarsPadding()) {
+        if (!clean) Column(Modifier.fillMaxSize().statusBarsPadding()) {
             // état (pilule centrée)
             Box(Modifier.fillMaxWidth().padding(top = 12.dp), contentAlignment = Alignment.Center) {
                 val (txt, bg, fg) = when {
@@ -292,6 +293,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                 }
                 // suivi + carte
                 Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                    WebButton("Aperçu", small = true) { clean = true }
                     Row(Modifier.background(CAPSULE, RoundedCornerShape(999.dp)).border(1.dp, LINE, RoundedCornerShape(999.dp)).padding(10.dp, 4.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                         Box(Modifier.size(9.dp).background(when (sess.track) { "ok" -> OK; "lost" -> REC; "relocated" -> WARN; else -> MUTED }, CircleShape))
                         Text(when { !sess.running -> "suivi inactif"; sess.track == "ok" -> "suivi ok (${String.format(Locale.ROOT, "%.2f", sess.score)})"; sess.track == "lost" -> "suivi perdu : reviens sur une zone déjà vue"; sess.track == "relocated" -> "recalé sur la carte"; else -> "suivi en cours" }, color = FG, fontSize = 13.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.widthIn(max = 220.dp))
@@ -359,6 +361,15 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     }
                     else WebButton("Éteindre la caméra", danger = true, enabled = cameraOn) { cameraOn = false; say("Caméra arrêtée.", false) }
                 }
+            }
+        }
+        if (clean) {
+            // aperçu sans texte : hors série, toucher n'importe où réaffiche ; en série, le toucher prend une photo, la pastille réaffiche
+            if (!sess.running) Box(Modifier.fillMaxSize().pointerInput(Unit) { detectTapGestures { clean = false } })
+            Box(Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding().padding(bottom = 18.dp), contentAlignment = Alignment.BottomCenter) {
+                Text(if (sess.running) "aperçu · toucher ici pour réafficher" else "aperçu · toucher l'écran pour réafficher",
+                    Modifier.background(Color(0x990D1017), RoundedCornerShape(999.dp)).border(1.dp, LINE, RoundedCornerShape(999.dp)).clickable { clean = false }.padding(14.dp, 8.dp),
+                    color = FG, fontSize = 13.sp)
             }
         }
         if (!granted) Box(Modifier.fillMaxSize().background(Color(0xCC000000)), contentAlignment = Alignment.Center) { Text("Autorisation caméra nécessaire.", color = FG) }
