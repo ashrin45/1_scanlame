@@ -1,0 +1,5 @@
+[    0.0s] segment 1/1 : objectif x100, 1 images entre 0 s et 15 s
+[    0.0s] 1 images candidates
+[    0.1s] profondeur : 1 photos en 1 pile(s) marquée(s) par l'appli (plusieurs plans de mise au point par champ)
+[    0.1s] netteté médiane 31.0, seuil 12.4
+[    0.1s] 1 images retenues (nettes, non redondantes)

@@ -1,0 +1,1551 @@
+   485.663  masque oculaire : 100 % du cadre utile (p95 200)
+   485.926  masque oculaire : 100 % du cadre utile (p95 200)
+   486.186  masque oculaire : 100 % du cadre utile (p95 200)
+   486.457  masque oculaire : 100 % du cadre utile (p95 200)
+   486.717  masque oculaire : 100 % du cadre utile (p95 200)
+   486.981  masque oculaire : 100 % du cadre utile (p95 200)
+   487.253  masque oculaire : 100 % du cadre utile (p95 199)
+   487.518  masque oculaire : 100 % du cadre utile (p95 199)
+   487.785  masque oculaire : 100 % du cadre utile (p95 199)
+   488.050  masque oculaire : 100 % du cadre utile (p95 200)
+   488.319  masque oculaire : 100 % du cadre utile (p95 199)
+   488.586  masque oculaire : 100 % du cadre utile (p95 199)
+   488.849  masque oculaire : 100 % du cadre utile (p95 199)
+   489.116  masque oculaire : 100 % du cadre utile (p95 199)
+   489.382  masque oculaire : 100 % du cadre utile (p95 199)
+   489.652  masque oculaire : 100 % du cadre utile (p95 199)
+   489.921  masque oculaire : 100 % du cadre utile (p95 199)
+   490.195  masque oculaire : 100 % du cadre utile (p95 199)
+   490.456  masque oculaire : 100 % du cadre utile (p95 199)
+   490.714  masque oculaire : 100 % du cadre utile (p95 199)
+   490.984  masque oculaire : 100 % du cadre utile (p95 199)
+   491.251  masque oculaire : 100 % du cadre utile (p95 199)
+   491.519  masque oculaire : 100 % du cadre utile (p95 199)
+   491.784  masque oculaire : 100 % du cadre utile (p95 199)
+   492.063  masque oculaire : 100 % du cadre utile (p95 199)
+   492.316  masque oculaire : 100 % du cadre utile (p95 199)
+   492.585  masque oculaire : 100 % du cadre utile (p95 199)
+   492.864  masque oculaire : 100 % du cadre utile (p95 199)
+   493.120  masque oculaire : 100 % du cadre utile (p95 199)
+   493.384  masque oculaire : 100 % du cadre utile (p95 199)
+   493.653  masque oculaire : 100 % du cadre utile (p95 199)
+   493.923  masque oculaire : 100 % du cadre utile (p95 199)
+   494.197  masque oculaire : 100 % du cadre utile (p95 199)
+   494.457  masque oculaire : 100 % du cadre utile (p95 199)
+   494.721  masque oculaire : 100 % du cadre utile (p95 199)
+   494.993  masque oculaire : 100 % du cadre utile (p95 199)
+   495.268  masque oculaire : 100 % du cadre utile (p95 199)
+   495.527  masque oculaire : 100 % du cadre utile (p95 199)
+   495.788  masque oculaire : 100 % du cadre utile (p95 199)
+   496.063  masque oculaire : 100 % du cadre utile (p95 199)
+   496.329  masque oculaire : 100 % du cadre utile (p95 199)
+   496.590  masque oculaire : 100 % du cadre utile (p95 199)
+   496.857  masque oculaire : 100 % du cadre utile (p95 199)
+   497.117  masque oculaire : 100 % du cadre utile (p95 199)
+   497.388  masque oculaire : 100 % du cadre utile (p95 199)
+   497.653  masque oculaire : 100 % du cadre utile (p95 199)
+   497.925  masque oculaire : 100 % du cadre utile (p95 199)
+   498.199  masque oculaire : 100 % du cadre utile (p95 199)
+   498.456  masque oculaire : 100 % du cadre utile (p95 199)
+   498.724  masque oculaire : 100 % du cadre utile (p95 199)
+   498.993  masque oculaire : 100 % du cadre utile (p95 199)
+   499.256  masque oculaire : 100 % du cadre utile (p95 199)
+   499.526  masque oculaire : 100 % du cadre utile (p95 199)
+   499.800  masque oculaire : 100 % du cadre utile (p95 199)
+   500.062  masque oculaire : 100 % du cadre utile (p95 199)
+   500.328  masque oculaire : 100 % du cadre utile (p95 199)
+   500.596  masque oculaire : 100 % du cadre utile (p95 199)
+   500.854  masque oculaire : 100 % du cadre utile (p95 199)
+   501.121  masque oculaire : 100 % du cadre utile (p95 199)
+   501.393  masque oculaire : 100 % du cadre utile (p95 199)
+   501.662  masque oculaire : 100 % du cadre utile (p95 199)
+   501.924  masque oculaire : 100 % du cadre utile (p95 199)
+   502.197  masque oculaire : 100 % du cadre utile (p95 199)
+   502.470  masque oculaire : 100 % du cadre utile (p95 199)
+   502.736  masque oculaire : 100 % du cadre utile (p95 199)
+   502.988  masque oculaire : 100 % du cadre utile (p95 199)
+   503.255  masque oculaire : 100 % du cadre utile (p95 199)
+   503.522  masque oculaire : 100 % du cadre utile (p95 199)
+   503.797  masque oculaire : 100 % du cadre utile (p95 200)
+   504.068  masque oculaire : 100 % du cadre utile (p95 200)
+   504.332  masque oculaire : 100 % du cadre utile (p95 200)
+   504.592  masque oculaire : 100 % du cadre utile (p95 200)
+   504.860  masque oculaire : 100 % du cadre utile (p95 200)
+   505.126  masque oculaire : 100 % du cadre utile (p95 199)
+   505.395  masque oculaire : 100 % du cadre utile (p95 199)
+   505.647  masque oculaire : 100 % du cadre utile (p95 200)
+   505.924  masque oculaire : 100 % du cadre utile (p95 199)
+   506.188  masque oculaire : 100 % du cadre utile (p95 199)
+   506.459  masque oculaire : 100 % du cadre utile (p95 199)
+   506.724  masque oculaire : 100 % du cadre utile (p95 199)
+   506.993  masque oculaire : 100 % du cadre utile (p95 199)
+   507.253  masque oculaire : 100 % du cadre utile (p95 199)
+   507.522  masque oculaire : 100 % du cadre utile (p95 199)
+   507.796  masque oculaire : 100 % du cadre utile (p95 199)
+   508.066  masque oculaire : 100 % du cadre utile (p95 199)
+   508.325  masque oculaire : 100 % du cadre utile (p95 199)
+   508.587  masque oculaire : 100 % du cadre utile (p95 199)
+   508.856  masque oculaire : 100 % du cadre utile (p95 199)
+   509.133  masque oculaire : 100 % du cadre utile (p95 199)
+   509.394  masque oculaire : 100 % du cadre utile (p95 199)
+   509.663  masque oculaire : 100 % du cadre utile (p95 199)
+   509.930  masque oculaire : 100 % du cadre utile (p95 199)
+   510.202  masque oculaire : 100 % du cadre utile (p95 199)
+   510.456  masque oculaire : 100 % du cadre utile (p95 199)
+   510.727  masque oculaire : 100 % du cadre utile (p95 199)
+   510.994  masque oculaire : 100 % du cadre utile (p95 199)
+   511.255  masque oculaire : 100 % du cadre utile (p95 199)
+   511.523  masque oculaire : 100 % du cadre utile (p95 199)
+   511.801  masque oculaire : 100 % du cadre utile (p95 199)
+   512.064  masque oculaire : 100 % du cadre utile (p95 199)
+   512.324  masque oculaire : 100 % du cadre utile (p95 199)
+   512.599  masque oculaire : 100 % du cadre utile (p95 199)
+   512.847  masque oculaire : 100 % du cadre utile (p95 199)
+   513.125  masque oculaire : 100 % du cadre utile (p95 199)
+   513.393  masque oculaire : 100 % du cadre utile (p95 199)
+   513.670  masque oculaire : 100 % du cadre utile (p95 199)
+   513.922  masque oculaire : 100 % du cadre utile (p95 199)
+   514.202  masque oculaire : 100 % du cadre utile (p95 199)
+   514.467  masque oculaire : 100 % du cadre utile (p95 199)
+   514.738  masque oculaire : 100 % du cadre utile (p95 199)
+   514.992  masque oculaire : 100 % du cadre utile (p95 199)
+   515.265  masque oculaire : 100 % du cadre utile (p95 199)
+   515.518  masque oculaire : 100 % du cadre utile (p95 199)
+   515.795  masque oculaire : 100 % du cadre utile (p95 199)
+   516.067  masque oculaire : 100 % du cadre utile (p95 199)
+   516.320  masque oculaire : 100 % du cadre utile (p95 199)
+   516.602  masque oculaire : 100 % du cadre utile (p95 199)
+   516.861  masque oculaire : 100 % du cadre utile (p95 199)
+   517.132  masque oculaire : 100 % du cadre utile (p95 199)
+   517.396  masque oculaire : 100 % du cadre utile (p95 199)
+   517.668  masque oculaire : 100 % du cadre utile (p95 199)
+   517.935  masque oculaire : 100 % du cadre utile (p95 199)
+   518.195  masque oculaire : 100 % du cadre utile (p95 199)
+   518.464  masque oculaire : 100 % du cadre utile (p95 199)
+   518.724  masque oculaire : 100 % du cadre utile (p95 199)
+   519.001  masque oculaire : 100 % du cadre utile (p95 199)
+   519.274  masque oculaire : 100 % du cadre utile (p95 199)
+   519.536  masque oculaire : 100 % du cadre utile (p95 200)
+   519.781  masque oculaire : 100 % du cadre utile (p95 200)
+   520.062  masque oculaire : 100 % du cadre utile (p95 200)
+   520.327  masque oculaire : 100 % du cadre utile (p95 200)
+   520.596  masque oculaire : 100 % du cadre utile (p95 200)
+   520.859  masque oculaire : 100 % du cadre utile (p95 200)
+   521.125  masque oculaire : 100 % du cadre utile (p95 199)
+   521.397  masque oculaire : 100 % du cadre utile (p95 200)
+   521.664  masque oculaire : 100 % du cadre utile (p95 200)
+   521.930  masque oculaire : 100 % du cadre utile (p95 200)
+   522.198  masque oculaire : 100 % du cadre utile (p95 200)
+   522.467  masque oculaire : 100 % du cadre utile (p95 200)
+   522.732  masque oculaire : 100 % du cadre utile (p95 200)
+   523.002  masque oculaire : 100 % du cadre utile (p95 199)
+   523.268  masque oculaire : 100 % du cadre utile (p95 200)
+   523.549  masque oculaire : 100 % du cadre utile (p95 200)
+   523.806  masque oculaire : 100 % du cadre utile (p95 200)
+   524.063  masque oculaire : 100 % du cadre utile (p95 200)
+   524.325  masque oculaire : 100 % du cadre utile (p95 200)
+   524.602  masque oculaire : 100 % du cadre utile (p95 200)
+   524.867  masque oculaire : 100 % du cadre utile (p95 200)
+   525.126  masque oculaire : 100 % du cadre utile (p95 200)
+   525.399  masque oculaire : 100 % du cadre utile (p95 200)
+[... 4450 lignes omises ...]
+  1675.480  masque oculaire : 94 % du cadre utile (p95 185)
+  1675.749  masque oculaire : 94 % du cadre utile (p95 185)
+  1676.015  masque oculaire : 86 % du cadre utile (p95 184)
+  1676.278  masque oculaire : 75 % du cadre utile (p95 177)
+  1676.547  masque oculaire : 36 % du cadre utile (p95 56)
+  1676.816  masque oculaire : 75 % du cadre utile (p95 177)
+  1677.083  masque oculaire : 76 % du cadre utile (p95 178)
+  1677.346  masque oculaire : 73 % du cadre utile (p95 180)
+  1677.616  masque oculaire : 81 % du cadre utile (p95 182)
+  1677.884  masque oculaire : 70 % du cadre utile (p95 180)
+  1678.146  masque oculaire : 53 % du cadre utile (p95 169)
+  1678.415  masque oculaire : 99 % du cadre utile (p95 189)
+  1678.682  masque oculaire : 99 % du cadre utile (p95 189)
+  1678.950  masque oculaire : 99 % du cadre utile (p95 189)
+  1679.217  masque oculaire : 99 % du cadre utile (p95 189)
+  1679.481  masque oculaire : 99 % du cadre utile (p95 189)
+  1679.751  masque oculaire : 99 % du cadre utile (p95 189)
+  1680.015  masque oculaire : 99 % du cadre utile (p95 189)
+  1680.281  masque oculaire : 99 % du cadre utile (p95 189)
+  1680.549  masque oculaire : 99 % du cadre utile (p95 189)
+  1680.817  masque oculaire : 99 % du cadre utile (p95 189)
+  1681.080  masque oculaire : 99 % du cadre utile (p95 189)
+  1681.345  masque oculaire : 99 % du cadre utile (p95 188)
+  1681.618  masque oculaire : 99 % du cadre utile (p95 188)
+  1681.881  masque oculaire : 99 % du cadre utile (p95 189)
+  1682.147  masque oculaire : 99 % du cadre utile (p95 189)
+  1682.415  masque oculaire : 99 % du cadre utile (p95 189)
+  1682.686  masque oculaire : 99 % du cadre utile (p95 189)
+  1682.800  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+  1682.956  masque oculaire : 99 % du cadre utile (p95 191)
+  1683.221  masque oculaire : 99 % du cadre utile (p95 191)
+  1683.494  masque oculaire : 99 % du cadre utile (p95 190)
+  1683.748  masque oculaire : 99 % du cadre utile (p95 190)
+  1683.974  verrouillage : focus infini, pose 9.991324 ms, ISO 62, WB figée
+  1684.005  masque oculaire : 99 % du cadre utile (p95 190)
+  1684.204  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+  1684.286  masque oculaire : 99 % du cadre utile (p95 190)
+  1684.559  masque oculaire : 99 % du cadre utile (p95 190)
+  1684.819  masque oculaire : 99 % du cadre utile (p95 189)
+  1685.082  masque oculaire : 99 % du cadre utile (p95 189)
+  1685.351  masque oculaire : 99 % du cadre utile (p95 189)
+  1685.615  masque oculaire : 99 % du cadre utile (p95 189)
+  1685.890  masque oculaire : 99 % du cadre utile (p95 189)
+  1686.150  masque oculaire : 99 % du cadre utile (p95 189)
+  1686.413  masque oculaire : 99 % du cadre utile (p95 190)
+  1686.680  masque oculaire : 99 % du cadre utile (p95 189)
+  1686.949  masque oculaire : 99 % du cadre utile (p95 189)
+  1687.217  masque oculaire : 99 % du cadre utile (p95 195)
+  1687.484  masque oculaire : 99 % du cadre utile (p95 203)
+  1687.750  masque oculaire : 99 % du cadre utile (p95 205)
+  1688.012  masque oculaire : 99 % du cadre utile (p95 205)
+  1688.284  masque oculaire : 99 % du cadre utile (p95 205)
+  1688.546  masque oculaire : 99 % du cadre utile (p95 205)
+  1688.811  masque oculaire : 99 % du cadre utile (p95 205)
+  1689.080  masque oculaire : 99 % du cadre utile (p95 205)
+  1689.356  masque oculaire : 99 % du cadre utile (p95 205)
+  1689.616  masque oculaire : 99 % du cadre utile (p95 205)
+  1689.884  masque oculaire : 99 % du cadre utile (p95 205)
+  1690.150  masque oculaire : 99 % du cadre utile (p95 205)
+  1690.414  masque oculaire : 99 % du cadre utile (p95 205)
+  1690.683  masque oculaire : 99 % du cadre utile (p95 205)
+  1690.948  masque oculaire : 99 % du cadre utile (p95 205)
+  1691.217  masque oculaire : 99 % du cadre utile (p95 205)
+  1691.482  masque oculaire : 99 % du cadre utile (p95 208)
+  1691.750  masque oculaire : 100 % du cadre utile (p95 211)
+  1692.019  masque oculaire : 100 % du cadre utile (p95 212)
+  1692.280  masque oculaire : 100 % du cadre utile (p95 212)
+  1692.551  masque oculaire : 100 % du cadre utile (p95 212)
+  1692.817  masque oculaire : 100 % du cadre utile (p95 212)
+  1693.082  masque oculaire : 100 % du cadre utile (p95 212)
+  1693.351  masque oculaire : 100 % du cadre utile (p95 212)
+  1693.619  masque oculaire : 100 % du cadre utile (p95 212)
+  1693.876  masque oculaire : 100 % du cadre utile (p95 212)
+  1694.155  masque oculaire : 100 % du cadre utile (p95 212)
+  1694.425  masque oculaire : 100 % du cadre utile (p95 212)
+  1694.686  masque oculaire : 100 % du cadre utile (p95 212)
+  1694.953  masque oculaire : 100 % du cadre utile (p95 212)
+  1695.220  masque oculaire : 100 % du cadre utile (p95 212)
+  1695.490  masque oculaire : 100 % du cadre utile (p95 212)
+  1695.802  masque oculaire : 100 % du cadre utile (p95 212)
+  1696.047  masque oculaire : 100 % du cadre utile (p95 212)
+  1696.317  masque oculaire : 100 % du cadre utile (p95 212)
+  1696.590  masque oculaire : 100 % du cadre utile (p95 212)
+  1696.853  masque oculaire : 100 % du cadre utile (p95 212)
+  1697.118  masque oculaire : 100 % du cadre utile (p95 211)
+  1697.391  masque oculaire : 100 % du cadre utile (p95 211)
+  1697.647  masque oculaire : 100 % du cadre utile (p95 211)
+  1697.921  masque oculaire : 100 % du cadre utile (p95 211)
+  1698.181  masque oculaire : 100 % du cadre utile (p95 211)
+  1698.471  masque oculaire : 100 % du cadre utile (p95 211)
+  1698.745  masque oculaire : 100 % du cadre utile (p95 211)
+  1699.016  masque oculaire : 100 % du cadre utile (p95 211)
+  1699.281  masque oculaire : 100 % du cadre utile (p95 211)
+  1699.546  masque oculaire : 100 % du cadre utile (p95 211)
+  1699.811  masque oculaire : 100 % du cadre utile (p95 211)
+  1700.081  masque oculaire : 100 % du cadre utile (p95 212)
+  1700.358  masque oculaire : 100 % du cadre utile (p95 212)
+  1700.615  masque oculaire : 100 % du cadre utile (p95 212)
+  1700.890  masque oculaire : 100 % du cadre utile (p95 211)
+  1701.151  masque oculaire : 100 % du cadre utile (p95 211)
+  1701.412  masque oculaire : 100 % du cadre utile (p95 212)
+  1701.675  masque oculaire : 100 % du cadre utile (p95 212)
+  1701.954  masque oculaire : 100 % du cadre utile (p95 212)
+  1702.223  masque oculaire : 100 % du cadre utile (p95 212)
+  1702.487  masque oculaire : 100 % du cadre utile (p95 212)
+  1702.754  masque oculaire : 100 % du cadre utile (p95 212)
+  1703.022  masque oculaire : 100 % du cadre utile (p95 212)
+  1703.282  masque oculaire : 100 % du cadre utile (p95 211)
+  1703.554  masque oculaire : 100 % du cadre utile (p95 211)
+  1703.820  masque oculaire : 100 % du cadre utile (p95 212)
+  1704.087  masque oculaire : 100 % du cadre utile (p95 211)
+  1704.356  masque oculaire : 100 % du cadre utile (p95 211)
+  1704.615  masque oculaire : 100 % du cadre utile (p95 211)
+  1704.881  masque oculaire : 100 % du cadre utile (p95 211)
+  1705.150  masque oculaire : 100 % du cadre utile (p95 211)
+  1705.412  masque oculaire : 100 % du cadre utile (p95 212)
+  1705.690  masque oculaire : 100 % du cadre utile (p95 212)
+  1705.955  masque oculaire : 100 % du cadre utile (p95 212)
+  1706.220  masque oculaire : 100 % du cadre utile (p95 212)
+  1706.483  masque oculaire : 100 % du cadre utile (p95 211)
+  1706.750  masque oculaire : 100 % du cadre utile (p95 211)
+  1707.018  masque oculaire : 100 % du cadre utile (p95 211)
+  1707.287  masque oculaire : 100 % du cadre utile (p95 211)
+  1707.557  masque oculaire : 100 % du cadre utile (p95 212)
+  1707.823  masque oculaire : 100 % du cadre utile (p95 212)
+  1708.088  masque oculaire : 100 % du cadre utile (p95 212)
+  1708.354  masque oculaire : 100 % du cadre utile (p95 212)
+  1708.616  masque oculaire : 100 % du cadre utile (p95 212)
+  1708.886  masque oculaire : 100 % du cadre utile (p95 212)
+  1709.155  masque oculaire : 100 % du cadre utile (p95 212)
+  1709.423  masque oculaire : 100 % du cadre utile (p95 212)
+  1709.688  masque oculaire : 100 % du cadre utile (p95 212)
+  1709.957  masque oculaire : 100 % du cadre utile (p95 212)
+  1710.227  masque oculaire : 100 % du cadre utile (p95 212)
+  1710.486  masque oculaire : 100 % du cadre utile (p95 212)
+  1710.749  masque oculaire : 100 % du cadre utile (p95 212)
+  1711.016  masque oculaire : 100 % du cadre utile (p95 212)
+  1711.279  masque oculaire : 100 % du cadre utile (p95 212)
+  1711.547  masque oculaire : 100 % du cadre utile (p95 212)
+  1711.817  masque oculaire : 100 % du cadre utile (p95 212)
+  1712.082  masque oculaire : 100 % du cadre utile (p95 212)
+  1712.345  masque oculaire : 100 % du cadre utile (p95 212)
+  1712.617  masque oculaire : 100 % du cadre utile (p95 212)
+  1712.881  masque oculaire : 100 % du cadre utile (p95 212)
+  1713.149  masque oculaire : 100 % du cadre utile (p95 212)
+  1713.424  masque oculaire : 100 % du cadre utile (p95 212)
+  1713.684  masque oculaire : 100 % du cadre utile (p95 212)
+  1713.953  masque oculaire : 100 % du cadre utile (p95 212)
+  1714.221  masque oculaire : 100 % du cadre utile (p95 212)
+  1714.482  masque oculaire : 100 % du cadre utile (p95 212)
+  1714.757  masque oculaire : 100 % du cadre utile (p95 212)
+  1715.020  masque oculaire : 100 % du cadre utile (p95 212)
+  1715.289  masque oculaire : 100 % du cadre utile (p95 212)
+  1715.553  masque oculaire : 100 % du cadre utile (p95 212)
+  1715.828  masque oculaire : 100 % du cadre utile (p95 212)
+  1716.079  masque oculaire : 100 % du cadre utile (p95 212)
+  1716.355  masque oculaire : 100 % du cadre utile (p95 212)
+  1716.618  masque oculaire : 100 % du cadre utile (p95 212)
+  1716.887  masque oculaire : 100 % du cadre utile (p95 212)
+  1717.157  masque oculaire : 100 % du cadre utile (p95 211)
+  1717.426  masque oculaire : 100 % du cadre utile (p95 212)
+  1717.690  masque oculaire : 100 % du cadre utile (p95 212)
+  1717.951  masque oculaire : 100 % du cadre utile (p95 212)
+  1718.216  masque oculaire : 100 % du cadre utile (p95 212)
+  1718.492  masque oculaire : 100 % du cadre utile (p95 212)
+  1718.751  masque oculaire : 100 % du cadre utile (p95 212)
+  1719.024  masque oculaire : 100 % du cadre utile (p95 212)
+  1719.287  masque oculaire : 100 % du cadre utile (p95 212)
+  1719.557  masque oculaire : 100 % du cadre utile (p95 212)
+  1719.819  masque oculaire : 100 % du cadre utile (p95 212)
+  1720.093  masque oculaire : 100 % du cadre utile (p95 212)
+  1720.348  masque oculaire : 100 % du cadre utile (p95 212)
+  1720.625  masque oculaire : 100 % du cadre utile (p95 212)
+  1720.891  masque oculaire : 100 % du cadre utile (p95 212)
+  1721.151  masque oculaire : 100 % du cadre utile (p95 212)
+  1721.426  masque oculaire : 100 % du cadre utile (p95 212)
+  1721.678  masque oculaire : 100 % du cadre utile (p95 212)
+  1721.958  masque oculaire : 100 % du cadre utile (p95 212)
+  1722.222  masque oculaire : 100 % du cadre utile (p95 212)
+  1722.489  masque oculaire : 100 % du cadre utile (p95 212)
+  1722.762  masque oculaire : 100 % du cadre utile (p95 212)
+  1723.014  masque oculaire : 100 % du cadre utile (p95 212)
+  1723.281  masque oculaire : 100 % du cadre utile (p95 212)
+  1723.557  masque oculaire : 100 % du cadre utile (p95 212)
+  1723.823  masque oculaire : 100 % du cadre utile (p95 212)
+  1724.093  masque oculaire : 100 % du cadre utile (p95 212)
+  1724.360  masque oculaire : 100 % du cadre utile (p95 212)
+  1724.619  masque oculaire : 100 % du cadre utile (p95 212)
+  1724.881  masque oculaire : 100 % du cadre utile (p95 212)
+  1725.153  masque oculaire : 100 % du cadre utile (p95 212)
+  1725.414  masque oculaire : 100 % du cadre utile (p95 212)
+  1725.687  masque oculaire : 100 % du cadre utile (p95 212)
+  1725.955  masque oculaire : 100 % du cadre utile (p95 212)
+  1726.222  masque oculaire : 100 % du cadre utile (p95 212)
+  1726.494  masque oculaire : 100 % du cadre utile (p95 212)
+  1726.756  masque oculaire : 100 % du cadre utile (p95 212)
+  1727.023  masque oculaire : 100 % du cadre utile (p95 212)
+  1727.295  masque oculaire : 100 % du cadre utile (p95 212)
+  1727.587  masque oculaire : 100 % du cadre utile (p95 212)
+  1727.855  masque oculaire : 100 % du cadre utile (p95 212)
+  1728.127  masque oculaire : 100 % du cadre utile (p95 212)
+  1728.391  masque oculaire : 100 % du cadre utile (p95 212)
+  1728.663  masque oculaire : 100 % du cadre utile (p95 212)
+  1728.921  masque oculaire : 100 % du cadre utile (p95 212)
+  1729.197  masque oculaire : 100 % du cadre utile (p95 212)
+  1729.463  masque oculaire : 100 % du cadre utile (p95 212)
+  1729.726  masque oculaire : 100 % du cadre utile (p95 212)
+  1729.994  masque oculaire : 100 % du cadre utile (p95 212)
+  1730.281  masque oculaire : 100 % du cadre utile (p95 212)
+  1730.531  masque oculaire : 100 % du cadre utile (p95 212)
+  1730.794  masque oculaire : 100 % du cadre utile (p95 212)
+  1731.060  masque oculaire : 100 % du cadre utile (p95 212)
+  1731.240  départ au x10 : profondeur non
+  1731.242  === série lame_20261022_155722_bleu-test-axe-z-tedt-photo-2 (photos) « bleu test axe z tedt photo 2 », lactophenol, objectif x10 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+  1731.281  masque oculaire : 100 % du cadre utile (p95 212)
+  1731.563  t0000326 suivi ok score 0.99 pos 0,0 net 43 (19 ms) carte 0 photos + 3 positions
+  1731.877  patron 4x4 champs posé en haut à gauche (0,0)
+  1731.877  photo o-2_0001 à 0,0 (385 ko, 211 ms)
+  1731.898  t0000661 suivi ok score 1.00 pos 0,0 net 45 (20 ms) carte 1 photos + 6 positions
+  1732.234  t0000997 suivi ok score 1.00 pos 0,0 net 46 (25 ms) carte 1 photos + 10 positions
+  1732.570  t0001333 suivi ok score 1.00 pos 0,0 net 46 (20 ms) carte 1 photos + 13 positions
+  1732.912  t0001675 suivi ok score 1.00 pos 0,0 net 46 (28 ms) carte 1 photos + 16 positions
+  1733.236  t0001999 suivi ok score 1.00 pos 0,0 net 46 (25 ms) carte 1 photos + 20 positions
+  1733.450  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0001.jpg (385 ko)
+  1733.579  t0002342 suivi ok score 1.00 pos 0,0 net 45 (30 ms) carte 1 photos + 23 positions
+  1733.905  t0002668 suivi ok score 1.00 pos 0,0 net 46 (25 ms) carte 1 photos + 26 positions
+  1734.230  t0002993 suivi ok score 1.00 pos 0,0 net 46 (17 ms) carte 1 photos + 30 positions
+  1734.572  t0003336 suivi ok score 0.99 pos 0,0 net 46 (17 ms) carte 1 photos + 33 positions
+  1734.932  t0003695 suivi ok score 1.00 pos 0,0 net 46 (42 ms) carte 1 photos + 36 positions
+  1735.249  t0004012 suivi ok score 1.00 pos 0,0 net 40 (30 ms) carte 1 photos + 40 positions
+  1735.585  t0004348 suivi ok score 1.00 pos 0,0 net 48 (33 ms) carte 1 photos + 43 positions
+  1735.897  t0004661 suivi ok score 1.00 pos 0,0 net 45 (17 ms) carte 1 photos + 46 positions
+  1736.240  t0005003 suivi ok score 1.00 pos 0,0 net 40 (26 ms) carte 1 photos + 50 positions
+  1736.573  t0005336 suivi ok score 1.00 pos 0,0 net 47 (17 ms) carte 1 photos + 53 positions
+  1736.902  t0005665 suivi ok score 1.00 pos 0,0 net 46 (18 ms) carte 1 photos + 56 positions
+  1737.239  t0006001 suivi ok score 0.99 pos 12,0 net 40 (21 ms) carte 1 photos + 60 positions
+  1737.569  t0006333 suivi ok score 0.99 pos 239,-11 net 28 (20 ms) carte 1 photos + 63 positions
+  1737.908  t0006671 suivi ok score 1.00 pos 911,-32 net 33 (22 ms) carte 1 photos + 66 positions
+  1738.253  t0007015 suivi ok score 1.00 pos 1069,-32 net 38 (33 ms) carte 1 photos + 70 positions
+  1738.566  t0007329 suivi ok score 0.99 pos 1096,-32 net 31 (17 ms) carte 1 photos + 73 positions
+  1738.735  photo o-2_0002 à 1084,-32 (375 ko, 242 ms)
+  1738.897  t0007661 suivi ok score 0.99 pos 1742,-32 net 33 (21 ms) carte 2 photos + 76 positions
+  1739.231  t0007995 suivi ok score 0.99 pos 2257,-37 net 37 (20 ms) carte 2 photos + 80 positions
+  1739.568  t0008331 suivi ok score 0.99 pos 2435,-48 net 36 (22 ms) carte 2 photos + 83 positions
+  1739.899  t0008662 suivi ok score 0.99 pos 3131,-48 net 30 (16 ms) carte 2 photos + 86 positions
+  1740.028  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0002.jpg (375 ko)
+  1740.202  photo en mouvement lent (79 % du champ, 31 u/s)
+  1740.202  ATTENTION pas trop grand (79 % du champ) : recouvrement insuffisant
+  1740.238  t0009001 suivi ok score 1.00 pos 3504,-48 net 37 (18 ms) carte 2 photos + 90 positions
+  1740.416  photo o-2_0003 à 3492,-48 (377 ko, 213 ms)
+  1740.566  t0009329 suivi ok score 1.00 pos 3540,-33 net 50 (21 ms) carte 3 photos + 93 positions
+  1740.903  t0009666 suivi ok score 1.00 pos 3528,-32 net 22 (22 ms) carte 3 photos + 96 positions
+  1741.240  t0010003 suivi ok score 1.00 pos 3517,-32 net 46 (26 ms) carte 3 photos + 100 positions
+  1741.265  reprise de mise au point au même endroit : netteté 50 contre 37 (reprise 1)
+  1741.481  photo o-2_0004 à 3516,-32 (378 ko, 215 ms)
+  1741.496  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0003.jpg (377 ko)
+  1741.564  t0010327 suivi ok score 1.00 pos 3516,-32 net 45 (17 ms) carte 4 photos + 103 positions
+  1741.904  t0010668 suivi ok score 1.00 pos 3516,-32 net 39 (20 ms) carte 4 photos + 106 positions
+  1742.240  t0011003 suivi ok score 1.00 pos 3636,-32 net 41 (22 ms) carte 4 photos + 110 positions
+  1742.577  t0011341 suivi ok score 0.99 pos 4034,-48 net 32 (25 ms) carte 4 photos + 113 positions
+  1742.920  t0011683 suivi ok score 0.99 pos 4328,-48 net 39 (34 ms) carte 4 photos + 116 positions
+  1743.261  t0012023 suivi ok score 0.99 pos 4488,-48 net 30 (35 ms) carte 4 photos + 120 positions
+  1743.574  t0012337 suivi ok score 1.00 pos 5321,-48 net 29 (25 ms) carte 4 photos + 123 positions
+  1743.673  photo en mouvement lent (62 % du champ, 37 u/s)
+  1743.901  photo o-2_0005 à 5404,-59 (380 ko, 227 ms)
+  1743.910  t0012673 suivi ok score 1.00 pos 5392,-51 net 53 (23 ms) carte 5 photos + 126 positions
+  1744.227  t0012990 suivi ok score 1.00 pos 5392,-48 net 54 (17 ms) carte 5 photos + 130 positions
+  1744.575  t0013337 suivi ok score 1.00 pos 5392,-48 net 54 (25 ms) carte 5 photos + 133 positions
+  1744.575  reprise de mise au point au même endroit : netteté 54 contre 28 (reprise 1)
+  1744.777  photo o-2_0006 à 5392,-48 (377 ko, 201 ms)
+  1744.914  t0013677 suivi ok score 1.00 pos 5392,-48 net 51 (34 ms) carte 6 photos + 136 positions
+  1745.074  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0004.jpg (378 ko)
+  1745.237  t0014000 suivi ok score 1.00 pos 5392,-48 net 40 (21 ms) carte 6 photos + 140 positions
+  1745.572  t0014336 suivi ok score 1.00 pos 5396,-58 net 45 (25 ms) carte 6 photos + 143 positions
+  1745.912  t0014674 suivi ok score 1.00 pos 5464,-62 net 40 (27 ms) carte 6 photos + 146 positions
+  1746.047  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0005.jpg (380 ko)
+  1746.241  t0015004 suivi ok score 0.99 pos 5692,-62 net 34 (24 ms) carte 6 photos + 150 positions
+  1746.571  t0015334 suivi ok score 0.99 pos 6038,-62 net 30 (20 ms) carte 6 photos + 153 positions
+  1746.899  t0015663 suivi ok score 0.99 pos 6504,-78 net 34 (19 ms) carte 6 photos + 156 positions
+  1747.241  t0016004 suivi ok score 0.99 pos 6553,-78 net 40 (20 ms) carte 6 photos + 160 positions
+  1747.546  photo o-2_0007 à 6540,-78 (376 ko, 201 ms)
+  1747.568  t0016331 suivi ok score 1.00 pos 6540,-78 net 47 (19 ms) carte 7 photos + 163 positions
+  1747.896  t0016660 suivi ok score 1.00 pos 6540,-78 net 41 (18 ms) carte 7 photos + 166 positions
+  1748.237  t0016999 suivi ok score 0.99 pos 6576,-78 net 31 (21 ms) carte 7 photos + 170 positions
+  1748.570  t0017333 suivi ok score 0.98 pos 7978,-94 net 26 (17 ms) carte 7 photos + 173 positions
+  1748.674  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0006.jpg (377 ko)
+  1748.765  photo en mouvement lent (52 % du champ, 30 u/s)
+  1748.923  t0017686 suivi ok score 1.00 pos 8158,-94 net 32 (22 ms) carte 7 photos + 176 positions
+  1748.994  photo o-2_0008 à 8146,-94 (376 ko, 228 ms)
+  1749.245  t0018008 suivi ok score 1.00 pos 8146,-94 net 44 (24 ms) carte 8 photos + 180 positions
+  1749.579  t0018342 suivi ok score 1.00 pos 8146,-94 net 32 (21 ms) carte 8 photos + 183 positions
+  1749.801  reprise de mise au point au même endroit : netteté 43 contre 32 (reprise 1)
+  1749.905  t0018668 suivi ok score 1.00 pos 8146,-94 net 46 (21 ms) carte 8 photos + 186 positions
+  1749.962  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0007.jpg (376 ko)
+  1750.010  photo o-2_0009 à 8146,-94 (374 ko, 209 ms)
+  1750.231  t0018994 suivi ok score 1.00 pos 8146,-94 net 46 (16 ms) carte 9 photos + 190 positions
+  1750.562  t0019325 suivi ok score 0.98 pos 8349,-94 net 33 (16 ms) carte 9 photos + 193 positions
+  1750.926  t0019688 suivi ok score 1.00 pos 8852,-110 net 46 (33 ms) carte 9 photos + 196 positions
+  1751.237  t0020000 suivi ok score 1.00 pos 8959,-110 net 44 (21 ms) carte 9 photos + 200 positions
+  1751.420  photo o-2_0010 à 8947,-110 (372 ko, 217 ms)
+  1751.512  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0008.jpg (376 ko)
+  1751.566  t0020330 suivi ok score 0.99 pos 9106,-110 net 46 (17 ms) carte 10 photos + 203 positions
+  1751.902  t0020665 suivi ok score 1.00 pos 9147,-110 net 47 (21 ms) carte 10 photos + 206 positions
+  1752.053  photo o-2_0011 à 9138,-110 (371 ko, 215 ms)
+  1752.239  t0021002 suivi ok score 0.99 pos 9195,-110 net 45 (20 ms) carte 11 photos + 210 positions
+  1752.370  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0009.jpg (374 ko)
+  1752.569  t0021332 suivi ok score 1.00 pos 9210,-110 net 45 (21 ms) carte 11 photos + 213 positions
+  1752.903  t0021667 suivi ok score 0.99 pos 9186,-110 net 46 (19 ms) carte 11 photos + 216 positions
+  1753.240  t0022003 suivi ok score 0.99 pos 9186,-78 net 41 (18 ms) carte 11 photos + 220 positions
+  1753.574  t0022338 suivi ok score 0.98 pos 9198,644 net 28 (22 ms) carte 11 photos + 223 positions
+  1753.901  t0022664 suivi ok score 0.98 pos 9198,1100 net 36 (20 ms) carte 11 photos + 226 positions
+  1754.241  t0023004 suivi ok score 0.98 pos 9198,1564 net 59 (26 ms) carte 11 photos + 230 positions
+  1754.567  t0023330 suivi ok score 0.99 pos 9210,2343 net 41 (19 ms) carte 11 photos + 233 positions
+  1754.903  t0023667 suivi ok score 0.99 pos 9221,3109 net 44 (18 ms) carte 11 photos + 236 positions
+  1754.966  photo en mouvement lent (80 % du champ, 30 u/s)
+  1754.966  ATTENTION pas trop grand (80 % du champ) : recouvrement insuffisant
+  1755.197  photo o-2_0012 à 9222,3157 (373 ko, 231 ms)
+  1755.231  t0023994 suivi ok score 1.00 pos 9210,3157 net 45 (16 ms) carte 12 photos + 240 positions
+  1755.578  t0024341 suivi ok score 1.00 pos 9210,3157 net 43 (27 ms) carte 12 photos + 243 positions
+  1755.911  t0024673 suivi ok score 1.00 pos 9210,3157 net 43 (26 ms) carte 12 photos + 246 positions
+  1756.103  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0010.jpg (372 ko)
+  1756.240  t0025003 suivi ok score 1.00 pos 9174,3157 net 46 (23 ms) carte 12 photos + 250 positions
+  1756.569  t0025333 suivi ok score 1.00 pos 9174,3157 net 49 (19 ms) carte 12 photos + 253 positions
+  1756.903  t0025667 suivi ok score 0.99 pos 9162,3157 net 45 (18 ms) carte 12 photos + 256 positions
+  1756.911  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0011.jpg (371 ko)
+  1757.235  t0025998 suivi ok score 0.99 pos 9111,3157 net 45 (18 ms) carte 12 photos + 260 positions
+  1757.498  photo o-2_0013 à 9102,3157 (371 ko, 222 ms)
+  1757.565  t0026328 suivi ok score 0.99 pos 8911,3157 net 42 (17 ms) carte 13 photos + 263 positions
+  1757.910  t0026673 suivi ok score 0.99 pos 8567,3157 net 40 (19 ms) carte 13 photos + 266 positions
+  1758.084  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0012.jpg (373 ko)
+  1758.242  t0027005 suivi ok score 0.99 pos 8062,3173 net 44 (25 ms) carte 13 photos + 270 positions
+  1758.568  t0027331 suivi ok score 0.99 pos 7595,3184 net 47 (17 ms) carte 13 photos + 273 positions
+  1758.675  photo en mouvement lent (51 % du champ, 17 u/s)
+  1758.893  photo o-2_0014 à 7538,3185 (372 ko, 218 ms)
+  1758.905  t0027668 suivi ok score 0.99 pos 7537,3178 net 47 (19 ms) carte 14 photos + 276 positions
+  1759.238  t0028001 suivi ok score 1.00 pos 7537,3177 net 31 (20 ms) carte 14 photos + 280 positions
+  1759.570  t0028334 suivi ok score 1.00 pos 7537,3177 net 49 (18 ms) carte 14 photos + 283 positions
+  1759.821  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0013.jpg (371 ko)
+  1759.909  t0028673 suivi ok score 1.00 pos 7549,3177 net 47 (19 ms) carte 14 photos + 286 positions
+  1760.236  t0028999 suivi ok score 0.99 pos 7537,3177 net 47 (16 ms) carte 14 photos + 290 positions
+  1760.567  t0029330 suivi ok score 0.98 pos 7218,3177 net 39 (17 ms) carte 14 photos + 293 positions
+  1760.912  t0029675 suivi ok score 0.99 pos 6583,3192 net 38 (22 ms) carte 14 photos + 296 positions
+  1761.061  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0014.jpg (372 ko)
+  1761.238  t0030001 suivi ok score 1.00 pos 6451,3192 net 42 (20 ms) carte 14 photos + 300 positions
+  1761.571  t0030334 suivi ok score 1.00 pos 6452,3192 net 31 (19 ms) carte 14 photos + 300 positions
+  1761.682  photo o-2_0015 à 6452,3192 (366 ko, 208 ms)
+  1761.907  t0030670 suivi ok score 1.00 pos 6404,3192 net 43 (23 ms) carte 15 photos + 300 positions
+  1762.245  t0031008 suivi ok score 1.00 pos 6404,3192 net 46 (25 ms) carte 15 photos + 300 positions
+  1762.426  reprise de mise au point au même endroit : netteté 44 contre 31 (reprise 1)
+  1762.457  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0015.jpg (366 ko)
+  1762.578  t0031341 suivi ok score 0.99 pos 6308,3192 net 42 (22 ms) carte 15 photos + 300 positions
+  1762.660  photo o-2_0016 à 6392,3192 (369 ko, 233 ms)
+  1762.901  t0031664 suivi ok score 0.96 pos 5257,3208 net 29 (17 ms) carte 16 photos + 300 positions
+  1763.180  photo en mouvement lent (64 % du champ, 35 u/s)
+  1763.242  t0032005 suivi ok score 1.00 pos 4421,3223 net 47 (22 ms) carte 16 photos + 300 positions
+  1763.387  photo o-2_0017 à 4421,3223 (372 ko, 206 ms)
+  1763.575  t0032338 suivi ok score 1.00 pos 4421,3223 net 39 (19 ms) carte 17 photos + 300 positions
+  1763.919  t0032683 suivi ok score 1.00 pos 4433,3239 net 38 (17 ms) carte 17 photos + 300 positions
+  1763.922  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0016.jpg (369 ko)
+  1764.245  t0033008 suivi ok score 1.00 pos 4433,3238 net 38 (24 ms) carte 17 photos + 300 positions
+  1764.587  t0033350 suivi ok score 0.98 pos 4433,3235 net 38 (30 ms) carte 17 photos + 300 positions
+  1764.912  t0033675 suivi ok score 1.00 pos 4433,3235 net 37 (22 ms) carte 17 photos + 300 positions
+  1765.243  t0034006 suivi ok score 1.00 pos 4433,3235 net 38 (21 ms) carte 17 photos + 300 positions
+  1765.575  t0034339 suivi ok score 1.00 pos 4433,3236 net 38 (18 ms) carte 17 photos + 300 positions
+  1765.905  t0034669 suivi ok score 1.00 pos 4433,3236 net 38 (17 ms) carte 17 photos + 300 positions
+  1766.245  t0035008 suivi ok score 1.00 pos 4433,3236 net 38 (20 ms) carte 17 photos + 300 positions
+  1766.578  t0035341 suivi ok score 1.00 pos 4433,3228 net 37 (17 ms) carte 17 photos + 300 positions
+  1766.911  t0035675 suivi ok score 1.00 pos 4433,3239 net 38 (23 ms) carte 17 photos + 300 positions
+  1767.247  t0036010 suivi ok score 1.00 pos 4433,3239 net 38 (22 ms) carte 17 photos + 300 positions
+  1767.572  t0036335 suivi ok score 1.00 pos 4433,3239 net 38 (19 ms) carte 17 photos + 300 positions
+  1767.917  t0036680 suivi ok score 1.00 pos 4433,3239 net 38 (22 ms) carte 17 photos + 300 positions
+  1768.242  t0037005 suivi ok score 1.00 pos 4433,3227 net 37 (20 ms) carte 17 photos + 300 positions
+  1768.595  t0037358 suivi ok score 1.00 pos 4433,3239 net 39 (21 ms) carte 17 photos + 300 positions
+  1768.916  t0037679 suivi ok score 1.00 pos 4433,3239 net 38 (25 ms) carte 17 photos + 300 positions
+  1769.252  t0038015 suivi ok score 1.00 pos 4433,3239 net 38 (20 ms) carte 17 photos + 300 positions
+  1769.577  t0038341 suivi ok score 1.00 pos 4433,3239 net 38 (19 ms) carte 17 photos + 300 positions
+  1769.909  t0038673 suivi ok score 1.00 pos 4433,3239 net 38 (19 ms) carte 17 photos + 300 positions
+  1770.264  t0039027 suivi ok score 1.00 pos 4433,3239 net 38 (24 ms) carte 17 photos + 300 positions
+  1770.579  t0039342 suivi ok score 1.00 pos 4433,3239 net 38 (23 ms) carte 17 photos + 300 positions
+  1770.923  t0039686 suivi ok score 1.00 pos 4433,3239 net 38 (23 ms) carte 17 photos + 300 positions
+  1771.249  t0040012 suivi ok score 1.00 pos 4433,3236 net 38 (21 ms) carte 17 photos + 300 positions
+  1771.584  t0040347 suivi ok score 1.00 pos 4433,3238 net 38 (27 ms) carte 17 photos + 300 positions
+  1771.923  t0040686 suivi ok score 1.00 pos 4433,3236 net 38 (31 ms) carte 17 photos + 300 positions
+  1772.241  t0041004 suivi ok score 1.00 pos 4433,3228 net 38 (17 ms) carte 17 photos + 300 positions
+  1772.596  t0041359 suivi ok score 1.00 pos 4433,3236 net 38 (36 ms) carte 17 photos + 300 positions
+  1772.920  t0041683 suivi ok score 1.00 pos 4433,3236 net 38 (27 ms) carte 17 photos + 300 positions
+  1773.257  t0042020 suivi ok score 1.00 pos 4433,3227 net 38 (28 ms) carte 17 photos + 300 positions
+  1773.587  t0042350 suivi ok score 0.98 pos 4433,3229 net 30 (24 ms) carte 17 photos + 300 positions
+  1773.906  t0042670 suivi ok score 0.99 pos 4433,3223 net 33 (18 ms) carte 17 photos + 300 positions
+  1774.242  t0043005 suivi ok score 0.99 pos 4433,3235 net 37 (21 ms) carte 17 photos + 300 positions
+  1774.579  t0043342 suivi ok score 0.99 pos 4433,3223 net 34 (20 ms) carte 17 photos + 300 positions
+  1774.921  t0043684 suivi ok score 0.99 pos 4433,3239 net 39 (21 ms) carte 17 photos + 300 positions
+  1775.256  t0044019 suivi ok score 0.99 pos 4433,3239 net 38 (32 ms) carte 17 photos + 300 positions
+  1775.576  t0044340 suivi ok score 0.99 pos 4433,3238 net 38 (17 ms) carte 17 photos + 300 positions
+  1775.919  t0044683 suivi ok score 0.99 pos 4433,3238 net 38 (24 ms) carte 17 photos + 300 positions
+  1776.248  t0045011 suivi ok score 1.00 pos 4433,3235 net 39 (20 ms) carte 17 photos + 300 positions
+  1776.578  t0045342 suivi ok score 1.00 pos 4433,3235 net 39 (21 ms) carte 17 photos + 300 positions
+  1776.918  t0045681 suivi ok score 1.00 pos 4433,3236 net 38 (25 ms) carte 17 photos + 300 positions
+  1777.243  t0046006 suivi ok score 1.00 pos 4433,3238 net 38 (19 ms) carte 17 photos + 300 positions
+  1777.577  t0046340 suivi ok score 1.00 pos 4433,3224 net 34 (20 ms) carte 17 photos + 300 positions
+  1777.918  t0046681 suivi ok score 0.99 pos 4264,3238 net 35 (26 ms) carte 17 photos + 300 positions
+  1778.251  t0047013 suivi ok score 0.92 pos 3395,3239 net 25 (20 ms) carte 17 photos + 300 positions
+  1778.578  t0047342 suivi ok score 0.99 pos 1777,3255 net 31 (21 ms) carte 17 photos + 300 positions
+  1778.608  photo en mouvement lent (86 % du champ, 6 u/s)
+  1778.608  ATTENTION pas trop grand (86 % du champ) : recouvrement insuffisant
+  1778.819  photo o-2_0018 à 1775,3255 (367 ko, 210 ms)
+  1778.913  t0047676 suivi ok score 1.00 pos 1802,3255 net 28 (24 ms) carte 18 photos + 300 positions
+  1779.238  t0048001 suivi ok score 0.99 pos 3682,3239 net 30 (16 ms) carte 18 photos + 300 positions
+  1779.238  photo en mouvement lent (62 % du champ, 24 u/s)
+  1779.467  photo o-2_0019 à 3682,3239 (368 ko, 228 ms)
+  1779.584  t0048348 suivi ok score 1.00 pos 3717,3239 net 33 (29 ms) carte 19 photos + 300 positions
+  1779.910  t0048673 suivi ok score 0.98 pos 2629,3239 net 28 (22 ms) carte 19 photos + 300 positions
+  1780.242  t0049005 suivi ok score 0.99 pos 1869,3255 net 39 (20 ms) carte 19 photos + 300 positions
+  1780.242  photo en mouvement lent (59 % du champ, 24 u/s)
+  1780.471  photo o-2_0020 à 1869,3255 (370 ko, 229 ms)
+  1780.552  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0017.jpg (372 ko)
+  1780.577  t0049340 suivi ok score 1.00 pos 1870,3255 net 49 (20 ms) carte 20 photos + 300 positions
+  1780.910  t0049673 suivi ok score 1.00 pos 1870,3259 net 30 (20 ms) carte 20 photos + 300 positions
+  1781.249  t0050012 suivi ok score 1.00 pos 1882,3255 net 50 (23 ms) carte 20 photos + 300 positions
+  1781.280  reprise de mise au point au même endroit : netteté 52 contre 39 (reprise 1)
+  1781.499  photo o-2_0021 à 1882,3255 (373 ko, 218 ms)
+  1781.577  t0050340 suivi ok score 1.00 pos 1882,3255 net 55 (21 ms) carte 21 photos + 300 positions
+  1781.784  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0018.jpg (367 ko)
+  1781.911  t0050675 suivi ok score 1.00 pos 1882,3255 net 54 (18 ms) carte 21 photos + 300 positions
+  1782.259  t0051022 suivi ok score 1.00 pos 1882,3255 net 52 (22 ms) carte 21 photos + 300 positions
+  1782.587  t0051350 suivi ok score 0.98 pos 2719,3240 net 38 (22 ms) carte 21 photos + 300 positions
+  1782.919  t0051682 suivi ok score 0.99 pos 2874,3239 net 46 (24 ms) carte 21 photos + 300 positions
+  1783.260  t0052023 suivi ok score 1.00 pos 3363,3239 net 39 (21 ms) carte 21 photos + 300 positions
+  1783.586  t0052349 suivi ok score 1.00 pos 3347,3239 net 42 (24 ms) carte 21 photos + 300 positions
+  1783.729  photo o-2_0022 à 3348,3239 (363 ko, 210 ms)
+  1783.909  t0052673 suivi ok score 1.00 pos 3348,3239 net 46 (20 ms) carte 22 photos + 300 positions
+  1784.242  t0053005 suivi ok score 1.00 pos 3348,3239 net 50 (18 ms) carte 22 photos + 300 positions
+  1784.576  t0053339 suivi ok score 0.98 pos 4059,3224 net 44 (16 ms) carte 22 photos + 300 positions
+  1784.909  t0053673 suivi ok score 0.99 pos 4146,3223 net 44 (17 ms) carte 22 photos + 300 positions
+  1785.082  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0019.jpg (368 ko)
+  1785.245  t0054006 suivi ok score 1.00 pos 4146,3239 net 44 (18 ms) carte 22 photos + 300 positions
+  1785.561  photo o-2_0023 à 4146,3239 (363 ko, 211 ms)
+  1785.571  t0054335 suivi ok score 1.00 pos 4146,3239 net 42 (17 ms) carte 23 photos + 300 positions
+  1785.910  t0054674 suivi ok score 1.00 pos 4146,3239 net 45 (21 ms) carte 23 photos + 300 positions
+  1786.003  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0020.jpg (370 ko)
+  1786.248  t0055011 suivi ok score 1.00 pos 4146,3239 net 46 (25 ms) carte 23 photos + 300 positions
+  1786.583  t0055346 suivi ok score 1.00 pos 4146,3239 net 46 (27 ms) carte 23 photos + 300 positions
+  1786.908  t0055671 suivi ok score 1.00 pos 4146,3239 net 45 (17 ms) carte 23 photos + 300 positions
+  1787.246  t0056008 suivi ok score 1.00 pos 4146,3239 net 44 (19 ms) carte 23 photos + 300 positions
+  1787.425  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0021.jpg (373 ko)
+  1787.578  t0056342 suivi ok score 1.00 pos 4146,3239 net 43 (17 ms) carte 23 photos + 300 positions
+  1787.920  t0056683 suivi ok score 1.00 pos 4146,3239 net 45 (28 ms) carte 23 photos + 300 positions
+  1788.254  t0057017 suivi ok score 1.00 pos 4146,3239 net 44 (26 ms) carte 23 photos + 300 positions
+  1788.445  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0022.jpg (363 ko)
+  1788.577  t0057341 suivi ok score 0.98 pos 4110,3239 net 44 (21 ms) carte 23 photos + 300 positions
+  1788.914  t0057678 suivi ok score 0.98 pos 3180,3223 net 46 (22 ms) carte 23 photos + 300 positions
+  1789.247  t0058010 suivi ok score 0.99 pos 3121,3239 net 47 (20 ms) carte 23 photos + 300 positions
+  1789.523  photo o-2_0024 à 3097,3239 (366 ko, 206 ms)
+  1789.571  t0058335 suivi ok score 0.99 pos 2408,3239 net 44 (17 ms) carte 24 photos + 300 positions
+  1789.918  t0058681 suivi ok score 0.99 pos 1810,3255 net 48 (25 ms) carte 24 photos + 300 positions
+  1790.243  t0059006 suivi ok score 1.00 pos 1691,3255 net 50 (18 ms) carte 24 photos + 300 positions
+  1790.581  t0059344 suivi ok score 0.99 pos 1422,3255 net 54 (23 ms) carte 24 photos + 300 positions
+  1790.613  photo o-2_0025 à 1643,3255 (369 ko, 239 ms)
+  1790.878  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0023.jpg (363 ko)
+  1790.910  t0059673 suivi ok score 0.99 pos 887,3271 net 40 (19 ms) carte 25 photos + 300 positions
+  1791.242  t0060005 suivi ok score 0.99 pos 401,3271 net 49 (18 ms) carte 25 photos + 300 positions
+  1791.583  t0060345 suivi ok score 1.00 pos 27,3271 net 49 (19 ms) carte 25 photos + 300 positions
+  1791.613  photo en mouvement lent (53 % du champ, 30 u/s)
+  1791.835  photo o-2_0026 à 15,3271 (391 ko, 221 ms)
+  1791.913  t0060676 suivi ok score 1.00 pos -33,3271 net 51 (23 ms) carte 26 photos + 300 positions
+  1792.246  t0061009 suivi ok score 1.00 pos -17,3287 net 37 (17 ms) carte 26 photos + 300 positions
+  1792.588  t0061351 suivi ok score 1.00 pos -17,3287 net 40 (25 ms) carte 26 photos + 300 positions
+  1792.935  t0061697 suivi ok score 1.00 pos -17,3284 net 47 (32 ms) carte 26 photos + 300 positions
+  1793.281  t0062044 suivi ok score 1.00 pos -17,3272 net 50 (40 ms) carte 26 photos + 300 positions
+  1793.593  t0062356 suivi ok score 1.00 pos -17,3271 net 46 (28 ms) carte 26 photos + 300 positions
+  1793.910  t0062674 suivi ok score 1.00 pos -5,3271 net 44 (19 ms) carte 26 photos + 300 positions
+  1794.011  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0024.jpg (366 ko)
+  1794.246  t0063009 suivi ok score 1.00 pos -5,3286 net 51 (16 ms) carte 26 photos + 300 positions
+  1794.582  t0063345 suivi ok score 0.99 pos 7,3494 net 44 (16 ms) carte 26 photos + 300 positions
+  1794.931  t0063694 suivi ok score 0.98 pos 19,4578 net 31 (31 ms) carte 26 photos + 300 positions
+  1795.248  t0064011 suivi ok score 1.00 pos 19,4976 net 53 (21 ms) carte 26 photos + 300 positions
+  1795.592  t0064355 suivi ok score 1.00 pos 30,5295 net 57 (24 ms) carte 26 photos + 300 positions
+  1795.619  photo en mouvement lent (50 % du champ, 30 u/s)
+  1795.831  photo o-2_0027 à 30,5311 (371 ko, 211 ms)
+  1795.909  t0064673 suivi ok score 0.99 pos 31,5423 net 54 (17 ms) carte 27 photos + 300 positions
+  1796.223  photo o-2_0028 à 31,5471 (377 ko, 216 ms)
+  1796.244  t0065007 suivi ok score 1.00 pos 19,5471 net 56 (20 ms) carte 28 photos + 300 positions
+  1796.579  t0065342 suivi ok score 1.00 pos 7,5471 net 52 (20 ms) carte 28 photos + 300 positions
+  1796.916  t0065679 suivi ok score 1.00 pos 7,5471 net 28 (19 ms) carte 28 photos + 300 positions
+  1797.255  t0066018 suivi ok score 1.00 pos 17,5471 net 59 (17 ms) carte 28 photos + 300 positions
+  1797.531  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0025.jpg (369 ko)
+  1797.595  t0066358 suivi ok score 1.00 pos 19,5471 net 57 (25 ms) carte 28 photos + 300 positions
+  1797.910  t0066673 suivi ok score 1.00 pos 19,5471 net 57 (16 ms) carte 28 photos + 300 positions
+  1798.254  t0067017 suivi ok score 1.00 pos 19,5471 net 60 (21 ms) carte 28 photos + 300 positions
+  1798.393  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0026.jpg (391 ko)
+  1798.582  t0067345 suivi ok score 0.99 pos 19,5487 net 62 (17 ms) carte 28 photos + 300 positions
+  1798.919  t0067682 suivi ok score 0.98 pos 41,6330 net 57 (20 ms) carte 28 photos + 300 positions
+  1799.252  t0068015 suivi ok score 1.00 pos 31,6375 net 52 (20 ms) carte 28 photos + 300 positions
+  1799.297  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0027.jpg (371 ko)
+  1799.523  photo o-2_0029 à 31,6379 (369 ko, 199 ms)
+  1799.574  t0068338 suivi ok score 1.00 pos 31,6379 net 43 (17 ms) carte 29 photos + 300 positions
+  1799.915  t0068678 suivi ok score 1.00 pos 31,6379 net 53 (19 ms) carte 29 photos + 300 positions
+  1800.253  t0069016 suivi ok score 1.00 pos 31,6379 net 56 (24 ms) carte 29 photos + 300 positions
+  1800.580  t0069343 suivi ok score 0.98 pos 254,6364 net 49 (18 ms) carte 29 photos + 300 positions
+  1800.731  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0028.jpg (377 ko)
+  1800.910  t0069673 suivi ok score 0.97 pos 1333,6352 net 32 (18 ms) carte 29 photos + 300 positions
+  1801.258  t0070020 suivi ok score 0.99 pos 3101,6333 net 43 (19 ms) carte 29 photos + 300 positions
+  1801.382  photo en mouvement lent (103 % du champ, 25 u/s)
+  1801.382  ATTENTION pas trop grand (103 % du champ) : recouvrement insuffisant
+  1801.583  t0070346 suivi ok score 1.00 pos 3170,6335 net 51 (20 ms) carte 29 photos + 300 positions
+  1801.612  photo o-2_0030 à 3186,6334 (368 ko, 229 ms)
+  1801.792  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0029.jpg (369 ko)
+  1801.916  t0070679 suivi ok score 1.00 pos 3171,6335 net 46 (19 ms) carte 30 photos + 300 positions
+  1802.248  t0071011 suivi ok score 1.00 pos 3171,6335 net 46 (18 ms) carte 30 photos + 300 positions
+  1802.580  t0071343 suivi ok score 1.00 pos 3179,6335 net 49 (19 ms) carte 30 photos + 300 positions
+  1802.932  t0071695 suivi ok score 0.99 pos 3362,6335 net 45 (31 ms) carte 30 photos + 300 positions
+  1803.247  t0072011 suivi ok score 0.99 pos 3837,6335 net 37 (18 ms) carte 30 photos + 300 positions
+  1803.595  t0072358 suivi ok score 0.99 pos 4377,6323 net 38 (22 ms) carte 30 photos + 300 positions
+  1803.920  t0072683 suivi ok score 1.00 pos 4712,6308 net 44 (22 ms) carte 30 photos + 300 positions
+  1804.245  t0073008 suivi ok score 1.00 pos 4688,6312 net 38 (16 ms) carte 30 photos + 300 positions
+  1804.471  photo o-2_0031 à 4688,6312 (365 ko, 224 ms)
+  1804.579  t0073342 suivi ok score 1.00 pos 4688,6309 net 52 (18 ms) carte 31 photos + 300 positions
+  1804.935  t0073698 suivi ok score 1.00 pos 4688,6309 net 51 (28 ms) carte 31 photos + 300 positions
+  1805.252  t0074015 suivi ok score 1.00 pos 4688,6309 net 33 (22 ms) carte 31 photos + 300 positions
+  1805.600  t0074362 suivi ok score 1.00 pos 4688,6309 net 49 (33 ms) carte 31 photos + 300 positions
+  1805.655  reprise de mise au point au même endroit : netteté 50 contre 38 (reprise 1)
+  1805.872  photo o-2_0032 à 4688,6309 (371 ko, 217 ms)
+  1805.915  t0074678 suivi ok score 1.00 pos 4688,6309 net 50 (19 ms) carte 32 photos + 300 positions
+  1805.977  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0030.jpg (368 ko)
+  1806.251  t0075014 suivi ok score 1.00 pos 4697,6309 net 51 (18 ms) carte 32 photos + 300 positions
+  1806.590  t0075353 suivi ok score 0.99 pos 4712,6309 net 51 (23 ms) carte 32 photos + 300 positions
+  1806.933  t0075696 suivi ok score 0.99 pos 4856,6309 net 46 (27 ms) carte 32 photos + 300 positions
+  1807.270  t0076033 suivi ok score 0.99 pos 5342,6293 net 41 (38 ms) carte 32 photos + 300 positions
+  1807.290  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0031.jpg (365 ko)
+  1807.583  t0076347 suivi ok score 0.99 pos 6362,6293 net 43 (20 ms) carte 32 photos + 300 positions
+  1807.788  photo en mouvement lent (62 % du champ, 39 u/s)
+  1807.916  t0076679 suivi ok score 1.00 pos 6601,6281 net 52 (16 ms) carte 32 photos + 300 positions
+  1808.014  photo o-2_0033 à 6581,6277 (376 ko, 225 ms)
+  1808.262  t0077024 suivi ok score 1.00 pos 6590,6277 net 61 (28 ms) carte 33 photos + 300 positions
+  1808.580  t0077344 suivi ok score 1.00 pos 6590,6277 net 49 (18 ms) carte 33 photos + 300 positions
+  1808.921  t0077684 suivi ok score 1.00 pos 6590,6277 net 52 (19 ms) carte 33 photos + 300 positions
+  1809.263  t0078025 suivi ok score 1.00 pos 6590,6277 net 52 (26 ms) carte 33 photos + 300 positions
+  1809.588  t0078351 suivi ok score 1.00 pos 6590,6277 net 45 (24 ms) carte 33 photos + 300 positions
+  1809.924  t0078686 suivi ok score 1.00 pos 6602,6277 net 47 (24 ms) carte 33 photos + 300 positions
+  1810.257  t0079020 suivi ok score 1.00 pos 6650,6277 net 48 (23 ms) carte 33 photos + 300 positions
+  1810.583  t0079346 suivi ok score 0.99 pos 6773,6277 net 48 (19 ms) carte 33 photos + 300 positions
+  1810.678  photo o-2_0034 à 6701,6277 (370 ko, 224 ms)
+  1810.923  t0079686 suivi ok score 0.99 pos 6901,6277 net 47 (27 ms) carte 34 photos + 300 positions
+  1811.260  t0080023 suivi ok score 1.00 pos 7113,6277 net 37 (28 ms) carte 34 photos + 300 positions
+  1811.516  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0032.jpg (371 ko)
+  1811.582  t0080345 suivi ok score 0.99 pos 7626,6261 net 37 (17 ms) carte 34 photos + 300 positions
+  1811.920  t0080684 suivi ok score 1.00 pos 8161,6249 net 42 (23 ms) carte 34 photos + 300 positions
+  1812.254  t0081017 suivi ok score 1.00 pos 8224,6260 net 39 (23 ms) carte 34 photos + 300 positions
+  1812.330  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0033.jpg (376 ko)
+  1812.527  photo o-2_0035 à 8212,6261 (369 ko, 208 ms)
+  1812.586  t0081349 suivi ok score 0.99 pos 8212,6261 net 44 (17 ms) carte 35 photos + 300 positions
+  1812.920  t0081684 suivi ok score 1.00 pos 8212,6261 net 48 (25 ms) carte 35 photos + 300 positions
+  1813.257  t0082020 suivi ok score 1.00 pos 8224,6320 net 44 (24 ms) carte 35 photos + 300 positions
+  1813.587  t0082351 suivi ok score 0.98 pos 8235,7213 net 25 (19 ms) carte 35 photos + 300 positions
+  1813.754  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0034.jpg (370 ko)
+  1813.922  t0082685 suivi ok score 1.00 pos 8225,7377 net 37 (23 ms) carte 35 photos + 300 positions
+  1814.055  photo floue (netteté 22 contre 54 de référence)
+  1814.254  t0083017 suivi ok score 1.00 pos 8224,7377 net 20 (23 ms) carte 35 photos + 300 positions
+  1814.273  photo o-2_0036 à 8224,7377 (371 ko, 218 ms)
+  1814.564  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0035.jpg (369 ko)
+  1814.584  t0083347 suivi ok score 1.00 pos 8224,7377 net 43 (19 ms) carte 36 photos + 300 positions
+  1814.931  t0083694 suivi ok score 1.00 pos 8224,7377 net 45 (27 ms) carte 36 photos + 300 positions
+  1814.982  reprise de mise au point au même endroit : netteté 45 contre 22 (reprise 1)
+  1815.211  photo o-2_0037 à 8224,7377 (381 ko, 228 ms)
+  1815.251  t0084015 suivi ok score 1.00 pos 8224,7377 net 44 (20 ms) carte 37 photos + 300 positions
+  1815.600  t0084363 suivi ok score 1.00 pos 8224,7377 net 40 (31 ms) carte 37 photos + 300 positions
+  1815.924  t0084687 suivi ok score 1.00 pos 8224,7377 net 42 (20 ms) carte 37 photos + 300 positions
+  1816.258  t0085021 suivi ok score 1.00 pos 8224,7377 net 44 (23 ms) carte 37 photos + 300 positions
+  1816.415  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0036.jpg (371 ko)
+  1816.599  t0085362 suivi ok score 1.00 pos 8236,7377 net 47 (21 ms) carte 37 photos + 300 positions
+  1816.923  t0085686 suivi ok score 0.99 pos 8333,7377 net 47 (21 ms) carte 37 photos + 300 positions
+  1817.255  t0086018 suivi ok score 0.99 pos 8499,7377 net 45 (18 ms) carte 37 photos + 300 positions
+  1817.584  t0086347 suivi ok score 0.99 pos 8698,7374 net 49 (16 ms) carte 37 photos + 300 positions
+  1817.788  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0037.jpg (381 ko)
+  1817.920  t0086683 suivi ok score 0.99 pos 9117,7361 net 46 (20 ms) carte 37 photos + 300 positions
+  1818.255  t0087017 suivi ok score 0.99 pos 9502,7361 net 47 (22 ms) carte 37 photos + 300 positions
+  1818.593  t0087356 suivi ok score 1.00 pos 9526,7361 net 24 (19 ms) carte 37 photos + 300 positions
+  1818.695  photo floue (netteté 22 contre 54 de référence)
+  1818.903  photo o-2_0038 à 9526,7361 (366 ko, 207 ms)
+  1818.916  t0087680 suivi ok score 1.00 pos 9526,7361 net 43 (20 ms) carte 38 photos + 300 positions
+  1819.265  t0088029 suivi ok score 1.00 pos 9526,7361 net 53 (21 ms) carte 38 photos + 300 positions
+  1819.583  t0088347 suivi ok score 1.00 pos 9526,7361 net 52 (17 ms) carte 38 photos + 300 positions
+  1819.645  reprise de mise au point au même endroit : netteté 52 contre 22 (reprise 1)
+  1819.868  photo o-2_0039 à 9526,7361 (370 ko, 222 ms)
+  1819.921  t0088684 suivi ok score 1.00 pos 9526,7234 net 35 (23 ms) carte 39 photos + 300 positions
+  1820.211  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0038.jpg (366 ko)
+  1820.262  t0089025 suivi ok score 1.00 pos 9526,7090 net 37 (23 ms) carte 39 photos + 300 positions
+  1820.582  t0089345 suivi ok score 1.00 pos 9526,7090 net 42 (16 ms) carte 39 photos + 300 positions
+  1820.667  photo o-2_0040 à 9526,7090 (365 ko, 206 ms)
+  1820.925  t0089688 suivi ok score 1.00 pos 9514,7090 net 48 (28 ms) carte 40 photos + 300 positions
+  1821.264  t0090027 suivi ok score 1.00 pos 9514,7090 net 53 (27 ms) carte 40 photos + 300 positions
+  1821.590  t0090353 suivi ok score 1.00 pos 9514,7090 net 37 (25 ms) carte 40 photos + 300 positions
+  1821.592  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0039.jpg (370 ko)
+  1821.932  t0090695 suivi ok score 1.00 pos 9514,7086 net 46 (30 ms) carte 40 photos + 300 positions
+  1821.933  reprise de mise au point au même endroit : netteté 46 contre 35 (reprise 1)
+  1822.165  photo o-2_0041 à 9514,7086 (367 ko, 232 ms)
+  1822.249  t0091012 suivi ok score 0.96 pos 9537,8348 net 28 (18 ms) carte 41 photos + 300 positions
+  1822.594  t0091357 suivi ok score 1.00 pos 9538,8572 net 33 (24 ms) carte 41 photos + 300 positions
+  1822.601  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0040.jpg (365 ko)
+  1822.926  t0091689 suivi ok score 0.99 pos 9549,8710 net 29 (25 ms) carte 41 photos + 300 positions
+  1822.948  photo o-2_0042 à 9550,8607 (369 ko, 195 ms)
+  1823.252  t0092015 suivi ok score 0.99 pos 9553,9088 net 31 (18 ms) carte 42 photos + 300 positions
+  1823.599  t0092362 suivi ok score 1.00 pos 9538,9099 net 48 (21 ms) carte 42 photos + 300 positions
+  1823.782  photo o-2_0043 à 9538,9099 (380 ko, 209 ms)
+  1823.919  t0092682 suivi ok score 1.00 pos 9538,9099 net 46 (20 ms) carte 43 photos + 300 positions
+  1824.269  t0093032 suivi ok score 1.00 pos 9538,9099 net 44 (30 ms) carte 43 photos + 300 positions
+  1824.586  t0093350 suivi ok score 1.00 pos 9538,9099 net 43 (17 ms) carte 43 photos + 300 positions
+  1824.730  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0041.jpg (367 ko)
+  1824.919  t0093682 suivi ok score 1.00 pos 9550,9179 net 49 (17 ms) carte 43 photos + 300 positions
+  1825.259  t0094022 suivi ok score 0.99 pos 9550,9499 net 46 (25 ms) carte 43 photos + 300 positions
+  1825.587  t0094350 suivi ok score 1.00 pos 9562,10135 net 45 (16 ms) carte 43 photos + 300 positions
+  1825.603  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0042.jpg (369 ko)
+  1825.922  t0094686 suivi ok score 1.00 pos 9550,10151 net 32 (22 ms) carte 43 photos + 300 positions
+  1826.215  photo o-2_0044 à 9550,10151 (371 ko, 230 ms)
+  1826.253  t0095017 suivi ok score 1.00 pos 9550,10151 net 49 (18 ms) carte 44 photos + 300 positions
+  1826.589  t0095352 suivi ok score 1.00 pos 9550,10151 net 54 (22 ms) carte 44 photos + 300 positions
+  1826.889  reprise de mise au point au même endroit : netteté 52 contre 31 (reprise 1)
+  1826.917  t0095680 suivi ok score 0.99 pos 9526,10140 net 51 (16 ms) carte 44 photos + 300 positions
+  1827.114  photo o-2_0045 à 9526,10151 (379 ko, 224 ms)
+  1827.255  t0096018 suivi ok score 0.99 pos 9501,10151 net 55 (23 ms) carte 45 photos + 300 positions
+  1827.353  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0043.jpg (380 ko)
+  1827.593  t0096356 suivi ok score 0.99 pos 9182,10156 net 42 (25 ms) carte 45 photos + 300 positions
+  1827.952  t0096714 suivi ok score 1.00 pos 8186,10161 net 50 (41 ms) carte 45 photos + 300 positions
+  1828.258  t0097022 suivi ok score 1.00 pos 8182,10168 net 46 (19 ms) carte 45 photos + 300 positions
+  1828.507  photo o-2_0046 à 8188,10160 (377 ko, 202 ms)
+  1828.585  t0097348 suivi ok score 1.00 pos 8190,10157 net 27 (18 ms) carte 46 photos + 300 positions
+  1828.757  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0044.jpg (371 ko)
+  1828.923  t0097686 suivi ok score 1.00 pos 8190,10157 net 49 (20 ms) carte 46 photos + 300 positions
+  1829.268  t0098030 suivi ok score 1.00 pos 8190,10157 net 40 (24 ms) carte 46 photos + 300 positions
+  1829.601  t0098365 suivi ok score 1.00 pos 8190,10157 net 33 (23 ms) carte 46 photos + 300 positions
+  1829.953  t0098715 suivi ok score 1.00 pos 8190,10157 net 46 (39 ms) carte 46 photos + 300 positions
+  1830.254  t0099017 suivi ok score 1.00 pos 8190,10157 net 47 (17 ms) carte 46 photos + 300 positions
+  1830.607  t0099369 suivi ok score 1.00 pos 8182,10157 net 43 (31 ms) carte 46 photos + 300 positions
+  1830.923  t0099687 suivi ok score 0.99 pos 8023,10157 net 37 (19 ms) carte 46 photos + 300 positions
+  1831.260  t0100022 suivi ok score 0.99 pos 7341,10157 net 39 (19 ms) carte 46 photos + 300 positions
+  1831.596  t0100359 suivi ok score 1.00 pos 6875,10157 net 44 (22 ms) carte 46 photos + 300 positions
+  1831.930  t0100693 suivi ok score 1.00 pos 6839,10173 net 45 (20 ms) carte 46 photos + 300 positions
+  1832.218  photo o-2_0047 à 6839,10173 (379 ko, 213 ms)
+  1832.257  t0101020 suivi ok score 1.00 pos 6848,10173 net 46 (17 ms) carte 47 photos + 300 positions
+  1832.585  t0101348 suivi ok score 1.00 pos 6848,10173 net 50 (18 ms) carte 47 photos + 300 positions
+  1832.924  t0101687 suivi ok score 0.99 pos 6827,10157 net 39 (19 ms) carte 47 photos + 300 positions
+  1833.253  t0102016 suivi ok score 0.99 pos 6403,10172 net 32 (15 ms) carte 47 photos + 300 positions
+  1833.337  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0045.jpg (379 ko)
+  1833.591  t0102355 suivi ok score 0.99 pos 5718,10173 net 41 (17 ms) carte 47 photos + 300 positions
+  1833.925  t0102689 suivi ok score 1.00 pos 5712,10189 net 49 (18 ms) carte 47 photos + 300 positions
+  1834.184  photo o-2_0048 à 5712,10189 (373 ko, 228 ms)
+  1834.261  t0103024 suivi ok score 1.00 pos 5712,10189 net 41 (24 ms) carte 48 photos + 300 positions
+  1834.273  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0046.jpg (377 ko)
+  1834.588  t0103351 suivi ok score 1.00 pos 5704,10189 net 49 (19 ms) carte 48 photos + 300 positions
+  1834.927  t0103690 suivi ok score 0.98 pos 4624,10189 net 34 (24 ms) carte 48 photos + 300 positions
+  1835.270  t0104032 suivi ok score 0.99 pos 3756,10189 net 36 (27 ms) carte 48 photos + 300 positions
+  1835.270  photo en mouvement lent (64 % du champ, 23 u/s)
+  1835.465  photo o-2_0049 à 3756,10189 (375 ko, 194 ms)
+  1835.468  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0047.jpg (379 ko)
+  1835.588  t0104351 suivi ok score 1.00 pos 3764,10189 net 42 (17 ms) carte 49 photos + 300 positions
+  1835.924  t0104687 suivi ok score 1.00 pos 3765,10189 net 35 (23 ms) carte 49 photos + 300 positions
+  1836.264  t0105027 suivi ok score 1.00 pos 3765,10189 net 42 (26 ms) carte 49 photos + 300 positions
+  1836.601  t0105362 suivi ok score 0.98 pos 3362,10189 net 28 (26 ms) carte 49 photos + 300 positions
+  1836.919  t0105682 suivi ok score 0.99 pos 2812,10205 net 45 (16 ms) carte 49 photos + 300 positions
+  1837.257  t0106020 suivi ok score 1.00 pos 2833,10205 net 51 (19 ms) carte 49 photos + 300 positions
+  1837.533  photo o-2_0050 à 2833,10205 (374 ko, 206 ms)
+  1837.587  t0106350 suivi ok score 1.00 pos 2833,10205 net 40 (18 ms) carte 50 photos + 300 positions
+  1837.928  t0106692 suivi ok score 1.00 pos 2833,10205 net 57 (21 ms) carte 50 photos + 300 positions
+  1838.267  t0107030 suivi ok score 1.00 pos 2833,10205 net 54 (25 ms) carte 50 photos + 300 positions
+  1838.593  t0107357 suivi ok score 1.00 pos 2833,10205 net 48 (18 ms) carte 50 photos + 300 positions
+  1838.748  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0048.jpg (373 ko)
+  1838.924  t0107688 suivi ok score 0.99 pos 2777,10205 net 40 (18 ms) carte 50 photos + 300 positions
+  1839.258  t0108022 suivi ok score 0.99 pos 2510,10205 net 46 (16 ms) carte 50 photos + 300 positions
+  1839.590  t0108354 suivi ok score 0.99 pos 1937,10205 net 38 (17 ms) carte 50 photos + 300 positions
+  1839.729  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0049.jpg (375 ko)
+  1839.925  t0108688 suivi ok score 1.00 pos 1554,10205 net 44 (18 ms) carte 50 photos + 300 positions
+  1840.257  t0109020 suivi ok score 0.99 pos 1378,10208 net 41 (17 ms) carte 50 photos + 300 positions
+  1840.421  photo en mouvement lent (51 % du champ, 31 u/s)
+  1840.590  t0109354 suivi ok score 1.00 pos 1267,10221 net 38 (17 ms) carte 50 photos + 300 positions
+  1840.644  photo o-2_0051 à 1279,10220 (369 ko, 222 ms)
+  1840.924  t0109688 suivi ok score 1.00 pos 1279,10221 net 31 (20 ms) carte 51 photos + 300 positions
+  1841.038  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0050.jpg (374 ko)
+  1841.256  t0110020 suivi ok score 1.00 pos 1279,10221 net 39 (18 ms) carte 51 photos + 300 positions
+  1841.607  t0110370 suivi ok score 1.00 pos 1279,10221 net 49 (27 ms) carte 51 photos + 300 positions
+  1841.932  t0110695 suivi ok score 1.00 pos 1268,10221 net 48 (25 ms) carte 51 photos + 300 positions
+  1842.262  t0111025 suivi ok score 0.99 pos 693,10221 net 29 (15 ms) carte 51 photos + 300 positions
+  1842.591  t0111354 suivi ok score 0.99 pos -276,10239 net 34 (16 ms) carte 51 photos + 300 positions
+  1842.790  photo en mouvement lent (66 % du champ, 8 u/s)
+  1842.919  t0111682 suivi ok score 0.99 pos -708,10266 net 50 (17 ms) carte 51 photos + 300 positions
+  1842.974  photo o-2_0052 à -727,10251 (373 ko, 183 ms)
+  1843.256  t0112019 suivi ok score 1.00 pos -716,10251 net 39 (18 ms) carte 52 photos + 300 positions
+  1843.588  t0112352 suivi ok score 1.00 pos -708,10251 net 27 (17 ms) carte 52 photos + 300 positions
+  1843.924  t0112688 suivi ok score 1.00 pos -704,10266 net 28 (17 ms) carte 52 photos + 300 positions
+  1844.284  t0113046 suivi ok score 0.91 pos -681,11069 net 20 (36 ms) carte 52 photos + 300 positions
+  1844.307  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0051.jpg (369 ko)
+  1844.597  t0113361 suivi ok score 0.98 pos -681,12276 net 26 (17 ms) carte 52 photos + 300 positions
+  1844.821  photo en mouvement lent (60 % du champ, 31 u/s)
+  1844.929  t0113692 suivi ok score 1.00 pos -681,12694 net 26 (22 ms) carte 52 photos + 300 positions
+  1845.053  photo o-2_0053 à -681,12678 (371 ko, 232 ms)
+  1845.255  t0114018 suivi ok score 0.99 pos -693,12701 net 48 (18 ms) carte 53 photos + 300 positions
+  1845.545  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0052.jpg (373 ko)
+  1845.594  t0114358 suivi ok score 1.00 pos -693,12706 net 30 (19 ms) carte 53 photos + 300 positions
+  1845.740  reprise de mise au point au même endroit : netteté 40 contre 29 (reprise 1)
+  1845.924  t0114687 suivi ok score 1.00 pos -693,12706 net 50 (18 ms) carte 53 photos + 300 positions
+  1845.952  photo o-2_0054 à -693,12706 (369 ko, 212 ms)
+  1846.257  t0115020 suivi ok score 1.00 pos -693,12706 net 45 (18 ms) carte 54 photos + 300 positions
+  1846.593  t0115357 suivi ok score 1.00 pos -693,12706 net 34 (22 ms) carte 54 photos + 300 positions
+  1846.927  t0115690 suivi ok score 1.00 pos -693,12691 net 44 (22 ms) carte 54 photos + 300 positions
+  1847.173  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0053.jpg (371 ko)
+  1847.262  t0116025 suivi ok score 1.00 pos -681,12881 net 32 (22 ms) carte 54 photos + 300 positions
+  1847.594  t0116358 suivi ok score 1.00 pos -681,12975 net 37 (22 ms) carte 54 photos + 300 positions
+  1847.816  photo o-2_0055 à -681,12975 (369 ko, 221 ms)
+  1847.937  t0116700 suivi ok score 0.99 pos -681,12992 net 34 (28 ms) carte 55 photos + 300 positions
+  1847.974  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0054.jpg (369 ko)
+  1848.262  t0117025 suivi ok score 0.99 pos -656,12992 net 33 (18 ms) carte 55 photos + 300 positions
+  1848.595  t0117359 suivi ok score 0.98 pos 1375,12956 net 38 (18 ms) carte 55 photos + 300 positions
+  1848.690  photo en mouvement lent (69 % du champ, 5 u/s)
+  1848.923  photo o-2_0056 à 1421,12955 (364 ko, 233 ms)
+  1848.935  t0117698 suivi ok score 1.00 pos 1415,12956 net 40 (28 ms) carte 56 photos + 300 positions
+  1849.256  t0118020 suivi ok score 1.00 pos 1415,12957 net 23 (19 ms) carte 56 photos + 300 positions
+  1849.596  t0118360 suivi ok score 1.00 pos 1415,12968 net 55 (24 ms) carte 56 photos + 300 positions
+  1849.931  t0118694 suivi ok score 1.00 pos 1415,12968 net 27 (19 ms) carte 56 photos + 300 positions
+  1850.260  t0119024 suivi ok score 1.00 pos 1415,12968 net 33 (19 ms) carte 56 photos + 300 positions
+  1850.597  t0119361 suivi ok score 1.00 pos 1415,12956 net 37 (24 ms) carte 56 photos + 300 positions
+  1850.805  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0055.jpg (369 ko)
+  1850.963  t0119726 suivi ok score 0.99 pos 1591,12955 net 35 (41 ms) carte 56 photos + 300 positions
+  1851.278  t0120041 suivi ok score 0.99 pos 1978,12955 net 32 (22 ms) carte 56 photos + 300 positions
+  1851.607  t0120370 suivi ok score 0.99 pos 2651,12951 net 34 (24 ms) carte 56 photos + 300 positions
+  1851.923  t0120687 suivi ok score 1.00 pos 2831,12955 net 26 (16 ms) carte 56 photos + 300 positions
+  1852.264  t0121027 suivi ok score 1.00 pos 2831,12955 net 29 (23 ms) carte 56 photos + 300 positions
+  1852.316  photo o-2_0057 à 2831,12955 (360 ko, 233 ms)
+  1852.410  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0056.jpg (364 ko)
+  1852.604  t0121367 suivi ok score 1.00 pos 2831,12955 net 46 (31 ms) carte 57 photos + 300 positions
+  1852.930  t0121693 suivi ok score 1.00 pos 2831,12955 net 55 (20 ms) carte 57 photos + 300 positions
+  1853.005  reprise de mise au point au même endroit : netteté 54 contre 27 (reprise 1)
+  1853.210  photo o-2_0058 à 2831,12955 (369 ko, 204 ms)
+  1853.256  t0122019 suivi ok score 1.00 pos 2831,12955 net 53 (17 ms) carte 58 photos + 300 positions
+  1853.593  t0122357 suivi ok score 1.00 pos 2831,12955 net 48 (20 ms) carte 58 photos + 300 positions
+  1853.926  t0122689 suivi ok score 0.99 pos 2858,12955 net 44 (17 ms) carte 58 photos + 300 positions
+  1854.267  t0123030 suivi ok score 1.00 pos 3046,12944 net 42 (21 ms) carte 58 photos + 300 positions
+  1854.604  t0123367 suivi ok score 1.00 pos 3346,12939 net 37 (25 ms) carte 58 photos + 300 positions
+  1854.934  t0123697 suivi ok score 1.00 pos 3656,12939 net 31 (24 ms) carte 58 photos + 300 positions
+  1855.265  t0124028 suivi ok score 1.00 pos 3933,12939 net 37 (21 ms) carte 58 photos + 300 positions
+  1855.596  t0124360 suivi ok score 1.00 pos 3933,12939 net 48 (18 ms) carte 58 photos + 300 positions
+  1855.897  photo o-2_0059 à 3933,12939 (367 ko, 229 ms)
+  1855.923  t0124686 suivi ok score 1.00 pos 3933,12939 net 21 (12 ms) carte 59 photos + 300 positions
+  1856.250  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0057.jpg (360 ko)
+  1856.265  t0125028 suivi ok score 1.00 pos 3933,12939 net 48 (22 ms) carte 59 photos + 300 positions
+  1856.599  t0125362 suivi ok score 1.00 pos 3933,12939 net 51 (24 ms) carte 59 photos + 300 positions
+  1856.726  reprise de mise au point au même endroit : netteté 51 contre 39 (reprise 1)
+  1856.928  t0125691 suivi ok score 1.00 pos 3933,12939 net 51 (20 ms) carte 59 photos + 300 positions
+  1856.956  photo o-2_0060 à 3933,12939 (377 ko, 229 ms)
+  1857.259  t0126022 suivi ok score 1.00 pos 3933,12939 net 51 (18 ms) carte 60 photos + 300 positions
+  1857.530  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0058.jpg (369 ko)
+  1857.594  t0126357 suivi ok score 1.00 pos 3933,12939 net 51 (19 ms) carte 60 photos + 300 positions
+  1857.930  t0126693 suivi ok score 1.00 pos 3933,12939 net 34 (20 ms) carte 60 photos + 300 positions
+  1858.271  t0127034 suivi ok score 1.00 pos 3933,12939 net 52 (22 ms) carte 60 photos + 300 positions
+  1858.597  t0127361 suivi ok score 1.00 pos 3933,12939 net 53 (20 ms) carte 60 photos + 300 positions
+  1858.931  t0127694 suivi ok score 1.00 pos 3933,12939 net 52 (20 ms) carte 60 photos + 300 positions
+  1859.274  t0128036 suivi ok score 1.00 pos 3933,12939 net 51 (28 ms) carte 60 photos + 300 positions
+  1859.599  t0128363 suivi ok score 1.00 pos 3933,12939 net 52 (18 ms) carte 60 photos + 300 positions
+  1859.933  t0128696 suivi ok score 1.00 pos 3933,12939 net 52 (20 ms) carte 60 photos + 300 positions
+  1860.269  t0129031 suivi ok score 1.00 pos 3933,12939 net 52 (22 ms) carte 60 photos + 300 positions
+  1860.603  t0129367 suivi ok score 1.00 pos 3933,12939 net 53 (20 ms) carte 60 photos + 300 positions
+  1860.952  t0129715 suivi ok score 1.00 pos 3933,12939 net 53 (20 ms) carte 60 photos + 300 positions
+  1861.271  t0130035 suivi ok score 1.00 pos 3933,12939 net 52 (21 ms) carte 60 photos + 300 positions
+  1861.605  t0130368 suivi ok score 1.00 pos 3933,12939 net 52 (28 ms) carte 60 photos + 300 positions
+  1861.930  t0130694 suivi ok score 1.00 pos 3933,12939 net 51 (20 ms) carte 60 photos + 300 positions
+  1862.273  t0131036 suivi ok score 1.00 pos 3933,12939 net 50 (26 ms) carte 60 photos + 300 positions
+  1862.596  t0131360 suivi ok score 1.00 pos 3933,12939 net 50 (20 ms) carte 60 photos + 300 positions
+  1862.933  t0131696 suivi ok score 1.00 pos 3945,12939 net 47 (20 ms) carte 60 photos + 300 positions
+  1863.287  t0132049 suivi ok score 1.00 pos 3969,12939 net 51 (31 ms) carte 60 photos + 300 positions
+  1863.607  t0132370 suivi ok score 1.00 pos 4029,12971 net 45 (21 ms) carte 60 photos + 300 positions
+  1863.942  t0132705 suivi ok score 1.00 pos 4028,12976 net 46 (25 ms) carte 60 photos + 300 positions
+  1864.269  t0133031 suivi ok score 1.00 pos 4029,12972 net 46 (24 ms) carte 60 photos + 300 positions
+  1864.613  t0133375 suivi ok score 1.00 pos 4017,12971 net 51 (32 ms) carte 60 photos + 300 positions
+  1864.943  t0133706 suivi ok score 1.00 pos 4017,12971 net 50 (27 ms) carte 60 photos + 300 positions
+  1865.266  t0134029 suivi ok score 1.00 pos 4017,12971 net 48 (19 ms) carte 60 photos + 300 positions
+  1865.608  t0134371 suivi ok score 1.00 pos 4013,12971 net 48 (26 ms) carte 60 photos + 300 positions
+  1865.944  t0134707 suivi ok score 1.00 pos 4016,12971 net 49 (25 ms) carte 60 photos + 300 positions
+  1866.267  t0135029 suivi ok score 1.00 pos 4017,12971 net 49 (18 ms) carte 60 photos + 300 positions
+  1866.603  t0135366 suivi ok score 1.00 pos 3993,12971 net 47 (21 ms) carte 60 photos + 300 positions
+  1866.933  t0135696 suivi ok score 1.00 pos 3993,12971 net 49 (20 ms) carte 60 photos + 300 positions
+  1867.273  t0136036 suivi ok score 1.00 pos 3972,12971 net 49 (26 ms) carte 60 photos + 300 positions
+  1867.600  t0136363 suivi ok score 1.00 pos 3981,12971 net 49 (22 ms) carte 60 photos + 300 positions
+  1867.932  t0136695 suivi ok score 1.00 pos 3981,12971 net 47 (19 ms) carte 60 photos + 300 positions
+  1868.265  t0137028 suivi ok score 1.00 pos 3981,12971 net 28 (18 ms) carte 60 photos + 300 positions
+  1868.604  t0137367 suivi ok score 1.00 pos 3981,12971 net 47 (22 ms) carte 60 photos + 300 positions
+  1868.949  t0137712 suivi ok score 1.00 pos 3969,12955 net 46 (28 ms) carte 60 photos + 300 positions
+  1869.263  t0138026 suivi ok score 1.00 pos 3969,12955 net 47 (18 ms) carte 60 photos + 300 positions
+  1869.596  t0138359 suivi ok score 1.00 pos 3969,12955 net 47 (19 ms) carte 60 photos + 300 positions
+  1869.937  t0138700 suivi ok score 1.00 pos 3969,12955 net 46 (23 ms) carte 60 photos + 300 positions
+  1870.267  t0139029 suivi ok score 1.00 pos 3969,12955 net 46 (19 ms) carte 60 photos + 300 positions
+  1870.599  t0139362 suivi ok score 0.99 pos 3969,12939 net 39 (18 ms) carte 60 photos + 300 positions
+  1870.936  t0139700 suivi ok score 1.00 pos 4100,12955 net 47 (23 ms) carte 60 photos + 300 positions
+  1871.267  t0140030 suivi ok score 0.98 pos 5200,12943 net 37 (17 ms) carte 60 photos + 300 positions
+  1871.449  photo en mouvement lent (51 % du champ, 28 u/s)
+  1871.596  t0140359 suivi ok score 0.99 pos 5555,12939 net 47 (16 ms) carte 60 photos + 300 positions
+  1871.663  photo o-2_0061 à 5499,12940 (380 ko, 213 ms)
+  1871.939  t0140702 suivi ok score 1.00 pos 5559,12939 net 47 (24 ms) carte 61 photos + 300 positions
+  1872.272  t0141036 suivi ok score 1.00 pos 5559,12939 net 48 (20 ms) carte 61 photos + 300 positions
+  1872.601  t0141364 suivi ok score 1.00 pos 5559,12939 net 46 (20 ms) carte 61 photos + 300 positions
+  1872.948  t0141711 suivi ok score 1.00 pos 5582,12955 net 48 (30 ms) carte 61 photos + 300 positions
+  1873.285  t0142047 suivi ok score 0.97 pos 6682,12955 net 39 (29 ms) carte 61 photos + 300 positions
+  1873.530  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0059.jpg (367 ko)
+  1873.617  t0142380 suivi ok score 0.99 pos 7336,12955 net 49 (27 ms) carte 61 photos + 300 positions
+  1873.800  photo en mouvement lent (68 % du champ, 30 u/s)
+  1873.935  t0142698 suivi ok score 1.00 pos 7581,12955 net 47 (18 ms) carte 61 photos + 300 positions
+  1874.035  photo o-2_0062 à 7579,12955 (370 ko, 234 ms)
+  1874.268  t0143032 suivi ok score 1.00 pos 7567,12955 net 26 (18 ms) carte 62 photos + 300 positions
+  1874.598  t0143362 suivi ok score 1.00 pos 7567,12955 net 49 (18 ms) carte 62 photos + 300 positions
+  1874.933  t0143697 suivi ok score 1.00 pos 7578,12955 net 46 (22 ms) carte 62 photos + 300 positions
+  1874.996  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0060.jpg (377 ko)
+  1875.269  t0144032 suivi ok score 0.98 pos 8359,12955 net 36 (22 ms) carte 62 photos + 300 positions
+  1875.611  t0144373 suivi ok score 0.99 pos 9484,12955 net 53 (28 ms) carte 62 photos + 300 positions
+  1875.715  photo en mouvement lent (64 % du champ, 29 u/s)
+  1875.931  t0144694 suivi ok score 1.00 pos 9615,12955 net 60 (19 ms) carte 62 photos + 300 positions
+  1875.948  photo o-2_0063 à 9544,12955 (372 ko, 232 ms)
+  1876.053  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0061.jpg (380 ko)
+  1876.267  t0145030 suivi ok score 1.00 pos 9604,12955 net 53 (20 ms) carte 63 photos + 300 positions
+  1876.607  t0145370 suivi ok score 1.00 pos 9604,12955 net 58 (22 ms) carte 63 photos + 300 positions
+  1876.935  t0145698 suivi ok score 1.00 pos 9604,12955 net 61 (18 ms) carte 63 photos + 300 positions
+  1877.271  t0146034 suivi ok score 1.00 pos 9614,12955 net 63 (20 ms) carte 63 photos + 300 positions
+  1877.603  t0146366 suivi ok score 1.00 pos 9627,12955 net 59 (20 ms) carte 63 photos + 300 positions
+  1877.939  t0146702 suivi ok score 1.00 pos 9615,12955 net 58 (23 ms) carte 63 photos + 300 positions
+  1878.275  t0147038 suivi ok score 1.00 pos 9604,12955 net 59 (22 ms) carte 63 photos + 300 positions
+  1878.608  t0147371 suivi ok score 1.00 pos 9604,12955 net 60 (25 ms) carte 63 photos + 300 positions
+  1878.947  t0147710 suivi ok score 1.00 pos 9604,12955 net 59 (25 ms) carte 63 photos + 300 positions
+  1879.276  t0148038 suivi ok score 1.00 pos 9604,12955 net 60 (26 ms) carte 63 photos + 300 positions
+  1879.602  t0148365 suivi ok score 1.00 pos 9604,12955 net 61 (21 ms) carte 63 photos + 300 positions
+  1879.939  t0148702 suivi ok score 1.00 pos 9604,12955 net 60 (24 ms) carte 63 photos + 300 positions
+  1880.277  t0149040 suivi ok score 1.00 pos 9604,12955 net 60 (26 ms) carte 63 photos + 300 positions
+  1880.599  t0149362 suivi ok score 1.00 pos 9604,12955 net 59 (18 ms) carte 63 photos + 300 positions
+  1880.936  t0149699 suivi ok score 1.00 pos 9604,12955 net 61 (20 ms) carte 63 photos + 300 positions
+  1881.290  t0150052 suivi ok score 1.00 pos 9604,12955 net 60 (31 ms) carte 63 photos + 300 positions
+  1881.624  t0150388 suivi ok score 1.00 pos 9604,12955 net 61 (24 ms) carte 63 photos + 300 positions
+  1881.939  t0150702 suivi ok score 1.00 pos 9604,12955 net 60 (20 ms) carte 63 photos + 300 positions
+  1882.281  t0151044 suivi ok score 1.00 pos 9604,12955 net 60 (25 ms) carte 63 photos + 300 positions
+  1882.606  t0151369 suivi ok score 1.00 pos 9604,12955 net 61 (22 ms) carte 63 photos + 300 positions
+  1882.944  t0151707 suivi ok score 1.00 pos 9604,12955 net 61 (23 ms) carte 63 photos + 300 positions
+  1883.283  t0152046 suivi ok score 1.00 pos 9604,12955 net 61 (32 ms) carte 63 photos + 300 positions
+  1883.601  t0152364 suivi ok score 1.00 pos 9604,12955 net 62 (18 ms) carte 63 photos + 300 positions
+  1883.937  t0152701 suivi ok score 1.00 pos 9604,12955 net 62 (19 ms) carte 63 photos + 300 positions
+  1884.273  t0153036 suivi ok score 1.00 pos 9604,12955 net 62 (18 ms) carte 63 photos + 300 positions
+  1884.604  t0153367 suivi ok score 1.00 pos 9604,12955 net 62 (21 ms) carte 63 photos + 300 positions
+  1884.940  t0153704 suivi ok score 1.00 pos 9604,12955 net 62 (19 ms) carte 63 photos + 300 positions
+  1885.280  t0154043 suivi ok score 1.00 pos 9604,12955 net 62 (23 ms) carte 63 photos + 300 positions
+  1885.607  t0154370 suivi ok score 1.00 pos 9604,12955 net 62 (20 ms) carte 63 photos + 300 positions
+  1885.947  t0154711 suivi ok score 1.00 pos 9604,12955 net 62 (23 ms) carte 63 photos + 300 positions
+  1886.281  t0155044 suivi ok score 1.00 pos 9604,12955 net 62 (25 ms) carte 63 photos + 300 positions
+  1886.610  t0155373 suivi ok score 1.00 pos 9604,12955 net 62 (22 ms) carte 63 photos + 300 positions
+  1886.938  t0155702 suivi ok score 1.00 pos 9604,12955 net 62 (21 ms) carte 63 photos + 300 positions
+  1887.277  t0156040 suivi ok score 1.00 pos 9604,12955 net 62 (22 ms) carte 63 photos + 300 positions
+  1887.605  t0156368 suivi ok score 1.00 pos 9604,12955 net 62 (18 ms) carte 63 photos + 300 positions
+  1887.937  t0156701 suivi ok score 1.00 pos 9604,12955 net 62 (19 ms) carte 63 photos + 300 positions
+  1888.291  t0157054 suivi ok score 1.00 pos 9604,12955 net 62 (30 ms) carte 63 photos + 300 positions
+  1888.600  t0157363 suivi ok score 1.00 pos 9604,12955 net 62 (18 ms) carte 63 photos + 300 positions
+  1888.942  t0157705 suivi ok score 1.00 pos 9604,12955 net 61 (26 ms) carte 63 photos + 300 positions
+  1889.273  t0158036 suivi ok score 1.00 pos 9604,12955 net 62 (21 ms) carte 63 photos + 300 positions
+  1889.603  t0158367 suivi ok score 1.00 pos 9604,12955 net 61 (20 ms) carte 63 photos + 300 positions
+  1889.951  t0158713 suivi ok score 1.00 pos 9604,12955 net 62 (33 ms) carte 63 photos + 300 positions
+  1890.276  t0159039 suivi ok score 1.00 pos 9604,12955 net 62 (21 ms) carte 63 photos + 300 positions
+  1890.611  t0159374 suivi ok score 1.00 pos 9604,12955 net 62 (20 ms) carte 63 photos + 300 positions
+  1890.938  t0159701 suivi ok score 1.00 pos 9604,12955 net 62 (20 ms) carte 63 photos + 300 positions
+  1891.271  t0160034 suivi ok score 1.00 pos 9604,12955 net 62 (20 ms) carte 63 photos + 300 positions
+  1891.619  t0160382 suivi ok score 1.00 pos 9604,12955 net 62 (31 ms) carte 63 photos + 300 positions
+  1891.939  t0160702 suivi ok score 1.00 pos 9604,12955 net 62 (21 ms) carte 63 photos + 300 positions
+  1892.276  t0161039 suivi ok score 1.00 pos 9604,12955 net 62 (22 ms) carte 63 photos + 300 positions
+  1892.608  t0161371 suivi ok score 1.00 pos 9604,12955 net 63 (18 ms) carte 63 photos + 300 positions
+  1892.934  t0161697 suivi ok score 1.00 pos 9604,12955 net 62 (18 ms) carte 63 photos + 300 positions
+  1893.272  t0162035 suivi ok score 1.00 pos 9604,12955 net 63 (19 ms) carte 63 photos + 300 positions
+  1893.610  t0162373 suivi ok score 1.00 pos 9604,12955 net 62 (22 ms) carte 63 photos + 300 positions
+  1893.969  t0162731 suivi ok score 1.00 pos 9604,12955 net 62 (38 ms) carte 63 photos + 300 positions
+  1894.288  t0163051 suivi ok score 1.00 pos 9604,12955 net 64 (23 ms) carte 63 photos + 300 positions
+  1894.613  t0163377 suivi ok score 1.00 pos 9604,12955 net 61 (26 ms) carte 63 photos + 300 positions
+  1894.934  t0163697 suivi ok score 1.00 pos 9604,12955 net 62 (18 ms) carte 63 photos + 300 positions
+  1895.271  t0164034 suivi ok score 1.00 pos 9604,12955 net 62 (21 ms) carte 63 photos + 300 positions
+  1895.603  t0164367 suivi ok score 1.00 pos 9604,12955 net 62 (21 ms) carte 63 photos + 300 positions
+  1895.940  t0164703 suivi ok score 1.00 pos 9604,12955 net 63 (22 ms) carte 63 photos + 300 positions
+  1896.279  t0165041 suivi ok score 1.00 pos 9604,12955 net 62 (27 ms) carte 63 photos + 300 positions
+  1896.617  t0165378 suivi ok score 1.00 pos 9604,12955 net 63 (21 ms) carte 63 photos + 300 positions
+  1896.940  t0165703 suivi ok score 1.00 pos 9604,12955 net 62 (19 ms) carte 63 photos + 300 positions
+  1897.276  t0166039 suivi ok score 1.00 pos 9604,12955 net 63 (20 ms) carte 63 photos + 300 positions
+  1897.609  t0166372 suivi ok score 1.00 pos 9604,12955 net 62 (18 ms) carte 63 photos + 300 positions
+  1897.950  t0166713 suivi ok score 1.00 pos 9604,12955 net 61 (29 ms) carte 63 photos + 300 positions
+  1898.273  t0167036 suivi ok score 1.00 pos 9604,12955 net 62 (21 ms) carte 63 photos + 300 positions
+  1898.604  t0167368 suivi ok score 1.00 pos 9604,12955 net 62 (19 ms) carte 63 photos + 300 positions
+  1898.956  t0167719 suivi ok score 1.00 pos 9604,12955 net 62 (29 ms) carte 63 photos + 300 positions
+  1899.277  t0168039 suivi ok score 1.00 pos 9604,12955 net 62 (19 ms) carte 63 photos + 300 positions
+  1899.609  t0168372 suivi ok score 1.00 pos 9604,12955 net 63 (20 ms) carte 63 photos + 300 positions
+  1899.953  t0168716 suivi ok score 1.00 pos 9604,12955 net 62 (31 ms) carte 63 photos + 300 positions
+  1900.282  t0169045 suivi ok score 1.00 pos 9604,12955 net 62 (26 ms) carte 63 photos + 300 positions
+  1900.612  t0169375 suivi ok score 1.00 pos 9604,12955 net 63 (24 ms) carte 63 photos + 300 positions
+  1900.940  t0169703 suivi ok score 1.00 pos 9604,12955 net 62 (18 ms) carte 63 photos + 300 positions
+  1901.275  t0170038 suivi ok score 1.00 pos 9604,12955 net 62 (19 ms) carte 63 photos + 300 positions
+  1901.611  t0170374 suivi ok score 1.00 pos 9604,12955 net 63 (20 ms) carte 63 photos + 300 positions
+  1901.942  t0170706 suivi ok score 1.00 pos 9604,12955 net 63 (20 ms) carte 63 photos + 300 positions
+  1902.282  t0171045 suivi ok score 1.00 pos 9604,12955 net 63 (20 ms) carte 63 photos + 300 positions
+  1902.613  t0171377 suivi ok score 1.00 pos 9604,12955 net 63 (26 ms) carte 63 photos + 300 positions
+  1902.942  t0171705 suivi ok score 1.00 pos 9604,12955 net 62 (20 ms) carte 63 photos + 300 positions
+  1903.287  t0172050 suivi ok score 1.00 pos 9604,12955 net 63 (28 ms) carte 63 photos + 300 positions
+  1903.617  t0172381 suivi ok score 1.00 pos 9604,12955 net 62 (25 ms) carte 63 photos + 300 positions
+  1903.939  t0172703 suivi ok score 1.00 pos 9604,12955 net 62 (19 ms) carte 63 photos + 300 positions
+  1904.280  t0173043 suivi ok score 1.00 pos 9604,12955 net 62 (20 ms) carte 63 photos + 300 positions
+  1904.621  t0173384 suivi ok score 1.00 pos 9604,12955 net 64 (26 ms) carte 63 photos + 300 positions
+  1904.944  t0173707 suivi ok score 1.00 pos 9604,12955 net 62 (22 ms) carte 63 photos + 300 positions
+  1905.281  t0174044 suivi ok score 1.00 pos 9604,12955 net 63 (22 ms) carte 63 photos + 300 positions
+  1905.606  t0174370 suivi ok score 1.00 pos 9604,12955 net 63 (19 ms) carte 63 photos + 300 positions
+  1905.942  t0174705 suivi ok score 1.00 pos 9604,12955 net 63 (19 ms) carte 63 photos + 300 positions
+  1906.275  t0175039 suivi ok score 1.00 pos 9604,12955 net 63 (17 ms) carte 63 photos + 300 positions
+  1906.612  t0175376 suivi ok score 1.00 pos 9604,12955 net 63 (21 ms) carte 63 photos + 300 positions
+  1906.954  t0175717 suivi ok score 1.00 pos 9604,12955 net 63 (23 ms) carte 63 photos + 300 positions
+  1907.284  t0176047 suivi ok score 1.00 pos 9604,12955 net 63 (25 ms) carte 63 photos + 300 positions
+  1907.612  t0176375 suivi ok score 1.00 pos 9604,12955 net 63 (20 ms) carte 63 photos + 300 positions
+  1907.941  t0176705 suivi ok score 1.00 pos 9604,12955 net 63 (19 ms) carte 63 photos + 300 positions
+  1908.278  t0177042 suivi ok score 1.00 pos 9604,12955 net 63 (20 ms) carte 63 photos + 300 positions
+  1908.614  t0177378 suivi ok score 1.00 pos 9604,12955 net 63 (21 ms) carte 63 photos + 300 positions
+  1908.952  t0177715 suivi ok score 1.00 pos 9604,12955 net 63 (25 ms) carte 63 photos + 300 positions
+  1909.282  t0178045 suivi ok score 1.00 pos 9604,12955 net 63 (25 ms) carte 63 photos + 300 positions
+  1909.607  t0178370 suivi ok score 1.00 pos 9604,12955 net 63 (18 ms) carte 63 photos + 300 positions
+  1909.947  t0178711 suivi ok score 1.00 pos 9604,12955 net 63 (21 ms) carte 63 photos + 300 positions
+  1910.277  t0179040 suivi ok score 1.00 pos 9604,12955 net 63 (19 ms) carte 63 photos + 300 positions
+  1910.615  t0179378 suivi ok score 1.00 pos 9604,12955 net 63 (23 ms) carte 63 photos + 300 positions
+  1910.951  t0179714 suivi ok score 1.00 pos 9604,12955 net 63 (25 ms) carte 63 photos + 300 positions
+  1911.291  t0180053 suivi ok score 1.00 pos 9604,12955 net 63 (27 ms) carte 63 photos + 300 positions
+  1911.609  t0180372 suivi ok score 1.00 pos 9604,12955 net 63 (18 ms) carte 63 photos + 300 positions
+  1911.947  t0180711 suivi ok score 1.00 pos 9604,12955 net 63 (23 ms) carte 63 photos + 300 positions
+  1912.275  t0181038 suivi ok score 1.00 pos 9604,12955 net 64 (18 ms) carte 63 photos + 300 positions
+  1912.609  t0181373 suivi ok score 1.00 pos 9604,12955 net 62 (21 ms) carte 63 photos + 300 positions
+  1912.984  t0181748 suivi ok score 1.00 pos 9604,12955 net 63 (21 ms) carte 63 photos + 300 positions
+  1913.318  t0182081 suivi ok score 1.00 pos 9604,12955 net 63 (23 ms) carte 63 photos + 300 positions
+  1913.650  t0182413 suivi ok score 1.00 pos 9604,12955 net 63 (27 ms) carte 63 photos + 300 positions
+  1913.976  t0182740 suivi ok score 1.00 pos 9604,12955 net 63 (21 ms) carte 63 photos + 300 positions
+  1914.318  t0183081 suivi ok score 1.00 pos 9604,12955 net 63 (28 ms) carte 63 photos + 300 positions
+  1914.642  t0183405 suivi ok score 1.00 pos 9604,12955 net 63 (20 ms) carte 63 photos + 300 positions
+  1914.981  t0183744 suivi ok score 1.00 pos 9627,12955 net 61 (26 ms) carte 63 photos + 300 positions
+  1915.376  t0184141 suivi lost score 0.33 pos 8354,13698 net 412 (76 ms) carte 63 photos + 300 positions
+  1916.171  t0184935 suivi lost score 0.31 pos 8354,13698 net 420 (111 ms) carte 63 photos + 300 positions
+  1916.561  t0185324 suivi ok score 0.86 pos 8387,12890 net 408 (35 ms) carte 63 photos + 300 positions
+  1916.874  t0185638 suivi ok score 1.00 pos 9448,12955 net 251 (21 ms) carte 63 photos + 300 positions
+  1917.105  reprise de mise au point au même endroit : netteté 264 contre 56 (reprise 1)
+  1917.205  t0185969 suivi ok score 0.99 pos 9448,12955 net 282 (18 ms) carte 63 photos + 300 positions
+  1917.331  photo o-2_0064 à 9448,12955 (179 ko, 226 ms)
+  1917.552  t0186314 suivi ok score 0.90 pos 11866,12445 net 198 (24 ms) carte 64 photos + 300 positions
+  1917.654  photo en mouvement lent (106 % du champ, 0 u/s)
+  1917.654  ATTENTION pas trop grand (106 % du champ) : recouvrement insuffisant
+  1917.870  photo o-2_0065 à 12655,12350 (183 ko, 215 ms)
+  1917.874  t0186638 suivi ok score 0.99 pos 11729,12399 net 224 (22 ms) carte 65 photos + 300 positions
+  1918.210  t0186974 suivi ok score 0.99 pos 11698,12412 net 228 (23 ms) carte 65 photos + 300 positions
+  1918.554  t0187318 suivi ok score 0.99 pos 11704,12413 net 224 (22 ms) carte 65 photos + 300 positions
+  1918.886  t0187650 suivi ok score 0.99 pos 11644,12430 net 232 (26 ms) carte 65 photos + 300 positions
+  1919.215  t0187979 suivi ok score 0.99 pos 11637,12433 net 228 (17 ms) carte 65 photos + 300 positions
+  1919.248  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0062.jpg (370 ko)
+  1919.318  photo o-2_0066 à 11632,12441 (148 ko, 182 ms)
+  1919.542  t0188306 suivi ok score 0.99 pos 11637,12433 net 227 (19 ms) carte 66 photos + 300 positions
+  1919.887  t0188650 suivi ok score 0.99 pos 11626,12433 net 233 (31 ms) carte 66 photos + 300 positions
+  1920.212  t0188976 suivi ok score 0.99 pos 11604,12433 net 227 (20 ms) carte 66 photos + 300 positions
+  1920.546  t0189310 suivi ok score 0.99 pos 11602,12433 net 234 (17 ms) carte 66 photos + 300 positions
+  1920.701  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0063.jpg (372 ko)
+  1920.894  t0189658 suivi ok score 0.99 pos 11610,12433 net 232 (32 ms) carte 66 photos + 300 positions
+  1921.222  t0189986 suivi ok score 0.99 pos 11604,12433 net 228 (26 ms) carte 66 photos + 300 positions
+  1921.546  t0190310 suivi ok score 0.99 pos 11601,12433 net 225 (19 ms) carte 66 photos + 300 positions
+  1921.816  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0064.jpg (179 ko)
+  1921.878  t0190642 suivi ok score 0.99 pos 11601,12433 net 227 (18 ms) carte 66 photos + 300 positions
+  1922.207  t0190971 suivi ok score 0.99 pos 11601,12433 net 227 (20 ms) carte 66 photos + 300 positions
+  1922.551  t0191315 suivi ok score 0.99 pos 11593,12433 net 229 (19 ms) carte 66 photos + 300 positions
+  1922.885  t0191649 suivi ok score 0.99 pos 11599,12433 net 226 (24 ms) carte 66 photos + 300 positions
+  1923.216  t0191980 suivi ok score 0.99 pos 11600,12433 net 230 (20 ms) carte 66 photos + 300 positions
+  1923.545  t0192309 suivi ok score 0.99 pos 11601,12433 net 230 (18 ms) carte 66 photos + 300 positions
+  1923.875  t0192639 suivi ok score 0.99 pos 11601,12433 net 231 (18 ms) carte 66 photos + 300 positions
+  1924.218  t0192983 suivi ok score 0.99 pos 11601,12433 net 224 (20 ms) carte 66 photos + 300 positions
+  1924.543  t0193308 suivi ok score 0.99 pos 11593,12433 net 233 (21 ms) carte 66 photos + 300 positions
+  1924.869  t0193633 suivi ok score 0.99 pos 11601,12433 net 220 (12 ms) carte 66 photos + 300 positions
+  1925.210  t0193974 suivi ok score 0.99 pos 11601,12433 net 228 (20 ms) carte 66 photos + 300 positions
+  1925.546  t0194310 suivi ok score 0.99 pos 11601,12433 net 239 (22 ms) carte 66 photos + 300 positions
+  1925.880  t0194644 suivi ok score 0.99 pos 11601,12433 net 228 (21 ms) carte 66 photos + 300 positions
+  1926.213  t0194978 suivi ok score 0.99 pos 11601,12433 net 226 (21 ms) carte 66 photos + 300 positions
+  1926.544  t0195308 suivi ok score 0.99 pos 11601,12433 net 234 (20 ms) carte 66 photos + 300 positions
+  1926.891  t0195655 suivi ok score 0.99 pos 11601,12433 net 223 (23 ms) carte 66 photos + 300 positions
+  1927.216  t0195980 suivi ok score 0.99 pos 11601,12433 net 226 (21 ms) carte 66 photos + 300 positions
+  1927.546  t0196310 suivi ok score 0.99 pos 11601,12421 net 232 (20 ms) carte 66 photos + 300 positions
+  1927.878  t0196642 suivi ok score 0.99 pos 11601,12429 net 236 (20 ms) carte 66 photos + 300 positions
+  1928.209  t0196973 suivi ok score 0.99 pos 11601,12433 net 222 (19 ms) carte 66 photos + 300 positions
+  1928.557  t0197321 suivi ok score 0.99 pos 11601,12433 net 228 (26 ms) carte 66 photos + 300 positions
+  1928.905  t0197669 suivi ok score 0.99 pos 11593,12433 net 227 (22 ms) carte 66 photos + 300 positions
+  1929.228  t0197992 suivi ok score 0.99 pos 11599,12433 net 219 (25 ms) carte 66 photos + 300 positions
+  1929.546  t0198310 suivi ok score 0.99 pos 11600,12433 net 228 (18 ms) carte 66 photos + 300 positions
+  1929.877  t0198641 suivi ok score 0.99 pos 11601,12418 net 231 (19 ms) carte 66 photos + 300 positions
+  1930.214  t0198978 suivi ok score 0.99 pos 11601,12429 net 225 (18 ms) carte 66 photos + 300 positions
+  1930.571  t0199336 suivi ok score 0.99 pos 11601,12422 net 228 (22 ms) carte 66 photos + 300 positions
+  1930.876  t0199640 suivi ok score 0.99 pos 11593,12433 net 236 (18 ms) carte 66 photos + 300 positions
+  1931.220  t0199984 suivi ok score 0.99 pos 11599,12433 net 225 (25 ms) carte 66 photos + 300 positions
+  1931.554  t0200318 suivi ok score 0.99 pos 11600,12433 net 221 (26 ms) carte 66 photos + 300 positions
+  1931.878  t0200642 suivi ok score 0.99 pos 11593,12433 net 231 (19 ms) carte 66 photos + 300 positions
+  1932.221  t0200985 suivi ok score 0.99 pos 11599,12433 net 219 (28 ms) carte 66 photos + 300 positions
+  1932.553  t0201317 suivi ok score 0.99 pos 11600,12433 net 228 (22 ms) carte 66 photos + 300 positions
+  1932.878  t0201642 suivi ok score 0.99 pos 11593,12433 net 227 (19 ms) carte 66 photos + 300 positions
+  1933.217  t0201982 suivi ok score 0.99 pos 11590,12433 net 223 (22 ms) carte 66 photos + 300 positions
+  1933.511  changement d'objectif vers x50 : début à 202276 ms, position 11593,12433 (ok)
+  4303.854  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+  4304.760  verrouillage : focus infini, pose 4.706773 ms, ISO 50, WB figée
+  4305.017  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+  4317.411  objectif x50 : reprise à 2586176 ms (calibration absente) ; profondeur non
+  4317.429  masque oculaire : 100 % du cadre utile (p95 255)
+  4317.438  t2586200 suivi ok score 1.00 pos 0,0 net 207 (1 ms) carte 0 photos + 0 positions
+  4317.791  t2586554 suivi ok score 1.00 pos 0,0 net 207 (33 ms) carte 0 photos + 4 positions
+  4318.033  patron 4x4 champs posé en haut à gauche (0,0)
+  4318.033  photo o-2_0067 à 0,0 (364 ko, 218 ms)
+  4318.112  t2586875 suivi ok score 0.95 pos 12,0 net 191 (19 ms) carte 1 photos + 7 positions
+  4318.429  t2587192 suivi ok score 0.99 pos 358,0 net 213 (16 ms) carte 1 photos + 10 positions
+  4318.781  t2587544 suivi ok score 0.97 pos 622,0 net 185 (21 ms) carte 1 photos + 14 positions
+  4319.107  t2587870 suivi ok score 0.97 pos 993,0 net 193 (16 ms) carte 1 photos + 17 positions
+  4319.431  t2588195 suivi ok score 0.94 pos 1354,0 net 217 (17 ms) carte 1 photos + 20 positions
+  4319.482  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0065.jpg (183 ko)
+  4319.702  photo en mouvement lent (51 % du champ, 31 u/s)
+  4319.768  t2588531 suivi ok score 1.00 pos 1566,0 net 217 (17 ms) carte 1 photos + 24 positions
+  4319.913  photo o-2_0068 à 1566,0 (333 ko, 210 ms)
+  4320.104  t2588867 suivi ok score 1.00 pos 1578,0 net 203 (19 ms) carte 2 photos + 27 positions
+  4320.441  t2589205 suivi ok score 0.96 pos 1602,0 net 197 (21 ms) carte 2 photos + 30 positions
+  4320.624  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0066.jpg (148 ko)
+  4320.778  t2589541 suivi ok score 0.96 pos 1976,0 net 206 (23 ms) carte 2 photos + 34 positions
+  4321.107  t2589871 suivi ok score 0.96 pos 2232,0 net 204 (22 ms) carte 2 photos + 37 positions
+  4321.435  t2590199 suivi ok score 0.95 pos 2498,0 net 197 (17 ms) carte 2 photos + 40 positions
+  4321.548  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0067.jpg (364 ko)
+  4321.765  t2590529 suivi ok score 0.98 pos 2690,0 net 193 (17 ms) carte 2 photos + 44 positions
+  4322.101  t2590865 suivi ok score 0.96 pos 2796,0 net 183 (17 ms) carte 2 photos + 47 positions
+  4322.434  t2591198 suivi ok score 0.98 pos 2914,0 net 190 (20 ms) carte 2 photos + 50 positions
+  4322.773  t2591536 suivi ok score 0.99 pos 2929,0 net 197 (23 ms) carte 2 photos + 54 positions
+  4322.863  photo o-2_0069 à 2929,0 (351 ko, 228 ms)
+  4323.099  t2591862 suivi ok score 1.00 pos 2929,0 net 191 (18 ms) carte 3 photos + 57 positions
+  4323.442  t2592205 suivi ok score 0.98 pos 3323,0 net 150 (26 ms) carte 3 photos + 60 positions
+  4323.769  t2592532 suivi ok score 0.97 pos 3551,0 net 183 (18 ms) carte 3 photos + 64 positions
+  4323.935  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0068.jpg (333 ko)
+  4324.115  t2592878 suivi ok score 0.99 pos 3586,0 net 181 (26 ms) carte 3 photos + 67 positions
+  4324.315  photo o-2_0070 à 3586,0 (345 ko, 197 ms)
+  4324.440  t2593204 suivi ok score 0.97 pos 3769,0 net 174 (20 ms) carte 4 photos + 70 positions
+  4324.773  t2593536 suivi ok score 0.98 pos 3933,0 net 176 (19 ms) carte 4 photos + 74 positions
+  4325.111  t2593874 suivi ok score 0.99 pos 4104,0 net 174 (24 ms) carte 4 photos + 77 positions
+  4325.444  t2594208 suivi ok score 0.99 pos 4196,0 net 172 (17 ms) carte 4 photos + 80 positions
+  4325.451  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0069.jpg (351 ko)
+  4325.595  photo o-2_0071 à 4172,0 (349 ko, 223 ms)
+  4325.769  t2594532 suivi ok score 0.97 pos 4364,0 net 165 (17 ms) carte 5 photos + 84 positions
+  4326.112  t2594875 suivi ok score 0.98 pos 4470,0 net 160 (25 ms) carte 5 photos + 87 positions
+  4326.394  photo o-2_0072 à 4470,0 (347 ko, 214 ms)
+  4326.439  t2595202 suivi ok score 1.00 pos 4470,0 net 158 (22 ms) carte 6 photos + 90 positions
+  4326.708  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0070.jpg (345 ko)
+  4326.780  t2595543 suivi ok score 1.00 pos 4482,0 net 162 (29 ms) carte 6 photos + 94 positions
+  4327.107  t2595870 suivi ok score 1.00 pos 4542,0 net 163 (23 ms) carte 6 photos + 97 positions
+  4327.439  t2596202 suivi ok score 1.00 pos 4542,0 net 180 (17 ms) carte 6 photos + 100 positions
+  4327.775  t2596538 suivi ok score 1.00 pos 4542,0 net 182 (19 ms) carte 6 photos + 104 positions
+  4327.972  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0071.jpg (349 ko)
+  4328.105  t2596868 suivi ok score 0.97 pos 4829,0 net 172 (20 ms) carte 6 photos + 107 positions
+  4328.438  t2597202 suivi ok score 1.00 pos 4973,0 net 170 (17 ms) carte 6 photos + 110 positions
+  4328.775  t2597537 suivi ok score 1.00 pos 4973,0 net 169 (26 ms) carte 6 photos + 114 positions
+  4328.819  photo o-2_0073 à 4973,0 (366 ko, 209 ms)
+  4329.113  t2597876 suivi ok score 0.98 pos 4973,0 net 169 (17 ms) carte 7 photos + 117 positions
+  4329.447  t2598210 suivi ok score 0.96 pos 4973,-744 net 155 (26 ms) carte 7 photos + 120 positions
+  4329.780  t2598543 suivi ok score 0.98 pos 4984,-1447 net 164 (25 ms) carte 7 photos + 124 positions
+  4330.053  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0072.jpg (347 ko)
+  4330.102  t2598866 suivi ok score 1.00 pos 4984,-1598 net 156 (17 ms) carte 7 photos + 127 positions
+  4330.445  t2599208 suivi ok score 0.98 pos 4976,-1599 net 145 (23 ms) carte 7 photos + 130 positions
+  4330.599  photo o-2_0074 à 4984,-1599 (326 ko, 225 ms)
+  4330.778  t2599541 suivi ok score 0.99 pos 4627,-1599 net 166 (25 ms) carte 8 photos + 134 positions
+  4331.113  t2599876 suivi ok score 1.00 pos 4626,-1599 net 171 (27 ms) carte 8 photos + 137 positions
+  4331.365  photo o-2_0075 à 4626,-1599 (329 ko, 226 ms)
+  4331.417  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0073.jpg (366 ko)
+  4331.439  t2600202 suivi ok score 1.00 pos 4626,-1599 net 170 (21 ms) carte 9 photos + 140 positions
+  4331.775  t2600537 suivi ok score 1.00 pos 4626,-1599 net 169 (22 ms) carte 9 photos + 144 positions
+  4332.110  t2600873 suivi ok score 1.00 pos 4626,-1599 net 170 (23 ms) carte 9 photos + 147 positions
+  4332.436  t2601200 suivi ok score 0.99 pos 4626,-1599 net 167 (17 ms) carte 9 photos + 150 positions
+  4332.472  série lame_20261022_155722_bleu-test-axe-z-tedt-photo-2 : 75 photos, 6500 échantillons de position
+  4332.631  masque oculaire : 100 % du cadre utile (p95 255)
+  4332.902  masque oculaire : 100 % du cadre utile (p95 255)
+  4333.169  masque oculaire : 100 % du cadre utile (p95 255)
+  4333.436  masque oculaire : 100 % du cadre utile (p95 255)
+  4333.667  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0074.jpg (326 ko)
+  4333.698  masque oculaire : 100 % du cadre utile (p95 255)
+  4333.956  masque oculaire : 100 % du cadre utile (p95 255)
+  4334.236  masque oculaire : 100 % du cadre utile (p95 255)
+  4334.497  masque oculaire : 100 % du cadre utile (p95 255)
+  4334.594  envoyé lame_20261022_155722_bleu-test-axe-z-tedt-photo-2_0075.jpg (329 ko)
+  4334.769  masque oculaire : 100 % du cadre utile (p95 255)
+  4335.039  masque oculaire : 100 % du cadre utile (p95 255)
+  4335.304  masque oculaire : 100 % du cadre utile (p95 255)
+  4335.564  masque oculaire : 100 % du cadre utile (p95 255)
+  4335.836  masque oculaire : 100 % du cadre utile (p95 255)
+  4336.112  masque oculaire : 100 % du cadre utile (p95 255)
+  4336.376  masque oculaire : 100 % du cadre utile (p95 255)
+  4336.597  série lame_20261022_155722_bleu-test-axe-z-tedt-photo-2 clôturée côté serveur : HTTP 200, réveil GitHub oui
+  4336.635  masque oculaire : 100 % du cadre utile (p95 255)
+  4336.908  masque oculaire : 100 % du cadre utile (p95 255)
+  4337.170  masque oculaire : 100 % du cadre utile (p95 255)
+  4337.438  masque oculaire : 100 % du cadre utile (p95 255)
+  4337.708  masque oculaire : 100 % du cadre utile (p95 255)
+  4337.973  masque oculaire : 100 % du cadre utile (p95 255)
+  4338.238  masque oculaire : 100 % du cadre utile (p95 255)
+  4338.508  masque oculaire : 100 % du cadre utile (p95 255)
+  4338.754  masque oculaire : 100 % du cadre utile (p95 255)
+  4339.040  masque oculaire : 100 % du cadre utile (p95 255)
+  4339.316  masque oculaire : 100 % du cadre utile (p95 255)
+  4339.577  masque oculaire : 100 % du cadre utile (p95 255)
+  4339.840  masque oculaire : 100 % du cadre utile (p95 255)
+  4340.109  masque oculaire : 100 % du cadre utile (p95 255)
+  4340.371  masque oculaire : 100 % du cadre utile (p95 255)
+  4340.637  masque oculaire : 100 % du cadre utile (p95 255)
+  4340.911  masque oculaire : 100 % du cadre utile (p95 255)
+  4341.177  masque oculaire : 100 % du cadre utile (p95 255)
+  4341.444  masque oculaire : 100 % du cadre utile (p95 255)
+  4341.712  masque oculaire : 100 % du cadre utile (p95 255)
+  4341.953  masque oculaire : 100 % du cadre utile (p95 255)
+  4342.224  masque oculaire : 100 % du cadre utile (p95 255)
+  4342.505  masque oculaire : 100 % du cadre utile (p95 255)
+  4342.770  masque oculaire : 100 % du cadre utile (p95 255)
+  4343.041  masque oculaire : 100 % du cadre utile (p95 255)
+  4343.308  masque oculaire : 100 % du cadre utile (p95 255)
+  4343.576  masque oculaire : 100 % du cadre utile (p95 255)
+  4343.840  masque oculaire : 100 % du cadre utile (p95 255)
+  4344.111  masque oculaire : 100 % du cadre utile (p95 255)
+  4344.378  masque oculaire : 100 % du cadre utile (p95 255)
+  4344.643  masque oculaire : 100 % du cadre utile (p95 255)
+  4344.904  masque oculaire : 100 % du cadre utile (p95 255)
+  4345.171  masque oculaire : 100 % du cadre utile (p95 255)
+  4345.441  masque oculaire : 100 % du cadre utile (p95 255)
+  4345.712  masque oculaire : 100 % du cadre utile (p95 255)
+  4345.976  masque oculaire : 100 % du cadre utile (p95 255)
+  4346.243  masque oculaire : 100 % du cadre utile (p95 255)
+  4346.506  masque oculaire : 100 % du cadre utile (p95 255)
+  4346.774  masque oculaire : 100 % du cadre utile (p95 255)
+  4347.024  masque oculaire : 99 % du cadre utile (p95 2)
+  4347.300  masque oculaire : 99 % du cadre utile (p95 2)
+  4347.567  masque oculaire : 99 % du cadre utile (p95 2)
+  4347.837  masque oculaire : 100 % du cadre utile (p95 13)
+  4348.107  masque oculaire : 99 % du cadre utile (p95 2)
+  4348.367  masque oculaire : 99 % du cadre utile (p95 2)
+  4348.639  masque oculaire : 99 % du cadre utile (p95 2)
+  4348.901  masque oculaire : 99 % du cadre utile (p95 2)
+  4349.169  masque oculaire : 99 % du cadre utile (p95 2)
+  4349.432  masque oculaire : 99 % du cadre utile (p95 2)
+  4349.696  masque oculaire : 99 % du cadre utile (p95 2)
+  4349.963  masque oculaire : 99 % du cadre utile (p95 2)
+  4350.234  masque oculaire : 99 % du cadre utile (p95 2)
+  4350.505  masque oculaire : 99 % du cadre utile (p95 2)
+  4350.762  masque oculaire : 99 % du cadre utile (p95 2)
+  4351.032  masque oculaire : 99 % du cadre utile (p95 2)
+  4351.304  masque oculaire : 99 % du cadre utile (p95 2)
+  4351.574  masque oculaire : 99 % du cadre utile (p95 2)
+  4351.836  masque oculaire : 99 % du cadre utile (p95 2)
+  4352.101  masque oculaire : 99 % du cadre utile (p95 2)
+  4352.375  masque oculaire : 99 % du cadre utile (p95 2)
+  4352.639  masque oculaire : 99 % du cadre utile (p95 2)
+  4352.900  masque oculaire : 99 % du cadre utile (p95 2)
+  4353.165  masque oculaire : 99 % du cadre utile (p95 2)
+  4353.440  masque oculaire : 99 % du cadre utile (p95 2)
+  4353.706  masque oculaire : 100 % du cadre utile (p95 70)
+  4353.981  masque oculaire : 99 % du cadre utile (p95 111)
+  4354.231  masque oculaire : 99 % du cadre utile (p95 111)
+  4354.506  masque oculaire : 99 % du cadre utile (p95 111)
+  4354.774  masque oculaire : 99 % du cadre utile (p95 111)
+  4355.040  masque oculaire : 99 % du cadre utile (p95 111)
+  4355.306  masque oculaire : 99 % du cadre utile (p95 110)
+  4355.586  masque oculaire : 100 % du cadre utile (p95 111)
+  4355.845  masque oculaire : 99 % du cadre utile (p95 110)
+  4356.109  masque oculaire : 99 % du cadre utile (p95 110)
+  4356.374  masque oculaire : 99 % du cadre utile (p95 111)
+  4356.643  masque oculaire : 99 % du cadre utile (p95 110)
+  4356.913  masque oculaire : 99 % du cadre utile (p95 110)
+  4357.179  masque oculaire : 99 % du cadre utile (p95 111)
+  4357.435  masque oculaire : 99 % du cadre utile (p95 110)
+  4357.710  masque oculaire : 99 % du cadre utile (p95 118)
+  4357.970  masque oculaire : 99 % du cadre utile (p95 152)
+  4358.240  masque oculaire : 99 % du cadre utile (p95 165)
+  4358.507  masque oculaire : 99 % du cadre utile (p95 165)
+  4358.779  masque oculaire : 99 % du cadre utile (p95 164)
+  4359.050  masque oculaire : 99 % du cadre utile (p95 164)
+  4359.318  masque oculaire : 99 % du cadre utile (p95 165)
+  4359.574  masque oculaire : 99 % du cadre utile (p95 164)
+  4359.845  masque oculaire : 99 % du cadre utile (p95 164)
+  4360.111  masque oculaire : 99 % du cadre utile (p95 164)
+  4360.389  masque oculaire : 99 % du cadre utile (p95 163)
+  4360.649  masque oculaire : 99 % du cadre utile (p95 164)
+  4360.914  masque oculaire : 99 % du cadre utile (p95 164)
+  4361.183  masque oculaire : 99 % du cadre utile (p95 163)
+  4361.447  masque oculaire : 99 % du cadre utile (p95 164)
+  4361.717  masque oculaire : 99 % du cadre utile (p95 164)
+  4361.983  masque oculaire : 99 % du cadre utile (p95 164)
+  4362.254  masque oculaire : 99 % du cadre utile (p95 164)
+  4362.517  masque oculaire : 99 % du cadre utile (p95 163)
+  4362.775  masque oculaire : 99 % du cadre utile (p95 163)
+  4363.047  masque oculaire : 99 % du cadre utile (p95 163)
+  4363.312  masque oculaire : 99 % du cadre utile (p95 163)
+  4363.578  masque oculaire : 99 % du cadre utile (p95 164)
+  4363.848  masque oculaire : 99 % du cadre utile (p95 163)
+  4364.109  masque oculaire : 99 % du cadre utile (p95 163)
+  4364.380  masque oculaire : 99 % du cadre utile (p95 163)
+  4364.647  masque oculaire : 99 % du cadre utile (p95 164)
+  4364.916  masque oculaire : 99 % du cadre utile (p95 163)
+  4365.184  masque oculaire : 99 % du cadre utile (p95 163)
+  4365.445  masque oculaire : 99 % du cadre utile (p95 163)
+  4365.711  masque oculaire : 99 % du cadre utile (p95 164)
+  4365.975  masque oculaire : 99 % du cadre utile (p95 164)
+  4366.243  masque oculaire : 99 % du cadre utile (p95 163)
+  4366.516  masque oculaire : 99 % du cadre utile (p95 164)
+  4366.779  masque oculaire : 99 % du cadre utile (p95 164)
+  4367.051  masque oculaire : 99 % du cadre utile (p95 164)
+  4367.312  masque oculaire : 99 % du cadre utile (p95 164)
+  4367.581  masque oculaire : 99 % du cadre utile (p95 164)
+  4367.835  masque oculaire : 99 % du cadre utile (p95 163)
+  4368.105  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+  4368.113  masque oculaire : 99 % du cadre utile (p95 181)
+  4368.376  masque oculaire : 99 % du cadre utile (p95 190)
+  4368.637  masque oculaire : 99 % du cadre utile (p95 191)
+  4368.916  masque oculaire : 99 % du cadre utile (p95 192)
+  4369.178  masque oculaire : 100 % du cadre utile (p95 191)
+  4369.448  masque oculaire : 100 % du cadre utile (p95 191)
+  4369.717  masque oculaire : 100 % du cadre utile (p95 192)
+  4369.976  masque oculaire : 100 % du cadre utile (p95 192)
+  4370.247  masque oculaire : 100 % du cadre utile (p95 191)
+  4370.508  masque oculaire : 100 % du cadre utile (p95 192)
+  4370.710  verrouillage : focus infini, pose 6.496137 ms, ISO 50, WB figée
+  4370.765  masque oculaire : 100 % du cadre utile (p95 193)
+  4370.965  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+  4371.047  masque oculaire : 100 % du cadre utile (p95 191)
+  4371.313  masque oculaire : 100 % du cadre utile (p95 191)
+  4371.581  masque oculaire : 100 % du cadre utile (p95 191)
+  4371.849  masque oculaire : 100 % du cadre utile (p95 192)
+  4372.111  masque oculaire : 100 % du cadre utile (p95 191)
+  4372.378  masque oculaire : 100 % du cadre utile (p95 192)
+  4372.658  masque oculaire : 100 % du cadre utile (p95 192)
+  4372.910  masque oculaire : 100 % du cadre utile (p95 191)
+  4373.173  masque oculaire : 100 % du cadre utile (p95 192)
+  4373.451  masque oculaire : 100 % du cadre utile (p95 190)
+  4373.712  masque oculaire : 100 % du cadre utile (p95 193)
+  4373.985  masque oculaire : 100 % du cadre utile (p95 202)
+  4374.229  masque oculaire : 100 % du cadre utile (p95 213)
+  4374.493  masque oculaire : 100 % du cadre utile (p95 217)
+  4374.759  masque oculaire : 100 % du cadre utile (p95 212)
+  4375.045  masque oculaire : 100 % du cadre utile (p95 202)
+  4375.307  masque oculaire : 100 % du cadre utile (p95 192)
+  4375.572  masque oculaire : 100 % du cadre utile (p95 185)
+  4375.844  masque oculaire : 100 % du cadre utile (p95 184)
+  4376.113  masque oculaire : 100 % du cadre utile (p95 184)
+  4376.379  masque oculaire : 100 % du cadre utile (p95 183)
+  4376.642  masque oculaire : 100 % du cadre utile (p95 183)
+  4376.910  masque oculaire : 100 % du cadre utile (p95 183)
+  4377.179  masque oculaire : 100 % du cadre utile (p95 183)
+  4377.445  masque oculaire : 100 % du cadre utile (p95 183)
+  4377.713  masque oculaire : 100 % du cadre utile (p95 183)
+  4377.976  masque oculaire : 100 % du cadre utile (p95 183)
+  4378.244  masque oculaire : 100 % du cadre utile (p95 183)
+  4378.513  masque oculaire : 100 % du cadre utile (p95 183)
+  4378.776  masque oculaire : 100 % du cadre utile (p95 182)
+  4379.045  masque oculaire : 100 % du cadre utile (p95 183)
+  4379.309  masque oculaire : 100 % du cadre utile (p95 183)
+  4379.577  masque oculaire : 100 % du cadre utile (p95 183)
+  4379.841  masque oculaire : 100 % du cadre utile (p95 184)
+  4380.109  masque oculaire : 100 % du cadre utile (p95 184)
+  4380.378  masque oculaire : 99 % du cadre utile (p95 184)
+  4380.647  masque oculaire : 99 % du cadre utile (p95 184)
+  4380.920  masque oculaire : 99 % du cadre utile (p95 184)
+  4381.204  masque oculaire : 99 % du cadre utile (p95 184)
+  4381.454  masque oculaire : 99 % du cadre utile (p95 184)
+  4381.698  masque oculaire : 99 % du cadre utile (p95 184)
+  4381.977  masque oculaire : 99 % du cadre utile (p95 184)
+  4382.251  masque oculaire : 99 % du cadre utile (p95 184)
+  4382.525  masque oculaire : 99 % du cadre utile (p95 184)
+  4382.784  masque oculaire : 99 % du cadre utile (p95 184)
+  4383.050  masque oculaire : 99 % du cadre utile (p95 184)
+  4383.321  masque oculaire : 99 % du cadre utile (p95 184)
+  4383.588  masque oculaire : 99 % du cadre utile (p95 185)
+  4383.852  masque oculaire : 99 % du cadre utile (p95 184)
+  4384.126  masque oculaire : 99 % du cadre utile (p95 184)
+  4384.386  masque oculaire : 99 % du cadre utile (p95 185)
+  4384.648  masque oculaire : 99 % du cadre utile (p95 184)
+  4384.918  masque oculaire : 99 % du cadre utile (p95 184)
+  4385.183  masque oculaire : 99 % du cadre utile (p95 184)
+  4385.453  masque oculaire : 99 % du cadre utile (p95 184)
+  4385.719  masque oculaire : 99 % du cadre utile (p95 184)
+  4385.986  masque oculaire : 99 % du cadre utile (p95 184)
+  4386.252  masque oculaire : 99 % du cadre utile (p95 184)
+  4386.515  masque oculaire : 99 % du cadre utile (p95 184)
+  4386.783  masque oculaire : 99 % du cadre utile (p95 184)
+  4387.056  masque oculaire : 99 % du cadre utile (p95 184)
+  4387.321  masque oculaire : 99 % du cadre utile (p95 184)
+  4387.575  masque oculaire : 99 % du cadre utile (p95 184)
+  4387.852  masque oculaire : 99 % du cadre utile (p95 184)
+  4388.113  masque oculaire : 99 % du cadre utile (p95 184)
+  4388.380  masque oculaire : 99 % du cadre utile (p95 184)
+  4388.647  masque oculaire : 99 % du cadre utile (p95 184)
+  4388.912  masque oculaire : 99 % du cadre utile (p95 184)
+  4389.182  masque oculaire : 99 % du cadre utile (p95 184)
+  4389.449  masque oculaire : 99 % du cadre utile (p95 184)
+  4389.714  masque oculaire : 99 % du cadre utile (p95 183)
+  4389.982  masque oculaire : 99 % du cadre utile (p95 184)
+  4390.251  masque oculaire : 99 % du cadre utile (p95 184)
+  4390.517  masque oculaire : 99 % du cadre utile (p95 184)
+  4390.783  masque oculaire : 99 % du cadre utile (p95 184)
+  4391.048  masque oculaire : 99 % du cadre utile (p95 184)
+  4391.313  masque oculaire : 99 % du cadre utile (p95 184)
+  4391.591  masque oculaire : 99 % du cadre utile (p95 184)
+  4391.854  masque oculaire : 99 % du cadre utile (p95 184)
+  4392.248  masque oculaire : 99 % du cadre utile (p95 184)
+  4392.510  masque oculaire : 99 % du cadre utile (p95 184)
+  4392.783  masque oculaire : 99 % du cadre utile (p95 184)
+  4393.056  masque oculaire : 99 % du cadre utile (p95 184)
+  4393.322  masque oculaire : 99 % du cadre utile (p95 184)
+  4393.593  masque oculaire : 99 % du cadre utile (p95 184)
+  4393.849  masque oculaire : 99 % du cadre utile (p95 184)
+  4394.129  masque oculaire : 99 % du cadre utile (p95 184)
+  4394.387  masque oculaire : 99 % du cadre utile (p95 184)
+  4394.654  masque oculaire : 99 % du cadre utile (p95 184)
+  4394.915  masque oculaire : 99 % du cadre utile (p95 184)
+  4395.186  masque oculaire : 99 % du cadre utile (p95 184)
+  4395.444  masque oculaire : 99 % du cadre utile (p95 184)
+  4395.691  réglages enregistrés
+  4395.730  masque oculaire : 99 % du cadre utile (p95 184)
+  4395.935  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+  4395.988  masque oculaire : 99 % du cadre utile (p95 184)
+  4396.249  masque oculaire : 99 % du cadre utile (p95 184)
+  4396.516  masque oculaire : 99 % du cadre utile (p95 185)
+  4396.792  masque oculaire : 99 % du cadre utile (p95 184)
+  4397.046  masque oculaire : 99 % du cadre utile (p95 184)
+  4397.327  masque oculaire : 99 % du cadre utile (p95 184)
+  4397.588  masque oculaire : 99 % du cadre utile (p95 184)
+  4397.850  masque oculaire : 99 % du cadre utile (p95 184)
+  4398.114  masque oculaire : 99 % du cadre utile (p95 184)
+  4398.389  masque oculaire : 99 % du cadre utile (p95 184)
+  4398.659  masque oculaire : 99 % du cadre utile (p95 184)
+  4398.941  masque oculaire : 99 % du cadre utile (p95 185)
+  4399.214  masque oculaire : 99 % du cadre utile (p95 184)
+  4399.485  masque oculaire : 99 % du cadre utile (p95 184)
+  4399.747  masque oculaire : 99 % du cadre utile (p95 185)
+  4400.024  masque oculaire : 99 % du cadre utile (p95 184)
+  4400.283  masque oculaire : 99 % du cadre utile (p95 184)
+  4400.549  masque oculaire : 99 % du cadre utile (p95 185)
+  4400.820  masque oculaire : 99 % du cadre utile (p95 185)
+  4401.084  masque oculaire : 99 % du cadre utile (p95 184)
+  4401.342  masque oculaire : 99 % du cadre utile (p95 185)
+  4401.622  masque oculaire : 99 % du cadre utile (p95 184)
+  4401.894  masque oculaire : 99 % du cadre utile (p95 185)
+  4402.136  masque oculaire : 99 % du cadre utile (p95 184)
+  4402.407  masque oculaire : 99 % du cadre utile (p95 184)
+  4402.690  masque oculaire : 99 % du cadre utile (p95 185)
+  4402.963  masque oculaire : 99 % du cadre utile (p95 184)
+  4403.219  masque oculaire : 99 % du cadre utile (p95 185)
+  4403.490  masque oculaire : 99 % du cadre utile (p95 185)
+  4403.751  masque oculaire : 99 % du cadre utile (p95 185)
+  4404.017  masque oculaire : 99 % du cadre utile (p95 185)
+  4404.286  masque oculaire : 99 % du cadre utile (p95 185)
+  4404.552  masque oculaire : 99 % du cadre utile (p95 185)
+  4404.814  masque oculaire : 99 % du cadre utile (p95 185)
+  4405.088  masque oculaire : 99 % du cadre utile (p95 185)
+  4405.346  masque oculaire : 99 % du cadre utile (p95 184)
+  4405.628  masque oculaire : 99 % du cadre utile (p95 185)
+  4405.888  masque oculaire : 99 % du cadre utile (p95 185)
+  4406.158  masque oculaire : 99 % du cadre utile (p95 185)
+  4406.403  départ au x100 : profondeur oui
+  4406.405  === série lame_20261022_164157_bleu-test-axe-z-tedt-photo-3 (photos) « bleu test axe z tedt photo 3 », lactophenol, objectif x100 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+  4406.437  masque oculaire : 99 % du cadre utile (p95 185)
+  4406.725  t0000330 suivi ok score 0.99 pos 0,0 net 52 (19 ms) carte 0 photos + 3 positions
+  4407.039  patron 2x2 champs posé en haut à gauche (0,0)
+  4407.039  photo o-3_0001 à 0,0 (454 ko, 210 ms)
+  4407.054  t0000659 suivi ok score 0.99 pos 0,0 net 51 (11 ms) carte 1 photos + 6 positions
+  4407.391  t0000996 suivi ok score 0.99 pos 0,0 net 52 (20 ms) carte 1 photos + 10 positions
+  4407.725  t0001330 suivi ok score 0.99 pos 0,0 net 53 (20 ms) carte 1 photos + 13 positions
+  4408.071  t0001676 suivi ok score 0.99 pos 0,0 net 52 (26 ms) carte 1 photos + 16 positions
+  4408.400  t0002004 suivi ok score 0.99 pos 0,0 net 42 (24 ms) carte 1 photos + 20 positions
+  4408.688  envoyé lame_20261022_164157_bleu-test-axe-z-tedt-photo-3_0001.jpg (454 ko)
+  4408.737  t0002340 suivi ok score 0.99 pos 0,0 net 20 (27 ms) carte 1 photos + 23 positions
+  4409.060  t0002665 suivi ok score 0.99 pos 0,0 net 48 (24 ms) carte 1 photos + 26 positions
+  4409.396  t0003001 suivi ok score 0.99 pos 0,0 net 39 (26 ms) carte 1 photos + 30 positions
+  4409.725  t0003329 suivi ok score 0.99 pos 0,0 net 56 (19 ms) carte 1 photos + 33 positions
+  4410.056  t0003661 suivi ok score 1.00 pos 0,0 net 43 (18 ms) carte 1 photos + 36 positions
+  4410.392  t0003998 suivi ok score 0.99 pos 0,0 net 56 (20 ms) carte 1 photos + 40 positions
+  4410.740  t0004346 suivi ok score 0.99 pos 0,0 net 57 (23 ms) carte 1 photos + 43 positions
+  4411.075  t0004680 suivi ok score 0.99 pos 0,0 net 57 (22 ms) carte 1 photos + 46 positions
+  4411.404  t0005009 suivi ok score 0.99 pos 0,0 net 57 (23 ms) carte 1 photos + 50 positions
+  4411.727  t0005332 suivi ok score 0.99 pos 0,0 net 54 (18 ms) carte 1 photos + 53 positions
+  4412.064  t0005670 suivi ok score 0.99 pos 0,0 net 54 (20 ms) carte 1 photos + 56 positions
+  4412.400  t0006005 suivi ok score 0.99 pos 0,0 net 55 (24 ms) carte 1 photos + 60 positions
+  4412.727  t0006332 suivi ok score 0.99 pos 0,0 net 54 (20 ms) carte 1 photos + 63 positions
+  4413.057  t0006662 suivi ok score 0.99 pos 0,0 net 55 (18 ms) carte 1 photos + 66 positions
+  4413.389  t0006994 suivi ok score 0.99 pos 0,0 net 27 (16 ms) carte 1 photos + 70 positions
+  4413.735  t0007340 suivi ok score 0.99 pos 0,0 net 50 (24 ms) carte 1 photos + 73 positions
+  4414.061  t0007667 suivi ok score 0.99 pos 0,0 net 51 (21 ms) carte 1 photos + 76 positions
+  4414.395  t0008000 suivi ok score 0.99 pos 0,0 net 51 (24 ms) carte 1 photos + 80 positions
+  4414.747  t0008351 suivi ok score 0.99 pos 0,0 net 51 (35 ms) carte 1 photos + 83 positions
+  4415.062  t0008668 suivi ok score 0.99 pos 0,0 net 36 (20 ms) carte 1 photos + 86 positions
+  4415.400  t0009004 suivi ok score 0.99 pos 0,0 net 51 (26 ms) carte 1 photos + 90 positions
+  4415.759  t0009364 suivi ok score 0.99 pos 0,0 net 56 (24 ms) carte 1 photos + 93 positions
+  4416.065  t0009671 suivi ok score 0.99 pos 0,0 net 55 (21 ms) carte 1 photos + 96 positions
+  4416.399  t0010004 suivi ok score 0.99 pos 0,0 net 55 (20 ms) carte 1 photos + 100 positions
+  4416.731  t0010336 suivi ok score 1.00 pos 0,0 net 56 (20 ms) carte 1 photos + 103 positions
+  4417.068  t0010673 suivi ok score 0.99 pos 0,0 net 57 (19 ms) carte 1 photos + 106 positions
+  4417.400  t0011005 suivi ok score 0.99 pos 0,0 net 56 (22 ms) carte 1 photos + 110 positions
+  4417.727  t0011332 suivi ok score 1.00 pos 0,0 net 57 (18 ms) carte 1 photos + 113 positions
+  4418.064  t0011669 suivi ok score 0.99 pos 0,0 net 56 (22 ms) carte 1 photos + 116 positions
+  4418.396  t0012001 suivi ok score 0.99 pos 0,0 net 56 (21 ms) carte 1 photos + 120 positions
+  4418.737  t0012342 suivi ok score 0.99 pos 0,0 net 54 (26 ms) carte 1 photos + 123 positions
+  4419.074  t0012679 suivi ok score 0.99 pos 0,0 net 55 (26 ms) carte 1 photos + 126 positions
+  4419.397  t0013002 suivi ok score 0.99 pos 0,0 net 54 (21 ms) carte 1 photos + 130 positions
+  4419.752  t0013357 suivi ok score 0.99 pos 0,0 net 54 (37 ms) carte 1 photos + 133 positions
+  4420.067  t0013673 suivi ok score 0.99 pos 0,0 net 57 (21 ms) carte 1 photos + 136 positions
+  4420.396  t0014001 suivi ok score 0.99 pos 0,0 net 53 (19 ms) carte 1 photos + 140 positions
+  4420.729  t0014335 suivi ok score 0.99 pos 0,0 net 54 (19 ms) carte 1 photos + 143 positions
+  4421.062  t0014667 suivi ok score 0.99 pos 0,0 net 54 (18 ms) carte 1 photos + 146 positions
