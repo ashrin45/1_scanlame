@@ -1,0 +1,5 @@
+[    0.0s] segment 2/2 : objectif x10, 1 images entre 122 s et 157 s
+[    0.0s] 1 images candidates
+[    0.1s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[    0.1s] netteté médiane 369.9, seuil 148.0
+[    0.1s] 1 images retenues (nettes, non redondantes)
