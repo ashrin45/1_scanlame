@@ -1,0 +1,25 @@
+[    0.0s] segment 1/1 : objectif x100, 84 images entre 0 s et 135 s
+[    0.0s] 84 images candidates
+[    2.4s] profondeur : 84 photos en 84 pile(s) marquée(s) par l'appli (plusieurs plans de mise au point par champ)
+[    2.4s] netteté médiane 4.6, seuil 3.0
+[    3.4s] 83 images retenues (nettes, non redondantes)
+[    5.3s] flat-field : médiane temporelle de 40 images (vignettage et poussières fixes de l'oculaire)
+[   15.8s] aberration chromatique : échelle R 1.0000, B 1.0000
+[   17.7s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 28 %)
+[   48.6s] prétraitement terminé, 83 images, recalage à 900 x 1200
+[   53.2s] points SIFT : 117 par image en moyenne
+[   53.2s] 739 paires à tester
+[   53.3s] 7 paires valides
+[   70.7s] 67 paire(s) recalée(s) par corrélation d'images (champs répétitifs ou pauvres en points)
+[   70.8s] distorsion radiale : aucune correction (résidu 0.11 px, pas d'amélioration nette)
+[   70.9s] composantes : [31, 9, 6, 5, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] -> on assemble la n°0 : 31 images
+[   71.1s] échelles relatives après ajustement : min 0.981, max 1.005
+[   71.1s] ajustement global : 2360 correspondances, 30 images
+[   71.1s] 43 image(s) placée(s) d'après le suivi en direct (21 en blocs recalés entre eux, 22 isolée(s))
+[   71.1s] compensation photométrique : écart de gain max 8.3 %
+[   71.1s] recalage : erreur médiane 1.05 px (échelle recalage), max 15.28
+[   73.8s] mosaïque 31982 x 25577
+[  421.8s] composition : 208 tuiles en 337 s
+[  427.8s] rognage automatique : rectangle plein trop petit (27 % de la couverture), lame laissée entière
+[  428.8s] qualité : note B (1 trou(s) dans la couverture, 43 champ(s) placé(s) sans recalage fin)
+[  428.8s] terminé : pano.jpg 31982 x 25577 , 74 images utilisées sur 83

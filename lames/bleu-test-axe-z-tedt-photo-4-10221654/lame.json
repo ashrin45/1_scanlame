@@ -1,0 +1,91 @@
+{
+ "title": "bleu test axe z tedt photo 4",
+ "width": 31982,
+ "height": 25577,
+ "fields": 74,
+ "tiles": 4244,
+ "tile": 512,
+ "maxlvl": 15,
+ "um_per_px": null,
+ "stain": "ziehl",
+ "objective": "x100",
+ "sample": null,
+ "comment": null,
+ "captured": "22/10/2026 16:54",
+ "parent": null,
+ "parent_transform": null,
+ "parent_anchored": null,
+ "parent_approx": null,
+ "outline": null,
+ "cellules": null,
+ "hint": null,
+ "stage": null,
+ "stage_cal": null,
+ "stage_obs": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "1 trou(s) dans la couverture",
+   "43 champ(s) placé(s) sans recalage fin"
+  ],
+  "frames": {
+   "candidates": 84,
+   "blurred": 0,
+   "selected": 83,
+   "used": 74,
+   "tracked_only": 43
+  },
+  "residual_px": 1.05,
+  "residual_max_px": 15.28,
+  "holes": [
+   [
+    [
+     27528,
+     18448
+    ],
+    [
+     27528,
+     18688
+    ],
+    [
+     28552,
+     18688
+    ],
+    [
+     28552,
+     18448
+    ]
+   ]
+  ],
+  "holes_frac": 0.0006,
+  "coverage_px": 456712128,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.041,
+  "gain_spread_pct": 8.3,
+  "flat_field": "médiane",
+  "k1": 0.0,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "series": "lame_20261022_165424_bleu-test-axe-z-tedt-photo-4",
+ "version": 1,
+ "params": {
+  "depth": "off",
+  "seams": true,
+  "fps": 4.0,
+  "reg_size": 1200,
+  "max_side": 32000,
+  "core": 0.7,
+  "tile": 2048,
+  "distortion": true,
+  "chroma": true,
+  "code": "32fa430"
+ },
+ "published": "2026-10-22T15:39:35+00:00",
+ "updated": "2026-10-22T15:39:35+00:00",
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null
+}
