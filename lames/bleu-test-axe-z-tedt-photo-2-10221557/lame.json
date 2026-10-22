@@ -1,0 +1,79 @@
+{
+ "title": "bleu test axe z tedt photo 2",
+ "width": 4000,
+ "height": 8128,
+ "fields": 43,
+ "tiles": 180,
+ "tile": 512,
+ "maxlvl": 13,
+ "um_per_px": null,
+ "stain": "lactophenol",
+ "objective": "x10",
+ "sample": null,
+ "comment": null,
+ "captured": "22/10/2026 15:57",
+ "parent": null,
+ "parent_transform": null,
+ "parent_anchored": null,
+ "parent_approx": null,
+ "outline": null,
+ "cellules": null,
+ "hint": null,
+ "stage": null,
+ "stage_cal": null,
+ "stage_obs": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "24 champ(s) placé(s) sans recalage fin"
+  ],
+  "frames": {
+   "candidates": 66,
+   "blurred": 0,
+   "selected": 45,
+   "used": 45,
+   "tracked_only": 24
+  },
+  "residual_px": 1.22,
+  "residual_max_px": 1351.86,
+  "holes": [],
+  "holes_frac": 0.0,
+  "coverage_px": 48261483,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 1.5,
+  "flat_field": "médiane",
+  "k1": 0.0,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "series": "lame_20261022_155722_bleu-test-axe-z-tedt-photo-2",
+ "version": 1,
+ "params": {
+  "depth": "off",
+  "seams": true,
+  "fps": 4.0,
+  "reg_size": 1200,
+  "max_side": 32000,
+  "core": 0.7,
+  "tile": 2048,
+  "distortion": true,
+  "chroma": true,
+  "code": "32fa430"
+ },
+ "published": "2026-10-22T14:58:01+00:00",
+ "updated": "2026-10-22T14:58:01+00:00",
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null,
+ "cropped": [
+  [
+   1424,
+   80,
+   5424,
+   8208
+  ]
+ ]
+}
