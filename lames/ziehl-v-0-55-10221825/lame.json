@@ -22,7 +22,17 @@
  "stage": null,
  "stage_cal": null,
  "stage_obs": null,
- "children": [],
+ "children": [
+  {
+   "slug": "ziehl-v-0-55-obj-x100-10221825",
+   "transform": [
+    0.10064521460266673,
+    0.0018246212129121226,
+    1246.9648492225604,
+    2267.088630611693
+   ]
+  }
+ ],
  "quality": {
   "grade": "A",
   "notes": [],
