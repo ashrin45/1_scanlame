@@ -1,0 +1,30 @@
+[    0.0s] segment 2/2 : objectif x50, 9 images entre 2586 s et 2601 s
+[    0.0s] 9 images candidates
+[    0.2s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[    0.2s] netteté médiane 245.2, seuil 98.1
+[    0.2s] 6 images retenues (nettes, non redondantes)
+[    0.2s] pas de champ vide filmé : vignettage estimé par lissage
+[    2.0s] aberration chromatique : échelle R 1.0020, B 1.0005
+[    2.1s] balance des blancs : blanc estimé par image, lissé sur 5 images (variation max 0 %)
+[    2.7s] prétraitement terminé, 6 images, recalage à 900 x 1200
+[    3.3s] points SIFT : 3995 par image en moyenne
+[    3.3s] 15 paires à tester
+[    5.1s] 9 paires valides
+[    5.3s] distorsion radiale k1 = -0.0100 (résidu 0.96 px contre 1.07 px sans correction)
+[    5.3s] composantes : [6] -> on assemble la n°0 : 6 images
+[    5.8s] a priori (position au changement d'objectif, suivi ok) : premier champ attendu vers (6320, 7092) px de la lame d'ensemble
+[    5.8s] ancrage dans la lame d'ensemble inbox/lame_20261022_155722_bleu-test-axe-z-tedt-photo-2/result (7590x8323 px, objectif x10) : mosaïque provisoire 731x516
+[    6.0s] recherche dans la fenêtre (4615, 5217, 7295, 8000)
+[    6.7s] facteur 1.0000 : 17 appariements, 4 inliers, échelle résiduelle 0.00
+[   27.6s] appariement appris (fenêtre 2680x2783) : 12 appariements, 2 inliers, échelle résiduelle 3.048
+[   27.6s] balayage du parent par 135 fenêtres de 1462x1032 (appariement appris, facteur 1.0000)
+[  672.8s] ancrage dans la lame d'ensemble impossible : prise non localisée dans la lame d'ensemble
+[  673.0s] échelles relatives après ajustement : min 0.984, max 1.002
+[  673.0s] ajustement global : 1149 correspondances, 5 images
+[  673.0s] compensation photométrique : écart de gain max 1.2 %
+[  673.0s] recalage : erreur médiane 0.95 px (échelle recalage), max 1.44
+[  673.0s] mosaïque 3848 x 2720
+[  679.7s] composition : 4 tuiles en 6 s
+[  679.8s] rognage automatique proposé : 3520 x 1856 px (62 % de la mosaïque, 81 % de la couverture)
+[  679.8s] qualité : note A (aucune remarque)
+[  679.8s] terminé : pano.jpg 3848 x 2720 , 6 images utilisées sur 6

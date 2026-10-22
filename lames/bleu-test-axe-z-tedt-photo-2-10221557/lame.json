@@ -22,7 +22,12 @@
  "stage": null,
  "stage_cal": null,
  "stage_obs": null,
- "children": [],
+ "children": [
+  {
+   "slug": "bleu-test-axe-z-tedt-photo-2-obj-x50-10221557",
+   "transform": null
+  }
+ ],
  "quality": {
   "grade": "B",
   "notes": [
