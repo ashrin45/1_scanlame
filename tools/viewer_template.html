@@ -10,16 +10,16 @@
 /* Layout: one-screen viewer, slim instrument bar on top, the slide fills the rest */
 :root {
   --bg: #f3f0f4; --panel: #ffffff; --fg: #2b2433; --muted: #6e6478; --line: #d9d2de;
-  --accent: #7a2e8c; --accent-soft: rgba(122,46,140,.14); --stage: #e9e4ec; --ok: #1b9466; --warn: #b7791f; --bad: #c0392b;
+  --accent: #7a2e8c; --accent-soft: rgba(122,46,140,.14); --stage: #e9e4ec; --ok: #1b9466; --warn: #b7791f; --bad: #c0392b; --star: #b07800;
   --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
-  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; color-scheme: dark } }
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; --star: #f0c24b; color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
-  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; color-scheme: dark }
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; --star: #f0c24b; color-scheme: dark }
 html, body { height: 100%; }
 body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-ui); display: flex; flex-direction: column; overflow: hidden; }
 header { flex: 0 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
@@ -37,6 +37,8 @@ button { font: 500 13px var(--font-ui); color: var(--fg); background: var(--pane
 button:hover { border-color: var(--accent); }
 button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+#favbtn[aria-pressed="true"] { background: transparent; border-color: var(--star); color: var(--star); }
+#favmsg { position: absolute; left: 50%; bottom: max(16px, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 8; width: max-content; max-width: min(520px, calc(100% - 32px)); background: var(--panel); color: var(--fg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; font: 14px var(--font-ui); box-shadow: 0 6px 24px rgba(0,0,0,.2); }
 button .g { display: inline-block; min-width: 16px; padding: 0 4px; border-radius: 4px; color: #fff; font-weight: 600; margin-left: 4px; }
 .gA { background: var(--ok); } .gB { background: var(--warn); } .gC { background: var(--bad); }
 .zctl { display: flex; align-items: center; gap: 6px; font: 500 12px var(--font-data); color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; }
@@ -104,6 +106,7 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
     <button id="qbtn" aria-pressed="false" hidden>Qualité<span class="g" id="qg"></span></button>
     <button id="kids" aria-pressed="true" hidden>Détails</button>
     <button id="cellsbtn" aria-pressed="false" hidden>Cellules<span class="g" id="cellsn"></span></button>
+    <button id="favbtn" aria-pressed="false" title="Ajouter aux favoris">☆ Favori</button>
     <button id="editbtn" aria-pressed="false" title="Rogner ou supprimer cette lame">Modifier</button>
     <label class="zctl" id="zctl" hidden><span>profondeur</span><input id="zr" type="range" min="0" max="1" value="0" step="1" aria-label="Plan de profondeur"><b id="zl">net partout</b></label>
   </div>
@@ -114,6 +117,7 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
   <div id="qpanel" hidden></div>
   <div id="cpanel" hidden></div>
   <div id="cfiche" hidden></div>
+  <div id="favmsg" role="status" hidden></div>
   <div id="epanel" hidden>
     <b>Modifier la lame</b>
     <input id="eurl" placeholder="URL du serveur (…/functions/v1/scanlame)" autocomplete="off">
@@ -138,6 +142,7 @@ const ZSTACK = __ZSTACK__;      // {levels, tiles:[...]} ou null
 const QUALITY = __QUALITY__;    // rapport du pipeline ({} si absent)
 const CHILDREN = __CHILDREN__;  // lames de détail (autre objectif) recalées dans celle-ci
 const PARENT = __PARENT__;      // lame d'ensemble, si celle-ci est un détail
+const FAVORI = __FAVORI__;      // lame dans les favoris de la galerie (etat enregistre sur le site)
 const CELLS = __CELLS__;        // effectifs du calque « Cellules » ({n, validees, ...}) ou null : le détail est dans cellules.json
 const svgNS = 'http://www.w3.org/2000/svg';
 const $ = id => document.getElementById(id);
@@ -418,6 +423,30 @@ if (CELL_SOURCES.length) {
 const LS = { get: k => { try { return localStorage.getItem(k) || ''; } catch (_) { return ''; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (_) {} } };
 $('eurl').value = LS.get('scanlame.url'); $('etoken').value = LS.get('scanlame.token');
 $('eurl').onchange = () => LS.set('scanlame.url', $('eurl').value.trim()); $('etoken').onchange = () => LS.set('scanlame.token', $('etoken').value.trim());
+// ---- favori : meme etat que l'etoile de la galerie (meme navigateur) ; enregistre avec la lame (tous les appareils) quand l'URL
+// du serveur et le jeton sont connus, sinon garde sur cet appareil. En attendant la mise a jour du site, le choix fait ici reste affiche.
+const favLocal = () => { try { return JSON.parse(LS.get('lames.favoris.local') || '{}') || {}; } catch (_) { return {}; } };
+{ const lf = favLocal(), e = lf[SLUG]; if (e && e.sent && (FAVORI === e.on || Date.now() - e.t > 6 * 3600e3)) { delete lf[SLUG]; LS.set('lames.favoris.local', JSON.stringify(lf)); } }
+const isFav = () => { const e = favLocal()[SLUG]; return e ? e.on : FAVORI; };
+function showFav() { const on = isFav(), b = $('favbtn'); b.setAttribute('aria-pressed', String(on)); b.textContent = on ? '★ Favori' : '☆ Favori'; b.title = on ? 'Retirer des favoris' : 'Ajouter aux favoris'; }
+let favT = null;
+function favMsg(t) { const m = $('favmsg'); m.textContent = t; m.hidden = false; clearTimeout(favT); favT = setTimeout(() => { m.hidden = true; }, 6000); }
+$('favbtn').onclick = async () => {
+  const on = !isFav(), lf = favLocal();
+  lf[SLUG] = { on, t: Date.now(), sent: false }; LS.set('lames.favoris.local', JSON.stringify(lf)); showFav();
+  const what = on ? 'Ajoutée aux favoris' : 'Retirée des favoris';
+  const url = ($('eurl').value || LS.get('scanlame.url') || '').trim().replace(/\/+$/, ''), token = ($('etoken').value || LS.get('scanlame.token') || '').trim();
+  if (!url || !token) { favMsg(what + ' sur cet appareil. Pour partager tes favoris entre téléphone et ordinateur, renseigne une fois l\'URL du serveur et le jeton dans « Modifier ».'); return; }
+  try {
+    const r = await fetch(url + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Token': token },
+      body: JSON.stringify({ series: 'edit_' + Date.now(), slug: SLUG, action: 'favori', on }) });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const lf2 = favLocal(); if (lf2[SLUG]) { lf2[SLUG].sent = true; LS.set('lames.favoris.local', JSON.stringify(lf2)); }
+    favMsg(what + '. Ce sera visible sur tous tes appareils dans quelques minutes.');
+  } catch (e) { favMsg(what + ' sur cet appareil seulement : le serveur n\'a pas répondu (' + e.message + ').'); }
+};
+window.addEventListener('pageshow', showFav);   // retour depuis la galerie : l'etoile a pu changer
+showFav();
 $('dlfull').href = 'https://github.com/ashrin45/1_scanlame/releases/download/lames/' + SLUG + '.jpg';
 $('dlzip').href = 'https://github.com/ashrin45/1_scanlame/releases/download/lames/' + SLUG + '-visionneuse.zip';
 // QR codes vers l'appli : scanlame://reprendre/<slug> (completer les zones manquantes) et scanlame://ensemble/<slug> (prendre un detail x100 rattache)

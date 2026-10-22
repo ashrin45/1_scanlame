@@ -152,7 +152,7 @@ def favori(slug, on):
     if not j: sys.exit('lame introuvable')
     if on: j['favori'] = True
     else: j.pop('favori', None)
-    save_lame(slug, j); write_gallery()
+    save_lame(slug, j); write_pages(slug); write_gallery()
     print(f'lame {slug} : {"ajoutée aux" if on else "retirée des"} favoris')
 
 if __name__ == '__main__':

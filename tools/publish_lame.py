@@ -114,7 +114,7 @@ def write_pages(slug):
             .replace('__FIELDS__', json.dumps(fields, separators=(',', ':'))).replace('__UMPX__', json.dumps(j.get('um_per_px')))
             .replace('__ZSTACK__', json.dumps(dict(levels=j['zstack'], tiles=j['zstack_tiles']) if j.get('zstack') else None))
             .replace('__QUALITY__', json.dumps(q, ensure_ascii=False)).replace('__CELLS__', json.dumps(j.get('cellules') if os.path.isfile(os.path.join(out, 'cellules.json')) else None)).replace('__CHILDREN__', json.dumps(children, ensure_ascii=False))
-            .replace('__PARENT__', json.dumps(parent, ensure_ascii=False)))
+            .replace('__PARENT__', json.dumps(parent, ensure_ascii=False)).replace('__FAVORI__', json.dumps(bool(j.get('favori')))))
     open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(page)
 
 def write_offline_zip(slug, out_zip):
@@ -129,6 +129,7 @@ def write_offline_zip(slug, out_zip):
     page = re.sub(r'const CHILDREN = .*?;\n', 'const CHILDREN = [];\n', page, count=1)
     page = re.sub(r'const PARENT = .*?;\n', 'const PARENT = null;\n', page, count=1)
     page = page.replace('<button id="editbtn" aria-pressed="false"', '<button id="editbtn" hidden aria-pressed="false"')
+    page = page.replace('<button id="favbtn" aria-pressed="false"', '<button id="favbtn" hidden aria-pressed="false"')
     page = page.replace('<div class="meta">', '<div class="meta"><span style="opacity:.7">copie hors ligne</span> · ', 1)
     osd = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'vendor', 'openseadragon.min.js')
     with zipfile.ZipFile(out_zip, 'w', zipfile.ZIP_DEFLATED) as z:

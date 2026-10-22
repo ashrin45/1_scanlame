@@ -115,6 +115,8 @@ function buildFilters() {
   for (const o of objs) mk('objectif ' + o, fObj === o, () => { fObj = fObj === o ? null : o; refresh(); });
 }
 function refresh() { filters.innerHTML = ''; buildFilters(); render(); }
+// retour depuis la page d'une lame : l'etoile a pu y changer
+window.addEventListener('pageshow', () => { try { localFav = JSON.parse(LS.get('lames.favoris.local') || '{}') || {}; } catch (_) {} refresh(); });
 grid.addEventListener('click', e => { const b = e.target.closest('.fav'); if (b) { e.preventDefault(); toggleFav(b.dataset.slug); } });
 document.getElementById('sort').onchange = e => { sortBy = e.target.value; try { localStorage.setItem('lames.sort', sortBy); } catch (_) {} render(); };
 try { const sv = localStorage.getItem('lames.sort'); if (sv) { sortBy = sv; document.getElementById('sort').value = sv; } } catch (_) {}
