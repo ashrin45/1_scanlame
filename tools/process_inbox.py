@@ -15,6 +15,8 @@ ap.add_argument('--work', default='inbox')
 ap.add_argument('--keep-days', type=float, default=float(os.environ.get('KEEP_DAYS', '60')), help='garder les prises publiees ce nombre de jours (reassemblage possible ; archive brute)')
 ap.add_argument('--fetch-only', action='store_true', help='telecharger la prise (avec --only) sans l assembler : diagnostic hors ligne')
 ap.add_argument('--force', action='store_true', help='retraiter meme une serie deja publiee ou en echec (avec --only)')
+ap.add_argument('--edits-only', action='store_true', help='ne traiter que les demandes d\'edition (edit_*) : rogner, supprimer, favoris, annotations')
+ap.add_argument('--no-edits', action='store_true', help='laisser les demandes d\'edition au workflow Editions')
 ap.add_argument('--storage-limit-mb', type=float, default=float(os.environ.get('STORAGE_LIMIT_MB', '80000')), help='au-dela, les prises publiees les plus anciennes sont supprimees sans attendre --keep-days')
 a = ap.parse_args()
 
@@ -106,6 +108,7 @@ done = []
 seen = set()
 def pending_series():
     names = [e['name'] for e in ls('') if e.get('id') is None or e.get('metadata') is None]   # dossiers
+    names = [n for n in names if (not a.edits_only or n.startswith('edit_')) and not (a.no_edits and n.startswith('edit_'))]
     return [n for n in names if (not a.only or n == a.only) and n not in seen]
 series = []
 while True:
@@ -141,6 +144,11 @@ while True:
                     fullp = os.path.join(a.work, f'{slug}_full.jpg')
                     subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'telecharger_lame.py'), slug, '--local', '-o', fullp])
                     release_full(slug, fullp)
+            elif action == 'annotation':
+                print(f'{s} : annotation ({cmd.get("op")}) sur {slug}')
+                payload = {k: cmd.get(k) for k in ('op', 'a', 'id', 'maj')}
+                subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'edit_lame.py'), 'annotation', slug, json.dumps(payload, ensure_ascii=False)], check=True)
+                if os.environ.get('GITHUB_ACTIONS'): git_publish(['lames'], f'Annotation : {slug} ({cmd.get("op")})')
             elif action == 'favori':
                 on = bool(cmd.get('on'))
                 print(f'{s} : {slug} {"ajoutée aux" if on else "retirée des"} favoris')
@@ -383,12 +391,12 @@ def series_files(sname):
     out += [(f'{sname}/photos/{e["name"]}', e) for e in ls(f'{sname}/photos')]
     return out
 inv = []
-for sname in [e['name'] for e in ls('') if e.get('id') is None]:
+for sname in ([] if a.edits_only else [e['name'] for e in ls('') if e.get('id') is None]):   # passe des editions : pas d'inventaire
     files = series_files(sname)
     size = sum((e.get('metadata') or {}).get('size', 0) for _, e in files)
     inv.append((sname, size, any(p.endswith('/done.txt') for p, _ in files), [p for p, _ in files]))
 total = sum(x[1] for x in inv)
-print(f'stockage : {total / 1048576:.0f} Mo dans le bucket ({len(inv)} série(s))')
+if not a.edits_only: print(f'stockage : {total / 1048576:.0f} Mo dans le bucket ({len(inv)} série(s))')
 for sname, size, is_done, paths in sorted(inv):   # noms horodates : ordre chronologique
     if total <= a.storage_limit_mb * 1048576: break
     if not is_done: continue

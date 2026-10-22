@@ -1,0 +1,32 @@
+name: Éditions depuis le site (rogner, supprimer, favoris, annotations)
+# Passe rapide, séparée de l'assemblage : bibliothèques légères seulement, et sa propre file d'attente, pour qu'une annotation
+# ou un favori soit en ligne en une à deux minutes même pendant l'assemblage d'une longue prise.
+on:
+  repository_dispatch:
+    types: [serie]
+  schedule:
+    - cron: '7-59/15 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: editions
+  cancel-in-progress: false
+jobs:
+  editions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Outils légers
+        run: grep -E "^(requests|numpy|opencv-python-headless|certifi|charset-normalizer|idna|urllib3)==" tools/requirements-pipeline.txt > /tmp/req-editions.txt && pip install -q -r /tmp/req-editions.txt
+      - name: Appliquer les demandes d'édition
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          PYTHONUNBUFFERED: '1'
+        run: python tools/process_inbox.py --edits-only

@@ -47,7 +47,7 @@ jobs:
           FORCE="${{ (inputs.force || github.event.client_payload.force) && '--force' || '' }}"
           FETCH="${{ github.event.client_payload.fetch_only && '--fetch-only' || '' }}"
           export PIPELINE_ARGS="${{ github.event.client_payload.pipeline_args || '' }}"
-          python tools/process_inbox.py ${ONLY:+--only "$ONLY"} $FORCE $FETCH
+          python tools/process_inbox.py --no-edits ${ONLY:+--only "$ONLY"} $FORCE $FETCH
       - name: Conserver la prise brute (diagnostic, client_payload.keep_raw)
         if: always() && github.event.client_payload.keep_raw && github.event.client_payload.only
         uses: actions/upload-artifact@v4

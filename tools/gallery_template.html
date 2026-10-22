@@ -99,6 +99,7 @@ function render() {
     if (i.zstack) tags.push(tag(i.zstack + ' plans', 'z'));
     if (i.params) { const p = i.params; tags.push(tag('v' + (i.version || 1) + ' · prof. ' + (p.depth === 'on' ? 'on' : 'off') + ' · coutures ' + (p.seams === false ? 'droites' : 'fond') + (p.code ? ' · ' + p.code : ''))); }
     if (i.children.length) tags.push(tag(i.children.length + ' détail(s)', 'z'));
+    if (i.annotations) tags.push(tag(i.annotations + ' annotation' + (i.annotations > 1 ? 's' : ''), 'z'));
     if (i.parent && byslug[i.parent]) tags.push(tag('détail de « ' + byslug[i.parent].title + ' »'));
     const fav = isFav(i);
     return `<div class="card"><a href="${i.slug}/"><img src="${i.thumb}" alt="" loading="lazy"><span class="t"><b>${esc(i.title)}</b><small>${i.width} × ${i.height} px${i.captured ? ' · prise ' + i.captured : ''}${i.published ? ' · publiée ' + fmtDate(i.published) : ''}${i.sample ? ' · ' + esc(i.sample) : ''}</small><span class="tags">${tags.join('')}</span></span></a>`

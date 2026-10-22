@@ -130,6 +130,8 @@ def write_offline_zip(slug, out_zip):
     page = re.sub(r'const PARENT = .*?;\n', 'const PARENT = null;\n', page, count=1)
     page = page.replace('<button id="editbtn" aria-pressed="false"', '<button id="editbtn" hidden aria-pressed="false"')
     page = page.replace('<button id="favbtn" aria-pressed="false"', '<button id="favbtn" hidden aria-pressed="false"')
+    ap = os.path.join(d, 'annotations.json')     # annotations incluses dans la page (lecture seule, sans serveur)
+    page = page.replace('const ANNOT_EMBED = null;', 'const ANNOT_EMBED = ' + (open(ap, encoding='utf-8').read().strip() if os.path.isfile(ap) else '{"annotations":[]}') + ';', 1)
     page = page.replace('<div class="meta">', '<div class="meta"><span style="opacity:.7">copie hors ligne</span> · ', 1)
     osd = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'vendor', 'openseadragon.min.js')
     with zipfile.ZipFile(out_zip, 'w', zipfile.ZIP_DEFLATED) as z:
@@ -154,7 +156,7 @@ def write_gallery():
                               sample=j.get('sample'), captured=j.get('captured'), um_per_px=j.get('um_per_px'), grade=(j.get('quality') or {}).get('grade'),
                               zstack=j.get('zstack') or 0, parent=j.get('parent'), children=[c['slug'] for c in (j.get('children') or [])], thumb=thumb, tile=j.get('tile'), maxlvl=j.get('maxlvl'), cellules=j.get('cellules'),
                               published=j.get('published'), updated=j.get('updated'), series=j.get('series'), version=j.get('version') or 1, params=j.get('params'),
-                              favori=bool(j.get('favori'))))
+                              favori=bool(j.get('favori')), annotations=j.get('annotations') or 0))
     json.dump(items, open(os.path.join(LAMES, 'lames.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     tpl = open(os.path.join(ROOT, 'tools', 'gallery_template.html'), encoding='utf-8').read()
     open(os.path.join(LAMES, 'index.html'), 'w', encoding='utf-8').write(

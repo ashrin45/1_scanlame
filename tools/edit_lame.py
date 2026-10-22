@@ -155,8 +155,66 @@ def favori(slug, on):
     save_lame(slug, j); write_pages(slug); write_gallery()
     print(f'lame {slug} : {"ajoutée aux" if on else "retirée des"} favoris')
 
+COULEURS = ('#e8a33d', '#e5484d', '#30a46c', '#3e63dd', '#8e4ec6')
+
+def annotation(slug, cmd):
+    """Applique une demande d'annotation venue de la visionneuse : {op: add | update | delete, a: {...}, id, maj}.
+    Fichier lames/<slug>/annotations.json ; le nombre est repris dans lame.json (galerie)."""
+    import re, datetime
+    j = load_lame(slug)
+    if not j: sys.exit('lame introuvable')
+    W, H = j['width'], j['height']
+    path = os.path.join(LAMES, slug, 'annotations.json')
+    data = json.load(open(path, encoding='utf-8')) if os.path.isfile(path) else {'slug': slug, 'annotations': []}
+    lst = data['annotations']
+    op = cmd.get('op'); src = cmd.get('a') or {}
+    aid = str(src.get('id') or cmd.get('id') or '')
+    if not re.fullmatch(r'[a-z0-9]{6,32}', aid): print(f'annotation : identifiant invalide « {aid} »'); return
+    maj = str(cmd.get('maj') or src.get('maj') or '')
+    if not re.fullmatch(r'\d{4}-\d{2}-\d{2}T[\d:.]+Z?', maj): maj = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds').replace('+00:00', 'Z')
+    cur = next((x for x in lst if x['id'] == aid), None)
+    if op == 'delete':
+        if cur: lst.remove(cur); print(f'annotation {aid} supprimée de {slug}')
+        else: print(f'annotation {aid} déjà absente de {slug}')
+    elif op in ('add', 'update'):
+        def num(v, lo, hi):
+            v = float(v)
+            if not math.isfinite(v): raise ValueError('coordonnée invalide')
+            return round(min(hi, max(lo, v)), 1)
+        rec = dict(cur or {}, id=aid)
+        typ = src.get('type', rec.get('type'))
+        if typ not in ('point', 'zone'): print(f'annotation {aid} : type invalide {typ}'); return
+        rec['type'] = typ
+        try:
+            if typ == 'point' and ('x' in src or 'x' not in rec):
+                rec['x'], rec['y'] = num(src['x'], 0, W), num(src['y'], 0, H); rec.pop('rect', None)
+            if typ == 'zone' and ('rect' in src or 'rect' not in rec):
+                x0, y0, x1, y1 = (float(v) for v in src['rect'])
+                x0, x1 = sorted((num(x0, 0, W), num(x1, 0, W))); y0, y1 = sorted((num(y0, 0, H), num(y1, 0, H)))
+                if x1 - x0 < 2 or y1 - y0 < 2: print(f'annotation {aid} : zone vide'); return
+                rec['rect'] = [x0, y0, x1, y1]; rec.pop('x', None); rec.pop('y', None)
+        except (KeyError, TypeError, ValueError) as e:
+            print(f'annotation {aid} : coordonnées invalides ({e})'); return
+        if 'texte' in src: rec['texte'] = str(src['texte'])[:2000].strip()
+        if 'auteur' in src: rec['auteur'] = str(src['auteur'])[:80].strip()
+        if 'couleur' in src: rec['couleur'] = src['couleur'] if src['couleur'] in COULEURS else COULEURS[0]
+        rec.setdefault('couleur', COULEURS[0]); rec.setdefault('texte', ''); rec.setdefault('auteur', '')
+        rec.setdefault('cree', maj); rec['maj'] = maj
+        if cur: lst[lst.index(cur)] = rec
+        else: lst.append(rec)
+        print(f'annotation {aid} {"modifiée" if cur else "ajoutée"} sur {slug}')
+    else:
+        print(f'annotation : opération inconnue {op}'); return
+    lst.sort(key=lambda x: x.get('cree') or '')
+    if lst: json.dump(data, open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    elif os.path.isfile(path): os.remove(path)
+    if lst: j['annotations'] = len(lst)
+    else: j.pop('annotations', None)
+    save_lame(slug, j); write_gallery()
+
 if __name__ == '__main__':
     if sys.argv[1] == 'delete': delete(sys.argv[2])
     elif sys.argv[1] == 'crop': crop(sys.argv[2], *sys.argv[3:7])
     elif sys.argv[1] == 'favori': favori(sys.argv[2], sys.argv[3].lower() in ('on', 'oui', '1', 'true'))
+    elif sys.argv[1] == 'annotation': annotation(sys.argv[2], json.loads(sys.argv[3]))
     else: sys.exit('action inconnue')

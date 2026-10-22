@@ -71,6 +71,42 @@ svg.cells polygon.sel { stroke-width: 4px; fill-opacity: .25; }
 #croprect { position: absolute; border: 2px solid #e8a33d; background: rgba(232, 163, 61, .12); box-shadow: 0 0 0 9999px rgba(0, 0, 0, .35); pointer-events: none; display: none; }
 #cropbar { position: absolute; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 8; display: flex; gap: 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px; font: 13px var(--font-ui); color: var(--fg); align-items: center; }
 #viewer .navigator { border: 1px solid var(--line) !important; background: var(--panel) !important; }
+/* annotations : epingles et zones posees sur la lame, panneau, formulaire */
+.cnt { display: inline-block; min-width: 16px; padding: 0 5px; margin-left: 5px; border-radius: 999px; font: 600 11px var(--font-data); background: var(--accent-soft); color: var(--accent); }
+.cnt:empty { display: none; }
+#apanel { position: absolute; right: max(12px, env(safe-area-inset-right, 0px)); top: 12px; z-index: 7; width: min(340px, calc(100vw - 32px)); max-height: calc(100% - 24px); overflow: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 13px var(--font-ui); color: var(--fg); display: flex; flex-direction: column; gap: 8px; box-shadow: 0 4px 18px rgba(0,0,0,.18); }
+#apanel h3 { margin: 0; font: 600 14px var(--font-ui); }
+#apanel .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+#apanel label.chk { display: flex; gap: 6px; align-items: center; color: var(--muted); font-size: 12px; margin-left: auto; }
+#apanel .item { display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 3px 8px; padding: 6px; border-radius: 8px; border: 1px solid transparent; }
+#apanel .item.sel { border-color: var(--accent); }
+#apanel .item .sw { width: 12px; height: 12px; border-radius: 50%; margin-top: 3px; }
+#apanel .item .tx { white-space: pre-wrap; overflow-wrap: anywhere; }
+#apanel .item .k, #acard .k { font-size: 12px; color: var(--muted); }
+#apanel .item .k, #apanel .item .acts { grid-column: 2; }
+#apanel .item .acts, #acard .acts { display: flex; gap: 6px; flex-wrap: wrap; }
+#apanel .item .acts button, #acard .acts button { padding: 2px 8px; font-size: 12px; }
+#apanel .msg { font-size: 12px; color: var(--muted); }
+#adraw { position: absolute; inset: 0; z-index: 6; cursor: crosshair; touch-action: none; }
+#arect { position: absolute; border: 2px dashed var(--accent); background: var(--accent-soft); pointer-events: none; display: none; }
+#abar { position: absolute; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 8; display: flex; gap: 10px; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font: 13px var(--font-ui); color: var(--fg); max-width: calc(100% - 32px); }
+#aform, #acard { position: absolute; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 9; width: min(420px, calc(100% - 32px)); box-sizing: border-box; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; font: 13px var(--font-ui); color: var(--fg); box-shadow: 0 8px 28px rgba(0,0,0,.25); }
+#aform textarea { font: 14px/1.4 var(--font-ui); min-height: 76px; resize: vertical; padding: 8px; border-radius: 8px; border: 1px solid var(--line); background: transparent; color: var(--fg); }
+#aform input { font: 13px var(--font-ui); padding: 6px 8px; border-radius: 6px; border: 1px solid var(--line); background: transparent; color: var(--fg); min-width: 0; flex: 1 1 auto; }
+#aform .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+#acard .tx { font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.coul { display: flex; gap: 8px; }
+.coul button { width: 28px; height: 28px; min-width: 28px; border-radius: 50%; padding: 0; border: 2px solid transparent; }
+.coul button[aria-pressed="true"] { border-color: var(--fg); box-shadow: inset 0 0 0 2px var(--panel); }
+.apin { position: relative; width: 22px; height: 30px; cursor: pointer; }
+.apin svg { width: 22px; height: 30px; display: block; filter: drop-shadow(0 1px 2px rgba(0,0,0,.55)); }
+.apin.wait svg, .alab.wait { opacity: .7; }
+.alab { font: 600 12px/1.3 var(--font-ui); color: #fff; background: rgba(15,12,18,.8); padding: 3px 7px; border-radius: 6px; white-space: nowrap; max-width: 240px; overflow: hidden; text-overflow: ellipsis; border-left: 3px solid; cursor: pointer; box-sizing: border-box; }
+.apin .alab { position: absolute; left: 20px; top: -2px; }
+.azlab { margin-bottom: 4px; }
+svg.annots rect { stroke-width: 2px; vector-effect: non-scaling-stroke; fill-opacity: .1; }
+svg.annots rect.wait { stroke-dasharray: 8 5; }
+svg.annots rect.sel { stroke-width: 4px; fill-opacity: .2; }
 .hud { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 5;
   font-family: var(--font-data); font-size: 12px; color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; pointer-events: none; font-variant-numeric: tabular-nums; }
 svg.fields polygon { fill: none; stroke: var(--accent); stroke-width: 1.5px; vector-effect: non-scaling-stroke; opacity: .9; }
@@ -106,6 +142,7 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
     <button id="qbtn" aria-pressed="false" hidden>Qualité<span class="g" id="qg"></span></button>
     <button id="kids" aria-pressed="true" hidden>Détails</button>
     <button id="cellsbtn" aria-pressed="false" hidden>Cellules<span class="g" id="cellsn"></span></button>
+    <button id="annbtn" aria-pressed="false" title="Annoter la lame (épingles, zones)">Annotations<span class="cnt" id="anncnt"></span></button>
     <button id="favbtn" aria-pressed="false" title="Ajouter aux favoris">☆ Favori</button>
     <button id="editbtn" aria-pressed="false" title="Rogner ou supprimer cette lame">Modifier</button>
     <label class="zctl" id="zctl" hidden><span>profondeur</span><input id="zr" type="range" min="0" max="1" value="0" step="1" aria-label="Plan de profondeur"><b id="zl">net partout</b></label>
@@ -118,6 +155,16 @@ svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order:
   <div id="cpanel" hidden></div>
   <div id="cfiche" hidden></div>
   <div id="favmsg" role="status" hidden></div>
+  <div id="apanel" hidden aria-label="Annotations"></div>
+  <div id="adraw" hidden><div id="arect"></div></div>
+  <div id="abar" hidden><span id="ainfo"></span><button type="button" id="acancel">Annuler</button></div>
+  <form id="aform" hidden>
+    <b id="atitle">Nouvelle annotation</b>
+    <textarea id="atext" placeholder="Ce que montre cet endroit (ex. tête aspergillaire bisériée, blaste, artefact…)" aria-label="Texte de l'annotation"></textarea>
+    <div class="row"><span class="coul" id="acoul" role="group" aria-label="Couleur"></span><input id="aauteur" placeholder="Signé (facultatif)" aria-label="Auteur" autocomplete="name"></div>
+    <div class="row"><button type="submit" id="asave">Enregistrer</button><button type="button" id="aformcancel">Annuler</button><span class="k" id="aformmsg"></span></div>
+  </form>
+  <div id="acard" hidden></div>
   <div id="epanel" hidden>
     <b>Modifier la lame</b>
     <input id="eurl" placeholder="URL du serveur (…/functions/v1/scanlame)" autocomplete="off">
@@ -143,6 +190,7 @@ const QUALITY = {"grade": "B", "notes": ["1 trou(s) dans la couverture", "2 cham
 const CHILDREN = [];  // lames de détail (autre objectif) recalées dans celle-ci
 const PARENT = null;      // lame d'ensemble, si celle-ci est un détail
 const FAVORI = false;      // lame dans les favoris de la galerie (etat enregistre sur le site)
+const ANNOT_EMBED = null;       // annotations incluses dans la copie hors ligne (sinon lues dans annotations.json)
 const CELLS = null;        // effectifs du calque « Cellules » ({n, validees, ...}) ou null : le détail est dans cellules.json
 const svgNS = 'http://www.w3.org/2000/svg';
 const $ = id => document.getElementById(id);
@@ -512,6 +560,232 @@ $('cropok').onclick = async () => {
   $('epanel').hidden = false;
   if (await sendEdit({ action: 'crop', rect })) endCrop();
 };
+// ---- annotations : epingles et zones avec un texte, enregistrees avec la lame (visibles sur tous les appareils) ----
+// Ecriture : demande d'edition au serveur (comme rogner ou supprimer), appliquee par GitHub en une a deux minutes ; en attendant,
+// l'annotation est gardee dans ce navigateur et affichee. Sans URL ni jeton, elle reste sur cet appareil.
+{
+  const COULEURS = ['#e8a33d', '#e5484d', '#30a46c', '#3e63dd', '#8e4ec6'];
+  const OFFLINE = ANNOT_EMBED !== null;
+  const KEY = 'lames.annot.' + SLUG;
+  const esc = t => String(t == null ? '' : t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  let server = [], pending = [], shown = true, selected = null, amode = null, draft = null, aStart = null, editing = null;
+  const loadPending = () => { try { pending = JSON.parse(LS.get(KEY) || '[]') || []; } catch (_) { pending = []; } };
+  const savePending = () => LS.set(KEY, JSON.stringify(pending));
+  const ident = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  function prune() {        // demandes deja appliquees par le site (ou trop anciennes)
+    const old = p => p.sent && Date.now() - p.t > 3 * 864e5;
+    pending = pending.filter(p => {
+      const s_ = server.find(a => a.id === p.id);
+      if (p.op === 'delete') return !(p.sent && !s_) && !old(p);
+      return !(s_ && (s_.maj || '') >= p.maj) && !old(p);
+    });
+    savePending();
+  }
+  function effective() {
+    const m = new Map(server.map(a => [a.id, Object.assign({}, a)]));
+    for (const p of pending) {
+      if (p.op === 'delete') { m.delete(p.id); continue; }
+      m.set(p.id, Object.assign({}, m.get(p.id) || {}, p.a, { id: p.id, maj: p.maj, attente: p.sent ? 'envoi' : 'local' }));
+    }
+    return [...m.values()].sort((a, b) => (a.cree || '').localeCompare(b.cree || ''));
+  }
+  const etat = a => a.attente === 'envoi' ? 'enregistrement en cours' : a.attente === 'local' ? 'sur cet appareil seulement' : '';
+  const quand = iso => { const d = new Date(iso); return isNaN(d) ? '' : d.toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }); };
+  const premiere = t => (String(t || '').split('\n')[0] || '(sans texte)');
+
+  // -- calque sur la lame
+  const zsvg = document.createElementNS(svgNS, 'svg');
+  zsvg.setAttribute('viewBox', `0 0 ${W} ${H}`); zsvg.setAttribute('class', 'annots'); zsvg.setAttribute('width', '100%'); zsvg.setAttribute('height', '100%'); zsvg.style.overflow = 'visible';
+  let overlays = [];
+  const pinSvg = c => `<svg viewBox="0 0 22 30" aria-hidden="true"><path d="M11 29C11 29 2 17.5 2 11a9 9 0 0 1 18 0c0 6.5-9 18-9 18z" fill="${c}" stroke="#fff" stroke-width="1.6"/><circle cx="11" cy="11" r="3.4" fill="#fff"/></svg>`;
+  function drawLayer() {
+    overlays.forEach(el => viewer.removeOverlay(el)); overlays = [];
+    viewer.removeOverlay(zsvg); while (zsvg.firstChild) zsvg.removeChild(zsvg.firstChild);
+    const list = effective();
+    $('anncnt').textContent = list.length || '';
+    if (!shown || !viewer.world.getItemCount()) return;
+    let zones = 0;
+    for (const a of list) {
+      const c = COULEURS.includes(a.couleur) ? a.couleur : COULEURS[0], w = a.attente ? ' wait' : '';
+      if (a.type === 'zone' && a.rect) {
+        const r = document.createElementNS(svgNS, 'rect'); const [x0, y0, x1, y1] = a.rect;
+        r.setAttribute('x', x0); r.setAttribute('y', y0); r.setAttribute('width', x1 - x0); r.setAttribute('height', y1 - y0);
+        r.setAttribute('stroke', c); r.setAttribute('fill', c); r.setAttribute('class', (w + (selected === a.id ? ' sel' : '')).trim());
+        zsvg.appendChild(r); zones++;
+        const lab = document.createElement('div'); lab.className = 'alab azlab' + w; lab.style.borderLeftColor = c; lab.textContent = premiere(a.texte); lab.title = a.texte || ''; lab.dataset.id = a.id;
+        viewer.addOverlay({ element: lab, location: new OpenSeadragon.Point(x0 / W, y0 / W), placement: OpenSeadragon.Placement.BOTTOM_LEFT }); overlays.push(lab);
+      } else if (a.type === 'point') {
+        const pin = document.createElement('div'); pin.className = 'apin' + w; pin.dataset.id = a.id;
+        pin.innerHTML = pinSvg(c) + `<span class="alab${w}" style="border-left-color:${c}" title="${esc(a.texte)}">${esc(premiere(a.texte))}</span>`;
+        viewer.addOverlay({ element: pin, location: new OpenSeadragon.Point(a.x / W, a.y / W), placement: OpenSeadragon.Placement.BOTTOM }); overlays.push(pin);
+      }
+    }
+    if (zones) viewer.addOverlay({ element: zsvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) });
+  }
+
+  // -- panneau
+  function panel() {
+    const list = effective(), P = $('apanel');
+    let h = `<div class="row"><h3>Annotations (${list.length})</h3><label class="chk"><input type="checkbox" id="ashow"${shown ? ' checked' : ''}> afficher sur la lame</label></div>`;
+    if (OFFLINE) h += `<div class="msg">Copie hors ligne : annotations en lecture seule.</div>`;
+    else h += `<div class="row"><button type="button" id="apin">+ Épingle</button><button type="button" id="azone">+ Zone</button></div>`;
+    if (!list.length) h += `<div class="msg">Aucune annotation. Pose une épingle sur une cellule ou entoure une zone, avec un texte : elle sera visible par tous ceux qui ouvrent cette lame.</div>`;
+    for (const a of list) {
+      const c = COULEURS.includes(a.couleur) ? a.couleur : COULEURS[0];
+      h += `<div class="item${selected === a.id ? ' sel' : ''}" data-id="${esc(a.id)}"><span class="sw" style="background:${c}"></span><span class="tx">${esc(a.texte || '(sans texte)')}</span>`
+        + `<span class="k">${a.type === 'zone' ? 'zone' : 'épingle'}${a.auteur ? ' · ' + esc(a.auteur) : ''}${a.cree ? ' · ' + quand(a.cree) : ''}${etat(a) ? ' · <b>' + etat(a) + '</b>' : ''}</span>`
+        + `<span class="acts"><button type="button" data-act="voir">Voir</button>${OFFLINE ? '' : '<button type="button" data-act="modif">Modifier</button><button type="button" data-act="suppr">Supprimer</button>'}</span></div>`;
+    }
+    h += `<div class="msg" id="amsg">${OFFLINE ? '' : (hasServer() ? 'Les annotations sont enregistrées avec la lame : visibles sur tous les appareils en une à deux minutes.' : 'URL du serveur et jeton absents sur cet appareil (bouton Modifier) : les annotations restent sur cet appareil.')}</div>`;
+    P.innerHTML = h;
+    $('ashow').onchange = e => { shown = e.target.checked; drawLayer(); };
+    if (!OFFLINE) { $('apin').onclick = () => startPlace('point'); $('azone').onclick = () => startPlace('zone'); }
+    P.querySelectorAll('.item').forEach(el => el.onclick = ev => {
+      const a = effective().find(x => x.id === el.dataset.id); if (!a) return;
+      const act = ev.target.dataset && ev.target.dataset.act;
+      if (act === 'modif') openForm(a);
+      else if (act === 'suppr') supprimer(a);
+      else { selected = a.id; goTo(a); drawLayer(); panel(); }
+    });
+  }
+  const hasServer = () => !!(($('eurl').value || LS.get('scanlame.url')) && ($('etoken').value || LS.get('scanlame.token')));
+  function goTo(a) {
+    const r = a.type === 'zone' ? a.rect : [a.x - 450, a.y - 340, a.x + 450, a.y + 340];
+    const m = 0.25 * Math.max(r[2] - r[0], r[3] - r[1]);
+    viewer.viewport.fitBounds(new OpenSeadragon.Rect((r[0] - m) / W, (r[1] - m) / W, (r[2] - r[0] + 2 * m) / W, (r[3] - r[1] + 2 * m) / W));
+  }
+  const narrow = () => window.innerWidth < 700;
+  $('annbtn').onclick = () => {
+    const open = $('apanel').hidden; $('apanel').hidden = !open; $('annbtn').setAttribute('aria-pressed', String(open));
+    if (open) { $('epanel').hidden = true; $('editbtn').setAttribute('aria-pressed', 'false'); $('acard').hidden = true; panel(); }
+  };
+
+  // -- poser une epingle ou tracer une zone
+  function drawRect() {
+    const el = $('arect');
+    if (!draft || draft.type !== 'zone') { el.style.display = 'none'; return; }
+    const main = viewer.world.getItemAt(0), [x0, y0, x1, y1] = draft.rect;
+    const p = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(x0, y0)), q = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(x1, y1));
+    el.style.display = 'block'; el.style.left = p.x + 'px'; el.style.top = p.y + 'px'; el.style.width = (q.x - p.x) + 'px'; el.style.height = (q.y - p.y) + 'px';
+  }
+  function startPlace(mode) {
+    amode = mode; draft = null; drawRect();
+    $('adraw').hidden = false; $('abar').hidden = false; $('acard').hidden = true;
+    $('ainfo').textContent = mode === 'point' ? 'Touche l\'endroit à marquer (zoome avant si besoin)' : 'Trace un rectangle autour de la zone';
+    if (narrow()) { $('apanel').hidden = true; $('annbtn').setAttribute('aria-pressed', 'false'); }
+    viewer.setMouseNavEnabled(false);
+  }
+  function endPlace() { amode = null; aStart = null; $('adraw').hidden = true; $('abar').hidden = true; viewer.setMouseNavEnabled(true); drawRect(); }
+  $('acancel').onclick = () => { draft = null; endPlace(); };
+  $('adraw').onpointerdown = ev => { ev.preventDefault(); $('adraw').setPointerCapture(ev.pointerId); aStart = imgPt(ev); if (amode === 'zone') { draft = { type: 'zone', rect: [aStart.x, aStart.y, aStart.x, aStart.y] }; drawRect(); } };
+  $('adraw').onpointermove = ev => { if (!aStart || amode !== 'zone') return; const p = imgPt(ev); draft.rect = [Math.min(aStart.x, p.x), Math.min(aStart.y, p.y), Math.max(aStart.x, p.x), Math.max(aStart.y, p.y)]; drawRect(); };
+  $('adraw').onpointerup = ev => {
+    if (!aStart) return; const p = imgPt(ev), s0 = aStart; aStart = null;
+    if (amode === 'point') { draft = { type: 'point', x: Math.round(p.x * 10) / 10, y: Math.round(p.y * 10) / 10 }; }
+    else {
+      draft = { type: 'zone', rect: [Math.min(s0.x, p.x), Math.min(s0.y, p.y), Math.max(s0.x, p.x), Math.max(s0.y, p.y)].map(v => Math.round(v * 10) / 10) };
+      const main = viewer.world.getItemAt(0), a = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(draft.rect[0], draft.rect[1])), b = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(draft.rect[2], draft.rect[3]));
+      if (Math.abs(b.x - a.x) < 12 || Math.abs(b.y - a.y) < 12) { $('ainfo').textContent = 'Zone trop petite : trace un rectangle plus grand'; draft = null; drawRect(); return; }
+    }
+    const d = draft; endPlace(); draft = d; drawRect(); openForm(null);
+  };
+  $('adraw').onpointercancel = () => { aStart = null; };
+  viewer.addHandler('animation', () => { if (draft) drawRect(); });
+
+  // -- formulaire (nouvelle annotation ou modification)
+  let couleur = COULEURS[0];
+  function couleurs() { $('acoul').innerHTML = COULEURS.map(c => `<button type="button" data-c="${c}" style="background:${c}" aria-pressed="${c === couleur}" aria-label="couleur ${c}"></button>`).join(''); $('acoul').querySelectorAll('button').forEach(b => b.onclick = () => { couleur = b.dataset.c; couleurs(); }); }
+  function openForm(a) {
+    editing = a;
+    $('atitle').textContent = a ? 'Modifier l\'annotation' : (draft && draft.type === 'zone' ? 'Nouvelle zone' : 'Nouvelle épingle');
+    $('atext').value = a ? (a.texte || '') : '';
+    couleur = a && COULEURS.includes(a.couleur) ? a.couleur : (LS.get('scanlame.couleur') || COULEURS[0]);
+    $('aauteur').value = a ? (a.auteur || '') : (LS.get('scanlame.auteur') || '');
+    $('aformmsg').textContent = '';
+    couleurs(); $('acard').hidden = true; $('aform').hidden = false; $('atext').focus();
+  }
+  const closeForm = () => { $('aform').hidden = true; editing = null; draft = null; drawRect(); };
+  $('aformcancel').onclick = closeForm;
+  $('aform').onsubmit = async ev => {
+    ev.preventDefault();
+    const texte = $('atext').value.trim(); if (!texte) { $('aformmsg').textContent = 'Écris un texte pour l\'annotation.'; $('atext').focus(); return; }
+    const auteur = $('aauteur').value.trim(); LS.set('scanlame.auteur', auteur); LS.set('scanlame.couleur', couleur);
+    const maj = new Date().toISOString();
+    let op;
+    if (editing) op = { op: 'update', id: editing.id, maj, t: Date.now(), sent: false, a: { type: editing.type, texte, auteur, couleur } };
+    else op = { op: 'add', id: ident(), maj, t: Date.now(), sent: false, a: Object.assign({}, draft, { texte, auteur, couleur, cree: maj }) };
+    pending.push(op); savePending();
+    selected = op.id; closeForm(); drawLayer(); if (!$('apanel').hidden) panel();
+    await envoyer(op);
+  };
+  async function envoyer(op) {
+    const url = ($('eurl').value || LS.get('scanlame.url') || '').trim().replace(/\/+$/, ''), token = ($('etoken').value || LS.get('scanlame.token') || '').trim();
+    const dire = t => { if ($('amsg')) $('amsg').textContent = t; favMsg(t); };
+    if (!url || !token) { dire('Annotation gardée sur cet appareil. Pour la partager, renseigne une fois l\'URL du serveur et le jeton dans « Modifier ».'); return; }
+    try {
+      const body = { series: 'edit_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6), slug: SLUG, action: 'annotation', op: op.op, id: op.id, maj: op.maj };
+      if (op.a) body.a = Object.assign({ id: op.id }, op.a);
+      const r = await fetch(url + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Token': token }, body: JSON.stringify(body) });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      loadPending(); const p = pending.find(x => x.id === op.id && x.maj === op.maj); if (p) { p.sent = true; savePending(); }
+      drawLayer(); if (!$('apanel').hidden) panel();
+      dire(op.op === 'delete' ? 'Annotation supprimée : ce sera visible partout dans une à deux minutes.' : 'Annotation enregistrée : visible sur tous les appareils dans une à deux minutes.');
+    } catch (e) { dire('Annotation gardée sur cet appareil : le serveur n\'a pas répondu (' + e.message + '). Nouvel essai au prochain chargement de la page.'); }
+  }
+  async function supprimer(a) {
+    if (!confirm('Supprimer cette annotation ?\n\n' + premiere(a.texte))) return;
+    const local = pending.find(p => p.id === a.id && p.op === 'add' && !p.sent) && !server.some(x => x.id === a.id);
+    if (local) { pending = pending.filter(p => p.id !== a.id); savePending(); }      // jamais envoyee : on l'oublie simplement
+    else { const op = { op: 'delete', id: a.id, maj: new Date().toISOString(), t: Date.now(), sent: false }; pending.push(op); savePending(); await envoyer(op); }
+    if (selected === a.id) selected = null;
+    $('acard').hidden = true; drawLayer(); if (!$('apanel').hidden) panel();
+  }
+
+  // -- clic sur une epingle, une etiquette ou une zone (souris ou doigt) : fiche
+  function showCard(a) {
+    selected = a.id; drawLayer();
+    const c = COULEURS.includes(a.couleur) ? a.couleur : COULEURS[0];
+    const card = $('acard');
+    card.innerHTML = `<div class="row" style="display:flex;gap:8px;align-items:center"><span style="width:12px;height:12px;border-radius:50%;background:${c};flex:0 0 auto"></span><b>${a.type === 'zone' ? 'Zone' : 'Épingle'}</b></div>`
+      + `<div class="tx">${esc(a.texte || '(sans texte)')}</div><div class="k">${a.auteur ? esc(a.auteur) + ' · ' : ''}${quand(a.cree)}${etat(a) ? ' · ' + etat(a) : ''}</div>`
+      + `<div class="acts">${OFFLINE ? '' : '<button type="button" id="cmodif">Modifier</button><button type="button" id="csuppr">Supprimer</button>'}<button type="button" id="cfermer">Fermer</button></div>`;
+    card.hidden = false;
+    if (!OFFLINE) { $('cmodif').onclick = () => openForm(a); $('csuppr').onclick = () => supprimer(a); }
+    $('cfermer').onclick = () => { card.hidden = true; selected = null; drawLayer(); };
+    if (!$('apanel').hidden) panel();
+  }
+  viewer.addHandler('canvas-click', ev => {
+    if (!shown || amode || !ev.quick) return;
+    const vr = $('viewer').getBoundingClientRect(), cx = vr.left + ev.position.x, cy = vr.top + ev.position.y;
+    const inside = el => { const r = el.getBoundingClientRect(); return cx >= r.left && cx <= r.right && cy >= r.top && cy <= r.bottom; };
+    const list = effective();
+    for (const el of overlays) {
+      const parts = [el, ...el.querySelectorAll('.alab')];
+      if (parts.some(inside)) { const a = list.find(x => x.id === el.dataset.id); if (a) { ev.preventDefaultAction = true; showCard(a); return; } }
+    }
+    const p = viewer.world.getItemAt(0).viewerElementToImageCoordinates(ev.position);
+    let hit = null, best = Infinity;
+    for (const a of list) if (a.type === 'zone' && a.rect) { const [x0, y0, x1, y1] = a.rect, ar = (x1 - x0) * (y1 - y0); if (p.x >= x0 && p.x <= x1 && p.y >= y0 && p.y <= y1 && ar < best) { hit = a; best = ar; } }
+    if (hit) { ev.preventDefaultAction = true; showCard(hit); }
+  });
+
+  // -- chargement : annotations du site + demandes en attente de ce navigateur ; nouvel essai d'envoi de celles qui n'etaient pas parties
+  async function charger() {
+    if (OFFLINE) server = ANNOT_EMBED.annotations || [];
+    else {
+      try { const r = await fetch('annotations.json?t=' + Date.now()); server = r.ok ? ((await r.json()).annotations || []) : []; } catch (_) { server = []; }
+    }
+    loadPending(); prune(); drawLayer(); if (!$('apanel').hidden) panel();
+    if (!OFFLINE && hasServer()) for (const p of pending.filter(p => !p.sent)) await envoyer(p);
+  }
+  viewer.addHandler('open', charger);
+  window.addEventListener('pageshow', e => { if (e.persisted) charger(); });
+  $('editbtn').addEventListener('click', () => { if (!$('epanel').hidden) { $('apanel').hidden = true; $('annbtn').setAttribute('aria-pressed', 'false'); } });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (!$('aform').hidden) closeForm(); else if (amode) { draft = null; endPlace(); } else if (!$('acard').hidden) { $('acard').hidden = true; selected = null; drawLayer(); }
+  });
+}
 </script>
 </body>
 </html>
