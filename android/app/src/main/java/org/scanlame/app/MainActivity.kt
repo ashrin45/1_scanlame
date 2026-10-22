@@ -701,7 +701,7 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
     var mode by remember { mutableStateOf(st.mode) }
     var advanced by remember { mutableStateOf(st.advanced) }
     var focus by remember { mutableStateOf(st.focusMode) }
-    var shutterCap by remember { mutableStateOf(st.shutterCapMs) }
+    var shutter by remember { mutableStateOf(st.shutter) }
     var ctemp by remember { mutableStateOf(st.ctemp) }
     var ev by remember { mutableStateOf(st.evComp) }
     var depth by remember { mutableStateOf(st.depth) }
@@ -731,7 +731,7 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
     fun save(): Boolean {
         val camChanged = cam0 != cameraId || st.mode != mode || st.analysisSide != aside || st.photoMaxSide != side || st.videoQuality != vq || st.videoMbps != vmbps || st.photoQuality != quality
         st.stain = stain; st.objective = objective; umpx.replace(',', '.').toFloatOrNull()?.let { st.setUmPerPx(objective, it) }
-        st.mode = mode; st.advanced = advanced; st.focusMode = focus; st.shutterCapMs = shutterCap; st.ctemp = ctemp; st.evComp = ev; st.depth = depth
+        st.mode = mode; st.advanced = advanced; st.focusMode = focus; st.shutter = shutter; st.ctemp = ctemp; st.evComp = ev; st.depth = depth
         st.cameraId = cameraId; st.zoomMax = zoomMax; st.zoom = st.zoom.coerceAtMost(zoomMax); st.zoomByCrop = zoomCrop; st.analysisSide = aside
         st.videoMbps = vmbps; st.videoQuality = vq; st.stillMs = stillMs; st.triggerDistance = trigDist; st.stepFrac = stepFrac; st.photoMaxSide = side; st.photoQuality = quality
         st.serverUrl = url; st.token = token; st.sendLog = sendLog; st.autoUpload = autoUpload; st.galleryUrl = gallery
@@ -794,7 +794,7 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
             Row(verticalAlignment = Alignment.CenterVertically) { Checkbox(advanced, { advanced = it }); Text("Fonctions en cours de validation : boutons « Fond blanc » et « Changer d'objectif » pendant la prise", fontSize = 14.sp, color = FG) }
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Select("Mise au point au verrouillage", listOf("inf" to "infini (oculaire à 0 dioptrie, recommandé)", "keep" to "garder la distance de l'autofocus"), focus, Modifier.weight(1f)) { focus = it }
-                Select("Temps de pose au verrouillage", listOf("0" to "garder la valeur courante", "8.3" to "1/120 s au plus (monter la lampe si sombre)", "4" to "1/250 s au plus", "2" to "1/500 s au plus"), if (shutterCap == 0f) "0" else shutterCap.toString().removeSuffix(".0"), Modifier.weight(1f)) { shutterCap = it.toFloat() }
+                Select("Pose au verrouillage", listOf("anti" to "10 ms : anti-scintillement de la lampe (recommandé)", "court" to "1/250 s au plus : lampe sans scintillement", "tel" to "garder la valeur du téléphone"), shutter, Modifier.weight(1f)) { shutter = it }
             }
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Select("Température de couleur au verrouillage", listOf("0" to "garder la valeur courante", "3200" to "3200 K (halogène)", "4000" to "4000 K", "5000" to "5000 K (LED blanche)", "5600" to "5600 K (lumière du jour)"), ctemp.toString(), Modifier.weight(1f)) { ctemp = it.toInt() }

@@ -35,6 +35,7 @@ class Settings(ctx: Context) {
     var zoomMax: Float get() = p.getFloat("zoommax", 4f); set(v) = p.edit().putFloat("zoommax", v).apply()
     var focusMode: String get() = str("focus", "inf"); set(v) = set("focus", v)         // inf | keep (au verrouillage)
     var shutterCapMs: Float get() = p.getFloat("shuttercap", 0f); set(v) = p.edit().putFloat("shuttercap", v).apply()   // 0 = garder la pose courante
+    var shutter: String get() = str("shutter", "anti"); set(v) = set("shutter", v)   // anti = 10 ms (un cycle du secteur) | court = 1/250 s au plus | tel = valeur du téléphone
     var ctemp: Int get() = p.getInt("ctemp", 0); set(v) = p.edit().putInt("ctemp", v).apply()       // 0 = figer la balance courante
     var evComp: Int get() = p.getInt("ev", 0); set(v) = p.edit().putInt("ev", v).apply()
     var advanced: Boolean get() = p.getBoolean("advanced", false); set(v) = p.edit().putBoolean("advanced", v).apply()

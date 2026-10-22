@@ -307,11 +307,24 @@ class CameraEngine(private val ctx: Context) {
         }
         // valeurs figees au moment du verrouillage (reutilisees telles quelles si on change le zoom ensuite)
         val lk = lockVals ?: run {
-            var expNs = lv.exposureNs ?: 10_000_000L; var iso = lv.iso ?: 200
-            val cap = (st.shutterCapMs * 1_000_000).toLong()
-            if (cap > 0 && expNs > cap) { iso = (iso.toDouble() * expNs / cap).roundToInt(); expNs = cap }
+            // pose au verrouillage : « anti » vise 10 ms, un cycle complet du secteur (100 Hz), pour une lumière stable malgré
+            // le scintillement de la lampe ; « court » plafonne à 1/250 s (lampe sans scintillement) ; « tel » garde la valeur mesurée.
+            // La luminosité est conservée en compensant par l'ISO ; si l'ISO bute sur sa limite, la pose reprend la différence.
+            val exp0 = lv.exposureNs ?: 10_000_000L; val iso0 = lv.iso ?: 200
+            val target = when (st.shutter) { "anti" -> 10_000_000L; "court" -> minOf(exp0, 4_000_000L); else -> exp0 }
+            var expNs = target; var iso = if (target == exp0) iso0 else (iso0.toDouble() * exp0 / target).roundToInt()
+            lockNote = ""
             val isoRange = chars?.get(CameraCharacteristics.SENSOR_INFO_SENSITIVITY_RANGE)
-            if (isoRange != null) iso = iso.coerceIn(isoRange.lower, isoRange.upper)
+            if (isoRange != null && iso < isoRange.lower) {
+                expNs = (expNs.toDouble() * iso / isoRange.lower).toLong(); iso = isoRange.lower
+                if (st.shutter == "anti" && expNs < 9_500_000L) lockNote = " ; lampe trop forte pour la pose anti-scintillement : baisse la lampe puis reverrouille"
+            }
+            if (isoRange != null && iso > isoRange.upper) {
+                expNs = (expNs.toDouble() * iso / isoRange.upper).toLong(); iso = isoRange.upper
+                lockNote = " ; lumière faible : pose allongée à ${expNs / 1e6} ms, monte la lampe si possible"
+            }
+            val expRange = chars?.get(CameraCharacteristics.SENSOR_INFO_EXPOSURE_TIME_RANGE)
+            if (expRange != null) expNs = expNs.coerceIn(expRange.lower, expRange.upper)
             Triple(expNs, iso, if (st.focusMode == "keep") (lv.focusDiopters ?: 0f) else 0f).also { lockVals = it }
         }
         val expNs = lk.first; val iso = lk.second
@@ -331,10 +344,11 @@ class CameraEngine(private val ctx: Context) {
         } else {
             b.setCaptureRequestOption(CaptureRequest.CONTROL_AWB_LOCK, true)
         }
-        if (lockVals === lk && !lockLogged) { lockLogged = true; Journal.log("verrouillage : focus ${if (st.focusMode == "keep") "distance courante ${lk.third}" else "infini"}, pose ${expNs / 1e6} ms, ISO $iso, WB ${if (st.ctemp > 0) "${st.ctemp} K" else "figée"}") }
+        if (lockVals === lk && !lockLogged) { lockLogged = true; Journal.log("verrouillage (${st.shutter}) : focus ${if (st.focusMode == "keep") "distance courante ${lk.third}" else "infini"}, pose ${expNs / 1e6} ms, ISO $iso, WB ${if (st.ctemp > 0) "${st.ctemp} K" else "figée"}$lockNote") }
     }
     private var lockVals: Triple<Long, Int, Float>? = null
     private var lockLogged = false
+    private var lockNote = ""
 
     fun setLocked(st: Settings, on: Boolean) { locked.value = on; lockVals = null; lockLogged = false; applyControls(st) }
 

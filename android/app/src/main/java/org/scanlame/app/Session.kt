@@ -429,7 +429,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
         state.value = state.value.copy(lastGrade = -1, sharpRef = 0f)
         st.objective = obj
         tracker = Tracker(); synchronized(placed) { placed.clear(); placedPhotos.clear() }; lastPos = null; lastShot = null; stillSince = 0L
-        Journal.log("objectif $obj : reprise à $t ms (calibration ${if (cal > 0) cal else "absente"}) ; profondeur ${if (st.depthFor(obj)) "oui" else "non"}")
+        Journal.log("objectif $obj : reprise à $t ms (calibration ${if (cal > 0) cal else "absente"}) ; profondeur ${if (st.depthFor(obj)) "oui" else "non"} ; pose ${(engine.live.value.exposureNs ?: 0L) / 1e6} ms, ISO ${engine.live.value.iso ?: 0}")
         switching = null
         state.value = state.value.copy(phase = "", objective = obj, message = "Objectif $obj : balayage des zones de détail.")
     }
@@ -476,7 +476,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             .put("width", W.roundToInt()).put("height", H.roundToInt()).put("zoom", st.zoom.toDouble())
             .put("app", "scanlame-android ${BuildConfig.VERSION_NAME}").put("device", "${Build.MANUFACTURER} ${Build.MODEL} Android ${Build.VERSION.RELEASE}")
             .put("camera", JSONObject().put("id", st.cameraId.ifEmpty { "auto" }).put("physical", st.physicalId.ifEmpty { null }).put("locked", engine.locked.value).put("focus", st.focusMode)
-                .put("shutter_cap_ms", st.shutterCapMs.toDouble()).put("ctemp", st.ctemp).put("ev", st.evComp).put("exposure_ns", engine.live.value.exposureNs ?: JSONObject.NULL).put("iso", engine.live.value.iso ?: JSONObject.NULL).put("analysis", engine.analysisSize?.toString())
+                .put("shutter", st.shutter).put("ctemp", st.ctemp).put("ev", st.evComp).put("exposure_ns", engine.live.value.exposureNs ?: JSONObject.NULL).put("iso", engine.live.value.iso ?: JSONObject.NULL).put("analysis", engine.analysisSize?.toString())
                 .put("photo", engine.photoSize?.toString()).put("video", engine.videoSize?.toString()).put("video_mbps", st.videoMbps).put("quality", st.photoQuality))
         Journal.log("=== série $id ($mode) « ${title.ifBlank { "sans nom" }} », ${st.stain}, objectif ${st.objective} : ${engine.bound.value}")
         state.value = State(running = true, mode = mode, seriesId = id, objective = st.objective, fieldW = W, fieldH = H,
