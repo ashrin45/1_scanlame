@@ -31,14 +31,23 @@ BUCKET = 'series'
 def ls(prefix):
     # le stockage repond parfois 500 ou 429 : nouvel essai avec attente (une lame publiee ne doit pas finir en echec pour ca)
     for attempt in range(6):
-        r = requests.post(f'{URL}/storage/v1/object/list/{BUCKET}', headers=H, json={'prefix': prefix, 'limit': 1000, 'sortBy': {'column': 'name', 'order': 'asc'}})
+        try:
+            r = requests.post(f'{URL}/storage/v1/object/list/{BUCKET}', headers=H, json={'prefix': prefix, 'limit': 1000, 'sortBy': {'column': 'name', 'order': 'asc'}}, timeout=60)
+        except requests.exceptions.RequestException as e:      # connexion coupee par le stockage : on reessaie aussi
+            if attempt == 5: raise
+            print(f'  {type(e).__name__} sur la liste {prefix or "/"} : nouvel essai dans {2 ** attempt} s'); time.sleep(2 ** attempt); continue
         if r.status_code in (429, 500, 502, 503, 504) and attempt < 5:
             print(f'  {r.status_code} sur la liste {prefix or "/"} : nouvel essai dans {2 ** attempt} s'); time.sleep(2 ** attempt); continue
         r.raise_for_status(); return r.json()
 def get(path, dest):
     # le stockage limite le debit (429) quand plusieurs prises se telechargent en meme temps : on attend et on reessaie
     for attempt in range(8):
-        with requests.get(f'{URL}/storage/v1/object/{BUCKET}/{path}', headers=H, stream=True) as r:
+        try:
+            r = requests.get(f'{URL}/storage/v1/object/{BUCKET}/{path}', headers=H, stream=True, timeout=120)
+        except requests.exceptions.RequestException as e:
+            if attempt == 7: raise
+            print(f'  {type(e).__name__} sur {path.rsplit("/", 1)[-1]} : nouvel essai dans {min(60, 2 ** attempt)} s'); time.sleep(min(60, 2 ** attempt)); continue
+        with r:
             if r.status_code in (429, 500, 502, 503, 504) and attempt < 7:
                 wait = float(r.headers.get('Retry-After') or 0) or min(60, 2 ** attempt)
                 print(f'  {r.status_code} sur {path.rsplit("/", 1)[-1]} : nouvel essai dans {wait:.0f} s'); time.sleep(wait); continue
