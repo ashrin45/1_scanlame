@@ -328,7 +328,6 @@ if (CELL_SOURCES.length) {
       p.setAttribute('points', c.p.map(q => q.join(',')).join(' '));
       const col = colorOf(c); p.setAttribute('stroke', col); p.setAttribute('fill', col);
       p.setAttribute('class', (c.classe ? '' : 'prop') + (c.bord ? ' bord' : '') + (selected === c.id ? ' sel' : ''));
-      p.addEventListener('click', ev => { ev.stopPropagation(); selected = c.id; fiche(c); draw(); });
       svg.appendChild(p);
     }
   }
@@ -360,6 +359,24 @@ if (CELL_SOURCES.length) {
     $('cpanel').innerHTML = h;
     $('cpanel').querySelectorAll('.cls').forEach(el => el.onclick = () => { const g = el.dataset.g; if (hidden.has(g)) hidden.delete(g); else hidden.add(g); panel(); draw(); });
   }
+  // clic sur une cellule : OpenSeadragon capture le pointeur de la souris (glisser pour se deplacer), le clic n'arrive donc jamais
+  // au contour sur ordinateur. On passe par le clic du visualiseur (souris et doigt) et on cherche la cellule sous le point.
+  const inPoly = (x, y, P) => { let ins = false; for (let i = 0, j = P.length - 1; i < P.length; j = i++) { const [xi, yi] = P[i], [xj, yj] = P[j]; if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / ((yj - yi) || 1e-9) + xi) ins = !ins; } return ins; };
+  viewer.addHandler('canvas-click', ev => {
+    if (!on || !data || !ev.quick) return;
+    const vp = viewer.viewport.pointFromPixel(ev.position), x = vp.x * W, y = vp.y * W;   // le calque couvre (0, 0, 1, H/W) avec une viewBox de W x H
+    let hit = null, best = Infinity;
+    for (const c of data.cellules) {
+      const b = c.bb; if (x < b[0] || x > b[2] || y < b[1] || y > b[3]) continue;
+      const key = c.classe || (c.propose && c.propose.cle) || null;
+      if (hidden.has(key ? groupOf(key) : 'sans')) continue;
+      const area = (b[2] - b[0]) * (b[3] - b[1]);
+      if (area < best && inPoly(x, y, c.p)) { hit = c; best = area; }
+    }
+    if (!hit) return;
+    ev.preventDefaultAction = true;          // pas de zoom au clic quand on touche une cellule
+    selected = hit.id; fiche(hit); draw();
+  });
   const applyCells = () => {
     if (on) { viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); $('cpanel').hidden = false; }
     else { viewer.removeOverlay(svg); $('cpanel').hidden = true; $('cfiche').hidden = true; }
@@ -377,7 +394,11 @@ if (CELL_SOURCES.length) {
       const T = src.T;   // enfant -> parent : x' = a x - b y + tx ; y' = b x + a y + ty
       const map = ([x, y]) => T ? [T[0] * x - T[1] * y + T[2], T[1] * x + T[0] * y + T[3]] : [x, y];
       const scale = T ? Math.hypot(T[0], T[1]) : 1;
-      for (const c of d.cellules) merged.cellules.push({ ...c, p: c.p.map(map).map(q => [Math.round(q[0] * 10) / 10, Math.round(q[1] * 10) / 10]), c: map(c.c), d: c.d * scale, from: src.title });
+      for (const c of d.cellules) {
+        const p = c.p.map(map).map(q => [Math.round(q[0] * 10) / 10, Math.round(q[1] * 10) / 10]);
+        const xs = p.map(q => q[0]), ys = p.map(q => q[1]);
+        merged.cellules.push({ ...c, p, bb: [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)], c: map(c.c), d: c.d * scale, from: src.title });
+      }
     }
     merged.problems = problems;
     return merged;
