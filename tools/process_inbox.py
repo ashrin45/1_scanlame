@@ -141,6 +141,11 @@ while True:
                     fullp = os.path.join(a.work, f'{slug}_full.jpg')
                     subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'telecharger_lame.py'), slug, '--local', '-o', fullp])
                     release_full(slug, fullp)
+            elif action == 'favori':
+                on = bool(cmd.get('on'))
+                print(f'{s} : {slug} {"ajoutée aux" if on else "retirée des"} favoris')
+                subprocess.run([sys.executable, os.path.join(ROOT, 'tools', 'edit_lame.py'), 'favori', slug, 'on' if on else 'off'], check=True)
+                if os.environ.get('GITHUB_ACTIONS'): git_publish(['lames'], f'Favori : {slug} ({"oui" if on else "non"})')
             else:
                 print(f'{s} : action inconnue {action}')
         except Exception as e:

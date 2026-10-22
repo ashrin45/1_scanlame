@@ -146,7 +146,17 @@ def crop(slug, x0, y0, x1, y1):
         print(f'  détail {cs} : rogné à la zone gardée')
         crop(cs, cx0, cy0, cx1, cy1)
 
+def favori(slug, on):
+    """Ajoute la lame aux favoris de la galerie (ou l'en retire)."""
+    j = load_lame(slug)
+    if not j: sys.exit('lame introuvable')
+    if on: j['favori'] = True
+    else: j.pop('favori', None)
+    save_lame(slug, j); write_gallery()
+    print(f'lame {slug} : {"ajoutée aux" if on else "retirée des"} favoris')
+
 if __name__ == '__main__':
     if sys.argv[1] == 'delete': delete(sys.argv[2])
     elif sys.argv[1] == 'crop': crop(sys.argv[2], *sys.argv[3:7])
+    elif sys.argv[1] == 'favori': favori(sys.argv[2], sys.argv[3].lower() in ('on', 'oui', '1', 'true'))
     else: sys.exit('action inconnue')

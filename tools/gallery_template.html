@@ -2,15 +2,22 @@
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lames virtuelles</title>
 <style>
-:root { --bg:#f3f0f4; --panel:#fff; --fg:#2b2433; --muted:#6e6478; --line:#d9d2de; --accent:#7a2e8c; --ok:#1b9466; --warn:#b7791f; --bad:#c0392b; }
-@media (prefers-color-scheme: dark) { :root { --bg:#17131b; --panel:#211c26; --fg:#ece6f0; --muted:#a79cb1; --line:#3a323f; --accent:#c58ad6; --ok:#3cc58e; --warn:#e2b25a; --bad:#ef6b5a; } }
+:root { --bg:#f3f0f4; --panel:#fff; --fg:#2b2433; --muted:#6e6478; --line:#d9d2de; --accent:#7a2e8c; --ok:#1b9466; --warn:#b7791f; --bad:#c0392b; --star:#b07800; }
+@media (prefers-color-scheme: dark) { :root { --bg:#17131b; --panel:#211c26; --fg:#ece6f0; --muted:#a79cb1; --line:#3a323f; --accent:#c58ad6; --ok:#3cc58e; --warn:#e2b25a; --bad:#ef6b5a; --star:#f0c24b; } }
 body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.4 system-ui,sans-serif; padding:20px max(16px, env(safe-area-inset-right)) 40px max(16px, env(safe-area-inset-left)); }
 h1 { font-size:20px; margin:0 0 4px; } p { color:var(--muted); margin:0 0 14px; }
 .filters { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 16px; }
 .filters button { font:600 13px system-ui,sans-serif; color:var(--muted); background:var(--panel); border:1px solid var(--line); border-radius:999px; padding:6px 12px; cursor:pointer; }
 .filters button[aria-pressed="true"] { color:var(--accent); border-color:var(--accent); }
 .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:14px; }
-.card { display:block; background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; color:inherit; text-decoration:none; position:relative; }
+.card { display:block; background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; position:relative; }
+.card > a { display:block; color:inherit; text-decoration:none; }
+.fav { position:absolute; top:8px; right:8px; width:40px; height:40px; border-radius:999px; border:1px solid var(--line); background:var(--panel); color:var(--muted); font:21px/1 system-ui,sans-serif; cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0; }
+.fav[aria-pressed="true"] { color:var(--star); border-color:var(--star); }
+.fav:hover { border-color:var(--star); }
+.fav:focus-visible, .filters button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.filters button.favf[aria-pressed="true"] { color:var(--star); border-color:var(--star); }
+#toast { position:fixed; left:50%; bottom:max(16px, env(safe-area-inset-bottom)); transform:translateX(-50%); z-index:5; width:max-content; max-width:min(560px, calc(100vw - 32px)); background:var(--panel); color:var(--fg); border:1px solid var(--line); border-radius:10px; padding:10px 14px; font-size:14px; box-shadow:0 6px 24px rgba(0,0,0,.18); }
 .card img { display:block; width:100%; aspect-ratio:3/2; object-fit:cover; background:#000; }
 .card .t { display:flex; flex-direction:column; gap:3px; padding:10px 12px; }
 .card b { font-size:15px; } .card small { color:var(--muted); }
@@ -33,11 +40,41 @@ h1 { font-size:20px; margin:0 0 4px; } p { color:var(--muted); margin:0 0 14px; 
     <option value="series">même prise, versions côte à côte</option>
   </select></label></div>
 <div class="grid" id="grid"></div>
+<div id="toast" role="status" hidden></div>
 <script>
 const ITEMS = __ITEMS__;
 const STAINS = __STAINS__;
 const grid = document.getElementById('grid'), filters = document.getElementById('filters');
 let fStain = null, fObj = null, sortBy = 'published';
+// favoris : enregistres avec la lame (tous les appareils) quand l'URL du serveur et le jeton sont connus sur cet appareil
+// (renseignes une fois dans « Modifier » d'une lame), sinon gardes sur cet appareil. En attendant la mise a jour du site,
+// le choix fait ici reste affiche.
+const LS = { get: k => { try { return localStorage.getItem(k); } catch (_) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (_) {} } };
+let fFav = LS.get('lames.favoris') === '1';
+let localFav = {}; try { localFav = JSON.parse(LS.get('lames.favoris.local') || '{}') || {}; } catch (_) { localFav = {}; }
+for (const [slug, e] of Object.entries(localFav)) {
+  const it = ITEMS.find(i => i.slug === slug);
+  if (!it || (e.sent && (it.favori === e.on || Date.now() - e.t > 6 * 3600e3))) delete localFav[slug];   // le site a pris la demande en compte
+}
+const saveLocal = () => LS.set('lames.favoris.local', JSON.stringify(localFav));
+saveLocal();
+const isFav = i => localFav[i.slug] ? localFav[i.slug].on : !!i.favori;
+let toastT = null;
+function toast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, 6000); }
+async function toggleFav(slug) {
+  const it = ITEMS.find(i => i.slug === slug); if (!it) return;
+  const on = !isFav(it);
+  localFav[slug] = { on, t: Date.now(), sent: false }; saveLocal(); refresh();
+  const url = (LS.get('scanlame.url') || '').trim().replace(/\/+$/, ''), token = (LS.get('scanlame.token') || '').trim();
+  if (!url || !token) { toast((on ? 'Ajoutée aux favoris' : 'Retirée des favoris') + ' sur cet appareil. Pour partager tes favoris entre téléphone et ordinateur, renseigne une fois l\'URL du serveur et le jeton dans « Modifier », sur la page d\'une lame.'); return; }
+  try {
+    const r = await fetch(url + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Token': token },
+      body: JSON.stringify({ series: 'edit_' + Date.now(), slug, action: 'favori', on }) });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    localFav[slug].sent = true; saveLocal();
+    toast((on ? 'Ajoutée aux favoris' : 'Retirée des favoris') + '. Ce sera visible sur tous tes appareils dans quelques minutes.');
+  } catch (e) { toast((on ? 'Ajoutée aux favoris' : 'Retirée des favoris') + ' sur cet appareil seulement : le serveur n\'a pas répondu (' + e.message + ').'); }
+}
 const capKey = i => { const m = /(\d{2})\/(\d{2})\/(\d{4}) ?(\d{2})?:?(\d{2})?/.exec(i.captured || ''); return m ? `${m[3]}${m[2]}${m[1]}${m[4] || '00'}${m[5] || '00'}` : ''; };
 const fmtDate = iso => { if (!iso) return ''; const d = new Date(iso); return isNaN(d) ? '' : d.toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }); };
 function sorted(list) {
@@ -52,7 +89,7 @@ function sorted(list) {
 }
 function tag(txt, cls) { return `<span class="tag ${cls || ''}">${txt}</span>`; }
 function render() {
-  const list = sorted(ITEMS.filter(i => (!fStain || i.stain === fStain) && (!fObj || i.objective === fObj)));
+  const list = sorted(ITEMS.filter(i => (!fFav || isFav(i)) && (!fStain || i.stain === fStain) && (!fObj || i.objective === fObj)));
   const byslug = Object.fromEntries(ITEMS.map(i => [i.slug, i]));
   grid.innerHTML = list.map(i => {
     const tags = [];
@@ -63,19 +100,22 @@ function render() {
     if (i.params) { const p = i.params; tags.push(tag('v' + (i.version || 1) + ' · prof. ' + (p.depth === 'on' ? 'on' : 'off') + ' · coutures ' + (p.seams === false ? 'droites' : 'fond') + (p.code ? ' · ' + p.code : ''))); }
     if (i.children.length) tags.push(tag(i.children.length + ' détail(s)', 'z'));
     if (i.parent && byslug[i.parent]) tags.push(tag('détail de « ' + byslug[i.parent].title + ' »'));
-    return `<a class="card" href="${i.slug}/"><img src="${i.thumb}" alt="" loading="lazy"><span class="t"><b>${esc(i.title)}</b><small>${i.width} × ${i.height} px${i.captured ? ' · prise ' + i.captured : ''}${i.published ? ' · publiée ' + fmtDate(i.published) : ''}${i.sample ? ' · ' + esc(i.sample) : ''}</small><span class="tags">${tags.join('')}</span></span></a>`;
-  }).join('') || '<div class="empty">Aucune lame pour ce filtre.</div>';
+    const fav = isFav(i);
+    return `<div class="card"><a href="${i.slug}/"><img src="${i.thumb}" alt="" loading="lazy"><span class="t"><b>${esc(i.title)}</b><small>${i.width} × ${i.height} px${i.captured ? ' · prise ' + i.captured : ''}${i.published ? ' · publiée ' + fmtDate(i.published) : ''}${i.sample ? ' · ' + esc(i.sample) : ''}</small><span class="tags">${tags.join('')}</span></span></a>`
+      + `<button type="button" class="fav" data-slug="${i.slug}" aria-pressed="${fav}" aria-label="${fav ? 'Retirer des favoris' : 'Ajouter aux favoris'} : ${esc(i.title)}" title="${fav ? 'Retirer des favoris' : 'Ajouter aux favoris'}">${fav ? '★' : '☆'}</button></div>`;
+  }).join('') || `<div class="empty">${fFav ? 'Aucune lame en favori pour ce filtre. Touche l\'étoile d\'une lame pour l\'ajouter.' : 'Aucune lame pour ce filtre.'}</div>`;
 }
 function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 function buildFilters() {
   const stains = [...new Set(ITEMS.map(i => i.stain).filter(Boolean))], objs = [...new Set(ITEMS.map(i => i.objective).filter(Boolean))].sort((a, b) => parseFloat(a) - parseFloat(b));
-  if (!stains.length && !objs.length) return;
-  const mk = (label, on, cb) => { const b = document.createElement('button'); b.textContent = label; b.setAttribute('aria-pressed', on); b.onclick = cb; filters.appendChild(b); };
-  mk('Toutes', !fStain && !fObj, () => { fStain = fObj = null; refresh(); });
+  const mk = (label, on, cb, cls) => { const b = document.createElement('button'); b.textContent = label; b.setAttribute('aria-pressed', on); b.onclick = cb; if (cls) b.className = cls; filters.appendChild(b); };
+  mk('Toutes', !fStain && !fObj && !fFav, () => { fStain = fObj = null; fFav = false; LS.set('lames.favoris', '0'); refresh(); });
+  mk(`★ Favoris (${ITEMS.filter(isFav).length})`, fFav, () => { fFav = !fFav; LS.set('lames.favoris', fFav ? '1' : '0'); refresh(); }, 'favf');
   for (const s of stains) mk(STAINS[s] || s, fStain === s, () => { fStain = fStain === s ? null : s; refresh(); });
   for (const o of objs) mk('objectif ' + o, fObj === o, () => { fObj = fObj === o ? null : o; refresh(); });
 }
 function refresh() { filters.innerHTML = ''; buildFilters(); render(); }
+grid.addEventListener('click', e => { const b = e.target.closest('.fav'); if (b) { e.preventDefault(); toggleFav(b.dataset.slug); } });
 document.getElementById('sort').onchange = e => { sortBy = e.target.value; try { localStorage.setItem('lames.sort', sortBy); } catch (_) {} render(); };
 try { const sv = localStorage.getItem('lames.sort'); if (sv) { sortBy = sv; document.getElementById('sort').value = sv; } } catch (_) {}
 refresh();
