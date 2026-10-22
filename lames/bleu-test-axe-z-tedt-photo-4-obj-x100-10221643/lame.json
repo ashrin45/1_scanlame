@@ -1,0 +1,159 @@
+{
+ "title": "bleu test axe z tedt photo 4 (obj. x100)",
+ "width": 8800,
+ "height": 6848,
+ "fields": 77,
+ "tiles": 353,
+ "tile": 512,
+ "maxlvl": 14,
+ "um_per_px": null,
+ "stain": "lactophenol",
+ "objective": "x100",
+ "sample": null,
+ "comment": null,
+ "captured": "22/10/2026 16:43",
+ "parent": "bleu-test-axe-z-tedt-photo-4-10221643",
+ "parent_transform": [
+  0.10387862074510329,
+  -0.006259751507330374,
+  2939.5632573174767,
+  3851.017367222228
+ ],
+ "parent_anchored": 50,
+ "parent_approx": null,
+ "outline": [
+  [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    6846.4
+   ],
+   [
+    8797.1,
+    6846.4
+   ],
+   [
+    8797.1,
+    0.0
+   ]
+  ]
+ ],
+ "cellules": null,
+ "hint": null,
+ "stage": null,
+ "stage_cal": null,
+ "stage_obs": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "recalage moyen (2.1 px)",
+   "17 champ(s) placé(s) sans recalage fin"
+  ],
+  "frames": {
+   "candidates": 93,
+   "blurred": 0,
+   "selected": 89,
+   "used": 79,
+   "tracked_only": 17
+  },
+  "residual_px": 2.15,
+  "residual_max_px": 20.91,
+  "holes": [],
+  "holes_frac": 0.0,
+  "coverage_px": 76675444,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 6.2,
+  "flat_field": "médiane",
+  "k1": 0.0,
+  "zstack_fields": 1,
+  "zstack_levels": 3
+ },
+ "series": "lame_20261022_164323_bleu-test-axe-z-tedt-photo-4",
+ "version": 1,
+ "params": {
+  "depth": "off",
+  "seams": true,
+  "fps": 4.0,
+  "reg_size": 1200,
+  "max_side": 32000,
+  "core": 0.7,
+  "tile": 2048,
+  "distortion": true,
+  "chroma": true,
+  "code": "32fa430"
+ },
+ "published": "2026-10-22T15:24:52+00:00",
+ "updated": "2026-10-22T15:24:55+00:00",
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 3,
+ "zstack_tiles": [
+  "1/0_0",
+  "10/0_0",
+  "10/1_0",
+  "11/0_0",
+  "11/0_1",
+  "11/1_0",
+  "11/1_1",
+  "11/2_0",
+  "11/2_1",
+  "12/0_0",
+  "12/0_1",
+  "12/0_2",
+  "12/0_3",
+  "12/1_0",
+  "12/1_1",
+  "12/1_2",
+  "12/1_3",
+  "12/2_1",
+  "12/2_2",
+  "12/2_3",
+  "12/3_1",
+  "12/3_2",
+  "12/3_3",
+  "12/4_0",
+  "12/4_1",
+  "12/4_2",
+  "12/4_3",
+  "13/0_1",
+  "13/0_4",
+  "13/1_3",
+  "13/2_0",
+  "13/5_5",
+  "13/5_6",
+  "13/6_6",
+  "13/7_2",
+  "13/7_6",
+  "13/8_3",
+  "13/8_4",
+  "13/8_5",
+  "13/8_6",
+  "14/11_12",
+  "14/11_13",
+  "14/12_12",
+  "14/12_13",
+  "14/13_13",
+  "14/1_3",
+  "2/0_0",
+  "3/0_0",
+  "4/0_0",
+  "5/0_0",
+  "6/0_0",
+  "7/0_0",
+  "8/0_0",
+  "9/0_0"
+ ],
+ "cropped": [
+  [
+   2000,
+   2320,
+   10800,
+   9168
+  ]
+ ]
+}

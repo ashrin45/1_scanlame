@@ -1,0 +1,1551 @@
+  1007.113  masque oculaire : 100 % du cadre utile (p95 199)
+  1007.382  masque oculaire : 100 % du cadre utile (p95 199)
+  1007.652  masque oculaire : 100 % du cadre utile (p95 199)
+  1007.922  masque oculaire : 100 % du cadre utile (p95 199)
+  1008.170  masque oculaire : 100 % du cadre utile (p95 199)
+  1008.445  masque oculaire : 100 % du cadre utile (p95 199)
+  1008.716  masque oculaire : 100 % du cadre utile (p95 199)
+  1008.983  masque oculaire : 100 % du cadre utile (p95 199)
+  1009.258  masque oculaire : 100 % du cadre utile (p95 199)
+  1009.522  masque oculaire : 100 % du cadre utile (p95 199)
+  1009.785  masque oculaire : 100 % du cadre utile (p95 199)
+  1010.055  masque oculaire : 100 % du cadre utile (p95 199)
+  1010.311  masque oculaire : 100 % du cadre utile (p95 200)
+  1010.577  masque oculaire : 100 % du cadre utile (p95 199)
+  1010.847  masque oculaire : 100 % du cadre utile (p95 200)
+  1011.118  masque oculaire : 100 % du cadre utile (p95 200)
+  1011.386  masque oculaire : 100 % du cadre utile (p95 199)
+  1011.654  masque oculaire : 100 % du cadre utile (p95 199)
+  1011.920  masque oculaire : 100 % du cadre utile (p95 199)
+  1012.187  masque oculaire : 100 % du cadre utile (p95 199)
+  1012.452  masque oculaire : 100 % du cadre utile (p95 199)
+  1012.723  masque oculaire : 100 % du cadre utile (p95 199)
+  1012.991  masque oculaire : 100 % du cadre utile (p95 199)
+  1013.257  masque oculaire : 100 % du cadre utile (p95 199)
+  1013.513  masque oculaire : 100 % du cadre utile (p95 199)
+  1013.779  masque oculaire : 100 % du cadre utile (p95 199)
+  1014.052  masque oculaire : 100 % du cadre utile (p95 199)
+  1014.321  masque oculaire : 100 % du cadre utile (p95 199)
+  1014.590  masque oculaire : 100 % du cadre utile (p95 199)
+  1014.857  masque oculaire : 100 % du cadre utile (p95 199)
+  1015.118  masque oculaire : 100 % du cadre utile (p95 199)
+  1015.380  masque oculaire : 100 % du cadre utile (p95 199)
+  1015.467  envoyé 00005.bin (46080 ko)
+  1015.648  masque oculaire : 100 % du cadre utile (p95 198)
+  1015.924  masque oculaire : 100 % du cadre utile (p95 199)
+  1016.182  masque oculaire : 100 % du cadre utile (p95 199)
+  1016.451  masque oculaire : 100 % du cadre utile (p95 199)
+  1016.711  masque oculaire : 100 % du cadre utile (p95 199)
+  1016.988  masque oculaire : 100 % du cadre utile (p95 199)
+  1017.249  masque oculaire : 100 % du cadre utile (p95 199)
+  1017.520  masque oculaire : 100 % du cadre utile (p95 199)
+  1017.785  masque oculaire : 100 % du cadre utile (p95 199)
+  1018.052  masque oculaire : 100 % du cadre utile (p95 199)
+  1018.316  masque oculaire : 100 % du cadre utile (p95 199)
+  1018.582  masque oculaire : 100 % du cadre utile (p95 199)
+  1018.850  masque oculaire : 100 % du cadre utile (p95 199)
+  1019.124  masque oculaire : 100 % du cadre utile (p95 199)
+  1019.395  masque oculaire : 100 % du cadre utile (p95 199)
+  1019.651  masque oculaire : 100 % du cadre utile (p95 199)
+  1019.925  masque oculaire : 100 % du cadre utile (p95 199)
+  1020.190  masque oculaire : 100 % du cadre utile (p95 199)
+  1020.454  masque oculaire : 100 % du cadre utile (p95 199)
+  1020.722  masque oculaire : 100 % du cadre utile (p95 199)
+  1020.981  masque oculaire : 100 % du cadre utile (p95 199)
+  1021.247  masque oculaire : 100 % du cadre utile (p95 199)
+  1021.524  masque oculaire : 100 % du cadre utile (p95 200)
+  1021.781  masque oculaire : 100 % du cadre utile (p95 199)
+  1022.050  masque oculaire : 100 % du cadre utile (p95 199)
+  1022.323  masque oculaire : 100 % du cadre utile (p95 199)
+  1022.583  masque oculaire : 100 % du cadre utile (p95 199)
+  1022.858  masque oculaire : 100 % du cadre utile (p95 199)
+  1023.125  masque oculaire : 100 % du cadre utile (p95 199)
+  1023.383  masque oculaire : 100 % du cadre utile (p95 199)
+  1023.655  masque oculaire : 100 % du cadre utile (p95 199)
+  1023.927  masque oculaire : 100 % du cadre utile (p95 199)
+  1024.185  masque oculaire : 100 % du cadre utile (p95 199)
+  1024.460  masque oculaire : 100 % du cadre utile (p95 199)
+  1024.712  masque oculaire : 100 % du cadre utile (p95 199)
+  1024.992  masque oculaire : 100 % du cadre utile (p95 199)
+  1025.258  masque oculaire : 100 % du cadre utile (p95 199)
+  1025.518  masque oculaire : 100 % du cadre utile (p95 199)
+  1025.789  masque oculaire : 100 % du cadre utile (p95 199)
+  1026.055  masque oculaire : 100 % du cadre utile (p95 199)
+  1026.316  masque oculaire : 100 % du cadre utile (p95 199)
+  1026.586  masque oculaire : 100 % du cadre utile (p95 199)
+  1026.855  masque oculaire : 100 % du cadre utile (p95 199)
+  1027.118  masque oculaire : 100 % du cadre utile (p95 199)
+  1027.390  masque oculaire : 100 % du cadre utile (p95 199)
+  1027.657  masque oculaire : 100 % du cadre utile (p95 199)
+  1027.920  masque oculaire : 100 % du cadre utile (p95 199)
+  1028.203  masque oculaire : 100 % du cadre utile (p95 199)
+  1028.450  masque oculaire : 100 % du cadre utile (p95 199)
+  1028.718  masque oculaire : 100 % du cadre utile (p95 199)
+  1029.003  masque oculaire : 100 % du cadre utile (p95 199)
+  1029.260  masque oculaire : 100 % du cadre utile (p95 199)
+  1029.530  masque oculaire : 100 % du cadre utile (p95 199)
+  1029.775  masque oculaire : 100 % du cadre utile (p95 199)
+  1030.055  masque oculaire : 100 % du cadre utile (p95 199)
+  1030.331  masque oculaire : 100 % du cadre utile (p95 199)
+  1030.586  masque oculaire : 100 % du cadre utile (p95 199)
+  1030.852  masque oculaire : 100 % du cadre utile (p95 199)
+  1031.120  masque oculaire : 100 % du cadre utile (p95 199)
+  1031.387  masque oculaire : 100 % du cadre utile (p95 199)
+  1031.659  masque oculaire : 100 % du cadre utile (p95 199)
+  1031.922  masque oculaire : 100 % du cadre utile (p95 199)
+  1032.194  masque oculaire : 100 % du cadre utile (p95 199)
+  1032.455  masque oculaire : 100 % du cadre utile (p95 199)
+  1032.725  masque oculaire : 100 % du cadre utile (p95 199)
+  1032.988  masque oculaire : 100 % du cadre utile (p95 199)
+  1033.256  masque oculaire : 100 % du cadre utile (p95 199)
+  1033.523  masque oculaire : 100 % du cadre utile (p95 199)
+  1033.790  masque oculaire : 100 % du cadre utile (p95 199)
+  1034.057  masque oculaire : 100 % du cadre utile (p95 199)
+  1034.320  masque oculaire : 100 % du cadre utile (p95 199)
+  1034.591  masque oculaire : 100 % du cadre utile (p95 199)
+  1034.854  masque oculaire : 100 % du cadre utile (p95 199)
+  1035.126  masque oculaire : 100 % du cadre utile (p95 199)
+  1035.384  masque oculaire : 100 % du cadre utile (p95 199)
+  1035.657  masque oculaire : 100 % du cadre utile (p95 199)
+  1035.920  masque oculaire : 100 % du cadre utile (p95 199)
+  1036.190  masque oculaire : 100 % du cadre utile (p95 199)
+  1036.461  masque oculaire : 100 % du cadre utile (p95 199)
+  1036.716  masque oculaire : 100 % du cadre utile (p95 199)
+  1036.994  masque oculaire : 100 % du cadre utile (p95 199)
+  1037.256  masque oculaire : 100 % du cadre utile (p95 199)
+  1037.526  masque oculaire : 100 % du cadre utile (p95 199)
+  1037.785  masque oculaire : 100 % du cadre utile (p95 199)
+  1038.051  masque oculaire : 100 % du cadre utile (p95 199)
+  1038.319  masque oculaire : 100 % du cadre utile (p95 199)
+  1038.596  masque oculaire : 100 % du cadre utile (p95 199)
+  1038.857  masque oculaire : 100 % du cadre utile (p95 199)
+  1039.126  masque oculaire : 100 % du cadre utile (p95 199)
+  1039.397  masque oculaire : 100 % du cadre utile (p95 199)
+  1039.652  masque oculaire : 100 % du cadre utile (p95 199)
+  1039.921  masque oculaire : 100 % du cadre utile (p95 199)
+  1040.191  masque oculaire : 100 % du cadre utile (p95 199)
+  1040.447  masque oculaire : 100 % du cadre utile (p95 199)
+  1040.722  masque oculaire : 100 % du cadre utile (p95 199)
+  1040.985  masque oculaire : 100 % du cadre utile (p95 199)
+  1041.260  masque oculaire : 100 % du cadre utile (p95 199)
+  1041.532  masque oculaire : 100 % du cadre utile (p95 199)
+  1041.792  masque oculaire : 100 % du cadre utile (p95 199)
+  1042.059  masque oculaire : 100 % du cadre utile (p95 199)
+  1042.325  masque oculaire : 100 % du cadre utile (p95 199)
+  1042.592  masque oculaire : 100 % du cadre utile (p95 199)
+  1042.868  masque oculaire : 100 % du cadre utile (p95 199)
+  1043.126  masque oculaire : 100 % du cadre utile (p95 199)
+  1043.386  masque oculaire : 100 % du cadre utile (p95 199)
+  1043.664  masque oculaire : 100 % du cadre utile (p95 199)
+  1043.924  masque oculaire : 100 % du cadre utile (p95 199)
+  1044.198  masque oculaire : 100 % du cadre utile (p95 199)
+  1044.458  masque oculaire : 100 % du cadre utile (p95 199)
+  1044.725  masque oculaire : 100 % du cadre utile (p95 199)
+  1044.995  masque oculaire : 100 % du cadre utile (p95 199)
+  1045.261  masque oculaire : 100 % du cadre utile (p95 199)
+  1045.526  masque oculaire : 100 % du cadre utile (p95 199)
+  1045.790  masque oculaire : 100 % du cadre utile (p95 199)
+  1046.064  masque oculaire : 100 % du cadre utile (p95 199)
+  1046.327  masque oculaire : 100 % du cadre utile (p95 199)
+  1046.584  masque oculaire : 100 % du cadre utile (p95 199)
+[... 4450 lignes omises ...]
+  4564.176  t0071689 suivi ok score 0.93 pos 2819,1445 net 45 (26 ms) carte 25 photos + 300 positions
+  4564.507  t0072019 suivi ok score 0.93 pos 1830,1429 net 40 (29 ms) carte 25 photos + 300 positions
+  4564.831  t0072343 suivi ok score 0.92 pos 1702,1429 net 36 (21 ms) carte 25 photos + 300 positions
+  4565.165  t0072678 suivi ok score 0.94 pos 1538,1429 net 39 (19 ms) carte 25 photos + 300 positions
+  4565.494  t0073007 suivi ok score 0.93 pos 1392,1429 net 34 (16 ms) carte 25 photos + 300 positions
+  4565.830  t0073343 suivi ok score 0.95 pos 976,1417 net 43 (19 ms) carte 25 photos + 300 positions
+  4566.012  photo en mouvement lent (63 % du champ, 21 u/s)
+  4566.160  t0073674 suivi ok score 0.97 pos 868,1414 net 53 (20 ms) carte 25 photos + 300 positions
+  4566.224  photo o-4_0026 à 878,1417 (405 ko, 211 ms)
+  4566.500  t0074013 suivi ok score 0.96 pos 883,1431 net 43 (21 ms) carte 26 photos + 300 positions
+  4566.830  t0074343 suivi ok score 0.96 pos 883,1431 net 50 (22 ms) carte 26 photos + 300 positions
+  4567.171  t0074683 suivi ok score 0.97 pos 883,1415 net 53 (23 ms) carte 26 photos + 300 positions
+  4567.248  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0026.jpg (405 ko)
+  4567.495  t0075009 suivi ok score 0.96 pos 230,1404 net 27 (16 ms) carte 26 photos + 300 positions
+  4567.832  t0075345 suivi ok score 0.97 pos -218,1400 net 55 (19 ms) carte 26 photos + 300 positions
+  4568.182  t0075694 suivi ok score 0.98 pos -206,1401 net 40 (28 ms) carte 26 photos + 300 positions
+  4568.273  photo o-4_0027 à -206,1404 (410 ko, 203 ms)
+  4568.497  t0076011 suivi ok score 0.98 pos -206,1402 net 42 (24 ms) carte 27 photos + 300 positions
+  4568.836  t0076350 suivi ok score 0.98 pos -206,1402 net 42 (22 ms) carte 27 photos + 300 positions
+  4569.161  t0076674 suivi ok score 0.98 pos -206,1402 net 42 (19 ms) carte 27 photos + 300 positions
+  4569.253  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0027.jpg (410 ko)
+  4569.498  t0077011 suivi ok score 0.98 pos -203,1389 net 50 (21 ms) carte 27 photos + 300 positions
+  4569.830  t0077343 suivi ok score 0.97 pos -206,1752 net 48 (21 ms) carte 27 photos + 300 positions
+  4570.163  t0077677 suivi ok score 0.95 pos -206,2090 net 44 (19 ms) carte 27 photos + 300 positions
+  4570.511  t0078023 suivi ok score 0.95 pos -214,2533 net 42 (30 ms) carte 27 photos + 300 positions
+  4570.846  t0078359 suivi ok score 0.94 pos -226,3084 net 53 (21 ms) carte 27 photos + 300 positions
+  4571.163  t0078675 suivi ok score 0.95 pos -229,4036 net 45 (17 ms) carte 27 photos + 300 positions
+  4571.397  photo en mouvement lent (77 % du champ, 37 u/s)
+  4571.397  ATTENTION pas trop grand (77 % du champ) : recouvrement insuffisant
+  4571.502  t0079015 suivi ok score 0.93 pos -241,4608 net 50 (22 ms) carte 27 photos + 300 positions
+  4571.614  photo o-4_0028 à -241,4545 (399 ko, 217 ms)
+  4571.827  t0079340 suivi ok score 0.95 pos -241,4625 net 32 (17 ms) carte 28 photos + 300 positions
+  4572.173  t0079687 suivi ok score 0.96 pos -249,4625 net 52 (24 ms) carte 28 photos + 300 positions
+  4572.506  t0080019 suivi ok score 0.95 pos -244,4625 net 52 (21 ms) carte 28 photos + 300 positions
+  4572.833  t0080346 suivi ok score 0.96 pos -241,4625 net 52 (18 ms) carte 28 photos + 300 positions
+  4572.951  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0028.jpg (399 ko)
+  4573.162  t0080675 suivi ok score 0.96 pos -253,4625 net 51 (19 ms) carte 28 photos + 300 positions
+  4573.500  t0081013 suivi ok score 0.95 pos -242,4629 net 52 (19 ms) carte 28 photos + 300 positions
+  4573.830  t0081343 suivi ok score 0.95 pos -241,4630 net 51 (17 ms) carte 28 photos + 300 positions
+  4574.167  t0081681 suivi ok score 0.95 pos -244,4641 net 51 (21 ms) carte 28 photos + 300 positions
+  4574.517  t0082029 suivi ok score 0.95 pos -241,4630 net 52 (37 ms) carte 28 photos + 300 positions
+  4574.831  t0082343 suivi ok score 0.94 pos -241,4625 net 52 (21 ms) carte 28 photos + 300 positions
+  4575.168  t0082681 suivi ok score 0.94 pos -253,4630 net 51 (22 ms) carte 28 photos + 300 positions
+  4575.497  t0083010 suivi ok score 0.94 pos -241,4636 net 50 (18 ms) carte 28 photos + 300 positions
+  4575.837  t0083350 suivi ok score 0.96 pos -241,4641 net 52 (24 ms) carte 28 photos + 300 positions
+  4576.167  t0083680 suivi ok score 0.95 pos -241,4641 net 51 (18 ms) carte 28 photos + 300 positions
+  4576.496  t0084010 suivi ok score 0.95 pos -241,4641 net 49 (19 ms) carte 28 photos + 300 positions
+  4576.832  t0084345 suivi ok score 0.96 pos -241,4641 net 50 (22 ms) carte 28 photos + 300 positions
+  4577.167  t0084680 suivi ok score 0.96 pos -241,4641 net 52 (21 ms) carte 28 photos + 300 positions
+  4577.504  t0085017 suivi ok score 0.95 pos -241,4656 net 53 (22 ms) carte 28 photos + 300 positions
+  4577.835  t0085348 suivi ok score 0.96 pos -241,4737 net 51 (23 ms) carte 28 photos + 300 positions
+  4578.169  t0085682 suivi ok score 0.95 pos -241,4800 net 49 (19 ms) carte 28 photos + 300 positions
+  4578.504  t0086017 suivi ok score 0.93 pos -253,4960 net 52 (21 ms) carte 28 photos + 300 positions
+  4578.842  t0086355 suivi ok score 0.96 pos -253,5056 net 48 (28 ms) carte 28 photos + 300 positions
+  4579.169  t0086682 suivi ok score 0.96 pos -253,5040 net 49 (19 ms) carte 28 photos + 300 positions
+  4579.523  t0087035 suivi ok score 0.95 pos -253,5040 net 39 (35 ms) carte 28 photos + 300 positions
+  4579.831  t0087345 suivi ok score 0.96 pos -253,5040 net 51 (19 ms) carte 28 photos + 300 positions
+  4580.169  t0087682 suivi ok score 0.96 pos -253,5040 net 44 (21 ms) carte 28 photos + 300 positions
+  4580.511  t0088023 suivi ok score 0.95 pos -253,5040 net 44 (27 ms) carte 28 photos + 300 positions
+  4580.857  t0088371 suivi ok score 0.96 pos -241,5040 net 41 (23 ms) carte 28 photos + 300 positions
+  4581.190  t0088703 suivi ok score 0.96 pos -217,5040 net 39 (38 ms) carte 28 photos + 300 positions
+  4581.512  t0089024 suivi ok score 0.95 pos -193,5040 net 37 (29 ms) carte 28 photos + 300 positions
+  4581.846  t0089359 suivi ok score 0.96 pos -158,5040 net 37 (24 ms) carte 28 photos + 300 positions
+  4582.177  t0089690 suivi ok score 0.96 pos -169,5040 net 45 (22 ms) carte 28 photos + 300 positions
+  4582.502  t0090015 suivi ok score 0.96 pos -169,5040 net 45 (20 ms) carte 28 photos + 300 positions
+  4582.842  t0090355 suivi ok score 0.96 pos -158,5040 net 42 (27 ms) carte 28 photos + 300 positions
+  4583.187  t0090699 suivi ok score 0.95 pos -147,5040 net 36 (35 ms) carte 28 photos + 300 positions
+  4583.511  t0091024 suivi ok score 0.94 pos -11,5040 net 33 (22 ms) carte 28 photos + 300 positions
+  4583.835  t0091348 suivi ok score 0.92 pos 487,5040 net 28 (17 ms) carte 28 photos + 300 positions
+  4584.168  t0091681 suivi ok score 0.93 pos 763,5040 net 32 (18 ms) carte 28 photos + 300 positions
+  4584.516  t0092029 suivi ok score 0.93 pos 957,5040 net 31 (37 ms) carte 28 photos + 300 positions
+  4584.836  t0092349 suivi ok score 0.93 pos 1457,5040 net 34 (24 ms) carte 28 photos + 300 positions
+  4584.836  photo en mouvement lent (57 % du champ, 26 u/s)
+  4585.048  photo o-4_0029 à 1457,5040 (398 ko, 211 ms)
+  4585.160  t0092674 suivi ok score 0.94 pos 1457,5067 net 57 (18 ms) carte 29 photos + 300 positions
+  4585.504  t0093017 suivi ok score 0.94 pos 1456,5067 net 50 (21 ms) carte 29 photos + 300 positions
+  4585.833  t0093346 suivi ok score 0.94 pos 1456,5067 net 51 (18 ms) carte 29 photos + 300 positions
+  4586.162  t0093676 suivi ok score 0.94 pos 1456,5067 net 50 (18 ms) carte 29 photos + 300 positions
+  4586.331  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0029.jpg (398 ko)
+  4586.500  t0094013 suivi ok score 0.94 pos 1448,5051 net 43 (18 ms) carte 29 photos + 300 positions
+  4586.834  t0094347 suivi ok score 0.93 pos 1423,5051 net 41 (20 ms) carte 29 photos + 300 positions
+  4587.167  t0094680 suivi ok score 0.94 pos 1278,5051 net 42 (20 ms) carte 29 photos + 300 positions
+  4587.499  t0095011 suivi ok score 0.94 pos 512,5040 net 31 (18 ms) carte 29 photos + 300 positions
+  4587.835  t0095348 suivi ok score 0.95 pos 524,5055 net 44 (18 ms) carte 29 photos + 300 positions
+  4588.029  photo o-4_0030 à 524,5052 (403 ko, 225 ms)
+  4588.176  t0095690 suivi ok score 0.95 pos 524,5055 net 47 (27 ms) carte 30 photos + 300 positions
+  4588.502  t0096016 suivi ok score 0.95 pos 524,5055 net 48 (22 ms) carte 30 photos + 300 positions
+  4588.846  t0096358 suivi ok score 0.95 pos 524,5055 net 46 (25 ms) carte 30 photos + 300 positions
+  4589.168  t0096680 suivi ok score 0.95 pos 524,5055 net 45 (21 ms) carte 30 photos + 300 positions
+  4589.329  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0030.jpg (403 ko)
+  4589.507  t0097020 suivi ok score 0.95 pos 524,5055 net 43 (26 ms) carte 30 photos + 300 positions
+  4589.834  t0097347 suivi ok score 0.95 pos 524,5055 net 45 (19 ms) carte 30 photos + 300 positions
+  4590.190  t0097702 suivi ok score 0.95 pos 524,5055 net 46 (35 ms) carte 30 photos + 300 positions
+  4590.501  t0098015 suivi ok score 0.95 pos 524,5055 net 43 (19 ms) carte 30 photos + 300 positions
+  4590.838  t0098352 suivi ok score 0.95 pos 524,5055 net 46 (19 ms) carte 30 photos + 300 positions
+  4591.048  rafale : doigt posé
+  4591.075  plan en rafale : pile 30, plan 2, netteté 45
+  4591.177  t0098690 suivi ok score 0.95 pos 524,5055 net 46 (26 ms) carte 30 photos + 300 positions
+  4591.295  plan o-4_0031 (pile 30, plan 2, 405 ko)
+  4591.365  plan en rafale : pile 30, plan 3, netteté 45
+  4591.497  t0099010 suivi ok score 0.95 pos 524,5055 net 44 (17 ms) carte 30 photos + 300 positions
+  4591.588  plan o-4_0032 (pile 30, plan 3, 405 ko)
+  4591.599  rafale : doigt levé (3 plan(s) sur ce champ)
+  4591.832  t0099345 suivi ok score 0.95 pos 524,5055 net 46 (18 ms) carte 30 photos + 300 positions
+  4592.170  t0099684 suivi ok score 0.95 pos 524,5055 net 45 (19 ms) carte 30 photos + 300 positions
+  4592.326  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0031.jpg (405 ko)
+  4592.503  t0100016 suivi ok score 0.95 pos 524,5055 net 44 (20 ms) carte 30 photos + 300 positions
+  4592.508  réglages appliqués : zoom 2.4 (recadrage), AF/AE verrouillés, EV 0
+  4592.836  t0100349 suivi ok score 0.95 pos 532,5055 net 46 (20 ms) carte 30 photos + 300 positions
+  4593.167  t0100680 suivi ok score 0.95 pos 536,5055 net 45 (18 ms) carte 30 photos + 300 positions
+  4593.386  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+  4593.502  t0101015 suivi ok score 0.95 pos 536,5055 net 47 (17 ms) carte 30 photos + 300 positions
+  4593.841  t0101354 suivi ok score 0.95 pos 533,5055 net 46 (22 ms) carte 30 photos + 300 positions
+  4594.169  t0101682 suivi ok score 0.95 pos 535,5055 net 52 (18 ms) carte 30 photos + 300 positions
+  4594.504  t0102017 suivi ok score 0.95 pos 527,5055 net 35 (19 ms) carte 30 photos + 300 positions
+  4594.833  t0102347 suivi ok score 0.94 pos 536,5055 net 34 (19 ms) carte 30 photos + 300 positions
+  4595.168  t0102681 suivi ok score 0.94 pos 536,5055 net 34 (21 ms) carte 30 photos + 300 positions
+  4595.516  t0103029 suivi ok score 0.94 pos 548,5055 net 30 (24 ms) carte 30 photos + 300 positions
+  4595.842  t0103355 suivi ok score 0.92 pos 990,5040 net 26 (22 ms) carte 30 photos + 300 positions
+  4596.178  t0103691 suivi ok score 0.93 pos 1588,5062 net 44 (24 ms) carte 30 photos + 300 positions
+  4596.508  t0104021 suivi ok score 0.94 pos 1588,5067 net 52 (20 ms) carte 30 photos + 300 positions
+  4596.734  photo o-4_0033 à 1588,5067 (393 ko, 251 ms)
+  4596.832  t0104346 suivi ok score 0.94 pos 1588,5067 net 53 (19 ms) carte 31 photos + 300 positions
+  4597.174  t0104687 suivi ok score 0.93 pos 1899,5067 net 51 (26 ms) carte 31 photos + 300 positions
+  4597.503  t0105015 suivi ok score 0.94 pos 2006,5067 net 54 (20 ms) carte 31 photos + 300 positions
+  4597.811  photo en mouvement lent (74 % du champ, 28 u/s)
+  4597.811  ATTENTION pas trop grand (74 % du champ) : recouvrement insuffisant
+  4597.841  t0105355 suivi ok score 0.93 pos 3868,5078 net 45 (21 ms) carte 31 photos + 300 positions
+  4598.031  photo o-4_0034 à 3854,5067 (403 ko, 219 ms)
+  4598.177  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0032.jpg (405 ko)
+  4598.178  t0105691 suivi ok score 0.95 pos 3868,5094 net 51 (24 ms) carte 32 photos + 300 positions
+  4598.503  t0106016 suivi ok score 0.95 pos 3865,5094 net 52 (18 ms) carte 32 photos + 300 positions
+  4598.840  t0106354 suivi ok score 0.95 pos 3856,5094 net 53 (22 ms) carte 32 photos + 300 positions
+  4599.168  t0106681 suivi ok score 0.94 pos 4083,5078 net 51 (19 ms) carte 32 photos + 300 positions
+  4599.218  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0033.jpg (393 ko)
+  4599.509  t0107021 suivi ok score 0.95 pos 4164,5078 net 47 (23 ms) carte 32 photos + 300 positions
+  4599.841  t0107354 suivi ok score 0.95 pos 4442,5078 net 50 (23 ms) carte 32 photos + 300 positions
+  4600.180  t0107693 suivi ok score 0.96 pos 4466,5094 net 52 (23 ms) carte 32 photos + 300 positions
+  4600.499  photo o-4_0035 à 4454,5094 (406 ko, 211 ms)
+  4600.507  t0108020 suivi ok score 0.96 pos 4454,5094 net 52 (23 ms) carte 33 photos + 300 positions
+  4600.836  t0108350 suivi ok score 0.96 pos 4454,5094 net 46 (17 ms) carte 33 photos + 300 positions
+  4601.168  t0108681 suivi ok score 0.95 pos 4693,5078 net 47 (18 ms) carte 33 photos + 300 positions
+  4601.403  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0034.jpg (403 ko)
+  4601.507  t0109020 suivi ok score 0.93 pos 5479,5078 net 47 (21 ms) carte 33 photos + 300 positions
+  4601.841  t0109354 suivi ok score 0.97 pos 6057,5089 net 42 (22 ms) carte 33 photos + 300 positions
+  4601.841  photo en mouvement lent (52 % du champ, 37 u/s)
+  4602.063  photo o-4_0036 à 6057,5089 (418 ko, 222 ms)
+  4602.168  t0109681 suivi ok score 0.97 pos 6045,5092 net 43 (18 ms) carte 34 photos + 300 positions
+  4602.501  t0110014 suivi ok score 0.98 pos 6045,5092 net 50 (18 ms) carte 34 photos + 300 positions
+  4602.669  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0035.jpg (406 ko)
+  4602.837  t0110351 suivi ok score 0.97 pos 6045,5092 net 48 (19 ms) carte 34 photos + 300 positions
+  4603.169  t0110682 suivi ok score 0.97 pos 6221,5092 net 46 (18 ms) carte 34 photos + 300 positions
+  4603.518  t0111030 suivi ok score 0.97 pos 6370,5076 net 45 (29 ms) carte 34 photos + 300 positions
+  4603.871  t0111383 suivi ok score 0.97 pos 6750,5092 net 47 (36 ms) carte 34 photos + 300 positions
+  4604.189  t0111702 suivi ok score 0.97 pos 7192,5092 net 46 (28 ms) carte 34 photos + 300 positions
+  4604.521  t0112034 suivi ok score 0.96 pos 7515,5092 net 46 (23 ms) carte 34 photos + 300 positions
+  4604.840  t0112353 suivi ok score 0.95 pos 8077,5104 net 46 (18 ms) carte 34 photos + 300 positions
+  4605.018  photo en mouvement lent (74 % du champ, 38 u/s)
+  4605.018  ATTENTION pas trop grand (74 % du champ) : recouvrement insuffisant
+  4605.166  t0112679 suivi ok score 0.97 pos 8328,5108 net 50 (16 ms) carte 34 photos + 300 positions
+  4605.236  photo o-4_0037 à 8327,5105 (403 ko, 217 ms)
+  4605.506  t0113020 suivi ok score 0.97 pos 8324,5107 net 49 (24 ms) carte 35 photos + 300 positions
+  4605.837  t0113351 suivi ok score 0.97 pos 8324,5107 net 44 (21 ms) carte 35 photos + 300 positions
+  4606.182  t0113695 suivi ok score 0.97 pos 8324,5107 net 42 (22 ms) carte 35 photos + 300 positions
+  4606.431  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0036.jpg (418 ko)
+  4606.520  t0114033 suivi ok score 0.97 pos 8324,5107 net 32 (29 ms) carte 35 photos + 300 positions
+  4606.841  t0114354 suivi ok score 0.96 pos 8312,5107 net 36 (23 ms) carte 35 photos + 300 positions
+  4607.181  t0114694 suivi ok score 0.97 pos 8324,5107 net 42 (23 ms) carte 35 photos + 300 positions
+  4607.517  t0115029 suivi ok score 0.96 pos 8356,5103 net 36 (30 ms) carte 35 photos + 300 positions
+  4607.820  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0037.jpg (403 ko)
+  4607.837  t0115350 suivi ok score 0.92 pos 9037,5107 net 36 (18 ms) carte 35 photos + 300 positions
+  4608.177  t0115690 suivi ok score 0.96 pos 9719,5107 net 38 (22 ms) carte 35 photos + 300 positions
+  4608.503  t0116016 suivi ok score 0.97 pos 9707,5123 net 49 (18 ms) carte 35 photos + 300 positions
+  4608.718  photo o-4_0038 à 9707,5123 (401 ko, 215 ms)
+  4608.835  t0116348 suivi ok score 0.97 pos 9707,5123 net 49 (17 ms) carte 36 photos + 300 positions
+  4609.172  t0116686 suivi ok score 0.96 pos 10245,5108 net 41 (19 ms) carte 36 photos + 300 positions
+  4609.508  t0117021 suivi ok score 0.97 pos 10544,5107 net 35 (21 ms) carte 36 photos + 300 positions
+  4609.843  t0117356 suivi ok score 0.96 pos 10915,5107 net 45 (24 ms) carte 36 photos + 300 positions
+  4610.036  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0038.jpg (401 ko)
+  4610.180  t0117693 suivi ok score 0.97 pos 10927,5123 net 37 (25 ms) carte 36 photos + 300 positions
+  4610.466  photo o-4_0039 à 10927,5123 (410 ko, 224 ms)
+  4610.503  t0118017 suivi ok score 0.97 pos 10927,5123 net 48 (17 ms) carte 37 photos + 300 positions
+  4610.835  t0118349 suivi ok score 0.97 pos 10927,5123 net 50 (18 ms) carte 37 photos + 300 positions
+  4611.175  t0118689 suivi ok score 0.96 pos 11117,5123 net 47 (21 ms) carte 37 photos + 300 positions
+  4611.515  t0119027 suivi ok score 0.96 pos 11683,5123 net 47 (23 ms) carte 37 photos + 300 positions
+  4611.665  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0039.jpg (410 ko)
+  4611.841  t0119354 suivi ok score 0.97 pos 11778,5123 net 50 (20 ms) carte 37 photos + 300 positions
+  4612.138  photo o-4_0040 à 11788,5123 (414 ko, 224 ms)
+  4612.174  t0119687 suivi ok score 0.97 pos 11776,5123 net 48 (17 ms) carte 38 photos + 300 positions
+  4612.504  t0120017 suivi ok score 0.98 pos 11775,5123 net 51 (17 ms) carte 38 photos + 300 positions
+  4612.842  t0120355 suivi ok score 0.97 pos 11775,5123 net 50 (21 ms) carte 38 photos + 300 positions
+  4613.173  t0120686 suivi ok score 0.97 pos 11775,5123 net 47 (17 ms) carte 38 photos + 300 positions
+  4613.274  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0040.jpg (414 ko)
+  4613.507  t0121020 suivi ok score 0.97 pos 11784,5123 net 37 (18 ms) carte 38 photos + 300 positions
+  4613.843  t0121357 suivi ok score 0.97 pos 11847,5123 net 38 (20 ms) carte 38 photos + 300 positions
+  4614.199  t0121712 suivi ok score 0.96 pos 12397,5123 net 40 (23 ms) carte 38 photos + 300 positions
+  4614.525  t0122037 suivi ok score 0.97 pos 12731,5134 net 48 (20 ms) carte 38 photos + 300 positions
+  4614.859  t0122371 suivi ok score 0.97 pos 12708,5123 net 52 (27 ms) carte 38 photos + 300 positions
+  4614.960  photo o-4_0041 à 12708,5123 (408 ko, 203 ms)
+  4615.169  t0122682 suivi ok score 0.97 pos 12708,5123 net 60 (17 ms) carte 39 photos + 300 positions
+  4615.510  t0123023 suivi ok score 0.97 pos 12708,5123 net 61 (21 ms) carte 39 photos + 300 positions
+  4615.848  t0123361 suivi ok score 0.96 pos 12807,5123 net 59 (27 ms) carte 39 photos + 300 positions
+  4616.175  t0123689 suivi ok score 0.96 pos 13521,5123 net 59 (20 ms) carte 39 photos + 300 positions
+  4616.522  t0124034 suivi ok score 0.97 pos 13616,5124 net 51 (25 ms) carte 39 photos + 300 positions
+  4616.541  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0041.jpg (408 ko)
+  4616.838  t0124352 suivi ok score 0.97 pos 13615,5123 net 47 (18 ms) carte 39 photos + 300 positions
+  4616.895  photo o-4_0042 à 13615,5123 (416 ko, 208 ms)
+  4617.178  t0124692 suivi ok score 0.97 pos 13615,5123 net 62 (19 ms) carte 40 photos + 300 positions
+  4617.511  t0125024 suivi ok score 0.97 pos 13615,5123 net 61 (21 ms) carte 40 photos + 300 positions
+  4617.845  t0125358 suivi ok score 0.97 pos 13712,5123 net 58 (23 ms) carte 40 photos + 300 positions
+  4618.179  t0125692 suivi ok score 0.96 pos 13914,5123 net 56 (19 ms) carte 40 photos + 300 positions
+  4618.379  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0042.jpg (416 ko)
+  4618.513  t0126026 suivi ok score 0.96 pos 14512,5120 net 61 (20 ms) carte 40 photos + 300 positions
+  4618.849  t0126362 suivi ok score 0.97 pos 15145,5122 net 61 (22 ms) carte 40 photos + 300 positions
+  4618.849  photo en mouvement lent (50 % du champ, 0 u/s)
+  4619.055  photo o-4_0043 à 15145,5122 (426 ko, 205 ms)
+  4619.177  t0126689 suivi ok score 0.97 pos 15133,5133 net 37 (24 ms) carte 41 photos + 300 positions
+  4619.504  t0127017 suivi ok score 0.97 pos 15133,5133 net 55 (17 ms) carte 41 photos + 300 positions
+  4619.842  t0127355 suivi ok score 0.97 pos 15133,5133 net 60 (18 ms) carte 41 photos + 300 positions
+  4620.189  t0127702 suivi ok score 0.97 pos 15133,5133 net 57 (30 ms) carte 41 photos + 300 positions
+  4620.479  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0043.jpg (426 ko)
+  4620.526  t0128039 suivi ok score 0.97 pos 15133,5133 net 56 (24 ms) carte 41 photos + 300 positions
+  4620.842  t0128355 suivi ok score 0.97 pos 15133,5133 net 59 (18 ms) carte 41 photos + 300 positions
+  4621.174  t0128687 suivi ok score 0.97 pos 15133,5133 net 59 (18 ms) carte 41 photos + 300 positions
+  4621.517  t0129029 suivi ok score 0.97 pos 15133,5133 net 63 (23 ms) carte 41 photos + 300 positions
+  4621.844  t0129357 suivi ok score 0.97 pos 15133,5133 net 64 (22 ms) carte 41 photos + 300 positions
+  4622.176  t0129690 suivi ok score 0.97 pos 15133,5133 net 60 (21 ms) carte 41 photos + 300 positions
+  4622.516  t0130028 suivi ok score 0.97 pos 15133,5133 net 56 (23 ms) carte 41 photos + 300 positions
+  4622.853  t0130365 suivi ok score 0.97 pos 15122,5133 net 59 (27 ms) carte 41 photos + 300 positions
+  4623.186  t0130699 suivi ok score 0.96 pos 15109,5133 net 61 (24 ms) carte 41 photos + 300 positions
+  4623.510  t0131023 suivi ok score 0.97 pos 15121,5133 net 61 (17 ms) carte 41 photos + 300 positions
+  4623.857  t0131370 suivi ok score 0.97 pos 15089,5133 net 58 (27 ms) carte 41 photos + 300 positions
+  4624.178  t0131692 suivi ok score 0.96 pos 15065,5149 net 56 (18 ms) carte 41 photos + 300 positions
+  4624.522  t0132035 suivi ok score 0.97 pos 15050,5145 net 55 (27 ms) carte 41 photos + 300 positions
+  4624.846  t0132359 suivi ok score 0.97 pos 15050,5133 net 65 (19 ms) carte 41 photos + 300 positions
+  4625.177  t0132690 suivi ok score 0.97 pos 15039,5149 net 61 (18 ms) carte 41 photos + 300 positions
+  4625.512  t0133025 suivi ok score 0.97 pos 15014,5160 net 63 (19 ms) carte 41 photos + 300 positions
+  4625.877  t0133390 suivi ok score 0.97 pos 15014,5149 net 65 (40 ms) carte 41 photos + 300 positions
+  4626.182  t0133695 suivi ok score 0.97 pos 15002,5149 net 68 (20 ms) carte 41 photos + 300 positions
+  4626.514  t0134027 suivi ok score 0.97 pos 15002,5149 net 66 (21 ms) carte 41 photos + 300 positions
+  4626.850  t0134364 suivi ok score 0.97 pos 15002,5134 net 62 (19 ms) carte 41 photos + 300 positions
+  4627.182  t0134695 suivi ok score 0.97 pos 15038,5133 net 62 (21 ms) carte 41 photos + 300 positions
+  4627.512  t0135025 suivi ok score 0.97 pos 15050,5133 net 64 (19 ms) carte 41 photos + 300 positions
+  4627.841  t0135354 suivi ok score 0.97 pos 15062,5133 net 61 (17 ms) carte 41 photos + 300 positions
+  4628.176  t0135689 suivi ok score 0.96 pos 15096,5138 net 62 (17 ms) carte 41 photos + 300 positions
+  4628.532  t0136044 suivi ok score 0.96 pos 15624,5160 net 58 (33 ms) carte 41 photos + 300 positions
+  4628.847  t0136360 suivi ok score 0.95 pos 16165,5165 net 56 (17 ms) carte 41 photos + 300 positions
+  4629.181  t0136694 suivi ok score 0.97 pos 16186,5165 net 53 (17 ms) carte 41 photos + 300 positions
+  4629.476  photo o-4_0044 à 16195,5165 (427 ko, 243 ms)
+  4629.511  t0137024 suivi ok score 0.96 pos 16234,5165 net 56 (18 ms) carte 42 photos + 300 positions
+  4629.853  t0137366 suivi ok score 0.96 pos 16448,5165 net 53 (21 ms) carte 42 photos + 300 positions
+  4630.180  t0137693 suivi ok score 0.97 pos 16520,5165 net 57 (19 ms) carte 42 photos + 300 positions
+  4630.509  t0138021 suivi ok score 0.97 pos 16532,5165 net 54 (19 ms) carte 42 photos + 300 positions
+  4630.773  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0044.jpg (427 ko)
+  4630.848  t0138361 suivi ok score 0.97 pos 16556,5181 net 56 (21 ms) carte 42 photos + 300 positions
+  4631.179  t0138691 suivi ok score 0.97 pos 16556,5166 net 52 (18 ms) carte 42 photos + 300 positions
+  4631.509  t0139022 suivi ok score 0.95 pos 16556,5197 net 54 (16 ms) carte 42 photos + 300 positions
+  4631.849  t0139362 suivi ok score 0.92 pos 16520,6074 net 43 (19 ms) carte 42 photos + 300 positions
+  4632.174  t0139688 suivi ok score 0.96 pos 16493,7353 net 49 (16 ms) carte 42 photos + 300 positions
+  4632.260  photo en mouvement lent (56 % du champ, 21 u/s)
+  4632.470  photo o-4_0045 à 16493,7396 (428 ko, 209 ms)
+  4632.520  t0140033 suivi ok score 0.98 pos 16493,7400 net 50 (18 ms) carte 43 photos + 300 positions
+  4632.847  t0140360 suivi ok score 0.98 pos 16493,7400 net 38 (21 ms) carte 43 photos + 300 positions
+  4633.182  t0140695 suivi ok score 0.98 pos 16493,7400 net 50 (24 ms) carte 43 photos + 300 positions
+  4633.515  t0141028 suivi ok score 0.98 pos 16493,7400 net 35 (19 ms) carte 43 photos + 300 positions
+  4633.783  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0045.jpg (428 ko)
+  4633.851  t0141364 suivi ok score 0.98 pos 16493,7400 net 45 (19 ms) carte 43 photos + 300 positions
+  4634.183  t0141696 suivi ok score 0.98 pos 16493,7400 net 38 (25 ms) carte 43 photos + 300 positions
+  4634.523  t0142033 suivi ok score 0.98 pos 16458,7389 net 32 (25 ms) carte 43 photos + 300 positions
+  4634.849  t0142362 suivi ok score 0.97 pos 15195,7355 net 26 (21 ms) carte 43 photos + 300 positions
+  4635.029  photo en mouvement lent (65 % du champ, 5 u/s)
+  4635.184  t0142698 suivi ok score 0.95 pos 14507,7353 net 33 (22 ms) carte 43 photos + 300 positions
+  4635.240  photo o-4_0046 à 14499,7348 (416 ko, 210 ms)
+  4635.544  t0143057 suivi ok score 0.96 pos 14637,7353 net 37 (30 ms) carte 44 photos + 300 positions
+  4635.854  t0143367 suivi ok score 0.98 pos 16241,7384 net 34 (21 ms) carte 44 photos + 300 positions
+  4635.855  photo en mouvement lent (57 % du champ, 5 u/s)
+  4636.076  photo o-4_0047 à 16241,7384 (430 ko, 221 ms)
+  4636.178  t0143691 suivi ok score 0.98 pos 16229,7384 net 50 (21 ms) carte 45 photos + 300 positions
+  4636.512  t0144025 suivi ok score 0.97 pos 16229,7384 net 23 (21 ms) carte 45 photos + 300 positions
+  4636.565  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0046.jpg (416 ko)
+  4636.848  t0144361 suivi ok score 0.98 pos 16229,7384 net 51 (22 ms) carte 45 photos + 300 positions
+  4637.197  t0144710 suivi ok score 0.98 pos 16229,7384 net 51 (32 ms) carte 45 photos + 300 positions
+  4637.515  t0145028 suivi ok score 0.97 pos 16194,7384 net 50 (19 ms) carte 45 photos + 300 positions
+  4637.850  t0145363 suivi ok score 0.95 pos 15832,7377 net 50 (23 ms) carte 45 photos + 300 positions
+  4638.191  t0145704 suivi ok score 0.97 pos 15554,7363 net 54 (22 ms) carte 45 photos + 300 positions
+  4638.533  t0146045 suivi ok score 0.96 pos 15185,7363 net 46 (34 ms) carte 45 photos + 300 positions
+  4638.863  t0146375 suivi ok score 0.96 pos 14686,7353 net 44 (33 ms) carte 45 photos + 300 positions
+  4639.183  t0146696 suivi ok score 0.95 pos 14207,7332 net 45 (19 ms) carte 45 photos + 300 positions
+  4639.419  photo en mouvement lent (78 % du champ, 15 u/s)
+  4639.419  ATTENTION pas trop grand (78 % du champ) : recouvrement insuffisant
+  4639.513  t0147026 suivi ok score 0.96 pos 13845,7331 net 47 (16 ms) carte 45 photos + 300 positions
+  4639.646  photo o-4_0048 à 13847,7331 (421 ko, 226 ms)
+  4639.854  t0147367 suivi ok score 0.96 pos 13858,7347 net 49 (21 ms) carte 46 photos + 300 positions
+  4640.192  t0147705 suivi ok score 0.96 pos 13869,7347 net 58 (32 ms) carte 46 photos + 300 positions
+  4640.510  t0148023 suivi ok score 0.96 pos 13834,7336 net 47 (17 ms) carte 46 photos + 300 positions
+  4640.858  t0148371 suivi ok score 0.96 pos 13272,7331 net 44 (24 ms) carte 46 photos + 300 positions
+  4641.186  t0148699 suivi ok score 0.96 pos 12618,7316 net 49 (22 ms) carte 46 photos + 300 positions
+  4641.241  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0047.jpg (430 ko)
+  4641.512  t0149025 suivi ok score 0.97 pos 12615,7316 net 47 (19 ms) carte 46 photos + 300 positions
+  4641.727  photo o-4_0049 à 12615,7316 (408 ko, 214 ms)
+  4641.855  t0149368 suivi ok score 0.96 pos 12626,7316 net 39 (24 ms) carte 47 photos + 300 positions
+  4642.182  t0149695 suivi ok score 0.97 pos 12626,7316 net 46 (18 ms) carte 47 photos + 300 positions
+  4642.519  t0150033 suivi ok score 0.96 pos 12579,7300 net 38 (25 ms) carte 47 photos + 300 positions
+  4642.852  t0150365 suivi ok score 0.96 pos 12229,7300 net 35 (23 ms) carte 47 photos + 300 positions
+  4643.151  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0048.jpg (421 ko)
+  4643.196  t0150710 suivi ok score 0.96 pos 11658,7284 net 35 (17 ms) carte 47 photos + 300 positions
+  4643.516  t0151028 suivi ok score 0.96 pos 11359,7284 net 34 (18 ms) carte 47 photos + 300 positions
+  4643.781  photo floue (netteté 29 contre 61 de référence)
+  4643.849  t0151362 suivi ok score 0.96 pos 11371,7287 net 29 (19 ms) carte 47 photos + 300 positions
+  4644.009  photo o-4_0050 à 11370,7284 (408 ko, 228 ms)
+  4644.183  t0151696 suivi ok score 0.97 pos 11379,7295 net 55 (23 ms) carte 48 photos + 300 positions
+  4644.516  t0152029 suivi ok score 0.95 pos 11331,7280 net 30 (22 ms) carte 48 photos + 300 positions
+  4644.849  t0152362 suivi ok score 0.95 pos 10545,7279 net 27 (19 ms) carte 48 photos + 300 positions
+  4645.119  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0049.jpg (408 ko)
+  4645.195  t0152708 suivi ok score 0.97 pos 10474,7279 net 48 (28 ms) carte 48 photos + 300 positions
+  4645.513  t0153027 suivi ok score 0.96 pos 10474,7279 net 30 (21 ms) carte 48 photos + 300 positions
+  4645.538  photo o-4_0051 à 10474,7279 (412 ko, 217 ms)
+  4645.856  t0153370 suivi ok score 0.95 pos 10474,7279 net 26 (25 ms) carte 49 photos + 300 positions
+  4646.189  t0153702 suivi ok score 0.96 pos 10474,7279 net 39 (22 ms) carte 49 photos + 300 positions
+  4646.519  t0154032 suivi ok score 0.96 pos 10474,7279 net 35 (25 ms) carte 49 photos + 300 positions
+  4646.707  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0050.jpg (408 ko)
+  4646.855  t0154368 suivi ok score 0.95 pos 10474,7279 net 32 (25 ms) carte 49 photos + 300 positions
+  4647.181  t0154694 suivi ok score 0.94 pos 10474,7279 net 22 (20 ms) carte 49 photos + 300 positions
+  4647.525  t0155038 suivi ok score 0.95 pos 10474,7279 net 28 (26 ms) carte 49 photos + 300 positions
+  4647.866  t0155378 suivi ok score 0.96 pos 10474,7263 net 35 (28 ms) carte 49 photos + 300 positions
+  4648.181  t0155694 suivi ok score 0.96 pos 10474,7263 net 50 (16 ms) carte 49 photos + 300 positions
+  4648.527  t0156040 suivi ok score 0.96 pos 10472,7263 net 50 (28 ms) carte 49 photos + 300 positions
+  4648.851  t0156364 suivi ok score 0.95 pos 10454,7263 net 44 (22 ms) carte 49 photos + 300 positions
+  4649.185  t0156698 suivi ok score 0.96 pos 10450,7263 net 50 (23 ms) carte 49 photos + 300 positions
+  4649.533  t0157046 suivi ok score 0.95 pos 10189,7263 net 43 (22 ms) carte 49 photos + 300 positions
+  4649.845  t0157358 suivi ok score 0.92 pos 9338,7228 net 30 (15 ms) carte 49 photos + 300 positions
+  4650.198  t0157711 suivi ok score 0.97 pos 9270,7263 net 47 (23 ms) carte 49 photos + 300 positions
+  4650.511  t0158024 suivi ok score 0.97 pos 9270,7263 net 48 (17 ms) carte 49 photos + 300 positions
+  4650.600  photo o-4_0052 à 9270,7263 (406 ko, 224 ms)
+  4650.851  t0158364 suivi ok score 0.97 pos 9293,7251 net 43 (23 ms) carte 50 photos + 300 positions
+  4651.184  t0158697 suivi ok score 0.96 pos 9245,7247 net 39 (17 ms) carte 50 photos + 300 positions
+  4651.526  t0159038 suivi ok score 0.97 pos 8589,7233 net 44 (27 ms) carte 50 photos + 300 positions
+  4651.812  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0051.jpg (412 ko)
+  4651.851  t0159364 suivi ok score 0.96 pos 8537,7249 net 45 (17 ms) carte 50 photos + 300 positions
+  4652.182  photo o-4_0053 à 8540,7247 (411 ko, 229 ms)
+  4652.190  t0159703 suivi ok score 0.98 pos 8540,7247 net 43 (23 ms) carte 51 photos + 300 positions
+  4652.517  t0160030 suivi ok score 0.90 pos 8385,7232 net 41 (22 ms) carte 51 photos + 300 positions
+  4652.851  t0160364 suivi ok score 0.97 pos 7044,7216 net 44 (18 ms) carte 51 photos + 300 positions
+  4652.920  photo en mouvement lent (50 % du champ, 29 u/s)
+  4653.129  photo o-4_0054 à 6998,7216 (418 ko, 208 ms)
+  4653.176  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0052.jpg (406 ko)
+  4653.180  t0160693 suivi ok score 0.98 pos 6990,7231 net 49 (20 ms) carte 52 photos + 300 positions
+  4653.519  t0161032 suivi ok score 0.98 pos 6990,7232 net 39 (20 ms) carte 52 photos + 300 positions
+  4653.852  t0161365 suivi ok score 0.97 pos 6990,7232 net 43 (20 ms) carte 52 photos + 300 positions
+  4654.182  t0161695 suivi ok score 0.98 pos 6990,7232 net 46 (18 ms) carte 52 photos + 300 positions
+  4654.515  t0162028 suivi ok score 0.91 pos 5549,7201 net 51 (18 ms) carte 52 photos + 300 positions
+  4654.713  photo en mouvement lent (60 % du champ, 21 u/s)
+  4654.851  t0162364 suivi ok score 0.95 pos 5166,7190 net 54 (21 ms) carte 52 photos + 300 positions
+  4654.944  photo o-4_0055 à 5163,7192 (406 ko, 230 ms)
+  4655.184  t0162697 suivi ok score 0.95 pos 5177,7190 net 43 (21 ms) carte 53 photos + 300 positions
+  4655.517  t0163030 suivi ok score 0.93 pos 5177,7190 net 25 (18 ms) carte 53 photos + 300 positions
+  4655.850  t0163364 suivi ok score 0.95 pos 5177,7190 net 55 (19 ms) carte 53 photos + 300 positions
+  4656.185  t0163699 suivi ok score 0.95 pos 5177,7190 net 47 (20 ms) carte 53 photos + 300 positions
+  4656.279  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0053.jpg (411 ko)
+  4656.518  t0164031 suivi ok score 0.95 pos 5177,7190 net 55 (19 ms) carte 53 photos + 300 positions
+  4656.849  t0164363 suivi ok score 0.95 pos 5177,7190 net 54 (17 ms) carte 53 photos + 300 positions
+  4657.192  t0164705 suivi ok score 0.95 pos 5177,7190 net 35 (24 ms) carte 53 photos + 300 positions
+  4657.521  t0165034 suivi ok score 0.93 pos 5078,7190 net 30 (16 ms) carte 53 photos + 300 positions
+  4657.632  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0054.jpg (418 ko)
+  4657.853  t0165366 suivi ok score 0.95 pos 4428,7174 net 25 (16 ms) carte 53 photos + 300 positions
+  4658.183  t0165697 suivi ok score 0.95 pos 4412,7185 net 44 (18 ms) carte 53 photos + 300 positions
+  4658.378  photo o-4_0056 à 4412,7174 (413 ko, 226 ms)
+  4658.518  t0166031 suivi ok score 0.95 pos 4424,7185 net 25 (22 ms) carte 54 photos + 300 positions
+  4658.817  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0055.jpg (406 ko)
+  4658.859  t0166373 suivi ok score 0.96 pos 4424,7185 net 44 (28 ms) carte 54 photos + 300 positions
+  4659.186  t0166700 suivi ok score 0.96 pos 4424,7185 net 55 (22 ms) carte 54 photos + 300 positions
+  4659.520  t0167033 suivi ok score 0.96 pos 4424,7185 net 57 (21 ms) carte 54 photos + 300 positions
+  4659.854  t0167367 suivi ok score 0.96 pos 4424,7185 net 57 (22 ms) carte 54 photos + 300 positions
+  4660.198  t0167711 suivi ok score 0.96 pos 4424,7185 net 52 (19 ms) carte 54 photos + 300 positions
+  4660.525  t0168037 suivi ok score 0.96 pos 4424,7169 net 46 (22 ms) carte 54 photos + 300 positions
+  4660.854  t0168367 suivi ok score 0.96 pos 4413,7181 net 49 (19 ms) carte 54 photos + 300 positions
+  4661.192  t0168705 suivi ok score 0.96 pos 4412,7173 net 44 (25 ms) carte 54 photos + 300 positions
+  4661.545  t0169057 suivi ok score 0.96 pos 4401,7169 net 47 (35 ms) carte 54 photos + 300 positions
+  4661.852  t0169365 suivi ok score 0.96 pos 4412,7185 net 53 (18 ms) carte 54 photos + 300 positions
+  4662.189  t0169703 suivi ok score 0.95 pos 4412,7185 net 52 (20 ms) carte 54 photos + 300 positions
+  4662.524  t0170037 suivi ok score 0.96 pos 4412,7185 net 55 (20 ms) carte 54 photos + 300 positions
+  4662.857  t0170370 suivi ok score 0.96 pos 4424,7185 net 56 (21 ms) carte 54 photos + 300 positions
+  4663.189  t0170702 suivi ok score 0.97 pos 4412,7185 net 55 (17 ms) carte 54 photos + 300 positions
+  4663.528  t0171040 suivi ok score 0.98 pos 4427,7170 net 55 (24 ms) carte 54 photos + 300 positions
+  4663.856  t0171369 suivi ok score 0.98 pos 4424,7180 net 48 (20 ms) carte 54 photos + 300 positions
+  4664.200  t0171713 suivi ok score 0.98 pos 4436,7169 net 52 (26 ms) carte 54 photos + 300 positions
+  4664.533  t0172045 suivi ok score 0.98 pos 4424,7169 net 52 (26 ms) carte 54 photos + 300 positions
+  4664.856  t0172369 suivi ok score 0.98 pos 4424,7169 net 51 (19 ms) carte 54 photos + 300 positions
+  4665.193  t0172706 suivi ok score 0.98 pos 4424,7169 net 54 (23 ms) carte 54 photos + 300 positions
+  4665.525  t0173037 suivi ok score 0.97 pos 4400,7132 net 54 (23 ms) carte 54 photos + 300 positions
+  4665.863  t0173375 suivi ok score 0.97 pos 4412,7137 net 52 (26 ms) carte 54 photos + 300 positions
+  4666.193  t0173706 suivi ok score 0.98 pos 4412,7137 net 55 (23 ms) carte 54 photos + 300 positions
+  4666.525  t0174038 suivi ok score 0.98 pos 4412,7137 net 56 (21 ms) carte 54 photos + 300 positions
+  4666.858  t0174371 suivi ok score 0.97 pos 4389,7137 net 48 (23 ms) carte 54 photos + 300 positions
+  4667.187  t0174700 suivi ok score 0.97 pos 4400,7169 net 51 (18 ms) carte 54 photos + 300 positions
+  4667.531  t0175044 suivi ok score 0.96 pos 4400,7169 net 52 (28 ms) carte 54 photos + 300 positions
+  4667.856  t0175369 suivi ok score 0.96 pos 4400,7169 net 55 (20 ms) carte 54 photos + 300 positions
+  4668.192  t0175706 suivi ok score 0.97 pos 4412,7169 net 48 (23 ms) carte 54 photos + 300 positions
+  4668.518  t0176031 suivi ok score 0.96 pos 4412,7170 net 54 (18 ms) carte 54 photos + 300 positions
+  4668.856  t0176370 suivi ok score 0.96 pos 4412,7170 net 54 (20 ms) carte 54 photos + 300 positions
+  4669.188  t0176702 suivi ok score 0.97 pos 4412,7169 net 56 (20 ms) carte 54 photos + 300 positions
+  4669.536  t0177049 suivi ok score 0.96 pos 4269,7169 net 59 (29 ms) carte 54 photos + 300 positions
+  4669.874  t0177386 suivi ok score 0.95 pos 3528,7153 net 48 (27 ms) carte 54 photos + 300 positions
+  4670.192  t0177704 suivi ok score 0.97 pos 3540,7153 net 52 (22 ms) carte 54 photos + 300 positions
+  4670.509  photo o-4_0057 à 3540,7153 (412 ko, 226 ms)
+  4670.516  t0178029 suivi ok score 0.97 pos 3540,7164 net 51 (17 ms) carte 55 photos + 300 positions
+  4670.851  t0178364 suivi ok score 0.97 pos 3540,7164 net 54 (17 ms) carte 55 photos + 300 positions
+  4671.206  t0178719 suivi ok score 0.97 pos 3428,7152 net 54 (32 ms) carte 55 photos + 300 positions
+  4671.526  t0179039 suivi ok score 0.96 pos 3228,7148 net 49 (22 ms) carte 55 photos + 300 positions
+  4671.849  t0179363 suivi ok score 0.97 pos 2715,7132 net 53 (15 ms) carte 55 photos + 300 positions
+  4672.187  t0179700 suivi ok score 0.97 pos 2546,7132 net 47 (17 ms) carte 55 photos + 300 positions
+  4672.544  t0180056 suivi ok score 0.97 pos 2523,7132 net 54 (34 ms) carte 55 photos + 300 positions
+  4672.691  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0056.jpg (413 ko)
+  4672.831  photo o-4_0058 à 2524,7132 (417 ko, 207 ms)
+  4672.857  t0180370 suivi ok score 0.97 pos 2524,7132 net 28 (23 ms) carte 56 photos + 300 positions
+  4673.192  t0180705 suivi ok score 0.98 pos 2524,7132 net 53 (24 ms) carte 56 photos + 300 positions
+  4673.535  t0181048 suivi ok score 0.97 pos 2524,7132 net 53 (28 ms) carte 56 photos + 300 positions
+  4673.850  t0181363 suivi ok score 0.97 pos 2237,7116 net 48 (17 ms) carte 56 photos + 300 positions
+  4673.863  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0057.jpg (412 ko)
+  4674.198  t0181711 suivi ok score 0.97 pos 1974,7102 net 52 (28 ms) carte 56 photos + 300 positions
+  4674.538  t0182050 suivi ok score 0.97 pos 1531,7086 net 48 (30 ms) carte 56 photos + 300 positions
+  4674.861  t0182374 suivi ok score 0.97 pos 1220,7085 net 47 (21 ms) carte 56 photos + 300 positions
+  4675.188  t0182701 suivi ok score 0.97 pos 1148,7099 net 49 (16 ms) carte 56 photos + 300 positions
+  4675.350  photo o-4_0059 à 1148,7085 (421 ko, 229 ms)
+  4675.525  t0183039 suivi ok score 0.98 pos 1160,7096 net 45 (21 ms) carte 57 photos + 300 positions
+  4675.858  t0183371 suivi ok score 0.98 pos 1160,7096 net 51 (22 ms) carte 57 photos + 300 positions
+  4676.185  t0183699 suivi ok score 0.98 pos 1160,7096 net 41 (17 ms) carte 57 photos + 300 positions
+  4676.521  t0184034 suivi ok score 0.97 pos 1160,7096 net 34 (18 ms) carte 57 photos + 300 positions
+  4676.855  t0184368 suivi ok score 0.98 pos 1160,7096 net 51 (18 ms) carte 57 photos + 300 positions
+  4677.054  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0058.jpg (417 ko)
+  4677.188  t0184702 suivi ok score 0.98 pos 1160,7096 net 49 (20 ms) carte 57 photos + 300 positions
+  4677.528  t0185041 suivi ok score 0.97 pos 1140,7096 net 50 (23 ms) carte 57 photos + 300 positions
+  4677.866  t0185379 suivi ok score 0.96 pos 1052,7096 net 53 (28 ms) carte 57 photos + 300 positions
+  4678.199  t0185712 suivi ok score 0.96 pos 765,7096 net 51 (27 ms) carte 57 photos + 300 positions
+  4678.309  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0059.jpg (421 ko)
+  4678.529  t0186042 suivi ok score 0.96 pos -35,7064 net 52 (23 ms) carte 57 photos + 300 positions
+  4678.864  t0186377 suivi ok score 0.97 pos -130,7064 net 52 (23 ms) carte 57 photos + 300 positions
+  4679.192  t0186705 suivi ok score 0.98 pos -127,7080 net 49 (24 ms) carte 57 photos + 300 positions
+  4679.218  photo o-4_0060 à -130,7080 (423 ko, 228 ms)
+  4679.525  t0187038 suivi ok score 0.97 pos -130,7080 net 53 (19 ms) carte 58 photos + 300 positions
+  4679.856  t0187369 suivi ok score 0.97 pos -130,7080 net 53 (17 ms) carte 58 photos + 300 positions
+  4680.209  t0187722 suivi ok score 0.98 pos -130,7080 net 53 (34 ms) carte 58 photos + 300 positions
+  4680.449  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0060.jpg (423 ko)
+  4680.531  t0188044 suivi ok score 0.97 pos -118,7080 net 51 (17 ms) carte 58 photos + 300 positions
+  4680.859  t0188372 suivi ok score 0.97 pos -130,7080 net 51 (22 ms) carte 58 photos + 300 positions
+  4681.192  t0188705 suivi ok score 0.97 pos -143,7080 net 49 (22 ms) carte 58 photos + 300 positions
+  4681.526  t0189039 suivi ok score 0.97 pos -142,7080 net 49 (22 ms) carte 58 photos + 300 positions
+  4681.872  t0189385 suivi ok score 0.95 pos -119,7091 net 52 (22 ms) carte 58 photos + 300 positions
+  4682.204  t0189717 suivi ok score 0.97 pos -118,7127 net 52 (22 ms) carte 58 photos + 300 positions
+  4682.523  t0190035 suivi ok score 0.97 pos -118,7275 net 53 (18 ms) carte 58 photos + 300 positions
+  4682.883  t0190395 suivi ok score 0.97 pos -130,7750 net 48 (35 ms) carte 58 photos + 300 positions
+  4683.201  t0190714 suivi ok score 0.96 pos -142,8455 net 47 (21 ms) carte 58 photos + 300 positions
+  4683.529  t0191042 suivi ok score 0.97 pos -150,8640 net 48 (18 ms) carte 58 photos + 300 positions
+  4683.858  t0191372 suivi ok score 0.96 pos -154,8944 net 46 (16 ms) carte 58 photos + 300 positions
+  4684.213  t0191725 suivi ok score 0.97 pos -166,8944 net 47 (35 ms) carte 58 photos + 300 positions
+  4684.441  photo o-4_0061 à -166,8944 (424 ko, 227 ms)
+  4684.529  t0192042 suivi ok score 0.98 pos -166,8944 net 48 (24 ms) carte 59 photos + 300 positions
+  4684.856  t0192369 suivi ok score 0.97 pos -166,8944 net 49 (18 ms) carte 59 photos + 300 positions
+  4685.193  t0192706 suivi ok score 0.98 pos -166,8944 net 49 (17 ms) carte 59 photos + 300 positions
+  4685.532  t0193044 suivi ok score 0.98 pos -166,8944 net 48 (26 ms) carte 59 photos + 300 positions
+  4685.723  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0061.jpg (424 ko)
+  4685.863  t0193376 suivi ok score 0.97 pos -166,8930 net 35 (22 ms) carte 59 photos + 300 positions
+  4686.195  t0193708 suivi ok score 0.95 pos -165,9231 net 49 (21 ms) carte 59 photos + 300 positions
+  4686.538  t0194050 suivi ok score 0.96 pos -186,10065 net 45 (27 ms) carte 59 photos + 300 positions
+  4686.868  t0194382 suivi ok score 0.97 pos -190,10075 net 50 (24 ms) carte 59 photos + 300 positions
+  4686.971  photo o-4_0062 à -190,10076 (419 ko, 202 ms)
+  4687.192  t0194705 suivi ok score 0.97 pos -190,10065 net 38 (22 ms) carte 60 photos + 300 positions
+  4687.530  t0195043 suivi ok score 0.97 pos -190,10065 net 53 (22 ms) carte 60 photos + 300 positions
+  4687.860  t0195373 suivi ok score 0.96 pos -178,10065 net 51 (21 ms) carte 60 photos + 300 positions
+  4688.193  t0195706 suivi ok score 0.96 pos 112,10065 net 50 (19 ms) carte 60 photos + 300 positions
+  4688.492  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0062.jpg (419 ko)
+  4688.533  t0196046 suivi ok score 0.96 pos 662,10081 net 47 (20 ms) carte 60 photos + 300 positions
+  4688.863  t0196376 suivi ok score 0.97 pos 1014,10081 net 47 (21 ms) carte 60 photos + 300 positions
+  4689.192  t0196705 suivi ok score 0.97 pos 1154,10081 net 51 (17 ms) carte 60 photos + 300 positions
+  4689.533  t0197046 suivi ok score 0.97 pos 1253,10081 net 50 (21 ms) carte 60 photos + 300 positions
+  4689.822  photo o-4_0063 à 1262,10081 (417 ko, 229 ms)
+  4689.866  t0197379 suivi ok score 0.97 pos 1252,10081 net 44 (19 ms) carte 61 photos + 300 positions
+  4690.199  t0197712 suivi ok score 0.97 pos 1252,10081 net 44 (25 ms) carte 61 photos + 300 positions
+  4690.538  t0198050 suivi ok score 0.97 pos 1288,10081 net 51 (27 ms) carte 61 photos + 300 positions
+  4690.862  t0198374 suivi ok score 0.97 pos 1524,10081 net 47 (22 ms) carte 61 photos + 300 positions
+  4691.171  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0063.jpg (417 ko)
+  4691.196  t0198709 suivi ok score 0.97 pos 1922,10081 net 48 (20 ms) carte 61 photos + 300 positions
+  4691.530  t0199043 suivi ok score 0.97 pos 1969,10081 net 51 (19 ms) carte 61 photos + 300 positions
+  4691.847  photo o-4_0064 à 1959,10096 (421 ko, 219 ms)
+  4691.858  t0199372 suivi ok score 0.97 pos 1958,10097 net 47 (19 ms) carte 62 photos + 300 positions
+  4692.192  t0199706 suivi ok score 0.97 pos 1958,10097 net 33 (21 ms) carte 62 photos + 300 positions
+  4692.550  t0200062 suivi ok score 0.97 pos 1958,10097 net 50 (38 ms) carte 62 photos + 300 positions
+  4692.873  t0200385 suivi ok score 0.97 pos 1957,10097 net 50 (29 ms) carte 62 photos + 300 positions
+  4693.049  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0064.jpg (421 ko)
+  4693.189  t0200703 suivi ok score 0.96 pos 2010,10097 net 50 (17 ms) carte 62 photos + 300 positions
+  4693.537  t0201050 suivi ok score 0.96 pos 2257,10097 net 49 (22 ms) carte 62 photos + 300 positions
+  4693.871  t0201383 suivi ok score 0.96 pos 2723,10097 net 45 (20 ms) carte 62 photos + 300 positions
+  4694.201  t0201714 suivi ok score 0.96 pos 3094,10112 net 45 (20 ms) carte 62 photos + 300 positions
+  4694.529  t0202042 suivi ok score 0.97 pos 3608,10128 net 46 (16 ms) carte 62 photos + 300 positions
+  4694.658  photo en mouvement lent (58 % du champ, 31 u/s)
+  4694.867  t0202380 suivi ok score 0.97 pos 3763,10128 net 46 (23 ms) carte 62 photos + 300 positions
+  4694.893  photo o-4_0065 à 3727,10128 (420 ko, 234 ms)
+  4695.189  t0202703 suivi ok score 0.97 pos 3751,10128 net 48 (11 ms) carte 63 photos + 300 positions
+  4695.526  t0203039 suivi ok score 0.97 pos 3751,10128 net 48 (19 ms) carte 63 photos + 300 positions
+  4695.868  t0203382 suivi ok score 0.97 pos 3751,10128 net 49 (21 ms) carte 63 photos + 300 positions
+  4696.198  t0203711 suivi ok score 0.97 pos 3751,10128 net 39 (24 ms) carte 63 photos + 300 positions
+  4696.327  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0065.jpg (420 ko)
+  4696.533  t0204047 suivi ok score 0.97 pos 3751,10128 net 49 (23 ms) carte 63 photos + 300 positions
+  4696.867  t0204380 suivi ok score 0.96 pos 3766,10128 net 48 (21 ms) carte 63 photos + 300 positions
+  4697.196  t0204709 suivi ok score 0.96 pos 4074,10128 net 47 (18 ms) carte 63 photos + 300 positions
+  4697.535  t0205047 suivi ok score 0.97 pos 4276,10128 net 45 (21 ms) carte 63 photos + 300 positions
+  4697.865  t0205378 suivi ok score 0.96 pos 4504,10143 net 44 (20 ms) carte 63 photos + 300 positions
+  4698.208  t0205721 suivi ok score 0.97 pos 4504,10144 net 38 (28 ms) carte 63 photos + 300 positions
+  4698.488  photo o-4_0066 à 4504,10144 (411 ko, 223 ms)
+  4698.529  t0206042 suivi ok score 0.96 pos 4504,10144 net 41 (17 ms) carte 64 photos + 300 positions
+  4698.866  t0206379 suivi ok score 0.96 pos 4504,10144 net 42 (23 ms) carte 64 photos + 300 positions
+  4699.202  t0206715 suivi ok score 0.97 pos 4504,10144 net 40 (27 ms) carte 64 photos + 300 positions
+  4699.537  t0207050 suivi ok score 0.97 pos 4504,10144 net 34 (26 ms) carte 64 photos + 300 positions
+  4699.877  t0207390 suivi ok score 0.97 pos 4528,10133 net 36 (30 ms) carte 64 photos + 300 positions
+  4699.981  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0066.jpg (411 ko)
+  4700.202  t0207715 suivi ok score 0.96 pos 4707,10128 net 31 (26 ms) carte 64 photos + 300 positions
+  4700.534  t0208047 suivi ok score 0.96 pos 5114,10144 net 33 (24 ms) carte 64 photos + 300 positions
+  4700.861  t0208375 suivi ok score 0.95 pos 5493,10160 net 51 (20 ms) carte 64 photos + 300 positions
+  4701.204  t0208717 suivi ok score 0.96 pos 5477,10160 net 42 (25 ms) carte 64 photos + 300 positions
+  4701.418  photo o-4_0067 à 5477,10160 (408 ko, 213 ms)
+  4701.526  t0209039 suivi ok score 0.96 pos 5476,10149 net 51 (18 ms) carte 65 photos + 300 positions
+  4701.874  t0209387 suivi ok score 0.96 pos 5511,10149 net 48 (30 ms) carte 65 photos + 300 positions
+  4702.195  t0209709 suivi ok score 0.96 pos 5560,10149 net 51 (20 ms) carte 65 photos + 300 positions
+  4702.531  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0067.jpg (408 ko)
+  4702.533  t0210046 suivi ok score 0.96 pos 5647,10149 net 44 (24 ms) carte 65 photos + 300 positions
+  4702.864  t0210378 suivi ok score 0.96 pos 5719,10149 net 48 (23 ms) carte 65 photos + 300 positions
+  4703.218  t0210730 suivi ok score 0.95 pos 6154,10149 net 50 (29 ms) carte 65 photos + 300 positions
+  4703.533  t0211046 suivi ok score 0.96 pos 6669,10149 net 48 (18 ms) carte 65 photos + 300 positions
+  4703.861  t0211375 suivi ok score 0.97 pos 6684,10165 net 32 (17 ms) carte 65 photos + 300 positions
+  4704.174  photo o-4_0068 à 6684,10165 (401 ko, 205 ms)
+  4704.195  t0211708 suivi ok score 0.97 pos 6684,10165 net 51 (20 ms) carte 66 photos + 300 positions
+  4704.536  t0212049 suivi ok score 0.97 pos 6684,10165 net 51 (24 ms) carte 66 photos + 300 positions
+  4704.865  t0212378 suivi ok score 0.97 pos 6745,10165 net 47 (19 ms) carte 66 photos + 300 positions
+  4705.199  t0212712 suivi ok score 0.96 pos 7233,10165 net 49 (16 ms) carte 66 photos + 300 positions
+  4705.546  t0213058 suivi ok score 0.96 pos 7795,10165 net 51 (27 ms) carte 66 photos + 300 positions
+  4705.549  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0068.jpg (401 ko)
+  4705.880  t0213392 suivi ok score 0.98 pos 8080,10180 net 50 (29 ms) carte 66 photos + 300 positions
+  4706.132  photo floue (netteté 29 contre 61 de référence)
+  4706.197  t0213711 suivi ok score 0.97 pos 8070,10181 net 29 (17 ms) carte 66 photos + 300 positions
+  4706.345  photo o-4_0069 à 8070,10181 (403 ko, 213 ms)
+  4706.535  t0214047 suivi ok score 0.97 pos 8070,10181 net 47 (24 ms) carte 67 photos + 300 positions
+  4706.866  t0214379 suivi ok score 0.97 pos 8078,10181 net 50 (17 ms) carte 67 photos + 300 positions
+  4707.204  t0214718 suivi ok score 0.97 pos 8164,10181 net 50 (24 ms) carte 67 photos + 300 positions
+  4707.474  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0069.jpg (403 ko)
+  4707.536  t0215049 suivi ok score 0.96 pos 8377,10181 net 53 (19 ms) carte 67 photos + 300 positions
+  4707.867  t0215380 suivi ok score 0.96 pos 8724,10192 net 49 (19 ms) carte 67 photos + 300 positions
+  4708.198  t0215711 suivi ok score 0.97 pos 8715,10193 net 33 (22 ms) carte 67 photos + 300 positions
+  4708.410  photo o-4_0070 à 8715,10193 (403 ko, 211 ms)
+  4708.532  t0216044 suivi ok score 0.97 pos 8715,10185 net 50 (24 ms) carte 68 photos + 300 positions
+  4708.874  t0216386 suivi ok score 0.98 pos 8715,10185 net 50 (27 ms) carte 68 photos + 300 positions
+  4709.208  t0216721 suivi ok score 0.96 pos 8727,10185 net 51 (26 ms) carte 68 photos + 300 positions
+  4709.531  t0217043 suivi ok score 0.97 pos 8788,10185 net 50 (19 ms) carte 68 photos + 300 positions
+  4709.791  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0070.jpg (403 ko)
+  4709.855  t0217369 suivi ok score 0.96 pos 9109,10185 net 53 (11 ms) carte 68 photos + 300 positions
+  4710.198  t0217711 suivi ok score 0.96 pos 9650,10185 net 57 (17 ms) carte 68 photos + 300 positions
+  4710.528  t0218042 suivi ok score 0.95 pos 9755,10200 net 54 (18 ms) carte 68 photos + 300 positions
+  4710.864  t0218378 suivi ok score 0.97 pos 9746,10201 net 55 (20 ms) carte 68 photos + 300 positions
+  4710.921  photo o-4_0071 à 9758,10201 (415 ko, 218 ms)
+  4711.204  t0218717 suivi ok score 0.96 pos 9758,10201 net 59 (22 ms) carte 69 photos + 300 positions
+  4711.535  t0219048 suivi ok score 0.94 pos 10152,10201 net 56 (22 ms) carte 69 photos + 300 positions
+  4711.871  t0219384 suivi ok score 0.95 pos 10562,10213 net 53 (22 ms) carte 69 photos + 300 positions
+  4712.205  t0219718 suivi ok score 0.94 pos 11017,10212 net 59 (23 ms) carte 69 photos + 300 positions
+  4712.436  photo en mouvement lent (50 % du champ, 21 u/s)
+  4712.482  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0071.jpg (415 ko)
+  4712.528  t0220042 suivi ok score 0.95 pos 11280,10228 net 58 (12 ms) carte 69 photos + 300 positions
+  4712.640  photo o-4_0072 à 11288,10228 (413 ko, 204 ms)
+  4712.858  t0220371 suivi ok score 0.96 pos 11270,10228 net 57 (18 ms) carte 70 photos + 300 positions
+  4713.197  t0220710 suivi ok score 0.96 pos 11270,10228 net 55 (21 ms) carte 70 photos + 300 positions
+  4713.525  t0221039 suivi ok score 0.94 pos 11291,10228 net 56 (18 ms) carte 70 photos + 300 positions
+  4713.860  t0221374 suivi ok score 0.93 pos 11641,10228 net 62 (17 ms) carte 70 photos + 300 positions
+  4714.192  t0221705 suivi ok score 0.94 pos 12307,10228 net 59 (16 ms) carte 70 photos + 300 positions
+  4714.244  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0072.jpg (413 ko)
+  4714.531  t0222044 suivi ok score 0.94 pos 12719,10228 net 48 (22 ms) carte 70 photos + 300 positions
+  4714.864  t0222377 suivi ok score 0.95 pos 13046,10244 net 49 (19 ms) carte 70 photos + 300 positions
+  4714.864  photo en mouvement lent (57 % du champ, 9 u/s)
+  4715.091  photo o-4_0073 à 13046,10244 (413 ko, 226 ms)
+  4715.187  t0222700 suivi ok score 0.96 pos 13031,10244 net 40 (11 ms) carte 71 photos + 300 positions
+  4715.525  t0223039 suivi ok score 0.96 pos 13031,10244 net 49 (18 ms) carte 71 photos + 300 positions
+  4715.862  t0223375 suivi ok score 0.96 pos 13031,10244 net 56 (18 ms) carte 71 photos + 300 positions
+  4716.197  t0223710 suivi ok score 0.97 pos 13031,10244 net 56 (21 ms) carte 71 photos + 300 positions
+  4716.531  t0224044 suivi ok score 0.96 pos 13031,10244 net 41 (20 ms) carte 71 photos + 300 positions
+  4716.759  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0073.jpg (413 ko)
+  4716.874  t0224387 suivi ok score 0.96 pos 13031,10244 net 49 (29 ms) carte 71 photos + 300 positions
+  4717.216  t0224729 suivi ok score 0.97 pos 13031,10244 net 56 (31 ms) carte 71 photos + 300 positions
+  4717.544  t0225057 suivi ok score 0.96 pos 13031,10244 net 47 (26 ms) carte 71 photos + 300 positions
+  4717.868  t0225381 suivi ok score 0.95 pos 13258,10244 net 50 (17 ms) carte 71 photos + 300 positions
+  4718.200  t0225712 suivi ok score 0.96 pos 14346,10260 net 46 (15 ms) carte 71 photos + 300 positions
+  4718.503  photo en mouvement lent (51 % du champ, 37 u/s)
+  4718.535  t0226048 suivi ok score 0.95 pos 14597,10273 net 53 (18 ms) carte 71 photos + 300 positions
+  4718.729  photo o-4_0074 à 14597,10269 (420 ko, 225 ms)
+  4718.878  t0226390 suivi ok score 0.96 pos 14585,10273 net 52 (32 ms) carte 72 photos + 300 positions
+  4719.206  t0226719 suivi ok score 0.96 pos 14585,10273 net 42 (23 ms) carte 72 photos + 300 positions
+  4719.538  t0227051 suivi ok score 0.96 pos 14585,10273 net 37 (22 ms) carte 72 photos + 300 positions
+  4719.864  t0227377 suivi ok score 0.95 pos 14585,10273 net 31 (17 ms) carte 72 photos + 300 positions
+  4720.206  t0227718 suivi ok score 0.96 pos 14670,10273 net 33 (22 ms) carte 72 photos + 300 positions
+  4720.547  t0228060 suivi ok score 0.95 pos 14836,10273 net 31 (22 ms) carte 72 photos + 300 positions
+  4720.865  t0228379 suivi ok score 0.97 pos 15171,10273 net 33 (16 ms) carte 72 photos + 300 positions
+  4721.119  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0074.jpg (420 ko)
+  4721.215  t0228728 suivi ok score 0.97 pos 15434,10273 net 31 (18 ms) carte 72 photos + 300 positions
+  4721.538  t0229051 suivi ok score 0.98 pos 15601,10274 net 40 (24 ms) carte 72 photos + 300 positions
+  4721.869  t0229381 suivi ok score 0.98 pos 15589,10289 net 66 (17 ms) carte 72 photos + 300 positions
+  4721.992  photo o-4_0075 à 15589,10289 (454 ko, 226 ms)
+  4722.202  t0229715 suivi ok score 0.98 pos 15589,10289 net 60 (19 ms) carte 73 photos + 300 positions
+  4722.550  t0230059 suivi ok score 0.98 pos 15589,10289 net 63 (29 ms) carte 73 photos + 300 positions
+  4722.868  t0230382 suivi ok score 0.98 pos 15589,10289 net 64 (19 ms) carte 73 photos + 300 positions
+  4723.200  t0230713 suivi ok score 0.98 pos 15589,10289 net 68 (18 ms) carte 73 photos + 300 positions
+  4723.534  t0231047 suivi ok score 0.96 pos 15589,10990 net 66 (20 ms) carte 73 photos + 300 positions
+  4723.861  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0075.jpg (454 ko)
+  4723.871  t0231383 suivi ok score 0.93 pos 15589,11411 net 59 (18 ms) carte 73 photos + 300 positions
+  4724.133  photo en mouvement lent (59 % du champ, 11 u/s)
+  4724.201  t0231714 suivi ok score 0.98 pos 15581,12702 net 53 (19 ms) carte 73 photos + 300 positions
+  4724.363  photo o-4_0076 à 15588,12700 (448 ko, 229 ms)
+  4724.531  t0232044 suivi ok score 0.98 pos 15577,12701 net 54 (19 ms) carte 74 photos + 300 positions
+  4724.869  t0232382 suivi ok score 0.98 pos 15577,12701 net 54 (21 ms) carte 74 photos + 300 positions
+  4725.209  t0232722 suivi ok score 0.98 pos 15517,12701 net 55 (24 ms) carte 74 photos + 300 positions
+  4725.539  t0233051 suivi ok score 0.97 pos 12704,12674 net 75 (18 ms) carte 74 photos + 300 positions
+  4725.616  photo en mouvement lent (95 % du champ, 21 u/s)
+  4725.617  ATTENTION pas trop grand (95 % du champ) : recouvrement insuffisant
+  4725.821  photo o-4_0077 à 12680,12663 (551 ko, 204 ms)
+  4725.872  t0233385 suivi ok score 0.99 pos 12692,12687 net 77 (23 ms) carte 75 photos + 300 positions
+  4725.912  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0076.jpg (448 ko)
+  4726.202  t0233714 suivi ok score 0.99 pos 12776,12687 net 76 (19 ms) carte 75 photos + 300 positions
+  4726.538  t0234051 suivi ok score 0.97 pos 13960,12674 net 76 (21 ms) carte 75 photos + 300 positions
+  4726.864  t0234378 suivi ok score 0.98 pos 13971,12674 net 72 (17 ms) carte 75 photos + 300 positions
+  4727.186  photo o-4_0078 à 13936,12674 (489 ko, 219 ms)
+  4727.200  t0234713 suivi ok score 0.97 pos 13724,12675 net 74 (19 ms) carte 76 photos + 300 positions
+  4727.539  t0235051 suivi ok score 0.98 pos 13526,12674 net 70 (21 ms) carte 76 photos + 300 positions
+  4727.867  t0235380 suivi ok score 0.99 pos 13505,12674 net 69 (17 ms) carte 76 photos + 300 positions
+  4728.206  t0235719 suivi ok score 0.99 pos 13473,12674 net 73 (19 ms) carte 76 photos + 300 positions
+  4728.441  photo o-4_0079 à 13473,12674 (514 ko, 234 ms)
+  4728.552  t0236063 suivi ok score 0.99 pos 13123,12674 net 68 (28 ms) carte 77 photos + 300 positions
+  4728.869  t0236382 suivi ok score 0.99 pos 12932,12674 net 75 (19 ms) carte 77 photos + 300 positions
+  4728.871  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0077.jpg (551 ko)
+  4729.203  t0236716 suivi ok score 0.98 pos 12784,12671 net 76 (21 ms) carte 77 photos + 300 positions
+  4729.272  photo o-4_0080 à 12908,12671 (546 ko, 233 ms)
+  4729.543  t0237055 suivi ok score 0.99 pos 12692,12671 net 77 (26 ms) carte 78 photos + 300 positions
+  4729.868  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0078.jpg (489 ko)
+  4729.876  t0237389 suivi ok score 0.99 pos 12525,12671 net 77 (24 ms) carte 78 photos + 300 positions
+  4730.207  t0237719 suivi ok score 0.99 pos 12036,12655 net 69 (20 ms) carte 78 photos + 300 positions
+  4730.543  t0238055 suivi ok score 0.99 pos 12059,12671 net 78 (23 ms) carte 78 photos + 300 positions
+  4730.729  photo o-4_0081 à 12059,12671 (556 ko, 229 ms)
+  4730.870  t0238383 suivi ok score 0.99 pos 12059,12671 net 78 (19 ms) carte 79 photos + 300 positions
+  4731.206  t0238718 suivi ok score 0.99 pos 12059,12671 net 61 (17 ms) carte 79 photos + 300 positions
+  4731.542  t0239055 suivi ok score 0.99 pos 12059,12671 net 29 (24 ms) carte 79 photos + 300 positions
+  4731.872  t0239385 suivi ok score 0.99 pos 12059,12671 net 80 (22 ms) carte 79 photos + 300 positions
+  4732.070  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0079.jpg (514 ko)
+  4732.209  t0239722 suivi ok score 0.99 pos 12059,12671 net 68 (21 ms) carte 79 photos + 300 positions
+  4732.542  t0240055 suivi ok score 0.99 pos 12059,12671 net 64 (20 ms) carte 79 photos + 300 positions
+  4732.879  t0240391 suivi ok score 0.99 pos 12059,12671 net 65 (25 ms) carte 79 photos + 300 positions
+  4733.212  t0240724 suivi ok score 0.99 pos 12059,12671 net 65 (20 ms) carte 79 photos + 300 positions
+  4733.543  t0241056 suivi ok score 0.99 pos 12059,12671 net 66 (18 ms) carte 79 photos + 300 positions
+  4733.759  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0080.jpg (546 ko)
+  4733.882  t0241394 suivi ok score 0.99 pos 12059,12671 net 63 (28 ms) carte 79 photos + 300 positions
+  4734.209  t0241722 suivi ok score 0.98 pos 12059,12666 net 62 (23 ms) carte 79 photos + 300 positions
+  4734.548  t0242060 suivi ok score 0.99 pos 12059,12671 net 64 (23 ms) carte 79 photos + 300 positions
+  4734.874  t0242386 suivi ok score 0.99 pos 12059,12671 net 66 (19 ms) carte 79 photos + 300 positions
+  4735.207  t0242720 suivi ok score 0.99 pos 12083,12671 net 60 (20 ms) carte 79 photos + 300 positions
+  4735.297  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0081.jpg (556 ko)
+  4735.544  t0243057 suivi ok score 0.99 pos 12083,12671 net 64 (24 ms) carte 79 photos + 300 positions
+  4735.880  t0243392 suivi ok score 0.99 pos 12083,12671 net 61 (24 ms) carte 79 photos + 300 positions
+  4736.219  t0243731 suivi ok score 0.99 pos 12083,12671 net 53 (22 ms) carte 79 photos + 300 positions
+  4736.543  t0244055 suivi ok score 0.97 pos 12083,13329 net 72 (22 ms) carte 79 photos + 300 positions
+  4736.880  t0244392 suivi ok score 0.99 pos 12072,13326 net 63 (18 ms) carte 79 photos + 300 positions
+  4737.125  photo o-4_0082 à 12071,13336 (598 ko, 222 ms)
+  4737.218  t0244731 suivi ok score 0.99 pos 12071,13339 net 67 (24 ms) carte 80 photos + 300 positions
+  4737.540  t0245052 suivi ok score 0.99 pos 12071,13339 net 60 (20 ms) carte 80 photos + 300 positions
+  4737.875  t0245388 suivi ok score 0.99 pos 12071,13339 net 75 (23 ms) carte 80 photos + 300 positions
+  4738.218  t0245731 suivi ok score 0.99 pos 12071,13339 net 72 (26 ms) carte 80 photos + 300 positions
+  4738.546  t0246058 suivi ok score 0.99 pos 12059,13339 net 62 (19 ms) carte 80 photos + 300 positions
+  4738.883  t0246395 suivi ok score 0.99 pos 12047,13339 net 60 (22 ms) carte 80 photos + 300 positions
+  4739.211  t0246723 suivi ok score 0.99 pos 12023,13323 net 49 (19 ms) carte 80 photos + 300 positions
+  4739.552  t0247064 suivi ok score 0.98 pos 11840,13323 net 50 (23 ms) carte 80 photos + 300 positions
+  4739.875  t0247388 suivi ok score 0.99 pos 11267,13323 net 51 (18 ms) carte 80 photos + 300 positions
+  4740.210  t0247722 suivi ok score 0.99 pos 11282,13323 net 39 (22 ms) carte 80 photos + 300 positions
+  4740.239  photo floue (netteté 35 contre 74 de référence)
+  4740.453  photo o-4_0083 à 11282,13323 (500 ko, 213 ms)
+  4740.547  t0248059 suivi ok score 0.99 pos 11282,13323 net 66 (26 ms) carte 81 photos + 300 positions
+  4740.875  t0248387 suivi ok score 0.99 pos 11282,13323 net 75 (19 ms) carte 81 photos + 300 positions
+  4741.208  t0248721 suivi ok score 0.99 pos 11103,13308 net 77 (19 ms) carte 81 photos + 300 positions
+  4741.539  t0249052 suivi ok score 0.98 pos 10409,13307 net 75 (18 ms) carte 81 photos + 300 positions
+  4741.876  t0249389 suivi ok score 0.96 pos 9621,13296 net 73 (22 ms) carte 81 photos + 300 positions
+  4741.906  photo en mouvement lent (55 % du champ, 31 u/s)
+  4742.117  photo o-4_0084 à 9609,13293 (443 ko, 210 ms)
+  4742.208  t0249721 suivi ok score 0.97 pos 9513,13292 net 68 (23 ms) carte 82 photos + 300 positions
+  4742.541  t0250054 suivi ok score 0.96 pos 9525,13308 net 31 (21 ms) carte 82 photos + 300 positions
+  4742.712  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0082.jpg (598 ko)
+  4742.872  t0250385 suivi ok score 0.97 pos 9525,13308 net 64 (19 ms) carte 82 photos + 300 positions
+  4743.208  t0250721 suivi ok score 0.97 pos 9525,13308 net 65 (21 ms) carte 82 photos + 300 positions
+  4743.537  t0251050 suivi ok score 0.93 pos 9262,13292 net 54 (17 ms) carte 82 photos + 300 positions
+  4743.889  t0251402 suivi ok score 0.97 pos 8511,13291 net 51 (31 ms) carte 82 photos + 300 positions
+  4744.217  t0251730 suivi ok score 0.97 pos 8535,13293 net 42 (26 ms) carte 82 photos + 300 positions
+  4744.399  photo o-4_0085 à 8533,13296 (410 ko, 225 ms)
+  4744.538  t0252050 suivi ok score 0.97 pos 8535,13293 net 51 (19 ms) carte 83 photos + 300 positions
+  4744.874  t0252388 suivi ok score 0.96 pos 8248,13293 net 50 (20 ms) carte 83 photos + 300 positions
+  4745.207  t0252720 suivi ok score 0.97 pos 7842,13293 net 51 (20 ms) carte 83 photos + 300 positions
+  4745.563  t0253074 suivi ok score 0.96 pos 7486,13277 net 52 (33 ms) carte 83 photos + 300 positions
+  4745.684  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0083.jpg (500 ko)
+  4745.888  t0253400 suivi ok score 0.97 pos 7391,13277 net 51 (28 ms) carte 83 photos + 300 positions
+  4746.205  t0253719 suivi ok score 0.97 pos 7391,13277 net 50 (18 ms) carte 83 photos + 300 positions
+  4746.268  photo o-4_0086 à 7399,13277 (418 ko, 227 ms)
+  4746.543  t0254056 suivi ok score 0.97 pos 7399,13277 net 32 (23 ms) carte 84 photos + 300 positions
+  4746.844  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0084.jpg (443 ko)
+  4746.876  t0254389 suivi ok score 0.97 pos 7399,13277 net 31 (20 ms) carte 84 photos + 300 positions
+  4747.208  t0254722 suivi ok score 0.96 pos 7399,13277 net 40 (19 ms) carte 84 photos + 300 positions
+  4747.547  t0255060 suivi ok score 0.97 pos 7411,13218 net 44 (24 ms) carte 84 photos + 300 positions
+  4747.881  t0255394 suivi ok score 0.96 pos 7411,13022 net 45 (20 ms) carte 84 photos + 300 positions
+  4748.156  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0085.jpg (410 ko)
+  4748.213  t0255726 suivi ok score 0.96 pos 7411,12836 net 49 (21 ms) carte 84 photos + 300 positions
+  4748.542  t0256054 suivi ok score 0.97 pos 7411,12751 net 52 (21 ms) carte 84 photos + 300 positions
+  4748.875  t0256388 suivi ok score 0.95 pos 7411,12579 net 47 (20 ms) carte 84 photos + 300 positions
+  4749.204  t0256717 suivi ok score 0.97 pos 7412,12429 net 48 (17 ms) carte 84 photos + 300 positions
+  4749.517  photo floue (netteté 22 contre 74 de référence)
+  4749.539  t0257052 suivi ok score 0.96 pos 7411,12433 net 22 (17 ms) carte 84 photos + 300 positions
+  4749.726  photo o-4_0087 à 7411,12433 (404 ko, 209 ms)
+  4749.882  t0257395 suivi ok score 0.97 pos 7411,12433 net 49 (27 ms) carte 85 photos + 300 positions
+  4750.215  t0257728 suivi ok score 0.97 pos 7411,12433 net 45 (25 ms) carte 85 photos + 300 positions
+  4750.543  t0258056 suivi ok score 0.96 pos 6518,12417 net 51 (20 ms) carte 85 photos + 300 positions
+  4750.890  t0258403 suivi ok score 0.97 pos 6372,12417 net 50 (30 ms) carte 85 photos + 300 positions
+  4751.039  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0086.jpg (418 ko)
+  4751.204  t0258716 suivi ok score 0.97 pos 6396,12417 net 52 (18 ms) carte 85 photos + 300 positions
+  4751.256  photo o-4_0088 à 6384,12417 (417 ko, 212 ms)
+  4751.546  t0259059 suivi ok score 0.97 pos 6381,12417 net 49 (20 ms) carte 86 photos + 300 positions
+  4751.885  t0259397 suivi ok score 0.96 pos 6261,12417 net 52 (24 ms) carte 86 photos + 300 positions
+  4751.925  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0087.jpg (404 ko)
+  4752.214  t0259727 suivi ok score 0.96 pos 5696,12402 net 50 (22 ms) carte 86 photos + 300 positions
+  4752.544  t0260057 suivi ok score 0.96 pos 3914,12385 net 47 (19 ms) carte 86 photos + 300 positions
+  4752.544  photo en mouvement lent (81 % du champ, 1 u/s)
+  4752.544  ATTENTION pas trop grand (81 % du champ) : recouvrement insuffisant
+  4752.753  photo o-4_0089 à 3914,12385 (414 ko, 208 ms)
+  4752.910  t0260423 suivi ok score 0.96 pos 3929,12396 net 42 (12 ms) carte 87 photos + 300 positions
+  4753.247  t0260760 suivi ok score 0.97 pos 3929,12396 net 51 (23 ms) carte 87 photos + 300 positions
+  4753.577  t0261090 suivi ok score 0.95 pos 3690,12396 net 47 (19 ms) carte 87 photos + 300 positions
+  4753.690  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0088.jpg (417 ko)
+  4753.915  t0261428 suivi ok score 0.97 pos 3032,12380 net 47 (23 ms) carte 87 photos + 300 positions
+  4754.250  t0261763 suivi ok score 0.96 pos 2574,12380 net 45 (23 ms) carte 87 photos + 300 positions
+  4754.577  t0262090 suivi ok score 0.95 pos 2586,12380 net 39 (22 ms) carte 87 photos + 300 positions
+  4754.805  photo o-4_0090 à 2586,12380 (402 ko, 227 ms)
+  4754.908  t0262421 suivi ok score 0.96 pos 2586,12380 net 50 (20 ms) carte 88 photos + 300 positions
+  4755.240  t0262753 suivi ok score 0.96 pos 2586,12380 net 48 (20 ms) carte 88 photos + 300 positions
+  4755.552  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0089.jpg (414 ko)
+  4755.583  t0263095 suivi ok score 0.95 pos 2360,12380 net 42 (21 ms) carte 88 photos + 300 positions
+  4755.913  t0263426 suivi ok score 0.96 pos 1762,12364 net 40 (20 ms) carte 88 photos + 300 positions
+  4756.253  t0263766 suivi ok score 0.96 pos 1273,12364 net 41 (22 ms) carte 88 photos + 300 positions
+  4756.591  t0264103 suivi ok score 0.97 pos 1248,12364 net 44 (28 ms) carte 88 photos + 300 positions
+  4756.903  photo o-4_0091 à 1249,12364 (410 ko, 218 ms)
+  4756.911  t0264424 suivi ok score 0.97 pos 1249,12364 net 40 (22 ms) carte 89 photos + 300 positions
+  4757.239  t0264753 suivi ok score 0.96 pos 1240,12364 net 44 (16 ms) carte 89 photos + 300 positions
+  4757.579  t0265092 suivi ok score 0.97 pos 1021,12364 net 45 (21 ms) carte 89 photos + 300 positions
+  4757.913  t0265426 suivi ok score 0.97 pos 675,12350 net 46 (19 ms) carte 89 photos + 300 positions
+  4757.954  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0090.jpg (402 ko)
+  4758.244  t0265757 suivi ok score 0.97 pos 320,12348 net 45 (18 ms) carte 89 photos + 300 positions
+  4758.576  t0266089 suivi ok score 0.98 pos 189,12348 net 45 (19 ms) carte 89 photos + 300 positions
+  4758.925  t0266437 suivi ok score 0.98 pos 69,12348 net 43 (30 ms) carte 89 photos + 300 positions
+  4759.097  photo o-4_0092 à 93,12348 (425 ko, 220 ms)
+  4759.198  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0091.jpg (410 ko)
+  4759.247  t0266760 suivi ok score 0.98 pos -15,12348 net 46 (22 ms) carte 90 photos + 300 positions
+  4759.576  t0267089 suivi ok score 0.98 pos -39,12348 net 43 (19 ms) carte 90 photos + 300 positions
+  4759.908  t0267422 suivi ok score 0.97 pos -122,12348 net 43 (18 ms) carte 90 photos + 300 positions
+  4760.250  t0267763 suivi ok score 0.97 pos -529,12332 net 43 (18 ms) carte 90 photos + 300 positions
+  4760.580  t0268093 suivi ok score 0.98 pos -588,12348 net 50 (17 ms) carte 90 photos + 300 positions
+  4760.910  t0268423 suivi ok score 0.98 pos -576,12348 net 49 (21 ms) carte 90 photos + 300 positions
+  4760.986  photo o-4_0093 à -580,12348 (419 ko, 240 ms)
+  4761.255  t0268768 suivi ok score 0.98 pos -578,12348 net 49 (22 ms) carte 91 photos + 300 positions
+  4761.580  t0269092 suivi ok score 0.98 pos -578,12348 net 48 (20 ms) carte 91 photos + 300 positions
+  4761.915  t0269428 suivi ok score 0.97 pos -578,12348 net 49 (19 ms) carte 91 photos + 300 positions
+  4762.239  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0092.jpg (425 ko)
+  4762.251  t0269764 suivi ok score 0.98 pos -578,12348 net 48 (22 ms) carte 91 photos + 300 positions
+  4762.586  t0270098 suivi ok score 0.98 pos -578,12348 net 48 (21 ms) carte 91 photos + 300 positions
+  4762.915  t0270428 suivi ok score 0.98 pos -578,12348 net 48 (20 ms) carte 91 photos + 300 positions
+  4763.252  t0270765 suivi ok score 0.98 pos -578,12348 net 48 (24 ms) carte 91 photos + 300 positions
+  4763.489  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0093.jpg (419 ko)
+  4763.582  t0271095 suivi ok score 0.98 pos -578,12348 net 47 (21 ms) carte 91 photos + 300 positions
+  4763.914  t0271427 suivi ok score 0.98 pos -578,12348 net 48 (21 ms) carte 91 photos + 300 positions
+  4764.249  t0271762 suivi ok score 0.98 pos -578,12348 net 48 (21 ms) carte 91 photos + 300 positions
+  4764.589  t0272102 suivi ok score 0.98 pos -578,12348 net 48 (25 ms) carte 91 photos + 300 positions
+  4764.912  t0272425 suivi ok score 0.98 pos -578,12348 net 47 (20 ms) carte 91 photos + 300 positions
+  4765.250  t0272763 suivi ok score 0.98 pos -578,12348 net 48 (24 ms) carte 91 photos + 300 positions
+  4765.583  t0273095 suivi ok score 0.98 pos -578,12348 net 48 (23 ms) carte 91 photos + 300 positions
+  4765.912  t0273425 suivi ok score 0.98 pos -578,12348 net 47 (20 ms) carte 91 photos + 300 positions
+  4766.248  t0273761 suivi ok score 0.98 pos -578,12348 net 48 (22 ms) carte 91 photos + 300 positions
+  4766.583  t0274095 suivi ok score 0.98 pos -578,12348 net 48 (21 ms) carte 91 photos + 300 positions
+  4766.941  t0274454 suivi ok score 0.97 pos -578,12348 net 48 (20 ms) carte 91 photos + 300 positions
+  4767.249  t0274762 suivi ok score 0.98 pos -578,12348 net 48 (24 ms) carte 91 photos + 300 positions
+  4767.581  t0275094 suivi ok score 0.98 pos -578,12348 net 47 (22 ms) carte 91 photos + 300 positions
+  4767.911  t0275424 suivi ok score 0.98 pos -578,12348 net 47 (19 ms) carte 91 photos + 300 positions
+  4768.251  t0275764 suivi ok score 0.98 pos -578,12348 net 48 (23 ms) carte 91 photos + 300 positions
+  4768.586  t0276099 suivi ok score 0.89 pos -709,12251 net 44 (19 ms) carte 91 photos + 300 positions
+  4768.873  photo en mouvement lent (80 % du champ, 0 u/s)
+  4768.873  ATTENTION pas trop grand (80 % du champ) : recouvrement insuffisant
+  4768.927  t0276438 suivi ok score 0.44 pos -3019,12189 net 430 (31 ms) carte 91 photos + 300 positions
+  4769.101  photo o-4_0094 à -3019,12189 (286 ko, 227 ms)
+  4769.258  t0276771 suivi ok score 0.47 pos -3019,12189 net 427 (33 ms) carte 92 photos + 300 positions
+  4769.614  suivi relocalisé (n° 1) à -4406,13942 score 0.70
+  4769.614  t0277127 suivi relocated score 0.70 pos -4406,13942 net 35 (39 ms) carte 92 photos + 300 positions
+  4769.778  photo en mouvement lent (52 % du champ, 0 u/s)
+  4769.909  t0277423 suivi ok score 0.99 pos -4035,13830 net 52 (19 ms) carte 92 photos + 300 positions
+  4769.986  photo o-4_0095 à -4035,13830 (50 ko, 207 ms)
+  4770.256  t0277770 suivi ok score 0.91 pos -4035,13830 net 45 (28 ms) carte 93 photos + 300 positions
+  4770.597  t0278111 suivi ok score 0.90 pos -4035,13830 net 44 (34 ms) carte 93 photos + 300 positions
+  4770.819  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0094.jpg (286 ko)
+  4770.910  t0278425 suivi ok score 1.00 pos -4035,13830 net 45 (20 ms) carte 93 photos + 300 positions
+  4771.251  t0278765 suivi ok score 0.89 pos -4035,13830 net 48 (25 ms) carte 93 photos + 300 positions
+  4771.583  t0279097 suivi ok score 0.87 pos -4035,13841 net 76 (23 ms) carte 93 photos + 300 positions
+  4771.913  t0279427 suivi ok score 0.97 pos -4035,13842 net 64 (20 ms) carte 93 photos + 300 positions
+  4772.278  t0279792 suivi ok score 0.90 pos -4035,13842 net 52 (40 ms) carte 93 photos + 300 positions
+  4772.584  t0280098 suivi ok score 0.84 pos -4035,13832 net 57 (23 ms) carte 93 photos + 300 positions
+  4772.915  t0280429 suivi ok score 0.95 pos -4035,13846 net 52 (20 ms) carte 93 photos + 300 positions
+  4773.270  t0280784 suivi ok score 0.92 pos -4035,13846 net 49 (37 ms) carte 93 photos + 300 positions
+  4773.584  t0281098 suivi ok score 0.83 pos -4035,13846 net 70 (20 ms) carte 93 photos + 300 positions
+  4773.923  t0281437 suivi ok score 0.91 pos -4035,13846 net 62 (25 ms) carte 93 photos + 300 positions
+  4774.196  changement d'objectif vers x10 : début à 281711 ms, position -4035,13846 (ok)
+  4795.432  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+  4798.257  verrouillage : focus infini, pose 0.752731 ms, ISO 50, WB figée
+  4798.499  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+  4809.551  objectif x10 : reprise à 317066 ms (calibration absente) ; profondeur non
+  4809.578  masque oculaire : 100 % du cadre utile (p95 231)
+  4809.633  t0317145 suivi ok score 0.99 pos 0,0 net 191 (24 ms) carte 0 photos + 0 positions
+  4809.958  t0317471 suivi ok score 0.98 pos 0,0 net 191 (17 ms) carte 0 photos + 4 positions
+  4810.223  patron 4x4 champs posé autour du détail (-4590,-6120)
+  4810.223  photo o-4_0096 à 0,0 (416 ko, 230 ms)
+  4810.298  t0317811 suivi ok score 0.99 pos 0,0 net 191 (17 ms) carte 1 photos + 7 positions
+  4810.620  t0318133 suivi ok score 0.99 pos 0,0 net 190 (20 ms) carte 1 photos + 10 positions
+  4810.954  t0318467 suivi ok score 0.98 pos 0,0 net 186 (19 ms) carte 1 photos + 14 positions
+  4811.289  t0318802 suivi ok score 0.97 pos 84,0 net 196 (19 ms) carte 1 photos + 17 positions
+  4811.626  t0319139 suivi ok score 0.99 pos 262,0 net 202 (21 ms) carte 1 photos + 20 positions
+  4811.676  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0095.jpg (50 ko)
+  4811.960  t0319473 suivi ok score 0.98 pos 251,0 net 209 (19 ms) carte 1 photos + 24 positions
+  4812.112  photo o-4_0097 à 252,0 (422 ko, 217 ms)
+  4812.297  t0319810 suivi ok score 0.99 pos 251,0 net 200 (22 ms) carte 2 photos + 27 positions
+  4812.634  t0320147 suivi ok score 0.99 pos 251,0 net 198 (26 ms) carte 2 photos + 30 positions
+  4812.958  t0320471 suivi ok score 0.95 pos 391,0 net 186 (19 ms) carte 2 photos + 34 positions
+  4813.300  t0320813 suivi ok score 0.95 pos 634,0 net 191 (26 ms) carte 2 photos + 37 positions
+  4813.443  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0096.jpg (416 ko)
+  4813.637  t0321151 suivi ok score 0.94 pos 885,0 net 188 (18 ms) carte 2 photos + 40 positions
+  4813.967  t0321479 suivi ok score 0.95 pos 1419,0 net 173 (26 ms) carte 2 photos + 44 positions
+  4814.303  t0321815 suivi ok score 0.99 pos 1530,0 net 178 (30 ms) carte 2 photos + 47 positions
+  4814.621  t0322134 suivi ok score 0.94 pos 1539,0 net 173 (16 ms) carte 2 photos + 50 positions
+  4814.714  photo o-4_0098 à 1530,0 (403 ko, 210 ms)
+  4814.957  t0322469 suivi ok score 0.94 pos 1869,0 net 181 (21 ms) carte 3 photos + 54 positions
+  4815.291  t0322804 suivi ok score 0.97 pos 2153,0 net 172 (20 ms) carte 3 photos + 57 positions
+  4815.621  t0323135 suivi ok score 0.97 pos 2439,0 net 160 (16 ms) carte 3 photos + 60 positions
+  4815.968  t0323481 suivi ok score 0.98 pos 2439,0 net 133 (24 ms) carte 3 photos + 64 positions
+  4816.207  photo o-4_0099 à 2439,0 (379 ko, 207 ms)
+  4816.306  t0323819 suivi ok score 0.99 pos 2439,0 net 166 (35 ms) carte 4 photos + 67 positions
+  4816.461  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0097.jpg (422 ko)
+  4816.642  t0324154 suivi ok score 0.98 pos 2439,0 net 208 (35 ms) carte 4 photos + 70 positions
+  4816.901  reprise de mise au point au même endroit : netteté 213 contre 130 (reprise 1)
+  4816.967  t0324480 suivi ok score 0.98 pos 2439,0 net 214 (21 ms) carte 4 photos + 74 positions
+  4817.121  photo o-4_0100 à 2439,0 (431 ko, 219 ms)
+  4817.303  t0324816 suivi ok score 0.99 pos 2439,0 net 214 (28 ms) carte 5 photos + 77 positions
+  4817.628  t0325140 suivi ok score 0.98 pos 2439,0 net 217 (18 ms) carte 5 photos + 80 positions
+  4817.916  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0098.jpg (403 ko)
+  4817.968  t0325481 suivi ok score 0.93 pos 2543,0 net 231 (22 ms) carte 5 photos + 84 positions
+  4818.295  t0325808 suivi ok score 0.97 pos 2714,0 net 216 (20 ms) carte 5 photos + 87 positions
+  4818.629  t0326142 suivi ok score 0.93 pos 2866,0 net 212 (26 ms) carte 5 photos + 90 positions
+  4818.962  t0326475 suivi ok score 0.98 pos 3084,0 net 220 (21 ms) carte 5 photos + 94 positions
+  4819.292  t0326804 suivi ok score 0.99 pos 3084,0 net 212 (18 ms) carte 5 photos + 97 positions
+  4819.520  photo o-4_0101 à 3084,0 (422 ko, 228 ms)
+  4819.627  t0327140 suivi ok score 0.97 pos 3084,0 net 212 (24 ms) carte 6 photos + 100 positions
+  4819.958  t0327471 suivi ok score 0.95 pos 3359,0 net 191 (20 ms) carte 6 photos + 104 positions
+  4820.304  t0327817 suivi ok score 0.93 pos 3610,0 net 203 (27 ms) carte 6 photos + 107 positions
+  4820.635  t0328147 suivi ok score 0.97 pos 3970,0 net 169 (28 ms) carte 6 photos + 110 positions
+  4820.974  t0328487 suivi ok score 0.94 pos 4188,0 net 196 (22 ms) carte 6 photos + 114 positions
+  4820.984  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0099.jpg (379 ko)
+  4821.291  t0328804 suivi ok score 0.94 pos 4343,0 net 171 (19 ms) carte 6 photos + 117 positions
+  4821.638  t0329150 suivi ok score 0.98 pos 4435,0 net 166 (29 ms) carte 6 photos + 120 positions
+  4821.959  photo o-4_0102 à 4443,0 (391 ko, 223 ms)
+  4821.970  t0329482 suivi ok score 0.97 pos 4494,0 net 177 (26 ms) carte 7 photos + 124 positions
+  4822.300  t0329812 suivi ok score 0.98 pos 4494,0 net 154 (27 ms) carte 7 photos + 127 positions
+  4822.562  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0100.jpg (431 ko)
+  4822.629  t0330142 suivi ok score 0.98 pos 4494,0 net 158 (21 ms) carte 7 photos + 130 positions
+  4822.963  t0330476 suivi ok score 0.98 pos 4494,0 net 168 (23 ms) carte 7 photos + 134 positions
+  4823.300  t0330813 suivi ok score 0.98 pos 4494,0 net 173 (23 ms) carte 7 photos + 137 positions
+  4823.625  t0331138 suivi ok score 0.98 pos 4494,0 net 145 (19 ms) carte 7 photos + 140 positions
+  4823.962  t0331474 suivi ok score 0.98 pos 4494,0 net 139 (20 ms) carte 7 photos + 144 positions
+  4824.302  t0331814 suivi ok score 0.98 pos 4494,0 net 188 (24 ms) carte 7 photos + 147 positions
+  4824.505  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0101.jpg (422 ko)
+  4824.636  t0332148 suivi ok score 0.98 pos 4494,0 net 188 (29 ms) carte 7 photos + 150 positions
+  4824.966  t0332479 suivi ok score 0.91 pos 4494,-80 net 172 (25 ms) carte 7 photos + 154 positions
+  4825.322  t0332835 suivi ok score 0.94 pos 4494,-446 net 176 (22 ms) carte 7 photos + 157 positions
+  4825.635  t0333147 suivi ok score 0.91 pos 4494,-993 net 184 (23 ms) carte 7 photos + 160 positions
+  4825.978  t0333491 suivi ok score 0.91 pos 4494,-1242 net 181 (21 ms) carte 7 photos + 164 positions
+  4826.296  t0333810 suivi ok score 0.98 pos 4494,-1254 net 172 (18 ms) carte 7 photos + 167 positions
+  4826.544  photo o-4_0103 à 4494,-1254 (385 ko, 205 ms)
+  4826.637  t0334150 suivi ok score 0.98 pos 4494,-1254 net 167 (24 ms) carte 8 photos + 170 positions
+  4826.965  t0334478 suivi ok score 0.98 pos 4494,-1254 net 186 (18 ms) carte 8 photos + 174 positions
+  4827.299  t0334812 suivi ok score 0.98 pos 4494,-1254 net 186 (23 ms) carte 8 photos + 177 positions
+  4827.629  t0335142 suivi ok score 0.87 pos 4494,-1506 net 185 (20 ms) carte 8 photos + 180 positions
+  4827.973  t0335485 suivi ok score 0.93 pos 4494,-1716 net 193 (24 ms) carte 8 photos + 184 positions
+  4827.977  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0102.jpg (391 ko)
+  4828.298  t0335811 suivi ok score 0.90 pos 4503,-2239 net 181 (20 ms) carte 8 photos + 187 positions
+  4828.647  t0336159 suivi ok score 0.88 pos 4505,-2724 net 189 (30 ms) carte 8 photos + 190 positions
+  4828.982  t0336495 suivi ok score 0.98 pos 4503,-2829 net 177 (33 ms) carte 8 photos + 194 positions
+  4829.192  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0103.jpg (385 ko)
+  4829.269  photo o-4_0104 à 4503,-2829 (417 ko, 198 ms)
+  4829.288  t0336801 suivi ok score 0.98 pos 4503,-2829 net 174 (17 ms) carte 9 photos + 197 positions
+  4829.629  t0337142 suivi ok score 0.98 pos 4503,-2829 net 159 (23 ms) carte 9 photos + 200 positions
+  4829.965  t0337478 suivi ok score 0.98 pos 4503,-2829 net 180 (22 ms) carte 9 photos + 204 positions
+  4830.293  t0337806 suivi ok score 0.98 pos 4503,-2829 net 181 (18 ms) carte 9 photos + 207 positions
+  4830.631  t0338144 suivi ok score 0.97 pos 4503,-2829 net 198 (22 ms) carte 9 photos + 210 positions
+  4830.974  t0338487 suivi ok score 0.94 pos 4503,-3276 net 208 (24 ms) carte 9 photos + 214 positions
+  4831.310  t0338822 suivi ok score 0.87 pos 4511,-3956 net 166 (30 ms) carte 9 photos + 217 positions
+  4831.633  t0339146 suivi ok score 0.95 pos 4515,-4199 net 165 (20 ms) carte 9 photos + 220 positions
+  4831.963  t0339475 suivi ok score 0.97 pos 4515,-4199 net 158 (18 ms) carte 9 photos + 224 positions
+  4832.220  photo o-4_0105 à 4515,-4199 (396 ko, 220 ms)
+  4832.299  t0339812 suivi ok score 0.97 pos 4515,-4199 net 148 (23 ms) carte 10 photos + 227 positions
+  4832.524  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0104.jpg (417 ko)
+  4832.628  t0340142 suivi ok score 0.98 pos 4515,-4199 net 163 (20 ms) carte 10 photos + 230 positions
+  4832.959  t0340472 suivi ok score 0.98 pos 4515,-4199 net 165 (17 ms) carte 10 photos + 234 positions
+  4833.295  t0340808 suivi ok score 0.97 pos 4515,-4199 net 163 (21 ms) carte 10 photos + 237 positions
+  4833.633  t0341146 suivi ok score 0.96 pos 4447,-4199 net 162 (22 ms) carte 10 photos + 240 positions
+  4833.977  t0341489 suivi ok score 0.97 pos 4191,-4199 net 178 (26 ms) carte 10 photos + 244 positions
+  4834.301  t0341813 suivi ok score 0.94 pos 3932,-4199 net 175 (22 ms) carte 10 photos + 247 positions
+  4834.633  t0342146 suivi ok score 0.98 pos 3869,-4199 net 173 (18 ms) carte 10 photos + 250 positions
+  4834.951  photo o-4_0106 à 3869,-4199 (433 ko, 221 ms)
+  4834.975  t0342487 suivi ok score 0.97 pos 3869,-4199 net 174 (29 ms) carte 11 photos + 254 positions
+  4835.290  t0342803 suivi ok score 0.95 pos 3869,-4041 net 191 (16 ms) carte 11 photos + 257 positions
+  4835.645  t0343157 suivi ok score 0.98 pos 3869,-3928 net 187 (31 ms) carte 11 photos + 260 positions
+  4835.986  t0343498 suivi ok score 0.98 pos 3869,-3848 net 183 (36 ms) carte 11 photos + 264 positions
+  4836.273  photo o-4_0107 à 3869,-3848 (438 ko, 189 ms)
+  4836.292  t0343805 suivi ok score 0.94 pos 3861,-3848 net 183 (18 ms) carte 12 photos + 267 positions
+  4836.505  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0105.jpg (396 ko)
+  4836.628  t0344141 suivi ok score 0.95 pos 3714,-3848 net 193 (22 ms) carte 12 photos + 270 positions
+  4836.961  t0344474 suivi ok score 0.93 pos 3474,-3848 net 183 (20 ms) carte 12 photos + 274 positions
+  4837.310  t0344822 suivi ok score 0.94 pos 2985,-3848 net 198 (30 ms) carte 12 photos + 277 positions
+  4837.644  t0345156 suivi ok score 0.93 pos 2473,-3848 net 187 (25 ms) carte 12 photos + 280 positions
+  4837.764  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0106.jpg (433 ko)
+  4837.823  photo en mouvement lent (51 % du champ, 31 u/s)
+  4837.958  t0345471 suivi ok score 0.94 pos 2240,-3848 net 174 (15 ms) carte 12 photos + 284 positions
+  4838.061  photo o-4_0108 à 2303,-3848 (453 ko, 237 ms)
+  4838.303  t0345816 suivi ok score 0.98 pos 2175,-3848 net 188 (25 ms) carte 13 photos + 287 positions
+  4838.633  t0346146 suivi ok score 0.98 pos 2163,-3848 net 186 (18 ms) carte 13 photos + 290 positions
+  4838.640  photo o-4_0109 à 2163,-3848 (452 ko, 207 ms)
+  4838.994  t0346506 suivi ok score 0.98 pos 2163,-3848 net 189 (41 ms) carte 14 photos + 294 positions
+  4839.317  t0346829 suivi ok score 0.97 pos 1996,-3848 net 191 (34 ms) carte 14 photos + 297 positions
+  4839.509  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0107.jpg (438 ko)
+  4839.634  t0347147 suivi ok score 0.97 pos 1614,-3848 net 193 (21 ms) carte 14 photos + 300 positions
+  4839.963  t0347475 suivi ok score 0.95 pos 1365,-3848 net 187 (15 ms) carte 14 photos + 300 positions
+  4840.296  t0347809 suivi ok score 0.98 pos 1184,-3848 net 177 (16 ms) carte 14 photos + 300 positions
+  4840.639  t0348152 suivi ok score 0.98 pos 1171,-3848 net 181 (24 ms) carte 14 photos + 300 positions
+  4840.841  photo o-4_0110 à 1171,-3848 (441 ko, 201 ms)
+  4840.969  t0348481 suivi ok score 0.98 pos 1171,-3848 net 182 (26 ms) carte 15 photos + 300 positions
+  4841.305  t0348818 suivi ok score 0.96 pos 1052,-3848 net 183 (26 ms) carte 15 photos + 300 positions
+  4841.638  t0349151 suivi ok score 0.97 pos 833,-3848 net 191 (20 ms) carte 15 photos + 300 positions
+  4841.970  t0349483 suivi ok score 0.98 pos 670,-3848 net 197 (23 ms) carte 15 photos + 300 positions
+  4842.076  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0108.jpg (453 ko)
+  4842.300  t0349813 suivi ok score 0.99 pos 633,-3848 net 169 (22 ms) carte 15 photos + 300 positions
+  4842.562  photo o-4_0111 à 633,-3848 (429 ko, 236 ms)
+  4842.630  t0350143 suivi ok score 0.98 pos 633,-3848 net 172 (17 ms) carte 16 photos + 300 positions
+  4842.962  t0350475 suivi ok score 0.98 pos 633,-3848 net 173 (17 ms) carte 16 photos + 300 positions
+  4843.297  t0350810 suivi ok score 0.99 pos 633,-3848 net 172 (19 ms) carte 16 photos + 300 positions
+  4843.630  t0351143 suivi ok score 0.97 pos 633,-3848 net 184 (19 ms) carte 16 photos + 300 positions
+  4843.970  t0351483 suivi ok score 0.98 pos 633,-3848 net 173 (24 ms) carte 16 photos + 300 positions
+  4844.305  t0351818 suivi ok score 0.99 pos 633,-3848 net 174 (24 ms) carte 16 photos + 300 positions
+  4844.629  t0352143 suivi ok score 0.98 pos 633,-3848 net 175 (17 ms) carte 16 photos + 300 positions
+  4844.642  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0109.jpg (452 ko)
+  4844.964  t0352477 suivi ok score 0.98 pos 633,-3848 net 178 (18 ms) carte 16 photos + 300 positions
+  4845.306  t0352818 suivi ok score 0.99 pos 633,-3848 net 186 (21 ms) carte 16 photos + 300 positions
+  4845.640  t0353153 suivi ok score 0.99 pos 633,-3834 net 186 (21 ms) carte 16 photos + 300 positions
+  4845.972  t0353485 suivi ok score 0.99 pos 645,-3848 net 167 (24 ms) carte 16 photos + 300 positions
+  4846.314  t0353827 suivi ok score 0.92 pos 657,-3869 net 186 (22 ms) carte 16 photos + 300 positions
+  4846.390  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0110.jpg (441 ko)
+  4846.642  t0354155 suivi ok score 0.95 pos 669,-3864 net 189 (20 ms) carte 16 photos + 300 positions
+  4846.987  t0354499 suivi ok score 0.98 pos 669,-3864 net 180 (32 ms) carte 16 photos + 300 positions
+  4847.298  t0354811 suivi ok score 0.96 pos 669,-3864 net 187 (17 ms) carte 16 photos + 300 positions
+  4847.645  t0355157 suivi ok score 0.96 pos 622,-3848 net 194 (29 ms) carte 16 photos + 300 positions
+  4847.970  t0355483 suivi ok score 0.97 pos 632,-3848 net 185 (23 ms) carte 16 photos + 300 positions
+  4848.310  t0355822 suivi ok score 0.97 pos 633,-3848 net 191 (26 ms) carte 16 photos + 300 positions
+  4848.478  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0111.jpg (429 ko)
+  4848.638  t0356151 suivi ok score 0.98 pos 598,-3864 net 176 (24 ms) carte 16 photos + 300 positions
+  4848.969  t0356482 suivi ok score 0.97 pos 645,-3864 net 192 (22 ms) carte 16 photos + 300 positions
+  4849.300  t0356813 suivi ok score 0.98 pos 637,-3864 net 193 (18 ms) carte 16 photos + 300 positions
+  4849.630  t0357144 suivi ok score 0.97 pos 645,-3864 net 180 (18 ms) carte 16 photos + 300 positions
+  4849.975  t0357487 suivi ok score 0.97 pos 645,-3864 net 179 (24 ms) carte 16 photos + 300 positions
+  4850.310  t0357823 suivi ok score 0.98 pos 645,-3864 net 179 (27 ms) carte 16 photos + 300 positions
+  4850.634  t0358147 suivi ok score 0.97 pos 645,-3863 net 181 (17 ms) carte 16 photos + 300 positions
+  4850.973  t0358485 suivi ok score 0.94 pos 278,-3848 net 184 (22 ms) carte 16 photos + 300 positions
+  4851.317  t0358829 suivi ok score 0.96 pos 152,-3848 net 182 (30 ms) carte 16 photos + 300 positions
+  4851.642  t0359155 suivi ok score 0.97 pos 87,-3848 net 181 (23 ms) carte 16 photos + 300 positions
+  4851.963  photo o-4_0112 à 87,-3848 (414 ko, 220 ms)
+  4851.969  t0359482 suivi ok score 0.97 pos 93,-3848 net 178 (18 ms) carte 17 photos + 300 positions
+  4852.297  t0359811 suivi ok score 0.98 pos 93,-3848 net 183 (17 ms) carte 17 photos + 300 positions
+  4852.636  t0360149 suivi ok score 0.95 pos -59,-3848 net 171 (22 ms) carte 17 photos + 300 positions
+  4852.977  t0360489 suivi ok score 0.96 pos -194,-3848 net 193 (27 ms) carte 17 photos + 300 positions
+  4853.202  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0112.jpg (414 ko)
+  4853.302  t0360815 suivi ok score 0.96 pos -484,-3833 net 183 (21 ms) carte 17 photos + 300 positions
+  4853.630  t0361143 suivi ok score 0.94 pos -919,-3832 net 178 (17 ms) carte 17 photos + 300 positions
+  4853.964  t0361477 suivi ok score 0.96 pos -1228,-3832 net 188 (18 ms) carte 17 photos + 300 positions
+  4854.301  t0361814 suivi ok score 0.98 pos -1231,-3816 net 173 (20 ms) carte 17 photos + 300 positions
+  4854.595  photo o-4_0113 à -1231,-3816 (410 ko, 221 ms)
+  4854.633  t0362147 suivi ok score 0.98 pos -1231,-3816 net 173 (18 ms) carte 18 photos + 300 positions
+  4854.974  t0362486 suivi ok score 0.94 pos -1243,-3816 net 188 (22 ms) carte 18 photos + 300 positions
+  4855.303  t0362816 suivi ok score 0.95 pos -1581,-3816 net 176 (19 ms) carte 18 photos + 300 positions
+  4855.653  t0363166 suivi ok score 0.85 pos -2053,-3800 net 201 (30 ms) carte 18 photos + 300 positions
+  4855.979  t0363491 suivi ok score 0.97 pos -2056,-3800 net 209 (26 ms) carte 18 photos + 300 positions
+  4856.290  photo o-4_0114 à -2056,-3800 (419 ko, 217 ms)
+  4856.303  t0363816 suivi ok score 0.98 pos -2056,-3800 net 208 (21 ms) carte 19 photos + 300 positions
+  4856.632  t0364145 suivi ok score 0.94 pos -2319,-3800 net 226 (17 ms) carte 19 photos + 300 positions
+  4856.968  t0364481 suivi ok score 0.94 pos -2785,-3784 net 189 (17 ms) carte 19 photos + 300 positions
+  4857.276  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0113.jpg (410 ko)
+  4857.308  t0364822 suivi ok score 0.96 pos -3180,-3784 net 200 (22 ms) carte 19 photos + 300 positions
+  4857.637  t0365150 suivi ok score 0.97 pos -3276,-3784 net 202 (23 ms) carte 19 photos + 300 positions
+  4857.972  t0365485 suivi ok score 0.97 pos -3276,-3784 net 203 (22 ms) carte 19 photos + 300 positions
+  4857.988  photo o-4_0115 à -3276,-3784 (440 ko, 219 ms)
+  4858.298  t0365811 suivi ok score 0.91 pos -3456,-3784 net 209 (16 ms) carte 20 photos + 300 positions
+  4858.636  t0366149 suivi ok score 0.94 pos -3862,-3768 net 229 (17 ms) carte 20 photos + 300 positions
+  4858.968  t0366481 suivi ok score 0.94 pos -4448,-3768 net 231 (17 ms) carte 20 photos + 300 positions
+  4859.253  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0114.jpg (419 ko)
+  4859.315  t0366827 suivi ok score 0.98 pos -4559,-3768 net 220 (23 ms) carte 20 photos + 300 positions
+  4859.637  t0367150 suivi ok score 0.98 pos -4559,-3768 net 219 (24 ms) carte 20 photos + 300 positions
+  4859.680  photo o-4_0116 à -4559,-3768 (451 ko, 200 ms)
+  4859.974  t0367487 suivi ok score 0.98 pos -4559,-3768 net 223 (22 ms) carte 21 photos + 300 positions
+  4860.302  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0115.jpg (440 ko)
+  4860.314  t0367827 suivi ok score 0.94 pos -4559,-3704 net 210 (25 ms) carte 21 photos + 300 positions
+  4860.641  t0368155 suivi ok score 0.91 pos -4547,-3051 net 197 (22 ms) carte 21 photos + 300 positions
+  4860.975  t0368487 suivi ok score 0.82 pos -4535,-2445 net 221 (20 ms) carte 21 photos + 300 positions
+  4861.310  t0368822 suivi ok score 0.95 pos -4527,-2084 net 197 (20 ms) carte 21 photos + 300 positions
+  4861.645  t0369157 suivi ok score 0.98 pos -4527,-2079 net 201 (22 ms) carte 21 photos + 300 positions
+  4861.815  photo o-4_0117 à -4527,-2079 (455 ko, 210 ms)
+  4861.971  t0369484 suivi ok score 0.97 pos -4527,-2079 net 200 (23 ms) carte 22 photos + 300 positions
+  4862.315  t0369828 suivi ok score 0.86 pos -4518,-1713 net 203 (27 ms) carte 22 photos + 300 positions
+  4862.652  t0370164 suivi ok score 0.95 pos -4515,-1474 net 211 (28 ms) carte 22 photos + 300 positions
+  4862.969  t0370483 suivi ok score 0.92 pos -4506,-1075 net 195 (16 ms) carte 22 photos + 300 positions
+  4863.305  t0370818 suivi ok score 0.98 pos -4503,-820 net 188 (19 ms) carte 22 photos + 300 positions
+  4863.386  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0116.jpg (451 ko)
+  4863.649  t0371163 suivi ok score 0.97 pos -4503,-820 net 187 (24 ms) carte 22 photos + 300 positions
+  4863.780  photo o-4_0118 à -4503,-820 (420 ko, 213 ms)
+  4863.981  t0371494 suivi ok score 0.97 pos -4503,-820 net 187 (30 ms) carte 23 photos + 300 positions
+  4864.303  t0371816 suivi ok score 0.88 pos -4494,-438 net 171 (18 ms) carte 23 photos + 300 positions
+  4864.634  t0372147 suivi ok score 0.94 pos -4491,5 net 169 (17 ms) carte 23 photos + 300 positions
+  4864.958  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0117.jpg (455 ko)
+  4864.969  t0372482 suivi ok score 0.97 pos -4491,9 net 176 (19 ms) carte 23 photos + 300 positions
+  4865.163  photo o-4_0119 à -4491,9 (386 ko, 218 ms)
+  4865.311  t0372823 suivi ok score 0.97 pos -4491,9 net 175 (27 ms) carte 24 photos + 300 positions
+  4865.638  t0373151 suivi ok score 0.93 pos -3726,-7 net 159 (22 ms) carte 24 photos + 300 positions
+  4865.976  t0373489 suivi ok score 0.95 pos -3260,-7 net 182 (25 ms) carte 24 photos + 300 positions
+  4866.213  photo en mouvement lent (53 % du champ, 9 u/s)
+  4866.318  t0373831 suivi ok score 0.96 pos -2876,-23 net 178 (25 ms) carte 24 photos + 300 positions
+  4866.432  photo o-4_0120 à -2884,-23 (371 ko, 219 ms)
+  4866.635  t0374148 suivi ok score 0.97 pos -2867,-23 net 178 (20 ms) carte 25 photos + 300 positions
+  4866.668  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0118.jpg (420 ko)
+  4866.967  t0374481 suivi ok score 0.96 pos -2875,-23 net 170 (19 ms) carte 25 photos + 300 positions
+  4867.303  t0374817 suivi ok score 0.96 pos -2879,-23 net 135 (20 ms) carte 25 photos + 300 positions
+  4867.637  t0375151 suivi ok score 0.97 pos -2867,-23 net 224 (19 ms) carte 25 photos + 300 positions
+  4867.671  reprise de mise au point au même endroit : netteté 228 contre 173 (reprise 1)
+  4867.902  photo o-4_0121 à -2867,-23 (414 ko, 230 ms)
+  4867.970  t0375483 suivi ok score 0.98 pos -2867,-23 net 233 (20 ms) carte 26 photos + 300 positions
+  4868.059  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0119.jpg (386 ko)
+  4868.304  t0375817 suivi ok score 0.97 pos -2867,-23 net 234 (21 ms) carte 26 photos + 300 positions
+  4868.640  t0376153 suivi ok score 0.90 pos -2831,-23 net 237 (22 ms) carte 26 photos + 300 positions
+  4868.981  t0376494 suivi ok score 0.95 pos -2567,-23 net 238 (25 ms) carte 26 photos + 300 positions
+  4869.312  t0376825 suivi ok score 0.89 pos -2277,-39 net 247 (22 ms) carte 26 photos + 300 positions
+  4869.635  t0377148 suivi ok score 0.96 pos -1887,-39 net 219 (15 ms) carte 26 photos + 300 positions
+  4869.971  t0377484 suivi ok score 0.97 pos -1711,-39 net 222 (19 ms) carte 26 photos + 300 positions
+  4870.310  t0377823 suivi ok score 0.98 pos -1711,-39 net 237 (26 ms) carte 26 photos + 300 positions
+  4870.525  photo o-4_0122 à -1711,-39 (416 ko, 214 ms)
+  4870.632  t0378146 suivi ok score 0.97 pos -1711,-39 net 240 (17 ms) carte 27 photos + 300 positions
+  4870.974  t0378487 suivi ok score 0.98 pos -1687,-39 net 247 (17 ms) carte 27 photos + 300 positions
+  4871.313  t0378826 suivi ok score 0.98 pos -1687,-39 net 247 (20 ms) carte 27 photos + 300 positions
+  4871.551  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0120.jpg (371 ko)
+  4871.647  t0379159 suivi ok score 0.96 pos -1687,9 net 209 (21 ms) carte 27 photos + 300 positions
+  4871.970  t0379484 suivi ok score 0.93 pos -1663,882 net 227 (18 ms) carte 27 photos + 300 positions
+  4872.306  t0379819 suivi ok score 0.95 pos -1663,980 net 211 (19 ms) carte 27 photos + 300 positions
+  4872.610  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0121.jpg (414 ko)
+  4872.642  t0380156 suivi ok score 0.86 pos -1663,1272 net 217 (19 ms) carte 27 photos + 300 positions
+  4872.982  t0380494 suivi ok score 0.93 pos -1652,1600 net 227 (23 ms) carte 27 photos + 300 positions
+  4873.238  photo en mouvement lent (52 % du champ, 24 u/s)
+  4873.307  t0380820 suivi ok score 0.98 pos -1651,2093 net 211 (19 ms) carte 27 photos + 300 positions
+  4873.470  photo o-4_0123 à -1651,2094 (403 ko, 231 ms)
+  4873.651  t0381164 suivi ok score 0.98 pos -1651,2093 net 213 (29 ms) carte 28 photos + 300 positions
+  4873.972  t0381485 suivi ok score 0.93 pos -1483,2093 net 242 (18 ms) carte 28 photos + 300 positions
+  4874.078  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0122.jpg (416 ko)
+  4874.305  t0381818 suivi ok score 0.95 pos -937,2077 net 217 (19 ms) carte 28 photos + 300 positions
+  4874.640  t0382153 suivi ok score 0.99 pos -613,2077 net 217 (21 ms) carte 28 photos + 300 positions
+  4874.975  t0382488 suivi ok score 0.99 pos -611,2077 net 224 (22 ms) carte 28 photos + 300 positions
+  4875.169  photo o-4_0124 à -611,2077 (420 ko, 229 ms)
+  4875.318  t0382831 suivi ok score 0.98 pos -611,2077 net 208 (31 ms) carte 29 photos + 300 positions
+  4875.647  t0383160 suivi ok score 0.95 pos -240,2077 net 245 (26 ms) carte 29 photos + 300 positions
+  4875.981  t0383493 suivi ok score 0.99 pos 35,2061 net 240 (21 ms) carte 29 photos + 300 positions
+  4876.306  t0383819 suivi ok score 0.98 pos 35,2061 net 239 (19 ms) carte 29 photos + 300 positions
+  4876.535  photo o-4_0125 à 35,2061 (429 ko, 228 ms)
+  4876.584  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0123.jpg (403 ko)
+  4876.638  t0384152 suivi ok score 0.98 pos 35,2061 net 239 (18 ms) carte 30 photos + 300 positions
+  4876.994  t0384506 suivi ok score 0.94 pos 465,2050 net 217 (31 ms) carte 30 photos + 300 positions
+  4877.308  t0384821 suivi ok score 0.89 pos 752,2045 net 225 (17 ms) carte 30 photos + 300 positions
+  4877.651  t0385164 suivi ok score 0.98 pos 895,2045 net 224 (22 ms) carte 30 photos + 300 positions
+  4877.807  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0124.jpg (420 ko)
+  4878.004  t0385516 suivi ok score 0.98 pos 883,2045 net 218 (34 ms) carte 30 photos + 300 positions
+  4878.114  photo o-4_0126 à 883,2045 (439 ko, 243 ms)
+  4878.316  t0385829 suivi ok score 0.95 pos 904,2045 net 223 (28 ms) carte 31 photos + 300 positions
+  4878.642  t0386155 suivi ok score 0.93 pos 1386,2030 net 215 (23 ms) carte 31 photos + 300 positions
+  4878.979  t0386492 suivi ok score 0.98 pos 1505,2029 net 209 (24 ms) carte 31 photos + 300 positions
+  4879.306  t0386819 suivi ok score 0.98 pos 1505,2029 net 211 (22 ms) carte 31 photos + 300 positions
+  4879.333  photo o-4_0127 à 1505,2029 (439 ko, 212 ms)
+  4879.639  t0387152 suivi ok score 0.88 pos 1640,2029 net 216 (19 ms) carte 32 photos + 300 positions
+  4879.981  t0387493 suivi ok score 0.90 pos 2186,2013 net 208 (24 ms) carte 32 photos + 300 positions
+  4879.994  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0125.jpg (429 ko)
+  4880.312  t0387825 suivi ok score 0.98 pos 2354,2013 net 193 (24 ms) carte 32 photos + 300 positions
+  4880.640  t0388153 suivi ok score 0.98 pos 2354,2013 net 194 (21 ms) carte 32 photos + 300 positions
+  4880.725  photo o-4_0128 à 2354,2013 (426 ko, 218 ms)
+  4881.003  t0388515 suivi ok score 0.98 pos 2354,2013 net 191 (37 ms) carte 33 photos + 300 positions
+  4881.317  t0388830 suivi ok score 0.96 pos 2493,2013 net 204 (25 ms) carte 33 photos + 300 positions
+  4881.404  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0126.jpg (439 ko)
+  4881.643  t0389156 suivi ok score 0.96 pos 2736,2002 net 198 (20 ms) carte 33 photos + 300 positions
+  4881.974  t0389487 suivi ok score 0.93 pos 2906,1997 net 197 (17 ms) carte 33 photos + 300 positions
+  4882.305  t0389819 suivi ok score 0.98 pos 2927,1997 net 191 (17 ms) carte 33 photos + 300 positions
+  4882.584  photo o-4_0129 à 2927,1997 (409 ko, 218 ms)
+  4882.660  t0390173 suivi ok score 0.98 pos 2927,1997 net 191 (24 ms) carte 34 photos + 300 positions
+  4882.990  t0390503 suivi ok score 0.96 pos 2927,1997 net 198 (23 ms) carte 34 photos + 300 positions
+  4883.313  t0390826 suivi ok score 0.94 pos 3322,1997 net 176 (24 ms) carte 34 photos + 300 positions
+  4883.641  t0391154 suivi ok score 0.92 pos 3585,1982 net 157 (19 ms) carte 34 photos + 300 positions
+  4883.861  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0127.jpg (439 ko)
+  4883.974  t0391487 suivi ok score 0.95 pos 3728,1982 net 164 (16 ms) carte 34 photos + 300 positions
+  4884.310  t0391823 suivi ok score 0.97 pos 3764,1982 net 161 (19 ms) carte 34 photos + 300 positions
+  4884.638  t0392151 suivi ok score 0.97 pos 3764,1982 net 162 (18 ms) carte 34 photos + 300 positions
+  4884.653  photo o-4_0130 à 3764,1982 (385 ko, 213 ms)
+  4884.976  t0392489 suivi ok score 0.94 pos 3920,1982 net 156 (20 ms) carte 35 photos + 300 positions
+  4885.070  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0128.jpg (426 ko)
+  4885.316  t0392828 suivi ok score 0.96 pos 4135,1982 net 138 (26 ms) carte 35 photos + 300 positions
+  4885.646  t0393159 suivi ok score 0.92 pos 4457,1966 net 108 (23 ms) carte 35 photos + 300 positions
+  4885.993  t0393506 suivi ok score 0.98 pos 4469,1966 net 110 (29 ms) carte 35 photos + 300 positions
+  4886.044  photo floue (netteté 110 contre 228 de référence)
+  4886.149  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0129.jpg (409 ko)
+  4886.270  photo o-4_0131 à 4469,1966 (366 ko, 225 ms)
+  4886.313  t0393826 suivi ok score 0.97 pos 4469,1966 net 109 (18 ms) carte 36 photos + 300 positions
+  4886.650  t0394163 suivi ok score 0.96 pos 4469,1966 net 97 (25 ms) carte 36 photos + 300 positions
+  4886.980  t0394493 suivi ok score 0.97 pos 4469,1966 net 118 (25 ms) carte 36 photos + 300 positions
+  4887.111  reprise de mise au point au même endroit : netteté 161 contre 110 (reprise 1)
+  4887.305  t0394818 suivi ok score 0.97 pos 4469,1966 net 172 (18 ms) carte 36 photos + 300 positions
+  4887.335  photo o-4_0132 à 4469,1966 (398 ko, 223 ms)
+  4887.642  t0395155 suivi ok score 0.97 pos 4469,1966 net 184 (19 ms) carte 37 photos + 300 positions
+  4887.980  t0395493 suivi ok score 0.98 pos 4469,1966 net 173 (19 ms) carte 37 photos + 300 positions
+  4888.321  t0395835 suivi ok score 0.97 pos 4469,1966 net 173 (25 ms) carte 37 photos + 300 positions
+  4888.468  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0130.jpg (385 ko)
+  4888.652  t0396165 suivi ok score 0.97 pos 4469,1966 net 174 (27 ms) carte 37 photos + 300 positions
+  4888.980  t0396493 suivi ok score 0.98 pos 4469,1966 net 176 (20 ms) carte 37 photos + 300 positions
+  4889.314  t0396827 suivi ok score 0.97 pos 4469,1966 net 176 (21 ms) carte 37 photos + 300 positions
+  4889.651  t0397164 suivi ok score 0.97 pos 4469,1966 net 175 (24 ms) carte 37 photos + 300 positions
+  4889.978  t0397491 suivi ok score 0.95 pos 4469,2189 net 203 (20 ms) carte 37 photos + 300 positions
+  4890.166  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0131.jpg (366 ko)
+  4890.315  t0397828 suivi ok score 0.93 pos 4481,2603 net 195 (24 ms) carte 37 photos + 300 positions
+  4890.643  t0398157 suivi ok score 0.87 pos 4481,3241 net 193 (21 ms) carte 37 photos + 300 positions
+  4890.988  t0398500 suivi ok score 0.98 pos 4481,3416 net 215 (28 ms) carte 37 photos + 300 positions
+  4891.309  t0398822 suivi ok score 0.97 pos 4481,3416 net 213 (21 ms) carte 37 photos + 300 positions
+  4891.360  photo o-4_0133 à 4481,3416 (416 ko, 207 ms)
+  4891.645  t0399158 suivi ok score 0.83 pos 4481,3468 net 200 (23 ms) carte 38 photos + 300 positions
+  4891.989  t0399501 suivi ok score 0.95 pos 4493,4038 net 208 (29 ms) carte 38 photos + 300 positions
+  4892.310  t0399823 suivi ok score 0.94 pos 4505,4627 net 174 (17 ms) carte 38 photos + 300 positions
+  4892.654  t0400167 suivi ok score 0.96 pos 4505,4659 net 177 (23 ms) carte 38 photos + 300 positions
+  4892.929  photo o-4_0134 à 4505,4659 (397 ko, 215 ms)
+  4892.977  t0400490 suivi ok score 0.98 pos 4505,4659 net 189 (23 ms) carte 39 photos + 300 positions
+  4893.278  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0132.jpg (398 ko)
+  4893.309  t0400823 suivi ok score 0.97 pos 4505,4659 net 191 (19 ms) carte 39 photos + 300 positions
+  4893.653  t0401166 suivi ok score 0.96 pos 4505,4659 net 188 (21 ms) carte 39 photos + 300 positions
+  4893.984  t0401497 suivi ok score 0.98 pos 4505,4659 net 183 (21 ms) carte 39 photos + 300 positions
+  4894.316  t0401829 suivi ok score 0.93 pos 4505,4659 net 178 (20 ms) carte 39 photos + 300 positions
+  4894.657  t0402170 suivi ok score 0.91 pos 4517,5090 net 224 (29 ms) carte 39 photos + 300 positions
+  4894.984  t0402497 suivi ok score 0.91 pos 4517,5394 net 208 (21 ms) carte 39 photos + 300 positions
+  4895.111  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0133.jpg (416 ko)
+  4895.316  t0402829 suivi ok score 0.87 pos 4529,5743 net 219 (17 ms) carte 39 photos + 300 positions
+  4895.654  t0403167 suivi ok score 0.95 pos 4529,5850 net 198 (28 ms) carte 39 photos + 300 positions
+  4895.922  photo o-4_0135 à 4529,5854 (390 ko, 207 ms)
+  4895.998  t0403511 suivi ok score 0.97 pos 4529,5854 net 199 (23 ms) carte 40 photos + 300 positions
+  4896.315  t0403828 suivi ok score 0.97 pos 4529,5854 net 193 (18 ms) carte 40 photos + 300 positions
+  4896.644  t0404157 suivi ok score 0.96 pos 4529,5854 net 196 (19 ms) carte 40 photos + 300 positions
+  4896.984  t0404497 suivi ok score 0.96 pos 4529,5950 net 199 (27 ms) carte 40 photos + 300 positions
+  4897.322  t0404835 suivi ok score 0.97 pos 4529,5966 net 235 (26 ms) carte 40 photos + 300 positions
+  4897.644  t0405157 suivi ok score 0.97 pos 4529,5966 net 237 (19 ms) carte 40 photos + 300 positions
+  4897.756  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0134.jpg (397 ko)
+  4897.998  t0405510 suivi ok score 0.93 pos 4373,5966 net 213 (32 ms) carte 40 photos + 300 positions
+  4898.313  t0405826 suivi ok score 0.94 pos 3918,5966 net 197 (20 ms) carte 40 photos + 300 positions
+  4898.651  t0406164 suivi ok score 0.95 pos 3426,5982 net 198 (21 ms) carte 40 photos + 300 positions
+  4898.981  t0406494 suivi ok score 0.95 pos 3047,5996 net 180 (22 ms) carte 40 photos + 300 positions
+  4899.199  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0135.jpg (390 ko)
+  4899.319  t0406832 suivi ok score 0.96 pos 3023,5998 net 171 (24 ms) carte 40 photos + 300 positions
+  4899.640  photo o-4_0136 à 3023,5998 (373 ko, 231 ms)
+  4899.648  t0407162 suivi ok score 0.97 pos 3023,5998 net 194 (25 ms) carte 41 photos + 300 positions
+  4899.975  t0407488 suivi ok score 0.97 pos 3023,5998 net 206 (19 ms) carte 41 photos + 300 positions
+  4900.327  t0407839 suivi ok score 0.97 pos 3023,5998 net 203 (29 ms) carte 41 photos + 300 positions
+  4900.659  t0408171 suivi ok score 0.94 pos 2545,5998 net 231 (28 ms) carte 41 photos + 300 positions
+  4900.907  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0136.jpg (373 ko)
+  4900.987  t0408500 suivi ok score 0.93 pos 1482,6029 net 209 (17 ms) carte 41 photos + 300 positions
+  4901.080  photo en mouvement lent (52 % du champ, 0 u/s)
+  4901.299  photo o-4_0137 à 1422,6029 (371 ko, 218 ms)
+  4901.316  t0408830 suivi ok score 0.95 pos 1422,6029 net 224 (24 ms) carte 42 photos + 300 positions
+  4901.646  t0409159 suivi ok score 0.96 pos 1422,6029 net 223 (19 ms) carte 42 photos + 300 positions
+  4902.005  t0409517 suivi ok score 0.96 pos 1422,6029 net 230 (36 ms) carte 42 photos + 300 positions
+  4902.318  t0409831 suivi ok score 0.95 pos 1398,6029 net 233 (20 ms) carte 42 photos + 300 positions
+  4902.647  t0410160 suivi ok score 0.96 pos 1386,6029 net 196 (18 ms) carte 42 photos + 300 positions
+  4902.727  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0137.jpg (371 ko)
+  4903.010  t0410522 suivi ok score 0.93 pos 742,6045 net 199 (36 ms) carte 42 photos + 300 positions
+  4903.319  t0410832 suivi ok score 0.94 pos 526,6045 net 198 (22 ms) carte 42 photos + 300 positions
+  4903.660  t0411173 suivi ok score 0.96 pos 335,6045 net 201 (27 ms) carte 42 photos + 300 positions
+  4903.987  t0411500 suivi ok score 0.96 pos 335,6045 net 199 (22 ms) carte 42 photos + 300 positions
+  4904.045  photo o-4_0138 à 335,6045 (375 ko, 224 ms)
+  4904.322  t0411835 suivi ok score 0.96 pos 335,6045 net 202 (24 ms) carte 43 photos + 300 positions
+  4904.648  t0412161 suivi ok score 0.94 pos -60,6045 net 204 (20 ms) carte 43 photos + 300 positions
+  4904.997  t0412509 suivi ok score 0.91 pos -491,6061 net 186 (29 ms) carte 43 photos + 300 positions
+  4905.127  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0138.jpg (375 ko)
+  4905.328  t0412841 suivi ok score 0.96 pos -609,6061 net 204 (30 ms) carte 43 photos + 300 positions
+  4905.648  t0413162 suivi ok score 0.97 pos -609,6061 net 204 (20 ms) carte 43 photos + 300 positions
+  4905.725  photo o-4_0139 à -609,6061 (373 ko, 214 ms)
+  4905.976  t0413489 suivi ok score 0.96 pos -609,6061 net 201 (19 ms) carte 44 photos + 300 positions
+  4906.322  t0413835 suivi ok score 0.95 pos -609,6061 net 192 (21 ms) carte 44 photos + 300 positions
+  4906.651  t0414164 suivi ok score 0.97 pos -609,6061 net 197 (19 ms) carte 44 photos + 300 positions
+  4906.984  t0414497 suivi ok score 0.96 pos -609,6061 net 200 (22 ms) carte 44 photos + 300 positions
+  4907.198  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0139.jpg (373 ko)
+  4907.312  t0414825 suivi ok score 0.94 pos -1314,6077 net 205 (17 ms) carte 44 photos + 300 positions
+  4907.648  t0415161 suivi ok score 0.96 pos -1528,6077 net 206 (20 ms) carte 44 photos + 300 positions
+  4907.981  t0415494 suivi ok score 0.96 pos -1528,6077 net 217 (20 ms) carte 44 photos + 300 positions
+  4908.141  photo o-4_0140 à -1528,6077 (379 ko, 222 ms)
+  4908.313  t0415826 suivi ok score 0.96 pos -1528,6077 net 221 (20 ms) carte 45 photos + 300 positions
+  4908.652  t0416165 suivi ok score 0.97 pos -1528,6077 net 222 (23 ms) carte 45 photos + 300 positions
+  4908.992  t0416504 suivi ok score 0.93 pos -2173,6093 net 174 (28 ms) carte 45 photos + 300 positions
+  4909.219  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0140.jpg (379 ko)
+  4909.324  t0416837 suivi ok score 0.95 pos -2424,6093 net 176 (19 ms) carte 45 photos + 300 positions
+  4909.655  t0417169 suivi ok score 0.97 pos -2424,6093 net 182 (20 ms) carte 45 photos + 300 positions
+  4909.844  photo o-4_0141 à -2424,6093 (383 ko, 212 ms)
+  4909.988  t0417501 suivi ok score 0.96 pos -2424,6093 net 184 (23 ms) carte 46 photos + 300 positions
+  4910.321  t0417834 suivi ok score 0.92 pos -2999,6104 net 189 (23 ms) carte 46 photos + 300 positions
+  4910.655  t0418167 suivi ok score 0.95 pos -3416,6109 net 217 (24 ms) carte 46 photos + 300 positions
+  4910.994  t0418507 suivi ok score 0.96 pos -3540,6109 net 191 (27 ms) carte 46 photos + 300 positions
+  4911.276  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0141.jpg (383 ko)
+  4911.335  t0418849 suivi ok score 0.96 pos -3536,6109 net 195 (23 ms) carte 46 photos + 300 positions
+  4911.443  photo o-4_0142 à -3536,6109 (381 ko, 223 ms)
+  4911.652  t0419165 suivi ok score 0.97 pos -3536,6109 net 206 (22 ms) carte 47 photos + 300 positions
+  4911.988  t0419501 suivi ok score 0.96 pos -3536,6109 net 206 (21 ms) carte 47 photos + 300 positions
+  4912.315  t0419828 suivi ok score 0.92 pos -3811,6109 net 202 (18 ms) carte 47 photos + 300 positions
+  4912.649  t0420162 suivi ok score 0.94 pos -4349,6125 net 222 (18 ms) carte 47 photos + 300 positions
+  4912.736  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0142.jpg (381 ko)
+  4912.984  t0420497 suivi ok score 0.96 pos -4409,6125 net 205 (20 ms) carte 47 photos + 300 positions
+  4913.267  photo o-4_0143 à -4409,6125 (387 ko, 219 ms)
+  4913.319  t0420832 suivi ok score 0.96 pos -4409,6125 net 204 (24 ms) carte 48 photos + 300 positions
+  4913.647  t0421160 suivi ok score 0.91 pos -4585,6125 net 209 (17 ms) carte 48 photos + 300 positions
+  4913.985  t0421498 suivi ok score 0.91 pos -4865,6125 net 217 (19 ms) carte 48 photos + 300 positions
+  4914.313  t0421827 suivi ok score 0.96 pos -4863,6141 net 221 (20 ms) carte 48 photos + 300 positions
+  4914.399  photo o-4_0144 à -4863,6141 (392 ko, 210 ms)
+  4914.558  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0143.jpg (387 ko)
+  4914.652  t0422165 suivi ok score 0.94 pos -4863,6110 net 224 (21 ms) carte 49 photos + 300 positions
+  4914.987  t0422499 suivi ok score 0.95 pos -4875,5486 net 206 (22 ms) carte 49 photos + 300 positions
+  4915.322  t0422835 suivi ok score 0.85 pos -4887,4802 net 204 (19 ms) carte 49 photos + 300 positions
+  4915.653  t0423166 suivi ok score 0.93 pos -4898,4020 net 164 (19 ms) carte 49 photos + 300 positions
+  4915.823  photo en mouvement lent (56 % du champ, 36 u/s)
+  4915.984  t0423496 suivi ok score 0.94 pos -4910,3639 net 143 (21 ms) carte 49 photos + 300 positions
+  4916.031  photo o-4_0145 à -4909,3863 (357 ko, 208 ms)
+  4916.332  t0423844 suivi ok score 0.95 pos -4921,3384 net 130 (32 ms) carte 50 photos + 300 positions
+  4916.651  t0424164 suivi ok score 0.97 pos -4921,3384 net 132 (20 ms) carte 50 photos + 300 positions
+  4916.845  photo o-4_0146 à -4921,3384 (351 ko, 218 ms)
+  4916.989  t0424502 suivi ok score 0.95 pos -4921,3384 net 133 (22 ms) carte 51 photos + 300 positions
+  4917.313  t0424826 suivi ok score 0.94 pos -4921,3384 net 61 (18 ms) carte 51 photos + 300 positions
+  4917.598  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0144.jpg (392 ko)
+  4917.653  t0425167 suivi ok score 0.96 pos -4921,3384 net 59 (20 ms) carte 51 photos + 300 positions
+  4917.992  t0425505 suivi ok score 0.95 pos -4921,3384 net 175 (21 ms) carte 51 photos + 300 positions
+  4917.992  reprise de mise au point au même endroit : netteté 175 contre 131 (reprise 1)
+  4918.214  photo o-4_0147 à -4921,3384 (373 ko, 221 ms)
+  4918.323  t0425836 suivi ok score 0.96 pos -4921,3384 net 207 (25 ms) carte 52 photos + 300 positions
+  4918.656  t0426170 suivi ok score 0.98 pos -4921,3384 net 213 (26 ms) carte 52 photos + 300 positions
+  4918.987  t0426500 suivi ok score 0.88 pos -4826,3384 net 241 (23 ms) carte 52 photos + 300 positions
+  4919.089  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0145.jpg (357 ko)
+  4919.317  t0426830 suivi ok score 0.95 pos -4443,3369 net 218 (19 ms) carte 52 photos + 300 positions
+  4919.658  t0427171 suivi ok score 0.98 pos -4406,3368 net 215 (20 ms) carte 52 photos + 300 positions
+  4919.909  photo o-4_0148 à -4407,3368 (387 ko, 221 ms)
+  4919.982  t0427495 suivi ok score 0.97 pos -4407,3368 net 216 (20 ms) carte 53 photos + 300 positions
+  4920.319  t0427832 suivi ok score 0.91 pos -4312,3368 net 224 (24 ms) carte 53 photos + 300 positions
+  4920.660  t0428173 suivi ok score 0.97 pos -4037,3368 net 240 (25 ms) carte 53 photos + 300 positions
+  4920.934  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0146.jpg (351 ko)
+  4921.014  t0428526 suivi ok score 0.97 pos -3870,3352 net 241 (32 ms) carte 53 photos + 300 positions
+  4921.315  t0428829 suivi ok score 0.97 pos -3870,3352 net 239 (21 ms) carte 53 photos + 300 positions
+  4921.449  photo o-4_0149 à -3870,3352 (390 ko, 226 ms)
+  4921.669  t0429182 suivi ok score 0.71 pos -3903,667 net 187 (32 ms) carte 54 photos + 300 positions
+  4921.884  photo en mouvement lent (97 % du champ, 39 u/s)
+  4921.884  ATTENTION pas trop grand (97 % du champ) : recouvrement insuffisant
+  4921.988  t0429501 suivi ok score 0.98 pos -3916,-597 net 214 (19 ms) carte 54 photos + 300 positions
+  4922.106  photo o-4_0150 à -3919,-612 (444 ko, 220 ms)
+  4922.238  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0147.jpg (373 ko)
+  4922.322  t0429834 suivi ok score 0.98 pos -3917,-601 net 213 (24 ms) carte 55 photos + 300 positions
+  4922.655  t0430168 suivi ok score 0.99 pos -3917,-601 net 216 (23 ms) carte 55 photos + 300 positions
+  4922.992  t0430504 suivi ok score 0.82 pos -3929,-1112 net 230 (23 ms) carte 55 photos + 300 positions
+  4923.319  t0430831 suivi ok score 0.87 pos -3941,-1888 net 213 (19 ms) carte 55 photos + 300 positions
+  4923.359  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0148.jpg (387 ko)
+  4923.650  t0431163 suivi ok score 0.82 pos -3965,-2851 net 221 (20 ms) carte 55 photos + 300 positions
+  4923.651  photo en mouvement lent (55 % du champ, 31 u/s)
+  4923.876  photo o-4_0151 à -3965,-2851 (472 ko, 225 ms)
+  4923.980  t0431493 suivi ok score 0.74 pos -3994,-3847 net 203 (13 ms) carte 56 photos + 300 positions
+  4924.321  t0431834 suivi ok score 0.83 pos -4008,-4865 net 190 (24 ms) carte 56 photos + 300 positions
+  4924.658  t0432171 suivi ok score 0.84 pos -4008,-5423 net 162 (19 ms) carte 56 photos + 300 positions
+  4924.687  photo en mouvement lent (63 % du champ, 37 u/s)
+  4924.903  photo o-4_0152 à -4017,-5439 (365 ko, 215 ms)
+  4924.986  t0432499 suivi ok score 0.96 pos -4019,-5741 net 132 (22 ms) carte 57 photos + 300 positions
+  4925.246  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0149.jpg (390 ko)
+  4925.324  t0432837 suivi ok score 0.95 pos -4031,-5917 net 151 (23 ms) carte 57 photos + 300 positions
+  4925.654  t0433167 suivi ok score 0.98 pos -4031,-5965 net 103 (21 ms) carte 57 photos + 300 positions
+  4925.758  photo floue (netteté 100 contre 234 de référence)
+  4925.968  photo o-4_0153 à -4031,-5965 (350 ko, 209 ms)
+  4925.985  t0433498 suivi ok score 0.97 pos -4031,-5965 net 84 (21 ms) carte 58 photos + 300 positions
+  4926.346  t0433858 suivi ok score 0.97 pos -4031,-5965 net 166 (36 ms) carte 58 photos + 300 positions
+  4926.438  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0150.jpg (444 ko)
+  4926.658  t0434171 suivi ok score 0.99 pos -4031,-5965 net 194 (21 ms) carte 58 photos + 300 positions
+  4926.695  reprise de mise au point au même endroit : netteté 195 contre 100 (reprise 1)
+  4926.916  photo o-4_0154 à -4031,-5965 (400 ko, 221 ms)
+  4926.999  t0434512 suivi ok score 0.98 pos -4031,-5965 net 194 (22 ms) carte 59 photos + 300 positions
+  4927.325  t0434838 suivi ok score 0.98 pos -4031,-5965 net 188 (22 ms) carte 59 photos + 300 positions
+  4927.676  t0435189 suivi ok score 0.99 pos -4031,-5965 net 184 (35 ms) carte 59 photos + 300 positions
+  4927.771  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0151.jpg (472 ko)
+  4928.017  t0435529 suivi ok score 0.93 pos -3914,-5965 net 177 (40 ms) carte 59 photos + 300 positions
+  4928.328  t0435841 suivi ok score 0.98 pos -3469,-5981 net 191 (25 ms) carte 59 photos + 300 positions
+  4928.666  t0436179 suivi ok score 0.97 pos -4592,-5953 net 178 (28 ms) carte 59 photos + 300 positions
+  4928.987  t0436499 suivi ok score 0.96 pos -5514,-5933 net 208 (19 ms) carte 59 photos + 300 positions
+  4929.322  t0436835 suivi ok score 0.97 pos -5525,-5933 net 190 (20 ms) carte 59 photos + 300 positions
+  4929.545  photo o-4_0155 à -5525,-5933 (401 ko, 222 ms)
+  4929.654  t0437167 suivi ok score 0.98 pos -5525,-5933 net 193 (21 ms) carte 60 photos + 300 positions
+  4930.006  t0437519 suivi ok score 0.91 pos -5525,-6097 net 183 (37 ms) carte 60 photos + 300 positions
+  4930.342  t0437855 suivi ok score 0.87 pos -5534,-6379 net 171 (33 ms) carte 60 photos + 300 positions
+  4930.676  t0438189 suivi ok score 0.98 pos -5537,-6427 net 214 (36 ms) carte 60 photos + 300 positions
+  4930.986  t0438499 suivi ok score 0.97 pos -5537,-6427 net 217 (21 ms) carte 60 photos + 300 positions
+  4931.012  photo o-4_0156 à -5537,-6427 (386 ko, 205 ms)
+  4931.075  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0152.jpg (365 ko)
+  4931.323  t0438836 suivi ok score 0.97 pos -5537,-6427 net 219 (22 ms) carte 61 photos + 300 positions
+  4931.662  t0439175 suivi ok score 0.98 pos -5537,-6427 net 185 (25 ms) carte 61 photos + 300 positions
+  4932.000  t0439513 suivi ok score 0.97 pos -5537,-6427 net 182 (29 ms) carte 61 photos + 300 positions
+  4932.330  t0439843 suivi ok score 0.97 pos -5537,-6427 net 182 (23 ms) carte 61 photos + 300 positions
+  4932.659  t0440172 suivi ok score 0.92 pos -5177,-6427 net 161 (23 ms) carte 61 photos + 300 positions
+  4932.685  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0153.jpg (350 ko)
+  4932.992  t0440504 suivi ok score 0.98 pos -4594,-6443 net 186 (20 ms) carte 61 photos + 300 positions
+  4933.324  t0440837 suivi ok score 0.98 pos -4593,-6443 net 182 (21 ms) carte 61 photos + 300 positions
+  4933.522  photo o-4_0157 à -4593,-6443 (412 ko, 234 ms)
+  4933.658  t0441171 suivi ok score 0.96 pos -4403,-6443 net 184 (22 ms) carte 62 photos + 300 positions
+  4933.997  t0441509 suivi ok score 0.93 pos -3705,-6457 net 210 (17 ms) carte 62 photos + 300 positions
+  4934.256  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0154.jpg (400 ko)
+  4934.324  t0441837 suivi ok score 0.98 pos -3565,-6459 net 202 (20 ms) carte 62 photos + 300 positions
+  4934.656  t0442169 suivi ok score 0.99 pos -3565,-6459 net 203 (23 ms) carte 62 photos + 300 positions
+  4934.709  photo o-4_0158 à -3565,-6459 (447 ko, 206 ms)
+  4935.012  t0442524 suivi ok score 0.91 pos -3027,-6474 net 204 (35 ms) carte 63 photos + 300 positions
+  4935.334  t0442847 suivi ok score 0.98 pos -2991,-6475 net 221 (22 ms) carte 63 photos + 300 positions
+  4935.364  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0155.jpg (401 ko)
+  4935.657  photo o-4_0159 à -2991,-6475 (445 ko, 231 ms)
+  4935.679  t0443191 suivi ok score 0.99 pos -2991,-6475 net 219 (23 ms) carte 64 photos + 300 positions
+  4936.008  t0443521 suivi ok score 0.95 pos -2800,-6475 net 207 (20 ms) carte 64 photos + 300 positions
+  4936.338  t0443851 suivi ok score 0.98 pos -2728,-6475 net 206 (27 ms) carte 64 photos + 300 positions
+  4936.659  t0444172 suivi ok score 0.96 pos -2728,-6475 net 209 (25 ms) carte 64 photos + 300 positions
+  4936.671  photo o-4_0160 à -2728,-6475 (445 ko, 213 ms)
+  4936.833  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0156.jpg (386 ko)
+  4936.990  t0444503 suivi ok score 0.95 pos -2288,-6475 net 226 (21 ms) carte 65 photos + 300 positions
+  4937.328  t0444840 suivi ok score 0.98 pos -2071,-6491 net 214 (24 ms) carte 65 photos + 300 positions
+  4937.670  t0445183 suivi ok score 0.98 pos -2071,-6491 net 212 (25 ms) carte 65 photos + 300 positions
+  4937.787  photo o-4_0161 à -2071,-6491 (426 ko, 227 ms)
+  4937.992  t0445505 suivi ok score 0.94 pos -1820,-6491 net 232 (23 ms) carte 66 photos + 300 positions
+  4938.333  t0445846 suivi ok score 0.92 pos -1485,-6506 net 225 (26 ms) carte 66 photos + 300 positions
+  4938.558  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0157.jpg (412 ko)
+  4938.678  t0446190 suivi ok score 0.98 pos -1473,-6506 net 207 (37 ms) carte 66 photos + 300 positions
+  4938.960  photo o-4_0162 à -1473,-6506 (411 ko, 237 ms)
+  4938.996  t0446509 suivi ok score 0.91 pos -1314,-6506 net 203 (22 ms) carte 67 photos + 300 positions
+  4939.330  t0446843 suivi ok score 0.93 pos -556,-6522 net 200 (24 ms) carte 67 photos + 300 positions
+  4939.672  t0447185 suivi ok score 0.98 pos -530,-6522 net 197 (29 ms) carte 67 photos + 300 positions
+  4939.904  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0158.jpg (447 ko)
+  4939.984  t0447497 suivi ok score 0.97 pos -530,-6522 net 195 (17 ms) carte 67 photos + 300 positions
+  4940.025  photo o-4_0163 à -530,-6522 (374 ko, 247 ms)
+  4940.324  t0447837 suivi ok score 0.92 pos 155,-6538 net 181 (20 ms) carte 68 photos + 300 positions
+  4940.659  t0448172 suivi ok score 0.99 pos 367,-6538 net 189 (23 ms) carte 68 photos + 300 positions
+  4940.944  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0159.jpg (445 ko)
+  4940.994  t0448507 suivi ok score 0.99 pos 367,-6538 net 189 (23 ms) carte 68 photos + 300 positions
+  4941.086  photo o-4_0164 à 367,-6538 (393 ko, 230 ms)
+  4941.326  t0448839 suivi ok score 0.96 pos 668,-6538 net 175 (16 ms) carte 69 photos + 300 positions
+  4941.684  t0449197 suivi ok score 0.96 pos 1104,-6554 net 172 (36 ms) carte 69 photos + 300 positions
+  4942.010  t0449523 suivi ok score 0.99 pos 1132,-6554 net 181 (22 ms) carte 69 photos + 300 positions
+  4942.110  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0160.jpg (445 ko)
+  4942.334  photo o-4_0165 à 1132,-6554 (413 ko, 217 ms)
+  4942.335  t0449848 suivi ok score 0.99 pos 1132,-6554 net 182 (23 ms) carte 70 photos + 300 positions
+  4942.661  t0450174 suivi ok score 0.96 pos 1622,-6570 net 188 (24 ms) carte 70 photos + 300 positions
+  4942.914  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0161.jpg (426 ko)
+  4942.994  t0450506 suivi ok score 0.99 pos 1777,-6570 net 209 (22 ms) carte 70 photos + 300 positions
+  4943.329  t0450841 suivi ok score 0.99 pos 1777,-6570 net 210 (24 ms) carte 70 photos + 300 positions
+  4943.511  photo o-4_0166 à 1777,-6570 (418 ko, 220 ms)
+  4943.664  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0162.jpg (411 ko)
+  4943.675  t0451187 suivi ok score 0.98 pos 2115,-6570 net 191 (37 ms) carte 71 photos + 300 positions
+  4943.987  t0451499 suivi ok score 0.96 pos 2506,-6586 net 193 (13 ms) carte 71 photos + 300 positions
+  4944.331  t0451843 suivi ok score 0.99 pos 2626,-6586 net 185 (22 ms) carte 71 photos + 300 positions
+  4944.586  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0163.jpg (374 ko)
+  4944.658  t0452171 suivi ok score 0.97 pos 2700,-6586 net 207 (21 ms) carte 71 photos + 300 positions
+  4944.722  photo o-4_0167 à 2626,-6586 (421 ko, 225 ms)
+  4944.994  t0452507 suivi ok score 0.94 pos 3331,-6602 net 201 (23 ms) carte 72 photos + 300 positions
+  4945.330  t0452843 suivi ok score 0.98 pos 3439,-6602 net 179 (23 ms) carte 72 photos + 300 positions
+  4945.659  t0453172 suivi ok score 0.98 pos 3439,-6602 net 178 (22 ms) carte 72 photos + 300 positions
+  4945.710  photo o-4_0168 à 3439,-6602 (407 ko, 221 ms)
+  4945.838  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0164.jpg (393 ko)
+  4946.018  t0453530 suivi ok score 0.94 pos 4108,-6618 net 163 (41 ms) carte 73 photos + 300 positions
+  4946.351  t0453864 suivi ok score 0.98 pos 4455,-6618 net 166 (29 ms) carte 73 photos + 300 positions
+  4946.681  t0454193 suivi ok score 0.99 pos 4463,-6618 net 165 (32 ms) carte 73 photos + 300 positions
+  4946.850  photo o-4_0169 à 4463,-6618 (407 ko, 221 ms)
+  4946.987  t0454499 suivi ok score 0.94 pos 4526,-6618 net 157 (15 ms) carte 74 photos + 300 positions
+  4947.332  t0454845 suivi ok score 0.94 pos 4941,-6634 net 172 (27 ms) carte 74 photos + 300 positions
+  4947.671  t0455183 suivi ok score 0.99 pos 4941,-6634 net 172 (25 ms) carte 74 photos + 300 positions
+  4947.842  photo o-4_0170 à 4941,-6634 (412 ko, 213 ms)
+  4947.912  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0165.jpg (413 ko)
+  4948.003  t0455516 suivi ok score 0.98 pos 4941,-6634 net 171 (26 ms) carte 75 photos + 300 positions
+  4948.326  t0455839 suivi ok score 0.98 pos 4941,-6634 net 171 (20 ms) carte 75 photos + 300 positions
+  4948.675  t0456187 suivi ok score 0.99 pos 4941,-6634 net 172 (28 ms) carte 75 photos + 300 positions
+  4949.029  t0456542 suivi ok score 0.98 pos 4941,-6634 net 172 (39 ms) carte 75 photos + 300 positions
+  4949.137  envoyé lame_20261022_164323_bleu-test-axe-z-tedt-photo-4_0166.jpg (418 ko)
+  4949.344  t0456857 suivi ok score 0.98 pos 4941,-6634 net 172 (33 ms) carte 75 photos + 300 positions
