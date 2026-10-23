@@ -293,10 +293,20 @@ while True:
     published = []; published_ok = True
     seg0_slug = None
     crop_offset = {}
+    # plusieurs segments de detail au meme objectif (deux zones en x100 separees par un passage au x10) : numerotes,
+    # sinon leurs titres et leurs slugs seraient identiques et le second ecraserait le premier a la publication
+    _objs = {}
+    for _res, _ci, _seg, _ in jobs:
+        if _ci is None and _seg != pseg: _objs.setdefault(layout_of(_res).get('objective'), []).append(_seg)
+    used_slugs = set()
     for res, ci, seg, par in jobs:
       lay = layout_of(res)
-      title = base_title + (f' (obj. {lay.get("objective")})' if seg != pseg else '') + ('' if ci is None else f' (zone {ci + 1})')
+      _same = _objs.get(lay.get('objective'), [])
+      detn = f' {_same.index(seg) + 1}' if ci is None and seg != pseg and len(_same) > 1 else ''
+      title = base_title + (f' (obj. {lay.get("objective")}{detn})' if seg != pseg else '') + ('' if ci is None else f' (zone {ci + 1})')
       slug = (slugify(title) + '-' + s.split('_')[1][4:] + s.split('_')[2][:4]) if meta.get('title') and s.count('_') >= 2 else s.lower().replace('_', '-') + ('' if seg == pseg else f'-obj{seg}') + ('' if ci is None else f'-zone{ci + 1}')
+      if slug in used_slugs: slug = f'{slug}-s{seg}'          # garde-fou : jamais deux publications au meme slug dans une meme prise
+      used_slugs.add(slug)
       parent = seg0_slug if par == 'SEG0' else (meta.get('parent') if seg == pseg else None)
       if parent:
           lay['parent'] = parent
