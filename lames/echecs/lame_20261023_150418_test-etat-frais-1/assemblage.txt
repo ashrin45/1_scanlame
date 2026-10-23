@@ -1,0 +1,13 @@
+[    0.0s] segment 1/1 : objectif x40, 39 images entre 0 s et 38 s
+[    0.0s] 39 images candidates
+[    0.8s] profondeur : 39 photos en 10 pile(s) marquée(s) par l'appli (plusieurs plans de mise au point par champ)
+[    7.0s] 1 pile(s) de profondeur fusionnée(s) (EDF), plans conservés pour la navigation
+[    7.0s] netteté médiane 46.5, seuil 18.6
+[    7.0s] 9 images retenues (nettes, non redondantes)
+[    7.2s] flat-field : médiane temporelle de 9 images (vignettage et poussières fixes de l'oculaire)
+[    9.2s] aberration chromatique : échelle R 1.0000, B 1.0000
+[    9.3s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 14 %)
+[   10.4s] prétraitement terminé, 9 images, recalage à 900 x 1200
+[   11.0s] points SIFT : 334 par image en moyenne
+[   11.0s] 36 paires à tester
+[   11.0s] 0 paires valides
