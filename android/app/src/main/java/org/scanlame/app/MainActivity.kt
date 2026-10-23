@@ -196,7 +196,6 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     var preview by remember { mutableStateOf<PreviewView?>(null) }
     var sheet by remember { mutableStateOf(false) }
     var startDlg by remember { mutableStateOf(false) }
-    var vernierDlg by remember { mutableStateOf(false) }   // relevé de la platine avant le départ
     var msg by remember { mutableStateOf("Touche le bouton violet pour démarrer la caméra.") }
     var msgErr by remember { mutableStateOf(false) }
     var showObjPick by remember { mutableStateOf(false) }
@@ -398,7 +397,8 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
             dismissButton = { TextButton(onClick = { switchDlg = null }) { Text("Annuler", color = MUTED) } })
     }
     if (startDlg) {
-        // feuille de depart (canevas « Nouvelle lame ») : nom, objectif en quatre gros boutons, patron, rognage, prelevement
+        // feuille de depart (canevas « Nouvelle lame ») : nom, objectif en gros boutons, patron, rognage, prelevement, vernier
+        var vernierSave by remember { mutableStateOf<(() -> Unit)?>(null) }
         var t by remember { mutableStateOf(title) }; var smp by remember { mutableStateOf(sample) }; var obj by remember { mutableStateOf(st.objective) }
         var autoCrop by remember { mutableStateOf(st.autoCrop) }
         val startState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
@@ -443,6 +443,26 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     FieldLabel("Prélèvement (optionnel)")
                     OutlinedTextField(smp, { smp = it }, placeholder = { Text("ex. hémoculture, ECBU, LCR") }, singleLine = true, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(6.dp))
                 }
+                if (st.askVernier) {
+                    val vxS = remember { mutableStateOf(st.stageX.replace(',', '.').toFloatOrNull() ?: 30f) }
+                    val vyS = remember { mutableStateOf(st.stageY.replace(',', '.').toFloatOrNull() ?: 110f) }
+                    var joinStage by remember { mutableStateOf(true) }
+                    vernierSave = {
+                        if (joinStage) { st.stageX = String.format(Locale.FRANCE, "%.1f", vxS.value); st.stageY = String.format(Locale.FRANCE, "%.1f", vyS.value) }
+                        else { st.stageX = ""; st.stageY = "" }
+                    }
+                    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                        FieldLabel("Relevé de la platine (vernier)")
+                        Text("La lame doit déjà être calée comme sur le schéma (butée du valet, étiquette à droite) depuis le début de tes réglages. Reproduis ici ce que lisent les deux curseurs, point = millimètres, graduation alignée (dorée) = dixièmes.", fontSize = 12.sp, color = MUTED)
+                        StageDiagram(Modifier.fillMaxWidth().height(116.dp))
+                        VernierStrip("X", vxS, 0f, 80f, reversed = true, vertical = false)
+                        VernierStrip("Y", vyS, 85f, 145f, reversed = false, vertical = true)
+                        Row(Modifier.fillMaxWidth().clickable { joinStage = !joinStage }, verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(joinStage, { joinStage = it }, colors = CheckboxDefaults.colors(checkedColor = ACCENT, checkmarkColor = BG, uncheckedColor = MUTED))
+                            Text("Joindre ce relevé à la série", fontSize = 14.sp, color = FG)
+                        }
+                    }
+                } else vernierSave = null
                 val par = lames.firstOrNull { it.slug == parent }?.title ?: st.recentSeries().firstOrNull { it.first == parent }?.second
                 Row(Modifier.fillMaxWidth().background(ACCENT_TINT, RoundedCornerShape(12.dp)).padding(12.dp, 10.dp), horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
                     Text("i", Modifier.size(18.dp).border(2.dp, ACCENT, RoundedCornerShape(999.dp)), color = ACCENT, fontSize = 11.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
@@ -453,38 +473,10 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     Text("Lancer la série", Modifier.weight(1f).heightIn(min = 52.dp).background(ACCENT, RoundedCornerShape(6.dp)).clickable {
                         title = t; sample = smp; st.objective = obj; startDlg = false
                         if (st.serverUrl.isEmpty()) say("Serveur non réglé : la prise restera sur le téléphone (file d'attente).", true)
-                        if (st.askVernier) vernierDlg = true
-                        else session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
+                        vernierSave?.invoke()
+                        session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
                     }.padding(vertical = 15.dp), color = BG, fontSize = 16.sp, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
                 }
-            }
-        }
-    }
-    if (vernierDlg) {
-        val vState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
-        ModalBottomSheet(onDismissRequest = { vernierDlg = false }, sheetState = vState, containerColor = PANEL, shape = RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp),
-            dragHandle = { Box(Modifier.padding(top = 12.dp).size(40.dp, 4.dp).background(LINE, RoundedCornerShape(999.dp))) }) {
-            val vx = remember { mutableStateOf(st.stageX.replace(',', '.').toFloatOrNull() ?: 30f) }
-            val vy = remember { mutableStateOf(st.stageY.replace(',', '.').toFloatOrNull() ?: 110f) }
-            val go = { withStage: Boolean ->
-                if (withStage) { st.stageX = String.format(Locale.FRANCE, "%.1f", vx.value); st.stageY = String.format(Locale.FRANCE, "%.1f", vy.value) }
-                else { st.stageX = ""; st.stageY = "" }
-                vernierDlg = false
-                session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
-            }
-            Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).navigationBarsPadding().padding(start = 20.dp, end = 20.dp, top = 12.dp, bottom = 20.dp),
-                verticalArrangement = Arrangement.spacedBy(14.dp)) {
-                Text("Relevé de la platine", fontSize = 27.sp, lineHeight = 34.sp, fontFamily = Display, color = FG)
-                Text("Avant de démarrer, cale toujours la lame pareil : en butée dans l'angle du valet, étiquette à droite, le bras à ressort la plaque à gauche.", fontSize = 13.sp, color = MUTED)
-                StageDiagram(Modifier.fillMaxWidth().height(96.dp))
-                Text("Lecture : le point du curseur donne les millimètres sur la règle ; la graduation fine qui tombe exactement en face d'un trait de la règle donne les dixièmes (surlignée en doré ci-dessous). Fais glisser chaque règle pour reproduire ce que tu lis, ou ajuste avec les boutons.", fontSize = 13.sp, color = MUTED)
-                VernierStrip("X", vx, 0f, 80f, reversed = true, vertical = false)
-                VernierStrip("Y", vy, 85f, 145f, reversed = false, vertical = true)
-                Row(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
-                    Text("Sans relevé", Modifier.heightIn(min = 52.dp).border(1.dp, LINE, RoundedCornerShape(6.dp)).clickable { go(false) }.padding(horizontal = 16.dp, vertical = 15.dp), color = MUTED, fontSize = 15.sp, fontWeight = FontWeight.Medium)
-                    Text("Enregistrer et lancer", Modifier.weight(1f).heightIn(min = 52.dp).background(ACCENT, RoundedCornerShape(6.dp)).clickable { go(true) }.padding(vertical = 15.dp), color = BG, fontSize = 16.sp, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
-                }
-                Text("Ne plus demander (réactivable dans les réglages)", Modifier.clickable { st.askVernier = false; go(false) }.padding(4.dp), color = MUTED, fontSize = 12.sp)
             }
         }
     }
@@ -574,35 +566,53 @@ fun loadLames(gallery: String): List<LameRef> = try {
 } catch (e: Exception) { Journal.log("galerie injoignable : ${e.message}"); emptyList() }
 
 /** Titre de section des réglages (eyebrow Paillasse : capitales espacées, filet au-dessus). */
-/** Schéma : la lame en butée dans l'angle du valet de la platine (comme sur le microscope du laboratoire). */
+/** Schéma : la lame en butée dans l'angle du valet, comme sur la platine du laboratoire (échelle X en haut, Y à droite). */
 @Composable
 fun StageDiagram(modifier: Modifier) {
-    Canvas(modifier.background(Color(0xFF0A0D13), RoundedCornerShape(10.dp))) {
+    val fg = MUTED
+    Canvas(modifier.background(Color(0xFF0E1014), RoundedCornerShape(12.dp))) {
         val w = size.width; val h = size.height
-        // platine
-        drawRoundRect(Color(0xFF161B26), Offset(w * 0.06f, h * 0.10f), Size(w * 0.88f, h * 0.80f), androidx.compose.ui.geometry.CornerRadius(8f, 8f))
-        // lame (3:1), poussee a droite contre le valet
-        val lw = w * 0.46f; val lh = lw / 3f; val lx = w * 0.40f; val ly = h * 0.5f - lh / 2
-        drawRoundRect(Color(0xFFE9EDF4), Offset(lx, ly), Size(lw, lh), androidx.compose.ui.geometry.CornerRadius(3f, 3f))
-        drawRect(Color(0xFFCBD2DE), Offset(lx + lw * 0.78f, ly), Size(lw * 0.22f, lh))   // etiquette a droite
-        drawCircle(Color(0xFFB07BD6), lh * 0.22f, Offset(lx + lw * 0.42f, ly + lh / 2))  // frottis
-        // valet : butee en L a droite de la lame (deux barres dorees)
-        val gold = Color(0xFFE3B95C); val t = 7f
-        drawRect(gold, Offset(lx + lw + 4f, ly - t - 4f), Size(w * 0.10f, t))                      // barre horizontale au-dessus du coin
-        drawRect(gold, Offset(lx + lw + 4f, ly - t - 4f), Size(t, lh + t + 8f))                    // barre verticale a droite
-        // bras a ressort a gauche (arc gris) qui pousse vers la droite
-        drawArc(Color(0xFF9AA4B5), 120f, 120f, false, Offset(lx - lh * 0.9f, ly - lh * 0.25f), Size(lh * 1.5f, lh * 1.5f), style = Stroke(6f))
-        // fleche de poussee
+        val paint = android.graphics.Paint().apply { color = fg.toArgb(); isAntiAlias = true; textSize = 11.sp.toPx(); textAlign = android.graphics.Paint.Align.CENTER }
+        drawRoundRect(Color(0xFF12151C), Offset(w * 0.03f, h * 0.07f), Size(w * 0.94f, h * 0.86f), androidx.compose.ui.geometry.CornerRadius(12f, 12f))
+        // echelle X en haut, croissante vers la gauche
+        for (i in 0..7) {
+            val x = w * 0.88f - i * w * 0.105f
+            drawLine(fg, Offset(x, h * 0.10f), Offset(x, h * 0.17f), 2.5f)
+            drawContext.canvas.nativeCanvas.drawText("${i * 10}", x, h * 0.17f + 12.sp.toPx(), paint)
+        }
+        // echelle Y a droite, croissante vers le bas
+        paint.textAlign = android.graphics.Paint.Align.RIGHT
+        for (i in 0..3) {
+            val y = h * 0.30f + i * h * 0.20f
+            drawLine(fg, Offset(w * 0.955f, y), Offset(w * 0.975f, y), 2.5f)
+            drawContext.canvas.nativeCanvas.drawText("${90 + i * 10}", w * 0.945f, y + 4.sp.toPx(), paint)
+        }
+        // glissiere du valet
+        drawRect(Color(0xFF3C4250), Offset(w * 0.12f, h * 0.38f), Size(w * 0.76f, h * 0.05f))
+        // lame (3:1), etiquette depolie a droite, frottis
+        val lw = w * 0.42f; val lh = lw / 3f; val lx = w * 0.33f; val ly = h * 0.62f - lh / 2
+        drawRoundRect(Color(0xFFEEF1F6), Offset(lx, ly), Size(lw, lh), androidx.compose.ui.geometry.CornerRadius(5f, 5f))
+        drawRect(Color(0xFFD6DBE4), Offset(lx + lw * 0.76f, ly), Size(lw * 0.24f, lh))
+        for (i in 0..2) drawLine(Color(0xFF969CA8), Offset(lx + lw * 0.79f, ly + lh * (0.25f + 0.22f * i)), Offset(lx + lw * 0.97f, ly + lh * (0.32f + 0.22f * i)), 2.5f)
+        drawCircle(Color(0xFFCDAAD7), lh * 0.26f, Offset(lx + lw * 0.38f, ly + lh / 2))
+        // coin de butee a droite (L metallique)
+        drawRect(Color(0xFF969CA8), Offset(lx + lw + 5f, ly - lh * 0.22f), Size(w * 0.075f, lh * 0.13f))
+        drawRect(Color(0xFF969CA8), Offset(lx + lw + 5f, ly - lh * 0.22f), Size(lh * 0.13f, lh * 1.36f))
+        // bras-ressort a gauche, pousse vers la droite
+        drawArc(Color(0xFF969CA8), 115f, 130f, false, Offset(lx - lh * 1.05f, ly - lh * 0.16f), Size(lh * 1.32f, lh * 1.32f), style = Stroke(9f))
         val ay = ly + lh / 2
-        drawLine(Color(0xFF7FD6A4), Offset(lx - 26f, ay), Offset(lx - 6f, ay), 5f)
-        drawLine(Color(0xFF7FD6A4), Offset(lx - 14f, ay - 8f), Offset(lx - 6f, ay), 5f)
-        drawLine(Color(0xFF7FD6A4), Offset(lx - 14f, ay + 8f), Offset(lx - 6f, ay), 5f)
+        drawLine(Color(0xFF7FD6A4), Offset(lx - 34f, ay), Offset(lx - 10f, ay), 5f)
+        val path = androidx.compose.ui.graphics.Path().apply { moveTo(lx - 10f, ay - 9f); lineTo(lx + 4f, ay); lineTo(lx - 10f, ay + 9f); close() }
+        drawPath(path, Color(0xFF7FD6A4))
+        paint.textAlign = android.graphics.Paint.Align.LEFT; paint.isFakeBoldText = true
+        drawContext.canvas.nativeCanvas.drawText("X", w * 0.045f, h * 0.17f + 10.sp.toPx(), paint)
+        drawContext.canvas.nativeCanvas.drawText("Y", w * 0.90f, h * 0.92f, paint)
     }
 }
 
-/** Vernier interactif, dessiné comme ceux de la platine (règle gravée blanche sur noir, curseur à point et graduations fines).
- *  Le point donne les millimètres, la graduation fine alignée avec un trait de la règle donne les dixièmes (surlignée).
- *  On fait glisser la règle le long de son axe ; les boutons ajustent de 1 mm et 0,1 mm. */
+/** Vernier interactif dessiné comme ceux de la platine : règle gravée blanche sur noir (chiffres côté opposé au curseur),
+ *  curseur en languette avec un point au zéro et 10 graduations fines (10 divisions sur 9 mm) ; celle qui tombe en face d'un
+ *  trait de la règle donne les dixièmes (dorée). On fait glisser la règle ; les boutons ajustent de 1 mm et 0,1 mm. */
 @Composable
 fun VernierStrip(label: String, state: androidx.compose.runtime.MutableState<Float>, min: Float, max: Float, reversed: Boolean, vertical: Boolean) {
     Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
@@ -615,51 +625,63 @@ fun VernierStrip(label: String, state: androidx.compose.runtime.MutableState<Flo
                     .clickable { state.value = (((state.value + d) * 10).roundToInt() / 10f).coerceIn(min, max) }
                     .padding(horizontal = 9.dp, vertical = 7.dp), color = FG, fontSize = 13.sp, fontFamily = Mono)
         }
-        val fg = FG; val muted = MUTED; val accent = ACCENT; val gold = BIREF
-        Canvas(Modifier.fillMaxWidth().height(if (vertical) 190.dp else 86.dp).background(Color(0xFF0A0D13), RoundedCornerShape(10.dp))
+        val fg = FG; val gold = BIREF
+        val canvasMod = (if (vertical) Modifier.width(200.dp).height(230.dp) else Modifier.fillMaxWidth().height(100.dp))
+            .background(Color(0xFF0E1014), RoundedCornerShape(10.dp)).clipToBounds()
             .pointerInput(reversed, vertical) {
-                detectDragGestures { change, drag ->
-                    change.consume()
+                detectDragGestures { ch, drag ->
+                    ch.consume()
                     val along = if (vertical) drag.y else drag.x
-                    val pxMm = (if (vertical) size.height else size.width) / (if (vertical) 34f else 30f)
-                    val sgn = if (reversed) 1f else -1f
-                    state.value = (state.value + sgn * along / pxMm).coerceIn(min, max)
+                    val pxMm = (if (vertical) size.height / 24f else size.width / 28f)
+                    state.value = (state.value + (if (reversed) along else -along) / pxMm).coerceIn(min, max)
                 }
-            }) {
-            val L = if (vertical) size.height else size.width
-            val pxMm = L / (if (vertical) 34f else 30f)
-            val c = L * 0.5f                                            // position du point du curseur
-            val baseAcross = (if (vertical) size.width else size.height) * 0.52f
+            }
+        Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+          Canvas(canvasMod) {
             val v = state.value
-            fun posOf(mm: Float): Float { val d = (mm - v) * pxMm; return c + (if (reversed) -d else d) }
-            fun pt(along: Float, across: Float) = if (vertical) Offset(across, along) else Offset(along, across)
-            val paint = android.graphics.Paint().apply { color = fg.toArgb(); textSize = 11.sp.toPx(); isAntiAlias = true
-                textAlign = if (vertical) android.graphics.Paint.Align.RIGHT else android.graphics.Paint.Align.CENTER
-                typeface = android.graphics.Typeface.MONOSPACE }
-            // regle principale : traits du cote oppose au curseur, chiffres toutes les 10
-            var m = kotlin.math.floor(v - (L / pxMm) / 2 - 1).toInt()
-            while (m <= v + (L / pxMm) / 2 + 1) {
+            val L = if (vertical) size.height else size.width
+            val pxMm = if (vertical) L / 24f else L / 28f
+            val c = L * 0.5f
+            val base = (if (vertical) size.width else size.height) * 0.52f
+            val sideN = if (vertical) -1f else 1f            // cote des chiffres : bas (X) ou gauche (Y) ; curseur de l'autre cote
+            fun pos(mm: Float): Float { val d0 = (mm - v) * pxMm; return c + (if (reversed) -d0 else d0) }
+            fun pt(a: Float, b: Float) = if (vertical) Offset(b, a) else Offset(a, b)
+            // bandeau cote chiffres, arete de la regle
+            if (vertical) drawRect(Color(0xFF0A0C10), Offset(0f, 0f), Size(base, size.height))
+            else drawRect(Color(0xFF0A0C10), Offset(0f, base), Size(size.width, size.height - base))
+            drawLine(LINE, pt(0f, base), pt(L, base), 2f)
+            val paint = android.graphics.Paint().apply { color = fg.toArgb(); isAntiAlias = true; isFakeBoldText = true; textSize = 13.sp.toPx()
+                textAlign = if (vertical) android.graphics.Paint.Align.RIGHT else android.graphics.Paint.Align.CENTER }
+            var m = kotlin.math.floor(v - L / pxMm / 2).toInt() - 1
+            while (m <= v + L / pxMm / 2 + 1) {
                 if (m >= min - 0.01f && m <= max + 0.01f) {
-                    val a = posOf(m.toFloat())
-                    val tick = if (m % 10 == 0) 24f else if (m % 5 == 0) 17f else 10f
-                    drawLine(if (m % 5 == 0) fg else muted, pt(a, baseAcross), pt(a, baseAcross - tick.dp.toPx() * 0.45f), 2.2f)
+                    val a = pos(m.toFloat())
+                    val t = (if (m % 10 == 0) 15f else if (m % 5 == 0) 11f else 6.5f).dp.toPx()
+                    val p0 = pt(a, base + 3.dp.toPx() * sideN); val p1 = pt(a, base + 3.dp.toPx() * sideN + t * sideN)
+                    drawLine(fg, p0, p1, 2.4f)
                     if (m % 10 == 0) {
-                        val lab = pt(a, baseAcross - 15.dp.toPx())
-                        drawContext.canvas.nativeCanvas.drawText("$m", lab.x + (if (vertical) -4f else 0f), lab.y + (if (vertical) 4.dp.toPx() else 0f), paint)
+                        val lp = pt(a, base + (if (vertical) 26f else 21f).dp.toPx() * sideN)
+                        drawContext.canvas.nativeCanvas.drawText("$m", lp.x, lp.y + (if (vertical) 5.dp.toPx() else 13.sp.toPx()), paint)
                     }
                 }
                 m++
             }
-            drawLine(muted, pt(0f, baseAcross), pt(L, baseAcross), 2f)
-            // curseur : point a la cote lue + 10 graduations fines (vernier : 10 divisions sur 9 mm), du cote oppose
-            drawCircle(accent, 5.dp.toPx() / 2, pt(c, baseAcross + 9.dp.toPx()))
+            // curseur : languette de l'autre cote, point au zero, 10 divisions sur 9 mm vers les valeurs croissantes
+            val cs = -sideN
+            val p0 = pos(v); val p9 = pos(v + 9f)
+            val a0 = minOf(p0, p9) - 12.dp.toPx(); val a1 = maxOf(p0, p9) + 12.dp.toPx()
+            val tabA = base + 3.dp.toPx() * cs; val tabB = base + 44.dp.toPx() * cs
+            val tl = pt(minOf(a0, a1), minOf(tabA, tabB)); val br = pt(maxOf(a0, a1), maxOf(tabA, tabB))
+            drawRoundRect(Color(0xFF1A1D24), tl, Size(br.x - tl.x, br.y - tl.y), androidx.compose.ui.geometry.CornerRadius(8f, 8f))
+            drawRoundRect(Color(0xFF343A48), tl, Size(br.x - tl.x, br.y - tl.y), androidx.compose.ui.geometry.CornerRadius(8f, 8f), style = Stroke(2f))
             val tenth = ((v * 10).roundToInt() % 10 + 10) % 10
             for (k in 0..10) {
-                val a = posOf(v + 0.9f * k)
-                val isAligned = k == tenth
-                drawLine(if (isAligned) gold else fg, pt(a, baseAcross + 16.dp.toPx()), pt(a, baseAcross + (if (isAligned) 30f else 25f).dp.toPx()), if (isAligned) 3.5f else 2f)
+                val a = pos(v + 0.9f * k)
+                val al = k == tenth
+                drawLine(if (al) gold else fg, pt(a, base + 6.dp.toPx() * cs), pt(a, base + (if (al) 26f else 20f).dp.toPx() * cs), if (al) 4f else 2.4f)
             }
-            drawLine(accent, pt(c, baseAcross), pt(c, baseAcross + 14.dp.toPx()), 3f)
+            drawCircle(fg, 3.5.dp.toPx(), pt(pos(v), base + 35.dp.toPx() * cs))
+          }
         }
     }
 }
@@ -703,6 +725,7 @@ fun PreCheck(s: Session.State, live: CameraEngine.Live, locked: Boolean) {
             Text("Avant de lancer", color = FG, fontSize = 15.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.weight(1f))
             Text("$ok sur ${items.size}", color = if (ok == items.size) OK else MUTED, fontSize = 12.sp, fontFamily = Mono)
         }
+        Text("Dès la pose de la lame : en butée dans l'angle du valet, étiquette à droite (le relevé du vernier se fait au départ de la série).", color = MUTED, fontSize = 12.sp)
         for ((good, title, detail) in items) Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             Box(Modifier.size(18.dp).background(if (good) OK else Color.Transparent, CircleShape).border(2.dp, if (good) OK else BIREF, CircleShape), contentAlignment = Alignment.Center) {
                 if (good) Canvas(Modifier.size(10.dp)) { drawLine(BG, Offset(size.width * 0.1f, size.height * 0.55f), Offset(size.width * 0.4f, size.height * 0.85f), 3f); drawLine(BG, Offset(size.width * 0.4f, size.height * 0.85f), Offset(size.width * 0.95f, size.height * 0.15f), 3f) }
