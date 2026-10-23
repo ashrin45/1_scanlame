@@ -249,7 +249,7 @@ class CameraEngine(private val ctx: Context) {
                 photoSize = imageCapture?.resolutionInfo?.resolution
                 videoSize = videoCapture?.attachedSurfaceResolution
                 if (videoCapture != null) try {
-                    val qs = Recorder.getVideoCapabilities(cam.cameraInfo).getSupportedQualities(androidx.camera.video.DynamicRange.SDR)
+                    val qs = Recorder.getVideoCapabilities(cam.cameraInfo).getSupportedQualities(androidx.camera.core.DynamicRange.SDR)
                     Journal.log("qualités vidéo prises en charge par cette caméra : " + qs.joinToString { q -> when (q) { Quality.UHD -> "4K"; Quality.FHD -> "FHD"; Quality.HD -> "HD"; Quality.SD -> "SD"; else -> q.toString() } })
                 } catch (e: Exception) { Journal.log("qualités vidéo : lecture impossible (${e.message})") }
                 bound.value = "$selDesc, analyse ${analysisSize?.let { "${it.width}x${it.height}" }}, " +
