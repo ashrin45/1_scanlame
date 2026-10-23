@@ -196,6 +196,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     var preview by remember { mutableStateOf<PreviewView?>(null) }
     var sheet by remember { mutableStateOf(false) }
     var startDlg by remember { mutableStateOf(false) }
+    var vernierDlg by remember { mutableStateOf(false) }   // relevé du vernier juste avant le départ (la lame est déjà calée depuis le pré-contrôle)
     var msg by remember { mutableStateOf("Touche le bouton violet pour démarrer la caméra.") }
     var msgErr by remember { mutableStateOf(false) }
     var showObjPick by remember { mutableStateOf(false) }
@@ -398,7 +399,6 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     }
     if (startDlg) {
         // feuille de depart (canevas « Nouvelle lame ») : nom, objectif en gros boutons, patron, rognage, prelevement, vernier
-        var vernierSave by remember { mutableStateOf<(() -> Unit)?>(null) }
         var t by remember { mutableStateOf(title) }; var smp by remember { mutableStateOf(sample) }; var obj by remember { mutableStateOf(st.objective) }
         var autoCrop by remember { mutableStateOf(st.autoCrop) }
         val startState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
@@ -443,26 +443,6 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     FieldLabel("Prélèvement (optionnel)")
                     OutlinedTextField(smp, { smp = it }, placeholder = { Text("ex. hémoculture, ECBU, LCR") }, singleLine = true, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(6.dp))
                 }
-                if (st.askVernier) {
-                    val vxS = remember { mutableStateOf(st.stageX.replace(',', '.').toFloatOrNull() ?: 30f) }
-                    val vyS = remember { mutableStateOf(st.stageY.replace(',', '.').toFloatOrNull() ?: 110f) }
-                    var joinStage by remember { mutableStateOf(true) }
-                    vernierSave = {
-                        if (joinStage) { st.stageX = String.format(Locale.FRANCE, "%.1f", vxS.value); st.stageY = String.format(Locale.FRANCE, "%.1f", vyS.value) }
-                        else { st.stageX = ""; st.stageY = "" }
-                    }
-                    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                        FieldLabel("Relevé de la platine (vernier)")
-                        Text("La lame doit déjà être calée comme sur le schéma (butée du valet, étiquette à droite) depuis le début de tes réglages. Reproduis ici ce que lisent les deux curseurs, point = millimètres, graduation alignée (dorée) = dixièmes.", fontSize = 12.sp, color = MUTED)
-                        StageDiagram(Modifier.fillMaxWidth().height(116.dp))
-                        VernierStrip("X", vxS, 0f, 80f, reversed = true, vertical = false)
-                        VernierStrip("Y", vyS, 85f, 145f, reversed = false, vertical = true)
-                        Row(Modifier.fillMaxWidth().clickable { joinStage = !joinStage }, verticalAlignment = Alignment.CenterVertically) {
-                            Checkbox(joinStage, { joinStage = it }, colors = CheckboxDefaults.colors(checkedColor = ACCENT, checkmarkColor = BG, uncheckedColor = MUTED))
-                            Text("Joindre ce relevé à la série", fontSize = 14.sp, color = FG)
-                        }
-                    }
-                } else vernierSave = null
                 val par = lames.firstOrNull { it.slug == parent }?.title ?: st.recentSeries().firstOrNull { it.first == parent }?.second
                 Row(Modifier.fillMaxWidth().background(ACCENT_TINT, RoundedCornerShape(12.dp)).padding(12.dp, 10.dp), horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
                     Text("i", Modifier.size(18.dp).border(2.dp, ACCENT, RoundedCornerShape(999.dp)), color = ACCENT, fontSize = 11.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
@@ -473,10 +453,37 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     Text("Lancer la série", Modifier.weight(1f).heightIn(min = 52.dp).background(ACCENT, RoundedCornerShape(6.dp)).clickable {
                         title = t; sample = smp; st.objective = obj; startDlg = false
                         if (st.serverUrl.isEmpty()) say("Serveur non réglé : la prise restera sur le téléphone (file d'attente).", true)
-                        vernierSave?.invoke()
-                        session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
+                        if (st.askVernier) vernierDlg = true
+                        else session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
                     }.padding(vertical = 15.dp), color = BG, fontSize = 16.sp, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
                 }
+            }
+        }
+    }
+    if (vernierDlg) {
+        val vState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+        ModalBottomSheet(onDismissRequest = { vernierDlg = false }, sheetState = vState, containerColor = PANEL, shape = RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp),
+            dragHandle = { Box(Modifier.padding(top = 12.dp).size(40.dp, 4.dp).background(LINE, RoundedCornerShape(999.dp))) }) {
+            val vxS = remember { mutableStateOf(st.stageX.replace(',', '.').toFloatOrNull() ?: 30f) }
+            val vyS = remember { mutableStateOf(st.stageY.replace(',', '.').toFloatOrNull() ?: 110f) }
+            val go = { withStage: Boolean ->
+                if (withStage) { st.stageX = String.format(Locale.FRANCE, "%.1f", vxS.value); st.stageY = String.format(Locale.FRANCE, "%.1f", vyS.value) }
+                else { st.stageX = ""; st.stageY = "" }
+                vernierDlg = false
+                session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
+            }
+            Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).navigationBarsPadding().padding(start = 20.dp, end = 20.dp, top = 12.dp, bottom = 20.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Text("Relevé de la platine", fontSize = 27.sp, lineHeight = 34.sp, fontFamily = Display, color = FG)
+                Text("Tu es sur ton premier champ : reproduis ici ce que lisent les deux curseurs. Point = millimètres, graduation alignée (dorée) = dixièmes. La lame reste calée comme depuis le début (butée du valet, étiquette à droite).", fontSize = 13.sp, color = MUTED)
+                StageDiagram(Modifier.fillMaxWidth().height(112.dp))
+                VernierStrip("X", vxS, 0f, 80f, reversed = true, vertical = false)
+                VernierStrip("Y", vyS, 85f, 145f, reversed = false, vertical = true)
+                Row(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Text("Sans relevé", Modifier.heightIn(min = 52.dp).border(1.dp, LINE, RoundedCornerShape(6.dp)).clickable { go(false) }.padding(horizontal = 16.dp, vertical = 15.dp), color = MUTED, fontSize = 15.sp, fontWeight = FontWeight.Medium)
+                    Text("Enregistrer et lancer", Modifier.weight(1f).heightIn(min = 52.dp).background(ACCENT, RoundedCornerShape(6.dp)).clickable { go(true) }.padding(vertical = 15.dp), color = BG, fontSize = 16.sp, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
+                }
+                Text("Ne plus demander (réactivable dans les réglages)", Modifier.clickable { st.askVernier = false; go(false) }.padding(4.dp), color = MUTED, fontSize = 12.sp)
             }
         }
     }
