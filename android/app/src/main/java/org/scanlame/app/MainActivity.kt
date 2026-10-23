@@ -468,8 +468,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                 Column(Modifier.fillMaxWidth().border(1.dp, if (locked) ACCENT else LINE, RoundedCornerShape(6.dp)).clickable(enabled = locked) {
                     title = t; sample = smp; st.objective = obj; startDlg = false
                     if (st.serverUrl.isEmpty()) say("Serveur non réglé : la prise restera sur le téléphone (file d'attente).", true)
-                    if (st.mode == Settings.MODE_VIDEO) session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null }, champ3d = true)
-                    else { start3d = true; mode3d = true }
+                    start3d = true; mode3d = true
                 }.padding(14.dp, 12.dp), verticalArrangement = Arrangement.spacedBy(3.dp)) {
                     Text("Champ 3D (essai)", color = if (locked) ACCENT else MUTED, fontSize = 15.sp, fontWeight = FontWeight.SemiBold)
                     Text(if (locked) "Vidéo d'un seul champ, sans bouger la platine : démarre au-dessus du plan net puis descends la vis lentement (10 à 15 s). Rendu en relief côté serveur."

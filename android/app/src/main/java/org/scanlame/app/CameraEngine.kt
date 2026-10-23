@@ -192,7 +192,12 @@ class CameraEngine(private val ctx: Context) {
                 val video = mode == Settings.MODE_VIDEO || mode == Settings.MODE_3D
                 val ratio = if (video) AspectRatio.RATIO_16_9 else AspectRatio.RATIO_4_3
                 val ratioStrategy = AspectRatioStrategy(ratio, AspectRatioStrategy.FALLBACK_RULE_AUTO)
-                val (sel, physical, selDesc) = selector(st, p)
+                var (sel, physical, selDesc) = selector(st, p)
+                if (mode == Settings.MODE_3D && physical != null) {
+                    // module epingle = video plafonnee a 720p pour les applis tierces ; la camera logique offre la 4K.
+                    // Zoom par recadrage et exposition manuelle etant verrouilles, la logique reste en pratique sur le module principal.
+                    physical = null; selDesc = "$selDesc, module non épinglé (champ 3D : 4K)"
+                }
 
                 val previewB = Preview.Builder().setResolutionSelector(ResolutionSelector.Builder().setAspectRatioStrategy(ratioStrategy).build())
                 Camera2Interop.Extender(previewB).setSessionCaptureCallback(object : CameraCaptureSession.CaptureCallback() {
