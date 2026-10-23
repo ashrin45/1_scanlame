@@ -316,9 +316,10 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     }
                 } else WebButton("Reprendre", small = true) { session.resumeSwitch() }
             }
-            Spacer(Modifier.weight(1f))
-            // message, zoom, netteté (juste au-dessus de la barre)
-            Column(Modifier.fillMaxWidth().padding(14.dp, 0.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            // zone centrale (pré-contrôle, messages, netteté, zoom) : elle défile si l'écran est trop petit, pour que la barre
+            // du bas (verrou, déclencheur, réglages) garde toujours sa taille au lieu d'être écrasée
+            Box(Modifier.weight(1f).fillMaxWidth(), contentAlignment = Alignment.BottomCenter) {
+            Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState(initial = Int.MAX_VALUE)).padding(14.dp, 0.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 if (cameraOn && bound != null && !sess.running && update == null) PreCheck(sess, live, locked)
                 if (update != null && !sess.running) Row(Modifier.fillMaxWidth().background(ACCENT, RoundedCornerShape(12.dp)).clickable { doUpdate() }.padding(12.dp, 10.dp), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                     Text("Mise à jour ${update!!.version} disponible (installée : ${BuildConfig.VERSION_NAME})", color = BG, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
@@ -336,6 +337,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     Text("zoom ${String.format(Locale.ROOT, "%.1f", zoom)}×", Modifier.background(CAPSULE, RoundedCornerShape(999.dp)).padding(10.dp, 4.dp), color = FG, fontSize = 14.sp)
                     Slider(zoom, { zoom = (it * 10).roundToInt() / 10f }, valueRange = 1f..st.zoomMax.coerceAtLeast(1.1f), modifier = Modifier.weight(1f), enabled = cameraOn)
                 }
+            }
             }
             // ---- barre du bas : verrou | déclencheur | réglages
             Row(Modifier.fillMaxWidth().background(androidx.compose.ui.graphics.Brush.verticalGradient(listOf(Color(0x000D1017), Color(0xEB0D1017)))).navigationBarsPadding().padding(16.dp, 12.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -732,7 +734,7 @@ fun PreCheck(s: Session.State, live: CameraEngine.Live, locked: Boolean) {
             Text("Avant de lancer", color = FG, fontSize = 15.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.weight(1f))
             Text("$ok sur ${items.size}", color = if (ok == items.size) OK else MUTED, fontSize = 12.sp, fontFamily = Mono)
         }
-        Text("Dès la pose de la lame : en butée dans l'angle du valet, étiquette à droite (le relevé du vernier se fait au départ de la série).", color = MUTED, fontSize = 12.sp)
+        Text("Lame calée dans l'angle du valet, étiquette à droite.", color = MUTED, fontSize = 12.sp)
         for ((good, title, detail) in items) Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             Box(Modifier.size(18.dp).background(if (good) OK else Color.Transparent, CircleShape).border(2.dp, if (good) OK else BIREF, CircleShape), contentAlignment = Alignment.Center) {
                 if (good) Canvas(Modifier.size(10.dp)) { drawLine(BG, Offset(size.width * 0.1f, size.height * 0.55f), Offset(size.width * 0.4f, size.height * 0.85f), 3f); drawLine(BG, Offset(size.width * 0.4f, size.height * 0.85f), Offset(size.width * 0.95f, size.height * 0.15f), 3f) }
