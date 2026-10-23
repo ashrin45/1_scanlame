@@ -8,7 +8,7 @@ class Settings(ctx: Context) {
     private val p: SharedPreferences = ctx.getSharedPreferences("scanlame", Context.MODE_PRIVATE)
 
     companion object {
-        val OBJECTIVES = listOf("x10", "x40", "x50", "x100")   // les objectifs du microscope du laboratoire
+        val OBJECTIVES = listOf("x2.5", "x10", "x40", "x50", "x100")   // les objectifs du microscope du laboratoire
         val STAINS = listOf("gram" to "Gram", "mgg" to "MGG", "giemsa" to "Giemsa", "ziehl" to "Ziehl-Neelsen", "auramine" to "Auramine", "bleu" to "Bleu de méthylène", "frais" to "État frais", "encre" to "Encre de Chine", "lactophenol" to "Lactophénol", "he" to "HE", "autre" to "Autre")
         const val MODE_PHOTOS = "photos"
         const val MODE_VIDEO = "video"

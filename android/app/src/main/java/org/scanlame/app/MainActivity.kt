@@ -415,7 +415,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     FieldLabel("Objectif")
                     // boutons plutot qu'une liste deroulante (les menus deroulants s'ouvrent mal dans une feuille)
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        for (o in Settings.OBJECTIVES) GridPill(o, o == obj, Modifier.weight(1f)) { obj = o }
+                        for (o in Settings.OBJECTIVES) GridPill(o, o == obj, Modifier.weight(if (o == "x2.5") 1.15f else 1f)) { obj = o }
                     }
                     val n = Regex("\\d+").find(obj)?.value?.toIntOrNull() ?: 0
                     if (n >= 100) Text("Commence par le plus fort grossissement : au passage au x10, le détail sera au centre du patron.", fontSize = 13.sp, color = MUTED)
