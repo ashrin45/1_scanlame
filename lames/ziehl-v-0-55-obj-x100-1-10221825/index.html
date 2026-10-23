@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ziehl v 0.55 (obj. x100 1)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+[hidden] { display: none !important; }
+/* Layout: one-screen viewer, slim instrument bar on top, the slide fills the rest */
+:root {
+  --bg: #f3f0f4; --panel: #ffffff; --fg: #2b2433; --muted: #6e6478; --line: #d9d2de;
+  --accent: #7a2e8c; --accent-soft: rgba(122,46,140,.14); --stage: #e9e4ec; --ok: #1b9466; --warn: #b7791f; --bad: #c0392b; --star: #b07800;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; --star: #f0c24b; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #17131b; --panel: #211c26; --fg: #ece6f0; --muted: #a79cb1; --line: #3a323f;
+  --accent: #c58ad6; --accent-soft: rgba(197,138,214,.18); --stage: #0f0c12; --ok: #3cc58e; --warn: #e2b25a; --bad: #ef6b5a; --star: #f0c24b; color-scheme: dark }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-ui); display: flex; flex-direction: column; overflow: hidden; }
+header { flex: 0 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  padding-block: 8px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: var(--panel); border-bottom: 1px solid var(--line); }
+.title { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+h1 { font-size: 15px; font-weight: 600; margin: 0; letter-spacing: .01em; }
+.info { font-size: 12px; color: var(--muted); }
+.info a { color: var(--accent); text-decoration: none; }
+.meta { font-family: var(--font-data); font-size: 12px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.meta b { color: var(--fg); font-weight: 500; }
+.meta a { color: var(--accent); text-decoration: none; } .meta a:hover { text-decoration: underline; }
+.tools { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+button { font: 500 13px var(--font-ui); color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; min-width: 36px; }
+button:hover { border-color: var(--accent); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+#favbtn[aria-pressed="true"] { background: transparent; border-color: var(--star); color: var(--star); }
+#favmsg { position: absolute; left: 50%; bottom: max(16px, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 8; width: max-content; max-width: min(520px, calc(100% - 32px)); background: var(--panel); color: var(--fg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; font: 14px var(--font-ui); box-shadow: 0 6px 24px rgba(0,0,0,.2); }
+button .g { display: inline-block; min-width: 16px; padding: 0 4px; border-radius: 4px; color: #fff; font-weight: 600; margin-left: 4px; }
+.gA { background: var(--ok); } .gB { background: var(--warn); } .gC { background: var(--bad); }
+.zctl { display: flex; align-items: center; gap: 6px; font: 500 12px var(--font-data); color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; }
+.zctl input { width: 110px; accent-color: var(--accent); margin: 0; }
+.zctl b { color: var(--fg); font-weight: 500; min-width: 7.5em; }
+#viewer { flex: 1 1 auto; min-height: 0; background: var(--stage); position: relative; }
+#cpanel { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); top: 12px; z-index: 6; width: min(340px, calc(100vw - 32px)); max-height: calc(100% - 90px); overflow: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 13px var(--font-ui); color: var(--fg); display: flex; flex-direction: column; gap: 8px; }
+#cpanel h3 { margin: 0; font: 600 14px var(--font-ui); }
+#cpanel .row { display: flex; justify-content: space-between; gap: 8px; align-items: center; min-height: 26px; }
+#cpanel .cls { display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 2px 4px; border-radius: 6px; }
+#cpanel .cls:hover { background: rgba(127,127,127,.12); }
+#cpanel .cls.off { opacity: .4; }
+#cpanel .sw { width: 12px; height: 12px; border-radius: 3px; flex: 0 0 auto; }
+#cpanel .n { font: 12px var(--font-data); margin-left: auto; }
+#cpanel .grp { font: 600 11px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; opacity: .7; margin-top: 4px; }
+#cpanel .msg { font-size: 12px; opacity: .8; }
+#cfiche { position: absolute; right: max(12px, env(safe-area-inset-right, 0px)); bottom: max(60px, env(safe-area-inset-bottom, 0px)); z-index: 7; width: min(300px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 13px var(--font-ui); color: var(--fg); display: flex; flex-direction: column; gap: 6px; }
+#cfiche b.cl { font-size: 15px; }
+#cfiche .k { opacity: .7; }
+svg.cells polygon { fill-opacity: .08; stroke-width: 2px; vector-effect: non-scaling-stroke; cursor: pointer; }
+svg.cells polygon.prop { stroke-dasharray: 6 4; }
+svg.cells polygon.bord { opacity: .45; }
+svg.cells polygon.sel { stroke-width: 4px; fill-opacity: .25; }
+#epanel { position: absolute; right: max(12px, env(safe-area-inset-right, 0px)); top: 12px; z-index: 7; width: min(340px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 13px var(--font-ui); color: var(--fg); display: flex; flex-direction: column; gap: 8px; }
+#epanel input { font: 13px var(--font-data); padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--fg); width: 100%; box-sizing: border-box; }
+#epanel .row { display: flex; gap: 8px; flex-wrap: wrap; }
+#epanel .danger { border-color: #c0392b; color: #c0392b; }
+#epanel .msg { font-size: 12px; opacity: .85; }
+#cropper { position: absolute; inset: 0; z-index: 6; cursor: crosshair; touch-action: none; }
+#croprect { position: absolute; border: 2px solid #e8a33d; background: rgba(232, 163, 61, .12); box-shadow: 0 0 0 9999px rgba(0, 0, 0, .35); pointer-events: none; display: none; }
+#cropbar { position: absolute; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 8; display: flex; gap: 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px; font: 13px var(--font-ui); color: var(--fg); align-items: center; }
+#viewer .navigator { border: 1px solid var(--line) !important; background: var(--panel) !important; }
+/* annotations : epingles et zones posees sur la lame, panneau, formulaire */
+.cnt { display: inline-block; min-width: 16px; padding: 0 5px; margin-left: 5px; border-radius: 999px; font: 600 11px var(--font-data); background: var(--accent-soft); color: var(--accent); }
+.cnt:empty { display: none; }
+#apanel { position: absolute; right: max(12px, env(safe-area-inset-right, 0px)); top: 12px; z-index: 7; width: min(340px, calc(100vw - 32px)); max-height: calc(100% - 24px); overflow: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font: 13px var(--font-ui); color: var(--fg); display: flex; flex-direction: column; gap: 8px; box-shadow: 0 4px 18px rgba(0,0,0,.18); }
+#apanel h3 { margin: 0; font: 600 14px var(--font-ui); }
+#apanel .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+#apanel label.chk { display: flex; gap: 6px; align-items: center; color: var(--muted); font-size: 12px; margin-left: auto; }
+#apanel .item { display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 3px 8px; padding: 6px; border-radius: 8px; border: 1px solid transparent; }
+#apanel .item.sel { border-color: var(--accent); }
+#apanel .item .sw { width: 12px; height: 12px; border-radius: 50%; margin-top: 3px; }
+#apanel .item .tx { white-space: pre-wrap; overflow-wrap: anywhere; }
+#apanel .item .k, #acard .k { font-size: 12px; color: var(--muted); }
+#apanel .item .k, #apanel .item .acts { grid-column: 2; }
+#apanel .item .acts, #acard .acts { display: flex; gap: 6px; flex-wrap: wrap; }
+#apanel .item .acts button, #acard .acts button { padding: 2px 8px; font-size: 12px; }
+#apanel .msg { font-size: 12px; color: var(--muted); }
+#adraw { position: absolute; inset: 0; z-index: 6; cursor: crosshair; touch-action: none; }
+#arect { position: absolute; border: 2px dashed var(--accent); background: var(--accent-soft); pointer-events: none; display: none; }
+#abar { position: absolute; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 8; display: flex; gap: 10px; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font: 13px var(--font-ui); color: var(--fg); max-width: calc(100% - 32px); }
+#aform, #acard { position: absolute; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 9; width: min(420px, calc(100% - 32px)); box-sizing: border-box; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; font: 13px var(--font-ui); color: var(--fg); box-shadow: 0 8px 28px rgba(0,0,0,.25); }
+#aform textarea { font: 14px/1.4 var(--font-ui); min-height: 76px; resize: vertical; padding: 8px; border-radius: 8px; border: 1px solid var(--line); background: transparent; color: var(--fg); }
+#aform input { font: 13px var(--font-ui); padding: 6px 8px; border-radius: 6px; border: 1px solid var(--line); background: transparent; color: var(--fg); min-width: 0; flex: 1 1 auto; }
+#aform .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+#acard .tx { font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.coul { display: flex; gap: 8px; }
+.coul button { width: 28px; height: 28px; min-width: 28px; border-radius: 50%; padding: 0; border: 2px solid transparent; }
+.coul button[aria-pressed="true"] { border-color: var(--fg); box-shadow: inset 0 0 0 2px var(--panel); }
+.apin { position: relative; width: 22px; height: 30px; cursor: pointer; }
+.apin svg { width: 22px; height: 30px; display: block; filter: drop-shadow(0 1px 2px rgba(0,0,0,.55)); }
+.apin.wait svg, .alab.wait { opacity: .7; }
+.alab { font: 600 12px/1.3 var(--font-ui); color: #fff; background: rgba(15,12,18,.8); padding: 3px 7px; border-radius: 6px; white-space: nowrap; max-width: 240px; overflow: hidden; text-overflow: ellipsis; border-left: 3px solid; cursor: pointer; box-sizing: border-box; }
+.apin .alab { position: absolute; left: 20px; top: -2px; }
+.azlab { margin-bottom: 4px; }
+svg.annots rect { stroke-width: 2px; vector-effect: non-scaling-stroke; fill-opacity: .1; }
+svg.annots rect.wait { stroke-dasharray: 8 5; }
+svg.annots rect.sel { stroke-width: 4px; fill-opacity: .2; }
+.hud { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 5;
+  font-family: var(--font-data); font-size: 12px; color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; pointer-events: none; font-variant-numeric: tabular-nums; }
+svg.fields polygon { fill: none; stroke: var(--accent); stroke-width: 1.5px; vector-effect: non-scaling-stroke; opacity: .9; }
+svg.fields text { fill: var(--accent); font: 500 40px var(--font-data); paint-order: stroke; stroke: var(--panel); stroke-width: 10px; opacity: .8; }
+svg.quality polygon { stroke-width: 1px; vector-effect: non-scaling-stroke; }
+svg.quality polygon.s2 { fill: rgba(27,148,102,.18); stroke: rgba(27,148,102,.7); }
+svg.quality polygon.s1 { fill: rgba(183,121,31,.28); stroke: rgba(183,121,31,.8); }
+svg.quality polygon.s0 { fill: rgba(192,57,43,.32); stroke: rgba(192,57,43,.9); }
+svg.quality polygon.tracked { stroke-dasharray: 6 4; }
+svg.quality polygon.hole { fill: rgba(192,57,43,.25); stroke: #c0392b; stroke-width: 2px; stroke-dasharray: 8 5; }
+svg.children polygon { fill: none; stroke: #e8a33d; stroke-width: 2px; vector-effect: non-scaling-stroke; }
+svg.children text { fill: #e8a33d; font: 600 36px var(--font-data); paint-order: stroke; stroke: #000; stroke-width: 8px; }
+#qpanel { position: absolute; left: max(12px, env(safe-area-inset-left, 0px)); top: 12px; z-index: 6; max-width: min(360px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; font-size: 13px; box-shadow: 0 4px 18px rgba(0,0,0,.18); }
+#qpanel h2 { font-size: 13px; margin: 0 0 6px; display: flex; align-items: center; gap: 8px; }
+#qpanel ul { margin: 0 0 8px; padding-left: 18px; } #qpanel li { margin: 2px 0; }
+#qpanel .kv { font-family: var(--font-data); font-size: 11px; color: var(--muted); display: grid; grid-template-columns: auto auto; gap: 2px 12px; font-variant-numeric: tabular-nums; }
+#qpanel .leg { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; font-size: 11px; color: var(--muted); }
+#qpanel .leg i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 3px; }
+#bar { position: absolute; right: max(14px, env(safe-area-inset-right, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px)); text-align: right; z-index: 5; pointer-events: none; font: 500 12px var(--font-data); color: #fff; text-shadow: 0 0 4px #000, 0 0 2px #000; }
+#bar i { display: block; margin-left: auto; height: 4px; background: #fff; border: 1px solid #000; border-top: 0; box-shadow: 0 0 3px #000; margin-bottom: 3px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="title"><h1>ziehl v 0.55 (obj. x100 1)</h1><div class="info" id="info">Ziehl-Neelsen · objectif x100 · 22/10/2026 18:25</div></div>
+  <div class="meta"><span><b>179</b> champs</span><span><b>11520 × 11664</b> px</span><span><b>15</b> niveaux de zoom</span><span>échelle non calibrée</span><span><b>5</b> plans de profondeur</span><span>v1 · profondeur off, coutures fond, recalage 1200 px, code 359ba85</span><span>journaux : <a href="journaux/20261022_182547_ziehl-v-0-55-assemblage.txt">assemblage 20261022</a> <a href="journaux/20261022_182547_ziehl-v-0-55-planche.jpg">planche 20261022</a> <a href="journaux/20261022_182547_ziehl-v-0-55-telephone.txt">téléphone 20261022</a></span></div>
+  <div class="tools">
+    <button id="zin" aria-label="Zoom avant">+</button>
+    <button id="zout" aria-label="Zoom arrière">−</button>
+    <button id="home" aria-label="Vue entière">⌂</button>
+    <button id="fields" aria-pressed="false">Champs</button>
+    <button id="qbtn" aria-pressed="false" hidden>Qualité<span class="g" id="qg"></span></button>
+    <button id="kids" aria-pressed="true" hidden>Détails</button>
+    <button id="cellsbtn" aria-pressed="false" hidden>Cellules<span class="g" id="cellsn"></span></button>
+    <button id="annbtn" aria-pressed="false" title="Annoter la lame (épingles, zones)">Annotations<span class="cnt" id="anncnt"></span></button>
+    <button id="favbtn" aria-pressed="false" title="Ajouter aux favoris">☆ Favori</button>
+    <button id="editbtn" aria-pressed="false" title="Rogner ou supprimer cette lame">Modifier</button>
+    <label class="zctl" id="zctl" hidden><span>profondeur</span><input id="zr" type="range" min="0" max="1" value="0" step="1" aria-label="Plan de profondeur"><b id="zl">net partout</b></label>
+  </div>
+</header>
+<div id="viewer">
+  <div class="hud" id="hud">zoom 1.00×</div>
+  <div id="bar" hidden><i></i><span></span></div>
+  <div id="qpanel" hidden></div>
+  <div id="cpanel" hidden></div>
+  <div id="cfiche" hidden></div>
+  <div id="favmsg" role="status" hidden></div>
+  <div id="apanel" hidden aria-label="Annotations"></div>
+  <div id="adraw" hidden><div id="arect"></div></div>
+  <div id="abar" hidden><span id="ainfo"></span><button type="button" id="acancel">Annuler</button></div>
+  <form id="aform" hidden>
+    <b id="atitle">Nouvelle annotation</b>
+    <textarea id="atext" placeholder="Ce que montre cet endroit (ex. tête aspergillaire bisériée, blaste, artefact…)" aria-label="Texte de l'annotation"></textarea>
+    <div class="row"><span class="coul" id="acoul" role="group" aria-label="Couleur"></span><input id="aauteur" placeholder="Signé (facultatif)" aria-label="Auteur" autocomplete="name"></div>
+    <div class="row"><button type="submit" id="asave">Enregistrer</button><button type="button" id="aformcancel">Annuler</button><span class="k" id="aformmsg"></span></div>
+  </form>
+  <div id="acard" hidden></div>
+  <div id="epanel" hidden>
+    <b>Modifier la lame</b>
+    <input id="eurl" placeholder="URL du serveur (…/functions/v1/scanlame)" autocomplete="off">
+    <input id="etoken" placeholder="Jeton" type="password" autocomplete="off">
+    <div class="row"><button id="ecrop">Rogner…</button><button id="edelete" class="danger">Supprimer la lame</button></div>
+    <div class="row"><button id="eresume">Reprendre (QR)</button><button id="edetail">Ajouter un détail (QR)</button></div>
+    <div id="qrbox" hidden style="display:flex;gap:12px;align-items:center"><div id="qr"></div><div class="msg" id="qrmsg"></div></div>
+    <div class="msg">Télécharger : <a id="dlfull" href="#" target="_blank" rel="noopener">image entière (JPEG pleine résolution)</a> · <a id="dlzip" href="#" target="_blank" rel="noopener">dossier avec visionneuse hors ligne (zip)</a> · ou <code>python tools/telecharger_lame.py ziehl-v-0-55-obj-x100-1-10221825 --patches 512</code> pour l'image, des vignettes et les champs (dépôt GitHub).</div>
+    <div class="msg" id="emsg">Les mêmes réglages que la page de capture. La modification est faite par GitHub Actions en quelques minutes.</div>
+  </div>
+  <div id="cropper" hidden><div id="croprect"></div></div>
+  <div id="cropbar" hidden><span id="cropinfo">Tracez un rectangle à garder</span><button id="cropok" disabled>Valider le rognage</button><button id="cropcancel">Annuler</button></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const SLUG = "ziehl-v-0-55-obj-x100-1-10221825";
+const W = 11520, H = 11664, TILE = 512, MAXLVL = 14;
+const FIELDS = [{"id":"0000","pts":[[1422,-11],[1396,1908],[-43,1889],[-17,-30]],"scale":1.0,"sharp":1.28,"z":false,"tracked":false},{"id":"0002","pts":[[2430,-61],[2401,1858],[962,1836],[991,-83]],"scale":1.0,"sharp":1.0,"z":false,"tracked":false},{"id":"0035","pts":[[3066,1302],[3048,3246],[1591,3232],[1609,1289]],"scale":0.987,"sharp":0.87,"z":false,"tracked":false},{"id":"0043","pts":[[2831,2829],[2795,4812],[1308,4786],[1343,2802]],"scale":0.967,"sharp":1.06,"z":false,"tracked":false},{"id":"0081","pts":[[2083,4193],[2051,6169],[570,6145],[602,4169]],"scale":0.971,"sharp":0.97,"z":false,"tracked":false},{"id":"0085","pts":[[3150,5174],[3121,7150],[1640,7128],[1669,5153]],"scale":0.971,"sharp":0.98,"z":false,"tracked":false},{"id":"0117","pts":[[2166,6037],[2134,8018],[649,7994],[681,6013]],"scale":0.969,"sharp":1.33,"z":false,"tracked":false},{"id":"0123","pts":[[2209,6491],[2176,8467],[694,8443],[726,6466]],"scale":0.971,"sharp":5.18,"z":false,"tracked":false},{"id":"0121","pts":[[2777,5395],[2746,7371],[1264,7347],[1296,5371]],"scale":0.971,"sharp":1.01,"z":false,"tracked":false},{"id":"0122","pts":[[2841,6467],[2809,8443],[1328,8419],[1359,6444]],"scale":0.971,"sharp":1.7,"z":false,"tracked":false},{"id":"0120","pts":[[2175,5424],[2141,7401],[658,7376],[692,5398]],"scale":0.97,"sharp":1.09,"z":false,"tracked":false},{"id":"0109","pts":[[3287,6620],[3255,8594],[1775,8570],[1807,6596]],"scale":0.972,"sharp":1.0,"z":false,"tracked":false},{"id":"0116","pts":[[2907,6002],[2878,7978],[1396,7956],[1426,5980]],"scale":0.971,"sharp":0.98,"z":false,"tracked":false},{"id":"0115","pts":[[2713,6650],[2680,8625],[1199,8600],[1232,6626]],"scale":0.972,"sharp":2.1,"z":false,"tracked":false},{"id":"0114","pts":[[3062,6633],[3031,8607],[1551,8583],[1582,6609]],"scale":0.972,"sharp":1.24,"z":false,"tracked":false},{"id":"0113","pts":[[3843,6592],[3812,8566],[2332,8543],[2363,6569]],"scale":0.972,"sharp":1.04,"z":false,"tracked":false},{"id":"0110","pts":[[2838,6643],[2806,8616],[1326,8592],[1358,6619]],"scale":0.972,"sharp":1.56,"z":false,"tracked":false},{"id":"0111","pts":[[2388,6669],[2357,8643],[877,8620],[908,6646]],"scale":0.972,"sharp":2.68,"z":false,"tracked":false},{"id":"0084","pts":[[2347,5215],[2311,7190],[830,7164],[865,5188]],"scale":0.971,"sharp":1.1,"z":false,"tracked":false},{"id":"0083","pts":[[1048,5274],[1018,7252],[-465,7230],[-436,5252]],"scale":0.97,"sharp":1.14,"z":false,"tracked":false},{"id":"0118","pts":[[1006,6097],[975,8077],[-510,8054],[-479,6074]],"scale":0.969,"sharp":2.16,"z":false,"tracked":false},{"id":"0119","pts":[[1073,7131],[1042,9111],[-443,9087],[-412,7107]],"scale":0.969,"sharp":4.74,"z":false,"tracked":false},{"id":"0082","pts":[[979,4246],[949,6219],[-530,6197],[-501,4223]],"scale":0.972,"sharp":1.01,"z":false,"tracked":false},{"id":"0038","pts":[[1352,2913],[1321,4880],[-155,4856],[-123,2889]],"scale":0.975,"sharp":1.14,"z":false,"tracked":false},{"id":"0041","pts":[[2511,2223],[2495,4173],[1032,4161],[1049,2211]],"scale":0.984,"sharp":0.95,"z":false,"tracked":false},{"id":"0044","pts":[[3399,2798],[3355,4791],[1860,4758],[1905,2765]],"scale":0.963,"sharp":0.99,"z":false,"tracked":false},{"id":"0080","pts":[[2615,4168],[2583,6145],[1101,6121],[1133,4144]],"scale":0.971,"sharp":1.19,"z":false,"tracked":false},{"id":"0086","pts":[[3781,5143],[3755,7114],[2276,7095],[2302,5123]],"scale":0.973,"sharp":1.12,"z":false,"tracked":false},{"id":"0108","pts":[[4109,6574],[4084,8549],[2603,8530],[2629,6555]],"scale":0.972,"sharp":0.95,"z":false,"tracked":false},{"id":"0107","pts":[[5078,6521],[5052,8502],[3566,8482],[3593,6501]],"scale":0.969,"sharp":1.25,"z":false,"tracked":false},{"id":"0105","pts":[[6094,6456],[6082,8444],[4592,8434],[4604,6447]],"scale":0.965,"sharp":0.99,"z":false,"tracked":false},{"id":"0104","pts":[[6627,6430],[6609,8415],[5120,8401],[5139,6416]],"scale":0.967,"sharp":0.95,"z":false,"tracked":false},{"id":"0106","pts":[[5607,6488],[5587,8474],[4098,8458],[4119,6473]],"scale":0.967,"sharp":1.08,"z":false,"tracked":false},{"id":"0090","pts":[[5933,5009],[5923,6994],[4434,6987],[4444,5001]],"scale":0.966,"sharp":2.83,"z":false,"tracked":false},{"id":"0091","pts":[[6630,4968],[6622,6950],[5136,6944],[5144,4962]],"scale":0.968,"sharp":0.95,"z":false,"tracked":false},{"id":"0103","pts":[[7631,6365],[7625,8350],[6136,8346],[6142,6360]],"scale":0.966,"sharp":1.03,"z":true,"tracked":false},{"id":"0101","pts":[[8926,6273],[8930,8263],[7438,8266],[7434,6276]],"scale":0.965,"sharp":1.12,"z":false,"tracked":false},{"id":"0102","pts":[[8427,6308],[8431,8296],[6940,8299],[6936,6311]],"scale":0.965,"sharp":1.46,"z":false,"tracked":false},{"id":"0095","pts":[[9355,4781],[9361,6768],[7871,6772],[7865,4786]],"scale":0.966,"sharp":0.96,"z":false,"tracked":false},{"id":"0100","pts":[[9826,6209],[9830,8203],[8336,8206],[8331,6212]],"scale":0.963,"sharp":1.06,"z":false,"tracked":false},{"id":"0096","pts":[[10224,4714],[10236,6708],[8741,6717],[8729,4723]],"scale":0.962,"sharp":1.19,"z":false,"tracked":false},{"id":"0099","pts":[[10690,6140],[10714,8131],[9221,8149],[9197,6158]],"scale":0.964,"sharp":1.53,"z":false,"tracked":false},{"id":"0098","pts":[[11714,6003],[11738,7994],[10245,8012],[10221,6021]],"scale":0.964,"sharp":1.17,"z":false,"tracked":false},{"id":"0065","pts":[[10224,3663],[10238,5658],[8742,5669],[8728,3674]],"scale":0.962,"sharp":0.83,"z":false,"tracked":false},{"id":"0067","pts":[[8994,3750],[9003,5751],[7502,5758],[7494,3757]],"scale":0.959,"sharp":0.74,"z":false,"tracked":false},{"id":"0093","pts":[[7994,4885],[7995,6862],[6512,6864],[6510,4886]],"scale":0.97,"sharp":1.46,"z":false,"tracked":false},{"id":"0094","pts":[[8464,4848],[8464,6830],[6978,6831],[6978,4849]],"scale":0.968,"sharp":1.1,"z":false,"tracked":false},{"id":"0092","pts":[[7252,4932],[7256,6908],[5774,6911],[5770,4935]],"scale":0.971,"sharp":1.09,"z":false,"tracked":false},{"id":"0073","pts":[[6552,3931],[6548,5915],[5060,5912],[5064,3928]],"scale":0.967,"sharp":0.86,"z":false,"tracked":false},{"id":"0072","pts":[[5316,4021],[5314,5987],[3839,5986],[3842,4019]],"scale":0.976,"sharp":1.02,"z":false,"tracked":false},{"id":"0088","pts":[[4864,5082],[4845,7054],[3367,7040],[3386,5068]],"scale":0.973,"sharp":1.33,"z":false,"tracked":false},{"id":"0089","pts":[[5471,5047],[5457,7020],[3977,7010],[3991,5037]],"scale":0.972,"sharp":1.25,"z":false,"tracked":false},{"id":"0087","pts":[[4297,5118],[4275,7083],[2802,7067],[2823,5102]],"scale":0.977,"sharp":1.18,"z":false,"tracked":false},{"id":"0078","pts":[[3593,4126],[3565,6088],[2093,6067],[2121,4104]],"scale":0.978,"sharp":1.44,"z":false,"tracked":false},{"id":"0077","pts":[[4030,4107],[3997,6062],[2530,6038],[2563,4082]],"scale":0.981,"sharp":1.3,"z":false,"tracked":false},{"id":"0079","pts":[[2934,4153],[2904,6123],[1427,6101],[1457,4131]],"scale":0.974,"sharp":1.05,"z":false,"tracked":false},{"id":"0042","pts":[[2853,3129],[2820,5118],[1329,5093],[1362,3104]],"scale":0.965,"sharp":1.06,"z":false,"tracked":false},{"id":"0045","pts":[[3998,2769],[3953,4768],[2453,4735],[2498,2735]],"scale":0.959,"sharp":0.85,"z":false,"tracked":false},{"id":"0076","pts":[[4595,4073],[4574,6031],[3106,6015],[3127,4057]],"scale":0.98,"sharp":1.18,"z":false,"tracked":false},{"id":"0075","pts":[[5124,4040],[5111,6000],[3642,5990],[3655,4030]],"scale":0.979,"sharp":0.95,"z":false,"tracked":false},{"id":"0074","pts":[[5999,3972],[5992,5951],[4509,5946],[4515,3967]],"scale":0.97,"sharp":0.95,"z":false,"tracked":false},{"id":"0071","pts":[[5848,3977],[5841,5953],[4360,5947],[4367,3972]],"scale":0.972,"sharp":0.96,"z":false,"tracked":false},{"id":"0051","pts":[[6832,2598],[6842,4558],[5373,4565],[5363,2606]],"scale":0.979,"sharp":0.63,"z":true,"tracked":false},{"id":"0070","pts":[[6617,3928],[6617,5911],[5131,5911],[5131,3929]],"scale":0.968,"sharp":0.88,"z":false,"tracked":false},{"id":"0069","pts":[[7187,3885],[7192,5875],[5700,5880],[5694,3889]],"scale":0.964,"sharp":0.89,"z":false,"tracked":false},{"id":"0068","pts":[[8067,3819],[8069,5813],[6574,5814],[6573,3821]],"scale":0.963,"sharp":0.77,"z":false,"tracked":false},{"id":"0054","pts":[[8558,2458],[8583,4431],[7103,4451],[7078,2477]],"scale":0.972,"sharp":0.76,"z":false,"tracked":false},{"id":"0055","pts":[[9743,2378],[9754,4352],[8273,4360],[8263,2386]],"scale":0.972,"sharp":0.75,"z":false,"tracked":false},{"id":"0066","pts":[[9781,3696],[9790,5696],[8289,5703],[8281,3702]],"scale":0.959,"sharp":0.8,"z":false,"tracked":false},{"id":"0064","pts":[[11065,3600],[11075,5599],[9577,5607],[9566,3608]],"scale":0.96,"sharp":0.96,"z":false,"tracked":false},{"id":"0063","pts":[[11070,4196],[11083,6190],[9588,6200],[9575,4206]],"scale":0.962,"sharp":1.29,"z":false,"tracked":false},{"id":"0062","pts":[[11924,4138],[11945,6129],[10452,6144],[10431,4154]],"scale":0.964,"sharp":1.08,"z":false,"tracked":false},{"id":"0097","pts":[[11626,4603],[11648,6589],[10159,6606],[10136,4620]],"scale":0.966,"sharp":1.04,"z":false,"tracked":false},{"id":"0061","pts":[[11872,3590],[11898,5568],[10414,5588],[10389,3609]],"scale":0.97,"sharp":1.0,"z":true,"tracked":false},{"id":"0058","pts":[[11780,2209],[11815,4194],[10326,4220],[10292,2235]],"scale":0.967,"sharp":0.89,"z":false,"tracked":false},{"id":"0059","pts":[[11885,3373],[11906,5366],[10411,5382],[10390,3389]],"scale":0.963,"sharp":0.9,"z":false,"tracked":false},{"id":"0060","pts":[[11741,1842],[11775,3820],[10292,3845],[10258,1867]],"scale":0.97,"sharp":0.79,"z":false,"tracked":false},{"id":"0057","pts":[[11073,2272],[11094,4254],[9607,4270],[9586,2288]],"scale":0.968,"sharp":0.81,"z":false,"tracked":false},{"id":"0056","pts":[[10415,2327],[10427,4305],[8944,4314],[8932,2336]],"scale":0.97,"sharp":0.81,"z":false,"tracked":false},{"id":"0025","pts":[[9394,864],[9412,2833],[7936,2846],[7918,877]],"scale":0.975,"sharp":0.81,"z":false,"tracked":false},{"id":"0027","pts":[[8165,959],[8171,2926],[6696,2930],[6690,963]],"scale":0.976,"sharp":0.8,"z":false,"tracked":false},{"id":"0028","pts":[[7515,1008],[7516,2971],[6044,2972],[6043,1009]],"scale":0.978,"sharp":0.83,"z":false,"tracked":false},{"id":"0029","pts":[[6695,1065],[6700,3019],[5234,3023],[5229,1068]],"scale":0.982,"sharp":0.79,"z":false,"tracked":false},{"id":"0030","pts":[[5780,1125],[5787,3087],[4316,3092],[4309,1130]],"scale":0.978,"sharp":0.97,"z":false,"tracked":false},{"id":"0032","pts":[[4672,1206],[4657,3167],[3187,3156],[3202,1195]],"scale":0.979,"sharp":1.01,"z":false,"tracked":false},{"id":"0048","pts":[[5552,2690],[5536,4649],[4067,4637],[4083,2678]],"scale":0.98,"sharp":0.59,"z":false,"tracked":false},{"id":"0050","pts":[[6248,2642],[6247,4600],[4779,4599],[4780,2641]],"scale":0.98,"sharp":0.8,"z":false,"tracked":false},{"id":"0052","pts":[[7231,2568],[7245,4529],[5774,4540],[5760,2579]],"scale":0.979,"sharp":0.8,"z":false,"tracked":false},{"id":"0053","pts":[[8038,2502],[8059,4466],[6586,4482],[6566,2518]],"scale":0.977,"sharp":0.79,"z":false,"tracked":false},{"id":"0049","pts":[[5903,2662],[5899,4628],[4425,4625],[4429,2660]],"scale":0.976,"sharp":0.78,"z":false,"tracked":false},{"id":"0047","pts":[[5031,2686],[5043,4720],[3517,4729],[3506,2695]],"scale":0.943,"sharp":0.85,"z":true,"tracked":false},{"id":"0046","pts":[[4418,2753],[4361,4744],[2869,4701],[2926,2711]],"scale":0.964,"sharp":0.86,"z":false,"tracked":false},{"id":"0033","pts":[[4170,1180],[4170,3266],[2605,3266],[2605,1180]],"scale":0.92,"sharp":1.0,"z":false,"tracked":false},{"id":"0034","pts":[[3567,1275],[3546,3225],[2084,3209],[2105,1259]],"scale":0.984,"sharp":0.92,"z":false,"tracked":false},{"id":"0036","pts":[[2216,1350],[2188,3292],[732,3271],[760,1329]],"scale":0.988,"sharp":0.94,"z":false,"tracked":false},{"id":"0040","pts":[[1305,2288],[1276,4241],[-189,4219],[-160,2266]],"scale":0.982,"sharp":1.08,"z":false,"tracked":false},{"id":"0039","pts":[[1293,1664],[1262,3619],[-203,3596],[-173,1642]],"scale":0.982,"sharp":1.04,"z":false,"tracked":false},{"id":"0037","pts":[[1240,1398],[1210,3348],[-253,3326],[-223,1375]],"scale":0.984,"sharp":1.07,"z":false,"tracked":false},{"id":"0001","pts":[[1968,-35],[1931,1884],[492,1856],[529,-63]],"scale":1.0,"sharp":0.87,"z":false,"tracked":false},{"id":"0003","pts":[[2931,-96],[2913,1826],[1472,1813],[1490,-109]],"scale":0.998,"sharp":0.51,"z":false,"tracked":false},{"id":"0005","pts":[[3877,-164],[3870,1766],[2423,1761],[2430,-170]],"scale":0.994,"sharp":0.98,"z":false,"tracked":false},{"id":"0006","pts":[[4730,-221],[4728,1722],[3270,1720],[3273,-224]],"scale":0.987,"sharp":1.18,"z":false,"tracked":false},{"id":"0031","pts":[[5192,1169],[5188,3131],[3716,3128],[3720,1166]],"scale":0.978,"sharp":0.96,"z":false,"tracked":false},{"id":"0007","pts":[[5330,-253],[5324,1683],[3872,1678],[3878,-258]],"scale":0.991,"sharp":0.93,"z":false,"tracked":false},{"id":"0009","pts":[[6378,-328],[6384,1613],[4928,1618],[4923,-323]],"scale":0.989,"sharp":0.97,"z":false,"tracked":false},{"id":"0011","pts":[[7526,-415],[7544,1524],[6090,1538],[6072,-401]],"scale":0.99,"sharp":0.71,"z":false,"tracked":false},{"id":"0012","pts":[[8448,-325],[8460,1622],[7000,1632],[6988,-315]],"scale":0.986,"sharp":0.92,"z":false,"tracked":false},{"id":"0026","pts":[[8774,911],[8789,2878],[7315,2889],[7300,922]],"scale":0.976,"sharp":0.85,"z":false,"tracked":false},{"id":"0024","pts":[[9774,837],[9787,2803],[8313,2813],[8300,847]],"scale":0.976,"sharp":0.8,"z":false,"tracked":false},{"id":"0023","pts":[[10360,787],[10380,2759],[8902,2774],[8881,802]],"scale":0.973,"sharp":0.74,"z":false,"tracked":false},{"id":"0022","pts":[[11052,723],[11083,2695],[9605,2718],[9574,747]],"scale":0.973,"sharp":0.82,"z":false,"tracked":false},{"id":"0018","pts":[[12028,-624],[12081,1322],[10622,1362],[10569,-584]],"scale":0.986,"sharp":0.76,"z":false,"tracked":false},{"id":"0021","pts":[[11947,649],[11992,2620],[10514,2654],[10469,682]],"scale":0.973,"sharp":0.51,"z":false,"tracked":false},{"id":"0016","pts":[[10775,-504],[10802,1439],[9345,1459],[9318,-484]],"scale":0.987,"sharp":0.88,"z":false,"tracked":false},{"id":"0017","pts":[[11398,-560],[11436,1383],[9979,1412],[9941,-531]],"scale":0.988,"sharp":0.87,"z":false,"tracked":false},{"id":"0020","pts":[[12580,297],[12648,2272],[11167,2323],[11099,348]],"scale":0.971,"sharp":0.91,"z":false,"tracked":false},{"id":"0019","pts":[[12471,-672],[12537,1275],[11077,1324],[11011,-622]],"scale":0.985,"sharp":0.98,"z":false,"tracked":false},{"id":"0015","pts":[[10271,-463],[10292,1481],[8834,1497],[8812,-447]],"scale":0.987,"sharp":0.85,"z":false,"tracked":false},{"id":"0014","pts":[[9561,-411],[9579,1538],[8117,1551],[8099,-398]],"scale":0.985,"sharp":0.81,"z":true,"tracked":false},{"id":"0013","pts":[[8959,-366],[8974,1580],[7515,1591],[7500,-355]],"scale":0.986,"sharp":0.74,"z":false,"tracked":false},{"id":"0010","pts":[[6917,-371],[6927,1567],[5474,1575],[5464,-363]],"scale":0.99,"sharp":0.84,"z":false,"tracked":false},{"id":"0008","pts":[[5917,-295],[5916,1645],[4462,1644],[4462,-295]],"scale":0.989,"sharp":0.88,"z":false,"tracked":false},{"id":"0004","pts":[[3493,-136],[3484,1794],[2037,1787],[2046,-143]],"scale":0.994,"sharp":0.88,"z":false,"tracked":false},{"id":"0138","pts":[[4692,8758],[4656,10829],[3103,10803],[3139,8732]],"scale":0.926,"sharp":0.98,"z":false,"tracked":true},{"id":"0164","pts":[[5207,9668],[5182,11744],[3625,11725],[3650,9649]],"scale":0.924,"sharp":0.87,"z":false,"tracked":true},{"id":"0166","pts":[[6096,9975],[6071,12053],[4513,12034],[4538,9956]],"scale":0.924,"sharp":1.06,"z":false,"tracked":true},{"id":"0168","pts":[[7322,9877],[7321,11965],[5756,11965],[5756,9877]],"scale":0.919,"sharp":1.13,"z":false,"tracked":true},{"id":"0170","pts":[[8464,9916],[8464,12005],[6897,12004],[6898,9915]],"scale":0.919,"sharp":1.22,"z":false,"tracked":true},{"id":"0172","pts":[[9508,9846],[9508,11936],[7940,11936],[7941,9846]],"scale":0.918,"sharp":1.18,"z":false,"tracked":true},{"id":"0174","pts":[[10803,9814],[10758,11904],[9191,11870],[9236,9780]],"scale":0.918,"sharp":1.07,"z":false,"tracked":true},{"id":"0176","pts":[[11217,10838],[11180,12932],[9610,12904],[9647,10811]],"scale":0.917,"sharp":0.9,"z":false,"tracked":true},{"id":"0178","pts":[[12389,10126],[12341,12199],[10787,12162],[10835,10090]],"scale":0.926,"sharp":0.95,"z":false,"tracked":true},{"id":"0175","pts":[[11165,9790],[11128,11885],[9557,11857],[9594,9762]],"scale":0.916,"sharp":1.05,"z":false,"tracked":true},{"id":"0177","pts":[[12430,10765],[12381,12862],[10809,12825],[10858,10729]],"scale":0.915,"sharp":0.84,"z":false,"tracked":true},{"id":"0173","pts":[[10288,9835],[10244,11926],[8676,11892],[8721,9802]],"scale":0.918,"sharp":1.21,"z":false,"tracked":true},{"id":"0171","pts":[[8918,9887],[8918,11976],[7352,11976],[7352,9887]],"scale":0.919,"sharp":1.07,"z":false,"tracked":true},{"id":"0169","pts":[[8009,9834],[8008,11922],[6443,11921],[6443,9833]],"scale":0.919,"sharp":1.27,"z":false,"tracked":true},{"id":"0145","pts":[[7892,8535],[7892,10622],[6327,10622],[6327,8535]],"scale":0.92,"sharp":1.18,"z":false,"tracked":true},{"id":"0154","pts":[[8127,7620],[8114,9708],[6548,9698],[6561,7610]],"scale":0.919,"sharp":0.88,"z":false,"tracked":true},{"id":"0146","pts":[[8551,8502],[8538,10591],[6972,10581],[6985,8493]],"scale":0.919,"sharp":0.88,"z":false,"tracked":true},{"id":"0153","pts":[[9609,7525],[9596,9615],[8029,9605],[8042,7515]],"scale":0.918,"sharp":1.13,"z":false,"tracked":true},{"id":"0152","pts":[[10706,7470],[10669,9563],[9099,9535],[9136,7442]],"scale":0.917,"sharp":0.91,"z":false,"tracked":true},{"id":"0150","pts":[[11609,8342],[11572,10435],[10002,10407],[10039,8314]],"scale":0.917,"sharp":0.96,"z":false,"tracked":true},{"id":"0148","pts":[[10339,8407],[10315,10497],[8747,10479],[8771,8389]],"scale":0.918,"sharp":1.14,"z":false,"tracked":true},{"id":"0151","pts":[[11566,7424],[11529,9521],[9956,9493],[9993,7396]],"scale":0.915,"sharp":0.93,"z":false,"tracked":true},{"id":"0149","pts":[[11221,8358],[11184,10454],[9613,10426],[9650,8331]],"scale":0.916,"sharp":0.92,"z":false,"tracked":true},{"id":"0147","pts":[[9684,8442],[9660,10533],[8092,10515],[8116,8424]],"scale":0.918,"sharp":1.03,"z":false,"tracked":true},{"id":"0144","pts":[[7287,8578],[7287,10664],[5723,10664],[5723,8578]],"scale":0.92,"sharp":1.15,"z":false,"tracked":true},{"id":"0155","pts":[[6591,7750],[6566,9826],[5009,9807],[5034,7731]],"scale":0.924,"sharp":1.32,"z":false,"tracked":true},{"id":"0156","pts":[[5854,7788],[5829,9864],[4272,9845],[4297,7769]],"scale":0.924,"sharp":1.28,"z":false,"tracked":true},{"id":"0157","pts":[[4791,7844],[4787,9919],[3231,9916],[3235,7841]],"scale":0.925,"sharp":0.97,"z":false,"tracked":true},{"id":"0158","pts":[[3606,7921],[3568,9984],[2020,9956],[2058,7893]],"scale":0.93,"sharp":1.08,"z":false,"tracked":true},{"id":"0141","pts":[[5952,8665],[5952,10751],[4387,10751],[4387,8665]],"scale":0.92,"sharp":0.86,"z":false,"tracked":true},{"id":"0167","pts":[[6621,9924],[6599,12019],[5027,12003],[5049,9907]],"scale":0.916,"sharp":1.19,"z":false,"tracked":true},{"id":"0143","pts":[[6858,8608],[6858,10694],[5294,10694],[5294,8608]],"scale":0.92,"sharp":1.0,"z":false,"tracked":true},{"id":"0140","pts":[[5550,8699],[5538,10783],[3975,10773],[3987,8690]],"scale":0.921,"sharp":0.98,"z":false,"tracked":true},{"id":"0142","pts":[[6296,8639],[6305,10730],[4737,10737],[4728,8646]],"scale":0.918,"sharp":0.97,"z":false,"tracked":true},{"id":"0139","pts":[[5048,8738],[5022,10814],[3465,10795],[3491,8719]],"scale":0.924,"sharp":0.97,"z":false,"tracked":true},{"id":"0165","pts":[[5223,10022],[5199,12100],[3641,12081],[3665,10004]],"scale":0.924,"sharp":1.9,"z":true,"tracked":true},{"id":"0124","pts":[[1982,7663],[1982,9749],[418,9749],[418,7663]],"scale":0.92,"sharp":1.87,"z":false,"tracked":true},{"id":"0126","pts":[[1216,8475],[1216,10562],[-349,10562],[-349,8475]],"scale":0.92,"sharp":1.27,"z":false,"tracked":true},{"id":"0161","pts":[[1910,7723],[1910,9809],[346,9809],[346,7723]],"scale":0.92,"sharp":1.69,"z":false,"tracked":true},{"id":"0133","pts":[[876,9775],[876,11861],[-688,11861],[-688,9775]],"scale":0.92,"sharp":1.53,"z":false,"tracked":true},{"id":"0132","pts":[[1663,9722],[1663,11808],[99,11808],[99,9722]],"scale":0.92,"sharp":1.51,"z":false,"tracked":true},{"id":"0134","pts":[[2588,9665],[2588,11751],[1024,11751],[1024,9665]],"scale":0.92,"sharp":0.92,"z":false,"tracked":true},{"id":"0135","pts":[[3621,9599],[3617,11687],[2052,11684],[2055,9596]],"scale":0.919,"sharp":1.0,"z":false,"tracked":true},{"id":"0131","pts":[[1304,9751],[1304,11837],[-260,11837],[-260,9751]],"scale":0.92,"sharp":1.29,"z":false,"tracked":true},{"id":"0130","pts":[[1285,9387],[1285,11473],[-280,11473],[-280,9387]],"scale":0.92,"sharp":1.38,"z":false,"tracked":true},{"id":"0129","pts":[[1208,8208],[1208,10295],[-357,10295],[-357,8208]],"scale":0.92,"sharp":1.63,"z":false,"tracked":true},{"id":"0128","pts":[[1231,8521],[1231,10607],[-334,10607],[-334,8521]],"scale":0.92,"sharp":3.25,"z":false,"tracked":true},{"id":"0125","pts":[[1160,7660],[1160,9747],[-405,9747],[-405,7660]],"scale":0.92,"sharp":1.18,"z":false,"tracked":true},{"id":"0127","pts":[[1306,9766],[1306,11852],[-258,11852],[-258,9766]],"scale":0.92,"sharp":1.26,"z":false,"tracked":true},{"id":"0159","pts":[[2657,7959],[2657,10046],[1093,10046],[1093,7959]],"scale":0.92,"sharp":1.37,"z":false,"tracked":true},{"id":"0160","pts":[[1562,8032],[1572,10115],[10,10123],[-1,8039]],"scale":0.921,"sharp":0.95,"z":false,"tracked":true},{"id":"0112","pts":[[2080,6629],[2080,8715],[515,8715],[515,6629]],"scale":0.92,"sharp":2.32,"z":false,"tracked":true},{"id":"0136","pts":[[3442,8758],[3442,10844],[1877,10844],[1877,8758]],"scale":0.92,"sharp":5.23,"z":false,"tracked":true},{"id":"0137","pts":[[4052,8734],[4052,10821],[2487,10821],[2487,8734]],"scale":0.92,"sharp":10.66,"z":false,"tracked":true},{"id":"0162","pts":[[2747,9604],[2747,11690],[1182,11690],[1182,9604]],"scale":0.92,"sharp":3.5,"z":false,"tracked":true},{"id":"0163","pts":[[3350,9589],[3350,11675],[1786,11675],[1786,9589]],"scale":0.92,"sharp":10.91,"z":false,"tracked":true}];
+const UMPX = null;          // micromètres par pixel de la mosaïque, null si non calibré
+const ZSTACK = {"levels": 5, "tiles": ["1/0_0", "10/0_0", "10/1_0", "11/0_0", "11/1_0", "11/2_0", "12/1_0", "12/1_1", "12/2_0", "12/2_1", "12/3_0", "12/3_1", "12/4_0", "12/4_1", "12/5_0", "12/5_1", "13/10_0", "13/10_2", "13/11_1", "13/11_2", "13/2_1", "13/2_2", "13/3_0", "13/3_1", "13/3_2", "13/4_0", "13/4_1", "13/4_10", "13/4_2", "13/5_0", "13/5_1", "13/5_2", "13/5_3", "13/6_0", "13/6_1", "13/6_2", "13/6_3", "13/7_0", "13/7_1", "13/7_2", "13/7_3", "13/8_0", "13/8_1", "13/8_2", "13/8_3", "13/9_0", "13/9_1", "13/9_2", "14/11_5", "14/11_6", "14/12_5", "14/12_6", "14/16_0", "14/16_1", "14/16_2", "14/17_0", "14/17_1", "14/8_20", "14/8_21", "14/8_22", "14/9_21", "2/0_0", "3/0_0", "4/0_0", "5/0_0", "6/0_0", "7/0_0", "8/0_0", "9/0_0"]};      // {levels, tiles:[...]} ou null
+const QUALITY = {"grade": "C", "notes": ["recalage moyen (2.6 px)", "1 trou(s) dans la couverture", "56 champ(s) placé(s) sans recalage fin"], "frames": {"candidates": 190, "blurred": 0, "selected": 179, "used": 179, "tracked_only": 56}, "residual_px": 2.62, "residual_max_px": 91.58, "holes": [], "holes_frac": 0.0, "coverage_px": 154571538, "coverage_mm2": null, "low_sharp_frac": 0.0, "gain_spread_pct": 3.8, "flat_field": "médiane", "k1": -0.022, "zstack_fields": 6, "zstack_levels": 5};    // rapport du pipeline ({} si absent)
+const CHILDREN = [];  // lames de détail (autre objectif) recalées dans celle-ci
+const PARENT = {"slug": "ziehl-v-0-55-10221825", "title": "ziehl v 0.55", "placed": true};      // lame d'ensemble, si celle-ci est un détail
+const FAVORI = false;      // lame dans les favoris de la galerie (etat enregistre sur le site)
+const ANNOT_EMBED = null;       // annotations incluses dans la copie hors ligne (sinon lues dans annotations.json)
+const CELLS = null;        // effectifs du calque « Cellules » ({n, validees, ...}) ou null : le détail est dans cellules.json
+const svgNS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+
+// tile source : pyramide Deep Zoom de cette lame ; pour un plan z, les tuiles manquantes retombent sur la base
+function source(prefix, keys) {
+  return { width: W, height: H, tileSize: TILE, tileOverlap: 1, minLevel: 0, maxLevel: MAXLVL,
+    getTileUrl: (l, x, y) => (keys && keys.has(l + '/' + x + '_' + y) ? prefix : 'lame_files') + `/${l}/${x}_${y}.jpg` };
+}
+const viewer = OpenSeadragon({
+  id: 'viewer', showNavigationControl: false, showNavigator: true, navigatorPosition: 'TOP_RIGHT', navigatorSizeRatio: 0.16,
+  gestureSettingsTouch: { pinchToZoom: true, flickEnabled: true }, maxZoomPixelRatio: 3, minZoomImageRatio: 0.6, visibilityRatio: 0.5,
+  animationTime: 0.6, immediateRender: true, preserveViewport: false, tileSources: source()
+});
+$('zin').onclick = () => viewer.viewport.zoomBy(1.6);
+$('zout').onclick = () => viewer.viewport.zoomBy(1 / 1.6);
+$('home').onclick = () => viewer.viewport.goHome();
+
+// ---- lame parente / enfants ----
+if (PARENT) $('info').insertAdjacentHTML('beforeend', `${$('info').textContent ? ' · ' : ''}<a href="../${PARENT.slug}/">↖ vue d'ensemble : ${PARENT.title}</a>${PARENT.placed ? '' : ' (position non retrouvée)'}`);
+const placed = CHILDREN.filter(c => c.transform);
+const unplaced = CHILDREN.filter(c => !c.transform);
+if (CHILDREN.length) {
+  $('info').insertAdjacentHTML('beforeend', ($('info').textContent ? ' · ' : '') + CHILDREN.map(c => `<a href="../${c.slug}/">↗ ${c.title}${c.objective ? ' (obj. ' + c.objective + ')' : ''}</a>`).join(' · '));
+}
+const kidLayers = [];
+// intersection d'un polygone avec un quadrilatère convexe (Sutherland-Hodgman)
+function clipPoly(poly, clip) {
+  let out = poly;
+  for (let i = 0; i < clip.length && out.length; i++) {
+    const A = clip[i], B = clip[(i + 1) % clip.length], inp = out; out = [];
+    const side = p => (B.x - A.x) * (p.y - A.y) - (B.y - A.y) * (p.x - A.x);
+    const inter = (p, q) => { const t = side(p) / (side(p) - side(q)); return { x: p.x + t * (q.x - p.x), y: p.y + t * (q.y - p.y) }; };
+    // orientation du quadrilatère : on garde le côté où se trouve son centre
+    const cx = clip.reduce((s, p) => s + p.x, 0) / clip.length, cy = clip.reduce((s, p) => s + p.y, 0) / clip.length;
+    const sgn = Math.sign(side({ x: cx, y: cy })) || 1;
+    for (let k = 0; k < inp.length; k++) {
+      const p = inp[k], q = inp[(k + 1) % inp.length], pin = side(p) * sgn >= 0, qin = side(q) * sgn >= 0;
+      if (pin) { out.push(p); if (!qin) out.push(inter(p, q)); } else if (qin) out.push(inter(p, q));
+    }
+  }
+  return out;
+}
+const kidSvg = document.createElementNS(svgNS, 'svg');
+kidSvg.setAttribute('viewBox', `0 0 ${W} ${H}`); kidSvg.setAttribute('class', 'children'); kidSvg.setAttribute('width', '100%'); kidSvg.setAttribute('height', '100%'); kidSvg.style.overflow = 'visible';
+for (const c of placed) {
+  const [a, b, tx, ty] = c.transform;   // x' = a x - b y + tx ; y' = b x + a y + ty  (enfant px -> parent px)
+  const s = Math.hypot(a, b), deg = Math.atan2(b, a) * 180 / Math.PI;
+  const corners = [[0, 0], [c.width, 0], [c.width, c.height], [0, c.height]].map(([x, y]) => [a * x - b * y + tx, b * x + a * y + ty]);
+  // contour en px parent, limite a l'emprise de la lame d'ensemble (meme borne que le calque)
+  const pbounds = [{ x: 0, y: 0 }, { x: W, y: 0 }, { x: W, y: H }, { x: 0, y: H }];
+  const polys = ((c.outline && c.outline.length) ? c.outline.map(poly => poly.map(([x, y]) => ({ x: a * x - b * y + tx, y: b * x + a * y + ty }))) : [corners.map(([x, y]) => ({ x, y }))])
+    .map(poly => clipPoly(poly, pbounds)).filter(p => p.length >= 3).map(poly => poly.map(p => [p.x, p.y]));
+  for (const poly of polys) { const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', poly.map(q => q.map(v => v.toFixed(1)).join(',')).join(' ')); kidSvg.appendChild(p); }
+  const t = document.createElementNS(svgNS, 'text'); t.setAttribute('x', corners[0][0] + 30); t.setAttribute('y', corners[0][1] - 20); t.textContent = c.objective ? 'obj. ' + c.objective : c.title; kidSvg.appendChild(t);
+  viewer.addHandler('open', () => viewer.addTiledImage({
+    tileSource: { width: c.width, height: c.height, tileSize: c.tile, tileOverlap: 1, minLevel: 0, maxLevel: c.maxlvl, getTileUrl: (l, x, y) => `../${c.slug}/lame_files/${l}/${x}_${y}.jpg` },
+    // OpenSeadragon tourne l'image autour de son centre : on place le rectangle non tourné pour que son centre tombe au bon endroit
+    x: (a * c.width / 2 - b * c.height / 2 + tx - s * c.width / 2) / W, y: (b * c.width / 2 + a * c.height / 2 + ty - s * c.height / 2) / W, width: s * c.width / W, degrees: deg,
+    success: e => {
+      kidLayers.push(e.item);
+      if (!e.item.setCroppingPolygons) return;
+      // rogné au contour couvert, et à l'emprise de la lame d'ensemble (un détail qui en déborde n'est pas affiché au-delà)
+      const inv = 1 / (a * a + b * b);
+      const toChild = ([X, Y]) => ({ x: inv * (a * (X - tx) + b * (Y - ty)), y: inv * (-b * (X - tx) + a * (Y - ty)) });
+      const bounds = [[0, 0], [W, 0], [W, H], [0, H]].map(toChild);
+      const polys = (c.outline && c.outline.length) ? c.outline.map(poly => poly.map(([x, y]) => ({ x, y }))) : [[{ x: 0, y: 0 }, { x: c.width, y: 0 }, { x: c.width, y: c.height }, { x: 0, y: c.height }]];
+      e.item.setCroppingPolygons(polys.map(poly => clipPoly(poly, bounds)).filter(p => p.length >= 3));
+    }
+  }));
+}
+if (placed.length) {
+  $('kids').hidden = false;
+  let on = true;
+  const apply = () => { kidLayers.forEach(l => l.setOpacity(on ? 1 : 0)); if (on) viewer.addOverlay({ element: kidSvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(kidSvg); };
+  $('kids').onclick = () => { on = !on; $('kids').setAttribute('aria-pressed', String(on)); apply(); };
+  viewer.addHandler('open', () => viewer.addOverlay({ element: kidSvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }));
+}
+
+// ---- contours des champs (sur demande) ----
+const svg = document.createElementNS(svgNS, 'svg');
+svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'fields'); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%');
+svg.style.overflow = 'visible';
+for (const f of FIELDS) {
+  const p = document.createElementNS(svgNS, 'polygon');
+  p.setAttribute('points', f.pts.map(q => q.join(',')).join(' '));
+  svg.appendChild(p);
+  const t = document.createElementNS(svgNS, 'text');
+  const [x, y] = f.pts[0]; t.setAttribute('x', x + 40); t.setAttribute('y', y + 110); t.textContent = f.id + (f.z ? ' z' : ''); svg.appendChild(t);
+}
+let fieldsShown = false;
+$('fields').onclick = () => { fieldsShown = !fieldsShown; $('fields').setAttribute('aria-pressed', String(fieldsShown)); if (fieldsShown) viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(svg); };
+
+// ---- rapport de qualité : panneau + calque (netteté par champ, trous) ----
+if (QUALITY && QUALITY.grade) {
+  $('qbtn').hidden = false; $('qg').textContent = QUALITY.grade; $('qg').className = 'g g' + QUALITY.grade;
+  const qsvg = document.createElementNS(svgNS, 'svg');
+  qsvg.setAttribute('viewBox', `0 0 ${W} ${H}`); qsvg.setAttribute('class', 'quality'); qsvg.setAttribute('width', '100%'); qsvg.setAttribute('height', '100%'); qsvg.style.overflow = 'visible';
+  for (const f of FIELDS) {
+    const p = document.createElementNS(svgNS, 'polygon');
+    p.setAttribute('points', f.pts.map(q => q.join(',')).join(' '));
+    const s = f.sharp == null ? 1 : f.sharp;
+    p.setAttribute('class', (s >= 0.8 ? 's2' : s >= 0.5 ? 's1' : 's0') + (f.tracked ? ' tracked' : ''));
+    qsvg.appendChild(p);
+  }
+  for (const h of QUALITY.holes || []) {
+    const p = document.createElementNS(svgNS, 'polygon'); p.setAttribute('points', h.map(q => q.join(',')).join(' ')); p.setAttribute('class', 'hole'); qsvg.appendChild(p);
+  }
+  const fr = QUALITY.frames || {};
+  const fmt = v => v == null ? '' : (typeof v === 'number' ? v.toLocaleString('fr-FR') : v);
+  $('qpanel').innerHTML = `<h2>Qualité <span class="g g${QUALITY.grade}" style="padding:0 6px;border-radius:4px;color:#fff">${QUALITY.grade}</span></h2>` +
+    (QUALITY.notes && QUALITY.notes.length ? '<ul>' + QUALITY.notes.map(n => `<li>${n}</li>`).join('') + '</ul>' : '<p style="margin:0 0 8px">Aucune remarque : couverture continue, champs nets, recalage précis.</p>') +
+    `<div class="kv"><span>images extraites</span><span>${fmt(fr.candidates)}</span><span>floues rejetées</span><span>${fmt(fr.blurred)}</span><span>champs assemblés</span><span>${fmt(fr.used)} / ${fmt(fr.selected)}</span>` +
+    `<span>recalage médian</span><span>${fmt(QUALITY.residual_px)} px</span><span>surface couverte</span><span>${QUALITY.coverage_mm2 != null ? fmt(QUALITY.coverage_mm2) + ' mm²' : fmt(QUALITY.coverage_px) + ' px'}</span>` +
+    `<span>flat-field</span><span>${fmt(QUALITY.flat_field)}</span>${QUALITY.zstack_fields ? `<span>piles de profondeur</span><span>${QUALITY.zstack_fields} (${QUALITY.zstack_levels} plans)</span>` : ''}</div>` +
+    `<div class="leg"><span><i style="background:rgba(27,148,102,.5)"></i>net</span><span><i style="background:rgba(183,121,31,.6)"></i>moyen</span><span><i style="background:rgba(192,57,43,.6)"></i>peu net</span><span><i style="border:2px dashed #c0392b;box-sizing:border-box"></i>trou</span><span><i style="border:1px dashed #666;box-sizing:border-box"></i>placé sans recalage</span></div>`;
+  let qOn = false;
+  $('qbtn').onclick = () => { qOn = !qOn; $('qbtn').setAttribute('aria-pressed', String(qOn)); $('qpanel').hidden = !qOn; if (qOn) viewer.addOverlay({ element: qsvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); else viewer.removeOverlay(qsvg); };
+}
+
+// ---- z-stack : un calque par plan, seul le plan choisi est visible (la base EDF reste dessous) ----
+if (ZSTACK && ZSTACK.levels > 0) {
+  const keys = new Set(ZSTACK.tiles || []);
+  const layers = [];
+  viewer.addHandler('open', () => {
+    for (let z = 0; z < ZSTACK.levels; z++) viewer.addTiledImage({ tileSource: source('lame_z' + z, keys), opacity: 0, success: e => { layers[z] = e.item; } });
+  });
+  $('zctl').hidden = false; $('zr').max = ZSTACK.levels;
+  const setZ = v => {
+    v = Math.max(0, Math.min(ZSTACK.levels, v)); $('zr').value = v;
+    $('zl').textContent = v === 0 ? 'net partout' : `plan ${v} / ${ZSTACK.levels}`;
+    layers.forEach((l, z) => l && l.setOpacity(z === v - 1 ? 1 : 0));
+  };
+  $('zr').oninput = () => setZ(+$('zr').value);
+  document.addEventListener('keydown', e => { if (e.key === '[') setZ(+$('zr').value - 1); if (e.key === ']') setZ(+$('zr').value + 1); });
+}
+
+// ---- zoom + barre d'échelle ----
+const hud = $('hud'), bar = $('bar');
+function updateBar() {
+  if (!UMPX) return;
+  const z = imgZoom();   // pixels écran par pixel image
+  const umPerScreenPx = UMPX / z;
+  const target = 120 * umPerScreenPx;
+  const p = Math.pow(10, Math.floor(Math.log10(target)));
+  const len = [1, 2, 5, 10].map(m => m * p).reduce((a, b) => Math.abs(b - target) < Math.abs(a - target) ? b : a);
+  bar.querySelector('i').style.width = (len / umPerScreenPx).toFixed(1) + 'px';
+  bar.querySelector('span').textContent = len >= 1000 ? (len / 1000).toLocaleString('fr-FR') + ' mm' : len.toLocaleString('fr-FR') + ' µm';
+  bar.hidden = false;
+}
+const imgZoom = () => { const it = viewer.world.getItemAt(0); return it ? it.viewportToImageZoom(viewer.viewport.getZoom(true)) : viewer.viewport.getZoom(true) / W; };
+function updateHud() {
+  const z = imgZoom();
+  hud.textContent = 'zoom ' + z.toFixed(2) + '× (1,00× = pixels natifs)';
+  updateBar();
+}
+viewer.addHandler('zoom', updateHud);
+viewer.addHandler('animation', updateHud);
+viewer.addHandler('animation-finish', updateHud);
+viewer.addHandler('open', updateHud);
+
+// ---- calque « Cellules » : contours de la segmentation, couleur par lignée, pointillé = proposition non validée ----
+// sources : les cellules de cette lame, et celles de ses lames de detail placees (ramenees dans ce repere par leur transformation)
+const CELL_SOURCES = [];
+if (CELLS && CELLS.n) CELL_SOURCES.push({ path: 'cellules.json', T: null, n: CELLS.n, v: CELLS.validees || 0, w: W, h: H, title: '' });
+for (const c of CHILDREN) if (c.cellules && c.cellules.n && c.transform) CELL_SOURCES.push({ path: `../${c.slug}/cellules.json`, T: c.transform, n: c.cellules.n, v: c.cellules.validees || 0, w: c.width, h: c.height, title: c.title });
+if (CELL_SOURCES.length) {
+  const totN = CELL_SOURCES.reduce((s, x) => s + x.n, 0), totV = CELL_SOURCES.reduce((s, x) => s + x.v, 0);
+  $('cellsbtn').hidden = false; $('cellsn').textContent = totV ? `${totV} / ${totN}` : String(totN);
+  let data = null, on = false, hidden = new Set(), selected = null;
+  const svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'cells'); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%'); svg.style.overflow = 'visible';
+  const colorOf = c => {
+    const key = c.classe || (c.propose && c.propose.cle);
+    if (!key) return '#8a8290';
+    const g = data.taxonomie.find(g => g.classes.some(k => k.key === key));
+    return g ? g.color : '#8a8290';
+  };
+  const labelOf = key => { for (const g of data.taxonomie) { const k = g.classes.find(k => k.key === key); if (k) return k.label; } return key || '?'; };
+  const abbrOf = key => { for (const g of data.taxonomie) { const k = g.classes.find(k => k.key === key); if (k) return k.abbrev; } return key || '?'; };
+  const groupOf = key => { const g = data.taxonomie.find(g => g.classes.some(k => k.key === key)); return g ? g.group : 'sans'; };
+  function draw() {
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    for (const c of data.cellules) {
+      const key = c.classe || (c.propose && c.propose.cle) || null;
+      if (hidden.has(key ? groupOf(key) : 'sans')) continue;
+      const p = document.createElementNS(svgNS, 'polygon');
+      p.setAttribute('points', c.p.map(q => q.join(',')).join(' '));
+      const col = colorOf(c); p.setAttribute('stroke', col); p.setAttribute('fill', col);
+      p.setAttribute('class', (c.classe ? '' : 'prop') + (c.bord ? ' bord' : '') + (selected === c.id ? ' sel' : ''));
+      svg.appendChild(p);
+    }
+  }
+  function fiche(c) {
+    const f = $('cfiche'); f.hidden = false;
+    const pr = c.propose;
+    f.innerHTML = `<div class="k">cellule ${c.id}${c.from ? ' · ' + c.from : ''} · ${Math.round(c.d)} px · ${c.bord ? 'au bord' : 'dans la lame'}</div>
+      <b class="cl">${c.classe ? labelOf(c.classe) : 'non classée'}</b>
+      ${c.classe ? `<div class="k">validée ${c.quand ? new Date(c.quand).toLocaleString('fr-FR') : ''}${c.accepte === true ? ' · proposition acceptée' : c.accepte === false ? ` · corrigée (le modèle proposait ${c.propose_lors})` : ''}</div>` : ''}
+      ${pr ? `<div>Proposition du modèle : <b>${pr.cle ? labelOf(pr.cle) : pr.code}</b> <span class="k">(${pr.code}, ${Math.round(pr.conf * 100)} %${pr.niveau === 'approx' ? ', correspondance approchée' : ''})</span></div>
+      <div class="k">alternatives : ${(pr.top3 || []).slice(1).map(t => `${t[0]} ${Math.round(t[1] * 100)} %`).join(' · ')}</div>` : '<div class="k">aucune proposition</div>'}
+      <div style="display:flex;gap:8px;margin-top:4px"><button type="button" id="cgo">Centrer</button><button type="button" id="cclose">Fermer</button></div>`;
+    $('cgo').onclick = () => { const r = 3 * c.d; viewer.viewport.fitBounds(new OpenSeadragon.Rect((c.c[0] - r) / W, (c.c[1] - r) / W, 2 * r / W, 2 * r / W)); };
+    $('cclose').onclick = () => { f.hidden = true; selected = null; draw(); };
+  }
+  function panel() {
+    const st = data.stats, counts = {};
+    for (const c of data.cellules) { const key = c.classe || (c.propose && c.propose.cle); const g = key ? groupOf(key) : 'sans'; counts[g] = counts[g] || { n: 0, v: 0 }; counts[g].n++; if (c.classe) counts[g].v++; }
+    const tot = Object.values(st.formule || {}).reduce((a, b) => a + b, 0);
+    let h = `<h3>Cellules</h3><div class="msg">${st.segmentees} segmentées · ${st.validees} validées · ${st.propositions} avec seule une proposition · ${st.bord} au bord</div>`;
+    h += `<div class="grp">lignées (afficher / masquer)</div>`;
+    for (const g of data.taxonomie) { const k = counts[g.group] || { n: 0, v: 0 }; h += `<div class="cls${hidden.has(g.group) ? ' off' : ''}" data-g="${g.group}"><span class="sw" style="background:${g.color}"></span>${g.label}<span class="n">${k.v} / ${k.n}</span></div>`; }
+    { const k = counts['sans'] || { n: 0, v: 0 }; h += `<div class="cls${hidden.has('sans') ? ' off' : ''}" data-g="sans"><span class="sw" style="background:#8a8290"></span>sans avis<span class="n">${k.n}</span></div>`; }
+    h += `<div class="grp">formule (${tot} cellules validées comptées)</div>`;
+    if (tot < 200) h += `<div class="msg">moins de 200 cellules validées : effectifs sans pourcentage</div>`;
+    const rows = Object.entries(st.formule || {}).sort((a, b) => b[1] - a[1]);
+    for (const [key, n] of rows) h += `<div class="row"><span><span class="sw" style="display:inline-block;background:${data.taxonomie.find(g => g.group === groupOf(key))?.color || '#8a8290'};vertical-align:middle;margin-right:6px"></span>${labelOf(key)}</span><span class="n">${n}${tot >= 200 ? ` · ${(100 * n / tot).toFixed(1)} %` : ''}</span></div>`;
+    if (data.modele) h += `<div class="msg">propositions : ${data.modele.modele || ''} ${data.modele.date ? '(' + data.modele.date + ')' : ''}. Une proposition seule n'est jamais une étiquette : pointillé tant qu'elle n'est pas validée.</div>`;
+    $('cpanel').innerHTML = h;
+    $('cpanel').querySelectorAll('.cls').forEach(el => el.onclick = () => { const g = el.dataset.g; if (hidden.has(g)) hidden.delete(g); else hidden.add(g); panel(); draw(); });
+  }
+  // clic sur une cellule : OpenSeadragon capture le pointeur de la souris (glisser pour se deplacer), le clic n'arrive donc jamais
+  // au contour sur ordinateur. On passe par le clic du visualiseur (souris et doigt) et on cherche la cellule sous le point.
+  const inPoly = (x, y, P) => { let ins = false; for (let i = 0, j = P.length - 1; i < P.length; j = i++) { const [xi, yi] = P[i], [xj, yj] = P[j]; if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / ((yj - yi) || 1e-9) + xi) ins = !ins; } return ins; };
+  viewer.addHandler('canvas-click', ev => {
+    if (!on || !data || !ev.quick) return;
+    const vp = viewer.viewport.pointFromPixel(ev.position), x = vp.x * W, y = vp.y * W;   // le calque couvre (0, 0, 1, H/W) avec une viewBox de W x H
+    let hit = null, best = Infinity;
+    for (const c of data.cellules) {
+      const b = c.bb; if (x < b[0] || x > b[2] || y < b[1] || y > b[3]) continue;
+      const key = c.classe || (c.propose && c.propose.cle) || null;
+      if (hidden.has(key ? groupOf(key) : 'sans')) continue;
+      const area = (b[2] - b[0]) * (b[3] - b[1]);
+      if (area < best && inPoly(x, y, c.p)) { hit = c; best = area; }
+    }
+    if (!hit) return;
+    ev.preventDefaultAction = true;          // pas de zoom au clic quand on touche une cellule
+    selected = hit.id; fiche(hit); draw();
+  });
+  const applyCells = () => {
+    if (on) { viewer.addOverlay({ element: svg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) }); $('cpanel').hidden = false; }
+    else { viewer.removeOverlay(svg); $('cpanel').hidden = true; $('cfiche').hidden = true; }
+  };
+  async function loadAll() {
+    const merged = { taxonomie: null, modele: null, stats: { segmentees: 0, validees: 0, propositions: 0, bord: 0, formule: {} }, cellules: [] };
+    const problems = [];
+    for (const src of CELL_SOURCES) {
+      let d;
+      try { d = await (await fetch(src.path + '?t=' + Date.now())).json(); } catch (e) { problems.push(`${src.title || 'cette lame'} : cellules.json illisible`); continue; }
+      if (d.largeur !== src.w || d.hauteur !== src.h) { problems.push(`${src.title || 'cette lame'} : cellules calculées sur ${d.largeur} × ${d.hauteur} px, lame de ${src.w} × ${src.h} : ignorées, relancer l'import`); continue; }
+      merged.taxonomie = merged.taxonomie || d.taxonomie; merged.modele = merged.modele || d.modele;
+      for (const k of ['segmentees', 'validees', 'propositions', 'bord']) merged.stats[k] += (d.stats && d.stats[k]) || 0;
+      for (const [k, n] of Object.entries((d.stats && d.stats.formule) || {})) merged.stats.formule[k] = (merged.stats.formule[k] || 0) + n;
+      const T = src.T;   // enfant -> parent : x' = a x - b y + tx ; y' = b x + a y + ty
+      const map = ([x, y]) => T ? [T[0] * x - T[1] * y + T[2], T[1] * x + T[0] * y + T[3]] : [x, y];
+      const scale = T ? Math.hypot(T[0], T[1]) : 1;
+      for (const c of d.cellules) {
+        const p = c.p.map(map).map(q => [Math.round(q[0] * 10) / 10, Math.round(q[1] * 10) / 10]);
+        const xs = p.map(q => q[0]), ys = p.map(q => q[1]);
+        merged.cellules.push({ ...c, p, bb: [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)], c: map(c.c), d: c.d * scale, from: src.title });
+      }
+    }
+    merged.problems = problems;
+    return merged;
+  }
+  $('cellsbtn').onclick = async () => {
+    if (!data) {
+      data = await loadAll();
+      if (!data.taxonomie) { $('cpanel').hidden = false; $('cpanel').textContent = data.problems.join(' · ') || 'aucune cellule lisible'; data = null; return; }
+      draw(); panel();
+      if (data.problems.length) $('cpanel').insertAdjacentHTML('beforeend', `<div class="msg" style="color:#c0392b">${data.problems.join('<br>')}</div>`);
+    }
+    on = !on; $('cellsbtn').setAttribute('aria-pressed', String(on)); applyCells();
+  };
+}
+
+// ---- modifier la lame : rogner, supprimer (demande envoyee a la fonction Supabase, executee par GitHub Actions) ----
+const LS = { get: k => { try { return localStorage.getItem(k) || ''; } catch (_) { return ''; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (_) {} } };
+$('eurl').value = LS.get('scanlame.url'); $('etoken').value = LS.get('scanlame.token');
+$('eurl').onchange = () => LS.set('scanlame.url', $('eurl').value.trim()); $('etoken').onchange = () => LS.set('scanlame.token', $('etoken').value.trim());
+// ---- favori : meme etat que l'etoile de la galerie (meme navigateur) ; enregistre avec la lame (tous les appareils) quand l'URL
+// du serveur et le jeton sont connus, sinon garde sur cet appareil. En attendant la mise a jour du site, le choix fait ici reste affiche.
+const favLocal = () => { try { return JSON.parse(LS.get('lames.favoris.local') || '{}') || {}; } catch (_) { return {}; } };
+{ const lf = favLocal(), e = lf[SLUG]; if (e && e.sent && (FAVORI === e.on || Date.now() - e.t > 6 * 3600e3)) { delete lf[SLUG]; LS.set('lames.favoris.local', JSON.stringify(lf)); } }
+const isFav = () => { const e = favLocal()[SLUG]; return e ? e.on : FAVORI; };
+function showFav() { const on = isFav(), b = $('favbtn'); b.setAttribute('aria-pressed', String(on)); b.textContent = on ? '★ Favori' : '☆ Favori'; b.title = on ? 'Retirer des favoris' : 'Ajouter aux favoris'; }
+let favT = null;
+function favMsg(t) { const m = $('favmsg'); m.textContent = t; m.hidden = false; clearTimeout(favT); favT = setTimeout(() => { m.hidden = true; }, 6000); }
+$('favbtn').onclick = async () => {
+  const on = !isFav(), lf = favLocal();
+  lf[SLUG] = { on, t: Date.now(), sent: false }; LS.set('lames.favoris.local', JSON.stringify(lf)); showFav();
+  const what = on ? 'Ajoutée aux favoris' : 'Retirée des favoris';
+  const url = ($('eurl').value || LS.get('scanlame.url') || '').trim().replace(/\/+$/, ''), token = ($('etoken').value || LS.get('scanlame.token') || '').trim();
+  if (!url || !token) { favMsg(what + ' sur cet appareil. Pour partager tes favoris entre téléphone et ordinateur, renseigne une fois l\'URL du serveur et le jeton dans « Modifier ».'); return; }
+  try {
+    const r = await fetch(url + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Token': token },
+      body: JSON.stringify({ series: 'edit_' + Date.now(), slug: SLUG, action: 'favori', on }) });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const lf2 = favLocal(); if (lf2[SLUG]) { lf2[SLUG].sent = true; LS.set('lames.favoris.local', JSON.stringify(lf2)); }
+    favMsg(what + '. Ce sera visible sur tous tes appareils dans quelques minutes.');
+  } catch (e) { favMsg(what + ' sur cet appareil seulement : le serveur n\'a pas répondu (' + e.message + ').'); }
+};
+window.addEventListener('pageshow', showFav);   // retour depuis la galerie : l'etoile a pu changer
+showFav();
+$('dlfull').href = 'https://github.com/ashrin45/1_scanlame/releases/download/lames/' + SLUG + '.jpg';
+$('dlzip').href = 'https://github.com/ashrin45/1_scanlame/releases/download/lames/' + SLUG + '-visionneuse.zip';
+// QR codes vers l'appli : scanlame://reprendre/<slug> (completer les zones manquantes) et scanlame://ensemble/<slug> (prendre un detail x100 rattache)
+function showQr(kind, msg) {
+  const url = 'scanlame://' + kind + '/' + SLUG;
+  $('qr').innerHTML = ''; $('qrbox').hidden = false;
+  try { new QRCode($('qr'), { text: url, width: 132, height: 132, correctLevel: QRCode.CorrectLevel.M }); } catch (e) { $('qr').textContent = url; }
+  $('qrmsg').innerHTML = msg + '<br>Scanner avec l\'appareil photo du téléphone : l\'appli s\'ouvre avec la lame déjà choisie. Sur le téléphone, <a href="' + url + '">ouvrir directement</a>.';
+}
+$('eresume').onclick = () => showQr('reprendre', 'Reprendre cette lame : filmer seulement les zones manquantes (même objectif), la reprise est recalée et fondue dedans.');
+$('edetail').onclick = () => showQr('ensemble', 'Ajouter un détail : série au fort grossissement, rattachée à cette lame d\'ensemble.');
+$('editbtn').onclick = () => { const on = $('epanel').hidden; $('epanel').hidden = !on; $('editbtn').setAttribute('aria-pressed', on); };
+async function sendEdit(payload) {
+  const url = $('eurl').value.trim().replace(/\/+$/, ''), token = $('etoken').value.trim();
+  if (!url || !token) { $('emsg').textContent = 'URL du serveur et jeton nécessaires (voir la page de capture).'; return false; }
+  $('emsg').textContent = 'envoi…';
+  try {
+    const r = await fetch(url + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Token': token },
+      body: JSON.stringify({ series: 'edit_' + Date.now(), slug: SLUG, ...payload }) });
+    if (!r.ok) { $('emsg').textContent = 'refusé : HTTP ' + r.status; return false; }
+    const j = await r.json();
+    $('emsg').textContent = 'Demande envoyée' + (j.dispatched ? ' : GitHub Actions est réveillé, ' : ' (traitement au prochain passage, 15 min au plus) : ') + 'rechargez la page dans quelques minutes.';
+    return true;
+  } catch (e) { $('emsg').textContent = 'erreur : ' + e.message; return false; }
+}
+$('edelete').onclick = async () => {
+  if (!confirm('Supprimer définitivement cette lame de la galerie ?')) return;
+  if (await sendEdit({ action: 'delete' })) $('edelete').disabled = true;
+};
+// rognage : rectangle trace au doigt ou a la souris sur la vue, converti en px de la lame
+let crop = null, cropStart = null;
+const rectEl = $('croprect');
+function imgPt(ev) {
+  const r = $('viewer').getBoundingClientRect();
+  const p = viewer.world.getItemAt(0).viewerElementToImageCoordinates(new OpenSeadragon.Point(ev.clientX - r.left, ev.clientY - r.top));   // image principale (les calques sont d'autres images)
+  return { x: Math.max(0, Math.min(W, p.x)), y: Math.max(0, Math.min(H, p.y)) };
+}
+function drawCrop() {
+  if (!crop) { rectEl.style.display = 'none'; $('cropok').disabled = true; return; }
+  const main = viewer.world.getItemAt(0);
+  const a = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(crop.x0, crop.y0));
+  const b = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(crop.x1, crop.y1));
+  rectEl.style.display = 'block'; rectEl.style.left = a.x + 'px'; rectEl.style.top = a.y + 'px'; rectEl.style.width = (b.x - a.x) + 'px'; rectEl.style.height = (b.y - a.y) + 'px';
+  const ok = crop.x1 - crop.x0 >= 64 && crop.y1 - crop.y0 >= 64;
+  $('cropok').disabled = !ok;
+  $('cropinfo').textContent = ok ? `zone gardée : ${Math.round(crop.x1 - crop.x0)} × ${Math.round(crop.y1 - crop.y0)} px` : 'Tracez un rectangle à garder';
+}
+$('ecrop').onclick = () => {
+  $('epanel').hidden = true; $('editbtn').setAttribute('aria-pressed', 'false');
+  $('cropper').hidden = false; $('cropbar').hidden = false; crop = null; drawCrop();
+  viewer.setMouseNavEnabled(false);
+};
+const endCrop = () => { $('cropper').hidden = true; $('cropbar').hidden = true; crop = null; drawCrop(); viewer.setMouseNavEnabled(true); };
+$('cropcancel').onclick = endCrop;
+$('cropper').onpointerdown = ev => { ev.preventDefault(); $('cropper').setPointerCapture(ev.pointerId); cropStart = imgPt(ev); crop = { x0: cropStart.x, y0: cropStart.y, x1: cropStart.x, y1: cropStart.y }; drawCrop(); };
+$('cropper').onpointermove = ev => { if (!cropStart) return; const p = imgPt(ev); crop = { x0: Math.min(cropStart.x, p.x), y0: Math.min(cropStart.y, p.y), x1: Math.max(cropStart.x, p.x), y1: Math.max(cropStart.y, p.y) }; drawCrop(); };
+$('cropper').onpointerup = $('cropper').onpointercancel = () => { cropStart = null; };
+viewer.addHandler('animation', () => { if (crop) drawCrop(); });
+$('cropok').onclick = async () => {
+  if (!crop) return;
+  const rect = [crop.x0, crop.y0, crop.x1, crop.y1].map(Math.round);
+  if (!confirm(`Garder seulement la zone ${rect[2] - rect[0]} × ${rect[3] - rect[1]} px et jeter le reste ? (irréversible)`)) return;
+  $('epanel').hidden = false;
+  if (await sendEdit({ action: 'crop', rect })) endCrop();
+};
+// ---- annotations : epingles et zones avec un texte, enregistrees avec la lame (visibles sur tous les appareils) ----
+// Ecriture : demande d'edition au serveur (comme rogner ou supprimer), appliquee par GitHub en une a deux minutes ; en attendant,
+// l'annotation est gardee dans ce navigateur et affichee. Sans URL ni jeton, elle reste sur cet appareil.
+{
+  const COULEURS = ['#e8a33d', '#e5484d', '#30a46c', '#3e63dd', '#8e4ec6'];
+  const OFFLINE = ANNOT_EMBED !== null;
+  const KEY = 'lames.annot.' + SLUG;
+  const esc = t => String(t == null ? '' : t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  let server = [], pending = [], shown = true, selected = null, amode = null, draft = null, aStart = null, editing = null;
+  const loadPending = () => { try { pending = JSON.parse(LS.get(KEY) || '[]') || []; } catch (_) { pending = []; } };
+  const savePending = () => LS.set(KEY, JSON.stringify(pending));
+  const ident = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  function prune() {        // demandes deja appliquees par le site (ou trop anciennes)
+    const old = p => p.sent && Date.now() - p.t > 3 * 864e5;
+    pending = pending.filter(p => {
+      const s_ = server.find(a => a.id === p.id);
+      if (p.op === 'delete') return !(p.sent && !s_) && !old(p);
+      return !(s_ && (s_.maj || '') >= p.maj) && !old(p);
+    });
+    savePending();
+  }
+  function effective() {
+    const m = new Map(server.map(a => [a.id, Object.assign({}, a)]));
+    for (const p of pending) {
+      if (p.op === 'delete') { m.delete(p.id); continue; }
+      m.set(p.id, Object.assign({}, m.get(p.id) || {}, p.a, { id: p.id, maj: p.maj, attente: p.sent ? 'envoi' : 'local' }));
+    }
+    return [...m.values()].sort((a, b) => (a.cree || '').localeCompare(b.cree || ''));
+  }
+  const etat = a => a.attente === 'envoi' ? 'enregistrement en cours' : a.attente === 'local' ? 'sur cet appareil seulement' : '';
+  const quand = iso => { const d = new Date(iso); return isNaN(d) ? '' : d.toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }); };
+  const premiere = t => (String(t || '').split('\n')[0] || '(sans texte)');
+
+  // -- calque sur la lame
+  const zsvg = document.createElementNS(svgNS, 'svg');
+  zsvg.setAttribute('viewBox', `0 0 ${W} ${H}`); zsvg.setAttribute('class', 'annots'); zsvg.setAttribute('width', '100%'); zsvg.setAttribute('height', '100%'); zsvg.style.overflow = 'visible';
+  let overlays = [];
+  const pinSvg = c => `<svg viewBox="0 0 22 30" aria-hidden="true"><path d="M11 29C11 29 2 17.5 2 11a9 9 0 0 1 18 0c0 6.5-9 18-9 18z" fill="${c}" stroke="#fff" stroke-width="1.6"/><circle cx="11" cy="11" r="3.4" fill="#fff"/></svg>`;
+  function drawLayer() {
+    overlays.forEach(el => viewer.removeOverlay(el)); overlays = [];
+    viewer.removeOverlay(zsvg); while (zsvg.firstChild) zsvg.removeChild(zsvg.firstChild);
+    const list = effective();
+    $('anncnt').textContent = list.length || '';
+    if (!shown || !viewer.world.getItemCount()) return;
+    let zones = 0;
+    for (const a of list) {
+      const c = COULEURS.includes(a.couleur) ? a.couleur : COULEURS[0], w = a.attente ? ' wait' : '';
+      if (a.type === 'zone' && a.rect) {
+        const r = document.createElementNS(svgNS, 'rect'); const [x0, y0, x1, y1] = a.rect;
+        r.setAttribute('x', x0); r.setAttribute('y', y0); r.setAttribute('width', x1 - x0); r.setAttribute('height', y1 - y0);
+        r.setAttribute('stroke', c); r.setAttribute('fill', c); r.setAttribute('class', (w + (selected === a.id ? ' sel' : '')).trim());
+        zsvg.appendChild(r); zones++;
+        const lab = document.createElement('div'); lab.className = 'alab azlab' + w; lab.style.borderLeftColor = c; lab.textContent = premiere(a.texte); lab.title = a.texte || ''; lab.dataset.id = a.id;
+        viewer.addOverlay({ element: lab, location: new OpenSeadragon.Point(x0 / W, y0 / W), placement: OpenSeadragon.Placement.BOTTOM_LEFT }); overlays.push(lab);
+      } else if (a.type === 'point') {
+        const pin = document.createElement('div'); pin.className = 'apin' + w; pin.dataset.id = a.id;
+        pin.innerHTML = pinSvg(c) + `<span class="alab${w}" style="border-left-color:${c}" title="${esc(a.texte)}">${esc(premiere(a.texte))}</span>`;
+        viewer.addOverlay({ element: pin, location: new OpenSeadragon.Point(a.x / W, a.y / W), placement: OpenSeadragon.Placement.BOTTOM }); overlays.push(pin);
+      }
+    }
+    if (zones) viewer.addOverlay({ element: zsvg, location: new OpenSeadragon.Rect(0, 0, 1, H / W) });
+  }
+
+  // -- panneau
+  function panel() {
+    const list = effective(), P = $('apanel');
+    let h = `<div class="row"><h3>Annotations (${list.length})</h3><label class="chk"><input type="checkbox" id="ashow"${shown ? ' checked' : ''}> afficher sur la lame</label></div>`;
+    if (OFFLINE) h += `<div class="msg">Copie hors ligne : annotations en lecture seule.</div>`;
+    else h += `<div class="row"><button type="button" id="apin">+ Épingle</button><button type="button" id="azone">+ Zone</button></div>`;
+    if (!list.length) h += `<div class="msg">Aucune annotation. Pose une épingle sur une cellule ou entoure une zone, avec un texte : elle sera visible par tous ceux qui ouvrent cette lame.</div>`;
+    for (const a of list) {
+      const c = COULEURS.includes(a.couleur) ? a.couleur : COULEURS[0];
+      h += `<div class="item${selected === a.id ? ' sel' : ''}" data-id="${esc(a.id)}"><span class="sw" style="background:${c}"></span><span class="tx">${esc(a.texte || '(sans texte)')}</span>`
+        + `<span class="k">${a.type === 'zone' ? 'zone' : 'épingle'}${a.auteur ? ' · ' + esc(a.auteur) : ''}${a.cree ? ' · ' + quand(a.cree) : ''}${etat(a) ? ' · <b>' + etat(a) + '</b>' : ''}</span>`
+        + `<span class="acts"><button type="button" data-act="voir">Voir</button>${OFFLINE ? '' : '<button type="button" data-act="modif">Modifier</button><button type="button" data-act="suppr">Supprimer</button>'}</span></div>`;
+    }
+    h += `<div class="msg" id="amsg">${OFFLINE ? '' : (hasServer() ? 'Les annotations sont enregistrées avec la lame : visibles sur tous les appareils en une à deux minutes.' : 'URL du serveur et jeton absents sur cet appareil (bouton Modifier) : les annotations restent sur cet appareil.')}</div>`;
+    P.innerHTML = h;
+    $('ashow').onchange = e => { shown = e.target.checked; drawLayer(); };
+    if (!OFFLINE) { $('apin').onclick = () => startPlace('point'); $('azone').onclick = () => startPlace('zone'); }
+    P.querySelectorAll('.item').forEach(el => el.onclick = ev => {
+      const a = effective().find(x => x.id === el.dataset.id); if (!a) return;
+      const act = ev.target.dataset && ev.target.dataset.act;
+      if (act === 'modif') openForm(a);
+      else if (act === 'suppr') supprimer(a);
+      else { selected = a.id; goTo(a); drawLayer(); panel(); }
+    });
+  }
+  const hasServer = () => !!(($('eurl').value || LS.get('scanlame.url')) && ($('etoken').value || LS.get('scanlame.token')));
+  function goTo(a) {
+    const r = a.type === 'zone' ? a.rect : [a.x - 450, a.y - 340, a.x + 450, a.y + 340];
+    const m = 0.25 * Math.max(r[2] - r[0], r[3] - r[1]);
+    viewer.viewport.fitBounds(new OpenSeadragon.Rect((r[0] - m) / W, (r[1] - m) / W, (r[2] - r[0] + 2 * m) / W, (r[3] - r[1] + 2 * m) / W));
+  }
+  const narrow = () => window.innerWidth < 700;
+  $('annbtn').onclick = () => {
+    const open = $('apanel').hidden; $('apanel').hidden = !open; $('annbtn').setAttribute('aria-pressed', String(open));
+    if (open) { $('epanel').hidden = true; $('editbtn').setAttribute('aria-pressed', 'false'); $('acard').hidden = true; panel(); }
+  };
+
+  // -- poser une epingle ou tracer une zone
+  function drawRect() {
+    const el = $('arect');
+    if (!draft || draft.type !== 'zone') { el.style.display = 'none'; return; }
+    const main = viewer.world.getItemAt(0), [x0, y0, x1, y1] = draft.rect;
+    const p = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(x0, y0)), q = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(x1, y1));
+    el.style.display = 'block'; el.style.left = p.x + 'px'; el.style.top = p.y + 'px'; el.style.width = (q.x - p.x) + 'px'; el.style.height = (q.y - p.y) + 'px';
+  }
+  function startPlace(mode) {
+    amode = mode; draft = null; drawRect();
+    $('adraw').hidden = false; $('abar').hidden = false; $('acard').hidden = true;
+    $('ainfo').textContent = mode === 'point' ? 'Touche l\'endroit à marquer (zoome avant si besoin)' : 'Trace un rectangle autour de la zone';
+    if (narrow()) { $('apanel').hidden = true; $('annbtn').setAttribute('aria-pressed', 'false'); }
+    viewer.setMouseNavEnabled(false);
+  }
+  function endPlace() { amode = null; aStart = null; $('adraw').hidden = true; $('abar').hidden = true; viewer.setMouseNavEnabled(true); drawRect(); }
+  $('acancel').onclick = () => { draft = null; endPlace(); };
+  $('adraw').onpointerdown = ev => { ev.preventDefault(); $('adraw').setPointerCapture(ev.pointerId); aStart = imgPt(ev); if (amode === 'zone') { draft = { type: 'zone', rect: [aStart.x, aStart.y, aStart.x, aStart.y] }; drawRect(); } };
+  $('adraw').onpointermove = ev => { if (!aStart || amode !== 'zone') return; const p = imgPt(ev); draft.rect = [Math.min(aStart.x, p.x), Math.min(aStart.y, p.y), Math.max(aStart.x, p.x), Math.max(aStart.y, p.y)]; drawRect(); };
+  $('adraw').onpointerup = ev => {
+    if (!aStart) return; const p = imgPt(ev), s0 = aStart; aStart = null;
+    if (amode === 'point') { draft = { type: 'point', x: Math.round(p.x * 10) / 10, y: Math.round(p.y * 10) / 10 }; }
+    else {
+      draft = { type: 'zone', rect: [Math.min(s0.x, p.x), Math.min(s0.y, p.y), Math.max(s0.x, p.x), Math.max(s0.y, p.y)].map(v => Math.round(v * 10) / 10) };
+      const main = viewer.world.getItemAt(0), a = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(draft.rect[0], draft.rect[1])), b = main.imageToViewerElementCoordinates(new OpenSeadragon.Point(draft.rect[2], draft.rect[3]));
+      if (Math.abs(b.x - a.x) < 12 || Math.abs(b.y - a.y) < 12) { $('ainfo').textContent = 'Zone trop petite : trace un rectangle plus grand'; draft = null; drawRect(); return; }
+    }
+    const d = draft; endPlace(); draft = d; drawRect(); openForm(null);
+  };
+  $('adraw').onpointercancel = () => { aStart = null; };
+  viewer.addHandler('animation', () => { if (draft) drawRect(); });
+
+  // -- formulaire (nouvelle annotation ou modification)
+  let couleur = COULEURS[0];
+  function couleurs() { $('acoul').innerHTML = COULEURS.map(c => `<button type="button" data-c="${c}" style="background:${c}" aria-pressed="${c === couleur}" aria-label="couleur ${c}"></button>`).join(''); $('acoul').querySelectorAll('button').forEach(b => b.onclick = () => { couleur = b.dataset.c; couleurs(); }); }
+  function openForm(a) {
+    editing = a;
+    $('atitle').textContent = a ? 'Modifier l\'annotation' : (draft && draft.type === 'zone' ? 'Nouvelle zone' : 'Nouvelle épingle');
+    $('atext').value = a ? (a.texte || '') : '';
+    couleur = a && COULEURS.includes(a.couleur) ? a.couleur : (LS.get('scanlame.couleur') || COULEURS[0]);
+    $('aauteur').value = a ? (a.auteur || '') : (LS.get('scanlame.auteur') || '');
+    $('aformmsg').textContent = '';
+    couleurs(); $('acard').hidden = true; $('aform').hidden = false; $('atext').focus();
+  }
+  const closeForm = () => { $('aform').hidden = true; editing = null; draft = null; drawRect(); };
+  $('aformcancel').onclick = closeForm;
+  $('aform').onsubmit = async ev => {
+    ev.preventDefault();
+    const texte = $('atext').value.trim(); if (!texte) { $('aformmsg').textContent = 'Écris un texte pour l\'annotation.'; $('atext').focus(); return; }
+    const auteur = $('aauteur').value.trim(); LS.set('scanlame.auteur', auteur); LS.set('scanlame.couleur', couleur);
+    const maj = new Date().toISOString();
+    let op;
+    if (editing) op = { op: 'update', id: editing.id, maj, t: Date.now(), sent: false, a: { type: editing.type, texte, auteur, couleur } };
+    else op = { op: 'add', id: ident(), maj, t: Date.now(), sent: false, a: Object.assign({}, draft, { texte, auteur, couleur, cree: maj }) };
+    pending.push(op); savePending();
+    selected = op.id; closeForm(); drawLayer(); if (!$('apanel').hidden) panel();
+    await envoyer(op);
+  };
+  async function envoyer(op) {
+    const url = ($('eurl').value || LS.get('scanlame.url') || '').trim().replace(/\/+$/, ''), token = ($('etoken').value || LS.get('scanlame.token') || '').trim();
+    const dire = t => { if ($('amsg')) $('amsg').textContent = t; favMsg(t); };
+    if (!url || !token) { dire('Annotation gardée sur cet appareil. Pour la partager, renseigne une fois l\'URL du serveur et le jeton dans « Modifier ».'); return; }
+    try {
+      const body = { series: 'edit_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6), slug: SLUG, action: 'annotation', op: op.op, id: op.id, maj: op.maj };
+      if (op.a) body.a = Object.assign({ id: op.id }, op.a);
+      const r = await fetch(url + '/finish', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Token': token }, body: JSON.stringify(body) });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      loadPending(); const p = pending.find(x => x.id === op.id && x.maj === op.maj); if (p) { p.sent = true; savePending(); }
+      drawLayer(); if (!$('apanel').hidden) panel();
+      dire(op.op === 'delete' ? 'Annotation supprimée : ce sera visible partout dans une à deux minutes.' : 'Annotation enregistrée : visible sur tous les appareils dans une à deux minutes.');
+    } catch (e) { dire('Annotation gardée sur cet appareil : le serveur n\'a pas répondu (' + e.message + '). Nouvel essai au prochain chargement de la page.'); }
+  }
+  async function supprimer(a) {
+    if (!confirm('Supprimer cette annotation ?\n\n' + premiere(a.texte))) return;
+    const local = pending.find(p => p.id === a.id && p.op === 'add' && !p.sent) && !server.some(x => x.id === a.id);
+    if (local) { pending = pending.filter(p => p.id !== a.id); savePending(); }      // jamais envoyee : on l'oublie simplement
+    else { const op = { op: 'delete', id: a.id, maj: new Date().toISOString(), t: Date.now(), sent: false }; pending.push(op); savePending(); await envoyer(op); }
+    if (selected === a.id) selected = null;
+    $('acard').hidden = true; drawLayer(); if (!$('apanel').hidden) panel();
+  }
+
+  // -- clic sur une epingle, une etiquette ou une zone (souris ou doigt) : fiche
+  function showCard(a) {
+    selected = a.id; drawLayer();
+    const c = COULEURS.includes(a.couleur) ? a.couleur : COULEURS[0];
+    const card = $('acard');
+    card.innerHTML = `<div class="row" style="display:flex;gap:8px;align-items:center"><span style="width:12px;height:12px;border-radius:50%;background:${c};flex:0 0 auto"></span><b>${a.type === 'zone' ? 'Zone' : 'Épingle'}</b></div>`
+      + `<div class="tx">${esc(a.texte || '(sans texte)')}</div><div class="k">${a.auteur ? esc(a.auteur) + ' · ' : ''}${quand(a.cree)}${etat(a) ? ' · ' + etat(a) : ''}</div>`
+      + `<div class="acts">${OFFLINE ? '' : '<button type="button" id="cmodif">Modifier</button><button type="button" id="csuppr">Supprimer</button>'}<button type="button" id="cfermer">Fermer</button></div>`;
+    card.hidden = false;
+    if (!OFFLINE) { $('cmodif').onclick = () => openForm(a); $('csuppr').onclick = () => supprimer(a); }
+    $('cfermer').onclick = () => { card.hidden = true; selected = null; drawLayer(); };
+    if (!$('apanel').hidden) panel();
+  }
+  viewer.addHandler('canvas-click', ev => {
+    if (!shown || amode || !ev.quick) return;
+    const vr = $('viewer').getBoundingClientRect(), cx = vr.left + ev.position.x, cy = vr.top + ev.position.y;
+    const inside = el => { const r = el.getBoundingClientRect(); return cx >= r.left && cx <= r.right && cy >= r.top && cy <= r.bottom; };
+    const list = effective();
+    for (const el of overlays) {
+      const parts = [el, ...el.querySelectorAll('.alab')];
+      if (parts.some(inside)) { const a = list.find(x => x.id === el.dataset.id); if (a) { ev.preventDefaultAction = true; showCard(a); return; } }
+    }
+    const p = viewer.world.getItemAt(0).viewerElementToImageCoordinates(ev.position);
+    let hit = null, best = Infinity;
+    for (const a of list) if (a.type === 'zone' && a.rect) { const [x0, y0, x1, y1] = a.rect, ar = (x1 - x0) * (y1 - y0); if (p.x >= x0 && p.x <= x1 && p.y >= y0 && p.y <= y1 && ar < best) { hit = a; best = ar; } }
+    if (hit) { ev.preventDefaultAction = true; showCard(hit); }
+  });
+
+  // -- chargement : annotations du site + demandes en attente de ce navigateur ; nouvel essai d'envoi de celles qui n'etaient pas parties
+  async function charger() {
+    if (OFFLINE) server = ANNOT_EMBED.annotations || [];
+    else {
+      try { const r = await fetch('annotations.json?t=' + Date.now()); server = r.ok ? ((await r.json()).annotations || []) : []; } catch (_) { server = []; }
+    }
+    loadPending(); prune(); drawLayer(); if (!$('apanel').hidden) panel();
+    if (!OFFLINE && hasServer()) for (const p of pending.filter(p => !p.sent)) await envoyer(p);
+  }
+  viewer.addHandler('open', charger);
+  window.addEventListener('pageshow', e => { if (e.persisted) charger(); });
+  $('editbtn').addEventListener('click', () => { if (!$('epanel').hidden) { $('apanel').hidden = true; $('annbtn').setAttribute('aria-pressed', 'false'); } });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (!$('aform').hidden) closeForm(); else if (amode) { draft = null; endPlace(); } else if (!$('acard').hidden) { $('acard').hidden = true; selected = null; drawLayer(); }
+  });
+}
+</script>
+</body>
+</html>
