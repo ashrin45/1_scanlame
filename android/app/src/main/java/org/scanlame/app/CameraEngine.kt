@@ -189,7 +189,8 @@ class CameraEngine(private val ctx: Context) {
                 if (key == lastBindKey && nowT - lastBindT < 1500 && camera != null) return@addListener
                 lastBindKey = key; lastBindT = nowT
                 p.unbindAll()
-                val ratio = if (mode == Settings.MODE_VIDEO) AspectRatio.RATIO_16_9 else AspectRatio.RATIO_4_3
+                val video = mode == Settings.MODE_VIDEO || mode == Settings.MODE_3D
+                val ratio = if (video) AspectRatio.RATIO_16_9 else AspectRatio.RATIO_4_3
                 val ratioStrategy = AspectRatioStrategy(ratio, AspectRatioStrategy.FALLBACK_RULE_AUTO)
                 val (sel, physical, selDesc) = selector(st, p)
 
@@ -221,9 +222,10 @@ class CameraEngine(private val ctx: Context) {
                 val analysis = analysisB.build()
                 analysis.setAnalyzer(analysisExecutor) { img -> try { onFrame(img) } finally { img.close() } }
 
-                val uses = ArrayList<UseCase>(listOf(preview, analysis))
+                // champ 3D : pas de flux d'analyse (platine immobile, rien a suivre) pour ne pas faire retrograder la video (4K)
+                val uses = if (mode == Settings.MODE_3D) ArrayList<UseCase>(listOf(preview)) else ArrayList<UseCase>(listOf(preview, analysis))
                 imageCapture = null; videoCapture = null
-                if (mode == Settings.MODE_VIDEO) {
+                if (video) {
                     val q = when (st.videoQuality) { "FHD" -> Quality.FHD; "HD" -> Quality.HD; else -> Quality.UHD }
                     val rec = Recorder.Builder().setQualitySelector(QualitySelector.from(q, FallbackStrategy.lowerQualityOrHigherThan(Quality.FHD)))
                         .setTargetVideoEncodingBitRate(st.videoMbps * 1_000_000).setExecutor(ioExecutor).build()
@@ -246,6 +248,10 @@ class CameraEngine(private val ctx: Context) {
                 analysisSize = analysis.resolutionInfo?.resolution
                 photoSize = imageCapture?.resolutionInfo?.resolution
                 videoSize = videoCapture?.attachedSurfaceResolution
+                if (videoCapture != null) try {
+                    val qs = Recorder.getVideoCapabilities(cam.cameraInfo).getSupportedQualities(androidx.camera.video.DynamicRange.SDR)
+                    Journal.log("qualités vidéo prises en charge par cette caméra : " + qs.joinToString { q -> when (q) { Quality.UHD -> "4K"; Quality.FHD -> "FHD"; Quality.HD -> "HD"; Quality.SD -> "SD"; else -> q.toString() } })
+                } catch (e: Exception) { Journal.log("qualités vidéo : lecture impossible (${e.message})") }
                 bound.value = "$selDesc, analyse ${analysisSize?.let { "${it.width}x${it.height}" }}, " +
                     (photoSize?.let { "photo ${it.width}x${it.height}" } ?: videoSize?.let { "vidéo ${it.width}x${it.height}" } ?: "")
                 Journal.log("liaison : ${bound.value}")

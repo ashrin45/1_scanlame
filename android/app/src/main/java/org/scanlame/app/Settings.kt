@@ -12,6 +12,7 @@ class Settings(ctx: Context) {
         val STAINS = listOf("gram" to "Gram", "mgg" to "MGG", "giemsa" to "Giemsa", "ziehl" to "Ziehl-Neelsen", "auramine" to "Auramine", "bleu" to "Bleu de méthylène", "frais" to "État frais", "encre" to "Encre de Chine", "lactophenol" to "Lactophénol", "he" to "HE", "autre" to "Autre")
         const val MODE_PHOTOS = "photos"
         const val MODE_VIDEO = "video"
+        const val MODE_3D = "3d"            // liaison camera d'un champ 3D : video seule, sans flux d'analyse (platine immobile)
     }
 
     private fun str(key: String, def: String) = p.getString(key, def) ?: def

@@ -244,7 +244,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     LaunchedEffect(sheet) { val l = withContext(Dispatchers.IO) { loadLames(st.galleryUrl) }; if (l.isNotEmpty()) lames = l }
     LaunchedEffect(cameraOn, preview, bindKey, mode3d) {
         val pv = preview
-        if (cameraOn && pv != null) engine.bind(owner, pv, st, if (mode3d) Settings.MODE_VIDEO else st.mode, { img -> session.onFrame(img) }) {
+        if (cameraOn && pv != null) engine.bind(owner, pv, st, if (mode3d) Settings.MODE_3D else st.mode, { img -> session.onFrame(img) }) {
             if (start3d) { start3d = false; session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null }, champ3d = true) }
             else say("Prêt, caméra active. Pose le téléphone sur l'oculaire, règle la netteté à la vis, verrouille AF/AE puis lance la série.", false)
         }
