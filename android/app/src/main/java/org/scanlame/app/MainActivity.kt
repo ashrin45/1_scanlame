@@ -210,6 +210,8 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     var complete by remember { mutableStateOf("") }
     var lames by remember { mutableStateOf<List<LameRef>>(emptyList()) }
     var bindKey by remember { mutableStateOf(0) }
+    var mode3d by remember { mutableStateOf(false) }    // liaison video temporaire le temps d'un champ 3D
+    var start3d by remember { mutableStateOf(false) }   // depart du champ 3D des que la video est liee
     var update by remember { mutableStateOf<Updater.Info?>(null) }
     var updProgress by remember { mutableStateOf(-1) }
     val scope = androidx.compose.runtime.rememberCoroutineScope()
@@ -240,9 +242,12 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     }
     // galerie relue à chaque ouverture des réglages (une lame publiée pendant que l'appli tourne doit apparaître)
     LaunchedEffect(sheet) { val l = withContext(Dispatchers.IO) { loadLames(st.galleryUrl) }; if (l.isNotEmpty()) lames = l }
-    LaunchedEffect(cameraOn, preview, bindKey) {
+    LaunchedEffect(cameraOn, preview, bindKey, mode3d) {
         val pv = preview
-        if (cameraOn && pv != null) engine.bind(owner, pv, st, st.mode, { img -> session.onFrame(img) }) { say("Prêt, caméra active. Pose le téléphone sur l'oculaire, règle la netteté à la vis, verrouille AF/AE puis lance la série.", false) }
+        if (cameraOn && pv != null) engine.bind(owner, pv, st, if (mode3d) Settings.MODE_VIDEO else st.mode, { img -> session.onFrame(img) }) {
+            if (start3d) { start3d = false; session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null }, champ3d = true) }
+            else say("Prêt, caméra active. Pose le téléphone sur l'oculaire, règle la netteté à la vis, verrouille AF/AE puis lance la série.", false)
+        }
         else if (!cameraOn) { engine.unbind(); engine.bound.value = null }
     }
     // zoom en direct
@@ -459,6 +464,17 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                         else session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
                     }.padding(vertical = 15.dp), color = BG, fontSize = 16.sp, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
                 }
+                // champ 3D : video d'un seul champ pendant la descente de la vis micrometrique (reglages verrouilles obligatoires)
+                Column(Modifier.fillMaxWidth().border(1.dp, if (locked) ACCENT else LINE, RoundedCornerShape(6.dp)).clickable(enabled = locked) {
+                    title = t; sample = smp; st.objective = obj; startDlg = false
+                    if (st.serverUrl.isEmpty()) say("Serveur non réglé : la prise restera sur le téléphone (file d'attente).", true)
+                    if (st.mode == Settings.MODE_VIDEO) session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null }, champ3d = true)
+                    else { start3d = true; mode3d = true }
+                }.padding(14.dp, 12.dp), verticalArrangement = Arrangement.spacedBy(3.dp)) {
+                    Text("Champ 3D (essai)", color = if (locked) ACCENT else MUTED, fontSize = 15.sp, fontWeight = FontWeight.SemiBold)
+                    Text(if (locked) "Vidéo d'un seul champ, sans bouger la platine : démarre au-dessus du plan net puis descends la vis lentement (10 à 15 s). Rendu en relief côté serveur."
+                        else "Verrouille d'abord AF/AE sur le champ choisi.", color = MUTED, fontSize = 12.sp)
+                }
             }
         }
     }
@@ -496,7 +512,10 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
             if (cameraOn) { if (changedCamera) bindKey++ else engine.applyControls(st) }
             zoom = st.zoom
         })
-    LaunchedEffect(sess.running) { while (sess.running) { delay(1000); Uploader.refresh(ctx) } }
+    LaunchedEffect(sess.running) {
+        if (!sess.running && mode3d && !start3d) mode3d = false     // fin du champ 3D : la camera revient en mode photos
+        while (sess.running) { delay(1000); Uploader.refresh(ctx) }
+    }
 }
 
 fun fmtTime(ms: Long): String { val s = ms / 1000; return String.format(Locale.ROOT, "%02d:%02d", s / 60, s % 60) }

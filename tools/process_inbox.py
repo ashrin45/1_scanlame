@@ -213,6 +213,12 @@ while True:
         get(f'{s}/serie.json', os.path.join(d, 'serie.json'))
         meta = json.load(open(os.path.join(d, 'serie.json')))
         paths = [f'{s}/serie.json']
+    # champ 3D (video d'un seul champ pendant la descente de la vis) : rien a assembler, la video reste dans le
+    # bucket (recuperable avec --only --fetch-only) pour le rendu en relief par le script dedie, en phase d'essai
+    if meta.get('champ3d') and not (a.fetch_only and a.only):
+        print(f'  champ 3D : vidéo conservée dans le bucket pour le rendu en relief (phase d\'essai), pas d\'assemblage')
+        put_text(f'{s}/done.txt', 'champ 3D : vidéo conservée pour le rendu en relief (phase d\'essai), pas d\'assemblage')
+        continue
     chunks = sorted(e['name'] for e in ls(f'{s}/chunks'))
     if chunks:
         ext = 'mp4' if 'mp4' in str(meta.get('video_mime', '')) else 'webm'

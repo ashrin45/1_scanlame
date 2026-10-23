@@ -65,6 +65,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
     private val gray = FloatArray(Tracker.S2 * Tracker.S2)
     private var frameCount = 0
     private var videoDone: ((Boolean) -> Unit)? = null
+    private var is3d = false                        // serie en cours = champ 3D (video d'un seul champ)
     @Volatile private var lastRot = 90
 
     private fun now() = SystemClock.elapsedRealtime()
@@ -444,9 +445,12 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
     }
     private fun slug(s: String) = Normalizer.normalize(s, Normalizer.Form.NFD).replace(Regex("[\\u0300-\\u036f]"), "").lowercase().replace(Regex("[^a-z0-9]+"), "-").trim('-').take(30)
 
-    fun start(title: String, sample: String, comment: String, parent: String?, complete: String?) {
+    fun start(title: String, sample: String, comment: String, parent: String?, complete: String?, champ3d: Boolean = false) {
         if (state.value.running) return
-        val mode = st.mode
+        is3d = champ3d
+        // champ 3D : video d'un seul champ pendant la descente de la vis micrometrique (reglages verrouilles),
+        // rendu en relief construit cote serveur par un script dedie, hors du pipeline d'assemblage
+        val mode = if (champ3d) Settings.MODE_VIDEO else st.mode
         val id = "lame_${stamp()}${slug(title).takeIf { it.isNotEmpty() }?.let { "_$it" } ?: ""}"
         t0 = now(); seq = 0; sampleSeq = 0; frameCount = 0
         tracker = Tracker(); synchronized(placed) { placed.clear(); placedPhotos.clear() }; lastPos = null; lastShot = null; stillSince = 0L; shooting = false
@@ -472,7 +476,7 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             .put("captured", SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX", Locale.ROOT).format(Date()))
             .put("calibrations", JSONObject(st.calibrations().mapValues { it.value.toDouble() }))
             .put("patron", st.patronFor(st.objective).takeIf { it != "libre" } ?: JSONObject.NULL).put("auto_crop", st.autoCrop)
-            .put("depth", st.depth).put("mode", mode).put("sample_ms", 100).put("position_unit", "px of the captured image (portrait)")
+            .put("depth", st.depth).put("mode", mode).put("champ3d", champ3d).put("sample_ms", 100).put("position_unit", "px of the captured image (portrait)")
             .put("width", W.roundToInt()).put("height", H.roundToInt()).put("zoom", st.zoom.toDouble())
             .put("app", "scanlame-android ${BuildConfig.VERSION_NAME}").put("device", "${Build.MANUFACTURER} ${Build.MODEL} Android ${Build.VERSION.RELEASE}")
             .put("camera", JSONObject().put("id", st.cameraId.ifEmpty { "auto" }).put("physical", st.physicalId.ifEmpty { null }).put("locked", engine.locked.value).put("focus", st.focusMode)
@@ -480,7 +484,11 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
                 .put("photo", engine.photoSize?.toString()).put("video", engine.videoSize?.toString()).put("video_mbps", st.videoMbps).put("quality", st.photoQuality))
         Journal.log("=== série $id ($mode) « ${title.ifBlank { "sans nom" }} », ${st.stain}, objectif ${st.objective} : ${engine.bound.value}")
         state.value = State(running = true, mode = mode, seriesId = id, objective = st.objective, fieldW = W, fieldH = H,
-            message = if (mode == Settings.MODE_VIDEO) "Enregistrement en cours. Platine lente, en serpentin, arrêt net à chaque champ." else "Série en cours : déplace la platine d'un demi-champ, arrête-toi, une photo part à chaque arrêt.")
+            message = when {
+                champ3d -> "Champ 3D : la vidéo tourne. Sans toucher la platine, pars au-dessus du plan net et descends la vis lentement et régulièrement (10 à 15 s), puis appuie sur le bouton rouge."
+                mode == Settings.MODE_VIDEO -> "Enregistrement en cours. Platine lente, en serpentin, arrêt net à chaque champ."
+                else -> "Série en cours : déplace la platine d'un demi-champ, arrête-toi, une photo part à chaque arrêt."
+            })
         if (mode == Settings.MODE_VIDEO) {
             val vf = File(dir, "video.mp4"); videoFile = vf
             val ok = engine.startVideo(vf) { ev ->
@@ -541,10 +549,10 @@ class Session(private val ctx: Context, private val engine: CameraEngine, privat
             }
             File(dir, "finish.json").writeText(m.toString())
             // slug que le serveur donnera a cette lame (meme regle que process_inbox) : pour la proposer comme lame d'ensemble sans attendre
-            st.addRecentSeries(predictedSlug(s.seriesId, meta.optString("title", "")), meta.optString("title", "").ifBlank { s.seriesId }, st.objective)
+            if (!is3d) st.addRecentSeries(predictedSlug(s.seriesId, meta.optString("title", "")), meta.optString("title", "").ifBlank { s.seriesId }, st.objective)
             Uploader.kick(ctx)
             val bilan = if (s.mode == Settings.MODE_PHOTOS) " Bilan : $seq photos, ${nBlurred} floue(s), ${nBigSteps} pas trop grand(s)." else ""
-            state.value = state.value.copy(message = "Prise ${s.seriesId.takeLast(6)} en file d'envoi.$bilan L'assemblage se fait côté serveur, la lame apparaîtra dans la galerie.", warn = "")
+            state.value = state.value.copy(message = if (is3d) "Champ 3D ${s.seriesId.takeLast(6)} en file d'envoi. La vidéo est gardée côté serveur pour le rendu en relief (phase d'essai) : elle n'apparaîtra pas dans la galerie." else "Prise ${s.seriesId.takeLast(6)} en file d'envoi.$bilan L'assemblage se fait côté serveur, la lame apparaîtra dans la galerie.", warn = "")
             onDone()
         }
         if (s.mode == Settings.MODE_VIDEO && engine.isRecording()) {
