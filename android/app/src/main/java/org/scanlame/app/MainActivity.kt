@@ -896,6 +896,11 @@ fun SettingsSheet(engine: CameraEngine, st: Settings, cameraOn: Boolean, lames: 
                 OutlinedTextField(stageX, { stageX = it; st.stageX = it }, label = { Text("Platine X (vernier, mm)", fontSize = 12.sp) }, singleLine = true, modifier = Modifier.weight(1f), keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal))
                 OutlinedTextField(stageY, { stageY = it; st.stageY = it }, label = { Text("Platine Y (vernier, mm)", fontSize = 12.sp) }, singleLine = true, modifier = Modifier.weight(1f), keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal))
             }
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                var askV by remember { mutableStateOf(st.askVernier) }
+                Checkbox(askV, { askV = it; st.askVernier = it }, colors = CheckboxDefaults.colors(checkedColor = ACCENT, checkmarkColor = BG, uncheckedColor = MUTED))
+                Text("Demander le relevé du vernier au départ de chaque série", fontSize = 13.sp, color = FG)
+            }
             Text("Relevés de la platine au premier champ de la série (facultatif). Avec ceux de la lame d'ensemble, ils servent à placer le détail ; la correspondance est apprise au premier recalage réussi.", color = MUTED, fontSize = 11.sp)
             Select("Compléter une lame existante (reprise des zones manquantes, même objectif)", listOf("" to "Non : nouvelle lame") + lames.map { it.slug to "${it.title}${it.objective?.let { o -> " (obj. $o)" } ?: ""}" }, complete) { complete = it; if (it.isNotEmpty()) { parent = ""; lames.firstOrNull { l -> l.slug == it }?.objective?.let { o -> objective = o } } }
             SectionTitle("Échelle")
