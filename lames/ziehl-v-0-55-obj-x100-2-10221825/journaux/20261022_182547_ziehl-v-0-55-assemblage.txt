@@ -1,0 +1,51 @@
+[    0.0s] segment 3/3 : objectif x100, 259 images entre 692 s et 1041 s
+[    0.0s] 259 images candidates
+[    3.2s] profondeur : 259 photos en 55 pile(s) marquée(s) par l'appli (plusieurs plans de mise au point par champ)
+[   22.5s]   pile : 1 plan(s) non alignable(s) écarté(s)
+[   40.6s]   pile : 1 plan(s) non alignable(s) écarté(s)
+[   41.1s] 27 pile(s) de profondeur fusionnée(s) (EDF), plans conservés pour la navigation
+[   41.1s] netteté médiane 165.8, seuil 66.3
+[   41.4s] 52 images retenues (nettes, non redondantes)
+[   42.1s] flat-field : médiane temporelle de 40 images (vignettage et poussières fixes de l'oculaire)
+[   43.8s] aberration chromatique : échelle R 1.0040, B 0.9940
+[   44.2s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 4 %)
+[   56.6s] prétraitement terminé, 52 images, recalage à 900 x 1200
+[   62.8s] points SIFT : 4701 par image en moyenne
+[   62.8s] 436 paires à tester
+[  148.8s] 200 paires valides
+[  155.6s] 1 paire(s) recalée(s) par corrélation d'images (champs répétitifs ou pauvres en points)
+[  156.7s] distorsion radiale k1 = -0.0220 (résidu 0.92 px contre 1.43 px sans correction)
+[  156.7s] composantes : [51, 1] -> on assemble la n°0 : 51 images
+[  157.1s] a priori (position au changement d'objectif, suivi ok) : premier champ attendu vers (3331, 3657) px de la lame d'ensemble
+[  157.1s] ancrage dans la lame d'ensemble inbox/lame_20261022_182547_ziehl-v-0-55/result (4664x6319 px, objectif x10) : mosaïque provisoire 725x832
+[  157.2s] recherche dans la fenêtre (2398, 2393, 4263, 4921)
+[  158.3s] facteur 1.0000 : 431 appariements, 255 inliers, échelle résiduelle 1.01
+[  188.0s] appariement appris (fenêtre 1056x1161) : 4533 appariements, 2142 inliers, échelle résiduelle 1.033
+[  188.0s]   -> affinage retenu (2142 inliers au lieu de 255)
+[  188.3s] ancrage global : 2142 points sur 42 images
+[  188.3s] localisation grossière : 2142 inliers, échelle enfant->parent 0.1033
+[  202.5s]   groupe 0000-0004 : 1823 appariements, 1362 inliers, échelle 1.056, rotation -0.3°, décalage 10 px parent
+[  219.1s]   groupe 0005-0009 : 47 appariements, 38 inliers, échelle 1.017, rotation +2.5°, décalage 8 px parent
+[  233.5s]   groupe 0010-0014 : 1396 appariements, 1242 inliers, échelle 1.030, rotation +0.6°, décalage 1 px parent
+[  251.3s]   groupe 0016-0020 : 47 appariements, 42 inliers, échelle 1.053, rotation -0.6°, décalage 9 px parent
+[  267.0s]   groupe 0021-0025 : 1075 appariements, 870 inliers, échelle 1.022, rotation +0.5°, décalage 1 px parent
+[  285.7s]   groupe 0026-0030 : 149 appariements, 130 inliers, échelle 1.001, rotation +1.4°, décalage 3 px parent
+[  299.4s]   groupe 0031-0035 : 1252 appariements, 1125 inliers, échelle 1.000, rotation -0.0°, décalage 1 px parent
+[  317.4s]   groupe 0036-0040 : 85 appariements, 81 inliers, échelle 0.985, rotation -1.2°, décalage 1 px parent
+[  332.3s]   groupe 0046-0051 : 1349 appariements, 1028 inliers, échelle 0.955, rotation -0.3°, décalage 10 px parent
+[  347.3s]   groupe 0046-0051 : 1349 appariements, 1028 inliers, échelle 0.955, rotation -0.3°, décalage 10 px parent
+[  347.3s] ancrage : 10/10 groupes appariés, 51 images ancrées, 4014 points
+[  347.6s] échelles relatives après ajustement : min 0.980, max 1.018
+[  347.6s] ancrages (1re passe) : résidu médian 8.7 px de recalage, 90e centile 20.4
+[  347.6s] ancrages (final) : résidu médian 8.7 px de recalage, 90e centile 20.4
+[  347.6s] ajustement global : 27390 correspondances, 50 images, 4014 ancrages
+[  347.6s] 1 image(s) placée(s) d'après le suivi en direct (0 en blocs recalés entre eux, 1 isolée(s))
+[  347.9s] compensation photométrique : écart de gain max 9.2 %
+[  347.9s] recalage : erreur médiane 2.17 px (échelle recalage), max 8.28
+[  348.6s] mosaïque 7160 x 8227
+[  348.6s] position dans la lame d'ensemble : échelle 0.1036, rotation -0.9°, 51 images ancrées
+[  428.5s] composition : 20 tuiles en 78 s
+[  821.2s] z-stack : 5 plans sur 27 champ(s) en 393 s
+[  822.1s] rognage automatique proposé : 5552 x 6320 px (60 % de la mosaïque, 72 % de la couverture)
+[  822.2s] qualité : note B (recalage moyen (2.2 px), 1 champ(s) placé(s) sans recalage fin)
+[  822.2s] terminé : pano.jpg 7160 x 8227 , 52 images utilisées sur 52
