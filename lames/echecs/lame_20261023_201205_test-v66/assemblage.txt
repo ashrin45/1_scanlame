@@ -1,0 +1,6 @@
+[    0.0s] extraction video.mp4 à 4.0 img/s
+[    7.1s] segment 1/1 : objectif x40, 97 images entre 0 s et 24 s
+[    7.1s] 97 images candidates
+[    7.4s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[    7.4s] netteté médiane 17.7, seuil 7.1
+[    7.4s] 1 images retenues (nettes, non redondantes)

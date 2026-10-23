@@ -1,0 +1,580 @@
+     0.000  ScanLame 0.66 démarré sur samsung SM-S928B (Android 16)
+     4.040  qualités vidéo prises en charge par cette caméra : 4K, FHD, HD, SD
+     4.040  liaison : caméra logique 0, module physique 6, analyse 640x360, vidéo 1280x720
+     4.718  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+     4.746  masque oculaire : 100 % du cadre utile (p95 24)
+     5.017  masque oculaire : 100 % du cadre utile (p95 23)
+     5.288  masque oculaire : 100 % du cadre utile (p95 23)
+     5.551  masque oculaire : 100 % du cadre utile (p95 23)
+     5.823  masque oculaire : 100 % du cadre utile (p95 24)
+     6.263  masque oculaire : 100 % du cadre utile (p95 25)
+     6.521  masque oculaire : 100 % du cadre utile (p95 25)
+     6.784  masque oculaire : 100 % du cadre utile (p95 25)
+     7.059  masque oculaire : 100 % du cadre utile (p95 23)
+     7.324  masque oculaire : 100 % du cadre utile (p95 22)
+     7.593  masque oculaire : 100 % du cadre utile (p95 21)
+     7.861  masque oculaire : 100 % du cadre utile (p95 20)
+     8.135  masque oculaire : 100 % du cadre utile (p95 25)
+     8.403  masque oculaire : 100 % du cadre utile (p95 24)
+     8.660  masque oculaire : 100 % du cadre utile (p95 24)
+     8.922  masque oculaire : 100 % du cadre utile (p95 22)
+     9.191  masque oculaire : 100 % du cadre utile (p95 17)
+     9.463  masque oculaire : 100 % du cadre utile (p95 23)
+     9.731  masque oculaire : 100 % du cadre utile (p95 24)
+     9.998  masque oculaire : 100 % du cadre utile (p95 18)
+    10.265  masque oculaire : 100 % du cadre utile (p95 24)
+    10.525  masque oculaire : 100 % du cadre utile (p95 22)
+    10.799  masque oculaire : 100 % du cadre utile (p95 20)
+    11.071  masque oculaire : 100 % du cadre utile (p95 23)
+    11.335  masque oculaire : 100 % du cadre utile (p95 23)
+    11.597  masque oculaire : 100 % du cadre utile (p95 23)
+    11.859  masque oculaire : 100 % du cadre utile (p95 23)
+    12.134  masque oculaire : 100 % du cadre utile (p95 24)
+    12.408  masque oculaire : 100 % du cadre utile (p95 24)
+    12.664  masque oculaire : 100 % du cadre utile (p95 24)
+    12.934  masque oculaire : 100 % du cadre utile (p95 22)
+    13.197  masque oculaire : 100 % du cadre utile (p95 24)
+    13.387  réglages enregistrés
+    13.461  masque oculaire : 100 % du cadre utile (p95 25)
+    13.616  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+    13.737  masque oculaire : 100 % du cadre utile (p95 25)
+    13.999  masque oculaire : 100 % du cadre utile (p95 24)
+    14.269  masque oculaire : 100 % du cadre utile (p95 24)
+    14.535  masque oculaire : 100 % du cadre utile (p95 24)
+    14.803  masque oculaire : 100 % du cadre utile (p95 23)
+    15.065  masque oculaire : 100 % du cadre utile (p95 22)
+    15.335  masque oculaire : 100 % du cadre utile (p95 20)
+    15.596  masque oculaire : 100 % du cadre utile (p95 13)
+    15.868  masque oculaire : 100 % du cadre utile (p95 17)
+    16.133  masque oculaire : 100 % du cadre utile (p95 26)
+    16.416  masque oculaire : 100 % du cadre utile (p95 23)
+    16.669  masque oculaire : 100 % du cadre utile (p95 22)
+    16.938  masque oculaire : 100 % du cadre utile (p95 26)
+    17.196  masque oculaire : 100 % du cadre utile (p95 25)
+    17.479  masque oculaire : 100 % du cadre utile (p95 25)
+    17.741  masque oculaire : 100 % du cadre utile (p95 25)
+    18.015  masque oculaire : 100 % du cadre utile (p95 25)
+    18.273  masque oculaire : 100 % du cadre utile (p95 25)
+    18.535  masque oculaire : 100 % du cadre utile (p95 25)
+    18.804  masque oculaire : 100 % du cadre utile (p95 25)
+    19.078  masque oculaire : 100 % du cadre utile (p95 25)
+    19.335  masque oculaire : 100 % du cadre utile (p95 25)
+    19.610  masque oculaire : 100 % du cadre utile (p95 25)
+    19.867  masque oculaire : 100 % du cadre utile (p95 25)
+    20.142  masque oculaire : 100 % du cadre utile (p95 25)
+    20.408  masque oculaire : 100 % du cadre utile (p95 25)
+    20.680  masque oculaire : 100 % du cadre utile (p95 25)
+    20.942  masque oculaire : 100 % du cadre utile (p95 25)
+    21.214  masque oculaire : 100 % du cadre utile (p95 25)
+    21.477  masque oculaire : 100 % du cadre utile (p95 25)
+    21.739  masque oculaire : 100 % du cadre utile (p95 25)
+    22.010  masque oculaire : 100 % du cadre utile (p95 25)
+    22.275  masque oculaire : 100 % du cadre utile (p95 25)
+    22.544  masque oculaire : 100 % du cadre utile (p95 25)
+    22.811  masque oculaire : 100 % du cadre utile (p95 25)
+    23.078  masque oculaire : 100 % du cadre utile (p95 25)
+    23.344  masque oculaire : 100 % du cadre utile (p95 25)
+    23.619  masque oculaire : 100 % du cadre utile (p95 25)
+    23.881  masque oculaire : 100 % du cadre utile (p95 25)
+    24.140  masque oculaire : 100 % du cadre utile (p95 25)
+    24.404  masque oculaire : 100 % du cadre utile (p95 25)
+    24.673  masque oculaire : 100 % du cadre utile (p95 25)
+    24.942  masque oculaire : 100 % du cadre utile (p95 25)
+    25.220  masque oculaire : 100 % du cadre utile (p95 25)
+    25.476  masque oculaire : 100 % du cadre utile (p95 25)
+    25.744  masque oculaire : 100 % du cadre utile (p95 25)
+    26.017  masque oculaire : 100 % du cadre utile (p95 25)
+    26.279  masque oculaire : 100 % du cadre utile (p95 25)
+    26.544  masque oculaire : 100 % du cadre utile (p95 25)
+    26.810  masque oculaire : 100 % du cadre utile (p95 25)
+    27.079  masque oculaire : 100 % du cadre utile (p95 25)
+    27.346  masque oculaire : 100 % du cadre utile (p95 25)
+    27.608  masque oculaire : 100 % du cadre utile (p95 255)
+    27.877  masque oculaire : 100 % du cadre utile (p95 255)
+    28.143  masque oculaire : 100 % du cadre utile (p95 220)
+    28.403  masque oculaire : 100 % du cadre utile (p95 194)
+    28.680  masque oculaire : 100 % du cadre utile (p95 186)
+    28.946  masque oculaire : 100 % du cadre utile (p95 184)
+    29.206  masque oculaire : 100 % du cadre utile (p95 184)
+    29.468  masque oculaire : 100 % du cadre utile (p95 183)
+    29.740  masque oculaire : 100 % du cadre utile (p95 183)
+    30.006  masque oculaire : 100 % du cadre utile (p95 184)
+    30.279  masque oculaire : 100 % du cadre utile (p95 183)
+    30.548  masque oculaire : 100 % du cadre utile (p95 183)
+    30.814  masque oculaire : 100 % du cadre utile (p95 183)
+    31.075  masque oculaire : 100 % du cadre utile (p95 183)
+    31.345  masque oculaire : 100 % du cadre utile (p95 183)
+    31.608  masque oculaire : 100 % du cadre utile (p95 183)
+    31.883  masque oculaire : 100 % du cadre utile (p95 182)
+    32.152  masque oculaire : 100 % du cadre utile (p95 183)
+    32.418  masque oculaire : 100 % du cadre utile (p95 183)
+    32.680  masque oculaire : 100 % du cadre utile (p95 183)
+    32.945  masque oculaire : 100 % du cadre utile (p95 183)
+    33.213  masque oculaire : 100 % du cadre utile (p95 183)
+    33.487  masque oculaire : 100 % du cadre utile (p95 183)
+    33.753  masque oculaire : 100 % du cadre utile (p95 183)
+    34.013  masque oculaire : 100 % du cadre utile (p95 183)
+    34.285  masque oculaire : 100 % du cadre utile (p95 183)
+    34.551  masque oculaire : 100 % du cadre utile (p95 183)
+    34.814  masque oculaire : 100 % du cadre utile (p95 183)
+    35.081  masque oculaire : 100 % du cadre utile (p95 183)
+    35.348  masque oculaire : 99 % du cadre utile (p95 183)
+    35.616  masque oculaire : 96 % du cadre utile (p95 184)
+    35.875  masque oculaire : 96 % du cadre utile (p95 184)
+    36.150  masque oculaire : 96 % du cadre utile (p95 184)
+    36.417  masque oculaire : 96 % du cadre utile (p95 183)
+    36.679  masque oculaire : 96 % du cadre utile (p95 183)
+    36.947  masque oculaire : 96 % du cadre utile (p95 183)
+    37.206  masque oculaire : 95 % du cadre utile (p95 183)
+    37.478  masque oculaire : 96 % du cadre utile (p95 183)
+    37.747  masque oculaire : 96 % du cadre utile (p95 183)
+    38.015  masque oculaire : 96 % du cadre utile (p95 183)
+    38.282  masque oculaire : 96 % du cadre utile (p95 183)
+    38.554  masque oculaire : 96 % du cadre utile (p95 183)
+    38.816  masque oculaire : 96 % du cadre utile (p95 183)
+    39.082  masque oculaire : 95 % du cadre utile (p95 184)
+    39.346  masque oculaire : 96 % du cadre utile (p95 184)
+    39.615  masque oculaire : 96 % du cadre utile (p95 184)
+    39.890  masque oculaire : 96 % du cadre utile (p95 184)
+    40.139  masque oculaire : 96 % du cadre utile (p95 184)
+    40.410  masque oculaire : 96 % du cadre utile (p95 183)
+    40.679  masque oculaire : 95 % du cadre utile (p95 183)
+    40.941  masque oculaire : 96 % du cadre utile (p95 183)
+    41.218  masque oculaire : 96 % du cadre utile (p95 183)
+    41.488  masque oculaire : 95 % du cadre utile (p95 183)
+    41.745  masque oculaire : 95 % du cadre utile (p95 182)
+    42.016  masque oculaire : 96 % du cadre utile (p95 182)
+    42.280  masque oculaire : 95 % du cadre utile (p95 182)
+    42.547  masque oculaire : 95 % du cadre utile (p95 183)
+    42.819  masque oculaire : 96 % du cadre utile (p95 182)
+    43.075  masque oculaire : 95 % du cadre utile (p95 181)
+    43.349  masque oculaire : 95 % du cadre utile (p95 181)
+    43.621  masque oculaire : 95 % du cadre utile (p95 181)
+    43.882  masque oculaire : 95 % du cadre utile (p95 181)
+    44.145  masque oculaire : 28 % du cadre utile (p95 108)
+    44.414  masque oculaire : 66 % du cadre utile (p95 104)
+    44.680  masque oculaire : 100 % du cadre utile (p95 255)
+    44.944  masque oculaire : 100 % du cadre utile (p95 212)
+    45.206  masque oculaire : 97 % du cadre utile (p95 191)
+    45.482  masque oculaire : 96 % du cadre utile (p95 191)
+    45.751  masque oculaire : 96 % du cadre utile (p95 192)
+    46.011  masque oculaire : 96 % du cadre utile (p95 191)
+    46.278  masque oculaire : 96 % du cadre utile (p95 191)
+    46.549  masque oculaire : 96 % du cadre utile (p95 191)
+    46.816  masque oculaire : 96 % du cadre utile (p95 191)
+    47.085  masque oculaire : 96 % du cadre utile (p95 191)
+    47.350  masque oculaire : 96 % du cadre utile (p95 191)
+    47.620  masque oculaire : 97 % du cadre utile (p95 193)
+    47.888  masque oculaire : 66 % du cadre utile (p95 186)
+    48.149  masque oculaire : 69 % du cadre utile (p95 201)
+    48.408  masque oculaire : 68 % du cadre utile (p95 208)
+    48.681  masque oculaire : 69 % du cadre utile (p95 212)
+    48.949  masque oculaire : 67 % du cadre utile (p95 212)
+    49.219  masque oculaire : 62 % du cadre utile (p95 213)
+    49.488  masque oculaire : 70 % du cadre utile (p95 219)
+    49.753  masque oculaire : 71 % du cadre utile (p95 218)
+    49.996  masque oculaire : 67 % du cadre utile (p95 218)
+    50.288  masque oculaire : 79 % du cadre utile (p95 215)
+    50.541  masque oculaire : 77 % du cadre utile (p95 206)
+    50.815  masque oculaire : 76 % du cadre utile (p95 203)
+    51.081  masque oculaire : 77 % du cadre utile (p95 205)
+    51.359  masque oculaire : 75 % du cadre utile (p95 205)
+    51.625  masque oculaire : 78 % du cadre utile (p95 205)
+    51.884  masque oculaire : 79 % du cadre utile (p95 204)
+    52.144  masque oculaire : 78 % du cadre utile (p95 204)
+    52.421  masque oculaire : 86 % du cadre utile (p95 205)
+    52.686  masque oculaire : 99 % du cadre utile (p95 202)
+    52.956  masque oculaire : 97 % du cadre utile (p95 193)
+    53.213  masque oculaire : 96 % du cadre utile (p95 191)
+    53.487  masque oculaire : 96 % du cadre utile (p95 192)
+    53.756  masque oculaire : 96 % du cadre utile (p95 192)
+    54.015  masque oculaire : 93 % du cadre utile (p95 191)
+    54.284  masque oculaire : 79 % du cadre utile (p95 197)
+    54.549  masque oculaire : 96 % du cadre utile (p95 201)
+    54.821  masque oculaire : 96 % du cadre utile (p95 201)
+    55.086  masque oculaire : 96 % du cadre utile (p95 201)
+    55.350  masque oculaire : 96 % du cadre utile (p95 201)
+    55.619  masque oculaire : 96 % du cadre utile (p95 201)
+    55.890  masque oculaire : 96 % du cadre utile (p95 201)
+    56.159  masque oculaire : 96 % du cadre utile (p95 201)
+    56.422  masque oculaire : 96 % du cadre utile (p95 201)
+    56.688  masque oculaire : 96 % du cadre utile (p95 201)
+    56.955  masque oculaire : 96 % du cadre utile (p95 201)
+    57.202  masque oculaire : 96 % du cadre utile (p95 201)
+    57.486  masque oculaire : 96 % du cadre utile (p95 201)
+    57.749  masque oculaire : 96 % du cadre utile (p95 201)
+    58.012  masque oculaire : 96 % du cadre utile (p95 201)
+    58.282  masque oculaire : 96 % du cadre utile (p95 200)
+    58.553  masque oculaire : 96 % du cadre utile (p95 201)
+    58.818  masque oculaire : 96 % du cadre utile (p95 201)
+    59.089  masque oculaire : 96 % du cadre utile (p95 201)
+    59.356  masque oculaire : 96 % du cadre utile (p95 201)
+    59.622  masque oculaire : 96 % du cadre utile (p95 200)
+    59.890  masque oculaire : 96 % du cadre utile (p95 201)
+    60.151  masque oculaire : 96 % du cadre utile (p95 201)
+    60.416  masque oculaire : 96 % du cadre utile (p95 201)
+    60.685  masque oculaire : 96 % du cadre utile (p95 201)
+    60.771  verrouillage (anti) : focus infini, pose 10.0 ms, ISO 49, WB figée
+    60.953  masque oculaire : 96 % du cadre utile (p95 200)
+    61.013  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+    61.111  masque oculaire : 98 % du cadre utile (p95 208)
+    61.250  masque oculaire : 98 % du cadre utile (p95 208)
+    61.375  masque oculaire : 98 % du cadre utile (p95 208)
+    61.510  masque oculaire : 98 % du cadre utile (p95 208)
+    61.642  masque oculaire : 98 % du cadre utile (p95 208)
+    61.780  masque oculaire : 98 % du cadre utile (p95 208)
+    61.910  masque oculaire : 98 % du cadre utile (p95 208)
+    62.041  masque oculaire : 98 % du cadre utile (p95 208)
+    62.182  masque oculaire : 98 % du cadre utile (p95 208)
+    62.316  masque oculaire : 98 % du cadre utile (p95 209)
+    62.447  masque oculaire : 98 % du cadre utile (p95 209)
+    62.590  masque oculaire : 98 % du cadre utile (p95 209)
+    62.726  masque oculaire : 98 % du cadre utile (p95 209)
+    62.850  masque oculaire : 98 % du cadre utile (p95 209)
+    62.981  masque oculaire : 98 % du cadre utile (p95 209)
+    63.115  masque oculaire : 98 % du cadre utile (p95 209)
+    63.242  masque oculaire : 98 % du cadre utile (p95 209)
+    63.383  masque oculaire : 98 % du cadre utile (p95 209)
+    63.515  masque oculaire : 98 % du cadre utile (p95 209)
+    63.646  masque oculaire : 98 % du cadre utile (p95 209)
+    63.781  masque oculaire : 98 % du cadre utile (p95 208)
+    63.914  masque oculaire : 98 % du cadre utile (p95 209)
+    64.049  masque oculaire : 98 % du cadre utile (p95 209)
+    64.180  masque oculaire : 98 % du cadre utile (p95 209)
+    64.314  masque oculaire : 98 % du cadre utile (p95 209)
+    64.448  masque oculaire : 98 % du cadre utile (p95 209)
+    64.583  masque oculaire : 98 % du cadre utile (p95 209)
+    64.717  masque oculaire : 98 % du cadre utile (p95 209)
+    64.842  masque oculaire : 98 % du cadre utile (p95 209)
+    64.990  masque oculaire : 98 % du cadre utile (p95 208)
+    65.111  masque oculaire : 98 % du cadre utile (p95 208)
+    65.244  masque oculaire : 98 % du cadre utile (p95 208)
+    65.382  masque oculaire : 98 % du cadre utile (p95 208)
+    65.514  masque oculaire : 98 % du cadre utile (p95 208)
+    65.646  masque oculaire : 98 % du cadre utile (p95 208)
+    65.779  masque oculaire : 98 % du cadre utile (p95 208)
+    65.916  masque oculaire : 98 % du cadre utile (p95 208)
+    66.046  masque oculaire : 98 % du cadre utile (p95 208)
+    66.178  masque oculaire : 98 % du cadre utile (p95 208)
+    66.306  masque oculaire : 98 % du cadre utile (p95 208)
+    66.445  masque oculaire : 98 % du cadre utile (p95 208)
+    66.575  masque oculaire : 98 % du cadre utile (p95 208)
+    66.713  masque oculaire : 98 % du cadre utile (p95 208)
+    66.847  masque oculaire : 98 % du cadre utile (p95 209)
+    66.986  masque oculaire : 98 % du cadre utile (p95 208)
+    67.117  masque oculaire : 98 % du cadre utile (p95 208)
+    67.246  masque oculaire : 98 % du cadre utile (p95 209)
+    67.386  masque oculaire : 98 % du cadre utile (p95 208)
+    67.515  masque oculaire : 98 % du cadre utile (p95 208)
+    67.646  masque oculaire : 98 % du cadre utile (p95 208)
+    67.774  masque oculaire : 98 % du cadre utile (p95 208)
+    67.912  masque oculaire : 98 % du cadre utile (p95 208)
+    68.045  masque oculaire : 98 % du cadre utile (p95 208)
+    68.184  masque oculaire : 98 % du cadre utile (p95 208)
+    68.310  masque oculaire : 98 % du cadre utile (p95 208)
+    68.494  masque oculaire : 98 % du cadre utile (p95 208)
+    68.625  masque oculaire : 98 % du cadre utile (p95 208)
+    68.761  masque oculaire : 98 % du cadre utile (p95 208)
+    68.891  masque oculaire : 98 % du cadre utile (p95 208)
+    69.025  masque oculaire : 98 % du cadre utile (p95 208)
+    69.156  masque oculaire : 98 % du cadre utile (p95 208)
+    69.292  masque oculaire : 98 % du cadre utile (p95 208)
+    69.423  masque oculaire : 98 % du cadre utile (p95 208)
+    69.558  masque oculaire : 98 % du cadre utile (p95 208)
+    69.690  masque oculaire : 98 % du cadre utile (p95 208)
+    69.834  masque oculaire : 98 % du cadre utile (p95 208)
+    69.960  masque oculaire : 98 % du cadre utile (p95 208)
+    70.088  masque oculaire : 98 % du cadre utile (p95 208)
+    70.228  masque oculaire : 98 % du cadre utile (p95 208)
+    70.358  masque oculaire : 98 % du cadre utile (p95 208)
+    70.506  masque oculaire : 98 % du cadre utile (p95 208)
+    70.630  masque oculaire : 98 % du cadre utile (p95 208)
+    70.758  masque oculaire : 98 % du cadre utile (p95 208)
+    70.889  masque oculaire : 98 % du cadre utile (p95 208)
+    71.024  masque oculaire : 98 % du cadre utile (p95 208)
+    71.158  masque oculaire : 98 % du cadre utile (p95 208)
+    71.303  masque oculaire : 98 % du cadre utile (p95 208)
+    71.427  masque oculaire : 98 % du cadre utile (p95 208)
+    71.571  masque oculaire : 98 % du cadre utile (p95 208)
+    71.699  masque oculaire : 98 % du cadre utile (p95 208)
+    71.838  masque oculaire : 98 % du cadre utile (p95 208)
+    71.960  masque oculaire : 98 % du cadre utile (p95 208)
+    72.090  masque oculaire : 98 % du cadre utile (p95 208)
+    72.236  masque oculaire : 98 % du cadre utile (p95 208)
+    72.364  masque oculaire : 98 % du cadre utile (p95 208)
+    72.497  masque oculaire : 98 % du cadre utile (p95 208)
+    72.630  masque oculaire : 98 % du cadre utile (p95 208)
+    72.766  masque oculaire : 98 % du cadre utile (p95 208)
+    72.899  masque oculaire : 98 % du cadre utile (p95 208)
+    73.034  masque oculaire : 98 % du cadre utile (p95 208)
+    73.163  masque oculaire : 98 % du cadre utile (p95 208)
+    73.297  masque oculaire : 98 % du cadre utile (p95 208)
+    73.436  masque oculaire : 98 % du cadre utile (p95 208)
+    73.566  masque oculaire : 98 % du cadre utile (p95 208)
+    73.699  masque oculaire : 98 % du cadre utile (p95 208)
+    73.840  masque oculaire : 98 % du cadre utile (p95 208)
+    73.964  masque oculaire : 98 % du cadre utile (p95 208)
+    74.092  masque oculaire : 98 % du cadre utile (p95 208)
+    74.228  masque oculaire : 98 % du cadre utile (p95 208)
+    74.357  masque oculaire : 98 % du cadre utile (p95 208)
+    74.496  masque oculaire : 98 % du cadre utile (p95 208)
+    74.626  masque oculaire : 98 % du cadre utile (p95 208)
+    74.761  masque oculaire : 98 % du cadre utile (p95 208)
+    74.903  masque oculaire : 98 % du cadre utile (p95 208)
+    75.036  masque oculaire : 98 % du cadre utile (p95 208)
+    75.162  masque oculaire : 98 % du cadre utile (p95 208)
+    75.299  masque oculaire : 98 % du cadre utile (p95 208)
+    75.430  masque oculaire : 98 % du cadre utile (p95 208)
+    75.566  masque oculaire : 98 % du cadre utile (p95 208)
+    75.697  masque oculaire : 98 % du cadre utile (p95 208)
+    75.836  masque oculaire : 98 % du cadre utile (p95 208)
+    75.958  masque oculaire : 98 % du cadre utile (p95 208)
+    76.088  masque oculaire : 98 % du cadre utile (p95 208)
+    76.231  masque oculaire : 98 % du cadre utile (p95 208)
+    76.364  masque oculaire : 98 % du cadre utile (p95 208)
+    76.492  masque oculaire : 98 % du cadre utile (p95 208)
+    76.637  masque oculaire : 98 % du cadre utile (p95 208)
+    76.759  masque oculaire : 98 % du cadre utile (p95 208)
+    76.899  masque oculaire : 98 % du cadre utile (p95 208)
+    77.033  masque oculaire : 98 % du cadre utile (p95 208)
+    77.165  masque oculaire : 98 % du cadre utile (p95 208)
+    77.298  masque oculaire : 98 % du cadre utile (p95 208)
+    77.434  masque oculaire : 98 % du cadre utile (p95 208)
+    77.565  masque oculaire : 98 % du cadre utile (p95 208)
+    77.695  masque oculaire : 98 % du cadre utile (p95 208)
+    77.834  masque oculaire : 98 % du cadre utile (p95 208)
+    77.967  masque oculaire : 98 % du cadre utile (p95 208)
+    78.099  masque oculaire : 98 % du cadre utile (p95 208)
+    78.233  masque oculaire : 98 % du cadre utile (p95 208)
+    78.367  masque oculaire : 98 % du cadre utile (p95 208)
+    78.498  masque oculaire : 98 % du cadre utile (p95 208)
+    78.633  masque oculaire : 98 % du cadre utile (p95 208)
+    78.764  masque oculaire : 98 % du cadre utile (p95 208)
+    78.897  masque oculaire : 98 % du cadre utile (p95 208)
+    79.031  masque oculaire : 98 % du cadre utile (p95 208)
+    79.166  masque oculaire : 98 % du cadre utile (p95 208)
+    79.301  masque oculaire : 98 % du cadre utile (p95 208)
+    79.433  masque oculaire : 98 % du cadre utile (p95 208)
+    79.564  masque oculaire : 98 % du cadre utile (p95 208)
+    79.697  masque oculaire : 98 % du cadre utile (p95 208)
+    79.832  masque oculaire : 98 % du cadre utile (p95 208)
+    79.965  masque oculaire : 98 % du cadre utile (p95 208)
+    80.094  masque oculaire : 98 % du cadre utile (p95 208)
+    80.232  masque oculaire : 98 % du cadre utile (p95 208)
+    80.363  masque oculaire : 98 % du cadre utile (p95 208)
+    80.497  masque oculaire : 98 % du cadre utile (p95 208)
+    80.629  masque oculaire : 98 % du cadre utile (p95 208)
+    80.774  masque oculaire : 98 % du cadre utile (p95 208)
+    80.898  masque oculaire : 98 % du cadre utile (p95 208)
+    81.024  masque oculaire : 98 % du cadre utile (p95 208)
+    81.159  masque oculaire : 98 % du cadre utile (p95 208)
+    81.303  masque oculaire : 99 % du cadre utile (p95 208)
+    81.429  masque oculaire : 99 % du cadre utile (p95 208)
+    81.566  masque oculaire : 99 % du cadre utile (p95 208)
+    81.695  masque oculaire : 99 % du cadre utile (p95 208)
+    81.833  masque oculaire : 99 % du cadre utile (p95 208)
+    81.960  masque oculaire : 99 % du cadre utile (p95 207)
+    82.093  masque oculaire : 100 % du cadre utile (p95 207)
+    82.225  masque oculaire : 100 % du cadre utile (p95 207)
+    82.366  masque oculaire : 100 % du cadre utile (p95 207)
+    82.491  masque oculaire : 100 % du cadre utile (p95 207)
+    82.625  masque oculaire : 100 % du cadre utile (p95 207)
+    82.770  masque oculaire : 100 % du cadre utile (p95 207)
+    82.904  masque oculaire : 100 % du cadre utile (p95 208)
+    83.024  masque oculaire : 100 % du cadre utile (p95 207)
+    83.158  masque oculaire : 100 % du cadre utile (p95 207)
+    83.292  masque oculaire : 100 % du cadre utile (p95 207)
+    83.427  masque oculaire : 100 % du cadre utile (p95 207)
+    83.564  masque oculaire : 100 % du cadre utile (p95 207)
+    83.698  masque oculaire : 100 % du cadre utile (p95 207)
+    83.827  masque oculaire : 100 % du cadre utile (p95 207)
+    83.960  masque oculaire : 100 % du cadre utile (p95 207)
+    84.091  masque oculaire : 100 % du cadre utile (p95 207)
+    84.232  masque oculaire : 100 % du cadre utile (p95 207)
+    84.359  masque oculaire : 100 % du cadre utile (p95 207)
+    84.498  masque oculaire : 100 % du cadre utile (p95 207)
+    84.633  masque oculaire : 100 % du cadre utile (p95 207)
+    84.767  masque oculaire : 100 % du cadre utile (p95 207)
+    84.894  masque oculaire : 100 % du cadre utile (p95 207)
+    85.028  masque oculaire : 100 % du cadre utile (p95 207)
+    85.158  masque oculaire : 100 % du cadre utile (p95 207)
+    85.292  masque oculaire : 100 % du cadre utile (p95 207)
+    85.425  masque oculaire : 100 % du cadre utile (p95 207)
+    85.558  masque oculaire : 100 % du cadre utile (p95 207)
+    85.696  masque oculaire : 100 % du cadre utile (p95 207)
+    85.828  masque oculaire : 100 % du cadre utile (p95 207)
+    85.962  masque oculaire : 100 % du cadre utile (p95 207)
+    86.095  masque oculaire : 100 % du cadre utile (p95 207)
+    86.226  masque oculaire : 100 % du cadre utile (p95 207)
+    86.360  masque oculaire : 100 % du cadre utile (p95 207)
+    86.493  masque oculaire : 100 % du cadre utile (p95 207)
+    86.671  masque oculaire : 100 % du cadre utile (p95 207)
+    86.818  masque oculaire : 100 % du cadre utile (p95 207)
+    86.952  masque oculaire : 100 % du cadre utile (p95 207)
+    87.087  masque oculaire : 100 % du cadre utile (p95 207)
+    87.212  masque oculaire : 100 % du cadre utile (p95 207)
+    87.345  masque oculaire : 100 % du cadre utile (p95 207)
+    87.486  masque oculaire : 100 % du cadre utile (p95 207)
+    87.620  masque oculaire : 100 % du cadre utile (p95 207)
+    87.753  masque oculaire : 100 % du cadre utile (p95 207)
+    87.877  masque oculaire : 100 % du cadre utile (p95 207)
+    88.021  masque oculaire : 100 % du cadre utile (p95 207)
+    88.152  masque oculaire : 100 % du cadre utile (p95 207)
+    88.284  masque oculaire : 100 % du cadre utile (p95 207)
+    88.411  masque oculaire : 100 % du cadre utile (p95 207)
+    88.543  masque oculaire : 100 % du cadre utile (p95 207)
+    88.678  masque oculaire : 100 % du cadre utile (p95 207)
+    88.811  masque oculaire : 100 % du cadre utile (p95 207)
+    88.943  masque oculaire : 100 % du cadre utile (p95 207)
+    89.079  masque oculaire : 100 % du cadre utile (p95 207)
+    89.121  départ au x40 : profondeur oui
+    89.123  === série lame_20261023_201205_test-v66 (video) « test v66 », bleu, objectif x40 : caméra logique 0, module physique 6, analyse 640x360, vidéo 1280x720
+    89.157  vidéo : enregistrement démarré
+    89.160  masque oculaire : 100 % du cadre utile (p95 207)
+    89.349  t0000227 suivi ok score 1.00 pos 0,0 net 81 (16 ms) carte 0 photos + 3 positions
+    89.505  t0000384 suivi ok score 1.00 pos 0,0 net 78 (12 ms) carte 0 photos + 6 positions
+    89.667  t0000545 suivi ok score 1.00 pos 0,0 net 76 (11 ms) carte 0 photos + 10 positions
+    89.835  t0000714 suivi ok score 1.00 pos 0,0 net 78 (11 ms) carte 0 photos + 13 positions
+    89.998  t0000876 suivi ok score 1.00 pos 0,0 net 76 (11 ms) carte 0 photos + 16 positions
+    90.165  t0001043 suivi ok score 1.00 pos 0,0 net 77 (11 ms) carte 0 photos + 20 positions
+    90.332  t0001210 suivi ok score 1.00 pos 0,0 net 76 (11 ms) carte 0 photos + 23 positions
+    90.523  t0001401 suivi ok score 1.00 pos 0,0 net 77 (19 ms) carte 0 photos + 26 positions
+    90.695  t0001572 suivi ok score 1.00 pos 0,0 net 74 (17 ms) carte 0 photos + 30 positions
+    90.859  t0001737 suivi ok score 1.00 pos 0,0 net 73 (13 ms) carte 0 photos + 33 positions
+    91.016  t0001895 suivi ok score 1.00 pos 0,0 net 73 (11 ms) carte 0 photos + 36 positions
+    91.181  t0002059 suivi ok score 1.00 pos -3,0 net 59 (11 ms) carte 0 photos + 40 positions
+    91.349  t0002228 suivi ok score 1.00 pos -3,0 net 49 (11 ms) carte 0 photos + 43 positions
+    91.523  t0002401 suivi ok score 1.00 pos -6,0 net 39 (11 ms) carte 0 photos + 46 positions
+    91.695  t0002573 suivi ok score 1.00 pos -6,0 net 31 (11 ms) carte 0 photos + 50 positions
+    91.857  t0002733 suivi ok score 1.00 pos -8,0 net 25 (11 ms) carte 0 photos + 53 positions
+    92.046  t0002924 suivi ok score 1.00 pos -8,0 net 25 (11 ms) carte 0 photos + 56 positions
+    92.204  t0003082 suivi ok score 1.00 pos -8,0 net 26 (11 ms) carte 0 photos + 60 positions
+    92.370  t0003249 suivi ok score 1.00 pos -8,0 net 25 (12 ms) carte 0 photos + 63 positions
+    92.544  t0003423 suivi ok score 1.00 pos -8,0 net 25 (11 ms) carte 0 photos + 66 positions
+    92.704  t0003583 suivi ok score 1.00 pos -8,0 net 25 (12 ms) carte 0 photos + 70 positions
+    92.869  t0003748 suivi ok score 1.00 pos -8,0 net 25 (11 ms) carte 0 photos + 73 positions
+    93.040  t0003918 suivi ok score 1.00 pos -8,0 net 26 (11 ms) carte 0 photos + 76 positions
+    93.204  t0004082 suivi ok score 1.00 pos -8,0 net 29 (11 ms) carte 0 photos + 80 positions
+    93.369  t0004247 suivi ok score 1.00 pos -8,0 net 31 (11 ms) carte 0 photos + 83 positions
+    93.545  t0004423 suivi ok score 1.00 pos -8,0 net 33 (17 ms) carte 0 photos + 86 positions
+    93.708  t0004586 suivi ok score 1.00 pos -8,0 net 33 (12 ms) carte 0 photos + 90 positions
+    93.871  t0004749 suivi ok score 1.00 pos -8,0 net 33 (11 ms) carte 0 photos + 93 positions
+    94.047  t0004925 suivi ok score 1.00 pos -8,0 net 34 (17 ms) carte 0 photos + 96 positions
+    94.201  t0005079 suivi ok score 1.00 pos -8,0 net 34 (10 ms) carte 0 photos + 100 positions
+    94.369  t0005247 suivi ok score 1.00 pos -8,0 net 36 (11 ms) carte 0 photos + 103 positions
+    94.536  t0005415 suivi ok score 1.00 pos -8,0 net 33 (11 ms) carte 0 photos + 106 positions
+    94.716  t0005594 suivi ok score 1.00 pos -8,0 net 36 (12 ms) carte 0 photos + 110 positions
+    94.870  t0005749 suivi ok score 1.00 pos -8,0 net 36 (11 ms) carte 0 photos + 113 positions
+    95.044  t0005923 suivi ok score 1.00 pos -8,0 net 36 (17 ms) carte 0 photos + 116 positions
+    95.202  t0006081 suivi ok score 1.00 pos -8,0 net 36 (11 ms) carte 0 photos + 120 positions
+    95.369  t0006248 suivi ok score 1.00 pos -8,0 net 34 (11 ms) carte 0 photos + 123 positions
+    95.541  t0006420 suivi ok score 1.00 pos -8,0 net 35 (12 ms) carte 0 photos + 126 positions
+    95.706  t0006585 suivi ok score 1.00 pos -8,0 net 34 (13 ms) carte 0 photos + 130 positions
+    95.873  t0006751 suivi ok score 1.00 pos -8,0 net 33 (10 ms) carte 0 photos + 133 positions
+    96.037  t0006916 suivi ok score 1.00 pos -8,0 net 34 (12 ms) carte 0 photos + 136 positions
+    96.204  t0007083 suivi ok score 1.00 pos -8,0 net 33 (11 ms) carte 0 photos + 140 positions
+    96.368  t0007247 suivi ok score 1.00 pos -8,0 net 31 (11 ms) carte 0 photos + 143 positions
+    96.548  t0007427 suivi ok score 1.00 pos -8,0 net 30 (17 ms) carte 0 photos + 146 positions
+    96.707  t0007585 suivi ok score 1.00 pos -8,0 net 30 (11 ms) carte 0 photos + 150 positions
+    96.872  t0007750 suivi ok score 1.00 pos -10,0 net 30 (11 ms) carte 0 photos + 153 positions
+    97.042  t0007920 suivi ok score 1.00 pos -8,0 net 30 (11 ms) carte 0 photos + 156 positions
+    97.210  t0008088 suivi ok score 1.00 pos -8,0 net 29 (13 ms) carte 0 photos + 160 positions
+    97.376  t0008255 suivi ok score 1.00 pos -10,0 net 29 (11 ms) carte 0 photos + 163 positions
+    97.538  t0008416 suivi ok score 1.00 pos -9,0 net 28 (11 ms) carte 0 photos + 166 positions
+    97.749  t0008627 suivi ok score 1.00 pos -9,0 net 28 (16 ms) carte 0 photos + 170 positions
+    97.903  t0008781 suivi ok score 1.00 pos -11,0 net 30 (11 ms) carte 0 photos + 173 positions
+    98.073  t0008952 suivi ok score 1.00 pos -11,0 net 31 (12 ms) carte 0 photos + 176 positions
+    98.237  t0009115 suivi ok score 1.00 pos -11,0 net 30 (11 ms) carte 0 photos + 180 positions
+    98.432  t0009311 suivi ok score 1.00 pos -11,0 net 31 (12 ms) carte 0 photos + 183 positions
+    98.595  t0009473 suivi ok score 1.00 pos -11,-5 net 32 (16 ms) carte 0 photos + 186 positions
+    98.769  t0009647 suivi ok score 1.00 pos -11,-4 net 31 (18 ms) carte 0 photos + 190 positions
+    98.938  t0009816 suivi ok score 1.00 pos -11,-5 net 28 (15 ms) carte 0 photos + 193 positions
+    99.096  t0009975 suivi ok score 1.00 pos -11,-5 net 26 (15 ms) carte 0 photos + 196 positions
+    99.259  t0010137 suivi ok score 1.00 pos -14,-5 net 26 (11 ms) carte 0 photos + 200 positions
+    99.429  t0010308 suivi ok score 1.00 pos -14,-5 net 23 (11 ms) carte 0 photos + 203 positions
+    99.590  t0010469 suivi ok score 1.00 pos -14,-5 net 24 (11 ms) carte 0 photos + 206 positions
+    99.753  t0010631 suivi ok score 1.00 pos -14,-5 net 24 (11 ms) carte 0 photos + 210 positions
+    99.943  t0010821 suivi ok score 1.00 pos -12,-5 net 23 (22 ms) carte 0 photos + 213 positions
+   100.101  t0010979 suivi ok score 1.00 pos -14,-5 net 23 (17 ms) carte 0 photos + 216 positions
+   100.261  t0011139 suivi ok score 1.00 pos -14,-5 net 24 (12 ms) carte 0 photos + 220 positions
+   100.420  t0011299 suivi ok score 1.00 pos -12,-5 net 24 (11 ms) carte 0 photos + 223 positions
+   100.583  t0011462 suivi ok score 1.00 pos -14,-5 net 23 (11 ms) carte 0 photos + 226 positions
+   100.761  t0011640 suivi ok score 1.00 pos -14,-5 net 25 (13 ms) carte 0 photos + 230 positions
+   100.929  t0011808 suivi ok score 1.00 pos -14,-5 net 26 (11 ms) carte 0 photos + 233 positions
+   101.094  t0011973 suivi ok score 1.00 pos -14,-5 net 27 (11 ms) carte 0 photos + 236 positions
+   101.259  t0012137 suivi ok score 1.00 pos -14,-5 net 28 (11 ms) carte 0 photos + 240 positions
+   101.430  t0012309 suivi ok score 1.00 pos -14,-5 net 30 (16 ms) carte 0 photos + 243 positions
+   101.589  t0012468 suivi ok score 1.00 pos -14,-5 net 31 (11 ms) carte 0 photos + 246 positions
+   101.774  t0012652 suivi ok score 1.00 pos -14,-5 net 35 (11 ms) carte 0 photos + 250 positions
+   101.928  t0012807 suivi ok score 1.00 pos -14,-5 net 47 (11 ms) carte 0 photos + 253 positions
+   102.089  t0012967 suivi ok score 1.00 pos -14,-5 net 48 (11 ms) carte 0 photos + 256 positions
+   102.264  t0013143 suivi ok score 1.00 pos -14,-5 net 45 (17 ms) carte 0 photos + 260 positions
+   102.425  t0013303 suivi ok score 1.00 pos -14,-5 net 40 (11 ms) carte 0 photos + 263 positions
+   102.589  t0013468 suivi ok score 1.00 pos -14,-5 net 28 (11 ms) carte 0 photos + 266 positions
+   102.758  t0013637 suivi ok score 1.00 pos -14,-5 net 23 (11 ms) carte 0 photos + 270 positions
+   102.923  t0013802 suivi ok score 1.00 pos -14,-5 net 22 (11 ms) carte 0 photos + 273 positions
+   103.084  t0013963 suivi ok score 1.00 pos -14,-5 net 23 (12 ms) carte 0 photos + 276 positions
+   103.257  t0014135 suivi ok score 1.00 pos -14,-5 net 25 (11 ms) carte 0 photos + 280 positions
+   103.423  t0014302 suivi ok score 1.00 pos -14,-5 net 24 (11 ms) carte 0 photos + 283 positions
+   103.590  t0014469 suivi ok score 1.00 pos -14,-5 net 23 (11 ms) carte 0 photos + 286 positions
+   103.757  t0014636 suivi ok score 1.00 pos -14,-5 net 23 (11 ms) carte 0 photos + 290 positions
+   103.926  t0014804 suivi ok score 1.00 pos -14,-5 net 23 (10 ms) carte 0 photos + 293 positions
+   104.089  t0014968 suivi ok score 1.00 pos -14,-5 net 24 (11 ms) carte 0 photos + 296 positions
+   104.258  t0015136 suivi ok score 1.00 pos -14,-5 net 25 (11 ms) carte 0 photos + 300 positions
+   104.430  t0015309 suivi ok score 1.00 pos -17,-10 net 26 (12 ms) carte 0 photos + 300 positions
+   104.585  t0015464 suivi ok score 1.00 pos -17,-10 net 27 (11 ms) carte 0 photos + 300 positions
+   104.774  t0015653 suivi ok score 1.00 pos -17,-10 net 28 (18 ms) carte 0 photos + 300 positions
+   104.943  t0015822 suivi ok score 1.00 pos -17,-10 net 29 (11 ms) carte 0 photos + 300 positions
+   105.110  t0015989 suivi ok score 1.00 pos -17,-10 net 29 (12 ms) carte 0 photos + 300 positions
+   105.283  t0016162 suivi ok score 1.00 pos -17,-10 net 30 (17 ms) carte 0 photos + 300 positions
+   105.444  t0016323 suivi ok score 1.00 pos -17,-10 net 30 (12 ms) carte 0 photos + 300 positions
+   105.605  t0016484 suivi ok score 1.00 pos -17,-10 net 31 (12 ms) carte 0 photos + 300 positions
+   105.772  t0016651 suivi ok score 1.00 pos -17,-10 net 33 (11 ms) carte 0 photos + 300 positions
+   105.936  t0016815 suivi ok score 1.00 pos -18,-10 net 33 (11 ms) carte 0 photos + 300 positions
+   106.108  t0016987 suivi ok score 1.00 pos -19,-10 net 33 (12 ms) carte 0 photos + 300 positions
+   106.280  t0017158 suivi ok score 1.00 pos -19,-10 net 34 (14 ms) carte 0 photos + 300 positions
+   106.437  t0017315 suivi ok score 1.00 pos -20,-10 net 34 (11 ms) carte 0 photos + 300 positions
+   106.608  t0017487 suivi ok score 1.00 pos -20,-10 net 35 (12 ms) carte 0 photos + 300 positions
+   106.771  t0017650 suivi ok score 1.00 pos -20,-10 net 36 (11 ms) carte 0 photos + 300 positions
+   106.943  t0017821 suivi ok score 1.00 pos -20,-10 net 37 (15 ms) carte 0 photos + 300 positions
+   107.117  t0017995 suivi ok score 1.00 pos -20,-10 net 37 (10 ms) carte 0 photos + 300 positions
+   107.278  t0018156 suivi ok score 1.00 pos -20,-10 net 39 (11 ms) carte 0 photos + 300 positions
+   107.435  t0018314 suivi ok score 1.00 pos -20,-10 net 38 (11 ms) carte 0 photos + 300 positions
+   107.609  t0018487 suivi ok score 1.00 pos -20,-10 net 38 (12 ms) carte 0 photos + 300 positions
+   107.778  t0018656 suivi ok score 1.00 pos -20,-10 net 40 (17 ms) carte 0 photos + 300 positions
+   107.937  t0018815 suivi ok score 1.00 pos -20,-10 net 41 (11 ms) carte 0 photos + 300 positions
+   108.106  t0018984 suivi ok score 1.00 pos -20,-10 net 41 (11 ms) carte 0 photos + 300 positions
+   108.285  t0019163 suivi ok score 1.00 pos -20,-10 net 42 (13 ms) carte 0 photos + 300 positions
+   108.448  t0019326 suivi ok score 1.00 pos -20,-10 net 42 (18 ms) carte 0 photos + 300 positions
+   108.608  t0019486 suivi ok score 1.00 pos -20,-10 net 43 (11 ms) carte 0 photos + 300 positions
+   108.783  t0019662 suivi ok score 1.00 pos -20,-10 net 43 (11 ms) carte 0 photos + 300 positions
+   108.936  t0019814 suivi ok score 1.00 pos -20,-10 net 45 (11 ms) carte 0 photos + 300 positions
+   109.104  t0019983 suivi ok score 1.00 pos -20,-10 net 43 (11 ms) carte 0 photos + 300 positions
+   109.272  t0020151 suivi ok score 1.00 pos -20,-10 net 44 (12 ms) carte 0 photos + 300 positions
+   109.437  t0020316 suivi ok score 1.00 pos -20,-10 net 44 (12 ms) carte 0 photos + 300 positions
+   109.604  t0020483 suivi ok score 1.00 pos -20,-10 net 46 (12 ms) carte 0 photos + 300 positions
+   109.795  t0020670 suivi ok score 1.00 pos -20,-10 net 47 (16 ms) carte 0 photos + 300 positions
+   109.975  t0020854 suivi ok score 1.00 pos -20,-10 net 47 (20 ms) carte 0 photos + 300 positions
+   110.145  t0021024 suivi ok score 1.00 pos -20,-10 net 49 (11 ms) carte 0 photos + 300 positions
+   110.305  t0021184 suivi ok score 1.00 pos -20,-10 net 50 (12 ms) carte 0 photos + 300 positions
+   110.471  t0021350 suivi ok score 1.00 pos -20,-10 net 53 (11 ms) carte 0 photos + 300 positions
+   110.640  t0021518 suivi ok score 1.00 pos -22,-10 net 55 (11 ms) carte 0 photos + 300 positions
+   110.806  t0021685 suivi ok score 1.00 pos -22,-10 net 55 (11 ms) carte 0 photos + 300 positions
+   110.976  t0021854 suivi ok score 1.00 pos -22,-10 net 56 (11 ms) carte 0 photos + 300 positions
+   111.138  t0022016 suivi ok score 1.00 pos -22,-10 net 57 (11 ms) carte 0 photos + 300 positions
+   111.315  t0022194 suivi ok score 1.00 pos -23,-10 net 57 (11 ms) carte 0 photos + 300 positions
+   111.471  t0022350 suivi ok score 1.00 pos -25,-15 net 61 (11 ms) carte 0 photos + 300 positions
+   111.640  t0022519 suivi ok score 1.00 pos -25,-15 net 62 (12 ms) carte 0 photos + 300 positions
+   111.801  t0022680 suivi ok score 1.00 pos -25,-15 net 63 (11 ms) carte 0 photos + 300 positions
+   111.981  t0022859 suivi ok score 1.00 pos -25,-15 net 65 (13 ms) carte 0 photos + 300 positions
+   112.142  t0023020 suivi ok score 1.00 pos -25,-15 net 66 (11 ms) carte 0 photos + 300 positions
+   112.303  t0023182 suivi ok score 1.00 pos -25,-15 net 68 (11 ms) carte 0 photos + 300 positions
+   112.474  t0023353 suivi ok score 1.00 pos -25,-15 net 71 (11 ms) carte 0 photos + 300 positions
+   112.637  t0023515 suivi ok score 1.00 pos -28,-15 net 72 (11 ms) carte 0 photos + 300 positions
+   112.820  t0023698 suivi ok score 1.00 pos -27,-15 net 73 (11 ms) carte 0 photos + 300 positions
+   112.975  t0023853 suivi ok score 1.00 pos -26,-15 net 76 (11 ms) carte 0 photos + 300 positions
+   113.151  t0024029 suivi ok score 1.00 pos -28,-15 net 75 (17 ms) carte 0 photos + 300 positions
+   113.309  t0024187 suivi ok score 1.00 pos -27,-15 net 77 (11 ms) carte 0 photos + 300 positions
+   113.490  t0024368 suivi ok score 1.00 pos -28,-20 net 77 (11 ms) carte 0 photos + 300 positions
+   113.597  vidéo : fin (293 Mo, erreur 0)
+   113.598  masque oculaire : 100 % du cadre utile (p95 207)
