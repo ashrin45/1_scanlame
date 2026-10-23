@@ -68,6 +68,7 @@ class Settings(ctx: Context) {
     fun setBurstFor(obj: String, v: Boolean) = p.edit().putBoolean("burst.$obj", v).apply()
     var autoCrop: Boolean get() = p.getBoolean("autocrop", true); set(v) = p.edit().putBoolean("autocrop", v).apply()   // rognage au plus grand rectangle couvert a la publication
     var hint: String get() = str("hint", ""); set(v) = set("hint", v)           // "fx,fy" : repère touché sur la lame d'ensemble (fraction de l'image), vidé au départ de la série
+    var askVernier: Boolean get() = p.getBoolean("askvernier", true); set(v) = p.edit().putBoolean("askvernier", v).apply()   // fenêtre de relevé du vernier avant chaque série
     var stageX: String get() = str("stagex", ""); set(v) = set("stagex", v)     // coordonnées de la platine (vernier, mm) à la première photo
     var stageY: String get() = str("stagey", ""); set(v) = set("stagey", v)
     fun umPerPx(obj: String): Float = p.getFloat("umpx.$obj", 0f)

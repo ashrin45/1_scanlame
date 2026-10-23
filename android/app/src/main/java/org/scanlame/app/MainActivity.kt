@@ -69,6 +69,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.graphics.nativeCanvas
+import androidx.compose.ui.graphics.toArgb
+import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.foundation.gestures.transformable
 import androidx.compose.foundation.layout.FlowRow
@@ -193,6 +196,7 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
     var preview by remember { mutableStateOf<PreviewView?>(null) }
     var sheet by remember { mutableStateOf(false) }
     var startDlg by remember { mutableStateOf(false) }
+    var vernierDlg by remember { mutableStateOf(false) }   // relevé de la platine avant le départ
     var msg by remember { mutableStateOf("Touche le bouton violet pour démarrer la caméra.") }
     var msgErr by remember { mutableStateOf(false) }
     var showObjPick by remember { mutableStateOf(false) }
@@ -449,9 +453,38 @@ fun App(engine: CameraEngine, st: Settings, session: Session) {
                     Text("Lancer la série", Modifier.weight(1f).heightIn(min = 52.dp).background(ACCENT, RoundedCornerShape(6.dp)).clickable {
                         title = t; sample = smp; st.objective = obj; startDlg = false
                         if (st.serverUrl.isEmpty()) say("Serveur non réglé : la prise restera sur le téléphone (file d'attente).", true)
-                        session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
+                        if (st.askVernier) vernierDlg = true
+                        else session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
                     }.padding(vertical = 15.dp), color = BG, fontSize = 16.sp, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
                 }
+            }
+        }
+    }
+    if (vernierDlg) {
+        val vState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+        ModalBottomSheet(onDismissRequest = { vernierDlg = false }, sheetState = vState, containerColor = PANEL, shape = RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp),
+            dragHandle = { Box(Modifier.padding(top = 12.dp).size(40.dp, 4.dp).background(LINE, RoundedCornerShape(999.dp))) }) {
+            val vx = remember { mutableStateOf(st.stageX.replace(',', '.').toFloatOrNull() ?: 30f) }
+            val vy = remember { mutableStateOf(st.stageY.replace(',', '.').toFloatOrNull() ?: 110f) }
+            val go = { withStage: Boolean ->
+                if (withStage) { st.stageX = String.format(Locale.FRANCE, "%.1f", vx.value); st.stageY = String.format(Locale.FRANCE, "%.1f", vy.value) }
+                else { st.stageX = ""; st.stageY = "" }
+                vernierDlg = false
+                session.start(title, sample, comment, parent.ifEmpty { null }, complete.ifEmpty { null })
+            }
+            Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).navigationBarsPadding().padding(start = 20.dp, end = 20.dp, top = 12.dp, bottom = 20.dp),
+                verticalArrangement = Arrangement.spacedBy(14.dp)) {
+                Text("Relevé de la platine", fontSize = 27.sp, lineHeight = 34.sp, fontFamily = Display, color = FG)
+                Text("Avant de démarrer, cale toujours la lame pareil : en butée dans l'angle du valet, étiquette à droite, le bras à ressort la plaque à gauche.", fontSize = 13.sp, color = MUTED)
+                StageDiagram(Modifier.fillMaxWidth().height(96.dp))
+                Text("Lecture : le point du curseur donne les millimètres sur la règle ; la graduation fine qui tombe exactement en face d'un trait de la règle donne les dixièmes (surlignée en doré ci-dessous). Fais glisser chaque règle pour reproduire ce que tu lis, ou ajuste avec les boutons.", fontSize = 13.sp, color = MUTED)
+                VernierStrip("X", vx, 0f, 80f, reversed = true, vertical = false)
+                VernierStrip("Y", vy, 85f, 145f, reversed = false, vertical = true)
+                Row(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Text("Sans relevé", Modifier.heightIn(min = 52.dp).border(1.dp, LINE, RoundedCornerShape(6.dp)).clickable { go(false) }.padding(horizontal = 16.dp, vertical = 15.dp), color = MUTED, fontSize = 15.sp, fontWeight = FontWeight.Medium)
+                    Text("Enregistrer et lancer", Modifier.weight(1f).heightIn(min = 52.dp).background(ACCENT, RoundedCornerShape(6.dp)).clickable { go(true) }.padding(vertical = 15.dp), color = BG, fontSize = 16.sp, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
+                }
+                Text("Ne plus demander (réactivable dans les réglages)", Modifier.clickable { st.askVernier = false; go(false) }.padding(4.dp), color = MUTED, fontSize = 12.sp)
             }
         }
     }
@@ -541,6 +574,96 @@ fun loadLames(gallery: String): List<LameRef> = try {
 } catch (e: Exception) { Journal.log("galerie injoignable : ${e.message}"); emptyList() }
 
 /** Titre de section des réglages (eyebrow Paillasse : capitales espacées, filet au-dessus). */
+/** Schéma : la lame en butée dans l'angle du valet de la platine (comme sur le microscope du laboratoire). */
+@Composable
+fun StageDiagram(modifier: Modifier) {
+    Canvas(modifier.background(Color(0xFF0A0D13), RoundedCornerShape(10.dp))) {
+        val w = size.width; val h = size.height
+        // platine
+        drawRoundRect(Color(0xFF161B26), Offset(w * 0.06f, h * 0.10f), Size(w * 0.88f, h * 0.80f), androidx.compose.ui.geometry.CornerRadius(8f, 8f))
+        // lame (3:1), poussee a droite contre le valet
+        val lw = w * 0.46f; val lh = lw / 3f; val lx = w * 0.40f; val ly = h * 0.5f - lh / 2
+        drawRoundRect(Color(0xFFE9EDF4), Offset(lx, ly), Size(lw, lh), androidx.compose.ui.geometry.CornerRadius(3f, 3f))
+        drawRect(Color(0xFFCBD2DE), Offset(lx + lw * 0.78f, ly), Size(lw * 0.22f, lh))   // etiquette a droite
+        drawCircle(Color(0xFFB07BD6), lh * 0.22f, Offset(lx + lw * 0.42f, ly + lh / 2))  // frottis
+        // valet : butee en L a droite de la lame (deux barres dorees)
+        val gold = Color(0xFFE3B95C); val t = 7f
+        drawRect(gold, Offset(lx + lw + 4f, ly - t - 4f), Size(w * 0.10f, t))                      // barre horizontale au-dessus du coin
+        drawRect(gold, Offset(lx + lw + 4f, ly - t - 4f), Size(t, lh + t + 8f))                    // barre verticale a droite
+        // bras a ressort a gauche (arc gris) qui pousse vers la droite
+        drawArc(Color(0xFF9AA4B5), 120f, 120f, false, Offset(lx - lh * 0.9f, ly - lh * 0.25f), Size(lh * 1.5f, lh * 1.5f), style = Stroke(6f))
+        // fleche de poussee
+        val ay = ly + lh / 2
+        drawLine(Color(0xFF7FD6A4), Offset(lx - 26f, ay), Offset(lx - 6f, ay), 5f)
+        drawLine(Color(0xFF7FD6A4), Offset(lx - 14f, ay - 8f), Offset(lx - 6f, ay), 5f)
+        drawLine(Color(0xFF7FD6A4), Offset(lx - 14f, ay + 8f), Offset(lx - 6f, ay), 5f)
+    }
+}
+
+/** Vernier interactif, dessiné comme ceux de la platine (règle gravée blanche sur noir, curseur à point et graduations fines).
+ *  Le point donne les millimètres, la graduation fine alignée avec un trait de la règle donne les dixièmes (surlignée).
+ *  On fait glisser la règle le long de son axe ; les boutons ajustent de 1 mm et 0,1 mm. */
+@Composable
+fun VernierStrip(label: String, state: androidx.compose.runtime.MutableState<Float>, min: Float, max: Float, reversed: Boolean, vertical: Boolean) {
+    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            Text("Platine $label", color = MUTED, fontSize = 13.sp, fontWeight = FontWeight.SemiBold)
+            Text(String.format(Locale.FRANCE, "%.1f mm", state.value), color = FG, fontFamily = Mono, fontSize = 18.sp, fontWeight = FontWeight.SemiBold)
+            Spacer(Modifier.weight(1f))
+            for ((d, lab) in listOf(-1f to "−1", -0.1f to "−0,1", 0.1f to "+0,1", 1f to "+1"))
+                Text(lab, Modifier.background(CAPSULE, RoundedCornerShape(6.dp)).border(1.dp, LINE, RoundedCornerShape(6.dp))
+                    .clickable { state.value = (((state.value + d) * 10).roundToInt() / 10f).coerceIn(min, max) }
+                    .padding(horizontal = 9.dp, vertical = 7.dp), color = FG, fontSize = 13.sp, fontFamily = Mono)
+        }
+        val fg = FG; val muted = MUTED; val accent = ACCENT; val gold = BIREF
+        Canvas(Modifier.fillMaxWidth().height(if (vertical) 190.dp else 86.dp).background(Color(0xFF0A0D13), RoundedCornerShape(10.dp))
+            .pointerInput(reversed, vertical) {
+                detectDragGestures { change, drag ->
+                    change.consume()
+                    val along = if (vertical) drag.y else drag.x
+                    val pxMm = (if (vertical) size.height else size.width) / (if (vertical) 34f else 30f)
+                    val sgn = if (reversed) 1f else -1f
+                    state.value = (state.value + sgn * along / pxMm).coerceIn(min, max)
+                }
+            }) {
+            val L = if (vertical) size.height else size.width
+            val pxMm = L / (if (vertical) 34f else 30f)
+            val c = L * 0.5f                                            // position du point du curseur
+            val baseAcross = (if (vertical) size.width else size.height) * 0.52f
+            val v = state.value
+            fun posOf(mm: Float): Float { val d = (mm - v) * pxMm; return c + (if (reversed) -d else d) }
+            fun pt(along: Float, across: Float) = if (vertical) Offset(across, along) else Offset(along, across)
+            val paint = android.graphics.Paint().apply { color = fg.toArgb(); textSize = 11.sp.toPx(); isAntiAlias = true
+                textAlign = if (vertical) android.graphics.Paint.Align.RIGHT else android.graphics.Paint.Align.CENTER
+                typeface = android.graphics.Typeface.MONOSPACE }
+            // regle principale : traits du cote oppose au curseur, chiffres toutes les 10
+            var m = kotlin.math.floor(v - (L / pxMm) / 2 - 1).toInt()
+            while (m <= v + (L / pxMm) / 2 + 1) {
+                if (m >= min - 0.01f && m <= max + 0.01f) {
+                    val a = posOf(m.toFloat())
+                    val tick = if (m % 10 == 0) 24f else if (m % 5 == 0) 17f else 10f
+                    drawLine(if (m % 5 == 0) fg else muted, pt(a, baseAcross), pt(a, baseAcross - tick.dp.toPx() * 0.45f), 2.2f)
+                    if (m % 10 == 0) {
+                        val lab = pt(a, baseAcross - 15.dp.toPx())
+                        drawContext.canvas.nativeCanvas.drawText("$m", lab.x + (if (vertical) -4f else 0f), lab.y + (if (vertical) 4.dp.toPx() else 0f), paint)
+                    }
+                }
+                m++
+            }
+            drawLine(muted, pt(0f, baseAcross), pt(L, baseAcross), 2f)
+            // curseur : point a la cote lue + 10 graduations fines (vernier : 10 divisions sur 9 mm), du cote oppose
+            drawCircle(accent, 5.dp.toPx() / 2, pt(c, baseAcross + 9.dp.toPx()))
+            val tenth = ((v * 10).roundToInt() % 10 + 10) % 10
+            for (k in 0..10) {
+                val a = posOf(v + 0.9f * k)
+                val isAligned = k == tenth
+                drawLine(if (isAligned) gold else fg, pt(a, baseAcross + 16.dp.toPx()), pt(a, baseAcross + (if (isAligned) 30f else 25f).dp.toPx()), if (isAligned) 3.5f else 2f)
+            }
+            drawLine(accent, pt(c, baseAcross), pt(c, baseAcross + 14.dp.toPx()), 3f)
+        }
+    }
+}
+
 /** Etiquette de champ (capitales espacees, gris), comme sur la page. */
 @Composable
 fun FieldLabel(t: String) = Text(t.uppercase(), fontSize = 12.sp, fontWeight = FontWeight.Bold, letterSpacing = 0.7.sp, color = MUTED)
