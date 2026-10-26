@@ -1,0 +1,82 @@
+     0.000  ScanLame 0.66 démarré sur samsung SM-S928B (Android 16)
+     1.593  qualités vidéo prises en charge par cette caméra : 4K, FHD, HD, SD
+     1.593  liaison : caméra logique 0, module physique 6, analyse 640x360, vidéo 1280x720
+     2.209  masque oculaire : 100 % du cadre utile (p95 213)
+     2.215  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+     2.494  masque oculaire : 97 % du cadre utile (p95 188)
+     2.765  masque oculaire : 90 % du cadre utile (p95 184)
+     3.032  masque oculaire : 73 % du cadre utile (p95 174)
+     3.296  masque oculaire : 98 % du cadre utile (p95 168)
+     3.570  masque oculaire : 83 % du cadre utile (p95 184)
+     3.832  masque oculaire : 74 % du cadre utile (p95 158)
+     4.094  masque oculaire : 100 % du cadre utile (p95 221)
+     4.368  masque oculaire : 39 % du cadre utile (p95 172)
+     4.629  masque oculaire : 67 % du cadre utile (p95 223)
+     4.907  masque oculaire : 96 % du cadre utile (p95 217)
+     5.170  masque oculaire : 97 % du cadre utile (p95 199)
+     5.446  masque oculaire : 93 % du cadre utile (p95 191)
+     5.708  masque oculaire : 96 % du cadre utile (p95 191)
+     5.981  masque oculaire : 98 % du cadre utile (p95 192)
+     6.247  masque oculaire : 98 % du cadre utile (p95 192)
+     6.517  masque oculaire : 99 % du cadre utile (p95 193)
+     6.777  masque oculaire : 99 % du cadre utile (p95 193)
+     7.040  masque oculaire : 99 % du cadre utile (p95 194)
+     7.311  masque oculaire : 68 % du cadre utile (p95 181)
+     7.581  masque oculaire : 90 % du cadre utile (p95 175)
+     7.846  masque oculaire : 69 % du cadre utile (p95 168)
+     8.118  masque oculaire : 86 % du cadre utile (p95 218)
+     8.383  masque oculaire : 62 % du cadre utile (p95 187)
+     8.645  masque oculaire : 76 % du cadre utile (p95 219)
+     8.920  masque oculaire : 88 % du cadre utile (p95 219)
+     9.180  masque oculaire : 82 % du cadre utile (p95 204)
+     9.446  masque oculaire : 79 % du cadre utile (p95 200)
+     9.718  masque oculaire : 80 % du cadre utile (p95 198)
+    10.032  masque oculaire : 82 % du cadre utile (p95 200)
+    10.311  masque oculaire : 84 % du cadre utile (p95 200)
+    10.577  masque oculaire : 84 % du cadre utile (p95 200)
+    10.850  masque oculaire : 84 % du cadre utile (p95 200)
+    11.107  masque oculaire : 82 % du cadre utile (p95 199)
+    11.365  masque oculaire : 77 % du cadre utile (p95 197)
+    11.634  masque oculaire : 78 % du cadre utile (p95 194)
+    11.904  masque oculaire : 80 % du cadre utile (p95 197)
+    12.174  masque oculaire : 78 % du cadre utile (p95 197)
+    12.448  masque oculaire : 76 % du cadre utile (p95 197)
+    12.718  masque oculaire : 73 % du cadre utile (p95 196)
+    12.980  masque oculaire : 73 % du cadre utile (p95 206)
+    13.273  masque oculaire : 77 % du cadre utile (p95 210)
+    13.512  masque oculaire : 78 % du cadre utile (p95 210)
+    13.807  masque oculaire : 75 % du cadre utile (p95 209)
+    14.085  masque oculaire : 74 % du cadre utile (p95 209)
+    14.356  masque oculaire : 75 % du cadre utile (p95 208)
+    14.622  masque oculaire : 75 % du cadre utile (p95 208)
+    14.874  masque oculaire : 73 % du cadre utile (p95 205)
+    15.148  masque oculaire : 75 % du cadre utile (p95 205)
+    15.425  masque oculaire : 71 % du cadre utile (p95 206)
+    15.707  masque oculaire : 71 % du cadre utile (p95 207)
+    15.989  masque oculaire : 82 % du cadre utile (p95 209)
+    16.234  masque oculaire : 99 % du cadre utile (p95 215)
+    16.513  masque oculaire : 99 % du cadre utile (p95 205)
+    16.785  masque oculaire : 98 % du cadre utile (p95 211)
+    16.817  départ au x40 : profondeur oui
+    16.819  === série lame_20261026_154827 (video) « sans nom », bleu, objectif x40 : caméra logique 0, module physique 6, analyse 640x360, vidéo 1280x720
+    16.857  masque oculaire : 98 % du cadre utile (p95 212)
+    16.872  vidéo : enregistrement démarré
+    17.181  t0000362 suivi ok score 0.99 pos -20,-70 net 33 (17 ms) carte 0 photos + 3 positions
+    17.495  t0000675 suivi ok score 0.99 pos -40,-170 net 28 (26 ms) carte 0 photos + 6 positions
+    17.829  t0001009 suivi ok score 0.99 pos -494,-57 net 60 (17 ms) carte 0 photos + 10 positions
+    18.154  t0001334 suivi ok score 0.99 pos -760,-31 net 63 (16 ms) carte 0 photos + 13 positions
+    18.511  t0001691 suivi ok score 0.98 pos -1029,-11 net 75 (33 ms) carte 0 photos + 16 positions
+    18.820  t0002000 suivi ok score 0.98 pos -1191,14 net 67 (16 ms) carte 0 photos + 20 positions
+    19.156  t0002336 suivi ok score 0.98 pos -1321,5 net 66 (19 ms) carte 0 photos + 23 positions
+    19.518  t0002698 suivi ok score 0.98 pos -1452,0 net 67 (36 ms) carte 0 photos + 26 positions
+    19.826  t0003005 suivi ok score 0.99 pos -1652,5 net 39 (23 ms) carte 0 photos + 30 positions
+    20.146  t0003327 suivi ok score 1.00 pos -2355,124 net 36 (12 ms) carte 0 photos + 33 positions
+    20.488  t0003669 suivi ok score 0.97 pos -2115,-253 net 49 (17 ms) carte 0 photos + 36 positions
+    20.822  t0004002 suivi ok score 0.92 pos -1268,-231 net 54 (19 ms) carte 0 photos + 40 positions
+    21.157  t0004337 suivi ok score 0.99 pos -916,-307 net 70 (21 ms) carte 0 photos + 43 positions
+    21.489  t0004670 suivi ok score 1.00 pos -780,-362 net 72 (18 ms) carte 0 photos + 46 positions
+    21.817  t0004998 suivi ok score 0.99 pos -680,-318 net 31 (15 ms) carte 0 photos + 50 positions
+    22.166  t0005347 suivi ok score 0.99 pos -579,92 net 29 (15 ms) carte 0 photos + 53 positions
+    22.499  t0005679 suivi ok score 0.99 pos -436,514 net 77 (26 ms) carte 0 photos + 56 positions
+    22.715  masque oculaire : 84 % du cadre utile (p95 194)
+    22.725  vidéo : fin (66 Mo, erreur 0)

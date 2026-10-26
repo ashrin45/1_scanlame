@@ -1,0 +1,14 @@
+[    0.0s] extraction video.mp4 à 4.0 img/s
+[    2.2s] segment 1/1 : objectif x40, 22 images entre 0 s et 6 s
+[    2.2s] 22 images candidates
+[    2.3s] profondeur désactivée : à chaque arrêt de platine, l'image la plus nette est gardée
+[    2.3s] netteté médiane 262.2, seuil 104.9
+[    2.4s] 13 images retenues (nettes, non redondantes)
+[    2.4s] flat-field : médiane temporelle de 13 images (vignettage et poussières fixes de l'oculaire)
+[    3.0s] aberration chromatique : échelle R 1.0000, B 1.0005
+[    3.0s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 31 %)
+[    3.5s] prétraitement terminé, 13 images, recalage à 675 x 1200
+[    4.3s] points SIFT : 1625 par image en moyenne
+[    4.3s] 70 paires à tester
+[    6.1s] 5 paires valides
+[    6.1s] 2 paire(s) SIFT rejetée(s) : les images ne se superposent pas à l'endroit trouvé (motif répétitif)
