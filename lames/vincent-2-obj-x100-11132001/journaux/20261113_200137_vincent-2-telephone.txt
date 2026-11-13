@@ -1,0 +1,1551 @@
+     0.001  ScanLame 0.66 démarré sur samsung SM-S928B (Android 16)
+     1.588  liaison : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+     2.028  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+     2.034  masque oculaire : 100 % du cadre utile (p95 255)
+     2.354  masque oculaire : 100 % du cadre utile (p95 255)
+     2.626  masque oculaire : 99 % du cadre utile (p95 185)
+     2.898  masque oculaire : 99 % du cadre utile (p95 184)
+     3.167  masque oculaire : 99 % du cadre utile (p95 190)
+     3.430  masque oculaire : 99 % du cadre utile (p95 190)
+     3.699  masque oculaire : 99 % du cadre utile (p95 190)
+     3.962  masque oculaire : 99 % du cadre utile (p95 190)
+     4.230  masque oculaire : 99 % du cadre utile (p95 190)
+     4.497  masque oculaire : 99 % du cadre utile (p95 190)
+     4.769  masque oculaire : 99 % du cadre utile (p95 190)
+     5.044  masque oculaire : 99 % du cadre utile (p95 190)
+     5.314  masque oculaire : 99 % du cadre utile (p95 190)
+     5.573  masque oculaire : 99 % du cadre utile (p95 190)
+     5.839  masque oculaire : 99 % du cadre utile (p95 189)
+     6.111  masque oculaire : 99 % du cadre utile (p95 190)
+     6.383  masque oculaire : 99 % du cadre utile (p95 190)
+     6.651  masque oculaire : 99 % du cadre utile (p95 189)
+     6.914  masque oculaire : 99 % du cadre utile (p95 190)
+     7.175  masque oculaire : 99 % du cadre utile (p95 190)
+     7.284  verrouillage (anti) : focus infini, pose 10.0 ms, ISO 37, WB figée
+     7.442  masque oculaire : 99 % du cadre utile (p95 190)
+     7.546  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+     7.718  masque oculaire : 99 % du cadre utile (p95 204)
+     7.964  masque oculaire : 99 % du cadre utile (p95 204)
+     8.246  masque oculaire : 99 % du cadre utile (p95 202)
+     8.520  masque oculaire : 99 % du cadre utile (p95 202)
+     8.783  masque oculaire : 99 % du cadre utile (p95 202)
+     9.050  masque oculaire : 99 % du cadre utile (p95 202)
+     9.318  masque oculaire : 99 % du cadre utile (p95 202)
+     9.576  masque oculaire : 99 % du cadre utile (p95 202)
+     9.848  masque oculaire : 99 % du cadre utile (p95 202)
+    10.111  masque oculaire : 99 % du cadre utile (p95 202)
+    10.373  masque oculaire : 99 % du cadre utile (p95 202)
+    10.644  masque oculaire : 99 % du cadre utile (p95 202)
+    10.916  masque oculaire : 99 % du cadre utile (p95 202)
+    11.181  masque oculaire : 99 % du cadre utile (p95 202)
+    11.450  masque oculaire : 99 % du cadre utile (p95 202)
+    11.718  masque oculaire : 99 % du cadre utile (p95 202)
+    11.982  masque oculaire : 99 % du cadre utile (p95 202)
+    12.246  masque oculaire : 99 % du cadre utile (p95 202)
+    12.516  masque oculaire : 99 % du cadre utile (p95 202)
+    12.779  masque oculaire : 99 % du cadre utile (p95 202)
+    13.048  masque oculaire : 99 % du cadre utile (p95 202)
+    13.321  masque oculaire : 99 % du cadre utile (p95 202)
+    13.579  masque oculaire : 99 % du cadre utile (p95 202)
+    13.850  masque oculaire : 99 % du cadre utile (p95 202)
+    14.108  masque oculaire : 99 % du cadre utile (p95 202)
+    14.380  masque oculaire : 99 % du cadre utile (p95 202)
+    14.650  masque oculaire : 99 % du cadre utile (p95 202)
+    14.919  masque oculaire : 99 % du cadre utile (p95 202)
+    15.184  masque oculaire : 99 % du cadre utile (p95 202)
+    15.445  masque oculaire : 99 % du cadre utile (p95 202)
+    15.718  masque oculaire : 99 % du cadre utile (p95 201)
+    15.987  masque oculaire : 99 % du cadre utile (p95 181)
+    16.251  masque oculaire : 99 % du cadre utile (p95 161)
+    16.518  masque oculaire : 99 % du cadre utile (p95 159)
+    16.785  masque oculaire : 99 % du cadre utile (p95 169)
+    17.047  masque oculaire : 99 % du cadre utile (p95 175)
+    17.312  masque oculaire : 99 % du cadre utile (p95 175)
+    17.576  masque oculaire : 99 % du cadre utile (p95 175)
+    17.850  masque oculaire : 99 % du cadre utile (p95 176)
+    18.118  masque oculaire : 99 % du cadre utile (p95 173)
+    18.379  masque oculaire : 99 % du cadre utile (p95 164)
+    18.652  masque oculaire : 99 % du cadre utile (p95 164)
+    18.682  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+    18.918  masque oculaire : 99 % du cadre utile (p95 191)
+    19.177  masque oculaire : 99 % du cadre utile (p95 191)
+    19.442  masque oculaire : 99 % du cadre utile (p95 185)
+    19.713  masque oculaire : 99 % du cadre utile (p95 182)
+    19.986  masque oculaire : 99 % du cadre utile (p95 188)
+    20.250  masque oculaire : 99 % du cadre utile (p95 192)
+    20.510  masque oculaire : 99 % du cadre utile (p95 191)
+    20.796  masque oculaire : 99 % du cadre utile (p95 189)
+    21.062  masque oculaire : 99 % du cadre utile (p95 189)
+    21.315  masque oculaire : 99 % du cadre utile (p95 188)
+    21.346  verrouillage (anti) : focus infini, pose 10.0 ms, ISO 86, WB figée
+    21.584  masque oculaire : 99 % du cadre utile (p95 188)
+    21.610  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+    21.847  masque oculaire : 99 % du cadre utile (p95 188)
+    22.118  masque oculaire : 99 % du cadre utile (p95 189)
+    22.378  masque oculaire : 99 % du cadre utile (p95 194)
+    22.647  masque oculaire : 99 % du cadre utile (p95 195)
+    22.920  masque oculaire : 99 % du cadre utile (p95 195)
+    23.196  masque oculaire : 99 % du cadre utile (p95 195)
+    23.443  masque oculaire : 99 % du cadre utile (p95 195)
+    23.717  masque oculaire : 99 % du cadre utile (p95 195)
+    23.983  masque oculaire : 99 % du cadre utile (p95 195)
+    24.247  masque oculaire : 99 % du cadre utile (p95 195)
+    24.515  masque oculaire : 99 % du cadre utile (p95 194)
+    24.783  masque oculaire : 99 % du cadre utile (p95 194)
+    25.054  masque oculaire : 99 % du cadre utile (p95 195)
+    25.366  masque oculaire : 99 % du cadre utile (p95 195)
+    25.646  masque oculaire : 99 % du cadre utile (p95 195)
+    25.918  masque oculaire : 99 % du cadre utile (p95 195)
+    26.181  masque oculaire : 99 % du cadre utile (p95 195)
+    26.459  masque oculaire : 99 % du cadre utile (p95 195)
+    26.716  masque oculaire : 99 % du cadre utile (p95 195)
+    26.986  masque oculaire : 99 % du cadre utile (p95 195)
+    27.254  masque oculaire : 99 % du cadre utile (p95 195)
+    27.521  masque oculaire : 99 % du cadre utile (p95 195)
+    27.787  masque oculaire : 99 % du cadre utile (p95 195)
+    28.053  masque oculaire : 99 % du cadre utile (p95 195)
+    28.323  masque oculaire : 99 % du cadre utile (p95 195)
+    28.644  masque oculaire : 99 % du cadre utile (p95 195)
+    28.882  masque oculaire : 99 % du cadre utile (p95 195)
+    29.151  masque oculaire : 99 % du cadre utile (p95 195)
+    29.417  masque oculaire : 99 % du cadre utile (p95 195)
+    29.682  masque oculaire : 99 % du cadre utile (p95 195)
+    29.951  masque oculaire : 99 % du cadre utile (p95 195)
+    30.220  masque oculaire : 99 % du cadre utile (p95 195)
+    30.486  masque oculaire : 99 % du cadre utile (p95 195)
+    30.736  masque oculaire : 99 % du cadre utile (p95 195)
+    30.784  départ au x100 : profondeur oui
+    30.785  === série lame_20261113_195154 (photos) « sans nom », bleu, objectif x100 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+    30.814  masque oculaire : 99 % du cadre utile (p95 195)
+    31.123  t0000337 suivi ok score 1.00 pos 0,0 net 108 (21 ms) carte 0 photos + 3 positions
+    31.446  patron 4x4 champs posé en haut à gauche (0,0)
+    31.446  photo 154_0001 à 0,0 (507 ko, 229 ms)
+    31.452  t0000666 suivi ok score 1.00 pos 0,0 net 108 (22 ms) carte 1 photos + 6 positions
+    31.787  t0001001 suivi ok score 1.00 pos 0,0 net 109 (15 ms) carte 1 photos + 10 positions
+    32.120  t0001334 suivi ok score 0.99 pos 0,0 net 107 (18 ms) carte 1 photos + 13 positions
+    32.456  t0001671 suivi ok score 1.00 pos 0,0 net 107 (21 ms) carte 1 photos + 16 positions
+    32.794  t0002007 suivi ok score 1.00 pos 0,0 net 108 (23 ms) carte 1 photos + 20 positions
+    32.836  envoyé lame_20261113_195154_0001.jpg (507 ko)
+    33.145  t0002358 suivi ok score 1.00 pos 0,0 net 108 (35 ms) carte 1 photos + 23 positions
+    33.484  t0002697 suivi ok score 1.00 pos 0,0 net 107 (40 ms) carte 1 photos + 26 positions
+    33.792  t0003004 suivi ok score 0.99 pos 0,0 net 62 (23 ms) carte 1 photos + 30 positions
+    34.119  t0003334 suivi ok score 1.00 pos 0,0 net 58 (20 ms) carte 1 photos + 33 positions
+    34.457  t0003671 suivi ok score 1.00 pos 0,0 net 106 (23 ms) carte 1 photos + 36 positions
+    34.792  t0004005 suivi ok score 1.00 pos 0,0 net 99 (21 ms) carte 1 photos + 40 positions
+    35.131  t0004345 suivi ok score 1.00 pos 0,0 net 100 (20 ms) carte 1 photos + 43 positions
+    35.450  t0004665 suivi ok score 1.00 pos 0,0 net 98 (17 ms) carte 1 photos + 46 positions
+    35.791  t0005004 suivi ok score 1.00 pos 0,0 net 56 (15 ms) carte 1 photos + 50 positions
+    36.133  t0005347 suivi ok score 1.00 pos 0,0 net 79 (16 ms) carte 1 photos + 53 positions
+    36.456  t0005670 suivi ok score 1.00 pos 0,0 net 106 (21 ms) carte 1 photos + 56 positions
+    36.791  t0006004 suivi ok score 1.00 pos 0,0 net 105 (20 ms) carte 1 photos + 60 positions
+    37.131  t0006344 suivi ok score 1.00 pos 0,0 net 105 (25 ms) carte 1 photos + 63 positions
+    37.475  t0006688 suivi ok score 1.00 pos 12,0 net 95 (31 ms) carte 1 photos + 66 positions
+    37.808  t0007021 suivi ok score 1.00 pos 12,0 net 105 (30 ms) carte 1 photos + 70 positions
+    38.123  t0007337 suivi ok score 1.00 pos 12,0 net 106 (20 ms) carte 1 photos + 73 positions
+    38.460  t0007675 suivi ok score 1.00 pos 12,0 net 104 (19 ms) carte 1 photos + 76 positions
+    38.796  t0008009 suivi ok score 1.00 pos 12,0 net 106 (21 ms) carte 1 photos + 80 positions
+    39.123  t0008337 suivi ok score 1.00 pos 12,0 net 107 (17 ms) carte 1 photos + 83 positions
+    39.466  t0008680 suivi ok score 1.00 pos 12,0 net 106 (26 ms) carte 1 photos + 86 positions
+    39.786  t0009000 suivi ok score 1.00 pos 12,0 net 107 (16 ms) carte 1 photos + 90 positions
+    40.122  t0009336 suivi ok score 0.99 pos 12,0 net 105 (16 ms) carte 1 photos + 93 positions
+[... 1411 lignes omises ...]
+   470.224  masque oculaire : 100 % du cadre utile (p95 231)
+   470.493  masque oculaire : 100 % du cadre utile (p95 231)
+   470.759  masque oculaire : 100 % du cadre utile (p95 231)
+   471.028  masque oculaire : 100 % du cadre utile (p95 231)
+   471.305  masque oculaire : 100 % du cadre utile (p95 231)
+   471.560  masque oculaire : 100 % du cadre utile (p95 231)
+   471.840  masque oculaire : 100 % du cadre utile (p95 231)
+   472.088  masque oculaire : 100 % du cadre utile (p95 231)
+   472.362  masque oculaire : 100 % du cadre utile (p95 231)
+   472.627  masque oculaire : 100 % du cadre utile (p95 231)
+   472.894  masque oculaire : 100 % du cadre utile (p95 231)
+   473.160  masque oculaire : 100 % du cadre utile (p95 232)
+   473.428  masque oculaire : 100 % du cadre utile (p95 231)
+   473.697  masque oculaire : 100 % du cadre utile (p95 229)
+   473.961  masque oculaire : 100 % du cadre utile (p95 230)
+   474.228  masque oculaire : 100 % du cadre utile (p95 221)
+   474.502  masque oculaire : 100 % du cadre utile (p95 220)
+   474.761  masque oculaire : 100 % du cadre utile (p95 220)
+   475.031  masque oculaire : 100 % du cadre utile (p95 219)
+   475.299  masque oculaire : 100 % du cadre utile (p95 219)
+   475.562  masque oculaire : 100 % du cadre utile (p95 219)
+   475.831  masque oculaire : 100 % du cadre utile (p95 219)
+   476.097  masque oculaire : 100 % du cadre utile (p95 221)
+   476.366  masque oculaire : 100 % du cadre utile (p95 223)
+   476.627  masque oculaire : 100 % du cadre utile (p95 222)
+   476.888  masque oculaire : 100 % du cadre utile (p95 222)
+   477.165  masque oculaire : 100 % du cadre utile (p95 221)
+   477.427  masque oculaire : 100 % du cadre utile (p95 221)
+   477.699  masque oculaire : 100 % du cadre utile (p95 221)
+   477.965  masque oculaire : 100 % du cadre utile (p95 221)
+   478.231  masque oculaire : 100 % du cadre utile (p95 222)
+   478.497  masque oculaire : 100 % du cadre utile (p95 222)
+   478.764  masque oculaire : 100 % du cadre utile (p95 222)
+   479.032  masque oculaire : 100 % du cadre utile (p95 222)
+   479.298  masque oculaire : 100 % du cadre utile (p95 222)
+   479.567  masque oculaire : 100 % du cadre utile (p95 220)
+   479.825  masque oculaire : 100 % du cadre utile (p95 220)
+   480.099  masque oculaire : 100 % du cadre utile (p95 222)
+   480.365  masque oculaire : 100 % du cadre utile (p95 222)
+   480.637  masque oculaire : 100 % du cadre utile (p95 222)
+   480.903  masque oculaire : 100 % du cadre utile (p95 222)
+   481.166  masque oculaire : 100 % du cadre utile (p95 222)
+   481.431  masque oculaire : 100 % du cadre utile (p95 223)
+   481.709  masque oculaire : 100 % du cadre utile (p95 224)
+   481.966  masque oculaire : 100 % du cadre utile (p95 224)
+   482.236  masque oculaire : 100 % du cadre utile (p95 224)
+   482.492  masque oculaire : 100 % du cadre utile (p95 223)
+   482.758  masque oculaire : 100 % du cadre utile (p95 223)
+   483.038  masque oculaire : 100 % du cadre utile (p95 223)
+   483.303  masque oculaire : 100 % du cadre utile (p95 224)
+   483.572  masque oculaire : 100 % du cadre utile (p95 223)
+   483.835  masque oculaire : 100 % du cadre utile (p95 223)
+   484.096  masque oculaire : 100 % du cadre utile (p95 223)
+   484.365  masque oculaire : 100 % du cadre utile (p95 224)
+   484.628  masque oculaire : 100 % du cadre utile (p95 224)
+   484.901  masque oculaire : 100 % du cadre utile (p95 224)
+   485.167  masque oculaire : 100 % du cadre utile (p95 224)
+   485.432  masque oculaire : 100 % du cadre utile (p95 224)
+   485.709  masque oculaire : 100 % du cadre utile (p95 224)
+   485.968  masque oculaire : 100 % du cadre utile (p95 224)
+   486.235  masque oculaire : 100 % du cadre utile (p95 224)
+   486.500  masque oculaire : 100 % du cadre utile (p95 224)
+   486.769  masque oculaire : 100 % du cadre utile (p95 224)
+   487.034  masque oculaire : 100 % du cadre utile (p95 224)
+   487.301  masque oculaire : 100 % du cadre utile (p95 223)
+   487.566  masque oculaire : 100 % du cadre utile (p95 221)
+   487.830  masque oculaire : 100 % du cadre utile (p95 234)
+   488.098  masque oculaire : 100 % du cadre utile (p95 234)
+   488.362  masque oculaire : 100 % du cadre utile (p95 234)
+   488.627  masque oculaire : 100 % du cadre utile (p95 234)
+   488.902  masque oculaire : 100 % du cadre utile (p95 234)
+   489.161  masque oculaire : 100 % du cadre utile (p95 234)
+   489.434  masque oculaire : 100 % du cadre utile (p95 234)
+   489.695  masque oculaire : 100 % du cadre utile (p95 234)
+   489.963  masque oculaire : 100 % du cadre utile (p95 234)
+   490.225  masque oculaire : 100 % du cadre utile (p95 234)
+   490.494  masque oculaire : 100 % du cadre utile (p95 234)
+   490.767  masque oculaire : 100 % du cadre utile (p95 234)
+   491.030  masque oculaire : 100 % du cadre utile (p95 234)
+   491.294  masque oculaire : 100 % du cadre utile (p95 235)
+   491.566  masque oculaire : 100 % du cadre utile (p95 235)
+   491.831  masque oculaire : 100 % du cadre utile (p95 235)
+   492.100  masque oculaire : 100 % du cadre utile (p95 235)
+   492.366  masque oculaire : 100 % du cadre utile (p95 235)
+   492.629  masque oculaire : 99 % du cadre utile (p95 5)
+   492.900  masque oculaire : 100 % du cadre utile (p95 254)
+   493.161  masque oculaire : 100 % du cadre utile (p95 253)
+   493.427  masque oculaire : 99 % du cadre utile (p95 2)
+   493.692  masque oculaire : 99 % du cadre utile (p95 2)
+   493.964  masque oculaire : 99 % du cadre utile (p95 2)
+   494.224  masque oculaire : 99 % du cadre utile (p95 2)
+   494.494  masque oculaire : 99 % du cadre utile (p95 2)
+   494.754  masque oculaire : 99 % du cadre utile (p95 2)
+   495.030  masque oculaire : 29 % du cadre utile (p95 125)
+   495.302  masque oculaire : 49 % du cadre utile (p95 173)
+   495.573  masque oculaire : 48 % du cadre utile (p95 172)
+   495.831  masque oculaire : 49 % du cadre utile (p95 174)
+   496.103  masque oculaire : 50 % du cadre utile (p95 174)
+   496.370  masque oculaire : 94 % du cadre utile (p95 213)
+   496.626  masque oculaire : 93 % du cadre utile (p95 215)
+   496.898  masque oculaire : 93 % du cadre utile (p95 214)
+   497.173  masque oculaire : 93 % du cadre utile (p95 214)
+   497.434  masque oculaire : 93 % du cadre utile (p95 214)
+   497.703  masque oculaire : 93 % du cadre utile (p95 214)
+   497.983  masque oculaire : 93 % du cadre utile (p95 214)
+   498.237  masque oculaire : 93 % du cadre utile (p95 214)
+   498.504  masque oculaire : 93 % du cadre utile (p95 214)
+   498.766  masque oculaire : 93 % du cadre utile (p95 215)
+   499.035  masque oculaire : 93 % du cadre utile (p95 215)
+   499.300  masque oculaire : 93 % du cadre utile (p95 214)
+   499.567  masque oculaire : 93 % du cadre utile (p95 214)
+   499.832  masque oculaire : 93 % du cadre utile (p95 214)
+   500.097  masque oculaire : 93 % du cadre utile (p95 214)
+   500.364  masque oculaire : 93 % du cadre utile (p95 214)
+   500.634  masque oculaire : 93 % du cadre utile (p95 214)
+   500.903  masque oculaire : 93 % du cadre utile (p95 214)
+   501.175  masque oculaire : 93 % du cadre utile (p95 214)
+   501.434  masque oculaire : 93 % du cadre utile (p95 214)
+   501.705  masque oculaire : 93 % du cadre utile (p95 214)
+   501.974  masque oculaire : 93 % du cadre utile (p95 214)
+   502.233  masque oculaire : 93 % du cadre utile (p95 214)
+   502.498  masque oculaire : 94 % du cadre utile (p95 215)
+   502.778  masque oculaire : 41 % du cadre utile (p95 159)
+   503.035  masque oculaire : 51 % du cadre utile (p95 175)
+   503.309  masque oculaire : 50 % du cadre utile (p95 173)
+   503.570  masque oculaire : 46 % du cadre utile (p95 168)
+   503.832  masque oculaire : 46 % du cadre utile (p95 168)
+   504.099  masque oculaire : 48 % du cadre utile (p95 172)
+   504.366  masque oculaire : 31 % du cadre utile (p95 135)
+   504.635  masque oculaire : 83 % du cadre utile (p95 6)
+   504.896  masque oculaire : 82 % du cadre utile (p95 6)
+   505.167  masque oculaire : 12 % du cadre utile (p95 30)
+   505.432  masque oculaire : 83 % du cadre utile (p95 6)
+   505.699  masque oculaire : 63 % du cadre utile (p95 9)
+   505.976  masque oculaire : 17 % du cadre utile (p95 24)
+   506.237  masque oculaire : 58 % du cadre utile (p95 10)
+   506.502  masque oculaire : 33 % du cadre utile (p95 17)
+   506.768  masque oculaire : 16 % du cadre utile (p95 71)
+   507.039  masque oculaire : 29 % du cadre utile (p95 126)
+   507.296  masque oculaire : 68 % du cadre utile (p95 195)
+   507.564  masque oculaire : 67 % du cadre utile (p95 193)
+   507.845  masque oculaire : 67 % du cadre utile (p95 194)
+   508.106  masque oculaire : 67 % du cadre utile (p95 193)
+   508.372  masque oculaire : 67 % du cadre utile (p95 193)
+   508.637  masque oculaire : 66 % du cadre utile (p95 194)
+   508.886  masque oculaire : 67 % du cadre utile (p95 193)
+   509.161  masque oculaire : 67 % du cadre utile (p95 193)
+   509.439  masque oculaire : 67 % du cadre utile (p95 193)
+   509.711  masque oculaire : 67 % du cadre utile (p95 193)
+   509.971  masque oculaire : 67 % du cadre utile (p95 193)
+   510.235  masque oculaire : 66 % du cadre utile (p95 194)
+   510.508  masque oculaire : 67 % du cadre utile (p95 194)
+   510.775  masque oculaire : 67 % du cadre utile (p95 194)
+   511.040  masque oculaire : 67 % du cadre utile (p95 194)
+   511.301  masque oculaire : 67 % du cadre utile (p95 194)
+   511.571  masque oculaire : 67 % du cadre utile (p95 194)
+   511.836  masque oculaire : 100 % du cadre utile (p95 254)
+   512.096  masque oculaire : 100 % du cadre utile (p95 255)
+   512.360  masque oculaire : 100 % du cadre utile (p95 255)
+   512.629  masque oculaire : 100 % du cadre utile (p95 253)
+   512.906  masque oculaire : 100 % du cadre utile (p95 237)
+   513.177  masque oculaire : 100 % du cadre utile (p95 237)
+   513.437  masque oculaire : 100 % du cadre utile (p95 237)
+   513.703  masque oculaire : 100 % du cadre utile (p95 237)
+   513.976  masque oculaire : 100 % du cadre utile (p95 237)
+   514.234  masque oculaire : 100 % du cadre utile (p95 237)
+   514.508  masque oculaire : 100 % du cadre utile (p95 232)
+   514.769  masque oculaire : 100 % du cadre utile (p95 227)
+   515.036  masque oculaire : 100 % du cadre utile (p95 227)
+   515.303  masque oculaire : 100 % du cadre utile (p95 228)
+   515.573  masque oculaire : 100 % du cadre utile (p95 228)
+   515.841  masque oculaire : 100 % du cadre utile (p95 5)
+   516.101  masque oculaire : 99 % du cadre utile (p95 2)
+   516.373  masque oculaire : 100 % du cadre utile (p95 208)
+   516.642  masque oculaire : 100 % du cadre utile (p95 223)
+   516.908  masque oculaire : 100 % du cadre utile (p95 223)
+   517.172  masque oculaire : 100 % du cadre utile (p95 223)
+   517.444  masque oculaire : 100 % du cadre utile (p95 223)
+   517.711  masque oculaire : 100 % du cadre utile (p95 223)
+   517.977  masque oculaire : 100 % du cadre utile (p95 223)
+   518.243  masque oculaire : 100 % du cadre utile (p95 223)
+   518.507  masque oculaire : 100 % du cadre utile (p95 223)
+   518.777  masque oculaire : 100 % du cadre utile (p95 223)
+   519.024  masque oculaire : 100 % du cadre utile (p95 223)
+   519.308  masque oculaire : 100 % du cadre utile (p95 223)
+   519.569  masque oculaire : 100 % du cadre utile (p95 224)
+   519.838  masque oculaire : 100 % du cadre utile (p95 223)
+   520.100  masque oculaire : 100 % du cadre utile (p95 223)
+   520.358  masque oculaire : 100 % du cadre utile (p95 224)
+   520.625  masque oculaire : 100 % du cadre utile (p95 224)
+   520.900  masque oculaire : 100 % du cadre utile (p95 223)
+   521.157  masque oculaire : 100 % du cadre utile (p95 225)
+   521.429  masque oculaire : 100 % du cadre utile (p95 226)
+   521.696  masque oculaire : 99 % du cadre utile (p95 226)
+   521.967  masque oculaire : 99 % du cadre utile (p95 226)
+   522.233  masque oculaire : 99 % du cadre utile (p95 225)
+   522.501  masque oculaire : 99 % du cadre utile (p95 225)
+   522.766  masque oculaire : 99 % du cadre utile (p95 225)
+   523.033  masque oculaire : 99 % du cadre utile (p95 225)
+   523.296  masque oculaire : 100 % du cadre utile (p95 225)
+   523.569  masque oculaire : 100 % du cadre utile (p95 225)
+   523.836  masque oculaire : 100 % du cadre utile (p95 224)
+   524.104  masque oculaire : 100 % du cadre utile (p95 225)
+   524.368  masque oculaire : 100 % du cadre utile (p95 225)
+   524.635  masque oculaire : 100 % du cadre utile (p95 226)
+   524.900  masque oculaire : 100 % du cadre utile (p95 227)
+   525.172  masque oculaire : 100 % du cadre utile (p95 227)
+   525.434  masque oculaire : 100 % du cadre utile (p95 227)
+   525.710  masque oculaire : 100 % du cadre utile (p95 227)
+   525.981  masque oculaire : 100 % du cadre utile (p95 227)
+   526.244  masque oculaire : 100 % du cadre utile (p95 226)
+   526.515  masque oculaire : 100 % du cadre utile (p95 227)
+   526.780  masque oculaire : 100 % du cadre utile (p95 227)
+   527.035  masque oculaire : 100 % du cadre utile (p95 228)
+   527.309  masque oculaire : 100 % du cadre utile (p95 228)
+   527.581  masque oculaire : 100 % du cadre utile (p95 226)
+   527.841  masque oculaire : 100 % du cadre utile (p95 225)
+   528.111  masque oculaire : 99 % du cadre utile (p95 224)
+   528.381  masque oculaire : 99 % du cadre utile (p95 224)
+   528.643  masque oculaire : 99 % du cadre utile (p95 224)
+   528.908  masque oculaire : 100 % du cadre utile (p95 223)
+   529.177  masque oculaire : 100 % du cadre utile (p95 223)
+   529.446  masque oculaire : 100 % du cadre utile (p95 223)
+   529.711  masque oculaire : 100 % du cadre utile (p95 224)
+   529.979  masque oculaire : 100 % du cadre utile (p95 224)
+   530.247  masque oculaire : 100 % du cadre utile (p95 224)
+   530.504  masque oculaire : 100 % du cadre utile (p95 224)
+   530.775  masque oculaire : 100 % du cadre utile (p95 224)
+   531.042  masque oculaire : 100 % du cadre utile (p95 224)
+   531.311  masque oculaire : 100 % du cadre utile (p95 223)
+   531.574  masque oculaire : 100 % du cadre utile (p95 223)
+   531.836  masque oculaire : 100 % du cadre utile (p95 223)
+   532.109  masque oculaire : 100 % du cadre utile (p95 224)
+   532.373  masque oculaire : 100 % du cadre utile (p95 223)
+   532.638  masque oculaire : 100 % du cadre utile (p95 223)
+   532.908  masque oculaire : 100 % du cadre utile (p95 224)
+   533.175  masque oculaire : 100 % du cadre utile (p95 223)
+   533.436  masque oculaire : 100 % du cadre utile (p95 223)
+   533.708  masque oculaire : 100 % du cadre utile (p95 223)
+   533.974  masque oculaire : 100 % du cadre utile (p95 223)
+   534.239  masque oculaire : 100 % du cadre utile (p95 223)
+   534.504  masque oculaire : 100 % du cadre utile (p95 223)
+   534.772  masque oculaire : 100 % du cadre utile (p95 223)
+   535.042  masque oculaire : 100 % du cadre utile (p95 223)
+   535.313  masque oculaire : 100 % du cadre utile (p95 223)
+   535.575  masque oculaire : 100 % du cadre utile (p95 223)
+   535.836  masque oculaire : 100 % du cadre utile (p95 223)
+   536.111  masque oculaire : 100 % du cadre utile (p95 224)
+   536.376  masque oculaire : 100 % du cadre utile (p95 224)
+   536.646  masque oculaire : 100 % du cadre utile (p95 224)
+   536.909  masque oculaire : 100 % du cadre utile (p95 224)
+   537.177  masque oculaire : 100 % du cadre utile (p95 224)
+   537.443  masque oculaire : 100 % du cadre utile (p95 224)
+   537.708  masque oculaire : 100 % du cadre utile (p95 224)
+   537.980  masque oculaire : 100 % du cadre utile (p95 224)
+   538.244  masque oculaire : 100 % du cadre utile (p95 224)
+   538.512  masque oculaire : 100 % du cadre utile (p95 224)
+   538.774  masque oculaire : 100 % du cadre utile (p95 224)
+   539.044  masque oculaire : 100 % du cadre utile (p95 224)
+   539.311  masque oculaire : 100 % du cadre utile (p95 224)
+   539.577  masque oculaire : 100 % du cadre utile (p95 224)
+   539.846  masque oculaire : 100 % du cadre utile (p95 224)
+   540.110  masque oculaire : 100 % du cadre utile (p95 224)
+   540.379  masque oculaire : 100 % du cadre utile (p95 224)
+   540.648  masque oculaire : 100 % du cadre utile (p95 224)
+   540.913  masque oculaire : 100 % du cadre utile (p95 224)
+   541.179  masque oculaire : 100 % du cadre utile (p95 224)
+   541.446  masque oculaire : 100 % du cadre utile (p95 224)
+   541.709  masque oculaire : 100 % du cadre utile (p95 224)
+   541.999  masque oculaire : 100 % du cadre utile (p95 224)
+   542.274  masque oculaire : 100 % du cadre utile (p95 224)
+   542.543  masque oculaire : 100 % du cadre utile (p95 224)
+   542.811  masque oculaire : 100 % du cadre utile (p95 224)
+   543.076  masque oculaire : 100 % du cadre utile (p95 224)
+   543.344  masque oculaire : 100 % du cadre utile (p95 224)
+   543.610  masque oculaire : 100 % du cadre utile (p95 224)
+   543.879  masque oculaire : 100 % du cadre utile (p95 224)
+   544.150  masque oculaire : 100 % du cadre utile (p95 224)
+   544.417  masque oculaire : 100 % du cadre utile (p95 224)
+   544.661  masque oculaire : 100 % du cadre utile (p95 224)
+   544.934  masque oculaire : 100 % du cadre utile (p95 224)
+   545.214  masque oculaire : 100 % du cadre utile (p95 224)
+   545.475  masque oculaire : 100 % du cadre utile (p95 224)
+   545.746  masque oculaire : 100 % du cadre utile (p95 224)
+   546.005  masque oculaire : 100 % du cadre utile (p95 224)
+   546.280  masque oculaire : 100 % du cadre utile (p95 225)
+   546.546  masque oculaire : 100 % du cadre utile (p95 225)
+   546.805  masque oculaire : 100 % du cadre utile (p95 225)
+   547.080  masque oculaire : 100 % du cadre utile (p95 224)
+   547.346  masque oculaire : 100 % du cadre utile (p95 224)
+   547.608  masque oculaire : 100 % du cadre utile (p95 224)
+   547.876  masque oculaire : 100 % du cadre utile (p95 224)
+   548.148  masque oculaire : 100 % du cadre utile (p95 224)
+   548.405  masque oculaire : 100 % du cadre utile (p95 224)
+   548.675  masque oculaire : 100 % du cadre utile (p95 224)
+   548.944  masque oculaire : 100 % du cadre utile (p95 224)
+   549.210  masque oculaire : 100 % du cadre utile (p95 224)
+   549.475  masque oculaire : 100 % du cadre utile (p95 225)
+   549.730  masque oculaire : 100 % du cadre utile (p95 224)
+   550.014  masque oculaire : 100 % du cadre utile (p95 225)
+   550.283  masque oculaire : 100 % du cadre utile (p95 225)
+   550.548  masque oculaire : 100 % du cadre utile (p95 225)
+   550.813  masque oculaire : 100 % du cadre utile (p95 225)
+   551.083  masque oculaire : 100 % du cadre utile (p95 225)
+   551.345  masque oculaire : 100 % du cadre utile (p95 225)
+   551.607  masque oculaire : 100 % du cadre utile (p95 225)
+   551.878  masque oculaire : 100 % du cadre utile (p95 225)
+   552.141  masque oculaire : 100 % du cadre utile (p95 225)
+   552.403  masque oculaire : 100 % du cadre utile (p95 225)
+   552.679  masque oculaire : 100 % du cadre utile (p95 225)
+   552.945  masque oculaire : 100 % du cadre utile (p95 225)
+   553.222  masque oculaire : 100 % du cadre utile (p95 225)
+   553.477  masque oculaire : 100 % du cadre utile (p95 225)
+   553.740  masque oculaire : 100 % du cadre utile (p95 225)
+   554.004  masque oculaire : 100 % du cadre utile (p95 225)
+   554.283  masque oculaire : 100 % du cadre utile (p95 225)
+   554.548  masque oculaire : 100 % du cadre utile (p95 225)
+   554.812  masque oculaire : 100 % du cadre utile (p95 225)
+   555.085  masque oculaire : 100 % du cadre utile (p95 225)
+   555.342  masque oculaire : 100 % du cadre utile (p95 225)
+   555.610  masque oculaire : 100 % du cadre utile (p95 225)
+   555.879  masque oculaire : 100 % du cadre utile (p95 225)
+   556.144  masque oculaire : 100 % du cadre utile (p95 225)
+   556.410  masque oculaire : 99 % du cadre utile (p95 2)
+   556.669  masque oculaire : 99 % du cadre utile (p95 2)
+   556.939  masque oculaire : 99 % du cadre utile (p95 2)
+   557.205  masque oculaire : 100 % du cadre utile (p95 16)
+   557.475  masque oculaire : 100 % du cadre utile (p95 255)
+   557.741  masque oculaire : 100 % du cadre utile (p95 255)
+   558.009  masque oculaire : 100 % du cadre utile (p95 255)
+   558.272  masque oculaire : 100 % du cadre utile (p95 255)
+   558.540  masque oculaire : 100 % du cadre utile (p95 255)
+   558.809  masque oculaire : 100 % du cadre utile (p95 255)
+   559.073  masque oculaire : 100 % du cadre utile (p95 255)
+   559.340  masque oculaire : 100 % du cadre utile (p95 255)
+   559.606  masque oculaire : 100 % du cadre utile (p95 255)
+   559.874  masque oculaire : 100 % du cadre utile (p95 255)
+   560.148  masque oculaire : 100 % du cadre utile (p95 255)
+   560.409  masque oculaire : 100 % du cadre utile (p95 255)
+   560.672  masque oculaire : 100 % du cadre utile (p95 255)
+   560.940  masque oculaire : 100 % du cadre utile (p95 255)
+   561.210  masque oculaire : 100 % du cadre utile (p95 255)
+   561.477  masque oculaire : 100 % du cadre utile (p95 255)
+   561.743  masque oculaire : 100 % du cadre utile (p95 255)
+   562.008  masque oculaire : 100 % du cadre utile (p95 255)
+   562.275  masque oculaire : 100 % du cadre utile (p95 255)
+   562.562  masque oculaire : 100 % du cadre utile (p95 255)
+   562.844  masque oculaire : 100 % du cadre utile (p95 255)
+   563.109  masque oculaire : 100 % du cadre utile (p95 255)
+   563.380  masque oculaire : 100 % du cadre utile (p95 255)
+   563.639  masque oculaire : 100 % du cadre utile (p95 255)
+   563.909  masque oculaire : 100 % du cadre utile (p95 255)
+   564.174  masque oculaire : 100 % du cadre utile (p95 255)
+   564.260  départ au x10 : profondeur non
+   564.261  === série lame_20261113_200048_vincent-2 (photos) « vincent 2 », bleu, objectif x10 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+   564.289  masque oculaire : 100 % du cadre utile (p95 255)
+   564.591  t0000344 suivi ok score 1.00 pos 0,0 net 153 (21 ms) carte 0 photos + 3 positions
+   564.910  patron 2x4 champs posé en haut à gauche (0,0)
+   564.911  photo t-2_0001 à 0,0 (83 ko, 221 ms)
+   564.917  t0000670 suivi ok score 1.00 pos 0,0 net 153 (21 ms) carte 1 photos + 6 positions
+   565.268  t0001021 suivi ok score 1.00 pos 0,0 net 154 (33 ms) carte 1 photos + 10 positions
+   565.588  t0001341 suivi ok score 1.00 pos 0,0 net 153 (17 ms) carte 1 photos + 13 positions
+   565.798  envoyé lame_20261113_200048_vincent-2_0001.jpg (83 ko)
+   565.919  t0001672 suivi ok score 1.00 pos 0,0 net 154 (16 ms) carte 1 photos + 16 positions
+   566.252  t0002005 suivi ok score 1.00 pos 0,0 net 149 (21 ms) carte 1 photos + 20 positions
+   566.587  t0002340 suivi ok score 0.99 pos 0,0 net 141 (22 ms) carte 1 photos + 23 positions
+   566.933  t0002685 suivi ok score 1.00 pos 0,0 net 131 (23 ms) carte 1 photos + 26 positions
+   567.261  t0003013 suivi ok score 1.00 pos 0,0 net 125 (21 ms) carte 1 photos + 30 positions
+   567.597  t0003349 suivi ok score 1.00 pos 0,0 net 123 (24 ms) carte 1 photos + 33 positions
+   567.927  t0003679 suivi ok score 1.00 pos 0,0 net 135 (23 ms) carte 1 photos + 36 positions
+   568.268  t0004019 suivi ok score 1.00 pos 0,0 net 135 (30 ms) carte 1 photos + 40 positions
+   568.588  t0004340 suivi ok score 1.00 pos 0,0 net 135 (14 ms) carte 1 photos + 43 positions
+   568.932  t0004684 suivi ok score 1.00 pos 0,0 net 135 (17 ms) carte 1 photos + 46 positions
+   569.259  t0005010 suivi ok score 1.00 pos 0,0 net 135 (23 ms) carte 1 photos + 50 positions
+   569.597  t0005348 suivi ok score 1.00 pos 0,0 net 134 (26 ms) carte 1 photos + 53 positions
+   569.926  t0005677 suivi ok score 1.00 pos 0,0 net 138 (23 ms) carte 1 photos + 56 positions
+   570.276  t0006027 suivi ok score 1.00 pos 0,0 net 139 (22 ms) carte 1 photos + 60 positions
+   570.606  t0006357 suivi ok score 1.00 pos 0,0 net 139 (34 ms) carte 1 photos + 63 positions
+   570.920  t0006672 suivi ok score 1.00 pos 0,0 net 139 (17 ms) carte 1 photos + 66 positions
+   571.260  t0007012 suivi ok score 1.00 pos 0,0 net 138 (22 ms) carte 1 photos + 70 positions
+   571.596  t0007348 suivi ok score 1.00 pos 0,0 net 139 (22 ms) carte 1 photos + 73 positions
+   571.933  t0007684 suivi ok score 1.00 pos 0,0 net 138 (23 ms) carte 1 photos + 76 positions
+   572.276  t0008027 suivi ok score 1.00 pos 0,0 net 135 (32 ms) carte 1 photos + 80 positions
+   572.601  t0008352 suivi ok score 1.00 pos 0,0 net 134 (25 ms) carte 1 photos + 83 positions
+   572.932  t0008683 suivi ok score 1.00 pos 0,0 net 130 (23 ms) carte 1 photos + 86 positions
+   573.258  t0009009 suivi ok score 1.00 pos 0,0 net 125 (20 ms) carte 1 photos + 90 positions
+   573.592  t0009344 suivi ok score 1.00 pos 0,0 net 132 (21 ms) carte 1 photos + 93 positions
+   573.927  t0009679 suivi ok score 1.00 pos 0,0 net 137 (21 ms) carte 1 photos + 96 positions
+   574.262  t0010013 suivi ok score 1.00 pos 0,0 net 138 (23 ms) carte 1 photos + 100 positions
+   574.595  t0010346 suivi ok score 1.00 pos 0,0 net 137 (22 ms) carte 1 photos + 103 positions
+   574.931  t0010683 suivi ok score 1.00 pos 0,0 net 136 (22 ms) carte 1 photos + 106 positions
+   575.265  t0011016 suivi ok score 1.00 pos 0,0 net 136 (24 ms) carte 1 photos + 110 positions
+   575.592  t0011344 suivi ok score 1.00 pos 0,0 net 137 (18 ms) carte 1 photos + 113 positions
+   575.921  t0011672 suivi ok score 1.00 pos 0,0 net 133 (15 ms) carte 1 photos + 116 positions
+   575.965  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+   576.225  série lame_20261113_200048_vincent-2 : 1 photos, 359 échantillons de position
+   576.288  masque oculaire : 99 % du cadre utile (p95 150)
+   576.534  masque oculaire : 99 % du cadre utile (p95 153)
+   576.818  masque oculaire : 99 % du cadre utile (p95 153)
+   577.095  masque oculaire : 99 % du cadre utile (p95 149)
+   577.352  masque oculaire : 99 % du cadre utile (p95 153)
+   577.361  série lame_20261113_200048_vincent-2 clôturée côté serveur : HTTP 200, réveil GitHub oui
+   577.612  masque oculaire : 99 % du cadre utile (p95 163)
+   577.890  masque oculaire : 99 % du cadre utile (p95 166)
+   578.151  masque oculaire : 99 % du cadre utile (p95 166)
+   578.421  masque oculaire : 99 % du cadre utile (p95 165)
+   578.692  masque oculaire : 99 % du cadre utile (p95 165)
+   578.953  masque oculaire : 99 % du cadre utile (p95 165)
+   579.222  masque oculaire : 99 % du cadre utile (p95 165)
+   579.484  masque oculaire : 99 % du cadre utile (p95 165)
+   579.754  masque oculaire : 99 % du cadre utile (p95 165)
+   580.023  masque oculaire : 99 % du cadre utile (p95 165)
+   580.289  masque oculaire : 99 % du cadre utile (p95 165)
+   580.554  masque oculaire : 99 % du cadre utile (p95 165)
+   580.832  masque oculaire : 99 % du cadre utile (p95 165)
+   581.093  masque oculaire : 99 % du cadre utile (p95 183)
+   581.353  masque oculaire : 99 % du cadre utile (p95 193)
+   581.623  masque oculaire : 99 % du cadre utile (p95 185)
+   581.886  masque oculaire : 99 % du cadre utile (p95 190)
+   582.151  masque oculaire : 99 % du cadre utile (p95 188)
+   582.417  masque oculaire : 99 % du cadre utile (p95 187)
+   582.685  masque oculaire : 99 % du cadre utile (p95 187)
+   582.953  masque oculaire : 99 % du cadre utile (p95 187)
+   583.214  masque oculaire : 99 % du cadre utile (p95 195)
+   583.490  masque oculaire : 99 % du cadre utile (p95 196)
+   583.763  masque oculaire : 99 % du cadre utile (p95 182)
+   584.026  masque oculaire : 99 % du cadre utile (p95 151)
+   584.278  masque oculaire : 99 % du cadre utile (p95 146)
+   584.554  masque oculaire : 99 % du cadre utile (p95 146)
+   584.821  masque oculaire : 99 % du cadre utile (p95 95)
+   585.103  masque oculaire : 99 % du cadre utile (p95 127)
+   585.353  masque oculaire : 99 % du cadre utile (p95 135)
+   585.622  masque oculaire : 99 % du cadre utile (p95 137)
+   585.888  masque oculaire : 99 % du cadre utile (p95 177)
+   586.158  masque oculaire : 99 % du cadre utile (p95 195)
+   586.415  masque oculaire : 99 % du cadre utile (p95 182)
+   586.685  masque oculaire : 99 % du cadre utile (p95 178)
+   586.955  masque oculaire : 99 % du cadre utile (p95 182)
+   587.035  verrouillage (anti) : focus infini, pose 10.0 ms, ISO 25, WB figée
+   587.219  masque oculaire : 99 % du cadre utile (p95 180)
+   587.268  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   587.495  masque oculaire : 100 % du cadre utile (p95 215)
+   587.758  masque oculaire : 100 % du cadre utile (p95 215)
+   588.021  masque oculaire : 100 % du cadre utile (p95 215)
+   588.289  masque oculaire : 99 % du cadre utile (p95 187)
+   588.560  masque oculaire : 99 % du cadre utile (p95 166)
+   588.821  masque oculaire : 99 % du cadre utile (p95 162)
+   589.087  masque oculaire : 99 % du cadre utile (p95 167)
+   589.354  masque oculaire : 99 % du cadre utile (p95 196)
+   589.622  masque oculaire : 100 % du cadre utile (p95 203)
+   589.875  masque oculaire : 100 % du cadre utile (p95 204)
+   590.156  masque oculaire : 100 % du cadre utile (p95 209)
+   590.426  masque oculaire : 100 % du cadre utile (p95 217)
+   590.688  masque oculaire : 100 % du cadre utile (p95 220)
+   590.955  masque oculaire : 100 % du cadre utile (p95 220)
+   591.226  masque oculaire : 100 % du cadre utile (p95 220)
+   591.499  masque oculaire : 100 % du cadre utile (p95 220)
+   591.763  masque oculaire : 100 % du cadre utile (p95 220)
+   592.025  masque oculaire : 100 % du cadre utile (p95 220)
+   592.297  masque oculaire : 100 % du cadre utile (p95 220)
+   592.559  masque oculaire : 100 % du cadre utile (p95 220)
+   592.831  masque oculaire : 100 % du cadre utile (p95 220)
+   593.092  masque oculaire : 100 % du cadre utile (p95 220)
+   593.367  masque oculaire : 100 % du cadre utile (p95 220)
+   593.627  masque oculaire : 100 % du cadre utile (p95 220)
+   593.893  masque oculaire : 100 % du cadre utile (p95 220)
+   594.160  masque oculaire : 100 % du cadre utile (p95 220)
+   594.425  masque oculaire : 100 % du cadre utile (p95 219)
+   594.699  masque oculaire : 100 % du cadre utile (p95 220)
+   594.955  masque oculaire : 100 % du cadre utile (p95 220)
+   595.229  masque oculaire : 100 % du cadre utile (p95 220)
+   595.493  masque oculaire : 100 % du cadre utile (p95 220)
+   595.764  masque oculaire : 100 % du cadre utile (p95 220)
+   596.027  masque oculaire : 100 % du cadre utile (p95 220)
+   596.297  masque oculaire : 100 % du cadre utile (p95 220)
+   596.564  masque oculaire : 100 % du cadre utile (p95 221)
+   596.831  masque oculaire : 100 % du cadre utile (p95 221)
+   597.093  masque oculaire : 100 % du cadre utile (p95 221)
+   597.351  masque oculaire : 100 % du cadre utile (p95 221)
+   597.623  masque oculaire : 100 % du cadre utile (p95 221)
+   597.896  masque oculaire : 100 % du cadre utile (p95 221)
+   598.160  masque oculaire : 100 % du cadre utile (p95 221)
+   598.427  masque oculaire : 100 % du cadre utile (p95 221)
+   598.701  masque oculaire : 100 % du cadre utile (p95 221)
+   598.964  masque oculaire : 100 % du cadre utile (p95 221)
+   599.230  masque oculaire : 100 % du cadre utile (p95 221)
+   599.500  masque oculaire : 100 % du cadre utile (p95 221)
+   599.765  masque oculaire : 100 % du cadre utile (p95 221)
+   600.029  masque oculaire : 100 % du cadre utile (p95 221)
+   600.291  masque oculaire : 100 % du cadre utile (p95 221)
+   600.565  masque oculaire : 100 % du cadre utile (p95 221)
+   600.826  masque oculaire : 100 % du cadre utile (p95 221)
+   601.099  masque oculaire : 100 % du cadre utile (p95 221)
+   601.481  masque oculaire : 100 % du cadre utile (p95 221)
+   601.757  masque oculaire : 100 % du cadre utile (p95 221)
+   602.026  masque oculaire : 100 % du cadre utile (p95 221)
+   602.293  masque oculaire : 100 % du cadre utile (p95 221)
+   602.563  masque oculaire : 100 % du cadre utile (p95 221)
+   602.819  masque oculaire : 100 % du cadre utile (p95 221)
+   603.090  masque oculaire : 100 % du cadre utile (p95 221)
+   603.352  masque oculaire : 100 % du cadre utile (p95 221)
+   603.634  masque oculaire : 100 % du cadre utile (p95 221)
+   603.899  masque oculaire : 100 % du cadre utile (p95 221)
+   604.167  masque oculaire : 100 % du cadre utile (p95 221)
+   604.423  masque oculaire : 100 % du cadre utile (p95 221)
+   604.687  masque oculaire : 100 % du cadre utile (p95 221)
+   604.955  masque oculaire : 100 % du cadre utile (p95 222)
+   605.215  réglages enregistrés
+   605.232  masque oculaire : 100 % du cadre utile (p95 222)
+   605.451  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   605.492  masque oculaire : 100 % du cadre utile (p95 222)
+   605.758  masque oculaire : 100 % du cadre utile (p95 222)
+   606.023  masque oculaire : 100 % du cadre utile (p95 221)
+   606.293  masque oculaire : 100 % du cadre utile (p95 222)
+   606.570  masque oculaire : 100 % du cadre utile (p95 222)
+   606.836  masque oculaire : 100 % du cadre utile (p95 221)
+   607.098  masque oculaire : 100 % du cadre utile (p95 221)
+   607.365  masque oculaire : 100 % du cadre utile (p95 222)
+   607.643  masque oculaire : 100 % du cadre utile (p95 222)
+   607.901  masque oculaire : 100 % du cadre utile (p95 221)
+   608.159  masque oculaire : 100 % du cadre utile (p95 221)
+   608.425  masque oculaire : 100 % du cadre utile (p95 221)
+   608.694  masque oculaire : 100 % du cadre utile (p95 221)
+   608.962  masque oculaire : 100 % du cadre utile (p95 221)
+   609.258  masque oculaire : 100 % du cadre utile (p95 221)
+   609.528  masque oculaire : 100 % du cadre utile (p95 221)
+   609.788  masque oculaire : 100 % du cadre utile (p95 221)
+   610.059  masque oculaire : 100 % du cadre utile (p95 221)
+   610.327  masque oculaire : 100 % du cadre utile (p95 221)
+   610.598  masque oculaire : 100 % du cadre utile (p95 221)
+   610.859  masque oculaire : 100 % du cadre utile (p95 221)
+   611.123  masque oculaire : 100 % du cadre utile (p95 221)
+   611.389  masque oculaire : 100 % du cadre utile (p95 221)
+   611.662  masque oculaire : 100 % du cadre utile (p95 222)
+   611.938  masque oculaire : 100 % du cadre utile (p95 222)
+   612.190  masque oculaire : 100 % du cadre utile (p95 222)
+   612.489  masque oculaire : 100 % du cadre utile (p95 222)
+   612.762  masque oculaire : 100 % du cadre utile (p95 222)
+   613.034  masque oculaire : 100 % du cadre utile (p95 222)
+   613.305  masque oculaire : 100 % du cadre utile (p95 222)
+   613.576  masque oculaire : 100 % du cadre utile (p95 222)
+   613.643  départ au x10 : profondeur non
+   613.645  === série lame_20261113_200137_vincent-2 (photos) « vincent 2 », bleu, objectif x10 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+   613.657  masque oculaire : 100 % du cadre utile (p95 222)
+   613.973  t0000327 suivi ok score 1.00 pos 0,0 net 150 (25 ms) carte 0 photos + 3 positions
+   614.287  patron 2x2 champs posé en haut à gauche (0,0)
+   614.287  photo t-2_0001 à 0,0 (507 ko, 222 ms)
+   614.304  t0000659 suivi ok score 1.00 pos 0,0 net 151 (23 ms) carte 1 photos + 6 positions
+   614.640  t0000995 suivi ok score 1.00 pos 0,0 net 155 (14 ms) carte 1 photos + 10 positions
+   615.000  t0001355 suivi ok score 1.00 pos 0,0 net 155 (21 ms) carte 1 photos + 13 positions
+   615.350  t0001704 suivi ok score 1.00 pos 0,0 net 152 (29 ms) carte 1 photos + 16 positions
+   615.663  t0002017 suivi ok score 1.00 pos 0,0 net 154 (15 ms) carte 1 photos + 20 positions
+   615.669  envoyé lame_20261113_200137_vincent-2_0001.jpg (507 ko)
+   616.017  t0002371 suivi ok score 1.00 pos 0,0 net 154 (31 ms) carte 1 photos + 23 positions
+   616.336  t0002691 suivi ok score 1.00 pos 0,0 net 149 (21 ms) carte 1 photos + 26 positions
+   616.666  t0003021 suivi ok score 1.00 pos 0,0 net 151 (14 ms) carte 1 photos + 30 positions
+   617.005  t0003360 suivi ok score 1.00 pos 0,0 net 148 (24 ms) carte 1 photos + 33 positions
+   617.335  t0003690 suivi ok score 0.94 pos 23,0 net 150 (21 ms) carte 1 photos + 36 positions
+   617.681  t0004035 suivi ok score 0.95 pos 111,0 net 156 (28 ms) carte 1 photos + 40 positions
+   617.930  photo t-2_0002 à 121,0 (515 ko, 224 ms)
+   618.006  t0004360 suivi ok score 0.97 pos 231,-15 net 162 (18 ms) carte 2 photos + 43 positions
+   618.353  t0004707 suivi ok score 0.98 pos 395,-16 net 146 (31 ms) carte 2 photos + 46 positions
+   618.676  t0005030 suivi ok score 0.98 pos 670,-48 net 141 (22 ms) carte 2 photos + 50 positions
+   618.900  envoyé lame_20261113_200137_vincent-2_0002.jpg (515 ko)
+   619.008  t0005362 suivi ok score 0.95 pos 732,-48 net 159 (23 ms) carte 2 photos + 53 positions
+   619.224  photo t-2_0003 à 732,-48 (486 ko, 215 ms)
+   619.329  t0005684 suivi ok score 0.95 pos 981,-64 net 138 (20 ms) carte 3 photos + 56 positions
+   619.667  t0006021 suivi ok score 0.99 pos 1088,-80 net 137 (21 ms) carte 3 photos + 60 positions
+   620.000  t0006355 suivi ok score 1.00 pos 1089,-80 net 132 (20 ms) carte 3 photos + 63 positions
+   620.057  photo t-2_0004 à 1089,-80 (460 ko, 213 ms)
+   620.110  envoyé lame_20261113_200137_vincent-2_0003.jpg (486 ko)
+   620.345  t0006699 suivi ok score 0.99 pos 1089,-80 net 143 (28 ms) carte 4 photos + 66 positions
+   620.667  t0007021 suivi ok score 0.97 pos 1304,-96 net 145 (20 ms) carte 4 photos + 70 positions
+   621.003  t0007357 suivi ok score 0.97 pos 1579,-123 net 137 (21 ms) carte 4 photos + 73 positions
+   621.334  t0007689 suivi ok score 0.92 pos 1826,-143 net 138 (22 ms) carte 4 photos + 76 positions
+   621.674  t0008028 suivi ok score 0.97 pos 2081,-159 net 123 (22 ms) carte 4 photos + 80 positions
+   622.003  t0008358 suivi ok score 0.93 pos 2427,-191 net 127 (20 ms) carte 4 photos + 83 positions
+   622.338  t0008693 suivi ok score 0.96 pos 2663,-207 net 136 (23 ms) carte 4 photos + 86 positions
+   622.669  t0009023 suivi ok score 0.96 pos 2953,-239 net 131 (19 ms) carte 4 photos + 90 positions
+   622.733  photo en mouvement lent (62 % du champ, 31 u/s)
+   622.955  photo t-2_0005 à 2989,-239 (402 ko, 221 ms)
+   623.003  t0009358 suivi ok score 0.96 pos 3180,-255 net 138 (23 ms) carte 5 photos + 93 positions
+   623.338  t0009693 suivi ok score 1.00 pos 3288,-271 net 134 (25 ms) carte 5 photos + 96 positions
+   623.669  t0010023 suivi ok score 1.00 pos 3288,-271 net 136 (22 ms) carte 5 photos + 100 positions
+   623.687  photo t-2_0006 à 3288,-271 (402 ko, 222 ms)
+   624.005  t0010360 suivi ok score 0.98 pos 3311,-16 net 131 (24 ms) carte 6 photos + 103 positions
+   624.340  t0010695 suivi ok score 0.96 pos 3324,191 net 129 (24 ms) carte 6 photos + 106 positions
+   624.390  envoyé lame_20261113_200137_vincent-2_0004.jpg (460 ko)
+   624.668  t0011022 suivi ok score 0.95 pos 3360,589 net 122 (19 ms) carte 6 photos + 110 positions
+   625.017  t0011371 suivi ok score 0.96 pos 3395,957 net 141 (26 ms) carte 6 photos + 113 positions
+   625.260  envoyé lame_20261113_200137_vincent-2_0005.jpg (402 ko)
+   625.348  t0011703 suivi ok score 0.94 pos 3442,1532 net 132 (20 ms) carte 6 photos + 116 positions
+   625.667  t0012022 suivi ok score 1.00 pos 3454,1595 net 144 (21 ms) carte 6 photos + 120 positions
+   625.984  photo t-2_0007 à 3454,1595 (425 ko, 214 ms)
+   626.003  t0012358 suivi ok score 0.87 pos 3466,1706 net 69 (25 ms) carte 7 photos + 123 positions
+   626.368  t0012723 suivi ok score 0.96 pos 3502,2087 net 136 (22 ms) carte 7 photos + 126 positions
+   626.709  envoyé lame_20261113_200137_vincent-2_0006.jpg (402 ko)
+   626.718  t0013072 suivi ok score 0.93 pos 3523,2360 net 123 (27 ms) carte 7 photos + 130 positions
+   627.046  t0013401 suivi ok score 0.95 pos 3537,2546 net 107 (25 ms) carte 7 photos + 133 positions
+   627.336  envoyé lame_20261113_200137_vincent-2_0007.jpg (425 ko)
+   627.392  t0013746 suivi ok score 0.96 pos 3562,2839 net 125 (27 ms) carte 7 photos + 136 positions
+   627.707  t0014061 suivi ok score 0.95 pos 3574,3015 net 129 (20 ms) carte 7 photos + 140 positions
+   628.045  t0014400 suivi ok score 1.00 pos 3574,3042 net 131 (27 ms) carte 7 photos + 143 positions
+   628.375  t0014730 suivi ok score 0.94 pos 3598,3317 net 128 (22 ms) carte 7 photos + 146 positions
+   628.703  t0015058 suivi ok score 0.98 pos 3633,3668 net 137 (19 ms) carte 7 photos + 150 positions
+   628.704  photo en mouvement lent (51 % du champ, 30 u/s)
+   628.929  photo t-2_0008 à 3633,3668 (419 ko, 225 ms)
+   629.038  t0015393 suivi ok score 0.96 pos 3654,3907 net 110 (21 ms) carte 8 photos + 153 positions
+   629.372  t0015727 suivi ok score 0.94 pos 3681,4189 net 125 (22 ms) carte 8 photos + 156 positions
+   629.683  envoyé lame_20261113_200137_vincent-2_0008.jpg (419 ko)
+   629.708  t0016062 suivi ok score 1.00 pos 3681,4258 net 135 (25 ms) carte 8 photos + 160 positions
+   630.033  t0016388 suivi ok score 1.00 pos 3681,4258 net 125 (21 ms) carte 8 photos + 163 positions
+   630.060  photo t-2_0009 à 3681,4258 (407 ko, 217 ms)
+   630.376  t0016731 suivi ok score 1.00 pos 3681,4258 net 126 (25 ms) carte 9 photos + 166 positions
+   630.720  t0017074 suivi ok score 1.00 pos 3681,4258 net 138 (34 ms) carte 9 photos + 170 positions
+   630.886  envoyé lame_20261113_200137_vincent-2_0009.jpg (407 ko)
+   631.043  t0017398 suivi ok score 0.97 pos 3606,4258 net 123 (22 ms) carte 9 photos + 173 positions
+   631.370  t0017725 suivi ok score 0.97 pos 3454,4274 net 111 (22 ms) carte 9 photos + 176 positions
+   631.428  photo t-2_0010 à 3561,4273 (412 ko, 222 ms)
+   631.708  t0018063 suivi ok score 0.99 pos 3117,4305 net 121 (21 ms) carte 10 photos + 180 positions
+   632.035  t0018390 suivi ok score 0.94 pos 3003,4321 net 134 (20 ms) carte 10 photos + 183 positions
+   632.229  envoyé lame_20261113_200137_vincent-2_0010.jpg (412 ko)
+   632.379  t0018734 suivi ok score 0.95 pos 2666,4352 net 125 (28 ms) carte 10 photos + 186 positions
+   632.704  t0019059 suivi ok score 0.94 pos 2438,4369 net 122 (22 ms) carte 10 photos + 190 positions
+   633.045  t0019400 suivi ok score 0.97 pos 2212,4385 net 142 (26 ms) carte 10 photos + 193 positions
+   633.376  t0019730 suivi ok score 0.98 pos 2103,4401 net 141 (19 ms) carte 10 photos + 196 positions
+   633.627  photo t-2_0011 à 2091,4401 (437 ko, 225 ms)
+   633.716  t0020070 suivi ok score 0.95 pos 1888,4416 net 141 (25 ms) carte 11 photos + 200 positions
+   634.035  t0020390 suivi ok score 0.97 pos 1600,4447 net 140 (21 ms) carte 11 photos + 203 positions
+   634.373  t0020727 suivi ok score 1.00 pos 1554,4448 net 131 (22 ms) carte 11 photos + 206 positions
+   634.667  envoyé lame_20261113_200137_vincent-2_0011.jpg (437 ko)
+   634.702  photo t-2_0012 à 1554,4448 (437 ko, 230 ms)
+   634.711  t0021065 suivi ok score 0.92 pos 1396,4463 net 140 (24 ms) carte 12 photos + 210 positions
+   635.030  t0021386 suivi ok score 0.95 pos 1207,4479 net 127 (14 ms) carte 12 photos + 213 positions
+   635.370  t0021724 suivi ok score 0.95 pos 955,4496 net 131 (21 ms) carte 12 photos + 216 positions
+   635.538  envoyé lame_20261113_200137_vincent-2_0012.jpg (437 ko)
+   635.708  t0022063 suivi ok score 0.92 pos 793,4512 net 132 (24 ms) carte 12 photos + 220 positions
+   636.056  t0022410 suivi ok score 0.96 pos 596,4528 net 130 (34 ms) carte 12 photos + 223 positions
+   636.373  t0022727 suivi ok score 0.98 pos 505,4544 net 139 (20 ms) carte 12 photos + 226 positions
+   636.689  photo t-2_0013 à 502,4544 (533 ko, 216 ms)
+   636.708  t0023062 suivi ok score 0.98 pos 465,4544 net 141 (21 ms) carte 13 photos + 230 positions
+   637.051  t0023405 suivi ok score 0.95 pos 251,4560 net 153 (21 ms) carte 13 photos + 233 positions
+   637.374  t0023728 suivi ok score 0.94 pos 71,4576 net 142 (19 ms) carte 13 photos + 236 positions
+   637.712  t0024066 suivi ok score 0.96 pos -152,4603 net 153 (19 ms) carte 13 photos + 240 positions
+   637.820  envoyé lame_20261113_200137_vincent-2_0013.jpg (533 ko)
+   638.038  t0024393 suivi ok score 0.96 pos -311,4608 net 154 (20 ms) carte 13 photos + 243 positions
+   638.375  t0024730 suivi ok score 1.00 pos -335,4624 net 145 (20 ms) carte 13 photos + 246 positions
+   638.667  photo t-2_0014 à -335,4624 (557 ko, 225 ms)
+   638.706  t0025061 suivi ok score 1.00 pos -335,4624 net 151 (21 ms) carte 14 photos + 250 positions
+   639.039  t0025394 suivi ok score 0.97 pos -346,4512 net 138 (16 ms) carte 14 photos + 253 positions
+   639.377  t0025731 suivi ok score 0.97 pos -371,4209 net 141 (20 ms) carte 14 photos + 256 positions
+   639.629  envoyé lame_20261113_200137_vincent-2_0014.jpg (557 ko)
+   639.708  t0026063 suivi ok score 0.93 pos -394,3951 net 140 (21 ms) carte 14 photos + 260 positions
+   640.046  t0026400 suivi ok score 0.95 pos -407,3742 net 155 (24 ms) carte 14 photos + 263 positions
+   640.374  t0026729 suivi ok score 0.87 pos -431,3441 net 124 (20 ms) carte 14 photos + 266 positions
+   640.714  t0027068 suivi ok score 1.00 pos -454,3285 net 149 (24 ms) carte 14 photos + 270 positions
+   641.044  t0027399 suivi ok score 1.00 pos -454,3285 net 150 (22 ms) carte 14 photos + 273 positions
+   641.133  photo t-2_0015 à -454,3285 (562 ko, 212 ms)
+   641.395  t0027748 suivi ok score 1.00 pos -454,3285 net 151 (36 ms) carte 15 photos + 276 positions
+   641.720  t0028074 suivi ok score 1.00 pos -442,3285 net 144 (24 ms) carte 15 photos + 280 positions
+   642.074  t0028428 suivi ok score 0.93 pos -370,3285 net 147 (41 ms) carte 15 photos + 283 positions
+   642.217  envoyé lame_20261113_200137_vincent-2_0015.jpg (562 ko)
+   642.376  t0028731 suivi ok score 0.95 pos -203,3269 net 141 (21 ms) carte 15 photos + 286 positions
+   642.716  t0029071 suivi ok score 0.91 pos 109,3237 net 130 (23 ms) carte 15 photos + 290 positions
+   643.052  t0029407 suivi ok score 0.93 pos 408,3205 net 143 (21 ms) carte 15 photos + 293 positions
+   643.375  t0029729 suivi ok score 0.96 pos 709,3189 net 134 (20 ms) carte 15 photos + 296 positions
+   643.720  t0030074 suivi ok score 0.93 pos 1067,3158 net 135 (30 ms) carte 15 photos + 300 positions
+   643.972  photo en mouvement lent (58 % du champ, 31 u/s)
+   644.046  t0030401 suivi ok score 1.00 pos 1343,3125 net 164 (22 ms) carte 15 photos + 300 positions
+   644.202  photo t-2_0016 à 1331,3127 (489 ko, 229 ms)
+   644.374  t0030729 suivi ok score 1.00 pos 1343,3126 net 152 (24 ms) carte 16 photos + 300 positions
+   644.715  t0031069 suivi ok score 1.00 pos 1343,3126 net 157 (26 ms) carte 16 photos + 300 positions
+   645.039  t0031394 suivi ok score 0.95 pos 1323,3126 net 141 (21 ms) carte 16 photos + 300 positions
+   645.313  envoyé lame_20261113_200137_vincent-2_0016.jpg (489 ko)
+   645.388  t0031743 suivi ok score 0.92 pos 538,3200 net 139 (19 ms) carte 16 photos + 300 positions
+   645.720  t0032074 suivi ok score 0.94 pos 220,3221 net 139 (30 ms) carte 16 photos + 300 positions
+   646.042  t0032397 suivi ok score 0.98 pos 64,3237 net 147 (22 ms) carte 16 photos + 300 positions
+   646.372  t0032727 suivi ok score 0.91 pos -151,3253 net 125 (20 ms) carte 16 photos + 300 positions
+   646.574  photo en mouvement lent (55 % du champ, 39 u/s)
+   646.708  t0033062 suivi ok score 1.00 pos -358,3284 net 151 (21 ms) carte 16 photos + 300 positions
+   646.792  photo t-2_0017 à -338,3269 (539 ko, 218 ms)
+   647.043  t0033398 suivi ok score 1.00 pos -347,3269 net 155 (22 ms) carte 17 photos + 300 positions
+   647.390  t0033744 suivi ok score 1.00 pos -347,3269 net 157 (28 ms) carte 17 photos + 300 positions
+   647.718  t0034073 suivi ok score 1.00 pos -347,3269 net 156 (22 ms) carte 17 photos + 300 positions
+   647.748  envoyé lame_20261113_200137_vincent-2_0017.jpg (539 ko)
+   648.047  t0034402 suivi ok score 0.95 pos -359,3125 net 133 (21 ms) carte 17 photos + 300 positions
+   648.382  t0034737 suivi ok score 0.99 pos -395,2805 net 142 (22 ms) carte 17 photos + 300 positions
+   648.709  t0035063 suivi ok score 0.93 pos -395,2711 net 140 (20 ms) carte 17 photos + 300 positions
+   648.889  photo t-2_0018 à -395,2727 (558 ko, 211 ms)
+   649.039  t0035394 suivi ok score 1.00 pos -395,2679 net 134 (21 ms) carte 18 photos + 300 positions
+   649.379  t0035734 suivi ok score 0.93 pos -383,2679 net 140 (23 ms) carte 18 photos + 300 positions
+   649.709  t0036063 suivi ok score 0.90 pos -25,2647 net 135 (23 ms) carte 18 photos + 300 positions
+   649.984  envoyé lame_20261113_200137_vincent-2_0018.jpg (558 ko)
+   650.047  t0036402 suivi ok score 0.95 pos 241,2631 net 132 (22 ms) carte 18 photos + 300 positions
+   650.381  t0036736 suivi ok score 0.99 pos 458,2615 net 140 (22 ms) carte 18 photos + 300 positions
+   650.712  t0037067 suivi ok score 1.00 pos 458,2615 net 141 (22 ms) carte 18 photos + 300 positions
+   650.853  photo t-2_0019 à 458,2615 (530 ko, 209 ms)
+   651.043  t0037397 suivi ok score 0.98 pos 435,2328 net 143 (21 ms) carte 19 photos + 300 positions
+   651.379  t0037734 suivi ok score 0.91 pos 411,2105 net 144 (22 ms) carte 19 photos + 300 positions
+   651.716  t0038070 suivi ok score 1.00 pos 411,2105 net 149 (24 ms) carte 19 photos + 300 positions
+   651.836  envoyé lame_20261113_200137_vincent-2_0019.jpg (530 ko)
+   651.914  photo t-2_0020 à 411,2105 (531 ko, 262 ms)
+   652.046  t0038400 suivi ok score 0.97 pos 530,2091 net 139 (23 ms) carte 20 photos + 300 positions
+   652.387  t0038742 suivi ok score 0.96 pos 877,2062 net 122 (30 ms) carte 20 photos + 300 positions
+   652.715  t0039069 suivi ok score 1.00 pos 1139,2041 net 146 (25 ms) carte 20 photos + 300 positions
+   653.045  t0039400 suivi ok score 1.00 pos 1140,2041 net 150 (20 ms) carte 20 photos + 300 positions
+   653.115  envoyé lame_20261113_200137_vincent-2_0020.jpg (531 ko)
+   653.206  photo t-2_0021 à 1140,2041 (503 ko, 229 ms)
+   653.380  t0039734 suivi ok score 1.00 pos 1140,2041 net 149 (22 ms) carte 21 photos + 300 positions
+   653.716  t0040070 suivi ok score 1.00 pos 1140,2041 net 150 (27 ms) carte 21 photos + 300 positions
+   654.044  t0040398 suivi ok score 1.00 pos 1140,2041 net 150 (21 ms) carte 21 photos + 300 positions
+   654.138  envoyé lame_20261113_200137_vincent-2_0021.jpg (503 ko)
+   654.376  t0040731 suivi ok score 1.00 pos 1140,2041 net 148 (21 ms) carte 21 photos + 300 positions
+   654.712  t0041066 suivi ok score 1.00 pos 1140,2041 net 150 (23 ms) carte 21 photos + 300 positions
+   655.050  t0041404 suivi ok score 1.00 pos 1140,2041 net 150 (24 ms) carte 21 photos + 300 positions
+   655.395  t0041749 suivi ok score 1.00 pos 1140,2041 net 149 (32 ms) carte 21 photos + 300 positions
+   655.713  t0042067 suivi ok score 1.00 pos 1140,2041 net 147 (22 ms) carte 21 photos + 300 positions
+   656.042  t0042397 suivi ok score 1.00 pos 1140,2041 net 150 (18 ms) carte 21 photos + 300 positions
+   656.390  t0042744 suivi ok score 1.00 pos 1140,2041 net 149 (28 ms) carte 21 photos + 300 positions
+   656.718  t0043073 suivi ok score 1.00 pos 1140,2041 net 150 (26 ms) carte 21 photos + 300 positions
+   657.051  t0043405 suivi ok score 1.00 pos 1140,2041 net 150 (26 ms) carte 21 photos + 300 positions
+   657.416  t0043770 suivi ok score 1.00 pos 1140,2041 net 149 (21 ms) carte 21 photos + 300 positions
+   657.753  t0044107 suivi ok score 1.00 pos 1140,2041 net 150 (21 ms) carte 21 photos + 300 positions
+   658.095  t0044449 suivi ok score 1.00 pos 1140,2041 net 150 (33 ms) carte 21 photos + 300 positions
+   658.428  t0044783 suivi ok score 1.00 pos 1140,2041 net 149 (21 ms) carte 21 photos + 300 positions
+   658.750  t0045105 suivi ok score 1.00 pos 1140,2041 net 149 (25 ms) carte 21 photos + 300 positions
+   659.089  t0045443 suivi ok score 1.00 pos 1140,2041 net 149 (21 ms) carte 21 photos + 300 positions
+   659.411  t0045766 suivi ok score 1.00 pos 1140,2041 net 149 (21 ms) carte 21 photos + 300 positions
+   659.752  t0046106 suivi ok score 1.00 pos 1140,2041 net 149 (22 ms) carte 21 photos + 300 positions
+   660.102  t0046456 suivi ok score 1.00 pos 1140,2041 net 150 (36 ms) carte 21 photos + 300 positions
+   660.421  t0046775 suivi ok score 1.00 pos 1140,2041 net 150 (24 ms) carte 21 photos + 300 positions
+   660.749  t0047103 suivi ok score 1.00 pos 1140,2041 net 150 (21 ms) carte 21 photos + 300 positions
+   661.084  t0047439 suivi ok score 1.00 pos 1140,2041 net 149 (23 ms) carte 21 photos + 300 positions
+   661.412  t0047767 suivi ok score 1.00 pos 1140,2041 net 150 (21 ms) carte 21 photos + 300 positions
+   661.751  t0048105 suivi ok score 1.00 pos 1140,2041 net 149 (23 ms) carte 21 photos + 300 positions
+   662.082  t0048436 suivi ok score 1.00 pos 1140,2041 net 150 (21 ms) carte 21 photos + 300 positions
+   662.419  t0048774 suivi ok score 1.00 pos 1140,2041 net 150 (25 ms) carte 21 photos + 300 positions
+   662.753  t0049107 suivi ok score 1.00 pos 1140,2041 net 150 (25 ms) carte 21 photos + 300 positions
+   663.092  t0049446 suivi ok score 1.00 pos 1140,2041 net 150 (29 ms) carte 21 photos + 300 positions
+   663.414  t0049769 suivi ok score 1.00 pos 1140,2041 net 150 (23 ms) carte 21 photos + 300 positions
+   663.748  t0050103 suivi ok score 1.00 pos 1140,2041 net 150 (21 ms) carte 21 photos + 300 positions
+   664.082  t0050437 suivi ok score 1.00 pos 1140,2041 net 149 (22 ms) carte 21 photos + 300 positions
+   664.418  t0050772 suivi ok score 1.00 pos 1140,2041 net 151 (27 ms) carte 21 photos + 300 positions
+   664.753  t0051107 suivi ok score 1.00 pos 1140,2041 net 150 (23 ms) carte 21 photos + 300 positions
+   665.090  t0051444 suivi ok score 1.00 pos 1140,2041 net 151 (29 ms) carte 21 photos + 300 positions
+   665.435  t0051789 suivi ok score 1.00 pos 1140,2041 net 151 (36 ms) carte 21 photos + 300 positions
+   665.752  t0052107 suivi ok score 1.00 pos 1140,2041 net 151 (22 ms) carte 21 photos + 300 positions
+   666.082  t0052436 suivi ok score 1.00 pos 1140,2041 net 150 (21 ms) carte 21 photos + 300 positions
+   666.419  t0052774 suivi ok score 1.00 pos 1140,2041 net 149 (22 ms) carte 21 photos + 300 positions
+   666.772  t0053126 suivi ok score 1.00 pos 1140,2041 net 147 (31 ms) carte 21 photos + 300 positions
+   667.088  t0053443 suivi ok score 1.00 pos 1140,2041 net 145 (26 ms) carte 21 photos + 300 positions
+   667.430  t0053784 suivi ok score 1.00 pos 1140,2041 net 144 (25 ms) carte 21 photos + 300 positions
+   667.749  t0054103 suivi ok score 1.00 pos 1140,2041 net 142 (21 ms) carte 21 photos + 300 positions
+   668.082  t0054436 suivi ok score 1.00 pos 1140,2041 net 141 (21 ms) carte 21 photos + 300 positions
+   668.416  t0054770 suivi ok score 1.00 pos 1128,2041 net 143 (24 ms) carte 21 photos + 300 positions
+   668.753  t0055107 suivi ok score 1.00 pos 1128,2041 net 145 (21 ms) carte 21 photos + 300 positions
+   669.093  t0055447 suivi ok score 1.00 pos 1136,2041 net 142 (29 ms) carte 21 photos + 300 positions
+   669.426  t0055780 suivi ok score 1.00 pos 1140,2041 net 149 (30 ms) carte 21 photos + 300 positions
+   669.756  t0056111 suivi ok score 1.00 pos 1140,2041 net 151 (22 ms) carte 21 photos + 300 positions
+   670.119  t0056474 suivi lost score 0.30 pos 442,2730 net 444 (60 ms) carte 21 photos + 300 positions
+   670.752  t0057108 suivi lost score 0.09 pos 872,770 net 387 (117 ms) carte 21 photos + 300 positions
+   671.197  t0057551 suivi ok score 1.00 pos 3131,2459 net 25 (20 ms) carte 21 photos + 300 positions
+   671.353  photo en mouvement lent (85 % du champ, 0 u/s)
+   671.353  ATTENTION pas trop grand (85 % du champ) : recouvrement insuffisant
+   671.353  photo floue (netteté 47 contre 152 de référence)
+   671.510  t0057865 suivi ok score 1.00 pos 3717,2379 net 48 (20 ms) carte 21 photos + 300 positions
+   671.561  photo t-2_0022 à 3717,2379 (413 ko, 207 ms)
+   671.855  t0058210 suivi ok score 1.00 pos 5260,2336 net 24 (21 ms) carte 22 photos + 300 positions
+   671.872  photo en mouvement lent (50 % du champ, 25 u/s)
+   671.873  photo floue (netteté 24 contre 152 de référence)
+   672.094  photo t-2_0023 à 5251,2333 (395 ko, 221 ms)
+   672.168  t0058523 suivi ok score 0.79 pos 5753,532 net 421 (14 ms) carte 23 photos + 300 positions
+   672.631  t0058987 suivi lost score 0.09 pos 4796,2285 net 382 (45 ms) carte 23 photos + 300 positions
+   672.785  envoyé lame_20261113_200137_vincent-2_0022.jpg (413 ko)
+   673.668  t0060024 suivi lost score 0.09 pos 4796,2285 net 371 (113 ms) carte 23 photos + 300 positions
+   674.691  t0061047 suivi lost score 0.10 pos 4796,2285 net 394 (92 ms) carte 23 photos + 300 positions
+   675.734  t0062090 suivi lost score 0.15 pos 4796,2285 net 416 (115 ms) carte 23 photos + 300 positions
+   676.291  t0062646 suivi ok score 0.87 pos 4569,1282 net 314 (31 ms) carte 23 photos + 300 positions
+   676.616  t0062971 suivi ok score 0.98 pos 4557,1249 net 283 (24 ms) carte 23 photos + 300 positions
+   676.938  photo t-2_0024 à 4557,1249 (426 ko, 223 ms)
+   676.942  t0063298 suivi ok score 0.98 pos 4557,1249 net 281 (21 ms) carte 24 photos + 300 positions
+   677.279  t0063634 suivi ok score 0.98 pos 4557,1249 net 278 (21 ms) carte 24 photos + 300 positions
+   677.613  t0063968 suivi ok score 0.98 pos 4557,1249 net 284 (21 ms) carte 24 photos + 300 positions
+   677.830  envoyé lame_20261113_200137_vincent-2_0023.jpg (395 ko)
+   677.951  t0064306 suivi ok score 0.98 pos 4557,1249 net 281 (27 ms) carte 24 photos + 300 positions
+   678.279  t0064635 suivi ok score 0.98 pos 4557,1249 net 279 (20 ms) carte 24 photos + 300 positions
+   678.606  t0064961 suivi ok score 0.98 pos 4557,1249 net 283 (15 ms) carte 24 photos + 300 positions
+   678.889  envoyé lame_20261113_200137_vincent-2_0024.jpg (426 ko)
+   678.949  t0065304 suivi ok score 0.98 pos 4557,1249 net 286 (21 ms) carte 24 photos + 300 positions
+   679.270  t0065625 suivi ok score 0.98 pos 4557,1249 net 292 (16 ms) carte 24 photos + 300 positions
+   679.612  t0065967 suivi ok score 0.98 pos 4557,1249 net 278 (22 ms) carte 24 photos + 300 positions
+   679.949  t0066305 suivi ok score 0.98 pos 4557,1249 net 285 (22 ms) carte 24 photos + 300 positions
+   680.283  t0066638 suivi ok score 0.98 pos 4557,1249 net 281 (22 ms) carte 24 photos + 300 positions
+   680.636  t0066991 suivi ok score 0.98 pos 4557,1249 net 286 (36 ms) carte 24 photos + 300 positions
+   680.947  t0067302 suivi ok score 0.98 pos 4557,1249 net 282 (15 ms) carte 24 photos + 300 positions
+   681.281  t0067636 suivi ok score 0.98 pos 4557,1249 net 287 (21 ms) carte 24 photos + 300 positions
+   681.308  changement d'objectif vers x100 : début à 67665 ms, position 4557,1249 (ok)
+   705.240  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+   706.037  verrouillage (anti) : focus infini, pose 10.0 ms, ISO 114, WB figée
+   706.269  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+   729.710  objectif x100 : reprise à 116066 ms (calibration absente) ; profondeur oui ; pose 10.0 ms, ISO 114
+   729.721  masque oculaire : 100 % du cadre utile (p95 255)
+   730.000  t0116355 suivi ok score 0.99 pos 0,0 net 135 (23 ms) carte 0 photos + 3 positions
+   730.329  t0116684 suivi ok score 1.00 pos 0,0 net 136 (22 ms) carte 0 photos + 6 positions
+   730.352  patron 4x4 champs posé en haut à gauche (0,0)
+   730.352  photo t-2_0025 à 0,0 (432 ko, 216 ms)
+   730.659  t0117013 suivi ok score 1.00 pos 0,0 net 136 (21 ms) carte 1 photos + 9 positions
+   731.006  t0117361 suivi ok score 1.00 pos 0,0 net 135 (28 ms) carte 1 photos + 13 positions
+   731.357  t0117711 suivi ok score 1.00 pos 0,0 net 134 (37 ms) carte 1 photos + 16 positions
+   731.494  envoyé lame_20261113_200137_vincent-2_0025.jpg (432 ko)
+   731.664  t0118019 suivi ok score 0.98 pos 0,0 net 135 (21 ms) carte 1 photos + 19 positions
+   732.001  t0118355 suivi ok score 1.00 pos 0,0 net 140 (21 ms) carte 1 photos + 23 positions
+   732.331  t0118686 suivi ok score 0.99 pos 0,0 net 145 (23 ms) carte 1 photos + 26 positions
+   732.668  t0119023 suivi ok score 0.98 pos 60,0 net 150 (24 ms) carte 1 photos + 29 positions
+   733.004  t0119359 suivi ok score 0.95 pos 407,-33 net 137 (24 ms) carte 1 photos + 33 positions
+   733.331  t0119685 suivi ok score 0.96 pos 705,-63 net 131 (20 ms) carte 1 photos + 36 positions
+   733.669  t0120024 suivi ok score 0.97 pos 932,-80 net 157 (23 ms) carte 1 photos + 39 positions
+   733.999  t0120354 suivi ok score 0.99 pos 1029,-95 net 147 (21 ms) carte 1 photos + 43 positions
+   734.154  photo t-2_0026 à 1016,-94 (436 ko, 218 ms)
+   734.330  t0120685 suivi ok score 0.94 pos 1343,-126 net 143 (23 ms) carte 2 photos + 46 positions
+   734.660  t0121015 suivi ok score 0.92 pos 1584,-142 net 130 (19 ms) carte 2 photos + 49 positions
+   735.002  t0121356 suivi ok score 0.98 pos 2000,-175 net 132 (25 ms) carte 2 photos + 53 positions
+   735.057  envoyé lame_20261113_200137_vincent-2_0026.jpg (436 ko)
+   735.321  t0121676 suivi ok score 0.98 pos 2143,-191 net 144 (14 ms) carte 2 photos + 56 positions
+   735.667  t0122022 suivi ok score 0.93 pos 2514,-218 net 130 (21 ms) carte 2 photos + 59 positions
+   736.006  t0122360 suivi ok score 0.90 pos 3100,-269 net 122 (21 ms) carte 2 photos + 63 positions
+   736.268  photo en mouvement lent (78 % du champ, 24 u/s)
+   736.269  ATTENTION pas trop grand (78 % du champ) : recouvrement insuffisant
+   736.335  t0122690 suivi ok score 0.97 pos 3423,-301 net 141 (23 ms) carte 2 photos + 66 positions
+   736.471  photo t-2_0027 à 3400,-301 (401 ko, 202 ms)
+   736.675  t0123031 suivi ok score 0.93 pos 3577,-316 net 125 (22 ms) carte 3 photos + 69 positions
+   737.000  t0123355 suivi ok score 0.98 pos 3746,-333 net 130 (24 ms) carte 3 photos + 73 positions
+   737.319  envoyé lame_20261113_200137_vincent-2_0027.jpg (401 ko)
+   737.335  t0123690 suivi ok score 1.00 pos 3746,-333 net 115 (24 ms) carte 3 photos + 76 positions
+   737.676  t0124031 suivi ok score 0.90 pos 3757,-157 net 86 (23 ms) carte 3 photos + 79 positions
+   737.990  t0124345 suivi ok score 1.00 pos 3770,2 net 128 (13 ms) carte 3 photos + 83 positions
+   738.334  t0124689 suivi ok score 0.97 pos 3793,2 net 109 (20 ms) carte 3 photos + 86 positions
+   738.671  t0125025 suivi ok score 0.97 pos 4319,-45 net 95 (27 ms) carte 3 photos + 89 positions
+   739.013  t0125367 suivi ok score 0.96 pos 4822,-88 net 103 (31 ms) carte 3 photos + 93 positions
+   739.203  photo en mouvement lent (55 % du champ, 34 u/s)
+   739.337  t0125692 suivi ok score 0.97 pos 5070,-109 net 116 (20 ms) carte 3 photos + 96 positions
+   739.435  photo t-2_0028 à 5072,-108 (368 ko, 231 ms)
+   739.658  t0126014 suivi ok score 1.00 pos 5072,-109 net 100 (14 ms) carte 4 photos + 99 positions
+   740.010  t0126365 suivi ok score 1.00 pos 5060,-109 net 86 (30 ms) carte 4 photos + 103 positions
+   740.351  t0126705 suivi ok score 1.00 pos 5060,-109 net 133 (33 ms) carte 4 photos + 106 positions
+   740.523  envoyé lame_20261113_200137_vincent-2_0028.jpg (368 ko)
+   740.679  t0127034 suivi ok score 0.99 pos 5072,-109 net 126 (33 ms) carte 4 photos + 109 positions
+   741.001  t0127356 suivi ok score 1.00 pos 5084,-109 net 131 (24 ms) carte 4 photos + 113 positions
+   741.336  t0127691 suivi ok score 0.96 pos 5228,-123 net 125 (24 ms) carte 4 photos + 116 positions
+   741.667  t0128022 suivi ok score 0.95 pos 5526,-140 net 121 (21 ms) carte 4 photos + 119 positions
+   742.004  t0128359 suivi ok score 0.98 pos 5837,-172 net 120 (22 ms) carte 4 photos + 123 positions
+   742.332  t0128687 suivi ok score 0.96 pos 6101,-188 net 117 (21 ms) carte 4 photos + 126 positions
+   742.667  t0129022 suivi ok score 0.99 pos 6375,-219 net 128 (22 ms) carte 4 photos + 129 positions
+   742.998  t0129353 suivi ok score 1.00 pos 6363,-219 net 119 (23 ms) carte 4 photos + 133 positions
+   743.190  photo t-2_0029 à 6363,-219 (365 ko, 232 ms)
+   743.318  t0129674 suivi ok score 1.00 pos 6363,-219 net 123 (15 ms) carte 5 photos + 136 positions
+   743.663  t0130018 suivi ok score 0.98 pos 6391,-219 net 114 (21 ms) carte 5 photos + 139 positions
+   743.951  envoyé lame_20261113_200137_vincent-2_0029.jpg (365 ko)
+   744.016  t0130370 suivi ok score 0.96 pos 6543,-233 net 121 (32 ms) carte 5 photos + 143 positions
+   744.335  t0130690 suivi ok score 0.91 pos 7060,-266 net 98 (23 ms) carte 5 photos + 146 positions
+   744.664  t0131019 suivi ok score 0.98 pos 7582,-313 net 111 (19 ms) carte 5 photos + 149 positions
+   745.012  t0131366 suivi ok score 0.98 pos 7642,-329 net 119 (32 ms) carte 5 photos + 153 positions
+   745.330  t0131685 suivi ok score 1.00 pos 7642,-329 net 110 (21 ms) carte 5 photos + 156 positions
+   745.390  photo t-2_0030 à 7642,-329 (365 ko, 210 ms)
+   745.674  t0132029 suivi ok score 1.00 pos 7642,-329 net 111 (29 ms) carte 6 photos + 159 positions
+   746.004  t0132359 suivi ok score 0.99 pos 7669,-329 net 117 (23 ms) carte 6 photos + 163 positions
+   746.269  envoyé lame_20261113_200137_vincent-2_0030.jpg (365 ko)
+   746.333  t0132688 suivi ok score 0.97 pos 8311,-382 net 75 (16 ms) carte 6 photos + 166 positions
+   746.667  t0133022 suivi ok score 0.99 pos 8717,-419 net 111 (21 ms) carte 6 photos + 169 positions
+   747.011  t0133365 suivi ok score 0.98 pos 9078,-447 net 112 (29 ms) carte 6 photos + 173 positions
+   747.227  photo en mouvement lent (53 % du champ, 40 u/s)
+   747.342  t0133697 suivi ok score 1.00 pos 9318,-467 net 117 (28 ms) carte 6 photos + 176 positions
+   747.450  photo t-2_0031 à 9272,-467 (378 ko, 223 ms)
+   747.669  t0134023 suivi ok score 1.00 pos 9317,-467 net 115 (26 ms) carte 7 photos + 179 positions
+   748.000  t0134355 suivi ok score 1.00 pos 9317,-467 net 119 (18 ms) carte 7 photos + 183 positions
+   748.332  t0134688 suivi ok score 0.99 pos 9328,-335 net 101 (21 ms) carte 7 photos + 186 positions
+   748.395  envoyé lame_20261113_200137_vincent-2_0031.jpg (378 ko)
+   748.670  t0135025 suivi ok score 0.96 pos 9353,-38 net 54 (24 ms) carte 7 photos + 189 positions
+   749.016  t0135371 suivi ok score 0.98 pos 9449,1175 net 52 (31 ms) carte 7 photos + 193 positions
+   749.332  t0135686 suivi ok score 1.00 pos 9464,1380 net 127 (21 ms) carte 7 photos + 196 positions
+   749.663  t0136018 suivi ok score 1.00 pos 9464,1380 net 117 (20 ms) carte 7 photos + 199 positions
+   749.747  photo t-2_0032 à 9464,1380 (390 ko, 233 ms)
+   749.998  t0136352 suivi ok score 1.00 pos 9453,1380 net 97 (22 ms) carte 8 photos + 203 positions
+   750.335  t0136690 suivi ok score 1.00 pos 9380,1380 net 115 (23 ms) carte 8 photos + 206 positions
+   750.669  t0137024 suivi ok score 0.97 pos 9058,1412 net 83 (20 ms) carte 8 photos + 209 positions
+   750.890  envoyé lame_20261113_200137_vincent-2_0032.jpg (390 ko)
+   751.023  t0137377 suivi ok score 0.95 pos 8404,1472 net 100 (29 ms) carte 8 photos + 213 positions
+   751.343  t0137698 suivi ok score 0.99 pos 8245,1479 net 114 (22 ms) carte 8 photos + 216 positions
+   751.671  t0138026 suivi ok score 0.98 pos 8173,1484 net 112 (24 ms) carte 8 photos + 219 positions
+   751.760  photo t-2_0033 à 8188,1495 (413 ko, 219 ms)
+   752.025  t0138380 suivi ok score 0.98 pos 8055,1489 net 111 (39 ms) carte 9 photos + 223 positions
+   752.334  t0138689 suivi ok score 0.96 pos 7505,1532 net 93 (20 ms) carte 9 photos + 226 positions
+   752.669  t0139024 suivi ok score 0.97 pos 6886,1593 net 113 (23 ms) carte 9 photos + 229 positions
+   752.675  envoyé lame_20261113_200137_vincent-2_0033.jpg (413 ko)
+   753.003  t0139358 suivi ok score 0.98 pos 6736,1610 net 116 (23 ms) carte 9 photos + 233 positions
+   753.339  t0139693 suivi ok score 0.97 pos 6659,1625 net 117 (23 ms) carte 9 photos + 236 positions
+   753.460  photo t-2_0034 à 6696,1621 (409 ko, 228 ms)
+   753.667  t0140021 suivi ok score 0.99 pos 6562,1629 net 131 (21 ms) carte 10 photos + 239 positions
+   754.001  t0140355 suivi ok score 0.97 pos 6415,1630 net 107 (20 ms) carte 10 photos + 243 positions
+   754.332  t0140687 suivi ok score 0.99 pos 6235,1646 net 128 (21 ms) carte 10 photos + 246 positions
+   754.524  envoyé lame_20261113_200137_vincent-2_0034.jpg (409 ko)
+   754.665  t0141020 suivi ok score 0.99 pos 5913,1677 net 107 (19 ms) carte 10 photos + 249 positions
+   754.991  t0141346 suivi ok score 0.98 pos 5806,1693 net 127 (13 ms) carte 10 photos + 253 positions
+   755.332  t0141687 suivi ok score 0.97 pos 5695,1693 net 116 (22 ms) carte 10 photos + 256 positions
+   755.357  photo t-2_0035 à 5780,1693 (423 ko, 227 ms)
+   755.670  t0142025 suivi ok score 0.98 pos 5529,1709 net 99 (22 ms) carte 11 photos + 259 positions
+   755.999  t0142354 suivi ok score 0.97 pos 5282,1725 net 106 (22 ms) carte 11 photos + 263 positions
+   756.337  t0142691 suivi ok score 1.00 pos 5255,1741 net 119 (22 ms) carte 11 photos + 266 positions
+   756.380  envoyé lame_20261113_200137_vincent-2_0035.jpg (423 ko)
+   756.607  photo t-2_0036 à 5255,1741 (422 ko, 204 ms)
+   756.664  t0143018 suivi ok score 1.00 pos 5255,1741 net 107 (21 ms) carte 12 photos + 269 positions
+   757.007  t0143362 suivi ok score 1.00 pos 5255,1741 net 104 (28 ms) carte 12 photos + 273 positions
+   757.338  t0143693 suivi ok score 1.00 pos 5255,1741 net 105 (24 ms) carte 12 photos + 276 positions
+   757.515  envoyé lame_20261113_200137_vincent-2_0036.jpg (422 ko)
+   757.669  t0144024 suivi ok score 0.97 pos 5207,1741 net 111 (22 ms) carte 12 photos + 279 positions
+   757.999  t0144354 suivi ok score 0.96 pos 4407,1804 net 107 (20 ms) carte 12 photos + 283 positions
+   758.342  t0144696 suivi ok score 0.99 pos 4111,1835 net 132 (22 ms) carte 12 photos + 286 positions
+   758.679  t0145034 suivi ok score 0.98 pos 3995,1846 net 123 (27 ms) carte 12 photos + 289 positions
+   759.007  t0145362 suivi ok score 0.97 pos 3617,1867 net 115 (22 ms) carte 12 photos + 293 positions
+   759.341  t0145696 suivi ok score 0.99 pos 3359,1899 net 116 (25 ms) carte 12 photos + 296 positions
+   759.341  photo en mouvement lent (62 % du champ, 35 u/s)
+   759.543  photo t-2_0037 à 3359,1899 (412 ko, 201 ms)
+   759.656  t0146011 suivi ok score 0.96 pos 3011,1929 net 114 (13 ms) carte 13 photos + 299 positions
+   760.011  t0146366 suivi ok score 0.99 pos 2737,1961 net 131 (30 ms) carte 13 photos + 300 positions
+   760.348  t0146703 suivi ok score 0.99 pos 2665,1963 net 122 (30 ms) carte 13 photos + 300 positions
+   760.607  photo t-2_0038 à 2665,1963 (413 ko, 258 ms)
+   760.628  envoyé lame_20261113_200137_vincent-2_0037.jpg (412 ko)
+   760.676  t0147030 suivi ok score 0.97 pos 2529,1974 net 109 (18 ms) carte 14 photos + 300 positions
+   760.998  t0147353 suivi ok score 0.99 pos 2476,1979 net 132 (21 ms) carte 14 photos + 300 positions
+   761.341  t0147696 suivi ok score 1.00 pos 2477,1979 net 127 (26 ms) carte 14 photos + 300 positions
+   761.669  t0148024 suivi ok score 1.00 pos 2477,1979 net 82 (21 ms) carte 14 photos + 300 positions
+   762.015  t0148369 suivi ok score 1.00 pos 2442,1979 net 114 (29 ms) carte 14 photos + 300 positions
+   762.339  t0148694 suivi ok score 1.00 pos 2441,1993 net 62 (25 ms) carte 14 photos + 300 positions
+   762.670  t0149025 suivi ok score 1.00 pos 2433,1995 net 135 (23 ms) carte 14 photos + 300 positions
+   763.004  t0149359 suivi ok score 0.98 pos 2415,1995 net 135 (23 ms) carte 14 photos + 300 positions
+   763.339  t0149694 suivi ok score 0.94 pos 1691,2053 net 118 (26 ms) carte 14 photos + 300 positions
+   763.674  t0150028 suivi ok score 0.99 pos 1464,2069 net 146 (22 ms) carte 14 photos + 300 positions
+   764.010  t0150364 suivi ok score 0.99 pos 1344,2085 net 153 (24 ms) carte 14 photos + 300 positions
+   764.343  t0150698 suivi ok score 0.97 pos 1247,2100 net 152 (23 ms) carte 14 photos + 300 positions
+   764.460  photo t-2_0039 à 1272,2085 (431 ko, 218 ms)
+   764.681  t0151036 suivi ok score 0.97 pos 1186,2107 net 145 (30 ms) carte 15 photos + 300 positions
+   765.006  t0151361 suivi ok score 0.96 pos 1021,2127 net 146 (24 ms) carte 15 photos + 300 positions
+   765.334  t0151689 suivi ok score 0.96 pos 591,2160 net 135 (19 ms) carte 15 photos + 300 positions
+   765.343  envoyé lame_20261113_200137_vincent-2_0038.jpg (413 ko)
+   765.668  t0152022 suivi ok score 0.96 pos 348,2192 net 142 (20 ms) carte 15 photos + 300 positions
+   766.006  t0152360 suivi ok score 0.96 pos 227,2208 net 152 (22 ms) carte 15 photos + 300 positions
+   766.207  envoyé lame_20261113_200137_vincent-2_0039.jpg (431 ko)
+   766.337  t0152692 suivi ok score 0.97 pos 135,2211 net 152 (23 ms) carte 15 photos + 300 positions
+   766.366  photo t-2_0040 à 194,2208 (447 ko, 230 ms)
+   766.670  t0153025 suivi ok score 0.94 pos -92,2239 net 148 (23 ms) carte 16 photos + 300 positions
+   767.013  t0153367 suivi ok score 0.93 pos -486,2271 net 155 (22 ms) carte 16 photos + 300 positions
+   767.351  t0153706 suivi ok score 1.00 pos -559,2291 net 101 (31 ms) carte 16 photos + 300 positions
+   767.415  envoyé lame_20261113_200137_vincent-2_0040.jpg (447 ko)
+   767.666  t0154021 suivi ok score 0.99 pos -550,2287 net 121 (21 ms) carte 16 photos + 300 positions
+   767.700  photo t-2_0041 à -558,2287 (425 ko, 220 ms)
+   768.007  t0154361 suivi ok score 0.98 pos -546,2287 net 148 (23 ms) carte 17 photos + 300 positions
+   768.339  t0154694 suivi ok score 0.97 pos -535,2447 net 147 (21 ms) carte 17 photos + 300 positions
+   768.456  envoyé lame_20261113_200137_vincent-2_0041.jpg (425 ko)
+   768.676  t0155031 suivi ok score 0.89 pos -439,3526 net 63 (19 ms) carte 17 photos + 300 positions
+   769.010  t0155364 suivi ok score 0.94 pos -358,4479 net 117 (20 ms) carte 17 photos + 300 positions
+   769.035  photo en mouvement lent (54 % du champ, 15 u/s)
+   769.255  photo t-2_0042 à -356,4486 (469 ko, 220 ms)
+   769.344  t0155699 suivi ok score 1.00 pos -355,4499 net 97 (23 ms) carte 18 photos + 300 positions
+   769.669  t0156024 suivi ok score 1.00 pos -355,4499 net 101 (21 ms) carte 18 photos + 300 positions
+   770.009  t0156363 suivi ok score 1.00 pos -355,4499 net 39 (24 ms) carte 18 photos + 300 positions
+   770.324  envoyé lame_20261113_200137_vincent-2_0042.jpg (469 ko)
+   770.343  t0156698 suivi ok score 1.00 pos -355,4499 net 126 (24 ms) carte 18 photos + 300 positions
+   770.686  t0157041 suivi ok score 1.00 pos -355,4499 net 141 (23 ms) carte 18 photos + 300 positions
+   771.013  t0157367 suivi ok score 1.00 pos -355,4499 net 142 (22 ms) carte 18 photos + 300 positions
+   771.361  t0157715 suivi ok score 0.98 pos -152,4483 net 130 (34 ms) carte 18 photos + 300 positions
+   771.670  t0158024 suivi ok score 0.99 pos -9,4468 net 136 (17 ms) carte 18 photos + 300 positions
+   772.017  t0158371 suivi ok score 0.98 pos 112,4456 net 130 (28 ms) carte 18 photos + 300 positions
+   772.341  t0158695 suivi ok score 0.99 pos 337,4436 net 126 (21 ms) carte 18 photos + 300 positions
+   772.678  t0159033 suivi ok score 0.99 pos 445,4432 net 112 (21 ms) carte 18 photos + 300 positions
+   772.918  photo t-2_0043 à 458,4423 (456 ko, 217 ms)
+   773.016  t0159371 suivi ok score 0.98 pos 502,4419 net 82 (26 ms) carte 19 photos + 300 positions
+   773.344  t0159699 suivi ok score 0.97 pos 658,4403 net 111 (23 ms) carte 19 photos + 300 positions
+   773.677  t0160032 suivi ok score 1.00 pos 649,4404 net 125 (21 ms) carte 19 photos + 300 positions
+   773.780  envoyé lame_20261113_200137_vincent-2_0043.jpg (456 ko)
+   774.011  t0160365 suivi ok score 1.00 pos 649,4404 net 126 (24 ms) carte 19 photos + 300 positions
+   774.342  t0160696 suivi ok score 1.00 pos 649,4404 net 132 (22 ms) carte 19 photos + 300 positions
+   774.671  t0161026 suivi ok score 0.99 pos 744,4404 net 126 (17 ms) carte 19 photos + 300 positions
+   775.012  t0161366 suivi ok score 0.99 pos 864,4388 net 98 (24 ms) carte 19 photos + 300 positions
+   775.350  t0161705 suivi ok score 0.98 pos 1147,4357 net 96 (31 ms) carte 19 photos + 300 positions
+   775.671  t0162026 suivi ok score 0.99 pos 1258,4341 net 99 (19 ms) carte 19 photos + 300 positions
+   776.010  t0162364 suivi ok score 0.93 pos 1853,4307 net 105 (24 ms) carte 19 photos + 300 positions
+   776.172  photo en mouvement lent (51 % du champ, 39 u/s)
+   776.338  t0162692 suivi ok score 1.00 pos 2011,4277 net 103 (20 ms) carte 19 photos + 300 positions
+   776.396  photo t-2_0044 à 2003,4293 (423 ko, 223 ms)
+   776.677  t0163032 suivi ok score 0.98 pos 2020,4282 net 111 (26 ms) carte 20 photos + 300 positions
+   777.016  t0163370 suivi ok score 0.98 pos 2045,4282 net 114 (31 ms) carte 20 photos + 300 positions
+   777.358  t0163713 suivi ok score 1.00 pos 2033,4282 net 89 (30 ms) carte 20 photos + 300 positions
+   777.396  envoyé lame_20261113_200137_vincent-2_0044.jpg (423 ko)
+   777.677  t0164032 suivi ok score 1.00 pos 2033,4282 net 89 (27 ms) carte 20 photos + 300 positions
+   778.017  t0164372 suivi ok score 1.00 pos 2033,4282 net 123 (30 ms) carte 20 photos + 300 positions
+   778.343  t0164698 suivi ok score 1.00 pos 2033,4282 net 109 (24 ms) carte 20 photos + 300 positions
+   778.677  t0165032 suivi ok score 0.99 pos 2128,4282 net 107 (24 ms) carte 20 photos + 300 positions
+   779.015  t0165370 suivi ok score 0.99 pos 2260,4266 net 106 (24 ms) carte 20 photos + 300 positions
+   779.345  t0165700 suivi ok score 0.99 pos 2415,4250 net 118 (26 ms) carte 20 photos + 300 positions
+   779.675  t0166030 suivi ok score 0.99 pos 2595,4234 net 112 (21 ms) carte 20 photos + 300 positions
+   780.005  t0166360 suivi ok score 0.98 pos 2858,4203 net 120 (19 ms) carte 20 photos + 300 positions
+   780.341  t0166696 suivi ok score 1.00 pos 2977,4202 net 114 (19 ms) carte 20 photos + 300 positions
+   780.635  photo t-2_0045 à 3001,4202 (427 ko, 225 ms)
+   780.679  t0167034 suivi ok score 0.98 pos 3069,4202 net 105 (23 ms) carte 21 photos + 300 positions
+   781.015  t0167369 suivi ok score 0.99 pos 3156,4186 net 121 (27 ms) carte 21 photos + 300 positions
+   781.346  t0167700 suivi ok score 0.97 pos 3371,4170 net 119 (22 ms) carte 21 photos + 300 positions
+   781.692  t0168047 suivi ok score 0.98 pos 3670,4154 net 122 (22 ms) carte 21 photos + 300 positions
+   781.763  envoyé lame_20261113_200137_vincent-2_0045.jpg (427 ko)
+   782.007  t0168362 suivi ok score 0.98 pos 3981,4122 net 122 (22 ms) carte 21 photos + 300 positions
+   782.348  t0168703 suivi ok score 0.99 pos 4196,4095 net 119 (25 ms) carte 21 photos + 300 positions
+   782.676  t0169031 suivi ok score 0.99 pos 4295,4090 net 119 (20 ms) carte 21 photos + 300 positions
+   782.989  photo t-2_0046 à 4328,4090 (446 ko, 204 ms)
+   783.012  t0169367 suivi ok score 0.99 pos 4412,4089 net 124 (25 ms) carte 22 photos + 300 positions
+   783.355  t0169709 suivi ok score 0.98 pos 4530,4075 net 116 (26 ms) carte 22 photos + 300 positions
+   783.675  t0170030 suivi ok score 0.97 pos 4702,4059 net 119 (21 ms) carte 22 photos + 300 positions
+   783.996  envoyé lame_20261113_200137_vincent-2_0046.jpg (446 ko)
+   784.032  t0170386 suivi ok score 0.99 pos 4913,4043 net 121 (37 ms) carte 22 photos + 300 positions
+   784.342  t0170696 suivi ok score 0.98 pos 5081,4027 net 128 (20 ms) carte 22 photos + 300 positions
+   784.682  t0171037 suivi ok score 0.99 pos 5093,4027 net 95 (22 ms) carte 22 photos + 300 positions
+   784.810  photo t-2_0047 à 5093,4027 (420 ko, 254 ms)
+   785.020  t0171374 suivi ok score 1.00 pos 5081,4027 net 119 (29 ms) carte 23 photos + 300 positions
+   785.344  t0171699 suivi ok score 1.00 pos 5081,4027 net 93 (21 ms) carte 23 photos + 300 positions
+   785.617  envoyé lame_20261113_200137_vincent-2_0047.jpg (420 ko)
+   785.684  t0172039 suivi ok score 1.00 pos 5081,4027 net 121 (25 ms) carte 23 photos + 300 positions
+   786.018  t0172372 suivi ok score 1.00 pos 5081,4027 net 123 (29 ms) carte 23 photos + 300 positions
+   786.345  t0172700 suivi ok score 1.00 pos 5092,4027 net 115 (24 ms) carte 23 photos + 300 positions
+   786.676  t0173030 suivi ok score 0.98 pos 5115,4027 net 123 (21 ms) carte 23 photos + 300 positions
+   787.008  t0173363 suivi ok score 0.98 pos 5269,4011 net 120 (21 ms) carte 23 photos + 300 positions
+   787.343  t0173697 suivi ok score 0.99 pos 5344,4011 net 132 (22 ms) carte 23 photos + 300 positions
+   787.675  t0174030 suivi ok score 0.98 pos 5543,3995 net 134 (21 ms) carte 23 photos + 300 positions
+   788.017  t0174372 suivi ok score 0.98 pos 5678,3979 net 122 (25 ms) carte 23 photos + 300 positions
+   788.346  t0174700 suivi ok score 0.97 pos 5847,3963 net 135 (24 ms) carte 23 photos + 300 positions
+   788.683  t0175038 suivi ok score 1.00 pos 5834,3963 net 133 (22 ms) carte 23 photos + 300 positions
+   788.867  photo t-2_0048 à 5834,3963 (456 ko, 213 ms)
+   789.017  t0175371 suivi ok score 1.00 pos 5834,3963 net 132 (27 ms) carte 24 photos + 300 positions
+   789.354  t0175709 suivi ok score 1.00 pos 5834,3963 net 105 (29 ms) carte 24 photos + 300 positions
+   789.682  t0176037 suivi ok score 1.00 pos 5834,3963 net 135 (27 ms) carte 24 photos + 300 positions
+   789.769  envoyé lame_20261113_200137_vincent-2_0048.jpg (456 ko)
+   790.012  t0176366 suivi ok score 1.00 pos 5834,3963 net 137 (23 ms) carte 24 photos + 300 positions
+   790.343  t0176697 suivi ok score 0.98 pos 5858,3963 net 129 (21 ms) carte 24 photos + 300 positions
+   790.674  t0177029 suivi ok score 0.99 pos 5953,3952 net 115 (21 ms) carte 24 photos + 300 positions
+   791.008  t0177363 suivi ok score 0.98 pos 6141,3932 net 116 (21 ms) carte 24 photos + 300 positions
+   791.343  t0177698 suivi ok score 0.99 pos 6268,3931 net 104 (20 ms) carte 24 photos + 300 positions
+   791.686  t0178040 suivi ok score 0.98 pos 6407,3915 net 111 (32 ms) carte 24 photos + 300 positions
+   791.728  photo t-2_0049 à 6324,3916 (442 ko, 216 ms)
+   792.018  t0178372 suivi ok score 1.00 pos 6419,3915 net 133 (22 ms) carte 25 photos + 300 positions
+   792.355  t0178710 suivi ok score 1.00 pos 6408,3915 net 106 (21 ms) carte 25 photos + 300 positions
+   792.701  t0179055 suivi ok score 1.00 pos 6408,3915 net 122 (30 ms) carte 25 photos + 300 positions
+   792.747  envoyé lame_20261113_200137_vincent-2_0049.jpg (442 ko)
+   793.013  t0179367 suivi ok score 1.00 pos 6416,3915 net 122 (22 ms) carte 25 photos + 300 positions
+   793.346  t0179701 suivi ok score 0.98 pos 6539,3899 net 113 (21 ms) carte 25 photos + 300 positions
+   793.696  t0180051 suivi ok score 0.98 pos 7089,3852 net 95 (31 ms) carte 25 photos + 300 positions
+   794.027  t0180381 suivi ok score 1.00 pos 7196,3836 net 104 (32 ms) carte 25 photos + 300 positions
+   794.342  t0180696 suivi ok score 1.00 pos 7196,3851 net 116 (21 ms) carte 25 photos + 300 positions
+   794.392  photo t-2_0050 à 7196,3851 (440 ko, 214 ms)
+   794.678  t0181033 suivi ok score 1.00 pos 7196,3851 net 104 (24 ms) carte 26 photos + 300 positions
+   795.010  t0181365 suivi ok score 1.00 pos 7196,3851 net 95 (21 ms) carte 26 photos + 300 positions
+   795.345  t0181700 suivi ok score 0.97 pos 7244,3851 net 106 (22 ms) carte 26 photos + 300 positions
+   795.421  envoyé lame_20261113_200137_vincent-2_0050.jpg (440 ko)
+   795.676  t0182031 suivi ok score 0.97 pos 7627,3820 net 95 (20 ms) carte 26 photos + 300 positions
+   796.019  t0182373 suivi ok score 0.95 pos 8073,3777 net 103 (23 ms) carte 26 photos + 300 positions
+   796.365  t0182719 suivi ok score 0.98 pos 8189,3771 net 99 (36 ms) carte 26 photos + 300 positions
+   796.674  t0183029 suivi ok score 1.00 pos 8180,3772 net 101 (21 ms) carte 26 photos + 300 positions
+   796.772  photo t-2_0051 à 8189,3772 (384 ko, 229 ms)
+   797.009  t0183364 suivi ok score 1.00 pos 8189,3772 net 108 (19 ms) carte 27 photos + 300 positions
+   797.344  t0183699 suivi ok score 1.00 pos 8189,3772 net 104 (16 ms) carte 27 photos + 300 positions
+   797.681  t0184036 suivi ok score 0.99 pos 8200,3773 net 128 (21 ms) carte 27 photos + 300 positions
+   797.848  envoyé lame_20261113_200137_vincent-2_0051.jpg (384 ko)
+   798.012  t0184367 suivi ok score 1.00 pos 8190,3772 net 104 (21 ms) carte 27 photos + 300 positions
+   798.347  t0184702 suivi ok score 1.00 pos 8189,3772 net 63 (22 ms) carte 27 photos + 300 positions
+   798.681  t0185036 suivi ok score 1.00 pos 8189,3772 net 64 (22 ms) carte 27 photos + 300 positions
+   799.025  t0185379 suivi ok score 0.99 pos 8189,3772 net 118 (29 ms) carte 27 photos + 300 positions
+   799.347  t0185702 suivi ok score 1.00 pos 8189,3772 net 108 (23 ms) carte 27 photos + 300 positions
+   799.688  t0186042 suivi ok score 0.99 pos 8189,3772 net 122 (24 ms) carte 27 photos + 300 positions
+   800.022  t0186376 suivi ok score 1.00 pos 8189,3772 net 95 (22 ms) carte 27 photos + 300 positions
+   800.347  t0186702 suivi ok score 1.00 pos 8189,3772 net 130 (21 ms) carte 27 photos + 300 positions
+   800.685  t0187039 suivi ok score 0.98 pos 8225,3769 net 121 (27 ms) carte 27 photos + 300 positions
+   801.015  t0187369 suivi ok score 0.96 pos 8365,3756 net 120 (23 ms) carte 27 photos + 300 positions
+   801.345  t0187700 suivi ok score 0.96 pos 8563,3729 net 101 (21 ms) carte 27 photos + 300 positions
+   801.680  t0188035 suivi ok score 0.99 pos 8822,3709 net 99 (19 ms) carte 27 photos + 300 positions
+   802.012  t0188367 suivi ok score 0.98 pos 9229,3677 net 108 (21 ms) carte 27 photos + 300 positions
+   802.348  t0188703 suivi ok score 0.94 pos 9898,3631 net 98 (19 ms) carte 27 photos + 300 positions
+   802.553  photo en mouvement lent (66 % du champ, 25 u/s)
+   802.685  t0189039 suivi ok score 0.99 pos 10210,3612 net 138 (21 ms) carte 27 photos + 300 positions
+   802.765  photo t-2_0052 à 10198,3599 (405 ko, 211 ms)
+   803.012  t0189368 suivi ok score 1.00 pos 10194,3600 net 134 (17 ms) carte 28 photos + 300 positions
+   803.340  t0189696 suivi ok score 1.00 pos 10194,3615 net 125 (14 ms) carte 28 photos + 300 positions
+   803.678  t0190033 suivi ok score 1.00 pos 10182,3600 net 99 (21 ms) carte 28 photos + 300 positions
+   803.850  envoyé lame_20261113_200137_vincent-2_0052.jpg (405 ko)
+   804.023  t0190377 suivi ok score 0.95 pos 10214,3935 net 75 (28 ms) carte 28 photos + 300 positions
+   804.347  t0190702 suivi ok score 0.95 pos 10302,4904 net 68 (19 ms) carte 28 photos + 300 positions
+   804.647  photo en mouvement lent (57 % du champ, 14 u/s)
+   804.679  t0191034 suivi ok score 0.99 pos 10386,5893 net 113 (20 ms) carte 28 photos + 300 positions
+   804.862  photo t-2_0053 à 10386,5896 (429 ko, 214 ms)
+   805.016  t0191370 suivi ok score 1.00 pos 10386,5893 net 92 (25 ms) carte 29 photos + 300 positions
+   805.350  t0191705 suivi ok score 1.00 pos 10386,5893 net 104 (23 ms) carte 29 photos + 300 positions
+   805.686  t0192041 suivi ok score 1.00 pos 10386,5893 net 107 (27 ms) carte 29 photos + 300 positions
+   805.763  envoyé lame_20261113_200137_vincent-2_0053.jpg (429 ko)
+   806.025  t0192379 suivi ok score 1.00 pos 10386,5893 net 105 (26 ms) carte 29 photos + 300 positions
+   806.359  t0192714 suivi ok score 1.00 pos 10386,5893 net 50 (26 ms) carte 29 photos + 300 positions
+   806.683  t0193038 suivi ok score 1.00 pos 10386,5893 net 30 (21 ms) carte 29 photos + 300 positions
+   807.020  t0193375 suivi ok score 1.00 pos 10386,5893 net 110 (25 ms) carte 29 photos + 300 positions
+   807.350  t0193704 suivi ok score 1.00 pos 10374,5893 net 113 (24 ms) carte 29 photos + 300 positions
+   807.683  t0194037 suivi ok score 0.99 pos 10303,5893 net 110 (21 ms) carte 29 photos + 300 positions
+   808.016  t0194370 suivi ok score 0.99 pos 10195,5904 net 95 (21 ms) carte 29 photos + 300 positions
+   808.374  t0194728 suivi ok score 0.99 pos 9872,5925 net 88 (21 ms) carte 29 photos + 300 positions
+   808.679  t0195034 suivi ok score 0.98 pos 9417,5971 net 96 (19 ms) carte 29 photos + 300 positions
+   809.020  t0195375 suivi ok score 1.00 pos 9131,6000 net 106 (21 ms) carte 29 photos + 300 positions
+   809.347  t0195702 suivi ok score 1.00 pos 9142,6000 net 114 (21 ms) carte 29 photos + 300 positions
+   809.537  photo t-2_0054 à 9142,6000 (432 ko, 220 ms)
+   809.687  t0196042 suivi ok score 0.99 pos 9086,6000 net 89 (27 ms) carte 30 photos + 300 positions
+   810.022  t0196377 suivi ok score 0.99 pos 8845,6015 net 75 (23 ms) carte 30 photos + 300 positions
+   810.338  envoyé lame_20261113_200137_vincent-2_0054.jpg (432 ko)
+   810.346  t0196701 suivi ok score 0.99 pos 8473,6047 net 87 (21 ms) carte 30 photos + 300 positions
+   810.692  t0197046 suivi ok score 0.98 pos 8162,6079 net 118 (27 ms) carte 30 photos + 300 positions
+   811.016  t0197370 suivi ok score 0.99 pos 8066,6090 net 132 (23 ms) carte 30 photos + 300 positions
+   811.271  photo t-2_0055 à 8055,6090 (423 ko, 223 ms)
+   811.350  t0197705 suivi ok score 0.99 pos 7983,6090 net 111 (21 ms) carte 31 photos + 300 positions
+   811.688  t0198043 suivi ok score 0.99 pos 7852,6106 net 111 (21 ms) carte 31 photos + 300 positions
+   812.016  t0198370 suivi ok score 0.97 pos 7721,6122 net 111 (22 ms) carte 31 photos + 300 positions
+   812.226  envoyé lame_20261113_200137_vincent-2_0055.jpg (423 ko)
+   812.348  t0198703 suivi ok score 0.99 pos 7624,6122 net 129 (21 ms) carte 31 photos + 300 positions
+   812.675  photo t-2_0056 à 7589,6138 (424 ko, 226 ms)
+   812.681  t0199036 suivi ok score 0.97 pos 7422,6149 net 114 (25 ms) carte 32 photos + 300 positions
+   813.016  t0199371 suivi ok score 0.97 pos 7078,6170 net 116 (22 ms) carte 32 photos + 300 positions
+   813.358  t0199713 suivi ok score 0.99 pos 7053,6186 net 133 (25 ms) carte 32 photos + 300 positions
+   813.633  photo t-2_0057 à 7054,6186 (424 ko, 218 ms)
+   813.683  t0200038 suivi ok score 1.00 pos 7054,6186 net 133 (22 ms) carte 33 photos + 300 positions
+   813.843  envoyé lame_20261113_200137_vincent-2_0056.jpg (424 ko)
+   814.022  t0200377 suivi ok score 0.99 pos 7043,6186 net 125 (25 ms) carte 33 photos + 300 positions
+   814.353  t0200708 suivi ok score 0.98 pos 6924,6197 net 117 (25 ms) carte 33 photos + 300 positions
+   814.697  t0201051 suivi ok score 0.95 pos 6540,6218 net 112 (30 ms) carte 33 photos + 300 positions
+   815.022  t0201376 suivi ok score 0.91 pos 6206,6249 net 105 (25 ms) carte 33 photos + 300 positions
+   815.365  t0201719 suivi ok score 0.98 pos 5839,6280 net 105 (33 ms) carte 33 photos + 300 positions
+   815.693  t0202048 suivi ok score 1.00 pos 5847,6296 net 137 (24 ms) carte 33 photos + 300 positions
+   815.965  photo t-2_0058 à 5847,6296 (446 ko, 213 ms)
+   816.017  t0202372 suivi ok score 1.00 pos 5847,6296 net 136 (19 ms) carte 34 photos + 300 positions
+   816.363  t0202718 suivi ok score 0.95 pos 5765,6296 net 94 (32 ms) carte 34 photos + 300 positions
+   816.681  t0203036 suivi ok score 0.95 pos 4978,6364 net 69 (19 ms) carte 34 photos + 300 positions
+   817.020  t0203374 suivi ok score 0.99 pos 4554,6404 net 75 (24 ms) carte 34 photos + 300 positions
+   817.031  envoyé lame_20261113_200137_vincent-2_0057.jpg (424 ko)
+   817.361  t0203716 suivi ok score 1.00 pos 4566,6404 net 122 (23 ms) carte 34 photos + 300 positions
+   817.577  photo t-2_0059 à 4566,6404 (463 ko, 215 ms)
+   817.681  t0204036 suivi ok score 1.00 pos 4566,6404 net 93 (22 ms) carte 35 photos + 300 positions
+   818.014  t0204369 suivi ok score 1.00 pos 4566,6404 net 117 (18 ms) carte 35 photos + 300 positions
+   818.188  envoyé lame_20261113_200137_vincent-2_0058.jpg (446 ko)
+   818.375  t0204730 suivi ok score 1.00 pos 4566,6404 net 121 (39 ms) carte 35 photos + 300 positions
+   818.700  t0205055 suivi ok score 0.99 pos 4530,6404 net 122 (25 ms) carte 35 photos + 300 positions
+   819.015  t0205370 suivi ok score 0.97 pos 4223,6420 net 99 (14 ms) carte 35 photos + 300 positions
+   819.350  t0205705 suivi ok score 0.99 pos 3948,6452 net 104 (15 ms) carte 35 photos + 300 positions
+   819.684  t0206039 suivi ok score 0.99 pos 3825,6468 net 117 (20 ms) carte 35 photos + 300 positions
+   820.028  t0206383 suivi ok score 1.00 pos 3836,6468 net 112 (25 ms) carte 35 photos + 300 positions
+   820.142  photo t-2_0060 à 3825,6468 (441 ko, 222 ms)
+   820.352  t0206705 suivi ok score 1.00 pos 3825,6468 net 124 (24 ms) carte 36 photos + 300 positions
+   820.685  t0207040 suivi ok score 1.00 pos 3765,6468 net 104 (21 ms) carte 36 photos + 300 positions
+   821.021  t0207375 suivi ok score 0.97 pos 3541,6482 net 96 (23 ms) carte 36 photos + 300 positions
+   821.078  envoyé lame_20261113_200137_vincent-2_0059.jpg (463 ko)
+   821.353  t0207708 suivi ok score 0.97 pos 2973,6531 net 93 (21 ms) carte 36 photos + 300 positions
+   821.689  t0208043 suivi ok score 1.00 pos 2832,6562 net 112 (24 ms) carte 36 photos + 300 positions
+   821.783  envoyé lame_20261113_200137_vincent-2_0060.jpg (441 ko)
+   822.011  t0208366 suivi ok score 1.00 pos 2836,6562 net 115 (14 ms) carte 36 photos + 300 positions
+   822.075  photo t-2_0061 à 2836,6562 (427 ko, 220 ms)
+   822.358  t0208713 suivi ok score 1.00 pos 2836,6551 net 116 (21 ms) carte 37 photos + 300 positions
+   822.684  t0209039 suivi ok score 0.98 pos 2752,6562 net 107 (22 ms) carte 37 photos + 300 positions
+   823.017  t0209372 suivi ok score 0.97 pos 2314,6594 net 91 (22 ms) carte 37 photos + 300 positions
+   823.123  envoyé lame_20261113_200137_vincent-2_0061.jpg (427 ko)
+   823.357  t0209712 suivi ok score 0.97 pos 1868,6640 net 102 (24 ms) carte 37 photos + 300 positions
+   823.687  t0210041 suivi ok score 0.94 pos 1393,6684 net 132 (21 ms) carte 37 photos + 300 positions
+   824.021  t0210375 suivi ok score 1.00 pos 1377,6701 net 137 (22 ms) carte 37 photos + 300 positions
+   824.337  photo t-2_0062 à 1377,6701 (430 ko, 217 ms)
+   824.355  t0210710 suivi ok score 1.00 pos 1377,6700 net 140 (25 ms) carte 38 photos + 300 positions
+   824.691  t0211046 suivi ok score 0.99 pos 1294,6701 net 126 (24 ms) carte 38 photos + 300 positions
+   825.018  t0211372 suivi ok score 0.97 pos 947,6731 net 108 (22 ms) carte 38 photos + 300 positions
+   825.275  envoyé lame_20261113_200137_vincent-2_0062.jpg (430 ko)
+   825.344  t0211699 suivi ok score 0.95 pos 196,6796 net 85 (15 ms) carte 38 photos + 300 positions
+   825.686  t0212041 suivi ok score 0.99 pos -570,6858 net 129 (22 ms) carte 38 photos + 300 positions
+   825.687  photo en mouvement lent (64 % du champ, 37 u/s)
+   825.903  photo t-2_0063 à -570,6858 (499 ko, 216 ms)
+   826.019  t0212374 suivi ok score 1.00 pos -571,6859 net 117 (22 ms) carte 39 photos + 300 positions
+   826.354  t0212709 suivi ok score 0.99 pos -571,6859 net 125 (18 ms) carte 39 photos + 300 positions
+   826.694  t0213049 suivi ok score 0.99 pos -571,6859 net 117 (23 ms) carte 39 photos + 300 positions
+   827.030  t0213385 suivi ok score 0.97 pos -547,7178 net 48 (20 ms) carte 39 photos + 300 positions
+   827.123  envoyé lame_20261113_200137_vincent-2_0063.jpg (499 ko)
+   827.354  t0213709 suivi ok score 0.99 pos -415,8841 net 128 (25 ms) carte 39 photos + 300 positions
+   827.704  t0214058 suivi ok score 1.00 pos -403,8856 net 119 (33 ms) carte 39 photos + 300 positions
+   827.868  photo t-2_0064 à -403,8856 (474 ko, 219 ms)
+   828.018  t0214372 suivi ok score 1.00 pos -403,8856 net 127 (21 ms) carte 40 photos + 300 positions
+   828.370  t0214724 suivi ok score 1.00 pos -403,8856 net 111 (33 ms) carte 40 photos + 300 positions
+   828.684  t0215039 suivi ok score 0.95 pos -248,8845 net 99 (18 ms) carte 40 photos + 300 positions
+   828.808  envoyé lame_20261113_200137_vincent-2_0064.jpg (474 ko)
+   829.028  t0215383 suivi ok score 0.95 pos 194,8810 net 128 (20 ms) carte 40 photos + 300 positions
+   829.357  t0215711 suivi ok score 1.00 pos 242,8793 net 127 (21 ms) carte 40 photos + 300 positions
+   829.680  photo t-2_0065 à 242,8793 (448 ko, 229 ms)
+   829.693  t0216047 suivi ok score 0.99 pos 242,8793 net 124 (23 ms) carte 41 photos + 300 positions
+   830.031  t0216385 suivi ok score 0.98 pos 303,8793 net 104 (27 ms) carte 41 photos + 300 positions
+   830.354  t0216709 suivi ok score 0.91 pos 1244,8712 net 100 (19 ms) carte 41 photos + 300 positions
+   830.517  envoyé lame_20261113_200137_vincent-2_0065.jpg (448 ko)
+   830.689  t0217044 suivi ok score 1.00 pos 1710,8665 net 124 (22 ms) carte 41 photos + 300 positions
+   831.024  t0217378 suivi ok score 1.00 pos 1698,8665 net 123 (24 ms) carte 41 photos + 300 positions
+   831.144  photo t-2_0066 à 1698,8665 (419 ko, 224 ms)
+   831.352  t0217707 suivi ok score 1.00 pos 1698,8665 net 125 (20 ms) carte 42 photos + 300 positions
+   831.686  t0218041 suivi ok score 0.96 pos 1814,8653 net 123 (21 ms) carte 42 photos + 300 positions
+   832.021  t0218375 suivi ok score 0.93 pos 2332,8606 net 109 (21 ms) carte 42 photos + 300 positions
+   832.026  envoyé lame_20261113_200137_vincent-2_0066.jpg (419 ko)
+   832.355  t0218709 suivi ok score 0.97 pos 2595,8584 net 137 (20 ms) carte 42 photos + 300 positions
+   832.688  t0219043 suivi ok score 1.00 pos 2583,8585 net 121 (21 ms) carte 42 photos + 300 positions
+   832.842  photo t-2_0067 à 2583,8585 (421 ko, 212 ms)
+   833.019  t0219374 suivi ok score 1.00 pos 2583,8585 net 123 (22 ms) carte 43 photos + 300 positions
+   833.355  t0219710 suivi ok score 0.94 pos 2749,8570 net 117 (22 ms) carte 43 photos + 300 positions
+   833.685  t0220039 suivi ok score 0.98 pos 3193,8523 net 119 (19 ms) carte 43 photos + 300 positions
+   833.891  envoyé lame_20261113_200137_vincent-2_0067.jpg (421 ko)
+   834.031  t0220385 suivi ok score 1.00 pos 3455,8505 net 117 (27 ms) carte 43 photos + 300 positions
+   834.363  t0220718 suivi ok score 1.00 pos 3443,8505 net 112 (24 ms) carte 43 photos + 300 positions
+   834.551  photo t-2_0068 à 3443,8505 (442 ko, 228 ms)
+   834.683  t0221039 suivi ok score 1.00 pos 3452,8505 net 101 (14 ms) carte 44 photos + 300 positions
+   835.025  t0221379 suivi ok score 0.95 pos 3778,8474 net 78 (25 ms) carte 44 photos + 300 positions
+   835.356  t0221710 suivi ok score 0.96 pos 4639,8392 net 98 (21 ms) carte 44 photos + 300 positions
+   835.704  t0222058 suivi ok score 1.00 pos 4721,8378 net 112 (26 ms) carte 44 photos + 300 positions
+   836.006  photo t-2_0069 à 4721,8378 (441 ko, 204 ms)
+   836.028  t0222382 suivi ok score 1.00 pos 4721,8378 net 116 (26 ms) carte 45 photos + 300 positions
+   836.140  envoyé lame_20261113_200137_vincent-2_0068.jpg (442 ko)
+   836.354  t0222709 suivi ok score 0.99 pos 4757,8367 net 119 (23 ms) carte 45 photos + 300 positions
+   836.688  t0223043 suivi ok score 0.96 pos 5486,8298 net 77 (22 ms) carte 45 photos + 300 positions
+   837.023  t0223377 suivi ok score 0.99 pos 6159,8254 net 129 (15 ms) carte 45 photos + 300 positions
+   837.371  t0223725 suivi ok score 1.00 pos 6147,8254 net 123 (28 ms) carte 45 photos + 300 positions
+   837.604  photo t-2_0070 à 6147,8254 (409 ko, 232 ms)
+   837.687  t0224042 suivi ok score 1.00 pos 6147,8254 net 130 (21 ms) carte 46 photos + 300 positions
+   838.017  t0224372 suivi ok score 0.99 pos 6147,8254 net 60 (21 ms) carte 46 photos + 300 positions
+   838.354  t0224709 suivi ok score 1.00 pos 6147,8254 net 124 (22 ms) carte 46 photos + 300 positions
+   838.578  envoyé lame_20261113_200137_vincent-2_0069.jpg (441 ko)
+   838.688  t0225043 suivi ok score 1.00 pos 6147,8254 net 160 (22 ms) carte 46 photos + 300 positions
+   839.018  t0225373 suivi ok score 1.00 pos 6147,8254 net 152 (17 ms) carte 46 photos + 300 positions
+   839.376  t0225731 suivi ok score 0.93 pos 6375,8227 net 125 (32 ms) carte 46 photos + 300 positions
+   839.604  envoyé lame_20261113_200137_vincent-2_0070.jpg (409 ko)
+   839.686  t0226041 suivi ok score 0.92 pos 6925,8179 net 105 (19 ms) carte 46 photos + 300 positions
+   840.022  t0226376 suivi ok score 0.92 pos 8060,8082 net 101 (21 ms) carte 46 photos + 300 positions
+   840.223  photo en mouvement lent (69 % du champ, 31 u/s)
+   840.352  t0226707 suivi ok score 0.97 pos 8231,8066 net 131 (20 ms) carte 46 photos + 300 positions
+   840.434  photo t-2_0071 à 8239,8066 (420 ko, 211 ms)
+   840.680  t0227035 suivi ok score 1.00 pos 8227,8066 net 133 (14 ms) carte 47 photos + 300 positions
+   841.014  t0227369 suivi ok score 0.94 pos 8254,8066 net 134 (15 ms) carte 47 photos + 300 positions
+   841.201  envoyé lame_20261113_200137_vincent-2_0071.jpg (420 ko)
+   841.359  t0227714 suivi ok score 0.98 pos 8697,8024 net 104 (21 ms) carte 47 photos + 300 positions
+   841.691  t0228046 suivi ok score 0.99 pos 8909,8003 net 107 (22 ms) carte 47 photos + 300 positions
+   842.024  t0228378 suivi ok score 0.97 pos 9789,7931 net 83 (22 ms) carte 47 photos + 300 positions
+   842.191  photo en mouvement lent (58 % du champ, 15 u/s)
+   842.356  t0228710 suivi ok score 1.00 pos 9993,7920 net 107 (21 ms) carte 47 photos + 300 positions
+   842.417  photo t-2_0072 à 10017,7916 (447 ko, 225 ms)
+   842.695  t0229050 suivi ok score 1.00 pos 9993,7919 net 105 (22 ms) carte 48 photos + 300 positions
+   843.027  t0229381 suivi ok score 1.00 pos 9993,7903 net 53 (22 ms) carte 48 photos + 300 positions
+   843.359  t0229714 suivi ok score 0.98 pos 10029,8269 net 38 (21 ms) carte 48 photos + 300 positions
+   843.439  envoyé lame_20261113_200137_vincent-2_0072.jpg (447 ko)
+   843.692  t0230047 suivi ok score 0.96 pos 10220,10480 net 92 (20 ms) carte 48 photos + 300 positions
+   843.721  photo en mouvement lent (63 % du champ, 6 u/s)
+   843.953  photo t-2_0073 à 10220,10483 (418 ko, 231 ms)
+   844.022  t0230376 suivi ok score 1.00 pos 10211,10484 net 127 (21 ms) carte 49 photos + 300 positions
+   844.352  t0230707 suivi ok score 1.00 pos 10208,10484 net 126 (21 ms) carte 49 photos + 300 positions
+   844.692  t0231047 suivi ok score 0.94 pos 9969,10500 net 115 (22 ms) carte 49 photos + 300 positions
+   844.732  envoyé lame_20261113_200137_vincent-2_0073.jpg (418 ko)
+   845.023  t0231378 suivi ok score 0.94 pos 9622,10532 net 139 (20 ms) carte 49 photos + 300 positions
+   845.361  t0231716 suivi ok score 0.99 pos 9466,10548 net 133 (25 ms) carte 49 photos + 300 positions
+   845.689  t0232044 suivi ok score 0.97 pos 9467,10548 net 129 (22 ms) carte 49 photos + 300 positions
+   845.918  photo t-2_0074 à 9467,10548 (415 ko, 228 ms)
+   846.022  t0232377 suivi ok score 0.97 pos 9431,10548 net 127 (24 ms) carte 50 photos + 300 positions
+   846.356  t0232711 suivi ok score 0.93 pos 9085,10580 net 123 (22 ms) carte 50 photos + 300 positions
+   846.684  t0233039 suivi ok score 0.86 pos 8197,10660 net 107 (18 ms) carte 50 photos + 300 positions
+   846.690  envoyé lame_20261113_200137_vincent-2_0074.jpg (415 ko)
+   846.964  photo en mouvement lent (58 % du champ, 30 u/s)
+   847.026  t0233380 suivi ok score 0.92 pos 7707,10707 net 149 (23 ms) carte 50 photos + 300 positions
+   847.167  photo t-2_0075 à 7710,10693 (405 ko, 202 ms)
+   847.358  t0233713 suivi ok score 0.94 pos 7713,10707 net 142 (25 ms) carte 51 photos + 300 positions
+   847.717  t0234071 suivi ok score 0.97 pos 7713,10704 net 114 (35 ms) carte 51 photos + 300 positions
+   847.862  envoyé lame_20261113_200137_vincent-2_0075.jpg (405 ko)
+   848.034  t0234389 suivi ok score 0.94 pos 7388,10723 net 86 (28 ms) carte 51 photos + 300 positions
+   848.359  t0234714 suivi ok score 0.94 pos 6510,10800 net 98 (23 ms) carte 51 photos + 300 positions
+   848.694  t0235049 suivi ok score 0.94 pos 6207,10827 net 140 (23 ms) carte 51 photos + 300 positions
+   849.034  t0235389 suivi ok score 1.00 pos 6219,10828 net 147 (23 ms) carte 51 photos + 300 positions
+   849.140  photo t-2_0076 à 6219,10831 (435 ko, 201 ms)
+   849.360  t0235715 suivi ok score 0.96 pos 6208,10831 net 132 (21 ms) carte 52 photos + 300 positions
+   849.695  t0236050 suivi ok score 0.92 pos 5311,10911 net 83 (24 ms) carte 52 photos + 300 positions
+   849.901  envoyé lame_20261113_200137_vincent-2_0076.jpg (435 ko)
+   849.932  photo en mouvement lent (58 % du champ, 7 u/s)
+   850.028  t0236383 suivi ok score 0.99 pos 4461,10991 net 115 (20 ms) carte 52 photos + 300 positions
+   850.133  photo t-2_0077 à 4450,10989 (449 ko, 200 ms)
+   850.355  t0236710 suivi ok score 1.00 pos 4462,10990 net 135 (21 ms) carte 53 photos + 300 positions
+   850.690  t0237044 suivi ok score 1.00 pos 4462,10990 net 129 (21 ms) carte 53 photos + 300 positions
+   850.896  envoyé lame_20261113_200137_vincent-2_0077.jpg (449 ko)
+   851.053  t0237407 suivi ok score 1.00 pos 4462,10990 net 106 (33 ms) carte 53 photos + 300 positions
+   851.358  t0237713 suivi ok score 1.00 pos 4462,10990 net 95 (14 ms) carte 53 photos + 300 positions
+   851.705  t0238059 suivi ok score 1.00 pos 4462,10990 net 137 (29 ms) carte 53 photos + 300 positions
+   852.028  t0238383 suivi ok score 1.00 pos 4462,10990 net 138 (14 ms) carte 53 photos + 300 positions
+   852.354  t0238709 suivi ok score 0.96 pos 4152,11006 net 111 (20 ms) carte 53 photos + 300 positions
+   852.686  t0239041 suivi ok score 0.98 pos 3589,11054 net 102 (19 ms) carte 53 photos + 300 positions
+   853.024  t0239378 suivi ok score 1.00 pos 3565,11075 net 119 (19 ms) carte 53 photos + 300 positions
+   853.350  photo t-2_0078 à 3565,11070 (481 ko, 216 ms)
+   853.359  t0239714 suivi ok score 0.98 pos 3565,11070 net 134 (21 ms) carte 54 photos + 300 positions
+   853.695  t0240050 suivi ok score 0.95 pos 3314,11086 net 95 (19 ms) carte 54 photos + 300 positions
+   854.028  t0240383 suivi ok score 1.00 pos 2323,11180 net 121 (24 ms) carte 54 photos + 300 positions
+   854.255  envoyé lame_20261113_200137_vincent-2_0078.jpg (481 ko)
+   854.362  t0240716 suivi ok score 1.00 pos 2335,11182 net 105 (20 ms) carte 54 photos + 300 positions
+   854.623  photo t-2_0079 à 2335,11182 (464 ko, 230 ms)
+   854.703  t0241058 suivi ok score 0.97 pos 2252,11182 net 99 (25 ms) carte 55 photos + 300 positions
+   855.022  t0241376 suivi ok score 0.96 pos 1211,11273 net 92 (18 ms) carte 55 photos + 300 positions
+   855.361  t0241716 suivi ok score 0.99 pos 996,11308 net 118 (24 ms) carte 55 photos + 300 positions
+   855.696  t0242051 suivi ok score 0.99 pos 996,11308 net 110 (24 ms) carte 55 photos + 300 positions
+   855.759  envoyé lame_20261113_200137_vincent-2_0079.jpg (464 ko)
+   855.883  photo t-2_0080 à 996,11308 (438 ko, 225 ms)
+   856.028  t0242382 suivi ok score 0.99 pos 973,11308 net 127 (26 ms) carte 56 photos + 300 positions
+   856.372  t0242726 suivi ok score 0.94 pos 268,11367 net 113 (30 ms) carte 56 photos + 300 positions
+   856.694  t0243049 suivi ok score 0.96 pos -716,11447 net 102 (19 ms) carte 56 photos + 300 positions
+   856.795  photo en mouvement lent (61 % du champ, 38 u/s)
+   856.805  envoyé lame_20261113_200137_vincent-2_0080.jpg (438 ko)
+   857.014  photo t-2_0081 à -867,11462 (507 ko, 218 ms)
+   857.025  t0243380 suivi ok score 1.00 pos -860,11463 net 125 (20 ms) carte 57 photos + 300 positions
+   857.364  t0243719 suivi ok score 1.00 pos -856,11462 net 129 (26 ms) carte 57 photos + 300 positions
+   857.696  t0244051 suivi ok score 1.00 pos -856,11462 net 127 (20 ms) carte 57 photos + 300 positions
+   857.996  envoyé lame_20261113_200137_vincent-2_0081.jpg (507 ko)
+   858.050  t0244404 suivi ok score 1.00 pos -856,11462 net 62 (22 ms) carte 57 photos + 300 positions
+   858.366  t0244721 suivi ok score 1.00 pos -856,11462 net 142 (27 ms) carte 57 photos + 300 positions
+   858.704  t0245058 suivi ok score 1.00 pos -856,11462 net 143 (28 ms) carte 57 photos + 300 positions
+   859.036  t0245390 suivi ok score 0.95 pos -856,11462 net 93 (22 ms) carte 57 photos + 300 positions
+   859.361  t0245716 suivi ok score 1.00 pos -856,11462 net 55 (19 ms) carte 57 photos + 300 positions
+   859.698  t0246053 suivi ok score 0.96 pos -807,11956 net 59 (22 ms) carte 57 photos + 300 positions
+   860.032  t0246386 suivi ok score 1.00 pos -772,12307 net 86 (22 ms) carte 57 photos + 300 positions
+   860.367  t0246721 suivi ok score 1.00 pos -772,12307 net 77 (26 ms) carte 57 photos + 300 positions
+   860.492  photo t-2_0082 à -772,12307 (443 ko, 232 ms)
+   860.700  t0247055 suivi ok score 1.00 pos -772,12307 net 55 (26 ms) carte 58 photos + 300 positions
+   861.036  t0247390 suivi ok score 1.00 pos -772,12307 net 141 (24 ms) carte 58 photos + 300 positions
+   861.299  envoyé lame_20261113_200137_vincent-2_0082.jpg (443 ko)
+   861.360  t0247715 suivi ok score 0.98 pos -772,12307 net 142 (17 ms) carte 58 photos + 300 positions
+   861.696  t0248051 suivi ok score 0.95 pos 1302,12135 net 79 (19 ms) carte 58 photos + 300 positions
+   861.898  photo en mouvement lent (90 % du champ, 6 u/s)
+   861.898  ATTENTION pas trop grand (90 % du champ) : recouvrement insuffisant
+   862.032  t0248386 suivi ok score 0.99 pos 1980,12074 net 124 (19 ms) carte 58 photos + 300 positions
+   862.123  photo t-2_0083 à 1988,12059 (466 ko, 224 ms)
+   862.371  t0248725 suivi ok score 0.99 pos 1893,12070 net 94 (27 ms) carte 59 photos + 300 positions
+   862.708  t0249063 suivi ok score 0.96 pos 390,12197 net 67 (19 ms) carte 59 photos + 300 positions
+   862.994  photo en mouvement lent (69 % du champ, 14 u/s)
+   863.029  t0249383 suivi ok score 0.94 pos -122,12243 net 116 (20 ms) carte 59 photos + 300 positions
+   863.221  photo t-2_0084 à -110,12243 (482 ko, 227 ms)
+   863.364  t0249718 suivi ok score 0.99 pos -121,12243 net 135 (22 ms) carte 60 photos + 300 positions
+   863.462  envoyé lame_20261113_200137_vincent-2_0083.jpg (466 ko)
+   863.702  t0250057 suivi ok score 0.96 pos -110,12248 net 91 (26 ms) carte 60 photos + 300 positions
+   864.030  t0250385 suivi ok score 0.94 pos 10,13658 net 107 (20 ms) carte 60 photos + 300 positions
+   864.375  t0250729 suivi ok score 1.00 pos 10,13678 net 137 (32 ms) carte 60 photos + 300 positions
+   864.627  photo t-2_0085 à 10,13678 (481 ko, 223 ms)
+   864.690  t0251044 suivi ok score 0.92 pos 322,13658 net 73 (20 ms) carte 61 photos + 300 positions
+   865.033  t0251387 suivi ok score 0.99 pos 2173,13490 net 107 (20 ms) carte 61 photos + 300 positions
+   865.098  photo en mouvement lent (72 % du champ, 2 u/s)
+   865.099  ATTENTION pas trop grand (72 % du champ) : recouvrement insuffisant
+   865.319  photo t-2_0086 à 2199,13486 (471 ko, 220 ms)
+   865.360  t0251715 suivi ok score 1.00 pos 2175,13486 net 118 (21 ms) carte 62 photos + 300 positions
+   865.532  envoyé lame_20261113_200137_vincent-2_0084.jpg (482 ko)
+   865.695  t0252050 suivi ok score 1.00 pos 2175,13485 net 116 (23 ms) carte 62 photos + 300 positions
+   866.031  t0252386 suivi ok score 0.97 pos 2382,13470 net 100 (19 ms) carte 62 photos + 300 positions
+   866.363  t0252718 suivi ok score 0.97 pos 2940,13422 net 98 (23 ms) carte 62 photos + 300 positions
+   866.504  envoyé lame_20261113_200137_vincent-2_0085.jpg (481 ko)
+   866.701  t0253056 suivi ok score 0.99 pos 3205,13395 net 122 (22 ms) carte 62 photos + 300 positions
+   867.033  t0253388 suivi ok score 1.00 pos 3203,13395 net 131 (23 ms) carte 62 photos + 300 positions
+   867.149  photo t-2_0087 à 3203,13395 (484 ko, 228 ms)
+   867.360  t0253714 suivi ok score 0.99 pos 3228,13395 net 126 (22 ms) carte 63 photos + 300 positions
+   867.700  t0254054 suivi ok score 0.96 pos 3729,13349 net 104 (27 ms) carte 63 photos + 300 positions
+   868.020  envoyé lame_20261113_200137_vincent-2_0086.jpg (471 ko)
+   868.028  t0254382 suivi ok score 0.99 pos 4363,13288 net 125 (20 ms) carte 63 photos + 300 positions
+   868.361  t0254716 suivi ok score 1.00 pos 4351,13300 net 125 (20 ms) carte 63 photos + 300 positions
+   868.623  photo t-2_0088 à 4351,13300 (473 ko, 220 ms)
+   868.694  t0255049 suivi ok score 1.00 pos 4351,13300 net 126 (23 ms) carte 64 photos + 300 positions
+   868.806  envoyé lame_20261113_200137_vincent-2_0087.jpg (484 ko)
+   869.031  t0255385 suivi ok score 1.00 pos 4351,13300 net 128 (22 ms) carte 64 photos + 300 positions
+   869.367  t0255722 suivi ok score 0.98 pos 4411,13300 net 129 (23 ms) carte 64 photos + 300 positions
+   869.695  t0256050 suivi ok score 0.92 pos 5095,13234 net 87 (19 ms) carte 64 photos + 300 positions
+   869.991  photo en mouvement lent (63 % du champ, 5 u/s)
+   870.053  t0256407 suivi ok score 1.00 pos 6272,13136 net 105 (37 ms) carte 64 photos + 300 positions
+   870.205  photo t-2_0089 à 6271,13125 (428 ko, 213 ms)
+   870.363  t0256718 suivi ok score 1.00 pos 6248,13136 net 107 (22 ms) carte 65 photos + 300 positions
+   870.722  t0257077 suivi ok score 1.00 pos 6248,13136 net 106 (34 ms) carte 65 photos + 300 positions
+   871.034  t0257388 suivi ok score 0.98 pos 6475,13121 net 104 (21 ms) carte 65 photos + 300 positions
+   871.063  envoyé lame_20261113_200137_vincent-2_0088.jpg (473 ko)
+   871.361  t0257716 suivi ok score 0.98 pos 7348,13040 net 62 (20 ms) carte 65 photos + 300 positions
+   871.639  photo en mouvement lent (65 % du champ, 3 u/s)
+   871.703  t0258058 suivi ok score 0.97 pos 8256,12970 net 116 (23 ms) carte 65 photos + 300 positions
+   871.844  photo t-2_0090 à 8261,12960 (406 ko, 205 ms)
+   872.019  envoyé lame_20261113_200137_vincent-2_0089.jpg (428 ko)
+   872.024  t0258379 suivi ok score 1.00 pos 8245,12960 net 113 (18 ms) carte 66 photos + 300 positions
+   872.379  t0258733 suivi ok score 1.00 pos 8245,12960 net 109 (36 ms) carte 66 photos + 300 positions
+   872.693  t0259048 suivi ok score 0.88 pos 8906,12911 net 102 (14 ms) carte 66 photos + 300 positions
+   873.031  t0259386 suivi ok score 0.86 pos 10102,12800 net 133 (19 ms) carte 66 photos + 300 positions
+   873.094  photo en mouvement lent (61 % du champ, 0 u/s)
+   873.308  photo t-2_0091 à 10126,12800 (374 ko, 213 ms)
+   873.370  t0259725 suivi ok score 0.99 pos 10106,12800 net 133 (24 ms) carte 67 photos + 300 positions
+   873.702  t0260057 suivi ok score 0.93 pos 10094,12800 net 155 (23 ms) carte 67 photos + 300 positions
+   874.036  t0260391 suivi ok score 0.96 pos 10150,12800 net 150 (17 ms) carte 67 photos + 300 positions
+   874.169  envoyé lame_20261113_200137_vincent-2_0090.jpg (406 ko)
+   874.365  t0260720 suivi ok score 1.00 pos 10174,12800 net 130 (21 ms) carte 67 photos + 300 positions
+   874.715  t0261070 suivi ok score 0.99 pos 10174,12800 net 134 (36 ms) carte 67 photos + 300 positions
+   874.927  envoyé lame_20261113_200137_vincent-2_0091.jpg (374 ko)
+   875.028  t0261382 suivi ok score 1.00 pos 10174,12800 net 133 (17 ms) carte 67 photos + 300 positions
+   875.374  t0261728 suivi ok score 0.99 pos 10174,12800 net 133 (26 ms) carte 67 photos + 300 positions
+   875.705  t0262060 suivi ok score 0.99 pos 10174,12800 net 133 (25 ms) carte 67 photos + 300 positions
+   876.040  t0262394 suivi ok score 1.00 pos 10174,12800 net 135 (24 ms) carte 67 photos + 300 positions
