@@ -1,0 +1,1277 @@
+     0.000  ScanLame 0.66 démarré sur samsung SM-S928B (Android 16)
+    27.038  réglages enregistrés
+    28.103  liaison : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+    28.499  réglages appliqués : zoom 1.0 (recadrage), AF/AE auto, EV 0
+    28.505  masque oculaire : 100 % du cadre utile (p95 255)
+    28.832  masque oculaire : 100 % du cadre utile (p95 255)
+    29.099  masque oculaire : 99 % du cadre utile (p95 191)
+    29.371  masque oculaire : 99 % du cadre utile (p95 194)
+    29.633  masque oculaire : 99 % du cadre utile (p95 195)
+    29.902  masque oculaire : 99 % du cadre utile (p95 195)
+    30.171  masque oculaire : 99 % du cadre utile (p95 195)
+    30.433  masque oculaire : 99 % du cadre utile (p95 195)
+    30.701  masque oculaire : 99 % du cadre utile (p95 195)
+    30.965  masque oculaire : 99 % du cadre utile (p95 194)
+    31.232  masque oculaire : 99 % du cadre utile (p95 194)
+    31.295  verrouillage (anti) : focus infini, pose 10.0 ms, ISO 110, WB figée
+    31.512  masque oculaire : 99 % du cadre utile (p95 194)
+    31.545  réglages appliqués : zoom 1.0 (recadrage), AF/AE verrouillés, EV 0
+    31.777  masque oculaire : 99 % du cadre utile (p95 194)
+    32.041  masque oculaire : 99 % du cadre utile (p95 194)
+    32.308  masque oculaire : 99 % du cadre utile (p95 194)
+    32.578  masque oculaire : 99 % du cadre utile (p95 194)
+    32.842  masque oculaire : 99 % du cadre utile (p95 194)
+    33.103  masque oculaire : 99 % du cadre utile (p95 194)
+    33.376  masque oculaire : 99 % du cadre utile (p95 194)
+    33.642  masque oculaire : 99 % du cadre utile (p95 195)
+    33.912  masque oculaire : 99 % du cadre utile (p95 195)
+    34.179  masque oculaire : 99 % du cadre utile (p95 194)
+    34.440  masque oculaire : 99 % du cadre utile (p95 194)
+    34.717  masque oculaire : 99 % du cadre utile (p95 194)
+    34.980  masque oculaire : 99 % du cadre utile (p95 194)
+    35.241  masque oculaire : 99 % du cadre utile (p95 194)
+    35.512  masque oculaire : 99 % du cadre utile (p95 194)
+    35.780  masque oculaire : 99 % du cadre utile (p95 194)
+    36.047  masque oculaire : 99 % du cadre utile (p95 194)
+    36.313  masque oculaire : 99 % du cadre utile (p95 194)
+    36.575  masque oculaire : 99 % du cadre utile (p95 194)
+    36.850  masque oculaire : 99 % du cadre utile (p95 195)
+    37.114  masque oculaire : 99 % du cadre utile (p95 194)
+    37.384  masque oculaire : 99 % du cadre utile (p95 194)
+    37.650  masque oculaire : 99 % du cadre utile (p95 194)
+    37.923  masque oculaire : 99 % du cadre utile (p95 194)
+    38.182  masque oculaire : 99 % du cadre utile (p95 194)
+    38.456  masque oculaire : 99 % du cadre utile (p95 194)
+    38.720  masque oculaire : 99 % du cadre utile (p95 194)
+    38.991  masque oculaire : 99 % du cadre utile (p95 194)
+    39.249  masque oculaire : 99 % du cadre utile (p95 194)
+    39.527  masque oculaire : 99 % du cadre utile (p95 194)
+    39.793  masque oculaire : 99 % du cadre utile (p95 194)
+    40.060  masque oculaire : 99 % du cadre utile (p95 194)
+    40.324  masque oculaire : 99 % du cadre utile (p95 194)
+    40.589  masque oculaire : 99 % du cadre utile (p95 194)
+    40.859  masque oculaire : 99 % du cadre utile (p95 194)
+    41.121  masque oculaire : 99 % du cadre utile (p95 194)
+    41.385  masque oculaire : 99 % du cadre utile (p95 194)
+    41.656  masque oculaire : 99 % du cadre utile (p95 195)
+    41.915  masque oculaire : 99 % du cadre utile (p95 195)
+    42.189  masque oculaire : 99 % du cadre utile (p95 194)
+    42.464  masque oculaire : 99 % du cadre utile (p95 194)
+    42.724  masque oculaire : 99 % du cadre utile (p95 194)
+    42.988  masque oculaire : 99 % du cadre utile (p95 194)
+    43.262  masque oculaire : 99 % du cadre utile (p95 194)
+    43.522  masque oculaire : 99 % du cadre utile (p95 194)
+    43.785  masque oculaire : 99 % du cadre utile (p95 194)
+    44.049  masque oculaire : 99 % du cadre utile (p95 194)
+    44.324  masque oculaire : 99 % du cadre utile (p95 194)
+    44.592  masque oculaire : 99 % du cadre utile (p95 194)
+    44.856  masque oculaire : 99 % du cadre utile (p95 194)
+    45.126  masque oculaire : 99 % du cadre utile (p95 194)
+    45.393  masque oculaire : 99 % du cadre utile (p95 194)
+    45.658  masque oculaire : 99 % du cadre utile (p95 194)
+    45.921  masque oculaire : 99 % du cadre utile (p95 194)
+    46.201  masque oculaire : 99 % du cadre utile (p95 194)
+    46.459  masque oculaire : 99 % du cadre utile (p95 194)
+    46.724  masque oculaire : 99 % du cadre utile (p95 194)
+    46.983  masque oculaire : 99 % du cadre utile (p95 194)
+    47.259  masque oculaire : 99 % du cadre utile (p95 194)
+    47.530  masque oculaire : 99 % du cadre utile (p95 193)
+    47.791  masque oculaire : 99 % du cadre utile (p95 193)
+    48.053  masque oculaire : 100 % du cadre utile (p95 194)
+    48.303  masque oculaire : 99 % du cadre utile (p95 194)
+    48.587  masque oculaire : 99 % du cadre utile (p95 194)
+    48.849  masque oculaire : 99 % du cadre utile (p95 194)
+    49.134  masque oculaire : 99 % du cadre utile (p95 194)
+    49.450  masque oculaire : 99 % du cadre utile (p95 194)
+    49.722  masque oculaire : 99 % du cadre utile (p95 194)
+    49.997  masque oculaire : 99 % du cadre utile (p95 194)
+    50.260  masque oculaire : 99 % du cadre utile (p95 194)
+    50.530  masque oculaire : 99 % du cadre utile (p95 194)
+    50.793  masque oculaire : 99 % du cadre utile (p95 194)
+    51.056  masque oculaire : 99 % du cadre utile (p95 194)
+    51.196  départ au x40 : profondeur oui
+    51.198  === série lame_20261113_194231_trico-erincei (photos) « trico erincei », bleu, objectif x40 : caméra logique 0, module physique 6, analyse 640x480, photo 4080x3060
+    51.221  masque oculaire : 100 % du cadre utile (p95 194)
+    51.527  t0000329 suivi ok score 1.00 pos 0,0 net 101 (19 ms) carte 0 photos + 3 positions
+    51.849  patron 4x4 champs posé en haut à gauche (0,0)
+    51.850  photo cei_0001 à 0,0 (734 ko, 225 ms)
+    51.853  t0000655 suivi ok score 1.00 pos 0,0 net 102 (16 ms) carte 1 photos + 6 positions
+    52.194  t0000995 suivi ok score 1.00 pos 0,0 net 102 (20 ms) carte 1 photos + 10 positions
+    52.528  t0001329 suivi ok score 1.00 pos 0,0 net 102 (23 ms) carte 1 photos + 13 positions
+    52.879  t0001680 suivi ok score 1.00 pos 0,0 net 102 (36 ms) carte 1 photos + 16 positions
+    53.199  t0002000 suivi ok score 1.00 pos 0,0 net 102 (21 ms) carte 1 photos + 20 positions
+    53.531  t0002332 suivi ok score 1.00 pos 0,0 net 101 (21 ms) carte 1 photos + 23 positions
+    53.701  envoyé lame_20261113_194231_trico-erincei_0001.jpg (734 ko)
+    53.880  t0002680 suivi ok score 1.00 pos 0,0 net 101 (32 ms) carte 1 photos + 26 positions
+    54.208  t0003008 suivi ok score 1.00 pos 0,0 net 102 (27 ms) carte 1 photos + 30 positions
+    54.534  t0003335 suivi ok score 1.00 pos 0,0 net 101 (20 ms) carte 1 photos + 33 positions
+    54.862  t0003663 suivi ok score 1.00 pos 0,0 net 100 (22 ms) carte 1 photos + 36 positions
+    55.203  t0004003 suivi ok score 1.00 pos 0,0 net 100 (27 ms) carte 1 photos + 40 positions
+    55.524  t0004326 suivi ok score 1.00 pos 0,0 net 101 (18 ms) carte 1 photos + 43 positions
+    55.867  t0004668 suivi ok score 1.00 pos 0,0 net 99 (26 ms) carte 1 photos + 46 positions
+    56.194  t0004996 suivi ok score 1.00 pos 0,0 net 94 (17 ms) carte 1 photos + 50 positions
+    56.530  t0005331 suivi ok score 1.00 pos 0,0 net 71 (20 ms) carte 1 photos + 53 positions
+    56.880  t0005681 suivi ok score 1.00 pos 0,0 net 92 (29 ms) carte 1 photos + 56 positions
+    57.203  t0006005 suivi ok score 1.00 pos 0,0 net 101 (18 ms) carte 1 photos + 60 positions
+    57.522  t0006324 suivi ok score 1.00 pos 0,0 net 101 (17 ms) carte 1 photos + 63 positions
+    57.869  t0006670 suivi ok score 1.00 pos 0,0 net 101 (30 ms) carte 1 photos + 66 positions
+    58.199  t0006999 suivi ok score 1.00 pos 0,0 net 102 (22 ms) carte 1 photos + 70 positions
+    58.525  t0007327 suivi ok score 1.00 pos 0,0 net 101 (21 ms) carte 1 photos + 73 positions
+    58.873  t0007674 suivi ok score 1.00 pos 0,0 net 100 (23 ms) carte 1 photos + 76 positions
+    59.209  t0008008 suivi ok score 1.00 pos 0,0 net 100 (30 ms) carte 1 photos + 80 positions
+    59.530  t0008330 suivi ok score 0.93 pos 384,-33 net 88 (19 ms) carte 1 photos + 83 positions
+    59.861  t0008663 suivi ok score 0.99 pos 539,-47 net 99 (15 ms) carte 1 photos + 86 positions
+    60.191  t0008992 suivi ok score 0.98 pos 741,-64 net 96 (16 ms) carte 1 photos + 90 positions
+    60.525  t0009327 suivi ok score 0.98 pos 1004,-91 net 92 (20 ms) carte 1 photos + 93 positions
+    60.858  t0009660 suivi ok score 0.98 pos 1377,-126 net 89 (19 ms) carte 1 photos + 96 positions
+    61.197  t0009998 suivi ok score 0.96 pos 1610,-143 net 81 (20 ms) carte 1 photos + 100 positions
+    61.527  t0010328 suivi ok score 0.97 pos 2127,-186 net 90 (17 ms) carte 1 photos + 103 positions
+    61.664  photo en mouvement lent (73 % du champ, 31 u/s)
+    61.664  ATTENTION pas trop grand (73 % du champ) : recouvrement insuffisant
+    61.854  t0010655 suivi ok score 1.00 pos 2233,-191 net 96 (15 ms) carte 1 photos + 106 positions
+    61.886  photo cei_0002 à 2223,-191 (762 ko, 221 ms)
+    62.192  t0010994 suivi ok score 1.00 pos 2232,-191 net 100 (15 ms) carte 2 photos + 110 positions
+    62.536  t0011337 suivi ok score 1.00 pos 2232,-191 net 100 (25 ms) carte 2 photos + 113 positions
+    62.860  t0011661 suivi ok score 1.00 pos 2232,-191 net 99 (19 ms) carte 2 photos + 116 positions
+    63.197  t0011998 suivi ok score 0.94 pos 2650,-221 net 87 (24 ms) carte 2 photos + 120 positions
+    63.525  t0012326 suivi ok score 1.00 pos 2901,-254 net 96 (19 ms) carte 2 photos + 123 positions
+    63.593  envoyé lame_20261113_194231_trico-erincei_0002.jpg (762 ko)
+    63.867  t0012668 suivi ok score 1.00 pos 2901,-254 net 98 (25 ms) carte 2 photos + 126 positions
+    63.986  photo cei_0003 à 2901,-254 (776 ko, 247 ms)
+    64.195  t0012996 suivi ok score 1.00 pos 2901,-254 net 92 (22 ms) carte 3 photos + 130 positions
+    64.527  t0013328 suivi ok score 1.00 pos 2901,-254 net 91 (20 ms) carte 3 photos + 133 positions
+    64.859  t0013661 suivi ok score 1.00 pos 2901,-254 net 96 (18 ms) carte 3 photos + 136 positions
+    65.210  t0014010 suivi ok score 1.00 pos 2901,-254 net 98 (31 ms) carte 3 photos + 140 positions
+    65.356  envoyé lame_20261113_194231_trico-erincei_0003.jpg (776 ko)
+    65.527  t0014329 suivi ok score 0.98 pos 2938,-254 net 98 (21 ms) carte 3 photos + 143 positions
+    65.859  t0014661 suivi ok score 0.99 pos 3212,-286 net 93 (19 ms) carte 3 photos + 146 positions
+    66.195  t0014997 suivi ok score 0.98 pos 3418,-302 net 96 (15 ms) carte 3 photos + 150 positions
+    66.534  t0015336 suivi ok score 0.99 pos 3653,-318 net 95 (24 ms) carte 3 photos + 153 positions
+    66.872  t0015673 suivi ok score 0.99 pos 3831,-334 net 97 (18 ms) carte 3 photos + 156 positions
+    67.204  t0016005 suivi ok score 1.00 pos 3832,-334 net 83 (26 ms) carte 3 photos + 160 positions
+    67.379  photo cei_0004 à 3832,-334 (678 ko, 221 ms)
+    67.530  t0016332 suivi ok score 1.00 pos 3832,-334 net 71 (23 ms) carte 4 photos + 163 positions
+    67.867  t0016668 suivi ok score 1.00 pos 3832,-334 net 75 (21 ms) carte 4 photos + 166 positions
+    68.196  t0016998 suivi ok score 0.99 pos 3843,-334 net 74 (18 ms) carte 4 photos + 170 positions
+    68.547  t0017348 suivi ok score 0.98 pos 4382,-380 net 66 (29 ms) carte 4 photos + 173 positions
+    68.720  envoyé lame_20261113_194231_trico-erincei_0004.jpg (678 ko)
+    68.855  t0017657 suivi ok score 0.99 pos 4764,-414 net 71 (15 ms) carte 4 photos + 176 positions
+    69.193  t0017995 suivi ok score 0.99 pos 5087,-444 net 79 (20 ms) carte 4 photos + 180 positions
+    69.524  t0018326 suivi ok score 0.99 pos 5505,-476 net 82 (18 ms) carte 4 photos + 183 positions
+    69.597  photo en mouvement lent (56 % du champ, 39 u/s)
+    69.815  photo cei_0005 à 5556,-477 (540 ko, 217 ms)
+    69.856  t0018659 suivi ok score 1.00 pos 5566,-477 net 79 (18 ms) carte 5 photos + 186 positions
+    70.213  t0019014 suivi ok score 0.99 pos 5554,-477 net 86 (34 ms) carte 5 photos + 190 positions
+    70.544  t0019345 suivi ok score 0.99 pos 5590,-95 net 88 (32 ms) carte 5 photos + 193 positions
+    70.867  t0019669 suivi ok score 1.00 pos 5590,-79 net 81 (19 ms) carte 5 photos + 196 positions
+    70.937  envoyé lame_20261113_194231_trico-erincei_0005.jpg (540 ko)
+    71.201  t0020002 suivi ok score 0.97 pos 5832,-93 net 67 (24 ms) carte 5 photos + 200 positions
+    71.525  t0020327 suivi ok score 0.98 pos 6353,-477 net 71 (16 ms) carte 5 photos + 203 positions
+    71.870  t0020672 suivi ok score 0.99 pos 6348,-477 net 103 (24 ms) carte 5 photos + 206 positions
+    72.056  photo cei_0006 à 6353,-477 (498 ko, 232 ms)
+    72.191  t0020994 suivi ok score 0.98 pos 6564,-493 net 76 (22 ms) carte 6 photos + 210 positions
+    72.531  t0021334 suivi ok score 1.00 pos 6349,-477 net 91 (25 ms) carte 6 photos + 213 positions
+    72.857  t0021659 suivi ok score 0.99 pos 6343,-477 net 99 (18 ms) carte 6 photos + 216 positions
+    73.161  envoyé lame_20261113_194231_trico-erincei_0006.jpg (498 ko)
+    73.198  t0022000 suivi ok score 0.98 pos 6503,-494 net 90 (18 ms) carte 6 photos + 220 positions
+    73.529  t0022331 suivi ok score 0.98 pos 6160,-466 net 77 (23 ms) carte 6 photos + 223 positions
+    73.861  t0022664 suivi ok score 0.98 pos 6281,-477 net 73 (23 ms) carte 6 photos + 226 positions
+    74.191  t0022993 suivi ok score 0.98 pos 5772,-99 net 79 (15 ms) carte 6 photos + 230 positions
+    74.528  t0023330 suivi ok score 0.96 pos 5182,-47 net 66 (21 ms) carte 6 photos + 233 positions
+    74.861  t0023663 suivi ok score 0.99 pos 4856,-17 net 83 (19 ms) carte 6 photos + 236 positions
+    75.199  t0024000 suivi ok score 0.99 pos 4358,17 net 80 (23 ms) carte 6 photos + 240 positions
+    75.230  photo en mouvement lent (67 % du champ, 21 u/s)
+    75.456  photo cei_0007 à 4349,17 (627 ko, 225 ms)
+    75.529  t0024330 suivi ok score 1.00 pos 4347,17 net 61 (17 ms) carte 7 photos + 243 positions
+    75.858  t0024660 suivi ok score 1.00 pos 4347,17 net 63 (16 ms) carte 7 photos + 246 positions
+    76.197  t0024998 suivi ok score 1.00 pos 4347,17 net 65 (18 ms) carte 7 photos + 250 positions
+    76.528  t0025330 suivi ok score 0.99 pos 4358,80 net 63 (16 ms) carte 7 photos + 253 positions
+    76.740  envoyé lame_20261113_194231_trico-erincei_0007.jpg (627 ko)
+    76.855  t0025657 suivi ok score 0.98 pos 4379,362 net 59 (15 ms) carte 7 photos + 256 positions
+    77.201  t0026002 suivi ok score 0.99 pos 4443,1100 net 43 (19 ms) carte 7 photos + 260 positions
+    77.542  t0026343 suivi ok score 1.00 pos 4482,1550 net 72 (21 ms) carte 7 photos + 263 positions
+    77.862  t0026664 suivi ok score 1.00 pos 4482,1551 net 71 (18 ms) carte 7 photos + 266 positions
+    78.056  photo cei_0008 à 4482,1551 (604 ko, 232 ms)
+    78.197  t0026998 suivi ok score 1.00 pos 4482,1551 net 62 (21 ms) carte 8 photos + 270 positions
+    78.527  t0027330 suivi ok score 0.99 pos 4482,1551 net 77 (16 ms) carte 8 photos + 273 positions
+    78.869  t0027671 suivi ok score 1.00 pos 4482,1551 net 95 (21 ms) carte 8 photos + 276 positions
+    79.203  t0028004 suivi ok score 1.00 pos 4482,1551 net 100 (23 ms) carte 8 photos + 280 positions
+    79.330  envoyé lame_20261113_194231_trico-erincei_0008.jpg (604 ko)
+    79.539  t0028340 suivi ok score 1.00 pos 4482,1551 net 97 (25 ms) carte 8 photos + 283 positions
+    79.870  t0028672 suivi ok score 0.99 pos 4462,1551 net 97 (22 ms) carte 8 photos + 286 positions
+    80.204  t0029005 suivi ok score 0.99 pos 4374,1567 net 101 (24 ms) carte 8 photos + 290 positions
+    80.534  t0029335 suivi ok score 0.98 pos 3860,1615 net 74 (16 ms) carte 8 photos + 293 positions
+    80.868  t0029670 suivi ok score 0.97 pos 3298,1646 net 94 (17 ms) carte 8 photos + 296 positions
+    81.197  t0029999 suivi ok score 1.00 pos 3275,1646 net 93 (19 ms) carte 8 photos + 300 positions
+    81.461  photo cei_0009 à 3275,1646 (725 ko, 224 ms)
+    81.527  t0030329 suivi ok score 1.00 pos 3275,1646 net 95 (16 ms) carte 9 photos + 300 positions
+    81.864  t0030665 suivi ok score 0.98 pos 3242,1646 net 89 (19 ms) carte 9 photos + 300 positions
+    82.206  t0031007 suivi ok score 0.99 pos 2736,1694 net 95 (23 ms) carte 9 photos + 300 positions
+    82.547  t0031348 suivi ok score 0.99 pos 2725,1694 net 96 (23 ms) carte 9 photos + 300 positions
+    82.794  photo cei_0010 à 2713,1694 (732 ko, 227 ms)
+    82.867  t0031668 suivi ok score 0.98 pos 2510,1710 net 90 (23 ms) carte 10 photos + 300 positions
+    83.031  envoyé lame_20261113_194231_trico-erincei_0009.jpg (725 ko)
+    83.209  t0032010 suivi ok score 0.99 pos 2295,1726 net 90 (22 ms) carte 10 photos + 300 positions
+    83.532  t0032334 suivi ok score 1.00 pos 2103,1742 net 88 (18 ms) carte 10 photos + 300 positions
+    83.872  t0032674 suivi ok score 1.00 pos 2091,1742 net 91 (18 ms) carte 10 photos + 300 positions
+    84.094  photo cei_0011 à 2091,1742 (727 ko, 221 ms)
+    84.205  t0033007 suivi ok score 1.00 pos 2091,1742 net 82 (23 ms) carte 11 photos + 300 positions
+    84.540  t0033342 suivi ok score 0.99 pos 1996,1742 net 83 (27 ms) carte 11 photos + 300 positions
+    84.868  t0033670 suivi ok score 0.98 pos 1722,1773 net 85 (21 ms) carte 11 photos + 300 positions
+    85.202  t0034004 suivi ok score 0.98 pos 1362,1804 net 86 (23 ms) carte 11 photos + 300 positions
+    85.514  envoyé lame_20261113_194231_trico-erincei_0010.jpg (732 ko)
+    85.537  t0034338 suivi ok score 0.99 pos 1231,1821 net 100 (24 ms) carte 11 photos + 300 positions
+    85.862  t0034663 suivi ok score 1.00 pos 1219,1821 net 99 (17 ms) carte 11 photos + 300 positions
+    85.961  photo cei_0012 à 1219,1821 (700 ko, 231 ms)
+    86.194  t0034996 suivi ok score 0.99 pos 1087,1836 net 97 (17 ms) carte 12 photos + 300 positions
+    86.528  t0035330 suivi ok score 0.99 pos 609,1880 net 97 (17 ms) carte 12 photos + 300 positions
+    86.877  t0035678 suivi ok score 1.00 pos 573,1885 net 88 (26 ms) carte 12 photos + 300 positions
+    86.907  envoyé lame_20261113_194231_trico-erincei_0011.jpg (727 ko)
+    87.158  photo cei_0013 à 573,1885 (684 ko, 223 ms)
+    87.194  t0035995 suivi ok score 0.99 pos 550,1885 net 86 (16 ms) carte 13 photos + 300 positions
+    87.530  t0036332 suivi ok score 1.00 pos 477,1900 net 85 (20 ms) carte 13 photos + 300 positions
+    87.865  t0036667 suivi ok score 0.99 pos 322,1901 net 83 (20 ms) carte 13 photos + 300 positions
+    88.198  t0036999 suivi ok score 0.99 pos 167,1917 net 86 (17 ms) carte 13 photos + 300 positions
+    88.530  t0037332 suivi ok score 0.99 pos 99,1933 net 85 (17 ms) carte 13 photos + 300 positions
+    88.576  envoyé lame_20261113_194231_trico-erincei_0012.jpg (700 ko)
+    88.721  photo cei_0014 à 108,1933 (667 ko, 215 ms)
+    88.861  t0037663 suivi ok score 1.00 pos 51,1933 net 82 (18 ms) carte 14 photos + 300 positions
+    89.202  t0038003 suivi ok score 0.99 pos -21,1947 net 81 (18 ms) carte 14 photos + 300 positions
+    89.545  t0038346 suivi ok score 1.00 pos -21,1949 net 79 (20 ms) carte 14 photos + 300 positions
+    89.667  envoyé lame_20261113_194231_trico-erincei_0013.jpg (684 ko)
+    89.864  t0038666 suivi ok score 0.96 pos -12,1965 net 83 (19 ms) carte 14 photos + 300 positions
+    90.196  t0038996 suivi ok score 0.94 pos 15,2346 net 74 (16 ms) carte 14 photos + 300 positions
+    90.528  t0039330 suivi ok score 0.95 pos 59,2805 net 72 (17 ms) carte 14 photos + 300 positions
+    90.869  t0039670 suivi ok score 0.97 pos 86,3095 net 78 (17 ms) carte 14 photos + 300 positions
+    91.208  t0040009 suivi ok score 0.97 pos 122,3542 net 62 (23 ms) carte 14 photos + 300 positions
+    91.540  t0040341 suivi ok score 0.96 pos 170,4116 net 80 (16 ms) carte 14 photos + 300 positions
+    91.540  photo en mouvement lent (54 % du champ, 30 u/s)
+    91.758  photo cei_0015 à 170,4116 (645 ko, 218 ms)
+    91.860  t0040662 suivi ok score 0.96 pos 194,4419 net 77 (16 ms) carte 15 photos + 300 positions
+    92.197  t0040998 suivi ok score 0.94 pos 206,4552 net 78 (17 ms) carte 15 photos + 300 positions
+    92.537  t0041338 suivi ok score 1.00 pos 218,4610 net 72 (22 ms) carte 15 photos + 300 positions
+    92.862  t0041664 suivi ok score 1.00 pos 218,4610 net 72 (17 ms) carte 15 photos + 300 positions
+    93.079  envoyé lame_20261113_194231_trico-erincei_0014.jpg (667 ko)
+    93.206  t0042007 suivi ok score 1.00 pos 218,4610 net 83 (27 ms) carte 15 photos + 300 positions
+    93.530  t0042332 suivi ok score 1.00 pos 218,4610 net 98 (16 ms) carte 15 photos + 300 positions
+    93.861  t0042663 suivi ok score 1.00 pos 206,4610 net 92 (16 ms) carte 15 photos + 300 positions
+    94.101  envoyé lame_20261113_194231_trico-erincei_0015.jpg (645 ko)
+    94.202  t0043003 suivi ok score 1.00 pos 206,4610 net 92 (20 ms) carte 15 photos + 300 positions
+    94.533  t0043335 suivi ok score 1.00 pos 218,4610 net 95 (16 ms) carte 15 photos + 300 positions
+    94.864  t0043666 suivi ok score 0.96 pos 335,4599 net 87 (15 ms) carte 15 photos + 300 positions
+    95.218  t0044018 suivi ok score 0.93 pos 1139,4529 net 84 (30 ms) carte 15 photos + 300 positions
+    95.536  t0044338 suivi ok score 1.00 pos 1497,4494 net 97 (16 ms) carte 15 photos + 300 positions
+    95.881  t0044682 suivi ok score 0.99 pos 1585,4494 net 77 (24 ms) carte 15 photos + 300 positions
+    96.094  photo cei_0016 à 1585,4494 (700 ko, 212 ms)
+    96.207  t0045008 suivi ok score 0.99 pos 1714,4478 net 89 (24 ms) carte 16 photos + 300 positions
+    96.535  t0045336 suivi ok score 0.97 pos 1905,4463 net 93 (19 ms) carte 16 photos + 300 positions
+    96.867  t0045668 suivi ok score 0.99 pos 2180,4446 net 93 (16 ms) carte 16 photos + 300 positions
+    97.204  t0046005 suivi ok score 1.00 pos 2323,4430 net 95 (20 ms) carte 16 photos + 300 positions
+    97.535  t0046337 suivi ok score 1.00 pos 2419,4414 net 78 (18 ms) carte 16 photos + 300 positions
+    97.727  photo cei_0017 à 2408,4415 (733 ko, 215 ms)
+    97.753  envoyé lame_20261113_194231_trico-erincei_0016.jpg (700 ko)
+    97.864  t0046666 suivi ok score 0.99 pos 2514,4400 net 83 (18 ms) carte 17 photos + 300 positions
+    98.207  t0047008 suivi ok score 1.00 pos 2549,4398 net 87 (23 ms) carte 17 photos + 300 positions
+    98.533  t0047335 suivi ok score 0.97 pos 2643,4398 net 89 (18 ms) carte 17 photos + 300 positions
+    98.866  t0047668 suivi ok score 0.99 pos 2848,4371 net 90 (17 ms) carte 17 photos + 300 positions
+    99.200  t0048002 suivi ok score 0.98 pos 2981,4366 net 91 (17 ms) carte 17 photos + 300 positions
+    99.546  t0048347 suivi ok score 0.97 pos 3257,4336 net 90 (26 ms) carte 17 photos + 300 positions
+    99.879  t0048680 suivi ok score 0.98 pos 3433,4319 net 89 (23 ms) carte 17 photos + 300 positions
+   100.205  t0049007 suivi ok score 0.98 pos 3683,4303 net 91 (21 ms) carte 17 photos + 300 positions
+   100.544  t0049345 suivi ok score 0.98 pos 4229,4256 net 88 (24 ms) carte 17 photos + 300 positions
+   100.681  photo en mouvement lent (62 % du champ, 36 u/s)
+   100.873  t0049675 suivi ok score 1.00 pos 4352,4251 net 92 (22 ms) carte 17 photos + 300 positions
+   100.880  photo cei_0018 à 4315,4255 (675 ko, 199 ms)
+   101.207  t0050009 suivi ok score 1.00 pos 4352,4255 net 92 (13 ms) carte 18 photos + 300 positions
+   101.536  t0050338 suivi ok score 0.99 pos 4352,4255 net 90 (16 ms) carte 18 photos + 300 positions
+   101.890  t0050691 suivi ok score 0.97 pos 4375,4590 net 51 (30 ms) carte 18 photos + 300 positions
+   102.203  t0051005 suivi ok score 0.97 pos 4434,5259 net 94 (19 ms) carte 18 photos + 300 positions
+   102.533  t0051334 suivi ok score 0.98 pos 4463,5641 net 69 (15 ms) carte 18 photos + 300 positions
+   102.870  t0051671 suivi ok score 0.98 pos 4484,5910 net 83 (17 ms) carte 18 photos + 300 positions
+   103.202  t0052004 suivi ok score 0.98 pos 4507,6072 net 89 (17 ms) carte 18 photos + 300 positions
+   103.535  t0052337 suivi ok score 0.99 pos 4508,6214 net 88 (19 ms) carte 18 photos + 300 positions
+   103.631  photo en mouvement lent (51 % du champ, 39 u/s)
+   103.853  photo cei_0019 à 4519,6298 (640 ko, 222 ms)
+   103.867  t0052669 suivi ok score 0.97 pos 4532,6486 net 82 (21 ms) carte 19 photos + 300 positions
+   104.206  t0053008 suivi ok score 1.00 pos 4532,6525 net 92 (24 ms) carte 19 photos + 300 positions
+   104.546  t0053347 suivi ok score 1.00 pos 4532,6529 net 91 (24 ms) carte 19 photos + 300 positions
+   104.875  t0053676 suivi ok score 0.99 pos 4486,6529 net 94 (20 ms) carte 19 photos + 300 positions
+   105.205  t0054007 suivi ok score 0.97 pos 4138,6556 net 81 (15 ms) carte 19 photos + 300 positions
+   105.539  t0054341 suivi ok score 1.00 pos 3994,6562 net 93 (20 ms) carte 19 photos + 300 positions
+   105.869  t0054672 suivi ok score 1.00 pos 3994,6561 net 94 (18 ms) carte 19 photos + 300 positions
+   105.922  photo cei_0020 à 3994,6561 (684 ko, 211 ms)
+   106.208  t0055010 suivi ok score 0.99 pos 3902,6572 net 91 (26 ms) carte 20 photos + 300 positions
+   106.544  t0055345 suivi ok score 0.98 pos 3536,6604 net 93 (23 ms) carte 20 photos + 300 positions
+   106.873  t0055674 suivi ok score 0.98 pos 3253,6625 net 91 (19 ms) carte 20 photos + 300 positions
+   107.206  t0056007 suivi ok score 0.98 pos 2906,6656 net 91 (20 ms) carte 20 photos + 300 positions
+   107.535  t0056337 suivi ok score 1.00 pos 2894,6656 net 90 (17 ms) carte 20 photos + 300 positions
+   107.765  photo cei_0021 à 2894,6656 (740 ko, 229 ms)
+   107.871  t0056673 suivi ok score 0.98 pos 2751,6671 net 90 (21 ms) carte 21 photos + 300 positions
+   108.202  t0057003 suivi ok score 0.96 pos 2237,6715 net 89 (18 ms) carte 21 photos + 300 positions
+   108.538  t0057338 suivi ok score 0.99 pos 1946,6736 net 92 (19 ms) carte 21 photos + 300 positions
+   108.872  t0057673 suivi ok score 1.00 pos 1929,6736 net 90 (19 ms) carte 21 photos + 300 positions
+   109.069  photo cei_0022 à 1929,6736 (706 ko, 233 ms)
+   109.207  t0058008 suivi ok score 1.00 pos 1929,6736 net 89 (21 ms) carte 22 photos + 300 positions
+   109.541  t0058342 suivi ok score 0.99 pos 1846,6736 net 92 (18 ms) carte 22 photos + 300 positions
+   109.888  t0058689 suivi ok score 0.98 pos 1548,6767 net 87 (29 ms) carte 22 photos + 300 positions
+   110.207  t0059009 suivi ok score 0.99 pos 1368,6783 net 90 (21 ms) carte 22 photos + 300 positions
+   110.403  envoyé lame_20261113_194231_trico-erincei_0017.jpg (733 ko)
+   110.553  t0059354 suivi ok score 0.99 pos 1297,6799 net 90 (25 ms) carte 22 photos + 300 positions
+   110.705  photo cei_0023 à 1308,6799 (680 ko, 236 ms)
+   110.872  t0059674 suivi ok score 0.99 pos 1265,6799 net 87 (21 ms) carte 23 photos + 300 positions
+   111.201  t0060003 suivi ok score 0.99 pos 811,6846 net 97 (16 ms) carte 23 photos + 300 positions
+   111.539  t0060341 suivi ok score 0.97 pos 654,6858 net 90 (20 ms) carte 23 photos + 300 positions
+   111.876  t0060678 suivi ok score 0.99 pos 606,6863 net 89 (21 ms) carte 23 photos + 300 positions
+   112.159  photo cei_0024 à 598,6863 (664 ko, 225 ms)
+   112.208  t0061009 suivi ok score 0.98 pos 452,6874 net 98 (23 ms) carte 24 photos + 300 positions
+   112.539  t0061341 suivi ok score 0.99 pos 105,6909 net 93 (21 ms) carte 24 photos + 300 positions
+   112.869  t0061671 suivi ok score 0.99 pos -50,6922 net 91 (17 ms) carte 24 photos + 300 positions
+   113.204  t0062006 suivi ok score 1.00 pos -74,6927 net 90 (19 ms) carte 24 photos + 300 positions
+   113.368  photo cei_0025 à -74,6927 (645 ko, 231 ms)
+   113.536  t0062338 suivi ok score 1.00 pos -74,6927 net 87 (20 ms) carte 25 photos + 300 positions
+   113.872  t0062674 suivi ok score 1.00 pos -86,6927 net 84 (19 ms) carte 25 photos + 300 positions
+   114.211  t0063012 suivi ok score 1.00 pos -86,6927 net 84 (24 ms) carte 25 photos + 300 positions
+   114.544  t0063346 suivi ok score 0.99 pos -86,6927 net 84 (24 ms) carte 25 photos + 300 positions
+   114.878  t0063679 suivi ok score 1.00 pos -86,6927 net 86 (23 ms) carte 25 photos + 300 positions
+   115.214  t0064015 suivi ok score 0.99 pos -113,6927 net 89 (23 ms) carte 25 photos + 300 positions
+   115.551  t0064353 suivi ok score 0.99 pos -360,6958 net 90 (24 ms) carte 25 photos + 300 positions
+   115.876  t0064678 suivi ok score 1.00 pos -420,6959 net 93 (17 ms) carte 25 photos + 300 positions
+   116.205  t0065007 suivi ok score 1.00 pos -421,6959 net 93 (19 ms) carte 25 photos + 300 positions
+   116.550  t0065351 suivi ok score 1.00 pos -421,6959 net 70 (26 ms) carte 25 photos + 300 positions
+   116.872  t0065673 suivi ok score 1.00 pos -421,6959 net 92 (19 ms) carte 25 photos + 300 positions
+   117.208  t0066009 suivi ok score 1.00 pos -421,6959 net 98 (22 ms) carte 25 photos + 300 positions
+   117.536  t0066338 suivi ok score 1.00 pos -421,6959 net 98 (15 ms) carte 25 photos + 300 positions
+   117.878  t0066679 suivi ok score 0.93 pos -421,6948 net 95 (22 ms) carte 25 photos + 300 positions
+   117.913  envoyé lame_20261113_194231_trico-erincei_0018.jpg (675 ko)
+   118.211  t0067013 suivi ok score 0.96 pos -424,6831 net 100 (23 ms) carte 25 photos + 300 positions
+   118.541  t0067343 suivi ok score 0.99 pos -443,6672 net 93 (20 ms) carte 25 photos + 300 positions
+   118.875  t0067676 suivi ok score 0.95 pos -491,6070 net 74 (21 ms) carte 25 photos + 300 positions
+   119.207  t0068008 suivi ok score 0.96 pos -541,5525 net 67 (20 ms) carte 25 photos + 300 positions
+   119.541  t0068342 suivi ok score 1.00 pos -588,5046 net 92 (19 ms) carte 25 photos + 300 positions
+   119.869  t0068671 suivi ok score 1.00 pos -588,5046 net 90 (17 ms) carte 25 photos + 300 positions
+   120.036  photo cei_0026 à -588,5046 (623 ko, 222 ms)
+   120.207  t0069008 suivi ok score 0.93 pos -588,5035 net 85 (21 ms) carte 26 photos + 300 positions
+   120.541  t0069344 suivi ok score 0.96 pos -622,4664 net 82 (20 ms) carte 26 photos + 300 positions
+   120.886  t0069688 suivi ok score 0.98 pos -656,4295 net 85 (30 ms) carte 26 photos + 300 positions
+   121.212  t0070014 suivi ok score 0.93 pos -683,3929 net 90 (24 ms) carte 26 photos + 300 positions
+   121.273  envoyé lame_20261113_194231_trico-erincei_0019.jpg (640 ko)
+   121.537  t0070339 suivi ok score 0.95 pos -701,3618 net 87 (17 ms) carte 26 photos + 300 positions
+   121.880  t0070681 suivi ok score 0.99 pos -714,3478 net 90 (21 ms) carte 26 photos + 300 positions
+   122.210  t0071012 suivi ok score 0.99 pos -726,3287 net 86 (21 ms) carte 26 photos + 300 positions
+   122.433  envoyé lame_20261113_194231_trico-erincei_0020.jpg (684 ko)
+   122.551  t0071352 suivi ok score 1.00 pos -738,3193 net 94 (27 ms) carte 26 photos + 300 positions
+   122.874  t0071676 suivi ok score 1.00 pos -750,3192 net 98 (23 ms) carte 26 photos + 300 positions
+   122.894  photo cei_0027 à -749,3192 (646 ko, 224 ms)
+   123.203  t0072004 suivi ok score 1.00 pos -749,3192 net 98 (16 ms) carte 27 photos + 300 positions
+   123.436  envoyé lame_20261113_194231_trico-erincei_0021.jpg (740 ko)
+   123.560  t0072361 suivi ok score 0.98 pos -725,3510 net 81 (31 ms) carte 27 photos + 300 positions
+   123.884  t0072686 suivi ok score 0.97 pos -646,4440 net 63 (26 ms) carte 27 photos + 300 positions
+   124.211  t0073013 suivi ok score 0.95 pos -589,5078 net 88 (21 ms) carte 27 photos + 300 positions
+   124.519  envoyé lame_20261113_194231_trico-erincei_0022.jpg (706 ko)
+   124.544  t0073346 suivi ok score 0.93 pos -527,5651 net 67 (20 ms) carte 27 photos + 300 positions
+   124.878  t0073680 suivi ok score 0.98 pos -480,6273 net 97 (22 ms) carte 27 photos + 300 positions
+   125.204  t0074006 suivi ok score 0.95 pos -412,6994 net 91 (16 ms) carte 27 photos + 300 positions
+   125.470  envoyé lame_20261113_194231_trico-erincei_0023.jpg (680 ko)
+   125.550  t0074351 suivi ok score 0.95 pos -376,7469 net 78 (21 ms) carte 27 photos + 300 positions
+   125.661  photo en mouvement lent (109 % du champ, 35 u/s)
+   125.662  ATTENTION pas trop grand (109 % du champ) : recouvrement insuffisant
+   125.875  t0074676 suivi ok score 0.93 pos -336,7861 net 83 (20 ms) carte 27 photos + 300 positions
+   125.890  photo cei_0028 à -361,7611 (634 ko, 228 ms)
+   126.206  t0075007 suivi ok score 0.99 pos -314,8122 net 96 (18 ms) carte 28 photos + 300 positions
+   126.342  envoyé lame_20261113_194231_trico-erincei_0024.jpg (664 ko)
+   126.552  t0075353 suivi ok score 1.00 pos -313,8122 net 97 (23 ms) carte 28 photos + 300 positions
+   126.893  t0075694 suivi ok score 0.94 pos -305,8207 net 92 (32 ms) carte 28 photos + 300 positions
+   127.207  t0076009 suivi ok score 0.98 pos -289,8504 net 94 (15 ms) carte 28 photos + 300 positions
+   127.539  t0076340 suivi ok score 0.94 pos -242,8988 net 95 (17 ms) carte 28 photos + 300 positions
+   127.577  envoyé lame_20261113_194231_trico-erincei_0025.jpg (645 ko)
+   127.872  t0076674 suivi ok score 1.00 pos -231,9002 net 92 (17 ms) carte 28 photos + 300 positions
+   128.136  photo cei_0029 à -239,9003 (649 ko, 224 ms)
+   128.219  t0077021 suivi ok score 1.00 pos -241,9035 net 94 (22 ms) carte 29 photos + 300 positions
+   128.551  t0077353 suivi ok score 1.00 pos -241,9049 net 67 (22 ms) carte 29 photos + 300 positions
+   128.576  envoyé lame_20261113_194231_trico-erincei_0026.jpg (623 ko)
+   128.875  t0077677 suivi ok score 1.00 pos -241,9051 net 80 (19 ms) carte 29 photos + 300 positions
+   129.207  t0078009 suivi ok score 0.98 pos -241,9051 net 93 (18 ms) carte 29 photos + 300 positions
+   129.544  t0078346 suivi ok score 0.98 pos -230,9131 net 92 (21 ms) carte 29 photos + 300 positions
+   129.892  t0078692 suivi ok score 0.97 pos -218,9258 net 91 (33 ms) carte 29 photos + 300 positions
+   130.212  t0079014 suivi ok score 0.99 pos -206,9449 net 89 (20 ms) carte 29 photos + 300 positions
+   130.548  t0079350 suivi ok score 0.96 pos -173,9784 net 87 (23 ms) carte 29 photos + 300 positions
+   130.883  t0079684 suivi ok score 0.96 pos -158,10023 net 88 (25 ms) carte 29 photos + 300 positions
+   131.213  t0080015 suivi ok score 0.95 pos -126,10341 net 85 (20 ms) carte 29 photos + 300 positions
+   131.541  t0080343 suivi ok score 0.97 pos -98,10672 net 91 (16 ms) carte 29 photos + 300 positions
+   131.877  t0080679 suivi ok score 0.96 pos -75,10895 net 96 (20 ms) carte 29 photos + 300 positions
+   132.212  t0081014 suivi ok score 0.97 pos -43,11230 net 90 (21 ms) carte 29 photos + 300 positions
+   132.310  photo en mouvement lent (57 % du champ, 39 u/s)
+   132.537  photo cei_0030 à -39,11330 (650 ko, 226 ms)
+   132.546  t0081348 suivi ok score 0.94 pos -19,11486 net 94 (25 ms) carte 30 photos + 300 positions
+   132.876  t0081678 suivi ok score 0.97 pos 16,11921 net 86 (15 ms) carte 30 photos + 300 positions
+   133.219  t0082019 suivi ok score 0.93 pos 41,12175 net 93 (26 ms) carte 30 photos + 300 positions
+   133.526  envoyé lame_20261113_194231_trico-erincei_0027.jpg (646 ko)
+   133.544  t0082345 suivi ok score 0.98 pos 53,12326 net 98 (19 ms) carte 30 photos + 300 positions
+   133.872  t0082674 suivi ok score 1.00 pos 53,12363 net 94 (16 ms) carte 30 photos + 300 positions
+   133.931  photo cei_0031 à 53,12350 (676 ko, 214 ms)
+   134.219  t0083020 suivi ok score 1.00 pos 53,12359 net 98 (25 ms) carte 31 photos + 300 positions
+   134.546  t0083348 suivi ok score 1.00 pos 53,12359 net 99 (22 ms) carte 31 photos + 300 positions
+   134.725  envoyé lame_20261113_194231_trico-erincei_0028.jpg (634 ko)
+   134.890  t0083692 suivi ok score 0.96 pos 53,12375 net 103 (27 ms) carte 31 photos + 300 positions
+   135.223  t0084023 suivi ok score 0.95 pos 89,12808 net 98 (28 ms) carte 31 photos + 300 positions
+   135.552  t0084353 suivi ok score 1.00 pos 89,12810 net 94 (26 ms) carte 31 photos + 300 positions
+   135.884  t0084686 suivi ok score 0.99 pos 98,12821 net 93 (23 ms) carte 31 photos + 300 positions
+   136.001  envoyé lame_20261113_194231_trico-erincei_0029.jpg (649 ko)
+   136.225  t0085026 suivi ok score 0.92 pos 1117,12725 net 88 (25 ms) carte 31 photos + 300 positions
+   136.541  t0085343 suivi ok score 0.97 pos 1296,12693 net 96 (16 ms) carte 31 photos + 300 positions
+   136.883  t0085684 suivi ok score 0.99 pos 1368,12693 net 96 (26 ms) carte 31 photos + 300 positions
+   136.941  photo cei_0032 à 1333,12693 (743 ko, 232 ms)
+   136.952  envoyé lame_20261113_194231_trico-erincei_0030.jpg (650 ko)
+   137.210  t0086011 suivi ok score 0.97 pos 1456,12679 net 97 (20 ms) carte 32 photos + 300 positions
+   137.543  t0086345 suivi ok score 0.99 pos 1575,12678 net 98 (18 ms) carte 32 photos + 300 positions
+   137.880  t0086681 suivi ok score 0.98 pos 1718,12662 net 93 (21 ms) carte 32 photos + 300 positions
+   138.214  t0087016 suivi ok score 0.97 pos 1954,12634 net 95 (18 ms) carte 32 photos + 300 positions
+   138.570  t0087371 suivi ok score 0.98 pos 2113,12630 net 90 (32 ms) carte 32 photos + 300 positions
+   138.886  t0087687 suivi ok score 0.98 pos 2376,12599 net 89 (23 ms) carte 32 photos + 300 positions
+   139.188  photo en mouvement lent (51 % du champ, 29 u/s)
+   139.210  t0088012 suivi ok score 0.98 pos 2899,12555 net 91 (15 ms) carte 32 photos + 300 positions
+   139.415  photo cei_0033 à 2878,12566 (693 ko, 226 ms)
+   139.553  t0088354 suivi ok score 0.99 pos 3019,12539 net 96 (25 ms) carte 33 photos + 300 positions
+   139.898  t0088698 suivi ok score 0.98 pos 3206,12528 net 89 (33 ms) carte 33 photos + 300 positions
+   140.213  t0089015 suivi ok score 0.99 pos 3434,12507 net 95 (18 ms) carte 33 photos + 300 positions
+   140.477  envoyé lame_20261113_194231_trico-erincei_0031.jpg (676 ko)
+   140.566  t0089367 suivi ok score 0.97 pos 3791,12477 net 88 (35 ms) carte 33 photos + 300 positions
+   140.878  t0089680 suivi ok score 0.99 pos 4419,12428 net 92 (18 ms) carte 33 photos + 300 positions
+   141.011  photo en mouvement lent (53 % du champ, 30 u/s)
+   141.213  t0090014 suivi ok score 1.00 pos 4503,12412 net 98 (24 ms) carte 33 photos + 300 positions
+   141.238  photo cei_0034 à 4503,12413 (564 ko, 225 ms)
+   141.541  t0090343 suivi ok score 1.00 pos 4494,12412 net 99 (17 ms) carte 34 photos + 300 positions
+   141.877  t0090679 suivi ok score 0.97 pos 4491,12301 net 96 (18 ms) carte 34 photos + 300 positions
+   142.207  t0091010 suivi ok score 0.99 pos 4459,11949 net 89 (16 ms) carte 34 photos + 300 positions
+   142.210  envoyé lame_20261113_194231_trico-erincei_0032.jpg (743 ko)
+   142.551  t0091352 suivi ok score 0.99 pos 4443,11754 net 97 (22 ms) carte 34 photos + 300 positions
+   142.876  t0091679 suivi ok score 0.98 pos 4407,11277 net 95 (18 ms) carte 34 photos + 300 positions
+   143.229  t0092030 suivi ok score 0.99 pos 4384,10962 net 101 (27 ms) carte 34 photos + 300 positions
+   143.537  envoyé lame_20261113_194231_trico-erincei_0033.jpg (693 ko)
+   143.550  t0092352 suivi ok score 1.00 pos 4348,10627 net 90 (23 ms) carte 34 photos + 300 positions
+   143.881  t0092684 suivi ok score 1.00 pos 4348,10627 net 90 (23 ms) carte 34 photos + 300 positions
+   144.076  photo cei_0035 à 4348,10627 (613 ko, 235 ms)
+   144.209  t0093011 suivi ok score 1.00 pos 4348,10627 net 95 (17 ms) carte 35 photos + 300 positions
+   144.547  t0093349 suivi ok score 1.00 pos 4348,10627 net 88 (18 ms) carte 35 photos + 300 positions
+   144.883  t0093685 suivi ok score 0.99 pos 4313,10627 net 88 (25 ms) carte 35 photos + 300 positions
+   145.167  envoyé lame_20261113_194231_trico-erincei_0034.jpg (564 ko)
+   145.207  t0094009 suivi ok score 1.00 pos 3704,10691 net 96 (16 ms) carte 35 photos + 300 positions
+   145.547  t0094350 suivi ok score 0.96 pos 3484,10705 net 86 (24 ms) carte 35 photos + 300 positions
+   145.884  t0094686 suivi ok score 0.99 pos 3212,10722 net 95 (23 ms) carte 35 photos + 300 positions
+   146.223  t0095024 suivi ok score 1.00 pos 3188,10722 net 92 (20 ms) carte 35 photos + 300 positions
+   146.519  photo cei_0036 à 3188,10722 (709 ko, 221 ms)
+   146.544  t0095346 suivi ok score 1.00 pos 3188,10722 net 92 (18 ms) carte 36 photos + 300 positions
+   146.609  envoyé lame_20261113_194231_trico-erincei_0035.jpg (613 ko)
+   146.884  t0095686 suivi ok score 0.96 pos 3173,10483 net 62 (23 ms) carte 36 photos + 300 positions
+   147.216  t0096018 suivi ok score 1.00 pos 3068,9241 net 98 (20 ms) carte 36 photos + 300 positions
+   147.550  t0096352 suivi ok score 1.00 pos 3068,9241 net 95 (18 ms) carte 36 photos + 300 positions
+   147.763  photo cei_0037 à 3068,9241 (715 ko, 212 ms)
+   147.883  t0096685 suivi ok score 0.94 pos 2898,9256 net 90 (23 ms) carte 37 photos + 300 positions
+   148.214  t0097015 suivi ok score 0.98 pos 2139,9332 net 91 (20 ms) carte 37 photos + 300 positions
+   148.568  t0097368 suivi ok score 1.00 pos 2031,9348 net 91 (32 ms) carte 37 photos + 300 positions
+   148.881  t0097683 suivi ok score 1.00 pos 2040,9336 net 90 (20 ms) carte 37 photos + 300 positions
+   148.934  photo cei_0038 à 2032,9347 (718 ko, 212 ms)
+   149.130  envoyé lame_20261113_194231_trico-erincei_0036.jpg (709 ko)
+   149.221  t0098022 suivi ok score 0.98 pos 1789,9368 net 72 (21 ms) carte 38 photos + 300 positions
+   149.556  t0098357 suivi ok score 0.98 pos 1099,9416 net 91 (24 ms) carte 38 photos + 300 positions
+   149.886  t0098687 suivi ok score 0.98 pos 569,9463 net 92 (21 ms) carte 38 photos + 300 positions
+   150.013  photo en mouvement lent (50 % du champ, 30 u/s)
+   150.191  envoyé lame_20261113_194231_trico-erincei_0037.jpg (715 ko)
+   150.209  t0099011 suivi ok score 0.97 pos 458,9464 net 91 (17 ms) carte 38 photos + 300 positions
+   150.247  photo cei_0039 à 497,9464 (680 ko, 234 ms)
+   150.542  t0099344 suivi ok score 0.99 pos -254,9544 net 98 (15 ms) carte 39 photos + 300 positions
+   150.883  t0099685 suivi ok score 0.93 pos -696,9577 net 84 (23 ms) carte 39 photos + 300 positions
+   151.114  photo en mouvement lent (56 % du champ, 32 u/s)
+   151.215  t0100017 suivi ok score 0.99 pos -1198,9625 net 100 (20 ms) carte 39 photos + 300 positions
+   151.341  photo cei_0040 à -1197,9624 (619 ko, 226 ms)
+   151.378  envoyé lame_20261113_194231_trico-erincei_0038.jpg (718 ko)
+   151.543  t0100344 suivi ok score 0.98 pos -1281,9624 net 103 (19 ms) carte 40 photos + 300 positions
+   151.884  t0100686 suivi ok score 0.94 pos -1713,9674 net 89 (23 ms) carte 40 photos + 300 positions
+   152.212  t0101013 suivi ok score 0.99 pos -2009,9692 net 108 (17 ms) carte 40 photos + 300 positions
+   152.329  envoyé lame_20261113_194231_trico-erincei_0039.jpg (680 ko)
+   152.551  t0101353 suivi ok score 0.99 pos -2106,9704 net 106 (21 ms) carte 40 photos + 300 positions
+   152.674  photo cei_0041 à -2070,9704 (604 ko, 223 ms)
+   152.877  t0101679 suivi ok score 0.96 pos -2467,9735 net 106 (17 ms) carte 41 photos + 300 positions
+   153.216  t0102018 suivi ok score 0.98 pos -2533,9736 net 110 (20 ms) carte 41 photos + 300 positions
+   153.557  t0102358 suivi ok score 0.93 pos -2820,9766 net 101 (24 ms) carte 41 photos + 300 positions
+   153.881  t0102683 suivi ok score 0.98 pos -3011,9784 net 109 (21 ms) carte 41 photos + 300 positions
+   153.913  envoyé lame_20261113_194231_trico-erincei_0040.jpg (619 ko)
+   154.212  t0103014 suivi ok score 0.97 pos -3153,9800 net 108 (17 ms) carte 41 photos + 300 positions
+   154.549  t0103351 suivi ok score 0.96 pos -3277,9816 net 110 (19 ms) carte 41 photos + 300 positions
+   154.891  t0103693 suivi ok score 0.99 pos -3575,9832 net 111 (25 ms) carte 41 photos + 300 positions
+   155.015  photo en mouvement lent (50 % du champ, 31 u/s)
+   155.211  t0104013 suivi ok score 1.00 pos -3614,9836 net 108 (18 ms) carte 41 photos + 300 positions
+   155.246  photo cei_0042 à -3599,9832 (578 ko, 230 ms)
+   155.507  envoyé lame_20261113_194231_trico-erincei_0041.jpg (604 ko)
+   155.550  t0104352 suivi ok score 1.00 pos -3611,9832 net 111 (17 ms) carte 42 photos + 300 positions
+   155.882  t0104684 suivi ok score 0.99 pos -3600,9832 net 106 (21 ms) carte 42 photos + 300 positions
+   156.213  t0105015 suivi ok score 0.95 pos -3551,10405 net 102 (19 ms) carte 42 photos + 300 positions
+   156.550  t0105352 suivi ok score 0.92 pos -3551,10501 net 101 (18 ms) carte 42 photos + 300 positions
+   156.879  t0105681 suivi ok score 0.98 pos -3505,10915 net 106 (19 ms) carte 42 photos + 300 positions
+   156.908  photo cei_0043 à -3540,10517 (572 ko, 230 ms)
+   157.211  t0106013 suivi ok score 0.92 pos -3504,10979 net 109 (16 ms) carte 43 photos + 300 positions
+   157.553  t0106355 suivi ok score 0.94 pos -3460,11473 net 91 (22 ms) carte 43 photos + 300 positions
+   157.902  t0106703 suivi ok score 0.97 pos -3424,11825 net 113 (34 ms) carte 43 photos + 300 positions
+   158.215  t0107016 suivi ok score 0.95 pos -3398,12159 net 107 (18 ms) carte 43 photos + 300 positions
+   158.248  envoyé lame_20261113_194231_trico-erincei_0042.jpg (578 ko)
+   158.550  t0107352 suivi ok score 0.97 pos -3387,12291 net 109 (20 ms) carte 43 photos + 300 positions
+   158.881  t0107683 suivi ok score 1.00 pos -3385,12341 net 109 (19 ms) carte 43 photos + 300 positions
+   158.900  photo cei_0044 à -3385,12316 (557 ko, 207 ms)
+   159.217  t0108019 suivi ok score 1.00 pos -3385,12345 net 106 (22 ms) carte 44 photos + 300 positions
+   159.274  envoyé lame_20261113_194231_trico-erincei_0043.jpg (572 ko)
+   159.550  t0108353 suivi ok score 0.97 pos -3277,12330 net 106 (19 ms) carte 44 photos + 300 positions
+   159.881  t0108684 suivi ok score 0.96 pos -2930,12302 net 94 (17 ms) carte 44 photos + 300 positions
+   160.227  t0109029 suivi ok score 0.97 pos -2444,12265 net 88 (26 ms) carte 44 photos + 300 positions
+   160.553  t0109355 suivi ok score 0.99 pos -2217,12249 net 94 (19 ms) carte 44 photos + 300 positions
+   160.883  t0109685 suivi ok score 1.00 pos -2208,12234 net 94 (19 ms) carte 44 photos + 300 positions
+   161.063  photo cei_0045 à -2217,12238 (577 ko, 211 ms)
+   161.224  t0110025 suivi ok score 0.97 pos -2198,12395 net 79 (28 ms) carte 45 photos + 300 positions
+   161.567  t0110368 suivi ok score 0.96 pos -2150,12885 net 82 (26 ms) carte 45 photos + 300 positions
+   161.890  t0110691 suivi ok score 1.00 pos -2137,12952 net 85 (24 ms) carte 45 photos + 300 positions
+   162.089  envoyé lame_20261113_194231_trico-erincei_0044.jpg (557 ko)
+   162.209  photo cei_0046 à -2137,12952 (596 ko, 220 ms)
+   162.212  t0111014 suivi ok score 1.00 pos -2173,12952 net 84 (17 ms) carte 46 photos + 300 positions
+   162.542  t0111345 suivi ok score 0.99 pos -2519,12983 net 83 (17 ms) carte 46 photos + 300 positions
+   162.881  t0111683 suivi ok score 0.98 pos -2884,13013 net 92 (16 ms) carte 46 photos + 300 positions
+   163.233  t0112034 suivi ok score 0.97 pos -3322,13046 net 99 (31 ms) carte 46 photos + 300 positions
+   163.548  t0112350 suivi ok score 0.99 pos -3336,13046 net 105 (17 ms) carte 46 photos + 300 positions
+   163.847  photo cei_0047 à -3361,13046 (568 ko, 233 ms)
+   163.876  t0112679 suivi ok score 1.00 pos -3361,13046 net 103 (17 ms) carte 47 photos + 300 positions
+   164.224  t0113026 suivi ok score 1.00 pos -3361,13046 net 107 (27 ms) carte 47 photos + 300 positions
+   164.254  envoyé lame_20261113_194231_trico-erincei_0045.jpg (577 ko)
+   164.545  t0113348 suivi ok score 0.95 pos -3361,12982 net 82 (16 ms) carte 47 photos + 300 positions
+   164.884  t0113686 suivi ok score 0.98 pos -3420,12329 net 99 (22 ms) carte 47 photos + 300 positions
+   165.217  t0114019 suivi ok score 0.96 pos -3432,12201 net 103 (18 ms) carte 47 photos + 300 positions
+   165.313  photo cei_0048 à -3429,12264 (561 ko, 233 ms)
+   165.551  t0114353 suivi ok score 0.96 pos -3480,11617 net 88 (21 ms) carte 48 photos + 300 positions
+   165.886  t0114688 suivi ok score 0.95 pos -3492,11458 net 97 (22 ms) carte 48 photos + 300 positions
+   166.229  t0115031 suivi ok score 0.93 pos -3504,11254 net 87 (28 ms) carte 48 photos + 300 positions
+   166.247  photo cei_0049 à -3492,11422 (575 ko, 231 ms)
+   166.374  envoyé lame_20261113_194231_trico-erincei_0046.jpg (596 ko)
+   166.563  t0115364 suivi ok score 0.95 pos -3548,10851 net 95 (28 ms) carte 49 photos + 300 positions
+   166.881  t0115683 suivi ok score 0.98 pos -3563,10676 net 91 (17 ms) carte 49 photos + 300 positions
+   167.222  t0116023 suivi ok score 0.95 pos -3564,10549 net 84 (20 ms) carte 49 photos + 300 positions
+   167.345  photo cei_0050 à -3564,10579 (580 ko, 207 ms)
+   167.551  t0116353 suivi ok score 0.96 pos -3597,10200 net 84 (21 ms) carte 50 photos + 300 positions
+   167.566  envoyé lame_20261113_194231_trico-erincei_0047.jpg (568 ko)
+   167.884  t0116687 suivi ok score 0.93 pos -3637,9773 net 99 (22 ms) carte 50 photos + 300 positions
+   168.220  t0117023 suivi ok score 0.96 pos -3667,9513 net 96 (23 ms) carte 50 photos + 300 positions
+   168.549  t0117351 suivi ok score 0.98 pos -3682,9325 net 93 (18 ms) carte 50 photos + 300 positions
+   168.882  t0117684 suivi ok score 0.97 pos -3703,9030 net 83 (16 ms) carte 50 photos + 300 positions
+   168.953  envoyé lame_20261113_194231_trico-erincei_0048.jpg (561 ko)
+   169.224  t0118026 suivi ok score 0.97 pos -3739,8731 net 90 (20 ms) carte 50 photos + 300 positions
+   169.547  t0118350 suivi ok score 0.96 pos -3778,8238 net 94 (14 ms) carte 50 photos + 300 positions
+   169.548  photo en mouvement lent (58 % du champ, 32 u/s)
+   169.769  photo cei_0051 à -3778,8238 (583 ko, 221 ms)
+   169.884  t0118686 suivi ok score 1.00 pos -3778,8226 net 98 (22 ms) carte 51 photos + 300 positions
+   170.219  t0119022 suivi ok score 0.97 pos -3766,8227 net 100 (23 ms) carte 51 photos + 300 positions
+   170.552  t0119354 suivi ok score 0.97 pos -3671,8227 net 101 (21 ms) carte 51 photos + 300 positions
+   170.888  t0119690 suivi ok score 0.97 pos -3279,8183 net 103 (18 ms) carte 51 photos + 300 positions
+   171.055  envoyé lame_20261113_194231_trico-erincei_0049.jpg (575 ko)
+   171.225  t0120026 suivi ok score 0.96 pos -2885,8152 net 101 (20 ms) carte 51 photos + 300 positions
+   171.558  t0120360 suivi ok score 1.00 pos -2777,8132 net 99 (21 ms) carte 51 photos + 300 positions
+   171.914  t0120716 suivi ok score 1.00 pos -2777,8131 net 99 (37 ms) carte 51 photos + 300 positions
+   172.063  photo cei_0052 à -2777,8131 (605 ko, 214 ms)
+   172.216  t0121018 suivi ok score 0.94 pos -2828,7541 net 53 (19 ms) carte 52 photos + 300 positions
+   172.366  envoyé lame_20261113_194231_trico-erincei_0050.jpg (580 ko)
+   172.551  t0121352 suivi ok score 1.00 pos -2873,7095 net 93 (16 ms) carte 52 photos + 300 positions
+   172.880  t0121683 suivi ok score 1.00 pos -2873,7095 net 94 (17 ms) carte 52 photos + 300 positions
+   172.946  photo cei_0053 à -2873,7095 (583 ko, 219 ms)
+   173.225  t0122026 suivi ok score 0.94 pos -2881,7032 net 94 (21 ms) carte 53 photos + 300 positions
+   173.397  envoyé lame_20261113_194231_trico-erincei_0051.jpg (583 ko)
+   173.558  t0122360 suivi ok score 0.97 pos -2896,6808 net 103 (28 ms) carte 53 photos + 300 positions
+   173.889  t0122691 suivi ok score 0.98 pos -2932,6394 net 93 (22 ms) carte 53 photos + 300 positions
+   174.230  t0123030 suivi ok score 0.97 pos -2944,6206 net 100 (28 ms) carte 53 photos + 300 positions
+   174.551  t0123353 suivi ok score 0.94 pos -2956,6134 net 96 (16 ms) carte 53 photos + 300 positions
+   174.680  photo cei_0054 à -2956,6154 (583 ko, 227 ms)
+   174.882  t0123684 suivi ok score 0.95 pos -2968,5963 net 94 (17 ms) carte 54 photos + 300 positions
+   175.216  t0124018 suivi ok score 0.92 pos -2992,5713 net 90 (15 ms) carte 54 photos + 300 positions
+   175.550  t0124352 suivi ok score 0.97 pos -3012,5484 net 93 (18 ms) carte 54 photos + 300 positions
+   175.835  envoyé lame_20261113_194231_trico-erincei_0052.jpg (605 ko)
+   175.886  t0124689 suivi ok score 0.96 pos -3016,5357 net 95 (17 ms) carte 54 photos + 300 positions
+   176.219  t0125020 suivi ok score 0.97 pos -3039,5230 net 101 (19 ms) carte 54 photos + 300 positions
+   176.319  photo cei_0055 à -3028,5294 (595 ko, 234 ms)
+   176.554  t0125356 suivi ok score 0.96 pos -3040,5071 net 94 (23 ms) carte 55 photos + 300 positions
+   176.782  envoyé lame_20261113_194231_trico-erincei_0053.jpg (583 ko)
+   176.880  t0125683 suivi ok score 0.94 pos -3063,4832 net 92 (16 ms) carte 55 photos + 300 positions
+   177.228  t0126029 suivi ok score 0.94 pos -3088,4593 net 93 (22 ms) carte 55 photos + 300 positions
+   177.551  t0126354 suivi ok score 0.92 pos -3096,4524 net 100 (20 ms) carte 55 photos + 300 positions
+   177.614  photo cei_0056 à -3088,4562 (608 ko, 207 ms)
+   177.886  t0126688 suivi ok score 0.95 pos -3100,4482 net 95 (17 ms) carte 56 photos + 300 positions
+   177.945  envoyé lame_20261113_194231_trico-erincei_0054.jpg (583 ko)
+   178.222  t0127024 suivi ok score 0.91 pos -3120,4209 net 94 (21 ms) carte 56 photos + 300 positions
+   178.567  t0127368 suivi ok score 0.93 pos -3135,4056 net 99 (30 ms) carte 56 photos + 300 positions
+   178.894  t0127695 suivi ok score 0.96 pos -3135,4020 net 103 (23 ms) carte 56 photos + 300 positions
+   179.237  t0128038 suivi ok score 0.98 pos -3147,3855 net 100 (29 ms) carte 56 photos + 300 positions
+   179.571  t0128372 suivi ok score 0.95 pos -3180,3493 net 89 (30 ms) carte 56 photos + 300 positions
+   179.903  t0128704 suivi ok score 0.91 pos -3195,3297 net 98 (26 ms) carte 56 photos + 300 positions
+   180.231  t0129033 suivi ok score 0.98 pos -3207,3138 net 96 (21 ms) carte 56 photos + 300 positions
+   180.566  t0129368 suivi ok score 0.93 pos -3219,3048 net 100 (27 ms) carte 56 photos + 300 positions
+   180.739  photo cei_0057 à -3219,3059 (630 ko, 222 ms)
+   180.881  t0129683 suivi ok score 0.98 pos -3231,2893 net 104 (16 ms) carte 57 photos + 300 positions
+   181.220  t0130022 suivi ok score 1.00 pos -3243,2888 net 105 (16 ms) carte 57 photos + 300 positions
+   181.555  t0130358 suivi ok score 1.00 pos -3243,2888 net 105 (21 ms) carte 57 photos + 300 positions
+   181.864  envoyé lame_20261113_194231_trico-erincei_0055.jpg (595 ko)
+   181.888  t0130690 suivi ok score 0.94 pos -3135,2877 net 101 (20 ms) carte 57 photos + 300 positions
+   182.227  t0131028 suivi ok score 0.93 pos -2920,2858 net 103 (24 ms) carte 57 photos + 300 positions
+   182.566  t0131367 suivi ok score 0.97 pos -2582,2825 net 103 (24 ms) carte 57 photos + 300 positions
+   182.842  envoyé lame_20261113_194231_trico-erincei_0056.jpg (608 ko)
+   182.890  t0131692 suivi ok score 0.99 pos -2390,2809 net 106 (18 ms) carte 57 photos + 300 positions
+   183.220  t0132022 suivi ok score 1.00 pos -2394,2809 net 107 (17 ms) carte 57 photos + 300 positions
+   183.351  photo cei_0058 à -2394,2809 (627 ko, 235 ms)
+   183.550  t0132352 suivi ok score 1.00 pos -2394,2809 net 107 (16 ms) carte 58 photos + 300 positions
+   183.889  t0132691 suivi ok score 0.97 pos -2442,2138 net 58 (17 ms) carte 58 photos + 300 positions
+   184.155  envoyé lame_20261113_194231_trico-erincei_0057.jpg (630 ko)
+   184.218  t0133020 suivi ok score 1.00 pos -2502,1567 net 102 (14 ms) carte 58 photos + 300 positions
+   184.556  t0133358 suivi ok score 1.00 pos -2498,1566 net 103 (20 ms) carte 58 photos + 300 positions
+   184.749  photo cei_0059 à -2498,1566 (670 ko, 226 ms)
+   184.883  t0133685 suivi ok score 1.00 pos -2498,1566 net 103 (17 ms) carte 59 photos + 300 positions
+   185.223  t0134024 suivi ok score 0.91 pos -2510,1343 net 98 (18 ms) carte 59 photos + 300 positions
+   185.551  t0134354 suivi ok score 0.98 pos -2542,1041 net 90 (16 ms) carte 59 photos + 300 positions
+   185.751  envoyé lame_20261113_194231_trico-erincei_0058.jpg (627 ko)
+   185.892  t0134694 suivi ok score 0.98 pos -2566,769 net 101 (20 ms) carte 59 photos + 300 positions
+   186.226  t0135027 suivi ok score 0.94 pos -2581,590 net 99 (20 ms) carte 59 photos + 300 positions
+   186.558  t0135360 suivi ok score 0.97 pos -2590,481 net 104 (21 ms) carte 59 photos + 300 positions
+   186.649  photo cei_0060 à -2582,530 (667 ko, 226 ms)
+   186.887  t0135689 suivi ok score 0.97 pos -2594,355 net 102 (19 ms) carte 60 photos + 300 positions
+   187.033  envoyé lame_20261113_194231_trico-erincei_0059.jpg (670 ko)
+   187.219  t0136021 suivi ok score 0.97 pos -2606,271 net 96 (17 ms) carte 60 photos + 300 positions
+   187.561  t0136363 suivi ok score 0.91 pos -2606,176 net 98 (25 ms) carte 60 photos + 300 positions
+   187.890  t0136692 suivi ok score 0.97 pos -2629,-26 net 93 (18 ms) carte 60 photos + 300 positions
+   188.221  t0137022 suivi ok score 1.00 pos -2642,-155 net 102 (18 ms) carte 60 photos + 300 positions
+   188.557  t0137359 suivi ok score 1.00 pos -2642,-155 net 102 (19 ms) carte 60 photos + 300 positions
+   188.587  photo cei_0061 à -2642,-155 (679 ko, 217 ms)
+   188.895  t0137697 suivi ok score 0.97 pos -3299,-91 net 89 (22 ms) carte 61 photos + 300 positions
+   189.226  t0138027 suivi ok score 1.00 pos -3633,-75 net 108 (20 ms) carte 61 photos + 300 positions
+   189.561  t0138363 suivi ok score 1.00 pos -3633,-75 net 111 (21 ms) carte 61 photos + 300 positions
+   189.721  photo cei_0062 à -3633,-74 (655 ko, 235 ms)
+   189.725  envoyé lame_20261113_194231_trico-erincei_0060.jpg (667 ko)
+   189.895  t0138696 suivi ok score 1.00 pos -3633,-75 net 110 (24 ms) carte 62 photos + 300 positions
+   190.222  t0139024 suivi ok score 0.94 pos -4183,-28 net 105 (17 ms) carte 62 photos + 300 positions
+   190.560  t0139362 suivi ok score 1.00 pos -4446,4 net 119 (22 ms) carte 62 photos + 300 positions
+   190.712  envoyé lame_20261113_194231_trico-erincei_0061.jpg (679 ko)
+   190.895  t0139697 suivi ok score 0.98 pos -4581,5 net 116 (23 ms) carte 62 photos + 300 positions
+   191.223  t0140024 suivi ok score 0.95 pos -4793,20 net 116 (19 ms) carte 62 photos + 300 positions
+   191.561  t0140363 suivi ok score 1.00 pos -4817,21 net 117 (20 ms) carte 62 photos + 300 positions
+   191.841  photo cei_0063 à -4808,21 (645 ko, 210 ms)
+   191.892  t0140695 suivi ok score 1.00 pos -4806,21 net 116 (20 ms) carte 63 photos + 300 positions
+   192.227  t0141028 suivi ok score 1.00 pos -4806,21 net 119 (22 ms) carte 63 photos + 300 positions
+   192.574  t0141375 suivi ok score 0.96 pos -4938,35 net 117 (27 ms) carte 63 photos + 300 positions
+   192.899  t0141700 suivi ok score 0.98 pos -5309,64 net 119 (18 ms) carte 63 photos + 300 positions
+   193.226  t0142028 suivi ok score 0.98 pos -5355,69 net 120 (16 ms) carte 63 photos + 300 positions
+   193.268  envoyé lame_20261113_194231_trico-erincei_0062.jpg (655 ko)
+   193.443  photo cei_0064 à -5355,69 (634 ko, 216 ms)
+   193.552  t0142354 suivi ok score 0.96 pos -5423,69 net 118 (16 ms) carte 64 photos + 300 positions
+   193.894  t0142696 suivi ok score 0.99 pos -5495,85 net 117 (24 ms) carte 64 photos + 300 positions
+   194.223  t0143025 suivi ok score 0.99 pos -5617,85 net 116 (19 ms) carte 64 photos + 300 positions
+   194.331  envoyé lame_20261113_194231_trico-erincei_0063.jpg (645 ko)
+   194.559  t0143361 suivi ok score 1.00 pos -5666,100 net 118 (18 ms) carte 64 photos + 300 positions
+   194.890  t0143692 suivi ok score 1.00 pos -5666,101 net 118 (16 ms) carte 64 photos + 300 positions
+   195.224  t0144026 suivi ok score 1.00 pos -5666,101 net 118 (16 ms) carte 64 photos + 300 positions
+   195.557  t0144359 suivi ok score 1.00 pos -5666,101 net 119 (17 ms) carte 64 photos + 300 positions
+   195.894  t0144695 suivi ok score 1.00 pos -5666,101 net 93 (19 ms) carte 64 photos + 300 positions
+   196.238  t0145039 suivi ok score 1.00 pos -5666,101 net 110 (30 ms) carte 64 photos + 300 positions
+   196.563  t0145365 suivi ok score 1.00 pos -5666,101 net 94 (23 ms) carte 64 photos + 300 positions
+   196.899  t0145701 suivi ok score 1.00 pos -5666,101 net 113 (23 ms) carte 64 photos + 300 positions
+   197.226  t0146027 suivi ok score 1.00 pos -5666,101 net 115 (20 ms) carte 64 photos + 300 positions
+   197.566  t0146368 suivi ok score 1.00 pos -5666,101 net 114 (23 ms) carte 64 photos + 300 positions
+   197.891  t0146693 suivi ok score 1.00 pos -5666,99 net 108 (17 ms) carte 64 photos + 300 positions
+   198.244  t0147045 suivi ok score 0.98 pos -5738,101 net 109 (30 ms) carte 64 photos + 300 positions
+   198.561  t0147363 suivi ok score 0.99 pos -5821,101 net 111 (16 ms) carte 64 photos + 300 positions
+   198.890  photo cei_0065 à -5858,115 (614 ko, 232 ms)
+   198.893  t0147695 suivi ok score 1.00 pos -5854,116 net 114 (20 ms) carte 65 photos + 300 positions
+   199.220  t0148022 suivi ok score 0.91 pos -5854,132 net 108 (17 ms) carte 65 photos + 300 positions
+   199.562  t0148364 suivi ok score 0.98 pos -5831,419 net 105 (23 ms) carte 65 photos + 300 positions
+   199.891  t0148693 suivi ok score 0.96 pos -5818,561 net 111 (18 ms) carte 65 photos + 300 positions
+   200.154  envoyé lame_20261113_194231_trico-erincei_0064.jpg (634 ko)
+   200.223  t0149025 suivi ok score 0.97 pos -5806,629 net 104 (15 ms) carte 65 photos + 300 positions
+   200.559  t0149361 suivi ok score 0.92 pos -5794,838 net 103 (20 ms) carte 65 photos + 300 positions
+   200.891  t0149693 suivi ok score 0.91 pos -5782,913 net 106 (21 ms) carte 65 photos + 300 positions
+   200.989  photo cei_0066 à -5786,876 (621 ko, 233 ms)
+   201.229  t0150031 suivi ok score 0.98 pos -5773,958 net 103 (23 ms) carte 66 photos + 300 positions
+   201.564  t0150366 suivi ok score 0.93 pos -5772,1002 net 111 (24 ms) carte 66 photos + 300 positions
+   201.612  envoyé lame_20261113_194231_trico-erincei_0065.jpg (614 ko)
+   201.892  t0150694 suivi ok score 0.94 pos -5760,1149 net 103 (18 ms) carte 66 photos + 300 positions
+   202.226  t0151028 suivi ok score 0.91 pos -5748,1295 net 113 (20 ms) carte 66 photos + 300 positions
+   202.561  t0151363 suivi ok score 1.00 pos -5748,1326 net 115 (20 ms) carte 66 photos + 300 positions
+   202.892  t0151695 suivi ok score 1.00 pos -5736,1326 net 70 (20 ms) carte 66 photos + 300 positions
+   203.237  t0152039 suivi ok score 1.00 pos -5736,1326 net 74 (16 ms) carte 66 photos + 300 positions
+   203.561  t0152363 suivi ok score 1.00 pos -5748,1326 net 74 (19 ms) carte 66 photos + 300 positions
+   203.900  t0152702 suivi ok score 1.00 pos -5748,1326 net 90 (24 ms) carte 66 photos + 300 positions
+   204.231  t0153032 suivi ok score 1.00 pos -5748,1326 net 91 (17 ms) carte 66 photos + 300 positions
+   204.581  t0153383 suivi ok score 1.00 pos -5748,1342 net 110 (31 ms) carte 66 photos + 300 positions
+   204.903  t0153705 suivi ok score 1.00 pos -5748,1342 net 104 (28 ms) carte 66 photos + 300 positions
+   205.234  t0154036 suivi ok score 0.93 pos -5736,1498 net 111 (18 ms) carte 66 photos + 300 positions
+   205.563  t0154365 suivi ok score 0.97 pos -5724,1548 net 108 (22 ms) carte 66 photos + 300 positions
+   205.775  photo cei_0067 à -5724,1548 (613 ko, 211 ms)
+   205.895  t0154698 suivi ok score 0.98 pos -5712,1660 net 103 (16 ms) carte 67 photos + 300 positions
+   206.222  t0155024 suivi ok score 0.92 pos -5712,1719 net 109 (15 ms) carte 67 photos + 300 positions
+   206.560  t0155363 suivi ok score 0.98 pos -5677,2090 net 110 (17 ms) carte 67 photos + 300 positions
+   206.891  t0155693 suivi ok score 0.98 pos -5656,2331 net 102 (16 ms) carte 67 photos + 300 positions
+   206.904  envoyé lame_20261113_194231_trico-erincei_0066.jpg (621 ko)
+   207.233  t0156035 suivi ok score 0.94 pos -5641,2473 net 107 (24 ms) carte 67 photos + 300 positions
+   207.555  photo cei_0068 à -5640,2505 (617 ko, 224 ms)
+   207.558  t0156360 suivi ok score 0.90 pos -5628,2605 net 108 (16 ms) carte 68 photos + 300 positions
+   207.892  t0156694 suivi ok score 0.90 pos -5628,2675 net 109 (17 ms) carte 68 photos + 300 positions
+   208.140  envoyé lame_20261113_194231_trico-erincei_0067.jpg (613 ko)
+   208.227  t0157029 suivi ok score 0.93 pos -5616,2742 net 107 (17 ms) carte 68 photos + 300 positions
+   208.571  t0157373 suivi ok score 0.96 pos -5604,2967 net 107 (27 ms) carte 68 photos + 300 positions
+   208.911  t0157712 suivi ok score 0.97 pos -5592,3111 net 107 (29 ms) carte 68 photos + 300 positions
+   209.221  photo cei_0069 à -5583,3139 (616 ko, 220 ms)
+   209.224  t0158026 suivi ok score 0.94 pos -5570,3254 net 105 (16 ms) carte 69 photos + 300 positions
+   209.555  t0158357 suivi ok score 0.93 pos -5546,3492 net 111 (16 ms) carte 69 photos + 300 positions
+   209.895  t0158697 suivi ok score 0.97 pos -5522,3828 net 98 (17 ms) carte 69 photos + 300 positions
+   210.232  t0159033 suivi ok score 0.95 pos -5498,4080 net 113 (19 ms) carte 69 photos + 300 positions
+   210.556  envoyé lame_20261113_194231_trico-erincei_0068.jpg (617 ko)
+   210.567  t0159369 suivi ok score 1.00 pos -5497,4130 net 111 (21 ms) carte 69 photos + 300 positions
+   210.828  photo cei_0070 à -5497,4130 (599 ko, 239 ms)
+   210.894  t0159696 suivi ok score 1.00 pos -5497,4130 net 111 (23 ms) carte 70 photos + 300 positions
+   211.231  t0160033 suivi ok score 1.00 pos -5497,4130 net 112 (20 ms) carte 70 photos + 300 positions
+   211.561  t0160363 suivi ok score 0.97 pos -5489,4193 net 107 (20 ms) carte 70 photos + 300 positions
+   211.893  t0160695 suivi ok score 0.92 pos -5463,4499 net 113 (19 ms) carte 70 photos + 300 positions
+   212.227  t0161029 suivi ok score 0.99 pos -5441,4751 net 113 (18 ms) carte 70 photos + 300 positions
+   212.574  t0161376 suivi ok score 0.92 pos -5426,4976 net 115 (26 ms) carte 70 photos + 300 positions
+   212.827  envoyé lame_20261113_194231_trico-erincei_0069.jpg (616 ko)
+   212.898  t0161700 suivi ok score 0.97 pos -5414,5038 net 116 (16 ms) carte 70 photos + 300 positions
+   212.959  photo cei_0071 à -5417,4990 (599 ko, 214 ms)
+   213.235  t0162037 suivi ok score 0.90 pos -5411,5197 net 115 (26 ms) carte 71 photos + 300 positions
+   213.563  t0162366 suivi ok score 0.96 pos -5399,5353 net 105 (22 ms) carte 71 photos + 300 positions
+   213.892  t0162694 suivi ok score 0.91 pos -5367,5628 net 110 (17 ms) carte 71 photos + 300 positions
+   213.997  envoyé lame_20261113_194231_trico-erincei_0070.jpg (599 ko)
+   214.229  t0163031 suivi ok score 0.97 pos -5363,5719 net 103 (20 ms) carte 71 photos + 300 positions
+   214.389  photo cei_0072 à -5363,5688 (586 ko, 218 ms)
+   214.558  t0163360 suivi ok score 0.98 pos -5352,5863 net 107 (19 ms) carte 72 photos + 300 positions
+   214.918  t0163719 suivi ok score 0.98 pos -5340,6052 net 103 (31 ms) carte 72 photos + 300 positions
+   215.082  envoyé lame_20261113_194231_trico-erincei_0071.jpg (599 ko)
+   215.250  t0164051 suivi ok score 0.95 pos -5328,6150 net 108 (31 ms) carte 72 photos + 300 positions
+   215.571  t0164372 suivi ok score 0.98 pos -5316,6293 net 108 (26 ms) carte 72 photos + 300 positions
+   215.906  t0164707 suivi ok score 0.97 pos -5292,6594 net 93 (28 ms) carte 72 photos + 300 positions
+   216.232  t0165034 suivi ok score 0.97 pos -5268,6866 net 94 (22 ms) carte 72 photos + 300 positions
+   216.562  t0165364 suivi ok score 0.97 pos -5256,7010 net 109 (18 ms) carte 72 photos + 300 positions
+   216.890  t0165693 suivi ok score 0.96 pos -5244,7297 net 113 (16 ms) carte 72 photos + 300 positions
+   217.229  t0166031 suivi ok score 0.98 pos -5232,7408 net 106 (15 ms) carte 72 photos + 300 positions
+   217.409  photo cei_0073 à -5232,7376 (558 ko, 229 ms)
+   217.562  t0166363 suivi ok score 1.00 pos -5232,7456 net 78 (21 ms) carte 73 photos + 300 positions
+   217.898  t0166700 suivi ok score 0.99 pos -5224,7445 net 80 (22 ms) carte 73 photos + 300 positions
+   218.229  t0167031 suivi ok score 1.00 pos -5232,7440 net 86 (17 ms) carte 73 photos + 300 positions
+   218.461  envoyé lame_20261113_194231_trico-erincei_0072.jpg (586 ko)
+   218.564  t0167366 suivi ok score 1.00 pos -5232,7440 net 79 (19 ms) carte 73 photos + 300 positions
+   218.893  t0167696 suivi ok score 1.00 pos -5232,7440 net 82 (16 ms) carte 73 photos + 300 positions
+   219.230  t0168032 suivi ok score 1.00 pos -5232,7456 net 94 (17 ms) carte 73 photos + 300 positions
+   219.561  t0168363 suivi ok score 0.96 pos -5195,7730 net 77 (17 ms) carte 73 photos + 300 positions
+   219.673  envoyé lame_20261113_194231_trico-erincei_0073.jpg (558 ko)
+   219.894  t0168697 suivi ok score 0.96 pos -5160,8221 net 81 (18 ms) carte 73 photos + 300 positions
+   220.231  t0169033 suivi ok score 0.96 pos -5148,8332 net 91 (19 ms) carte 73 photos + 300 positions
+   220.560  t0169363 suivi ok score 0.99 pos -5148,8348 net 81 (18 ms) carte 73 photos + 300 positions
+   220.622  photo cei_0074 à -5148,8348 (565 ko, 225 ms)
+   220.913  t0169715 suivi ok score 0.99 pos -5148,8364 net 92 (31 ms) carte 74 photos + 300 positions
+   221.234  t0170036 suivi ok score 1.00 pos -5136,8364 net 74 (20 ms) carte 74 photos + 300 positions
+   221.564  t0170367 suivi ok score 1.00 pos -5136,8364 net 72 (22 ms) carte 74 photos + 300 positions
+   221.675  envoyé lame_20261113_194231_trico-erincei_0074.jpg (565 ko)
+   221.902  t0170704 suivi ok score 0.96 pos -5124,8460 net 70 (22 ms) carte 74 photos + 300 positions
+   222.233  t0171035 suivi ok score 0.96 pos -5095,8841 net 97 (23 ms) carte 74 photos + 300 positions
+   222.561  t0171363 suivi ok score 0.99 pos -5092,8927 net 69 (16 ms) carte 74 photos + 300 positions
+   222.904  t0171706 suivi ok score 0.96 pos -5076,9149 net 71 (19 ms) carte 74 photos + 300 positions
+   223.230  t0172032 suivi ok score 0.98 pos -5065,9258 net 77 (14 ms) carte 74 photos + 300 positions
+   223.490  photo cei_0075 à -5065,9273 (564 ko, 227 ms)
+   223.560  t0172363 suivi ok score 0.98 pos -5053,9468 net 70 (16 ms) carte 75 photos + 300 positions
+   223.900  t0172702 suivi ok score 0.96 pos -5033,9671 net 78 (22 ms) carte 75 photos + 300 positions
+   224.238  t0173039 suivi ok score 0.97 pos -5018,9896 net 77 (24 ms) carte 75 photos + 300 positions
+   224.552  envoyé lame_20261113_194231_trico-erincei_0075.jpg (564 ko)
+   224.570  t0173372 suivi ok score 0.99 pos -5017,9910 net 90 (21 ms) carte 75 photos + 300 positions
+   224.729  photo cei_0076 à -5017,9910 (570 ko, 227 ms)
+   224.897  t0173699 suivi ok score 1.00 pos -5017,9910 net 89 (21 ms) carte 76 photos + 300 positions
+   225.235  t0174038 suivi ok score 0.99 pos -5017,9910 net 106 (20 ms) carte 76 photos + 300 positions
+   225.573  t0174375 suivi ok score 0.97 pos -5043,9591 net 96 (26 ms) carte 76 photos + 300 positions
+   225.619  envoyé lame_20261113_194231_trico-erincei_0076.jpg (570 ko)
+   225.900  t0174702 suivi ok score 0.97 pos -5058,9204 net 74 (21 ms) carte 76 photos + 300 positions
+   226.231  t0175033 suivi ok score 0.94 pos -5111,8538 net 89 (21 ms) carte 76 photos + 300 positions
+   226.567  t0175369 suivi ok score 0.99 pos -5124,8460 net 86 (21 ms) carte 76 photos + 300 positions
+   226.893  t0175695 suivi ok score 1.00 pos -5124,8460 net 64 (16 ms) carte 76 photos + 300 positions
+   226.919  photo cei_0077 à -5124,8460 (566 ko, 213 ms)
+   227.225  t0176027 suivi ok score 1.00 pos -5124,8460 net 80 (16 ms) carte 77 photos + 300 positions
+   227.566  t0176368 suivi ok score 1.00 pos -5124,8460 net 87 (21 ms) carte 77 photos + 300 positions
+   227.904  t0176706 suivi ok score 1.00 pos -5136,8460 net 102 (24 ms) carte 77 photos + 300 positions
+   228.142  envoyé lame_20261113_194231_trico-erincei_0077.jpg (566 ko)
+   228.238  t0177040 suivi ok score 0.99 pos -5124,8460 net 81 (16 ms) carte 77 photos + 300 positions
+   228.560  t0177363 suivi ok score 1.00 pos -5124,8460 net 69 (17 ms) carte 77 photos + 300 positions
+   228.902  t0177704 suivi ok score 0.98 pos -5124,8460 net 80 (22 ms) carte 77 photos + 300 positions
+   229.239  t0178040 suivi ok score 0.98 pos -5070,9083 net 71 (22 ms) carte 77 photos + 300 positions
+   229.567  t0178369 suivi ok score 0.99 pos -5056,9257 net 91 (23 ms) carte 77 photos + 300 positions
+   229.898  t0178700 suivi ok score 0.98 pos -5028,9640 net 71 (18 ms) carte 77 photos + 300 positions
+   230.234  t0179036 suivi ok score 0.97 pos -5007,10070 net 55 (21 ms) carte 77 photos + 300 positions
+   230.566  t0179367 suivi ok score 0.96 pos -4951,10680 net 53 (17 ms) carte 77 photos + 300 positions
+   230.696  photo en mouvement lent (58 % du champ, 26 u/s)
+   230.901  t0179703 suivi ok score 0.98 pos -4944,10867 net 77 (25 ms) carte 77 photos + 300 positions
+   230.926  photo cei_0078 à -4946,10804 (563 ko, 229 ms)
+   231.229  t0180031 suivi ok score 0.98 pos -4925,11074 net 87 (16 ms) carte 78 photos + 300 positions
+   231.561  t0180364 suivi ok score 0.96 pos -4912,11216 net 127 (16 ms) carte 78 photos + 300 positions
+   231.849  envoyé lame_20261113_194231_trico-erincei_0078.jpg (563 ko)
+   231.898  t0180701 suivi ok score 0.94 pos -4909,11293 net 81 (16 ms) carte 78 photos + 300 positions
+   232.227  t0181029 suivi ok score 0.97 pos -4862,11887 net 88 (14 ms) carte 78 photos + 300 positions
+   232.570  t0181372 suivi ok score 0.96 pos -4822,12387 net 92 (24 ms) carte 78 photos + 300 positions
+   232.897  t0181700 suivi ok score 0.98 pos -4797,12708 net 68 (18 ms) carte 78 photos + 300 positions
+   233.240  t0182041 suivi ok score 0.98 pos -4761,13077 net 85 (21 ms) carte 78 photos + 300 positions
+   233.263  photo en mouvement lent (56 % du champ, 32 u/s)
+   233.496  photo cei_0079 à -4759,13093 (561 ko, 232 ms)
+   233.564  t0182367 suivi ok score 1.00 pos -4758,13114 net 95 (18 ms) carte 79 photos + 300 positions
+   233.899  t0182702 suivi ok score 0.99 pos -4758,13114 net 115 (22 ms) carte 79 photos + 300 positions
+   234.266  t0183067 suivi ok score 1.00 pos -4758,13114 net 113 (37 ms) carte 79 photos + 300 positions
+   234.514  envoyé lame_20261113_194231_trico-erincei_0079.jpg (561 ko)
+   234.574  t0183376 suivi ok score 1.00 pos -4758,13114 net 117 (17 ms) carte 79 photos + 300 positions
+   234.900  t0183702 suivi ok score 1.00 pos -4758,13114 net 118 (20 ms) carte 79 photos + 300 positions
+   235.233  t0184035 suivi ok score 1.00 pos -4758,13114 net 118 (18 ms) carte 79 photos + 300 positions
+   235.567  t0184370 suivi ok score 1.00 pos -4758,13114 net 116 (19 ms) carte 79 photos + 300 positions
+   235.905  t0184707 suivi ok score 1.00 pos -4758,13114 net 117 (23 ms) carte 79 photos + 300 positions
+   236.247  t0185048 suivi ok score 1.00 pos -4758,13114 net 118 (29 ms) carte 79 photos + 300 positions
+   236.567  t0185369 suivi ok score 1.00 pos -4758,13114 net 116 (19 ms) carte 79 photos + 300 positions
+   236.904  t0185705 suivi ok score 1.00 pos -4758,13114 net 116 (19 ms) carte 79 photos + 300 positions
+   237.271  t0186074 suivi ok score 1.00 pos -4758,13114 net 117 (17 ms) carte 79 photos + 300 positions
+   237.599  t0186402 suivi ok score 1.00 pos -4758,13114 net 117 (20 ms) carte 79 photos + 300 positions
+   237.942  t0186744 suivi ok score 1.00 pos -4758,13114 net 115 (30 ms) carte 79 photos + 300 positions
+   238.266  t0187068 suivi ok score 1.00 pos -4758,13114 net 117 (17 ms) carte 79 photos + 300 positions
+   238.606  t0187409 suivi ok score 1.00 pos -4758,13114 net 117 (20 ms) carte 79 photos + 300 positions
+   238.941  t0187743 suivi ok score 1.00 pos -4758,13114 net 115 (22 ms) carte 79 photos + 300 positions
+   239.264  t0188067 suivi ok score 1.00 pos -4758,13114 net 118 (17 ms) carte 79 photos + 300 positions
+   239.603  t0188405 suivi ok score 1.00 pos -4758,13114 net 117 (21 ms) carte 79 photos + 300 positions
+   239.934  t0188736 suivi ok score 1.00 pos -4758,13114 net 116 (16 ms) carte 79 photos + 300 positions
+   240.272  t0189074 suivi ok score 1.00 pos -4758,13114 net 117 (20 ms) carte 79 photos + 300 positions
+   240.606  t0189408 suivi ok score 1.00 pos -4758,13114 net 115 (23 ms) carte 79 photos + 300 positions
+   240.934  t0189736 suivi ok score 1.00 pos -4758,13114 net 115 (18 ms) carte 79 photos + 300 positions
+   241.266  t0190068 suivi ok score 1.00 pos -4758,13114 net 118 (16 ms) carte 79 photos + 300 positions
+   241.601  t0190403 suivi ok score 1.00 pos -4758,13114 net 117 (18 ms) carte 79 photos + 300 positions
+   241.931  t0190733 suivi ok score 1.00 pos -4758,13114 net 116 (16 ms) carte 79 photos + 300 positions
+   242.276  t0191078 suivi ok score 1.00 pos -4758,13114 net 117 (27 ms) carte 79 photos + 300 positions
+   242.604  t0191406 suivi ok score 1.00 pos -4758,13114 net 116 (20 ms) carte 79 photos + 300 positions
+   242.935  t0191738 suivi ok score 1.00 pos -4758,13114 net 116 (18 ms) carte 79 photos + 300 positions
+   243.266  t0192068 suivi ok score 1.00 pos -4758,13114 net 116 (17 ms) carte 79 photos + 300 positions
+   243.601  t0192403 suivi ok score 1.00 pos -4758,13114 net 117 (19 ms) carte 79 photos + 300 positions
+   243.938  t0192740 suivi ok score 1.00 pos -4758,13114 net 116 (18 ms) carte 79 photos + 300 positions
+   244.271  t0193073 suivi ok score 1.00 pos -4758,13114 net 116 (23 ms) carte 79 photos + 300 positions
+   244.607  t0193409 suivi ok score 1.00 pos -4758,13114 net 116 (23 ms) carte 79 photos + 300 positions
+   244.933  t0193735 suivi ok score 1.00 pos -4758,13114 net 117 (16 ms) carte 79 photos + 300 positions
+   245.273  t0194075 suivi ok score 1.00 pos -4758,13114 net 116 (20 ms) carte 79 photos + 300 positions
+   245.616  t0194418 suivi ok score 1.00 pos -4758,13114 net 116 (28 ms) carte 79 photos + 300 positions
+   245.938  t0194741 suivi ok score 1.00 pos -4758,13114 net 116 (12 ms) carte 79 photos + 300 positions
+   246.268  t0195070 suivi ok score 1.00 pos -4758,13114 net 117 (20 ms) carte 79 photos + 300 positions
+   246.602  t0195405 suivi ok score 1.00 pos -4758,13114 net 115 (17 ms) carte 79 photos + 300 positions
+   246.933  t0195736 suivi ok score 1.00 pos -4758,13114 net 117 (17 ms) carte 79 photos + 300 positions
+   247.266  t0196068 suivi ok score 1.00 pos -4758,13114 net 115 (17 ms) carte 79 photos + 300 positions
+   247.616  t0196418 suivi ok score 1.00 pos -4758,13114 net 116 (27 ms) carte 79 photos + 300 positions
+   247.940  t0196742 suivi ok score 1.00 pos -4758,13114 net 116 (19 ms) carte 79 photos + 300 positions
+   248.280  t0197081 suivi ok score 1.00 pos -4758,13114 net 116 (21 ms) carte 79 photos + 300 positions
+   248.604  t0197407 suivi ok score 1.00 pos -4758,13114 net 117 (19 ms) carte 79 photos + 300 positions
+   248.839  changement d'objectif vers x10 : début à 197642 ms, position -4758,13114 (ok)
+   265.046  objectif x10 : reprise à 213849 ms (calibration absente) ; profondeur non ; pose 10.0 ms, ISO 110
+   265.068  masque oculaire : 100 % du cadre utile (p95 214)
+   265.146  t0213947 suivi ok score 1.00 pos 0,0 net 145 (17 ms) carte 0 photos + 1 positions
+   265.483  t0214284 suivi ok score 1.00 pos 0,0 net 149 (25 ms) carte 0 photos + 5 positions
+   265.707  patron 2x4 champs posé autour du détail (-1530,-6120)
+   265.707  photo cei_0080 à 0,0 (570 ko, 223 ms)
+   265.814  t0214616 suivi ok score 1.00 pos 0,0 net 148 (18 ms) carte 1 photos + 8 positions
+   266.138  t0214941 suivi ok score 1.00 pos 0,0 net 149 (18 ms) carte 1 photos + 11 positions
+   266.478  t0215280 suivi ok score 1.00 pos 0,0 net 148 (22 ms) carte 1 photos + 15 positions
+   266.824  t0215625 suivi ok score 1.00 pos 0,0 net 148 (22 ms) carte 1 photos + 18 positions
+   266.899  envoyé lame_20261113_194231_trico-erincei_0080.jpg (570 ko)
+   267.142  t0215943 suivi ok score 1.00 pos 0,0 net 148 (19 ms) carte 1 photos + 21 positions
+   267.476  t0216277 suivi ok score 1.00 pos 0,0 net 148 (20 ms) carte 1 photos + 25 positions
+   267.804  t0216607 suivi ok score 1.00 pos 0,0 net 149 (16 ms) carte 1 photos + 28 positions
+   268.143  t0216945 suivi ok score 1.00 pos 0,0 net 149 (16 ms) carte 1 photos + 31 positions
+   268.478  t0217280 suivi ok score 1.00 pos 0,0 net 149 (16 ms) carte 1 photos + 35 positions
+   268.832  t0217633 suivi ok score 1.00 pos 0,0 net 149 (37 ms) carte 1 photos + 38 positions
+   269.170  t0217971 suivi ok score 1.00 pos 0,0 net 148 (36 ms) carte 1 photos + 41 positions
+   269.478  t0218279 suivi ok score 1.00 pos 0,0 net 149 (19 ms) carte 1 photos + 45 positions
+   269.832  t0218633 suivi ok score 1.00 pos 0,0 net 149 (37 ms) carte 1 photos + 48 positions
+   270.155  t0218957 suivi ok score 1.00 pos 0,0 net 136 (24 ms) carte 1 photos + 51 positions
+   270.482  t0219284 suivi ok score 1.00 pos 0,0 net 129 (22 ms) carte 1 photos + 55 positions
+   270.813  t0219615 suivi ok score 1.00 pos 0,0 net 136 (23 ms) carte 1 photos + 58 positions
+   271.147  t0219948 suivi ok score 1.00 pos 0,0 net 137 (22 ms) carte 1 photos + 61 positions
+   271.480  t0220281 suivi ok score 1.00 pos 0,0 net 131 (22 ms) carte 1 photos + 65 positions
+   271.807  t0220610 suivi ok score 1.00 pos 0,0 net 129 (17 ms) carte 1 photos + 68 positions
+   272.152  t0220954 suivi ok score 1.00 pos 0,0 net 134 (21 ms) carte 1 photos + 71 positions
+   272.483  t0221285 suivi ok score 1.00 pos 0,0 net 135 (21 ms) carte 1 photos + 75 positions
+   272.812  t0221615 suivi ok score 0.98 pos 180,-16 net 124 (18 ms) carte 1 photos + 78 positions
+   273.153  t0221954 suivi ok score 0.99 pos 403,-32 net 128 (24 ms) carte 1 photos + 81 positions
+   273.478  t0222279 suivi ok score 0.99 pos 535,-48 net 131 (18 ms) carte 1 photos + 85 positions
+   273.815  t0222617 suivi ok score 0.99 pos 657,-64 net 130 (22 ms) carte 1 photos + 88 positions
+   274.154  t0222955 suivi ok score 0.99 pos 848,-78 net 125 (26 ms) carte 1 photos + 91 positions
+   274.478  t0223280 suivi ok score 0.99 pos 1028,-95 net 129 (19 ms) carte 1 photos + 95 positions
+   274.821  t0223622 suivi ok score 1.00 pos 1064,-96 net 130 (28 ms) carte 1 photos + 98 positions
+   275.036  photo cei_0081 à 1064,-96 (612 ko, 214 ms)
+   275.141  t0223943 suivi ok score 1.00 pos 1064,-96 net 138 (17 ms) carte 2 photos + 101 positions
+   275.475  t0224277 suivi ok score 1.00 pos 1064,-96 net 142 (17 ms) carte 2 photos + 105 positions
+   275.809  t0224611 suivi ok score 1.00 pos 1064,-96 net 142 (16 ms) carte 2 photos + 108 positions
+   276.140  t0224942 suivi ok score 0.98 pos 1124,-96 net 142 (15 ms) carte 2 photos + 111 positions
+   276.313  envoyé lame_20261113_194231_trico-erincei_0081.jpg (612 ko)
+   276.486  t0225288 suivi ok score 0.98 pos 1363,-126 net 142 (25 ms) carte 2 photos + 115 positions
+   276.813  t0225615 suivi ok score 1.00 pos 1446,-127 net 146 (19 ms) carte 2 photos + 118 positions
+   277.141  t0225943 suivi ok score 1.00 pos 1446,-127 net 143 (18 ms) carte 2 photos + 121 positions
+   277.243  photo cei_0082 à 1446,-127 (605 ko, 233 ms)
+   277.478  t0226280 suivi ok score 1.00 pos 1446,-127 net 145 (20 ms) carte 3 photos + 125 positions
+   277.812  t0226614 suivi ok score 0.99 pos 1446,-139 net 144 (19 ms) carte 3 photos + 128 positions
+   278.149  t0226951 suivi ok score 0.94 pos 1434,-315 net 136 (17 ms) carte 3 photos + 131 positions
+   278.201  envoyé lame_20261113_194231_trico-erincei_0082.jpg (605 ko)
+   278.482  t0227284 suivi ok score 0.98 pos 1411,-574 net 146 (23 ms) carte 3 photos + 135 positions
+   278.814  t0227617 suivi ok score 0.94 pos 1399,-749 net 148 (21 ms) carte 3 photos + 138 positions
+   279.145  t0227946 suivi ok score 1.00 pos 1387,-813 net 150 (17 ms) carte 3 photos + 141 positions
+   279.424  photo cei_0083 à 1387,-813 (620 ko, 212 ms)
+   279.476  t0228278 suivi ok score 0.99 pos 1387,-813 net 149 (19 ms) carte 4 photos + 145 positions
+   279.832  t0228633 suivi ok score 0.93 pos 1375,-1004 net 160 (31 ms) carte 4 photos + 148 positions
+   280.146  t0228948 suivi ok score 0.96 pos 1351,-1213 net 148 (16 ms) carte 4 photos + 151 positions
+   280.297  envoyé lame_20261113_194231_trico-erincei_0083.jpg (620 ko)
+   280.487  t0229289 suivi ok score 1.00 pos 1351,-1275 net 147 (19 ms) carte 4 photos + 155 positions
+   280.682  photo cei_0084 à 1351,-1275 (624 ko, 219 ms)
+   280.812  t0229614 suivi ok score 1.00 pos 1351,-1275 net 148 (22 ms) carte 5 photos + 158 positions
+   281.165  t0229966 suivi ok score 0.97 pos 1387,-1275 net 141 (35 ms) carte 5 photos + 161 positions
+   281.491  t0230293 suivi ok score 1.00 pos 1458,-1291 net 145 (22 ms) carte 5 photos + 165 positions
+   281.596  envoyé lame_20261113_194231_trico-erincei_0084.jpg (624 ko)
+   281.813  t0230615 suivi ok score 1.00 pos 1458,-1291 net 146 (19 ms) carte 5 photos + 168 positions
+   282.144  t0230947 suivi ok score 0.96 pos 1458,-1328 net 149 (18 ms) carte 5 photos + 171 positions
+   282.486  t0231287 suivi ok score 0.96 pos 1434,-1561 net 147 (18 ms) carte 5 photos + 175 positions
+   282.818  t0231620 suivi ok score 0.96 pos 1412,-1801 net 157 (17 ms) carte 5 photos + 178 positions
+   283.152  t0231954 suivi ok score 0.94 pos 1400,-1944 net 146 (24 ms) carte 5 photos + 181 positions
+   283.496  t0232297 suivi ok score 0.91 pos 1387,-2103 net 157 (26 ms) carte 5 photos + 185 positions
+   283.829  t0232630 suivi ok score 1.00 pos 1387,-2104 net 153 (28 ms) carte 5 photos + 188 positions
+   284.043  photo cei_0085 à 1387,-2104 (644 ko, 213 ms)
+   284.140  t0232942 suivi ok score 1.00 pos 1387,-2104 net 155 (16 ms) carte 6 photos + 191 positions
+   284.482  t0233283 suivi ok score 1.00 pos 1387,-2104 net 155 (20 ms) carte 6 photos + 195 positions
+   284.814  t0233616 suivi ok score 1.00 pos 1387,-2104 net 151 (18 ms) carte 6 photos + 198 positions
+   285.149  t0233951 suivi ok score 1.00 pos 1387,-2104 net 158 (21 ms) carte 6 photos + 201 positions
+   285.483  t0234284 suivi ok score 0.98 pos 1387,-2152 net 149 (20 ms) carte 6 photos + 205 positions
+   285.812  t0234613 suivi ok score 0.90 pos 1363,-2427 net 156 (16 ms) carte 6 photos + 208 positions
+   286.072  envoyé lame_20261113_194231_trico-erincei_0085.jpg (644 ko)
+   286.153  t0234954 suivi ok score 0.95 pos 1351,-2570 net 160 (23 ms) carte 6 photos + 211 positions
+   286.484  t0235286 suivi ok score 1.00 pos 1339,-2630 net 163 (20 ms) carte 6 photos + 215 positions
+   286.707  photo cei_0086 à 1339,-2630 (670 ko, 221 ms)
+   286.811  t0235612 suivi ok score 0.97 pos 1339,-2677 net 159 (17 ms) carte 7 photos + 218 positions
+   287.158  t0235960 suivi ok score 0.95 pos 1315,-2928 net 166 (21 ms) carte 7 photos + 221 positions
+   287.481  t0236282 suivi ok score 1.00 pos 1315,-2932 net 161 (17 ms) carte 7 photos + 225 positions
+   287.646  photo cei_0087 à 1315,-2932 (675 ko, 225 ms)
+   287.809  envoyé lame_20261113_194231_trico-erincei_0086.jpg (670 ko)
+   287.812  t0236614 suivi ok score 0.96 pos 1419,-2948 net 163 (19 ms) carte 8 photos + 228 positions
+   288.145  t0236947 suivi ok score 0.98 pos 1578,-2948 net 155 (16 ms) carte 8 photos + 231 positions
+   288.506  t0237306 suivi ok score 1.00 pos 1614,-2964 net 162 (34 ms) carte 8 photos + 235 positions
+   288.805  photo cei_0088 à 1614,-2964 (561 ko, 218 ms)
+   288.817  t0237619 suivi ok score 0.99 pos 1569,-3458 net 149 (22 ms) carte 9 photos + 238 positions
+   289.144  t0237946 suivi ok score 1.00 pos 1566,-3490 net 152 (15 ms) carte 9 photos + 241 positions
+   289.438  photo cei_0089 à 1566,-3490 (669 ko, 224 ms)
+   289.482  t0238283 suivi ok score 0.92 pos 1554,-3634 net 156 (21 ms) carte 10 photos + 245 positions
+   289.828  t0238629 suivi ok score 0.94 pos 1542,-3796 net 156 (29 ms) carte 10 photos + 248 positions
+   289.831  envoyé lame_20261113_194231_trico-erincei_0087.jpg (675 ko)
+   290.144  t0238946 suivi ok score 0.97 pos 1519,-4000 net 158 (17 ms) carte 10 photos + 251 positions
+   290.478  t0239280 suivi ok score 0.92 pos 1518,-4094 net 160 (17 ms) carte 10 photos + 255 positions
+   290.669  photo cei_0090 à 1518,-4091 (643 ko, 222 ms)
+   290.725  envoyé lame_20261113_194231_trico-erincei_0088.jpg (561 ko)
+   290.815  t0239617 suivi ok score 0.90 pos 1507,-4174 net 171 (22 ms) carte 11 photos + 258 positions
+   291.145  t0239947 suivi ok score 1.00 pos 1506,-4206 net 167 (16 ms) carte 11 photos + 261 positions
+   291.497  t0240298 suivi ok score 0.99 pos 1495,-4349 net 143 (29 ms) carte 11 photos + 265 positions
+   291.601  photo cei_0091 à 1506,-4254 (595 ko, 213 ms)
+   291.821  t0240623 suivi ok score 0.95 pos 1482,-4588 net 158 (20 ms) carte 12 photos + 268 positions
+   292.154  t0240956 suivi ok score 1.00 pos 1479,-4620 net 166 (22 ms) carte 12 photos + 271 positions
+   292.334  photo cei_0092 à 1470,-4620 (653 ko, 221 ms)
+   292.491  t0241292 suivi ok score 1.00 pos 1479,-4620 net 176 (25 ms) carte 13 photos + 275 positions
+   292.691  envoyé lame_20261113_194231_trico-erincei_0089.jpg (669 ko)
+   292.837  t0241638 suivi ok score 1.00 pos 1479,-4620 net 177 (32 ms) carte 13 photos + 278 positions
+   293.163  t0241965 suivi ok score 0.99 pos 1479,-4647 net 156 (22 ms) carte 13 photos + 281 positions
+   293.489  t0242291 suivi ok score 0.99 pos 1458,-4843 net 153 (16 ms) carte 13 photos + 285 positions
+   293.827  t0242628 suivi ok score 0.95 pos 1455,-4942 net 166 (25 ms) carte 13 photos + 288 positions
+   293.930  envoyé lame_20261113_194231_trico-erincei_0090.jpg (643 ko)
+   294.153  t0242954 suivi ok score 0.94 pos 1419,-5337 net 159 (22 ms) carte 13 photos + 291 positions
+   294.481  t0243283 suivi ok score 0.92 pos 1407,-5405 net 162 (16 ms) carte 13 photos + 295 positions
+   294.811  t0243614 suivi ok score 0.92 pos 1384,-5688 net 139 (16 ms) carte 13 photos + 298 positions
+   294.942  envoyé lame_20261113_194231_trico-erincei_0091.jpg (595 ko)
+   295.156  t0243957 suivi ok score 0.91 pos 1371,-5913 net 161 (26 ms) carte 13 photos + 300 positions
+   295.478  t0244279 suivi ok score 0.96 pos 1359,-6006 net 168 (16 ms) carte 13 photos + 300 positions
+   295.569  photo cei_0093 à 1359,-5975 (611 ko, 215 ms)
+   295.827  t0244629 suivi ok score 1.00 pos 1359,-6023 net 165 (27 ms) carte 14 photos + 300 positions
+   296.148  t0244950 suivi ok score 1.00 pos 1359,-6023 net 161 (17 ms) carte 14 photos + 300 positions
+   296.488  t0245290 suivi ok score 0.94 pos 1289,-6023 net 155 (22 ms) carte 14 photos + 300 positions
+   296.819  t0245621 suivi ok score 1.00 pos 1264,-6007 net 161 (21 ms) carte 14 photos + 300 positions
+   297.155  t0245957 suivi ok score 0.94 pos 1255,-6102 net 158 (25 ms) carte 14 photos + 300 positions
+   297.261  envoyé lame_20261113_194231_trico-erincei_0092.jpg (653 ko)
+   297.483  t0246285 suivi ok score 1.00 pos 1240,-6310 net 159 (18 ms) carte 14 photos + 300 positions
+   297.825  t0246626 suivi ok score 0.96 pos 1240,-6310 net 162 (23 ms) carte 14 photos + 300 positions
+   298.012  photo cei_0094 à 1240,-6310 (602 ko, 226 ms)
+   298.153  t0246955 suivi ok score 0.93 pos 1443,-6325 net 145 (23 ms) carte 15 photos + 300 positions
+   298.487  t0247289 suivi ok score 0.97 pos 1634,-6342 net 157 (23 ms) carte 15 photos + 300 positions
+   298.509  envoyé lame_20261113_194231_trico-erincei_0093.jpg (611 ko)
+   298.816  t0247618 suivi ok score 1.00 pos 1634,-6342 net 160 (15 ms) carte 15 photos + 300 positions
+   299.076  photo cei_0095 à 1634,-6342 (591 ko, 223 ms)
+   299.158  t0247960 suivi ok score 0.99 pos 1634,-6342 net 159 (20 ms) carte 16 photos + 300 positions
+   299.490  t0248291 suivi ok score 0.90 pos 1203,-6311 net 114 (24 ms) carte 16 photos + 300 positions
+   299.822  t0248624 suivi ok score 0.96 pos 941,-6279 net 160 (23 ms) carte 16 photos + 300 positions
+   300.151  t0248953 suivi ok score 1.00 pos 917,-6278 net 161 (18 ms) carte 16 photos + 300 positions
+   300.309  envoyé lame_20261113_194231_trico-erincei_0094.jpg (602 ko)
+   300.440  photo cei_0096 à 917,-6278 (542 ko, 217 ms)
+   300.479  t0249281 suivi ok score 0.99 pos 622,-6251 net 173 (17 ms) carte 17 photos + 300 positions
+   300.817  t0249619 suivi ok score 0.99 pos 490,-6246 net 160 (17 ms) carte 17 photos + 300 positions
+   301.158  t0249960 suivi ok score 0.95 pos 331,-6230 net 174 (21 ms) carte 17 photos + 300 positions
+   301.402  envoyé lame_20261113_194231_trico-erincei_0095.jpg (591 ko)
+   301.485  t0250287 suivi ok score 1.00 pos 156,-6214 net 167 (18 ms) carte 17 photos + 300 positions
+   301.823  t0250624 suivi ok score 1.00 pos 156,-6214 net 169 (21 ms) carte 17 photos + 300 positions
+   301.953  photo cei_0097 à 156,-6214 (546 ko, 231 ms)
+   302.148  t0250950 suivi ok score 0.97 pos 72,-6214 net 166 (18 ms) carte 18 photos + 300 positions
+   302.494  t0251296 suivi ok score 0.97 pos -83,-6198 net 169 (25 ms) carte 18 photos + 300 positions
+   302.817  t0251619 suivi ok score 0.98 pos -251,-6182 net 171 (17 ms) carte 18 photos + 300 positions
+   303.077  envoyé lame_20261113_194231_trico-erincei_0096.jpg (542 ko)
+   303.150  t0251953 suivi ok score 0.98 pos -394,-6166 net 176 (17 ms) carte 18 photos + 300 positions
+   303.489  t0252291 suivi ok score 0.95 pos -678,-6150 net 169 (24 ms) carte 18 photos + 300 positions
+   303.828  t0252630 suivi ok score 0.97 pos -822,-6134 net 184 (19 ms) carte 18 photos + 300 positions
+   304.099  envoyé lame_20261113_194231_trico-erincei_0097.jpg (546 ko)
+   304.150  t0252953 suivi ok score 1.00 pos -917,-6118 net 189 (16 ms) carte 18 photos + 300 positions
+   304.478  t0253280 suivi ok score 1.00 pos -917,-6118 net 191 (16 ms) carte 18 photos + 300 positions
+   304.566  photo cei_0098 à -917,-6118 (473 ko, 220 ms)
+   304.819  t0253621 suivi ok score 0.93 pos -1012,-6118 net 175 (25 ms) carte 19 photos + 300 positions
+   305.145  t0253947 suivi ok score 0.93 pos -1511,-6071 net 139 (15 ms) carte 19 photos + 300 positions
+   305.367  envoyé lame_20261113_194231_trico-erincei_0098.jpg (473 ko)
+   305.494  t0254295 suivi ok score 0.98 pos -1741,-6055 net 133 (28 ms) carte 19 photos + 300 positions
+   305.815  t0254617 suivi ok score 1.00 pos -1777,-6039 net 133 (17 ms) carte 19 photos + 300 positions
+   306.162  t0254964 suivi ok score 0.98 pos -1885,-6028 net 113 (29 ms) carte 19 photos + 300 positions
+   306.167  photo cei_0099 à -1777,-6039 (470 ko, 216 ms)
+   306.478  t0255281 suivi ok score 0.98 pos -2040,-6023 net 117 (16 ms) carte 20 photos + 300 positions
+   306.823  t0255625 suivi ok score 0.99 pos -2351,-5991 net 119 (24 ms) carte 20 photos + 300 positions
+   307.003  envoyé lame_20261113_194231_trico-erincei_0099.jpg (470 ko)
+   307.158  t0255960 suivi ok score 1.00 pos -2423,-5975 net 126 (22 ms) carte 20 photos + 300 positions
+   307.485  t0256287 suivi ok score 1.00 pos -2423,-5975 net 126 (22 ms) carte 20 photos + 300 positions
+   307.564  photo cei_0100 à -2423,-5975 (498 ko, 214 ms)
+   307.827  t0256630 suivi ok score 0.95 pos -2400,-5693 net 92 (24 ms) carte 21 photos + 300 positions
+   308.163  t0256964 suivi ok score 0.97 pos -2376,-5453 net 113 (28 ms) carte 21 photos + 300 positions
+   308.484  t0257286 suivi ok score 0.99 pos -2355,-5173 net 113 (20 ms) carte 21 photos + 300 positions
+   308.651  envoyé lame_20261113_194231_trico-erincei_0100.jpg (498 ko)
+   308.826  t0257628 suivi ok score 1.00 pos -2351,-5083 net 120 (21 ms) carte 21 photos + 300 positions
+   309.145  photo cei_0101 à -2351,-5083 (519 ko, 224 ms)
+   309.149  t0257951 suivi ok score 0.94 pos -2351,-5067 net 118 (17 ms) carte 22 photos + 300 positions
+   309.482  t0258284 suivi ok score 0.96 pos -2327,-4763 net 88 (17 ms) carte 22 photos + 300 positions
+   309.817  t0258619 suivi ok score 0.96 pos -2291,-4350 net 113 (19 ms) carte 22 photos + 300 positions
+   310.153  t0258954 suivi ok score 0.95 pos -2267,-4062 net 115 (20 ms) carte 22 photos + 300 positions
+   310.393  envoyé lame_20261113_194231_trico-erincei_0101.jpg (519 ko)
+   310.483  t0259282 suivi ok score 0.96 pos -2256,-3982 net 119 (15 ms) carte 22 photos + 300 positions
+   310.718  photo cei_0102 à -2256,-3982 (535 ko, 234 ms)
+   310.815  t0259617 suivi ok score 1.00 pos -2244,-3883 net 115 (18 ms) carte 23 photos + 300 positions
+   311.156  t0259958 suivi ok score 1.00 pos -2243,-3882 net 119 (24 ms) carte 23 photos + 300 positions
+   311.492  t0260293 suivi ok score 0.96 pos -1332,-3960 net 127 (20 ms) carte 23 photos + 300 positions
+   311.774  envoyé lame_20261113_194231_trico-erincei_0102.jpg (535 ko)
+   311.820  t0260622 suivi ok score 0.98 pos -1177,-3976 net 135 (20 ms) carte 23 photos + 300 positions
+   312.150  t0260952 suivi ok score 0.97 pos -1037,-3988 net 139 (20 ms) carte 23 photos + 300 positions
+   312.181  photo cei_0103 à -1177,-3976 (520 ko, 229 ms)
+   312.479  t0261281 suivi ok score 0.98 pos -679,-4023 net 161 (15 ms) carte 24 photos + 300 positions
+   312.820  t0261622 suivi ok score 1.00 pos -643,-4024 net 172 (18 ms) carte 24 photos + 300 positions
+   313.049  photo cei_0104 à -643,-4024 (543 ko, 229 ms)
+   313.152  t0261955 suivi ok score 0.87 pos -643,-4013 net 168 (21 ms) carte 25 photos + 300 positions
+   313.155  envoyé lame_20261113_194231_trico-erincei_0103.jpg (520 ko)
+   313.480  t0262282 suivi ok score 0.92 pos -599,-3567 net 161 (15 ms) carte 25 photos + 300 positions
+   313.838  t0262640 suivi ok score 0.96 pos -571,-3194 net 167 (31 ms) carte 25 photos + 300 positions
+   314.164  t0262965 suivi ok score 0.94 pos -559,-3135 net 158 (28 ms) carte 25 photos + 300 positions
+   314.373  photo cei_0105 à -559,-3135 (563 ko, 208 ms)
+   314.492  t0263294 suivi ok score 0.86 pos -548,-3042 net 168 (23 ms) carte 26 photos + 300 positions
+   314.821  t0263623 suivi ok score 0.87 pos -536,-2911 net 153 (18 ms) carte 26 photos + 300 positions
+   314.972  photo cei_0106 à -547,-2953 (536 ko, 220 ms)
+   315.152  t0263954 suivi ok score 0.86 pos -527,-2727 net 167 (20 ms) carte 27 photos + 300 positions
+   315.492  t0264294 suivi ok score 0.95 pos -495,-2450 net 121 (27 ms) carte 27 photos + 300 positions
+   315.519  photo cei_0107 à -515,-2701 (540 ko, 229 ms)
+   315.725  envoyé lame_20261113_194231_trico-erincei_0104.jpg (543 ko)
+   315.827  t0264628 suivi ok score 0.97 pos -479,-2242 net 152 (26 ms) carte 28 photos + 300 positions
+   316.166  t0264968 suivi ok score 0.96 pos -432,-1764 net 145 (26 ms) carte 28 photos + 300 positions
+   316.501  t0265302 suivi ok score 0.98 pos -408,-1461 net 156 (26 ms) carte 28 photos + 300 positions
+   316.826  t0265628 suivi ok score 0.99 pos -409,-1457 net 154 (20 ms) carte 28 photos + 300 positions
+   317.036  photo cei_0108 à -409,-1457 (547 ko, 209 ms)
+   317.163  t0265964 suivi ok score 0.99 pos -923,-1409 net 130 (25 ms) carte 29 photos + 300 positions
+   317.370  envoyé lame_20261113_194231_trico-erincei_0105.jpg (563 ko)
+   317.483  t0266285 suivi ok score 0.97 pos -1150,-1393 net 130 (15 ms) carte 29 photos + 300 positions
+   317.827  t0266629 suivi ok score 0.98 pos -1540,-1361 net 124 (16 ms) carte 29 photos + 300 positions
+   318.158  t0266961 suivi ok score 1.00 pos -1687,-1345 net 128 (22 ms) carte 29 photos + 300 positions
+   318.491  t0267292 suivi ok score 1.00 pos -1688,-1345 net 130 (19 ms) carte 29 photos + 300 positions
+   318.600  photo cei_0109 à -1688,-1345 (532 ko, 213 ms)
+   318.821  t0267623 suivi ok score 0.98 pos -1673,-1175 net 78 (17 ms) carte 30 photos + 300 positions
+   319.151  t0267953 suivi ok score 0.95 pos -1632,-703 net 101 (15 ms) carte 30 photos + 300 positions
+   319.496  t0268298 suivi ok score 0.97 pos -1628,-612 net 126 (26 ms) carte 30 photos + 300 positions
+   319.653  envoyé lame_20261113_194231_trico-erincei_0106.jpg (536 ko)
+   319.815  photo cei_0110 à -1616,-580 (530 ko, 232 ms)
+   319.818  t0268620 suivi ok score 0.98 pos -1616,-531 net 132 (16 ms) carte 31 photos + 300 positions
+   320.167  t0268969 suivi ok score 0.99 pos -1593,-325 net 123 (24 ms) carte 31 photos + 300 positions
+   320.495  t0269297 suivi ok score 0.94 pos -1580,-182 net 144 (26 ms) carte 31 photos + 300 positions
+   320.699  envoyé lame_20261113_194231_trico-erincei_0107.jpg (540 ko)
+   320.815  photo cei_0111 à -1580,-134 (514 ko, 224 ms)
+   320.818  t0269620 suivi ok score 0.96 pos -1568,14 net 136 (17 ms) carte 32 photos + 300 positions
+   321.149  t0269952 suivi ok score 0.97 pos -1556,169 net 137 (16 ms) carte 32 photos + 300 positions
+   321.485  t0270287 suivi ok score 0.95 pos -1544,328 net 135 (19 ms) carte 32 photos + 300 positions
+   321.612  photo cei_0112 à -1545,264 (518 ko, 216 ms)
+   321.820  t0270623 suivi ok score 0.98 pos -1524,508 net 135 (17 ms) carte 33 photos + 300 positions
+   321.906  envoyé lame_20261113_194231_trico-erincei_0108.jpg (547 ko)
+   322.161  t0270963 suivi ok score 0.98 pos -1509,683 net 136 (19 ms) carte 33 photos + 300 positions
+   322.486  t0271287 suivi ok score 0.96 pos -1485,1007 net 135 (16 ms) carte 33 photos + 300 positions
+   322.738  envoyé lame_20261113_194231_trico-erincei_0109.jpg (532 ko)
+   322.828  t0271630 suivi ok score 0.99 pos -1473,1098 net 134 (21 ms) carte 33 photos + 300 positions
+   323.043  photo cei_0113 à -1473,1098 (546 ko, 214 ms)
+   323.155  t0271957 suivi ok score 0.95 pos -1450,1388 net 111 (22 ms) carte 34 photos + 300 positions
+   323.495  t0272297 suivi ok score 0.98 pos -1425,1619 net 126 (23 ms) carte 34 photos + 300 positions
+   323.825  t0272627 suivi ok score 0.96 pos -1393,1975 net 116 (17 ms) carte 34 photos + 300 positions
+   324.164  t0272965 suivi ok score 0.97 pos -1357,2341 net 114 (21 ms) carte 34 photos + 300 positions
+   324.184  envoyé lame_20261113_194231_trico-erincei_0110.jpg (530 ko)
+   324.494  t0273296 suivi ok score 1.00 pos -1345,2436 net 126 (21 ms) carte 34 photos + 300 positions
+   324.818  t0273620 suivi ok score 1.00 pos -1345,2436 net 126 (16 ms) carte 34 photos + 300 positions
+   324.902  photo cei_0114 à -1345,2436 (607 ko, 207 ms)
+   325.052  envoyé lame_20261113_194231_trico-erincei_0111.jpg (514 ko)
+   325.157  t0273959 suivi ok score 0.97 pos -950,2405 net 120 (22 ms) carte 35 photos + 300 positions
+   325.488  t0274290 suivi ok score 0.99 pos -747,2389 net 131 (21 ms) carte 35 photos + 300 positions
+   325.830  t0274631 suivi ok score 0.99 pos -557,2373 net 128 (21 ms) carte 35 photos + 300 positions
+   326.152  envoyé lame_20261113_194231_trico-erincei_0112.jpg (518 ko)
+   326.166  t0274968 suivi ok score 0.99 pos -305,2342 net 125 (22 ms) carte 35 photos + 300 positions
+   326.495  t0275297 suivi ok score 0.98 pos -123,2326 net 128 (25 ms) carte 35 photos + 300 positions
+   326.831  t0275633 suivi ok score 0.98 pos 257,2295 net 125 (24 ms) carte 35 photos + 300 positions
+   326.963  photo en mouvement lent (55 % du champ, 35 u/s)
+   327.165  t0275966 suivi ok score 1.00 pos 412,2289 net 135 (26 ms) carte 35 photos + 300 positions
+   327.187  photo cei_0115 à 328,2293 (665 ko, 224 ms)
+   327.301  envoyé lame_20261113_194231_trico-erincei_0113.jpg (546 ko)
+   327.492  t0276293 suivi ok score 1.00 pos 508,2277 net 134 (22 ms) carte 36 photos + 300 positions
+   327.696  photo cei_0116 à 496,2277 (665 ko, 243 ms)
+   327.837  t0276639 suivi ok score 0.99 pos 653,2262 net 128 (30 ms) carte 37 photos + 300 positions
+   328.164  t0276965 suivi ok score 0.98 pos 882,2245 net 131 (25 ms) carte 37 photos + 300 positions
+   328.496  t0277297 suivi ok score 0.99 pos 1022,2229 net 131 (21 ms) carte 37 photos + 300 positions
+   328.823  t0277625 suivi ok score 0.99 pos 1149,2218 net 133 (19 ms) carte 37 photos + 300 positions
+   328.959  envoyé lame_20261113_194231_trico-erincei_0114.jpg (607 ko)
+   329.020  photo cei_0117 à 1117,2229 (610 ko, 251 ms)
+   329.163  t0277965 suivi ok score 0.99 pos 1336,2213 net 128 (26 ms) carte 38 photos + 300 positions
+   329.488  t0278290 suivi ok score 0.99 pos 1525,2198 net 133 (15 ms) carte 38 photos + 300 positions
+   329.830  t0278631 suivi ok score 0.98 pos 1755,2182 net 128 (22 ms) carte 38 photos + 300 positions
+   330.157  t0278959 suivi ok score 1.00 pos 1810,2166 net 130 (17 ms) carte 38 photos + 300 positions
+   330.497  photo cei_0118 à 1810,2166 (556 ko, 236 ms)
+   330.510  t0279311 suivi ok score 0.97 pos 1810,2198 net 117 (28 ms) carte 39 photos + 300 positions
+   330.554  envoyé lame_20261113_194231_trico-erincei_0115.jpg (665 ko)
+   330.821  t0279623 suivi ok score 0.99 pos 1845,2596 net 133 (17 ms) carte 39 photos + 300 positions
+   331.156  t0279958 suivi ok score 0.99 pos 1881,3026 net 102 (17 ms) carte 39 photos + 300 positions
+   331.497  t0280298 suivi ok score 0.99 pos 1906,3377 net 144 (24 ms) carte 39 photos + 300 positions
+   331.534  envoyé lame_20261113_194231_trico-erincei_0116.jpg (665 ko)
+   331.822  t0280624 suivi ok score 1.00 pos 1906,3377 net 143 (15 ms) carte 39 photos + 300 positions
+   332.084  photo cei_0119 à 1906,3377 (493 ko, 230 ms)
+   332.155  t0280957 suivi ok score 0.99 pos 1918,3571 net 117 (18 ms) carte 40 photos + 300 positions
+   332.493  t0281295 suivi ok score 0.99 pos 1954,3951 net 136 (19 ms) carte 40 photos + 300 positions
+   332.829  t0281632 suivi ok score 1.00 pos 1966,4046 net 141 (23 ms) carte 40 photos + 300 positions
+   333.158  photo cei_0120 à 1966,4046 (468 ko, 216 ms)
+   333.170  t0281972 suivi ok score 0.99 pos 1957,4046 net 147 (26 ms) carte 41 photos + 300 positions
+   333.433  envoyé lame_20261113_194231_trico-erincei_0117.jpg (610 ko)
+   333.487  t0282289 suivi ok score 1.00 pos 1787,4062 net 140 (15 ms) carte 41 photos + 300 positions
+   333.823  t0282625 suivi ok score 0.99 pos 1440,4089 net 103 (20 ms) carte 41 photos + 300 positions
+   334.164  t0282965 suivi ok score 0.98 pos 1201,4110 net 134 (20 ms) carte 41 photos + 300 positions
+   334.497  t0283299 suivi ok score 0.99 pos 1042,4121 net 118 (19 ms) carte 41 photos + 300 positions
+   334.524  envoyé lame_20261113_194231_trico-erincei_0118.jpg (556 ko)
+   334.830  t0283632 suivi ok score 0.99 pos 863,4137 net 126 (21 ms) carte 41 photos + 300 positions
+   335.164  t0283966 suivi ok score 0.99 pos 588,4153 net 123 (22 ms) carte 41 photos + 300 positions
+   335.457  photo en mouvement lent (51 % du champ, 31 u/s)
+   335.468  envoyé lame_20261113_194231_trico-erincei_0119.jpg (493 ko)
+   335.492  t0284293 suivi ok score 1.00 pos 384,4169 net 126 (16 ms) carte 41 photos + 300 positions
+   335.688  photo cei_0121 à 396,4169 (619 ko, 231 ms)
+   335.830  t0284632 suivi ok score 0.99 pos 321,4169 net 121 (27 ms) carte 42 photos + 300 positions
+   336.167  t0284968 suivi ok score 0.98 pos 181,4185 net 119 (22 ms) carte 42 photos + 300 positions
+   336.496  t0285298 suivi ok score 1.00 pos 13,4201 net 120 (16 ms) carte 42 photos + 300 positions
+   336.614  envoyé lame_20261113_194231_trico-erincei_0120.jpg (468 ko)
+   336.833  t0285635 suivi ok score 0.99 pos -249,4217 net 118 (19 ms) carte 42 photos + 300 positions
+   337.161  t0285962 suivi ok score 0.99 pos -402,4233 net 117 (21 ms) carte 42 photos + 300 positions
+   337.493  t0286294 suivi ok score 0.98 pos -633,4250 net 125 (19 ms) carte 42 photos + 300 positions
+   337.714  envoyé lame_20261113_194231_trico-erincei_0121.jpg (619 ko)
+   337.832  t0286633 suivi ok score 0.99 pos -896,4280 net 118 (17 ms) carte 42 photos + 300 positions
+   338.156  t0286959 suivi ok score 0.99 pos -1194,4308 net 117 (16 ms) carte 42 photos + 300 positions
+   338.430  photo en mouvement lent (60 % du champ, 37 u/s)
+   338.492  t0287294 suivi ok score 0.99 pos -1434,4328 net 122 (15 ms) carte 42 photos + 300 positions
+   338.642  photo cei_0122 à -1421,4328 (601 ko, 211 ms)
+   338.839  t0287640 suivi ok score 0.99 pos -1568,4344 net 120 (26 ms) carte 43 photos + 300 positions
+   339.161  t0287963 suivi ok score 1.00 pos -1580,4344 net 124 (21 ms) carte 43 photos + 300 positions
+   339.341  photo cei_0123 à -1580,4344 (598 ko, 213 ms)
+   339.494  t0288295 suivi ok score 1.00 pos -1580,4344 net 116 (20 ms) carte 44 photos + 300 positions
+   339.753  envoyé lame_20261113_194231_trico-erincei_0122.jpg (601 ko)
+   339.836  t0288638 suivi ok score 1.00 pos -1580,4344 net 122 (22 ms) carte 44 photos + 300 positions
+   340.180  t0288982 suivi ok score 1.00 pos -1580,4344 net 122 (28 ms) carte 44 photos + 300 positions
+   340.497  t0289299 suivi ok score 1.00 pos -1544,4758 net 121 (22 ms) carte 44 photos + 300 positions
+   340.830  t0289632 suivi ok score 0.97 pos -1524,4934 net 112 (21 ms) carte 44 photos + 300 positions
+   341.158  t0289959 suivi ok score 0.99 pos -1509,5094 net 123 (16 ms) carte 44 photos + 300 positions
+   341.503  t0290304 suivi ok score 0.99 pos -1486,5364 net 129 (26 ms) carte 44 photos + 300 positions
+   341.828  t0290629 suivi ok score 0.96 pos -1473,5544 net 126 (19 ms) carte 44 photos + 300 positions
+   342.156  t0290959 suivi ok score 0.97 pos -1461,5685 net 116 (17 ms) carte 44 photos + 300 positions
+   342.501  t0291303 suivi ok score 0.99 pos -1438,5955 net 120 (27 ms) carte 44 photos + 300 positions
+   342.834  t0291635 suivi ok score 0.99 pos -1425,6162 net 111 (25 ms) carte 44 photos + 300 positions
+   343.174  t0291975 suivi ok score 0.99 pos -1401,6354 net 121 (27 ms) carte 44 photos + 300 positions
+   343.225  photo en mouvement lent (50 % du champ, 30 u/s)
+   343.458  photo cei_0124 à -1401,6386 (502 ko, 232 ms)
+   343.488  t0292290 suivi ok score 0.96 pos -1377,6741 net 101 (15 ms) carte 45 photos + 300 positions
+   343.839  t0292640 suivi ok score 1.00 pos -1365,6837 net 125 (28 ms) carte 45 photos + 300 positions
+   344.162  t0292964 suivi ok score 1.00 pos -1365,6837 net 125 (23 ms) carte 45 photos + 300 positions
+   344.189  photo cei_0125 à -1365,6837 (507 ko, 225 ms)
+   344.491  t0293293 suivi ok score 0.94 pos -1329,7283 net 140 (17 ms) carte 46 photos + 300 positions
+   344.832  t0293634 suivi ok score 1.00 pos -1329,7283 net 142 (22 ms) carte 46 photos + 300 positions
+   345.170  t0293971 suivi ok score 0.99 pos -660,7219 net 115 (25 ms) carte 46 photos + 300 positions
+   345.435  envoyé lame_20261113_194231_trico-erincei_0123.jpg (598 ko)
+   345.510  t0294311 suivi ok score 1.00 pos -460,7203 net 118 (29 ms) carte 46 photos + 300 positions
+   345.824  t0294627 suivi ok score 0.99 pos -362,7189 net 113 (19 ms) carte 46 photos + 300 positions
+   345.922  photo cei_0126 à -432,7204 (533 ko, 216 ms)
+   346.162  t0294964 suivi ok score 0.98 pos -142,7188 net 115 (20 ms) carte 47 photos + 300 positions
+   346.300  envoyé lame_20261113_194231_trico-erincei_0124.jpg (502 ko)
+   346.490  t0295292 suivi ok score 0.99 pos 106,7160 net 106 (15 ms) carte 47 photos + 300 positions
+   346.827  t0295629 suivi ok score 0.98 pos 357,7140 net 97 (17 ms) carte 47 photos + 300 positions
+   347.167  t0295968 suivi ok score 0.99 pos 690,7111 net 99 (24 ms) carte 47 photos + 300 positions
+   347.506  t0296307 suivi ok score 0.99 pos 871,7093 net 94 (26 ms) carte 47 photos + 300 positions
+   347.837  t0296639 suivi ok score 0.98 pos 1101,7078 net 91 (21 ms) carte 47 photos + 300 positions
+   347.999  photo en mouvement lent (54 % du champ, 40 u/s)
+   348.159  t0296961 suivi ok score 0.98 pos 1313,7062 net 91 (20 ms) carte 47 photos + 300 positions
+   348.213  photo cei_0127 à 1221,7062 (608 ko, 213 ms)
+   348.509  t0297311 suivi ok score 0.98 pos 1506,7046 net 90 (34 ms) carte 48 photos + 300 positions
+   348.849  t0297650 suivi ok score 0.99 pos 1767,7014 net 94 (30 ms) carte 48 photos + 300 positions
+   349.128  envoyé lame_20261113_194231_trico-erincei_0125.jpg (507 ko)
+   349.167  t0297969 suivi ok score 0.98 pos 2067,6998 net 86 (17 ms) carte 48 photos + 300 positions
+   349.498  t0298299 suivi ok score 0.99 pos 2222,6982 net 90 (21 ms) carte 48 photos + 300 positions
+   349.830  t0298632 suivi ok score 1.00 pos 2293,6977 net 88 (22 ms) carte 48 photos + 300 positions
+   349.877  photo cei_0128 à 2243,6982 (622 ko, 226 ms)
+   350.166  envoyé lame_20261113_194231_trico-erincei_0126.jpg (533 ko)
+   350.170  t0298971 suivi ok score 0.99 pos 2711,6939 net 85 (25 ms) carte 49 photos + 300 positions
+   350.503  t0299304 suivi ok score 1.00 pos 2771,6934 net 93 (26 ms) carte 49 photos + 300 positions
+   350.834  t0299636 suivi ok score 1.00 pos 2771,6934 net 93 (21 ms) carte 49 photos + 300 positions
+   350.858  photo cei_0129 à 2771,6934 (609 ko, 230 ms)
+   351.167  t0299969 suivi ok score 0.97 pos 2747,6667 net 93 (21 ms) carte 50 photos + 300 positions
+   351.244  envoyé lame_20261113_194231_trico-erincei_0127.jpg (608 ko)
+   351.501  t0300302 suivi ok score 0.98 pos 2739,6552 net 78 (22 ms) carte 50 photos + 300 positions
+   351.827  t0300628 suivi ok score 0.99 pos 2711,6121 net 89 (15 ms) carte 50 photos + 300 positions
+   352.167  t0300969 suivi ok score 0.98 pos 2688,5898 net 88 (21 ms) carte 50 photos + 300 positions
+   352.494  t0301296 suivi ok score 0.99 pos 2675,5750 net 98 (16 ms) carte 50 photos + 300 positions
+   352.828  t0301630 suivi ok score 0.99 pos 2664,5707 net 97 (22 ms) carte 50 photos + 300 positions
+   352.857  photo cei_0130 à 2665,5723 (543 ko, 227 ms)
+   353.158  t0301960 suivi ok score 0.98 pos 2652,5610 net 106 (15 ms) carte 51 photos + 300 positions
+   353.497  t0302298 suivi ok score 0.99 pos 2640,5404 net 104 (19 ms) carte 51 photos + 300 positions
+   353.522  photo cei_0131 à 2652,5563 (523 ko, 228 ms)
+   353.826  t0302628 suivi ok score 0.99 pos 2628,5229 net 90 (17 ms) carte 52 photos + 300 positions
+   353.976  envoyé lame_20261113_194231_trico-erincei_0128.jpg (622 ko)
+   354.163  t0302965 suivi ok score 0.98 pos 2592,4897 net 92 (18 ms) carte 52 photos + 300 positions
+   354.495  t0303297 suivi ok score 0.98 pos 2568,4607 net 104 (17 ms) carte 52 photos + 300 positions
+   354.839  t0303640 suivi ok score 0.98 pos 2516,4493 net 106 (26 ms) carte 52 photos + 300 positions
+   355.167  t0303969 suivi ok score 0.98 pos 2505,4319 net 116 (25 ms) carte 52 photos + 300 positions
+   355.177  envoyé lame_20261113_194231_trico-erincei_0129.jpg (609 ko)
+   355.194  photo cei_0132 à 2516,4455 (454 ko, 227 ms)
+   355.491  t0304293 suivi ok score 0.98 pos 2504,4258 net 129 (17 ms) carte 53 photos + 300 positions
+   355.791  photo cei_0133 à 2495,4242 (443 ko, 227 ms)
+   355.828  t0304630 suivi ok score 0.99 pos 2481,4066 net 119 (17 ms) carte 54 photos + 300 positions
+   356.174  t0304976 suivi ok score 0.98 pos 2446,3746 net 144 (26 ms) carte 54 photos + 300 positions
+   356.472  envoyé lame_20261113_194231_trico-erincei_0130.jpg (543 ko)
+   356.494  t0305296 suivi ok score 0.98 pos 2433,3545 net 150 (19 ms) carte 54 photos + 300 positions
+   356.842  t0305644 suivi ok score 0.99 pos 2420,3424 net 133 (29 ms) carte 54 photos + 300 positions
+   357.118  photo cei_0134 à 2420,3393 (456 ko, 217 ms)
+   357.165  t0305967 suivi ok score 0.99 pos 2409,3296 net 146 (19 ms) carte 55 photos + 300 positions
+   357.496  t0306298 suivi ok score 0.97 pos 2405,3159 net 123 (20 ms) carte 55 photos + 300 positions
+   357.518  photo cei_0135 à 2408,3233 (463 ko, 222 ms)
+   357.830  t0306632 suivi ok score 0.99 pos 2396,3026 net 119 (19 ms) carte 56 photos + 300 positions
+   357.987  photo cei_0136 à 2396,3071 (466 ko, 226 ms)
+   358.002  envoyé lame_20261113_194231_trico-erincei_0131.jpg (523 ko)
+   358.168  t0306970 suivi ok score 1.00 pos 2384,2914 net 140 (22 ms) carte 57 photos + 300 positions
+   358.499  t0307301 suivi ok score 0.97 pos 2360,2694 net 132 (18 ms) carte 57 photos + 300 positions
+   358.795  envoyé lame_20261113_194231_trico-erincei_0132.jpg (454 ko)
+   358.830  t0307633 suivi ok score 0.99 pos 2360,2599 net 134 (16 ms) carte 57 photos + 300 positions
+   358.992  photo cei_0137 à 2360,2630 (488 ko, 226 ms)
+   359.162  t0307964 suivi ok score 0.99 pos 2337,2336 net 116 (21 ms) carte 58 photos + 300 positions
+   359.508  t0308310 suivi ok score 0.99 pos 2304,1969 net 124 (22 ms) carte 58 photos + 300 positions
+   359.818  envoyé lame_20261113_194231_trico-erincei_0133.jpg (443 ko)
+   359.841  t0308643 suivi ok score 0.99 pos 2277,1660 net 72 (20 ms) carte 58 photos + 300 positions
+   360.173  t0308975 suivi ok score 0.98 pos 2253,1321 net 133 (24 ms) carte 58 photos + 300 positions
+   360.499  t0309301 suivi ok score 0.97 pos 2241,1240 net 139 (20 ms) carte 58 photos + 300 positions
+   360.647  photo cei_0138 à 2242,1272 (534 ko, 228 ms)
+   360.809  envoyé lame_20261113_194231_trico-erincei_0134.jpg (456 ko)
+   360.837  t0309639 suivi ok score 1.00 pos 2229,1129 net 142 (25 ms) carte 59 photos + 300 positions
+   361.175  t0309977 suivi ok score 1.00 pos 2229,1129 net 140 (25 ms) carte 59 photos + 300 positions
+   361.512  t0310313 suivi ok score 1.00 pos 2229,1129 net 140 (30 ms) carte 59 photos + 300 positions
+   361.834  t0310635 suivi ok score 1.00 pos 2229,1129 net 141 (19 ms) carte 59 photos + 300 positions
