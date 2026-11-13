@@ -1,0 +1,25 @@
+[    0.0s] segment 2/2 : objectif x40, 49 images entre 311 s et 396 s
+[    0.0s] 49 images candidates
+[    0.7s] profondeur : 49 photos en 49 pile(s) marquée(s) par l'appli (plusieurs plans de mise au point par champ)
+[    0.7s] netteté médiane 17.4, seuil 6.9
+[    1.0s] 49 images retenues (nettes, non redondantes)
+[    1.6s] flat-field : médiane temporelle de 40 images (vignettage et poussières fixes de l'oculaire)
+[    3.4s] aberration chromatique : échelle R 1.0005, B 0.9990
+[    3.7s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 4 %)
+[    8.4s] prétraitement terminé, 49 images, recalage à 900 x 1200
+[   11.7s] points SIFT : 578 par image en moyenne
+[   11.7s] 390 paires à tester
+[   13.7s] 24 paires valides
+[   27.5s] 91 paire(s) recalée(s) par corrélation d'images (champs répétitifs ou pauvres en points)
+[   27.9s] distorsion radiale : aucune correction (résidu 0.28 px, pas d'amélioration nette)
+[   27.9s] composantes : [37, 11, 1] -> on assemble la n°0 : 37 images
+[   28.1s] échelles relatives après ajustement : min 0.978, max 1.004
+[   28.1s] ajustement global : 4338 correspondances, 36 images
+[   28.1s] 12 image(s) placée(s) d'après le suivi en direct (11 en blocs recalés entre eux, 1 isolée(s))
+[   28.3s] compensation photométrique : écart de gain max 1.5 %
+[   28.3s] recalage : erreur médiane 1.11 px (échelle recalage), max 115.31
+[   28.9s] mosaïque 6972 x 9871
+[  106.2s] composition : 20 tuiles en 76 s
+[  107.2s] rognage automatique proposé : 5872 x 5280 px (45 % de la mosaïque, 60 % de la couverture)
+[  107.3s] qualité : note B (12 % de champs peu nets, 12 champ(s) placé(s) sans recalage fin)
+[  107.3s] terminé : pano.jpg 6972 x 9871 , 49 images utilisées sur 49
