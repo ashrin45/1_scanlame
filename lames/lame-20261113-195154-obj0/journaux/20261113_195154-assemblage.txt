@@ -1,0 +1,34 @@
+[    0.0s] segment 1/2 : objectif x100, 92 images entre 0 s et 219 s
+[    0.0s] 92 images candidates
+[    1.3s] profondeur : 92 photos en 92 pile(s) marquée(s) par l'appli (plusieurs plans de mise au point par champ)
+[    1.3s] netteté médiane 35.5, seuil 14.2
+[    1.7s] 88 images retenues (nettes, non redondantes)
+[    2.4s] flat-field : médiane temporelle de 40 images (vignettage et poussières fixes de l'oculaire)
+[    4.2s] aberration chromatique : échelle R 1.0005, B 1.0000
+[    4.9s] balance des blancs : blanc estimé par image, lissé sur 9 images (variation max 31 %)
+[   12.8s] prétraitement terminé, 88 images, recalage à 900 x 1200
+[   19.5s] points SIFT : 1269 par image en moyenne
+[   19.5s] 901 paires à tester
+[   33.7s] 323 paires valides
+[   35.2s] 39 paire(s) SIFT rejetée(s) : les images ne se superposent pas à l'endroit trouvé (motif répétitif)
+[   53.3s] 89 paire(s) recalée(s) par corrélation d'images (champs répétitifs ou pauvres en points)
+[   54.0s] distorsion radiale k1 = -0.0220 (résidu 0.64 px contre 1.12 px sans correction)
+[   54.0s] composantes : [66, 14, 3, 2, 2, 1] -> on assemble la n°0 : 66 images
+[   57.4s] a priori (ensemble enregistré après le détail) : dernière photo du détail au centre du premier champ de l'ensemble (3684, 6290)
+[   57.5s] ancrage dans la lame d'ensemble inbox/lame_20261113_195154/result (6972x9871 px, objectif x40) : mosaïque provisoire 2308x2744
+[   57.6s] recherche dans la fenêtre (164, 1679, 5650, 8000)
+[   62.6s] facteur 1.0000 : 99 appariements, 6 inliers, échelle résiduelle 0.85
+[   68.8s] facteur 1.0000 : 67 appariements, 4 inliers, échelle résiduelle 0.00
+[   96.5s] appariement appris (fenêtre 5486x6321) : 3 appariements, 0 inliers, échelle résiduelle 0.000
+[   96.5s] balayage du parent par 4 fenêtres de 4616x5488 (appariement appris, facteur 1.0000)
+[  212.0s] ancrage dans la lame d'ensemble impossible : prise non localisée dans la lame d'ensemble
+[  212.6s] échelles relatives après ajustement : min 0.984, max 1.065
+[  212.6s] ajustement global : 39143 correspondances, 65 images
+[  212.6s] 22 image(s) placée(s) d'après le suivi en direct (21 en blocs recalés entre eux, 1 isolée(s))
+[  213.1s] compensation photométrique : écart de gain max 30.2 %
+[  213.1s] recalage : erreur médiane 0.92 px (échelle recalage), max 100.26
+[  214.2s] mosaïque 7513 x 8783
+[  330.6s] composition : 20 tuiles en 114 s
+[  332.2s] rognage automatique proposé : 5840 x 7424 px (66 % de la mosaïque, 79 % de la couverture)
+[  332.3s] qualité : note B (2 trou(s) dans la couverture, 22 champ(s) placé(s) sans recalage fin)
+[  332.3s] terminé : pano.jpg 7513 x 8783 , 88 images utilisées sur 88

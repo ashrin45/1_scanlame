@@ -22,7 +22,12 @@
  "stage": null,
  "stage_cal": null,
  "stage_obs": null,
- "children": [],
+ "children": [
+  {
+   "slug": "lame-20261113-195154-obj0",
+   "transform": null
+  }
+ ],
  "quality": {
   "grade": "B",
   "notes": [
