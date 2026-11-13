@@ -1,0 +1,103 @@
+{
+ "title": "trico erincei (obj. x40)",
+ "width": 5232,
+ "height": 7792,
+ "fields": 71,
+ "tiles": 250,
+ "tile": 512,
+ "maxlvl": 13,
+ "um_per_px": null,
+ "stain": "bleu",
+ "objective": "x40",
+ "sample": null,
+ "comment": null,
+ "captured": "13/11/2026 19:42",
+ "parent": "trico-erincei-11131942",
+ "parent_transform": [
+  0.2520665544213939,
+  -0.0012955026079650364,
+  1309.4594540945745,
+  2294.67757858019
+ ],
+ "parent_anchored": 61,
+ "parent_approx": null,
+ "outline": [
+  [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    7790.8
+   ],
+   [
+    5229.4,
+    7790.8
+   ],
+   [
+    5229.4,
+    0.0
+   ]
+  ]
+ ],
+ "cellules": null,
+ "hint": null,
+ "stage": null,
+ "stage_cal": null,
+ "stage_obs": null,
+ "children": [],
+ "quality": {
+  "grade": "B",
+  "notes": [
+   "1 champ(s) placé(s) sans recalage fin"
+  ],
+  "frames": {
+   "candidates": 79,
+   "blurred": 3,
+   "selected": 72,
+   "used": 72,
+   "tracked_only": 1
+  },
+  "residual_px": 1.34,
+  "residual_max_px": 19.47,
+  "holes": [],
+  "holes_frac": 0.0,
+  "coverage_px": 52121217,
+  "coverage_mm2": null,
+  "low_sharp_frac": 0.0,
+  "gain_spread_pct": 5.1,
+  "flat_field": "médiane",
+  "k1": -0.022,
+  "zstack_fields": 0,
+  "zstack_levels": 0
+ },
+ "series": "lame_20261113_194231_trico-erincei",
+ "version": 1,
+ "params": {
+  "depth": "off",
+  "seams": true,
+  "fps": 4.0,
+  "reg_size": 1200,
+  "max_side": 32000,
+  "core": 0.7,
+  "tile": 2048,
+  "distortion": true,
+  "chroma": true,
+  "code": "70538b5"
+ },
+ "published": "2026-11-13T19:05:49+00:00",
+ "updated": "2026-11-13T19:05:50+00:00",
+ "retakes": 0,
+ "retake_series": [],
+ "zstack": 0,
+ "zstack_tiles": null,
+ "cropped": [
+  [
+   448,
+   256,
+   5680,
+   8048
+  ]
+ ]
+}

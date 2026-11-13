@@ -22,7 +22,17 @@
  "stage": null,
  "stage_cal": null,
  "stage_obs": null,
- "children": [],
+ "children": [
+  {
+   "slug": "trico-erincei-obj-x40-11131942",
+   "transform": [
+    0.2520665544213939,
+    -0.0012955026079650364,
+    1309.4594540945745,
+    2294.67757858019
+   ]
+  }
+ ],
  "quality": {
   "grade": "A",
   "notes": [],
